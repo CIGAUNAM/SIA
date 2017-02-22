@@ -1,0 +1,34 @@
+<article>
+
+  <h2>{{ curso_especializacion.nombre_curso }}</h2>
+  <p>{{ curso_especializacion.descripcion }}</p>
+  <dl>
+    <dt>Tipo</dt>
+      <dd>{{ curso_especializacion.tipo }}</dd>
+    <dt>Horas</dt>
+      <dd>{{ curso_especializacion.horas }}</dd>
+    <dt>Fecha de inicio</dt>
+      <dd>{{ curso_especializacion.fecha_inicio }}</dd>
+    <dt>Fecha de fin</dt>
+      <dd>{{ curso_especializacion.fecha_fin }}</dd>
+    <dt>Modalidad</dt>
+      <dd>{{ curso_especializacion.modalidad }}</dd>
+    <dt>Área de conocimiento</dt>
+      <dd>{{ curso_especializacion.area_conocimiento }}</dd>
+    <dt>Dependencia</dt>
+      <dd>{{ curso_especializacion.dependencia }}</dd>
+
+
+      {% if curso_especializacion.tags.all %}
+          <dt>Tag{{ curso_especializacion.tags.count|pluralize }}</dt>
+          {% for tag in curso_especializacion.tags.all %}
+              <dd>
+                  <a href="">{{ tag.tag|title }}</a>
+              </dd>
+          {% endfor %}
+      {% endif %}
+  </dl>
+
+
+
+</article>

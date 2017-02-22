@@ -2,7 +2,7 @@ import os
 import django
 
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SIACMS.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SIA.settings")
 
 django.setup()
 

@@ -1,0 +1,16 @@
+<h2>{{ tag.name|title }}</h2>
+{% if tag.curso_especializacion_tags.all %}
+    <section>
+        <h3>Curso{{ tag.curso_especializacion_tags.count|pluralize }} de especialización</h3>
+        <p>Tag is associated with {{ tag.curso_especializacion_tags.count }} Curso{{ tag.startup_set.count|pluralize }}.</p>
+       <ul>
+           {% for curso in tag.curso_especializacion_tags.all %}
+               <li><a href="">{{ curso.name }}</a></li>
+           {% endfor %}
+       </ul>
+     </section>
+{% endif %}
+
+{% if not tag.startup_set.all and not tag.blog_posts.all %}
+<p>Esta tag no está relacionada con ningún contenido.</p>
+{% endif %}
