@@ -1,8 +1,8 @@
-<h2>{{ tag.name|title }}</h2>
+<h2>{{ tag.tag|title }}</h2>
 {% if tag.curso_especializacion_tags.all %}
     <section>
         <h3>Curso{{ tag.curso_especializacion_tags.count|pluralize }} de especialización</h3>
-        <p>Tag is associated with {{ tag.curso_especializacion_tags.count }} Curso{{ tag.startup_set.count|pluralize }}.</p>
+        <p>Tag asociada con {{ tag.curso_especializacion_tags.count }} Curso{{ tag.startup_set.count|pluralize }} de especialización.</p>
        <ul>
            {% for curso in tag.curso_especializacion_tags.all %}
                <li><a href="">{{ curso.name }}</a></li>
