@@ -1,0 +1,101 @@
+<h2>{{ tag.tag|title }}</h2>
+{% if tag.curso_especializacion_tags.all %}
+<section>
+    <h3>Curso{{ tag.curso_especializacion_tags.count|pluralize }} de Especializacion</h3>
+    <p>
+        Ésta Tag está asociada con {{ tag.curso_especializacion_tags.count }} Curso{{ tag.curso_especializacion_tags.count|pluralize }} de Especializacion
+    </p>
+    <ul>
+        {% for curso in tag.curso_especializacion_tags.all %}
+        <li>
+            <a href="">
+                {{ curso.nombre_curso }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% else %}
+<p>Esta tag no está relacionada con ningún Curso de Especialización</p>
+{% endif %}
+
+{% if tag.licenciatura_tags.all %}
+<section>
+    <h3>Licenciaturas</h3>
+    <ul>
+        {% for curso in tag.licenciatura_tags.all %}
+        <li>
+            <a href="">
+                {{ curso.nombre_curso }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% else %}
+<p>Esta tag no está relacionada con ninguna Licenciatura</p>
+{% endif %}
+
+{% if tag.maestria_tags.all %}
+<section>
+    <h3>Maestrías</h3>
+    <ul>
+        {% for curso in tag.maestria_tags.all %}
+        <li>
+            <a href="">
+                {{ curso.nombre_curso }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% else %}
+<p>Esta tag no está relacionada con ninguna Maestría</p>
+{% endif %}
+
+{% if tag.doctorado_tags.all %}
+<section>
+    <h3>Doctorados</h3>
+    <ul>
+        {% for curso in tag.doctorado_tags.all %}
+        <li>
+            <a href="">
+                {{ curso.nombre_curso }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% else %}
+<p>Esta tag no está relacionada con ningún Doctorado</p>
+{% endif %}
+
+{% if tag.post_doctorado_tags.all %}
+<section>
+    <h3>Post Doctorados</h3>
+    <ul>
+        {% for curso in tag.post_doctorado_tags.all %}
+        <li>
+            <a href="">
+                {{ curso.nombre_curso }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% else %}
+<p>Esta tag no está relacionada con ningún Post Doctorado</p>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
