@@ -72,14 +72,13 @@ INSTALLED_APPS = [
     'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
     'rest_framework',
 
-
-
-
-
     'sekizai',
     'treebeard',
     'filer',
     'easy_thumbnails',
+
+
+    'django_sb_admin',
 ]
 
 AUTH_USER_MODEL = 'nucleo.User'

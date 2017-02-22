@@ -8,6 +8,11 @@ from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrRead
 from rest_framework import permissions
 
 
+class TagLista(generics.ListCreateAPIView):
+
+    def get(self):
+        return Tag.objects.all()
+
 
 class TagList(generics.ListCreateAPIView):
     queryset = Tag.objects.all()
