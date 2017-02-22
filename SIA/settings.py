@@ -72,13 +72,12 @@ INSTALLED_APPS = [
     'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
     'rest_framework',
 
-    'aldryn_style',
-    'aldryn_bootstrap3',
+
+
 
 
     'sekizai',
     'treebeard',
-    'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
 ]
