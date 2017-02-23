@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
-gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -167,12 +166,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+#MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+#STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'SIA', 'static'),
-#)
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 #SITE_ID = 1
 
 
