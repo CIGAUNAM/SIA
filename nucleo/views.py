@@ -8,6 +8,11 @@ from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrRead
 from rest_framework import permissions
 
 
+
+def homepage(request):
+    return render(context=None, template_name='login.html')
+
+
 class TagLista(generics.ListCreateAPIView):
 
     def get(self):
