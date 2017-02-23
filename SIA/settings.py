@@ -76,9 +76,6 @@ INSTALLED_APPS = [
     'treebeard',
     'filer',
     'easy_thumbnails',
-
-
-    'django_sb_admin',
 ]
 
 AUTH_USER_MODEL = 'nucleo.User'
