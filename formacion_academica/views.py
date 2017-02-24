@@ -10,6 +10,10 @@ from rest_framework import generics
 # Create your views here.
 
 
+def curso_especializacion(request):
+    return render(request=request, context=None, template_name='cursos_especializacion.html')
+
+
 class CursoEspecializacionList(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
     queryset = CursoEspecializacion.objects.all()
