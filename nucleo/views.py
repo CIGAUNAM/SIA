@@ -13,6 +13,7 @@ def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
 
 
+
 class TagLista(generics.ListCreateAPIView):
 
     def get(self):
