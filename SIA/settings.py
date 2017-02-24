@@ -50,7 +50,7 @@ GRADO_ACADEMICO = (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    #'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -70,6 +70,10 @@ INSTALLED_APPS = [
     'formacion_recursos_humanos.apps.FormacionRecursosHumanosConfig',
     'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
     'rest_framework',
+
+    'django_adminlte',
+    'django_adminlte_theme',
+    'django.contrib.admin',
 
     'sekizai',
     'treebeard',
