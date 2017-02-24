@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>SIA - {{ titulo }}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -32,8 +32,11 @@
 
 </head>
 
+
+
 <body>
 
+{% if user.is_authenticated %}
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -250,7 +253,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="logout/"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -274,7 +277,7 @@
                             <!-- /input-group -->
                         </li>
                         <li class="active">
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="inicio/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-graduation-cap fa-fw"></i> Formación Académica<span class="fa arrow"></span></a>
@@ -360,7 +363,7 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Difusión científica<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Memorias in extenso</a>
+                                    <a href="#">Memorias in extenso</a>
                                 </li>
                                 <li>
                                     <a href="#">Prólogos de libro</a>
@@ -501,7 +504,12 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Desarrollos tecnológicos</a>
+                            <a href="#"><i class="fa fa-cogs fa-fw"></i> Desarrollos tecnológicos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Desarrollos tecnológicos</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-trophy fa-fw"></i> Premios y disticiones<span class="fa arrow"></span></a>
@@ -526,11 +534,32 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Blank</h1>
+                        <h1 class="page-header">Título - {{ request.user.username }}</h1>
+                        <!-- <p class="page-header1"><strong>&nbsp; &nbsp; {{ categoria }}</strong></p> -->
+                        <hr>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
+
+                {% block content %}{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <!-- /.container-fluid -->
         </div>
@@ -551,6 +580,14 @@
     <!-- Custom Theme JavaScript -->
     <script src="{% static "js/sb-admin-2.js" %}"></script>
 
+{% else %}
+        <script>
+        window.location.href = '/login/';
+        </script>
+{% endif %}
+
 </body>
+
+
 
 </html>

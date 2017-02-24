@@ -16,9 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from nucleo.views import homepage
+from django.contrib.auth import views as auth_views
+
+from nucleo.views import inicio
 
 urlpatterns = [
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'template_name': 'login.html'}, name='logout'),
+    url(r'^inicio/$', inicio, name='inicio'),
+
     url(r'^admin/', admin.site.urls),
-    url(r'^$', homepage),
+    url(r'^$', inicio, name='inicio'),
 ]
