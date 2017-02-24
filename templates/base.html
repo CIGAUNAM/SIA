@@ -534,9 +534,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Título - {{ request.user.username }}</h1>
-                        <!-- <p class="page-header1"><strong>&nbsp; &nbsp; {{ categoria }}</strong></p> -->
-                        <hr>
+                        <h1 class="page-header">Título - {{ request }} {{ request.user.username }}</h1>
+
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
