@@ -1,8 +1,17 @@
 {% extends 'adminlte/base.html' %}
-
 {% block title %}SIA - Inicio{% endblock %}
 {% block content_header %}
-    <p>Just some example content</p>
+    <section class="content-header">
+        <h1> Dashboard
+            {% block page_name %}{% endblock %}
+            {% block no_description %}
+            <small>{% block page_description %}{% endblock %}</small>
+            {% endblock %}
+        </h1>
+        {% block breadcrumbs %}
+            {# Breadcrumb implementation left to developers #}
+        {% endblock %}
+    </section>
 {% endblock %}
 {% block content %}
     <p>Just some example content</p>
