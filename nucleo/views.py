@@ -9,12 +9,8 @@ from rest_framework import permissions
 
 
 
-def login(request):
-    return render(request=request, context=None, template_name='login.html')
-
-def homepage(request):
-    return render(request=request, context=None, template_name='base.html')
-
+def inicio(request):
+    return render(request=request, context=None, template_name='dashboard.html')
 
 
 class TagLista(generics.ListCreateAPIView):
