@@ -1,19 +1,54 @@
 {% extends 'adminlte/base.html' %}
-{% block title %}SIA - Inicio{% endblock %}
+{% block title %}SIA - Cursos de especialización (Formación académica){% endblock %}
 {% block content_header %}
     <section class="content-header">
-        <h1> Formación Académica
-            {% block page_name %}{% endblock %}
+        <h1>
+            {% block page_name %}Cursos de especialización{% endblock %}
             {% block no_description %}
-            <small>{% block page_description %}{% endblock %}Cursos de especialización</small>
+                <small>{% block page_description %}Formación Académica{% endblock %}</small>
             {% endblock %}
         </h1>
         {% block breadcrumbs %}
             {# Breadcrumb implementation left to developers #}
+            <ol class="breadcrumb">
+                <li><a href="/">Inicio</a></li>
+                <li>Formación académica</li>
+                <li class="active">Cursos de especialización</li>
+            </ol>
         {% endblock %}
     </section>
 {% endblock %}
 {% block content %}
-    <p>Just some example content</p>
+
+
+    <div class="box box-solid box-primary nav-tabs-custom" style="cursor: move;">
+        <ul class="nav nav-tabs pull-right ui-sortable-handle">
+            <li class="active"><a href="#revenue-chart" data-toggle="tab" aria-expanded="true">Mis cursos</a></li>
+            <li class=""><a href="#sales-chart" data-toggle="tab" aria-expanded="false">Agregar</a></li>
+            <li class=""><a href="#sales-chart" data-toggle="tab" aria-expanded="false">Cursos de otros miembros</a>
+            </li>
+            <li class="pull-left header"><i class="fa fa-inbox"></i></li>
+        </ul>
+        <div class="box-header with-border">
+            <h3 class="box-title">Cursos de especialización</h3>
+            <div class="box-tools pull-right">
+                <!-- Buttons, labels, and many other things can be placed here! -->
+                <!-- Here is a label for example -->
+
+
+            </div><!-- /.box-tools -->
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            The body of the box
+            <p>otro parrafo </p>
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <div id="has-feedback" class="has-feedback">
+                <input type="text" class="form-control input-sm" placeholder="Buscar...">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+        </div><!-- box-footer -->
+    </div><!-- /.box -->
+
 
 {% endblock %}
