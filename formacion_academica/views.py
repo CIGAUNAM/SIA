@@ -7,7 +7,25 @@ from rest_framework import permissions
 from formacion_academica.serializers import *
 from rest_framework import generics
 
+
+from . models import CursoEspecializacion
+from django.http import HttpResponse
+from django.core import serializers
+
+
+
 # Create your views here.
+
+
+def show_cursos(request):
+    return render(request, 'dashboard.html')
+
+def cursos_json(request):
+    cursos = CursoEspecializacion.objects.all()
+    json = serializers.serialize('json', cursos)
+    return HttpResponse(json, content_type='application/json')
+
+
 
 
 def curso_especializacion(request):
