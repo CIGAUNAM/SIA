@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from nucleo.views import inicio
+from formacion_academica.views import show_cursos
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
@@ -28,5 +29,5 @@ urlpatterns = [
     url(r'^formacion/', include('formacion_academica.urls')),
 
     url(r'^admin/', admin.site.urls),
-    url(r'^$', inicio, name='inicio'),
+    url(r'^$', show_cursos, name='cursos'),
 ]

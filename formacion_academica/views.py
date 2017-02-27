@@ -18,6 +18,7 @@ from django.core import serializers
 
 
 def show_cursos(request):
+    context = {'titulo': 'Inicio'}
     return render(request, 'dashboard.html')
 
 def cursos_json(request):
