@@ -79,6 +79,8 @@ INSTALLED_APPS = [
     'treebeard',
     'filer',
     'easy_thumbnails',
+
+    'table',
 ]
 
 AUTH_USER_MODEL = 'nucleo.User'

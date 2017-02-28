@@ -1,4 +1,4 @@
-{% extends 'adminlte/base.html' %}
+{% extends 'ebase.html' %}
 {% block title %}SIA - Cursos de especialización (Formación académica){% endblock %}
 {% block content_header %}
     <section class="content-header">
@@ -21,7 +21,7 @@
 {% block content %}
 
 
-    <div class="box box-solid box-primary nav-tabs-custom" style="cursor: move;">
+    <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
             <li class="active"><a href="#mis-cursos" data-toggle="tab" aria-expanded="true">Mis cursos</a></li>
             <li class=""><a href="#agregar" data-toggle="tab" aria-expanded="false"><span
@@ -539,7 +539,51 @@
                     </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                    agregar
+
+
+
+
+
+            <script>
+             jQuery(document).ready(function($jquery) {
+                 $jquery('#postsTable').dataTable({
+                     "iDisplayLength": 2,
+                     "ajax": {
+                         "processing": true,
+                         "url": "{# url 'ajax_posts' #}",
+                         "dataSrc": ""
+                     },
+
+                     "columns": [
+                             { "data": "pk" },
+                             { "data": "fields.title" },
+                             { "data": "fields.url" },
+                             { "data": "fields.content" }
+                         ]
+                 });
+             });
+         </script>
+
+
+    <div class="container">
+            <table id="postsTable" class="table">
+                 <thead>
+                     <tr>
+                         <th>Id</th>
+                         <th>Title</th>
+                         <th>Url</th>
+                         <th>Content</th>
+                     </tr>
+                 </thead>
+                 <tbody></tbody>
+            </table>
+        </div>
+
+
+
+
+
+
                 </div><!-- /.box-body -->
             </div>
 
