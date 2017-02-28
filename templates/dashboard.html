@@ -1,7 +1,42 @@
 {% extends 'ebase.html' %}
 {% block content %}
 
-<p>dsfkjdshfk</p>
+<p>Dashboard contenido prueba</p>
+
+            <script>
+             jQuery(document).ready(function($jquery) {
+                 $jquery('#postsTable').dataTable({
+                     "iDisplayLength": 2,
+                     "ajax": {
+                         "processing": true,
+                         "url": "{# url 'ajax_posts' #}",
+                         "dataSrc": ""
+                     },
+
+                     "columns": [
+                             { "data": "pk" },
+                             { "data": "fields.title" },
+                             { "data": "fields.url" },
+                             { "data": "fields.content" }
+                         ]
+                 });
+             });
+         </script>
+
+
+    <div class="container">
+            <table id="postsTable" class="table">
+                 <thead>
+                     <tr>
+                         <th>Id</th>
+                         <th>Title</th>
+                         <th>Url</th>
+                         <th>Content</th>
+                     </tr>
+                 </thead>
+                 <tbody></tbody>
+            </table>
+        </div>
 
 
 {% endblock %}
