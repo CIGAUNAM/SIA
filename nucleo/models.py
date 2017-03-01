@@ -164,6 +164,7 @@ class Institucion(models.Model):
         verbose_name_plural = 'Instituciones'
 
 
+
 class Dependencia(models.Model):
     dependencia = models.CharField(max_length=255)
     slug = AutoSlugField(populate_from='dependencia', max_length=255, unique=True)
@@ -177,6 +178,9 @@ class Dependencia(models.Model):
                                                           ('ESCUELAS', 'Facultades y Escuelas'),
                                                           ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
                                                           ('NO', 'No')), default='NO', verbose_name='Subsistema UNAM')
+
+    def natural_key(self):
+        return (self.dependencia)
 
     def __str__(self):
         return "{} : {}".format(self.institucion, self.dependencia)

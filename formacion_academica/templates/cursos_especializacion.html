@@ -1,23 +1,5 @@
 {% extends 'ebase.html' %}
-{% block title %}SIA - Cursos de especialización (Formación académica){% endblock %}
-{% block content_header %}
-    <section class="content-header">
-        <h1>
-            {% block page_name %}Cursos de especialización{% endblock %}
-            {% block no_description %}
-                <small>{% block page_description %}Formación Académica{% endblock %}</small>
-            {% endblock %}
-        </h1>
-        {% block breadcrumbs %}
-            {# Breadcrumb implementation left to developers #}
-            <ol class="breadcrumb">
-                <li><a href="/">Inicio</a></li>
-                <li>Formación académica</li>
-                <li class="active">Cursos de especialización</li>
-            </ol>
-        {% endblock %}
-    </section>
-{% endblock %}
+
 {% block content %}
 
 
@@ -48,7 +30,7 @@
                     <script>
                         jQuery(document).ready(function ($jquery) {
                             $jquery('#cursos_json').dataTable({
-                                "iDisplayLength": 15,
+                                "iDisplayLength": 25,
                                 "ajax": {
                                     "processing": true,
                                     "url": "{% url 'cursos_json' %}",
@@ -64,22 +46,22 @@
                                         }
                                     },
                                     {"data": "fields.tipo"},
-                                    {"data": "fields.fecha_inicio"},
                                     {"data": "fields.horas"},
+                                    {"data": "fields.dependencia"},
                                 ]
                             });
                         });
                     </script>
 
 
-                    <table id="cursos_json" class="table">
+                    <table id="cursos_json" class="dataTables_wrapper form-inline dt-bootstrap" style="width: 100%">
                         <thead>
                         <tr>
 
-                            <th>Nombre del curso</th>
+                            <th>nombre_curso</th>
                             <th>Tipo</th>
-                            <th>fecha inicio</th>
                             <th>Horas</th>
+                            <th>Dependencia</th>
                         </tr>
                         </thead>
                         <tbody></tbody>

@@ -23,25 +23,29 @@
                     },
                     {"data": "fields.tipo"},
                     {"data": "fields.horas"},
+                    {"data": "fields.dependencia"},
                 ]
             });
         });
     </script>
 
 
+    <div class="box">
+        <div class="box-body">
+            <table id="cursos_json" class="dataTables_wrapper form-inline dt-bootstrap">
+                <thead>
+                <tr>
 
-    <table id="cursos_json" class="table">
-        <thead>
-        <tr>
-
-            <th>nombre_curso</th>
-            <th>Tipo</th>
-            <th>Horas</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
+                    <th>nombre_curso</th>
+                    <th>Tipo</th>
+                    <th>Horas</th>
+                    <th>Dependencia</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
 
 
 {% endblock %}

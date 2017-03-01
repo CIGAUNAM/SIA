@@ -75,10 +75,10 @@ INSTALLED_APPS = [
     'django_adminlte_theme',
     'django.contrib.admin',
 
-    'sekizai',
-    'treebeard',
-    'filer',
-    'easy_thumbnails',
+    #'sekizai',
+    #'treebeard',
+    #'filer',
+    #'easy_thumbnails',
 
     'table',
 ]

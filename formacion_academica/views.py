@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 
+
 from . permissions import IsOwnerOrReadOnly
 
 from rest_framework import permissions
@@ -24,12 +25,15 @@ def cursos_especializacion(request):
 def show_cursos_dash(request):
     return render(request, 'dashboard.html')
 
-def cursos_json(request):
+def cursos_jsonbak(request):
     cursos = CursoEspecializacion.objects.all()
     json = serializers.serialize('json', cursos)
     return HttpResponse(json, content_type='application/json')
 
-
+def cursos_json(request):
+    cursos = CursoEspecializacion.objects.all()
+    json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia'), use_natural_foreign_keys=True)
+    return HttpResponse(json, content_type='application/json')
 
 
 def curso_especializacion(request):
