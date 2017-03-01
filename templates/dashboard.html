@@ -6,19 +6,18 @@
             <script>
              jQuery(document).ready(function($jquery) {
                  $jquery('#postsTable').dataTable({
-                     "iDisplayLength": 2,
+                     "iDisplayLength": 25,
                      "ajax": {
                          "processing": true,
                          "url": "{% url 'cursos_json' %}",
                          "dataSrc": ""
                      },
 
-                     "columns": [
-
-                             { "data": "nombre_curso" },
-                             { "data": "nombre_curso" },
-                             { "data": "nombre_curso" },
-                             { "data": "nombre_curso" }
+                     "fields": [
+                             { "data": "pk" },
+                             { "data": "field.nombre_curso" },
+                             { "data": "field.nombre_curso" },
+                             { "data": "field.nombre_curso" },
                          ]
                  });
              });
