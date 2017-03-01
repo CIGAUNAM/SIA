@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from nucleo.views import inicio
-from formacion_academica.views import show_cursos
+from formacion_academica.views import show_cursos, cursos_json
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
@@ -30,4 +30,14 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', show_cursos, name='cursos'),
+    url(r'^$', cursos_json, name='cursos_json'),
 ]
+
+"""
+urlpatterns += patterns(
+    'formacion_academica.views',
+    url(regex=r'^$',
+        view='cursos_json',
+        name='ajax_posts'),
+   )
+"""

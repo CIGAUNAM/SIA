@@ -14,7 +14,7 @@
 
 
         <!-- styles no se que -->
-{% endblock %}
+    {% endblock %}
 {% endblock %}
 
 {% block content_header %}
@@ -22,7 +22,7 @@
         <h1> {{ titulo_pagina }} Titulo
             {% block page_name %}{% endblock %}
             {% block no_description %}
-            <small>{% block page_description %}{% endblock %}</small>
+                <small>{% block page_description %}{% endblock %}</small>
             {% endblock %}
         </h1>
         {% block breadcrumbs %}
