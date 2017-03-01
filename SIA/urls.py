@@ -30,7 +30,7 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', show_cursos, name='cursos'),
-    url(r'^$', cursos_json, name='cursos_json'),
+    url(r'^cursos_json/', cursos_json, name='cursos_json'),
 ]
 
 """
