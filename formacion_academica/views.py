@@ -17,7 +17,11 @@ from django.core import serializers
 # Create your views here.
 
 
-def show_cursos(request):
+def cursos_especializacion(request):
+    return render(request, 'cursos_especializacion.html')
+
+
+def show_cursos_dash(request):
     return render(request, 'dashboard.html')
 
 def cursos_json(request):
