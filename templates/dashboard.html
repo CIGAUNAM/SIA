@@ -9,15 +9,16 @@
                      "iDisplayLength": 2,
                      "ajax": {
                          "processing": true,
-                         "url": "{# url 'ajax_posts' #}",
+                         "url": "{% url 'cursos_json' %}",
                          "dataSrc": ""
                      },
 
                      "columns": [
-                             { "data": "pk" },
-                             { "data": "fields.title" },
-                             { "data": "fields.url" },
-                             { "data": "fields.content" }
+
+                             { "data": "nombre_curso" },
+                             { "data": "nombre_curso" },
+                             { "data": "nombre_curso" },
+                             { "data": "nombre_curso" }
                          ]
                  });
              });
