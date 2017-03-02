@@ -8,6 +8,7 @@ from rest_framework import permissions
 from formacion_academica.serializers import *
 from rest_framework import generics
 
+from nucleo.models import User
 
 from . models import CursoEspecializacion
 from django.http import HttpResponse
@@ -25,13 +26,10 @@ def cursos_especializacion(request):
 def show_cursos_dash(request):
     return render(request, 'dashboard.html')
 
-def cursos_jsonbak(request):
-    cursos = CursoEspecializacion.objects.all()
-    json = serializers.serialize('json', cursos)
-    return HttpResponse(json, content_type='application/json')
 
 def cursos_json(request):
-    cursos = CursoEspecializacion.objects.all()
+    usuarioid = User.objects.get(username='gabriela.cuevas').id
+    cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
     json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia', 'slug'), use_natural_foreign_keys=True)
     return HttpResponse(json, content_type='application/json')
 
