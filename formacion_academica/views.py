@@ -32,7 +32,7 @@ def cursos_jsonbak(request):
 
 def cursos_json(request):
     cursos = CursoEspecializacion.objects.all()
-    json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia'), use_natural_foreign_keys=True)
+    json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia', 'slug'), use_natural_foreign_keys=True)
     return HttpResponse(json, content_type='application/json')
 
 
