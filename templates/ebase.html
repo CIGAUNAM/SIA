@@ -1,40 +1,95 @@
 {% extends 'adminlte/base.html' %}
-{% block title %}SIA - {{ titulo_exp }}{% endblock %}
 
-{% block extra_head %}
-    <!-- comentario extra en head -->
-    {% block stylesheets %}
-        {% include 'adminlte/lib/_styles.html' %}
-
-
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-
-
-        <!-- styles no se que -->
-    {% endblock %}
-{% endblock %}
-
-{% block content_header %}
-    <section class="content-header">
-        <h1> {{ titulo_pagina }} Titulo
-            {% block page_name %}{% endblock %}
-            {% block no_description %}
-                <small>{% block page_description %}{% endblock %}</small>
-            {% endblock %}
-        </h1>
-        {% block breadcrumbs %}
-            {# Breadcrumb implementation left to developers #}
-            <ol class="breadcrumb">
-                <li><a href="/">Inicio</a></li>
-                <li>Sección</li>
-                <li class="active">Subsección</li>
-            </ol>
+{% if user.is_authenticated %}
+    {% block title %}SIA - {{ titulo_exp }}{% endblock %}
+    {% block extra_head %}
+        <!-- comentario extra en head -->
+        {% block stylesheets %}
+            {% include 'adminlte/lib/_styles.html' %}
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+            <!-- styles no se que -->
         {% endblock %}
-    </section>
-{% endblock %}
+    {% endblock %}
 
-{% block content %}
-{% endblock %}
+    {% block content_header %}
+        <section class="content-header">
+            <h1> {{ titulo_pagina }} Titulo
+                {% block page_name %}{% endblock %}
+                {% block no_description %}
+                    <small>{% block page_description %}{% endblock %}</small>
+                {% endblock %}
+            </h1>
+            {% block breadcrumbs %}
+                {# Breadcrumb implementation left to developers #}
+                <ol class="breadcrumb">
+                    <li><a href="/">Inicio</a></li>
+                    <li>Sección</li>
+                    <li class="active">Subsección</li>
+                </ol>
+            {% endblock %}
+        </section>
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+
+{% else %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Acceso al sistema</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="{% url "login" %}" accept-charset="utf-8" id="login">
+                            {% csrf_token %}
+                            <fieldset>
+                                <input type="hidden" name="next" value="{{ next }}">
+                                <div class="form-group">
+                                    <input class="form-control submit_on_enter" placeholder="Nombre de usuario"
+                                           name="username" type="username" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control submit_on_enter" placeholder="Password" name="password"
+                                           type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="submit_on_enter" name="remember" type="checkbox"
+                                               value="Remember Me">Recordarme
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <a href="javascript:;" class="btn btn-lg btn-success btn-block"
+                                   onclick="document.getElementById('login').submit();">Acceder</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.submit_on_enter').keydown(function (event) {
+                // enter has keyCode = 13, change it if you want to use another button
+                if (event.keyCode == 13) {
+                    this.form.submit();
+                    return false;
+                }
+            });
+        });
+    </script>
+
+
+{% endif %}
