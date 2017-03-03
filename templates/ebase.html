@@ -1,6 +1,7 @@
 {% extends 'adminlte/base.html' %}
 
-{% if user.is_authenticated %}
+{% if request.user.is_authenticated %}
+
     {% block title %}SIA - {{ titulo_exp }}{% endblock %}
     {% block extra_head %}
         <!-- comentario extra en head -->

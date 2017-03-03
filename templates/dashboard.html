@@ -1,7 +1,7 @@
 {% extends 'ebase.html' %}
 {% block content %}
 
-    <p>Dashboard contenido prudsadasdsadsadseba</p>
+    <p>Bienvenido {{ request.user.first_name }} {{ request.user.last_name }} ({{ request.user.username }})</p>
 <!--
     <script>
         jQuery(document).ready(function ($jquery) {
