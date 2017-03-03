@@ -5,6 +5,7 @@ from formacion_academica import views
 urlpatterns = [
 
     url(r'^cursos-especializacion/$', views.curso_especializacion, name='cursos_especializacion'),
+    url(r'^cursos-especializacion/cursos_json/', views.cursos_json, name='cursos_json'),
 
 
     url(r'^acursos.especializacion/$', views.CursoEspecializacionList.as_view()),
