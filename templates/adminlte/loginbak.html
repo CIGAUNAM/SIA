@@ -1,0 +1,93 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+    {% block title_outer %}
+        <title>Login SIA</title>
+    {% endblock %}
+
+    {% block meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {% endblock %}
+
+    {% block stylesheets %}
+        {% include 'adminlte/lib/_styles.html' %}
+    {% endblock %}
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="class="hold-transition login-page">
+
+
+<div class="login-box">
+    {% block logo %}
+        <div class="login-logo">
+            <a href="{% block logo_href %}/{% endblock %}">{% block logo_text %}<b>SIA.</b>CIGA{% endblock %}</a>
+        </div>
+    {% endblock %}
+    {% block form %}
+        <form method="post">
+            {% csrf_token %}
+            {% block login_form %}
+                <form action="" method="post">{% csrf_token %}
+                    {% if message %}
+                        <p class="login-box-msg" style="color: red;">{{ message }}</p>
+                    {% endif %}
+                    <div class="form-group has-feedback">
+                        <input name="username" class="form-control" placeholder="Usuario">
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" name="password" class="form-control" placeholder="Password"
+                               style="padding: 11px;">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="checkbox icheck">
+                                <label class="">
+                                    <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false"
+                                         style="position: relative;"><input type="checkbox"
+                                                                            style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                        <ins class="iCheck-helper"
+                                             style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    Recordarme
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xs-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Acceder</button>
+                        </div>
+                    </div>
+
+                </form>
+                <a href="#">Olvidé mi password</a>
+            {% endblock login_form %}
+        </form>
+    {% endblock %}
+
+    {% block javascript %}
+        {% include 'adminlte/lib/_scripts.html' %}
+    {% endblock %}
+
+
+
+</div>
+
+<script src="/static/jquery/dist/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script src="/static/bootstrap/dist/js/bootstrap.min.js "></script>
+<script src="/static/admin-lte/dist/js/app.min.js"></script>
+
+
+
+</body>
+</html>
