@@ -28,7 +28,7 @@ def inicio(request):
 
 
 def cursos_json(request):
-    usuarioid = User.objects.get(username=request.username).id
+    usuarioid = User.objects.get(username=request.user.username).id
     cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
     json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia', 'slug'), use_natural_foreign_keys=True)
     return HttpResponse(json, content_type='application/json')
