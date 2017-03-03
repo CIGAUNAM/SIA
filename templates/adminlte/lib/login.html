@@ -1,8 +1,0 @@
-{% extends "adminlte/lib/login.html" %}
-
-{% block form %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form  }}
-    </form>
-{% endblock %}
