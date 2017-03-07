@@ -1,4 +1,4 @@
-from django.shortcuts import render
+
 from django.http.response import HttpResponse
 
 
@@ -11,16 +11,16 @@ from rest_framework import generics
 from nucleo.models import User
 
 from . models import CursoEspecializacion
-from django.http import HttpResponse
+from django.http.response import (Http404, HttpResponse)
+from django.shortcuts import (render, get_object_or_404, render_to_response)
+
 from django.core import serializers
+
 
 
 
 # Create your views here.
 
-
-def cursos_especializacion(request):
-    return render(request, 'cursos_especializacion.html')
 
 
 def inicio(request):
@@ -28,14 +28,23 @@ def inicio(request):
 
 
 def cursos_json(request):
-    usuarioid = User.objects.get(username=request.user.username).id
-    cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
-    json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia', 'slug'), use_natural_foreign_keys=True)
-    return HttpResponse(json, content_type='application/json')
+    try:
+        usuarioid = User.objects.get(username=request.user.username).id
+        cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
+        json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia', 'slug'), use_natural_foreign_keys=True)
+        return HttpResponse(json, content_type='application/json')
+    except:
+        raise Http404
 
 
-def curso_especializacion(request):
-    return render(request=request, context=None, template_name='cursos_especializacion.html')
+def cursos_especializacion(request):
+    return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos'})
+
+
+def curso_especializacion_detalle(request, slug):
+    curso = CursoEspecializacion.objects.get(slug=slug)
+
+    return render(request, template_name='cursos_especializacion.html', context={'active': 'curso_detalle', 'curso': curso})
 
 
 class CursoEspecializacionList(generics.ListCreateAPIView):

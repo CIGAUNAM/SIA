@@ -5,18 +5,30 @@
 
     <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
-            <li class="active"><a href="#mis-cursos" data-toggle="tab" aria-expanded="true">Mis cursos</a></li>
-            <li class=""><a href="#agregar" data-toggle="tab" aria-expanded="false"><span
-                    id="accion">Agregar</span></a></li>
-            <!-- <li class=""><a href="#otros" data-toggle="tab" aria-expanded="false">Cursos de otros miembros</a>-->
-            </li>
+
+            {% if active == 'curso_detalle' %}
+                <li><a href="/formacion/cursos-especializacion/" aria-expanded="true">Mis cursos</a></li>
+
+                <li {% if active == 'curso_detalle' %}class="active"{% endif %}><a href="#curso_detalle"
+                                                                                   data-toggle="tab"
+                                                                                   aria-expanded="false"><span
+                        id="accion">Editar curso</span></a></li>
+                <!-- <li class=""><a href="#otros" data-toggle="tab" aria-expanded="false">Cursos de otros miembros</a>-->
+                </li>
+            {% else %}
+                <li {% if active == 'mis_cursos' %}class="active"{% endif %}><a href="#mis-cursos" data-toggle="tab"
+                                                                                aria-expanded="true">Mis cursos</a></li>
+                <li class=""><a href="#agregar" data-toggle="tab" aria-expanded="false"><span
+                        id="accion">Agregar curso</span></a></li>
+                <!-- <li class=""><a href="#otros" data-toggle="tab" aria-expanded="false">Cursos de otros miembros</a>-->
+                </li>
+            {% endif %}
             <li class="pull-left header"><i class="fa fa-inbox"></i></li>
         </ul>
 
 
         <div class="tab-content no-padding">
-
-            <div id="mis-cursos" class="tab-pane {% if True %}active{% endif %}">
+            <div id="mis-cursos" class="tab-pane {% if active == 'mis_cursos' %}active{% endif %}">
                 <div class="bg-light-blue-active box-header with-border">
                     <h3 class="box-title">Mis cursos de especialización</h3>
                     <div class="box-tools pull-right">
@@ -25,8 +37,6 @@
                     </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body">
-
-
                     <script>
                         jQuery(document).ready(function ($jquery) {
                             $jquery('#cursos_json').dataTable({
@@ -42,7 +52,7 @@
                                     {
                                         "data": "fields.nombre_curso",
                                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='curso/" + oData.fields.slug + "'>" + oData.fields.nombre_curso + "</a>");
+                                            $(nTd).html("<a href='/formacion/cursos-especializacion/" + oData.fields.slug + "'>" + oData.fields.nombre_curso + "</a>");
                                         }
                                     },
                                     {"data": "fields.tipo"},
@@ -61,7 +71,7 @@
                             <th>Curso</th>
                             <th>Tipo</th>
                             <th>Horas</th>
-                            <th>Dependencia</th>
+                            <th>Lugar</th>
                         </tr>
                         </thead>
                         <tbody></tbody>
@@ -71,35 +81,75 @@
                 </div><!-- /.box-body -->
             </div>
 
-            <div id="agregar" class="tab-pane" {% if False %}active{% endif %}>
+
+            {% if active == 'curso_detalle' %}
+
+                <div id="curso_detalle" class="tab-pane active">
+                    <div class="bg-light-blue-active box-header with-border">
+                        <h3 class="box-title">Editar curso de especialización</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Buttons, labels, and many other things can be placed here! -->
+                            <!-- Here is a label for example -->
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+
+                        <p><strong>Nombre del curso: </strong> {{ curso.nombre_curso }}</p>
+                        <p><strong>Descripción: </strong> {{ curso.descripcion }}</p>
+                        <p><strong>Tipo: </strong> {{ curso.tipo|title }}</p>
+                        <p><strong>Horas: </strong> {{ curso.horas }}</p>
+                        <p><strong>Fecha: </strong> del {{ curso.fecha_inicio }} al {{ curso.fecha_fin }}</p>
+                        <p><strong>Modalidad: </strong> {{ curso.modalidad|title }} </p>
+                        <p><strong>Área de conocimiento: </strong> {{ curso.area_conocimiento }} </p>
+                        <p><strong>Área de conocimiento: </strong> {{ curso.area_conocimiento }} </p>
+                        <p><strong>Institución: </strong> {{ curso.dependencia.institucion }} </p>
+                        <p><strong>Dependencia: </strong> {{ curso.dependencia.dependencia }} </p>
+                        <p><strong>Ciudad: </strong> {{ curso.dependencia.ciudad.ciudad }} </p>
+                        <p><strong>Estado: </strong> {{ curso.dependencia.ciudad.estado.estado }} </p>
+                        <p><strong>País: </strong> {{ curso.dependencia.institucion.pais }} </p>
+                        <p><strong>País: </strong> {{ curso.dependencia.institucion.pais }} </p>
+
+
+
+
+                    </div><!-- /.box-body -->
+                </div>
+
+            {% else %}
+
+                <div id="agregar" class="tab-pane">
+                    <div class="bg-light-blue-active box-header with-border">
+                        <h3 class="box-title">Agregar curso de especialización</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Buttons, labels, and many other things can be placed here! -->
+                            <!-- Here is a label for example -->
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+
+                        <form>
+                            <label>Nombre del curso: </label>
+                            <input type="text"><br />
+                            <label>Descripción </label><textarea></textarea>
+                        </form>
+
+                    </div><!-- /.box-body -->
+                </div>
+
+            {% endif %}
+
+            <div id="otros_cursos" class="tab-pane">
                 <div class="bg-light-blue-active box-header with-border">
-                    <h3 class="box-title">Agregar curso de especialización</h3>
+                    <h3 class="box-title">Cursos de otros miembros</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
                     </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body">
-
-
-                    <p>prueba</p>
-
+                    otros
                 </div><!-- /.box-body -->
             </div>
-
-
-            <!--<div id="otros" class="tab-pane">
-                <div class="bg-light-blue-active box-header with-border">
-                    <h3 class="box-title">Cursos de otros miembros</h3>
-                    <div class="box-tools pull-right">
-                        <!-- Buttons, labels, and many other things can be placed here! -- >
-                        <!-- Here is a label for example -- >
-                    </div>< ! -- /.box-tools -- >
-                </div>< ! -- /.box-header -- >
-                <div class="box-body">
-                    otros
-                </div>< ! -- /.box-body -- >
-            </div> -->
 
         </div>
 
