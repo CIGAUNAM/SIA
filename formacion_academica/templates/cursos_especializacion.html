@@ -7,20 +7,19 @@
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
 
             {% if active == 'curso_detalle' %}
-                <li><a href="/{{ plantilla.categoria }}/{{ plantilla.seccion }}/" aria-expanded="true">{{ plantilla.titulo_lista }}</a></li>
+                <li><a href="/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
 
                 <li {% if active == 'curso_detalle' %}class="active"{% endif %}><a href="#curso_detalle"
                                                                                    data-toggle="tab"
-                                                                                   aria-expanded="false"><span
-                        id="accion">Editar curso</span></a></li>
-                <!-- <li class=""><a href="#otros" data-toggle="tab" aria-expanded="false">Cursos de otros miembros</a>-->
+                                                                                   aria-expanded="false">Editar curso</a></li>
+
                 </li>
             {% else %}
                 <li {% if active == 'mis_cursos' %}class="active"{% endif %}><a href="#mis-cursos" data-toggle="tab"
-                                                                                aria-expanded="true">{{ plantilla.titulo_lista }}</a></li>
-                <li class=""><a href="#agregar" data-toggle="tab" aria-expanded="false"><span
-                        id="accion">Agregar curso</span></a></li>
-                <!-- <li class=""><a href="#otros" data-toggle="tab" aria-expanded="false">Cursos de otros miembros</a>-->
+                                                                                aria-expanded="true">{{ plantilla.tab_lista }}</a>
+                </li>
+                <li class=""><a href="#agregar" data-toggle="tab" aria-expanded="false">Agregar curso</a></li>
+
                 </li>
             {% endif %}
             <li class="pull-left header"><i class="fa fa-inbox"></i></li>
@@ -52,11 +51,11 @@
                                     {
                                         "data": "fields.nombre_curso",
                                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='/formacion/cursos-especializacion/" + oData.fields.slug + "'>" + oData.fields.nombre_curso + "</a>");
+                                            $(nTd).html("<a href='/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" + oData.fields.slug + "'>" + oData.fields.nombre_curso + "</a>");
                                         }
                                     },
-                                    {"data": "fields.tipo"},
                                     {"data": "fields.horas"},
+                                    {"data": "fields.fecha_inicio"},
                                     {"data": "fields.dependencia"},
                                 ]
                             });
@@ -69,8 +68,9 @@
                         <tr>
 
                             <th>Curso</th>
-                            <th>Tipo</th>
+
                             <th>Horas</th>
+                            <th>Inicio</th>
                             <th>Lugar</th>
                         </tr>
                         </thead>
@@ -125,7 +125,7 @@
 
                         <form>
                             <label>Nombre del curso: </label>
-                            <input type="text"><br />
+                            <input type="text"><br/>
                             <label>Descripción </label><textarea></textarea>
                         </form>
 

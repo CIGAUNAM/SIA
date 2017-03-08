@@ -1,7 +1,7 @@
 {% extends 'adminlte/base.html' %}
 
 
-{% block title %}SIA - {{ titulo_exp }}{% endblock %}
+{% block title %}SIA : {{ plantilla.breadcrumb_seccion }} - {{ plantilla.titulo_pagina }} {% endblock %}
 {% block extra_head %}
     <!-- comentario extra en head -->
     {% block stylesheets %}
@@ -16,7 +16,7 @@
 
     {% block content_header %}
         <section class="content-header">
-            <h1> {{ titulo_pagina }} Titulo
+            <h1> {{ plantilla.titulo_pagina }}
                 {% block page_name %}{% endblock %}
                 {% block no_description %}
                     <small>{% block page_description %}{% endblock %}</small>
@@ -26,8 +26,8 @@
                 {# Breadcrumb implementation left to developers #}
                 <ol class="breadcrumb">
                     <li><a href="/">Inicio</a></li>
-                    <li>Sección</li>
-                    <li class="active">Subsección</li>
+                    <li>{{ plantilla.breadcrumb_seccion }}</li>
+                    <li class="active">{{ plantilla.titulo_pagina }}</li>
                 </ol>
             {% endblock %}
         </section>

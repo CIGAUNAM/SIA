@@ -1,8 +1,6 @@
-
 from django.http.response import HttpResponse
 
-
-from . permissions import IsOwnerOrReadOnly
+from .permissions import IsOwnerOrReadOnly
 
 from rest_framework import permissions
 from formacion_academica.serializers import *
@@ -10,43 +8,73 @@ from rest_framework import generics
 
 from nucleo.models import User
 
-from . models import CursoEspecializacion
+from .models import CursoEspecializacion
 from django.http.response import (Http404, HttpResponse)
 from django.shortcuts import (render, get_object_or_404, render_to_response)
+from django.views.generic import View
 
 from django.core import serializers
 
 
-
-
 # Create your views here.
-
-
 
 def inicio(request):
     return render(request, 'dashboard.html')
+
+
+class CursoEspecializacionJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', cursos,
+                                         fields=('nombre_curso', 'fecha_inicio', 'horas', 'dependencia', 'slug'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class CursoEspecializacionLista(View):
+    def plantilla_cursos(self):
+        return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
+                'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
+                'breadcrumb_seccion': 'Formación académica'}
+
+    def get(self, request):
+        return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': plantilla_cursos()})
+
+
+
 
 
 def cursos_json(request):
     try:
         usuarioid = User.objects.get(username=request.user.username).id
         cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
-        json = serializers.serialize('json', cursos, fields=('nombre_curso','tipo', 'horas', 'dependencia', 'slug'), use_natural_foreign_keys=True)
+        json = serializers.serialize('json', cursos,
+                                     fields=('nombre_curso', 'fecha_inicio', 'horas', 'dependencia', 'slug'),
+                                     use_natural_foreign_keys=True)
         return HttpResponse(json, content_type='application/json')
     except:
         raise Http404
 
 
+def plantilla_cursos():
+    return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
+            'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
+            'breadcrumb_seccion': 'Formación académica'}
+
+
 def cursos_especializacion(request):
-    return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos'})
+    return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': plantilla_cursos()})
 
 
 def curso_especializacion_detalle(request, slug):
-    plantilla = {'categoria': 'formacion', 'seccion': 'cursos-especializacion', 'titulo_lista': 'Mis Cursos'}
-
     curso = CursoEspecializacion.objects.get(slug=slug)
 
-    return render(request, template_name='cursos_especializacion.html', context={'active': 'curso_detalle', 'curso': curso, 'plantilla': plantilla})
+    return render(request, template_name='cursos_especializacion.html',
+                  context={'active': 'curso_detalle', 'curso': curso, 'plantilla': plantilla_cursos()})
 
 
 class CursoEspecializacionList(generics.ListCreateAPIView):
