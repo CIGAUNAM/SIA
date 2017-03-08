@@ -7,7 +7,7 @@
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
 
             {% if active == 'curso_detalle' %}
-                <li><a href="/formacion/cursos-especializacion/" aria-expanded="true">Mis cursos</a></li>
+                <li><a href="/{{ plantilla.categoria }}/{{ plantilla.seccion }}/" aria-expanded="true">{{ plantilla.titulo_lista }}</a></li>
 
                 <li {% if active == 'curso_detalle' %}class="active"{% endif %}><a href="#curso_detalle"
                                                                                    data-toggle="tab"
@@ -17,7 +17,7 @@
                 </li>
             {% else %}
                 <li {% if active == 'mis_cursos' %}class="active"{% endif %}><a href="#mis-cursos" data-toggle="tab"
-                                                                                aria-expanded="true">Mis cursos</a></li>
+                                                                                aria-expanded="true">{{ plantilla.titulo_lista }}</a></li>
                 <li class=""><a href="#agregar" data-toggle="tab" aria-expanded="false"><span
                         id="accion">Agregar curso</span></a></li>
                 <!-- <li class=""><a href="#otros" data-toggle="tab" aria-expanded="false">Cursos de otros miembros</a>-->
@@ -77,7 +77,6 @@
                         <tbody></tbody>
                     </table>
 
-
                 </div><!-- /.box-body -->
             </div>
 
@@ -101,15 +100,12 @@
                         <p><strong>Fecha: </strong> del {{ curso.fecha_inicio }} al {{ curso.fecha_fin }}</p>
                         <p><strong>Modalidad: </strong> {{ curso.modalidad|title }} </p>
                         <p><strong>Área de conocimiento: </strong> {{ curso.area_conocimiento }} </p>
-                        <p><strong>Área de conocimiento: </strong> {{ curso.area_conocimiento }} </p>
                         <p><strong>Institución: </strong> {{ curso.dependencia.institucion }} </p>
                         <p><strong>Dependencia: </strong> {{ curso.dependencia.dependencia }} </p>
                         <p><strong>Ciudad: </strong> {{ curso.dependencia.ciudad.ciudad }} </p>
                         <p><strong>Estado: </strong> {{ curso.dependencia.ciudad.estado.estado }} </p>
                         <p><strong>País: </strong> {{ curso.dependencia.institucion.pais }} </p>
                         <p><strong>País: </strong> {{ curso.dependencia.institucion.pais }} </p>
-
-
 
 
                     </div><!-- /.box-body -->
