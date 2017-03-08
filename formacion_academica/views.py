@@ -42,9 +42,11 @@ def cursos_especializacion(request):
 
 
 def curso_especializacion_detalle(request, slug):
+    plantilla = {'categoria': 'formacion', 'seccion': 'cursos-especializacion', 'titulo_lista': 'Mis Cursos'}
+
     curso = CursoEspecializacion.objects.get(slug=slug)
 
-    return render(request, template_name='cursos_especializacion.html', context={'active': 'curso_detalle', 'curso': curso})
+    return render(request, template_name='cursos_especializacion.html', context={'active': 'curso_detalle', 'curso': curso, 'plantilla': plantilla})
 
 
 class CursoEspecializacionList(generics.ListCreateAPIView):
