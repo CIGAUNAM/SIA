@@ -36,13 +36,14 @@ class CursoEspecializacionJSON(View):
 
 
 class CursoEspecializacionLista(View):
-    def plantilla_cursos(self):
+    def contexto_cursos(self):
         return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
                 'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
                 'breadcrumb_seccion': 'Formación académica'}
 
     def get(self, request):
-        return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': plantilla_cursos()})
+        return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': self.contexto_cursos()})
+
 
 
 
