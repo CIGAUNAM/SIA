@@ -51,7 +51,7 @@
                                     {
                                         "data": "fields.nombre_curso",
                                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" + oData.fields.slug + "'>" + oData.fields.nombre_curso + "</a>");
+                                            $(nTd).html("<a href='/{% url  %}" + oData.fields.slug + "'>" + oData.fields.nombre_curso + "</a>");
                                         }
                                     },
                                     {"data": "fields.horas"},
