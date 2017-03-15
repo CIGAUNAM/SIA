@@ -1,6 +1,7 @@
 from django.db import models
 
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from autoslug import AutoSlugField
 from nucleo.models import User, Tag, Dependencia, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Proyecto
 
@@ -29,11 +30,15 @@ class CursoEspecializacion(models.Model):
     def __str__(self):
         return "{} : {} : {}".format(self.nombre_curso, self.fecha_inicio, self.usuario)
 
+    def get_absolute_url(self):
+        return reverse('curso_especializacion', kwargs={'slug': self.slug})
+
     class Meta:
         ordering = ['fecha_inicio']
         verbose_name = 'Curso de especialización'
         verbose_name_plural = 'Cursos de especialización'
         unique_together = ['nombre_curso', 'fecha_inicio', 'usuario']
+
 
 
 class Licenciatura(models.Model):
