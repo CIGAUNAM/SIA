@@ -296,7 +296,6 @@ class Financiamiento(models.Model):
     tipo_financiamiento = models.CharField(max_length=80, choices=FINANCIAMIENTO_TIPO)
     descripcion = models.TextField(blank=True)
     programas_financiamiento = models.ManyToManyField(ProgramaFinanciamiento, related_name='financiamiento_programas_financiamiento', blank=True)
-    #dependencias_financiamiento = models.ManyToManyField(Dependencia, related_name='financiamientos', blank=True)
     dependencias_financiamiento = models.ManyToManyField(Dependencia, related_name='financiamiento_dependencias_financiamiento', blank=True)
     clave_proyecto = models.CharField(max_length=255)
 
