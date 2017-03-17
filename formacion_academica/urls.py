@@ -1,12 +1,13 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
-from . views import curso_especializacion_detalle, CursoEspecializacionLista, CursoEspecializacionJSON
+from . views import curso_especializacion_detalle, CursoEspecializacionLista, CursoEspecializacionJSON, CursoEspecializacionAgregar
 
 urlpatterns = [
 
     url(r'^cursos-especializacion/$', CursoEspecializacionLista.as_view(), name='curso_especializacion_lista'),
-    url(r'^cursos-especializacion/cursos_json/', CursoEspecializacionJSON.as_view(), name='cursos_json'),
+    url(r'^cursos-especializacion/cursos_json/', CursoEspecializacionJSON.as_view(), name='curso_especializacion_lista__json'),
     url(r'^cursos-especializacion/(?P<slug>[\w\-]+)/$', curso_especializacion_detalle, name='curso_especializacion'),
+    url(r'^cursos-especializacion/agregar$', CursoEspecializacionAgregar.as_view(), name='curso_especializacion_agregar'),
 
 
     #url(r'^acursos.especializacion/$', CursoEspecializacionList.as_view()),
