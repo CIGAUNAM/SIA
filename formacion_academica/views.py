@@ -45,6 +45,18 @@ class CursoEspecializacionLista(View):
         return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': self.contexto_cursos()})
 
 
+class CursoEspecializacionAgregar(View):
+    def contexto_cursos(self):
+        return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
+                'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
+                'breadcrumb_seccion': 'Formación académica'}
+
+
+    def post(self, request):
+        pass
+
+    def get(self, request):
+        return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'plantilla': self.contexto_cursos()})
 
 
 

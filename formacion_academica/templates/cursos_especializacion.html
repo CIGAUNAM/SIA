@@ -7,11 +7,13 @@
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
 
             {% if active == 'curso_detalle' %}
-                <li><a href="/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
+                <li><a href="/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/"
+                       aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
 
                 <li {% if active == 'curso_detalle' %}class="active"{% endif %}><a href="#curso_detalle"
                                                                                    data-toggle="tab"
-                                                                                   aria-expanded="false">Editar curso</a></li>
+                                                                                   aria-expanded="false">Editar
+                    curso</a></li>
 
                 </li>
             {% else %}
@@ -123,11 +125,61 @@
                     </div><!-- /.box-header -->
                     <div class="box-body">
 
-                        <form>
-                            <label>Nombre del curso: </label>
-                            <input type="text"><br/>
-                            <label>Descripción </label><textarea></textarea>
+
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <p>
+                                <label for="nombre_curso">Nombre del curso: </label>
+                                <input id="nombre_curso" maxlength="255" type="text" size="50">
+                            </p>
+                            <p>
+                                <label for="descripcion">Descripcion: </label>
+                                <textarea id="descripcion" rows="5" cols="50"></textarea>
+
+                            </p>
+                            <p>
+                                <label for="tipo">Tipo de Curso: </label>
+                                <select id="tipo">
+                                    <option value="CURSO">Curso</option>
+                                    <option value="DIPLOMADO">Diplomado</option>
+                                    <option value="CERTIFICACION">Certificación</option>
+                                    <option value="OTRO">Otro</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="horas">Horas: </label>
+                                <input id="horas" maxlength="90" type="text">
+                            </p>
+                            <p>
+                                <label for="fecha_inicio">fecha_inicio: </label>
+                                <input id="fecha_inicio" maxlength="90" type="text">
+                            </p>
+                            <p>
+                                <label for="fecha_fin">fecha_fin: </label>
+                                <input id="fecha_fin" maxlength="90" type="text">
+                            </p>
+                            <p>
+                                <label for="modalidad">Modalidad: </label>
+                                <select id="modalidad">
+                                    <option value="PRESENCIAL">Presencial</option>
+                                    <option value="EN_LINEA">En línea</option>
+                                    <option value="MIXTO">Mixto</option>
+                                    <option value="OTRO">Otro</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="area_conocimiento">Área de conocimiento: </label>
+                                <input id="area_conocimiento" maxlength="10" type="text">
+                            </p>
+                            <p>
+                                <label for="dependencia">Dependencia: </label>
+                                <input id="dependencia" maxlength="10" type="text">
+                            </p>
+                            <button type="submit">Agregar curso</button>
+                            <button onclick="mis-cursos">Cancelar</button>
+
                         </form>
+
 
                     </div><!-- /.box-body -->
                 </div>
