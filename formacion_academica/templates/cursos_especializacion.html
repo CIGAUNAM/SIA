@@ -20,7 +20,7 @@
                 <li {% if active == 'mis_cursos' %}class="active"{% endif %}><a href="#mis-cursos" data-toggle="tab"
                                                                                 aria-expanded="true">{{ plantilla.tab_lista }}</a>
                 </li>
-                <li class=""><a href="#agregar" data-toggle="tab" aria-expanded="false">Agregar curso</a></li>
+                <li {% if active == 'agregar' %}class="active"{% endif %}><a href="#agregar" data-toggle="tab" aria-expanded="false">Agregar curso</a></li>
 
                 </li>
             {% endif %}
@@ -80,6 +80,7 @@
                     </table>
 
                 </div><!-- /.box-body -->
+
             </div>
 
 
@@ -111,6 +112,7 @@
 
 
                     </div><!-- /.box-body -->
+
                 </div>
 
             {% else %}
@@ -125,10 +127,9 @@
                     </div><!-- /.box-header -->
                     <div class="box-body">
 
-
                         <div>
                             <div>
-                                <form action="/" method="post">
+                                <form action="/formacion/cursos-especializacion/" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     <button type="submit">Agregar curso</button>

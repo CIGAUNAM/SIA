@@ -8,7 +8,7 @@ from django import forms
 class CursoEspecializacionForm(forms.ModelForm):
     class Meta:
         model = CursoEspecializacion
-        exclude = ['slug', 'usuario', ]
+        exclude = ['slug', 'usuario', 'tags', ]
 
 
 class LicenciaturaForm(forms.ModelForm):
