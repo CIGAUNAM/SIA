@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
-from . views import curso_especializacion_detalle, CursoEspecializacionLista, CursoEspecializacionJSON, CursoEspecializacionAgregar
+from . views import curso_especializacion_detalle, CursoEspecializacionLista, CursoEspecializacionJSON
 
 urlpatterns = [
 

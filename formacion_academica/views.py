@@ -53,25 +53,12 @@ class CursoEspecializacionLista(View):
         bound_form = self.form_class(request.POST)
 
         if bound_form.is_valid():
-            bound_form.usuario_id = User.objects.get(pk=self.request.user.id).id
+            bound_form.usuario_id = User.objects.get(username=request.user.username).id
             nuevo_curso = bound_form.save()
             return redirect(nuevo_curso)
         else:
             return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'form': bound_form})
 
-
-class CursoEspecializacionAgregar(View):
-    def contexto_cursos(self):
-        return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
-                'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
-                'breadcrumb_seccion': 'Formación académica'}
-
-    def post(self, request):
-        pass
-
-    def get(self, request):
-        return render(request, 'cursos_especializacion.html',
-                      {'active': 'agregar', 'plantilla': self.contexto_cursos()})
 
 
 def cursos_json(request):
@@ -90,10 +77,6 @@ def contexto_cursos():
     return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
             'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
             'breadcrumb_seccion': 'Formación académica'}
-
-
-def cursos_especializacion(request):
-    return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': contexto_cursos()})
 
 
 def curso_especializacion_detalle(request, slug):
