@@ -18,9 +18,9 @@
                 </li>
             {% else %}
                 <li {% if active == 'mis_cursos' %}class="active"{% endif %}><a href="#mis-cursos" data-toggle="tab"
-                                                                                aria-expanded="true">{{ plantilla.tab_lista }}</a>
+                                                                                aria-expanded="true">aa{{ plantilla.tab_lista }}</a>
                 </li>
-                <li {% if active == 'agregar' %}class="active"{% endif %}><a href="#agregar" data-toggle="tab" aria-expanded="false">Agregar curso</a></li>
+                <li><a href="#agregar" data-toggle="tab" aria-expanded="true">Agregar curso</a></li>
 
                 </li>
             {% endif %}
@@ -117,7 +117,7 @@
 
             {% else %}
 
-                <div id="agregar" class="tab-pane">
+                <div id="agregar" class="tab-pane{% if active == 'agregar' %} active{% endif %}">
                     <div class="bg-light-blue-active box-header with-border">
                         <h3 class="box-title">Agregar curso de especialización</h3>
                         <div class="box-tools pull-right">

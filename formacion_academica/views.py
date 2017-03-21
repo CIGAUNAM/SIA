@@ -57,7 +57,7 @@ class CursoEspecializacionLista(View):
             nuevo_curso = bound_form.save()
             return redirect(nuevo_curso)
         else:
-            return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'form': bound_form})
+            return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'plantilla': self.contexto_cursos(), 'form': bound_form})
 
 
 
