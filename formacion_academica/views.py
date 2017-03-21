@@ -10,10 +10,12 @@ from nucleo.models import User
 
 from .models import CursoEspecializacion
 from django.http.response import (Http404, HttpResponse)
-from django.shortcuts import (render, get_object_or_404, render_to_response)
+from django.shortcuts import (render, get_object_or_404, render_to_response, redirect)
 from django.views.generic import View
 
 from django.core import serializers
+
+from .forms import *
 
 
 # Create your views here.
@@ -36,13 +38,26 @@ class CursoEspecializacionJSON(View):
 
 
 class CursoEspecializacionLista(View):
+    form_class = CursoEspecializacionForm
+
     def contexto_cursos(self):
         return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
                 'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
-                'breadcrumb_seccion': 'Formación académica'}
+                'breadcrumb_seccion': 'Formación académica', 'form': "algo xD"}
 
     def get(self, request):
-        return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': self.contexto_cursos()})
+        return render(request, 'cursos_especializacion.html',
+                      {'active': 'mis_cursos', 'plantilla': self.contexto_cursos(), 'form': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+
+        if bound_form.is_valid():
+            bound_form.usuario_id = User.objects.get(pk=self.request.user.id).id
+            nuevo_curso = bound_form.save()
+            return redirect(nuevo_curso)
+        else:
+            return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'form': bound_form})
 
 
 class CursoEspecializacionAgregar(View):
@@ -51,14 +66,12 @@ class CursoEspecializacionAgregar(View):
                 'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
                 'breadcrumb_seccion': 'Formación académica'}
 
-
     def post(self, request):
         pass
 
     def get(self, request):
-        return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'plantilla': self.contexto_cursos()})
-
-
+        return render(request, 'cursos_especializacion.html',
+                      {'active': 'agregar', 'plantilla': self.contexto_cursos()})
 
 
 def cursos_json(request):
@@ -73,21 +86,34 @@ def cursos_json(request):
         raise Http404
 
 
-def plantilla_cursos():
+def contexto_cursos():
     return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
             'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
             'breadcrumb_seccion': 'Formación académica'}
 
 
 def cursos_especializacion(request):
-    return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': plantilla_cursos()})
+    return render(request, 'cursos_especializacion.html', {'active': 'mis_cursos', 'plantilla': contexto_cursos()})
 
 
 def curso_especializacion_detalle(request, slug):
     curso = CursoEspecializacion.objects.get(slug=slug)
 
     return render(request, template_name='cursos_especializacion.html',
-                  context={'active': 'curso_detalle', 'curso': curso, 'plantilla': plantilla_cursos()})
+                  context={'active': 'curso_detalle', 'curso': curso, 'plantilla': contexto_cursos()})
+
+
+def curso_especializacion_crear(request):
+    if request.method == 'POST':
+        form = CursoEspecializacionForm(request.POST)
+        if form.is_valid():
+            form.usuario = request.user
+            nuevo_curso = form.save()
+            return redirect(nuevo_curso)
+        else:
+            pass
+    else:
+        pass
 
 
 class CursoEspecializacionList(generics.ListCreateAPIView):

@@ -21,9 +21,9 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Pub
 # Create your models here.
 
 class Tag(models.Model):
-    tag = models.CharField(max_length=50, unique=True)
+    tag = models.CharField(max_length=50, unique=True, help_text='Etiqueta para categorizar objetos.')
     slug = AutoSlugField(populate_from='tag')
-    help_text = 'Etiqueta para configuraciòn de URL.'
+
 
     def __str__(self):
         return self.tag
