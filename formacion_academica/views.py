@@ -53,8 +53,10 @@ class CursoEspecializacionLista(View):
         bound_form = self.form_class(request.POST)
 
         if bound_form.is_valid():
-            bound_form.usuario_id = User.objects.get(username=request.user.username).id
+            nuevo_curso = bound_form.save(commit=False)
+            nuevo_curso.usuario = request.user
             nuevo_curso = bound_form.save()
+
             return redirect(nuevo_curso)
         else:
             return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'plantilla': self.contexto_cursos(), 'form': bound_form})
