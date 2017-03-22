@@ -18,7 +18,7 @@
                 </li>
             {% else %}
                 <li {% if active == 'mis_cursos' %}class="active"{% endif %}><a href="#mis-cursos" data-toggle="tab"
-                                                                                aria-expanded="true">aa{{ plantilla.tab_lista }}</a>
+                                                                                aria-expanded="true">{{ plantilla.tab_lista }}</a>
                 </li>
                 <li><a href="#agregar" data-toggle="tab" aria-expanded="true">Agregar curso</a></li>
 
@@ -99,7 +99,7 @@
 
                         <div>
                             <div>
-                                <form action="{{ slug.get_absolute_url }}" method="post">
+                                <form action="{% url 'curso_especializacion_detalle' slug=curso.slug %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     <button type="submit">Actualizar curso</button>
@@ -126,7 +126,7 @@
 
                         <div>
                             <div>
-                                <form action="/formacion/cursos-especializacion/" method="post">
+                                <form action="{% url 'curso_especializacion_lista' %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     <button type="submit">Agregar curso</button>

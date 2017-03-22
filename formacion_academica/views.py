@@ -39,6 +39,7 @@ class CursoEspecializacionJSON(View):
 
 class CursoEspecializacionLista(View):
     form_class = CursoEspecializacionForm
+    active = None
 
     def contexto_cursos(self):
         return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
@@ -46,10 +47,12 @@ class CursoEspecializacionLista(View):
                 'breadcrumb_seccion': 'Formación académica', 'form': "algo xD"}
 
     def get(self, request):
+        self.active = 'mis_cursos'
         return render(request, 'cursos_especializacion.html',
-                      {'active': 'mis_cursos', 'plantilla': self.contexto_cursos(), 'form': self.form_class})
+                      {'active': self.active, 'plantilla': self.contexto_cursos(), 'form': self.form_class})
 
     def post(self, request):
+        self.active = 'curso_detalle'
         bound_form = self.form_class(request.POST)
 
         if bound_form.is_valid():
@@ -75,24 +78,24 @@ class CursoEspecializacionDetalle(View):
                 'breadcrumb_seccion': 'Formación académica', 'form': "algo xD"}
 
     def get(self, request, slug):
-        curso = get_object_or_404(self.model, slug=slug)
+        curso = get_object_or_404(self.model, slug=slug, usuario=request.user)
         context = {'active': 'curso_detalle', 'plantilla': self.contexto_cursos(), 'form': self.form_class(instance=curso), 'curso': curso}
         return render(request, 'cursos_especializacion.html', context)
 
     def post(self, request, slug):
-        curso = get_object_or_404(self.model, slug=slug)
+        curso = get_object_or_404(self.model, slug=slug, usuario=request.user)
         bound_form = self.form_class(request.POST, instance=curso)
 
         if bound_form.is_valid():
-            nuevo_curso = bound_form.save(commit=False)
-            nuevo_curso.usuario = request.user
-            nuevo_curso = bound_form.save()
-            return redirect(nuevo_curso)
+            detalle_curso = bound_form.save(commit=False)
+            detalle_curso.usuario = request.user
+            detalle_curso = bound_form.save()
+            return redirect(detalle_curso)
         else:
-            return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'plantilla': self.contexto_cursos(), 'form': bound_form})
+            return render(request, 'cursos_especializacion.html', {'active': 'curso_detalle', 'plantilla': self.contexto_cursos(), 'form': bound_form})
 
     def get_update_url(self):
-        return reverse('curso_especializacion_detalle', kwargs={'slug': self.slug})
+        return reverse('curso_especializacion_detalle', kwargs={'slug': self.form_class.slug})
 
 
 
