@@ -30,7 +30,7 @@ class CursoEspecializacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', cursos,
-                                         fields=('nombre_curso', 'fecha_inicio', 'horas', 'dependencia', 'slug'),
+                                         fields=('nombre_curso', 'fecha_inicio', 'horas', 'dependencia', 'pk'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -77,13 +77,13 @@ class CursoEspecializacionDetalle(View):
                 'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
                 'breadcrumb_seccion': 'Formación académica', 'form': "algo xD"}
 
-    def get(self, request, slug):
-        curso = get_object_or_404(self.model, slug=slug, usuario=request.user)
+    def get(self, request, pk):
+        curso = get_object_or_404(self.model, pk=pk, usuario=request.user)
         context = {'active': 'curso_detalle', 'plantilla': self.contexto_cursos(), 'form': self.form_class(instance=curso), 'curso': curso}
         return render(request, 'cursos_especializacion.html', context)
 
-    def post(self, request, slug):
-        curso = get_object_or_404(self.model, slug=slug, usuario=request.user)
+    def post(self, request, pk):
+        curso = get_object_or_404(self.model, pk=pk, usuario=request.user)
         bound_form = self.form_class(request.POST, instance=curso)
 
         if bound_form.is_valid():
@@ -95,7 +95,7 @@ class CursoEspecializacionDetalle(View):
             return render(request, 'cursos_especializacion.html', {'active': 'curso_detalle', 'plantilla': self.contexto_cursos(), 'form': bound_form})
 
     def get_update_url(self):
-        return reverse('curso_especializacion_detalle', kwargs={'slug': self.form_class.slug})
+        return reverse('curso_especializacion_detalle', kwargs={'pk': self.form_class.pk})
 
 
 
