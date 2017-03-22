@@ -33,6 +33,7 @@ class CursoEspecializacion(models.Model):
     def get_absolute_url(self):
         return reverse('curso_especializacion_detalle', kwargs={'slug': self.slug})
 
+
     class Meta:
         ordering = ['fecha_inicio']
         verbose_name = 'Curso de especialización'
