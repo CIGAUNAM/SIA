@@ -28,10 +28,10 @@ class CursoEspecializacion(models.Model):
     tags = models.ManyToManyField(Tag, related_name='curso_especializacion_tags', blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.nombre_curso, self.fecha_inicio, self.usuario)
+        return "{} : {} : {}".format(self.nombre_curso, self.usuario)
 
     def get_absolute_url(self):
-        return reverse('curso_especializacion', kwargs={'slug': self.slug})
+        return reverse('curso_especializacion_detalle', kwargs={'slug': self.slug})
 
     class Meta:
         ordering = ['fecha_inicio']
