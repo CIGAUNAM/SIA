@@ -15,7 +15,7 @@ CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODAL
 
 class CursoEspecializacion(models.Model):
     nombre_curso = models.CharField(max_length=255, verbose_name='Nombre del curso')
-    slug = AutoSlugField(populate_from='nombre_curso', max_length=150, unique=True)
+    #slug = AutoSlugField(populate_from='nombre_curso', max_length=150, unique=True)
     descripcion = models.TextField(verbose_name='Descripción', blank=True)
     tipo = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_TIPO, verbose_name='Tipo de curso')
     horas = models.PositiveIntegerField(verbose_name='Número de horas')
@@ -28,17 +28,16 @@ class CursoEspecializacion(models.Model):
     tags = models.ManyToManyField(Tag, related_name='curso_especializacion_tags', blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.nombre_curso, self.usuario)
+        return self.nombre_curso
 
     def get_absolute_url(self):
-        return reverse('curso_especializacion_detalle', kwargs={'slug': self.slug})
-
+        return reverse('curso_especializacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['fecha_inicio']
         verbose_name = 'Curso de especialización'
         verbose_name_plural = 'Cursos de especialización'
-        unique_together = ['nombre_curso', 'fecha_inicio', 'usuario']
+        unique_together = ['nombre_curso', 'usuario']
 
 
 

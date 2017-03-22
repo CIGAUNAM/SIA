@@ -6,7 +6,7 @@ urlpatterns = [
 
     url(r'^cursos-especializacion/$', CursoEspecializacionLista.as_view(), name='curso_especializacion_lista'),
     url(r'^cursos-especializacion/cursos_json/', CursoEspecializacionJSON.as_view(), name='curso_especializacion_lista__json'),
-    url(r'^cursos-especializacion/(?P<slug>[\w\-]+)/$', CursoEspecializacionDetalle.as_view(), name='curso_especializacion_detalle'),
+    url(r'^cursos-especializacion/(?P<pk>[\w\-]+)/$', CursoEspecializacionDetalle.as_view(), name='curso_especializacion_detalle'),
 
 
     #url(r'^acursos.especializacion/$', CursoEspecializacionList.as_view()),
