@@ -63,42 +63,48 @@ class CursoEspecializacionLista(View):
 
 
 
-def cursos_json(request):
-    try:
-        usuarioid = User.objects.get(username=request.user.username).id
-        cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
-        json = serializers.serialize('json', cursos,
-                                     fields=('nombre_curso', 'fecha_inicio', 'horas', 'dependencia', 'slug'),
-                                     use_natural_foreign_keys=True)
-        return HttpResponse(json, content_type='application/json')
-    except:
-        raise Http404
 
 
-def contexto_cursos():
-    return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
-            'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
-            'breadcrumb_seccion': 'Formación académica'}
+class CursoEspecializacionDetalle(View):
+    form_class = CursoEspecializacionForm
+    model = CursoEspecializacion
 
+    def contexto_cursos(self):
+        return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
+                'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
+                'breadcrumb_seccion': 'Formación académica', 'form': "algo xD"}
 
-def curso_especializacion_detalle(request, slug):
-    curso = CursoEspecializacion.objects.get(slug=slug)
+    def get(self, request, slug):
+        curso = get_object_or_404(self.model, slug=slug)
+        context = {'active': 'curso_detalle', 'plantilla': self.contexto_cursos(), 'form': self.form_class(instance=curso), 'curso': curso}
+        return render(request, 'cursos_especializacion.html', context)
 
-    return render(request, template_name='cursos_especializacion.html',
-                  context={'active': 'curso_detalle', 'curso': curso, 'plantilla': contexto_cursos()})
+    def post(self, request, slug):
+        curso = get_object_or_404(self.model, slug=slug)
+        bound_form = self.form_class(request.POST, instance=curso)
 
-
-def curso_especializacion_crear(request):
-    if request.method == 'POST':
-        form = CursoEspecializacionForm(request.POST)
-        if form.is_valid():
-            form.usuario = request.user
-            nuevo_curso = form.save()
+        if bound_form.is_valid():
+            nuevo_curso = bound_form.save(commit=False)
+            nuevo_curso.usuario = request.user
+            nuevo_curso = bound_form.save()
             return redirect(nuevo_curso)
         else:
-            pass
-    else:
-        pass
+            return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'plantilla': self.contexto_cursos(), 'form': bound_form})
+
+    def get_update_url(self):
+        return reverse('curso_especializacion_detalle', kwargs={'slug': self.slug})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class CursoEspecializacionList(generics.ListCreateAPIView):
