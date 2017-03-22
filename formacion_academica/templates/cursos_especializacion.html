@@ -96,19 +96,16 @@
                     </div><!-- /.box-header -->
                     <div class="box-body">
 
-                        <p><strong>Nombre del curso: </strong> {{ curso.nombre_curso }}</p>
-                        <p><strong>Descripción: </strong> {{ curso.descripcion }}</p>
-                        <p><strong>Tipo: </strong> {{ curso.tipo|title }}</p>
-                        <p><strong>Horas: </strong> {{ curso.horas }}</p>
-                        <p><strong>Fecha: </strong> del {{ curso.fecha_inicio }} al {{ curso.fecha_fin }}</p>
-                        <p><strong>Modalidad: </strong> {{ curso.modalidad|title }} </p>
-                        <p><strong>Área de conocimiento: </strong> {{ curso.area_conocimiento }} </p>
-                        <p><strong>Institución: </strong> {{ curso.dependencia.institucion }} </p>
-                        <p><strong>Dependencia: </strong> {{ curso.dependencia.dependencia }} </p>
-                        <p><strong>Ciudad: </strong> {{ curso.dependencia.ciudad.ciudad }} </p>
-                        <p><strong>Estado: </strong> {{ curso.dependencia.ciudad.estado.estado }} </p>
-                        <p><strong>País: </strong> {{ curso.dependencia.institucion.pais }} </p>
-                        <p><strong>País: </strong> {{ curso.dependencia.institucion.pais }} </p>
+
+                        <div>
+                            <div>
+                                <form action="{{ slug.get_absolute_url }}" method="post">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <button type="submit">Actualizar curso</button>
+                                </form>
+                            </div>
+                        </div>
 
 
                     </div><!-- /.box-body -->
@@ -136,7 +133,6 @@
                                 </form>
                             </div>
                         </div>
-
 
                     </div><!-- /.box-body -->
                 </div>
