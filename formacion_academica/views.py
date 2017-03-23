@@ -167,6 +167,13 @@ class MaestriaJSON(View):
         except:
             raise Http404
 
+class MaestriaLista(View):
+    pass
+
+
+class MaestriaDetalle(View):
+    pass
+
 
 
 
