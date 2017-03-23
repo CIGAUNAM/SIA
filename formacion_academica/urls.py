@@ -8,6 +8,9 @@ urlpatterns = [
     url(r'^cursos-especializacion/cursos_json/', CursoEspecializacionJSON.as_view(), name='curso_especializacion_lista__json'),
     url(r'^cursos-especializacion/(?P<pk>[\w\-]+)/$', CursoEspecializacionDetalle.as_view(), name='curso_especializacion_detalle'),
 
+    url(r'^licenciaturas/licenciaturas_json/', LicenciaturaJSON.as_view(), name='licenciatura_lista__json'),
+    url(r'^licenciaturas/$', LicenciaturaLista.as_view(), name='licenciatura_lista'),
+    url(r'^licenciaturas/(?P<pk>[\w\-]+)/$', LicenciaturaDetalle.as_view(), name='licenciatura_detalle'),
 
     #url(r'^acursos.especializacion/$', CursoEspecializacionList.as_view()),
     #url(r'^acurso.especializacion/(?P<pk>[0-9]+)/$', CursoEspecializacionDetail.as_view()),

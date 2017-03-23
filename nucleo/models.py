@@ -365,11 +365,14 @@ class Tesis(models.Model):
 class ProgramaLicenciatura(models.Model):
     programa = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    slug = AutoSlugField(populate_from='programa', unique=True)
+    #slug = AutoSlugField(populate_from='programa', unique=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento')
 
     def __str__(self):
         return self.programa
+
+    def natural_key(self):
+        return (self.programa)
 
     class Meta:
         ordering = ['programa']
