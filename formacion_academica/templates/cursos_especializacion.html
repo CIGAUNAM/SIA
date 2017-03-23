@@ -49,7 +49,7 @@
                                     {
                                         "data": "fields.nombre_curso",
                                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" + oData.pk + "'>" + oData.fields.nombre_curso + "</a>");
+                                            $(nTd).html("<a href='{% url 'curso_especializacion_lista' %}" + oData.pk + "'>" + oData.fields.nombre_curso + "</a>");
                                         }
                                     },
                                     {"data": "fields.horas"},

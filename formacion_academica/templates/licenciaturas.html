@@ -42,7 +42,7 @@
                                     {
                                         "data": "fields.carrera",
                                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" + oData.pk + "'>" + oData.fields.carrera + "</a>");
+                                            $(nTd).html("<a href='{% url 'licenciatura_lista' %}" + oData.pk + "'>" + oData.fields.carrera + "</a>");
                                         }
                                     },
                                     {"data": "fields.titulo_tesis"},
@@ -87,7 +87,7 @@
                                 <form action="{% url 'licenciatura_detalle' pk=objeto.pk %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">Actualizar {{ plantilla.titulo }}</button>
+                                    <button type="submit">Actualizar {{ plantilla.objeto }}</button>
                                 </form>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                                 <form action="{% url 'licenciatura_lista' %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">{{ plantilla.tab_agregar }}</button>
+                                    <button type="submit">Agregar {{ plantilla.objeto }}</button>
                                 </form>
                             </div>
                         </div>
