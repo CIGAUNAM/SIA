@@ -155,6 +155,17 @@ class LicenciaturaDetalle(View, LicenciaturaContext):
 
 
 
+class MaestriaJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            maestrias = Maestria.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', maestrias,
+                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
 
 
 
