@@ -5,29 +5,22 @@
 
     <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
-
             {% if active == 'detalle' %}
-                <li><a href="/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
-
-                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="false">Editar curso</a></li>
-
+                <li><a href="{% url 'licenciatura_lista' %}" aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
+                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="false">{{ plantilla.tab_detalle }}</a></li>
 
             {% else %}
-                <li {% if active == 'mis_cursos' %}class="active"{% endif %}><a href="#mis-cursos" data-toggle="tab"
-                                                                                aria-expanded="true">{{ plantilla.tab_lista }}</a>
-                </li>
-                <li><a href="#agregar" data-toggle="tab" aria-expanded="true">Agregar curso</a></li>
-
+                <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab" aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
+                <li><a href="#agregar" data-toggle="tab" aria-expanded="true">{{ plantilla.tab_agregar }}</a></li>
 
             {% endif %}
             <li class="pull-left header"><i class="fa fa-inbox"></i></li>
         </ul>
 
-
         <div class="tab-content no-padding">
-            <div id="mis-cursos" class="tab-pane {% if active == 'mis_cursos' %}active{% endif %}">
+            <div id="lista" class="tab-pane {% if active == 'lista' %}active{% endif %}">
                 <div class="bg-light-blue-active box-header with-border">
-                    <h3 class="box-title">Mis cursos de especialización</h3>
+                    <h3 class="box-title">{{ plantilla.titulo_lista }}</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
@@ -36,37 +29,37 @@
                 <div class="box-body">
                     <script>
                         jQuery(document).ready(function ($jquery) {
-                            $jquery('#cursos_json').dataTable({
+                            $jquery('#tabla_json').dataTable({
                                 "iDisplayLength": 15,
                                 "ajax": {
                                     "processing": true,
-                                    "url": "{% url 'curso_especializacion_lista__json' %}",
+                                    "url": "{% url 'licenciatura_lista__json' %}",
                                     "dataSrc": ""
                                 },
 
 
                                 "columns": [
                                     {
-                                        "data": "fields.nombre_curso",
+                                        "data": "fields.carrera",
                                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" + oData.pk + "'>" + oData.fields.nombre_curso + "</a>");
+                                            $(nTd).html("<a href='/{{ plantilla.categoria_url }}/{{ plantilla.seccion_url }}/" + oData.pk + "'>" + oData.fields.carrera + "</a>");
                                         }
                                     },
-                                    {"data": "fields.horas"},
-                                    {"data": "fields.fecha_inicio"},
+                                    {"data": "fields.titulo_tesis"},
+                                    {"data": "fields.fecha_grado"},
                                     {"data": "fields.dependencia"},
                                 ]
                             });
                         });
                     </script>
 
-                    <table id="cursos_json" class="dataTables_wrapper form-inline dt-bootstrap" style="width: 100%">
+                    <table id="tabla_json" class="dataTables_wrapper form-inline dt-bootstrap" style="width: 100%">
                         <thead>
                         <tr>
-                            <th>Curso</th>
-                            <th>Horas</th>
-                            <th>Inicio</th>
-                            <th>Lugar</th>
+                            <th>Carrera</th>
+                            <th>Título de Tesis</th>
+                            <th>Fecha de grado</th>
+                            <th>Dependencia</th>
                         </tr>
                         </thead>
                         <tbody></tbody>
@@ -81,7 +74,7 @@
 
                 <div id="detalle" class="tab-pane active">
                     <div class="bg-light-blue-active box-header with-border">
-                        <h3 class="box-title">Editar curso de especialización</h3>
+                        <h3 class="box-title">{{ plantilla.titulo_detalle }}</h3>
                         <div class="box-tools pull-right">
                             <!-- Buttons, labels, and many other things can be placed here! -->
                             <!-- Here is a label for example -->
@@ -91,10 +84,10 @@
                     <div class="box-body">
                         <div>
                             <div>
-                                <form action="{% url 'curso_especializacion_detalle' pk=curso.pk %}" method="post">
+                                <form action="{% url 'licenciatura_detalle' pk=objeto.pk %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">Actualizar curso</button>
+                                    <button type="submit">Actualizar {{ plantilla.titulo }}</button>
                                 </form>
                             </div>
                         </div>
@@ -107,7 +100,7 @@
                 <div id="agregar" class="tab-pane{% if active == 'agregar' %} active{% endif %}">
 
                     <div class="bg-light-blue-active box-header with-border">
-                        <h3 class="box-title">Agregar curso de especialización</h3>
+                        <h3 class="box-title">{{ plantilla.titulo_agregar }}</h3>
                         <div class="box-tools pull-right">
                             <!-- Buttons, labels, and many other things can be placed here! -->
                             <!-- Here is a label for example -->
@@ -117,10 +110,10 @@
                     <div class="box-body">
                         <div>
                             <div>
-                                <form action="{% url 'curso_especializacion_lista' %}" method="post">
+                                <form action="{% url 'licenciatura_lista' %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">Agregar curso</button>
+                                    <button type="submit">{{ plantilla.tab_agregar }}</button>
                                 </form>
                             </div>
                         </div>

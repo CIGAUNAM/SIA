@@ -46,17 +46,19 @@ class Licenciatura(models.Model):
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
     dependencia = models.ForeignKey(Dependencia)
     titulo_tesis = models.CharField(max_length=255)
-    slug = AutoSlugField(populate_from='titulo_tesis', unique=True)
-    #tesis = models.FileField(blank=True)
+    #slug = AutoSlugField(populate_from='titulo_tesis', unique=True)
     tesis_url = models.URLField(blank=True)
     fecha_inicio = models.DateField('Fecha de inicio de licenciatura')
     fecha_fin = models.DateField('Fecha de terminación de licenciatura')
-    fecha_grado = models.DateField('Fecha de obtención de grado licenciatura')
+    fecha_grado = models.DateField('Fecha de obtención de grado de licenciatura')
     usuario = models.ForeignKey(User, related_name='licenciaturas')
     tags = models.ManyToManyField(Tag, related_name='licenciatura_tags', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.dependencia, str(self.carrera.programa), self.titulo_tesis)
+
+    def get_absolute_url(self):
+        return reverse('licenciatura_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['dependencia', 'carrera', 'titulo_tesis']

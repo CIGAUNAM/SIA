@@ -9,30 +9,30 @@ class CursoEspecializacionForm(forms.ModelForm):
     class Meta:
         model = CursoEspecializacion
 
-        exclude = ['slug', 'usuario', 'tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class LicenciaturaForm(forms.ModelForm):
     class Meta:
         model = Licenciatura
-        exclude = ['slug', 'usuario', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class MaestriaForm(forms.ModelForm):
     class Meta:
         model = Maestria
-        exclude = ['slug', 'usuario', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class DoctoradoForm(forms.ModelForm):
     class Meta:
         model = Doctorado
-        exclude = ['slug', 'usuario', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class PostDoctoradoForm(forms.ModelForm):
     class Meta:
         model = PostDoctorado
-        exclude = ['slug', 'usuario', ]
+        exclude = ['usuario', 'tags', ]
 
 
