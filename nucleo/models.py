@@ -245,6 +245,9 @@ class AreaConocimiento(models.Model):
     def __str__(self):
         return self.area_conocimiento
 
+    def natural_key(self):
+        return (self.area_conocimiento)
+
     class Meta:
         ordering = ['categoria', 'area_conocimiento']
         verbose_name = 'Área General de Conocimiento'
@@ -388,6 +391,9 @@ class ProgramaMaestria(models.Model):
 
     def __str__(self):
         return self.programa
+
+    def natural_key(self):
+        return (self.programa)
 
     class Meta:
         ordering = ['programa']
