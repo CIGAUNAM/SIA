@@ -6,21 +6,21 @@
     <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
             {% if active == 'detalle' %}
-                <li><a href="{% url 'licenciatura_lista' %}" aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
-                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="false">{{ plantilla.tab_detalle }}</a></li>
+                <li><a href="{% url 'licenciatura_lista' %}" aria-expanded="true">{{ aux.tab_lista }}</a></li>
+                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="false">{{ aux.tab_detalle }}</a></li>
 
             {% else %}
-                <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab" aria-expanded="true">{{ plantilla.tab_lista }}</a></li>
-                <li><a href="#agregar" data-toggle="tab" aria-expanded="true">{{ plantilla.tab_agregar }}</a></li>
+                <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab" aria-expanded="true">{{ aux.tab_lista }}</a></li>
+                <li><a href="#agregar" data-toggle="tab" aria-expanded="true">{{ aux.tab_agregar }}</a></li>
 
             {% endif %}
             <li class="pull-left header"><i class="fa fa-inbox"></i></li>
         </ul>
 
         <div class="tab-content no-padding">
-            <div id="lista" class="tab-pane {% if active == 'lista' %}active{% endif %}">
+            <div id="lista" class="tab-pane{% if active == 'lista' %} active{% endif %}">
                 <div class="bg-light-blue-active box-header with-border">
-                    <h3 class="box-title">{{ plantilla.titulo_lista }}</h3>
+                    <h3 class="box-title">{{ aux.titulo_lista }}</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
@@ -33,16 +33,16 @@
                                 "iDisplayLength": 15,
                                 "ajax": {
                                     "processing": true,
-                                    "url": "{% url 'licenciatura_lista__json' %}",
+                                    "url": "{% url 'maestria_lista__json' %}",
                                     "dataSrc": ""
                                 },
 
 
                                 "columns": [
                                     {
-                                        "data": "fields.carrera",
+                                        "data": "fields.programa",
                                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='{% url 'licenciatura_lista' %}" + oData.pk + "'>" + oData.fields.carrera + "</a>");
+                                            $(nTd).html("<a href='{% url 'maestria_lista' %}" + oData.pk + "'>" + oData.fields.carrera + "</a>");
                                         }
                                     },
                                     {"data": "fields.titulo_tesis"},
@@ -56,7 +56,7 @@
                     <table id="tabla_json" class="dataTables_wrapper form-inline dt-bootstrap" style="width: 100%">
                         <thead>
                         <tr>
-                            <th>Carrera</th>
+                            <th>Programa</th>
                             <th>Título de Tesis</th>
                             <th>Fecha de grado</th>
                             <th>Dependencia</th>
@@ -74,7 +74,7 @@
 
                 <div id="detalle" class="tab-pane active">
                     <div class="bg-light-blue-active box-header with-border">
-                        <h3 class="box-title">{{ plantilla.titulo_detalle }}</h3>
+                        <h3 class="box-title">{{ aux.titulo_detalle }}</h3>
                         <div class="box-tools pull-right">
                             <!-- Buttons, labels, and many other things can be placed here! -->
                             <!-- Here is a label for example -->
@@ -84,10 +84,10 @@
                     <div class="box-body">
                         <div>
                             <div>
-                                <form action="{% url 'licenciatura_detalle' pk=objeto.pk %}" method="post">
+                                <form action="/" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">Actualizar {{ plantilla.objeto }}</button>
+                                    <button type="submit">Actualizar {{ aux.objeto }}</button>
                                 </form>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                 <div id="agregar" class="tab-pane{% if active == 'agregar' %} active{% endif %}">
 
                     <div class="bg-light-blue-active box-header with-border">
-                        <h3 class="box-title">{{ plantilla.titulo_agregar }}</h3>
+                        <h3 class="box-title">{{ aux.titulo_agregar }}</h3>
                         <div class="box-tools pull-right">
                             <!-- Buttons, labels, and many other things can be placed here! -->
                             <!-- Here is a label for example -->
@@ -113,7 +113,7 @@
                                 <form action="{% url 'licenciatura_lista' %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">Agregar {{ plantilla.objeto }}</button>
+                                    <button type="submit">Agregar {{ aux.objeto }}</button>
                                 </form>
                             </div>
                         </div>

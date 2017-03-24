@@ -1,16 +1,10 @@
-from django.http.response import HttpResponse
-
 from .permissions import IsOwnerOrReadOnly
 
 from rest_framework import permissions
 from formacion_academica.serializers import *
 from rest_framework import generics
 
-from nucleo.models import User
-
-from .models import CursoEspecializacion
 from django.http.response import (Http404, HttpResponse)
-from django.shortcuts import (render, get_object_or_404, render_to_response, redirect)
 from django.views.generic import View
 
 from django.core import serializers
@@ -170,13 +164,15 @@ class MaestriaJSON(View):
 class MaestriaLista(ObjectCreateMixin, View):
     form_class = MaestriaForm
     model = Maestria
-    contexto = MaestriaContext
+    aux = MaestriaContext.contexto
+
     template_name = 'formacion_academica_u.html'
 
 
-class MaestriaDetalle(ObjectCreateMixin, View):
+class MaestriaDetalle(ObjectUpdateMixin, View):
     form_class = MaestriaForm
     model = Maestria
+    aux = MaestriaContext.contexto
     template_name = 'formacion_academica_u.html'
 
 
