@@ -16,7 +16,6 @@ urlpatterns = [
     url(r'^maestrias/$', MaestriaLista.as_view(), name='maestria_lista'),
     url(r'^maestrias/(?P<pk>[\w\-]+)/$', MaestriaDetalle.as_view(), name='maestria_detalle'),
 
-
     #url(r'^acursos.especializacion/$', CursoEspecializacionList.as_view()),
     #url(r'^acurso.especializacion/(?P<pk>[0-9]+)/$', CursoEspecializacionDetail.as_view()),
     #url(r'^alicenciaturas/$', LicenciaturaList.as_view()),
