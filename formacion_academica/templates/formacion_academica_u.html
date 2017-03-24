@@ -6,7 +6,7 @@
     <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
             {% if active == 'detalle' %}
-                <li><a href="{% url 'licenciatura_lista' %}" aria-expanded="true">{{ aux.tab_lista }}</a></li>
+                <li><a href="{% url 'maestria_lista' %}" aria-expanded="true">{{ aux.tab_lista }}</a></li>
                 <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="false">{{ aux.tab_detalle }}</a></li>
 
             {% else %}
@@ -110,7 +110,7 @@
                     <div class="box-body">
                         <div>
                             <div>
-                                <form action="{% url 'licenciatura_lista' %}" method="post">
+                                <form action="{% url 'maestria_lista' %}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     <button type="submit">Agregar {{ aux.objeto }}</button>
@@ -125,9 +125,5 @@
 
         </div>
     </div><!-- /.box -->
-
-
-
-
 
 {% endblock %}
