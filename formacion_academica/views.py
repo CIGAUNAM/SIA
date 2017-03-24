@@ -91,6 +91,8 @@ class CursoEspecializacionDetalle(View):
         else:
             return render(request, 'cursos_especializacion.html', {'active': 'curso_detalle', 'plantilla': self.contexto_cursos(), 'form': bound_form})
 
+    def get_update_url(self):
+        return reverse('curso_especializacion_detalle', kwargs={'pk': self.form_class.pk})
 
 
 class LicenciaturaJSON(View):
@@ -145,6 +147,9 @@ class LicenciaturaDetalle(View, LicenciaturaContext):
         else:
             return render(request, 'licenciaturas.html', {'active': 'detalle', 'plantilla': self.contexto, 'form': bound_form})
 
+    def get_update_url(self):
+        return reverse('licenciatura_detalle', kwargs={'pk': self.form_class.pk})
+
 
 
 
@@ -173,6 +178,9 @@ class MaestriaDetalle(ObjectCreateMixin, View):
     form_class = MaestriaForm
     model = Maestria
     template_name = 'formacion_academica_u.html'
+
+
+
 
 
 

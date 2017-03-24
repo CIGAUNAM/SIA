@@ -12,9 +12,9 @@ urlpatterns = [
     url(r'^licenciaturas/$', LicenciaturaLista.as_view(), name='licenciatura_lista'),
     url(r'^licenciaturas/(?P<pk>[\w\-]+)/$', LicenciaturaDetalle.as_view(), name='licenciatura_detalle'),
 
-    url(r'^maestrias/maestrias_json/', MaestriaJSON.as_view(), name='maestria_lista__json'),
-    url(r'^maestrias/$', MaestriaLista.as_view(), name='licenciatura_lista'),
-    url(r'^maestrias/(?P<pk>[\w\-]+)/$', MaestriaDetalle.as_view(), name='licenciatura_detalle'),
+    url(r'^maestrias/json/', MaestriaJSON.as_view(), name='maestria_lista__json'),
+    url(r'^maestrias/$', MaestriaLista.as_view(), name='maestria_lista'),
+    url(r'^maestrias/(?P<pk>[\w\-]+)/$', MaestriaDetalle.as_view(), name='maestria_detalle'),
 
 
     #url(r'^acursos.especializacion/$', CursoEspecializacionList.as_view()),
