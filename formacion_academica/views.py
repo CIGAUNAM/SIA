@@ -182,13 +182,6 @@ class MaestriaDetalle(ObjectCreateMixin, View):
 
 
 
-
-
-
-
-
-
-
 class CursoEspecializacionList(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
     queryset = CursoEspecializacion.objects.all()
