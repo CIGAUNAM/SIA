@@ -24,7 +24,7 @@ class CursoEspecializacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', cursos,
-                                         fields=('nombre_curso', 'fecha_inicio', 'horas', 'dependencia'),
+                                         fields=('nombre_curso', 'fecha_fin', 'horas', 'dependencia'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -102,7 +102,125 @@ class LicenciaturaJSON(View):
             raise Http404
 
 
-class LicenciaturaLista(View, LicenciaturaContext):
+class LicenciaturaLista(ObjectCreateMixin, View):
+    form_class = LicenciaturaForm
+    model = Licenciatura
+    aux = LicenciaturaContext.contexto
+    template_name = 'formacion_academica_u.html'
+
+
+class LicenciaturaDetalle(ObjectUpdateMixin, View):
+    form_class = LicenciaturaForm
+    model = Licenciatura
+    aux = LicenciaturaContext.contexto
+    template_name = 'formacion_academica_u.html'
+
+
+class MaestriaJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            maestrias = Maestria.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', maestrias, fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'), use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class MaestriaLista(ObjectCreateMixin, View):
+    form_class = MaestriaForm
+    model = Maestria
+    aux = MaestriaContext.contexto
+
+    template_name = 'formacion_academica_u.html'
+
+
+class MaestriaDetalle(ObjectUpdateMixin, View):
+    form_class = MaestriaForm
+    model = Maestria
+    aux = MaestriaContext.contexto
+    template_name = 'formacion_academica_u.html'
+
+
+
+class DoctoradoJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            maestrias = Doctorado.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', maestrias, fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'), use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class DoctoradoLista(ObjectCreateMixin, View):
+    form_class = DoctoradoForm
+    model = Doctorado
+    aux = DoctoradoContext.contexto
+
+    template_name = 'formacion_academica_u.html'
+
+
+class DoctoradoDetalle(ObjectUpdateMixin, View):
+    form_class = DoctoradoForm
+    model = Doctorado
+    aux = DoctoradoContext.contexto
+    template_name = 'formacion_academica_u.html'
+
+
+class PostDoctoradoJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            maestrias = PostDoctorado.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', maestrias, fields=('titulo', 'area_conocimiento', 'fecha_fin', 'proyecto', 'dependencia'), use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class PostDoctoradoLista(ObjectCreateMixin, View):
+    form_class = PostDoctoradoForm
+    model = PostDoctorado
+    aux = PostDoctoradoContext.contexto
+
+    template_name = 'formacion_academica_u.html'
+
+
+class PostDoctoradoDetalle(ObjectUpdateMixin, View):
+    form_class = PostDoctoradoForm
+    model = PostDoctorado
+    aux = PostDoctoradoContext.contexto
+    template_name = 'formacion_academica_u.html'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class LicenciaturaLista1(View, LicenciaturaContext):
     form_class = LicenciaturaForm
 
     def get(self, request):
@@ -120,7 +238,7 @@ class LicenciaturaLista(View, LicenciaturaContext):
             return render(request, 'licenciaturas.html', {'active': 'agregar', 'plantilla': self.contexto, 'form': bound_form})
 
 
-class LicenciaturaDetalle(View, LicenciaturaContext):
+class LicenciaturaDetalle1(View, LicenciaturaContext):
     form_class = LicenciaturaForm
     model = Licenciatura
 
@@ -148,32 +266,14 @@ class LicenciaturaDetalle(View, LicenciaturaContext):
 
 
 
-class MaestriaJSON(View):
-    def get(self, request):
-        try:
-            usuarioid = User.objects.get(username=request.user.username).id
-            maestrias = Maestria.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', maestrias,
-                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'),
-                                         use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
 
 
-class MaestriaLista(ObjectCreateMixin, View):
-    form_class = MaestriaForm
-    model = Maestria
-    aux = MaestriaContext.contexto
-
-    template_name = 'formacion_academica_u.html'
 
 
-class MaestriaDetalle(ObjectUpdateMixin, View):
-    form_class = MaestriaForm
-    model = Maestria
-    aux = MaestriaContext.contexto
-    template_name = 'formacion_academica_u.html'
+
+
+
+
 
 
 

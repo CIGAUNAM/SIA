@@ -410,6 +410,9 @@ class ProgramaDoctorado(models.Model):
     def __str__(self):
         return self.programa
 
+    def natural_key(self):
+        return (self.programa)
+
     class Meta:
         ordering = ['programa']
         verbose_name = 'Programa de doctorado'
@@ -503,9 +506,12 @@ class Proyecto(models.Model):
 
     def __str__(self):
         if self.nombre_proyecto == 'Ningúno':
-            return self.nombre_proyecto
+            return 'Ningúno'
         else:
             return "{} : {}".format(self.nombre_proyecto, self.fecha_inicio)
+
+    def natural_key(self):
+        return (self.nombre_proyecto)
 
     class Meta:
         ordering = ['fecha_inicio', 'nombre_proyecto']

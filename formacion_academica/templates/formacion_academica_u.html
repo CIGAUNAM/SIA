@@ -6,7 +6,7 @@
     <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
             {% if active == 'detalle' %}
-                <li><a href="{% url 'maestria_lista' %}" aria-expanded="true">{{ aux.tab_lista }}</a></li>
+                <li><a href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" aria-expanded="true">{{ aux.tab_lista }}</a></li>
                 <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="false">{{ aux.tab_detalle }}</a></li>
 
             {% else %}
@@ -28,7 +28,7 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
 
-{{ aux.tabla_mios|safe }}
+                    {{ aux.tabla_mios|safe }}
 
                     <table id="tabla_json" class="dataTables_wrapper form-inline dt-bootstrap" style="width: 100%">
                         <thead>
@@ -60,7 +60,7 @@
                     <div class="box-body">
                         <div>
                             <div>
-                                <form action="/" method="post">
+                                <form action="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/{{ form.pk }}" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     <button type="submit">Actualizar {{ aux.objeto }}</button>
@@ -86,7 +86,7 @@
                     <div class="box-body">
                         <div>
                             <div>
-                                <form action="{% url 'maestria_lista' %}" method="post">
+                                <form action="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     <button type="submit">Agregar {{ aux.objeto }}</button>
