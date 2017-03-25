@@ -27,39 +27,15 @@
                     </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                    <script>
-                        jQuery(document).ready(function ($jquery) {
-                            $jquery('#tabla_json').dataTable({
-                                "iDisplayLength": 15,
-                                "ajax": {
-                                    "processing": true,
-                                    "url": "{% url 'maestria_lista__json' %}",
-                                    "dataSrc": ""
-                                },
 
-
-                                "columns": [
-                                    {
-                                        "data": "fields.programa",
-                                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-                                            $(nTd).html("<a href='{% url 'maestria_lista' %}" + oData.pk + "'>" + oData.fields.carrera + "</a>");
-                                        }
-                                    },
-                                    {"data": "fields.titulo_tesis"},
-                                    {"data": "fields.fecha_grado"},
-                                    {"data": "fields.dependencia"},
-                                ]
-                            });
-                        });
-                    </script>
+{{ aux.tabla_mios|safe }}
 
                     <table id="tabla_json" class="dataTables_wrapper form-inline dt-bootstrap" style="width: 100%">
                         <thead>
                         <tr>
-                            <th>Programa</th>
-                            <th>Título de Tesis</th>
-                            <th>Fecha de grado</th>
-                            <th>Dependencia</th>
+                            {% for titulo in aux.titulos_tabla %}
+                            <th>{{ titulo }}</th>
+                            {% endfor %}
                         </tr>
                         </thead>
                         <tbody></tbody>

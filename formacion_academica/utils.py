@@ -9,9 +9,41 @@ class LicenciaturaContext:
 
 
 class MaestriaContext:
-    contexto = {'tab_lista': 'Mis Maestrías', 'tab_agregar': 'Agregar Maestría', 'tab_detalle': 'Editar Maestría',
-               'titulo_lista': 'Mis Maestrías', 'titulo_agregar': 'Agregar Maestría', 'titulo_detalle': 'Editar Maestría',
-               'objeto': 'maestría', 'breadcrumb_seccion': 'Formación académica', 'titulo_pagina': 'Maestrías'}
+    contexto = {'url_categoria': 'formacion', 'url_seccion': 'maestrias',
+                'tab_lista': 'Mis Maestrías', 'tab_agregar': 'Agregar Maestría', 'tab_detalle': 'Editar Maestría',
+                'titulo_lista': 'Mis Maestrías', 'titulo_agregar': 'Agregar Maestría',
+                'titulo_detalle': 'Editar Maestría',
+                'objeto': 'maestría', 'breadcrumb_seccion': 'Formación académica', 'titulo_pagina': 'Maestrías',
+                'titulos_tabla': ['Programa', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.programa",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.programa + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.titulo_tesis"},\n' \
+                                    '{"data": "fields.fecha_grado"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>' \
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+
 
 
 class ObjectCreateMixin:
@@ -20,7 +52,7 @@ class ObjectCreateMixin:
     aux = {}
 
     def get(self, request):
-        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux})
+        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -30,7 +62,7 @@ class ObjectCreateMixin:
             new_obj = bound_form.save()
             return redirect(new_obj)
         else:
-            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux})
+            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
 
 
 class ObjectUpdateMixin:
