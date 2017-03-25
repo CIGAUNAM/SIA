@@ -37,7 +37,7 @@ class CursoEspecializacion(models.Model):
         ordering = ['fecha_inicio']
         verbose_name = 'Curso de especialización'
         verbose_name_plural = 'Cursos de especialización'
-        unique_together = ['nombre_curso', 'usuario']
+        unique_together = ['nombre_curso', 'usuario', 'fecha_fin']
 
 
 
@@ -63,6 +63,7 @@ class Licenciatura(models.Model):
 
     class Meta:
         ordering = ['dependencia', 'carrera', 'titulo_tesis']
+        unique_together = ['carrera', 'usuario']
 
 
 class Maestria(models.Model):
@@ -82,8 +83,12 @@ class Maestria(models.Model):
     def __str__(self):
         return "{} : {} : {}".format(self.dependencia, self.programa.programa, self.titulo_tesis)
 
+    def get_absolute_url(self):
+        return reverse('maestria_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['dependencia', 'programa', 'titulo_tesis']
+        unique_together = ['programa', 'usuario']
 
 
 class Doctorado(models.Model):
@@ -103,8 +108,12 @@ class Doctorado(models.Model):
     def __str__(self):
         return "{} : {} : {}".format(self.dependencia, self.programa.programa, self.titulo_tesis)
 
+    def get_absolute_url(self):
+        return reverse('doctorado_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['fecha_grado', 'dependencia', 'titulo_tesis']
+        unique_together = ['programa', 'usuario']
 
 
 proyectos = [
@@ -126,5 +135,9 @@ class PostDoctorado(models.Model):
     def __str__(self):
         return "{} : {} : {}".format(self.usuario, self.dependencia, self.area_conocimiento)
 
+    def get_absolute_url(self):
+        return reverse('postdoctorado_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['fecha_fin', 'dependencia']
+        unique_together = ['titulo', 'usuario']
