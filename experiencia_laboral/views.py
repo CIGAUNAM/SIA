@@ -1,13 +1,82 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse
 
 from . permissions import IsOwnerOrReadOnly
-
 from rest_framework import permissions
 from experiencia_laboral.serializers import *
 from rest_framework import generics
+from django.http.response import (Http404, HttpResponse)
+from django.views.generic import View
+from django.core import serializers
+from . forms import *
+from . utils import *
+
 
 # Create your views here.
+
+
+
+class ExperienciaLaboralJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            experiencias = ExperienciaLaboral.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', experiencias,
+                                         fields=('nombramiento', 'cargo', 'fecha_inicio', 'dependencia'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ExperienciaLaboralLista(ObjectCreateMixin, View):
+    form_class = ExperienciaLaboralForm
+    model = ExperienciaLaboral
+    aux = ExperienciaLaboralContext.contexto
+    template_name = 'main.html'
+
+
+class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
+    form_class = ExperienciaLaboralForm
+    model = ExperienciaLaboral
+    aux = ExperienciaLaboralContext.contexto
+    template_name = 'main.html'
+
+
+
+class LineaInvestigacionJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            experiencias = LineaInvestigacion.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', experiencias,
+                                         fields=('linea_investigacion', 'fecha_inicio', 'dependencia'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class LineaInvestigacionLista(ObjectCreateMixin, View):
+    form_class = LineaInvestigacionForm
+    model = LineaInvestigacion
+    aux = LineaInvestigacionContext.contexto
+    template_name = 'main.html'
+
+
+class LineaInvestigacionDetalle(ObjectUpdateMixin, View):
+    form_class = LineaInvestigacionForm
+    model = LineaInvestigacion
+    aux = LineaInvestigacionContext.contexto
+    template_name = 'main.html'
+
+
+
+
+
+
+
+
+
 
 
 class ExperienciaLaboralList(generics.ListCreateAPIView):
