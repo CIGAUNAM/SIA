@@ -15,6 +15,7 @@ class ArticuloCientificoJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
+            #articulos = ArticuloCientifico.objects.all().exclude(usuarios__id__exact=usuarioid)
             articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', articulos,
                                          fields=('titulo', 'tipo', 'revista', 'status', 'fecha'),
