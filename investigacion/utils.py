@@ -14,7 +14,7 @@ class ArticuloCientificoContext:
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj,
                 'objeto': obj.lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
-                'titulos_tabla': ['Tíitulo', 'Tipo', 'Revista', 'Fecha']}
+                'titulos_tabla': ['Tíitulo', 'Tipo', 'Revista', 'Status', 'Fecha']}
 
 
     tabla_mios =  '<script>\n' \
