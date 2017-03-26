@@ -38,13 +38,14 @@ class ExperienciaLaboralContext:
 
 
 class LineaInvestigacionContext:
-    contexto = {'url_categoria': 'experiencia', 'url_seccion': 'laborales',
-                'tab_lista': 'Mis Experiencias Laborales', 'tab_agregar': 'Agregar Experiencia Laboral',
-                'tab_detalle': 'Editar Experiencia Laboral',
-                'titulo_lista': 'Mis Licenciaturas', 'titulo_agregar': 'Agregar Experiencia Laboral',
-                'titulo_detalle': 'Editar Experiencia Laboral',
-                'objeto': 'experiencia laboral', 'breadcrumb_seccion': 'Experiencia Laboral', 'titulo_pagina': 'Experiencias Laborales',
-                'titulos_tabla': ['Nombramiento', 'Cargo', 'Fecha de inicio', 'Dependencia']}
+    jkljkl = "shalala"
+    contexto = {'url_categoria': 'experiencia', 'url_seccion': 'lineas-investigacion',
+                'tab_lista': 'Mis Lìneas de Investigación', 'tab_agregar': 'Agregar Lìnea de Investigación',
+                'tab_detalle': 'Editar Lìnea de Investigación',
+                'titulo_lista': 'Mis Lìneas de Investigación', 'titulo_agregar': 'Agregar Lìnea de Investigación',
+                'titulo_detalle': 'Editar Lìnea de Investigación',
+                'objeto': 'lìnea de investigación' + jkljkl, 'breadcrumb_seccion': 'Lìneas de Investigación', 'titulo_pagina': 'Lìneas de Investigación',
+                'titulos_tabla': ['Lìnea de Investigación', 'Fecha de inicio', 'Dependencia']}
 
 
     tabla_mios =  '<script>\n' \
@@ -58,12 +59,11 @@ class LineaInvestigacionContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.cargo",\n' \
+                                        '"data": "fields.linea_investigacion",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.cargo + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.linea_investigacion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.nombramiento"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
                                     '{"data": "fields.dependencia"},\n' \
                                 ']\n' \
@@ -75,7 +75,39 @@ class LineaInvestigacionContext:
 
 
 
+class CapacidadPotencialidadContext:
+    contexto = {'url_categoria': 'experiencia', 'url_seccion': 'capacidades',
+                'tab_lista': 'Mis Capacidades y Potencialidades', 'tab_agregar': 'Agregar Capacidad o Potencialidad',
+                'tab_detalle': 'Editar Capacidad o Potencialidad',
+                'titulo_lista': 'Mis Capacidades y Potencialidades', 'titulo_agregar': 'Agregar Capacidad o Potencialidad',
+                'titulo_detalle': 'Editar Capacidad o Potencialidad',
+                'objeto': 'competencia', 'breadcrumb_seccion': 'Capacidades y Potencialidades', 'titulo_pagina': 'Capacidades y Potencialidades',
+                'titulos_tabla': ['Competencia', 'Fecha de inicio']}
 
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.competencia",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.competencia + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
 
 
 

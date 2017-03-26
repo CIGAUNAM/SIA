@@ -2,6 +2,7 @@ from django.db import models
 
 from django.conf import settings
 from autoslug import AutoSlugField
+from django.core.urlresolvers import reverse
 from nucleo.models import User, Tag, Pais, Estado, Ciudad, Ubicacion, Institucion, Dependencia, Cargo, Proyecto, TipoDocumento, Revista, Indice, Libro, Editorial, Coleccion
 
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
@@ -10,17 +11,16 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Pub
 
 class ArticuloCientifico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=16, choices=(('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     revista = models.ForeignKey(Revista)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     solo_electronico = models.BooleanField(default=False)
-    autores = models.ManyToManyField(User, related_name='articulo_cientifico_autores')
+    usuarios = models.ManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
     nombre_abreviado_wos = models.CharField(max_length=255, blank=True)
-
     url = models.URLField(blank=True)
     fecha = models.DateField(auto_now=False)
     volumen = models.CharField(max_length=100, blank=True)
@@ -37,6 +37,11 @@ class ArticuloCientifico(models.Model):
 
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
+
+    def get_absolute_url(self):
+        return reverse('articulo_cientifico_detalle', kwargs={'pk': self.pk})
+
+
     class Meta:
         verbose_name = "Artículo científico"
         verbose_name_plural = "Artículos científicos"
@@ -48,7 +53,7 @@ class ArticuloCientifico(models.Model):
 
 class CapituloLibroInvestigacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro)
     #status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
@@ -67,7 +72,7 @@ class CapituloLibroInvestigacion(models.Model):
 
 class MapaArbitrado(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     escala = models.CharField(max_length=30)
     autores = models.ManyToManyField(User, related_name='mapa_arbitrado_autores')
@@ -96,7 +101,7 @@ class MapaArbitrado(models.Model):
 
 class InformeTecnico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     autores = models.ManyToManyField(User, related_name='informe_tecnico_autores')
 
