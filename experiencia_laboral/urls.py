@@ -1,18 +1,19 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
-from experiencia_laboral import views
-
+from . views import *
 
 
 
 
 urlpatterns = [
 
-    url(r'^experiencias-laborales/$', ExperienciaLaboralLista.as_view(), name='experiencia_laboral_lista'),
-    url(r'^experiencias-laborales/cursos_json/', ExperienciaLaboralJSON.as_view(), name='experiencia_laboral_lista__json'),
-    url(r'^experiencias-laborales/(?P<pk>[\w\-]+)/$', ExperienciaLaboralDetalle.as_view(), name='experiencia_laboral_detalle'),
+    url(r'^laborales/json/', ExperienciaLaboralJSON.as_view(), name='experiencia_laboral_lista__json'),
+    url(r'^laborales/$', ExperienciaLaboralLista.as_view(), name='experiencia_laboral_lista'),
+    url(r'^laborales/(?P<pk>[\w\-]+)/$', ExperienciaLaboralDetalle.as_view(), name='experiencia_laboral_detalle'),
 
-
+    url(r'^lineas-investigacion/json/', ExperienciaLaboralJSON.as_view(), name='experiencia_laboral_lista__json'),
+    url(r'^lineas-investigacion/$', ExperienciaLaboralLista.as_view(), name='experiencia_laboral_lista'),
+    url(r'^lineas-investigacion/(?P<pk>[\w\-]+)/$', ExperienciaLaboralDetalle.as_view(), name='experiencia_laboral_detalle'),
 
 
 

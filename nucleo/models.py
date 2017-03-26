@@ -214,6 +214,9 @@ class Cargo(models.Model):
     def __str__(self):
         return self.cargo
 
+    def natural_key(self):
+        return (self.cargo)
+
     class Meta:
         unique_together = ['cargo', 'tipo_cargo']
         ordering = ['cargo']
@@ -228,6 +231,9 @@ class Nombramiento(models.Model):
 
     def __str__(self):
         return self.nombramiento
+
+    def natural_key(self):
+        return (self.nombramiento)
 
     class Meta:
         ordering = ['id']
