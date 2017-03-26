@@ -58,10 +58,6 @@ class ObjectCreateVarMixin:
     def post(self, request):
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
-            new_obj = bound_form.save(commit=False)
-            if request.user not in new_obj.usuarios:
-                print(new_obj.usuarios) # = request.user
-                print(type(new_obj.usuarios)) # = request.user
             new_obj = bound_form.save()
             return redirect(new_obj)
         else:
@@ -74,15 +70,13 @@ class ObjectUpdateVarMixin:
     aux = {}
 
     def get(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
+        obj = get_object_or_404(self.model, pk=pk)
         return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
 
     def post(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
+        obj = get_object_or_404(self.model, pk=pk)
         bound_form = self.form_class(request.POST, instance=obj)
         if bound_form.is_valid():
-            det_obj = bound_form.save(commit=False)
-            det_obj.usuario = request.user
             det_obj = bound_form.save()
             return redirect(det_obj)
             self.det_obj.pk
