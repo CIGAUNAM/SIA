@@ -15,10 +15,11 @@ class ArticuloCientificoJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            experiencias = ArticuloCientifico.objects.filter(autores__id__exact=usuarioid)
-            json = serializers.serialize('json', experiencias,
+            articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
+            json = serializers.serialize('json', articulos,
                                          fields=('nombramiento', 'cargo', 'fecha_inicio', 'dependencia'),
                                          use_natural_foreign_keys=True)
+            print(articulos)
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
