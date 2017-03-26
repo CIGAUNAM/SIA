@@ -11,11 +11,11 @@ class ExperienciaLaboralForm(forms.ModelForm):
 
 class LineaInvestigacionForm(forms.ModelForm):
     class Meta:
-        model = ExperienciaLaboral
+        model = LineaInvestigacion
         exclude = ['usuario', 'tags', ]
 
 
 class CapacidadPotencialidadForm(forms.ModelForm):
     class Meta:
-        model = ExperienciaLaboral
+        model = CapacidadPotencialidad
         exclude = ['usuario', 'tags', ]

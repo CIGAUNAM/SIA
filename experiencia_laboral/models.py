@@ -26,7 +26,7 @@ class ExperienciaLaboral(models.Model):
         ordering = ['fecha_inicio', 'dependencia']
         verbose_name = "Experiencia Laboral"
         verbose_name_plural = "Experiencias Laborales"
-        unique_together = ['dependencia', 'nombramiento', 'fecha_fin', 'usuario']
+        unique_together = ['dependencia', 'cargo', 'fecha_fin', 'usuario']
 
 
 class LineaInvestigacion(models.Model):
@@ -48,7 +48,7 @@ class LineaInvestigacion(models.Model):
         ordering = ['fecha_inicio', 'linea_investigacion']
         verbose_name = "Línea de investigación"
         verbose_name_plural = "Líneas de investigación"
-        unique_together = ['linea_investigacion', 'fecha_fin', 'usuario']
+        unique_together = ['linea_investigacion', 'fecha_inicio', 'usuario']
 
 
 class CapacidadPotencialidad(models.Model):

@@ -27,17 +27,9 @@ urlpatterns = [
 
     url(r'^formacion/', include('formacion_academica.urls')),
     url(r'^experiencia/', include('experiencia_laboral.urls')),
+    url(r'^investigacion/', include('investigacion.urls')),
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),
 
 ]
-
-"""
-urlpatterns += patterns(
-    'formacion_academica.views',
-    url(regex=r'^$',
-        view='cursos_json',
-        name='ajax_posts'),
-   )
-"""

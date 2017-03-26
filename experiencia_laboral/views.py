@@ -71,6 +71,35 @@ class LineaInvestigacionDetalle(ObjectUpdateMixin, View):
 
 
 
+class CapacidadPotencialidadJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            experiencias = CapacidadPotencialidad.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', experiencias,
+                                         fields=('competencia', 'fecha_inicio'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class CapacidadPotencialidadLista(ObjectCreateMixin, View):
+    form_class = CapacidadPotencialidadForm
+    model = CapacidadPotencialidad
+    aux = CapacidadPotencialidadContext.contexto
+    template_name = 'main.html'
+
+
+class CapacidadPotencialidadDetalle(ObjectUpdateMixin, View):
+    form_class = CapacidadPotencialidadForm
+    model = CapacidadPotencialidad
+    aux = CapacidadPotencialidadContext.contexto
+    template_name = 'main.html'
+
+
+
+
 
 
 
