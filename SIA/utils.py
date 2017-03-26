@@ -40,7 +40,6 @@ class ObjectUpdateMixin:
             det_obj.usuario = request.user
             det_obj = bound_form.save()
             return redirect(det_obj)
-            self.det_obj.pk
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
@@ -79,6 +78,5 @@ class ObjectUpdateVarMixin:
         if bound_form.is_valid():
             det_obj = bound_form.save()
             return redirect(det_obj)
-            self.det_obj.pk
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
