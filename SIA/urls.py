@@ -24,9 +24,9 @@ from formacion_academica.views import inicio
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'adminlte/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'adminlte/login.html'}, name='login'),
-    url(r'^inicio/$', inicio, name='inicio'),
 
     url(r'^formacion/', include('formacion_academica.urls')),
+    url(r'^experiencia/', include('experiencia_laboral.urls')),
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),

@@ -1,8 +1,7 @@
 from django.db import models
-
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from autoslug import AutoSlugField
+#from autoslug import AutoSlugField
 from nucleo.models import User, Tag, Dependencia, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Proyecto
 
 CURSO_ESPECIALIZACION_TIPO = getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', (('CURSO', 'Curso'), ('DIPLOMADO', 'Diplomado'), ('CERTIFICACION', 'Certificación'), ('OTRO', 'Otro')))
