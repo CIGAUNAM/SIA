@@ -41,14 +41,10 @@ class ArticuloCientifico(models.Model):
     def get_absolute_url(self):
         return reverse('articulo_cientifico_detalle', kwargs={'pk': self.pk})
 
-
     class Meta:
         verbose_name = "Artículo científico"
         verbose_name_plural = "Artículos científicos"
         ordering = ['fecha', 'titulo']
-
-
-
 
 
 class CapituloLibroInvestigacion(models.Model):
@@ -60,10 +56,15 @@ class CapituloLibroInvestigacion(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_investigacion_proyectos', blank=True)
+    usuario = models.ForeignKey(User, related_name='capitulo_libro_investigacion_usuario')
     tags = models.ManyToManyField(Tag, related_name='capitulo_libro_investigacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)
+
+    def get_absolute_url(self):
+        return reverse('capitulo_libro_investigacion_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = "Capítulo en libro"
         verbose_name_plural = "Capítulos en libros"
@@ -75,7 +76,7 @@ class MapaArbitrado(models.Model):
     #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     escala = models.CharField(max_length=30)
-    autores = models.ManyToManyField(User, related_name='mapa_arbitrado_autores')
+    usuarios = models.ManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='mapa_arbitrado_coordinadores', blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
@@ -84,15 +85,19 @@ class MapaArbitrado(models.Model):
     fecha = models.DateField(auto_now=False)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=1)
-    coleccion = models.ForeignKey(Coleccion, blank=True)
+    coleccion = models.ForeignKey(Coleccion, blank=True, null=True)
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, blank=True)
     url = models.URLField(blank=True)
-    proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos', blank=True)
+    proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos')
     tags = models.ManyToManyField(Tag, related_name='mapa_arbitrado_tags', blank=True)
 
     def __str__(self):
         return "{} : ({}) : {}".format(self.titulo, self.escala, self.fecha)
+
+    def get_absolute_url(self):
+        return reverse('mapa_arbitrado_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = "Mapa arbitrado"
         verbose_name_plural = "Mapas arbitrados"
@@ -103,17 +108,19 @@ class InformeTecnico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
-    autores = models.ManyToManyField(User, related_name='informe_tecnico_autores')
-
+    usuarios = models.ManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
     fecha = models.DateField(auto_now=False)
     numero_paginas = models.PositiveIntegerField(default=1)
     proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos')
     url = models.URLField(blank=True)
-
     tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.fecha)
+
+    def get_absolute_url(self):
+        return reverse('informe_tecnico_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = "Informe técnico de acceso público"
         verbose_name_plural = "Informes técnicos de acceso público"
