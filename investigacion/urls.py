@@ -18,4 +18,9 @@ urlpatterns = [
     url(r'^mapas-arbitrados/$', MapaArbitradoLista.as_view(), name='mapa_arbitrado_lista'),
     url(r'^mapas-arbitrados/(?P<pk>[\w\-]+)/$', MapaArbitradoDetalle.as_view(), name='mapa_arbitrado_detalle'),
 
+    url(r'^informes-tecnicos-publicos/json/', InformeTecnicoJSON.as_view(), name='informe_tecnico_publico_lista__json'),
+    url(r'^informes-tecnicos-publicos/json-otros/', InformeTecnicoJSON.as_view(otros=True), name='informe_tecnico_publico_lista_otros__json'),
+    url(r'^informes-tecnicos-publicos/$', InformeTecnicoLista.as_view(), name='informe_tecnico_publico_lista'),
+    url(r'^informes-tecnicos-publicos/(?P<pk>[\w\-]+)/$', InformeTecnicoDetalle.as_view(), name='informe_tecnico_publico_detalle'),
+
 ]

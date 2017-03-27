@@ -119,7 +119,7 @@ class InformeTecnico(models.Model):
         return "{} : {}".format(self.titulo, self.fecha)
 
     def get_absolute_url(self):
-        return reverse('informe_tecnico_detalle', kwargs={'pk': self.pk})
+        return reverse('informe_tecnico__publico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = "Informe técnico de acceso público"
