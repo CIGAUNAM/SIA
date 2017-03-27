@@ -12,16 +12,17 @@ from . utils import *
 
 
 class ArticuloCientificoJSON(View):
+    otros = False
     def get(self, request):
+
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            #articulos = ArticuloCientifico.objects.all().exclude(usuarios__id__exact=usuarioid)
-            articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
-            json = serializers.serialize('json', articulos,
-                                         fields=('titulo', 'tipo', 'revista', 'status', 'fecha'),
-                                         use_natural_foreign_keys=True)
-
-            print(type(json))
+            if self.otros:
+                articulos = ArticuloCientifico.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
+            json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'tipo', 'revista', 'status', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -38,4 +39,65 @@ class ArticuloCientificoDetalle(ObjectUpdateVarMixin, View):
     form_class = ArticuloCientificoForm
     model = ArticuloCientifico
     aux = ArticuloCientificoContext.contexto
+    template_name = 'main_otros.html'
+
+
+
+class CapituloLibroInvestigacionJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = CapituloLibroInvestigacion.objects.filter(usuario__id__exact=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'libro', 'pagina_inicio', 'pagina_fin'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class CapituloLibroInvestigacionLista(ObjectCreateVarMixin, View):
+    form_class = CapituloLibroInvestigacionForm
+    model = CapituloLibroInvestigacion
+    aux = CapituloLibroInvestigacionContext.contexto
+    template_name = 'main_otros.html'
+
+
+class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
+    form_class = CapituloLibroInvestigacionForm
+    model = CapituloLibroInvestigacion
+    aux = CapituloLibroInvestigacionContext.contexto
+    template_name = 'main_otros.html'
+
+
+
+class MapaArbitradoJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                items = MapaArbitrado.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                items = MapaArbitrado.objects.filter(usuarios__id__exact=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'status', 'editorial', 'fecha'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class MapaArbitradoLista(ObjectCreateVarMixin, View):
+    form_class = MapaArbitradoForm
+    model = MapaArbitrado
+    aux = MapaArbitradoContext.contexto
+    template_name = 'main_otros.html'
+
+
+class MapaArbitradoDetalle(ObjectUpdateVarMixin, View):
+    form_class = MapaArbitradoForm
+    model = MapaArbitrado
+    aux = MapaArbitradoContext.contexto
     template_name = 'main_otros.html'
