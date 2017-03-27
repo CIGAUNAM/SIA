@@ -101,3 +101,35 @@ class MapaArbitradoDetalle(ObjectUpdateVarMixin, View):
     model = MapaArbitrado
     aux = MapaArbitradoContext.contexto
     template_name = 'main_otros.html'
+
+
+
+class InformeTecnicoJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                items = InformeTecnico.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                items = InformeTecnico.objects.filter(usuarios__id__exact=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'fecha', 'numero_paginas'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class InformeTecnicoLista(ObjectCreateVarMixin, View):
+    form_class = InformeTecnicoForm
+    model = InformeTecnico
+    aux = InformeTecnicoContext.contexto
+    template_name = 'main_otros.html'
+
+
+class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
+    form_class = InformeTecnicoForm
+    model = InformeTecnico
+    aux = InformeTecnicoContext.contexto
+    template_name = 'main_otros.html'
