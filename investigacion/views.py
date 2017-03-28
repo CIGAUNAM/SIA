@@ -133,3 +133,47 @@ class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
     model = InformeTecnico
     aux = InformeTecnicoContext.contexto
     template_name = 'main_otros.html'
+
+
+
+class LibroInvestigacionJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                items = LibroInvestigacion.objects.filter(tipo='INVESTIGACION').exclude(usuarios__id__exact=usuarioid)
+            else:
+                items = LibroInvestigacion.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre_libro', 'editorial', 'ciudad', 'status', 'fecha'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class LibroInvestigacionLista(ObjectCreateVarMixin, View):
+    form_class = LibroInvestigacionForm
+    model = LibroInvestigacion
+    aux = LibroInvestigacionContext.contexto
+    template_name = 'main_otros.html'
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save(commit=False)
+            new_obj.tipo = 'INVESTIGACION'
+            new_obj = bound_form.save()
+
+            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
+
+        else:
+            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
+
+
+class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
+    form_class = LibroInvestigacionForm
+    model = LibroInvestigacion
+    aux = LibroInvestigacionContext.contexto
+    template_name = 'main_otros.html'

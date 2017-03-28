@@ -1,7 +1,7 @@
 from django.db import models
 
 from django.contrib.auth.models import AbstractUser
-
+from django.core.urlresolvers import reverse
 from django.conf import settings
 from autoslug import AutoSlugField
 
@@ -603,10 +603,10 @@ class StatusPublicacion(models.Model):
 
 class Libro(models.Model):
     nombre_libro = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='nombre_libro', unique=True)
+    #slug = AutoSlugField(populate_from='nombre_libro', unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.TextField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgaciòn')))
-    autores = models.ManyToManyField(User, related_name='libro_autores')
+    tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación')))
+    usuarios = models.ManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='libro_coordinadores', blank=True)
     editorial = models.ForeignKey(Editorial)
@@ -614,7 +614,7 @@ class Libro(models.Model):
     fecha = models.DateField(auto_now=False)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=0)
-    coleccion = models.ForeignKey(Coleccion, blank=True, default=1)
+    coleccion = models.ForeignKey(Coleccion, blank=True, null=True)
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30)
     url = models.URLField(blank=True)
@@ -622,7 +622,16 @@ class Libro(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
 
     def __str__(self):
-        return "{} : {} : {} : {}".format(self.nombre_libro, self.editorial, self.ciudad, self.isbn)
+        return "{} : {} : {}".format(self.nombre_libro, self.editorial, self.isbn)
+
+    def natural_key(self):
+        return (self.nombre_libro)
+
+    def get_absolute_url(self):
+
+
+        return reverse('libro_investigacion_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre_libro']
         get_latest_by = ['fecha', 'nombre_libro', 'editorial']
