@@ -104,6 +104,7 @@ class MapaArbitrado(models.Model):
         ordering = ['fecha', 'titulo']
 
 
+
 class InformeTecnico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='titulo', unique=True)

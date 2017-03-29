@@ -28,6 +28,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.tag
 
+    def natural_key(self):
+        return (self.tag)
+
     class Meta:
         ordering = ['tag']
 
@@ -38,6 +41,9 @@ class ZonaPais(models.Model):
 
     def __str__(self):
         return self.zona
+
+    def natural_key(self):
+        return (self.zona)
 
     class Meta:
         ordering = ['zona']
@@ -55,6 +61,9 @@ class Pais(models.Model):
     def __str__(self):
         return self.pais
 
+    def natural_key(self):
+        return (self.pais)
+
     class Meta:
         ordering = ['pais']
         verbose_name_plural = 'Paises'
@@ -69,6 +78,9 @@ class Estado(models.Model):
     def __str__(self):
         return "{} : {}".format(self.pais, self.estado)
 
+    def natural_key(self):
+        return (self.estado)
+
     class Meta:
         unique_together = ['estado', 'pais']
         ordering = ['pais', 'estado']
@@ -81,6 +93,9 @@ class Ciudad(models.Model):
 
     def __str__(self):
         return "{} : {} ".format(self.estado, self.ciudad)
+
+    def natural_key(self):
+        return (self.ciudad)
 
     class Meta:
         unique_together = ['ciudad', 'estado']
@@ -99,6 +114,9 @@ class Region(models.Model):
     def __str__(self):
         return self.region
 
+    def natural_key(self):
+        return (self.region)
+
     class Meta:
         ordering = ['region']
         verbose_name = 'Región'
@@ -116,6 +134,9 @@ class Ubicacion(models.Model):
 
     def __str__(self):
         return "{} : {} : {}".format(self.direccion1, self.direccion2, self.ciudad)
+
+    def natural_key(self):
+        return (self.direccion1)
 
     class Meta:
         ordering = ['ciudad', 'direccion1']
@@ -145,6 +166,9 @@ class User(AbstractUser):
     def __str__(self):
         return "{} : {} {} : {}".format(self.username,  self.first_name, self.last_name, self.rfc)
 
+    def natural_key(self):
+        return (self.username)
+
     class Meta:
         ordering = ['last_name']
 
@@ -158,11 +182,13 @@ class Institucion(models.Model):
     def __str__(self):
         return self.institucion
 
+    def natural_key(self):
+        return (self.institucion)
+
     class Meta:
         ordering = ['institucion']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
-
 
 
 class Dependencia(models.Model):
@@ -179,11 +205,11 @@ class Dependencia(models.Model):
                                                           ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
                                                           ('NO', 'No')), default='NO', verbose_name='Subsistema UNAM')
 
-    def natural_key(self):
-        return (self.dependencia)
-
     def __str__(self):
         return "{} : {}".format(self.institucion, self.dependencia)
+
+    def natural_key(self):
+        return (self.dependencia)
 
     class Meta:
         unique_together = ('dependencia', 'institucion')
@@ -199,6 +225,9 @@ class Departamento(models.Model):
 
     def __str__(self):
         return "{} : {}".format(self.dependencia, self.departamento)
+
+    def natural_key(self):
+        return (self.departamento)
 
     class Meta:
         unique_together = ('departamento', 'dependencia')
@@ -269,6 +298,9 @@ class AreaEspecialidad(models.Model):
     def __str__(self):
         return self.especialidad
 
+    def natural_key(self):
+        return (self.especialidad)
+
     class Meta:
         ordering = ['especialidad']
         verbose_name = 'Área de especialidad de WOS y otras entidades'
@@ -282,6 +314,9 @@ class ImpactoSocial(models.Model):
 
     def __str__(self):
         return self.impacto_social
+
+    def natural_key(self):
+        return (self.impacto_social)
 
     class Meta:
         ordering = ['impacto_social']
@@ -297,6 +332,9 @@ class ProgramaFinanciamiento(models.Model):
     def __str__(self):
         return self.programa_financiamiento
 
+    def natural_key(self):
+        return (self.programa_financiamiento)
+
     class Meta:
         ordering = ['programa_financiamiento']
 
@@ -311,6 +349,9 @@ class Financiamiento(models.Model):
     def __str__(self):
         return "{} : {}".format(self.financiamiento, self.clave_proyecto)
 
+    def natural_key(self):
+        return (self.tipo_financiamiento)
+
     class Meta:
         verbose_name = 'Financiamiento'
         verbose_name_plural = 'Financiamientos'
@@ -323,6 +364,9 @@ class Metodologia(models.Model):
 
     def __str__(self):
         return self.metodologia
+
+    def natural_key(self):
+        return (self.metodologia)
 
     class Meta:
         ordering = ['metodologia']
