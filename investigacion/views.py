@@ -209,9 +209,7 @@ class ProyectoInvestigacionLista(ObjectCreateVarMixin, View):
             new_obj = bound_form.save(commit=False)
             new_obj.tipo = 'INVESTIGACION'
             new_obj = bound_form.save()
-
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
-
         else:
             return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
 

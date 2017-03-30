@@ -556,7 +556,7 @@ class Proyecto(models.Model):
     es_permanente = models.BooleanField(default=False)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    responsables = models.ManyToManyField(User, related_name='proyecto_responsables')
+    usuarios = models.ManyToManyField(User, related_name='proyecto_responsables', verbose_name='Responsables')
     participantes = models.ManyToManyField(User, related_name='proyecto_participantes', blank=True)
     status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
     clasificacion = models.CharField(max_length=30, choices=CLASIFICACION_PROYECTO)
