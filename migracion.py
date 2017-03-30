@@ -14,7 +14,7 @@ from django.conf import settings
 #from autoslug import AutoSlugField
 from nucleo.models import Tag, ZonaPais, Pais, Estado, Ciudad, Region, Ubicacion, Institucion, Dependencia, \
     Departamento, User, ProgramaFinanciamiento, AreaConocimiento, AreaConocimiento, AreaEspecialidad, ImpactoSocial, Cargo, \
-    Financiamiento, Metodologia, Beca, Tesis, ProgramaLicenciatura, \
+    Financiamiento, Metodologia, Beca, Tesis, ProgramaLicenciatura, ProblemaNacionalConacyt, \
     ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, Proyecto, Nombramiento, Editorial, Revista, Indice
 from apoyo_institucional.models import Actividad, Comision, Representacion, CargoAcademicoAdministrativo, \
     RepresentanteAnteOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
@@ -28,6 +28,9 @@ from experiencia_laboral.models import *
 import uuid
 
 
+
+print("Borrando problemas conacyt")
+ProblemaNacionalConacyt.objects.all().delete()
 
 print("Borrando Indices")
 Indice.objects.all().delete()
@@ -2888,3 +2891,11 @@ for i in indices:
     I = Indice(indice=i)
     I.save()
     print('Agregado indice ' + I.indice)
+
+
+problemas = ['Gestión integral del agua, seguridad hídrica y derecho del agua', 'Mitigación y adaptación al cambio climático', 'Resiliencia frente a desastres naturales y tecnológicos', 'Aprovechamiento y protección de ecosistemas y de la biodiversidad', 'Los océanos y su aprovechamiento', 'Alimentos y su producción', 'Ciudades y desarrollo urbano', 'Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones', 'Manufactura de alta tecnología', 'Consumo sustentable de energía', 'Desarrollo y aprovechamiento de energías renovables limpias  onducta humana y prevención de adicciones', 'Enfermedades emergentes y de importancia nacional', 'Combate a la pobreza y seguridad alimentaria', 'Migraciones y asentamientos humanos', 'Seguridad ciudadana', 'Economía y gestión del conocimiento', 'Prevención de riesgos naturales',]
+
+for i in problemas:
+    p = ProblemaNacionalConacyt(nombre=i)
+    p.save()
+    print('Agregado problema conacyt: ', p)
