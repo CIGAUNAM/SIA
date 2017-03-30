@@ -316,14 +316,14 @@ class ProyectoInvestigacionContext:
     obj = 'Proyecto'
     objs = 'Proyectos'
     url_categoria = 'investigacion'
-    url_seccion = 'proyectos-investigacion'
+    url_seccion = 'proyectos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
-                'titulos_tabla': ['Título', 'Editorial', 'Ciudad', 'Status', 'Fecha']}
+                'titulos_tabla': ['Proyecto', 'Fecha inicio', 'Status', 'Clasificación', 'Modalidad']}
 
 
     tabla_mios =  '<script>\n' \
