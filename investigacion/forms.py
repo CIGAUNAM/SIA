@@ -1,5 +1,7 @@
 from . models import *
 from nucleo.models import Libro as LibroInvestigacion
+from nucleo.models import Proyecto as ProyectoInvestigacion
+
 from django import forms
 
 #
@@ -31,4 +33,10 @@ class InformeTecnicoForm(forms.ModelForm):
 class LibroInvestigacionForm(forms.ModelForm):
     class Meta:
         model = LibroInvestigacion
+        exclude = ['tipo', 'tags', ]
+
+
+class ProyectoInvestigacionForm(forms.ModelForm):
+    class Meta:
+        model = ProyectoInvestigacion
         exclude = ['tipo', 'tags', ]

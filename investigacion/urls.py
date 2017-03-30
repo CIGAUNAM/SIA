@@ -28,4 +28,9 @@ urlpatterns = [
     url(r'^libros-publicados/$', LibroInvestigacionLista.as_view(), name='libro_investigacion_lista'),
     url(r'^libros-publicados/(?P<pk>[\w\-]+)/$', LibroInvestigacionDetalle.as_view(), name='libro_investigacion_detalle'),
 
+    url(r'^proyectos/json/', ProyectoInvestigacionJSON.as_view(), name='proyecto_investigacion_lista__json'),
+    url(r'^proyectos/json-otros/', ProyectoInvestigacionJSON.as_view(otros=True), name='proyecto_investigacion_lista_otros__json'),
+    url(r'^proyectos/$', ProyectoInvestigacionLista.as_view(), name='proyecto_investigacion_lista'),
+    url(r'^proyectos/(?P<pk>[\w\-]+)/$', ProyectoInvestigacionDetalle.as_view(), name='proyecto_investigacion_detalle'),
+
 ]
