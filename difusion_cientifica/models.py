@@ -1,9 +1,9 @@
 from django.db import models
 
 from django.conf import settings
-#from django.contrib.auth.models import User
 from autoslug import AutoSlugField
 from nucleo.models import User, Tag, Pais, Ciudad, Ubicacion, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from django.core.urlresolvers import reverse
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
@@ -13,12 +13,12 @@ EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDI
 
 class MemoriaInExtenso(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descipcion = models.TextField(blank=True)
     ciudad = models.ForeignKey(Ciudad)
     fecha = models.DateField()
     evento = models.ForeignKey(Evento)
-    autores = models.ManyToManyField(User, related_name='memoria_in_extenso_autores_externos')
+    usuarios = models.ManyToManyField(User, related_name='memoria_in_extenso_autores_externos', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='memoria_in_extenso_editores', blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='memoria_in_extenso_agradecimientos', blank=True)
@@ -31,6 +31,10 @@ class MemoriaInExtenso(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+    def get_absolute_url(self):
+        return reverse('memoria_in_extenso_detalle', kwargs={'pk': self.pk})
+    
     class Meta:
         verbose_name = 'Memoria in extenso'
         verbose_name_plural = 'Memorias in extenso'
@@ -51,6 +55,9 @@ class PrologoLibro(models.Model):
     def __str__(self):
         return '{} : {}'.format(self.autor_prologo, self.libro)
 
+    def get_absolute_url(self):
+        return reverse('prologo_libro_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = 'Prólogo de libro'
         verbose_name_plural = 'Prólogos de libros'
@@ -62,7 +69,7 @@ class Resena(models.Model):
     libro = models.ForeignKey(Libro, null=True, related_name='resena_libro')
     revista = models.ForeignKey(Revista, related_name='resena_revista', null=True)
     volumen = models.CharField(max_length=10, blank=True)
-    slug = AutoSlugField(populate_from='titulo_resena', unique=True)
+    #slug = AutoSlugField(populate_from='titulo_resena', unique=True)
     descipcion = models.TextField(blank=True)
     revistas = models.ManyToManyField(Revista, related_name='resena_revistas', blank=True)
     libros = models.ManyToManyField(Libro, related_name='resena_libros', blank=True)
@@ -77,6 +84,9 @@ class Resena(models.Model):
 
     def __str__(self):
         return '{} : {}'.format(self.autor_resena, self.titulo_resena)
+
+    def get_absolute_url(self):
+        return reverse('resena_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Reseña de libro'
@@ -95,6 +105,9 @@ class OrganizacionEventoAcademico(models.Model):
     def __str__(self):
         return str(self.evento)
 
+    def get_absolute_url(self):
+        return reverse('organizacion_evento_academico_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = 'Organización de evento académico'
         verbose_name_plural= 'Organización de eventos académicos'
@@ -102,7 +115,7 @@ class OrganizacionEventoAcademico(models.Model):
 
 class ParticipacionEventoAcademico(models.Model):
     titulo = models.CharField(max_length=255)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descipcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento)
     resumen_publicado = models.BooleanField(default=False)
@@ -114,6 +127,9 @@ class ParticipacionEventoAcademico(models.Model):
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)
+
+    def get_absolute_url(self):
+        return reverse('participacion_evento_academico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Participación en evento académico'
