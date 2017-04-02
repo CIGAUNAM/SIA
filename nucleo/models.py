@@ -501,10 +501,10 @@ class Evento(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     dependencias = models.ManyToManyField(Dependencia, related_name='evento_dependencias')
-    ubicacion = models.ForeignKey(Ubicacion)
+    ubicacion = models.TextField(blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.nombre_evento, self.fecha_inicio, self.ubicacion.ciudad)
+        return "{} : {}".format(self.nombre_evento, self.fecha_inicio)
 
     def natural_key(self):
         return (self.nombre_evento)
