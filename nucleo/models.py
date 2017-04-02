@@ -589,11 +589,7 @@ class Proyecto(models.Model):
 
 
 
-
-
 ###################
-
-
 
 
 
