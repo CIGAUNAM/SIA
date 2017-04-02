@@ -26,7 +26,7 @@ class MemoriaInExtenso(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     issn = models.SlugField(max_length=20, blank=True)
-    proyectos = models.ForeignKey(Proyecto)
+    proyectos = models.ManyToManyField(Proyecto)
     url = models.URLField(blank=True)
 
     def __str__(self):
@@ -42,8 +42,8 @@ class MemoriaInExtenso(models.Model):
 
 class PrologoLibro(models.Model):
     descipcion = models.TextField(blank=True)
-    autor_prologo = models.ForeignKey(User)
-    autores = models.ManyToManyField(User, related_name='prologo_libro_autores', blank=True)
+    usuario = models.ForeignKey(User)
+    coautores = models.ManyToManyField(User, related_name='prologo_libro_coautores', blank=True)
     editores = models.ManyToManyField(User, related_name='prologo_libro_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='prologo_libro_coordinadores', blank=True)
     libro = models.ForeignKey(Libro, related_name='prologo_libro_libro')
@@ -53,7 +53,7 @@ class PrologoLibro(models.Model):
     tags = models.ManyToManyField(Tag, related_name='prologo_libro_tags', blank=True)
 
     def __str__(self):
-        return '{} : {}'.format(self.autor_prologo, self.libro)
+        return '{} : {}'.format(self.usuario, self.libro)
 
     def get_absolute_url(self):
         return reverse('prologo_libro_detalle', kwargs={'pk': self.pk})
