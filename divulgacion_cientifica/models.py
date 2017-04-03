@@ -13,18 +13,18 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Pub
 
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    documento_articulo = models.FileField()
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    documento_articulo = models.FileField(blank=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=16, choices=(('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
-    revista = models.ForeignKey(Revista)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     indizado = models.BooleanField(default=False)
-    autores = models.ManyToManyField(User, related_name='articulo_divulgracion_autores')
+    usuarios = models.ManyToManyField(User, related_name='articulo_divulgracion_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_divulgracion_alumnos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='articulo_divulgracion_indices', blank=True)
-    solo_electronico = models.BooleanField(default=False)
     url = models.URLField(blank=True)
+    solo_electronico = models.BooleanField(default=False)
+    revista = models.ForeignKey(Revista)
     fecha = models.DateField(auto_now=False)
     volumen = models.CharField(max_length=100, blank=True)
     numero = models.CharField(max_length=100, blank=True)
@@ -43,7 +43,7 @@ class ArticuloDivulgacion(models.Model):
         verbose_name_plural = "Artículos de divulgación"
         ordering = ['fecha', 'titulo']
 
-
+"""
 class LibroDivulgacion(models.Model):
     libro = models.ForeignKey(Libro)
     slug = AutoSlugField(populate_from='libro', unique=True)
@@ -59,7 +59,7 @@ class LibroDivulgacion(models.Model):
         verbose_name = "Libro de divulgación"
         verbose_name_plural = "Libro de divulgación"
         ordering = ['libro']
-
+"""
 
 class CapituloLibroDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
@@ -80,7 +80,7 @@ class CapituloLibroDivulgacion(models.Model):
         ordering = ['titulo']
 
 
-class OrganizacionEvento(models.Model):
+class OrganizacionEventoDivulgacion(models.Model):
     evento = models.ForeignKey(Evento)
     descripcion = models.TextField(blank=True)
     responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
@@ -97,7 +97,7 @@ class OrganizacionEvento(models.Model):
         verbose_name_plural= 'Organización de eventos académicos'
 
 
-class ParticipacionEvento(models.Model):
+class ParticipacionEventoDivulgacion(models.Model):
     titulo = models.CharField(max_length=255)
     slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
