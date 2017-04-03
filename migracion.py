@@ -12,10 +12,7 @@ from django.db import models
 from django.conf import settings
 
 #from autoslug import AutoSlugField
-from nucleo.models import Tag, ZonaPais, Pais, Estado, Ciudad, Region, Ubicacion, Institucion, Dependencia, \
-    Departamento, User, ProgramaFinanciamiento, AreaConocimiento, AreaConocimiento, AreaEspecialidad, ImpactoSocial, Cargo, \
-    Financiamiento, Metodologia, Beca, Tesis, ProgramaLicenciatura, ProblemaNacionalConacyt, \
-    ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, Proyecto, Nombramiento, Editorial, Revista, Indice
+from nucleo.models import *
 from apoyo_institucional.models import Actividad, Comision, Representacion, CargoAcademicoAdministrativo, \
     RepresentanteAnteOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
 from desarrollo_tecnologico.models import TipoDesarrollo, Licencia, DesarrolloTecnologico
@@ -2899,3 +2896,10 @@ for i in problemas:
     p = ProblemaNacionalConacyt(nombre=i)
     p.save()
     print('Agregado problema conacyt: ', p)
+
+
+t = TipoEvento(tipo_evento='Otro')
+t.save()
+e = Evento(nombre_evento='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 10, 10), tipo=TipoEvento.objects.get(tipo_evento='Otro'))
+e.save()
+l = Libro(nombre_libro='Otro', )
