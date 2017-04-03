@@ -1,3 +1,4 @@
+from django.core.serializers.python import Serializer
 from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
@@ -41,15 +42,13 @@ class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
 
 
 class PrologoLibroJSON(View):
-    otros = False
     def get(self, request):
 
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            if self.otros:
-                items = PrologoLibro.objects.all().exclude(usuarios__id__exact=usuarioid)
-            else:
-                items = PrologoLibro.objects.filter(usuarios__id__exact=usuarioid)
+
+            items = PrologoLibro.objects.filter(usuario=usuarioid)
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('libro',))
             return HttpResponse(json, content_type='application/json')
@@ -57,15 +56,101 @@ class PrologoLibroJSON(View):
             raise Http404
 
 
-class PrologoLibroLista(ObjectCreateVarMixin, View):
+class PrologoLibroLista(ObjectCreateMixin, View):
     form_class = PrologoLibroForm
     model = PrologoLibro
     aux = PrologoLibroContext.contexto
     template_name = 'main_otros.html'
 
 
-class PrologoLibroDetalle(ObjectUpdateVarMixin, View):
+class PrologoLibroDetalle(ObjectUpdateMixin, View):
     form_class = PrologoLibroForm
     model = PrologoLibro
     aux = PrologoLibroContext.contexto
+    template_name = 'main_otros.html'
+
+
+
+class ResenaJSON(View):
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+
+            items = Resena.objects.filter(usuario=usuarioid)
+
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'libro_resenado', 'revista_resenada', 'libro_publica', 'revista_publica'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ResenaLista(ObjectCreateMixin, View):
+    form_class = ResenaForm
+    model = Resena
+    aux = ResenaContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ResenaDetalle(ObjectUpdateMixin, View):
+    form_class = ResenaForm
+    model = Resena
+    aux = ResenaContext.contexto
+    template_name = 'main_otros.html'
+
+
+
+class OrganizacionEventoAcademicoJSON(View):
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = OrganizacionEventoAcademico.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('evento', 'responsabilidad', 'ambito'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class OrganizacionEventoAcademicoLista(ObjectCreateMixin, View):
+    form_class = OrganizacionEventoAcademicoForm
+    model = OrganizacionEventoAcademico
+    aux = OrganizacionEventoAcademicoContext.contexto
+    template_name = 'main_otros.html'
+
+
+class OrganizacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
+    form_class = OrganizacionEventoAcademicoForm
+    model = OrganizacionEventoAcademico
+    aux = OrganizacionEventoAcademicoContext.contexto
+    template_name = 'main_otros.html'
+
+
+
+class ParticipacionEventoAcademicoJSON(View):
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ParticipacionEventoAcademico.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'evento', 'ambito'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ParticipacionEventoAcademicoLista(ObjectCreateMixin, View):
+    form_class = ParticipacionEventoAcademicoForm
+    model = ParticipacionEventoAcademico
+    aux = ParticipacionEventoAcademicoContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ParticipacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
+    form_class = ParticipacionEventoAcademicoForm
+    model = ParticipacionEventoAcademico
+    aux = ParticipacionEventoAcademicoContext.contexto
     template_name = 'main_otros.html'

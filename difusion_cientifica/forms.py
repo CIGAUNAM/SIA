@@ -13,22 +13,22 @@ class MemoriaInExtensoForm(forms.ModelForm):
 class PrologoLibroForm(forms.ModelForm):
     class Meta:
         model = PrologoLibro
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class ResenaForm(forms.ModelForm):
     class Meta:
         model = Resena
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
     class Meta:
         model = OrganizacionEventoAcademico
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
     class Meta:
         model = ParticipacionEventoAcademico
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
