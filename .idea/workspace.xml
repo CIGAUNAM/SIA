@@ -12,8 +12,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/divulgacion_cientifica/migrations/0002_auto_20170403_1916.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/divulgacion_cientifica/migrations/0003_auto_20170403_1943.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/divulgacion_cientifica/migrations/0004_auto_20170403_2015.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docencia/migrations/0001_initial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docencia/migrations/0002_auto_20170403_1916.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/experiencia_laboral/migrations/0001_initial.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/experiencia_laboral/migrations/0002_auto_20170403_1916.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/formacion_academica/migrations/0001_initial.py" />
@@ -27,15 +25,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nucleo/migrations/0001_initial.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vinculacion/migrations/0001_initial.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/urls.py" afterPath="$PROJECT_DIR$/SIA/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/difusion_cientifica/models.py" afterPath="$PROJECT_DIR$/difusion_cientifica/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/difusion_cientifica/views.py" afterPath="$PROJECT_DIR$/difusion_cientifica/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/forms.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/models.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/urls.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/utils.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/views.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" afterPath="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
     </list>
     <ignored path="apoyo_institucional/migrations/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +51,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -209,11 +199,11 @@
         <option value="$PROJECT_DIR$/difusion_cientifica/models.py" />
         <option value="$PROJECT_DIR$/SIA/urls.py" />
         <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
-        <option value="$PROJECT_DIR$/divulgacion_cientifica/utils.py" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/forms.py" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/views.py" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/models.py" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/urls.py" />
+        <option value="$PROJECT_DIR$/divulgacion_cientifica/utils.py" />
       </list>
     </option>
   </component>
@@ -679,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491265061718</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="form libro,  y natural keys de nucleo">
+      <created>1491269170042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1491269170042</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1080,8 +1077,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
