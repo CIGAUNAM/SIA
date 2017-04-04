@@ -19,7 +19,7 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
 class OrganizacionEventoDivulgacionForm(forms.ModelForm):
     class Meta:
         model = OrganizacionEventoDivulgacion
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class ParticipacionEventoDivulgacionForm(forms.ModelForm):

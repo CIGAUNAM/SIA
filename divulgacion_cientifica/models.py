@@ -81,7 +81,7 @@ class CapituloLibroDivulgacion(models.Model):
         return "{} : {}".format(self.titulo, self.libro)
 
     def get_absolute_url(self):
-        return reverse('capitulo_libro_divulgacion', kwargs={'pk': self.pk})
+        return reverse('capitulo_libro_divulgacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = "Capítulo en libro de divulgación"
@@ -97,13 +97,14 @@ class OrganizacionEventoDivulgacion(models.Model):
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='organizacion_evento_tags', blank=True)
 
     def __str__(self):
         return str(self.evento)
 
     def get_absolute_url(self):
-        return reverse('organizacion_evento_divulgacion', kwargs={'pk': self.pk})
+        return reverse('organizacion_evento_divulgacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Organización de evento académico'
@@ -126,7 +127,7 @@ class ParticipacionEventoDivulgacion(models.Model):
         return "{} : {}".format(self.titulo, self.evento)
 
     def get_absolute_url(self):
-        return reverse('participacion_evento_divulgacion', kwargs={'pk': self.pk})
+        return reverse('participacion_evento_divulgacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Participación en evento académico'
@@ -145,7 +146,7 @@ class MedioDivulgacion(models.Model):
         return self.nombre_medio
 
     def get_absolute_url(self):
-        return reverse('medio_divulgacion', kwargs={'pk': self.pk})
+        return reverse('medio_divulgacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         unique_together = ['canal', 'nombre_medio']
@@ -168,7 +169,7 @@ class ProgramaRadioTelevisionInternet(models.Model):
         return "{} : {} : {}".format(self.nombre_medio, self.tema, self.fecha)
 
     def get_absolute_url(self):
-        return reverse('programa_radio_television_internet', kwargs={'pk': self.pk})
+        return reverse('programa_radio_television_internet_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['fecha', 'tema']

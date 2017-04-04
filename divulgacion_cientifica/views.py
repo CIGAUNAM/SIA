@@ -67,3 +67,30 @@ class CapituloLibroDivulgacionDetalle(ObjectUpdateMixin, View):
     model = CapituloLibroDivulgacion
     aux = CapituloLibroDivulgacionContext.contexto
     template_name = 'main_otros.html'
+
+
+
+class OrganizacionEventoDivulgacionJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = OrganizacionEventoDivulgacion.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('evento', 'responsabilidad', 'ambito'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class OrganizacionEventoDivulgacionLista(ObjectCreateMixin, View):
+    form_class = OrganizacionEventoDivulgacionForm
+    model = OrganizacionEventoDivulgacion
+    aux = OrganizacionEventoDivulgacionContext.contexto
+    template_name = 'main_otros.html'
+
+
+class OrganizacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
+    form_class = OrganizacionEventoDivulgacionForm
+    model = OrganizacionEventoDivulgacion
+    aux = OrganizacionEventoDivulgacionContext.contexto
+    template_name = 'main_otros.html'
