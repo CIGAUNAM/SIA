@@ -42,11 +42,11 @@ class MemoriaInExtenso(models.Model):
 
 class PrologoLibro(models.Model):
     descipcion = models.TextField(blank=True)
-    usuario = models.ForeignKey(User)
     libro = models.ForeignKey(Libro, related_name='prologo_libro_libro')
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='prologo_libro_tags', blank=True)
 
     def __str__(self):
