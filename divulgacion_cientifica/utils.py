@@ -7,6 +7,7 @@ class ArticuloDivulgacionContext:
     url_seccion = 'articulos-divulgacion'
 
 
+
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
