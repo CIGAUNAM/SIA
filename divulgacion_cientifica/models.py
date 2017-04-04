@@ -4,6 +4,7 @@ from django.conf import settings
 #from django.contrib.auth.models import User
 from autoslug import AutoSlugField
 from nucleo.models import User, Tag, Pais, Ciudad, Ubicacion, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from django.core.urlresolvers import reverse
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
@@ -38,6 +39,9 @@ class ArticuloDivulgacion(models.Model):
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
 
+    def get_absolute_url(self):
+        return reverse('articulo_divulgacion_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = "Artículo de divulgación"
         verbose_name_plural = "Artículos de divulgación"
@@ -63,21 +67,27 @@ class LibroDivulgacion(models.Model):
 
 class CapituloLibroDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro)
     #status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_divulgracion_proyectos', blank=True)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='capitulo_libro_divulgacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)
+
+    def get_absolute_url(self):
+        return reverse('capitulo_libro_divulgacion', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = "Capítulo en libro de divulgación"
         verbose_name_plural = "Capítulos en libros de divulgración"
         ordering = ['titulo']
+        unique_together = ['titulo', 'libro', 'usuario']
 
 
 class OrganizacionEventoDivulgacion(models.Model):
@@ -92,6 +102,9 @@ class OrganizacionEventoDivulgacion(models.Model):
     def __str__(self):
         return str(self.evento)
 
+    def get_absolute_url(self):
+        return reverse('organizacion_evento_divulgacion', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = 'Organización de evento académico'
         verbose_name_plural= 'Organización de eventos académicos'
@@ -99,7 +112,7 @@ class OrganizacionEventoDivulgacion(models.Model):
 
 class ParticipacionEventoDivulgacion(models.Model):
     titulo = models.CharField(max_length=255)
-    slug = AutoSlugField(populate_from='titulo', unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento)
     resumen_publicado = models.BooleanField(default=False)
@@ -112,6 +125,9 @@ class ParticipacionEventoDivulgacion(models.Model):
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)
 
+    def get_absolute_url(self):
+        return reverse('participacion_evento_divulgacion', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = 'Participación en evento académico'
         verbose_name_plural= 'Participación en eventos académicos'
@@ -119,15 +135,17 @@ class ParticipacionEventoDivulgacion(models.Model):
 
 class MedioDivulgacion(models.Model):
     nombre_medio = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='nombre_medio', unique=True)
+    #slug = AutoSlugField(populate_from='nombre_medio', unique=True)
     descripcion = models.TextField(blank=True)
-    slug = AutoSlugField(populate_from='nombre_medio', unique=True)
     canal = models.CharField(max_length=255)
     ubicacion = models.ForeignKey(Ubicacion)
     tags = models.ManyToManyField(Tag, related_name='medio_divulgacion_tags', blank=True)
 
     def __str__(self):
         return self.nombre_medio
+
+    def get_absolute_url(self):
+        return reverse('medio_divulgacion', kwargs={'pk': self.pk})
 
     class Meta:
         unique_together = ['canal', 'nombre_medio']
@@ -148,6 +166,9 @@ class ProgramaRadioTelevisionInternet(models.Model):
 
     def __str__(self):
         return "{} : {} : {}".format(self.nombre_medio, self.tema, self.fecha)
+
+    def get_absolute_url(self):
+        return reverse('programa_radio_television_internet', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['fecha', 'tema']

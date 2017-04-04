@@ -1,4 +1,3 @@
-from django.core.serializers.python import Serializer
 from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
