@@ -146,3 +146,5 @@ class OrganizacionEventoDivulgacionContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
+
+
