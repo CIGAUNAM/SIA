@@ -94,3 +94,60 @@ class OrganizacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
     template_name = 'main_otros.html'
+
+
+
+class ParticipacionEventoDivulgacionJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ParticipacionEventoDivulgacion.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'evento', 'ambito'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ParticipacionEventoDivulgacionLista(ObjectCreateMixin, View):
+    form_class = ParticipacionEventoDivulgacionForm
+    model = ParticipacionEventoDivulgacion
+    aux = ParticipacionEventoDivulgacionContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ParticipacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
+    form_class = ParticipacionEventoDivulgacionForm
+    model = ParticipacionEventoDivulgacion
+    template_name = 'main_otros.html'
+    aux = ParticipacionEventoDivulgacionContext.contexto
+
+
+
+class ProgramaRadioTelevisionInternetJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ProgramaRadioTelevisionInternet.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('tema', 'fecha', 'nombre_medio', 'medio'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ProgramaRadioTelevisionInternetLista(ObjectCreateMixin, View):
+    form_class = ProgramaRadioTelevisionInternetForm
+    model = ProgramaRadioTelevisionInternet
+    aux = ProgramaRadioTelevisionInternetContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ProgramaRadioTelevisionInternetDivulgacionDetalle(ObjectUpdateMixin, View):
+    form_class = ProgramaRadioTelevisionInternetForm
+    model = ProgramaRadioTelevisionInternet
+    aux = ProgramaRadioTelevisionInternetContext.contexto
+    template_name = 'main_otros.html'
+
+
+

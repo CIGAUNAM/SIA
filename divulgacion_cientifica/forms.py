@@ -25,19 +25,13 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
 class ParticipacionEventoDivulgacionForm(forms.ModelForm):
     class Meta:
         model = ParticipacionEventoDivulgacion
-        exclude = ['tags', ]
-
-
-class MedioDivulgacionForm(forms.ModelForm):
-    class Meta:
-        model = MedioDivulgacion
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
     class Meta:
         model = ProgramaRadioTelevisionInternet
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class LibroDivulgacionForm(forms.ModelForm):
