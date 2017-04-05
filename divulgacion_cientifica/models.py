@@ -117,10 +117,11 @@ class ParticipacionEventoDivulgacion(models.Model):
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento)
     resumen_publicado = models.BooleanField(default=False)
-    autores = models.ManyToManyField(User, related_name='participacion_evento_autores')
+    #usuarios = models.ManyToManyField(User, related_name='participacion_evento_autores', verbose_name='Autores')
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='participacion_evento_tags', blank=True)
 
     def __str__(self):
@@ -139,7 +140,7 @@ class MedioDivulgacion(models.Model):
     #slug = AutoSlugField(populate_from='nombre_medio', unique=True)
     descripcion = models.TextField(blank=True)
     canal = models.CharField(max_length=255)
-    ubicacion = models.ForeignKey(Ubicacion)
+    ciudad = models.ForeignKey(Ciudad)
     tags = models.ManyToManyField(Tag, related_name='medio_divulgacion_tags', blank=True)
 
     def __str__(self):
@@ -147,6 +148,9 @@ class MedioDivulgacion(models.Model):
 
     def get_absolute_url(self):
         return reverse('medio_divulgacion_detalle', kwargs={'pk': self.pk})
+
+    def natural_key(self):
+        return (self.nombre_medio)
 
     class Meta:
         unique_together = ['canal', 'nombre_medio']
@@ -156,13 +160,14 @@ class MedioDivulgacion(models.Model):
 
 
 class ProgramaRadioTelevisionInternet(models.Model):
-    fecha = models.DateField()
     tema = models.CharField(max_length=255)
+    fecha = models.DateField()
     descripcion = models.TextField(blank=True)
     actividad = models.CharField(max_length=20, choices=(('PRODUCCION', 'Producciòn'), ('PARTICIPACION', 'Participaciòn'), ('ENTREVISTA', 'Entrevista'), ('OTRA', 'Otra')))
     medio = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     nombre_medio = models.ForeignKey(MedioDivulgacion)
-    partiticipantes = models.ManyToManyField(User, related_name='programa_radio_television_internet_participantes')
+    #partiticipantes = models.ManyToManyField(User, related_name='programa_radio_television_internet_participantes')
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='programa_radio_television_internet_tags', blank=True)
 
     def __str__(self):
