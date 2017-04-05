@@ -25,4 +25,9 @@ urlpatterns = [
     url(r'^medios-divulgacion/$', ProgramaRadioTelevisionInternetLista.as_view(), name='programa_radio_television_internet_lista'),
     url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/$', ProgramaRadioTelevisionInternetDivulgacionDetalle.as_view(), name='programa_radio_television_internet_detalle'),
 
+    url(r'^libros-divulgacion/json/', LibroDivulgacionJSON.as_view(), name='libro_investigacion_lista__json'),
+    url(r'^libros-divulgacion/json-otros/', LibroDivulgacionJSON.as_view(otros=True), name='libro_investigacion_lista_otros__json'),
+    url(r'^libros-divulgacion/$', LibroDivulgacionLista.as_view(), name='libro_investigacion_lista'),
+    url(r'^libros-divulgacion/(?P<pk>[\w\-]+)/$', LibroDivulgacionDetalle.as_view(), name='libro_investigacion_detalle'),
+
 ]
