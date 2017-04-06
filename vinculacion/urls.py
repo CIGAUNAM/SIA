@@ -29,7 +29,9 @@ urlpatterns = [
     url(r'^servicios-externos-no-academicos/$', ServicioExternoEntidadNoAcademicaLista.as_view(), name='servicio_externo_entidad_no_academica_lista'),
     url(r'^servicios-externos-no-academicos/(?P<pk>[\w\-]+)/$', ServicioExternoEntidadNoAcademicaDetalle.as_view(), name='servicio_externo_entidad_no_academica_detalle'),
 
-
+    url(r'^otros-programas-vinculacion/json/', OtroProgramaVinculacionJSON.as_view(), name='otro_programa_vinculacion_lista__json'),
+    url(r'^otros-programas-vinculacion/$', OtroProgramaVinculacionLista.as_view(), name='otro_programa_vinculacion_lista'),
+    url(r'^otros-programas-vinculacion/(?P<pk>[\w\-]+)/$', OtroProgramaVinculacionDetalle.as_view(), name='otro_programa_vinculacion_detalle'),
 
 ]
 """

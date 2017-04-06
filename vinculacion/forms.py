@@ -1,5 +1,4 @@
 from . models import *
-from nucleo.models import Libro as LibroDivulgacion
 from django import forms
 
 #
