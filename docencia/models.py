@@ -6,6 +6,7 @@ from nucleo.models import User, Tag, Dependencia, Proyecto, ProgramaLicenciatura
 from vinculacion.models import RedAcademica
 
 
+
 # Create your models here.
 
 class CursoDocencia(models.Model):
