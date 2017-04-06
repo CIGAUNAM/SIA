@@ -153,14 +153,10 @@ class ConvenioEntidadNoAcademicaDetalle(ObjectUpdateVarMixin, View):
 
 
 class ServicioExternoEntidadNoAcademicaJSON(View):
-    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            if self.otros:
-                items = ServicioExternoEntidadNoAcademica.objects.all().exclude(usuarios__id__exact=usuarioid)
-            else:
-                items = ServicioExternoEntidadNoAcademica.objects.filter(usuarios__id__exact=usuarioid)
+            items = ServicioExternoEntidadNoAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre_servicio', 'clasificacion_servicio', 'dependencia', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
@@ -168,14 +164,14 @@ class ServicioExternoEntidadNoAcademicaJSON(View):
             raise Http404
 
 
-class ServicioExternoEntidadNoAcademicaLista(ObjectCreateVarMixin, View):
+class ServicioExternoEntidadNoAcademicaLista(ObjectCreateMixin, View):
     form_class = ServicioExternoEntidadNoAcademicaForm
     model = ServicioExternoEntidadNoAcademica
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
     template_name = 'main_otros.html'
 
 
-class ServicioExternoEntidadNoAcademicaDetalle(ObjectUpdateVarMixin, View):
+class ServicioExternoEntidadNoAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ServicioExternoEntidadNoAcademicaForm
     model = ServicioExternoEntidadNoAcademica
     aux = ServicioExternoEntidadNoAcademicaContext.contexto

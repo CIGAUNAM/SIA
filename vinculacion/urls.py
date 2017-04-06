@@ -26,7 +26,6 @@ urlpatterns = [
     url(r'^convenios-entidades-no-academicas/(?P<pk>[\w\-]+)/$', ConvenioEntidadNoAcademicaDetalle.as_view(), name='convenio_entidad_no_academica_detalle'),
 
     url(r'^servicios-externos-no-academicos/json/', ServicioExternoEntidadNoAcademicaJSON.as_view(), name='servicio_externo_entidad_no_academica_lista__json'),
-    url(r'^servicios-externos-no-academicos/json-otros/', ServicioExternoEntidadNoAcademicaJSON.as_view(otros=True), name='servicio_externo_entidad_no_academica_lista_otros__json'),
     url(r'^servicios-externos-no-academicos/$', ServicioExternoEntidadNoAcademicaLista.as_view(), name='servicio_externo_entidad_no_academica_lista'),
     url(r'^servicios-externos-no-academicos/(?P<pk>[\w\-]+)/$', ServicioExternoEntidadNoAcademicaDetalle.as_view(), name='servicio_externo_entidad_no_academica_detalle'),
 
