@@ -7,6 +7,7 @@ from vinculacion.models import RedAcademica
 
 
 
+
 # Create your models here.
 
 class CursoDocencia(models.Model):
