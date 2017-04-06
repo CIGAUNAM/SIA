@@ -720,3 +720,14 @@ class Revista(models.Model):
     class Meta:
         ordering = ['nombre_revista']
         get_latest_by = ['fecha', 'nombre_revista', 'editorial']
+
+
+class Asignatura(models.Model):
+    asignatura = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.asignatura
+
+    def natural_key(self):
+        return (self.asignatura)
