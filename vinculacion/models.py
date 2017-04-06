@@ -58,7 +58,7 @@ class ArbitrajeProyectoInvestigacion(models.Model):
 
 class ArbitrajeOtraActividad(models.Model):
     actividad = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='actividad', unique=True)
+    #slug = AutoSlugField(populate_from='actividad', unique=True)
     descripcion = models.TextField(blank=True)
     dependencia = models.ForeignKey(Dependencia)
     fecha = models.DateField()
@@ -79,7 +79,7 @@ class ArbitrajeOtraActividad(models.Model):
 
 class RedAcademica(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='nombre', unique=True)
+    #slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
     clasificacion = models.CharField(max_length=20, choices=RED_ACADEMICA__CLASIFICACION)
     #regiones = models.ManyToManyField(Region, related_name='red_academica_regiones', blank=True)
@@ -105,7 +105,7 @@ class RedAcademica(models.Model):
 
 class ConvenioEntidadNoAcademica(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='nombre', unique=True)
+    #slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
     es_agradecimiento = models.BooleanField(blank=True)
     clasificacion_entidad = models.CharField(max_length=20, choices=ENTIDAD_NO_ACADEMICA__CLASIFICACION)
@@ -132,7 +132,7 @@ class ConvenioEntidadNoAcademica(models.Model):
 
 class ClasificacionServicio(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='nombre', unique=True)
+    #slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -144,13 +144,13 @@ class ClasificacionServicio(models.Model):
 
 class ServicioExternoEntidadNoAcademica(models.Model):
     nombre_servicio = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
+    #slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
     clasificacion_servicio = models.ForeignKey(ClasificacionServicio)
     descripcion = models.TextField(blank=True)
     dependencia = models.ForeignKey(Dependencia)
     clasificacion_entidad = models.CharField(max_length=20, choices=ENTIDAD_NO_ACADEMICA__CLASIFICACION)
     fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
+    fecha_fin = models.DateField(blank=True, null=True)
     incluye_financiamiento = models.BooleanField(default=False)
     usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='servicio_externo_entidad_academica_tags', blank=True)
@@ -169,7 +169,7 @@ class ServicioExternoEntidadNoAcademica(models.Model):
 
 class OtroProgramaVinculacion(models.Model):
     nombre_servicio = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
+    #slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
     fecha = models.DateField()
     tipo = models.CharField(max_length=20, choices=(('VINCULLACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
     descripcion = models.TextField()
