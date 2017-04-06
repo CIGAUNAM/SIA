@@ -6,7 +6,7 @@ from . models import Tag, ZonaPais, Pais, Estado, Ciudad, Region, Ubicacion, Ins
     User, ProgramaFinanciamiento, AreaConocimiento, AreaEspecialidad, ImpactoSocial, Cargo, Financiamiento, \
     Metodologia, Beca, Tesis, ProgramaLicenciatura, \
     ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, ProblemaNacionalConacyt, Proyecto, Nombramiento, \
-    TipoDocumento, Indice, Editorial, Coleccion, Libro, Revista
+    TipoDocumento, Indice, Editorial, Coleccion, Libro, Revista, Asignatura
 
 admin.site.register(Tag)
 admin.site.register(ZonaPais)
@@ -44,3 +44,4 @@ admin.site.register(Editorial)
 admin.site.register(Coleccion)
 admin.site.register(Libro)
 admin.site.register(Revista)
+admin.site.register(Asignatura)
