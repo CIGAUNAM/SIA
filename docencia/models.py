@@ -17,7 +17,7 @@ class Asignatura(models.Model):
         return self.asignatura
 
 
-class Curso(models.Model):
+class CursoDocencia(models.Model):
     nivel = models.CharField(max_length=30, choices=(('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
     tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
     licenciatura = models.ForeignKey(Licenciatura)
@@ -30,7 +30,7 @@ class Curso(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
-    docente = models.ForeignKey(User, related_name='curso_escolarizado_docente')
+    usuario = models.ForeignKey(User, related_name='curso_escolarizado_docente')
     otros_academicos = models.ManyToManyField(User, related_name='curso_escolarizado_otros_academicos', blank=True)
     otras_dependencias_participantes = models.ManyToManyField(User, related_name='curso_escolarizado_otras_dependencias_participantes', blank=True)
 

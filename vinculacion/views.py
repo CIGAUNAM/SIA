@@ -176,3 +176,30 @@ class ServicioExternoEntidadNoAcademicaDetalle(ObjectUpdateMixin, View):
     model = ServicioExternoEntidadNoAcademica
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
     template_name = 'main_otros.html'
+
+
+
+class OtroProgramaVinculacionJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = OtroProgramaVinculacion.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre_servicio', 'fecha', 'tipo'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class OtroProgramaVinculacionLista(ObjectCreateMixin, View):
+    form_class = OtroProgramaVinculacionForm
+    model = OtroProgramaVinculacion
+    aux = OtroProgramaVinculacionContext.contexto
+    template_name = 'main_otros.html'
+
+
+class OtroProgramaVinculacionDetalle(ObjectUpdateMixin, View):
+    form_class = OtroProgramaVinculacionForm
+    model = OtroProgramaVinculacion
+    aux = OtroProgramaVinculacionContext.contexto
+    template_name = 'main_otros.html'

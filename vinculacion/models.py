@@ -171,7 +171,7 @@ class OtroProgramaVinculacion(models.Model):
     nombre_servicio = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
     fecha = models.DateField()
-    tipo = models.CharField(max_length=20, choices=(('VINCULLACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
+    tipo = models.CharField(max_length=20, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
     descripcion = models.TextField()
     dependencias = models.ManyToManyField(Dependencia)
     resultados = models.TextField(blank=True)
