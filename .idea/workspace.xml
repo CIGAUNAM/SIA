@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apoyo_institucional/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apoyo_institucional/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apoyo_institucional/utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoyo_institucional/forms.py" afterPath="$PROJECT_DIR$/apoyo_institucional/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoyo_institucional/models.py" afterPath="$PROJECT_DIR$/apoyo_institucional/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/models.py" afterPath="$PROJECT_DIR$/docencia/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/urls.py" afterPath="$PROJECT_DIR$/docencia/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/utils.py" afterPath="$PROJECT_DIR$/docencia/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/views.py" afterPath="$PROJECT_DIR$/docencia/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoyo_institucional/urls.py" afterPath="$PROJECT_DIR$/apoyo_institucional/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoyo_institucional/utils.py" afterPath="$PROJECT_DIR$/apoyo_institucional/utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoyo_institucional/views.py" afterPath="$PROJECT_DIR$/apoyo_institucional/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" afterPath="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +36,32 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apoyo_institucional/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apoyo_institucional/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="17" column="99" lean-forward="false" selection-start-line="17" selection-start-column="99" selection-end-line="17" selection-end-column="99" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_main_sidebar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="278" column="77" lean-forward="false" selection-start-line="278" selection-start-column="77" selection-end-line="278" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -49,9 +70,21 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apoyo_institucional/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="34" column="66" lean-forward="false" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="66" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/difusion_cientifica/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/apoyo_institucional/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="44" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -71,8 +104,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apoyo_institucional/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="152" column="36" lean-forward="false" selection-start-line="152" selection-start-column="36" selection-end-line="152" selection-end-column="36" />
+            <state relative-caret-position="450">
+              <caret line="165" column="54" lean-forward="false" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -101,6 +134,7 @@
       <find>docencia</find>
       <find>request.user</find>
       <find>cueva</find>
+      <find>apoyo ins</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,12 +158,13 @@
         <option value="$PROJECT_DIR$/vinculacion/models.py" />
         <option value="$PROJECT_DIR$/docencia/models.py" />
         <option value="$PROJECT_DIR$/docencia/urls.py" />
-        <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
         <option value="$PROJECT_DIR$/docencia/utils.py" />
         <option value="$PROJECT_DIR$/docencia/views.py" />
-        <option value="$PROJECT_DIR$/apoyo_institucional/urls.py" />
-        <option value="$PROJECT_DIR$/apoyo_institucional/utils.py" />
         <option value="$PROJECT_DIR$/apoyo_institucional/forms.py" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/utils.py" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/urls.py" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/views.py" />
+        <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
         <option value="$PROJECT_DIR$/apoyo_institucional/models.py" />
       </list>
     </option>
@@ -262,6 +297,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SIA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adminlte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adminlte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -701,7 +790,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491528526127</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="empezando docencia">
+      <created>1491596877009</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1491596877009</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -750,7 +846,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py" />
     <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1214">
@@ -810,8 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/difusion_cientifica/urls.py" />
-    <entry file="file://$PROJECT_DIR$/difusion_cientifica/utils.py" />
     <entry file="file://$PROJECT_DIR$/templates/main_otros.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -823,14 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/difusion_cientifica/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="154" column="37" lean-forward="false" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1013,7 +1098,7 @@
         <state relative-caret-position="51">
           <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1025,14 +1110,6 @@
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="261" column="59" lean-forward="false" selection-start-line="261" selection-start-column="59" selection-end-line="261" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,28 +1157,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apoyo_institucional/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apoyo_institucional/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/difusion_cientifica/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="39" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1109,17 +1188,63 @@
     <entry file="file://$PROJECT_DIR$/apoyo_institucional/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="44" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apoyo_institucional/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="66" lean-forward="false" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apoyo_institucional/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" column="99" lean-forward="false" selection-start-line="17" selection-start-column="99" selection-end-line="17" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apoyo_institucional/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="278" column="77" lean-forward="false" selection-start-line="278" selection-start-column="77" selection-end-line="278" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apoyo_institucional/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="152" column="36" lean-forward="false" selection-start-line="152" selection-start-column="36" selection-end-line="152" selection-end-column="36" />
+        <state relative-caret-position="450">
+          <caret line="165" column="54" lean-forward="false" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="54" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

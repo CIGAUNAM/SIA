@@ -7,10 +7,30 @@ from django import forms
 class CargoAcademicoAdministrativoForm(forms.ModelForm):
     class Meta:
         model = CargoAcademicoAdministrativo
-        exclude = ['tags', ]
-
-
-class PrologoLibroForm(forms.ModelForm):
-    class Meta:
-        model = PrologoLibro
         exclude = ['usuario', 'tags', ]
+
+
+class RepresentanteAnteOrganoColegiadoForm(forms.ModelForm):
+    class Meta:
+        model = RepresentanteAnteOrganoColegiado
+        exclude = ['usuario', 'tags', ]
+
+
+class ComisionAcademicaForm(forms.ModelForm):
+    class Meta:
+        model = ComisionAcademica
+        exclude = ['usuario', 'tags', ]
+
+
+class ApoyoTecnicoForm(forms.ModelForm):
+    class Meta:
+        model = ApoyoTecnico
+        exclude = ['usuario', 'tags', ]
+
+
+class ApoyoOtraActividadForm(forms.ModelForm):
+    class Meta:
+        model = ApoyoTecnico
+        exclude = ['usuario', 'tags', ]
+
+
