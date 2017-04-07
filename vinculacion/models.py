@@ -35,6 +35,7 @@ class ArbitrajePublicacionAcademica(models.Model):
         ordering = ['-fecha_dictamen']
         verbose_name = 'Arbitraje en publicaciones académicas'
         verbose_name_plural = 'Arbitrajes en publicaciones académicas'
+        unique_together = ['usuario', 'fecha_dictamen']
 
 
 class ArbitrajeProyectoInvestigacion(models.Model):
