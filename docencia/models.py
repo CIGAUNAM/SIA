@@ -33,3 +33,4 @@ class CursoDocencia(models.Model):
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
 
+
