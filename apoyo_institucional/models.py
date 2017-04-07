@@ -64,7 +64,7 @@ class CargoAcademicoAdministrativo(models.Model):
         return "[ {} : {} ] : {} : {} : {} : {}".format(self.user, self.cargo, self.dependencia.dependencia, self.dependencia.institucion, self.cargo_inicio, self.cargo_fin)
     class Meta:
         verbose_name_plural = 'Cargos Académico-Administrativos'
-        unique_together = ('cargo', 'user', 'dependencia', 'cargo_inicio')
+        unique_together = ('cargo', 'usuario', 'dependencia', 'cargo_inicio')
         ordering = ['-cargo_inicio']
         get_latest_by = ['user', 'cargo']
 
@@ -82,7 +82,7 @@ class RepresentanteAnteOrganoColegiado(models.Model):
         return "{} : {} : {} : {} - {}".format(self.representante, self.representacion, self.ante, self.cargo_inicio, self.cargo_fin)
     class Meta:
         verbose_name_plural = 'Representantes Ante Organos Colegiados'
-        unique_together = ('representante', 'representacion', 'cargo_inicio')
+        unique_together = ('usuario', 'representacion', 'cargo_inicio')
         ordering = ['-cargo_inicio']
 
 
@@ -102,7 +102,7 @@ class ComisionAcademica(models.Model):
         return "[{}] : {} : {} : {}".format(self.user, self.comision_academica, self.fecha_inicio, self.fecha_fin)
     class Meta:
         verbose_name_plural = 'Comisiones Académicas'
-        unique_together = ('comision_academica', 'user', 'fecha_inicio')
+        unique_together = ('comision_academica', 'usuario', 'fecha_inicio')
         ordering = ['fecha_inicio']
         get_latest_by = ['user', 'comision_academica']
 
@@ -144,7 +144,7 @@ class ApoyoTecnico(models.Model):
         return "[{}] : {} : {} : {}".format(self.user, self.apoyo_tecnico, self.apoyo_inicio, self.apoyo_fin)
     class Meta:
         verbose_name_plural = 'Apoyos de Técnicos'
-        unique_together = ('apoyo_tecnico', 'user', 'dependencia', 'apoyo_inicio')
+        unique_together = ('apoyo_tecnico', 'usuario', 'dependencia', 'apoyo_inicio')
         ordering = ['-apoyo_inicio']
         get_latest_by = ['user', 'apoyo_tecnico']
 
@@ -163,6 +163,6 @@ class ApoyoOtraActividad(models.Model):
         return "[{}] : {} : {} : {}".format(self.user, self.apoyo_actividad, self.apoyo_inicio, self.apoyo_fin)
     class Meta:
         verbose_name_plural = 'Apoyos en Otras Actividades'
-        unique_together = ('apoyo_actividad', 'user', 'dependencia', 'apoyo_inicio')
+        unique_together = ('apoyo_actividad', 'usuario', 'dependencia', 'apoyo_inicio')
         ordering = ['-apoyo_inicio']
         get_latest_by = ['user', 'apoyo_actividad']
