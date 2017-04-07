@@ -52,12 +52,12 @@ class OrganoColegiado(models.Model):
 
 class CargoAcademicoAdministrativo(models.Model):
     cargo = models.ForeignKey(Cargo)
-    user = models.ForeignKey(User)
     descripcion = models.TextField(blank=True)
     dependencia = models.ForeignKey(Dependencia)
     cargo_inicio = models.DateField(auto_now=False)
     cargo_fin = models.DateField(auto_now=False)
-    slug = AutoSlugField(populate_from='cargo', unique=True)
+    #slug = AutoSlugField(populate_from='cargo', unique=True)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='cargo_academico_administrativo_tags', blank=True)
 
     def __str__(self):
@@ -70,12 +70,12 @@ class CargoAcademicoAdministrativo(models.Model):
 
 
 class RepresentanteAnteOrganoColegiado(models.Model):
-    representante = models.ForeignKey(User)
     representacion = models.ForeignKey(Representacion)
-    ante = models.ForeignKey(Departamento)
+    ante = models.ForeignKey(Dependencia)
     descripcion = models.TextField(blank=True)
     cargo_inicio = models.DateField(auto_now=False)
     cargo_fin = models.DateField(auto_now=False)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='representante_ante_organo_colegiado_tags', blank=True)
 
     def __str__(self):
@@ -88,14 +88,14 @@ class RepresentanteAnteOrganoColegiado(models.Model):
 
 class ComisionAcademica(models.Model):
     comision_academica = models.ForeignKey(Comision)
-    slug = AutoSlugField(populate_from='comision_academica', unique=True, max_length=255)
+    #slug = AutoSlugField(populate_from='comision_academica', unique=True, max_length=255)
     descripcion = models.TextField(blank=True)
-    user = models.ForeignKey(User)
     es_evaluacion = models.BooleanField(default=False)
     dependencias = models.ManyToManyField(Dependencia)
     ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='comision_academica_tags', blank=True)
 
     def __str__(self):
@@ -131,13 +131,13 @@ class ComisionEvaluacion(models.Model):
 class ApoyoTecnico(models.Model):
     apoyo_tecnico = models.ForeignKey(Actividad)
     descripcion = models.TextField()
-    user = models.ForeignKey(User)
     dependencia = models.ForeignKey(Dependencia)
     ubicacion = models.ForeignKey(Ubicacion)
     apoyo_inicio = models.DateField(auto_now=False)
     apoyo_fin = models.DateField(auto_now=False)
     tags = models.ManyToManyField(Tag)
-    slug = AutoSlugField(populate_from='apoyo_tecnico', unique=True)
+    #slug = AutoSlugField(populate_from='apoyo_tecnico', unique=True)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='apoyo_tecnico_tags', blank=True)
 
     def __str__(self):
@@ -151,12 +151,12 @@ class ApoyoTecnico(models.Model):
 class ApoyoOtraActividad(models.Model):
     apoyo_actividad = models.ForeignKey(Actividad)
     descripcion = models.TextField()
-    user = models.ForeignKey(User)
     dependencia = models.ForeignKey(Dependencia)
     ubicacion = models.ForeignKey(Ubicacion)
     apoyo_inicio = models.DateField(auto_now=False)
     apoyo_fin = models.DateField(auto_now=False)
-    slug = AutoSlugField(populate_from='apoyo_otra_actividad_tags', unique=True)
+    #slug = AutoSlugField(populate_from='apoyo_otra_actividad_tags', unique=True)
+    usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='apoyo_otra_actividad_tags', blank=True)
 
     def __str__(self):
