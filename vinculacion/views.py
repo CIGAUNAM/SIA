@@ -15,7 +15,7 @@ class ArbitrajePublicacionAcademicaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ArbitrajePublicacionAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('fecha_dictamen',))
+                                         fields=('fecha_dictamen'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

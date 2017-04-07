@@ -11,9 +11,9 @@ from vinculacion.models import RedAcademica
 class CursoDocencia(models.Model):
     nivel = models.CharField(max_length=30, choices=(('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
     tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
-    licenciatura = models.ForeignKey(ProgramaLicenciatura, blank=True)
-    maestria = models.ForeignKey(ProgramaMaestria, blank=True)
-    doctorado = models.ForeignKey(ProgramaDoctorado, blank=True)
+    licenciatura = models.ForeignKey(ProgramaLicenciatura, blank=True, null=True)
+    maestria = models.ForeignKey(ProgramaMaestria, blank=True, null=True)
+    doctorado = models.ForeignKey(ProgramaDoctorado, blank=True, null=True)
     asignatura = models.ForeignKey(Asignatura)
     modalidad = models.CharField(max_length=30, choices=(('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea')))
     #nivel_participacion = models.CharField(max_length=30, choices=(('TITULAR', 'Titular / Responsable'), ('COLABORADOR', 'Colaborador / Invitado')))
@@ -22,8 +22,8 @@ class CursoDocencia(models.Model):
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
     usuario = models.ForeignKey(User, related_name='curso_escolarizado_usuario')
-    usuarios = models.ManyToManyField(User, related_name='curso_escolarizado_usuarioa', blank=True)
-    otras_dependencias_participantes = models.ManyToManyField(User, related_name='curso_escolarizado_otras_dependencias_participantes', blank=True)
+    usuarios = models.ManyToManyField(User, related_name='curso_escolarizado_usuarioa', blank=True, verbose)
+    otras_dependencias_participantes = models.ManyToManyField(Dependencia, related_name='curso_escolarizado_otras_dependencias_participantes', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.asignatura, str(self.dependencia.dependencia), self.fecha_inicio)
