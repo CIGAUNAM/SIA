@@ -60,3 +60,29 @@ class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
     aux = RepresentacionOrganoColegiadoContext.contexto
     template_name = 'main_otros.html'
 
+
+class ComisionAcademicaJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ComisionAcademica.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('comision_academica', 'ubicacion', 'cargo_inicio', 'cargo_fin'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ComisionAcademicaLista(ObjectCreateMixin, View):
+    form_class = ComisionAcademicaForm
+    model = ComisionAcademica
+    aux = ComisionAcademicaContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ComisionAcademicaDetalle(ObjectUpdateMixin, View):
+    form_class = ComisionAcademicaForm
+    model = ComisionAcademica
+    aux = ComisionAcademicaContext.contexto
+    template_name = 'main_otros.html'
+
