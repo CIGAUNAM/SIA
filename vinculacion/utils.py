@@ -12,7 +12,7 @@ class ArbitrajePublicacionAcademicaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
-                'titulos_tabla': ['Fecha']}
+                'titulos_tabla': ['Fecha',]}
 
 
     tabla_mios =  '<script>\n' \
@@ -30,7 +30,7 @@ class ArbitrajePublicacionAcademicaContext:
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.fecha_dictamen + "</a>");\n' \
                                         '}\n' \
-                                    '},\n' \
+                                    '}\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
