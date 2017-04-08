@@ -11,4 +11,8 @@ urlpatterns = [
     url(r'^representaciones-organos-colegiados/json/', RepresentacionOrganoColegiadoJSON.as_view(), name='representacion_organo_colegiado_lista__json'),
     url(r'^representaciones-organos-colegiados/$', RepresentacionOrganoColegiadoLista.as_view(), name='representacion_organo_colegiado_lista'),
     url(r'^representaciones-organos-colegiados/(?P<pk>[\w\-]+)/$', RepresentacionOrganoColegiadoDetalle.as_view(), name='representacion_organo_colegiado_detalle'),
+
+    url(r'^comisiones-academicas/json/', ComisionAcademicaJSON.as_view(), name='comision_academica_lista__json'),
+    url(r'^comisiones-academicas/$', ComisionAcademicaLista.as_view(), name='comision_academica_lista'),
+    url(r'^comisiones-academicas/(?P<pk>[\w\-]+)/$', ComisionAcademicaDetalle.as_view(), name='comision_academica_detalle'),
 ]

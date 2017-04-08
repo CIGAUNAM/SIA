@@ -108,11 +108,11 @@ class RepresentacionOrganoColegiado(models.Model):
 
 class ComisionAcademica(models.Model):
     comision_academica = models.ForeignKey(Comision)
-    ##slug = AutoSlugField(populate_from='comision_academica', unique=True, max_length=255)
+    #slug = AutoSlugField(populate_from='comision_academica', unique=True, max_length=255)
     descripcion = models.TextField(blank=True)
     es_evaluacion = models.BooleanField(default=False)
     dependencias = models.ManyToManyField(Dependencia)
-    ubicacion = models.ForeignKey(Ubicacion)
+    #ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User)
@@ -130,33 +130,12 @@ class ComisionAcademica(models.Model):
         ordering = ['fecha_inicio']
         get_latest_by = ['user', 'comision_academica']
 
-"""
-class ComisionEvaluacion(models.Model):
-    comision_evaluacion = models.ForeignKey(Comision)
-    descripcion = models.TextField()
-    user = models.ForeignKey(User)
-    dependencia = models.ForeignKey(Dependencia)
-    ubicacion = models.ForeignKey(Ubicacion)
-    es_academica = models.BooleanField(default=False)
-    comision_inicio = models.DateField(auto_now=False)
-    comision_fin = models.DateField(auto_now=False)
-    tags = models.ManyToManyField(Tag)
-    #slug = AutoSlugField(populate_from='comision_evaluacion', unique=True)
-
-    def __str__(self):
-        return "[{}] : {} : {} : {}".format(self.user, self.comision_evaluacion, self.comision_inicio, self.comision_fin)
-    class Meta:
-        verbose_name_plural = 'Comisiones de Evaluación'
-        unique_together = ('comision_evaluacion', 'user', 'dependencia', 'comision_inicio')
-        ordering = ['-comision_inicio']
-        get_latest_by = ['user', 'comision_evaluacion']
-"""
 
 class ApoyoTecnico(models.Model):
     apoyo_tecnico = models.ForeignKey(Actividad)
     descripcion = models.TextField()
     dependencia = models.ForeignKey(Dependencia)
-    ubicacion = models.ForeignKey(Ubicacion)
+    #ubicacion = models.ForeignKey(Ubicacion)
     apoyo_inicio = models.DateField(auto_now=False)
     apoyo_fin = models.DateField(auto_now=False)
     tags = models.ManyToManyField(Tag)
