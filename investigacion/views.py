@@ -219,3 +219,12 @@ class ProyectoInvestigacionDetalle(ObjectUpdateVarMixin, View):
     model = ProyectoInvestigacion
     aux = ProyectoInvestigacionContext.contexto
     template_name = 'main_otros.html'
+
+    def post(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        bound_form = self.form_class(request.POST, instance=obj)
+        if bound_form.is_valid():
+            det_obj = bound_form.save()
+            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk)) #corregir el redirect
+        else:
+            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
