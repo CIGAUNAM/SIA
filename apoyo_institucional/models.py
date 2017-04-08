@@ -20,6 +20,7 @@ class Comision(models.Model):
         verbose_name_plural = 'Comisiones'
 
 
+
 class Actividad(models.Model):
     actividad = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='actividad', unique=True)
