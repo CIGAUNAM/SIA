@@ -33,3 +33,30 @@ class CargoAcademicoAdministrativoDetalle(ObjectUpdateMixin, View):
     model = CargoAcademicoAdministrativo
     aux = CargoAcademicoAdministrativoContext.contexto
     template_name = 'main_otros.html'
+
+
+class RepresentacionOrganoColegiadoJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = RepresentacionOrganoColegiado.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('representacion', 'ante', 'cargo_inicio', 'cargo_fin'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class RepresentacionOrganoColegiadoLista(ObjectCreateMixin, View):
+    form_class = RepresentacionOrganoColegiadoForm
+    model = RepresentacionOrganoColegiado
+    aux = RepresentacionOrganoColegiadoContext.contexto
+    template_name = 'main_otros.html'
+
+
+class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
+    form_class = RepresentacionOrganoColegiadoForm
+    model = RepresentacionOrganoColegiado
+    aux = RepresentacionOrganoColegiadoContext.contexto
+    template_name = 'main_otros.html'
+

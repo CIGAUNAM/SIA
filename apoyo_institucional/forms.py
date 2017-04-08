@@ -10,9 +10,9 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
         exclude = ['usuario', 'tags', ]
 
 
-class RepresentanteAnteOrganoColegiadoForm(forms.ModelForm):
+class RepresentacionOrganoColegiadoForm(forms.ModelForm):
     class Meta:
-        model = RepresentanteAnteOrganoColegiado
+        model = RepresentacionOrganoColegiado
         exclude = ['usuario', 'tags', ]
 
 
