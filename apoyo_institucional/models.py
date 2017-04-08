@@ -133,7 +133,7 @@ class ComisionAcademica(models.Model):
 
 class ApoyoTecnico(models.Model):
     apoyo_tecnico = models.ForeignKey(Actividad)
-    descripcion = models.TextField()
+    descripcion = models.TextField(blank=True)
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
     apoyo_inicio = models.DateField(auto_now=False)
