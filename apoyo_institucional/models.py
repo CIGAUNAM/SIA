@@ -131,6 +131,7 @@ class ComisionAcademica(models.Model):
         get_latest_by = ['user', 'comision_academica']
 
 
+
 class ApoyoTecnico(models.Model):
     apoyo_tecnico = models.ForeignKey(Actividad)
     descripcion = models.TextField(blank=True)
