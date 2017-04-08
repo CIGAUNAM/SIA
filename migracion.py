@@ -14,7 +14,7 @@ from django.conf import settings
 #from autoslug import AutoSlugField
 from nucleo.models import *
 from apoyo_institucional.models import Actividad, Comision, Representacion, CargoAcademicoAdministrativo, \
-    RepresentanteAnteOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
+    RepresentacionOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
 from desarrollo_tecnologico.models import TipoDesarrollo, Licencia, DesarrolloTecnologico
 from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, OrganizacionEventoAcademico, \
     ParticipacionEventoAcademico
