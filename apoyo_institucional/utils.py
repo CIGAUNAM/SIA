@@ -96,7 +96,7 @@ class ComisionAcademicaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
-                'titulos_tabla': ['Comisión', 'Ubicación', 'Inicio', 'Fin']}
+                'titulos_tabla': ['Comisión', 'Inicio', 'Fin']}
 
 
     tabla_mios =  '<script>\n' \
@@ -115,9 +115,8 @@ class ComisionAcademicaContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.comision_academica + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.ubicacion"},\n' \
-                                    '{"data": "fields.cargo_inicio"},\n' \
-                                    '{"data": "fields.cargo_fin"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.fecha_fin"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -158,8 +157,8 @@ class ApoyoTecnicoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.cargo_inicio"},\n' \
-                                    '{"data": "fields.cargo_fin"},\n' \
+                                    '{"data": "fields.apoyo_inicio"},\n' \
+                                    '{"data": "fields.apoyo_fin"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

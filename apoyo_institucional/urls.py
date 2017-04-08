@@ -15,4 +15,8 @@ urlpatterns = [
     url(r'^comisiones-academicas/json/', ComisionAcademicaJSON.as_view(), name='comision_academica_lista__json'),
     url(r'^comisiones-academicas/$', ComisionAcademicaLista.as_view(), name='comision_academica_lista'),
     url(r'^comisiones-academicas/(?P<pk>[\w\-]+)/$', ComisionAcademicaDetalle.as_view(), name='comision_academica_detalle'),
+
+    url(r'^apoyos-tecnicos/json/', ApoyoTecnicoJSON.as_view(), name='apoyo_tecnico_lista__json'),
+    url(r'^apoyos-tecnicos/$', ApoyoTecnicoLista.as_view(), name='apoyo_tecnico_lista'),
+    url(r'^apoyos-tecnicos/(?P<pk>[\w\-]+)/$', ApoyoTecnicoDetalle.as_view(), name='apoyo_tecnico_detalle'),
 ]

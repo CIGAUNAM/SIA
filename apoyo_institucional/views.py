@@ -67,7 +67,7 @@ class ComisionAcademicaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ComisionAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('comision_academica', 'ubicacion', 'cargo_inicio', 'cargo_fin'))
+                                         fields=('comision_academica', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -85,4 +85,31 @@ class ComisionAcademicaDetalle(ObjectUpdateMixin, View):
     model = ComisionAcademica
     aux = ComisionAcademicaContext.contexto
     template_name = 'main_otros.html'
+
+
+class ApoyoTecnicoJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ApoyoTecnico.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('apoyo_tecnico', 'dependencia', 'apoyo_inicio', 'apoyo_fin'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ApoyoTecnicoLista(ObjectCreateMixin, View):
+    form_class = ApoyoTecnicoForm
+    model = ApoyoTecnico
+    aux = ApoyoTecnicoContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ApoyoTecnicoDetalle(ObjectUpdateMixin, View):
+    form_class = ApoyoTecnicoForm
+    model = ApoyoTecnico
+    aux = ApoyoTecnicoContext.contexto
+    template_name = 'main_otros.html'
+
 
