@@ -11,7 +11,7 @@ CLASIFICACION_PROYECTO = getattr(settings, 'CLASIFICACION_PROYECTO', (('BASICO',
 ORGANIZACION_PROYECTO = getattr(settings, 'ORGANIZACION_PROYECTO', (('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo')))
 MODALIDAD_PROYECTO = getattr(settings, 'MODALIDAD_PROYECTO', (('DISCIPLINARIO', 'Disciplinario'), ('MULTIDISCIPLINARIO', 'Multidisciplinario'), ('INTERDISCIPLINARIO', 'Interisciplinario'), ('TRANSDISCIPLINARIO', 'Transdisciplinario'), ('OTRA', 'Otra')))
 FINANCIAMIENTO_UNAM = getattr(settings, 'FINANCIAMIENTO_UNAM', (('ASIGNADO', 'Presupuesto asignado a la entidad'), ('CONCURSADO', 'Presupuesto concursado por la entidad'), ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'), ('OTRO', 'Otro')))
-FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_UNAM', (('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero')))
+FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_UNAM', (('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'), ('OTRO', 'Otro')))
 FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO)))
 CARGO__TIPO_CARGO  = getattr(settings, 'CARGO__TIPO_CARGO', (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo')))
 GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
@@ -163,13 +163,13 @@ class User(AbstractUser):
     ingreso_entidad = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return "{} : {} {} : {}".format(self.username,  self.first_name, self.last_name, self.rfc)
+        return "{} {} ".format(self.first_name, self.last_name)
 
     def natural_key(self):
-        return (self.username)
+        return "{} {} ".format(self.first_name, self.last_name)
 
     class Meta:
-        ordering = ['last_name']
+        ordering = ['first_name', 'last_name']
 
 
 class Institucion(models.Model):
@@ -322,7 +322,7 @@ class ImpactoSocial(models.Model):
         verbose_name = 'Impacto social'
         verbose_name_plural = 'Impactos sociales'
 
-
+"""
 class ProgramaFinanciamiento(models.Model):
     programa_financiamiento = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='programa_financiamiento', unique=True)
@@ -336,17 +336,18 @@ class ProgramaFinanciamiento(models.Model):
 
     class Meta:
         ordering = ['programa_financiamiento']
-
+"""
 
 class Financiamiento(models.Model):
+    programa = models.CharField(max_length=255, unique=True)
     tipo_financiamiento = models.CharField(max_length=80, choices=FINANCIAMIENTO_TIPO)
     descripcion = models.TextField(blank=True)
-    programas_financiamiento = models.ManyToManyField(ProgramaFinanciamiento, related_name='financiamiento_programas_financiamiento', blank=True)
+    #programas_financiamiento = models.ManyToManyField(ProgramaFinanciamiento, related_name='financiamiento_programas_financiamiento', blank=True)
     dependencias_financiamiento = models.ManyToManyField(Dependencia, related_name='financiamiento_dependencias_financiamiento', blank=True)
-    clave_proyecto = models.CharField(max_length=255)
+    #clave_proyecto = models.CharField(max_length=255)
 
     def __str__(self):
-        return "{} : {}".format(self.financiamiento, self.clave_proyecto)
+        return self.programa
 
     def natural_key(self):
         return (self.tipo_financiamiento)

@@ -113,3 +113,29 @@ class ApoyoTecnicoDetalle(ObjectUpdateMixin, View):
     template_name = 'main_otros.html'
 
 
+class ApoyoOtraActividadJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ApoyoOtraActividad.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('apoyo_actividad', 'dependencia', 'apoyo_inicio', 'apoyo_fin'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ApoyoOtraActividadLista(ObjectCreateMixin, View):
+    form_class = ApoyoOtraActividadForm
+    model = ApoyoOtraActividad
+    aux = ApoyoOtraActividadContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ApoyoOtraActividadDetalle(ObjectUpdateMixin, View):
+    form_class = ApoyoOtraActividadForm
+    model = ApoyoOtraActividad
+    aux = ApoyoOtraActividadContext.contexto
+    template_name = 'main_otros.html'
+
+

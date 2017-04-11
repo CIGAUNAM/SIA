@@ -93,12 +93,6 @@ class ImpactoSocialSerializer(serializers.ModelSerializer):
         fields = ('id', 'impacto_social', 'descripcion')
 
 
-class ProgramaFinanciamientoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProgramaFinanciamiento
-        fields = ('id', 'programa_financiamiento', 'descripcion')
-
-
 class FinanciamientoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Financiamiento

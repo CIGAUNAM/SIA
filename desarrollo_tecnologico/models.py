@@ -2,7 +2,7 @@ from django.db import models
 
 #from django.contrib.auth.models import User
 from autoslug import AutoSlugField
-from nucleo.models import User, Tag, Ubicacion, Region, Dependencia, ProgramaFinanciamiento, ImpactoSocial, Proyecto, Indice
+from nucleo.models import User, Tag, Ubicacion, Region, Dependencia, ImpactoSocial, Proyecto, Indice
 
 # Create your models here.
 

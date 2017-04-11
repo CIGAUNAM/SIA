@@ -19,4 +19,8 @@ urlpatterns = [
     url(r'^apoyos-tecnicos/json/', ApoyoTecnicoJSON.as_view(), name='apoyo_tecnico_lista__json'),
     url(r'^apoyos-tecnicos/$', ApoyoTecnicoLista.as_view(), name='apoyo_tecnico_lista'),
     url(r'^apoyos-tecnicos/(?P<pk>[\w\-]+)/$', ApoyoTecnicoDetalle.as_view(), name='apoyo_tecnico_detalle'),
+
+    url(r'^otras-actividades/json/', ApoyoOtraActividadJSON.as_view(), name='apoyo_otra_actividad_lista__json'),
+    url(r'^otras-actividades/$', ApoyoOtraActividadLista.as_view(), name='apoyo_otra_actividad_lista'),
+    url(r'^otras-actividades/(?P<pk>[\w\-]+)/$', ApoyoOtraActividadDetalle.as_view(), name='apoyo_otra_actividad_detalle'),
 ]
