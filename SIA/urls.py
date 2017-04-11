@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^vinculacion/', include('vinculacion.urls')),
     url(r'^docencia/', include('docencia.urls')),
     url(r'^apoyo-institucional/', include('apoyo_institucional.urls')),
+    url(r'^movilidad-academica/', include('movilidad_academica.urls')),
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),

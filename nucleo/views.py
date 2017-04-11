@@ -152,23 +152,13 @@ class ImpactoSocialDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ImpactoSocialSerializer
 
 
-class ProgramaFinanciamientoList(generics.ListCreateAPIView):
-    queryset = ProgramaFinanciamiento.objects.all()
-    serializer_class = ProgramaFinanciamientoSerializer
-
-class ProgramaFinanciamientoDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = ProgramaFinanciamiento.objects.all()
-    serializer_class = ProgramaFinanciamientoSerializer
-
-
 class FinanciamientoList(generics.ListCreateAPIView):
     queryset = Financiamiento.objects.all()
     serializer_class = FinanciamientoSerializer
 
 class FinanciamientoDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = ProgramaFinanciamiento.objects.all()
+    queryset = Financiamiento.objects.all()
     serializer_class = FinanciamientoSerializer
 
 

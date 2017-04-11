@@ -134,7 +134,7 @@ class ComisionAcademica(models.Model):
 
 class ApoyoTecnico(models.Model):
     apoyo_tecnico = models.ForeignKey(Actividad)
-    descripcion = models.TextField(blank=True)
+    descripcion = models.TextField()
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
     apoyo_inicio = models.DateField(auto_now=False)
@@ -156,11 +156,12 @@ class ApoyoTecnico(models.Model):
         ordering = ['-apoyo_inicio']
         get_latest_by = ['user', 'apoyo_tecnico']
 
+
 class ApoyoOtraActividad(models.Model):
     apoyo_actividad = models.ForeignKey(Actividad)
     descripcion = models.TextField()
     dependencia = models.ForeignKey(Dependencia)
-    ubicacion = models.ForeignKey(Ubicacion)
+    #ubicacion = models.ForeignKey(Ubicacion)
     apoyo_inicio = models.DateField(auto_now=False)
     apoyo_fin = models.DateField(auto_now=False)
     ##slug = AutoSlugField(populate_from='apoyo_otra_actividad_tags', unique=True)

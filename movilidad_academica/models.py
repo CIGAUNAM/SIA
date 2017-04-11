@@ -8,9 +8,9 @@ from vinculacion.models import RedAcademica
 # Create your models here.
 
 
-class Vinculacion(models.Model):
+class MovilidadAcademica(models.Model):
     tipo = models.CharField(max_length=30, choices=(('INVITACION', 'Invitación'), ('ESTANCIA', 'Estancia de colaboración'), ('SABATICO', 'Sabático')))
-    academico = models.ForeignKey(User)
+    academico = models.ForeignKey(User, related_name='movilidad_academica_academico')
     descripcion = models.TextField(blank=True)
     dependencia = models.ForeignKey(Dependencia)
     actividades = models.TextField()
@@ -19,8 +19,9 @@ class Vinculacion(models.Model):
     intercambio_unam = models.BooleanField(default=False)
     financiamiento = models.ForeignKey(Financiamiento)
     redes_academicas = models.ManyToManyField(RedAcademica, related_name='vinculacion_redes_academicas', blank=True)
-    proyectos_investigacion = models.ManyToManyField(Proyecto, related_name='vinculacion_proyectos_investigacion', blank=True)
-    tags = models.ForeignKey(Tag, related_name='vinculacion_tags')
+    proyecto_investigacion = models.ForeignKey(Proyecto, blank=True, null=True)
+    usuario = models.ForeignKey(User, related_name='movilidad_academica_usuario')
+    tags = models.ManyToManyField(Tag, related_name='vinculacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(str(self.academico), str(self.dependencia))
@@ -31,6 +32,7 @@ class Vinculacion(models.Model):
         verbose_name_plural = 'Actividades de vinculación'
 
 
+"""
 class Invitado(models.Model):
     invitado = models.ForeignKey(User)
     descripcion = models.TextField(blank=True)
@@ -41,7 +43,8 @@ class Invitado(models.Model):
     intercambio_unam = models.BooleanField(default=False)
     financiamiento = models.ForeignKey(Financiamiento)
     redes_academicas = models.ManyToManyField(RedAcademica, related_name='invitado_redes_academicas', blank=True)
-    proyectos_investigacion = models.ManyToManyField(Proyecto, related_name='invitado_proyectos_investigacion', blank=True)
+    proyecto_investigacion = models.ForeignKey(Proyecto, blank=True, null=True)
+    usuario = models.ForeignKey(User)
     tags = models.ForeignKey(Tag, related_name='invitado_tags')
 
     def __str__(self):
@@ -65,6 +68,7 @@ class EstanciaColaboracion(models.Model):
     convocatoria_financiamiento_unam = models.CharField(max_length=255, blank=True)
     redes_academicas = models.ManyToManyField(RedAcademica, related_name='estancia_colaboracion_academicas', blank=True)
     proyectos_investigacion = models.ManyToManyField(Proyecto, related_name='estancia_colaboracion_investigacion', blank=True)
+    usuario = models.ForeignKey(User)
     tags = models.ForeignKey(Tag, related_name='estancia_tags')
 
     def __str__(self):
@@ -74,3 +78,4 @@ class EstanciaColaboracion(models.Model):
         ordering = ['-fecha_inicio']
         verbose_name = 'Estancia de colaboración'
         verbose_name_plural = 'Estancias de colaboración'
+"""

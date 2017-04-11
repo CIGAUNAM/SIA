@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 
 from . models import Tag, ZonaPais, Pais, Estado, Ciudad, Region, Ubicacion, Institucion, Dependencia, Departamento, \
-    User, ProgramaFinanciamiento, AreaConocimiento, AreaEspecialidad, ImpactoSocial, Cargo, Financiamiento, \
+    User, AreaConocimiento, AreaEspecialidad, ImpactoSocial, Cargo, Financiamiento, \
     Metodologia, Beca, Tesis, ProgramaLicenciatura, \
     ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, ProblemaNacionalConacyt, Proyecto, Nombramiento, \
     TipoDocumento, Indice, Editorial, Coleccion, Libro, Revista, Asignatura
@@ -19,7 +19,6 @@ admin.site.register(Institucion)
 admin.site.register(Dependencia)
 admin.site.register(Departamento)
 admin.site.register(User)
-admin.site.register(ProgramaFinanciamiento)
 admin.site.register(AreaConocimiento)
 admin.site.register(AreaEspecialidad)
 admin.site.register(ImpactoSocial)

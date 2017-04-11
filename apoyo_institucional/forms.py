@@ -30,7 +30,7 @@ class ApoyoTecnicoForm(forms.ModelForm):
 
 class ApoyoOtraActividadForm(forms.ModelForm):
     class Meta:
-        model = ApoyoTecnico
+        model = ApoyoOtraActividad
         exclude = ['usuario', 'tags', ]
 
 
