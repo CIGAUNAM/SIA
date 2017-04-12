@@ -15,12 +15,11 @@ class InvitadoJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = MovilidadAcademica.objects.filter(usuario=21, tipo='INVITACION').values('academico__first_name',
+            items = MovilidadAcademica.objects.filter(usuario=usuarioid, tipo='INVITACION').only('academico__first_name',
                                                                                             'academico__last_name',
                                                                                             'dependencia__ciudad__estado__pais__pais',
                                                                                             'fecha_inicio')
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('academico', 'dependencia', 'fecha_inicio', 'dependencia.ciudad.estado.pais'))
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
