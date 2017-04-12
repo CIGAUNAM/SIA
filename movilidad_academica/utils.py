@@ -26,13 +26,12 @@ class InvitadoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.academico",\n' \
+                                        '"data": "fields.academico__first_name",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.academico + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.academico__first_name + + oData.fields.academico__last_name"</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.dependencia.pais"},\n' \
+                                    '{"data": "fields.dependencia__ciudad__estado__pais__pais"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
                                 ']\n' \
                             '});\n' \
