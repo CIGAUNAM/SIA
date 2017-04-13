@@ -10,22 +10,34 @@ from django.db.models import Q
 
 # Create your views here.
 
+
 class InvitadoJSON(View):
     otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = MovilidadAcademica.objects.filter(usuario=usuarioid, tipo='INVITACION').only('academico__first_name',
-                                                                                            'academico__last_name',
-                                                                                            'dependencia__ciudad__estado__pais__pais',
-                                                                                            'fecha_inicio')
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True)
+            items = MovilidadAcademica.objects.filter(usuario=usuarioid, tipo='INVITACION').values('pk', 'academico__first_name', 'academico__last_name', 'dependencia__dependencia', 'dependencia__ciudad__estado__pais__pais', 'fecha_inicio')
+            for i in items:
+                i['fecha_inicio'] = str(i['fecha_inicio'])
+
+            json = '['
+            for i in items:
+                json += '{"model": "movilidad_academica.movilidadacademica", "pk": '
+                json += str(i['pk'])
+                json += ', "fields": {"academico": '
+                json += '"' + str(i['academico__first_name']) + ' ' + str(i['academico__last_name']) + '", '
+                json += '"dependencia": ' + '"' + str(i['dependencia__dependencia']) + '", '
+                json += '"pais": ' + '"' + str(i['dependencia__ciudad__estado__pais__pais']) + '", '
+                json += '"fecha_inicio": ' + '"' + str(i['fecha_inicio']) + '"'
+                json += '}}, '
+            json += ']'
+            json = json.replace('}}, ]', '}}]')
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class InvitadoLista(ObjectCreateMixin, View):
+class MovilidadLista(ObjectCreateMixin, View):
     form_class = MovilidadAcademicaForm
     model = MovilidadAcademica
     aux = InvitadoContext.contexto
