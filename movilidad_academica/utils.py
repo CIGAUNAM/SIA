@@ -1,7 +1,7 @@
 url_categoria = 'movilidad-academica'
 
 
-class InvitadoContext:
+class MovilidadContext:
     obj = 'Invitado'
     objs = 'Invitados'
     url_seccion = 'invitados'

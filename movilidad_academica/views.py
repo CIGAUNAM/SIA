@@ -11,14 +11,14 @@ from django.db.models import Q
 # Create your views here.
 
 
-class InvitadoJSON(View):
-    otros = False
+class MovilidadJSON(View):
+    tipo = None
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = MovilidadAcademica.objects.filter(usuario=usuarioid, tipo='INVITACION').values('pk', 'academico__first_name', 'academico__last_name', 'dependencia__dependencia', 'dependencia__ciudad__estado__pais__pais', 'fecha_inicio')
-            for i in items:
-                i['fecha_inicio'] = str(i['fecha_inicio'])
+            items = MovilidadAcademica.objects.filter(usuario=usuarioid, tipo=self.tipo).values('pk', 'academico__first_name', 'academico__last_name', 'dependencia__dependencia', 'dependencia__ciudad__estado__pais__pais', 'fecha_inicio')
+            #for i in items:
+            #    i['fecha_inicio'] = str(i['fecha_inicio'])
 
             json = '['
             for i in items:
@@ -38,6 +38,7 @@ class InvitadoJSON(View):
 
 
 class MovilidadLista(ObjectCreateMixin, View):
+    tipo = None
     form_class = MovilidadAcademicaForm
     model = MovilidadAcademica
     aux = InvitadoContext.contexto
@@ -47,7 +48,7 @@ class MovilidadLista(ObjectCreateMixin, View):
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
             new_obj = bound_form.save(commit=False)
-            new_obj.tipo = 'INVITACION'
+            new_obj.tipo = self.tipo
             new_obj.usuario = request.user
             new_obj = bound_form.save()
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
@@ -55,7 +56,7 @@ class MovilidadLista(ObjectCreateMixin, View):
             return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
 
 
-class InvitadoDetalle(ObjectUpdateMixin, View):
+class MovilidadDetalle(ObjectUpdateMixin, View):
     form_class = MovilidadAcademicaForm
     model = MovilidadAcademica
     aux = InvitadoContext.contexto
