@@ -143,8 +143,8 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
         bound_form = self.form_class(request.POST, instance=obj)
         if bound_form.is_valid():
             det_obj = bound_form.save()
-            #return redirect("/" + self.url_categoria + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk))  # corregir el redirect
-            return redirect("/movilidad-academica/" + self.aux['url_seccion'] + "/")  # corregir el redirect
+            return redirect("/" + self.url_categoria + "/" + self.url_seccion + "/" + str(det_obj.pk))  # corregir el redirect
+            #return redirect("/movilidad-academica/" + self.url_seccion + "/")  # corregir el redirect
 
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
