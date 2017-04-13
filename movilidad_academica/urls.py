@@ -4,8 +4,8 @@ from . views import *
 urlpatterns = [
 
     url(r'^invitados/json/', MovilidadJSON.as_view(tipo='INVITACION', obj='Invitado', objs='Invitados', url_seccion='invitados'), name='invitado_lista__json'),
-    url(r'^invitados/$', MovilidadLista.as_view(tipo='INVITACION'), name='invitado_lista'),
-    url(r'^invitados/(?P<pk>[\w\-]+)/$', MovilidadDetalle.as_view(), name='invitado_detalle'),
+    url(r'^invitados/$', MovilidadLista.as_view(tipo='INVITACION', obj='Invitado', objs='Invitados', url_seccion='invitados'), name='invitado_lista'),
+    url(r'^invitados/(?P<pk>[\w\-]+)/$', MovilidadDetalle.as_view(tipo='INVITACION', obj='Invitado', objs='Invitados', url_seccion='invitados'), name='invitado_detalle'),
 
     url(r'^estancias/json/', MovilidadJSON.as_view(tipo='ESTANCIA'), name='estancia_lista__json'),
     url(r'^estancias/$', MovilidadLista.as_view(tipo='ESTANCIA'), name='estancia_lista'),
