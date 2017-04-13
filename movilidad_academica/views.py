@@ -4,7 +4,6 @@ from django.views.generic import View
 from django.core import serializers
 from SIA.utils import *
 from .forms import *
-from .utils import *
 from .models import *
 from django.db.models import Q
 
@@ -74,15 +73,13 @@ class MovilidadLista(ObjectCreateMixin, View):
                      '"ajax": {\n' \
                      '"processing": true,\n' \
                      '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json/",\n' \
-                                                                                           '"dataSrc": ""\n' \
-                                                                                           '},\n' \
-                                                                                           '"columns": [\n' \
-                                                                                           '{\n' \
-                                                                                           '"data": "fields.academico",\n' \
-                                                                                           '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                                                                           '$(nTd).html("<a href=\'/' + str(
-            self.url_categoria) + '/' + str(
-            self.url_seccion) + '/" + oData.pk + "\'>" + oData.fields.academico + "</a>");\n' \
+                                '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                '{\n' \
+                                '"data": "fields.academico",\n' \
+                                '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                '$(nTd).html("<a href=\'/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/" + oData.pk + "\'>" + oData.fields.academico + "</a>");\n' \
                                 '}\n' \
                                 '},\n' \
                                 '{"data": "fields.dependencia"},\n' \
@@ -107,7 +104,7 @@ class MovilidadLista(ObjectCreateMixin, View):
             new_obj.tipo = self.tipo
             new_obj.usuario = request.user
             new_obj = bound_form.save()
-            return redirect("/" + self.url_categoria + "/" + self.aux['url_seccion'] + "/" + str(
+            return redirect("/" + self.url_categoria + "/" + self.url_seccion + "/" + str(
                 new_obj.pk))  # corregir el redirect
         else:
             return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
@@ -134,8 +131,6 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
         return mi_contexto
 
     aux = contexto
-
-
     template_name = 'main_otros.html'
 
     def post(self, request, pk):
@@ -144,7 +139,5 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
         if bound_form.is_valid():
             det_obj = bound_form.save()
             return redirect("/" + self.url_categoria + "/" + self.url_seccion + "/" + str(det_obj.pk))  # corregir el redirect
-            #return redirect("/movilidad-academica/" + self.url_seccion + "/")  # corregir el redirect
-
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
