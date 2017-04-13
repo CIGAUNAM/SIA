@@ -41,7 +41,7 @@ class MovilidadLista(ObjectCreateMixin, View):
     tipo = None
     form_class = MovilidadAcademicaForm
     model = MovilidadAcademica
-    aux = InvitadoContext.contexto
+    aux = MovilidadContext.contexto
     template_name = 'main_otros.html'
 
     def post(self, request):

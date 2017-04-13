@@ -2,9 +2,9 @@ url_categoria = 'movilidad-academica'
 
 
 class MovilidadContext:
-    obj = 'Invitado'
-    objs = 'Invitados'
-    url_seccion = 'invitados'
+    obj = None
+    objs = None
+    url_seccion = None
 
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
