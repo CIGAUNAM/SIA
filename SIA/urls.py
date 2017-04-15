@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^docencia/', include('docencia.urls')),
     url(r'^apoyo-institucional/', include('apoyo_institucional.urls')),
     url(r'^movilidad-academica/', include('movilidad_academica.urls')),
+    url(r'^formacion-recursos-humanos/', include('formacion_recursos_humanos.urls')),
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),
