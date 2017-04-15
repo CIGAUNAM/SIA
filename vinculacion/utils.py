@@ -1,7 +1,5 @@
 url_categoria = 'vinculacion'
 
-
-
 class ArbitrajePublicacionAcademicaContext:
     obj = 'Arbitraje de Publicación'
     objs = 'Arbitrajes de Publicaciones'

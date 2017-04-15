@@ -400,30 +400,6 @@ class Reconocimiento(models.Model):
         ordering = ['reconocimiento']
 
 
-class Tesis(models.Model):
-    titulo = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='titulo')
-    descripcion = models.TextField(blank=True)
-    grado_academico = models.CharField(max_length=20, choices=GRADO_ACADEMICO)
-    documento_tesis = models.FileField()
-    alumno = models.ForeignKey(User, related_name='tesis_alumno')
-    dependencia = models.ForeignKey(Dependencia)
-    beca = models.ForeignKey(Beca)
-    reconocimiento = models.ForeignKey(Reconocimiento, blank=True, null=True)
-    fecha_examen = models.DateField()
-
-    def __str__(self):
-        return "{} : {}".format(self.titulo, self.alumno, self.grado_academico)
-
-    def natural_key(self):
-        return (self.titulo)
-
-    class Meta:
-        ordering = ['-fecha_examen']
-        verbose_name = 'Tesis'
-        verbose_name_plural = 'Tesis'
-
-
 class ProgramaLicenciatura(models.Model):
     programa = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)

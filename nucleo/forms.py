@@ -129,7 +129,7 @@ class ReconocimientoForm(forms.ModelForm):
 
 class TesisForm(forms.ModelForm):
     class Meta:
-        model = Tesis
+        model = DireccionTesis
         exclude = ['slug', ]
 
 
