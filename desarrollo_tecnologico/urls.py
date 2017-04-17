@@ -6,9 +6,9 @@ from . views import *
 
 urlpatterns = [
 
-    url(r'^desarrollos-tecnologicos/json/', ComiteCandidaturaDoctoralJSON.as_view(), name='comite_candidatura_doctoral_lista__json'),
-    url(r'^desarrollos-tecnologicos/json-otros/', ComiteCandidaturaDoctoralJSON.as_view(otros=True), name='comite_candidatura_doctoral_lista__json_otros'),
-    url(r'^desarrollos-tecnologicos/$', ComiteCandidaturaDoctoralLista.as_view(), name='comite_candidatura_doctoral_lista'),
-    url(r'^desarrollos-tecnologicos/(?P<pk>[\w\-]+)/$', ComiteCandidaturaDoctoralDetalle.as_view(), name='comite_candidatura_doctoral_detalle'),
+    url(r'^desarrollos-tecnologicos/json/', DesarrolloTecnologicoJSON.as_view(), name='desarrollo_tecnologico_lista__json'),
+    url(r'^desarrollos-tecnologicos/json-otros/', DesarrolloTecnologicoJSON.as_view(otros=True), name='desarrollo_tecnologico_lista__json_otros'),
+    url(r'^desarrollos-tecnologicos/$', DesarrolloTecnologicoLista.as_view(), name='desarrollo_tecnologico_lista'),
+    url(r'^desarrollos-tecnologicos/(?P<pk>[\w\-]+)/$', DesarrolloTecnologicoDetalle.as_view(), name='desarrollo_tecnologico_detalle'),
 
 ]

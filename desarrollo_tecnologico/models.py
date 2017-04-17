@@ -1,7 +1,7 @@
 from django.db import models
 
 #from django.contrib.auth.models import User
-from autoslug import AutoSlugField
+from django.core.urlresolvers import reverse
 from nucleo.models import User, Tag, Ubicacion, Region, Dependencia, ImpactoSocial, Proyecto, Indice
 
 # Create your models here.
@@ -21,7 +21,6 @@ class TipoDesarrollo(models.Model):
 
 class Licencia(models.Model):
     licencia = models.CharField(max_length=255, unique=True)
-    slug = AutoSlugField(populate_from='licencia', unique=True)
     descripcion = models.TextField()
     url = models.URLField()
 
@@ -42,11 +41,14 @@ class DesarrolloTecnologico(models.Model):
     licencia = models.ForeignKey(Licencia)
     url = models.URLField(blank=True)
     autores = models.ManyToManyField(User, related_name='desarrollo_tecnologico_autores')
-    agradecimientos = models.ManyToManyField(User, related_name='desarrollo_tecnologico_agradecimientos')
+    agradecimientos = models.ManyToManyField(User, related_name='desarrollo_tecnologico_agradecimientos', blank=True, null=True)
     fecha = models.DateField()
 
     def __str__(self):
         return self.nombre_desarrollo_tecnologico
+
+    def get_absolute_url(self):
+        return reverse('comite_tutoral_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre_desarrollo_tecnologico']
