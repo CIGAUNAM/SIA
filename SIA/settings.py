@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'docencia.apps.DocenciaConfig',
     'formacion_recursos_humanos.apps.FormacionRecursosHumanosConfig',
     'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
+    'distinciones.apps.DistincionesConfig',
     'rest_framework',
 
     'django_adminlte',
