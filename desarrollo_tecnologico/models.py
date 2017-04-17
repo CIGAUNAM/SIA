@@ -41,7 +41,7 @@ class DesarrolloTecnologico(models.Model):
     licencia = models.ForeignKey(Licencia)
     url = models.URLField(blank=True)
     autores = models.ManyToManyField(User, related_name='desarrollo_tecnologico_autores')
-    agradecimientos = models.ManyToManyField(User, related_name='desarrollo_tecnologico_agradecimientos', blank=True, null=True)
+    agradecimientos = models.ManyToManyField(User, related_name='desarrollo_tecnologico_agradecimientos', blank=True)
     fecha = models.DateField()
 
     def __str__(self):
