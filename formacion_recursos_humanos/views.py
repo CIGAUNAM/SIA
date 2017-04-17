@@ -5,8 +5,10 @@ from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
 from SIA.utils import *
-from . forms import *
-from . utils import *
+from .forms import *
+from .utils import *
+from django.db.models import Q
+
 
 # Create your views here.
 
@@ -17,7 +19,10 @@ class AsesorEstanciaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = AsesorEstancia.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
-                                         fields=('asesorado', 'grado_academico', 'programa_licenciatura', 'programa_maestria', 'programa_doctorado', 'dependencia', 'fecha_fin'),
+                                         fields=(
+                                             'asesorado', 'grado_academico', 'programa_licenciatura',
+                                             'programa_maestria',
+                                             'programa_doctorado', 'dependencia', 'fecha_fin'),
                                          use_natural_foreign_keys=True)
             json = json.replace('"programa_licenciatura": null,', '')
             json = json.replace('"programa_maestria": null,', '')
@@ -48,14 +53,14 @@ class AsesorEstanciaDetalle(ObjectUpdateMixin, View):
     template_name = 'main_otros.html'
 
 
-
 class DireccionTesisJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = DireccionTesis.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
-                                         fields=('titulo', 'asesorado', 'grado_academico', 'dependencia', 'fecha_examen'),
+                                         fields=(
+                                             'titulo', 'asesorado', 'grado_academico', 'dependencia', 'fecha_examen'),
                                          use_natural_foreign_keys=True)
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
@@ -78,3 +83,75 @@ class DireccionTesisDetalle(ObjectUpdateMixin, View):
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
     template_name = 'main_otros.html'
+
+
+class ComiteTutoralJSON(View):
+    otros = False
+
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                items = ComiteTutoral.objects.all().exclude(asesor_principal=usuarioid).exclude(
+                    otros_asesores=usuarioid).exclude(sinodales=usuarioid)
+            else:
+                items = ComiteTutoral.objects.filter(Q(asesor_principal=usuarioid) | Q(otros_asesores=usuarioid) | Q(sinodales=usuarioid))
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=(
+                                             'asesorado', 'grado_academico', 'programa_maestria', 'programa_doctorado',
+                                             'dependencia', 'proyecto'))
+            json = json.replace('"programa_maestria": null,', '')
+            json = json.replace('"programa_doctorado": null,', '')
+            json = json.replace('MAESTRIA', 'Maestría')
+            json = json.replace('DOCTORADO', 'Doctorado')
+            json = json.replace('programa_maestria', 'programa')
+            json = json.replace('programa_doctorado', 'programa')
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ComiteTutoralLista(ObjectCreateVarMixin, View):
+    form_class = ComiteTutoralForm
+    model = ComiteTutoral
+    aux = ComiteTutoralContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ComiteTutoralDetalle(ObjectUpdateVarMixin, View):
+    form_class = ComiteTutoralForm
+    model = ComiteTutoral
+    aux = ComiteTutoralContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ComiteCandidaturaDoctoralJSON(View):
+    otros = False
+
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                items = ComiteCandidaturaDoctoral.objects.all().exclude(asesor_principal=usuarioid).exclude(otros_asesores=usuarioid).exclude(sinodales=usuarioid)
+            else:
+                items = ComiteCandidaturaDoctoral.objects.filter(Q(asesor_principal=usuarioid) | Q(otros_asesores=usuarioid) | Q(sinodales=usuarioid))
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('asesorado', 'programa_doctorado', 'proyecto', 'fecha_defensa'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ComiteCandidaturaDoctoralLista(ObjectCreateVarMixin, View):
+    form_class = ComiteCandidaturaDoctoralForm
+    model = ComiteCandidaturaDoctoral
+    aux = ComiteCandidaturaDoctoralContext.contexto
+    template_name = 'main_otros.html'
+
+
+class ComiteCandidaturaDoctoralDetalle(ObjectUpdateVarMixin, View):
+    form_class = ComiteCandidaturaDoctoralForm
+    model = ComiteCandidaturaDoctoral
+    aux = ComiteCandidaturaDoctoralContext.contexto
+    template_name = 'main_otros.html'
+
+

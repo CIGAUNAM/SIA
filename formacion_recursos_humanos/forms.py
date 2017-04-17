@@ -18,9 +18,10 @@ class DireccionTesisForm(forms.ModelForm):
 class ComiteTutoralForm(forms.ModelForm):
     class Meta:
         model = ComiteTutoral
-        #exclude = ['usuario',]
+        exclude = []
 
 
 class ComiteCandidaturaDoctoralForm(forms.ModelForm):
     class Meta:
         model = ComiteCandidaturaDoctoral
+        exclude = []
