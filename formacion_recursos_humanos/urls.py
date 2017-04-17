@@ -14,4 +14,14 @@ urlpatterns = [
     url(r'^direccion-tesis/$', DireccionTesisLista.as_view(), name='direccion_tesis_lista'),
     url(r'^direccion-tesis/(?P<pk>[\w\-]+)/$', DireccionTesisDetalle.as_view(), name='direccion_tesis_detalle'),
 
+    url(r'^comites-tutorales/json/', ComiteTutoralJSON.as_view(), name='comite_tutoral_lista__json'),
+    url(r'^comites-tutorales/json-otros/', ComiteTutoralJSON.as_view(otros=True), name='comite_tutoral_lista__json_otros'),
+    url(r'^comites-tutorales/$', ComiteTutoralLista.as_view(), name='comite_tutoral_lista'),
+    url(r'^comites-tutorales/(?P<pk>[\w\-]+)/$', ComiteTutoralDetalle.as_view(), name='comite_tutoral_detalle'),
+
+    url(r'^comites-candidatura-doctoral/json/', ComiteCandidaturaDoctoralJSON.as_view(), name='comite_candidatura_doctoral_lista__json'),
+    url(r'^comites-candidatura-doctoral/json-otros/', ComiteCandidaturaDoctoralJSON.as_view(otros=True), name='comite_candidatura_doctoral_lista__json_otros'),
+    url(r'^comites-candidatura-doctoral/$', ComiteCandidaturaDoctoralLista.as_view(), name='comite_candidatura_doctoral_lista'),
+    url(r'^comites-candidatura-doctoral/(?P<pk>[\w\-]+)/$', ComiteCandidaturaDoctoralDetalle.as_view(), name='comite_candidatura_doctoral_detalle'),
+
 ]
