@@ -5,11 +5,12 @@ from django.conf import settings
 from autoslug import AutoSlugField
 from nucleo.models import User, Dependencia, Distincion
 
-EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
+DISTINCION__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 
 # Create your models here.
 
-class DistincionObtenida(models.Model):
+class DistincionAcademico(models.Model):
+    tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
     fecha = models.DateField()
     distincion = models.ForeignKey(Distincion)
     descripcion = models.TextField(blank=True)

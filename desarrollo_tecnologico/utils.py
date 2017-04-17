@@ -1,11 +1,11 @@
-url_categoria = 'resarrollos-tecnologicos'
+url_categoria = 'desarrollos-tecnologicos'
 
 
 
 class DesarrolloTecnologicoContext:
     obj = 'Desarrollo Tecnológico'
     objs = 'Desarrollos Tecnológicos'
-    url_seccion = 'resarrollos-tecnologicos'
+    url_seccion = 'desarrollos-tecnologicos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
@@ -31,10 +31,9 @@ class DesarrolloTecnologicoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre_desarrollo_tecnologico + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.nivel"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.fecha_inicio"},\n' \
-                                    '{"data": "fields.total_horas"},\n' \
+                                    '{"data": "fields.patente"},\n' \
+                                    '{"data": "fields.licencia"},\n' \
+                                    '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -53,15 +52,14 @@ class DesarrolloTecnologicoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.asignatura",\n' \
+                                        '"data": "fields.nombre_desarrollo_tecnologico",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asignatura + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre_desarrollo_tecnologico + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.nivel"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.fecha_inicio"},\n' \
-                                    '{"data": "fields.total_horas"},\n' \
+                                    '{"data": "fields.patente"},\n' \
+                                    '{"data": "fields.licencia"},\n' \
+                                    '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
