@@ -30,6 +30,7 @@ class DistincionAcademico(models.Model):
         verbose_name_plural = 'Distinciones recibidas'
 
 
+
 class DistincionAlumno(models.Model):
     tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
     fecha = models.DateField()
