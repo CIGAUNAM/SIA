@@ -11,10 +11,10 @@ GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('LICENCIATURA', 'Licenc
 
 class DistincionAcademico(models.Model):
     distincion = models.ForeignKey(Distincion)
-    fecha = models.DateField()
     condecorados = models.ManyToManyField(User, related_name='distincion_academico_condecorados')
     otorga = models.ForeignKey(Dependencia)
     ambito = models.CharField(max_length=20, choices=DISTINCION__AMBITO)
+    fecha = models.DateField()
 
     def __str__(self):
         return "{} : {}".format(self.distincion, self.fecha)
@@ -31,12 +31,12 @@ class DistincionAcademico(models.Model):
 
 class DistincionAlumno(models.Model):
     distincion = models.ForeignKey(Distincion)
-    fecha = models.DateField()
     alumno = models.ForeignKey(User, related_name='distincion_alumno_alumno')
     grado_academico = models.CharField(max_length=20, choices=GRADO_ACADEMICO)
     tutores = models.ManyToManyField(User, related_name='distincion_alumno_tutores')
     otorga = models.ForeignKey(Dependencia)
     ambito = models.CharField(max_length=20, choices=DISTINCION__AMBITO)
+    fecha = models.DateField()
 
     def __str__(self):
         return "{} : {}".format(self.distincion, self.fecha)
