@@ -493,9 +493,10 @@ class Evento(models.Model):
 
 class Distincion(models.Model):
     nombre_distincion = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre_distincion', unique=True)
+    tipo = models.CharField(max_length=30, choices=(
+    ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'), ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
+    ('GUGGENHEIM', 'Beca Guggenheim'), ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=30, choices=(('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'), ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'), ('GUGGENHEIM', 'Beca Guggenheim'), ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
 
     def __str__(self):
         return self.nombre_distincion
