@@ -48,3 +48,5 @@ class DistincionAlumno(models.Model):
         ordering = ['-fecha']
         verbose_name = 'Distinción recibida'
         verbose_name_plural = 'Distinciones recibidas'
+
+
