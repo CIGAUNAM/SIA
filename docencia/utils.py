@@ -1,5 +1,5 @@
 url_categoria = 'docencia'
-
+bc_seccion = 'Docencia'
 
 
 class CursoDocenciaEscolarizadoContext:
@@ -11,7 +11,7 @@ class CursoDocenciaEscolarizadoContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Asignatura', 'Nivel', 'Dependencia', 'Inicio', 'Horas']}
 
 
@@ -80,7 +80,7 @@ class CursoDocenciaExtracurricularContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Asignatura', 'Nivel', 'Dependencia', 'Inicio', 'Horas']}
 
 

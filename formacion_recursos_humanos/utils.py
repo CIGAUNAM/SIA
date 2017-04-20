@@ -1,4 +1,6 @@
 url_categoria = 'formacion-recursos-humanos'
+bc_seccion = 'Formación de Recursos Humanos'
+
 
 class AsesorEstanciaContext:
     obj = 'Asesoría'
@@ -9,7 +11,7 @@ class AsesorEstanciaContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Asesorado', 'Grado', 'Programa', 'Dependencia', 'Finalizado']}
 
 
@@ -51,7 +53,7 @@ class DireccionTesisContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Título', 'Asesorado', 'Grado', 'Dependencia', 'Examen']}
 
 
@@ -93,7 +95,7 @@ class ComiteTutoralContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Asesorado', 'Grado', 'Programa', 'Dependencia', 'Proyecto']}
 
 
@@ -162,7 +164,7 @@ class ComiteCandidaturaDoctoralContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Asesorado', 'Programa', 'Proyecto', 'Defensa']}
 
 
