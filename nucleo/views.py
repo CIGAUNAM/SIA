@@ -14,6 +14,10 @@ def inicio(request):
 
 
 
+
+
+
+
 class TagLista(generics.ListCreateAPIView):
 
     def get(self):

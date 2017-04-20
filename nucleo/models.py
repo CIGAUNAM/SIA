@@ -492,20 +492,20 @@ class Evento(models.Model):
 
 
 class Distincion(models.Model):
-    nombre_distincion = models.CharField(max_length=255, unique=True)
+    distincion = models.CharField(max_length=255, unique=True)
     tipo = models.CharField(max_length=30, choices=(
     ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'), ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
     ('GUGGENHEIM', 'Beca Guggenheim'), ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
-        return self.nombre_distincion
+        return self.distincion
 
     def natural_key(self):
-        return (self.nombre_distincion)
+        return (self.distincion)
 
     class Meta:
-        ordering = ['nombre_distincion']
+        ordering = ['distincion']
         verbose_name = 'Distinción'
         verbose_name_plural = 'Distinciones'
 

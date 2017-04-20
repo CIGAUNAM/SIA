@@ -1,5 +1,5 @@
 url_categoria = 'distinciones'
-
+bc_seccion = 'Premios y distinciones'
 
 
 class DistincionAcademicoContext:
@@ -11,8 +11,8 @@ class DistincionAcademicoContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
-                'titulos_tabla': ['Asignatura', 'Nivel', 'Dependencia', 'Inicio', 'Horas']}
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Distinción', 'Otorga', 'Ámbito', 'fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -41,7 +41,7 @@ class DistincionAcademicoContext:
 
     contexto['tabla_mios'] = tabla_mios
 
-    tabla_otros =  '<script>\n' \
+    tabla_otros = '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
                     '       $jquery("#tabla_json_otros").dataTable({\n' \
                                 '"iDisplayLength": 15,\n' \
@@ -52,9 +52,9 @@ class DistincionAcademicoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.asignatura",\n' \
+                                        '"data": "fields.distincion",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asignatura + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.distincion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.otorga"},\n' \
@@ -70,19 +70,19 @@ class DistincionAcademicoContext:
 
 
 class DistincionAlumnoContext:
-    obj = 'Distinción (Académicos)'
-    objs = 'Distinciones (Académicos)'
-    url_seccion = 'academicos'
+    obj = 'Distinción (Alumno)'
+    objs = 'Distinciones (Alumnos)'
+    url_seccion = 'alumnos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': obj, 'titulo_pagina': objs,
-                'titulos_tabla': ['Asignatura', 'Nivel', 'Dependencia', 'Inicio', 'Horas']}
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Distinción', 'alumno', 'grado_academico', 'Otorga', 'Ámbito', 'fecha']}
 
 
-    tabla_mios =  '<script>\n' \
+    tabla_mios = '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
                     '       $jquery("#tabla_json").dataTable({\n' \
                                 '"iDisplayLength": 15,\n' \
@@ -93,11 +93,13 @@ class DistincionAlumnoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.asignatura",\n' \
+                                        '"data": "fields.distincion",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asignatura + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.distincion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
+                                    '{"data": "fields.alumno"},\n' \
+                                    '{"data": "fields.grado_academico"},\n' \
                                     '{"data": "fields.otorga"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \
@@ -119,11 +121,13 @@ class DistincionAlumnoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.asignatura",\n' \
+                                        '"data": "fields.distincion",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asignatura + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.distincion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
+                                    '{"data": "fields.alumno"},\n' \
+                                    '{"data": "fields.grado_academico"},\n' \
                                     '{"data": "fields.otorga"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \

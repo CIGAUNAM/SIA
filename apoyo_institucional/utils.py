@@ -1,4 +1,6 @@
 url_categoria = 'apoyo-institucional'
+bc_seccion = 'Apoyo Institucional'
+
 
 
 class CargoAcademicoAdministrativoContext:

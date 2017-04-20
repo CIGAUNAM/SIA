@@ -11,15 +11,14 @@ from . models import *
 class DistincionAcademicoJSON(View):
     otros = False
     def get(self, request):
-
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = DistincionAcademico.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = DistincionAcademico.objects.all().exclude(condecorados=usuarioid)
             else:
-                items = DistincionAcademico.objects.filter(usuarios__id__exact=usuarioid)
+                items = DistincionAcademico.objects.filter(condecorados=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'ciudad', 'fecha', 'evento'))
+                                         fields=('distincion', 'otorga', 'ambito', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -46,11 +45,11 @@ class DistincionAlumnoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = DistincionAlumno.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = DistincionAlumno.objects.all().exclude(tutores=usuarioid)
             else:
-                items = DistincionAlumno.objects.filter(usuarios__id__exact=usuarioid)
+                items = DistincionAlumno.objects.filter(tutores=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'ciudad', 'fecha', 'evento'))
+                                         fields=('distincion', 'alumno', 'grado_academico', 'otorga', 'ambito', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
