@@ -7,6 +7,7 @@ from rest_framework import generics
 from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
+from SIA.utils import *
 from . forms import *
 from . utils import *
 
@@ -32,14 +33,15 @@ class ExperienciaLaboralLista(ObjectCreateMixin, View):
     form_class = ExperienciaLaboralForm
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
-    template_name = 'main.html'
+    template_name = 'main_otros.html'
 
 
 class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
     form_class = ExperienciaLaboralForm
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
-    template_name = 'main.html'
+
+    template_name = 'main_otros.html'
 
 
 
@@ -60,14 +62,14 @@ class LineaInvestigacionLista(ObjectCreateMixin, View):
     form_class = LineaInvestigacionForm
     model = LineaInvestigacion
     aux = LineaInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'main_otros.html'
 
 
 class LineaInvestigacionDetalle(ObjectUpdateMixin, View):
     form_class = LineaInvestigacionForm
     model = LineaInvestigacion
     aux = LineaInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'main_otros.html'
 
 
 
@@ -88,14 +90,25 @@ class CapacidadPotencialidadLista(ObjectCreateMixin, View):
     form_class = CapacidadPotencialidadForm
     model = CapacidadPotencialidad
     aux = CapacidadPotencialidadContext.contexto
-    template_name = 'main.html'
+    template_name = 'main_otros.html'
 
 
 class CapacidadPotencialidadDetalle(ObjectUpdateMixin, View):
     form_class = CapacidadPotencialidadForm
     model = CapacidadPotencialidad
     aux = CapacidadPotencialidadContext.contexto
-    template_name = 'main.html'
+    template_name = 'main_otros.html'
+
+
+
+
+
+
+
+
+
+
+
 
 
 

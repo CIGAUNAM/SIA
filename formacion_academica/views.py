@@ -62,14 +62,14 @@ class LicenciaturaLista(ObjectCreateMixin, View):
     form_class = LicenciaturaForm
     model = Licenciatura
     aux = LicenciaturaContext.contexto
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 class LicenciaturaDetalle(ObjectUpdateMixin, View):
     form_class = LicenciaturaForm
     model = Licenciatura
     aux = LicenciaturaContext.contexto
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 class MaestriaJSON(View):
@@ -87,15 +87,14 @@ class MaestriaLista(ObjectCreateMixin, View):
     form_class = MaestriaForm
     model = Maestria
     aux = MaestriaContext.contexto
-
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 class MaestriaDetalle(ObjectUpdateMixin, View):
     form_class = MaestriaForm
     model = Maestria
     aux = MaestriaContext.contexto
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 
@@ -114,15 +113,14 @@ class DoctoradoLista(ObjectCreateMixin, View):
     form_class = DoctoradoForm
     model = Doctorado
     aux = DoctoradoContext.contexto
-
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 class DoctoradoDetalle(ObjectUpdateMixin, View):
     form_class = DoctoradoForm
     model = Doctorado
     aux = DoctoradoContext.contexto
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 class PostDoctoradoJSON(View):
@@ -140,15 +138,14 @@ class PostDoctoradoLista(ObjectCreateMixin, View):
     form_class = PostDoctoradoForm
     model = PostDoctorado
     aux = PostDoctoradoContext.contexto
-
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 class PostDoctoradoDetalle(ObjectUpdateMixin, View):
     form_class = PostDoctoradoForm
     model = PostDoctorado
     aux = PostDoctoradoContext.contexto
-    template_name = 'formacion_academica_u.html'
+    template_name = 'main_otros.html'
 
 
 

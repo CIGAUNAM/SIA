@@ -83,6 +83,8 @@ class LicenciaturaContext:
 
 
 class MaestriaContext:
+    url_seccion = 'maestrias'
+
     contexto = {'url_categoria': 'formacion', 'url_seccion': 'maestrias',
                 'tab_lista': 'Mis Maestrías', 'tab_agregar': 'Agregar Maestría', 'tab_detalle': 'Editar Maestría',
                 'titulo_lista': 'Mis Maestrías', 'titulo_agregar': 'Agregar Maestría',
@@ -118,6 +120,8 @@ class MaestriaContext:
 
 
 class DoctoradoContext:
+    url_seccion = 'doctorados'
+
     contexto = {'url_categoria': 'formacion', 'url_seccion': 'doctorados',
                 'tab_lista': 'Mis Doctorados', 'tab_agregar': 'Agregar Doctorado', 'tab_detalle': 'Editar Doctorado',
                 'titulo_lista': 'Mis Doctorados', 'titulo_agregar': 'Agregar Doctorado',
@@ -153,6 +157,8 @@ class DoctoradoContext:
 
 
 class PostDoctoradoContext:
+    url_seccion = 'postdoctorados'
+
     contexto = {'url_categoria': 'formacion', 'url_seccion': 'postdoctorados',
                 'tab_lista': 'Mis Postdoctorados', 'tab_agregar': 'Agregar Postdoctorado', 'tab_detalle': 'Editar Postdoctorado',
                 'titulo_lista': 'Mis Postdoctorados', 'titulo_agregar': 'Agregar Postdoctorado',
@@ -186,58 +192,3 @@ class PostDoctoradoContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-class ObjectCreateMixin:
-    form_class = None
-    template_name = ''
-    aux = {}
-
-    def get(self, request):
-        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
-
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save(commit=False)
-            new_obj.usuario = request.user
-            new_obj = bound_form.save()
-            return redirect(new_obj)
-        else:
-            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
-
-
-class ObjectUpdateMixin:
-    form_class = None
-    template_name = ''
-    aux = {}
-
-    def get(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
-
-    def post(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        bound_form = self.form_class(request.POST, instance=obj)
-        if bound_form.is_valid():
-            det_obj = bound_form.save(commit=False)
-            det_obj.usuario = request.user
-            det_obj = bound_form.save()
-            return redirect(det_obj)
-            self.det_obj.pk
-        else:
-            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
-"""
-
-
