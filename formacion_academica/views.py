@@ -8,14 +8,13 @@ from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 
 from django.core import serializers
-
+from SIA.utils import *
 from .forms import *
 from .utils import *
 
 # Create your views here.
 
-def inicio(request):
-    return render(request, 'dashboard.html')
+
 
 
 class CursoEspecializacionJSON(View):
@@ -24,69 +23,26 @@ class CursoEspecializacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', cursos,
-                                         fields=('nombre_curso', 'fecha_fin', 'horas', 'dependencia'),
+                                         fields=('nombre_curso', 'horas', 'dependencia', 'fecha_fin'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class CursoEspecializacionLista(View):
-    form_class = CursoEspecializacionForm
-    active = None
-
-    def contexto_cursos(self):
-        return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
-                'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
-                'breadcrumb_seccion': 'Formación académica', 'form': "algo xD"}
-
-    def get(self, request):
-        self.active = 'mis_cursos'
-        return render(request, 'cursos_especializacion.html',
-                      {'active': self.active, 'plantilla': self.contexto_cursos(), 'form': self.form_class})
-
-    def post(self, request):
-        self.active = 'curso_detalle'
-        bound_form = self.form_class(request.POST)
-
-        if bound_form.is_valid():
-            nuevo_curso = bound_form.save(commit=False)
-            nuevo_curso.usuario = request.user
-            nuevo_curso = bound_form.save()
-
-            return redirect(nuevo_curso)
-        else:
-            return render(request, 'cursos_especializacion.html', {'active': 'agregar', 'plantilla': self.contexto_cursos(), 'form': bound_form})
-
-
-class CursoEspecializacionDetalle(View):
+class CursoEspecializacionLista(ObjectCreateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion
+    aux = CursoEspecializacionContext.contexto
+    template_name = 'main_otros.html'
 
-    def contexto_cursos(self):
-        return {'categoria_url': 'formacion', 'seccion_url': 'cursos-especializacion', 'tab_lista': 'Mis Cursos',
-                'tab_agregar': 'Agregar curso', 'titulo_pagina': 'Cursos de especialización',
-                'breadcrumb_seccion': 'Formación académica', 'form': "algo xD"}
 
-    def get(self, request, pk):
-        curso = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        context = {'active': 'detalle', 'plantilla': self.contexto_cursos(), 'form': self.form_class(instance=curso), 'curso': curso}
-        return render(request, 'cursos_especializacion.html', context)
+class CursoEspecializacionDetalle(ObjectUpdateMixin, View):
+    form_class = CursoEspecializacionForm
+    model = CursoEspecializacion
+    aux = CursoEspecializacionContext.contexto
+    template_name = 'main_otros.html'
 
-    def post(self, request, pk):
-        curso = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        bound_form = self.form_class(request.POST, instance=curso)
-
-        if bound_form.is_valid():
-            detalle_curso = bound_form.save(commit=False)
-            detalle_curso.usuario = request.user
-            detalle_curso = bound_form.save()
-            return redirect(detalle_curso)
-        else:
-            return render(request, 'cursos_especializacion.html', {'active': 'curso_detalle', 'plantilla': self.contexto_cursos(), 'form': bound_form})
-
-    def get_update_url(self):
-        return reverse('curso_especializacion_detalle', kwargs={'pk': self.form_class.pk})
 
 
 class LicenciaturaJSON(View):

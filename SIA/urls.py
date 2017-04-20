@@ -19,7 +19,6 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from nucleo.views import inicio
-from formacion_academica.views import inicio
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'adminlte/login.html'}, name='login'),
@@ -36,6 +35,8 @@ urlpatterns = [
     url(r'^movilidad-academica/', include('movilidad_academica.urls')),
     url(r'^formacion-recursos-humanos/', include('formacion_recursos_humanos.urls')),
     url(r'^desarrollos-tecnologicos/', include('desarrollo_tecnologico.urls')),
+    url(r'^distinciones/', include('distinciones.urls')),
+
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),
