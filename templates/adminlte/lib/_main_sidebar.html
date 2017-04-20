@@ -7,7 +7,7 @@
         </a>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "formacion" %} active{% endif %}" >
         <a href="#">
             <i class="fa fa-graduation-cap fa-fw"></i> <span>Formación académica</span>
             <span class="pull-right-container">
@@ -15,27 +15,27 @@
             </span>
         </a>
         <ul class="treeview-menu">
-            <li>
-                <a href="{% url 'curso_especializacion_lista' %}">
+            <li{% if aux.url_seccion == 'cursos-especializacion' %} class="active"{% endif %}>
+                <a href="/formacion/cursos-especializacion" >
                     <i class="fa fa-circle-o"></i> Cursos de especialización
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'licenciaturas' %} class="active"{% endif %}>
                 <a href="/formacion/licenciaturas">
                     <i class="fa fa-circle-o"></i> Licenciaturas
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'maestrias' %} class="active"{% endif %}>
                 <a href="/formacion/maestrias">
                     <i class="fa fa-circle-o"></i> Maestrías
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'doctorados' %} class="active"{% endif %}>
                 <a href="/formacion/doctorados">
                     <i class="fa fa-circle-o"></i> Doctorados
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'postdoctorados' %} class="active"{% endif %}>
                 <a href="/formacion/postdoctorados">
                     <i class="fa fa-circle-o"></i> Post Doctorados
                 </a>
@@ -43,25 +43,25 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "experiencia" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-wrench fa-fw"></i> <span>Experiencia laboral</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'laborales' %} class="active"{% endif %}>
                 <a href="/experiencia/laborales">
                     <i class="fa fa-circle-o"></i> Experiencia laboral
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'lineas-investigacion' %} class="active"{% endif %}>
                 <a href="/experiencia/lineas-investigacion">
                     <i class="fa fa-circle-o"></i> Líneas de investigación
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'capacidades' %} class="active"{% endif %}>
                 <a href="/experiencia/capacidades">
                     <i class="fa fa-circle-o"></i> Capacidades y<br/>
                     <i class="fa fa-none"></i>potencialidades

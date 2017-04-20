@@ -1,12 +1,17 @@
-from django.shortcuts import redirect, render, get_object_or_404
+url_categoria = 'experiencia'
+bc_seccion = 'Experiencia Laboral'
+
 
 class ExperienciaLaboralContext:
-    contexto = {'url_categoria': 'experiencia', 'url_seccion': 'laborales',
-                'tab_lista': 'Mis Experiencias Laborales', 'tab_agregar': 'Agregar Experiencia Laboral',
-                'tab_detalle': 'Editar Experiencia Laboral',
-                'titulo_lista': 'Mis Licenciaturas', 'titulo_agregar': 'Agregar Experiencia Laboral',
-                'titulo_detalle': 'Editar Experiencia Laboral',
-                'objeto': 'experiencia laboral', 'breadcrumb_seccion': 'Experiencia Laboral', 'titulo_pagina': 'Experiencias Laborales',
+    obj = 'Experiencia Laboral'
+    objs = 'Experiencias Laborales'
+    url_seccion = 'laborales'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Nombramiento', 'Cargo', 'Fecha de inicio', 'Dependencia']}
 
 
@@ -38,13 +43,15 @@ class ExperienciaLaboralContext:
 
 
 class LineaInvestigacionContext:
-    jkljkl = "shalala"
-    contexto = {'url_categoria': 'experiencia', 'url_seccion': 'lineas-investigacion',
-                'tab_lista': 'Mis Lìneas de Investigación', 'tab_agregar': 'Agregar Lìnea de Investigación',
-                'tab_detalle': 'Editar Lìnea de Investigación',
-                'titulo_lista': 'Mis Lìneas de Investigación', 'titulo_agregar': 'Agregar Lìnea de Investigación',
-                'titulo_detalle': 'Editar Lìnea de Investigación',
-                'objeto': 'lìnea de investigación' + jkljkl, 'breadcrumb_seccion': 'Lìneas de Investigación', 'titulo_pagina': 'Lìneas de Investigación',
+    obj = 'Lìnea de Investigación'
+    objs = 'Lìneas de Investigación'
+    url_seccion = 'lineas-investigacion'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Lìnea de Investigación', 'Fecha de inicio', 'Dependencia']}
 
 
@@ -76,12 +83,15 @@ class LineaInvestigacionContext:
 
 
 class CapacidadPotencialidadContext:
-    contexto = {'url_categoria': 'experiencia', 'url_seccion': 'capacidades',
-                'tab_lista': 'Mis Capacidades y Potencialidades', 'tab_agregar': 'Agregar Capacidad o Potencialidad',
-                'tab_detalle': 'Editar Capacidad o Potencialidad',
-                'titulo_lista': 'Mis Capacidades y Potencialidades', 'titulo_agregar': 'Agregar Capacidad o Potencialidad',
-                'titulo_detalle': 'Editar Capacidad o Potencialidad',
-                'objeto': 'competencia', 'breadcrumb_seccion': 'Capacidades y Potencialidades', 'titulo_pagina': 'Capacidades y Potencialidades',
+    obj = 'Capacidad o Potencialidad'
+    objs = 'Capacidades o Potencialidades'
+    url_seccion = 'capacidades'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Competencia', 'Fecha de inicio']}
 
 
@@ -108,63 +118,3 @@ class CapacidadPotencialidadContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class ObjectCreateMixin:
-    form_class = None
-    template_name = ''
-    aux = {}
-
-    def get(self, request):
-        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
-
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save(commit=False)
-            new_obj.usuario = request.user
-            new_obj = bound_form.save()
-            return redirect(new_obj)
-        else:
-            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
-
-
-class ObjectUpdateMixin:
-    form_class = None
-    template_name = ''
-    aux = {}
-
-    def get(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
-
-    def post(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        bound_form = self.form_class(request.POST, instance=obj)
-        if bound_form.is_valid():
-            det_obj = bound_form.save(commit=False)
-            det_obj.usuario = request.user
-            det_obj = bound_form.save()
-            return redirect(det_obj)
-            self.det_obj.pk
-        else:
-            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
-
-
-
