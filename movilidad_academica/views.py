@@ -58,12 +58,13 @@ class MovilidadLista(ObjectCreateMixin, View):
 
 
     def contexto(self):
+
         mi_contexto = {'url_categoria': str(self.url_categoria), 'url_seccion': str(self.url_seccion),
                     'tab_lista': 'Mis ' + str(self.objs), 'tab_agregar': 'Agregar ' + str(self.obj),
                     'tab_detalle': 'Editar ' + str(self.obj),
                     'titulo_lista': 'Mis ' + str(self.objs), 'titulo_agregar': 'Agregar ' + str(self.obj),
                     'titulo_detalle': 'Editar ' + str(self.obj), 'objeto': str(self.obj).lower(),
-                    'breadcrumb_seccion': str(self.obj), 'titulo_pagina': str(self.objs),
+                    'breadcrumb_seccion': 'Movilidad Académica', 'titulo_pagina': str(self.objs),
                     'titulos_tabla': ['Académico', 'Procedencia', 'País', 'Inicio']}
 
         tabla_mios = '<script>\n' \
@@ -125,7 +126,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
                     'tab_detalle': 'Editar ' + str(self.obj),
                     'titulo_lista': 'Mis ' + str(self.objs), 'titulo_agregar': 'Agregar ' + str(self.obj),
                     'titulo_detalle': 'Editar ' + str(self.obj), 'objeto': str(self.obj).lower(),
-                    'breadcrumb_seccion': str(self.obj), 'titulo_pagina': str(self.objs),
+                    'breadcrumb_seccion': 'Movilidad Académica', 'titulo_pagina': str(self.objs),
                     'titulos_tabla': ['Académico', 'Procedencia', 'País', 'Inicio']}
 
         return mi_contexto
