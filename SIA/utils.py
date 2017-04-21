@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
-
-
+from django.http.response import (Http404, HttpResponse)
+from nucleo.models import User
 #
 
 
@@ -42,7 +42,6 @@ class ObjectUpdateMixin:
             return redirect(det_obj)
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
-
 
 
 
