@@ -34,14 +34,14 @@ class CursoEspecializacionLista(ObjectCreateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion
     aux = CursoEspecializacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'cursos_especializacion.html'
 
 
 class CursoEspecializacionDetalle(ObjectUpdateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion
     aux = CursoEspecializacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'cursos_especializacion.html'
 
 
 
