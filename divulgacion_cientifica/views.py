@@ -40,11 +40,18 @@ class ArticuloDivulgacionDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class ArticuloDivulgacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ArticuloDivulgacion, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class CapituloLibroDivulgacionJSON(View):
-    otros = False
     def get(self, request):
-
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = CapituloLibroDivulgacion.objects.filter(usuario=usuarioid)
@@ -68,6 +75,15 @@ class CapituloLibroDivulgacionDetalle(ObjectUpdateMixin, View):
     aux = CapituloLibroDivulgacionContext.contexto
     template_name = 'main.html'
 
+
+class CapituloLibroDivulgacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(CapituloLibroDivulgacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class OrganizacionEventoDivulgacionJSON(View):
@@ -96,6 +112,15 @@ class OrganizacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class OrganizacionEventoDivulgacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(OrganizacionEventoDivulgacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ParticipacionEventoDivulgacionJSON(View):
     def get(self, request):
@@ -123,6 +148,15 @@ class ParticipacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
     aux = ParticipacionEventoDivulgacionContext.contexto
 
 
+class ParticipacionEventoDivulgacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ParticipacionEventoDivulgacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ProgramaRadioTelevisionInternetJSON(View):
     def get(self, request):
@@ -143,12 +177,21 @@ class ProgramaRadioTelevisionInternetLista(ObjectCreateMixin, View):
     template_name = 'main.html'
 
 
-class ProgramaRadioTelevisionInternetDivulgacionDetalle(ObjectUpdateMixin, View):
+class ProgramaRadioTelevisionInternetDetalle(ObjectUpdateMixin, View):
     form_class = ProgramaRadioTelevisionInternetForm
     model = ProgramaRadioTelevisionInternet
     aux = ProgramaRadioTelevisionInternetContext.contexto
     template_name = 'main.html'
 
+
+class ProgramaRadioTelevisionInternetEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ProgramaRadioTelevisionInternet, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class LibroDivulgacionJSON(View):
@@ -158,7 +201,7 @@ class LibroDivulgacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = LibroDivulgacion.objects.filter(tipo='INVESTIGACION').exclude(usuarios__id__exact=usuarioid)
+                items = LibroDivulgacion.objects.filter(tipo='DIVULGACION').exclude(usuarios__id__exact=usuarioid)
             else:
                 items = LibroDivulgacion.objects.filter(usuarios__id__exact=usuarioid, tipo='DIVULGACION')
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
@@ -192,3 +235,13 @@ class LibroDivulgacionDetalle(ObjectUpdateVarMixin, View):
     model = LibroDivulgacion
     aux = LibroDivulgacionContext.contexto
     template_name = 'main.html'
+
+
+class LibroDivulgacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(LibroDivulgacion, pk=pk, tipo='DIVULGACION', usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
