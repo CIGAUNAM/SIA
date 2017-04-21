@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/main_otros.html" afterPath="$PROJECT_DIR$/templates/main_old.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/formacion_academica/templates/formacion_academica_u.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoyo_institucional/views.py" afterPath="$PROJECT_DIR$/apoyo_institucional/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desarrollo_tecnologico/views.py" afterPath="$PROJECT_DIR$/desarrollo_tecnologico/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/difusion_cientifica/views.py" afterPath="$PROJECT_DIR$/difusion_cientifica/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/distinciones/views.py" afterPath="$PROJECT_DIR$/distinciones/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/views.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/views.py" afterPath="$PROJECT_DIR$/docencia/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiencia_laboral/views.py" afterPath="$PROJECT_DIR$/experiencia_laboral/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" afterPath="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_academica/views.py" afterPath="$PROJECT_DIR$/formacion_academica/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_recursos_humanos/views.py" afterPath="$PROJECT_DIR$/formacion_recursos_humanos/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investigacion/views.py" afterPath="$PROJECT_DIR$/investigacion/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movilidad_academica/views.py" afterPath="$PROJECT_DIR$/movilidad_academica/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" afterPath="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.html" afterPath="$PROJECT_DIR$/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vinculacion/views.py" afterPath="$PROJECT_DIR$/vinculacion/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,24 +43,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/main.html">
+      <file leaf-file-name="cursos_especializacion.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="51">
+              <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/movilidad_academica/views.py">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="128" column="63" lean-forward="false" selection-start-line="128" selection-start-column="63" selection-end-line="128" selection-end-column="63" />
+            <state relative-caret-position="313">
+              <caret line="78" column="51" lean-forward="true" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#2205#2224#0#HTML" expanded="true" />
+                <element signature="e#3966#3985#0#HTML" expanded="true" />
+                <element signature="e#4173#4193#0#HTML" expanded="true" />
+                <element signature="e#5693#5712#0#HTML" expanded="true" />
+                <element signature="e#6872#6891#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ebase.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/ebase.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,6 +86,7 @@
       <list>
         <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -110,6 +114,7 @@
       <find>aux</find>
       <find>'breadcrumb_seccion': obj</find>
       <find>style=&quot;display: none;&quot;</find>
+      <find>form.as</find>
     </findStrings>
     <replaceStrings>
       <replace>'breadcrumb_seccion': obj</replace>
@@ -137,7 +142,6 @@
         <option value="$PROJECT_DIR$/docencia/views.py" />
         <option value="$PROJECT_DIR$/apoyo_institucional/forms.py" />
         <option value="$PROJECT_DIR$/apoyo_institucional/urls.py" />
-        <option value="$PROJECT_DIR$/apoyo_institucional/views.py" />
         <option value="$PROJECT_DIR$/apoyo_institucional/models.py" />
         <option value="$PROJECT_DIR$/distinciones/models.py" />
         <option value="$PROJECT_DIR$/distinciones/views.py" />
@@ -149,7 +153,6 @@
         <option value="$PROJECT_DIR$/SIA/urls.py" />
         <option value="$PROJECT_DIR$/nucleo/views.py" />
         <option value="$PROJECT_DIR$/formacion_academica/utils.py" />
-        <option value="$PROJECT_DIR$/formacion_academica/views.py" />
         <option value="$PROJECT_DIR$/_misc/test1.js" />
         <option value="$PROJECT_DIR$/experiencia_laboral/views.py" />
         <option value="$PROJECT_DIR$/experiencia_laboral/utils.py" />
@@ -162,6 +165,11 @@
         <option value="$PROJECT_DIR$/docencia/utils.py" />
         <option value="$PROJECT_DIR$/formacion_recursos_humanos/utils.py" />
         <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
+        <option value="$PROJECT_DIR$/templates/ebase.html" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/views.py" />
+        <option value="$PROJECT_DIR$/formacion_academica/views.py" />
+        <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" />
       </list>
     </option>
   </component>
@@ -374,7 +382,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="formacion_recursos_humanos" />
+              <option name="myItemId" value="formacion_academica" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,7 +396,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="docencia" />
+              <option name="myItemId" value="formacion_academica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -414,6 +426,7 @@
   <component name="PropertiesComponent">
     <property name="js.eslint.eslintPackage" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunManager" selected="Django server.SIA">
     <configuration default="false" name="migracion" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -877,7 +890,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492722554284</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="corregido el active del menu para que se quede activa la opcion seleccionada.">
+      <created>1492738783978</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1492738783978</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -949,7 +969,8 @@
     <MESSAGE value="empezando docencia" />
     <MESSAGE value="distinciones&#10;" />
     <MESSAGE value="corrigiendo vistas en todo el proyecto (las primeras urls tenian vistas que no cumplen con DRY)" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrigiendo vistas en todo el proyecto (las primeras urls tenian vistas que no cumplen con DRY)" />
+    <MESSAGE value="corregido el active del menu para que se quede activa la opcion seleccionada." />
+    <option name="LAST_COMMIT_MESSAGE" value="corregido el active del menu para que se quede activa la opcion seleccionada." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -958,7 +979,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/forms.py" />
     <entry file="file://$PROJECT_DIR$/vinculacion/forms.py" />
     <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/views.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1099,22 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ebase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="49" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/main_old.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1182,16 +1186,6 @@
         <state relative-caret-position="119">
           <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="15" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1291,6 +1285,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/movilidad_academica/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ebase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/formacion_academica_u.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-987">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" column="43" lean-forward="false" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="78" column="51" lean-forward="true" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+          <folding>
+            <element signature="e#2205#2224#0#HTML" expanded="true" />
+            <element signature="e#3966#3985#0#HTML" expanded="true" />
+            <element signature="e#4173#4193#0#HTML" expanded="true" />
+            <element signature="e#5693#5712#0#HTML" expanded="true" />
+            <element signature="e#6872#6891#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apoyo_institucional/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1301,21 +1343,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main.html">
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="51">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/movilidad_academica/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="128" column="63" lean-forward="false" selection-start-line="128" selection-start-column="63" selection-end-line="128" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

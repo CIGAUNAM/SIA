@@ -7,13 +7,17 @@
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
             {% if active == 'detalle' %}
                 <li><a href="../#lista" data-toggle="tab" aria-expanded="true">{{ aux.tab_lista }}</a></li>
-                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="true">{{ aux.tab_detalle }}</a></li>
+                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab"
+                                                                             aria-expanded="true">{{ aux.tab_detalle }}</a>
+                </li>
                 {% if aux.tab_otros %}
                     <li><a href="../#lista-otros" data-toggle="tab" aria-expanded="true">{{ aux.tab_otros }}</a></li>
                 {% endif %}
 
             {% else %}
-                <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab" aria-expanded="true">{{ aux.tab_lista }}</a></li>
+                <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab"
+                                                                           aria-expanded="true">{{ aux.tab_lista }}</a>
+                </li>
                 <li><a href="#agregar" data-toggle="tab" aria-expanded="true">{{ aux.tab_agregar }}</a></li>
                 {% if aux.tab_otros %}
                     <li><a href="#lista-otros" data-toggle="tab" aria-expanded="true">{{ aux.tab_otros }}</a></li>
@@ -73,9 +77,13 @@
                                 <form action="" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <br />
+                                    {% block form_detalle %}
+                                        <p>puta</p>
+                                    {% endblock %}
+                                    <br/>
                                     <button class="btn btn-success" type="submit">Actualizar {{ aux.objeto }}</button>
-                                    <a class="btn btn-primary" style="color: #fff" href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                    <a class="btn btn-primary" style="color: #fff"
+                                       href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
                                     <button class="btn btn-danger" type="submit" style="float: right">Eliminar</button>
                                 </form>
                             </div>
@@ -102,9 +110,13 @@
                                 <form action="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <br />
+                                    {% block form_agregar %}
+                                        <p>puta</p>
+                                    {% endblock %}
+                                    <br/>
                                     <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
-                                    <a class="btn btn-primary" style="color: #fff" href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                    <a class="btn btn-primary" style="color: #fff"
+                                       href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
                                 </form>
                             </div>
                         </div>
@@ -146,7 +158,6 @@
 
                 </div>
             {% endif %}
-
 
 
         </div>
