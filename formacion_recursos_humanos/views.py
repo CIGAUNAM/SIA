@@ -43,14 +43,14 @@ class AsesorEstanciaLista(ObjectCreateMixin, View):
     form_class = AsesorEstanciaForm
     model = AsesorEstancia
     aux = AsesorEstanciaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class AsesorEstanciaDetalle(ObjectUpdateMixin, View):
     form_class = AsesorEstanciaForm
     model = AsesorEstancia
     aux = AsesorEstanciaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class DireccionTesisJSON(View):
@@ -75,14 +75,14 @@ class DireccionTesisLista(ObjectCreateMixin, View):
     form_class = DireccionTesisForm
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class DireccionTesisDetalle(ObjectUpdateMixin, View):
     form_class = DireccionTesisForm
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ComiteTutoralJSON(View):
@@ -115,14 +115,14 @@ class ComiteTutoralLista(ObjectCreateVarMixin, View):
     form_class = ComiteTutoralForm
     model = ComiteTutoral
     aux = ComiteTutoralContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ComiteTutoralDetalle(ObjectUpdateVarMixin, View):
     form_class = ComiteTutoralForm
     model = ComiteTutoral
     aux = ComiteTutoralContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ComiteCandidaturaDoctoralJSON(View):
@@ -145,13 +145,13 @@ class ComiteCandidaturaDoctoralLista(ObjectCreateVarMixin, View):
     form_class = ComiteCandidaturaDoctoralForm
     model = ComiteCandidaturaDoctoral
     aux = ComiteCandidaturaDoctoralContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ComiteCandidaturaDoctoralDetalle(ObjectUpdateVarMixin, View):
     form_class = ComiteCandidaturaDoctoralForm
     model = ComiteCandidaturaDoctoral
     aux = ComiteCandidaturaDoctoralContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 

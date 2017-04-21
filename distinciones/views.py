@@ -28,14 +28,14 @@ class DistincionAcademicoLista(ObjectCreateVarMixin, View):
     form_class = DistincionAcademicoForm
     model = DistincionAcademico
     aux = DistincionAcademicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class DistincionAcademicoDetalle(ObjectUpdateVarMixin, View):
     form_class = DistincionAcademicoForm
     model = DistincionAcademico
     aux = DistincionAcademicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class DistincionAlumnoJSON(View):
@@ -59,11 +59,11 @@ class DistincionAlumnoLista(ObjectCreateVarMixin, View):
     form_class = DistincionAlumnoForm
     model = DistincionAlumno
     aux = DistincionAlumnoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class DistincionAlumnoDetalle(ObjectUpdateVarMixin, View):
     form_class = DistincionAlumnoForm
     model = DistincionAlumno
     aux = DistincionAlumnoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'

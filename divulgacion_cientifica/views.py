@@ -30,14 +30,14 @@ class ArticuloDivulgacionLista(ObjectCreateVarMixin, View):
     form_class = ArticuloDivulgacionForm
     model = ArticuloDivulgacion
     aux = ArticuloDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ArticuloDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = ArticuloDivulgacionForm
     model = ArticuloDivulgacion
     aux = ArticuloDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -59,14 +59,14 @@ class CapituloLibroDivulgacionLista(ObjectCreateMixin, View):
     form_class = CapituloLibroDivulgacionForm
     model = CapituloLibroDivulgacion
     aux = CapituloLibroDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class CapituloLibroDivulgacionDetalle(ObjectUpdateMixin, View):
     form_class = CapituloLibroDivulgacionForm
     model = CapituloLibroDivulgacion
     aux = CapituloLibroDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -86,14 +86,14 @@ class OrganizacionEventoDivulgacionLista(ObjectCreateMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class OrganizacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -113,13 +113,13 @@ class ParticipacionEventoDivulgacionLista(ObjectCreateMixin, View):
     form_class = ParticipacionEventoDivulgacionForm
     model = ParticipacionEventoDivulgacion
     aux = ParticipacionEventoDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ParticipacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
     form_class = ParticipacionEventoDivulgacionForm
     model = ParticipacionEventoDivulgacion
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
     aux = ParticipacionEventoDivulgacionContext.contexto
 
 
@@ -140,14 +140,14 @@ class ProgramaRadioTelevisionInternetLista(ObjectCreateMixin, View):
     form_class = ProgramaRadioTelevisionInternetForm
     model = ProgramaRadioTelevisionInternet
     aux = ProgramaRadioTelevisionInternetContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ProgramaRadioTelevisionInternetDivulgacionDetalle(ObjectUpdateMixin, View):
     form_class = ProgramaRadioTelevisionInternetForm
     model = ProgramaRadioTelevisionInternet
     aux = ProgramaRadioTelevisionInternetContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -172,7 +172,7 @@ class LibroDivulgacionLista(ObjectCreateVarMixin, View):
     form_class = LibroDivulgacionForm
     model = LibroDivulgacion
     aux = LibroDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -191,4 +191,4 @@ class LibroDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = LibroDivulgacionForm
     model = LibroDivulgacion
     aux = LibroDivulgacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'

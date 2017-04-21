@@ -70,41 +70,41 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "investigacion" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-sitemap fa-fw"></i> <span>Investigación y resultados</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'articulos-cientificos' %} class="active"{% endif %}>
                 <a href="/investigacion/articulos-cientificos">
                     <i class="fa fa-circle-o"></i> Artículos científicos
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'libros-publicados' %} class="active"{% endif %}>
                 <a href="/investigacion/libros-publicados">
                     <i class="fa fa-circle-o"></i> Libros publicados
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'capitulos-libros-investigacion' %} class="active"{% endif %}>
                 <a href="/investigacion/capitulos-libros-investigacion">
                     <i class="fa fa-circle-o"></i> Capítulos en libros
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'mapas-arbitrados' %} class="active"{% endif %}>
                 <a href="/investigacion/mapas-arbitrados">
                     <i class="fa fa-circle-o"></i> Mapas arbitrados
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'informes-tecnicos-publicos' %} class="active"{% endif %}>
                 <a href="/investigacion/informes-tecnicos-publicos">
                     <i class="fa fa-circle-o"></i> Informes técnicos de acceso<br/>
                     <i class="fa fa-none"></i>público
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'proyectos' %} class="active"{% endif %}>
                 <a href="/investigacion/proyectos">
                     <i class="fa fa-circle-o"></i> Proyectos de investigación
                 </a>
@@ -112,36 +112,36 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "difusion-cientifica" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-sitemap fa-fw"></i> <span>Difusión científica</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'memorias-in-extenso' %} class="active"{% endif %}>
                 <a href="/difusion-cientifica/memorias-in-extenso">
                     <i class="fa fa-circle-o"></i> Memorias in extenso
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'prologos-libros' %} class="active"{% endif %}>
                 <a href="/difusion-cientifica/prologos-libros">
                     <i class="fa fa-circle-o"></i> Prólogos de libro
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'resenas' %} class="active"{% endif %}>
                 <a href="/difusion-cientifica/resenas">
                     <i class="fa fa-circle-o"></i> Reseñas
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'organizacion-eventos-academicos' %} class="active"{% endif %}>
                 <a href="/difusion-cientifica/organizacion-eventos-academicos">
                     <i class="fa fa-circle-o"></i> Organización de eventos<br/>
                     <i class="fa fa-none"></i>académicos
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'participacion-eventos-academicos' %} class="active"{% endif %}>
                 <a href="/difusion-cientifica/participacion-eventos-academicos">
                     <i class="fa fa-circle-o"></i> Participación en eventos<br/>
                     <i class="fa fa-none"></i>académicos
@@ -150,41 +150,41 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "divulgacion-cientifica" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-comments-o fa-fw"></i> <span>Divulgación científica</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'articulos-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/articulos-divulgacion">
                     <i class="fa fa-circle-o"></i> Artículos de divulgación
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'libros-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/libros-divulgacion">
                     <i class="fa fa-circle-o"></i> Libros de divulgación
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'capitulos-libros-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/capitulos-libros-divulgacion">
                     <i class="fa fa-circle-o"></i> Capítulos en libros de<br/>
                     <i class="fa fa-none"></i>divulgación
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'organizacion-eventos-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/organizacion-eventos-divulgacion">
                     <i class="fa fa-circle-o"></i> Organización de eventos
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'participacion-eventos-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/participacion-eventos-divulgacion">
                     <i class="fa fa-circle-o"></i> Participación en eventos
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'medios-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/medios-divulgacion">
                     <i class="fa fa-circle-o"></i> Programas de radio,<br>
                     <i class="fa fa-none"></i>televisión e internet
@@ -193,50 +193,50 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "vinculacion" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-link fa-fw"></i> <span>Vinculación, colaboración <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y servicios</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'arbitrajes-publicaciones' %} class="active"{% endif %}>
                 <a href="/vinculacion/arbitrajes-publicaciones">
                     <i class="fa fa-circle-o"></i> Arbitrajes en publicaciones<br/>
                     <i class="fa fa-none"></i>académicas
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'arbitrajes-proyectos' %} class="active"{% endif %}>
                 <a href="/vinculacion/arbitrajes-proyectos">
                     <i class="fa fa-circle-o"></i> Arbitrajes de proyectos de<br/>
                     <i class="fa fa-none"></i>investigación
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'otros-arbitrajes' %} class="active"{% endif %}>
                 <a href="/vinculacion/otros-arbitrajes">
                     <i class="fa fa-circle-o"></i> Otras actividades de<br/>
                     <i class="fa fa-none"></i>arbitraje
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'redes-academicas' %} class="active"{% endif %}>
                 <a href="/vinculacion/redes-academicas">
                     <i class="fa fa-circle-o"></i> Redes académicas
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'convenios-entidades-no-academicas' %} class="active"{% endif %}>
                 <a href="/vinculacion/convenios-entidades-no-academicas">
                     <i class="fa fa-circle-o"></i> Convenios con entidades<br/>
                     <i class="fa fa-none"></i>no académicas
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'servicios-externos-no-academicos' %} class="active"{% endif %}>
                 <a href="/vinculacion/servicios-externos-no-academicos">
                     <i class="fa fa-circle-o"></i> Servicios externos a<br>
                     <i class="fa fa-none"></i>entidades no académicas
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'otros-programas-vinculacion' %} class="active"{% endif %}>
                 <a href="/vinculacion/otros-programas-vinculacion">
                     <i class="fa fa-circle-o"></i> Otros programas de<br>
                     <i class="fa fa-none"></i>vinculación y colaboración
@@ -245,37 +245,37 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "apoyo-institucional" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-life-ring fa-fw"></i> <span>Apoyo institucional</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'cargos-academico-dministrativos' %} class="active"{% endif %}>
                 <a href="/apoyo-institucional/cargos-academico-dministrativos">
                     <i class="fa fa-circle-o"></i> Cargos <br/>
                     <i class="fa fa-none"></i>Académico-Administrativos
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'representaciones-organos-colegiados' %} class="active"{% endif %}>
                 <a href="/apoyo-institucional/representaciones-organos-colegiados">
                     <i class="fa fa-circle-o"></i> Representación en órganos<br/>
                     <i class="fa fa-none"></i>colegiados
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'comisiones-academicas' %} class="active"{% endif %}>
                 <a href="/apoyo-institucional/comisiones-academicas">
                     <i class="fa fa-circle-o"></i> Comisiones académicas
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'apoyos-tecnicos' %} class="active"{% endif %}>
                 <a href="/apoyo-institucional/apoyos-tecnicos">
                     <i class="fa fa-circle-o"></i> Apoyo técnico
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'otras-actividades' %} class="active"{% endif %}>
                 <a href="/apoyo-institucional/otras-actividades">
                     <i class="fa fa-circle-o"></i> Otras Actividades de apoyo
                 </a>
@@ -283,26 +283,26 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "movilidad-academica" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-plane fa-fw"></i> <span>Movilidad académica</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'invitados' %} class="active"{% endif %}>
                 <a href="/movilidad-academica/invitados">
                     <i class="fa fa-circle-o"></i> Invitados
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'estancias' %} class="active"{% endif %}>
                 <a href="/movilidad-academica/estancias">
                     <i class="fa fa-circle-o"></i> Estancias de colaboración
 
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'sabaticos' %} class="active"{% endif %}>
                 <a href="/movilidad-academica/sabaticos">
                     <i class="fa fa-circle-o"></i> Sabáticos
                 </a>
@@ -310,53 +310,52 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "docencia" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-book fa-fw"></i> <span>Docencia</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'cursos-escolarizados' %} class="active"{% endif %}>
                 <a href="/docencia/cursos-escolarizados">
                     <i class="fa fa-circle-o"></i> Cursos escolarizados
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'cursos-extracurriculares' %} class="active"{% endif %}>
                 <a href="/docencia/cursos-extracurriculares">
                     <i class="fa fa-circle-o"></i> Cursos extracurriculares
-
                 </a>
             </li>
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "formacion-recursos-humanos" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-users fa-fw"></i> <span> Recursos humanos</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'asesorias' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/asesorias">
                     <i class="fa fa-circle-o"></i> Asesor en residencias,<br/>
                     <i class="fa fa-none"></i>prácticas, estancias o servicio
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'direccion-tesis' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/direccion-tesis">
                     <i class="fa fa-circle-o"></i> Dirección de tésis
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'comites-tutorales' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-tutorales">
                     <i class="fa fa-circle-o"></i> Comités tutorales
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'comites-candidatura-doctoral' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-candidatura-doctoral">
                     <i class="fa fa-circle-o"></i> Comité de examen de<br/>
                     <i class="fa fa-none"></i>candidatura doctoral
@@ -365,15 +364,15 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "desarrollos-tecnologicos" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-cogs fa-fw"></i> <span>Desarrollos tecnológicos</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'desarrollos-tecnologicos' %} class="active"{% endif %}>
                 <a href="/desarrollos-tecnologicos/desarrollos-tecnologicos">
                     <i class="fa fa-circle-o"></i> Desarrollos tecnológicos
                 </a>
@@ -381,20 +380,20 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview{% if aux.url_categoria == "distinciones" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-trophy fa-fw"></i> <span>Premios y disticiones</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
-        <ul class="treeview-menu" style="display: none;">
-            <li>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'academicos' %} class="active"{% endif %}>
                 <a href="/distinciones/academicos">
                     <i class="fa fa-circle-o"></i> Recibidos por académicos
                 </a>
             </li>
-            <li>
+            <li{% if aux.url_seccion == 'alumnos' %} class="active"{% endif %}>
                 <a href="/distinciones/alumnos">
                     <i class="fa fa-circle-o"></i> Recibidos por alumnos
                 </a>

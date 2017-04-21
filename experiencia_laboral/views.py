@@ -33,7 +33,7 @@ class ExperienciaLaboralLista(ObjectCreateMixin, View):
     form_class = ExperienciaLaboralForm
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
@@ -41,7 +41,7 @@ class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
 
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -62,14 +62,14 @@ class LineaInvestigacionLista(ObjectCreateMixin, View):
     form_class = LineaInvestigacionForm
     model = LineaInvestigacion
     aux = LineaInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class LineaInvestigacionDetalle(ObjectUpdateMixin, View):
     form_class = LineaInvestigacionForm
     model = LineaInvestigacion
     aux = LineaInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -90,14 +90,14 @@ class CapacidadPotencialidadLista(ObjectCreateMixin, View):
     form_class = CapacidadPotencialidadForm
     model = CapacidadPotencialidad
     aux = CapacidadPotencialidadContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class CapacidadPotencialidadDetalle(ObjectUpdateMixin, View):
     form_class = CapacidadPotencialidadForm
     model = CapacidadPotencialidad
     aux = CapacidadPotencialidadContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 

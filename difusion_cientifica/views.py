@@ -29,14 +29,14 @@ class MemoriaInExtensoLista(ObjectCreateVarMixin, View):
     form_class = MemoriaInExtensoForm
     model = MemoriaInExtenso
     aux = MemoriaInExtensoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
     form_class = MemoriaInExtensoForm
     model = MemoriaInExtenso
     aux = MemoriaInExtensoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -59,14 +59,14 @@ class PrologoLibroLista(ObjectCreateMixin, View):
     form_class = PrologoLibroForm
     model = PrologoLibro
     aux = PrologoLibroContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class PrologoLibroDetalle(ObjectUpdateMixin, View):
     form_class = PrologoLibroForm
     model = PrologoLibro
     aux = PrologoLibroContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -89,14 +89,14 @@ class ResenaLista(ObjectCreateMixin, View):
     form_class = ResenaForm
     model = Resena
     aux = ResenaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ResenaDetalle(ObjectUpdateMixin, View):
     form_class = ResenaForm
     model = Resena
     aux = ResenaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -117,14 +117,14 @@ class OrganizacionEventoAcademicoLista(ObjectCreateMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class OrganizacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -145,11 +145,11 @@ class ParticipacionEventoAcademicoLista(ObjectCreateMixin, View):
     form_class = ParticipacionEventoAcademicoForm
     model = ParticipacionEventoAcademico
     aux = ParticipacionEventoAcademicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ParticipacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
     form_class = ParticipacionEventoAcademicoForm
     model = ParticipacionEventoAcademico
     aux = ParticipacionEventoAcademicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'

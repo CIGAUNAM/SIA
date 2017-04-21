@@ -34,14 +34,14 @@ class CursoEspecializacionLista(ObjectCreateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion
     aux = CursoEspecializacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class CursoEspecializacionDetalle(ObjectUpdateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion
     aux = CursoEspecializacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -62,14 +62,14 @@ class LicenciaturaLista(ObjectCreateMixin, View):
     form_class = LicenciaturaForm
     model = Licenciatura
     aux = LicenciaturaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class LicenciaturaDetalle(ObjectUpdateMixin, View):
     form_class = LicenciaturaForm
     model = Licenciatura
     aux = LicenciaturaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class MaestriaJSON(View):
@@ -87,14 +87,14 @@ class MaestriaLista(ObjectCreateMixin, View):
     form_class = MaestriaForm
     model = Maestria
     aux = MaestriaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class MaestriaDetalle(ObjectUpdateMixin, View):
     form_class = MaestriaForm
     model = Maestria
     aux = MaestriaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -113,14 +113,14 @@ class DoctoradoLista(ObjectCreateMixin, View):
     form_class = DoctoradoForm
     model = Doctorado
     aux = DoctoradoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class DoctoradoDetalle(ObjectUpdateMixin, View):
     form_class = DoctoradoForm
     model = Doctorado
     aux = DoctoradoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class PostDoctoradoJSON(View):
@@ -138,14 +138,14 @@ class PostDoctoradoLista(ObjectCreateMixin, View):
     form_class = PostDoctoradoForm
     model = PostDoctorado
     aux = PostDoctoradoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class PostDoctoradoDetalle(ObjectUpdateMixin, View):
     form_class = PostDoctoradoForm
     model = PostDoctorado
     aux = PostDoctoradoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 

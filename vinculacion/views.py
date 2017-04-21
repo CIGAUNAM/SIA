@@ -25,14 +25,14 @@ class ArbitrajePublicacionAcademicaLista(ObjectCreateMixin, View):
     form_class = ArbitrajePublicacionAcademicaForm
     model = ArbitrajePublicacionAcademica
     aux = ArbitrajePublicacionAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ArbitrajePublicacionAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ArbitrajePublicacionAcademicaForm
     model = ArbitrajePublicacionAcademica
     aux = ArbitrajePublicacionAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -52,14 +52,14 @@ class ArbitrajeProyectoInvestigacionLista(ObjectCreateMixin, View):
     form_class = ArbitrajeProyectoInvestigacionForm
     model = ArbitrajeProyectoInvestigacion
     aux = ArbitrajeProyectoInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ArbitrajeProyectoInvestigacionDetalle(ObjectUpdateMixin, View):
     form_class = ArbitrajeProyectoInvestigacionForm
     model = ArbitrajeProyectoInvestigacion
     aux = ArbitrajeProyectoInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -79,14 +79,14 @@ class ArbitrajeOtraActividadLista(ObjectCreateMixin, View):
     form_class = ArbitrajeOtraActividadForm
     model = ArbitrajeOtraActividad
     aux = ArbitrajeOtraActividadContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ArbitrajeOtraActividadDetalle(ObjectUpdateMixin, View):
     form_class = ArbitrajeOtraActividadForm
     model = ArbitrajeOtraActividad
     aux = ArbitrajeOtraActividadContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -110,14 +110,14 @@ class RedAcademicaLista(ObjectCreateVarMixin, View):
     form_class = RedAcademicaForm
     model = RedAcademica
     aux = RedAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class RedAcademicaDetalle(ObjectUpdateVarMixin, View):
     form_class = RedAcademicaForm
     model = RedAcademica
     aux = RedAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -141,14 +141,14 @@ class ConvenioEntidadNoAcademicaLista(ObjectCreateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadNoAcademica
     aux = ConvenioEntidadNoAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ConvenioEntidadNoAcademicaDetalle(ObjectUpdateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadNoAcademica
     aux = ConvenioEntidadNoAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -168,14 +168,14 @@ class ServicioExternoEntidadNoAcademicaLista(ObjectCreateMixin, View):
     form_class = ServicioExternoEntidadNoAcademicaForm
     model = ServicioExternoEntidadNoAcademica
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ServicioExternoEntidadNoAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ServicioExternoEntidadNoAcademicaForm
     model = ServicioExternoEntidadNoAcademica
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -195,11 +195,11 @@ class OtroProgramaVinculacionLista(ObjectCreateMixin, View):
     form_class = OtroProgramaVinculacionForm
     model = OtroProgramaVinculacion
     aux = OtroProgramaVinculacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class OtroProgramaVinculacionDetalle(ObjectUpdateMixin, View):
     form_class = OtroProgramaVinculacionForm
     model = OtroProgramaVinculacion
     aux = OtroProgramaVinculacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
