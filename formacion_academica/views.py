@@ -5,7 +5,8 @@ from formacion_academica.serializers import *
 from rest_framework import generics
 
 from django.http.response import (Http404, HttpResponse)
-from django.views.generic import View
+from django.views.generic import View, DeleteView
+from django.core.urlresolvers import reverse_lazy
 
 from django.core import serializers
 from SIA.utils import *
@@ -44,6 +45,15 @@ class CursoEspecializacionDetalle(ObjectUpdateMixin, View):
     template_name = 'cursos_especializacion.html'
 
 
+class CursoEspecializacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(CursoEspecializacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class LicenciaturaJSON(View):
     def get(self, request):
@@ -72,6 +82,16 @@ class LicenciaturaDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class LicenciaturaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Licenciatura, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class MaestriaJSON(View):
     def get(self, request):
         try:
@@ -96,6 +116,15 @@ class MaestriaDetalle(ObjectUpdateMixin, View):
     aux = MaestriaContext.contexto
     template_name = 'main.html'
 
+
+class MaestriaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Maestria, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class DoctoradoJSON(View):
@@ -123,6 +152,16 @@ class DoctoradoDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class DoctoradoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Doctorado, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class PostDoctoradoJSON(View):
     def get(self, request):
         try:
@@ -148,7 +187,14 @@ class PostDoctoradoDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
-
+class PostDoctoradoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(PostDoctorado, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 

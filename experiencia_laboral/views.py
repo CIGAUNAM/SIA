@@ -40,9 +40,17 @@ class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
     form_class = ExperienciaLaboralForm
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
-
     template_name = 'main.html'
 
+
+class ExperienciaLaboralEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ExperienciaLaboral, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class LineaInvestigacionJSON(View):
@@ -72,6 +80,15 @@ class LineaInvestigacionDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class LineaInvestigacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(LineaInvestigacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class CapacidadPotencialidadJSON(View):
     def get(self, request):
@@ -100,7 +117,14 @@ class CapacidadPotencialidadDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
-
+class CapacidadPotencialidadEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(CapacidadPotencialidad, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 

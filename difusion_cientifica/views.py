@@ -39,6 +39,15 @@ class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class MemoriaInExtensoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(MemoriaInExtenso, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class PrologoLibroJSON(View):
     def get(self, request):
@@ -69,15 +78,21 @@ class PrologoLibroDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class PrologoLibroEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(PrologoLibro, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ResenaJSON(View):
     def get(self, request):
-
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-
             items = Resena.objects.filter(usuario=usuarioid)
-
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro_resenado', 'revista_resenada', 'libro_publica', 'revista_publica'))
             return HttpResponse(json, content_type='application/json')
@@ -99,10 +114,18 @@ class ResenaDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class ResenaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Resena, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class OrganizacionEventoAcademicoJSON(View):
     def get(self, request):
-
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = OrganizacionEventoAcademico.objects.filter(usuario=usuarioid)
@@ -127,10 +150,18 @@ class OrganizacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class OrganizacionEventoAcademicoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(OrganizacionEventoAcademico, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ParticipacionEventoAcademicoJSON(View):
     def get(self, request):
-
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ParticipacionEventoAcademico.objects.filter(usuario=usuarioid)
@@ -153,3 +184,13 @@ class ParticipacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
     model = ParticipacionEventoAcademico
     aux = ParticipacionEventoAcademicoContext.contexto
     template_name = 'main.html'
+
+
+class ParticipacionEventoAcademicoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ParticipacionEventoAcademico, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404

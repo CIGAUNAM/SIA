@@ -42,6 +42,15 @@ class ArticuloCientificoDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class ArticuloCientificoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ArticuloCientifico, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class CapituloLibroInvestigacionJSON(View):
     otros = False
@@ -70,6 +79,15 @@ class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     aux = CapituloLibroInvestigacionContext.contexto
     template_name = 'main.html'
 
+
+class CapituloLibroInvestigacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(CapituloLibroInvestigacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class MapaArbitradoJSON(View):
@@ -103,6 +121,15 @@ class MapaArbitradoDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class MapaArbitradoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(MapaArbitrado, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class InformeTecnicoJSON(View):
     otros = False
@@ -134,6 +161,15 @@ class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
     aux = InformeTecnicoContext.contexto
     template_name = 'main.html'
 
+
+class InformeTecnicoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(InformeTecnico, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class LibroInvestigacionJSON(View):
@@ -178,6 +214,15 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     aux = LibroInvestigacionContext.contexto
     template_name = 'main.html'
 
+
+class LibroInvestigacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(LibroInvestigacion, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class ProyectoInvestigacionJSON(View):
@@ -228,3 +273,13 @@ class ProyectoInvestigacionDetalle(ObjectUpdateVarMixin, View):
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk)) #corregir el redirect
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
+
+
+class ProyectoInvestigacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ProyectoInvestigacion, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
