@@ -31,7 +31,7 @@ class CursoDocenciaEscolarizadoLista(ObjectCreateMixin, View):
     form_class = CursoDocenciaForm
     model = CursoDocencia
     aux = CursoDocenciaEscolarizadoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -49,7 +49,7 @@ class CursoDocenciaEscolarizadoDetalle(ObjectUpdateMixin, View):
     form_class = CursoDocenciaForm
     model = CursoDocencia
     aux = CursoDocenciaEscolarizadoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
@@ -84,7 +84,7 @@ class CursoDocenciaExtracurricularLista(ObjectCreateMixin, View):
     form_class = CursoDocenciaForm
     model = CursoDocencia
     aux = CursoDocenciaExtracurricularContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -102,7 +102,7 @@ class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
     form_class = CursoDocenciaForm
     model = CursoDocencia
     aux = CursoDocenciaExtracurricularContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)

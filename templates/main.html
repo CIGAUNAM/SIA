@@ -6,12 +6,20 @@
     <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
             {% if active == 'detalle' %}
-                <li><a href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" aria-expanded="true">{{ aux.tab_lista }}</a></li>
-                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="false">{{ aux.tab_detalle }}</a></li>
+                <li><a href="../#lista" data-toggle="tab" aria-expanded="true">{{ aux.tab_lista }}</a></li>
+                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab" aria-expanded="true">{{ aux.tab_detalle }}</a></li>
+                {% if aux.tab_otros %}
+                    <li><a href="../#lista-otros" data-toggle="tab" aria-expanded="true">{{ aux.tab_otros }}</a></li>
+                {% endif %}
 
             {% else %}
                 <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab" aria-expanded="true">{{ aux.tab_lista }}</a></li>
                 <li><a href="#agregar" data-toggle="tab" aria-expanded="true">{{ aux.tab_agregar }}</a></li>
+                {% if aux.tab_otros %}
+                    <li><a href="#lista-otros" data-toggle="tab" aria-expanded="true">{{ aux.tab_otros }}</a></li>
+                {% endif %}
+
+
 
             {% endif %}
             <li class="pull-left header"><i class="fa fa-inbox"></i></li>
@@ -34,7 +42,9 @@
                         <thead>
                         <tr>
                             {% for titulo in aux.titulos_tabla %}
-                            <th><nobr>{{ titulo }}</nobr></th>
+                                <th>
+                                    <nobr>{{ titulo }}</nobr>
+                                </th>
                             {% endfor %}
                         </tr>
                         </thead>
@@ -63,7 +73,10 @@
                                 <form action="" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">Actualizar {{ aux.objeto }}</button>
+                                    <br />
+                                    <button class="btn btn-success" type="submit">Actualizar {{ aux.objeto }}</button>
+                                    <a class="btn btn-primary" style="color: #fff" href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                    <button class="btn btn-danger" type="submit" style="float: right">Eliminar</button>
                                 </form>
                             </div>
                         </div>
@@ -89,7 +102,9 @@
                                 <form action="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" method="post">
                                     {% csrf_token %}
                                     {{ form.as_p }}
-                                    <button type="submit">Agregar {{ aux.objeto }}</button>
+                                    <br />
+                                    <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
+                                    <a class="btn btn-primary" style="color: #fff" href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
                                 </form>
                             </div>
                         </div>
@@ -98,6 +113,41 @@
                 </div>
 
             {% endif %}
+
+            {% if aux.tab_otros %}
+
+                <div id="lista-otros" class="tab-pane{% if active == 'lista-otros' %} active{% endif %}">
+                    <div class="bg-light-blue-active box-header with-border">
+                        <h3 class="box-title">{{ aux.titulo_lista_otros }}</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Buttons, labels, and many other things can be placed here! -->
+                            <!-- Here is a label for example -->
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+
+                        {{ aux.tabla_otros|safe }}
+
+                        <table id="tabla_json_otros" class="dataTables_wrapper form-inline dt-bootstrap"
+                               style="width: 100%">
+                            <thead>
+                            <tr>
+                                {% for titulo in aux.titulos_tabla %}
+                                    <th>
+                                        <nobr>{{ titulo }}</nobr>
+                                    </th>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div><!-- /.box-body -->
+
+                </div>
+            {% endif %}
+
+
 
         </div>
     </div><!-- /.box -->

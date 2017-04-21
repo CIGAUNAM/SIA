@@ -96,7 +96,7 @@ class MovilidadLista(ObjectCreateMixin, View):
 
     aux = contexto
 
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -132,7 +132,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
         return mi_contexto
 
     aux = contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)

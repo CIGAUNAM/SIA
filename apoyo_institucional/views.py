@@ -25,14 +25,14 @@ class CargoAcademicoAdministrativoLista(ObjectCreateMixin, View):
     form_class = CargoAcademicoAdministrativoForm
     model = CargoAcademicoAdministrativo
     aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class CargoAcademicoAdministrativoDetalle(ObjectUpdateMixin, View):
     form_class = CargoAcademicoAdministrativoForm
     model = CargoAcademicoAdministrativo
     aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class RepresentacionOrganoColegiadoJSON(View):
@@ -51,14 +51,14 @@ class RepresentacionOrganoColegiadoLista(ObjectCreateMixin, View):
     form_class = RepresentacionOrganoColegiadoForm
     model = RepresentacionOrganoColegiado
     aux = RepresentacionOrganoColegiadoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
     form_class = RepresentacionOrganoColegiadoForm
     model = RepresentacionOrganoColegiado
     aux = RepresentacionOrganoColegiadoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ComisionAcademicaJSON(View):
@@ -77,14 +77,14 @@ class ComisionAcademicaLista(ObjectCreateMixin, View):
     form_class = ComisionAcademicaForm
     model = ComisionAcademica
     aux = ComisionAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ComisionAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ComisionAcademicaForm
     model = ComisionAcademica
     aux = ComisionAcademicaContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ApoyoTecnicoJSON(View):
@@ -103,14 +103,14 @@ class ApoyoTecnicoLista(ObjectCreateMixin, View):
     form_class = ApoyoTecnicoForm
     model = ApoyoTecnico
     aux = ApoyoTecnicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ApoyoTecnicoDetalle(ObjectUpdateMixin, View):
     form_class = ApoyoTecnicoForm
     model = ApoyoTecnico
     aux = ApoyoTecnicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ApoyoOtraActividadJSON(View):
@@ -129,13 +129,13 @@ class ApoyoOtraActividadLista(ObjectCreateMixin, View):
     form_class = ApoyoOtraActividadForm
     model = ApoyoOtraActividad
     aux = ApoyoOtraActividadContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ApoyoOtraActividadDetalle(ObjectUpdateMixin, View):
     form_class = ApoyoOtraActividadForm
     model = ApoyoOtraActividad
     aux = ApoyoOtraActividadContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 

@@ -32,14 +32,14 @@ class ArticuloCientificoLista(ObjectCreateVarMixin, View):
     form_class = ArticuloCientificoForm
     model = ArticuloCientifico
     aux = ArticuloCientificoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class ArticuloCientificoDetalle(ObjectUpdateVarMixin, View):
     form_class = ArticuloCientificoForm
     model = ArticuloCientifico
     aux = ArticuloCientificoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -61,14 +61,14 @@ class CapituloLibroInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -93,14 +93,14 @@ class MapaArbitradoLista(ObjectCreateVarMixin, View):
     form_class = MapaArbitradoForm
     model = MapaArbitrado
     aux = MapaArbitradoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class MapaArbitradoDetalle(ObjectUpdateVarMixin, View):
     form_class = MapaArbitradoForm
     model = MapaArbitrado
     aux = MapaArbitradoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -125,14 +125,14 @@ class InformeTecnicoLista(ObjectCreateVarMixin, View):
     form_class = InformeTecnicoForm
     model = InformeTecnico
     aux = InformeTecnicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
     form_class = InformeTecnicoForm
     model = InformeTecnico
     aux = InformeTecnicoContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -157,7 +157,7 @@ class LibroInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = LibroInvestigacionForm
     model = LibroInvestigacion
     aux = LibroInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -176,7 +176,7 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = LibroInvestigacionForm
     model = LibroInvestigacion
     aux = LibroInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
 
 
@@ -201,7 +201,7 @@ class ProyectoInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = ProyectoInvestigacionForm
     model = ProyectoInvestigacion
     aux = ProyectoInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -218,7 +218,7 @@ class ProyectoInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = ProyectoInvestigacionForm
     model = ProyectoInvestigacion
     aux = ProyectoInvestigacionContext.contexto
-    template_name = 'main_otros.html'
+    template_name = 'main.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
