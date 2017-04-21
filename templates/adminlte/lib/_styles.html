@@ -1,0 +1,19 @@
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" type="text/css" href="{% static "admin-lte/dist/css/AdminLTE.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "admin-lte/dist/css/skins/_all-skins.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "icheck/skins/square/blue.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "conflicts/conflicts.css" %}">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+
+{% endblock %}

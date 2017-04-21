@@ -78,19 +78,23 @@
                                     {% csrf_token %}
                                     {{ form.as_p }}
                                     {% block form_detalle %}
-                                        <p>puta</p>
+                                        <p>agregar</p>
                                     {% endblock %}
                                     <br/>
                                     <button class="btn btn-success" type="submit">Actualizar {{ aux.objeto }}</button>
                                     <a class="btn btn-primary" style="color: #fff"
                                        href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
-                                    <button class="btn btn-danger" type="submit" style="float: right">Eliminar</button>
+                                    <button class="btn btn-danger" type="submit" style="float: right"
+                                            data-toggle="modal" data-target="#eliminar">Eliminar
+                                    </button>
                                 </form>
                             </div>
                         </div>
                     </div><!-- /.box-body -->
 
                 </div>
+
+
 
             {% else %}
 
@@ -162,5 +166,28 @@
 
         </div>
     </div><!-- /.box -->
+
+    <!-- Modal -->
+    <div id="eliminar" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Eliminar {{ aux.objeto }}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro que desea eliminar este elemento?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
 {% endblock %}
