@@ -1,4 +1,4 @@
-url_categoria = 'formacion'
+url_categoria = 'formacion-academica'
 bc_seccion = 'Formación Académica'
 
 
