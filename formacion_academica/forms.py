@@ -1,11 +1,12 @@
 from . models import *
 from django import forms
-
+from bootstrap_datepicker.widgets import DatePicker
 
 #
 
 
 class CursoEspecializacionForm(forms.ModelForm):
+    #datesss = forms.DateField(widget=DatePicker(options={"format": "mm/dd/yyyy", "autoclose": True}))
     class Meta:
         model = CursoEspecializacion
         exclude = ['usuario', 'tags', ]
