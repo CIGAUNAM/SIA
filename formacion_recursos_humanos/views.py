@@ -53,6 +53,16 @@ class AsesorEstanciaDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class AsesorEstanciaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(AsesorEstancia, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class DireccionTesisJSON(View):
     def get(self, request):
         try:
@@ -83,6 +93,16 @@ class DireccionTesisDetalle(ObjectUpdateMixin, View):
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
     template_name = 'main.html'
+
+
+class DireccionTesisEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(DireccionTesis, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class ComiteTutoralJSON(View):
@@ -125,6 +145,16 @@ class ComiteTutoralDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class ComiteTutoralEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ComiteCandidaturaDoctoral, Q(pk=pk, asesor_principal=request.user) | Q(pk=pk, otros_asesores=request.user) | Q(pk=pk, sinodales=request.user))
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class ComiteCandidaturaDoctoralJSON(View):
     otros = False
 
@@ -155,3 +185,11 @@ class ComiteCandidaturaDoctoralDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class ComiteCandidaturaDoctoralEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ComiteCandidaturaDoctoral, Q(pk=pk, asesor_principal=request.user) | Q(pk=pk, otros_asesores=request.user) | Q(pk=pk, sinodales=request.user))
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
