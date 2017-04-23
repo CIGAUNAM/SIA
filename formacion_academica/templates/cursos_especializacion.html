@@ -4,8 +4,33 @@
     <!-- <hr />
     <p>agregar</p>-->
     {{ form1.as_p }}
+    <div class="form-group">
+        <label>Date:</label>
+
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input data-provide="datepicker" class="datepicker form-control pull-right" id="datepicker" type="text">
+        </div>
+        <!-- /.input group -->
+    </div>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1900:2012",
+                // You can put more options here.
+            });
+        });
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
     <p>detalle</p>
+
 {% endblock %}
