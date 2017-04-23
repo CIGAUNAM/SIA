@@ -142,3 +142,13 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
             return redirect("/" + self.url_categoria + "/" + self.url_seccion + "/" + str(det_obj.pk))  # corregir el redirect
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
+
+
+class MovilidadAcademicaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(MovilidadAcademica, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404

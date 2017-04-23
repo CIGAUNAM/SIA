@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'adminlte/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'adminlte/login.html'}, name='login'),
 
-    url(r'^formacion/', include('formacion_academica.urls')),
+    url(r'^formacion-academica/', include('formacion_academica.urls')),
     url(r'^experiencia/', include('experiencia_laboral.urls')),
     url(r'^investigacion/', include('investigacion.urls')),
     url(r'^difusion-cientifica/', include('difusion_cientifica.urls')),

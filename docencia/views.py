@@ -61,8 +61,6 @@ class CursoDocenciaEscolarizadoDetalle(ObjectUpdateMixin, View):
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
 
-
-
 class CursoDocenciaExtracurricularJSON(View):
     otros = False
     def get(self, request):
@@ -112,3 +110,14 @@ class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk)) #corregir el redirect
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
+
+
+
+class CursoDocenciaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(CursoDocencia, Q(pk=pk, usuarios=request.user) | Q(pk=pk, usuario=request.user))
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
