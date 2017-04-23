@@ -43,3 +43,11 @@ class DesarrolloTecnologicoDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class DesarrolloTecnologicoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(DesarrolloTecnologico, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
