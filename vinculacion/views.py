@@ -35,6 +35,15 @@ class ArbitrajePublicacionAcademicaDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class ArbitrajePublicacionAcademicaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ArbitrajePublicacionAcademica, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ArbitrajeProyectoInvestigacionJSON(View):
     def get(self, request):
@@ -62,6 +71,15 @@ class ArbitrajeProyectoInvestigacionDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class ArbitrajeProyectoInvestigacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ArbitrajeProyectoInvestigacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ArbitrajeOtraActividadJSON(View):
     def get(self, request):
@@ -88,6 +106,15 @@ class ArbitrajeOtraActividadDetalle(ObjectUpdateMixin, View):
     aux = ArbitrajeOtraActividadContext.contexto
     template_name = 'main.html'
 
+
+class ArbitrajeOtraActividadEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ArbitrajeOtraActividad, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class RedAcademicaJSON(View):
@@ -120,6 +147,15 @@ class RedAcademicaDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class RedAcademicaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(RedAcademica, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ConvenioEntidadNoAcademicaJSON(View):
     otros = False
@@ -151,6 +187,15 @@ class ConvenioEntidadNoAcademicaDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class ConvenioEntidadNoAcademicaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ConvenioEntidadNoAcademica, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class ServicioExternoEntidadNoAcademicaJSON(View):
     def get(self, request):
@@ -178,6 +223,15 @@ class ServicioExternoEntidadNoAcademicaDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class ServicioExternoEntidadNoAcademicaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ServicioExternoEntidadNoAcademica, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 class OtroProgramaVinculacionJSON(View):
     def get(self, request):
@@ -203,3 +257,13 @@ class OtroProgramaVinculacionDetalle(ObjectUpdateMixin, View):
     model = OtroProgramaVinculacion
     aux = OtroProgramaVinculacionContext.contexto
     template_name = 'main.html'
+
+
+class OtroProgramaVinculacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(OtroProgramaVinculacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
