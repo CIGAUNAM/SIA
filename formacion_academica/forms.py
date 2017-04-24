@@ -1,8 +1,13 @@
 from . models import *
 from django import forms
-from bootstrap_datepicker.widgets import DatePicker
+#from bootstrap_datepicker.widgets import DatePicker
+#from django_select2 import fields, widgets
 
 #
+
+#class CursoEspecializacionTipo(fields.AutoModelSelect2TagField):
+#    queryset = CursoEspecializacion.objects
+#    #search_fields = ['tipo__icontains', ]
 
 
 class CursoEspecializacionForm(forms.ModelForm):
