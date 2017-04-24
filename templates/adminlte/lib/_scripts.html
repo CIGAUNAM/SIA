@@ -7,6 +7,9 @@
     <script>    $.widget.bridge('uibutton', $.ui.button); </script>
     <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %} "></script>
     <script src="{% static "admin-lte/dist/js/app.min.js" %}"></script>
+    <script src="{% static "datepicker/js/bootstrap-datepicker.js" %}"></script>
+    <script src="{% static "select2/js/select2.js" %}"></script>
+
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 
     <script>
@@ -14,8 +17,9 @@
             $(".datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
-                yearRange: "1960:2040",
-                format: 'YYYY-MM-DD'
+                yearRange: "1960:2020",
+                format: 'yyyy-mm-dd',
+                autoclose: true,
                 // You can put more options here.
             });
         });
