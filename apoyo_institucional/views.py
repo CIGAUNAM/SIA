@@ -35,6 +35,16 @@ class CargoAcademicoAdministrativoDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class CargoAcademicoAdministrativoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(CargoAcademicoAdministrativo, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class RepresentacionOrganoColegiadoJSON(View):
     def get(self, request):
         try:
@@ -59,6 +69,16 @@ class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
     model = RepresentacionOrganoColegiado
     aux = RepresentacionOrganoColegiadoContext.contexto
     template_name = 'main.html'
+
+
+class RepresentacionOrganoColegiadoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(RepresentacionOrganoColegiado, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 class ComisionAcademicaJSON(View):
@@ -87,6 +107,16 @@ class ComisionAcademicaDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class ComisionAcademicaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ComisionAcademica, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class ApoyoTecnicoJSON(View):
     def get(self, request):
         try:
@@ -113,6 +143,16 @@ class ApoyoTecnicoDetalle(ObjectUpdateMixin, View):
     template_name = 'main.html'
 
 
+class ApoyoTecnicoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ApoyoTecnico, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class ApoyoOtraActividadJSON(View):
     def get(self, request):
         try:
@@ -137,5 +177,15 @@ class ApoyoOtraActividadDetalle(ObjectUpdateMixin, View):
     model = ApoyoOtraActividad
     aux = ApoyoOtraActividadContext.contexto
     template_name = 'main.html'
+
+
+class ApoyoOtraActividadEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ApoyoOtraActividad, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 

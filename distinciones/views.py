@@ -38,6 +38,16 @@ class DistincionAcademicoDetalle(ObjectUpdateVarMixin, View):
     template_name = 'main.html'
 
 
+class DistincionAcademicoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(DistincionAcademico, pk=pk, condecorados=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class DistincionAlumnoJSON(View):
     otros = False
     def get(self, request):
@@ -67,3 +77,13 @@ class DistincionAlumnoDetalle(ObjectUpdateVarMixin, View):
     model = DistincionAlumno
     aux = DistincionAlumnoContext.contexto
     template_name = 'main.html'
+
+
+class DistincionAlumnoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(DistincionAlumno, pk=pk, tutores=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
