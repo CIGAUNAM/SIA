@@ -6,9 +6,10 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            $(".js-example-placeholder-single").select2({
+            $(".js-placeholder-single").select2({
                 placeholder: "Select a state",
-                allowClear: true
+                allowClear: true,
+                val: null
             });
         });
     </script>
@@ -56,29 +57,8 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        <select class="js-example-placeholder-single" style="width: 100%;">
+        <select class="js-placeholder-single" style="width: 100%;">
             <option>Alabama</option>
-            <option>Alaska</option>
-            <option>California</option>
-            <option>Delaware</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Washington</option>
-        </select>
-        <div class="input-group-addon">
-            <i class="fa fa-question-circle"></i>
-        </div>
-    </div>
-    <br/>
-
-    <div class="form-group">
-    <label>Opcioneses:</label>
-
-    <div class="input-group">
-        <div class="input-group-addon">
-            <i class="fa fa-calendar"></i>
-        </div>
-        <select class="js-example-placeholder-single" style="width: 100%;">
             <option>Alaska</option>
             <option>California</option>
             <option>Delaware</option>
