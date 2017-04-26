@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'formacion_recursos_humanos.apps.FormacionRecursosHumanosConfig',
     'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
     'distinciones.apps.DistincionesConfig',
+
     'rest_framework',
 
     'django_adminlte',
@@ -82,6 +83,7 @@ INSTALLED_APPS = [
     #'easy_thumbnails',
 
     'table',
+    'django_select2',
 ]
 
 AUTH_USER_MODEL = 'nucleo.User'
@@ -173,12 +175,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'),
-#)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static_custom'),
+)
 
 
 THUMBNAIL_PROCESSORS = (

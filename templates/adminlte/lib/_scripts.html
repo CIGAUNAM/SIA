@@ -1,11 +1,31 @@
 {% load static %}
 
 {% block scripts %}
-<!-- <script src="{% static "jquery/dist/jquery.min.js" %}"></script> -->
-<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<!-- <script>    $.widget.bridge('uibutton', $.ui.button); </script> -->
-<script src="{% static "bootstrap/dist/js/bootstrap.min.js" %} "></script>
-<script src="{% static "admin-lte/dist/js/app.min.js" %}"></script>
-<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="{% static "jquery/dist/jquery.min.js" %}"></script> -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>    $.widget.bridge('uibutton', $.ui.button); </script>
+    <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %} "></script>
+    <script src="{% static "admin-lte/dist/js/app.min.js" %}"></script>
+    <script src="{% static "datepicker/js/bootstrap-datepicker.js" %}"></script>
+    <script src="{% static "select2/js/select2.js" %}"></script>
+
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1960:2020",
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                // You can put more options here.
+            });
+        });
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
+
 {% endblock %}

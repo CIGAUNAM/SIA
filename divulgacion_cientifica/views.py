@@ -240,7 +240,7 @@ class LibroDivulgacionDetalle(ObjectUpdateVarMixin, View):
 class LibroDivulgacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(LibroDivulgacion, pk=pk, tipo='DIVULGACION', usuario=request.user)
+            item = get_object_or_404(LibroDivulgacion, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:
