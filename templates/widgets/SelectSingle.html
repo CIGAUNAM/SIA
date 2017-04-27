@@ -1,0 +1,16 @@
+<div class="form-group" style="margin-top: -10px;">
+    <div class="input-group">
+        <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </div>
+        <select class="js-placeholder-single" style="width: 100%; line-height: 22px;">
+            <option></option>
+            {% for i in widget.choices %}
+                <option>{{ i }}</option>
+            {% endfor %}
+        </select>
+        <div class="input-group-addon">
+            <i class="fa fa-question-circle"></i>
+        </div>
+    </div>
+    <br/>
