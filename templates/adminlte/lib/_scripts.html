@@ -26,6 +26,15 @@
         $(document).ready(function () {
             $('.datepicker').datepicker();
         });
+
+        $(document).ready(function () {
+            $(".js-placeholder-single").select2({
+                placeholder: "Select a state",
+                allowClear: true,
+            });
+        });
     </script>
+
+
 
 {% endblock %}

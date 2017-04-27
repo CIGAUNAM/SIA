@@ -13,7 +13,7 @@ CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODAL
 
 
 class CursoEspecializacion(models.Model):
-    nombre_curso = models.CharField(max_length=255, verbose_name='Nombre del curso')
+    nombre_curso = models.CharField(max_length=255, verbose_name='Nombre del curso', help_text='Nombre del curso texto de ayuda')
     #slug = AutoSlugField(populate_from='nombre_curso', max_length=150, unique=True)
     descripcion = models.TextField(verbose_name='Descripción', blank=True)
     tipo = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_TIPO, verbose_name='Tipo de curso')
