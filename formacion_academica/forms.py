@@ -9,9 +9,11 @@ from django import forms
 #    queryset = CursoEspecializacion.objects
 #    #search_fields = ['tipo__icontains', ]
 
+from .widgets import MyWidget
 
 class CursoEspecializacionForm(forms.ModelForm):
     #datesss = forms.DateField(widget=DatePicker(options={"format": "mm/dd/yyyy", "autoclose": True}))
+    nombre_curso = forms.CharField(widget=MyWidget)
     class Meta:
         model = CursoEspecializacion
         exclude = ['usuario', 'tags', ]
