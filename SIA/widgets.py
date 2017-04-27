@@ -40,7 +40,7 @@ class wTextarea(Widget):
 
 class wSelectSingle(Select):
     allow_multiple_selected = False
-    template_name = 'widgets/SelectSingle.html'
+    #template_name = 'widgets/SelectSingle.html'
 
     def __init__(self, attrs=None, choices=()):
         super(Select, self).__init__(attrs)
