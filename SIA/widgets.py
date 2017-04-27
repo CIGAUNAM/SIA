@@ -79,7 +79,7 @@ class wSelectSingle(Select):
     def render_option(self, selected_choices, option_value, option_label):
         if option_value is None:
             option_value = ''
-        option_value = force_text(option_value)
+        option_value = option_value
         if option_value in selected_choices:
             selected_html = mark_safe(' selected="selected"')
             if not self.allow_multiple_selected:
@@ -87,15 +87,15 @@ class wSelectSingle(Select):
                 selected_choices.remove(option_value)
         else:
             selected_html = ''
-        return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, force_text(option_label))
+        return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, option_label)
 
     def render_options(self, selected_choices):
         # Normalize to strings.
-        selected_choices = set(force_text(v) for v in selected_choices)
+        selected_choices = set(v for v in selected_choices)
         output = ['<option></option>']
         for option_value, option_label in self.choices:
             if isinstance(option_label, (list, tuple)):
-                output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                output.append(format_html('<optgroup label="{}">', option_value))
                 for option in option_label:
                     output.append(self.render_option(selected_choices, *option))
                 output.append('</optgroup>')
