@@ -18,6 +18,7 @@ class CursoEspecializacionForm(forms.ModelForm):
         exclude = ['usuario', 'tags', ]
 
 
+
 class LicenciaturaForm(forms.ModelForm):
     class Meta:
         model = Licenciatura
