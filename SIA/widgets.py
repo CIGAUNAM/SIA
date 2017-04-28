@@ -1,4 +1,4 @@
-from django.forms.widgets import Widget, Select
+from django.forms.widgets import Widget, Select, Input
 from django.template import loader
 from django.utils.safestring import mark_safe
 import copy
@@ -40,7 +40,6 @@ class wTextarea(Widget):
 
 class wSelectSingle(Select):
     allow_multiple_selected = False
-    #template_name = 'widgets/SelectSingle.html'
 
     def __init__(self, attrs=None, choices=()):
         super(Select, self).__init__(attrs)
@@ -68,12 +67,21 @@ class wSelectSingle(Select):
             value = ''
         final_attrs = self.build_attrs(attrs, name=name)
         output = [format_html('<div class="form-group" style="margin-top: -10px;">'
-                              '<div class="input-group"><div class="input-group-addon">'
-                              '<i class="fa fa-calendar"></i></div><select{} class="js-placeholder-single" style="width: 100%;>', flatatt(final_attrs))]
+                                '<div class="input-group">'
+                                    '<div class="input-group-addon">'
+                                        '<i class="fa fa-calendar"></i>'
+                                    '</div>'
+                                    '<select{} class="js-placeholder-single" style="width: 100%;>', flatatt(final_attrs))]
         options = self.render_options([value])
         if options:
             output.append(options)
-        output.append('</select> <div class="input-group-addon"> <i class="fa fa-question-circle"></i> </div> </div> <br/>')
+        output.append('</select>'
+                        '<div class="input-group-addon">'
+                            '<i class="fa fa-question-circle"></i>'
+                        '</div>'
+                      '</div>'
+                      '</div>'
+                      '<br/>')
         return mark_safe('\n'.join(output))
 
     def render_option(self, selected_choices, option_value, option_label):
@@ -89,10 +97,11 @@ class wSelectSingle(Select):
             selected_html = ''
         return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, option_label)
 
+
     def render_options(self, selected_choices):
         # Normalize to strings.
         selected_choices = set(v for v in selected_choices)
-        output = ['<option></option>']
+        output = ['<option></option>\n<option></option>']
         for option_value, option_label in self.choices:
             if isinstance(option_label, (list, tuple)):
                 output.append(format_html('<optgroup label="{}">', option_value))
@@ -102,3 +111,26 @@ class wSelectSingle(Select):
             else:
                 output.append(self.render_option(selected_choices, option_value, option_label))
         return '\n'.join(output)
+
+
+
+class wInput(Input):
+    """
+    Base class for all <input> widgets (except type='checkbox' and
+    type='radio', which are special).
+    """
+    input_type = None  # Subclasses must define this.
+
+    def format_value(self, value):
+        if self.is_localized:
+            return formats.localize_input(value)
+        return value
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        if value != '':
+            # Only add the 'value' attribute if a value is non-empty.
+            final_attrs['value'] = force_text(self.format_value(value))
+        return format_html('<input{} />', flatatt(final_attrs))
