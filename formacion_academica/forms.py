@@ -10,7 +10,10 @@ class CursoEspecializacionForm(forms.ModelForm):
     nombre_curso = forms.CharField(widget=wCharField)
     descripcion = forms.CharField(widget=wTextarea)
     tipo = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ))
-    institucion = forms.ModelChoiceField(Institucion.objects.all().order_by('institucion'), widget=wSelectSingle)
+    horas = forms.CharField(widget=wNumberField)
+    #institucion = forms.ModelChoiceField(Institucion.objects.all().order_by('institucion'), widget=wSelectSingle)
+
+
     dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle)
 
     class Meta:
