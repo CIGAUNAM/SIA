@@ -1,22 +1,22 @@
-from . models import *
 from django import forms
-#from bootstrap_datepicker.widgets import DatePicker
-#from django_select2 import fields, widgets
 
-#
-
-#class CursoEspecializacionTipo(fields.AutoModelSelect2TagField):
-#    queryset = CursoEspecializacion.objects
-#    #search_fields = ['tipo__icontains', ]
-
-from .widgets import MyWidget
+from SIA.widgets import *
+from . models import *
+from django.conf import settings
+from nucleo.models import Institucion
 
 class CursoEspecializacionForm(forms.ModelForm):
     #datesss = forms.DateField(widget=DatePicker(options={"format": "mm/dd/yyyy", "autoclose": True}))
-    nombre_curso = forms.CharField(widget=MyWidget)
+    nombre_curso = forms.CharField(widget=wCharField)
+    descripcion = forms.CharField(widget=wTextarea)
+    tipo = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ))
+    institucion = forms.ModelChoiceField(Institucion.objects.all().order_by('institucion'), widget=wSelectSingle)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle)
+
     class Meta:
         model = CursoEspecializacion
         exclude = ['usuario', 'tags', ]
+
 
 
 class LicenciaturaForm(forms.ModelForm):
