@@ -3,7 +3,7 @@
         <div class="input-group-addon">
             <i class="fa fa-sticky-note-o"></i>
         </div>
-        <input class="form-control pull-right" id="id_{{ widget.name }}" maxlength="255" name="{{ widget.name }}" required=""
+        <input class="form-control pull-right" id="id_{{ widget.name }}" maxlength="255" type="number" min=0 name="{{ widget.name }}" required=""
                type="text"{% if widget.value %} value="{{ widget.value }}"{% endif %}>
         <div class="input-group-addon">
             <a href="#"><i class="fa fa-question-circle"></i></a>

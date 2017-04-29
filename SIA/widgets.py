@@ -22,9 +22,24 @@ class wCharField(Widget):
         template = loader.get_template(self.template_name).render(context)
         return mark_safe(template)
 
+class wNumberField(Widget):
+    template_name = 'widgets/NumberField.html'
+
+    def get_context(self, name, value, attrs=None):
+        return {'widget': {
+            'name': name,
+            'value': value,
+        }}
+
+    def render(self, name, value, attrs=None):
+        context = self.get_context(name, value, attrs)
+        template = loader.get_template(self.template_name).render(context)
+        return mark_safe(template)
+
 
 class wTextarea(Widget):
     template_name = 'widgets/Textarea.html'
+    is_required = False
 
     def get_context(self, name, value, attrs=None):
         return {'widget': {
@@ -80,8 +95,7 @@ class wSelectSingle(Select):
                             '<i class="fa fa-question-circle"></i>'
                         '</div>'
                       '</div>'
-                      '</div>'
-                      '<br/>')
+                      '</div>')
         return mark_safe('\n'.join(output))
 
     def render_option(self, selected_choices, option_value, option_label):
