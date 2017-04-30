@@ -1,4 +1,4 @@
-from django.forms.widgets import Widget, Select, Input
+from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput
 from django.template import loader
 from django.utils.safestring import mark_safe
 import copy
@@ -7,6 +7,8 @@ from django.forms.utils import flatatt, to_current_timezone
 from django.utils.encoding import (
     force_str, force_text, python_2_unicode_compatible,
 )
+from django.utils import datetime_safe, formats, six
+
 
 class wCharField(Widget):
     template_name = 'widgets/CharField.html'
@@ -51,6 +53,43 @@ class wTextarea(Widget):
         context = self.get_context(name, value, attrs)
         template = loader.get_template(self.template_name).render(context)
         return mark_safe(template)
+
+
+class wDateField(DateInput):
+    template_name = 'widgets/DateField.html'
+    format_key = 'DATE_INPUT_FORMATS'
+    format = None
+
+    def get_context(self, name, value, attrs=None):
+
+        if value:
+            tfecha = str(formats.localize_input(value, formats.get_format(self.format_key)[0]))
+            try:
+                tfecha = tfecha.split("/")
+                fecha = str(tfecha[2]) + "-" + str(tfecha[1]) + "-" + str(tfecha[0])
+                return {'widget': {
+                    'name': name,
+                    'value': fecha,
+                }}
+            except:
+                return {'widget': {
+                    'name': name,
+                    'value': value,
+                }}
+        else:
+            return {'widget': {
+                'name': name,
+            }}
+
+    def render(self, name, value, attrs=None):
+        context = self.get_context(name, value, attrs)
+        template = loader.get_template(self.template_name).render(context)
+        return mark_safe(template)
+
+
+class wDateField2(DateTimeBaseInput):
+    format_key = 'DATE_INPUT_FORMATS'
+
 
 
 class wSelectSingle(Select):

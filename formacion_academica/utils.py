@@ -85,7 +85,7 @@ class LicenciaturaContext:
 class MaestriaContext:
     url_seccion = 'maestrias'
 
-    contexto = {'url_categoria': 'formacion', 'url_seccion': 'maestrias',
+    contexto = {'url_categoria': url_categoria, 'url_seccion': 'maestrias',
                 'tab_lista': 'Mis Maestrías', 'tab_agregar': 'Agregar Maestría', 'tab_detalle': 'Editar Maestría',
                 'titulo_lista': 'Mis Maestrías', 'titulo_agregar': 'Agregar Maestría',
                 'titulo_detalle': 'Editar Maestría',
@@ -122,7 +122,7 @@ class MaestriaContext:
 class DoctoradoContext:
     url_seccion = 'doctorados'
 
-    contexto = {'url_categoria': 'formacion', 'url_seccion': 'doctorados',
+    contexto = {'url_categoria': url_categoria, 'url_seccion': 'doctorados',
                 'tab_lista': 'Mis Doctorados', 'tab_agregar': 'Agregar Doctorado', 'tab_detalle': 'Editar Doctorado',
                 'titulo_lista': 'Mis Doctorados', 'titulo_agregar': 'Agregar Doctorado',
                 'titulo_detalle': 'Editar Doctorado',
@@ -159,7 +159,7 @@ class DoctoradoContext:
 class PostDoctoradoContext:
     url_seccion = 'postdoctorados'
 
-    contexto = {'url_categoria': 'formacion', 'url_seccion': 'postdoctorados',
+    contexto = {'url_categoria': url_categoria, 'url_seccion': 'postdoctorados',
                 'tab_lista': 'Mis Postdoctorados', 'tab_agregar': 'Agregar Postdoctorado', 'tab_detalle': 'Editar Postdoctorado',
                 'titulo_lista': 'Mis Postdoctorados', 'titulo_agregar': 'Agregar Postdoctorado',
                 'titulo_detalle': 'Editar Postdoctorado',
