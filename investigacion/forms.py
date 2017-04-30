@@ -39,18 +39,47 @@ class ArticuloCientificoForm(forms.ModelForm):
 
 
 class CapituloLibroInvestigacionForm(forms.ModelForm):
+    titulo = forms.CharField(widget=wCharField)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    libro = forms.ModelChoiceField(Libro.objects.all().order_by('nombre_libro'), widget=wSelectSingle)
+    pagina_inicio = forms.CharField(widget=wNumberField)
+    pagina_fin = forms.CharField(widget=wNumberField)
+
     class Meta:
         model = CapituloLibroInvestigacion
-        exclude = ['tags', ]
+        exclude = ['usuario', 'tags', ]
 
 
 class MapaArbitradoForm(forms.ModelForm):
+    titulo = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    escala = forms.CharField(widget=wCharField)
+    status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ))
+    ciudad = forms.ModelChoiceField(Ciudad.objects.all().order_by('ciudad'), widget=wSelectSingle)
+    editorial = forms.ModelChoiceField(Editorial.objects.all().order_by('editorial'), widget=wSelectSingle)
+    fecha = forms.CharField(widget=wDateField)
+    numero_edicion = forms.CharField(widget=wNumberField)
+    numero_paginas = forms.CharField(widget=wNumberField)
+    coleccion = forms.ModelChoiceField(Coleccion.objects.all().order_by('coleccion'), widget=wSelectSingle)
+    volumen = forms.CharField(widget=wCharField)
+    isbn = forms.CharField(widget=wCharField, required=False)
+    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+
     class Meta:
         model = MapaArbitrado
         exclude = ['tags', ]
 
 
 class InformeTecnicoForm(forms.ModelForm):
+    titulo = models.CharField(max_length=255, unique=True)
+    #slug = AutoSlugField(populate_from='titulo', unique=True)
+    descripcion = models.TextField(blank=True)
+    usuarios = models.ManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
+    fecha = models.DateField(auto_now=False)
+    numero_paginas = models.PositiveIntegerField(default=1)
+    proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos')
+    url = models.URLField(blank=True)
+    tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
     class Meta:
         model = InformeTecnico
         exclude = ['tags', ]
