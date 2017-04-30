@@ -17,9 +17,9 @@ class ArticuloCientificoForm(forms.ModelForm):
     revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelectSingle)
     status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ))
     solo_electronico = forms.BooleanField()
-    usuarios = forms.ModelMultipleChoiceField(User)
-    alumnos = forms.ModelMultipleChoiceField(User)
-    indices = forms.ModelMultipleChoiceField(Indice)
+    #usuarios = forms.ModelMultipleChoiceField(User)
+    #alumnos = forms.ModelMultipleChoiceField(User)
+    #indices = forms.ModelMultipleChoiceField(Indice)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha = forms.CharField(widget=wDateField)
@@ -31,7 +31,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     pagina_fin = forms.CharField(widget=wNumberField)
     id_doi = forms.CharField(widget=wCharField, required=False)
     id_wos = forms.CharField(widget=wCharField, required=False)
-    proyectos = forms.ModelMultipleChoiceField(Proyecto)
+    #proyectos = forms.ModelMultipleChoiceField(Proyecto)
 
     class Meta:
         model = ArticuloCientifico
