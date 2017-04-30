@@ -13,6 +13,7 @@ from SIA.utils import *
 from .forms import *
 from .utils import *
 
+
 # Create your views here.
 
 
@@ -97,7 +98,9 @@ class MaestriaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             maestrias = Maestria.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', maestrias, fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'), use_natural_foreign_keys=True)
+            json = serializers.serialize('json', maestrias,
+                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'),
+                                         use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -132,7 +135,9 @@ class DoctoradoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             maestrias = Doctorado.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', maestrias, fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'), use_natural_foreign_keys=True)
+            json = serializers.serialize('json', maestrias,
+                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'),
+                                         use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -167,7 +172,9 @@ class PostDoctoradoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             maestrias = PostDoctorado.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', maestrias, fields=('titulo', 'area_conocimiento', 'fecha_fin', 'proyecto', 'dependencia'), use_natural_foreign_keys=True)
+            json = serializers.serialize('json', maestrias,
+                                         fields=('titulo', 'area_conocimiento', 'fecha_fin', 'proyecto', 'dependencia'),
+                                         use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -197,33 +204,12 @@ class PostDoctoradoEliminar(View):
             raise Http404
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class LicenciaturaLista1(View, LicenciaturaContext):
     form_class = LicenciaturaForm
 
     def get(self, request):
-        return render(request, 'licenciaturas.html', {'active': 'lista', 'plantilla': self.contexto, 'form': self.form_class})
+        return render(request, 'licenciaturas.html',
+                      {'active': 'lista', 'plantilla': self.contexto, 'form': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -234,7 +220,8 @@ class LicenciaturaLista1(View, LicenciaturaContext):
 
             return redirect(nueva_licenciatura)
         else:
-            return render(request, 'licenciaturas.html', {'active': 'agregar', 'plantilla': self.contexto, 'form': bound_form})
+            return render(request, 'licenciaturas.html',
+                          {'active': 'agregar', 'plantilla': self.contexto, 'form': bound_form})
 
 
 class LicenciaturaDetalle1(View, LicenciaturaContext):
@@ -243,7 +230,8 @@ class LicenciaturaDetalle1(View, LicenciaturaContext):
 
     def get(self, request, pk):
         objeto = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        context = {'active': 'detalle', 'plantilla': self.contexto, 'form': self.form_class(instance=objeto), 'objeto': objeto}
+        context = {'active': 'detalle', 'plantilla': self.contexto, 'form': self.form_class(instance=objeto),
+                   'objeto': objeto}
         return render(request, 'licenciaturas.html', context)
 
     def post(self, request, pk):
@@ -256,33 +244,11 @@ class LicenciaturaDetalle1(View, LicenciaturaContext):
             detalle_curso = bound_form.save()
             return redirect(detalle_curso)
         else:
-            return render(request, 'licenciaturas.html', {'active': 'detalle', 'plantilla': self.contexto, 'form': bound_form})
+            return render(request, 'licenciaturas.html',
+                          {'active': 'detalle', 'plantilla': self.contexto, 'form': bound_form})
 
     def get_update_url(self):
         return reverse('licenciatura_detalle', kwargs={'pk': self.form_class.pk})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class CursoEspecializacionList(generics.ListCreateAPIView):

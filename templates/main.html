@@ -76,9 +76,8 @@
                             <div>
                                 <form action="" method="post">
                                     {% csrf_token %}
-                                    {{ form.as_p }}
                                     {% block form_detalle %}
-                                        <p>agregar</p>
+                                        {{ form.as_p }}
                                     {% endblock %}
                                     <br/>
                                     <button class="btn btn-success" type="submit">Actualizar {{ aux.objeto }}</button>
@@ -111,9 +110,8 @@
                             <div>
                                 <form action="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" method="post">
                                     {% csrf_token %}
-                                    {{ form.as_p }}
                                     {% block form_agregar %}
-                                        <p>agregar</p>
+                                        {{ form.as_p }}
                                     {% endblock %}
                                     <br/>
                                     <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
