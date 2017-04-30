@@ -29,22 +29,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.203', '10.1.11.2', '201.144.41.229']
 
-STATUS_PUBLICACION = (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro'))
-STATUS_PROYECTO = (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro'))
-CLASIFICACION_PROYECTO = (('BASICO', 'Básico'), ('APLICADO', 'Aplicado'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'), ('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'), ('OTRA', 'Otra'))
-ORGANIZACION_PROYECTO = (('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo'))
-MODALIDAD_PROYECTO = (('DISCIPLINARIO', 'Disciplinario'), ('MULTIDISCIPLINARIO', 'Multidisciplinario'), ('INTERDISCIPLINARIO', 'Interisciplinario'), ('TRANSDISCIPLINARIO', 'Transdisciplinario'), ('OTRA', 'Otra'))
-FINANCIAMIENTO_UNAM = (('ASIGNADO', 'Presupuesto asignado a la entidad'), ('CONCURSADO', 'Presupuesto concursado por la entidad'), ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'), ('OTRO', 'Otro'))
-FINANCIAMIENTO_EXTERNO = (('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'))
-FINANCIAMIENTO_TIPO = (('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO))
+STATUS_PUBLICACION = (('', ''), ('', ''), ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro'))
+STATUS_PROYECTO = (('', ''), ('', ''), ('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro'))
+CLASIFICACION_PROYECTO = (('', ''), ('', ''), ('BASICO', 'Básico'), ('APLICADO', 'Aplicado'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'), ('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'), ('OTRA', 'Otra'))
+ORGANIZACION_PROYECTO = (('', ''), ('', ''), ('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo'))
+MODALIDAD_PROYECTO = (('', ''), ('', ''), ('DISCIPLINARIO', 'Disciplinario'), ('MULTIDISCIPLINARIO', 'Multidisciplinario'), ('INTERDISCIPLINARIO', 'Interisciplinario'), ('TRANSDISCIPLINARIO', 'Transdisciplinario'), ('OTRA', 'Otra'))
+FINANCIAMIENTO_UNAM = (('', ''), ('', ''), ('ASIGNADO', 'Presupuesto asignado a la entidad'), ('CONCURSADO', 'Presupuesto concursado por la entidad'), ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'), ('OTRO', 'Otro'))
+FINANCIAMIENTO_EXTERNO = (('', ''), ('', ''), ('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'))
+FINANCIAMIENTO_TIPO = (('', ''), ('', ''), ('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO))
 CURSO_ESPECIALIZACION_TIPO = (('', ''), ('', ''), ('CURSO', 'Curso'), ('DIPLOMADO', 'Diplomado'), ('CERTIFICACION', 'Certificación'), ('OTRO', 'Otro'))
 CURSO_ESPECIALIZACION_MODALIDAD = (('', ''), ('', ''), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro'))
-CARGO__TIPO_CARGO = (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'))
-EVENTO__AMBITO = (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
-EVENTO__RESPONSABILIDAD = (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro'))
-RED_ACADEMICA__CLASIFICACION = (('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
-ENTIDAD_NO_ACADEMICA__CLASIFICACION = (('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('PRIVADO', 'Sector privado'), ('NO_LUCRATIVO', 'Sector privado no lucrativo'), ('EXTRANJERO', 'Extranjero'), ('OTRO', 'Otro'))
-GRADO_ACADEMICO = (('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
+CARGO__TIPO_CARGO = (('', ''), ('', ''), ('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'))
+EVENTO__AMBITO = (('', ''), ('', ''), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
+EVENTO__RESPONSABILIDAD = (('', ''), ('', ''), ('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro'))
+RED_ACADEMICA__CLASIFICACION = (('', ''), ('', ''), ('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
+ENTIDAD_NO_ACADEMICA__CLASIFICACION = (('', ''), ('', ''), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('PRIVADO', 'Sector privado'), ('NO_LUCRATIVO', 'Sector privado no lucrativo'), ('EXTRANJERO', 'Extranjero'), ('OTRO', 'Otro'))
+GRADO_ACADEMICO = (('', ''), ('', ''), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 
 
 # Application definition
