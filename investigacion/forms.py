@@ -3,6 +3,8 @@ from SIA.widgets import *
 from . models import *
 from nucleo.models import Libro as LibroInvestigacion
 from nucleo.models import Proyecto as ProyectoInvestigacion
+from nucleo.models import ProblemaNacionalConacyt, Metodologia, AreaEspecialidad, ImpactoSocial, Financiamiento
+
 
 from django import forms
 
@@ -71,27 +73,50 @@ class MapaArbitradoForm(forms.ModelForm):
 
 
 class InformeTecnicoForm(forms.ModelForm):
-    titulo = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='titulo', unique=True)
-    descripcion = models.TextField(blank=True)
-    usuarios = models.ManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
-    fecha = models.DateField(auto_now=False)
-    numero_paginas = models.PositiveIntegerField(default=1)
-    proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos')
-    url = models.URLField(blank=True)
-    tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
+    titulo = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    fecha = forms.CharField(widget=wDateField)
+    numero_paginas = forms.CharField(widget=wNumberField)
+    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+
     class Meta:
         model = InformeTecnico
         exclude = ['tags', ]
 
 
 class LibroInvestigacionForm(forms.ModelForm):
+    nombre_libro = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    editorial = forms.ModelChoiceField(Editorial.objects.all().order_by('editorial'), widget=wSelectSingle)
+    ciudad = forms.ModelChoiceField(Ciudad.objects.all().order_by('ciudad'), widget=wSelectSingle)
+    fecha = forms.CharField(widget=wDateField)
+    numero_edicion = forms.CharField(widget=wNumberField)
+    numero_paginas = forms.CharField(widget=wNumberField)
+    coleccion = forms.ModelChoiceField(Coleccion.objects.all().order_by('coleccion'), widget=wSelectSingle)
+    volumen = forms.CharField(widget=wCharField)
+    isbn = forms.CharField(widget=wCharField, required=False)
+    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ))
+
     class Meta:
         model = LibroInvestigacion
         exclude = ['tipo', 'tags', ]
 
 
 class ProyectoInvestigacionForm(forms.ModelForm):
+    nombre_proyecto = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    es_permanente = forms.BooleanField()
+    fecha_inicio = forms.CharField(widget=wDateField)
+    fecha_fin = forms.CharField(widget=wDateField)
+    status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PROYECTO', ))
+    clasificacion = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'CLASIFICACION_PROYECTO', ))
+    organizacion = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'ORGANIZACION_PROYECTO', ))
+    modalidad = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'MODALIDAD_PROYECTO', ))
+    tematica_genero = forms.BooleanField()
+    #problemaconacyt podria ser  no multiple
+    descripcion_problema_nacional_conacyt = forms.CharField(widget=wTextarea, required=False)
+
     class Meta:
         model = ProyectoInvestigacion
         exclude = ['tipo', 'tags', ]
