@@ -13,24 +13,24 @@ from django.conf import settings
 #
 
 class ArticuloCientificoForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField)
+    titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    tipo = forms.ChoiceField(widget=wSelectSingle, choices=(('', ''), ('', ''), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
-    revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelectSingle)
-    status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ))
+    tipo = forms.ChoiceField(widget=wSelectSingle, choices=(('', ''), ('', ''), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')), required=True)
+    revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelectSingle, required=True)
+    status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField()
     #usuarios = forms.ModelMultipleChoiceField(User)
     #alumnos = forms.ModelMultipleChoiceField(User)
     #indices = forms.ModelMultipleChoiceField(Indice)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
-    fecha = forms.CharField(widget=wDateField)
+    fecha = forms.CharField(widget=wDateField, required=True)
     volumen = forms.CharField(widget=wCharField, required=False)
     numero = forms.CharField(widget=wCharField, required=False)
     issn_impreso = forms.CharField(widget=wCharField, required=False)
     issn_online = forms.CharField(widget=wCharField, required=False)
-    pagina_inicio = forms.CharField(widget=wNumberField)
-    pagina_fin = forms.CharField(widget=wNumberField)
+    pagina_inicio = forms.CharField(widget=wNumberField, required=True)
+    pagina_fin = forms.CharField(widget=wNumberField, required=True)
     id_doi = forms.CharField(widget=wCharField, required=False)
     id_wos = forms.CharField(widget=wCharField, required=False)
     #proyectos = forms.ModelMultipleChoiceField(Proyecto)
@@ -41,11 +41,11 @@ class ArticuloCientificoForm(forms.ModelForm):
 
 
 class CapituloLibroInvestigacionForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField)
+    titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    libro = forms.ModelChoiceField(Libro.objects.all().order_by('nombre_libro'), widget=wSelectSingle)
-    pagina_inicio = forms.CharField(widget=wNumberField)
-    pagina_fin = forms.CharField(widget=wNumberField)
+    libro = forms.ModelChoiceField(Libro.objects.all().order_by('nombre_libro'), widget=wSelectSingle, required=True)
+    pagina_inicio = forms.CharField(widget=wNumberField, required=True)
+    pagina_fin = forms.CharField(widget=wNumberField, required=True)
 
     class Meta:
         model = CapituloLibroInvestigacion
@@ -55,15 +55,15 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
 class MapaArbitradoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    escala = forms.CharField(widget=wCharField)
-    status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ))
-    ciudad = forms.ModelChoiceField(Ciudad.objects.all().order_by('ciudad'), widget=wSelectSingle)
-    editorial = forms.ModelChoiceField(Editorial.objects.all().order_by('editorial'), widget=wSelectSingle)
-    fecha = forms.CharField(widget=wDateField)
-    numero_edicion = forms.CharField(widget=wNumberField)
-    numero_paginas = forms.CharField(widget=wNumberField)
-    coleccion = forms.ModelChoiceField(Coleccion.objects.all().order_by('coleccion'), widget=wSelectSingle)
-    volumen = forms.CharField(widget=wCharField)
+    escala = forms.CharField(widget=wCharField, required=True)
+    status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    ciudad = forms.ModelChoiceField(Ciudad.objects.all().order_by('ciudad'), widget=wSelectSingle, required=True)
+    editorial = forms.ModelChoiceField(Editorial.objects.all().order_by('editorial'), widget=wSelectSingle, required=True)
+    fecha = forms.CharField(widget=wDateField, required=True)
+    numero_edicion = forms.CharField(widget=wNumberField, required=True)
+    numero_paginas = forms.CharField(widget=wNumberField, required=True)
+    coleccion = forms.ModelChoiceField(Coleccion.objects.all().order_by('coleccion'), widget=wSelectSingle, required=False)
+    volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
 
@@ -75,8 +75,8 @@ class MapaArbitradoForm(forms.ModelForm):
 class InformeTecnicoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    fecha = forms.CharField(widget=wDateField)
-    numero_paginas = forms.CharField(widget=wNumberField)
+    fecha = forms.CharField(widget=wDateField, required=True)
+    numero_paginas = forms.CharField(widget=wNumberField, required=True)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
 
     class Meta:
