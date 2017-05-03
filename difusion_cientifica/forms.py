@@ -40,7 +40,7 @@ class ResenaForm(forms.ModelForm):
     revista_resenada = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelectSingle, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     libro_publica = forms.ModelChoiceField(Libro.objects.all().order_by('nombre_libro'), widget=wSelectSingle, required=True)
-    revista_publica = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_libro'), widget=wSelectSingle, required=True)
+    revista_publica = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelectSingle, required=True)
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
