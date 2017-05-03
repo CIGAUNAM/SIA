@@ -26,7 +26,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha = forms.CharField(widget=wDateField, required=True)
     volumen = forms.CharField(widget=wCharField, required=False)
-    numero = forms.CharField(widget=wCharField, required=False)
+    numero = forms.CharField(widget=wNumberField, required=False)
     issn_impreso = forms.CharField(widget=wCharField, required=False)
     issn_online = forms.CharField(widget=wCharField, required=False)
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
