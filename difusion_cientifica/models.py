@@ -14,7 +14,7 @@ EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDI
 class MemoriaInExtenso(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='titulo', unique=True)
-    descipcion = models.TextField(blank=True)
+    descripcion = models.TextField(blank=True)
     ciudad = models.ForeignKey(Ciudad)
     fecha = models.DateField()
     evento = models.ForeignKey(Evento)
@@ -41,7 +41,7 @@ class MemoriaInExtenso(models.Model):
 
 
 class PrologoLibro(models.Model):
-    descipcion = models.TextField(blank=True)
+    descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro, related_name='prologo_libro_libro')
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
@@ -66,7 +66,7 @@ class Resena(models.Model):
     libro_resenado = models.ForeignKey(Libro, blank=True, null=True, related_name='resena_libro_resenado')
     revista_resenada = models.ForeignKey(Revista, blank=True, null=True, related_name='resena_revista_resenada')
     #slug = AutoSlugField(populate_from='titulo_resena', unique=True)
-    descipcion = models.TextField(blank=True)
+    descripcion = models.TextField(blank=True)
     libro_publica = models.ForeignKey(Libro, related_name='resena_libro_publica', blank=True, null=True)
     revista_publica = models.ForeignKey(Revista, related_name='resena_revista_publica', blank=True, null=True)
     pagina_inicio = models.PositiveIntegerField()
@@ -88,7 +88,7 @@ class Resena(models.Model):
 
 class OrganizacionEventoAcademico(models.Model):
     evento = models.ForeignKey(Evento)
-    descipcion = models.TextField(blank=True)
+    descripcion = models.TextField(blank=True)
     responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
@@ -110,7 +110,7 @@ class OrganizacionEventoAcademico(models.Model):
 class ParticipacionEventoAcademico(models.Model):
     titulo = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='titulo', unique=True)
-    descipcion = models.TextField(blank=True)
+    descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento)
     resumen_publicado = models.BooleanField(default=False)
     #autores = models.ManyToManyField(User, related_name='participacion_evento_academico_autores')

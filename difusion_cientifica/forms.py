@@ -51,12 +51,27 @@ class ResenaForm(forms.ModelForm):
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
+    evento = forms.ModelChoiceField(Evento.objects.all().order_by('nombre_evento'), widget=wSelectSingle, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    responsabilidad = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'EVENTO__RESPONSABILIDAD', ), required=True)
+    numero_ponentes = forms.CharField(widget=wNumberField, required=True)
+    numero_asistentes = forms.CharField(widget=wNumberField, required=True)
+    ambito = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+
     class Meta:
         model = OrganizacionEventoAcademico
         exclude = ['usuario', 'tags', ]
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
+    titulo = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    evento = forms.ModelChoiceField(Evento.objects.all().order_by('nombre_evento'), widget=wSelectSingle, required=True)
+    resumen_publicado = forms.BooleanField()
+    ambito = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+    por_invitacion = forms.BooleanField()
+    ponencia_magistral = forms.BooleanField()
+
     class Meta:
         model = ParticipacionEventoAcademico
         exclude = ['usuario', 'tags', ]
