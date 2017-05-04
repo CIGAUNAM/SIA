@@ -10,7 +10,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     tipo = forms.ChoiceField(widget=wSelectSingle, choices=(('', ''), ('', ''), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')), required=True)
     status = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    indizado = forms.BooleanField()
+    indizado = forms.BooleanField(required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     solo_electronico = forms.BooleanField()
     revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelectSingle, required=True)

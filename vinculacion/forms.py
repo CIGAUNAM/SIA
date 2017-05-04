@@ -29,7 +29,7 @@ class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
 class ArbitrajeOtraActividadForm(forms.ModelForm):
     actividad = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('nombre_proyecto'), widget=wSelectSingle, required=True)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle, required=True)
     fecha = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
@@ -43,14 +43,7 @@ class RedAcademicaForm(forms.ModelForm):
     clasificacion = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=wTextarea, required=True)
     fecha_constitucion = forms.CharField(widget=wDateField, required=True)
-
-
-
-    vigente = models.BooleanField(default=False)
-    proyectos = models.ManyToManyField(Proyecto, related_name='red_academica_proyectos', blank=True)
-    usuarios = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
-    tags = models.ManyToManyField(Tag, related_name='red_academica_tags', blank=True)
-
+    vigente = forms.BooleanField()
 
     class Meta:
         model = RedAcademica
@@ -58,18 +51,43 @@ class RedAcademicaForm(forms.ModelForm):
 
 
 class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
+    nombre = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    es_agradecimiento = forms.BooleanField()
+    clasificacion = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
+    objetivos = forms.CharField(widget=wTextarea, required=False)
+    fecha_inicio = forms.CharField(widget=wDateField, required=True)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    es_renovacion = forms.BooleanField(required=False)
+    incluye_financiamiento = forms.BooleanField()
+
     class Meta:
         model = ConvenioEntidadNoAcademica
         exclude = ['tags', ]
 
 
 class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
+    nombre_servicio = forms.CharField(widget=wCharField, required=True)
+    clasificacion_servicio = forms.ModelChoiceField(ClasificacionServicio.objects.all().order_by('nombre'), widget=wSelectSingle, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle, required=True)
+    clasificacion_entidad = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
+    fecha_inicio = forms.CharField(widget=wDateField, required=True)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    incluye_financiamiento = forms.BooleanField()
+
     class Meta:
         model = ServicioExternoEntidadNoAcademica
         exclude = ['usuario', 'tags', ]
 
 
 class OtroProgramaVinculacionForm(forms.ModelForm):
+    nombre = forms.CharField(widget=wCharField, required=True)
+    fecha = forms.CharField(widget=wDateField, required=True)
+    tipo = forms.ChoiceField(widget=wSelectSingle, choices=(('', '',), ('', '',), ('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    resultados = forms.CharField(widget=wTextarea, required=False)
+
     class Meta:
         model = OtroProgramaVinculacion
         exclude = ['usuario', 'tags', ]

@@ -139,7 +139,6 @@ class ApoyoTecnico(models.Model):
     #ubicacion = models.ForeignKey(Ubicacion)
     apoyo_inicio = models.DateField(auto_now=False)
     apoyo_fin = models.DateField(auto_now=False)
-    tags = models.ManyToManyField(Tag)
     ##slug = AutoSlugField(populate_from='apoyo_tecnico', unique=True)
     usuario = models.ForeignKey(User)
     tags = models.ManyToManyField(Tag, related_name='apoyo_tecnico_tags', blank=True)

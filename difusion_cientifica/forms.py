@@ -67,10 +67,10 @@ class ParticipacionEventoAcademicoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     evento = forms.ModelChoiceField(Evento.objects.all().order_by('nombre_evento'), widget=wSelectSingle, required=True)
-    resumen_publicado = forms.BooleanField()
+    resumen_publicado = forms.BooleanField(required=False)
     ambito = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
-    por_invitacion = forms.BooleanField()
-    ponencia_magistral = forms.BooleanField()
+    por_invitacion = forms.BooleanField(required=False)
+    ponencia_magistral = forms.BooleanField(required=False)
 
     class Meta:
         model = ParticipacionEventoAcademico
