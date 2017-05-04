@@ -27,12 +27,31 @@ class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
 
 
 class ArbitrajeOtraActividadForm(forms.ModelForm):
+    actividad = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('nombre_proyecto'), widget=wSelectSingle, required=True)
+    fecha = forms.CharField(widget=wDateField, required=True)
+
     class Meta:
         model = ArbitrajeOtraActividad
         exclude = ['usuario', 'tags', ]
 
 
 class RedAcademicaForm(forms.ModelForm):
+    nombre = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    clasificacion = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
+    objetivos = forms.CharField(widget=wTextarea, required=True)
+    fecha_constitucion = forms.CharField(widget=wDateField, required=True)
+
+
+
+    vigente = models.BooleanField(default=False)
+    proyectos = models.ManyToManyField(Proyecto, related_name='red_academica_proyectos', blank=True)
+    usuarios = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
+    tags = models.ManyToManyField(Tag, related_name='red_academica_tags', blank=True)
+
+
     class Meta:
         model = RedAcademica
         exclude = ['tags', ]
