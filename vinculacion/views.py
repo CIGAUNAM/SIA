@@ -239,7 +239,7 @@ class OtroProgramaVinculacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = OtroProgramaVinculacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre_servicio', 'fecha', 'tipo'))
+                                         fields=('nombre', 'fecha', 'tipo'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

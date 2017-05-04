@@ -169,7 +169,7 @@ class ServicioExternoEntidadNoAcademica(models.Model):
 
 
 class OtroProgramaVinculacion(models.Model):
-    nombre_servicio = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
     fecha = models.DateField()
     tipo = models.CharField(max_length=20, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
@@ -180,12 +180,12 @@ class OtroProgramaVinculacion(models.Model):
     tags = models.ManyToManyField(Tag, related_name='otro_programa_vinculacion_tags', blank=True)
 
     def __str__(self):
-        return "{} : {}".format(self.nombre_servicio, self.fecha)
+        return "{} : {}".format(self.nombre, self.fecha)
 
     def get_absolute_url(self):
         return reverse('otro_programa_vinculacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['-fecha', 'nombre_servicio']
+        ordering = ['-fecha', 'nombre']
         verbose_name = 'Otro programa o acción de vinculación, colaboración y/o cooperación'
         verbose_name_plural = 'Otros programas o acciones de vinculación, colaboración y/o cooperación'
