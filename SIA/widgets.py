@@ -92,7 +92,7 @@ class wDateField2(DateTimeBaseInput):
 
 
 
-class wSelectSingle(Select):
+class wSelectSingle1(Select):
     allow_multiple_selected = False
 
     def __init__(self, attrs=None, choices=()):
@@ -164,6 +164,43 @@ class wSelectSingle(Select):
             else:
                 output.append(self.render_option(selected_choices, option_value, option_label))
         return '\n'.join(output)
+
+
+class wSelectSingle(Select):
+    input_type = 'select'
+    template_name = 'django/forms/widgets/select.html'
+    option_template_name = 'django/forms/widgets/select_option.html'
+    add_id_index = False
+    checked_attribute = {'selected': True}
+    option_inherits_attrs = False
+
+    def get_context(self, name, value, attrs):
+        context = super(Select, self).get_context(name, value, attrs)
+        if self.allow_multiple_selected:
+            context['widget']['attrs']['multiple'] = 'multiple'
+        return context
+
+    @staticmethod
+    def _choice_has_empty_value(choice):
+        """Return True if the choice's value is empty string or None."""
+        value, _ = choice
+        return (
+            (isinstance(value, six.string_types) and not bool(value)) or
+            value is None
+        )
+
+    def use_required_attribute(self, initial):
+        """
+        Don't render 'required' if the first <option> has a value, as that's
+        invalid HTML.
+        """
+        use_required_attribute = super(Select, self).use_required_attribute(initial)
+        # 'required' is always okay for <select multiple>.
+        if self.allow_multiple_selected:
+            return use_required_attribute
+
+        first_choice = next(iter(self.choices), None)
+        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
 
 
 
