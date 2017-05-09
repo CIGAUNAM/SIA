@@ -16,7 +16,7 @@ class CursoEspecializacionForm(forms.ModelForm):
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
-    area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('categoria'), widget=Select3Widget, required=True)
+    area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('pk'), widget=Select3Widget, required=True)
     dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=Select3Widget, required=True)
 
     class Meta:
