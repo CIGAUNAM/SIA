@@ -3,22 +3,21 @@ from django import forms
 from SIA.widgets import *
 from .models import *
 from django.conf import settings
+
+from django_select2.forms import Select2Widget, Select2MultipleWidget
 from nucleo.models import Institucion
 
 
 class CursoEspecializacionForm(forms.ModelForm):
     nombre_curso = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    tipo = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
     horas = forms.CharField(widget=wNumberField, required=True)
-    modalidad = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True)
+    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    # fecha_inicio = forms.CharField()
-    # fecha_fin = forms.CharField()
     fecha_fin = forms.CharField(widget=wDateField, required=False)
-    area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('categoria'),
-                                               widget=wSelectSingle, required=True)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle, required=True)
+    area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('categoria'), widget=Select3Widget, required=True)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=Select3Widget, required=True)
 
     class Meta:
         model = CursoEspecializacion
