@@ -11,7 +11,7 @@ from django.utils import datetime_safe, formats, six
 from django import forms
 from django.conf import settings
 from itertools import chain
-
+from django_select2.forms import Select2Mixin
 
 class wCharField(Widget):
     template_name = 'widgets/CharField.html'
@@ -168,44 +168,8 @@ class wSelectSingle1(Select):
                 output.append(self.render_option(selected_choices, option_value, option_label))
         return '\n'.join(output)
 
-class wSelectSingle2(Select):
-    input_type = 'select'
-    template_name = 'django/forms/widgets/select.html'
-    option_template_name = 'django/forms/widgets/select_option.html'
-    add_id_index = False
-    checked_attribute = {'selected': True}
-    option_inherits_attrs = False
 
-    def get_context(self, name, value, attrs):
-        context = super(Select, self).get_context(name, value, attrs)
-        if self.allow_multiple_selected:
-            context['widget']['attrs']['multiple'] = 'multiple'
-        return context
-
-    @staticmethod
-    def _choice_has_empty_value(choice):
-        """Return True if the choice's value is empty string or None."""
-        value, _ = choice
-        return (
-            (isinstance(value, six.string_types) and not bool(value)) or
-            value is None
-        )
-
-    def use_required_attribute(self, initial):
-        """
-        Don't render 'required' if the first <option> has a value, as that's
-        invalid HTML.
-        """
-        use_required_attribute = super(Select, self).use_required_attribute(initial)
-        # 'required' is always okay for <select multiple>.
-        if self.allow_multiple_selected:
-            return use_required_attribute
-
-        first_choice = next(iter(self.choices), None)
-        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
-
-
-class Select3Mixin(object):
+class Select3Mixin(Select2Mixin):
     """
     The base mixin of all Select2 widgets.
 
@@ -256,7 +220,7 @@ class Select3Mixin(object):
 
     media = property(_get_media)
 
-class wSelectSingle(Select):
+class wSelectSingle2(Select):
     allow_multiple_selected = False
 
     def __init__(self, attrs=None, choices=()):
@@ -272,6 +236,12 @@ class wSelectSingle(Select):
         obj.choices = copy.copy(self.choices)
         memo[id(self)] = obj
         return obj
+
+    def get_context(self, name, value, attrs=None):
+        return {'widget': {
+            'name': name,
+            'value': value,
+        }}
 
     def render(self, name, value, attrs=None):
         if value is None:
@@ -320,6 +290,43 @@ class wSelectSingle(Select):
             else:
                 output.append(self.render_option(selected_choices, option_value, option_label))
         return '\n'.join(output)
+
+
+class wSelectSingle(Select):
+    input_type = 'select'
+    template_name = 'widgets/select.html'
+    option_template_name = 'widgets/select_option.html'
+    add_id_index = False
+    checked_attribute = {'selected': True}
+    option_inherits_attrs = False
+
+    def get_context(self, name, value, attrs):
+        context = super(Select, self).get_context(name, value, attrs)
+        if self.allow_multiple_selected:
+            context['widget']['attrs']['multiple'] = 'multiple'
+        return context
+
+    @staticmethod
+    def _choice_has_empty_value(choice):
+        """Return True if the choice's value is empty string or None."""
+        value, _ = choice
+        return (
+            (isinstance(value, six.string_types) and not bool(value)) or
+            value is None
+        )
+
+    def use_required_attribute(self, initial):
+        """
+        Don't render 'required' if the first <option> has a value, as that's
+        invalid HTML.
+        """
+        use_required_attribute = super(Select, self).use_required_attribute(initial)
+        # 'required' is always okay for <select multiple>.
+        if self.allow_multiple_selected:
+            return use_required_attribute
+
+        first_choice = next(iter(self.choices), None)
+        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
 
 
 
