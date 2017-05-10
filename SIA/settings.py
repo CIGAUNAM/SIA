@@ -184,6 +184,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_custom'),
 )
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
