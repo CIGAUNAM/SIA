@@ -38,18 +38,6 @@ class CiudadForm(forms.ModelForm):
         exclude = ['slug', ]
 
 
-class RegionForm(forms.ModelForm):
-    class Meta:
-        model = Region
-        exclude = ['slug', ]
-
-
-class UbicacionForm(forms.ModelForm):
-    class Meta:
-        model = Ubicacion
-        exclude = ['slug', ]
-
-
 class InstitucionForm(forms.ModelForm):
     class Meta:
         model = Institucion

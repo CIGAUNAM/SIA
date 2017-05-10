@@ -2,7 +2,7 @@ from django.db import models
 
 from django.conf import settings
 #from autoslug import AutoSlugField
-from nucleo.models import User, Tag, Pais, Ciudad, Ubicacion, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from nucleo.models import User, Tag, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
 from django.core.urlresolvers import reverse
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))

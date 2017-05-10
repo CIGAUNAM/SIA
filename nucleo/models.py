@@ -35,73 +35,73 @@ class Tag(models.Model):
 
 
 class ZonaPais(models.Model):
-    zona = models.CharField(max_length=60, unique=True)
+    nombre = models.CharField(max_length=60, unique=True)
     #slug = AutoSlugField(populate_from='zona')
 
     def __str__(self):
-        return self.zona
+        return self.nombre
 
     def natural_key(self):
-        return (self.zona)
+        return (self.nombre)
 
     class Meta:
-        ordering = ['zona']
+        ordering = ['nombre']
         verbose_name = 'Zona de paises'
         verbose_name_plural = 'Zonas de paises'
 
 
 class Pais(models.Model):
-    pais = models.CharField(max_length=60, unique=True)
+    nombre = models.CharField(max_length=60, unique=True)
     #slug = AutoSlugField(populate_from='pais', unique=True)
     nombre_extendido = models.CharField(max_length=200, unique=True)
     codigo = models.SlugField(max_length=2, unique=True)
     zona = models.ForeignKey(ZonaPais)
 
     def __str__(self):
-        return self.pais
+        return self.nombre
 
     def natural_key(self):
-        return (self.pais)
+        return (self.nombre)
 
     class Meta:
-        ordering = ['pais']
+        ordering = ['nombre']
         verbose_name_plural = 'Paises'
         verbose_name = 'País'
 
 
 class Estado(models.Model):
-    estado = models.CharField(max_length=200)
+    nombre = models.CharField(max_length=200)
     #slug = AutoSlugField(populate_from='estado')
     pais = models.ForeignKey(Pais)
 
     def __str__(self):
-        return "{} : {}".format(self.pais, self.estado)
+        return "{} : {}".format(self.pais, self.nombre)
 
     def natural_key(self):
-        return (self.estado)
+        return (self.nombre)
 
     class Meta:
-        unique_together = ['estado', 'pais']
-        ordering = ['pais', 'estado']
+        unique_together = ['nombre', 'pais']
+        ordering = ['nombre']
 
 
 class Ciudad(models.Model):
-    ciudad = models.CharField(max_length=255)
+    nombre = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='ciudad')
     estado = models.ForeignKey(Estado)
 
     def __str__(self):
-        return "{} : {} ".format(self.estado, self.ciudad)
+        return "{} : {} ".format(self.estado, self.nombre)
 
     def natural_key(self):
-        return (self.ciudad)
+        return (self.nombre)
 
     class Meta:
-        unique_together = ['ciudad', 'estado']
-        ordering = ['estado', 'ciudad']
+        unique_together = ['nombre', 'estado']
+        ordering = ['nombre']
         verbose_name_plural = 'Ciudades'
 
-
+"""
 class Region(models.Model):
     region = models.CharField(max_length=200)
     #slug = AutoSlugField(populate_from='region', unique=True)
@@ -142,7 +142,7 @@ class Ubicacion(models.Model):
         unique_together = ['direccion1', 'direccion2', 'ciudad']
         verbose_name = 'Ubicación'
         verbose_name_plural = 'Ubicaciones'
-
+"""
 
 
 class User(AbstractUser):
@@ -173,25 +173,25 @@ class User(AbstractUser):
 
 
 class Institucion(models.Model):
-    institucion = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='institucion', max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais)
 
     def __str__(self):
-        return self.institucion
+        return self.nombre
 
     def natural_key(self):
-        return (self.institucion)
+        return (self.nombre)
 
     class Meta:
-        ordering = ['institucion']
+        ordering = ['nombre']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
 
 
 class Dependencia(models.Model):
-    dependencia = models.CharField(max_length=255)
+    nombre = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='dependencia', max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion)
@@ -205,14 +205,14 @@ class Dependencia(models.Model):
                                                           ('NO', 'No')), default='NO', verbose_name='Subsistema UNAM')
 
     def __str__(self):
-        return self.dependencia
+        return self.nombre
 
     def natural_key(self):
-        return (self.dependencia)
+        return (self.nombre)
 
     class Meta:
-        unique_together = ('dependencia', 'institucion')
-        ordering = ['institucion', 'dependencia']
+        unique_together = ('nombre', 'institucion')
+        ordering = ['nombre']
 
 
 class Departamento(models.Model):

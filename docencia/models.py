@@ -26,7 +26,7 @@ class CursoDocencia(models.Model):
     otras_dependencias_participantes = models.ManyToManyField(Dependencia, related_name='curso_escolarizado_otras_dependencias_participantes', blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.dependencia), self.fecha_inicio)
+        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
 
     class Meta:
         ordering = ['-fecha_inicio']
