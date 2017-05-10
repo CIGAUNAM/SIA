@@ -1,11 +1,11 @@
-from django import forms
+#from django import forms
 
 from SIA.widgets import *
 from .models import *
 from django.conf import settings
 
-from django_select2.forms import Select2Widget, Select2MultipleWidget, ModelSelect2Widget
-from nucleo.models import Institucion
+from django_select2.forms import ModelSelect2Widget
+
 
 
 class CursoEspecializacionForm(forms.ModelForm):
@@ -17,8 +17,8 @@ class CursoEspecializacionForm(forms.ModelForm):
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
     area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('pk'), widget=Select3Widget, required=True)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), label='Dependencia',  widget=Select3Widget(search_fields=['dependencia__icontains'],), required=True)
-    #dependencia = forms.ModelChoiceField(queryset=Dependencia.objects.all().order_by('dependencia'), label='Dependencia', widget=ModelSelect2Widget(search_fields=['dependencia__icontains'],), required=True)
+    #dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), label='Dependencia',  widget=Select3Widget, required=True)
+    dependencia = forms.ModelChoiceField(queryset=Dependencia.objects.all().order_by('dependencia'), label='Dependencia', widget=ModelSelect2Widget(search_fields=['dependencia__icontains'],), required=True)
 
     class Meta:
         model = CursoEspecializacion

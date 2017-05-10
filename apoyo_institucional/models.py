@@ -1,6 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
-from nucleo.models import User, Tag, Pais, Estado, Ciudad, Ubicacion, Institucion, Dependencia, Departamento, Cargo
+from nucleo.models import User, Tag, Pais, Estado, Ciudad, Institucion, Dependencia, Departamento, Cargo
 from django.core.urlresolvers import reverse
 
 # Create your models here.
@@ -73,7 +73,7 @@ class CargoAcademicoAdministrativo(models.Model):
     tags = models.ManyToManyField(Tag, related_name='cargo_academico_administrativo_tags', blank=True)
 
     def __str__(self):
-        return "[ {} : {} ] : {} : {} : {} : {}".format(self.user, self.cargo, self.dependencia.dependencia, self.dependencia.institucion, self.cargo_inicio, self.cargo_fin)
+        return "[ {} : {} ] : {} : {} : {} : {}".format(self.user, self.cargo, self.dependencia.nombre, self.dependencia.institucion, self.cargo_inicio, self.cargo_fin)
 
     def get_absolute_url(self):
         return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})

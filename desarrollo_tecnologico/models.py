@@ -2,7 +2,7 @@ from django.db import models
 
 #from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from nucleo.models import User, Tag, Ubicacion, Region, Dependencia, ImpactoSocial, Proyecto, Indice
+from nucleo.models import User, Tag, Dependencia, ImpactoSocial, Proyecto, Indice
 
 # Create your models here.
 

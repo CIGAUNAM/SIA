@@ -19,7 +19,7 @@ from experiencia_laboral.models import *
 import uuid
 
 
-from nucleo.models import Tag, ZonaPais, Pais, Estado, Ciudad, Region, Ubicacion, Institucion, Dependencia, User, Revista, Indice
+from nucleo.models import Tag, ZonaPais, Pais, Estado, Ciudad, Institucion, Dependencia, User, Revista, Indice
 from investigacion.models import *
 
 
