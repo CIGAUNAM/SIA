@@ -6,7 +6,7 @@ from django import forms
 #
 
 class CargoAcademicoAdministrativoForm(forms.ModelForm):
-    cargo = forms.ModelChoiceField(Cargo.objects.all().order_by('cargo'), widget=wSelectSingle, required=True)
+    cargo = forms.ModelChoiceField(Cargo.objects.all().order_by('nombre'), widget=wSelectSingle, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle, required=True)
     cargo_inicio = forms.CharField(widget=wDateField, required=True)
@@ -14,7 +14,7 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
 
     class Meta:
         model = CargoAcademicoAdministrativo
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class RepresentacionOrganoColegiadoForm(forms.ModelForm):
@@ -26,7 +26,7 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
 
     class Meta:
         model = RepresentacionOrganoColegiado
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class ComisionAcademicaForm(forms.ModelForm):
@@ -38,7 +38,7 @@ class ComisionAcademicaForm(forms.ModelForm):
 
     class Meta:
         model = ComisionAcademica
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class ApoyoTecnicoForm(forms.ModelForm):
@@ -50,7 +50,7 @@ class ApoyoTecnicoForm(forms.ModelForm):
 
     class Meta:
         model = ApoyoTecnico
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class ApoyoOtraActividadForm(forms.ModelForm):
@@ -62,6 +62,6 @@ class ApoyoOtraActividadForm(forms.ModelForm):
 
     class Meta:
         model = ApoyoOtraActividad
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 

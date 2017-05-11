@@ -18,20 +18,6 @@ def inicio(request):
 
 
 
-class TagLista(generics.ListCreateAPIView):
-
-    def get(self):
-        return Tag.objects.all()
-
-
-class TagList(generics.ListCreateAPIView):
-    queryset = Tag.objects.all()
-    serializer_class = TagSerializer
-
-class TagDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Tag.objects.all()
-    serializer_class = TagSerializer
 
 
 class ZonaPaisList(generics.ListCreateAPIView):

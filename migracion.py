@@ -86,1443 +86,1443 @@ Zonas = ('América del Norte', 'América Central', 'América del Sur', 'Antillas
 
 for i in Zonas:
     print(i)
-    z = ZonaPais(zona=i)
+    z = ZonaPais(nombre=i)
     z.save()
 
 
 
-Paises = (('México', 'Estados Unidos Mexicanos', 'MX', ZonaPais.objects.get(zona='América del Norte').id),
-          ('Abjasia', 'República de Abjasia', 'AB', ZonaPais.objects.get(zona='Asia').id),
-          ('Acrotiri y Dhekelia', 'Bases Soberanas de Acrotiri y Dhekelia', 'QM', ZonaPais.objects.get(zona='Europa').id),
-          ('Afganistán', 'República Islámica de Afganistán', 'AF', ZonaPais.objects.get(zona='Asia').id),
-          ('Albania', 'República de Albania', 'AL', ZonaPais.objects.get(zona='Europa').id),
-          ('Alemania', 'República Federal de Alemania', 'DE', ZonaPais.objects.get(zona='Europa').id),
-          ('Andorra', 'Principado de Andorra', 'AD', ZonaPais.objects.get(zona='Europa').id),
-          ('Angola', 'República de Angola', 'AO', ZonaPais.objects.get(zona='África').id),
-          ('Anguila', 'Anguila', 'AI', ZonaPais.objects.get(zona='América Central').id),
-          ('Antigua y Barbuda', 'Antigua y Barbuda', 'AG', ZonaPais.objects.get(zona='Antillas').id),
-          ('Arabia Saudita', 'Reino de Arabia Saudita', 'SA', ZonaPais.objects.get(zona='Asia').id),
-          ('Argelia', 'República Argelina Democrática y Popular', 'DZ', ZonaPais.objects.get(zona='África').id),
-          ('Argentina', 'República Argentina', 'AR', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Armenia', 'República de Armenia', 'AM', ZonaPais.objects.get(zona='Asia').id),
-          ('Aruba', 'Aruba', 'AW', ZonaPais.objects.get(zona='América Central').id),
-          ('Australia', 'Mancomunidad de Australia', 'AU', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Austria', 'República de Austria', 'AT', ZonaPais.objects.get(zona='Europa').id),
-          ('Azawad', 'Estado Independiente del Azawad', '00', ZonaPais.objects.get(zona='África').id),
-          ('Azerbaiyán', 'República de Azerbaiyán', 'AZ', ZonaPais.objects.get(zona='Asia').id),
-          ('Bahamas', 'Mancomunidad de las Bahamas', 'BS', ZonaPais.objects.get(zona='Antillas').id),
-          ('Bangladés', 'República Popular de Bangladesh', 'BD', ZonaPais.objects.get(zona='Asia').id),
-          ('Barbados', 'Barbados', 'BB', ZonaPais.objects.get(zona='América Central').id),
-          ('Baréin', 'Reino de Baréin', 'BH', ZonaPais.objects.get(zona='Asia').id),
-          ('Bélgica', 'Reino de Bélgica', 'BE', ZonaPais.objects.get(zona='Europa').id),
-          ('Belice', 'Belice', 'BZ', ZonaPais.objects.get(zona='América Central').id),
-          ('Benín', 'República de Benín', 'BJ', ZonaPais.objects.get(zona='África').id),
-          ('Bermudas', 'Bermudas', 'BM', ZonaPais.objects.get(zona='América del Norte').id),
-          ('Bielorrusia', 'República de Bielorrusia', 'BY', ZonaPais.objects.get(zona='Europa').id),
-          ('Birmania', 'Unión de Myanmar (antes Birmania)', 'MM', ZonaPais.objects.get(zona='Asia').id),
-          ('Bolivia', 'Estado Plurinacional de Bolivia', 'BO', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Bosnia y Herzegovina', 'Bosnia y Herzegovina', 'BA', ZonaPais.objects.get(zona='Europa').id),
-          ('Botsuana', 'República de Botsuana', 'BW', ZonaPais.objects.get(zona='África').id),
-          ('Brasil', 'República Federativa del Brasil', 'BR', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Brunéi', 'Estado de Brunéi, Morada de la Paz', 'BN', ZonaPais.objects.get(zona='Asia').id),
-          ('Bulgaria', 'República de Bulgaria', 'BG', ZonaPais.objects.get(zona='Europa').id),
-          ('Burkina Faso', 'Burkina Faso (antes Republica del Alto Volta)', 'BF', ZonaPais.objects.get(zona='África').id),
-          ('Burundi', 'República de Burundi', 'BI', ZonaPais.objects.get(zona='África').id),
-          ('Bután', 'Reino de Bután', 'BT', ZonaPais.objects.get(zona='Asia').id),
-          ('Cabo Verde', 'República de Cabo Verde', 'CV', ZonaPais.objects.get(zona='África').id),
-          ('Camboya', 'Reino de Camboya', 'KH', ZonaPais.objects.get(zona='Asia').id),
-          ('Camerún', 'República de Camerún', 'CM', ZonaPais.objects.get(zona='África').id),
-          ('Canadá', 'Canadá', 'CA', ZonaPais.objects.get(zona='América del Norte').id),
-          ('Catar', 'Estado de Catar', 'QA', ZonaPais.objects.get(zona='Asia').id),
-          ('Chad', 'República del Chad', 'TD', ZonaPais.objects.get(zona='África').id),
-          ('Chile', 'República de Chile', 'CL', ZonaPais.objects.get(zona='América del Sur').id),
-          ('China', 'República Popular China', 'CN', ZonaPais.objects.get(zona='Asia').id),
-          ('Chipre', 'República de Chipre', 'CY', ZonaPais.objects.get(zona='Europa-Asia').id),
-          ('Ciudad del Vaticano', 'Estado de la Ciudad del Vaticano', 'VA', ZonaPais.objects.get(zona='Europa').id),
-          ('Colombia', 'República de Colombia', 'CO', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Comoras', 'Unión de las Comoras', 'KM', ZonaPais.objects.get(zona='África').id),
-          ('Corea del Norte', 'República Popular Democrática de Corea', 'KP', ZonaPais.objects.get(zona='Asia').id),
-          ('Corea del Sur', 'República de Corea', 'KR', ZonaPais.objects.get(zona='Asia').id),
-          ('Costa de Marfil', 'República de Costa de Marfil', 'CI', ZonaPais.objects.get(zona='África').id),
-          ('Costa Rica', 'República de Costa Rica', 'CR', ZonaPais.objects.get(zona='América Central').id),
-          ('Croacia', 'República de Croacia', 'HR', ZonaPais.objects.get(zona='Europa').id),
-          ('Cuba', 'República de Cuba', 'CU', ZonaPais.objects.get(zona='Antillas').id),
-          ('Curazao', 'Curazao', 'CW', ZonaPais.objects.get(zona='América Central').id),
-          ('Dinamarca', 'Reino de Dinamarca', 'DK', ZonaPais.objects.get(zona='Europa').id),
-          ('Dominica', 'Mancomunidad de Dominica', 'DM', ZonaPais.objects.get(zona='Antillas').id),
-          ('Ecuador', 'República del Ecuador', 'EC', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Egipto', 'República Árabe de Egipto', 'EG', ZonaPais.objects.get(zona='África').id),
-          ('El Salvador', 'República de El Salvador', 'SV', ZonaPais.objects.get(zona='América Central').id),
-          ('Emiratos Árabes Unidos', 'Emiratos Árabes Unidos', 'AE', ZonaPais.objects.get(zona='Asia').id),
-          ('Eritrea', 'Estado de Eritrea', 'ER', ZonaPais.objects.get(zona='África').id),
-          ('Eslovaquia', 'República de Eslovaquia', 'SK', ZonaPais.objects.get(zona='Europa').id),
-          ('Eslovenia', 'República de Eslovenia', 'SI', ZonaPais.objects.get(zona='Europa').id),
-          ('España', 'Reino de España', 'ES', ZonaPais.objects.get(zona='Europa').id),
-          ('Estados Unidos de América', 'Estados Unidos de América', 'US', ZonaPais.objects.get(zona='América del Norte').id),
-          ('Estonia', 'República de Estonia', 'EE', ZonaPais.objects.get(zona='Europa').id),
-          ('Etiopía', 'República Democrática Federal de Etiopía', 'ET', ZonaPais.objects.get(zona='África').id),
-          ('Filipinas', 'República de las Filipinas', 'PH', ZonaPais.objects.get(zona='Asia').id),
-          ('Finlandia', 'República de Finlandia', 'FI', ZonaPais.objects.get(zona='Europa').id),
-          ('Fiyi', 'República de las Islas Fiyi (Fiji)', 'FJ', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Francia', 'República Francesa', 'FR', ZonaPais.objects.get(zona='Europa').id),
-          ('Gabón', 'República Gabonesa', 'GA', ZonaPais.objects.get(zona='África').id),
-          ('Gambia', 'República de la Gambia', 'GM', ZonaPais.objects.get(zona='África').id),
-          ('Georgia', 'Georgia', 'GE', ZonaPais.objects.get(zona='Asia').id),
-          ('Ghana', 'República de Ghana', 'GH', ZonaPais.objects.get(zona='África').id),
-          ('Gibraltar', 'Gibraltar', 'GI', ZonaPais.objects.get(zona='Europa').id),
-          ('Granada', 'Granada', 'GD', ZonaPais.objects.get(zona='Antillas').id),
-          ('Grecia', 'República Helénica', 'GR', ZonaPais.objects.get(zona='Europa').id),
-          ('Groenlandia', 'Groenlandia', 'GL', ZonaPais.objects.get(zona='América del Norte').id),
-          ('Guam', 'Territorio de Guam', 'GU', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Guatemala', 'República de Guatemala', 'GT', ZonaPais.objects.get(zona='América Central').id),
-          ('Guernsey', 'Bailiazgo de Guernsey', 'GF', ZonaPais.objects.get(zona='Europa').id),
-          ('Guinea', 'República de Guinea', 'GN', ZonaPais.objects.get(zona='África').id),
-          ('Guinea Ecuatorial', 'República de Guinea Ecuatorial', 'GQ', ZonaPais.objects.get(zona='África').id),
-          ('Guinea-Bissau', 'República de Guinea-Bissau', 'GW', ZonaPais.objects.get(zona='África').id),
-          ('Guyana', 'República Cooperativa de Guyana', 'GY', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Haití', 'República de Haití', 'HT', ZonaPais.objects.get(zona='Antillas').id),
-          ('Honduras', 'República de Honduras', 'HN', ZonaPais.objects.get(zona='América Central').id),
-          ('Hong Kong', 'Región Administrativa Especial de Hong Kong', 'HK', ZonaPais.objects.get(zona='Asia').id),
-          ('Hungría', 'República de Hungría', 'HU', ZonaPais.objects.get(zona='Europa').id),
-          ('India', 'República de India', 'IN', ZonaPais.objects.get(zona='Asia').id),
-          ('Indonesia', 'República de Indonesia', 'ID', ZonaPais.objects.get(zona='Asia').id),
-          ('Irak', 'República de Irak', 'IQ', ZonaPais.objects.get(zona='Asia').id),
-          ('Irán', 'República Islámica de Irán', 'IR', ZonaPais.objects.get(zona='Asia').id),
-          ('Irlanda', 'República de Irlanda', 'IE', ZonaPais.objects.get(zona='Europa').id),
-          ('Isla de Man', 'Isla de Man', 'IM', ZonaPais.objects.get(zona='Europa').id),
-          ('Isla de Navidad', 'Territorio de la Isla de Navidad', 'CX', ZonaPais.objects.get(zona='Asia').id),
-          ('Isla Norfolk', 'Territorio de las Islas Norfolk', 'NF', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Islandia', 'República de Islandia', 'IS', ZonaPais.objects.get(zona='Europa').id),
-          ('Islas Caimán', 'Islas Caimán', 'KY', ZonaPais.objects.get(zona='América Central').id),
-          ('Islas Cocos', 'Islas Cocos', 'CC', ZonaPais.objects.get(zona='Asia').id),
-          ('Islas Cook', 'Islas Cook', 'CK', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Islas Feroe', 'Islas Feroe', 'FO', ZonaPais.objects.get(zona='Europa').id),
-          ('Islas Malvinas', 'Islas Malvinas', 'FK', ZonaPais.objects.get(zona='Oceano Atlántico').id),
-          ('Islas Marianas del Norte', 'Estado Libre Asociado de las Islas Marianas del Norte', 'MP', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Islas Marshall', 'República de las Islas Marshall', 'MH', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Islas Pitcairn', 'Islas Pitcairn', 'PN', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Islas Salomón', 'Islas Salomón', 'SB', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Islas Turcas y Caicos', 'Islas Turcas y Caicos', 'TC', ZonaPais.objects.get(zona='América Central').id),
-          ('Islas Vírgenes Británicas', 'Islas Vírgenes Británicas', 'VG', ZonaPais.objects.get(zona='América Central').id),
-          ('Islas Vírgenes de los Estados Unidos', 'Islas Vírgenes de los Estados Unidos', 'VI', ZonaPais.objects.get(zona='América Central').id),
-          ('Israel', 'Estado de Israel', 'IL', ZonaPais.objects.get(zona='Asia').id),
-          ('Italia', 'República Italiana', 'IT', ZonaPais.objects.get(zona='Europa').id),
-          ('Jamaica', 'Jamaica', 'JM', ZonaPais.objects.get(zona='Antillas').id),
-          ('Japón', 'Japón', 'JP', ZonaPais.objects.get(zona='Asia').id),
-          ('Jersey', 'Bailiazgo de Jersey', 'JE', ZonaPais.objects.get(zona='Europa').id),
-          ('Jordania', 'Reino Hachemita de Jordania', 'JO', ZonaPais.objects.get(zona='Asia').id),
-          ('Kazajistán', 'República de Kazajistán', 'KZ', ZonaPais.objects.get(zona='Asia').id),
-          ('Kenia', 'República de Kenia', 'KE', ZonaPais.objects.get(zona='África').id),
-          ('Kirguistán', 'República Kirguiza', 'KG', ZonaPais.objects.get(zona='Asia').id),
-          ('Kiribati', 'República de Kiribati', 'KI', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Kosovo', 'República de Kosovo', 'XK', ZonaPais.objects.get(zona='Europa').id),
-          ('Kuwait', 'Estado de Kuwait', 'KW', ZonaPais.objects.get(zona='Asia').id),
-          ('Laos', 'República Democrática Popular Lao', 'LA', ZonaPais.objects.get(zona='Asia').id),
-          ('Lesoto', 'Reino de Lesoto', 'LS', ZonaPais.objects.get(zona='África').id),
-          ('Letonia', 'República de Letonia', 'LV', ZonaPais.objects.get(zona='Europa').id),
-          ('Líbano', 'República del Líbano', 'LB', ZonaPais.objects.get(zona='Asia').id),
-          ('Liberia', 'República de Liberia', 'LR', ZonaPais.objects.get(zona='África').id),
-          ('Libia', 'República de Libia', 'LY', ZonaPais.objects.get(zona='África').id),
-          ('Liechtenstein', 'Principado de Liechtenstein', 'LI', ZonaPais.objects.get(zona='Europa').id),
-          ('Lituania', 'República de Lituania', 'LT', ZonaPais.objects.get(zona='Europa').id),
-          ('Luxemburgo', 'Gran Ducado de Luxemburgo', 'LU', ZonaPais.objects.get(zona='Europa').id),
-          ('Macao', 'Región Administrativa Especial de Macao', 'MO', ZonaPais.objects.get(zona='Asia').id),
-          ('Macedonia', 'República de Macedonia3', 'MK', ZonaPais.objects.get(zona='Europa').id),
-          ('Madagascar', 'República de Madagascar', 'MG', ZonaPais.objects.get(zona='África').id),
-          ('Malasia', 'Federación de Malasia', 'MY', ZonaPais.objects.get(zona='Asia').id),
-          ('Malaui', 'República de Malaui', 'MW', ZonaPais.objects.get(zona='África').id),
-          ('Maldivas', 'República de las Maldivas', 'MV', ZonaPais.objects.get(zona='Asia').id),
-          ('Malí', 'República de Malí', 'ML', ZonaPais.objects.get(zona='África').id),
-          ('Malta', 'República de Malta', 'MT', ZonaPais.objects.get(zona='Europa').id),
-          ('Marruecos', 'Reino de Marruecos', 'MA', ZonaPais.objects.get(zona='África').id),
-          ('Mauricio', 'República de Mauricio', 'MU', ZonaPais.objects.get(zona='África').id),
-          ('Mauritania', 'República Islámica de Mauritania', 'MR', ZonaPais.objects.get(zona='África').id),
-          ('Micronesia', 'Estados Federados de Micronesia', 'FM', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Moldavia', 'República de Moldavia', 'MD', ZonaPais.objects.get(zona='Europa').id),
-          ('Mónaco', 'Principado de Mónaco', 'MC', ZonaPais.objects.get(zona='Europa').id),
-          ('Mongolia', 'Mongolia', 'MN', ZonaPais.objects.get(zona='Asia').id),
-          ('Montenegro', 'República de Montenegro', 'ME', ZonaPais.objects.get(zona='Europa').id),
-          ('Montserrat', 'Montserrat', 'MS', ZonaPais.objects.get(zona='América Central').id),
-          ('Mozambique', 'República de Mozambique', 'MZ', ZonaPais.objects.get(zona='África').id),
-          ('Nagorno Karabaj', 'República de Nagorno Karabaj', 'XA', ZonaPais.objects.get(zona='Europa-Asia').id),
-          ('Namibia', 'República de Namibia', 'NA', ZonaPais.objects.get(zona='África').id),
-          ('Nauru', 'República de Nauru', 'NR', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Nepal', 'República Federal Democrática de Nepal', 'NP', ZonaPais.objects.get(zona='Asia').id),
-          ('Nicaragua', 'República de Nicaragua', 'NI', ZonaPais.objects.get(zona='América Central').id),
-          ('Níger', 'República del Níger', 'NE', ZonaPais.objects.get(zona='África').id),
-          ('Nigeria', 'República Federal de Nigeria', 'NG', ZonaPais.objects.get(zona='África').id),
-          ('Niue', 'Niue', 'NU', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Noruega', 'Reino de Noruega', 'NO', ZonaPais.objects.get(zona='Europa').id),
-          ('Nueva Caledonia', 'Territorio de Nueva Caledonia y dependencias', 'NC', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Nueva Zelanda', 'Nueva Zelanda', 'NZ', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Omán', 'Sultanato de Omán', 'OM', ZonaPais.objects.get(zona='Asia').id),
-          ('Osetia del Sur', 'República de Osetia del Sur', 'XB', ZonaPais.objects.get(zona='Europa-Asia').id),
-          ('Países Bajos / Holanda', 'Reino de los Países Bajos', 'NL', ZonaPais.objects.get(zona='Europa').id),
-          ('Pakistán', 'República Islámica de Pakistán', 'PK', ZonaPais.objects.get(zona='Asia').id),
-          ('Palaos', 'República de Palaos', 'PW', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Palestina', 'Autoridad Palestina de Cisjordania y la Franja de Gaza', 'PS', ZonaPais.objects.get(zona='Asia').id),
-          ('Panamá', 'República de Panamá', 'PA', ZonaPais.objects.get(zona='América Central').id),
-          ('Papúa Nueva Guinea', 'Estado Independiente de Papúa Nueva Guinea', 'PG', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Paraguay', 'República del Paraguay', 'PY', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Perú', 'República del Perú', 'PE', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Polinesia Francesa', 'Polinesia Francesa', 'PF', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Polonia', 'República de Polonia', 'PL', ZonaPais.objects.get(zona='Europa').id),
-          ('Portugal', 'República Portuguesa', 'PT', ZonaPais.objects.get(zona='Europa').id),
-          ('Puerto Rico', 'Estado Libre Asociado de Puerto Rico', 'PR', ZonaPais.objects.get(zona='Antillas').id),
-          ('Reino Unido', 'Reino Unido de Gran Bretaña e Irlanda del Norte', 'GB', ZonaPais.objects.get(zona='Europa').id),
-          ('Republica Centroafricana', 'República Centroafricana', 'CF', ZonaPais.objects.get(zona='África').id),
-          ('Republica Checa', 'República Checa', 'CZ', ZonaPais.objects.get(zona='Europa').id),
-          ('Republica del Congo', 'República del Congo', 'CG', ZonaPais.objects.get(zona='África').id),
-          ('Republica del Norte de Chipre', 'República Turca del Norte de Chipre', 'XC', ZonaPais.objects.get(zona='Europa').id),
-          ('Republica Democratica del Congo', 'República Democrática del Congo', 'CD', ZonaPais.objects.get(zona='África').id),
-          ('República Dominicana', 'República Dominicana', 'DO', ZonaPais.objects.get(zona='Antillas').id),
-          ('Ruanda', 'República de Ruanda', 'RW', ZonaPais.objects.get(zona='África').id),
-          ('Rumania', 'Rumania', 'RO', ZonaPais.objects.get(zona='Europa').id),
-          ('Rusia', 'Federación Rusa', 'RU', ZonaPais.objects.get(zona='Europa-Asia').id),
-          ('Sahara Occidental', 'República Árabe Saharaui Democrática', 'EH', ZonaPais.objects.get(zona='África').id),
-          ('Samoa', 'Estado Independiente de Samoa', 'WS', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Samoa Americana', 'Territorio de la Samoa Americana', 'AS', ZonaPais.objects.get(zona='Oceanía').id),
-          ('San Bartolomé', 'San Bartolomé', 'BL', ZonaPais.objects.get(zona='América Central').id),
-          ('San Cristóbal y Nieves', 'Federación de San Cristóbal y Nieves', 'KN', ZonaPais.objects.get(zona='Antillas').id),
-          ('San Marino', 'Serenísima República de San Marino', 'SM', ZonaPais.objects.get(zona='Europa').id),
-          ('San Martín (Francia)', 'San Martín', 'MF', ZonaPais.objects.get(zona='América Central').id),
-          ('San Martín (Países Bajos)', 'Sint Maarten', 'SX', ZonaPais.objects.get(zona='América Central').id),
-          ('San Pedro y Miquelón', 'San Pedro y Miquelón', 'PM', ZonaPais.objects.get(zona='América del Norte').id),
-          ('San Vicente y las Granadinas', 'San Vicente y las Granadinas', 'VC', ZonaPais.objects.get(zona='Antillas').id),
-          ('Santa Elena, Ascensión y Tristán de Acuña', 'Santa Elena, Ascensión y Tristán de Acuña', 'SH', ZonaPais.objects.get(zona='Oceano Atlántico').id),
-          ('Santa Lucía', 'Santa Lucía', 'LC', ZonaPais.objects.get(zona='Antillas').id),
-          ('Santo Tomé y Príncipe', 'República Democrática de Santo Tomé y Príncipe', 'ST', ZonaPais.objects.get(zona='África').id),
-          ('Senegal', 'República de Senegal', 'SN', ZonaPais.objects.get(zona='África').id),
-          ('Serbia', 'República de Serbia', 'RS', ZonaPais.objects.get(zona='Europa').id),
-          ('Seychelles', 'República de Seychelles', 'SC', ZonaPais.objects.get(zona='África').id),
-          ('Sierra Leona', 'República de Sierra Leona', 'SL', ZonaPais.objects.get(zona='África').id),
-          ('Singapur', 'República de Singapur', 'SG', ZonaPais.objects.get(zona='Asia').id),
-          ('Siria', 'República Árabe Siria', 'SY', ZonaPais.objects.get(zona='Asia').id),
-          ('Somalia', 'Somalia', 'SO', ZonaPais.objects.get(zona='África').id),
-          ('Somalilandia', 'República de Somalilandia', 'XD', ZonaPais.objects.get(zona='África').id),
-          ('Sri Lanka', 'República Democrática Socialista de Sri Lanka', 'LK', ZonaPais.objects.get(zona='Asia').id),
-          ('Suazilandia', 'Reino de Suazilandia', 'SZ', ZonaPais.objects.get(zona='África').id),
-          ('Sudáfrica', 'República de Sudáfrica', 'ZA', ZonaPais.objects.get(zona='África').id),
-          ('Sudán', 'República del Sudán', 'SD', ZonaPais.objects.get(zona='África').id),
-          ('Sudán del Sur', 'República de Sudán del Sur', 'SS', ZonaPais.objects.get(zona='África').id),
-          ('Suecia', 'Reino de Suecia', 'SE', ZonaPais.objects.get(zona='Europa').id),
-          ('Suiza', 'Confederación Helvética', 'CH', ZonaPais.objects.get(zona='Europa').id),
-          ('Surinam', 'República de Surinam', 'SR', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Svalbard', 'Svalbard y Jan Mayen', 'SJ', ZonaPais.objects.get(zona='Europa').id),
-          ('Tailandia', 'Reino de Tailandia', 'TH', ZonaPais.objects.get(zona='Asia').id),
-          ('Taiwán', 'República de China', 'TW', ZonaPais.objects.get(zona='Asia').id),
-          ('Tanzania', 'República Unida de Tanzania', 'TZ', ZonaPais.objects.get(zona='África').id),
-          ('Tayikistán', 'República de Tayikistán', 'TJ', ZonaPais.objects.get(zona='Asia').id),
-          ('Timor Oriental', 'República Democrática de Timor Oriental', 'TL', ZonaPais.objects.get(zona='Asia').id),
-          ('Togo', 'República Togolesa', 'TG', ZonaPais.objects.get(zona='África').id),
-          ('Tokelau', 'Tokelau', 'TK', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Tonga', 'Reino de Tonga', 'TO', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Transnistria', 'República Moldava Pridnestroviana', 'XE', ZonaPais.objects.get(zona='Europa').id),
-          ('Trinidad y Tobago', 'República de Trinidad y Tobago', 'TT', ZonaPais.objects.get(zona='Antillas').id),
-          ('Túnez', 'República Tunecina', 'TN', ZonaPais.objects.get(zona='África').id),
-          ('Turkmenistán', 'República de Turkmenistán', 'TM', ZonaPais.objects.get(zona='Asia').id),
-          ('Turquía', 'República de Turquía', 'TR', ZonaPais.objects.get(zona='Europa-Asia').id),
-          ('Tuvalu', 'Tuvalu', 'TV', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Ucrania', 'Ucrania', 'UA', ZonaPais.objects.get(zona='Europa').id),
-          ('Uganda', 'República de Uganda', 'UG', ZonaPais.objects.get(zona='África').id),
-          ('Uruguay', 'República Oriental del Uruguay', 'UY', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Uzbekistán', 'República de Uzbekistán', 'UZ', ZonaPais.objects.get(zona='Asia').id),
-          ('Vanuatu', 'República de Vanuatu', 'VU', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Venezuela', 'República Bolivariana de Venezuela', 'VE', ZonaPais.objects.get(zona='América del Sur').id),
-          ('Vietnam', 'República Socialista de Vietnam', 'VN', ZonaPais.objects.get(zona='Asia').id),
-          ('Wallis y Futuna', 'Islas Wallis y Futuna', 'WF', ZonaPais.objects.get(zona='Oceanía').id),
-          ('Yemen', 'República del Yemen', 'YE', ZonaPais.objects.get(zona='Asia').id),
-          ('Yibuti', 'República de Yibuti', 'DJ', ZonaPais.objects.get(zona='África').id),
-          ('Zambia', 'República de Zambia', 'ZM', ZonaPais.objects.get(zona='África').id),
-          ('Zimbabue', 'República de Zimbabue', 'ZW', ZonaPais.objects.get(zona='África').id))
+Paises = (('México', 'Estados Unidos Mexicanos', 'MX', ZonaPais.objects.get(nombre='América del Norte').id),
+          ('Abjasia', 'República de Abjasia', 'AB', ZonaPais.objects.get(nombre='Asia').id),
+          ('Acrotiri y Dhekelia', 'Bases Soberanas de Acrotiri y Dhekelia', 'QM', ZonaPais.objects.get(nombre='Europa').id),
+          ('Afganistán', 'República Islámica de Afganistán', 'AF', ZonaPais.objects.get(nombre='Asia').id),
+          ('Albania', 'República de Albania', 'AL', ZonaPais.objects.get(nombre='Europa').id),
+          ('Alemania', 'República Federal de Alemania', 'DE', ZonaPais.objects.get(nombre='Europa').id),
+          ('Andorra', 'Principado de Andorra', 'AD', ZonaPais.objects.get(nombre='Europa').id),
+          ('Angola', 'República de Angola', 'AO', ZonaPais.objects.get(nombre='África').id),
+          ('Anguila', 'Anguila', 'AI', ZonaPais.objects.get(nombre='América Central').id),
+          ('Antigua y Barbuda', 'Antigua y Barbuda', 'AG', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Arabia Saudita', 'Reino de Arabia Saudita', 'SA', ZonaPais.objects.get(nombre='Asia').id),
+          ('Argelia', 'República Argelina Democrática y Popular', 'DZ', ZonaPais.objects.get(nombre='África').id),
+          ('Argentina', 'República Argentina', 'AR', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Armenia', 'República de Armenia', 'AM', ZonaPais.objects.get(nombre='Asia').id),
+          ('Aruba', 'Aruba', 'AW', ZonaPais.objects.get(nombre='América Central').id),
+          ('Australia', 'Mancomunidad de Australia', 'AU', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Austria', 'República de Austria', 'AT', ZonaPais.objects.get(nombre='Europa').id),
+          ('Azawad', 'Estado Independiente del Azawad', '00', ZonaPais.objects.get(nombre='África').id),
+          ('Azerbaiyán', 'República de Azerbaiyán', 'AZ', ZonaPais.objects.get(nombre='Asia').id),
+          ('Bahamas', 'Mancomunidad de las Bahamas', 'BS', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Bangladés', 'República Popular de Bangladesh', 'BD', ZonaPais.objects.get(nombre='Asia').id),
+          ('Barbados', 'Barbados', 'BB', ZonaPais.objects.get(nombre='América Central').id),
+          ('Baréin', 'Reino de Baréin', 'BH', ZonaPais.objects.get(nombre='Asia').id),
+          ('Bélgica', 'Reino de Bélgica', 'BE', ZonaPais.objects.get(nombre='Europa').id),
+          ('Belice', 'Belice', 'BZ', ZonaPais.objects.get(nombre='América Central').id),
+          ('Benín', 'República de Benín', 'BJ', ZonaPais.objects.get(nombre='África').id),
+          ('Bermudas', 'Bermudas', 'BM', ZonaPais.objects.get(nombre='América del Norte').id),
+          ('Bielorrusia', 'República de Bielorrusia', 'BY', ZonaPais.objects.get(nombre='Europa').id),
+          ('Birmania', 'Unión de Myanmar (antes Birmania)', 'MM', ZonaPais.objects.get(nombre='Asia').id),
+          ('Bolivia', 'Estado Plurinacional de Bolivia', 'BO', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Bosnia y Herzegovina', 'Bosnia y Herzegovina', 'BA', ZonaPais.objects.get(nombre='Europa').id),
+          ('Botsuana', 'República de Botsuana', 'BW', ZonaPais.objects.get(nombre='África').id),
+          ('Brasil', 'República Federativa del Brasil', 'BR', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Brunéi', 'Estado de Brunéi, Morada de la Paz', 'BN', ZonaPais.objects.get(nombre='Asia').id),
+          ('Bulgaria', 'República de Bulgaria', 'BG', ZonaPais.objects.get(nombre='Europa').id),
+          ('Burkina Faso', 'Burkina Faso (antes Republica del Alto Volta)', 'BF', ZonaPais.objects.get(nombre='África').id),
+          ('Burundi', 'República de Burundi', 'BI', ZonaPais.objects.get(nombre='África').id),
+          ('Bután', 'Reino de Bután', 'BT', ZonaPais.objects.get(nombre='Asia').id),
+          ('Cabo Verde', 'República de Cabo Verde', 'CV', ZonaPais.objects.get(nombre='África').id),
+          ('Camboya', 'Reino de Camboya', 'KH', ZonaPais.objects.get(nombre='Asia').id),
+          ('Camerún', 'República de Camerún', 'CM', ZonaPais.objects.get(nombre='África').id),
+          ('Canadá', 'Canadá', 'CA', ZonaPais.objects.get(nombre='América del Norte').id),
+          ('Catar', 'Estado de Catar', 'QA', ZonaPais.objects.get(nombre='Asia').id),
+          ('Chad', 'República del Chad', 'TD', ZonaPais.objects.get(nombre='África').id),
+          ('Chile', 'República de Chile', 'CL', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('China', 'República Popular China', 'CN', ZonaPais.objects.get(nombre='Asia').id),
+          ('Chipre', 'República de Chipre', 'CY', ZonaPais.objects.get(nombre='Europa-Asia').id),
+          ('Ciudad del Vaticano', 'Estado de la Ciudad del Vaticano', 'VA', ZonaPais.objects.get(nombre='Europa').id),
+          ('Colombia', 'República de Colombia', 'CO', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Comoras', 'Unión de las Comoras', 'KM', ZonaPais.objects.get(nombre='África').id),
+          ('Corea del Norte', 'República Popular Democrática de Corea', 'KP', ZonaPais.objects.get(nombre='Asia').id),
+          ('Corea del Sur', 'República de Corea', 'KR', ZonaPais.objects.get(nombre='Asia').id),
+          ('Costa de Marfil', 'República de Costa de Marfil', 'CI', ZonaPais.objects.get(nombre='África').id),
+          ('Costa Rica', 'República de Costa Rica', 'CR', ZonaPais.objects.get(nombre='América Central').id),
+          ('Croacia', 'República de Croacia', 'HR', ZonaPais.objects.get(nombre='Europa').id),
+          ('Cuba', 'República de Cuba', 'CU', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Curazao', 'Curazao', 'CW', ZonaPais.objects.get(nombre='América Central').id),
+          ('Dinamarca', 'Reino de Dinamarca', 'DK', ZonaPais.objects.get(nombre='Europa').id),
+          ('Dominica', 'Mancomunidad de Dominica', 'DM', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Ecuador', 'República del Ecuador', 'EC', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Egipto', 'República Árabe de Egipto', 'EG', ZonaPais.objects.get(nombre='África').id),
+          ('El Salvador', 'República de El Salvador', 'SV', ZonaPais.objects.get(nombre='América Central').id),
+          ('Emiratos Árabes Unidos', 'Emiratos Árabes Unidos', 'AE', ZonaPais.objects.get(nombre='Asia').id),
+          ('Eritrea', 'Estado de Eritrea', 'ER', ZonaPais.objects.get(nombre='África').id),
+          ('Eslovaquia', 'República de Eslovaquia', 'SK', ZonaPais.objects.get(nombre='Europa').id),
+          ('Eslovenia', 'República de Eslovenia', 'SI', ZonaPais.objects.get(nombre='Europa').id),
+          ('España', 'Reino de España', 'ES', ZonaPais.objects.get(nombre='Europa').id),
+          ('Estados Unidos de América', 'Estados Unidos de América', 'US', ZonaPais.objects.get(nombre='América del Norte').id),
+          ('Estonia', 'República de Estonia', 'EE', ZonaPais.objects.get(nombre='Europa').id),
+          ('Etiopía', 'República Democrática Federal de Etiopía', 'ET', ZonaPais.objects.get(nombre='África').id),
+          ('Filipinas', 'República de las Filipinas', 'PH', ZonaPais.objects.get(nombre='Asia').id),
+          ('Finlandia', 'República de Finlandia', 'FI', ZonaPais.objects.get(nombre='Europa').id),
+          ('Fiyi', 'República de las Islas Fiyi (Fiji)', 'FJ', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Francia', 'República Francesa', 'FR', ZonaPais.objects.get(nombre='Europa').id),
+          ('Gabón', 'República Gabonesa', 'GA', ZonaPais.objects.get(nombre='África').id),
+          ('Gambia', 'República de la Gambia', 'GM', ZonaPais.objects.get(nombre='África').id),
+          ('Georgia', 'Georgia', 'GE', ZonaPais.objects.get(nombre='Asia').id),
+          ('Ghana', 'República de Ghana', 'GH', ZonaPais.objects.get(nombre='África').id),
+          ('Gibraltar', 'Gibraltar', 'GI', ZonaPais.objects.get(nombre='Europa').id),
+          ('Granada', 'Granada', 'GD', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Grecia', 'República Helénica', 'GR', ZonaPais.objects.get(nombre='Europa').id),
+          ('Groenlandia', 'Groenlandia', 'GL', ZonaPais.objects.get(nombre='América del Norte').id),
+          ('Guam', 'Territorio de Guam', 'GU', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Guatemala', 'República de Guatemala', 'GT', ZonaPais.objects.get(nombre='América Central').id),
+          ('Guernsey', 'Bailiazgo de Guernsey', 'GF', ZonaPais.objects.get(nombre='Europa').id),
+          ('Guinea', 'República de Guinea', 'GN', ZonaPais.objects.get(nombre='África').id),
+          ('Guinea Ecuatorial', 'República de Guinea Ecuatorial', 'GQ', ZonaPais.objects.get(nombre='África').id),
+          ('Guinea-Bissau', 'República de Guinea-Bissau', 'GW', ZonaPais.objects.get(nombre='África').id),
+          ('Guyana', 'República Cooperativa de Guyana', 'GY', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Haití', 'República de Haití', 'HT', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Honduras', 'República de Honduras', 'HN', ZonaPais.objects.get(nombre='América Central').id),
+          ('Hong Kong', 'Región Administrativa Especial de Hong Kong', 'HK', ZonaPais.objects.get(nombre='Asia').id),
+          ('Hungría', 'República de Hungría', 'HU', ZonaPais.objects.get(nombre='Europa').id),
+          ('India', 'República de India', 'IN', ZonaPais.objects.get(nombre='Asia').id),
+          ('Indonesia', 'República de Indonesia', 'ID', ZonaPais.objects.get(nombre='Asia').id),
+          ('Irak', 'República de Irak', 'IQ', ZonaPais.objects.get(nombre='Asia').id),
+          ('Irán', 'República Islámica de Irán', 'IR', ZonaPais.objects.get(nombre='Asia').id),
+          ('Irlanda', 'República de Irlanda', 'IE', ZonaPais.objects.get(nombre='Europa').id),
+          ('Isla de Man', 'Isla de Man', 'IM', ZonaPais.objects.get(nombre='Europa').id),
+          ('Isla de Navidad', 'Territorio de la Isla de Navidad', 'CX', ZonaPais.objects.get(nombre='Asia').id),
+          ('Isla Norfolk', 'Territorio de las Islas Norfolk', 'NF', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Islandia', 'República de Islandia', 'IS', ZonaPais.objects.get(nombre='Europa').id),
+          ('Islas Caimán', 'Islas Caimán', 'KY', ZonaPais.objects.get(nombre='América Central').id),
+          ('Islas Cocos', 'Islas Cocos', 'CC', ZonaPais.objects.get(nombre='Asia').id),
+          ('Islas Cook', 'Islas Cook', 'CK', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Islas Feroe', 'Islas Feroe', 'FO', ZonaPais.objects.get(nombre='Europa').id),
+          ('Islas Malvinas', 'Islas Malvinas', 'FK', ZonaPais.objects.get(nombre='Oceano Atlántico').id),
+          ('Islas Marianas del Norte', 'Estado Libre Asociado de las Islas Marianas del Norte', 'MP', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Islas Marshall', 'República de las Islas Marshall', 'MH', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Islas Pitcairn', 'Islas Pitcairn', 'PN', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Islas Salomón', 'Islas Salomón', 'SB', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Islas Turcas y Caicos', 'Islas Turcas y Caicos', 'TC', ZonaPais.objects.get(nombre='América Central').id),
+          ('Islas Vírgenes Británicas', 'Islas Vírgenes Británicas', 'VG', ZonaPais.objects.get(nombre='América Central').id),
+          ('Islas Vírgenes de los Estados Unidos', 'Islas Vírgenes de los Estados Unidos', 'VI', ZonaPais.objects.get(nombre='América Central').id),
+          ('Israel', 'Estado de Israel', 'IL', ZonaPais.objects.get(nombre='Asia').id),
+          ('Italia', 'República Italiana', 'IT', ZonaPais.objects.get(nombre='Europa').id),
+          ('Jamaica', 'Jamaica', 'JM', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Japón', 'Japón', 'JP', ZonaPais.objects.get(nombre='Asia').id),
+          ('Jersey', 'Bailiazgo de Jersey', 'JE', ZonaPais.objects.get(nombre='Europa').id),
+          ('Jordania', 'Reino Hachemita de Jordania', 'JO', ZonaPais.objects.get(nombre='Asia').id),
+          ('Kazajistán', 'República de Kazajistán', 'KZ', ZonaPais.objects.get(nombre='Asia').id),
+          ('Kenia', 'República de Kenia', 'KE', ZonaPais.objects.get(nombre='África').id),
+          ('Kirguistán', 'República Kirguiza', 'KG', ZonaPais.objects.get(nombre='Asia').id),
+          ('Kiribati', 'República de Kiribati', 'KI', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Kosovo', 'República de Kosovo', 'XK', ZonaPais.objects.get(nombre='Europa').id),
+          ('Kuwait', 'Estado de Kuwait', 'KW', ZonaPais.objects.get(nombre='Asia').id),
+          ('Laos', 'República Democrática Popular Lao', 'LA', ZonaPais.objects.get(nombre='Asia').id),
+          ('Lesoto', 'Reino de Lesoto', 'LS', ZonaPais.objects.get(nombre='África').id),
+          ('Letonia', 'República de Letonia', 'LV', ZonaPais.objects.get(nombre='Europa').id),
+          ('Líbano', 'República del Líbano', 'LB', ZonaPais.objects.get(nombre='Asia').id),
+          ('Liberia', 'República de Liberia', 'LR', ZonaPais.objects.get(nombre='África').id),
+          ('Libia', 'República de Libia', 'LY', ZonaPais.objects.get(nombre='África').id),
+          ('Liechtenstein', 'Principado de Liechtenstein', 'LI', ZonaPais.objects.get(nombre='Europa').id),
+          ('Lituania', 'República de Lituania', 'LT', ZonaPais.objects.get(nombre='Europa').id),
+          ('Luxemburgo', 'Gran Ducado de Luxemburgo', 'LU', ZonaPais.objects.get(nombre='Europa').id),
+          ('Macao', 'Región Administrativa Especial de Macao', 'MO', ZonaPais.objects.get(nombre='Asia').id),
+          ('Macedonia', 'República de Macedonia3', 'MK', ZonaPais.objects.get(nombre='Europa').id),
+          ('Madagascar', 'República de Madagascar', 'MG', ZonaPais.objects.get(nombre='África').id),
+          ('Malasia', 'Federación de Malasia', 'MY', ZonaPais.objects.get(nombre='Asia').id),
+          ('Malaui', 'República de Malaui', 'MW', ZonaPais.objects.get(nombre='África').id),
+          ('Maldivas', 'República de las Maldivas', 'MV', ZonaPais.objects.get(nombre='Asia').id),
+          ('Malí', 'República de Malí', 'ML', ZonaPais.objects.get(nombre='África').id),
+          ('Malta', 'República de Malta', 'MT', ZonaPais.objects.get(nombre='Europa').id),
+          ('Marruecos', 'Reino de Marruecos', 'MA', ZonaPais.objects.get(nombre='África').id),
+          ('Mauricio', 'República de Mauricio', 'MU', ZonaPais.objects.get(nombre='África').id),
+          ('Mauritania', 'República Islámica de Mauritania', 'MR', ZonaPais.objects.get(nombre='África').id),
+          ('Micronesia', 'Estados Federados de Micronesia', 'FM', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Moldavia', 'República de Moldavia', 'MD', ZonaPais.objects.get(nombre='Europa').id),
+          ('Mónaco', 'Principado de Mónaco', 'MC', ZonaPais.objects.get(nombre='Europa').id),
+          ('Mongolia', 'Mongolia', 'MN', ZonaPais.objects.get(nombre='Asia').id),
+          ('Montenegro', 'República de Montenegro', 'ME', ZonaPais.objects.get(nombre='Europa').id),
+          ('Montserrat', 'Montserrat', 'MS', ZonaPais.objects.get(nombre='América Central').id),
+          ('Mozambique', 'República de Mozambique', 'MZ', ZonaPais.objects.get(nombre='África').id),
+          ('Nagorno Karabaj', 'República de Nagorno Karabaj', 'XA', ZonaPais.objects.get(nombre='Europa-Asia').id),
+          ('Namibia', 'República de Namibia', 'NA', ZonaPais.objects.get(nombre='África').id),
+          ('Nauru', 'República de Nauru', 'NR', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Nepal', 'República Federal Democrática de Nepal', 'NP', ZonaPais.objects.get(nombre='Asia').id),
+          ('Nicaragua', 'República de Nicaragua', 'NI', ZonaPais.objects.get(nombre='América Central').id),
+          ('Níger', 'República del Níger', 'NE', ZonaPais.objects.get(nombre='África').id),
+          ('Nigeria', 'República Federal de Nigeria', 'NG', ZonaPais.objects.get(nombre='África').id),
+          ('Niue', 'Niue', 'NU', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Noruega', 'Reino de Noruega', 'NO', ZonaPais.objects.get(nombre='Europa').id),
+          ('Nueva Caledonia', 'Territorio de Nueva Caledonia y dependencias', 'NC', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Nueva Zelanda', 'Nueva Zelanda', 'NZ', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Omán', 'Sultanato de Omán', 'OM', ZonaPais.objects.get(nombre='Asia').id),
+          ('Osetia del Sur', 'República de Osetia del Sur', 'XB', ZonaPais.objects.get(nombre='Europa-Asia').id),
+          ('Países Bajos / Holanda', 'Reino de los Países Bajos', 'NL', ZonaPais.objects.get(nombre='Europa').id),
+          ('Pakistán', 'República Islámica de Pakistán', 'PK', ZonaPais.objects.get(nombre='Asia').id),
+          ('Palaos', 'República de Palaos', 'PW', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Palestina', 'Autoridad Palestina de Cisjordania y la Franja de Gaza', 'PS', ZonaPais.objects.get(nombre='Asia').id),
+          ('Panamá', 'República de Panamá', 'PA', ZonaPais.objects.get(nombre='América Central').id),
+          ('Papúa Nueva Guinea', 'Estado Independiente de Papúa Nueva Guinea', 'PG', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Paraguay', 'República del Paraguay', 'PY', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Perú', 'República del Perú', 'PE', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Polinesia Francesa', 'Polinesia Francesa', 'PF', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Polonia', 'República de Polonia', 'PL', ZonaPais.objects.get(nombre='Europa').id),
+          ('Portugal', 'República Portuguesa', 'PT', ZonaPais.objects.get(nombre='Europa').id),
+          ('Puerto Rico', 'Estado Libre Asociado de Puerto Rico', 'PR', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Reino Unido', 'Reino Unido de Gran Bretaña e Irlanda del Norte', 'GB', ZonaPais.objects.get(nombre='Europa').id),
+          ('Republica Centroafricana', 'República Centroafricana', 'CF', ZonaPais.objects.get(nombre='África').id),
+          ('Republica Checa', 'República Checa', 'CZ', ZonaPais.objects.get(nombre='Europa').id),
+          ('Republica del Congo', 'República del Congo', 'CG', ZonaPais.objects.get(nombre='África').id),
+          ('Republica del Norte de Chipre', 'República Turca del Norte de Chipre', 'XC', ZonaPais.objects.get(nombre='Europa').id),
+          ('Republica Democratica del Congo', 'República Democrática del Congo', 'CD', ZonaPais.objects.get(nombre='África').id),
+          ('República Dominicana', 'República Dominicana', 'DO', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Ruanda', 'República de Ruanda', 'RW', ZonaPais.objects.get(nombre='África').id),
+          ('Rumania', 'Rumania', 'RO', ZonaPais.objects.get(nombre='Europa').id),
+          ('Rusia', 'Federación Rusa', 'RU', ZonaPais.objects.get(nombre='Europa-Asia').id),
+          ('Sahara Occidental', 'República Árabe Saharaui Democrática', 'EH', ZonaPais.objects.get(nombre='África').id),
+          ('Samoa', 'Estado Independiente de Samoa', 'WS', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Samoa Americana', 'Territorio de la Samoa Americana', 'AS', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('San Bartolomé', 'San Bartolomé', 'BL', ZonaPais.objects.get(nombre='América Central').id),
+          ('San Cristóbal y Nieves', 'Federación de San Cristóbal y Nieves', 'KN', ZonaPais.objects.get(nombre='Antillas').id),
+          ('San Marino', 'Serenísima República de San Marino', 'SM', ZonaPais.objects.get(nombre='Europa').id),
+          ('San Martín (Francia)', 'San Martín', 'MF', ZonaPais.objects.get(nombre='América Central').id),
+          ('San Martín (Países Bajos)', 'Sint Maarten', 'SX', ZonaPais.objects.get(nombre='América Central').id),
+          ('San Pedro y Miquelón', 'San Pedro y Miquelón', 'PM', ZonaPais.objects.get(nombre='América del Norte').id),
+          ('San Vicente y las Granadinas', 'San Vicente y las Granadinas', 'VC', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Santa Elena, Ascensión y Tristán de Acuña', 'Santa Elena, Ascensión y Tristán de Acuña', 'SH', ZonaPais.objects.get(nombre='Oceano Atlántico').id),
+          ('Santa Lucía', 'Santa Lucía', 'LC', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Santo Tomé y Príncipe', 'República Democrática de Santo Tomé y Príncipe', 'ST', ZonaPais.objects.get(nombre='África').id),
+          ('Senegal', 'República de Senegal', 'SN', ZonaPais.objects.get(nombre='África').id),
+          ('Serbia', 'República de Serbia', 'RS', ZonaPais.objects.get(nombre='Europa').id),
+          ('Seychelles', 'República de Seychelles', 'SC', ZonaPais.objects.get(nombre='África').id),
+          ('Sierra Leona', 'República de Sierra Leona', 'SL', ZonaPais.objects.get(nombre='África').id),
+          ('Singapur', 'República de Singapur', 'SG', ZonaPais.objects.get(nombre='Asia').id),
+          ('Siria', 'República Árabe Siria', 'SY', ZonaPais.objects.get(nombre='Asia').id),
+          ('Somalia', 'Somalia', 'SO', ZonaPais.objects.get(nombre='África').id),
+          ('Somalilandia', 'República de Somalilandia', 'XD', ZonaPais.objects.get(nombre='África').id),
+          ('Sri Lanka', 'República Democrática Socialista de Sri Lanka', 'LK', ZonaPais.objects.get(nombre='Asia').id),
+          ('Suazilandia', 'Reino de Suazilandia', 'SZ', ZonaPais.objects.get(nombre='África').id),
+          ('Sudáfrica', 'República de Sudáfrica', 'ZA', ZonaPais.objects.get(nombre='África').id),
+          ('Sudán', 'República del Sudán', 'SD', ZonaPais.objects.get(nombre='África').id),
+          ('Sudán del Sur', 'República de Sudán del Sur', 'SS', ZonaPais.objects.get(nombre='África').id),
+          ('Suecia', 'Reino de Suecia', 'SE', ZonaPais.objects.get(nombre='Europa').id),
+          ('Suiza', 'Confederación Helvética', 'CH', ZonaPais.objects.get(nombre='Europa').id),
+          ('Surinam', 'República de Surinam', 'SR', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Svalbard', 'Svalbard y Jan Mayen', 'SJ', ZonaPais.objects.get(nombre='Europa').id),
+          ('Tailandia', 'Reino de Tailandia', 'TH', ZonaPais.objects.get(nombre='Asia').id),
+          ('Taiwán', 'República de China', 'TW', ZonaPais.objects.get(nombre='Asia').id),
+          ('Tanzania', 'República Unida de Tanzania', 'TZ', ZonaPais.objects.get(nombre='África').id),
+          ('Tayikistán', 'República de Tayikistán', 'TJ', ZonaPais.objects.get(nombre='Asia').id),
+          ('Timor Oriental', 'República Democrática de Timor Oriental', 'TL', ZonaPais.objects.get(nombre='Asia').id),
+          ('Togo', 'República Togolesa', 'TG', ZonaPais.objects.get(nombre='África').id),
+          ('Tokelau', 'Tokelau', 'TK', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Tonga', 'Reino de Tonga', 'TO', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Transnistria', 'República Moldava Pridnestroviana', 'XE', ZonaPais.objects.get(nombre='Europa').id),
+          ('Trinidad y Tobago', 'República de Trinidad y Tobago', 'TT', ZonaPais.objects.get(nombre='Antillas').id),
+          ('Túnez', 'República Tunecina', 'TN', ZonaPais.objects.get(nombre='África').id),
+          ('Turkmenistán', 'República de Turkmenistán', 'TM', ZonaPais.objects.get(nombre='Asia').id),
+          ('Turquía', 'República de Turquía', 'TR', ZonaPais.objects.get(nombre='Europa-Asia').id),
+          ('Tuvalu', 'Tuvalu', 'TV', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Ucrania', 'Ucrania', 'UA', ZonaPais.objects.get(nombre='Europa').id),
+          ('Uganda', 'República de Uganda', 'UG', ZonaPais.objects.get(nombre='África').id),
+          ('Uruguay', 'República Oriental del Uruguay', 'UY', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Uzbekistán', 'República de Uzbekistán', 'UZ', ZonaPais.objects.get(nombre='Asia').id),
+          ('Vanuatu', 'República de Vanuatu', 'VU', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Venezuela', 'República Bolivariana de Venezuela', 'VE', ZonaPais.objects.get(nombre='América del Sur').id),
+          ('Vietnam', 'República Socialista de Vietnam', 'VN', ZonaPais.objects.get(nombre='Asia').id),
+          ('Wallis y Futuna', 'Islas Wallis y Futuna', 'WF', ZonaPais.objects.get(nombre='Oceanía').id),
+          ('Yemen', 'República del Yemen', 'YE', ZonaPais.objects.get(nombre='Asia').id),
+          ('Yibuti', 'República de Yibuti', 'DJ', ZonaPais.objects.get(nombre='África').id),
+          ('Zambia', 'República de Zambia', 'ZM', ZonaPais.objects.get(nombre='África').id),
+          ('Zimbabue', 'República de Zimbabue', 'ZW', ZonaPais.objects.get(nombre='África').id))
 
 for i in Paises:
-    p = Pais(pais=i[0], nombre_extendido=i[1], codigo=i[2], zona=ZonaPais(pk=i[3]))
+    p = Pais(nombre=i[0], nombre_extendido=i[1], codigo=i[2], zona=ZonaPais(pk=i[3]))
     p.save()
-    print("Agregado el país " + i[0] + " para la zona " + str(ZonaPais.objects.get(pk=i[3]).zona))
+    print("Agregado el país " + i[0] + " para la zona " + str(ZonaPais.objects.get(pk=i[3]).nombre))
 
 
 
 
 
 Estados = (
-    ('Aguascalientes', Pais.objects.get(pais='México').id),
-    ('Baja California', Pais.objects.get(pais='México').id),
-    ('Baja California Sur', Pais.objects.get(pais='México').id),
-    ('Campeche', Pais.objects.get(pais='México').id),
-    ('Chiapas', Pais.objects.get(pais='México').id),
-    ('Chihuahua', Pais.objects.get(pais='México').id),
-    ('Ciudad de México', Pais.objects.get(pais='México').id),
-    ('Coahuila de Zaragoza', Pais.objects.get(pais='México').id),
-    ('Colima', Pais.objects.get(pais='México').id),
-    ('Durango', Pais.objects.get(pais='México').id),
-    ('Guanajuato', Pais.objects.get(pais='México').id),
-    ('Guerrero', Pais.objects.get(pais='México').id),
-    ('Hidalgo', Pais.objects.get(pais='México').id),
-    ('Jalisco', Pais.objects.get(pais='México').id),
-    ('Estado de México', Pais.objects.get(pais='México').id),
-    ('Michoacán de Ocampo', Pais.objects.get(pais='México').id), #16
-    ('Morelos', Pais.objects.get(pais='México').id),
-    ('Nayarit', Pais.objects.get(pais='México').id),
-    ('Nuevo León', Pais.objects.get(pais='México').id),
-    ('Oaxaca', Pais.objects.get(pais='México').id),
-    ('Puebla', Pais.objects.get(pais='México').id),
-    ('Querétaro de Arteaga', Pais.objects.get(pais='México').id),
-    ('Quintana Roo', Pais.objects.get(pais='México').id),
-    ('San Luis Potosí', Pais.objects.get(pais='México').id), # 24
-    ('Sinaloa', Pais.objects.get(pais='México').id),
-    ('Sonora', Pais.objects.get(pais='México').id),
-    ('Tabasco', Pais.objects.get(pais='México').id),
-    ('Tamaulipas', Pais.objects.get(pais='México').id),
-    ('Tlaxcala', Pais.objects.get(pais='México').id),
-    ('Veracruz de Ignacio de la Llave', Pais.objects.get(pais='México').id),
-    ('Yucatán', Pais.objects.get(pais='México').id),
-    ('Zacatecas', Pais.objects.get(pais='México').id),
-    ('Bogotá', Pais.objects.get(pais='Colombia').id),
-    ('Antioquia', Pais.objects.get(pais='Colombia').id),
-    ('Meta', Pais.objects.get(pais='Colombia').id),
-    ('Bern', Pais.objects.get(pais='Suiza').id),
-    ('Zúrich', Pais.objects.get(pais='Suiza').id),
-    ('Cantón de Vaud', Pais.objects.get(pais='Suiza').id),
-    ('Provincia de León', Pais.objects.get(pais='España').id),
-    ('Comunidad de Madrid', Pais.objects.get(pais='España').id),
-    ('Alicante', Pais.objects.get(pais='España').id),
-    ('Cataluña', Pais.objects.get(pais='España').id),
-    ('Andalucía', Pais.objects.get(pais='España').id),
-    ('Valencia', Pais.objects.get(pais='España').id),
-    ('Galicia', Pais.objects.get(pais='España').id),
-    ('Granada', Pais.objects.get(pais='España').id),
-    ('Aragón', Pais.objects.get(pais='España').id),
-    ('Región de Murcia', Pais.objects.get(pais='España').id),
-    ('Provincia de Macerata', Pais.objects.get(pais='Italia').id),
-    ('Trento', Pais.objects.get(pais='Italia').id),
-    ('Cerdeña', Pais.objects.get(pais='Italia').id),
-    ('Ciudad metropolitana de Roma Capital', Pais.objects.get(pais='Italia').id),
-    ('Isla de Francia', Pais.objects.get(pais='Francia').id),
-    ('Alto Garona', Pais.objects.get(pais='Francia').id),
-    ('El Cairo', Pais.objects.get(pais='Egipto').id),
-    ('Santiago', Pais.objects.get(pais='Chile').id),
-    ('Lima', Pais.objects.get(pais='Perú').id),
-    ('Viena', Pais.objects.get(pais='Austria').id),
-    ('Georgia', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Virginia', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Texas', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('California', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Massachusetts', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Míchigan', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Indiana', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Nueva York', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Illinois', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Washington', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Luisiana', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Florida', Pais.objects.get(pais='Estados Unidos de América').id),
-    ('Wiltshire', Pais.objects.get(pais='Reino Unido').id),
-    ('Inglaterra', Pais.objects.get(pais='Reino Unido').id),
-    ('Caracas', Pais.objects.get(pais='Venezuela').id),
-    ('Miranda', Pais.objects.get(pais='Venezuela').id),
-    ('Loreto', Pais.objects.get(pais='Perú').id),
-    ('Leoncio Prado', Pais.objects.get(pais='Perú').id),
-    ('Montevideo', Pais.objects.get(pais='Uruguay').id),
-    ('Overijssel', Pais.objects.get(pais='Países Bajos / Holanda').id),
-    ('Holanda Septentrional', Pais.objects.get(pais='Países Bajos / Holanda').id),
-    ('Güeldres', Pais.objects.get(pais='Países Bajos / Holanda').id),
-    ('Queensland', Pais.objects.get(pais='Australia').id),
-    ('Cochabamba', Pais.objects.get(pais='Bolivia').id),
-    ('Baviera', Pais.objects.get(pais='Alemania').id),
-    ('Renania del Norte-Westfalia', Pais.objects.get(pais='Alemania').id),
-    ('Buenos Aires', Pais.objects.get(pais='Argentina').id),
-    ('Córdoba', Pais.objects.get(pais='Argentina').id),
-    ('Tucumán', Pais.objects.get(pais='Argentina').id),
-    ('Escalante', Pais.objects.get(pais='Argentina').id),
-    ('Río Negro', Pais.objects.get(pais='Argentina').id),
-    ('Mendoza', Pais.objects.get(pais='Argentina').id),
-    ('La Habana', Pais.objects.get(pais='Cuba').id),
-    ('Sinkiang', Pais.objects.get(pais='China').id),
-    ('Hokkaido', Pais.objects.get(pais='Japón').id),
-    ('Vancouver', Pais.objects.get(pais='Canadá').id),
-    ('Quebec', Pais.objects.get(pais='Canadá').id),
-    ('Minas Gerais', Pais.objects.get(pais='Brasil').id),
-    ('Bahía', Pais.objects.get(pais='Brasil').id),
-    ('Espírito Santo', Pais.objects.get(pais='Brasil').id),
-    ('Provincia Occidental del Cabo', Pais.objects.get(pais='Sudáfrica').id),
-    ('Praia', Pais.objects.get(pais='Cabo Verde').id),
-    ('Akershus', Pais.objects.get(pais='Noruega').id),
-    ('Francisco Morazán', Pais.objects.get(pais='Honduras').id),
-    ('Minho', Pais.objects.get(pais='Portugal').id),
-    ('Guatemala', Pais.objects.get(pais='Guatemala').id),
-    ('Dar es-Salam', Pais.objects.get(pais='Tanzania').id),
+    ('Aguascalientes', Pais.objects.get(nombre='México').id),
+    ('Baja California', Pais.objects.get(nombre='México').id),
+    ('Baja California Sur', Pais.objects.get(nombre='México').id),
+    ('Campeche', Pais.objects.get(nombre='México').id),
+    ('Chiapas', Pais.objects.get(nombre='México').id),
+    ('Chihuahua', Pais.objects.get(nombre='México').id),
+    ('Ciudad de México', Pais.objects.get(nombre='México').id),
+    ('Coahuila de Zaragoza', Pais.objects.get(nombre='México').id),
+    ('Colima', Pais.objects.get(nombre='México').id),
+    ('Durango', Pais.objects.get(nombre='México').id),
+    ('Guanajuato', Pais.objects.get(nombre='México').id),
+    ('Guerrero', Pais.objects.get(nombre='México').id),
+    ('Hidalgo', Pais.objects.get(nombre='México').id),
+    ('Jalisco', Pais.objects.get(nombre='México').id),
+    ('Estado de México', Pais.objects.get(nombre='México').id),
+    ('Michoacán de Ocampo', Pais.objects.get(nombre='México').id), #16
+    ('Morelos', Pais.objects.get(nombre='México').id),
+    ('Nayarit', Pais.objects.get(nombre='México').id),
+    ('Nuevo León', Pais.objects.get(nombre='México').id),
+    ('Oaxaca', Pais.objects.get(nombre='México').id),
+    ('Puebla', Pais.objects.get(nombre='México').id),
+    ('Querétaro de Arteaga', Pais.objects.get(nombre='México').id),
+    ('Quintana Roo', Pais.objects.get(nombre='México').id),
+    ('San Luis Potosí', Pais.objects.get(nombre='México').id), # 24
+    ('Sinaloa', Pais.objects.get(nombre='México').id),
+    ('Sonora', Pais.objects.get(nombre='México').id),
+    ('Tabasco', Pais.objects.get(nombre='México').id),
+    ('Tamaulipas', Pais.objects.get(nombre='México').id),
+    ('Tlaxcala', Pais.objects.get(nombre='México').id),
+    ('Veracruz de Ignacio de la Llave', Pais.objects.get(nombre='México').id),
+    ('Yucatán', Pais.objects.get(nombre='México').id),
+    ('Zacatecas', Pais.objects.get(nombre='México').id),
+    ('Bogotá', Pais.objects.get(nombre='Colombia').id),
+    ('Antioquia', Pais.objects.get(nombre='Colombia').id),
+    ('Meta', Pais.objects.get(nombre='Colombia').id),
+    ('Bern', Pais.objects.get(nombre='Suiza').id),
+    ('Zúrich', Pais.objects.get(nombre='Suiza').id),
+    ('Cantón de Vaud', Pais.objects.get(nombre='Suiza').id),
+    ('Provincia de León', Pais.objects.get(nombre='España').id),
+    ('Comunidad de Madrid', Pais.objects.get(nombre='España').id),
+    ('Alicante', Pais.objects.get(nombre='España').id),
+    ('Cataluña', Pais.objects.get(nombre='España').id),
+    ('Andalucía', Pais.objects.get(nombre='España').id),
+    ('Valencia', Pais.objects.get(nombre='España').id),
+    ('Galicia', Pais.objects.get(nombre='España').id),
+    ('Granada', Pais.objects.get(nombre='España').id),
+    ('Aragón', Pais.objects.get(nombre='España').id),
+    ('Región de Murcia', Pais.objects.get(nombre='España').id),
+    ('Provincia de Macerata', Pais.objects.get(nombre='Italia').id),
+    ('Trento', Pais.objects.get(nombre='Italia').id),
+    ('Cerdeña', Pais.objects.get(nombre='Italia').id),
+    ('Ciudad metropolitana de Roma Capital', Pais.objects.get(nombre='Italia').id),
+    ('Isla de Francia', Pais.objects.get(nombre='Francia').id),
+    ('Alto Garona', Pais.objects.get(nombre='Francia').id),
+    ('El Cairo', Pais.objects.get(nombre='Egipto').id),
+    ('Santiago', Pais.objects.get(nombre='Chile').id),
+    ('Lima', Pais.objects.get(nombre='Perú').id),
+    ('Viena', Pais.objects.get(nombre='Austria').id),
+    ('Georgia', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Virginia', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Texas', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('California', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Massachusetts', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Míchigan', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Indiana', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Nueva York', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Illinois', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Washington', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Luisiana', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Florida', Pais.objects.get(nombre='Estados Unidos de América').id),
+    ('Wiltshire', Pais.objects.get(nombre='Reino Unido').id),
+    ('Inglaterra', Pais.objects.get(nombre='Reino Unido').id),
+    ('Caracas', Pais.objects.get(nombre='Venezuela').id),
+    ('Miranda', Pais.objects.get(nombre='Venezuela').id),
+    ('Loreto', Pais.objects.get(nombre='Perú').id),
+    ('Leoncio Prado', Pais.objects.get(nombre='Perú').id),
+    ('Montevideo', Pais.objects.get(nombre='Uruguay').id),
+    ('Overijssel', Pais.objects.get(nombre='Países Bajos / Holanda').id),
+    ('Holanda Septentrional', Pais.objects.get(nombre='Países Bajos / Holanda').id),
+    ('Güeldres', Pais.objects.get(nombre='Países Bajos / Holanda').id),
+    ('Queensland', Pais.objects.get(nombre='Australia').id),
+    ('Cochabamba', Pais.objects.get(nombre='Bolivia').id),
+    ('Baviera', Pais.objects.get(nombre='Alemania').id),
+    ('Renania del Norte-Westfalia', Pais.objects.get(nombre='Alemania').id),
+    ('Buenos Aires', Pais.objects.get(nombre='Argentina').id),
+    ('Córdoba', Pais.objects.get(nombre='Argentina').id),
+    ('Tucumán', Pais.objects.get(nombre='Argentina').id),
+    ('Escalante', Pais.objects.get(nombre='Argentina').id),
+    ('Río Negro', Pais.objects.get(nombre='Argentina').id),
+    ('Mendoza', Pais.objects.get(nombre='Argentina').id),
+    ('La Habana', Pais.objects.get(nombre='Cuba').id),
+    ('Sinkiang', Pais.objects.get(nombre='China').id),
+    ('Hokkaido', Pais.objects.get(nombre='Japón').id),
+    ('Vancouver', Pais.objects.get(nombre='Canadá').id),
+    ('Quebec', Pais.objects.get(nombre='Canadá').id),
+    ('Minas Gerais', Pais.objects.get(nombre='Brasil').id),
+    ('Bahía', Pais.objects.get(nombre='Brasil').id),
+    ('Espírito Santo', Pais.objects.get(nombre='Brasil').id),
+    ('Provincia Occidental del Cabo', Pais.objects.get(nombre='Sudáfrica').id),
+    ('Praia', Pais.objects.get(nombre='Cabo Verde').id),
+    ('Akershus', Pais.objects.get(nombre='Noruega').id),
+    ('Francisco Morazán', Pais.objects.get(nombre='Honduras').id),
+    ('Minho', Pais.objects.get(nombre='Portugal').id),
+    ('Guatemala', Pais.objects.get(nombre='Guatemala').id),
+    ('Dar es-Salam', Pais.objects.get(nombre='Tanzania').id),
 )
 
 for i in Estados:
-    e = Estado(estado=i[0], pais=Pais(pk=i[1]))
+    e = Estado(nombre=i[0], pais=Pais(pk=i[1]))
     e.save()
 
-    print("Agregado el estado " + i[0] + " para el país " + str(Pais.objects.get(pk=i[1]).pais))
+    print("Agregado el estado " + i[0] + " para el país " + str(Pais.objects.get(pk=i[1]).nombre))
 
 
 Ciudades = (
-    ('Morelia', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Áporo', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Huetamo', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Tingambato', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Zamora', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Uruapan', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('El Rosario', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Tacámbaro', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Ciudad Hidalgo', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Puruándiro', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Taretan', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Morelos', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Ciudad de México, CDMX', Estado.objects.get(estado='Ciudad de México').id),
-    ('Texcoco de Mora', Estado.objects.get(estado='Estado de México').id),
-    ('Naucalpan de Juárez', Estado.objects.get(estado='Estado de México').id),
-    ('Toluca', Estado.objects.get(estado='Estado de México').id),
-    ('El Batán', Estado.objects.get(estado='Estado de México').id),
-    ('Chetumal', Estado.objects.get(estado='Quintana Roo').id),
-    ('Cozumel', Estado.objects.get(estado='Quintana Roo').id),
-    ('Guadalajara', Estado.objects.get(estado='Jalisco').id),
-    ('Monterrey', Estado.objects.get(estado='Nuevo León').id),
-    ('Bogotá D.C.', Estado.objects.get(estado='Bogotá').id),
-    ('Bern', Estado.objects.get(estado='Bern').id),
-    ('León', Estado.objects.get(estado='Provincia de León').id),
-    ('Madrid', Estado.objects.get(estado='Comunidad de Madrid').id),
-    ('Recanati', Estado.objects.get(estado='Provincia de Macerata').id),
-    ('León', Estado.objects.get(estado='Guanajuato').id),
-    ('Guanajuato', Estado.objects.get(estado='Guanajuato').id),
-    ('París', Estado.objects.get(estado='Isla de Francia').id),
-    ('El Cairo', Estado.objects.get(estado='El Cairo').id),
-    ('Ciudad Juárez', Estado.objects.get(estado='Chihuahua').id),
-    ('San Luis Potosí', Estado.objects.get(estado='San Luis Potosí').id),
-    ('Santiago', Estado.objects.get(estado='Santiago').id),
-    ('Xalapa', Estado.objects.get(estado='Veracruz de Ignacio de la Llave').id),
-    ('Lima', Estado.objects.get(estado='Lima').id),
-    ('Camerino', Estado.objects.get(estado='Provincia de Macerata').id),
-    ('Viena', Estado.objects.get(estado='Viena').id),
-    ('Washington, D.C.', Estado.objects.get(estado='Virginia').id),
-    ('Blacksburg', Estado.objects.get(estado='Virginia').id),
-    ('Arlington', Estado.objects.get(estado='Texas').id),
-    ('College Station', Estado.objects.get(estado='Texas').id),
-    ('Swindon', Estado.objects.get(estado='Wiltshire').id),
-    ('Pichátaro', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('La Piedad de Cabadas', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Caracas', Estado.objects.get(estado='Caracas').id),
-    ('Londres', Estado.objects.get(estado='Inglaterra').id),
-    ('Pátzcuaro', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Apatzingán de la Constitución', Estado.objects.get(estado='Michoacán de Ocampo').id),
-    ('Ciudad de Iquitos', Estado.objects.get(estado='Loreto').id),
-    ('Tingo María', Estado.objects.get(estado='Leoncio Prado').id),
-    ('Mérida', Estado.objects.get(estado='Yucatán').id),
-    ('Ciudad Victoria', Estado.objects.get(estado='Tamaulipas').id),
-    ('Montevideo', Estado.objects.get(estado='Montevideo').id),
-    ('Mexicali', Estado.objects.get(estado='Baja California').id),
-    ('Davis', Estado.objects.get(estado='California').id),
-    ('Redlands', Estado.objects.get(estado='California').id),
-    ('Medellín', Estado.objects.get(estado='Antioquia').id),
-    ('Norfolk', Estado.objects.get(estado='Inglaterra').id),
-    ('Enschede', Estado.objects.get(estado='Overijssel').id),
-    ('Buenos Aires', Estado.objects.get(estado='Buenos Aires').id),
-    ('La Plata', Estado.objects.get(estado='Buenos Aires').id),
-    ('Brisbane', Estado.objects.get(estado='Queensland').id),
-    ('Bellaterra', Estado.objects.get(estado='Cataluña').id),
-    ('Barcelona', Estado.objects.get(estado='Cataluña').id),
-    ('Lérida', Estado.objects.get(estado='Cataluña').id),
-    ('Aguascalientes', Estado.objects.get(estado='Aguascalientes').id),
-    ('Wayland', Estado.objects.get(estado='Massachusetts').id),
-    ('Cambridge', Estado.objects.get(estado='Massachusetts').id),
-    ('Norcross', Estado.objects.get(estado='Georgia').id),
-    ('Tepic', Estado.objects.get(estado='Nayarit').id),
-    ('Boston', Estado.objects.get(estado='Massachusetts').id),
-    ('Bloomington', Estado.objects.get(estado='Indiana').id),
-    ('Cochabamba', Estado.objects.get(estado='Cochabamba').id),
-    ('Zúrich', Estado.objects.get(estado='Zúrich').id),
-    ('Ann Arbor', Estado.objects.get(estado='Míchigan').id),
-    ('Wurzburgo', Estado.objects.get(estado='Baviera').id),
-    ('San Vicente del Raspeig', Estado.objects.get(estado='Alicante').id),
-    ('Nueva York', Estado.objects.get(estado='Nueva York').id),
-    ('Hermosillo', Estado.objects.get(estado='Sonora').id),
-    ('Heroica Guaymas de Zaragoza', Estado.objects.get(estado='Sonora').id),
-    ('San Miguel de Tucumán', Estado.objects.get(estado='Tucumán').id),
-    ('Cádiz', Estado.objects.get(estado='Andalucía').id),
-    ('Sevilla', Estado.objects.get(estado='Andalucía').id),
-    ('La Habana', Estado.objects.get(estado='La Habana').id),
-    ('Toulouse', Estado.objects.get(estado='Alto Garona').id),
-    ('Valencia', Estado.objects.get(estado='Valencia').id),
-    ('Albuixech', Estado.objects.get(estado='Valencia').id),
-    ('Brístol', Estado.objects.get(estado='Inglaterra').id),
-    ('Córdoba', Estado.objects.get(estado='Córdoba').id),
-    ('Urumchi', Estado.objects.get(estado='Sinkiang').id),
-    ('La Paz', Estado.objects.get(estado='Baja California Sur').id),
-    ('Santiago de Querétaro', Estado.objects.get(estado='Querétaro de Arteaga').id),
-    ('Evanston', Estado.objects.get(estado='Illinois').id),
-    ('Urbana-Champaign', Estado.objects.get(estado='Illinois').id),
-    ('Sapporo', Estado.objects.get(estado='Hokkaido').id),
-    ('Santiago de Compostela', Estado.objects.get(estado='Galicia').id),
-    ('West Point Grey', Estado.objects.get(estado='Vancouver').id),
-    ('Campeche', Estado.objects.get(estado='Campeche').id),
-    ('San Cristóbal de las Casas', Estado.objects.get(estado='Chiapas').id),
-    ('Tuxtla Gutiérrez', Estado.objects.get(estado='Chiapas').id),
-    ('Belo Horizonte', Estado.objects.get(estado='Minas Gerais').id),
-    ('Feira de Santana', Estado.objects.get(estado='Bahía').id),
-    ('Granada', Estado.objects.get(estado='Granada').id),
-    ('Culiacán Rosales', Estado.objects.get(estado='Sinaloa').id),
-    ('Ámsterdam', Estado.objects.get(estado='Holanda Septentrional').id),
-    ('Trento', Estado.objects.get(estado='Trento').id),
-    ('Austin', Estado.objects.get(estado='Texas').id),
-    ('Murcia', Estado.objects.get(estado='Región de Murcia').id),
-    ('Comodoro Rivadavia', Estado.objects.get(estado='Escalante').id),
-    ('Viedma', Estado.objects.get(estado='Río Negro').id),
-    ('Roma', Estado.objects.get(estado='Ciudad metropolitana de Roma Capital').id),
-    ('Gland', Estado.objects.get(estado='Cantón de Vaud').id),
-    ('Pullman', Estado.objects.get(estado='Washington').id),
-    ('Ciudad del Cabo', Estado.objects.get(estado='Provincia Occidental del Cabo').id),
-    ('Quebec', Estado.objects.get(estado='Quebec').id),
-    ('Nueva Orleans', Estado.objects.get(estado='Luisiana').id),
-    ('Praia', Estado.objects.get(estado='Praia').id),
-    ('Cagliari', Estado.objects.get(estado='Cerdeña').id),
-    ('Pula', Estado.objects.get(estado='Cerdeña').id),
-    ('Oslo', Estado.objects.get(estado='Akershus').id),
-    ('Cuernavaca', Estado.objects.get(estado='Morelos').id),
-    ('Chilpancingo de los Bravo', Estado.objects.get(estado='Guerrero').id),
-    ('Bonn', Estado.objects.get(estado='Renania del Norte-Westfalia').id),
-    ('Gainesville', Estado.objects.get(estado='Florida').id),
-    ('Tegucigalpa', Estado.objects.get(estado='Francisco Morazán').id),
-    ('Puebla de Zaragoza', Estado.objects.get(estado='Puebla').id),
-    ('Villavicencio', Estado.objects.get(estado='Meta').id),
-    ('Mendoza', Estado.objects.get(estado='Mendoza').id),
-    ('Vitória', Estado.objects.get(estado='Espírito Santo').id),
-    ('Braga', Estado.objects.get(estado='Minho').id),
-    ('Ciudad de Guatemala', Estado.objects.get(estado='Guatemala').id),
-    ('Los Salias', Estado.objects.get(estado='Miranda').id),
-    ('Dar es-Salam', Estado.objects.get(estado='Dar es-Salam').id),
-    ('Berkeley', Estado.objects.get(estado='California').id),
-    ('Wageningen', Estado.objects.get(estado='Güeldres').id),
-    ('Tlaxcala de Xicohténcatl', Estado.objects.get(estado='Tlaxcala').id),
-    ('Zaragoza', Estado.objects.get(estado='Aragón').id)
+    ('Morelia', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Áporo', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Huetamo', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Tingambato', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Zamora', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Uruapan', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('El Rosario', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Tacámbaro', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Ciudad Hidalgo', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Puruándiro', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Taretan', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Morelos', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Ciudad de México, CDMX', Estado.objects.get(nombre='Ciudad de México').id),
+    ('Texcoco de Mora', Estado.objects.get(nombre='Estado de México').id),
+    ('Naucalpan de Juárez', Estado.objects.get(nombre='Estado de México').id),
+    ('Toluca', Estado.objects.get(nombre='Estado de México').id),
+    ('El Batán', Estado.objects.get(nombre='Estado de México').id),
+    ('Chetumal', Estado.objects.get(nombre='Quintana Roo').id),
+    ('Cozumel', Estado.objects.get(nombre='Quintana Roo').id),
+    ('Guadalajara', Estado.objects.get(nombre='Jalisco').id),
+    ('Monterrey', Estado.objects.get(nombre='Nuevo León').id),
+    ('Bogotá D.C.', Estado.objects.get(nombre='Bogotá').id),
+    ('Bern', Estado.objects.get(nombre='Bern').id),
+    ('León', Estado.objects.get(nombre='Provincia de León').id),
+    ('Madrid', Estado.objects.get(nombre='Comunidad de Madrid').id),
+    ('Recanati', Estado.objects.get(nombre='Provincia de Macerata').id),
+    ('León', Estado.objects.get(nombre='Guanajuato').id),
+    ('Guanajuato', Estado.objects.get(nombre='Guanajuato').id),
+    ('París', Estado.objects.get(nombre='Isla de Francia').id),
+    ('El Cairo', Estado.objects.get(nombre='El Cairo').id),
+    ('Ciudad Juárez', Estado.objects.get(nombre='Chihuahua').id),
+    ('San Luis Potosí', Estado.objects.get(nombre='San Luis Potosí').id),
+    ('Santiago', Estado.objects.get(nombre='Santiago').id),
+    ('Xalapa', Estado.objects.get(nombre='Veracruz de Ignacio de la Llave').id),
+    ('Lima', Estado.objects.get(nombre='Lima').id),
+    ('Camerino', Estado.objects.get(nombre='Provincia de Macerata').id),
+    ('Viena', Estado.objects.get(nombre='Viena').id),
+    ('Washington, D.C.', Estado.objects.get(nombre='Virginia').id),
+    ('Blacksburg', Estado.objects.get(nombre='Virginia').id),
+    ('Arlington', Estado.objects.get(nombre='Texas').id),
+    ('College Station', Estado.objects.get(nombre='Texas').id),
+    ('Swindon', Estado.objects.get(nombre='Wiltshire').id),
+    ('Pichátaro', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('La Piedad de Cabadas', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Caracas', Estado.objects.get(nombre='Caracas').id),
+    ('Londres', Estado.objects.get(nombre='Inglaterra').id),
+    ('Pátzcuaro', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Apatzingán de la Constitución', Estado.objects.get(nombre='Michoacán de Ocampo').id),
+    ('Ciudad de Iquitos', Estado.objects.get(nombre='Loreto').id),
+    ('Tingo María', Estado.objects.get(nombre='Leoncio Prado').id),
+    ('Mérida', Estado.objects.get(nombre='Yucatán').id),
+    ('Ciudad Victoria', Estado.objects.get(nombre='Tamaulipas').id),
+    ('Montevideo', Estado.objects.get(nombre='Montevideo').id),
+    ('Mexicali', Estado.objects.get(nombre='Baja California').id),
+    ('Davis', Estado.objects.get(nombre='California').id),
+    ('Redlands', Estado.objects.get(nombre='California').id),
+    ('Medellín', Estado.objects.get(nombre='Antioquia').id),
+    ('Norfolk', Estado.objects.get(nombre='Inglaterra').id),
+    ('Enschede', Estado.objects.get(nombre='Overijssel').id),
+    ('Buenos Aires', Estado.objects.get(nombre='Buenos Aires').id),
+    ('La Plata', Estado.objects.get(nombre='Buenos Aires').id),
+    ('Brisbane', Estado.objects.get(nombre='Queensland').id),
+    ('Bellaterra', Estado.objects.get(nombre='Cataluña').id),
+    ('Barcelona', Estado.objects.get(nombre='Cataluña').id),
+    ('Lérida', Estado.objects.get(nombre='Cataluña').id),
+    ('Aguascalientes', Estado.objects.get(nombre='Aguascalientes').id),
+    ('Wayland', Estado.objects.get(nombre='Massachusetts').id),
+    ('Cambridge', Estado.objects.get(nombre='Massachusetts').id),
+    ('Norcross', Estado.objects.get(nombre='Georgia').id),
+    ('Tepic', Estado.objects.get(nombre='Nayarit').id),
+    ('Boston', Estado.objects.get(nombre='Massachusetts').id),
+    ('Bloomington', Estado.objects.get(nombre='Indiana').id),
+    ('Cochabamba', Estado.objects.get(nombre='Cochabamba').id),
+    ('Zúrich', Estado.objects.get(nombre='Zúrich').id),
+    ('Ann Arbor', Estado.objects.get(nombre='Míchigan').id),
+    ('Wurzburgo', Estado.objects.get(nombre='Baviera').id),
+    ('San Vicente del Raspeig', Estado.objects.get(nombre='Alicante').id),
+    ('Nueva York', Estado.objects.get(nombre='Nueva York').id),
+    ('Hermosillo', Estado.objects.get(nombre='Sonora').id),
+    ('Heroica Guaymas de Zaragoza', Estado.objects.get(nombre='Sonora').id),
+    ('San Miguel de Tucumán', Estado.objects.get(nombre='Tucumán').id),
+    ('Cádiz', Estado.objects.get(nombre='Andalucía').id),
+    ('Sevilla', Estado.objects.get(nombre='Andalucía').id),
+    ('La Habana', Estado.objects.get(nombre='La Habana').id),
+    ('Toulouse', Estado.objects.get(nombre='Alto Garona').id),
+    ('Valencia', Estado.objects.get(nombre='Valencia').id),
+    ('Albuixech', Estado.objects.get(nombre='Valencia').id),
+    ('Brístol', Estado.objects.get(nombre='Inglaterra').id),
+    ('Córdoba', Estado.objects.get(nombre='Córdoba').id),
+    ('Urumchi', Estado.objects.get(nombre='Sinkiang').id),
+    ('La Paz', Estado.objects.get(nombre='Baja California Sur').id),
+    ('Santiago de Querétaro', Estado.objects.get(nombre='Querétaro de Arteaga').id),
+    ('Evanston', Estado.objects.get(nombre='Illinois').id),
+    ('Urbana-Champaign', Estado.objects.get(nombre='Illinois').id),
+    ('Sapporo', Estado.objects.get(nombre='Hokkaido').id),
+    ('Santiago de Compostela', Estado.objects.get(nombre='Galicia').id),
+    ('West Point Grey', Estado.objects.get(nombre='Vancouver').id),
+    ('Campeche', Estado.objects.get(nombre='Campeche').id),
+    ('San Cristóbal de las Casas', Estado.objects.get(nombre='Chiapas').id),
+    ('Tuxtla Gutiérrez', Estado.objects.get(nombre='Chiapas').id),
+    ('Belo Horizonte', Estado.objects.get(nombre='Minas Gerais').id),
+    ('Feira de Santana', Estado.objects.get(nombre='Bahía').id),
+    ('Granada', Estado.objects.get(nombre='Granada').id),
+    ('Culiacán Rosales', Estado.objects.get(nombre='Sinaloa').id),
+    ('Ámsterdam', Estado.objects.get(nombre='Holanda Septentrional').id),
+    ('Trento', Estado.objects.get(nombre='Trento').id),
+    ('Austin', Estado.objects.get(nombre='Texas').id),
+    ('Murcia', Estado.objects.get(nombre='Región de Murcia').id),
+    ('Comodoro Rivadavia', Estado.objects.get(nombre='Escalante').id),
+    ('Viedma', Estado.objects.get(nombre='Río Negro').id),
+    ('Roma', Estado.objects.get(nombre='Ciudad metropolitana de Roma Capital').id),
+    ('Gland', Estado.objects.get(nombre='Cantón de Vaud').id),
+    ('Pullman', Estado.objects.get(nombre='Washington').id),
+    ('Ciudad del Cabo', Estado.objects.get(nombre='Provincia Occidental del Cabo').id),
+    ('Quebec', Estado.objects.get(nombre='Quebec').id),
+    ('Nueva Orleans', Estado.objects.get(nombre='Luisiana').id),
+    ('Praia', Estado.objects.get(nombre='Praia').id),
+    ('Cagliari', Estado.objects.get(nombre='Cerdeña').id),
+    ('Pula', Estado.objects.get(nombre='Cerdeña').id),
+    ('Oslo', Estado.objects.get(nombre='Akershus').id),
+    ('Cuernavaca', Estado.objects.get(nombre='Morelos').id),
+    ('Chilpancingo de los Bravo', Estado.objects.get(nombre='Guerrero').id),
+    ('Bonn', Estado.objects.get(nombre='Renania del Norte-Westfalia').id),
+    ('Gainesville', Estado.objects.get(nombre='Florida').id),
+    ('Tegucigalpa', Estado.objects.get(nombre='Francisco Morazán').id),
+    ('Puebla de Zaragoza', Estado.objects.get(nombre='Puebla').id),
+    ('Villavicencio', Estado.objects.get(nombre='Meta').id),
+    ('Mendoza', Estado.objects.get(nombre='Mendoza').id),
+    ('Vitória', Estado.objects.get(nombre='Espírito Santo').id),
+    ('Braga', Estado.objects.get(nombre='Minho').id),
+    ('Ciudad de Guatemala', Estado.objects.get(nombre='Guatemala').id),
+    ('Los Salias', Estado.objects.get(nombre='Miranda').id),
+    ('Dar es-Salam', Estado.objects.get(nombre='Dar es-Salam').id),
+    ('Berkeley', Estado.objects.get(nombre='California').id),
+    ('Wageningen', Estado.objects.get(nombre='Güeldres').id),
+    ('Tlaxcala de Xicohténcatl', Estado.objects.get(nombre='Tlaxcala').id),
+    ('Zaragoza', Estado.objects.get(nombre='Aragón').id)
 )
 
 for i in Ciudades:
-    c = Ciudad(ciudad=i[0], estado=Estado(pk=i[1]))
+    c = Ciudad(nombre=i[0], estado=Estado(pk=i[1]))
     c.save()
-    print("Agregada la ciudad " + i[0] + "para el estado " + str(Estado.objects.get(pk=i[1]).estado))
+    print("Agregada la ciudad " + i[0] + "para el estado " + str(Estado.objects.get(pk=i[1]).nombre))
 
 
 
 Instituciones = (
-('Universidad Nacional Autónoma de México (UNAM)', Pais.objects.get(pais='México').id,
+('Universidad Nacional Autónoma de México (UNAM)', Pais.objects.get(nombre='México').id,
     [
-        ('Universidad Nacional Autónoma de México (UNAM)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Universidad Nacional Autónoma de México, Campus Morelia (UNAM Morelia)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Unidad Académica de Geografía, Morelia (UNAM Morelia)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Centro de Investigaciones en Geografía Ambiental (CIGA)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Dirección General de Cooperación e Internacionalización (DGECI)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Investigaciones en Ecosistemas y Sustentabilidad (IIES)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Centro de Ciencias de la Atmósfera', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Centro Regional de Investigaciones Multidisciplinarias (CRIM)', Ciudad.objects.get(ciudad='Cuernavaca').id),
-        ('Unidad de Posgrado', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Escuela Nacional de Estudios Superiores, Unidad Morelia (ENES Morelia)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Escuela Nacional de Estudios Superiores, Unidad León (ENES León)', Ciudad.objects.filter(ciudad='León', estado=Estado.objects.get(estado='Guanajuato').id)[0].id),
-        ('Instituto de Biología', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Ecología', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Investigaciones Antropológicas', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Investigaciones Filológicas', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Geografía', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Geología', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Geofísica', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto de Geofísica, Unidad Morelia (UNAM Morelia)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Instituto de Geografía, Unidad Morelia (UNAM Morelia)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Colegio de Geografía', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Consejo Académico de Área en Ciencias Sociales (CAACS)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Facultad de Ciencias', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Facultad de Filosofía y Letras', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Facultad de Arquitectura', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Facultad de Ciencias Políticas y Sociales', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Facultad de Economía', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Facultad de Ingeniería', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Facultad de Medicina Veterinaria y Zootecnia', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Dirección General Asuntos del Personal Académico (DGAPA)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Posgrado en Geografia', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Laboratorio de Edafología "Nicolás Aguilera"', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Dirección General de Bibiotecas (DGB)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Programa de Actualización y Superación Docente (PASD)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Dirección General de Planeación', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Secretaría de Desarrollo Institucional (SDI)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Consejo Técnico de la Investigación Científica (CIC-CTIC)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Colegio de Historia', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Laboratorio de Análisis Físicos y Químicos del Ambiente (LAFQA)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Colegio de Geografia (Facultad de Filosofía y Letras)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
+        ('Universidad Nacional Autónoma de México (UNAM)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Universidad Nacional Autónoma de México, Campus Morelia (UNAM Morelia)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Unidad Académica de Geografía, Morelia (UNAM Morelia)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Centro de Investigaciones en Geografía Ambiental (CIGA)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Dirección General de Cooperación e Internacionalización (DGECI)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Investigaciones en Ecosistemas y Sustentabilidad (IIES)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Centro de Ciencias de la Atmósfera', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Centro Regional de Investigaciones Multidisciplinarias (CRIM)', Ciudad.objects.get(nombre='Cuernavaca').id),
+        ('Unidad de Posgrado', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Escuela Nacional de Estudios Superiores, Unidad Morelia (ENES Morelia)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Escuela Nacional de Estudios Superiores, Unidad León (ENES León)', Ciudad.objects.filter(nombre='León', estado=Estado.objects.get(nombre='Guanajuato').id)[0].id),
+        ('Instituto de Biología', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Ecología', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Investigaciones Antropológicas', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Investigaciones Filológicas', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Geografía', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Geología', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Geofísica', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto de Geofísica, Unidad Morelia (UNAM Morelia)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Instituto de Geografía, Unidad Morelia (UNAM Morelia)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Colegio de Geografía', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Consejo Académico de Área en Ciencias Sociales (CAACS)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Facultad de Ciencias', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Facultad de Filosofía y Letras', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Facultad de Arquitectura', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Facultad de Ciencias Políticas y Sociales', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Facultad de Economía', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Facultad de Ingeniería', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Facultad de Medicina Veterinaria y Zootecnia', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Dirección General Asuntos del Personal Académico (DGAPA)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Posgrado en Geografia', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Laboratorio de Edafología "Nicolás Aguilera"', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Dirección General de Bibiotecas (DGB)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Programa de Actualización y Superación Docente (PASD)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Dirección General de Planeación', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Secretaría de Desarrollo Institucional (SDI)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Consejo Técnico de la Investigación Científica (CIC-CTIC)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Colegio de Historia', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Laboratorio de Análisis Físicos y Químicos del Ambiente (LAFQA)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Colegio de Geografia (Facultad de Filosofía y Letras)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
     ]
  ),
 
-('Universidad Michoacana de San Nicolás de Hidalgo (UMSNH)', Pais.objects.get(pais='México').id,
+('Universidad Michoacana de San Nicolás de Hidalgo (UMSNH)', Pais.objects.get(nombre='México').id,
     [
-        ('Universidad Michoacana de San Nicolás de Hidalgo (UMSNH)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Instituto de Investigaciones Económicas y Empresariales (ININEE)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Instituto de Investigaciones Históricas', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Instituto de Investigaciones en Ciencias de la Tierra', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Coordinación de la Investigación Científica (CIC)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Facultad de Ingeniería Eléctrica (FIE)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Facultad de Filosofía "Samuel Ramos"', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Facultad de Economía "Vasco de Quiroga"', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Facultad de Ingeniería Eléctrica', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Facultad de Biología', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Escuela de Ciencias Agropecuarias', Ciudad.objects.get(ciudad='Apatzingán de la Constitución').id)
+        ('Universidad Michoacana de San Nicolás de Hidalgo (UMSNH)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Instituto de Investigaciones Económicas y Empresariales (ININEE)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Instituto de Investigaciones Históricas', Ciudad.objects.get(nombre='Morelia').id),
+        ('Instituto de Investigaciones en Ciencias de la Tierra', Ciudad.objects.get(nombre='Morelia').id),
+        ('Coordinación de la Investigación Científica (CIC)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Facultad de Ingeniería Eléctrica (FIE)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Facultad de Filosofía "Samuel Ramos"', Ciudad.objects.get(nombre='Morelia').id),
+        ('Facultad de Economía "Vasco de Quiroga"', Ciudad.objects.get(nombre='Morelia').id),
+        ('Facultad de Ingeniería Eléctrica', Ciudad.objects.get(nombre='Morelia').id),
+        ('Facultad de Biología', Ciudad.objects.get(nombre='Morelia').id),
+        ('Escuela de Ciencias Agropecuarias', Ciudad.objects.get(nombre='Apatzingán de la Constitución').id)
     ]
  ),
 
-('Universidad de Camerino', Pais.objects.get(pais='Italia').id,
+('Universidad de Camerino', Pais.objects.get(nombre='Italia').id,
     [
-        ('Departamento de Geobotánica', Ciudad.objects.get(ciudad='Camerino').id),
-        ('Braun Blanquetia', Ciudad.objects.get(ciudad='Camerino').id)
+        ('Departamento de Geobotánica', Ciudad.objects.get(nombre='Camerino').id),
+        ('Braun Blanquetia', Ciudad.objects.get(nombre='Camerino').id)
     ]
  ),
 
-('Universidad Nacional de Colombia', Pais.objects.get(pais='Colombia').id,
+('Universidad Nacional de Colombia', Pais.objects.get(nombre='Colombia').id,
     [
-        ('Universidad Nacional de Colombia', Ciudad.objects.get(ciudad='Bogotá D.C.').id),
-        ('Universidad Nacional de Colombia Sede Medellín', Ciudad.objects.get(ciudad='Medellín').id),
-        ('Instituto de Ciencias Naturales', Ciudad.objects.get(ciudad='Bogotá D.C.').id),
-        ('Caldasia', Ciudad.objects.get(ciudad='Bogotá D.C.').id),
-        ('Facultad de Minas', Ciudad.objects.get(ciudad='Bogotá D.C.').id)
+        ('Universidad Nacional de Colombia', Ciudad.objects.get(nombre='Bogotá D.C.').id),
+        ('Universidad Nacional de Colombia Sede Medellín', Ciudad.objects.get(nombre='Medellín').id),
+        ('Instituto de Ciencias Naturales', Ciudad.objects.get(nombre='Bogotá D.C.').id),
+        ('Caldasia', Ciudad.objects.get(nombre='Bogotá D.C.').id),
+        ('Facultad de Minas', Ciudad.objects.get(nombre='Bogotá D.C.').id)
     ]
  ),
 
-('Universidad Intercultural Indígena de Michoacán (UIIM)', Pais.objects.get(pais='México').id,
+('Universidad Intercultural Indígena de Michoacán (UIIM)', Pais.objects.get(nombre='México').id,
     [
-        ('UIIM Sede Pichátaro', Ciudad.objects.get(ciudad='Pichátaro').id),
-        ('UIIM Unidad Académica Purépecha', Ciudad.objects.get(ciudad='Pátzcuaro').id)
+        ('UIIM Sede Pichátaro', Ciudad.objects.get(nombre='Pichátaro').id),
+        ('UIIM Unidad Académica Purépecha', Ciudad.objects.get(nombre='Pátzcuaro').id)
     ]
  ),
 
-('University of Bern', Pais.objects.get(pais='Suiza').id, [('Mountain Research and Development', Ciudad.objects.get(ciudad='Bern').id)]),
+('University of Bern', Pais.objects.get(nombre='Suiza').id, [('Mountain Research and Development', Ciudad.objects.get(nombre='Bern').id)]),
 
-('Universidad de León', Pais.objects.get(pais='España').id,
+('Universidad de León', Pais.objects.get(nombre='España').id,
     [
-        ('Universidad de León', Ciudad.objects.filter(ciudad='León', estado=Estado.objects.get(estado='Provincia de León'))[0].id)
+        ('Universidad de León', Ciudad.objects.filter(nombre='León', estado=Estado.objects.get(nombre='Provincia de León'))[0].id)
     ]
  ),
 
 
 
-('Universidad Complutense de Madrid', Pais.objects.get(pais='España').id, [('Universidad Complutense de Madrid', Ciudad.objects.get(ciudad='Madrid').id)]),
+('Universidad Complutense de Madrid', Pais.objects.get(nombre='España').id, [('Universidad Complutense de Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Consejo Nacional de Ciencia y Tecnología (CONACYT)', Pais.objects.get(pais='México').id,
+('Consejo Nacional de Ciencia y Tecnología (CONACYT)', Pais.objects.get(nombre='México').id,
     [
-        ('Consejo Nacional de Ciencia y Tecnología (CONACYT)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Fomento Regional para el Desarrollo Científico, Tecnológico y de Innovación (FORDECYT)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Innovate UK - CONACYT', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Consejo Nacional de Ciencia y Tecnología (CONACYT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Fomento Regional para el Desarrollo Científico, Tecnológico y de Innovación (FORDECYT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Innovate UK - CONACYT', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     ]
  ),
 
-('Gobierno de la República Mexicana', Pais.objects.get(pais='México').id,
+('Gobierno de la República Mexicana', Pais.objects.get(nombre='México').id,
     [
-        ('Secretaría de Desarrollo Social (SEDESOL)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Comisión Nacional Para el Conocimiento y Uso de la Biodiversidad (CONABIO)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Comisión Nacional de Áreas Naturales Portegidas (CONANP)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Comisión Nacional de Vivienda (CONAVI)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Comisión Nacional Forestal (CONAFOR)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Comisión Nacional del Agua (CONAGUA)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Consejo Nacional de Población (CONAPO)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Secretaría de Relaciones Exteriores (SRE)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Dirección General de Desarrollo Institucional y Promoción', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Dirección de Manejo Integral de Cuencas Hídricas', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Dirección General de Educación Tecnológica Agropecuaria (DGTA)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Secretaría de Educación Pública (SEP)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Petróleos Mexicanos (PEMEX)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Secretaría de Comunicaciones y Transportes (SCT)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Secretaría de Gobernación (SEGOB)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Secretaría de Desarrollo Social (SEDESOL)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Comisión Nacional Para el Conocimiento y Uso de la Biodiversidad (CONABIO)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Comisión Nacional de Áreas Naturales Portegidas (CONANP)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Comisión Nacional de Vivienda (CONAVI)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Comisión Nacional Forestal (CONAFOR)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Comisión Nacional del Agua (CONAGUA)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Consejo Nacional de Población (CONAPO)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Secretaría de Relaciones Exteriores (SRE)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Dirección General de Desarrollo Institucional y Promoción', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Dirección de Manejo Integral de Cuencas Hídricas', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Dirección General de Educación Tecnológica Agropecuaria (DGTA)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Secretaría de Educación Pública (SEP)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Petróleos Mexicanos (PEMEX)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Secretaría de Comunicaciones y Transportes (SCT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Secretaría de Gobernación (SEGOB)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     ]
  ),
 
-('Gobierno del Estado de Michoacán de Ocampo', Pais.objects.get(pais='México').id,
+('Gobierno del Estado de Michoacán de Ocampo', Pais.objects.get(nombre='México').id,
     [
-        ('Gobierno del Estado de Michoacán de Ocampo', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Secretaría de Innovación, Ciencia y Desarrollo Tecnológico (SICDET)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Consejo Estatal de Ciencia y Tecnología (CECTI)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Centro Estatal para el Desarrollo Municipal (CEDEMUN)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Secretaría de Urbanismo y Medio Ambiente', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Centro Estatal de Tecnologías de Información y Comunicaciones (CETIC)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Universidad Tecnológica de Morelia (UTM)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Secretaria de Educación en el Estado de Michoacán de Ocampo (SEE Michoacán)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Universidad Virtual del Estado de Michoacán (UNIVIM)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Coordinación General de Gabinete y Planeación (CPLADE)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Telebachillerato Michoacán', Ciudad.objects.get(ciudad='Morelia').id)
+        ('Gobierno del Estado de Michoacán de Ocampo', Ciudad.objects.get(nombre='Morelia').id),
+        ('Secretaría de Innovación, Ciencia y Desarrollo Tecnológico (SICDET)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Consejo Estatal de Ciencia y Tecnología (CECTI)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Centro Estatal para el Desarrollo Municipal (CEDEMUN)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Secretaría de Urbanismo y Medio Ambiente', Ciudad.objects.get(nombre='Morelia').id),
+        ('Centro Estatal de Tecnologías de Información y Comunicaciones (CETIC)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Universidad Tecnológica de Morelia (UTM)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Secretaria de Educación en el Estado de Michoacán de Ocampo (SEE Michoacán)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Universidad Virtual del Estado de Michoacán (UNIVIM)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Coordinación General de Gabinete y Planeación (CPLADE)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Telebachillerato Michoacán', Ciudad.objects.get(nombre='Morelia').id)
     ]
  ),
 
-('Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)', Pais.objects.get(pais='Francia').id, [('Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)', Ciudad.objects.get(ciudad='París').id)]),
+('Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)', Pais.objects.get(nombre='Francia').id, [('Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)', Ciudad.objects.get(nombre='París').id)]),
 
-('El Colegio de Michoacán, A.C. (COLMICH)', Pais.objects.get(pais='México').id, [('El Colegio de Michoacán, A.C. (COLMICH)', Ciudad.objects.get(ciudad='La Piedad de Cabadas').id)]),
+('El Colegio de Michoacán, A.C. (COLMICH)', Pais.objects.get(nombre='México').id, [('El Colegio de Michoacán, A.C. (COLMICH)', Ciudad.objects.get(nombre='La Piedad de Cabadas').id)]),
 
-('Interciencia, Revista de Ciencia y Tecnología de América Latina', Pais.objects.get(pais='Venezuela').id, [('Interciencia, Revista de Ciencia y Tecnología de América Latina', Ciudad.objects.get(ciudad='Caracas').id)]),
+('Interciencia, Revista de Ciencia y Tecnología de América Latina', Pais.objects.get(nombre='Venezuela').id, [('Interciencia, Revista de Ciencia y Tecnología de América Latina', Ciudad.objects.get(nombre='Caracas').id)]),
 
-('Hindawi Publishing Corporation', Pais.objects.get(pais='Reino Unido').id, [('Advances in Meteorology', Ciudad.objects.get(ciudad='Londres').id)]),
+('Hindawi Publishing Corporation', Pais.objects.get(nombre='Reino Unido').id, [('Advances in Meteorology', Ciudad.objects.get(nombre='Londres').id)]),
 
-('Universidad Autónoma de Ciudad Juárez', Pais.objects.get(pais='México').id,
+('Universidad Autónoma de Ciudad Juárez', Pais.objects.get(nombre='México').id,
     (
-        ('Instituto de Arquitectura, Diseño y Arte', Ciudad.objects.get(ciudad='Ciudad Juárez').id),
-        ('Departamento. de Arquitectura', Ciudad.objects.get(ciudad='Ciudad Juárez').id),
-        ('Programa Académico de Geoinformática', Ciudad.objects.get(ciudad='Ciudad Juárez').id)
+        ('Instituto de Arquitectura, Diseño y Arte', Ciudad.objects.get(nombre='Ciudad Juárez').id),
+        ('Departamento. de Arquitectura', Ciudad.objects.get(nombre='Ciudad Juárez').id),
+        ('Programa Académico de Geoinformática', Ciudad.objects.get(nombre='Ciudad Juárez').id)
     )
  ),
 
-('Universidad Valladolid', Pais.objects.get(pais='México').id, [('Instituto Valladolid Preparatoria', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Universidad Valladolid', Pais.objects.get(nombre='México').id, [('Instituto Valladolid Preparatoria', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Instituto Tecnológico de Morelia (ITM)', Pais.objects.get(pais='México').id,
+('Instituto Tecnológico de Morelia (ITM)', Pais.objects.get(nombre='México').id,
     (
-        ('Instituto Tecnológico de Morelia (ITM)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Departamento de Sistemas y Computación', Ciudad.objects.get(ciudad='Morelia').id)
+        ('Instituto Tecnológico de Morelia (ITM)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Departamento de Sistemas y Computación', Ciudad.objects.get(nombre='Morelia').id)
     )
  ),
 
-('Universidad Autónoma de San Luis Potosí', Pais.objects.get(pais='México').id, [('Universidad Autónoma de San Luis Potosí', Ciudad.objects.get(ciudad='San Luis Potosí').id)]),
+('Universidad Autónoma de San Luis Potosí', Pais.objects.get(nombre='México').id, [('Universidad Autónoma de San Luis Potosí', Ciudad.objects.get(nombre='San Luis Potosí').id)]),
 
-('Pontificia Universidad Católica de Chile', Pais.objects.get(pais='Chile').id,
+('Pontificia Universidad Católica de Chile', Pais.objects.get(nombre='Chile').id,
     (
-        ('Pontificia Universidad Católica de Chile', Ciudad.objects.get(ciudad='Santiago').id),
-        ('Comisión Nacional de Acreditación', Ciudad.objects.get(ciudad='Santiago').id)
+        ('Pontificia Universidad Católica de Chile', Ciudad.objects.get(nombre='Santiago').id),
+        ('Comisión Nacional de Acreditación', Ciudad.objects.get(nombre='Santiago').id)
     )
  ),
 
-('Instituto de Ecología, A.C. (INECOL)', Pais.objects.get(pais='México').id, [('Instituto de Ecología, A.C. (INECOL)', Ciudad.objects.get(ciudad='Xalapa').id)]),
+('Instituto de Ecología, A.C. (INECOL)', Pais.objects.get(nombre='México').id, [('Instituto de Ecología, A.C. (INECOL)', Ciudad.objects.get(nombre='Xalapa').id)]),
 
-('Red Mexicana de Cuencas Hidrográficas', Pais.objects.get(pais='México').id, [('Red Mexicana de Cuencas Hidrográficas', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Red Mexicana de Cuencas Hidrográficas', Pais.objects.get(nombre='México').id, [('Red Mexicana de Cuencas Hidrográficas', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Agraria de la Selva', Pais.objects.get(pais='Perú').id, [('Revista Investigación y Amazonía', Ciudad.objects.get(ciudad='Tingo María').id)]),
+('Universidad Agraria de la Selva', Pais.objects.get(nombre='Perú').id, [('Revista Investigación y Amazonía', Ciudad.objects.get(nombre='Tingo María').id)]),
 
-('Instituto de Investigaciones de la Amazonía Peruana', Pais.objects.get(pais='Perú').id, [('Instituto de Investigaciones de la Amazonía Peruana', Ciudad.objects.get(ciudad='Lima').id)]),
+('Instituto de Investigaciones de la Amazonía Peruana', Pais.objects.get(nombre='Perú').id, [('Instituto de Investigaciones de la Amazonía Peruana', Ciudad.objects.get(nombre='Lima').id)]),
 
-('Asociación Española de Fitosociología (AEFA)', Pais.objects.get(pais='España').id,
+('Asociación Española de Fitosociología (AEFA)', Pais.objects.get(nombre='España').id,
     (
-        ('Global Geobotany', Ciudad.objects.get(ciudad='Madrid').id),
-        ('International Journal of Geobotanical Research', Ciudad.objects.get(ciudad='Madrid').id)
+        ('Global Geobotany', Ciudad.objects.get(nombre='Madrid').id),
+        ('International Journal of Geobotanical Research', Ciudad.objects.get(nombre='Madrid').id)
     )
  ),
 
-('Austrian Development Cooperation (ADC)', Pais.objects.get(pais='Austria').id, [('APPEAR', Ciudad.objects.get(ciudad='Viena').id)]),
+('Austrian Development Cooperation (ADC)', Pais.objects.get(nombre='Austria').id, [('APPEAR', Ciudad.objects.get(nombre='Viena').id)]),
 
-('National Geographic Society (NGS)', Pais.objects.get(pais='Estados Unidos de América').id, [('National Geographic Society (NGS)', Ciudad.objects.get(ciudad='Washington, D.C.').id)]),
+('National Geographic Society (NGS)', Pais.objects.get(nombre='Estados Unidos de América').id, [('National Geographic Society (NGS)', Ciudad.objects.get(nombre='Washington, D.C.').id)]),
 
-('National Science Foundation (NSF)', Pais.objects.get(pais='Estados Unidos de América').id, [('National Science Foundation (NSF)', Ciudad.objects.get(ciudad='Arlington').id)]),
+('National Science Foundation (NSF)', Pais.objects.get(nombre='Estados Unidos de América').id, [('National Science Foundation (NSF)', Ciudad.objects.get(nombre='Arlington').id)]),
 
-('National Environmental Research Council (NERC)', Pais.objects.get(pais='Reino Unido').id, [('National Environmental Research Council (NERC)', Ciudad.objects.get(ciudad='Swindon').id)]),
+('National Environmental Research Council (NERC)', Pais.objects.get(nombre='Reino Unido').id, [('National Environmental Research Council (NERC)', Ciudad.objects.get(nombre='Swindon').id)]),
 
-('Gobierno del Estado de Yucatán', Pais.objects.get(pais='México').id, [('Fondo Mixto Conacyt-Gobierno del Estado de Yucatán (FOMIX)', Ciudad.objects.get(ciudad='Mérida').id)]),
+('Gobierno del Estado de Yucatán', Pais.objects.get(nombre='México').id, [('Fondo Mixto Conacyt-Gobierno del Estado de Yucatán (FOMIX)', Ciudad.objects.get(nombre='Mérida').id)]),
 
-('Universidad Autónoma de Tamaulipas', Pais.objects.get(pais='México').id,
+('Universidad Autónoma de Tamaulipas', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad Autonoma de Tamaulipas', Ciudad.objects.get(ciudad='Ciudad Victoria').id),
-        ('Instituto de Ecología Aplicada', Ciudad.objects.get(ciudad='Ciudad Victoria').id)
+        ('Universidad Autonoma de Tamaulipas', Ciudad.objects.get(nombre='Ciudad Victoria').id),
+        ('Instituto de Ecología Aplicada', Ciudad.objects.get(nombre='Ciudad Victoria').id)
     )
  ),
 
-('Agencia Nacional de Investigación e Innovación de Uruguay (ANII)', Pais.objects.get(pais='Uruguay').id, [('Fondo María Viñas', Ciudad.objects.get(ciudad='Montevideo').id)]),
+('Agencia Nacional de Investigación e Innovación de Uruguay (ANII)', Pais.objects.get(nombre='Uruguay').id, [('Fondo María Viñas', Ciudad.objects.get(nombre='Montevideo').id)]),
 
-('Universidad Autónoma de Baja California', Pais.objects.get(pais='México').id, [('Universidad Autónoma de Baja California', Ciudad.objects.get(ciudad='Mexicali').id)]),
+('Universidad Autónoma de Baja California', Pais.objects.get(nombre='México').id, [('Universidad Autónoma de Baja California', Ciudad.objects.get(nombre='Mexicali').id)]),
 
-('Universidad de California Davis', Pais.objects.get(pais='Estados Unidos de América').id, [('Universidad de California Davis', Ciudad.objects.get(ciudad='Davis').id)]),
+('Universidad de California Davis', Pais.objects.get(nombre='Estados Unidos de América').id, [('Universidad de California Davis', Ciudad.objects.get(nombre='Davis').id)]),
 
-('Universidad de Antioquia', Pais.objects.get(pais='Colombia').id, [('Universidad de Antioquia', Ciudad.objects.get(ciudad='Medellín').id)]),
+('Universidad de Antioquia', Pais.objects.get(nombre='Colombia').id, [('Universidad de Antioquia', Ciudad.objects.get(nombre='Medellín').id)]),
 
-('University of East Anglia', Pais.objects.get(pais='Reino Unido').id, [('University of East Anglia', Ciudad.objects.get(ciudad='Norfolk').id)]),
+('University of East Anglia', Pais.objects.get(nombre='Reino Unido').id, [('University of East Anglia', Ciudad.objects.get(nombre='Norfolk').id)]),
 
-('Universidad París 1 Panteón-Sorbona', Pais.objects.get(pais='Francia').id, [('Universidad París 1 Panteón-Sorbona', Ciudad.objects.get(ciudad='París').id)]),
+('Universidad París 1 Panteón-Sorbona', Pais.objects.get(nombre='Francia').id, [('Universidad París 1 Panteón-Sorbona', Ciudad.objects.get(nombre='París').id)]),
 
-('Universidad Northwestern', Pais.objects.get(pais='Estados Unidos de América').id, [('Universidad Northwestern', Ciudad.objects.get(ciudad='Evanston').id)]),
+('Universidad Northwestern', Pais.objects.get(nombre='Estados Unidos de América').id, [('Universidad Northwestern', Ciudad.objects.get(nombre='Evanston').id)]),
 
-('University of Twente', Pais.objects.get(pais='Países Bajos / Holanda').id,
+('University of Twente', Pais.objects.get(nombre='Países Bajos / Holanda').id,
     (
-        ('University of Twente', Ciudad.objects.get(ciudad='Enschede').id),
-        ('International Institute for Geo-Information Sciences and Earth Observation (ITC)', Ciudad.objects.get(ciudad='Enschede').id),
-        ('Faculty of Geo-Information Science and Earth Observation (ITC)', Ciudad.objects.get(ciudad='Enschede').id),
-        ('Department of Governance and Technology for Sustainability (CSTM)', Ciudad.objects.get(ciudad='Enschede').id)
+        ('University of Twente', Ciudad.objects.get(nombre='Enschede').id),
+        ('International Institute for Geo-Information Sciences and Earth Observation (ITC)', Ciudad.objects.get(nombre='Enschede').id),
+        ('Faculty of Geo-Information Science and Earth Observation (ITC)', Ciudad.objects.get(nombre='Enschede').id),
+        ('Department of Governance and Technology for Sustainability (CSTM)', Ciudad.objects.get(nombre='Enschede').id)
     )
  ),
 
-('Universidad Autónoma de Madrid', Pais.objects.get(pais='España').id, [('Universidad Autónoma de Madrid', Ciudad.objects.get(ciudad='Madrid').id)]),
+('Universidad Autónoma de Madrid', Pais.objects.get(nombre='España').id, [('Universidad Autónoma de Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Universidad de Buenos Aires (UBA)', Pais.objects.get(pais='Argentina').id,
+('Universidad de Buenos Aires (UBA)', Pais.objects.get(nombre='Argentina').id,
     (
-        ('Universidad de Buenos Aires (UBA)', Ciudad.objects.get(ciudad='Buenos Aires').id),
-        ('Proyecto Arqueológico Yocavil', Ciudad.objects.get(ciudad='Buenos Aires').id)
+        ('Universidad de Buenos Aires (UBA)', Ciudad.objects.get(nombre='Buenos Aires').id),
+        ('Proyecto Arqueológico Yocavil', Ciudad.objects.get(nombre='Buenos Aires').id)
     )
  ),
 
-('Universidad de Queensland', Pais.objects.get(pais='Australia').id, [('Universidad de Queensland', Ciudad.objects.get(ciudad='Brisbane').id)]),
+('Universidad de Queensland', Pais.objects.get(nombre='Australia').id, [('Universidad de Queensland', Ciudad.objects.get(nombre='Brisbane').id)]),
 
-('Universidad Autónoma de Barcelona (UAB)', Pais.objects.get(pais='España').id,
+('Universidad Autónoma de Barcelona (UAB)', Pais.objects.get(nombre='España').id,
     (
-        ('Universidad Autónoma de Barcelona (UAB)', Ciudad.objects.get(ciudad='Barcelona').id),
-        ('Instituto Catalán de Tecnología Ambiental (ICTA)', Ciudad.objects.get(ciudad='Barcelona').id)
+        ('Universidad Autónoma de Barcelona (UAB)', Ciudad.objects.get(nombre='Barcelona').id),
+        ('Instituto Catalán de Tecnología Ambiental (ICTA)', Ciudad.objects.get(nombre='Barcelona').id)
     )
  ),
 
-('El Colegio de México, A.C.', Pais.objects.get(pais='México').id, [('El Colegio de México, A.C.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('El Colegio de México, A.C.', Pais.objects.get(nombre='México').id, [('El Colegio de México, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('LEAD International', Pais.objects.get(pais='México').id, [('LEAD International', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('LEAD International', Pais.objects.get(nombre='México').id, [('LEAD International', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Instituto Nacional de Estadística y Geografía (INEGI)', Pais.objects.get(pais='México').id, [('Instituto Nacional de Estadística y Geografía (INEGI)', Ciudad.objects.get(ciudad='Aguascalientes').id)]),
+('Instituto Nacional de Estadística y Geografía (INEGI)', Pais.objects.get(nombre='México').id, [('Instituto Nacional de Estadística y Geografía (INEGI)', Ciudad.objects.get(nombre='Aguascalientes').id)]),
 
-('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Pais.objects.get(pais='México').id, [('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Pais.objects.get(nombre='México').id, [('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Autónoma del Estado de México (UAEMex)', Pais.objects.get(pais='México').id,
+('Universidad Autónoma del Estado de México (UAEMex)', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad Autónoma del Estado de México (UAEMex)', Ciudad.objects.get(ciudad='Toluca').id),
-        ('Facultad de Geografía', Ciudad.objects.get(ciudad='Toluca').id)
+        ('Universidad Autónoma del Estado de México (UAEMex)', Ciudad.objects.get(nombre='Toluca').id),
+        ('Facultad de Geografía', Ciudad.objects.get(nombre='Toluca').id)
     )
  ),
 
-('Open Geospatial Consortium (OGC)', Pais.objects.get(pais='Estados Unidos de América').id, [('Open Geospatial Consortium (OGC)', Ciudad.objects.get(ciudad='Wayland').id)]),
+('Open Geospatial Consortium (OGC)', Pais.objects.get(nombre='Estados Unidos de América').id, [('Open Geospatial Consortium (OGC)', Ciudad.objects.get(nombre='Wayland').id)]),
 
-('Gtt Imaging, S.A. de C.V.', Pais.objects.get(pais='México').id, [('Gtt Imaging, S.A. de C.V.', Ciudad.objects.get(ciudad='Guadalajara').id)]),
+('Gtt Imaging, S.A. de C.V.', Pais.objects.get(nombre='México').id, [('Gtt Imaging, S.A. de C.V.', Ciudad.objects.get(nombre='Guadalajara').id)]),
 
-('Instituto Nacional para el Federalismo y el Desarrollo Municipal (INAFED)', Pais.objects.get(pais='México').id, [('Instituto Nacional para el Federalismo y el Desarrollo Municipal (INAFED)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Instituto Nacional para el Federalismo y el Desarrollo Municipal (INAFED)', Pais.objects.get(nombre='México').id, [('Instituto Nacional para el Federalismo y el Desarrollo Municipal (INAFED)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT)', Pais.objects.get(pais='México').id,
+('Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT)', Pais.objects.get(nombre='México').id,
     (
-        ('Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Instituto Nacional de Ecología y Cambio Climático (INECC)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Instituto Nacional de Ecología y Cambio Climático (INECC)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     )
  ),
 
-('Universidad Iberoamericana (UIA)', Pais.objects.get(pais='México').id,
+('Universidad Iberoamericana (UIA)', Pais.objects.get(nombre='México').id,
     [
-        ('Ibero OnLine', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Ibero OnLine', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     ]
  ),
 
-('Centro de Capacitación en Calidad Sanitaria S.A. DE C.V.', Pais.objects.get(pais='México').id, [('Centro de Capacitación en Calidad Sanitaria S.A. DE C.V.', Ciudad.objects.get(ciudad='Monterrey').id)]),
+('Centro de Capacitación en Calidad Sanitaria S.A. DE C.V.', Pais.objects.get(nombre='México').id, [('Centro de Capacitación en Calidad Sanitaria S.A. DE C.V.', Ciudad.objects.get(nombre='Monterrey').id)]),
 
-('Instituto Nacional de Antropología e Historia (INAH)', Pais.objects.get(pais='México').id,
+('Instituto Nacional de Antropología e Historia (INAH)', Pais.objects.get(nombre='México').id,
     (
-        ('Centro de Investigaciones y Estudios Superiores en Antropología Social (CIESAS)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Coordinación de Antropología', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Escuela Nacional de Antropología e Historia', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Centro de Investigaciones y Estudios Superiores en Antropología Social (CIESAS)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Coordinación de Antropología', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Escuela Nacional de Antropología e Historia', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     )
  ),
 
-('Universidad Autónoma Chapingo', Pais.objects.get(pais='México').id, [('Universidad Autónoma Chapingo', Ciudad.objects.get(ciudad='Texcoco de Mora').id)]),
+('Universidad Autónoma Chapingo', Pais.objects.get(nombre='México').id, [('Universidad Autónoma Chapingo', Ciudad.objects.get(nombre='Texcoco de Mora').id)]),
 
-('Sistema de la Integración Centroamericana (SICA)', Pais.objects.get(pais='México').id, [('Comisión Centroamericana de Ambiente y Desarrollo (CCAD)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Sistema de la Integración Centroamericana (SICA)', Pais.objects.get(nombre='México').id, [('Comisión Centroamericana de Ambiente y Desarrollo (CCAD)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('National Aeronautics and Space Administration (NASA)', Pais.objects.get(pais='Estados Unidos de América').id, [('National Aeronautics and Space Administration (NASA)', Ciudad.objects.get(ciudad='Washington, D.C.').id)]),
+('National Aeronautics and Space Administration (NASA)', Pais.objects.get(nombre='Estados Unidos de América').id, [('National Aeronautics and Space Administration (NASA)', Ciudad.objects.get(nombre='Washington, D.C.').id)]),
 
-('Organización de las Naciones Unidas (ONU)', Pais.objects.get(pais='Estados Unidos de América').id,
+('Organización de las Naciones Unidas (ONU)', Pais.objects.get(nombre='Estados Unidos de América').id,
     (
-        ('Banco Mundial (The World Bank)', Ciudad.objects.get(ciudad='Washington, D.C.').id),
-        ('Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)', Ciudad.objects.get(ciudad='Roma').id)
+        ('Banco Mundial (The World Bank)', Ciudad.objects.get(nombre='Washington, D.C.').id),
+        ('Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)', Ciudad.objects.get(nombre='Roma').id)
     )
  ),
 
-('Environmental Systems Research Institute (ESRI)', Pais.objects.get(pais='Estados Unidos de América').id, [('Environmental Systems Research Institute (ESRI)', Ciudad.objects.get(ciudad='Redlands').id)]),
+('Environmental Systems Research Institute (ESRI)', Pais.objects.get(nombre='Estados Unidos de América').id, [('Environmental Systems Research Institute (ESRI)', Ciudad.objects.get(nombre='Redlands').id)]),
 
-('Hexagon Geospatial', Pais.objects.get(pais='Estados Unidos de América').id, [('ERDAS Imagine', Ciudad.objects.get(ciudad='Norcross').id)]),
+('Hexagon Geospatial', Pais.objects.get(nombre='Estados Unidos de América').id, [('ERDAS Imagine', Ciudad.objects.get(nombre='Norcross').id)]),
 
-('Sistemas de Información Geográfica, S.A. de C.V.', Pais.objects.get(pais='México').id, [('Sistemas de Información Geográfica, S.A. de C.V.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Sistemas de Información Geográfica, S.A. de C.V.', Pais.objects.get(nombre='México').id, [('Sistemas de Información Geográfica, S.A. de C.V.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)', Pais.objects.get(pais='México').id, [('Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)', Pais.objects.get(nombre='México').id, [('Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Sociedad Mexicana de Geografía y Estadística, A.C.', Pais.objects.get(pais='México').id, [('Sociedad Mexicana de Geografía y Estadística, A.C.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Sociedad Mexicana de Geografía y Estadística, A.C.', Pais.objects.get(nombre='México').id, [('Sociedad Mexicana de Geografía y Estadística, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Dirección General de Geografía y Medio Ambiente', Pais.objects.get(pais='México').id, [('Dirección General de Geografía y Medio Ambiente', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Dirección General de Geografía y Medio Ambiente', Pais.objects.get(nombre='México').id, [('Dirección General de Geografía y Medio Ambiente', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Autónoma de Nayarit', Pais.objects.get(pais='México').id, [('Universidad Autónoma de Nayarit', Ciudad.objects.get(ciudad='Tepic').id)]),
+('Universidad Autónoma de Nayarit', Pais.objects.get(nombre='México').id, [('Universidad Autónoma de Nayarit', Ciudad.objects.get(nombre='Tepic').id)]),
 
-('El Colegio de Jalisco A.C.', Pais.objects.get(pais='México').id, [('El Colegio de Jalisco A.C.', Ciudad.objects.get(ciudad='Guadalajara').id)]),
+('El Colegio de Jalisco A.C.', Pais.objects.get(nombre='México').id, [('El Colegio de Jalisco A.C.', Ciudad.objects.get(nombre='Guadalajara').id)]),
 
-('Fundación Premio Nacional de Tecnología A.C.', Pais.objects.get(pais='México').id, [('Fundación Premio Nacional de Tecnología A.C.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Fundación Premio Nacional de Tecnología A.C.', Pais.objects.get(nombre='México').id, [('Fundación Premio Nacional de Tecnología A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad de Harvard', Pais.objects.get(pais='Estados Unidos de América').id,
+('Universidad de Harvard', Pais.objects.get(nombre='Estados Unidos de América').id,
     [
-        ('Harvard Business Publishing', Ciudad.objects.get(ciudad='Boston').id)
+        ('Harvard Business Publishing', Ciudad.objects.get(nombre='Boston').id)
     ]
  ),
 
-('Instituto Mexicano de la Propiedad Industrial (IMPI)', Pais.objects.get(pais='México').id, [('Instituto Mexicano de la Propiedad Industrial (IMPI)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Instituto Mexicano de la Propiedad Industrial (IMPI)', Pais.objects.get(nombre='México').id, [('Instituto Mexicano de la Propiedad Industrial (IMPI)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Tecmilenio', Pais.objects.get(pais='México').id,
+('Universidad Tecmilenio', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad Tecmilenio', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Buzan Latin America', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Universidad Tecmilenio', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Buzan Latin America', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     )
  ),
 
-('La Universidad de Indiana Bloomington', Pais.objects.get(pais='Estados Unidos de América').id,
+('La Universidad de Indiana Bloomington', Pais.objects.get(nombre='Estados Unidos de América').id,
     (
-        ('Department of Political Science and Workshop in Political Theory and Policy Analysis', Ciudad.objects.get(ciudad='Bloomington').id),
-        ('Workshop in Political Theory and Policy Analysis', Ciudad.objects.get(ciudad='Bloomington').id),
-        ('Vincent and Elinor Ostrom Workshop in Political Theory and Policy Analysis', Ciudad.objects.get(ciudad='Bloomington').id)
+        ('Department of Political Science and Workshop in Political Theory and Policy Analysis', Ciudad.objects.get(nombre='Bloomington').id),
+        ('Workshop in Political Theory and Policy Analysis', Ciudad.objects.get(nombre='Bloomington').id),
+        ('Vincent and Elinor Ostrom Workshop in Political Theory and Policy Analysis', Ciudad.objects.get(nombre='Bloomington').id)
     )
  ),
 
-('Universidad Mayor se San Simón', Pais.objects.get(pais='Bolivia').id,
+('Universidad Mayor se San Simón', Pais.objects.get(nombre='Bolivia').id,
     (
-        ('Universidad Mayor se San Simón', Ciudad.objects.get(ciudad='Cochabamba').id),
-        ('Centro de Levantamientos Aeroespaciales y Aplicaciones SIG para el Desarrollo Sostenible de los Recursos Naturales (CLAS)', Ciudad.objects.get(ciudad='Cochabamba').id)
+        ('Universidad Mayor se San Simón', Ciudad.objects.get(nombre='Cochabamba').id),
+        ('Centro de Levantamientos Aeroespaciales y Aplicaciones SIG para el Desarrollo Sostenible de los Recursos Naturales (CLAS)', Ciudad.objects.get(nombre='Cochabamba').id)
     )
  ),
 
-('Escuela Politécnica Federal de Zúrich (ETHZ)', Pais.objects.get(pais='Suiza').id, [('Institute of Hydromechanics and Water Management', Ciudad.objects.get(ciudad='Zúrich').id)]),
+('Escuela Politécnica Federal de Zúrich (ETHZ)', Pais.objects.get(nombre='Suiza').id, [('Institute of Hydromechanics and Water Management', Ciudad.objects.get(nombre='Zúrich').id)]),
 
-('Universidad de Míchigan', Pais.objects.get(pais='Estados Unidos de América').id, [('Universidad de Míchigan', Ciudad.objects.get(ciudad='Ann Arbor').id)]),
+('Universidad de Míchigan', Pais.objects.get(nombre='Estados Unidos de América').id, [('Universidad de Míchigan', Ciudad.objects.get(nombre='Ann Arbor').id)]),
 
-('ASPEL', Pais.objects.get(pais='México').id, [('ASPEL', Ciudad.objects.get(ciudad='Guadalajara').id)]),
+('ASPEL', Pais.objects.get(nombre='México').id, [('ASPEL', Ciudad.objects.get(nombre='Guadalajara').id)]),
 
-('Técnica Aplicada Internacional S.A. de C.V.', Pais.objects.get(pais='México').id, [('Técnica Aplicada Internacional S.A. de C.V.', Ciudad.objects.get(ciudad='Naucalpan de Juárez').id)]),
+('Técnica Aplicada Internacional S.A. de C.V.', Pais.objects.get(nombre='México').id, [('Técnica Aplicada Internacional S.A. de C.V.', Ciudad.objects.get(nombre='Naucalpan de Juárez').id)]),
 
-('Universidad de Wurzburgo', Pais.objects.get(pais='Alemania').id, [('Universidad de Wurzburgo', Ciudad.objects.get(ciudad='Wurzburgo').id)]),
+('Universidad de Wurzburgo', Pais.objects.get(nombre='Alemania').id, [('Universidad de Wurzburgo', Ciudad.objects.get(nombre='Wurzburgo').id)]),
 
-('The Big Van Theory: científicos sobre ruedas', Pais.objects.get(pais='España').id, [('The Big Van Theory: científicos sobre ruedas', Ciudad.objects.get(ciudad='Madrid').id)]),
+('The Big Van Theory: científicos sobre ruedas', Pais.objects.get(nombre='España').id, [('The Big Van Theory: científicos sobre ruedas', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Universidad Complutense Madrid', Pais.objects.get(pais='España').id, [('Universidad Complutense Madrid', Ciudad.objects.get(ciudad='Madrid').id)]),
+('Universidad Complutense Madrid', Pais.objects.get(nombre='España').id, [('Universidad Complutense Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Escuela de Organización Industrial', Pais.objects.get(pais='España').id, [('Escuela de Organización Industrial', Ciudad.objects.get(ciudad='Madrid').id)]),
+('Escuela de Organización Industrial', Pais.objects.get(nombre='España').id, [('Escuela de Organización Industrial', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Gobierno de España', Pais.objects.get(pais='España').id, [('Gobierno de España', Ciudad.objects.get(ciudad='Madrid').id)]),
+('Gobierno de España', Pais.objects.get(nombre='España').id, [('Gobierno de España', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Universidad de Alicante', Pais.objects.get(pais='España').id, [('Instituto de Economía Internacional', Ciudad.objects.get(ciudad='San Vicente del Raspeig').id)]),
+('Universidad de Alicante', Pais.objects.get(nombre='España').id, [('Instituto de Economía Internacional', Ciudad.objects.get(nombre='San Vicente del Raspeig').id)]),
 
-('Interactive Advertising Bureau (IAB)', Pais.objects.get(pais='Estados Unidos de América').id, [('Interactive Advertising Bureau (IAB)', Ciudad.objects.get(ciudad='Nueva York').id)]),
+('Interactive Advertising Bureau (IAB)', Pais.objects.get(nombre='Estados Unidos de América').id, [('Interactive Advertising Bureau (IAB)', Ciudad.objects.get(nombre='Nueva York').id)]),
 
-('Universidad Don Vasco', Pais.objects.get(pais='México').id, [('Universidad Don Vasco', Ciudad.objects.get(ciudad='Uruapan').id)]),
+('Universidad Don Vasco', Pais.objects.get(nombre='México').id, [('Universidad Don Vasco', Ciudad.objects.get(nombre='Uruapan').id)]),
 
-('Arkinet, S.A. De C.V.', Pais.objects.get(pais='México').id, [('Centro de capacitación de alto rendimiento', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Arkinet, S.A. De C.V.', Pais.objects.get(nombre='México').id, [('Centro de capacitación de alto rendimiento', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)', Pais.objects.get(pais='México').id, [('Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)', Pais.objects.get(nombre='México').id, [('Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Politécnica de Madrid', Pais.objects.get(pais='España').id, [('Universidad Politécnica de Madrid', Ciudad.objects.get(ciudad='Madrid').id)]),
+('Universidad Politécnica de Madrid', Pais.objects.get(nombre='España').id, [('Universidad Politécnica de Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Academia Mexicana de Impacto Ambiental, A.C.(AMIA, A.C.)', Pais.objects.get(pais='México').id, [('Academia Mexicana de Impacto Ambiental, A.C.(AMIA, A.C.)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Academia Mexicana de Impacto Ambiental, A.C.(AMIA, A.C.)', Pais.objects.get(nombre='México').id, [('Academia Mexicana de Impacto Ambiental, A.C.(AMIA, A.C.)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Advanced Analytical Systems, S.A. de C.V.', Pais.objects.get(pais='México').id, [('Advanced Analytical Systems, S.A. de C.V.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Advanced Analytical Systems, S.A. de C.V.', Pais.objects.get(nombre='México').id, [('Advanced Analytical Systems, S.A. de C.V.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad de Sonora', Pais.objects.get(pais='México').id, [('Universidad de Sonora', Ciudad.objects.get(ciudad='Hermosillo').id)]),
+('Universidad de Sonora', Pais.objects.get(nombre='México').id, [('Universidad de Sonora', Ciudad.objects.get(nombre='Hermosillo').id)]),
 
-('Universidad Estatal de Sonora', Pais.objects.get(pais='México').id, [('Universidad Estatal de Sonora', Ciudad.objects.get(ciudad='Hermosillo').id)]),
+('Universidad Estatal de Sonora', Pais.objects.get(nombre='México').id, [('Universidad Estatal de Sonora', Ciudad.objects.get(nombre='Hermosillo').id)]),
 
-('Banco Interamericano de Desarrollo (BID)', Pais.objects.get(pais='Estados Unidos de América').id, [('Banco Interamericano de Desarrollo (BID)', Ciudad.objects.get(ciudad='Washington, D.C.').id)]),
+('Banco Interamericano de Desarrollo (BID)', Pais.objects.get(nombre='Estados Unidos de América').id, [('Banco Interamericano de Desarrollo (BID)', Ciudad.objects.get(nombre='Washington, D.C.').id)]),
 
-('Universidad Nacional de Tucumán', Pais.objects.get(pais='Argentina').id,
+('Universidad Nacional de Tucumán', Pais.objects.get(nombre='Argentina').id,
     (
-        ('Universidad Nacional de Tucumán', Ciudad.objects.get(ciudad='San Miguel de Tucumán').id),
-        ('Facultad de Ciencias Naturales', Ciudad.objects.get(ciudad='San Miguel de Tucumán').id),
-        ('Laboratorio de Geoarqueología de la Facultad de Ciencias Naturales', Ciudad.objects.get(ciudad='San Miguel de Tucumán').id)
+        ('Universidad Nacional de Tucumán', Ciudad.objects.get(nombre='San Miguel de Tucumán').id),
+        ('Facultad de Ciencias Naturales', Ciudad.objects.get(nombre='San Miguel de Tucumán').id),
+        ('Laboratorio de Geoarqueología de la Facultad de Ciencias Naturales', Ciudad.objects.get(nombre='San Miguel de Tucumán').id)
     )
  ),
 
-('Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.', Pais.objects.get(pais='México').id, [('Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.', Pais.objects.get(nombre='México').id, [('Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Centro de Investigación en Matemáticas (CIMAT)', Pais.objects.get(pais='México').id, [('Centro de Investigación en Matemáticas (CIMAT)', Ciudad.objects.get(ciudad='Guanajuato').id)]),
+('Centro de Investigación en Matemáticas (CIMAT)', Pais.objects.get(nombre='México').id, [('Centro de Investigación en Matemáticas (CIMAT)', Ciudad.objects.get(nombre='Guanajuato').id)]),
 
-('Universidad de Guadalajara', Pais.objects.get(pais='México').id,
+('Universidad de Guadalajara', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad de Guadalajara', Ciudad.objects.get(ciudad='Guadalajara').id),
-        ('Centro Universitario de Ciencias Sociales y Humanidades', Ciudad.objects.get(ciudad='Guadalajara').id)
+        ('Universidad de Guadalajara', Ciudad.objects.get(nombre='Guadalajara').id),
+        ('Centro Universitario de Ciencias Sociales y Humanidades', Ciudad.objects.get(nombre='Guadalajara').id)
     )
  ),
 
-('Universidad de Cádiz', Pais.objects.get(pais='España').id, [('Universidad de Cádiz', Ciudad.objects.get(ciudad='Cádiz').id)]),
+('Universidad de Cádiz', Pais.objects.get(nombre='España').id, [('Universidad de Cádiz', Ciudad.objects.get(nombre='Cádiz').id)]),
 
-('Universidad de La Habana', Pais.objects.get(pais='Cuba').id, [('Facultad de Geografía', Ciudad.objects.get(ciudad='La Habana').id)]),
+('Universidad de La Habana', Pais.objects.get(nombre='Cuba').id, [('Facultad de Geografía', Ciudad.objects.get(nombre='La Habana').id)]),
 
-('Universidad Paul Sabatier', Pais.objects.get(pais='Francia').id, [('Universidad Paul Sabatier', Ciudad.objects.get(ciudad='Toulouse').id)]),
+('Universidad Paul Sabatier', Pais.objects.get(nombre='Francia').id, [('Universidad Paul Sabatier', Ciudad.objects.get(nombre='Toulouse').id)]),
 
-('Universidad Politécnica de Valencia', Pais.objects.get(pais='España').id, [('Universidad Politécnica de Valencia', Ciudad.objects.get(ciudad='Valencia').id)]),
+('Universidad Politécnica de Valencia', Pais.objects.get(nombre='España').id, [('Universidad Politécnica de Valencia', Ciudad.objects.get(nombre='Valencia').id)]),
 
-('International Social Science Council (ISSC)', Pais.objects.get(pais='Francia').id, [('International Social Science Council (ISSC)', Ciudad.objects.get(ciudad='París').id)]),
+('International Social Science Council (ISSC)', Pais.objects.get(nombre='Francia').id, [('International Social Science Council (ISSC)', Ciudad.objects.get(nombre='París').id)]),
 
-('Universidad de París I Panthéon-Sorbonne', Pais.objects.get(pais='Francia').id, [('Universidad de París I Panthéon-Sorbonne', Ciudad.objects.get(ciudad='París').id)]),
+('Universidad de París I Panthéon-Sorbonne', Pais.objects.get(nombre='Francia').id, [('Universidad de París I Panthéon-Sorbonne', Ciudad.objects.get(nombre='París').id)]),
 
-('Universidad Politécnica de Cataluña', Pais.objects.get(pais='España').id, [('Universidad Politécnica de Cataluña', Ciudad.objects.get(ciudad='Barcelona').id)]),
+('Universidad Politécnica de Cataluña', Pais.objects.get(nombre='España').id, [('Universidad Politécnica de Cataluña', Ciudad.objects.get(nombre='Barcelona').id)]),
 
-('Universidad de Lérida', Pais.objects.get(pais='España').id, [('Universidad de Lérida', Ciudad.objects.get(ciudad='Lérida').id)]),
+('Universidad de Lérida', Pais.objects.get(nombre='España').id, [('Universidad de Lérida', Ciudad.objects.get(nombre='Lérida').id)]),
 
-('Universidad de Brístol', Pais.objects.get(pais='Reino Unido').id, [('Universidad de Brístol', Ciudad.objects.get(ciudad='Brístol').id)]),
+('Universidad de Brístol', Pais.objects.get(nombre='Reino Unido').id, [('Universidad de Brístol', Ciudad.objects.get(nombre='Brístol').id)]),
 
-('Universidad Nacional de Córdoba (UNC)', Pais.objects.get(pais='Argentina').id, [('Universidad Nacional de Córdoba (UNC)', Ciudad.objects.get(ciudad='Córdoba').id)]),
+('Universidad Nacional de Córdoba (UNC)', Pais.objects.get(nombre='Argentina').id, [('Universidad Nacional de Córdoba (UNC)', Ciudad.objects.get(nombre='Córdoba').id)]),
 
-('Universidad de Sinkiang (XinJiang University)', Pais.objects.get(pais='China').id, [('Universidad de Sinkiang (XinJiang University)', Ciudad.objects.get(ciudad='Urumchi').id)]),
+('Universidad de Sinkiang (XinJiang University)', Pais.objects.get(nombre='China').id, [('Universidad de Sinkiang (XinJiang University)', Ciudad.objects.get(nombre='Urumchi').id)]),
 
-('Universidad Autónoma de Baja California Sur (UABCS)', Pais.objects.get(pais='México').id, [('Universidad Autónoma de Baja California Sur (UABCS)', Ciudad.objects.get(ciudad='La Paz').id)]),
+('Universidad Autónoma de Baja California Sur (UABCS)', Pais.objects.get(nombre='México').id, [('Universidad Autónoma de Baja California Sur (UABCS)', Ciudad.objects.get(nombre='La Paz').id)]),
 
-('Academia de Ciencias de Cuba', Pais.objects.get(pais='Cuba').id, [('Instituto de Ecología y Sistemática', Ciudad.objects.get(ciudad='La Habana').id)]),
+('Academia de Ciencias de Cuba', Pais.objects.get(nombre='Cuba').id, [('Instituto de Ecología y Sistemática', Ciudad.objects.get(nombre='La Habana').id)]),
 
-('Universidad Interamericana para el Desarrollo (UNID)', Pais.objects.get(pais='México').id,
+('Universidad Interamericana para el Desarrollo (UNID)', Pais.objects.get(nombre='México').id,
     [
-        ('Universidad Interamericana para el Desarrollo, Morelia (UNID Morelia)', Ciudad.objects.get(ciudad='Morelia').id)
+        ('Universidad Interamericana para el Desarrollo, Morelia (UNID Morelia)', Ciudad.objects.get(nombre='Morelia').id)
     ]
  ),
 
-('Universidad Autónoma de Querétaro', Pais.objects.get(pais='México').id, [('Universidad Autónoma de Querétaro', Ciudad.objects.get(ciudad='Santiago de Querétaro').id)]),
+('Universidad Autónoma de Querétaro', Pais.objects.get(nombre='México').id, [('Universidad Autónoma de Querétaro', Ciudad.objects.get(nombre='Santiago de Querétaro').id)]),
 
-('Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)', Pais.objects.get(pais='México').id,
+('Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)', Pais.objects.get(nombre='México').id,
     (
-        ('Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)', Ciudad.objects.get(ciudad='Monterrey').id),
-        ('Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Guaymas (ITESM, Campus Guaymas)', Ciudad.objects.get(ciudad='Heroica Guaymas de Zaragoza').id)
+        ('Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)', Ciudad.objects.get(nombre='Monterrey').id),
+        ('Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Guaymas (ITESM, Campus Guaymas)', Ciudad.objects.get(nombre='Heroica Guaymas de Zaragoza').id)
     )
  ),
 
-('Universidad de Wageningen (WUR)', Pais.objects.get(pais='Países Bajos / Holanda').id, [('Wageningen University and Research Centre', Ciudad.objects.get(ciudad='Wageningen').id)]),
+('Universidad de Wageningen (WUR)', Pais.objects.get(nombre='Países Bajos / Holanda').id, [('Wageningen University and Research Centre', Ciudad.objects.get(nombre='Wageningen').id)]),
 
-('Universidad de Hokkaido', Pais.objects.get(pais='Japón').id, [('Universidad de Hokkaido', Ciudad.objects.get(ciudad='Sapporo').id)]),
+('Universidad de Hokkaido', Pais.objects.get(nombre='Japón').id, [('Universidad de Hokkaido', Ciudad.objects.get(nombre='Sapporo').id)]),
 
-('Biocenosis, A.C.', Pais.objects.get(pais='México').id, [('Biocenosis, A.C.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Biocenosis, A.C.', Pais.objects.get(nombre='México').id, [('Biocenosis, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Alternare, A.C.', Pais.objects.get(pais='México').id, [('Alternare, A.C.', Ciudad.objects.get(ciudad='Áporo').id)]),
+('Alternare, A.C.', Pais.objects.get(nombre='México').id, [('Alternare, A.C.', Ciudad.objects.get(nombre='Áporo').id)]),
 
-('Espacio Autónomo, A.C.', Pais.objects.get(pais='México').id, [('Espacio Autónomo, A.C.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Espacio Autónomo, A.C.', Pais.objects.get(nombre='México').id, [('Espacio Autónomo, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('H. Ayuntamiento de Morelia', Pais.objects.get(pais='México').id,
+('H. Ayuntamiento de Morelia', Pais.objects.get(nombre='México').id,
     (
-        ('H. Ayuntamiento de Morelia', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Instituto Municipal de Planeación Morelia (IMPLAN)', Ciudad.objects.get(ciudad='Morelia').id)
+        ('H. Ayuntamiento de Morelia', Ciudad.objects.get(nombre='Morelia').id),
+        ('Instituto Municipal de Planeación Morelia (IMPLAN)', Ciudad.objects.get(nombre='Morelia').id)
     )
  ),
 
-('H. Ayuntamiento de Morelos', Pais.objects.get(pais='México').id,
+('H. Ayuntamiento de Morelos', Pais.objects.get(nombre='México').id,
     [
-        ('H. Ayuntamiento de Morelos', Ciudad.objects.get(ciudad='Morelos').id)
+        ('H. Ayuntamiento de Morelos', Ciudad.objects.get(nombre='Morelos').id)
     ]
  ),
 
-('Universidad de Santiago de Compostela', Pais.objects.get(pais='España').id,
+('Universidad de Santiago de Compostela', Pais.objects.get(nombre='España').id,
     (
-        ('Universidad de Santiago de Compostela', Ciudad.objects.get(ciudad='Santiago de Compostela').id),
-        ('Departamento de Farmacia y Tecnología Farmacéutica', Ciudad.objects.get(ciudad='Santiago de Compostela').id)
+        ('Universidad de Santiago de Compostela', Ciudad.objects.get(nombre='Santiago de Compostela').id),
+        ('Departamento de Farmacia y Tecnología Farmacéutica', Ciudad.objects.get(nombre='Santiago de Compostela').id)
     )
  ),
 
-('Universidad de Columbia Británica (University of British Columbia (UBC))', Pais.objects.get(pais='Canadá').id, [('Universidad de Columbia Británica (University of British Columbia (UBC))', Ciudad.objects.get(ciudad='West Point Grey').id)]),
+('Universidad de Columbia Británica (University of British Columbia (UBC))', Pais.objects.get(nombre='Canadá').id, [('Universidad de Columbia Británica (University of British Columbia (UBC))', Ciudad.objects.get(nombre='West Point Grey').id)]),
 
-('Universidad de Illinois en Urbana-Champaign', Pais.objects.get(pais='Estados Unidos de América').id, [('Universidad de Illinois en Urbana-Champaign', Ciudad.objects.get(ciudad='Urbana-Champaign').id)]),
+('Universidad de Illinois en Urbana-Champaign', Pais.objects.get(nombre='Estados Unidos de América').id, [('Universidad de Illinois en Urbana-Champaign', Ciudad.objects.get(nombre='Urbana-Champaign').id)]),
 
-('Universidad Autónoma de Campeche (UACAM)', Pais.objects.get(pais='México').id,
+('Universidad Autónoma de Campeche (UACAM)', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad Autónoma de Campeche (UACAM)', Ciudad.objects.get(ciudad='Campeche').id),
-        ('Instituto de Ecología, Pesquerías y Oceanografía del Golfo de México (EPOMEX)', Ciudad.objects.get(ciudad='Campeche').id)
+        ('Universidad Autónoma de Campeche (UACAM)', Ciudad.objects.get(nombre='Campeche').id),
+        ('Instituto de Ecología, Pesquerías y Oceanografía del Golfo de México (EPOMEX)', Ciudad.objects.get(nombre='Campeche').id)
     )
  ),
 
-('El Colegio de la Frontera Sur Unidad San Cristóbal (ECOSUR)', Pais.objects.get(pais='México').id, [('El Colegio de la Frontera Sur Unidad San Cristóbal (ECOSUR)', Ciudad.objects.get(ciudad='San Cristóbal de las Casas').id)]),
+('El Colegio de la Frontera Sur Unidad San Cristóbal (ECOSUR)', Pais.objects.get(nombre='México').id, [('El Colegio de la Frontera Sur Unidad San Cristóbal (ECOSUR)', Ciudad.objects.get(nombre='San Cristóbal de las Casas').id)]),
 
-('Universidad Federal de Minas Gerais', Pais.objects.get(pais='Brasil').id, [('Universidad Federal de Minas Gerais', Ciudad.objects.get(ciudad='Belo Horizonte').id)]),
+('Universidad Federal de Minas Gerais', Pais.objects.get(nombre='Brasil').id, [('Universidad Federal de Minas Gerais', Ciudad.objects.get(nombre='Belo Horizonte').id)]),
 
-('Universidad Estatal de Feira de Santana', Pais.objects.get(pais='Brasil').id, [('Universidad Estatal de Feira de Santana', Ciudad.objects.get(ciudad='Feira de Santana').id)]),
+('Universidad Estatal de Feira de Santana', Pais.objects.get(nombre='Brasil').id, [('Universidad Estatal de Feira de Santana', Ciudad.objects.get(nombre='Feira de Santana').id)]),
 
-('Universidad de Toulouse', Pais.objects.get(pais='Francia').id, [('Universidad de Toulouse', Ciudad.objects.get(ciudad='Toulouse').id)]),
+('Universidad de Toulouse', Pais.objects.get(nombre='Francia').id, [('Universidad de Toulouse', Ciudad.objects.get(nombre='Toulouse').id)]),
 
-('Universidad de Granada', Pais.objects.get(pais='España').id, [('Universidad de Granada', Ciudad.objects.get(ciudad='Granada').id)]),
+('Universidad de Granada', Pais.objects.get(nombre='España').id, [('Universidad de Granada', Ciudad.objects.get(nombre='Granada').id)]),
 
-('Centro de Investigación en Alimentación y Desarrollo, A.C. (CIAD)', Pais.objects.get(pais='México').id, [('Centro de Investigación en Alimentación y Desarrollo, A.C. (CIAD)', Ciudad.objects.get(ciudad='Culiacán Rosales').id)]),
+('Centro de Investigación en Alimentación y Desarrollo, A.C. (CIAD)', Pais.objects.get(nombre='México').id, [('Centro de Investigación en Alimentación y Desarrollo, A.C. (CIAD)', Ciudad.objects.get(nombre='Culiacán Rosales').id)]),
 
-('Instituto Nacional de Investigaciones Forestles, Agrícolas y Pecuarias (INIFAP)', Pais.objects.get(pais='México').id, [('Instituto Nacional de Investigaciones Forestles, Agrícolas y Pecuarias (INIFAP)', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Instituto Nacional de Investigaciones Forestles, Agrícolas y Pecuarias (INIFAP)', Pais.objects.get(nombre='México').id, [('Instituto Nacional de Investigaciones Forestles, Agrícolas y Pecuarias (INIFAP)', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Universidad de Guanajuato', Pais.objects.get(pais='México').id,
+('Universidad de Guanajuato', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad de Guanajuato', Ciudad.objects.get(ciudad='Guanajuato').id),
-        ('Departamento de Geomática e Hidráulica', Ciudad.objects.get(ciudad='Guanajuato').id)
+        ('Universidad de Guanajuato', Ciudad.objects.get(nombre='Guanajuato').id),
+        ('Departamento de Geomática e Hidráulica', Ciudad.objects.get(nombre='Guanajuato').id)
     )
  ),
 
-('Instituto Tecnológico del Valle de Morelia', Pais.objects.get(pais='México').id, [('Instituto Tecnológico del Valle de Morelia', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Instituto Tecnológico del Valle de Morelia', Pais.objects.get(nombre='México').id, [('Instituto Tecnológico del Valle de Morelia', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Universidad de Trento', Pais.objects.get(pais='Italia').id, [('Universidad de Trento', Ciudad.objects.get(ciudad='Trento').id)]),
+('Universidad de Trento', Pais.objects.get(nombre='Italia').id, [('Universidad de Trento', Ciudad.objects.get(nombre='Trento').id)]),
 
-('Diputación Provincial de Barcelona', Pais.objects.get(pais='España').id, [('Diputación Provincial de Barcelona', Ciudad.objects.get(ciudad='Barcelona').id)]),
+('Diputación Provincial de Barcelona', Pais.objects.get(nombre='España').id, [('Diputación Provincial de Barcelona', Ciudad.objects.get(nombre='Barcelona').id)]),
 
-('Netherlands Organization for Scientific Research (NWO)', Pais.objects.get(pais='Países Bajos / Holanda').id,
+('Netherlands Organization for Scientific Research (NWO)', Pais.objects.get(nombre='Países Bajos / Holanda').id,
     (
-        ('Netherlands Organization for Scientific Research (NWO)', Ciudad.objects.get(ciudad='Ámsterdam').id),
-        ('Netherlands Organization for Scientific Research (WOTRO)', Ciudad.objects.get(ciudad='Ámsterdam').id)
+        ('Netherlands Organization for Scientific Research (NWO)', Ciudad.objects.get(nombre='Ámsterdam').id),
+        ('Netherlands Organization for Scientific Research (WOTRO)', Ciudad.objects.get(nombre='Ámsterdam').id)
     )
  ),
 
-('Alianza México REDD+', Pais.objects.get(pais='México').id, [('Alianza México REDD+', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Alianza México REDD+', Pais.objects.get(nombre='México').id, [('Alianza México REDD+', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Reserva de la Biosfera de la Mariposa Monarca', Pais.objects.get(pais='México').id, [('Reserva de la Biosfera de la Mariposa Monarca', Ciudad.objects.get(ciudad='El Rosario').id)]),
+('Reserva de la Biosfera de la Mariposa Monarca', Pais.objects.get(nombre='México').id, [('Reserva de la Biosfera de la Mariposa Monarca', Ciudad.objects.get(nombre='El Rosario').id)]),
 
-('Fondo Mexicano para la Conservación de la Naturaleza, A.C. (FMCN)', Pais.objects.get(pais='México').id, [('Fondo Mexicano para la Conservación de la Naturaleza, A.C. (FMCN)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Fondo Mexicano para la Conservación de la Naturaleza, A.C. (FMCN)', Pais.objects.get(nombre='México').id, [('Fondo Mexicano para la Conservación de la Naturaleza, A.C. (FMCN)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Agencia Nacional de Promoción Científica y Tecnológica', Pais.objects.get(pais='Argentina').id, [('Agencia Nacional de Promoción Científica y Tecnológica', Ciudad.objects.get(ciudad='Buenos Aires').id)]),
+('Agencia Nacional de Promoción Científica y Tecnológica', Pais.objects.get(nombre='Argentina').id, [('Agencia Nacional de Promoción Científica y Tecnológica', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
-('Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)', Pais.objects.get(pais='Argentina').id, [('Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)', Ciudad.objects.get(ciudad='Buenos Aires').id)]),
+('Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)', Pais.objects.get(nombre='Argentina').id, [('Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
-('Global Water Watch México', Pais.objects.get(pais='México').id, [('Global Water Watch México', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Global Water Watch México', Pais.objects.get(nombre='México').id, [('Global Water Watch México', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Grupo Balsas para Estudio y Manejo de Ecosistemas, A.C.', Pais.objects.get(pais='México').id, [('Grupo Balsas para Estudio y Manejo de Ecosistemas, A.C.', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Grupo Balsas para Estudio y Manejo de Ecosistemas, A.C.', Pais.objects.get(nombre='México').id, [('Grupo Balsas para Estudio y Manejo de Ecosistemas, A.C.', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Fundación Produce Michoacán, A.C.', Pais.objects.get(pais='México').id, [('Fundación Produce Michoacán, A.C.', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Fundación Produce Michoacán, A.C.', Pais.objects.get(nombre='México').id, [('Fundación Produce Michoacán, A.C.', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Fundación Gonzalo Río Arronte I.A.P.', Pais.objects.get(pais='México').id, [('Fundación Gonzalo Río Arronte I.A.P.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Fundación Gonzalo Río Arronte I.A.P.', Pais.objects.get(nombre='México').id, [('Fundación Gonzalo Río Arronte I.A.P.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Inter-American Institute for Global Change Research', Pais.objects.get(pais='Estados Unidos de América').id, [('Inter-American Institute for Global Change Research', Ciudad.objects.get(ciudad='Montevideo').id)]),
+('Inter-American Institute for Global Change Research', Pais.objects.get(nombre='Estados Unidos de América').id, [('Inter-American Institute for Global Change Research', Ciudad.objects.get(nombre='Montevideo').id)]),
 
-('Gobierno del Estado de Jalisco', Pais.objects.get(pais='México').id,
+('Gobierno del Estado de Jalisco', Pais.objects.get(nombre='México').id,
     (
-        ('Gobierno del Estado de Jalisco', Ciudad.objects.get(ciudad='Guadalajara').id),
-        ('Secretaria de Medio Ambiente', Ciudad.objects.get(ciudad='Guadalajara').id),
-        ('Secretaría de Medio Ambiente y Desarrollo Territorial (SEMADET Jalisco)', Ciudad.objects.get(ciudad='Guadalajara').id)
+        ('Gobierno del Estado de Jalisco', Ciudad.objects.get(nombre='Guadalajara').id),
+        ('Secretaria de Medio Ambiente', Ciudad.objects.get(nombre='Guadalajara').id),
+        ('Secretaría de Medio Ambiente y Desarrollo Territorial (SEMADET Jalisco)', Ciudad.objects.get(nombre='Guadalajara').id)
     )
  ),
 
-('Universidad de Murcia', Pais.objects.get(pais='España').id, [('Universidad de Murcia', Ciudad.objects.get(ciudad='Murcia').id)]),
+('Universidad de Murcia', Pais.objects.get(nombre='España').id, [('Universidad de Murcia', Ciudad.objects.get(nombre='Murcia').id)]),
 
-('Universidad Nacional de la Patagonia San Juan Bosco', Pais.objects.get(pais='Argentina').id, [('Universidad Nacional de la Patagonia San Juan Bosco', Ciudad.objects.get(ciudad='Comodoro Rivadavia').id)]),
+('Universidad Nacional de la Patagonia San Juan Bosco', Pais.objects.get(nombre='Argentina').id, [('Universidad Nacional de la Patagonia San Juan Bosco', Ciudad.objects.get(nombre='Comodoro Rivadavia').id)]),
 
-('Centro de Estudios Patagonia', Pais.objects.get(pais='Argentina').id, [('Centro de Estudios Patagonia', Ciudad.objects.get(ciudad='Viedma').id)]),
+('Centro de Estudios Patagonia', Pais.objects.get(nombre='Argentina').id, [('Centro de Estudios Patagonia', Ciudad.objects.get(nombre='Viedma').id)]),
 
-('Colegio de Postgraduados (COLPOS)', Pais.objects.get(pais='México').id, [('Colegio de Postgraduados (COLPOS)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Colegio de Postgraduados (COLPOS)', Pais.objects.get(nombre='México').id, [('Colegio de Postgraduados (COLPOS)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Centro Nacional para la Investigación Científica (Centre National de la Recherche Scientifique CNRS)', Pais.objects.get(pais='Francia').id, [('Centro Nacional para la Investigación Científica (Centre National de la Recherche Scientifique CNRS)', Ciudad.objects.get(ciudad='París').id)]),
+('Centro Nacional para la Investigación Científica (Centre National de la Recherche Scientifique CNRS)', Pais.objects.get(nombre='Francia').id, [('Centro Nacional para la Investigación Científica (Centre National de la Recherche Scientifique CNRS)', Ciudad.objects.get(nombre='París').id)]),
 
-('Ministerio de Asuntos Exteriores y Desarrollo Internacional francés', Pais.objects.get(pais='Francia').id, [('Ministerio de Asuntos Exteriores y Desarrollo Internacional francés', Ciudad.objects.get(ciudad='París').id)]),
+('Ministerio de Asuntos Exteriores y Desarrollo Internacional francés', Pais.objects.get(nombre='Francia').id, [('Ministerio de Asuntos Exteriores y Desarrollo Internacional francés', Ciudad.objects.get(nombre='París').id)]),
 
-('Universidad Autónoma de Chiapas (UNACH)', Pais.objects.get(pais='México').id, [('Universidad Autónoma de Chiapas (UNACH)', Ciudad.objects.get(ciudad='Tuxtla Gutiérrez').id)]),
+('Universidad Autónoma de Chiapas (UNACH)', Pais.objects.get(nombre='México').id, [('Universidad Autónoma de Chiapas (UNACH)', Ciudad.objects.get(nombre='Tuxtla Gutiérrez').id)]),
 
-('Universidad de Texas en Austin', Pais.objects.get(pais='Estados Unidos de América').id, [('Universidad de Texas en Austin', Ciudad.objects.get(ciudad='Austin').id)]),
+('Universidad de Texas en Austin', Pais.objects.get(nombre='Estados Unidos de América').id, [('Universidad de Texas en Austin', Ciudad.objects.get(nombre='Austin').id)]),
 
-('WWF México', Pais.objects.get(pais='México').id, [('WWF México', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('WWF México', Pais.objects.get(nombre='México').id, [('WWF México', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('International Union for Conservation of Nature (IUCN)', Pais.objects.get(pais='Suiza').id, [('International Union for Conservation of Nature (IUCN)', Ciudad.objects.get(ciudad='Gland').id)]),
+('International Union for Conservation of Nature (IUCN)', Pais.objects.get(nombre='Suiza').id, [('International Union for Conservation of Nature (IUCN)', Ciudad.objects.get(nombre='Gland').id)]),
 
-('Universidad de Toulouse-Jean Jaurès', Pais.objects.get(pais='Francia').id, [('Universidad de Toulouse-Jean Jaurès', Ciudad.objects.get(ciudad='Toulouse').id)]),
+('Universidad de Toulouse-Jean Jaurès', Pais.objects.get(nombre='Francia').id, [('Universidad de Toulouse-Jean Jaurès', Ciudad.objects.get(nombre='Toulouse').id)]),
 
-('Instituto Politécnico Nacional (IPN)', Pais.objects.get(pais='México').id,
+('Instituto Politécnico Nacional (IPN)', Pais.objects.get(nombre='México').id,
     (
-        ('Instituto Politécnico Nacional (IPN)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Centro de Investigación y de Estudios Avanzados (CINVESTAV)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Instituto Politécnico Nacional (IPN)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Centro de Investigación y de Estudios Avanzados (CINVESTAV)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     )
  ),
 
-('Instituto Politécnico y Universidad Estatal de Virginia (Virginia Tech, VT)', Pais.objects.get(pais='Estados Unidos de América').id, [('Department of Biological Systems Engineering (BSE)', Ciudad.objects.get(ciudad='Blacksburg').id)]),
+('Instituto Politécnico y Universidad Estatal de Virginia (Virginia Tech, VT)', Pais.objects.get(nombre='Estados Unidos de América').id, [('Department of Biological Systems Engineering (BSE)', Ciudad.objects.get(nombre='Blacksburg').id)]),
 
-('Universidad Estatal de Washington', Pais.objects.get(pais='Estados Unidos de América').id, [('Universidad Estatal', Ciudad.objects.get(ciudad='Pullman').id)]),
+('Universidad Estatal de Washington', Pais.objects.get(nombre='Estados Unidos de América').id, [('Universidad Estatal', Ciudad.objects.get(nombre='Pullman').id)]),
 
-('Consejo Superior de Investigaciones Científicas (CSIC)', Pais.objects.get(pais='España').id, [('Centro de Edafología y Biología Aplicada del Segura (CEBAS)', Ciudad.objects.get(ciudad='Murcia').id)]),
+('Consejo Superior de Investigaciones Científicas (CSIC)', Pais.objects.get(nombre='España').id, [('Centro de Edafología y Biología Aplicada del Segura (CEBAS)', Ciudad.objects.get(nombre='Murcia').id)]),
 
-('Universidad Pablo de Olavide (UPO)', Pais.objects.get(pais='España').id, [('Universidad Pablo de Olavide (UPO)', Ciudad.objects.get(ciudad='Sevilla').id)]),
+('Universidad Pablo de Olavide (UPO)', Pais.objects.get(nombre='España').id, [('Universidad Pablo de Olavide (UPO)', Ciudad.objects.get(nombre='Sevilla').id)]),
 
-('Unión Geográfica Internacional (UGI)', Pais.objects.get(pais='Sudáfrica').id, [('Unión Geográfica Internacional (UGI)', Ciudad.objects.get(ciudad='Ciudad del Cabo').id)]),
+('Unión Geográfica Internacional (UGI)', Pais.objects.get(nombre='Sudáfrica').id, [('Unión Geográfica Internacional (UGI)', Ciudad.objects.get(nombre='Ciudad del Cabo').id)]),
 
-('Consejo Latinoamericano de Ciencias Sociales (CLACSO)', Pais.objects.get(pais='Argentina').id, [('Consejo Latinoamericano de Ciencias Sociales (CLACSO)', Ciudad.objects.get(ciudad='Buenos Aires').id)]),
+('Consejo Latinoamericano de Ciencias Sociales (CLACSO)', Pais.objects.get(nombre='Argentina').id, [('Consejo Latinoamericano de Ciencias Sociales (CLACSO)', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
-('La Universidad de Texas A&M', Pais.objects.get(pais='Estados Unidos de América').id, [('La Universidad de Texas A&M', Ciudad.objects.get(ciudad='College Station').id)]),
+('La Universidad de Texas A&M', Pais.objects.get(nombre='Estados Unidos de América').id, [('La Universidad de Texas A&M', Ciudad.objects.get(nombre='College Station').id)]),
 
-('Universidad de Montreal', Pais.objects.get(pais='Canadá').id, [('HEC Montreal', Ciudad.objects.get(ciudad='Quebec').id)]),
+('Universidad de Montreal', Pais.objects.get(nombre='Canadá').id, [('HEC Montreal', Ciudad.objects.get(nombre='Quebec').id)]),
 
-('Universidad Tulane', Pais.objects.get(pais='Estados Unidos de América').id, [('Universidad Tulane', Ciudad.objects.get(ciudad='Nueva Orleans').id)]),
+('Universidad Tulane', Pais.objects.get(nombre='Estados Unidos de América').id, [('Universidad Tulane', Ciudad.objects.get(nombre='Nueva Orleans').id)]),
 
-('Universidad Nacional de General Sarmiento (UNGS)', Pais.objects.get(pais='Argentina').id,
+('Universidad Nacional de General Sarmiento (UNGS)', Pais.objects.get(nombre='Argentina').id,
     [
-        ('Instituto del Conurbano (ICO)', Ciudad.objects.get(ciudad='Buenos Aires').id)
+        ('Instituto del Conurbano (ICO)', Ciudad.objects.get(nombre='Buenos Aires').id)
     ]
  ),
 
-('Universidad de Cabo Verde', Pais.objects.get(pais='Cabo Verde').id, [('Universidad de Cabo Verde', Ciudad.objects.get(ciudad='Praia').id)]),
+('Universidad de Cabo Verde', Pais.objects.get(nombre='Cabo Verde').id, [('Universidad de Cabo Verde', Ciudad.objects.get(nombre='Praia').id)]),
 
-('Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4)', Pais.objects.get(pais='Italia').id, [('Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4)', Ciudad.objects.get(ciudad='Pula').id)]),
+('Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4)', Pais.objects.get(nombre='Italia').id, [('Centro di Ricerca, Sviluppo e Studi Superiori in Sardegna (CRS4)', Ciudad.objects.get(nombre='Pula').id)]),
 
-('Universidad de Ciencias de Vida de Noruega (NMBU)', Pais.objects.get(pais='Noruega').id, [('International Environment and Development Studies', Ciudad.objects.get(ciudad='Oslo').id)]),
+('Universidad de Ciencias de Vida de Noruega (NMBU)', Pais.objects.get(nombre='Noruega').id, [('International Environment and Development Studies', Ciudad.objects.get(nombre='Oslo').id)]),
 
-('Gobierno de Cataluña (Generalitat de Catalunya)', Pais.objects.get(pais='España').id, [('Gobierno de Cataluña (Generalitat de Catalunya)', Ciudad.objects.get(ciudad='Barcelona').id)]),
+('Gobierno de Cataluña (Generalitat de Catalunya)', Pais.objects.get(nombre='España').id, [('Gobierno de Cataluña (Generalitat de Catalunya)', Ciudad.objects.get(nombre='Barcelona').id)]),
 
-('Sociedad Científica Latinoamericana de Agroecología (SOCLA)', Pais.objects.get(pais='Argentina').id, [('Sociedad Científica Latinoamericana de Agroecología (SOCLA)', Ciudad.objects.get(ciudad='Buenos Aires').id)]),
+('Sociedad Científica Latinoamericana de Agroecología (SOCLA)', Pais.objects.get(nombre='Argentina').id, [('Sociedad Científica Latinoamericana de Agroecología (SOCLA)', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
-('Partido de La Costa', Pais.objects.get(pais='Argentina').id, [('Honorable Concejo Deliberante', Ciudad.objects.get(ciudad='Buenos Aires').id)]),
+('Partido de La Costa', Pais.objects.get(nombre='Argentina').id, [('Honorable Concejo Deliberante', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
-('Asociación Etnobiológica Mexicana, A.C.', Pais.objects.get(pais='México').id, [('Asociación Etnobiológica Mexicana, A.C.', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Asociación Etnobiológica Mexicana, A.C.', Pais.objects.get(nombre='México').id, [('Asociación Etnobiológica Mexicana, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Autónoma de Guerrero', Pais.objects.get(pais='México').id,
+('Universidad Autónoma de Guerrero', Pais.objects.get(nombre='México').id,
     [
-        ('Universidad Autónoma de Guerrero', Ciudad.objects.get(ciudad='Chilpancingo de los Bravo').id),
-        ('Unidad de Ciencias de la Tierra', Ciudad.objects.get(ciudad='Chilpancingo de los Bravo').id)
+        ('Universidad Autónoma de Guerrero', Ciudad.objects.get(nombre='Chilpancingo de los Bravo').id),
+        ('Unidad de Ciencias de la Tierra', Ciudad.objects.get(nombre='Chilpancingo de los Bravo').id)
     ]
  ),
 
-('Academia Mexicana de Ciencias', Pais.objects.get(pais='México').id, [('Academia Mexicana de Ciencias', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Academia Mexicana de Ciencias', Pais.objects.get(nombre='México').id, [('Academia Mexicana de Ciencias', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Instituto Tecnológico Superior de Huetamo', Pais.objects.get(pais='México').id, [('Instituto Tecnológico Superior de Huetamo', Ciudad.objects.get(ciudad='Huetamo').id)]),
+('Instituto Tecnológico Superior de Huetamo', Pais.objects.get(nombre='México').id, [('Instituto Tecnológico Superior de Huetamo', Ciudad.objects.get(nombre='Huetamo').id)]),
 
-('Universidad Pedagógica Nacional', Pais.objects.get(pais='México').id,
+('Universidad Pedagógica Nacional', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad Pedagógica Nacional', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Unidad 161 Morelia', Ciudad.objects.get(ciudad='Morelia').id)
+        ('Universidad Pedagógica Nacional', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Unidad 161 Morelia', Ciudad.objects.get(nombre='Morelia').id)
     )
  ),
 
-('Grupo Interdisciplinario de Tecnología Rural Apropiada, A.C. (GIRA)', Pais.objects.get(pais='México').id, [('Grupo Interdisciplinario de Tecnología Rural Apropiada, A.C. (GIRA)', Ciudad.objects.get(ciudad='Pátzcuaro').id)]),
+('Grupo Interdisciplinario de Tecnología Rural Apropiada, A.C. (GIRA)', Pais.objects.get(nombre='México').id, [('Grupo Interdisciplinario de Tecnología Rural Apropiada, A.C. (GIRA)', Ciudad.objects.get(nombre='Pátzcuaro').id)]),
 
-('International Maize and Wheat Improvement Center (CIMMYT)', Pais.objects.get(pais='México').id, [('International Maize and Wheat Improvement Center (CIMMYT)', Ciudad.objects.get(ciudad='El Batán').id)]),
+('International Maize and Wheat Improvement Center (CIMMYT)', Pais.objects.get(nombre='México').id, [('International Maize and Wheat Improvement Center (CIMMYT)', Ciudad.objects.get(nombre='El Batán').id)]),
 
-('Cooperación Alemana al Desarrollo GIZ', Pais.objects.get(pais='Alemania').id, [('Cooperación Alemana al Desarrollo GIZ', Ciudad.objects.get(ciudad='Bonn').id)]),
+('Cooperación Alemana al Desarrollo GIZ', Pais.objects.get(nombre='Alemania').id, [('Cooperación Alemana al Desarrollo GIZ', Ciudad.objects.get(nombre='Bonn').id)]),
 
-('Universidad de Florida', Pais.objects.get(pais='Estados Unidos de América').id,
+('Universidad de Florida', Pais.objects.get(nombre='Estados Unidos de América').id,
     (
-        ('Universidad de Florida', Ciudad.objects.get(ciudad='Gainesville').id),
-        ('Center for Latin American Studies', Ciudad.objects.get(ciudad='Gainesville').id)
+        ('Universidad de Florida', Ciudad.objects.get(nombre='Gainesville').id),
+        ('Center for Latin American Studies', Ciudad.objects.get(nombre='Gainesville').id)
     )
  ),
 
-('Instituto Tecnológico Superior de Tacámbaro', Pais.objects.get(pais='México').id,
+('Instituto Tecnológico Superior de Tacámbaro', Pais.objects.get(nombre='México').id,
     (
-        ('Instituto Tecnológico Superior de Tacámbaro', Ciudad.objects.get(ciudad='Tacámbaro').id),
-        ('Departamento de Geociencias', Ciudad.objects.get(ciudad='Tacámbaro').id)
+        ('Instituto Tecnológico Superior de Tacámbaro', Ciudad.objects.get(nombre='Tacámbaro').id),
+        ('Departamento de Geociencias', Ciudad.objects.get(nombre='Tacámbaro').id)
     )
  ),
 
-('Universidad Católica de Honduras (UNICAH)', Pais.objects.get(pais='Honduras').id, [('Universidad Católica de Honduras (UNICAH)', Ciudad.objects.get(ciudad='Tegucigalpa').id)]),
+('Universidad Católica de Honduras (UNICAH)', Pais.objects.get(nombre='Honduras').id, [('Universidad Católica de Honduras (UNICAH)', Ciudad.objects.get(nombre='Tegucigalpa').id)]),
 
-('Universidad Autónoma Metropolitana (UAM)', Pais.objects.get(pais='México').id,
+('Universidad Autónoma Metropolitana (UAM)', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad Autónoma Metropolitana (UAM)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Universidad Autónoma Metropolitana, Unidad Xochimilco (UAM)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)
+        ('Universidad Autónoma Metropolitana (UAM)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Universidad Autónoma Metropolitana, Unidad Xochimilco (UAM)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
     )
  ),
 
-('Instituto Tecnológico Superior de Ciudad Hidalgo', Pais.objects.get(pais='México').id, [('Instituto Tecnológico Superior de Ciudad Hidalgo', Ciudad.objects.get(ciudad='Ciudad Hidalgo').id)]),
+('Instituto Tecnológico Superior de Ciudad Hidalgo', Pais.objects.get(nombre='México').id, [('Instituto Tecnológico Superior de Ciudad Hidalgo', Ciudad.objects.get(nombre='Ciudad Hidalgo').id)]),
 
-('Universidad de Morelia (UDEM)', Pais.objects.get(pais='México').id,
+('Universidad de Morelia (UDEM)', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad de Morelia (UDEM)', Ciudad.objects.get(ciudad='Morelia').id),
-        ('Escuela de Tecnologías de la Información', Ciudad.objects.get(ciudad='Morelia').id)
+        ('Universidad de Morelia (UDEM)', Ciudad.objects.get(nombre='Morelia').id),
+        ('Escuela de Tecnologías de la Información', Ciudad.objects.get(nombre='Morelia').id)
     )
  ),
 
-('Instituto Tecnológico Superior de Puruándiro (ITESP)', Pais.objects.get(pais='México').id, [('Instituto Tecnológico Superior de Puruándiro (ITESP)', Ciudad.objects.get(ciudad='Puruándiro').id)]),
+('Instituto Tecnológico Superior de Puruándiro (ITESP)', Pais.objects.get(nombre='México').id, [('Instituto Tecnológico Superior de Puruándiro (ITESP)', Ciudad.objects.get(nombre='Puruándiro').id)]),
 
-('Benemérita Universidad Autónoma de Puebla (BUAP)', Pais.objects.get(pais='México').id,
+('Benemérita Universidad Autónoma de Puebla (BUAP)', Pais.objects.get(nombre='México').id,
     (
-        ('Benemérita Universidad Autónoma de Puebla (BUAP)', Ciudad.objects.get(ciudad='Puebla de Zaragoza').id),
-        ('Instituto de Ciencias', Ciudad.objects.get(ciudad='Puebla de Zaragoza').id)
+        ('Benemérita Universidad Autónoma de Puebla (BUAP)', Ciudad.objects.get(nombre='Puebla de Zaragoza').id),
+        ('Instituto de Ciencias', Ciudad.objects.get(nombre='Puebla de Zaragoza').id)
     )
  ),
 
-('Universidad de Zaragoza', Pais.objects.get(pais='España').id, [('Departamento de Geografía y Ordenación del Territorio', Ciudad.objects.get(ciudad='Zaragoza').id)]),
+('Universidad de Zaragoza', Pais.objects.get(nombre='España').id, [('Departamento de Geografía y Ordenación del Territorio', Ciudad.objects.get(nombre='Zaragoza').id)]),
 
-('Universidad Internacional de Andalucía (UNIA)', Pais.objects.get(pais='España').id, [('Universidad Internacional de Andalucía (UNIA)', Ciudad.objects.get(ciudad='Sevilla').id)]),
+('Universidad Internacional de Andalucía (UNIA)', Pais.objects.get(nombre='España').id, [('Universidad Internacional de Andalucía (UNIA)', Ciudad.objects.get(nombre='Sevilla').id)]),
 
-('Universidad de los Llanos (UNILLANOS)', Pais.objects.get(pais='Colombia').id, [('Facultad de Ciencias Agropecuarias y Recursos Naturales (FCARN)', Ciudad.objects.get(ciudad='Villavicencio').id)]),
+('Universidad de los Llanos (UNILLANOS)', Pais.objects.get(nombre='Colombia').id, [('Facultad de Ciencias Agropecuarias y Recursos Naturales (FCARN)', Ciudad.objects.get(nombre='Villavicencio').id)]),
 
-('Universidad Nacional de La Plata (UNLP)', Pais.objects.get(pais='Argentina').id, [('Facultad de Humanidades y Ciencias de la Educación', Ciudad.objects.get(ciudad='La Plata').id)]),
+('Universidad Nacional de La Plata (UNLP)', Pais.objects.get(nombre='Argentina').id, [('Facultad de Humanidades y Ciencias de la Educación', Ciudad.objects.get(nombre='La Plata').id)]),
 
-('Universidad Nacional de Cuyo (UNCUYO)', Pais.objects.get(pais='Argentina').id, [('Universidad Nacional de Cuyo (UNCUYO)', Ciudad.objects.get(ciudad='Mendoza').id)]),
+('Universidad Nacional de Cuyo (UNCUYO)', Pais.objects.get(nombre='Argentina').id, [('Universidad Nacional de Cuyo (UNCUYO)', Ciudad.objects.get(nombre='Mendoza').id)]),
 
-('Facultad Latinoamericana de Ciencias Sociales (FLACSO)', Pais.objects.get(pais='México').id, [('Facultad Latinoamericana de Ciencias Sociales (FLACSO)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Facultad Latinoamericana de Ciencias Sociales (FLACSO)', Pais.objects.get(nombre='México').id, [('Facultad Latinoamericana de Ciencias Sociales (FLACSO)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Autónoma del Estado de Morelos', Pais.objects.get(pais='México').id, [('Universidad Autónoma del Estado de Morelos', Ciudad.objects.get(ciudad='Cuernavaca').id)]),
+('Universidad Autónoma del Estado de Morelos', Pais.objects.get(nombre='México').id, [('Universidad Autónoma del Estado de Morelos', Ciudad.objects.get(nombre='Cuernavaca').id)]),
 
-('Universidad de Quintana Roo', Pais.objects.get(pais='México').id,
+('Universidad de Quintana Roo', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad de Quintana Roo', Ciudad.objects.get(ciudad='Chetumal').id),
-        ('Universidad de Quintana Roo, Campus Cozumel', Ciudad.objects.get(ciudad='Cozumel').id)
+        ('Universidad de Quintana Roo', Ciudad.objects.get(nombre='Chetumal').id),
+        ('Universidad de Quintana Roo, Campus Cozumel', Ciudad.objects.get(nombre='Cozumel').id)
     )
  ),
 
-('Universidad Tecnológica de Madrid', Pais.objects.get(pais='España').id, [('Universidad Tecnológica de Madrid', Ciudad.objects.get(ciudad='Madrid').id)]),
+('Universidad Tecnológica de Madrid', Pais.objects.get(nombre='España').id, [('Universidad Tecnológica de Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-('Universidad Internacional Jefferson', Pais.objects.get(pais='México').id, [('Universidad Internacional Jefferson', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Universidad Internacional Jefferson', Pais.objects.get(nombre='México').id, [('Universidad Internacional Jefferson', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Universidad Federal de Espírito Santo (UFES)', Pais.objects.get(pais='Brasil').id, [('Universidad Federal de Espírito Santo (UFES)', Ciudad.objects.get(ciudad='Vitória').id)]),
+('Universidad Federal de Espírito Santo (UFES)', Pais.objects.get(nombre='Brasil').id, [('Universidad Federal de Espírito Santo (UFES)', Ciudad.objects.get(nombre='Vitória').id)]),
 
-('Universidad del Minho', Pais.objects.get(pais='Portugal').id, [('Universidad del Minho', Ciudad.objects.get(ciudad='Braga').id)]),
+('Universidad del Minho', Pais.objects.get(nombre='Portugal').id, [('Universidad del Minho', Ciudad.objects.get(nombre='Braga').id)]),
 
-('Universidad de San Carlos de Guatemala', Pais.objects.get(pais='Guatemala').id,
+('Universidad de San Carlos de Guatemala', Pais.objects.get(nombre='Guatemala').id,
     (
-        ('Universidad de San Carlos de Guatemala', Ciudad.objects.get(ciudad='Ciudad de Guatemala').id),
-        ('Escuela de Biología', Ciudad.objects.get(ciudad='Ciudad de Guatemala').id),
-        ('Facultad de Ciencias Químicas y Farmacia', Ciudad.objects.get(ciudad='Ciudad de Guatemala').id)
+        ('Universidad de San Carlos de Guatemala', Ciudad.objects.get(nombre='Ciudad de Guatemala').id),
+        ('Escuela de Biología', Ciudad.objects.get(nombre='Ciudad de Guatemala').id),
+        ('Facultad de Ciencias Químicas y Farmacia', Ciudad.objects.get(nombre='Ciudad de Guatemala').id)
     )
  ),
 
-('Universidad Veracruzana (UV)', Pais.objects.get(pais='México').id,
+('Universidad Veracruzana (UV)', Pais.objects.get(nombre='México').id,
     (
-        ('Universidad Veracruzana (UV)', Ciudad.objects.get(ciudad='Xalapa').id),
-        ('Facultad de Biología', Ciudad.objects.get(ciudad='Xalapa').id)
+        ('Universidad Veracruzana (UV)', Ciudad.objects.get(nombre='Xalapa').id),
+        ('Facultad de Biología', Ciudad.objects.get(nombre='Xalapa').id)
     )
  ),
 
-('Pontificia Universidad Javeriana', Pais.objects.get(pais='Colombia').id, [('Pontificia Universidad Javeriana', Ciudad.objects.get(ciudad='Bogotá D.C.').id)]),
+('Pontificia Universidad Javeriana', Pais.objects.get(nombre='Colombia').id, [('Pontificia Universidad Javeriana', Ciudad.objects.get(nombre='Bogotá D.C.').id)]),
 
-('Universidad de Ámsterdam', Pais.objects.get(pais='Países Bajos / Holanda').id,
+('Universidad de Ámsterdam', Pais.objects.get(nombre='Países Bajos / Holanda').id,
     (
-        ('Universidad de Ámsterdam', Ciudad.objects.get(ciudad='Ámsterdam').id),
-        ('Amsterdam Institute for Social Science Research (AISSR)', Ciudad.objects.get(ciudad='Ámsterdam').id)
+        ('Universidad de Ámsterdam', Ciudad.objects.get(nombre='Ámsterdam').id),
+        ('Amsterdam Institute for Social Science Research (AISSR)', Ciudad.objects.get(nombre='Ámsterdam').id)
     )
  ),
 
-('Instituto Federal Electoral', Pais.objects.get(pais='México').id, [('Instituto Federal Electoral', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Instituto Federal Electoral', Pais.objects.get(nombre='México').id, [('Instituto Federal Electoral', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Centro de Bachillerato Tecnológico Agropecuario (CBTA)', Pais.objects.get(pais='México').id,
+('Centro de Bachillerato Tecnológico Agropecuario (CBTA)', Pais.objects.get(nombre='México').id,
     (
-        ('Centro de Bachillerato Tecnológico Agropecuario (CBTA)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id),
-        ('Centro de Bachillerato Tecnológico Agropecuario #89 José Vasconcelos (CBTA 89)', Ciudad.objects.get(ciudad='Taretan').id)
+        ('Centro de Bachillerato Tecnológico Agropecuario (CBTA)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+        ('Centro de Bachillerato Tecnológico Agropecuario #89 José Vasconcelos (CBTA 89)', Ciudad.objects.get(nombre='Taretan').id)
     )
  ),
 
-('Tecnológico Nacional de México (TecNM)', Pais.objects.get(pais='México').id, [('Tecnológico Nacional de México (TecNM)', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Tecnológico Nacional de México (TecNM)', Pais.objects.get(nombre='México').id, [('Tecnológico Nacional de México (TecNM)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Instituto Venezolano de Investigaciones Científicas (IVIC)', Pais.objects.get(pais='Venezuela').id, [('Instituto Venezolano de Investigaciones Científicas (IVIC)', Ciudad.objects.get(ciudad='Los Salias').id)]),
+('Instituto Venezolano de Investigaciones Científicas (IVIC)', Pais.objects.get(nombre='Venezuela').id, [('Instituto Venezolano de Investigaciones Científicas (IVIC)', Ciudad.objects.get(nombre='Los Salias').id)]),
 
-('Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.', Pais.objects.get(pais='México').id, [('Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.', Ciudad.objects.get(ciudad='San Cristóbal de las Casas').id)]),
+('Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.', Pais.objects.get(nombre='México').id, [('Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.', Ciudad.objects.get(nombre='San Cristóbal de las Casas').id)]),
 
-('Signos Diseño & Publicidad', Pais.objects.get(pais='México').id, [('Signos Diseño & Publicidad', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Signos Diseño & Publicidad', Pais.objects.get(nombre='México').id, [('Signos Diseño & Publicidad', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Tecnologías y Servicios Agrarios, S.A (Tragsatec)', Pais.objects.get(pais='España').id, [('Tecnologías y Servicios Agrarios, S.A (Tragsatec)', Ciudad.objects.get(ciudad='Lérida').id)]),
+('Tecnologías y Servicios Agrarios, S.A (Tragsatec)', Pais.objects.get(nombre='España').id, [('Tecnologías y Servicios Agrarios, S.A (Tragsatec)', Ciudad.objects.get(nombre='Lérida').id)]),
 
-('Meneu Distribución, S.A.', Pais.objects.get(pais='España').id, [('Meneu Distribución, S.A.', Ciudad.objects.get(ciudad='Albuixech').id)]),
+('Meneu Distribución, S.A.', Pais.objects.get(nombre='España').id, [('Meneu Distribución, S.A.', Ciudad.objects.get(nombre='Albuixech').id)]),
 
-('Instituto Cartográfico y Geológico de Cataluña (ICGC)', Pais.objects.get(pais='España').id, [('Instituto Cartográfico y Geológico de Cataluña', Ciudad.objects.get(ciudad='Barcelona').id)]),
+('Instituto Cartográfico y Geológico de Cataluña (ICGC)', Pais.objects.get(nombre='España').id, [('Instituto Cartográfico y Geológico de Cataluña', Ciudad.objects.get(nombre='Barcelona').id)]),
 
-('Universidad de Dar es-Salam', Pais.objects.get(pais='Tanzania').id, [('Universidad de Dar es-Salam', Ciudad.objects.get(ciudad='Dar es-Salam').id)]),
+('Universidad de Dar es-Salam', Pais.objects.get(nombre='Tanzania').id, [('Universidad de Dar es-Salam', Ciudad.objects.get(nombre='Dar es-Salam').id)]),
 
-('Universidad Autónoma de Tlaxcala', Pais.objects.get(pais='México').id, [('Universidad Autónoma de Tlaxcala', Ciudad.objects.get(ciudad='Tlaxcala de Xicohténcatl').id)]),
+('Universidad Autónoma de Tlaxcala', Pais.objects.get(nombre='México').id, [('Universidad Autónoma de Tlaxcala', Ciudad.objects.get(nombre='Tlaxcala de Xicohténcatl').id)]),
 
-('Harlen Administrativo SA de CV', Pais.objects.get(pais='México').id, [('Harlen Administrativo SA de CV', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Harlen Administrativo SA de CV', Pais.objects.get(nombre='México').id, [('Harlen Administrativo SA de CV', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('CodiNet S.A. DE C.V.', Pais.objects.get(pais='México').id, [('CodiNet S.A. DE C.V.', Ciudad.objects.get(ciudad='Morelia').id)]),
+('CodiNet S.A. DE C.V.', Pais.objects.get(nombre='México').id, [('CodiNet S.A. DE C.V.', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('International Society for the Study of Religion, Nature and Culture (ISSRNC)', Pais.objects.get(pais='Estados Unidos de América').id, [('International Society for the Study of Religion, Nature and Culture (ISSRNC)', Ciudad.objects.get(ciudad='Gainesville').id)]),
+('International Society for the Study of Religion, Nature and Culture (ISSRNC)', Pais.objects.get(nombre='Estados Unidos de América').id, [('International Society for the Study of Religion, Nature and Culture (ISSRNC)', Ciudad.objects.get(nombre='Gainesville').id)]),
 
-('Conference of Latin Americanist Geographers (CLAG)', Pais.objects.get(pais='Estados Unidos de América').id, [('Conference of Latin Americanist Geographers (CLAG)', Ciudad.objects.get(ciudad='Gainesville').id)]),
+('Conference of Latin Americanist Geographers (CLAG)', Pais.objects.get(nombre='Estados Unidos de América').id, [('Conference of Latin Americanist Geographers (CLAG)', Ciudad.objects.get(nombre='Gainesville').id)]),
 
-('Ayuntamiento de Cuernavaca', Pais.objects.get(pais='México').id, [('Ayuntamiento de Cuernavaca', Ciudad.objects.get(ciudad='Cuernavaca').id)]),
+('Ayuntamiento de Cuernavaca', Pais.objects.get(nombre='México').id, [('Ayuntamiento de Cuernavaca', Ciudad.objects.get(nombre='Cuernavaca').id)]),
 
-('Gobierno del Estado de Morelos', Pais.objects.get(pais='México').id, [('Gobierno del Estado de Morelos', Ciudad.objects.get(ciudad='Cuernavaca').id)]),
+('Gobierno del Estado de Morelos', Pais.objects.get(nombre='México').id, [('Gobierno del Estado de Morelos', Ciudad.objects.get(nombre='Cuernavaca').id)]),
 
-('TECIF', Pais.objects.get(pais='México').id, [('TECIF', Ciudad.objects.get(ciudad='Morelia').id)]),
+('TECIF', Pais.objects.get(nombre='México').id, [('TECIF', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)', Pais.objects.get(pais='México').id, [('Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)', Pais.objects.get(nombre='México').id, [('Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Commission for Environmental Cooperation', Pais.objects.get(pais='México').id, [('Commission for Environmental Cooperation', Ciudad.objects.get(ciudad='Ciudad de México, CDMX').id)]),
+('Commission for Environmental Cooperation', Pais.objects.get(nombre='México').id, [('Commission for Environmental Cooperation', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-('Universidad Vasco de Quiroga (UVAQ)', Pais.objects.get(pais='México').id, [('Universidad Vasco de Quiroga (UVAQ)', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Universidad Vasco de Quiroga (UVAQ)', Pais.objects.get(nombre='México').id, [('Universidad Vasco de Quiroga (UVAQ)', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Ministerio de Infraestructura, Provincia de Buenos Aires', Pais.objects.get(pais='Argentina').id, [('Ministerio de Infraestructura', Ciudad.objects.get(ciudad='Buenos Aires').id)]),
+('Ministerio de Infraestructura, Provincia de Buenos Aires', Pais.objects.get(nombre='Argentina').id, [('Ministerio de Infraestructura', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
-('Fondo Monarca, A.C.', Pais.objects.get(pais='México').id, [('Fondo Monarca, A.C.', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Fondo Monarca, A.C.', Pais.objects.get(nombre='México').id, [('Fondo Monarca, A.C.', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Universidad de California en Berkeley', Pais.objects.get(pais='Estados Unidos de América').id,
+('Universidad de California en Berkeley', Pais.objects.get(nombre='Estados Unidos de América').id,
     (
-        ('Universidad de California en Berkeley', Ciudad.objects.get(ciudad='Berkeley').id),
-        ('Center for Latin American Studies (CLAS)', Ciudad.objects.get(ciudad='Berkeley').id)
+        ('Universidad de California en Berkeley', Ciudad.objects.get(nombre='Berkeley').id),
+        ('Center for Latin American Studies (CLAS)', Ciudad.objects.get(nombre='Berkeley').id)
     )
  ),
 
-('EcoLogic Development Fund', Pais.objects.get(pais='Estados Unidos de América').id, [('EcoLogic Development Fund', Ciudad.objects.get(ciudad='Cambridge').id)]),
+('EcoLogic Development Fund', Pais.objects.get(nombre='Estados Unidos de América').id, [('EcoLogic Development Fund', Ciudad.objects.get(nombre='Cambridge').id)]),
 
-('Ecotecnologías, A.C.', Pais.objects.get(pais='México').id, [('Ecotecnologías, A.C.', Ciudad.objects.get(ciudad='Morelia').id)]),
+('Ecotecnologías, A.C.', Pais.objects.get(nombre='México').id, [('Ecotecnologías, A.C.', Ciudad.objects.get(nombre='Morelia').id)]),
 
-('Universidad Nacional Agraria La Molina (UNALM)', Pais.objects.get(pais='Perú').id, [('Universidad Nacional Agraria La Molina (UNALM)', Ciudad.objects.get(ciudad='Lima').id)]),
+('Universidad Nacional Agraria La Molina (UNALM)', Pais.objects.get(nombre='Perú').id, [('Universidad Nacional Agraria La Molina (UNALM)', Ciudad.objects.get(nombre='Lima').id)]),
 )
 
 for i in Instituciones:
-    e = Institucion(institucion=i[0], pais=Pais(pk=i[1]))
+    e = Institucion(nombre=i[0], pais=Pais(pk=i[1]))
     e.save()
-    print("Agregada la Institución " + i[0].upper() + " para el país " + str(Pais.objects.get(pk=i[1]).pais))
+    print("Agregada la Institución " + i[0].upper() + " para el país " + str(Pais.objects.get(pk=i[1]).nombre))
 
     for j in i[2]:
-        f = Dependencia(dependencia=j[0], ciudad=Ciudad(pk=j[1]), institucion=Institucion(pk=e.pk))
+        f = Dependencia(nombre=j[0], ciudad=Ciudad(pk=j[1]), institucion=Institucion(pk=e.pk))
         f.save()
-        print(" --- Agregada la Dependencia " + j[0].upper() + " para la institución " + str(Institucion.objects.get(pk=e.pk).institucion))
+        print(" --- Agregada la Dependencia " + j[0].upper() + " para la institución " + str(Institucion.objects.get(pk=e.pk).nombre))
 
 
 User.objects.create_superuser(username='admin', email='cesar.benjamin@enesmorelia.unam.mx', password='ciga2017',
-                              pais_origen=Pais.objects.get(pais='México'), ciudad=Ciudad.objects.get(ciudad='Morelia'))
+                              pais_origen=Pais.objects.get(nombre='México'), ciudad=Ciudad.objects.get(nombre='Morelia'))
 
 
 Usuarios = (
-    ('usr_st',              'usr_st',       'usr_st',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'Aso3U'),
-    ('alex',                'alex',         'alex',             'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'rWKXd'),
-    ('16ymf',               '16ymf',        '16ymf',            'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', '16ymf1'),
-    ('mario.figueroa',      'Figueroa Cárdenas',    'Mario',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', '16ymf'),
-    ('yunsh',               'yunsh',        'yunsh',            'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'yunsh'),
+    ('usr_st',              'usr_st',       'usr_st',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'Aso3U'),
+    ('alex',                'alex',         'alex',             'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'rWKXd'),
+    ('16ymf',               '16ymf',        '16ymf',            'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', '16ymf1'),
+    ('mario.figueroa',      'Figueroa Cárdenas',    'Mario',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', '16ymf'),
+    ('yunsh',               'yunsh',        'yunsh',            'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'yunsh'),
 
-    ('berenice.solis',      'Berenice',            'Solis Castillo',       'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '6ESlj'),
-    ('saray.bucio',         'Saray',               'Bucio Mendoza',        'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'usmv1'),
-    ('quetzalcoatl.orozco', 'Quetzalcoatl',        'Orozco Ramirez',       'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'ubFaE'),
-    ('lourdes.gonzalez',    'Maria Lourdes',       'González Arqueros',    'INVESTIGADOR', Pais.objects.get(pais='España').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'EeGJW'),
-    ('karine.lefebvre',     'Karine',              'Lefebvre',             'INVESTIGADOR', Pais.objects.get(pais='Francia').id, Ciudad.objects.get(ciudad='Morelia').id, '-', '7Gs53'),
-    ('lorena.poncela',      'Lorena',              'Poncela Rodríguez',    'INVESTIGADOR', Pais.objects.get(pais='España').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'hnSDn'),
-    ('pedro.urquijo',       'Pedro Sergio',        'Urquijo Torres',       'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'D', 'fEVor'),
-    ('hilda.rivas',         'Hilda',               'Rivas',                'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', 'OH7fq'),
-    ('jose.navarrete',      'José Antonio',        'Navarrete Pacheco',    'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'd2BFg'),
-    ('luis.morales',        'Luis Miguel',         'Morales Manilla',      'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', 'ftTrS'),
-    ('alejandra.larrazabal','Alejandra Patricia',  'Larrazábal De la Via', 'TECNICO',      Pais.objects.get(pais='Bolivia').id, Ciudad.objects.get(ciudad='Morelia').id, 'C', 'Ersp5'),
-    ('maria.carmona',       'María Estela',        'Carmona Jiménez',      'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', 'Yrcbo'),
-    ('manuel.bollo',        'Manuel',              'Bollo Manent',         'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'D', 'zF8gk'),
-    ('yan.gao',             'Yan',                 'Gao',                  'INVESTIGADOR', Pais.objects.get(pais='China').id,   Ciudad.objects.get(ciudad='Morelia').id, 'B', 'UiSNj'),
-    ('gabriela.cuevas',     'Gabriela',            'Cuevas García',        'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'B', 'J8YEd'),
-    ('margaret.skutsch',    'Margaret',            'Skutsch',              'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'YxU7H'),
-    ('angel.priego',        'Angel Guadalupe',     'Priego Santander',     'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', '9hUCZ'),
-    ('brian.napoletano',    'Brian',               'Napoletano',           'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'B', '9OzFa'),
-    ('manuel.mendoza',      'Manuel Eduardo',      'Mendoza Cantú',        'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'D', 'wjZ8d'),
-    ('keith.mccall',        'Keith Michael',       'McCall',               'INVESTIGADOR', Pais.objects.get(pais='Reino Unido').id, Ciudad.objects.get(ciudad='Morelia').id, 'D', 'dNnfH'),
-    ('jean.mas',            'Jean Francois',       'Mas',                  'INVESTIGADOR', Pais.objects.get(pais='Francia').id, Ciudad.objects.get(ciudad='Morelia').id, 'D', 'GUKjy'),
-    ('adrian.ghilardi',     'Adrián',              'Ghilardi',             'INVESTIGADOR', Pais.objects.get(pais='Italia').id,  Ciudad.objects.get(ciudad='Morelia').id, 'B', 'DgFdm'),
-    ('claudio.garibay',     'Claudio',             'Garibay Orozco',       'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', '88SSU'),
-    ('ana.burgos',          'Ana',                 'Burgos',               'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'jEvFg'),
-    ('gerardo.bocco',       'Gerardo Héctor Rubén','Bocco Verdinelli',     'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'D', 'f4r8Q'),
-    ('francisco.bautista',  'Francisco',           'Bautista Zúñiga',      'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', '98big'),
-    ('sara.barrasa',        'Sara',                'Barrasa García',       'INVESTIGADOR', Pais.objects.get(pais='España').id,  Ciudad.objects.get(ciudad='Morelia').id, 'B', 'prgh0'),
-    ('marta.astier',        'Marta',               'Astier',               'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'sNeKu'),
-    ('antonio.vieyra',      'Jose Antonio',        'Vieyra Medrano',       'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', 'fs3S7'),
-    ('hugo.zavala',         'Hugo Alejandro',      'Zavala Vaca',           'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', 'n80rn'),
-    ('rosaura.paez',        'Rosaura',             'Páez Bistrain',         'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'C', 'puYq7'),
-    ('yadira.mendez',       'Yadira Mireya',       'Méndez Lemus',          'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'B', '58Tln'),
-    ('gabriela.lemus',      'Gabriela',            'Lemus',                 'ADMINISTRATIVO',Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, 'B', 'Hj7Jx'),
-    ('fabiola.velazquez',   'Fabiola Araceli',     'Velázquez Ayala',       'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'c3fhV'),
-    ('alejandro.velazquez', 'Alejandro',           'Velázquez Montes' ,     'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00001'),
-    ('alina.alvarez',       'Alina',                'Alvarez Larrain',      'OTRO',         Pais.objects.get(pais='Argentina').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'h8fvn'),
-    ('arturo.muniz',        'Arturo',               'Muñiz Jauregui',       'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '10002'),
-    ('maria.ramirez',       'María Isabel',         'Ramírez Ramírez',      'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, 'D', 'Y9jOf'),
-    ('jaime.paneque',       'Jaime',                'Paneque Gálvez',       'INVESTIGADOR', Pais.objects.get(pais='España').id,  Ciudad.objects.get(ciudad='Morelia').id, 'B', 'Y6pdF'),
-    ('frida.guiza',         'Frida Nadiezda',       'Güiza Valverde',       'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'Yl5I4'),
-    ('mariana.vallejo',     'Mariana',              'Vallejo Ramos',        'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '4th7o'),
-    ('hebe.vessuri',        'Hebe',                 'Vessuri',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'vmh1r'),
-    ('rosa.rivas',          'Rosa',                 'Rivas',                'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00002'),
-    ('manuel.zavala',       'Manuel',               'Zavala',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00003'),
-    ('raquel.gonzalez',     'Raquel',               'González García',      'TECNICO',      Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'biabG'),
-    ('omar.montano',        'Omar',                 'Montaño',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00004'),
-    ('arturo.balderas',     'Arturo',               'Balderas Torres',      'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00005'),
-    ('adriana.flores',      'Adriana Carolina',     'Flores Díaz',          'INVESTIGADOR', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'df4ty'),
-    ('armonia.borrego',     'Armonía',              'Borrego',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'gb4go'),
+    ('berenice.solis',      'Berenice',            'Solis Castillo',       'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '6ESlj'),
+    ('saray.bucio',         'Saray',               'Bucio Mendoza',        'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'usmv1'),
+    ('quetzalcoatl.orozco', 'Quetzalcoatl',        'Orozco Ramirez',       'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'ubFaE'),
+    ('lourdes.gonzalez',    'Maria Lourdes',       'González Arqueros',    'INVESTIGADOR', Pais.objects.get(nombre='España').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'EeGJW'),
+    ('karine.lefebvre',     'Karine',              'Lefebvre',             'INVESTIGADOR', Pais.objects.get(nombre='Francia').id, Ciudad.objects.get(nombre='Morelia').id, '-', '7Gs53'),
+    ('lorena.poncela',      'Lorena',              'Poncela Rodríguez',    'INVESTIGADOR', Pais.objects.get(nombre='España').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'hnSDn'),
+    ('pedro.urquijo',       'Pedro Sergio',        'Urquijo Torres',       'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'D', 'fEVor'),
+    ('hilda.rivas',         'Hilda',               'Rivas',                'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', 'OH7fq'),
+    ('jose.navarrete',      'José Antonio',        'Navarrete Pacheco',    'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'd2BFg'),
+    ('luis.morales',        'Luis Miguel',         'Morales Manilla',      'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', 'ftTrS'),
+    ('alejandra.larrazabal','Alejandra Patricia',  'Larrazábal De la Via', 'TECNICO',      Pais.objects.get(nombre='Bolivia').id, Ciudad.objects.get(nombre='Morelia').id, 'C', 'Ersp5'),
+    ('maria.carmona',       'María Estela',        'Carmona Jiménez',      'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', 'Yrcbo'),
+    ('manuel.bollo',        'Manuel',              'Bollo Manent',         'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'D', 'zF8gk'),
+    ('yan.gao',             'Yan',                 'Gao',                  'INVESTIGADOR', Pais.objects.get(nombre='China').id,   Ciudad.objects.get(nombre='Morelia').id, 'B', 'UiSNj'),
+    ('gabriela.cuevas',     'Gabriela',            'Cuevas García',        'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'B', 'J8YEd'),
+    ('margaret.skutsch',    'Margaret',            'Skutsch',              'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'YxU7H'),
+    ('angel.priego',        'Angel Guadalupe',     'Priego Santander',     'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', '9hUCZ'),
+    ('brian.napoletano',    'Brian',               'Napoletano',           'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'B', '9OzFa'),
+    ('manuel.mendoza',      'Manuel Eduardo',      'Mendoza Cantú',        'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'D', 'wjZ8d'),
+    ('keith.mccall',        'Keith Michael',       'McCall',               'INVESTIGADOR', Pais.objects.get(nombre='Reino Unido').id, Ciudad.objects.get(nombre='Morelia').id, 'D', 'dNnfH'),
+    ('jean.mas',            'Jean Francois',       'Mas',                  'INVESTIGADOR', Pais.objects.get(nombre='Francia').id, Ciudad.objects.get(nombre='Morelia').id, 'D', 'GUKjy'),
+    ('adrian.ghilardi',     'Adrián',              'Ghilardi',             'INVESTIGADOR', Pais.objects.get(nombre='Italia').id,  Ciudad.objects.get(nombre='Morelia').id, 'B', 'DgFdm'),
+    ('claudio.garibay',     'Claudio',             'Garibay Orozco',       'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', '88SSU'),
+    ('ana.burgos',          'Ana',                 'Burgos',               'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'jEvFg'),
+    ('gerardo.bocco',       'Gerardo Héctor Rubén','Bocco Verdinelli',     'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'D', 'f4r8Q'),
+    ('francisco.bautista',  'Francisco',           'Bautista Zúñiga',      'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', '98big'),
+    ('sara.barrasa',        'Sara',                'Barrasa García',       'INVESTIGADOR', Pais.objects.get(nombre='España').id,  Ciudad.objects.get(nombre='Morelia').id, 'B', 'prgh0'),
+    ('marta.astier',        'Marta',               'Astier',               'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'sNeKu'),
+    ('antonio.vieyra',      'Jose Antonio',        'Vieyra Medrano',       'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', 'fs3S7'),
+    ('hugo.zavala',         'Hugo Alejandro',      'Zavala Vaca',           'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', 'n80rn'),
+    ('rosaura.paez',        'Rosaura',             'Páez Bistrain',         'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'C', 'puYq7'),
+    ('yadira.mendez',       'Yadira Mireya',       'Méndez Lemus',          'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'B', '58Tln'),
+    ('gabriela.lemus',      'Gabriela',            'Lemus',                 'ADMINISTRATIVO',Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, 'B', 'Hj7Jx'),
+    ('fabiola.velazquez',   'Fabiola Araceli',     'Velázquez Ayala',       'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'c3fhV'),
+    ('alejandro.velazquez', 'Alejandro',           'Velázquez Montes' ,     'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00001'),
+    ('alina.alvarez',       'Alina',                'Alvarez Larrain',      'OTRO',         Pais.objects.get(nombre='Argentina').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'h8fvn'),
+    ('arturo.muniz',        'Arturo',               'Muñiz Jauregui',       'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '10002'),
+    ('maria.ramirez',       'María Isabel',         'Ramírez Ramírez',      'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, 'D', 'Y9jOf'),
+    ('jaime.paneque',       'Jaime',                'Paneque Gálvez',       'INVESTIGADOR', Pais.objects.get(nombre='España').id,  Ciudad.objects.get(nombre='Morelia').id, 'B', 'Y6pdF'),
+    ('frida.guiza',         'Frida Nadiezda',       'Güiza Valverde',       'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'Yl5I4'),
+    ('mariana.vallejo',     'Mariana',              'Vallejo Ramos',        'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '4th7o'),
+    ('hebe.vessuri',        'Hebe',                 'Vessuri',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'vmh1r'),
+    ('rosa.rivas',          'Rosa',                 'Rivas',                'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00002'),
+    ('manuel.zavala',       'Manuel',               'Zavala',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00003'),
+    ('raquel.gonzalez',     'Raquel',               'González García',      'TECNICO',      Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'biabG'),
+    ('omar.montano',        'Omar',                 'Montaño',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00004'),
+    ('arturo.balderas',     'Arturo',               'Balderas Torres',      'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00005'),
+    ('adriana.flores',      'Adriana Carolina',     'Flores Díaz',          'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'df4ty'),
+    ('armonia.borrego',     'Armonía',              'Borrego',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'gb4go'),
 
-    ('hernando.rodriguez',  'Hernando',             'Rodriguez',            'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00006'),
-    ('sara.ortiz',          'Sara',                 'Ortiz',                'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00007'),
-    ('roser.manejo',        'Roser',                'Manejo',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00008'),
-    ('pablo.argueta',       'Pablo',                'Argueta',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00009'),
-    ('beatriz.tejera',      'Beatriz',              'Tejera',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00010'),
-    ('ana.moreno',          'Ana Isabel',           'Moreno Calles',        'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00011'),
-    ('marcela.morales',     'Marcela',              'Morales',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00012'),
-    ('jorge.gonzalez',      'Jorge',                'Gonzalez',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00013'),
-    ('dante.ayala',         'Dante Ariel ',         'Ayala Ortiz',          'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00014'),
-    ('jose.pimentel',       'Jose',                 'Pimentel',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00015'),
-    ('martha.velazquez',    'Martha',               'Velazquez',            'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00016'),
-    ('rocio.aguirre',       'Rocío',                'Aguirre',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00017'),
-    ('margarita.alvarado',  'Margarita',            'Alvarado',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00018'),
-    ('carina.grajales',     'Carina',               'Grajales',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00019'),
-    ('luis.garcia',         'Luis',                 'García',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00020'),
-    ('luz.garcia',          'Luz Elena',            'García Martínez',      'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00021'),
-    ('luis.ramirez',        'Luis',                 'Ramírez',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00022'),
-    ('maria.vizcaino',      'María',                'Vizcaíno',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00023'),
-    ('andrew.boni',         'Andrew',               'Boni',                 'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00024'),
-    ('john.healey',         'John',                 'Healey',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00025'),
-    ('eduardo.frapolli',    'Eduardo',              'Frapolli',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00026'),
-    ('miguel.martinez',     'Miguel',               'Martínez',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00027'),
-    ('g.legorreta.paulin',  'G',                    'Legorreta Paulin',     'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00028'),
-    ('j.tiburio',           'J',                    'Tiburio',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00029'),
-    ('lucia.almeida',       'Lucia',                'Almeida',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00030'),
-    ('roberto.lindig',      'Roberto',              'Lindig',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00031'),
-    ('enrique.ojeda',       'Enrique',              'Ojeda',                'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00032'),
-    ('jose.farina',         'José',                 'Fariña',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00033'),
-    ('jesus.fuentes',       'Jesús',                'Fuentes',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00034'),
-    ('sophie.avila',        'Sophie',               'Avila',                'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00035'),
-    ('guillermo.salas',     'Guillermo',            'Salas',                'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00036'),
-    ('gian.delgado',        'Gian',                 'Delgado',              'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00037'),
-    ('octavio.gonzalez',    'Octavio',              'González',             'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00038'),
-    ('jose.hernandez',      'José',                 'Hernández',            'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00039'),
-    ('leticia.merino',      'Leticia',              'Merino',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00040'),
-    ('luis.macias',         'José Luis',            'Macías',               'OTRO',         Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', '00041'))
+    ('hernando.rodriguez',  'Hernando',             'Rodriguez',            'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00006'),
+    ('sara.ortiz',          'Sara',                 'Ortiz',                'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00007'),
+    ('roser.manejo',        'Roser',                'Manejo',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00008'),
+    ('pablo.argueta',       'Pablo',                'Argueta',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00009'),
+    ('beatriz.tejera',      'Beatriz',              'Tejera',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00010'),
+    ('ana.moreno',          'Ana Isabel',           'Moreno Calles',        'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00011'),
+    ('marcela.morales',     'Marcela',              'Morales',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00012'),
+    ('jorge.gonzalez',      'Jorge',                'Gonzalez',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00013'),
+    ('dante.ayala',         'Dante Ariel ',         'Ayala Ortiz',          'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00014'),
+    ('jose.pimentel',       'Jose',                 'Pimentel',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00015'),
+    ('martha.velazquez',    'Martha',               'Velazquez',            'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00016'),
+    ('rocio.aguirre',       'Rocío',                'Aguirre',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00017'),
+    ('margarita.alvarado',  'Margarita',            'Alvarado',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00018'),
+    ('carina.grajales',     'Carina',               'Grajales',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00019'),
+    ('luis.garcia',         'Luis',                 'García',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00020'),
+    ('luz.garcia',          'Luz Elena',            'García Martínez',      'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00021'),
+    ('luis.ramirez',        'Luis',                 'Ramírez',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00022'),
+    ('maria.vizcaino',      'María',                'Vizcaíno',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00023'),
+    ('andrew.boni',         'Andrew',               'Boni',                 'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00024'),
+    ('john.healey',         'John',                 'Healey',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00025'),
+    ('eduardo.frapolli',    'Eduardo',              'Frapolli',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00026'),
+    ('miguel.martinez',     'Miguel',               'Martínez',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00027'),
+    ('g.legorreta.paulin',  'G',                    'Legorreta Paulin',     'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00028'),
+    ('j.tiburio',           'J',                    'Tiburio',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00029'),
+    ('lucia.almeida',       'Lucia',                'Almeida',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00030'),
+    ('roberto.lindig',      'Roberto',              'Lindig',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00031'),
+    ('enrique.ojeda',       'Enrique',              'Ojeda',                'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00032'),
+    ('jose.farina',         'José',                 'Fariña',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00033'),
+    ('jesus.fuentes',       'Jesús',                'Fuentes',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00034'),
+    ('sophie.avila',        'Sophie',               'Avila',                'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00035'),
+    ('guillermo.salas',     'Guillermo',            'Salas',                'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00036'),
+    ('gian.delgado',        'Gian',                 'Delgado',              'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00037'),
+    ('octavio.gonzalez',    'Octavio',              'González',             'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00038'),
+    ('jose.hernandez',      'José',                 'Hernández',            'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00039'),
+    ('leticia.merino',      'Leticia',              'Merino',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00040'),
+    ('luis.macias',         'José Luis',            'Macías',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00041'))
 for i in Usuarios:
     u = User.objects.create_user(username=i[0], first_name=i[1], last_name=i[2], tipo=i[3], pais_origen=Pais(pk=i[4]),
                                  ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion1=i[0], password=i[7],
@@ -1530,283 +1530,283 @@ for i in Usuarios:
     print(u)
 
 Usuarios = (
-    ('yameli.aguilar',      'Aguilar Duarte',       'Yameli',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'yameli.aguilar'),
-    ('luis.cancer',         'Cancer Pomar',         'Luis',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'luis.cancer'),
-    ('r.aguilar.romero',    'Aguilar Romero',       'R.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'r.aguilar.romero'),
-    ('raul.aguirre',        'Aguirre Gómez',        'Raúl',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'raul.aguirre'),
-    ('eduardo.alanis',      'Alanís Rodríguez',     'Eduardo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'eduardo.alanis'),
-    ('israde.alcantara',    'Alcántara',            'Israde',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'israde.alcantara'),
-    ('j.alcantar.mejía',    'Alcántar Mejía',       'J.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'j.alcantar.mejía'),
-    ('sonia.altizer',       'Altizer',              'Sonia',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'sonia.altizer'),
-    ('fernando.alvarado',   'Alvarado Ramos',       'Fernando',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'fernando.alvarado'),
-    ('alfredo.amador',      'Amador García',        'Alfredo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alfredo.amador'),
-    ('mirna.ambrosio',      'Ambrosio',             'Mirna',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'Mirna.ambrosio'),
-    ('jose.anaya',          'Anaya Gomez',          'José Eduardo', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jose.anaya'),
-    ('carlos.anaya',        'Anaya Merchant',      'Carlos Antonio','OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'carlos.anaya'),
-    ('a.andablo.reyes',     'Andablo Reyes',        'A.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'a.andablo.reyes'),
-    ('rene.arzuffi',        'Arzuffi Barrera',      'René',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'rene.arzuffi'),
-    ('patricia.balvanera',  'Balvanera',            'Patricia',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'patricia.balvanera'),
-    ('rc.barrientos.medina','Barrientos Medina',    'R. C.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'rc.barrientos.medina'),
-    ('m.boada.junca',       'Boada Juncá',          'M.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'm.boada.junca'),
-    ('encarnacion.bobadilla','Bobadilla Soto',      'Encarnación Ernesto','OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'enc.bobadilla'),
-    ('nayda.bravo',         'Bravo Hernández',      'Nayda Luz',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'nayda.bravo'),
-    ('miguel.bravo',        'Bravo',                'Miguel',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'miguel.bravo'),
-    ('lincoln.brwoer',      'Brower',               'Lincoln P.',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'lincoln.brwoer'),
-    ('stephen.brush',       'Brush',                'Stephen',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'stephen.brush'),
-    ('bryan.pijanowski',    'Pijanowski',           'Bryan C.',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'bryan.pijanowski'),
-    ('matthias.bucker',     'Bücker',               'Matthias',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'matthias.bucker'),
-    ('hector.cabadas',      'Cabadas Báez',         'Héctor Víctor','OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'hector.cabadas'),
-    ('cecilia.caballero',   'Caballero Miranda',    'Cecilia I.',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'cecilia.caballero'),
-    ('martin.cardena',      'Cadena Salgado',       'Martin',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'martin.cardenas'),
-    ('nadia.campos',        'Campos Salas',         'Nadia',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'nadia.campos'),
-    ('m.campos.sanchez',    'Campos Sánchez',       'M.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'a.campos.sanchez'),
-    ('jp.carbonelli',       'Carbonelli',           'J. P.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jp.carbonelli'),
-    ('v.palamarczuk',       'Palamarczuk',          'V.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'v.palamarczuk'),
-    ('t.carlon.allende',    'Carlón Allende',       'T.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 't.carlon.allende'),
-    ('angel.carrancho',     'Carrancho',            'Ángel',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'angel.carrancho'),
-    ('oswaldo.carrillo',    'Carrillo',             'Oswaldo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'oswaldo.carrillo'),
-    ('alejandro.casas',     'Casas Fernández',      'Alejandro',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alejandro.casas'),
-    ('miguel.castillo',     'Castillo Santiago',    'Miguel Angel', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'miguel.castillo'),
-    ('alicia.castillo',     'Castillo',             'Alicia',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alicia.castillo'),
-    ('federico.castrejon',  'Castrejón Ayala',      'Federico',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'federico.castrejon'),
-    ('raul.cejudo',         'Cejudo Ruiz',          'Raul',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'raul.cejudo'),
-    ('laura.chang',         'Chang Martínez',       'Laura',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'laura.chang'),
-    ('noah.chutz',          'Chutz',                'Noah',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'noah.chutz'),
-    ('alejandro.collantes', 'Collantes',            'Alejandro',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alejandro.collantes'),
-    ('camilo.correa',       'Correa Ayram',         'Camilo A.',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'camilo.correa'),
-    ('stephane.couturier',  'Couturier',            'Stéphane',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'stephane.couturier'),
-    ('zoila.cardenas',      'Cárdenas Mendoza',     'Zoila',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'zoila.cardenas'),
-    ('o.delgado.carranza',  'Delgado Carranza',     'O.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'o.delgado.carranza'),
-    ('luis.dourado',        'Dourado',              'Luís',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'luis,dourado'),
-    ('inna.dubrovina',      'Dubrovina',            'Inna',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'inna.dubrovina'),
-    ('ek.del.val',          'de Gortari',           'Ek del Val',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ek.del.val'),
-    ('miguel.escalona',     'Escalona',             'Miguel',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'miguel.escalona'),
-    ('ileana.espejel',      'Espejel',              'Ileana',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ileana.espejel.'),
-    ('lm.espinosa.rodriguez', 'Espinosa Rodríguez', 'L. M.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'e.rodriguez'),
-    ('a.espinoza.maya',     'Espinoza Maya',        'A.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'a.espinoza.maya'),
-    ('bailis.espinoza',     'Espinoza Medrano',     'Bailis',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'bailis.Espinoza'),
-    ('fabricio.espinoza',   'Espinoza Medrano',     'Fabricio',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'fabricio.espinoza'),
-    ('osvaldo.esquivel',    'Esquivel Lucatero',    'Osvaldo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'osvaldo.esquivel'),
-    ('andres.etter',        'Etter',                'Andrés',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'andres.etter'),
+    ('yameli.aguilar',      'Aguilar Duarte',       'Yameli',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'yameli.aguilar'),
+    ('luis.cancer',         'Cancer Pomar',         'Luis',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'luis.cancer'),
+    ('r.aguilar.romero',    'Aguilar Romero',       'R.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'r.aguilar.romero'),
+    ('raul.aguirre',        'Aguirre Gómez',        'Raúl',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'raul.aguirre'),
+    ('eduardo.alanis',      'Alanís Rodríguez',     'Eduardo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'eduardo.alanis'),
+    ('israde.alcantara',    'Alcántara',            'Israde',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'israde.alcantara'),
+    ('j.alcantar.mejía',    'Alcántar Mejía',       'J.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'j.alcantar.mejía'),
+    ('sonia.altizer',       'Altizer',              'Sonia',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'sonia.altizer'),
+    ('fernando.alvarado',   'Alvarado Ramos',       'Fernando',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'fernando.alvarado'),
+    ('alfredo.amador',      'Amador García',        'Alfredo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alfredo.amador'),
+    ('mirna.ambrosio',      'Ambrosio',             'Mirna',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'Mirna.ambrosio'),
+    ('jose.anaya',          'Anaya Gomez',          'José Eduardo', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jose.anaya'),
+    ('carlos.anaya',        'Anaya Merchant',      'Carlos Antonio','OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'carlos.anaya'),
+    ('a.andablo.reyes',     'Andablo Reyes',        'A.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'a.andablo.reyes'),
+    ('rene.arzuffi',        'Arzuffi Barrera',      'René',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'rene.arzuffi'),
+    ('patricia.balvanera',  'Balvanera',            'Patricia',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'patricia.balvanera'),
+    ('rc.barrientos.medina','Barrientos Medina',    'R. C.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'rc.barrientos.medina'),
+    ('m.boada.junca',       'Boada Juncá',          'M.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'm.boada.junca'),
+    ('encarnacion.bobadilla','Bobadilla Soto',      'Encarnación Ernesto','OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'enc.bobadilla'),
+    ('nayda.bravo',         'Bravo Hernández',      'Nayda Luz',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'nayda.bravo'),
+    ('miguel.bravo',        'Bravo',                'Miguel',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'miguel.bravo'),
+    ('lincoln.brwoer',      'Brower',               'Lincoln P.',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'lincoln.brwoer'),
+    ('stephen.brush',       'Brush',                'Stephen',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'stephen.brush'),
+    ('bryan.pijanowski',    'Pijanowski',           'Bryan C.',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'bryan.pijanowski'),
+    ('matthias.bucker',     'Bücker',               'Matthias',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'matthias.bucker'),
+    ('hector.cabadas',      'Cabadas Báez',         'Héctor Víctor','OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'hector.cabadas'),
+    ('cecilia.caballero',   'Caballero Miranda',    'Cecilia I.',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'cecilia.caballero'),
+    ('martin.cardena',      'Cadena Salgado',       'Martin',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'martin.cardenas'),
+    ('nadia.campos',        'Campos Salas',         'Nadia',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'nadia.campos'),
+    ('m.campos.sanchez',    'Campos Sánchez',       'M.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'a.campos.sanchez'),
+    ('jp.carbonelli',       'Carbonelli',           'J. P.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jp.carbonelli'),
+    ('v.palamarczuk',       'Palamarczuk',          'V.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'v.palamarczuk'),
+    ('t.carlon.allende',    'Carlón Allende',       'T.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 't.carlon.allende'),
+    ('angel.carrancho',     'Carrancho',            'Ángel',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'angel.carrancho'),
+    ('oswaldo.carrillo',    'Carrillo',             'Oswaldo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'oswaldo.carrillo'),
+    ('alejandro.casas',     'Casas Fernández',      'Alejandro',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alejandro.casas'),
+    ('miguel.castillo',     'Castillo Santiago',    'Miguel Angel', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'miguel.castillo'),
+    ('alicia.castillo',     'Castillo',             'Alicia',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alicia.castillo'),
+    ('federico.castrejon',  'Castrejón Ayala',      'Federico',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'federico.castrejon'),
+    ('raul.cejudo',         'Cejudo Ruiz',          'Raul',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'raul.cejudo'),
+    ('laura.chang',         'Chang Martínez',       'Laura',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'laura.chang'),
+    ('noah.chutz',          'Chutz',                'Noah',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'noah.chutz'),
+    ('alejandro.collantes', 'Collantes',            'Alejandro',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alejandro.collantes'),
+    ('camilo.correa',       'Correa Ayram',         'Camilo A.',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'camilo.correa'),
+    ('stephane.couturier',  'Couturier',            'Stéphane',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'stephane.couturier'),
+    ('zoila.cardenas',      'Cárdenas Mendoza',     'Zoila',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'zoila.cardenas'),
+    ('o.delgado.carranza',  'Delgado Carranza',     'O.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'o.delgado.carranza'),
+    ('luis.dourado',        'Dourado',              'Luís',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'luis,dourado'),
+    ('inna.dubrovina',      'Dubrovina',            'Inna',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'inna.dubrovina'),
+    ('ek.del.val',          'de Gortari',           'Ek del Val',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ek.del.val'),
+    ('miguel.escalona',     'Escalona',             'Miguel',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'miguel.escalona'),
+    ('ileana.espejel',      'Espejel',              'Ileana',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ileana.espejel.'),
+    ('lm.espinosa.rodriguez', 'Espinosa Rodríguez', 'L. M.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'e.rodriguez'),
+    ('a.espinoza.maya',     'Espinoza Maya',        'A.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'a.espinoza.maya'),
+    ('bailis.espinoza',     'Espinoza Medrano',     'Bailis',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'bailis.Espinoza'),
+    ('fabricio.espinoza',   'Espinoza Medrano',     'Fabricio',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'fabricio.espinoza'),
+    ('osvaldo.esquivel',    'Esquivel Lucatero',    'Osvaldo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'osvaldo.esquivel'),
+    ('andres.etter',        'Etter',                'Andrés',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'andres.etter'),
 
-    ('b.figueroa.rangel',   'Figueroa Rangel',      'B.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'figueroa.rangel'),
-    ('linda.fink',          'Fink',                 'Linda S.',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'linda.fink'),
-    ('roberto.fisher',      'Fisher Ortíz',    'Roberto Alexander', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'roberto.fisher'),
-    ('a.flamenco.sandoval', 'Flamenco Sandoval',    'A.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'flamenco.sandoval'),
-    ('angel.flores',        'Flores Domínguez',     'Angel David',  'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'angel.flores'),
-    ('ivan.franch',         'Franch Pardo',         'Iván',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ivan.franch'),
-    ('oscar.frausto',       'Frausto',              'Oscar',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'oscar.frausto'),
-    ('mario.freitas',       'Freitas',              'Mário',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'mario.freitas'),
-    ('gabriel.vazquez',     'Vázquez',              'C. Gabriel',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'gabriel.vazquez'),
-    ('artemio.gallegos',    'Gallegos García',      'Artemio',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'artemio.gallegos'),
-    ('angeles.gallegos',    'Gallegos A.',          'Angeles',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'angeles.gallegos'),
-    ('victoria.reyes',      'Reyes García',         'Victoria',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'victoria.reyes'),
-    ('manuel.macia',        'J. Macía',             'Manuel',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'manuel.macia'),
-    ('m.farfan.gutierez',   'Farfán Gutiérrez',     'M.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'm.farfan.gutierez'),
+    ('b.figueroa.rangel',   'Figueroa Rangel',      'B.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'figueroa.rangel'),
+    ('linda.fink',          'Fink',                 'Linda S.',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'linda.fink'),
+    ('roberto.fisher',      'Fisher Ortíz',    'Roberto Alexander', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'roberto.fisher'),
+    ('a.flamenco.sandoval', 'Flamenco Sandoval',    'A.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'flamenco.sandoval'),
+    ('angel.flores',        'Flores Domínguez',     'Angel David',  'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'angel.flores'),
+    ('ivan.franch',         'Franch Pardo',         'Iván',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ivan.franch'),
+    ('oscar.frausto',       'Frausto',              'Oscar',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'oscar.frausto'),
+    ('mario.freitas',       'Freitas',              'Mário',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'mario.freitas'),
+    ('gabriel.vazquez',     'Vázquez',              'C. Gabriel',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'gabriel.vazquez'),
+    ('artemio.gallegos',    'Gallegos García',      'Artemio',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'artemio.gallegos'),
+    ('angeles.gallegos',    'Gallegos A.',          'Angeles',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'angeles.gallegos'),
+    ('victoria.reyes',      'Reyes García',         'Victoria',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'victoria.reyes'),
+    ('manuel.macia',        'J. Macía',             'Manuel',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'manuel.macia'),
+    ('m.farfan.gutierez',   'Farfán Gutiérrez',     'M.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'm.farfan.gutierez'),
 
-    ('jorge.gama',          'Gama Castro',          'Jorge E.',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jorge.gama'),
-    ('andres.garcia',       'Garcia',               'Andres',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'andres.garcia'),
-    ('ana.garcia',          'García de Fuentes',    'Ana',          'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ana.garcia'),
-    ('eduardo.garcia',      'García',               'Eduardo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'eduardo.garcia'),
-    ('f.gavi.reyes',        'Gavi Reyes',           'F.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'f.gavi.reyes'),
-    ('mayra.gavito',        'Gavito',               'Mayra',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'mayra.gavito'),
-    ('gilberto.gaxiola',    'Gaxiola Castro',       'Gilberto',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'gilberto.gaxiola'),
-    ('d.geissert.kientz',   'Geissert Kientz',      'D.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'd.geissert.kientz'),
-    ('peter.gerritsen',     'W. Gerritsen',         'Peter R.',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'peter.gerritsen'),
-    ('joaquin.gimenez',     'Giménez de Azcarate',  'Joaquin',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'joaquin.gimenez'),
-    ('pierre.glynn',        'Glynn',                'Pierre',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'pierre.glynn'),
-    ('avto.gogichaishvili', 'Gogichaishvili',       'Avto',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'gogichaishvili'),
-    ('j.gonzález.areu',     'González Areu',        'J.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'gonzález.areu'),
-    ('claudio.gonzalez',    'González Arqueros',    'Claudio',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'claudio.gonzalez'),
-    ('carlos.gonzalez',     'González Esquivel',    'Carlos',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'carlos.gonzalez'),
-    ('gaspar.gonzalez',     'González Sansón',      'Gaspar',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'gaspar.gonzalez'),
-    ('maria.gonzalez',      'González Santiago',   'María Virginia','OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'maria.gonzalez'),
-    ('luis.gopar',          'Gopar Merino',         'Luis Fernando','OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'luis.gopar'),
-    ('solange.grimoldi',    'Grimoldi',             'Solange',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'solange.grimoldi'),
-    ('maximilien.gueze',    'Gueze',                'Maximilien',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'maximilien.gueze'),
-    ('francisco.gurri',     'Gurri',                'Francisco',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'francisco.gurri'),
-    ('gemma.gomez',         'Gómez Castillo',       'Gemma',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'gemma.gomez'),
-    ('enrique.gomez',       'Gómez Pech',           'Enrique',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'enrique.gomez'),
-    ('ernest.williams',     'H. Williams',          'Ernest',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ernest.williams'),
-    ('muki.haklay',         'Haklay',               'Muki',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'muki.haklay'),
-    ('vm.hernandez.madrigal', 'Hernández Madrigal', 'V. M.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'vm.hernandez'),
-    ('aldo.hernandez',      'Hernández  Magaña',    'Aldo I.',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'aldo.hernandez'),
-    ('benigno.hernandez',   'Hernández de la Torre','Benigno',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'benigno.hernandez'),
-    ('ruben.hernandez',     'Hernández Morales',    'Ruben',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ruben.hernandez'),
-    ('keith.hobson',        'Hobson',               'Keith A.',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'hobson.keith'),
-    ('isabel.ramirez',      'Ramirez',              'M. Isabel',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'isabel.ramirez'),
-    ('e.vera.isunza',       'Isunza Vera',          'E.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'e.vera.isunza'),
-    ('daniel.iura',         'Iura Gonzalez',        'Daniel',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'daniel.iura'),
-    ('thomas.j.ihl',        'J. Ihl',               'Thomas',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'thomas.j.ihl'),
-    ('jaime.urrutia',       'Urrutia Fucugauchi',   'Jaime',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jaime.urrutia'),
-    ('pablo.jaramillo',     'Jaramillo López',      'Pablo',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'pablo.jaramillo'),
-    ('ramon.jarquin',       'Jarquin Gálvez',       'Ramón',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ramon.jarquin'),
-    ('adrian.mas',          'Jean François',        'Adrián Mas',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'adrian.mas'),
-    ('r.jimenez.ramirez',   'Jiménez Ramírez',      'R.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'r.jimenez'),
-    ('erik.juarez',         'Juarez Blanquet',      'Erik',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'erik.juarez'),
-    ('elias.ucakuwun',      'K. Ucakuwun',          'Elias',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'elias.ucakuwun'),
-    ('ken.oyama',           'Oyama',                'Alberto Ken',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ken.oyama'),
-    ('maxime.kieffer',      'Kieffer',              'Maxime',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'maxime.kieffer'),
-    ('nagesh.kolagani',     'Kolagani',             'Nagesh',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'nagesh.kolagani'),
-    ('marit.kraagt',        'Kraagt',               'Marit',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'marit.kraagt'),
-    ('rosario.langrave',    'Langrave',             'Rosario',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'rosario.langrave'),
-    ('antonio.larrazabal',  'Larrazábal De la Vía', 'Antonio',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'a.larrazabal'),
-    ('Lemoine,rodríguez',   'Lemoine Rodríguez',    'R.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'Lemoine,rodríguez'),
-    ('rodrigo.liendo',      'Liendo',               'Rodrigo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'rodrigo.liendo'),
-    ('a.lomelí.jimenez',    'Lomelí Jiménez',       'A.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'a.lomelí'),
-    ('lourdes,gonzalez',    'González Arqueros',    'M. Lourdes',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'lourdes,gonzalez'),
-    ('jesus.luna',          'Luna Béjar',           'Jesús Alonso', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jesus.luna'),
-    ('cruz.lopez',          'López Contreras',      'Cruz',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'cruz.lopez'),
-    ('erna.lopez',          'López Granados',       'Erna M.',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'erna.lopez'),
-    ('gilbert.nduru',       'M. Nduru',             'Gilbert',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'gilbert.nduru'),
-    ('miguel.maass',        'Maass Moreno',         'Miguel',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'manuel.maass'),
-    ('javier.martinez',     'Martínez',             'Javier',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'javier.martinez'),
-    ('y.martinez.ruiz',     'Martínez Ruíz',        'Y.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'y.martinez.ruiz'),
-    ('tomas.martinez',      'Martínez Saldaña',     'Tomás',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'tomas.martinez'),
-    ('ayesa.martinez',      'Martínez Serrano',     'Ayesa',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ayesa.martinez'),
-    ('leonardo.martinez',   'Martínez Torres',      'H. Leonardo',  'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'leonardo.martinez'),
-    ('emily.mcclung',       'McClung de Tapia',     'Emily',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'emily.mcclung'),
-    ('paula.melic',         'Melic',                'Paula',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'paula.melic'),
-    ('josemaria.michel',    'Michel Fuentes',       'Jose Maria',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'josemaria.michel'),
-    ('rosa.molina',         'Molina Rojas',         'Rosa María',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'rosa.molina'),
-    ('jc.mora.chaparro',    'Mora Chaparro',        'J. C.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jc.mora.chaparro'),
-    ('j.morales.contreras', 'Morales Contreras',    'J.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'j.morales.contreras'),
-    ('jaime.morales',       'Morales Hernández',    'Jaime',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jaime.morales'),
-    ('helda.morales',       'Morales Iglesias',     'Helda',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'h.morales.iglesias'),
-    ('juan.morales',        'Morales',              'Juan J.',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'juan.morales'),
-    ('wendy.morales',       'Morales',              'Wendy',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'wendy.morales'),
+    ('jorge.gama',          'Gama Castro',          'Jorge E.',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jorge.gama'),
+    ('andres.garcia',       'Garcia',               'Andres',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'andres.garcia'),
+    ('ana.garcia',          'García de Fuentes',    'Ana',          'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ana.garcia'),
+    ('eduardo.garcia',      'García',               'Eduardo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'eduardo.garcia'),
+    ('f.gavi.reyes',        'Gavi Reyes',           'F.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'f.gavi.reyes'),
+    ('mayra.gavito',        'Gavito',               'Mayra',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'mayra.gavito'),
+    ('gilberto.gaxiola',    'Gaxiola Castro',       'Gilberto',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'gilberto.gaxiola'),
+    ('d.geissert.kientz',   'Geissert Kientz',      'D.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'd.geissert.kientz'),
+    ('peter.gerritsen',     'W. Gerritsen',         'Peter R.',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'peter.gerritsen'),
+    ('joaquin.gimenez',     'Giménez de Azcarate',  'Joaquin',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'joaquin.gimenez'),
+    ('pierre.glynn',        'Glynn',                'Pierre',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'pierre.glynn'),
+    ('avto.gogichaishvili', 'Gogichaishvili',       'Avto',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'gogichaishvili'),
+    ('j.gonzález.areu',     'González Areu',        'J.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'gonzález.areu'),
+    ('claudio.gonzalez',    'González Arqueros',    'Claudio',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'claudio.gonzalez'),
+    ('carlos.gonzalez',     'González Esquivel',    'Carlos',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'carlos.gonzalez'),
+    ('gaspar.gonzalez',     'González Sansón',      'Gaspar',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'gaspar.gonzalez'),
+    ('maria.gonzalez',      'González Santiago',   'María Virginia','OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'maria.gonzalez'),
+    ('luis.gopar',          'Gopar Merino',         'Luis Fernando','OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'luis.gopar'),
+    ('solange.grimoldi',    'Grimoldi',             'Solange',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'solange.grimoldi'),
+    ('maximilien.gueze',    'Gueze',                'Maximilien',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'maximilien.gueze'),
+    ('francisco.gurri',     'Gurri',                'Francisco',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'francisco.gurri'),
+    ('gemma.gomez',         'Gómez Castillo',       'Gemma',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'gemma.gomez'),
+    ('enrique.gomez',       'Gómez Pech',           'Enrique',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'enrique.gomez'),
+    ('ernest.williams',     'H. Williams',          'Ernest',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ernest.williams'),
+    ('muki.haklay',         'Haklay',               'Muki',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'muki.haklay'),
+    ('vm.hernandez.madrigal', 'Hernández Madrigal', 'V. M.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'vm.hernandez'),
+    ('aldo.hernandez',      'Hernández  Magaña',    'Aldo I.',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'aldo.hernandez'),
+    ('benigno.hernandez',   'Hernández de la Torre','Benigno',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'benigno.hernandez'),
+    ('ruben.hernandez',     'Hernández Morales',    'Ruben',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ruben.hernandez'),
+    ('keith.hobson',        'Hobson',               'Keith A.',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'hobson.keith'),
+    ('isabel.ramirez',      'Ramirez',              'M. Isabel',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'isabel.ramirez'),
+    ('e.vera.isunza',       'Isunza Vera',          'E.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'e.vera.isunza'),
+    ('daniel.iura',         'Iura Gonzalez',        'Daniel',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'daniel.iura'),
+    ('thomas.j.ihl',        'J. Ihl',               'Thomas',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'thomas.j.ihl'),
+    ('jaime.urrutia',       'Urrutia Fucugauchi',   'Jaime',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jaime.urrutia'),
+    ('pablo.jaramillo',     'Jaramillo López',      'Pablo',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'pablo.jaramillo'),
+    ('ramon.jarquin',       'Jarquin Gálvez',       'Ramón',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ramon.jarquin'),
+    ('adrian.mas',          'Jean François',        'Adrián Mas',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'adrian.mas'),
+    ('r.jimenez.ramirez',   'Jiménez Ramírez',      'R.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'r.jimenez'),
+    ('erik.juarez',         'Juarez Blanquet',      'Erik',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'erik.juarez'),
+    ('elias.ucakuwun',      'K. Ucakuwun',          'Elias',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'elias.ucakuwun'),
+    ('ken.oyama',           'Oyama',                'Alberto Ken',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ken.oyama'),
+    ('maxime.kieffer',      'Kieffer',              'Maxime',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'maxime.kieffer'),
+    ('nagesh.kolagani',     'Kolagani',             'Nagesh',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'nagesh.kolagani'),
+    ('marit.kraagt',        'Kraagt',               'Marit',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'marit.kraagt'),
+    ('rosario.langrave',    'Langrave',             'Rosario',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'rosario.langrave'),
+    ('antonio.larrazabal',  'Larrazábal De la Vía', 'Antonio',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'a.larrazabal'),
+    ('Lemoine,rodríguez',   'Lemoine Rodríguez',    'R.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'Lemoine,rodríguez'),
+    ('rodrigo.liendo',      'Liendo',               'Rodrigo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'rodrigo.liendo'),
+    ('a.lomelí.jimenez',    'Lomelí Jiménez',       'A.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'a.lomelí'),
+    ('lourdes,gonzalez',    'González Arqueros',    'M. Lourdes',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'lourdes,gonzalez'),
+    ('jesus.luna',          'Luna Béjar',           'Jesús Alonso', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jesus.luna'),
+    ('cruz.lopez',          'López Contreras',      'Cruz',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'cruz.lopez'),
+    ('erna.lopez',          'López Granados',       'Erna M.',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'erna.lopez'),
+    ('gilbert.nduru',       'M. Nduru',             'Gilbert',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'gilbert.nduru'),
+    ('miguel.maass',        'Maass Moreno',         'Miguel',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'manuel.maass'),
+    ('javier.martinez',     'Martínez',             'Javier',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'javier.martinez'),
+    ('y.martinez.ruiz',     'Martínez Ruíz',        'Y.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'y.martinez.ruiz'),
+    ('tomas.martinez',      'Martínez Saldaña',     'Tomás',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'tomas.martinez'),
+    ('ayesa.martinez',      'Martínez Serrano',     'Ayesa',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ayesa.martinez'),
+    ('leonardo.martinez',   'Martínez Torres',      'H. Leonardo',  'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'leonardo.martinez'),
+    ('emily.mcclung',       'McClung de Tapia',     'Emily',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'emily.mcclung'),
+    ('paula.melic',         'Melic',                'Paula',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'paula.melic'),
+    ('josemaria.michel',    'Michel Fuentes',       'Jose Maria',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'josemaria.michel'),
+    ('rosa.molina',         'Molina Rojas',         'Rosa María',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'rosa.molina'),
+    ('jc.mora.chaparro',    'Mora Chaparro',        'J. C.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jc.mora.chaparro'),
+    ('j.morales.contreras', 'Morales Contreras',    'J.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'j.morales.contreras'),
+    ('jaime.morales',       'Morales Hernández',    'Jaime',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jaime.morales'),
+    ('helda.morales',       'Morales Iglesias',     'Helda',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'h.morales.iglesias'),
+    ('juan.morales',        'Morales',              'Juan J.',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'juan.morales'),
+    ('wendy.morales',       'Morales',              'Wendy',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'wendy.morales'),
 
-    ('julius.muchemi',      'Muchemi',              'Julius G.',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'julius.muchemi'),
-    ('antonio.mendez',      'Méndez Lemus',         'Antonio',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'antonio.mendez'),
-    ('alfred.gichu',        'N. Gichu',             'Alfred',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alfred.gichu'),
-    ('francis.wegulo',      'N. Wegulo',            'Francis',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'francis.wegulo'),
-    ('antonio.napoletano',  'Napoletano',           'Antonio',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'antonio.napoletano'),
-    ('alejandro.nene',      'Nené Preciado',  'Alejandro Jalmacin', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alejandro.nene'),
-    ('julie.noriega',       'Noriega',              'Julie',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'julie.noriega'),
-    ('ricardo.napoles',     'Nápoles',              'Ricardo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ricardo.napoles'),
-    ('karen.oberhauser',    'Oberhauser',           'Karen S.',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'karen.oberhauser'),
-    ('luis.olivares',       'Olivares Martínez',    'Luis Daniel',  'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'luis.olivares'),
-    ('eduardo.orihuela',    'Orihuela Estefan',     'Eduardo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'eduardo.orihuela'),
-    ('alberto.orozco',      'Orozco Moreno',        'Alberto',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alberto.orozco'),
-    ('marti.orta',          'Orta Martínez',        'Martí',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'marti.orta'),
-    ('beatriz.ortega',      'Ortega',               'Beatriz',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'beatriz.ortega'),
-    ('s.ortiz.garcia',      'Ortiz García',         'S.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 's.ortiz.garcia'),
-    ('laura.osorio',        'Osorio',               'Laura P.',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'laura.osorio'),
-    ('frank.ostermann',     'Ostermann',            'Frank',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'frank.ostermann'),
-    ('d.palma.lopez',       'Palma López',          'D.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'd.palma.lopez'),
-    ('hugo.perales',        'Perales',              'Hugo',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'hugo.perales'),
-    ('sol.perez',           'Perez Jimenez',        'Sol',          'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'sol.perez'),
-    ('suzanne.pierce',      'Pierce',               'Suzanne',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'suzanne.pierce'),
-    ('jose.plancarte',      'Plancarte Trujillo',   'José Aldo',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jose.plancarte'),
-    ('sandra.pola',         'Pola Villaseñor',      'Sandra',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'sandra.pola'),
-    ('juan.pulido',         'Pulido',               'Juan',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'juan.pulido'),
-    ('irene.perez',         'Pérez Llorente',       'Irene',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'irene.perez'),
-    ('diego.perez',         'Pérez Salicrup',       'Diego Raúl',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'diego.perez'),
-    ('azucena.perez',       'Pérez Vega',           'Azucena',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'azucena.perez'),
-    ('jorge.quetzal',       'Quetzal Argueta',      'Jorge',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jorge.quetzal'),
-    ('giacomo.gambaldi',    'Rambaldi',             'Giacomo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'giacomo.gambaldi'),
+    ('julius.muchemi',      'Muchemi',              'Julius G.',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'julius.muchemi'),
+    ('antonio.mendez',      'Méndez Lemus',         'Antonio',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'antonio.mendez'),
+    ('alfred.gichu',        'N. Gichu',             'Alfred',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alfred.gichu'),
+    ('francis.wegulo',      'N. Wegulo',            'Francis',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'francis.wegulo'),
+    ('antonio.napoletano',  'Napoletano',           'Antonio',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'antonio.napoletano'),
+    ('alejandro.nene',      'Nené Preciado',  'Alejandro Jalmacin', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alejandro.nene'),
+    ('julie.noriega',       'Noriega',              'Julie',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'julie.noriega'),
+    ('ricardo.napoles',     'Nápoles',              'Ricardo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ricardo.napoles'),
+    ('karen.oberhauser',    'Oberhauser',           'Karen S.',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'karen.oberhauser'),
+    ('luis.olivares',       'Olivares Martínez',    'Luis Daniel',  'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'luis.olivares'),
+    ('eduardo.orihuela',    'Orihuela Estefan',     'Eduardo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'eduardo.orihuela'),
+    ('alberto.orozco',      'Orozco Moreno',        'Alberto',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alberto.orozco'),
+    ('marti.orta',          'Orta Martínez',        'Martí',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'marti.orta'),
+    ('beatriz.ortega',      'Ortega',               'Beatriz',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'beatriz.ortega'),
+    ('s.ortiz.garcia',      'Ortiz García',         'S.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 's.ortiz.garcia'),
+    ('laura.osorio',        'Osorio',               'Laura P.',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'laura.osorio'),
+    ('frank.ostermann',     'Ostermann',            'Frank',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'frank.ostermann'),
+    ('d.palma.lopez',       'Palma López',          'D.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'd.palma.lopez'),
+    ('hugo.perales',        'Perales',              'Hugo',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'hugo.perales'),
+    ('sol.perez',           'Perez Jimenez',        'Sol',          'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'sol.perez'),
+    ('suzanne.pierce',      'Pierce',               'Suzanne',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'suzanne.pierce'),
+    ('jose.plancarte',      'Plancarte Trujillo',   'José Aldo',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jose.plancarte'),
+    ('sandra.pola',         'Pola Villaseñor',      'Sandra',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'sandra.pola'),
+    ('juan.pulido',         'Pulido',               'Juan',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'juan.pulido'),
+    ('irene.perez',         'Pérez Llorente',       'Irene',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'irene.perez'),
+    ('diego.perez',         'Pérez Salicrup',       'Diego Raúl',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'diego.perez'),
+    ('azucena.perez',       'Pérez Vega',           'Azucena',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'azucena.perez'),
+    ('jorge.quetzal',       'Quetzal Argueta',      'Jorge',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jorge.quetzal'),
+    ('giacomo.gambaldi',    'Rambaldi',             'Giacomo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'giacomo.gambaldi'),
 
-    ('palaniappan.ramu',    'Ramu',                 'Palaniappan',  'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'palaniappan.ramu'),
-    ('diana.ramirez',       'Ramírez Mejía',        'Diana',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'diana.ramirez'),
-    ('lg.ramirez.sanchez',  'Ramírez Sanchez',      'L. G.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'lg.ramirez.sanchez'),
-    ('hugo.ramirez',        'Ramírez Tobías',       'Hugo Magdaleno','OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'hugo.ramirez'),
-    ('f.garcía.oliva',      'García Oliva',         'F.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'f.garcía.oliva'),
-    ('f.pineda.garcia',     'Pineda-García',        'F.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'f.pineda.garcia'),
-    ('i.torres.garcia',     'Torres-García',        'I.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'i.torres.garcia'),
-    ('f.pena.vega',         'Peña Vega',            'F.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'f.pena.vega'),
-    ('saul.alvarez',        'Álvarez Borrego',      'Saúl',         'OTRO', Pais.objects.get(pais='México').id,  Ciudad.objects.get(ciudad='Morelia').id, '-', 'saul.alvarez'),
+    ('palaniappan.ramu',    'Ramu',                 'Palaniappan',  'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'palaniappan.ramu'),
+    ('diana.ramirez',       'Ramírez Mejía',        'Diana',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'diana.ramirez'),
+    ('lg.ramirez.sanchez',  'Ramírez Sanchez',      'L. G.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'lg.ramirez.sanchez'),
+    ('hugo.ramirez',        'Ramírez Tobías',       'Hugo Magdaleno','OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'hugo.ramirez'),
+    ('f.garcía.oliva',      'García Oliva',         'F.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'f.garcía.oliva'),
+    ('f.pineda.garcia',     'Pineda-García',        'F.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'f.pineda.garcia'),
+    ('i.torres.garcia',     'Torres-García',        'I.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'i.torres.garcia'),
+    ('f.pena.vega',         'Peña Vega',            'F.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'f.pena.vega'),
+    ('saul.alvarez',        'Álvarez Borrego',      'Saúl',         'OTRO', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', 'saul.alvarez'),
 
-    ('selene.rangel',       'Rangel Landa',         'Selene',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'selene.rangel'),
-    ('omar.masera',         'Masera',               'Omar Raul',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'omar.masera'),
-    ('j.reyez.lopez',       'Reyes López',          'J.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'j.reyez.lopez'),
-    ('mercedes.rivera',     'Rivera León',          'Mercedes',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'mercedes.rivera'),
-    ('alexis.rivero',       'Rivero Romero',        'Alexis Daniela', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alexis.rivero'),
-    ('yesenia.rodriguez',   'Rodríguez López',      'Yesenia',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'yesenia.rodriguez'),
-    ('g.rodriguez.tapia',   'Rodríguez Tapia',      'G.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'g.rodriguez.tapia'),
-    ('paul.roge',           'Roge',                 'Paul',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'paul.roge'),
-    ('yessica.romero',      'Romero Bautista',      'Yessica Angélica', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'yessica.romero'),
-    ('fernando.rosete',     'Rosete Vergés',        'Fernando',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'fernando.rosete'),
-    ('jeffrey.ross',        'Ross Ibarra',          'Jeffrey',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jeffrey.ross'),
-    ('peter.rosset',        'Rosset',               'Peter',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'peter.rosset'),
-    ('andrew.roth',         'Roth',                 'Andrew',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'andrew.roth'),
-    ('ryan.morris',         'Ryan Norris',          'D.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ryan.morris'),
-    ('amalio.santacruz',    'Santacruz Varela',     'Amalio',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'amalio.santacruz'),
-    ('ge.santana.huicochea', 'Santana Huicochea',   'G. E.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ge.santana.huicochea'),
-    ('laura.santillan',     'Santillán Hernández',  'Laura Alicia', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'laura.santillan'),
-    ('didac.santos',        'Santos Fita',          'Didac',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'didac.santos'),
-    ('daniel.schwindt',     'Schwindt',             'Daniel',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'dalien.schwindt'),
-    ('sergey.sedov',        'Sedov',                'Sergey',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'sergey.sedov'),
-    ('paola.segundo',        'Segundo Métay',        'Paola',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'pola.segundo'),
-    ('itzi.segundo',        'Segundo',              'Itzi',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'itzi.segundo'),
-    ('tzitzi.sharhi',       'Sharhi Delgado',       'Tzitzi',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'tzitzi.sharhi'),
-    ('francisco.silva',     'Silva Bátiz',     'Francisco de Asís', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'francisco.silva'),
-    ('peter.simmons',       'Simmons',              'Peter',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'peter.simmons'),
-    ('m.solange.grimoldi',  'Solange Grimoldi',     'M.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'm.solange.grimoldi'),
-    ('ana.soler',           'Soler Arechalde',      'Ana M.',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ana.soler'),
-    ('jose.solis',          'Solis Navarrete',      'José Alberto', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jose.solis'),
-    ('elizabeth.solleiro',  'Solleiro Rebolledo',   'Elizabeth',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'elizabeth.solleiro'),
-    ('f.solis.dominguez',   'Solís Domínguez',      'F.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'f.solis.dominguez'),
+    ('selene.rangel',       'Rangel Landa',         'Selene',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'selene.rangel'),
+    ('omar.masera',         'Masera',               'Omar Raul',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'omar.masera'),
+    ('j.reyez.lopez',       'Reyes López',          'J.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'j.reyez.lopez'),
+    ('mercedes.rivera',     'Rivera León',          'Mercedes',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'mercedes.rivera'),
+    ('alexis.rivero',       'Rivero Romero',        'Alexis Daniela', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alexis.rivero'),
+    ('yesenia.rodriguez',   'Rodríguez López',      'Yesenia',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'yesenia.rodriguez'),
+    ('g.rodriguez.tapia',   'Rodríguez Tapia',      'G.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'g.rodriguez.tapia'),
+    ('paul.roge',           'Roge',                 'Paul',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'paul.roge'),
+    ('yessica.romero',      'Romero Bautista',      'Yessica Angélica', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'yessica.romero'),
+    ('fernando.rosete',     'Rosete Vergés',        'Fernando',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'fernando.rosete'),
+    ('jeffrey.ross',        'Ross Ibarra',          'Jeffrey',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jeffrey.ross'),
+    ('peter.rosset',        'Rosset',               'Peter',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'peter.rosset'),
+    ('andrew.roth',         'Roth',                 'Andrew',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'andrew.roth'),
+    ('ryan.morris',         'Ryan Norris',          'D.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ryan.morris'),
+    ('amalio.santacruz',    'Santacruz Varela',     'Amalio',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'amalio.santacruz'),
+    ('ge.santana.huicochea', 'Santana Huicochea',   'G. E.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ge.santana.huicochea'),
+    ('laura.santillan',     'Santillán Hernández',  'Laura Alicia', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'laura.santillan'),
+    ('didac.santos',        'Santos Fita',          'Didac',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'didac.santos'),
+    ('daniel.schwindt',     'Schwindt',             'Daniel',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'dalien.schwindt'),
+    ('sergey.sedov',        'Sedov',                'Sergey',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'sergey.sedov'),
+    ('paola.segundo',        'Segundo Métay',        'Paola',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'pola.segundo'),
+    ('itzi.segundo',        'Segundo',              'Itzi',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'itzi.segundo'),
+    ('tzitzi.sharhi',       'Sharhi Delgado',       'Tzitzi',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'tzitzi.sharhi'),
+    ('francisco.silva',     'Silva Bátiz',     'Francisco de Asís', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'francisco.silva'),
+    ('peter.simmons',       'Simmons',              'Peter',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'peter.simmons'),
+    ('m.solange.grimoldi',  'Solange Grimoldi',     'M.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'm.solange.grimoldi'),
+    ('ana.soler',           'Soler Arechalde',      'Ana M.',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ana.soler'),
+    ('jose.solis',          'Solis Navarrete',      'José Alberto', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jose.solis'),
+    ('elizabeth.solleiro',  'Solleiro Rebolledo',   'Elizabeth',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'elizabeth.solleiro'),
+    ('f.solis.dominguez',   'Solís Domínguez',      'F.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'f.solis.dominguez'),
 
-    ('roger.guevara',       'Guevara Hernández',    'Roger',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'roger.guevara'),
-    ('jl.palacio.prieto',   'Palacio Prieto',       'J. L.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jl.palacio.prieto'),
-    ('p.moreno.casasola',   'Moreno Casasola',      'P.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'p.moreno.casasola'),
-    ('ja.lopez.portillo',   'López Portillo',       'J. A.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'j.lopez.portillo'),
+    ('roger.guevara',       'Guevara Hernández',    'Roger',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'roger.guevara'),
+    ('jl.palacio.prieto',   'Palacio Prieto',       'J. L.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jl.palacio.prieto'),
+    ('p.moreno.casasola',   'Moreno Casasola',      'P.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'p.moreno.casasola'),
+    ('ja.lopez.portillo',   'López Portillo',       'J. A.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'j.lopez.portillo'),
 
-    ('h.hernandez.trejo',   'Hernández Trejo',      'H.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'h.hernandez.trejo'),
-    ('m.vargas.sandoval',   'Vargas Sandoval',      'M.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'm.vargas.sandoval'),
-    ('v.rico.gray',         'Zamora Crescencio',    'V.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'v.rico.gray'),
-    ('c.gutierrez.baez',    'Gutiérrez Báez',       'C.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'c.gutierrez.baez'),
-    ('m.domínguez.c',       'Domìnguez Carrasco',   'M. R.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'm.domínguez.c'),
-    ('mt.camacho.olmedo',   'Camacho Olmedo',       'M. T.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'mt.camacho.olmedo'),
-    ('teresa.ramirez',      'Ramírez Herrera',      'María Teresa', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'teresa.ramirez'),
-    ('y.calvillo.garcía',   'Calvillo García',      'Y.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'y.calvillo.garcía'),
-    ('c.delgado.trejo',     'Delgado Trejo',        'C.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'c.delgado.trejo'),
-    ('claudia.uberhuaga',   'Uberhuaga',            'Claudia',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'claudia.uberhuaga'),
-    ('jacquie.burgess',     'Burgess',              'Jacquie',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jacquie.burgess'),
-    ('m.kinyanjui',         'Kinyanjui',            'M.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'm.kinyanjui'),
-    ('ricardo.saucedo',     'Saucedo',              'Ricardo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ricardo.saucedo'),
-    ('l.morales.barquero',  'Morales Barquero',     'L.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'l.morales.barquero'),
-    ('daniel.slayback',     'A. Slayback',          'Daniel',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'daniel.slayback'),
-    ('guillermo.figueroa',  'Figueroa Béjar',     'Guillermo Iván', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'guillermo.figueroa'),
-    ('monica.figueroa',     'Figueroa Béjar',     'Mónica Adriana', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'monica.figueroa'),
-    ('maria.figueroa',      'Figueroa Béjar',  'María del Socorro', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'maria.figueroa'),
-    ('yair.merlin',         'Merlín Uribe',         'Yair',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'yair.merlin'),
-    ('robert.hijmans',      'Hijmans',              'Hijmans',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'robert.hijmans'),
-    ('ramon.mariaca',       'Mariaca Méndez',       'Ramón',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'ramon.mariaca'),
-    ('bruce.ferguson',      'Ferguson',             'Bruce',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'bruce.ferguson'),
-    ('jorge.morfin',        'Morfin Rios',          'Jorge',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jorge.morfin'),
-    ('citlalli.lopez',      'López Binqüist',       'Citlalli',     'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'citlalli.lopez'),
+    ('h.hernandez.trejo',   'Hernández Trejo',      'H.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'h.hernandez.trejo'),
+    ('m.vargas.sandoval',   'Vargas Sandoval',      'M.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'm.vargas.sandoval'),
+    ('v.rico.gray',         'Zamora Crescencio',    'V.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'v.rico.gray'),
+    ('c.gutierrez.baez',    'Gutiérrez Báez',       'C.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'c.gutierrez.baez'),
+    ('m.domínguez.c',       'Domìnguez Carrasco',   'M. R.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'm.domínguez.c'),
+    ('mt.camacho.olmedo',   'Camacho Olmedo',       'M. T.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'mt.camacho.olmedo'),
+    ('teresa.ramirez',      'Ramírez Herrera',      'María Teresa', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'teresa.ramirez'),
+    ('y.calvillo.garcía',   'Calvillo García',      'Y.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'y.calvillo.garcía'),
+    ('c.delgado.trejo',     'Delgado Trejo',        'C.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'c.delgado.trejo'),
+    ('claudia.uberhuaga',   'Uberhuaga',            'Claudia',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'claudia.uberhuaga'),
+    ('jacquie.burgess',     'Burgess',              'Jacquie',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jacquie.burgess'),
+    ('m.kinyanjui',         'Kinyanjui',            'M.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'm.kinyanjui'),
+    ('ricardo.saucedo',     'Saucedo',              'Ricardo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ricardo.saucedo'),
+    ('l.morales.barquero',  'Morales Barquero',     'L.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'l.morales.barquero'),
+    ('daniel.slayback',     'A. Slayback',          'Daniel',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'daniel.slayback'),
+    ('guillermo.figueroa',  'Figueroa Béjar',     'Guillermo Iván', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'guillermo.figueroa'),
+    ('monica.figueroa',     'Figueroa Béjar',     'Mónica Adriana', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'monica.figueroa'),
+    ('maria.figueroa',      'Figueroa Béjar',  'María del Socorro', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'maria.figueroa'),
+    ('yair.merlin',         'Merlín Uribe',         'Yair',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'yair.merlin'),
+    ('robert.hijmans',      'Hijmans',              'Hijmans',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'robert.hijmans'),
+    ('ramon.mariaca',       'Mariaca Méndez',       'Ramón',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'ramon.mariaca'),
+    ('bruce.ferguson',      'Ferguson',             'Bruce',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'bruce.ferguson'),
+    ('jorge.morfin',        'Morfin Rios',          'Jorge',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jorge.morfin'),
+    ('citlalli.lopez',      'López Binqüist',       'Citlalli',     'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'citlalli.lopez'),
 
 #
 
-    ('neyra.sosa',          'Sosa Gutiérrez',       'Neyra',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'neyra.sosa'),
-    ('lorena.soto',         'Soto Pinto',           'Lorena',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'lorena.soto'),
-    ('romina.spano',        'Spano',                'Romina C.',    'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'romina.spano'),
-    ('a.sanchez.duque',     'Sánchez Duque',        'A.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'a.sanchez.duque'),
-    ('julio.sanchez',       'Sánchez Escudero',     'Julio',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'julio.sanchez'),
-    ('jm.sanchez.nunez',    'Sánchez Núñez',        'J. M.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jm.sanchez'),
-    ('cristobal.sanchez',   'Sánchez Sánchez',      'Cristóbal Daniel', 'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'cristobal.sanchez'),
-    ('hind.taud',           'Taud',                 'Hind',         'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'hind.taud'),
-    ('keiko.tatanisho',     'Teranisho Castillo',   'Keiko',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'keiko.tatanisho'),
-    ('birgit.terhorst',     'Terhorst',             'Birgit',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'birgit.terhorst'),
-    ('diego.torres',        'Torres Huerta',        'Diego',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'diego.torres'),
-    ('jf.torrescano.valle', 'Torrescano Valle',     'J. F.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jf.torrescano.valle'),
-    ('tyler.flockhart',     'Tyler Flockhart',      'D. T.',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'tyler.flockhart'),
-    ('nicolas.vargas',      'Vargas Ramírez',       'Nicolás',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'nicolas.vargas'),
-    ('jeroen.verplanke',    'Verplanke',            'Jeroen',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'jeroen.verplanke'),
-    ('laura.villamil',      'Villamil Echeverri',   'Laura',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'laura.villamil'),
-    ('alexey.voinov',       'Voinov',               'Alexey',       'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'alexey.voinov'),
-    ('lorenzo.vazquez',     'Vázquez Selem',        'Lorenzo',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'lorenzo.vazquez'),
-    ('leonard.wassenaar',   'Wassenaar',            'Leonard I.',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'leonard.wassenaar'),
-    ('martina.wilde',       'Wilde',                'Martina',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'martina.wilde'),
-    ('antoinette.winklerprins', 'WinklerPrins',     'Antoinette',   'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'winklerPrins'),
-    ('j.zavala.cruz',       'Zavala Cruz',          'J.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'j.zavala.cruz'),
-    ('isela.zarmeno',       'Zermeño',              'Isela',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'isela.zarmeño'),
-    ('zirion.martinez',     'Zirión Martínez',      'M.',           'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'zirion.martinez'),
-    ('n.aguila.carrasco',   'Águila Carrasco',      'N',            'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'aguila.carrasco'),
-    ('pablo.alvarez',       'Álvarez',              'Pablo',        'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'pablo.alvarez'),
-    ('l.menéndez.carrera',  'Menéndez Carrera',     'L',            'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'l.menéndez.carrera'),
-    ('georges.seingier',    'Seingier',             'Georges',      'OTRO', Pais.objects.get(pais='México').id, Ciudad.objects.get(ciudad='Morelia').id, '-', 'georges.seingier')
+    ('neyra.sosa',          'Sosa Gutiérrez',       'Neyra',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'neyra.sosa'),
+    ('lorena.soto',         'Soto Pinto',           'Lorena',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'lorena.soto'),
+    ('romina.spano',        'Spano',                'Romina C.',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'romina.spano'),
+    ('a.sanchez.duque',     'Sánchez Duque',        'A.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'a.sanchez.duque'),
+    ('julio.sanchez',       'Sánchez Escudero',     'Julio',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'julio.sanchez'),
+    ('jm.sanchez.nunez',    'Sánchez Núñez',        'J. M.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jm.sanchez'),
+    ('cristobal.sanchez',   'Sánchez Sánchez',      'Cristóbal Daniel', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'cristobal.sanchez'),
+    ('hind.taud',           'Taud',                 'Hind',         'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'hind.taud'),
+    ('keiko.tatanisho',     'Teranisho Castillo',   'Keiko',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'keiko.tatanisho'),
+    ('birgit.terhorst',     'Terhorst',             'Birgit',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'birgit.terhorst'),
+    ('diego.torres',        'Torres Huerta',        'Diego',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'diego.torres'),
+    ('jf.torrescano.valle', 'Torrescano Valle',     'J. F.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jf.torrescano.valle'),
+    ('tyler.flockhart',     'Tyler Flockhart',      'D. T.',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'tyler.flockhart'),
+    ('nicolas.vargas',      'Vargas Ramírez',       'Nicolás',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'nicolas.vargas'),
+    ('jeroen.verplanke',    'Verplanke',            'Jeroen',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'jeroen.verplanke'),
+    ('laura.villamil',      'Villamil Echeverri',   'Laura',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'laura.villamil'),
+    ('alexey.voinov',       'Voinov',               'Alexey',       'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'alexey.voinov'),
+    ('lorenzo.vazquez',     'Vázquez Selem',        'Lorenzo',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'lorenzo.vazquez'),
+    ('leonard.wassenaar',   'Wassenaar',            'Leonard I.',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'leonard.wassenaar'),
+    ('martina.wilde',       'Wilde',                'Martina',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'martina.wilde'),
+    ('antoinette.winklerprins', 'WinklerPrins',     'Antoinette',   'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'winklerPrins'),
+    ('j.zavala.cruz',       'Zavala Cruz',          'J.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'j.zavala.cruz'),
+    ('isela.zarmeno',       'Zermeño',              'Isela',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'isela.zarmeño'),
+    ('zirion.martinez',     'Zirión Martínez',      'M.',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'zirion.martinez'),
+    ('n.aguila.carrasco',   'Águila Carrasco',      'N',            'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'aguila.carrasco'),
+    ('pablo.alvarez',       'Álvarez',              'Pablo',        'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'pablo.alvarez'),
+    ('l.menéndez.carrera',  'Menéndez Carrera',     'L',            'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'l.menéndez.carrera'),
+    ('georges.seingier',    'Seingier',             'Georges',      'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'georges.seingier')
 )
 
 for i in Usuarios:
@@ -1829,31 +1829,31 @@ TECH = ('Acoustics', 'Automation & Control Systems', 'Computer Science', 'Constr
 ARTH = ('Architecture', 'Art', 'Arts & Humanities Other Topics', 'Asian Studies', 'Classics', 'Dance', 'Film, Radio & Television', 'History', 'History & Philosophy of Science', 'Literature', 'Music', 'Philosophy', 'Religion', 'Theater')
 SOCS = ("Archaeology", "Area Studies", "Biomedical Social Sciences", "Business & Economics", "Communication", "Criminology & Penology", "Cultural Studies", "Demography", "Education & Educational Research", "Ethnic Studies", "Family Studies", "Geography", "Government & Law", "International Relations", "Linguistics", "Mathematical Methods In Social Sciences", "Psychology", "Public Administration", "Social Issues", "Social Sciences Other Topics", "Social Work", "Sociology", "Urban Studies", "Women's Studies")
 
-otra =  AreaConocimiento(categoria='ZTRA', area_conocimiento='Otra')
+otra =  AreaConocimiento(categoria='ZTRA', nombre='Otra')
 otra.save()
 
 for i in LSBM:
-    a = AreaConocimiento(categoria='LSBM', area_conocimiento=i)
+    a = AreaConocimiento(categoria='LSBM', nombre=i)
     a.save()
     print(a)
 
 for i in PHYS:
-    a = AreaConocimiento(categoria='PHYS', area_conocimiento=i)
+    a = AreaConocimiento(categoria='PHYS', nombre=i)
     a.save()
     print(a)
 
 for i in TECH:
-    a = AreaConocimiento(categoria='TECH', area_conocimiento=i)
+    a = AreaConocimiento(categoria='TECH', nombre=i)
     a.save()
     print(a)
 
 for i in ARTH:
-    a = AreaConocimiento(categoria='ARTH', area_conocimiento=i)
+    a = AreaConocimiento(categoria='ARTH', nombre=i)
     a.save()
     print(a)
 
 for i in SOCS:
-    a = AreaConocimiento(categoria='SOCS', area_conocimiento=i)
+    a = AreaConocimiento(categoria='SOCS', nombre=i)
     a.save()
     print(a)
 
@@ -1997,7 +1997,7 @@ CursosEspecializacion = (
 )
 
 for i in CursosEspecializacion:
-    c = CursoEspecializacion(nombre_curso=i[0], tipo=i[1], horas=int(i[2]), fecha_inicio=datetime(int(i[4]), int(i[3]), 1), fecha_fin=datetime(int(i[6]), int(i[5]), 28), dependencia=Dependencia.objects.get(dependencia=i[8][0]), modalidad='PRESENCIAL', area_conocimiento=AreaConocimiento.objects.get(area_conocimiento=i[7]), usuario=User.objects.get(rfc=i[9]))
+    c = CursoEspecializacion(nombre=i[0], tipo=i[1], horas=int(i[2]), fecha_inicio=datetime(int(i[4]), int(i[3]), 1), fecha_fin=datetime(int(i[6]), int(i[5]), 28), dependencia=Dependencia.objects.get(nombre=i[8][0]), modalidad='PRESENCIAL', area_conocimiento=AreaConocimiento.objects.get(nombre=i[7]), usuario=User.objects.get(rfc=i[9]))
     c.save()
     print(c)
 
@@ -2035,7 +2035,7 @@ Carreras = (
 # ('Licenciatura en Biología', 'Agronomía', 'Arqueología', 'Biología', 'Ciencias Ambientales', 'Licenciatura en Ciencias Antropológicas (orientación Arqueológica)', 'Ciencias del Mar', 'Economía', 'Geografía', 'Geografia Economica', 'Geography', 'Historia', 'Ingeniería Agrónoma', 'Ingeniería en Sistemas Computacionales', 'Ingeniería en Agroecología', 'Ingeniería Técnica Agrícola', 'Licenciatura en Administración de Empresas Agropecuárias', 'Licenciatura en Economía', 'Licenciatura en Ciencias Biológicas', 'Medicina Veterinaria Zootecnista', 'Sociología')
 
 for i in Carreras:
-    c = ProgramaLicenciatura(programa=i[0], area_conocimiento=AreaConocimiento.objects.get(area_conocimiento=i[1]))
+    c = ProgramaLicenciatura(nombre=i[0], area_conocimiento=AreaConocimiento.objects.get(nombre=i[1]))
     c.save()
     print(c)
 
@@ -2078,10 +2078,10 @@ Licenciaturas = (
 for i in Licenciaturas:
     if len(i[2]) > 1:
         dep_id = \
-        Dependencia.objects.filter(dependencia=i[2][0], institucion=Institucion.objects.get(institucion=i[2][1]).id)[0].id
+        Dependencia.objects.filter(nombre=i[2][0], institucion=Institucion.objects.get(nombre=i[2][1]).id)[0].id
     else:
-        dep_id = Dependencia.objects.get(dependencia=i[2][0]).id
-    c = Licenciatura(carrera=ProgramaLicenciatura.objects.get(programa=i[0]), dependencia=Dependencia.objects.get(pk=dep_id), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
+        dep_id = Dependencia.objects.get(nombre=i[2][0]).id
+    c = Licenciatura(carrera=ProgramaLicenciatura.objects.get(nombre=i[0]), dependencia=Dependencia.objects.get(pk=dep_id), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     c.save()
     print(c)
 
@@ -2117,7 +2117,7 @@ ProgramasMaestria = (
 )
 
 for i in ProgramasMaestria:
-    p = ProgramaMaestria(programa=i[0], area_conocimiento=AreaConocimiento.objects.get(area_conocimiento=i[1]))
+    p = ProgramaMaestria(nombre=i[0], area_conocimiento=AreaConocimiento.objects.get(nombre=i[1]))
     p.save()
     print("agregado programa de maestria " + i[0].upper() + " en area " + i[1].upper() )
 
@@ -2155,7 +2155,7 @@ Maestrias = (
 
 
 for i in Maestrias:
-    m = Maestria(programa=ProgramaMaestria.objects.get(programa=i[0]), dependencia=Dependencia.objects.get(dependencia=i[2]), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
+    m = Maestria(programa=ProgramaMaestria.objects.get(nombre=i[0]), dependencia=Dependencia.objects.get(nombre=i[2]), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     m.save()
     print(m)
 
@@ -2185,7 +2185,7 @@ ProgramasDoctorado = (
 ('Technology and Development', 'Science & Technology Other Topics'))
 
 for i in ProgramasDoctorado:
-    p = ProgramaDoctorado(programa=i[0], area_conocimiento=AreaConocimiento.objects.get(area_conocimiento=i[1]))
+    p = ProgramaDoctorado(nombre=i[0], area_conocimiento=AreaConocimiento.objects.get(nombre=i[1]))
     p.save()
     print("agregado programa de doctorado " + i[0].upper() + " en area " + i[1].upper() )
 
@@ -2220,17 +2220,17 @@ Doctorados = (
 #                              0                                1                                                                                          2                                            3   4   5    6     7     8     9
 
 for i in Doctorados:
-    m = Doctorado(programa=ProgramaDoctorado.objects.get(programa=i[0]),
-                  dependencia=Dependencia.objects.get(dependencia=i[1]), titulo_tesis=i[2],
+    m = Doctorado(programa=ProgramaDoctorado.objects.get(nombre=i[0]),
+                  dependencia=Dependencia.objects.get(nombre=i[1]), titulo_tesis=i[2],
                   fecha_inicio=datetime(int(i[3]), int(i[4]), 1), fecha_fin=datetime(int(i[5]), int(i[6]), 28),
                   fecha_grado=datetime(int(i[7]), int(i[8]), 1), usuario=User.objects.get(rfc=i[9]))
     m.save()
     print(m)
 
-ningunproyecto = Proyecto(nombre_proyecto='Ningúno', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1))
+ningunproyecto = Proyecto(nombre='Ninguno', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1))
 ningunproyecto.save()
 
-otroproyecto = Proyecto(nombre_proyecto='Otro', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1))
+otroproyecto = Proyecto(nombre='Otro', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1))
 otroproyecto.save()
 
 
@@ -2253,8 +2253,8 @@ postdoctorados = (
 ('Universidad Nacional Autónoma de México (UNAM)', 2016, 8, 2016, 12, '16ymf'))
 
 for i in postdoctorados:
-    p = PostDoctorado(titulo=str(uuid.uuid1()), proyecto=Proyecto.objects.get(nombre_proyecto='Ningúno'),
-                      area_conocimiento=AreaConocimiento.objects.get(area_conocimiento='Otra'), dependencia=Dependencia.objects.get(dependencia=i[0]),
+    p = PostDoctorado(nombre=str(uuid.uuid1()), proyecto=Proyecto.objects.get(nombre='Ningúno'),
+                      area_conocimiento=AreaConocimiento.objects.get(nombre='Otra'), dependencia=Dependencia.objects.get(nombre=i[0]),
                       fecha_inicio=datetime(i[1], i[2], 1), fecha_fin=datetime(i[3], i[4], 1),
                       usuario=User.objects.get(rfc=i[5]))
     p.save()
@@ -2363,7 +2363,7 @@ nombramientos = (
 ('I9689', 'Técnico Académico Titular (investigación) C, Tiempo Completo'))
 
 for i in nombramientos:
-    n = Nombramiento(clave=i[0], nombramiento=i[1])
+    n = Nombramiento(clave=i[0], nombre=i[1])
     n.save()
     print(n)
 
@@ -2589,9 +2589,9 @@ for i in experiencias:
         raise Exception
 
     if int(i[8]) == 0 and int(i[9]) == 0:
-        e = ExperienciaLaboral(dependencia=Dependencia.objects.get(dependencia=i[5]), nombramiento=Nombramiento.objects.get(nombramiento=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(cargo=c), fecha_inicio=date(int(i[6]), int(i[7]), 1), usuario=User.objects.get(rfc=i[10]))
+        e = ExperienciaLaboral(dependencia=Dependencia.objects.get(nombre=i[5]), nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 1), usuario=User.objects.get(rfc=i[10]))
     else:
-        e = ExperienciaLaboral(dependencia=Dependencia.objects.get(dependencia=i[5]), nombramiento=Nombramiento.objects.get(nombramiento=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(cargo=c), fecha_inicio=date(int(i[6]), int(i[7]), 28), fecha_fin=date(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
+        e = ExperienciaLaboral(dependencia=Dependencia.objects.get(nombre=i[5]), nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 28), fecha_fin=date(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     e.save()
     print(e)
 
@@ -2696,14 +2696,14 @@ capacidades = (
 
 for i in capacidades:
     if i[2] == 'no':
-        c = CapacidadPotencialidad(competencia=i[0], fecha_inicio=date(int(i[1]), 1, 1), usuario=User.objects.get(rfc=i[3]))
+        c = CapacidadPotencialidad(nombre=i[0], fecha_inicio=date(int(i[1]), 1, 1), usuario=User.objects.get(rfc=i[3]))
     else:
-        c = CapacidadPotencialidad(competencia=i[0], fecha_inicio=date(int(i[1]), 1, 1), fecha_fin=date(int(i[2]), 12, 28), usuario=User.objects.get(rfc=i[3]))
+        c = CapacidadPotencialidad(nombre=i[0], fecha_inicio=date(int(i[1]), 1, 1), fecha_fin=date(int(i[2]), 12, 28), usuario=User.objects.get(rfc=i[3]))
     c.save()
     print(c)
 
 
-ed = Editorial(editorial='Otra', pais=Pais.objects.get(pais='México'))
+ed = Editorial(nombre='Otra', pais=Pais.objects.get(nombre='México'))
 ed.save()
 print("Agregada Editorial 'Otra'")
 
@@ -2877,7 +2877,7 @@ revistas = (
 )
 
 for i in revistas:
-    r = Revista(nombre_revista=i[0], editorial=Editorial.objects.get(editorial=i[2]))
+    r = Revista(nombre=i[0], editorial=Editorial.objects.get(nombre=i[2]))
     r.save()
     print(r)
 
@@ -2885,7 +2885,7 @@ for i in revistas:
 indices = ('Web of Science: SCI/SSCI/SCI-EX', 'Latindex', 'Scopus', 'SciELO', 'Clase', 'Revistas CONACYT', 'RedALyC', 'Otros Indices')
 
 for i in indices:
-    I = Indice(indice=i)
+    I = Indice(nombre=i)
     I.save()
     print('Agregado indice ' + I.indice)
 
@@ -2898,8 +2898,8 @@ for i in problemas:
     print('Agregado problema conacyt: ', p)
 
 
-t = TipoEvento(tipo_evento='Otro')
+t = TipoEvento(nombre='Otro')
 t.save()
-e = Evento(nombre_evento='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 10, 10), tipo=TipoEvento.objects.get(tipo_evento='Otro'))
+e = Evento(nombre='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 10, 10), tipo=TipoEvento.objects.get(nombre='Otro'))
 e.save()
-l = Libro(nombre_libro='Otro', )
+l = Libro(nombre='Otro', )

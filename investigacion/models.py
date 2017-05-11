@@ -3,7 +3,7 @@ from django.db import models
 from django.conf import settings
 from autoslug import AutoSlugField
 from django.core.urlresolvers import reverse
-from nucleo.models import User, Tag, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, TipoDocumento, Revista, Indice, Libro, Editorial, Coleccion
+from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, TipoDocumento, Revista, Indice, Libro, Editorial, Coleccion
 
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
 
@@ -33,7 +33,7 @@ class ArticuloCientifico(models.Model):
     id_wos = models.CharField(max_length=100, blank=True)
     proyectos = models.ManyToManyField(Proyecto, related_name='articulo_cientifico_proyectos')
     #usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='articulo_cientifico_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='articulo_cientifico_tags', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
@@ -57,7 +57,7 @@ class CapituloLibroInvestigacion(models.Model):
     pagina_fin = models.PositiveIntegerField()
     proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_investigacion_proyectos', blank=True)
     usuario = models.ForeignKey(User, related_name='capitulo_libro_investigacion_usuario')
-    tags = models.ManyToManyField(Tag, related_name='capitulo_libro_investigacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='capitulo_libro_investigacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)
@@ -90,7 +90,7 @@ class MapaArbitrado(models.Model):
     isbn = models.SlugField(max_length=30, blank=True)
     url = models.URLField(blank=True)
     proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos')
-    tags = models.ManyToManyField(Tag, related_name='mapa_arbitrado_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='mapa_arbitrado_tags', blank=True)
 
     def __str__(self):
         return "{} : ({}) : {}".format(self.titulo, self.escala, self.fecha)
@@ -114,7 +114,7 @@ class InformeTecnico(models.Model):
     numero_paginas = models.PositiveIntegerField(default=1)
     proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos')
     url = models.URLField(blank=True)
-    tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.fecha)

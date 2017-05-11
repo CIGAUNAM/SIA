@@ -8,14 +8,14 @@ class ExperienciaLaboralForm(forms.ModelForm):
     dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle, required=True)
     nombramiento = forms.ModelChoiceField(Nombramiento.objects.all().order_by('nombramiento'), widget=wSelectSingle, required=False)
     es_nombramiento_definitivo = forms.BooleanField()
-    cargo = forms.ModelChoiceField(Cargo.objects.all().order_by('cargo'), widget=wSelectSingle, required=True)
+    cargo = forms.ModelChoiceField(Cargo.objects.all().order_by('nombre'), widget=wSelectSingle, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
 
     class Meta:
         model = ExperienciaLaboral
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class LineaInvestigacionForm(forms.ModelForm):
@@ -27,7 +27,7 @@ class LineaInvestigacionForm(forms.ModelForm):
 
     class Meta:
         model = LineaInvestigacion
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class CapacidadPotencialidadForm(forms.ModelForm):
@@ -38,4 +38,4 @@ class CapacidadPotencialidadForm(forms.ModelForm):
 
     class Meta:
         model = CapacidadPotencialidad
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]

@@ -18,4 +18,4 @@ class CursoDocenciaForm(forms.ModelForm):
 
     class Meta:
         model = CursoDocencia
-        exclude = ['usuario', 'tipo', 'tags', ]
+        exclude = ['usuario', 'tipo', ]

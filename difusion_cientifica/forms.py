@@ -47,7 +47,7 @@ class ResenaForm(forms.ModelForm):
 
     class Meta:
         model = Resena
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
@@ -60,7 +60,7 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
 
     class Meta:
         model = OrganizacionEventoAcademico
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
@@ -74,4 +74,4 @@ class ParticipacionEventoAcademicoForm(forms.ModelForm):
 
     class Meta:
         model = ParticipacionEventoAcademico
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]

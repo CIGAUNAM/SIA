@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^rest/dependencias/$', views.DependenciaList.as_view()),
     url(r'^rest/dependencia/(?P<pk>[0-9]+)/$', views.DependenciaDetail.as_view()),
     url(r'^rest/cargos/$', views.CargoList.as_view()),
-    url(r'^rest/cargo/(?P<pk>[0-9]+)/$', views.CargoDetail.as_view()),
+    url(r'^rest/nombre/(?P<pk>[0-9]+)/$', views.CargoDetail.as_view()),
     url(r'^rest/nombramientos/$', views.NombramientoList.as_view()),
     url(r'^rest/nombramientos/(?P<pk>[0-9]+)/$', views.NombramientoDetail.as_view()),
     url(r'^rest/areas.conocimiento/$', views.AreaConocimientoList.as_view()),

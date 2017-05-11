@@ -24,7 +24,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = ArticuloDivulgacion
-        exclude = ['tags', ]
+        exclude = []
 
 
 class CapituloLibroDivulgacionForm(forms.ModelForm):
@@ -36,7 +36,7 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = CapituloLibroDivulgacion
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class OrganizacionEventoDivulgacionForm(forms.ModelForm):
@@ -49,7 +49,7 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = OrganizacionEventoDivulgacion
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class ParticipacionEventoDivulgacionForm(forms.ModelForm):
@@ -63,7 +63,7 @@ class ParticipacionEventoDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = ParticipacionEventoDivulgacion
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
@@ -76,7 +76,7 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
 
     class Meta:
         model = ProgramaRadioTelevisionInternet
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class LibroDivulgacionForm(forms.ModelForm):
@@ -95,4 +95,4 @@ class LibroDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = LibroDivulgacion
-        exclude = ['tipo', 'tags', ]
+        exclude = ['tipo', ]

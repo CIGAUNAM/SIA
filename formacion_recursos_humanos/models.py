@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.conf import settings
-from nucleo.models import User, Tag, Dependencia, Beca, Proyecto, Reconocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
+from nucleo.models import User, Dependencia, Beca, Proyecto, Reconocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
 
 GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
 

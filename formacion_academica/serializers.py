@@ -7,7 +7,7 @@ class CursoEspecializacionSerializer(serializers.ModelSerializer):
     class Meta:
         model = CursoEspecializacion
         usuario = serializers.ReadOnlyField(source='usuario.username')
-        fields = ('id', 'nombre_curso', 'descripcion', 'tipo', 'horas', 'fecha_inicio', 'fecha_fin', 'modalidad', 'area_conocimiento', 'dependencia', 'usuario')
+        fields = ('id', 'nombre', 'descripcion', 'tipo', 'horas', 'fecha_inicio', 'fecha_fin', 'modalidad', 'area_conocimiento', 'dependencia', 'usuario')
 
 
 class LicenciaturaSerializer(serializers.ModelSerializer):
