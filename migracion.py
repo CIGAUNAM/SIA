@@ -2887,7 +2887,7 @@ indices = ('Web of Science: SCI/SSCI/SCI-EX', 'Latindex', 'Scopus', 'SciELO', 'C
 for i in indices:
     I = Indice(nombre=i)
     I.save()
-    print('Agregado indice ' + I.indice)
+    print('Agregado indice ' + I.nombre)
 
 
 problemas = ['Gestión integral del agua, seguridad hídrica y derecho del agua', 'Mitigación y adaptación al cambio climático', 'Resiliencia frente a desastres naturales y tecnológicos', 'Aprovechamiento y protección de ecosistemas y de la biodiversidad', 'Los océanos y su aprovechamiento', 'Alimentos y su producción', 'Ciudades y desarrollo urbano', 'Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones', 'Manufactura de alta tecnología', 'Consumo sustentable de energía', 'Desarrollo y aprovechamiento de energías renovables limpias  onducta humana y prevención de adicciones', 'Enfermedades emergentes y de importancia nacional', 'Combate a la pobreza y seguridad alimentaria', 'Migraciones y asentamientos humanos', 'Seguridad ciudadana', 'Economía y gestión del conocimiento', 'Prevención de riesgos naturales',]

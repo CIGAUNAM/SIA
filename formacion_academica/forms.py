@@ -9,7 +9,7 @@ from django_select2.forms import ModelSelect2Widget
 
 
 class CursoEspecializacionForm(forms.ModelForm):
-    nombre_curso = forms.CharField(widget=wCharField, required=True)
+    nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
     horas = forms.CharField(widget=wNumberField, required=True)
@@ -17,8 +17,8 @@ class CursoEspecializacionForm(forms.ModelForm):
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
     area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('pk'), widget=Select3Widget, required=True)
-    #dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), label='Dependencia',  widget=Select3Widget, required=True)
-    dependencia = forms.ModelChoiceField(queryset=Dependencia.objects.all().order_by('dependencia'), label='Dependencia', widget=ModelSelect2Widget(search_fields=['dependencia__icontains'],), required=True)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all(), label='Dependencia',  widget=Select3Widget, required=True)
+    #dependencia = forms.ModelChoiceField(queryset=Dependencia.objects.all(), label='Dependencia', widget=ModelSelect2Widget(search_fields=['nombre__icontains'],), required=True)
 
     class Meta:
         model = CursoEspecializacion
