@@ -6,9 +6,9 @@ from django import forms
 
 class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelectSingle, required=True)
-    libro = forms.ModelChoiceField(Libro.objects.all().order_by('nombre_libro'), widget=wSelectSingle, required=True)
-    capitulo_libro = forms.ModelChoiceField(CapituloLibroInvestigacion.objects.all().order_by('titulo'), widget=wSelectSingle, required=True)
+    revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelect, required=True)
+    libro = forms.ModelChoiceField(Libro.objects.all().order_by('nombre_libro'), widget=wSelect, required=True)
+    capitulo_libro = forms.ModelChoiceField(CapituloLibroInvestigacion.objects.all().order_by('titulo'), widget=wSelect, required=True)
     fecha_dictamen = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
@@ -19,7 +19,7 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
 class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
     fecha = forms.CharField(widget=wDateField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    proyecto = forms.ModelChoiceField(Proyecto.objects.all().order_by('nombre_proyecto'), widget=wSelectSingle, required=True)
+    proyecto = forms.ModelChoiceField(Proyecto.objects.all().order_by('nombre_proyecto'), widget=wSelect, required=True)
 
     class Meta:
         model = ArbitrajeProyectoInvestigacion
@@ -29,7 +29,7 @@ class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
 class ArbitrajeOtraActividadForm(forms.ModelForm):
     actividad = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle, required=True)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
     fecha = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
@@ -40,7 +40,7 @@ class ArbitrajeOtraActividadForm(forms.ModelForm):
 class RedAcademicaForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    clasificacion = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
+    clasificacion = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=wTextarea, required=True)
     fecha_constitucion = forms.CharField(widget=wDateField, required=True)
     vigente = forms.BooleanField()
@@ -54,7 +54,7 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     es_agradecimiento = forms.BooleanField()
-    clasificacion = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
+    clasificacion = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=wTextarea, required=False)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
@@ -68,10 +68,10 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
 
 class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
     nombre_servicio = forms.CharField(widget=wCharField, required=True)
-    clasificacion_servicio = forms.ModelChoiceField(ClasificacionServicio.objects.all().order_by('nombre'), widget=wSelectSingle, required=True)
+    clasificacion_servicio = forms.ModelChoiceField(ClasificacionServicio.objects.all().order_by('nombre'), widget=wSelect, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelectSingle, required=True)
-    clasificacion_entidad = forms.ChoiceField(widget=wSelectSingle, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
+    clasificacion_entidad = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
     incluye_financiamiento = forms.BooleanField()
@@ -84,7 +84,7 @@ class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
 class OtroProgramaVinculacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     fecha = forms.CharField(widget=wDateField, required=True)
-    tipo = forms.ChoiceField(widget=wSelectSingle, choices=(('', '',), ('', '',), ('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
+    tipo = forms.ChoiceField(widget=wSelect, choices=(('', '',), ('', '',), ('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     resultados = forms.CharField(widget=wTextarea, required=False)
 

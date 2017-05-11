@@ -162,7 +162,7 @@ class Select3Mixin(Select2Mixin):
 
     media = property(_get_media)
 
-class wSelectSingle(Select):
+class wSelect(Select):
     input_type = 'select'
     template_name = 'widgets/select.html'
     option_template_name = 'widgets/select_option.html'
@@ -198,7 +198,7 @@ class wSelectSingle(Select):
         first_choice = next(iter(self.choices), None)
         return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
 
-class Select3Widget(wSelectSingle, Select3Mixin):
+class Select3Widget(Select2Mixin, wSelect):
     """
     Select2 drop in widget.
 
