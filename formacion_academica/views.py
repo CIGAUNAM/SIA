@@ -73,14 +73,14 @@ class LicenciaturaLista(ObjectCreateMixin, View):
     form_class = LicenciaturaForm
     model = Licenciatura
     aux = LicenciaturaContext.contexto
-    template_name = 'main.html'
+    template_name = 'licenciaturas.html'
 
 
 class LicenciaturaDetalle(ObjectUpdateMixin, View):
     form_class = LicenciaturaForm
     model = Licenciatura
     aux = LicenciaturaContext.contexto
-    template_name = 'main.html'
+    template_name = 'licenciaturas.html'
 
 
 class LicenciaturaEliminar(View):
@@ -110,14 +110,14 @@ class MaestriaLista(ObjectCreateMixin, View):
     form_class = MaestriaForm
     model = Maestria
     aux = MaestriaContext.contexto
-    template_name = 'main.html'
+    template_name = 'maestrias.html'
 
 
 class MaestriaDetalle(ObjectUpdateMixin, View):
     form_class = MaestriaForm
     model = Maestria
     aux = MaestriaContext.contexto
-    template_name = 'main.html'
+    template_name = 'maestrias.html'
 
 
 class MaestriaEliminar(View):
@@ -147,14 +147,14 @@ class DoctoradoLista(ObjectCreateMixin, View):
     form_class = DoctoradoForm
     model = Doctorado
     aux = DoctoradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'doctorados.html'
 
 
 class DoctoradoDetalle(ObjectUpdateMixin, View):
     form_class = DoctoradoForm
     model = Doctorado
     aux = DoctoradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'doctorados.html'
 
 
 class DoctoradoEliminar(View):
