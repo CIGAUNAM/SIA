@@ -2443,15 +2443,15 @@ cargos = (
 
 for i in cargos:
     if not i[0] and not i[1] and i[2]:
-        c = Cargo(cargo=i[2], tipo_cargo='OTRO')
+        c = Cargo(nombre=i[2], tipo_cargo='OTRO')
         c.save()
         print(c)
     elif not i[0] and i[1] and not i[2]:
-        c = Cargo(cargo=i[1], tipo_cargo='ADMINISTRATIVO')
+        c = Cargo(nombre=i[1], tipo_cargo='ADMINISTRATIVO')
         c.save()
         print(c)
     elif i[0] and not i[1] and not i[2]:
-        c = Cargo(cargo=i[0], tipo_cargo='ACADEMICO')
+        c = Cargo(nombre=i[0], tipo_cargo='ACADEMICO')
         c.save()
         print(c)
     else:
