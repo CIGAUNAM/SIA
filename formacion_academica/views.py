@@ -173,7 +173,7 @@ class PostDoctoradoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             maestrias = PostDoctorado.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', maestrias,
-                                         fields=('titulo', 'area_conocimiento', 'fecha_fin', 'proyecto', 'dependencia'),
+                                         fields=('nombre', 'area_conocimiento', 'fecha_fin', 'proyecto', 'dependencia'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -184,14 +184,14 @@ class PostDoctoradoLista(ObjectCreateMixin, View):
     form_class = PostDoctoradoForm
     model = PostDoctorado
     aux = PostDoctoradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'post_doctorados.html'
 
 
 class PostDoctoradoDetalle(ObjectUpdateMixin, View):
     form_class = PostDoctoradoForm
     model = PostDoctorado
     aux = PostDoctoradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'post_doctorados.html'
 
 
 class PostDoctoradoEliminar(View):
