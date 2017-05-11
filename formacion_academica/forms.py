@@ -20,6 +20,15 @@ class CursoEspecializacionForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
     horas = forms.CharField(widget=wNumberField, required=True)
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True)
+    area_conocimiento = forms.ModelChoiceField(
+        queryset=AreaConocimiento.objects.all(),
+        label="Área de conocimiento",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            # dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
 
@@ -43,7 +52,6 @@ class CursoEspecializacionForm(forms.ModelForm):
     )
 
 
-
     class Meta:
         model = CursoEspecializacion
         exclude = ['usuario', ]
@@ -60,9 +68,37 @@ class CursoEspecializacionForm(forms.ModelForm):
 
 
 class LicenciaturaForm(forms.ModelForm):
-    carrera = forms.ModelChoiceField(ProgramaLicenciatura.objects.all().order_by('programa'), widget=wSelect, required=True)
+    carrera = forms.ModelChoiceField(
+        queryset=ProgramaLicenciatura.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
+
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+
+        ), required=False,
+    )
+
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+
     titulo_tesis = forms.CharField(widget=wCharField, required=True)
     tesis_doc = forms.FileField(required=False)  # corregir y poner el campo como los demas
     tesis_url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
@@ -76,15 +112,43 @@ class LicenciaturaForm(forms.ModelForm):
 
 
 class MaestriaForm(forms.ModelForm):
-    programa = forms.ModelChoiceField(ProgramaMaestria.objects.all().order_by('programa'), widget=wSelect, required=True)
+    programa = forms.ModelChoiceField(
+        queryset=ProgramaMaestria.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
+
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+
+        ), required=False,
+    )
+
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+
     titulo_tesis = forms.CharField(widget=wCharField, required=True)
     tesis_doc = forms.FileField(required=False)  # corregir y poner el campo como los demas
     tesis_url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=False)
-    fecha_grado = forms.CharField(widget=wDateField, required=False)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_grado = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = Maestria
@@ -92,15 +156,43 @@ class MaestriaForm(forms.ModelForm):
 
 
 class DoctoradoForm(forms.ModelForm):
-    programa = forms.ModelChoiceField(ProgramaDoctorado.objects.all().order_by('programa'), widget=wSelect, required=True)
+    programa = forms.ModelChoiceField(
+        queryset=ProgramaMaestria.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
+
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+
+        ), required=False,
+    )
+
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+
     titulo_tesis = forms.CharField(widget=wCharField, required=True)
     tesis_doc = forms.FileField(required=False)  # corregir y poner el campo como los demas
     tesis_url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=False)
-    fecha_grado = forms.CharField(widget=wDateField, required=False)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_grado = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = Doctorado
@@ -110,10 +202,11 @@ class DoctoradoForm(forms.ModelForm):
 class PostDoctoradoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('categoria'),
+
+    area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all(),
                                                widget=wSelect, required=True)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
-    proyecto = forms.ModelChoiceField(Proyecto.objects.all().order_by('nombre_proyecto'), widget=wSelect, required=True)
+    dependencia = forms.ModelChoiceField(Dependencia.objects.all(), widget=wSelect, required=True)
+    proyecto = forms.ModelChoiceField(Proyecto.objects.all(), widget=wSelect, required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
 
