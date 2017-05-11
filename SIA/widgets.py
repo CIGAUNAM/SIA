@@ -11,7 +11,7 @@ from django.utils import datetime_safe, formats, six
 from django import forms
 from django.conf import settings
 from itertools import chain
-from django_select2.forms import Select2Mixin, ModelSelect2Widget
+from django_select2.forms import Select2Mixin, ModelSelect2Widget, ModelSelect2Mixin, HeavySelect2Widget
 
 class wCharField(Widget):
     template_name = 'widgets/CharField.html'
@@ -223,6 +223,42 @@ class Select3Widget(wSelectSingle, Select3Mixin):
 
 
 class ModelSelect3Widget(ModelSelect2Widget):
-    search_fields = [
-        'title__icontains',
-    ]
+    pass
+
+
+class ModelSelect2Widget333(ModelSelect2Mixin, HeavySelect2Widget):
+    """
+    Select2 drop in model select widget.
+
+    Example usage::
+
+        class MyWidget(ModelSelect2Widget):
+            search_fields = [
+                'title__icontains',
+            ]
+
+        class MyModelForm(forms.ModelForm):
+            class Meta:
+                model = MyModel
+                fields = ('my_field', )
+                widgets = {
+                    'my_field': MyWidget,
+                }
+
+    or::
+
+        class MyForm(forms.Form):
+            my_choice = forms.ChoiceField(
+                widget=ModelSelect2Widget(
+                    model=MyOtherModel,
+                    search_fields=['title__icontains']
+                )
+            )
+
+    .. tip:: The ModelSelect2(Multiple)Widget will try
+        to get the QuerySet from the fields choices.
+        Therefore you don't need to define a QuerySet,
+        if you just drop in the widget for a ForeignKey field.
+    """
+
+    pass
