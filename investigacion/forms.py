@@ -10,6 +10,8 @@ from django import forms
 
 from django.conf import settings
 
+from django_select2.forms import Select2Widget, ModelSelect2MultipleWidget
+
 #
 
 class ArticuloCientificoForm(forms.ModelForm):
@@ -19,9 +21,9 @@ class ArticuloCientificoForm(forms.ModelForm):
     revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelect, required=True)
     status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField()
-    #usuarios = forms.ModelMultipleChoiceField(User)
+    #usuarios = forms.ModelMultipleChoiceField(User, widget=ModelSelect2MultipleWidget)
     #alumnos = forms.ModelMultipleChoiceField(User)
-    #indices = forms.ModelMultipleChoiceField(Indice)
+    indices = forms.MultipleChoiceField(Indice, widget=ModelSelect2MultipleWidget)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha = forms.CharField(widget=wDateField, required=True)

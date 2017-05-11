@@ -1,11 +1,53 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    <p><strong>Nombre del curso:</strong>{{ form.nombre }}</p>
+    <p><strong>Descripción:</strong>{{ form.descripcion }}</p>
+    <p><strong>Tipo:</strong>{{ form.tipo }}</p>
+    <p><strong>Horas:</strong>{{ form.horas }}</p>
+    <p><strong>Modalidad:</strong>{{ form.modalidad }}</p>
+    <p><strong>fecha de inicio:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>fecha de fin:</strong>{{ form.fecha_fin }}</p>
+    <p><strong>Área de conocimiento:</strong>{{ form.area_conocimiento }}</p>
+    <p><strong>Institución:</strong>{{ form.institucion }}</p>
+    <p><strong>Dependencia:</strong>{{ form.dependencia }}</p>
+
+    <p></p><p></p><p></p><p></p>
+
+
+
+
+
+
+
+
+    <p>---</p>
     {{ form.as_p }}
     <p>agregar</p>
 {% endblock %}
 
 {% block form_detalle %}
+    <p><strong>Nombre del curso:</strong>{{ form.nombre }}</p>
+    <p><strong>Descripción:</strong>{{ form.descripcion }}</p>
+    <p><strong>Tipo:</strong>{{ form.tipo }}</p>
+    <p><strong>Horas:</strong>{{ form.horas }}</p>
+    <p><strong>Modalidad:</strong>{{ form.modalidad }}</p>
+    <p><strong>fecha de inicio:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>fecha de fin:</strong>{{ form.fecha_fin }}</p>
+    <p><strong>Área de conocimiento:</strong>{{ form.area_conocimiento }}</p>
+    <p><strong>Institución:</strong>{{ form.institucion }}</p>
+    <p><strong>Dependencia:</strong>{{ form.dependencia }}</p>
+
+    <p></p><p></p><p></p><p></p>
+
+
+
+
+
+
+
+
+    <p>---</p>
     {{ form.as_p }}
     <p>detalle</p>
 {% endblock %}

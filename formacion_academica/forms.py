@@ -3,26 +3,59 @@
 from SIA.widgets import *
 from .models import *
 from django.conf import settings
+from django_select2.views import AutoResponseView
 
 from django_select2.forms import ModelSelect2Widget, Select2Widget, Select2MultipleWidget
+from nucleo.models import Institucion
 
+class NombreModelSelect3Widget(ModelSelect3Widget):
+    search_fields = [
+        'nombre__icontains',
+    ]
 
 
 class CursoEspecializacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    tipo = forms.ChoiceField(widget=Select2Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
     horas = forms.CharField(widget=wNumberField, required=True)
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
-    area_conocimiento = forms.ModelChoiceField(AreaConocimiento.objects.all().order_by('pk'), widget=Select3Widget, required=True)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all(), label='Dependencia',  widget=Select2MultipleWidget, required=True)
-    #dependencia = forms.ChoiceField(label='Dependencia', widget=ModelSelect3Widget(model=Dependencia, search_fields=['nombre__icontains', ]), required=True)
+
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+
+
 
     class Meta:
         model = CursoEspecializacion
         exclude = ['usuario', ]
+        widgets = {
+            'dependencia': NombreModelSelect3Widget,
+            'area_conocimiento': NombreModelSelect3Widget,
+        }
+        help_texts = {
+            'nombre': 'Group to which this message belongs to',
+        }
+
+
 
 
 
