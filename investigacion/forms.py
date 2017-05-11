@@ -37,7 +37,7 @@ class ArticuloCientificoForm(forms.ModelForm):
 
     class Meta:
         model = ArticuloCientifico
-        exclude = ['tags', ]
+        exclude = []
 
 
 class CapituloLibroInvestigacionForm(forms.ModelForm):
@@ -49,7 +49,7 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
 
     class Meta:
         model = CapituloLibroInvestigacion
-        exclude = ['usuario', 'tags', ]
+        exclude = ['usuario', ]
 
 
 class MapaArbitradoForm(forms.ModelForm):
@@ -69,7 +69,7 @@ class MapaArbitradoForm(forms.ModelForm):
 
     class Meta:
         model = MapaArbitrado
-        exclude = ['tags', ]
+        exclude = []
 
 
 class InformeTecnicoForm(forms.ModelForm):
@@ -81,7 +81,7 @@ class InformeTecnicoForm(forms.ModelForm):
 
     class Meta:
         model = InformeTecnico
-        exclude = ['tags', ]
+        exclude = []
 
 
 class LibroInvestigacionForm(forms.ModelForm):
@@ -100,7 +100,7 @@ class LibroInvestigacionForm(forms.ModelForm):
 
     class Meta:
         model = LibroInvestigacion
-        exclude = ['tipo', 'tags', ]
+        exclude = ['tipo', ]
 
 
 class ProyectoInvestigacionForm(forms.ModelForm):
@@ -119,4 +119,4 @@ class ProyectoInvestigacionForm(forms.ModelForm):
 
     class Meta:
         model = ProyectoInvestigacion
-        exclude = ['tipo', 'tags', ]
+        exclude = ['tipo', ]

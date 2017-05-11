@@ -2,37 +2,37 @@ from django.db import models
 
 #from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from nucleo.models import User, Tag, Dependencia, ImpactoSocial, Proyecto, Indice
+from nucleo.models import User, Dependencia, ImpactoSocial, Proyecto, Indice
 
 # Create your models here.
 
 class TipoDesarrollo(models.Model):
-    tipo_desarrollo = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField()
 
     def __str__(self):
-        return self.tipo_desarrollo
+        return self.nombre
 
     class Meta:
-        ordering = ['tipo_desarrollo']
+        ordering = ['nombre']
         verbose_name = 'Tipo de desarrollo'
         verbose_name_plural = 'Tipos de desarrollo'
 
 
 class Licencia(models.Model):
-    licencia = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField()
     url = models.URLField()
 
     def __str__(self):
-        return self.licencia
+        return self.nombre
 
     class Meta:
-        ordering = ['licencia']
+        ordering = ['nombre']
 
 
 class DesarrolloTecnologico(models.Model):
-    nombre_desarrollo_tecnologico = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255, unique=True)
     #tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
     proyectos = models.ManyToManyField(Proyecto, related_name='desarrollo_tecnologico_proyectos')
     descripcion = models.TextField()
@@ -45,12 +45,12 @@ class DesarrolloTecnologico(models.Model):
     fecha = models.DateField()
 
     def __str__(self):
-        return self.nombre_desarrollo_tecnologico
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('comite_tutoral_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre_desarrollo_tecnologico']
-        get_latest_by = ['fecha', 'nombre_desarrollo_tecnologico']
+        ordering = ['nombre']
+        get_latest_by = ['fecha', 'nombre']
         verbose_name_plural = 'Desarrollos Tecnológicos'

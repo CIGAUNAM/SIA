@@ -4,12 +4,6 @@ from formacion_academica.models import *
 from autoslug import AutoSlugField
 
 
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = ('id', 'tag')
-
-
 class ZonaPaisSerializer(serializers.ModelSerializer):
     class Meta:
         model = ZonaPais
@@ -66,7 +60,7 @@ class DependenciaSerializer(serializers.ModelSerializer):
 class CargoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cargo
-        fields = ('id', 'cargo', 'descripcion', 'tipo_cargo')
+        fields = ('id', 'nombre', 'descripcion', 'tipo_cargo')
 
 
 class NombramientoSerializer(serializers.ModelSerializer):

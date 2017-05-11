@@ -3,7 +3,7 @@ from django.db import models
 from django.conf import settings
 #from django.contrib.auth.models import User
 from autoslug import AutoSlugField
-from nucleo.models import User, Tag, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from nucleo.models import User, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
 from django.core.urlresolvers import reverse
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
@@ -34,7 +34,7 @@ class ArticuloDivulgacion(models.Model):
     pagina_fin = models.PositiveIntegerField()
     id_doi = models.CharField(max_length=100, blank=True)
     proyectos = models.ManyToManyField(Proyecto, related_name='articulo_divulgracion_proyectos', blank=True)
-    tags = models.ManyToManyField(Tag, related_name='articulo_divulgacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='articulo_divulgacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
@@ -54,7 +54,7 @@ class LibroDivulgacion(models.Model):
     descripcion = models.TextField(blank=True)
     #status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     proyectos = models.ManyToManyField(Proyecto, related_name='libro_divulgracion_proyectos', blank=True)
-    tags = models.ManyToManyField(Tag, related_name='libro_divulgacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='libro_divulgacion_tags', blank=True)
 
     def __str__(self):
         return str(self.libro)
@@ -75,7 +75,7 @@ class CapituloLibroDivulgacion(models.Model):
     pagina_fin = models.PositiveIntegerField()
     proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_divulgracion_proyectos', blank=True)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='capitulo_libro_divulgacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='capitulo_libro_divulgacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)
@@ -98,7 +98,7 @@ class OrganizacionEventoDivulgacion(models.Model):
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='organizacion_evento_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='organizacion_evento_tags', blank=True)
 
     def __str__(self):
         return str(self.evento)
@@ -122,7 +122,7 @@ class ParticipacionEventoDivulgacion(models.Model):
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='participacion_evento_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='participacion_evento_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)
@@ -141,7 +141,7 @@ class MedioDivulgacion(models.Model):
     descripcion = models.TextField(blank=True)
     canal = models.CharField(max_length=255)
     ciudad = models.ForeignKey(Ciudad)
-    tags = models.ManyToManyField(Tag, related_name='medio_divulgacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='medio_divulgacion_tags', blank=True)
 
     def __str__(self):
         return self.nombre_medio
@@ -168,7 +168,7 @@ class ProgramaRadioTelevisionInternet(models.Model):
     nombre_medio = models.ForeignKey(MedioDivulgacion)
     #partiticipantes = models.ManyToManyField(User, related_name='programa_radio_television_internet_participantes')
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='programa_radio_television_internet_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='programa_radio_television_internet_tags', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.nombre_medio, self.tema, self.fecha)

@@ -1,7 +1,7 @@
 from django.db import models
 
 from autoslug import AutoSlugField
-from nucleo.models import User, Tag, Dependencia, Financiamiento, Proyecto
+from nucleo.models import User, Dependencia, Financiamiento, Proyecto
 from vinculacion.models import RedAcademica
 
 
@@ -21,7 +21,7 @@ class MovilidadAcademica(models.Model):
     redes_academicas = models.ManyToManyField(RedAcademica, related_name='vinculacion_redes_academicas', blank=True)
     proyecto_investigacion = models.ForeignKey(Proyecto, blank=True, null=True)
     usuario = models.ForeignKey(User, related_name='movilidad_academica_usuario')
-    tags = models.ManyToManyField(Tag, related_name='vinculacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='vinculacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(str(self.academico), str(self.dependencia))
@@ -45,7 +45,7 @@ class Invitado(models.Model):
     redes_academicas = models.ManyToManyField(RedAcademica, related_name='invitado_redes_academicas', blank=True)
     proyecto_investigacion = models.ForeignKey(Proyecto, blank=True, null=True)
     usuario = models.ForeignKey(User)
-    tags = models.ForeignKey(Tag, related_name='invitado_tags')
+    #tags = models.ForeignKey(Tag, related_name='invitado_tags')
 
     def __str__(self):
         return "{} : {}".format(str(self.invitado), str(self.dependencia_procedencia))
@@ -69,7 +69,7 @@ class EstanciaColaboracion(models.Model):
     redes_academicas = models.ManyToManyField(RedAcademica, related_name='estancia_colaboracion_academicas', blank=True)
     proyectos_investigacion = models.ManyToManyField(Proyecto, related_name='estancia_colaboracion_investigacion', blank=True)
     usuario = models.ForeignKey(User)
-    tags = models.ForeignKey(Tag, related_name='estancia_tags')
+    #tags = models.ForeignKey(Tag, related_name='estancia_tags')
 
     def __str__(self):
         return "{} : {}".format(str(self.academico), str(self.dependencia_visitada))

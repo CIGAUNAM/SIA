@@ -2,7 +2,7 @@ from django.db import models
 
 from django.conf import settings
 #from autoslug import AutoSlugField
-from nucleo.models import User, Tag, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from nucleo.models import User, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
 from django.core.urlresolvers import reverse
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
@@ -47,7 +47,7 @@ class PrologoLibro(models.Model):
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='prologo_libro_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='prologo_libro_tags', blank=True)
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.libro)
@@ -73,7 +73,7 @@ class Resena(models.Model):
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='resena_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='resena_tags', blank=True)
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.titulo)
@@ -94,7 +94,7 @@ class OrganizacionEventoAcademico(models.Model):
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='organizacion_evento_academico_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='organizacion_evento_academico_tags', blank=True)
 
     def __str__(self):
         return str(self.evento)
@@ -118,7 +118,7 @@ class ParticipacionEventoAcademico(models.Model):
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='participacion_evento_academico_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='participacion_evento_academico_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)

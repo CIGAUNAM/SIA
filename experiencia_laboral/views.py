@@ -22,7 +22,7 @@ class ExperienciaLaboralJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = ExperienciaLaboral.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', experiencias,
-                                         fields=('nombramiento', 'cargo', 'fecha_inicio', 'dependencia'),
+                                         fields=('nombramiento', 'nombre', 'fecha_inicio', 'dependencia'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -96,7 +96,7 @@ class CapacidadPotencialidadJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = CapacidadPotencialidad.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', experiencias,
-                                         fields=('competencia', 'fecha_inicio'),
+                                         fields=('nombre', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:

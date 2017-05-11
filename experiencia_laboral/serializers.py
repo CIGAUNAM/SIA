@@ -7,7 +7,7 @@ class ExperienciaLaboralSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExperienciaLaboral
         usuario = serializers.ReadOnlyField(source='usuario.username')
-        fields = ('id', 'dependencia', 'nombramiento', 'es_nombramiento_definitivo', 'cargo', 'descripcion', 'fecha_inicio', 'fecha_fin', 'usuario')
+        fields = ('id', 'dependencia', 'nombramiento', 'es_nombramiento_definitivo', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'usuario')
 
 
 class LineaInvestigacionSerializer(serializers.ModelSerializer):
@@ -21,6 +21,6 @@ class CapacidadPotencialidadSerializer(serializers.ModelSerializer):
     class Meta:
         model = CapacidadPotencialidad
         usuario = serializers.ReadOnlyField(source='usuario.username')
-        fields = ('id', 'competencia', 'descripcion', 'fecha_inicio', 'fecha_fin', 'usuario')
+        fields = ('id', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'usuario')
 
 

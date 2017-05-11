@@ -2,7 +2,7 @@ from django.db import models
 
 from django.conf import settings
 from autoslug import AutoSlugField
-from nucleo.models import User, Tag, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, TipoDocumento, Revista, Indice, Libro, Editorial, Coleccion
+from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, TipoDocumento, Revista, Indice, Libro, Editorial, Coleccion
 from investigacion.models import CapituloLibroInvestigacion
 from django.core.urlresolvers import reverse
 
@@ -20,7 +20,7 @@ class ArbitrajePublicacionAcademica(models.Model):
     capitulo_libro = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True)
     fecha_dictamen = models.DateField()
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='arbitraje_publicacion_academica_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='arbitraje_publicacion_academica_tags', blank=True)
 
     def __str__(self):
         lista_titulos = [self.revista, self.libro, self.capitulo_libro]
@@ -43,7 +43,7 @@ class ArbitrajeProyectoInvestigacion(models.Model):
     descripcion = models.TextField(blank=True)
     proyecto = models.ForeignKey(Proyecto)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='arbitraje_proyecto_investigacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='arbitraje_proyecto_investigacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(str(self.proyecto), self.fecha)
@@ -64,7 +64,7 @@ class ArbitrajeOtraActividad(models.Model):
     dependencia = models.ForeignKey(Dependencia)
     fecha = models.DateField()
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='arbitraje_otras_actividades_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='arbitraje_otras_actividades_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.actividad, self.dependencia)
@@ -90,7 +90,7 @@ class RedAcademica(models.Model):
     vigente = models.BooleanField(default=False)
     proyectos = models.ManyToManyField(Proyecto, related_name='red_academica_proyectos', blank=True)
     usuarios = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
-    tags = models.ManyToManyField(Tag, related_name='red_academica_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='red_academica_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_constitucion)
@@ -117,7 +117,7 @@ class ConvenioEntidadNoAcademica(models.Model):
     es_renovacion = models.BooleanField(default=False)
     incluye_financiamiento = models.BooleanField(default=False)
     usuarios = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios', verbose_name='Académicos participantes')
-    tags = models.ManyToManyField(Tag, related_name='convenio_entidad_academica_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='convenio_entidad_academica_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_inicio)
@@ -154,7 +154,7 @@ class ServicioExternoEntidadNoAcademica(models.Model):
     fecha_fin = models.DateField(blank=True, null=True)
     incluye_financiamiento = models.BooleanField(default=False)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='servicio_externo_entidad_academica_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='servicio_externo_entidad_academica_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre_servicio, self.fecha_inicio)
@@ -177,7 +177,7 @@ class OtroProgramaVinculacion(models.Model):
     dependencias = models.ManyToManyField(Dependencia)
     resultados = models.TextField(blank=True)
     usuario = models.ForeignKey(User)
-    tags = models.ManyToManyField(Tag, related_name='otro_programa_vinculacion_tags', blank=True)
+    #tags = models.ManyToManyField(Tag, related_name='otro_programa_vinculacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha)

@@ -18,4 +18,4 @@ class MovilidadAcademicaForm(forms.ModelForm):
 
     class Meta:
         model = MovilidadAcademica
-        exclude = ['tipo', 'usuario', 'tags', ]
+        exclude = ['tipo', 'usuario', ]
