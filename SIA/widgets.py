@@ -11,7 +11,7 @@ from django.utils import datetime_safe, formats, six
 from django import forms
 from django.conf import settings
 from itertools import chain
-from django_select2.forms import Select2Mixin, ModelSelect2Widget, ModelSelect2Mixin, HeavySelect2Widget
+from django_select2.forms import Select2Mixin, ModelSelect2Widget, ModelSelect2Mixin, HeavySelect2Widget, HeavySelect2Mixin
 
 class wCharField(Widget):
     template_name = 'widgets/CharField.html'
@@ -162,7 +162,7 @@ class Select3Mixin(Select2Mixin):
 
     media = property(_get_media)
 
-class wSelect(Select):
+class wSelect1(Select):
     input_type = 'select'
     template_name = 'widgets/select.html'
     option_template_name = 'widgets/select_option.html'
@@ -198,6 +198,63 @@ class wSelect(Select):
         first_choice = next(iter(self.choices), None)
         return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
 
+
+class wSelect(Select):
+    allow_multiple_selected = False
+
+    def __init__(self, attrs=None, choices=()):
+        super(Select, self).__init__(attrs)
+        # choices can be any iterable, but we may need to render this widget
+        # multiple times. Thus, collapse it into a list so it can be consumed
+        # more than once.
+        self.choices = list(choices)
+
+    def __deepcopy__(self, memo):
+        obj = copy.copy(self)
+        obj.attrs = self.attrs.copy()
+        obj.choices = copy.copy(self.choices)
+        memo[id(self)] = obj
+        return obj
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, name=name)
+        output = [format_html('<div class="form-group" style="margin-top: -10px;"><div class="input-group"><div class="input-group-addon"><i class="fa fa-list-alt"></i></div><select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
+        options = self.render_options([value])
+        if options:
+            output.append(options)
+        output.append('</select><div class="input-group-addon"><i class="fa fa-question-circle"></i></div></div>')
+        return mark_safe('\n'.join(output))
+
+    def render_option(self, selected_choices, option_value, option_label):
+        if option_value is None:
+            option_value = ''
+        option_value = force_text(option_value)
+        if option_value in selected_choices:
+            selected_html = mark_safe(' selected="selected"')
+            if not self.allow_multiple_selected:
+                # Only allow for a single selection.
+                selected_choices.remove(option_value)
+        else:
+            selected_html = ''
+        return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, force_text(option_label))
+
+    def render_options(self, selected_choices):
+        # Normalize to strings.
+        selected_choices = set(force_text(v) for v in selected_choices)
+        output = []
+        for option_value, option_label in self.choices:
+            if isinstance(option_label, (list, tuple)):
+                output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                for option in option_label:
+                    output.append(self.render_option(selected_choices, *option))
+                output.append('</optgroup>')
+            else:
+                output.append(self.render_option(selected_choices, option_value, option_label))
+        return '\n'.join(output)
+
+
 class Select3Widget(Select2Mixin, wSelect):
     """
     Select2 drop in widget.
@@ -221,12 +278,33 @@ class Select3Widget(Select2Mixin, wSelect):
 
     pass
 
+class HeavySelect3Widget(HeavySelect2Mixin, Select3Widget):
+    """
+    Select2 widget with AJAX support that registers itself to Django's Cache.
 
-class ModelSelect3Widget(ModelSelect2Widget):
+    Usage example::
+
+        class MyWidget(HeavySelect2Widget):
+            data_view = 'my_view_name'
+
+    or::
+
+        class MyForm(forms.Form):
+            my_field = forms.ChoicesField(
+                widget=HeavySelect2Widget(
+                    data_url='/url/to/json/response'
+                )
+            )
+
+    """
+
     pass
 
 
-class ModelSelect2Widget333(ModelSelect2Mixin, HeavySelect2Widget):
+class ModelSelect3Widget(ModelSelect2Mixin, HeavySelect3Widget):
+    search_fields = [
+        'nombre__icontains',
+    ]
     """
     Select2 drop in model select widget.
 

@@ -600,6 +600,9 @@ class Indice(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('/', kwargs={'pk': self.pk})
+
 
 
 class Memoria(models.Model):
