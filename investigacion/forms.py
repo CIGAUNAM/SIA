@@ -53,19 +53,30 @@ class ArticuloCientificoForm(forms.ModelForm):
             'usuarios': Select2MultipleWidget,
             'alumnos': Select2MultipleWidget,
             'indices': Select2MultipleWidget,
+            'proyectos': Select2MultipleWidget,
         }
 
 
 class CapituloLibroInvestigacionForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True)
+    titulo = forms.CharField(widget=wCharField, required=True,)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    libro = forms.ModelChoiceField(Libro.objects.all(), widget=wSelect, required=True)
+    libro = forms.ModelChoiceField(
+        queryset=Libro.objects.all(),
+        label="Libro",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            # dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
 
     class Meta:
         model = CapituloLibroInvestigacion
         exclude = ['usuario', ]
+        widgets = {
+            'proyectos': Select2MultipleWidget,
+        }
 
 
 class MapaArbitradoForm(forms.ModelForm):
@@ -73,12 +84,46 @@ class MapaArbitradoForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     escala = forms.CharField(widget=wCharField, required=True)
     status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    ciudad = forms.ModelChoiceField(Ciudad.objects.all(), widget=wSelect, required=True)
-    editorial = forms.ModelChoiceField(Editorial.objects.all(), widget=wSelect, required=True)
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="Pais",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'pais': 'pais'},
+        )
+    )
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'estado': 'estado'},
+        )
+    )
+    editorial = forms.ModelChoiceField(
+        queryset=Editorial.objects.all(),
+        label="Editorial",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     fecha = forms.CharField(widget=wDateField, required=True)
     numero_edicion = forms.CharField(widget=wNumberField, required=True)
     numero_paginas = forms.CharField(widget=wNumberField, required=True)
-    coleccion = forms.ModelChoiceField(Coleccion.objects.all(), widget=wSelect, required=False)
+    coleccion = forms.ModelChoiceField(
+        queryset=Coleccion.objects.all(),
+        label="Coleccion",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
@@ -86,6 +131,12 @@ class MapaArbitradoForm(forms.ModelForm):
     class Meta:
         model = MapaArbitrado
         exclude = []
+        widgets = {
+            'usuarios': Select2MultipleWidget,
+            'editores': Select2MultipleWidget,
+            'coordinadores': Select2MultipleWidget,
+            'proyectos': Select2MultipleWidget,
+        }
 
 
 class InformeTecnicoForm(forms.ModelForm):
@@ -98,6 +149,10 @@ class InformeTecnicoForm(forms.ModelForm):
     class Meta:
         model = InformeTecnico
         exclude = []
+        widgets = {
+            'usuarios': Select2MultipleWidget,
+            'proyectos': Select2MultipleWidget,
+        }
 
 
 class LibroInvestigacionForm(forms.ModelForm):
@@ -117,6 +172,12 @@ class LibroInvestigacionForm(forms.ModelForm):
     class Meta:
         model = LibroInvestigacion
         exclude = ['tipo', ]
+        widgets = {
+            'usuarios': Select2MultipleWidget,
+            'editores': Select2MultipleWidget,
+            'coordinadores': Select2MultipleWidget,
+            'proyectos': Select2MultipleWidget,
+        }
 
 
 class ProyectoInvestigacionForm(forms.ModelForm):

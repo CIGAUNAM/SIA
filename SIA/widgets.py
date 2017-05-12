@@ -341,3 +341,6 @@ class ModelSelect3Widget(ModelSelect2Mixin, HeavySelect3Widget):
     """
 
     pass
+
+
+#test
