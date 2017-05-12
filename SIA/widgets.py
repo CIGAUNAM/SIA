@@ -255,6 +255,7 @@ class wSelect(Select):
         return '\n'.join(output)
 
 
+
 class Select3Widget(Select2Mixin, wSelect):
     """
     Select2 drop in widget.
