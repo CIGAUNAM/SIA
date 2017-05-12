@@ -33,14 +33,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField()
 
-    usuarios = forms.ModelChoiceField(
-        queryset=User.objects.all(),
-        label="Autores",
-        widget=Select2MultipleWidget,
-    )
 
-    # alumnos = forms.ModelMultipleChoiceField(User)
-    # indices = forms.MultipleChoiceField(Indice, widget=ModelSelect2MultipleWidget)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha = forms.CharField(widget=wDateField, required=True)
@@ -58,6 +51,11 @@ class ArticuloCientificoForm(forms.ModelForm):
     class Meta:
         model = ArticuloCientifico
         exclude = []
+        widgets = {
+            'usuarios': Select2MultipleWidget,
+            'alumnos': Select2MultipleWidget,
+            'indices': Select2MultipleWidget,
+        }
 
 
 class CapituloLibroInvestigacionForm(forms.ModelForm):
