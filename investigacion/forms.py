@@ -1,29 +1,46 @@
 from SIA.widgets import *
 
-from . models import *
+from .models import *
 from nucleo.models import Libro as LibroInvestigacion
 from nucleo.models import Proyecto as ProyectoInvestigacion
-from nucleo.models import ProblemaNacionalConacyt, Metodologia, AreaEspecialidad, ImpactoSocial, Financiamiento
+# from nucleo.models import ProblemaNacionalConacyt, Metodologia, AreaEspecialidad, ImpactoSocial, Financiamiento
 
 
 from django import forms
 
 from django.conf import settings
+from django_select2.forms import Select2MultipleWidget
 
 from django_select2.forms import Select2Widget, ModelSelect2MultipleWidget
+
 
 #
 
 class ArticuloCientificoForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
-    tipo = forms.ChoiceField(widget=wSelect, choices=(('', ''), ('', ''), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')), required=True)
-    revista = forms.ModelChoiceField(Revista.objects.all().order_by('nombre_revista'), widget=wSelect, required=True)
-    status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    titulo = forms.CharField(widget=wCharField, required=True, label='Título de artículo')
+    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=(
+    ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')),
+                             required=True)
+    revista = forms.ModelChoiceField(
+        queryset=Revista.objects.all(),
+        label="Revista",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            # dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField()
-    #usuarios = forms.ModelMultipleChoiceField(User, widget=ModelSelect2MultipleWidget)
-    #alumnos = forms.ModelMultipleChoiceField(User)
-    indices = forms.MultipleChoiceField(Indice, widget=ModelSelect2MultipleWidget)
+
+    usuarios = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Autores",
+        widget=Select2MultipleWidget,
+    )
+
+    # alumnos = forms.ModelMultipleChoiceField(User)
+    # indices = forms.MultipleChoiceField(Indice, widget=ModelSelect2MultipleWidget)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha = forms.CharField(widget=wDateField, required=True)
@@ -35,7 +52,8 @@ class ArticuloCientificoForm(forms.ModelForm):
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     id_doi = forms.CharField(widget=wCharField, required=False)
     id_wos = forms.CharField(widget=wCharField, required=False)
-    #proyectos = forms.ModelMultipleChoiceField(Proyecto)
+
+    # proyectos = forms.ModelMultipleChoiceField(Proyecto)
 
     class Meta:
         model = ArticuloCientifico
@@ -45,7 +63,7 @@ class ArticuloCientificoForm(forms.ModelForm):
 class CapituloLibroInvestigacionForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    libro = forms.ModelChoiceField(Libro.objects.all().order_by('nombre_libro'), widget=wSelect, required=True)
+    libro = forms.ModelChoiceField(Libro.objects.all(), widget=wSelect, required=True)
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
 
@@ -59,12 +77,12 @@ class MapaArbitradoForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     escala = forms.CharField(widget=wCharField, required=True)
     status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    ciudad = forms.ModelChoiceField(Ciudad.objects.all().order_by('ciudad'), widget=wSelect, required=True)
-    editorial = forms.ModelChoiceField(Editorial.objects.all().order_by('editorial'), widget=wSelect, required=True)
+    ciudad = forms.ModelChoiceField(Ciudad.objects.all(), widget=wSelect, required=True)
+    editorial = forms.ModelChoiceField(Editorial.objects.all(), widget=wSelect, required=True)
     fecha = forms.CharField(widget=wDateField, required=True)
     numero_edicion = forms.CharField(widget=wNumberField, required=True)
     numero_paginas = forms.CharField(widget=wNumberField, required=True)
-    coleccion = forms.ModelChoiceField(Coleccion.objects.all().order_by('coleccion'), widget=wSelect, required=False)
+    coleccion = forms.ModelChoiceField(Coleccion.objects.all(), widget=wSelect, required=False)
     volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
@@ -89,12 +107,12 @@ class InformeTecnicoForm(forms.ModelForm):
 class LibroInvestigacionForm(forms.ModelForm):
     nombre_libro = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    editorial = forms.ModelChoiceField(Editorial.objects.all().order_by('editorial'), widget=wSelect)
-    ciudad = forms.ModelChoiceField(Ciudad.objects.all().order_by('ciudad'), widget=wSelect)
+    editorial = forms.ModelChoiceField(Editorial.objects.all(), widget=wSelect)
+    ciudad = forms.ModelChoiceField(Ciudad.objects.all(), widget=wSelect)
     fecha = forms.CharField(widget=wDateField)
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
-    coleccion = forms.ModelChoiceField(Coleccion.objects.all().order_by('coleccion'), widget=wSelect)
+    coleccion = forms.ModelChoiceField(Coleccion.objects.all(), widget=wSelect)
     volumen = forms.CharField(widget=wCharField)
     isbn = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
@@ -116,7 +134,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     organizacion = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'ORGANIZACION_PROYECTO', ))
     modalidad = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'MODALIDAD_PROYECTO', ))
     tematica_genero = forms.BooleanField()
-    #problemaconacyt podria ser  no multiple
+    # problemaconacyt podria ser  no multiple
     descripcion_problema_nacional_conacyt = forms.CharField(widget=wTextarea, required=False)
 
     class Meta:

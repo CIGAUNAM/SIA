@@ -170,7 +170,8 @@ class User(AbstractUser):
         return "{} {} ".format(self.first_name, self.last_name)
 
     class Meta:
-        ordering = ['first_name', 'last_name']
+        #ordering = ['first_name', 'last_name']
+        pass
 
 
 class Institucion(models.Model):

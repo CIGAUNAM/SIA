@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^capacidades/(?P<pk>[\w\-]+)/$', CapacidadPotencialidadDetalle.as_view(), name='capacidad_potencialidad_detalle'),
 
 ]
+
 urlpatterns = format_suffix_patterns(urlpatterns)

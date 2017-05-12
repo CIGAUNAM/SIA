@@ -3,7 +3,7 @@
 from SIA.widgets import *
 from .models import *
 from django.conf import settings
-from django_select2.views import AutoResponseView
+#from django_select2.views import AutoResponseView
 
 from django_select2.forms import ModelSelect2Widget, Select2Widget, Select2MultipleWidget
 from nucleo.models import Institucion

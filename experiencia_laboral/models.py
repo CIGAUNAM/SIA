@@ -52,7 +52,7 @@ class LineaInvestigacion(models.Model):
 
 
 class CapacidadPotencialidad(models.Model):
-    nombre = models.CharField(max_length=255)
+    nombre = models.CharField(max_length=255, verbose_name='Capacidad o potencialidad')
     descripcion = models.TextField(blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
