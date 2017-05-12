@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Título de <em>memoria in extenso</em>:</strong>{{ form.nombre }}</p>
+    <p><strong>Descripción:</strong>{{ form.descripcion }}</p>
+    <p><strong>País:</strong>{{ form.pais }}</p>
+    <p><strong>Estado:</strong>{{ form.estado }}</p>
+    <p><strong>Ciudad:</strong>{{ form.ciudad }}</p>
+    <p><strong>Fecha:</strong>{{ form.fecha }}</p>
+    <p><strong>Evento:</strong>{{ form.evento }}</p>
+    <p><strong>Autores:</strong>{{ form.usuarios }}</p>
+    <p><strong>Editores:</strong>{{ form.editores }}</p>
+    <p><strong>Indices:</strong>{{ form.indices }}</p>
+    <p><strong>Agradecimientos:</strong>{{ form.agradecimientos }}</p>
+    <p><strong>País de origen:</strong>{{ form.pais_origen }}</p>
+    <p><strong>Página inicial:</strong>{{ form.pagina_inicio }}</p>
+    <p><strong>Página final:</strong>{{ form.pagina_fin }}</p>
+    <p><strong>ISSN:</strong>{{ form.issn }}</p>
+    <p><strong>URL:</strong>{{ form.url }}</p>
+    <p><strong>Proyectos:</strong>{{ form.proyectos }}</p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Título de <em>memoria in extenso</em>:</strong>{{ form.nombre }}</p>
+    <p><strong>Descripción:</strong>{{ form.descripcion }}</p>
+    <p><strong>País:</strong>{{ form.pais }}</p>
+    <p><strong>Estado:</strong>{{ form.estado }}</p>
+    <p><strong>Ciudad:</strong>{{ form.ciudad }}</p>
+    <p><strong>Fecha:</strong>{{ form.fecha }}</p>
+    <p><strong>Evento:</strong>{{ form.evento }}</p>
+    <p><strong>Autores:</strong>{{ form.usuarios }}</p>
+    <p><strong>Editores:</strong>{{ form.editores }}</p>
+    <p><strong>Indices:</strong>{{ form.indices }}</p>
+    <p><strong>Agradecimientos:</strong>{{ form.agradecimientos }}</p>
+    <p><strong>País de origen:</strong>{{ form.pais_origen }}</p>
+    <p><strong>Página inicial:</strong>{{ form.pagina_inicio }}</p>
+    <p><strong>Página final:</strong>{{ form.pagina_fin }}</p>
+    <p><strong>ISSN:</strong>{{ form.issn }}</p>
+    <p><strong>URL:</strong>{{ form.url }}</p>
+    <p><strong>Proyectos:</strong>{{ form.proyectos }}</p>
+{% endblock %}

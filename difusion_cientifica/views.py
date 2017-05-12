@@ -29,14 +29,14 @@ class MemoriaInExtensoLista(ObjectCreateVarMixin, View):
     form_class = MemoriaInExtensoForm
     model = MemoriaInExtenso
     aux = MemoriaInExtensoContext.contexto
-    template_name = 'main.html'
+    template_name = 'memoria_in_extenso.html'
 
 
 class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
     form_class = MemoriaInExtensoForm
     model = MemoriaInExtenso
     aux = MemoriaInExtensoContext.contexto
-    template_name = 'main.html'
+    template_name = 'memoria_in_extenso.html'
 
 
 class MemoriaInExtensoEliminar(View):
@@ -104,14 +104,14 @@ class ResenaLista(ObjectCreateMixin, View):
     form_class = ResenaForm
     model = Resena
     aux = ResenaContext.contexto
-    template_name = 'main.html'
+    template_name = 'resena.html'
 
 
 class ResenaDetalle(ObjectUpdateMixin, View):
     form_class = ResenaForm
     model = Resena
     aux = ResenaContext.contexto
-    template_name = 'main.html'
+    template_name = 'resena.html'
 
 
 class ResenaEliminar(View):

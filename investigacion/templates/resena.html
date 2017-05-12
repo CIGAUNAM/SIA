@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Título de reseña:</strong>{{ form.titulo }}</p>
+    <p><strong>Libro Resenado:</strong>{{ form.libro_resenado }}</p>
+    <p><strong>Revista Reseñada:</strong>{{ form.revista_resenada }}</p>
+    <p><strong>Descripcion:</strong>{{ form.descripcion }}</p>
+    <p><strong>Libro que publica:</strong>{{ form.libro_publica }}</p>
+    <p><strong>Revista que publica:</strong>{{ form.revista_publica }}</p>
+    <p><strong>Página inicial:</strong>{{ form.pagina_inicio }}</p>
+    <p><strong>Página final:</strong>{{ form.pagina_fin }}</p>
+    <p><strong>URL:</strong>{{ form.url }}</p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Título de reseña:</strong>{{ form.titulo }}</p>
+    <p><strong>Libro Resenado:</strong>{{ form.libro_resenado }}</p>
+    <p><strong>Revista Reseñada:</strong>{{ form.revista_resenada }}</p>
+    <p><strong>Descripcion:</strong>{{ form.descripcion }}</p>
+    <p><strong>Libro que publica:</strong>{{ form.libro_publica }}</p>
+    <p><strong>Revista que publica:</strong>{{ form.revista_publica }}</p>
+    <p><strong>Página inicial:</strong>{{ form.pagina_inicio }}</p>
+    <p><strong>Página final:</strong>{{ form.pagina_fin }}</p>
+    <p><strong>URL:</strong>{{ form.url }}</p>
+{% endblock %}

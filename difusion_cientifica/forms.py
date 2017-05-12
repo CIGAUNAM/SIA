@@ -3,6 +3,7 @@ from . models import *
 
 from django import forms
 from nucleo.models import Pais, Estado, Ciudad
+from django_select2.forms import Select2MultipleWidget
 #
 
 class MemoriaInExtensoForm(forms.ModelForm):
@@ -32,10 +33,21 @@ class MemoriaInExtensoForm(forms.ModelForm):
             dependent_fields={'estado': 'estado'},
         )
     )
-
     fecha = forms.CharField(widget=wDateField, required=True)
-    evento = forms.ModelChoiceField(Evento.objects.all(), widget=wSelect, required=True)
-    pais_origen = forms.ModelChoiceField(Pais.objects.all(), widget=wSelect, required=True)
+    evento = forms.ModelChoiceField(
+        queryset=Evento.objects.all(),
+        label="Evento",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    pais_origen = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País de origen",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     issn = forms.CharField(widget=wCharField, required=False)
@@ -44,14 +56,27 @@ class MemoriaInExtensoForm(forms.ModelForm):
     class Meta:
         model = MemoriaInExtenso
         exclude = ['tags', ]
+        widgets = {
+            'usuarios': Select2MultipleWidget,
+            'editores': Select2MultipleWidget,
+            'indices': Select2MultipleWidget,
+            'agradecimientos': Select2MultipleWidget,
+            'proyectos': Select2MultipleWidget,
+        }
 
 
 class PrologoLibroForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    libro = forms.ModelChoiceField(Libro.objects.all(), widget=wSelect, required=True)
-    pagina_inicio = forms.CharField(widget=wNumberField, required=True)
-    pagina_fin = forms.CharField(widget=wNumberField, required=True)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    libro = forms.ModelChoiceField(
+        queryset=Libro.objects.all(),
+        label="Libro",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Páginal inicial')
+    pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Páginal final')
+    url = forms.CharField(widget=wCharField, required=False, label='URL')  # corregir valiadr url
 
     class Meta:
         model = PrologoLibro
@@ -59,12 +84,36 @@ class PrologoLibroForm(forms.ModelForm):
 
 
 class ResenaForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True)
-    libro_resenado = forms.ModelChoiceField(Libro.objects.all(), widget=wSelect, required=True)
-    revista_resenada = forms.ModelChoiceField(Revista.objects.all(), widget=wSelect, required=True)
+    titulo = forms.CharField(widget=wCharField, required=True, label='Título de reseña')
+    libro_resenado = forms.ModelChoiceField(
+        queryset=Libro.objects.all(),
+        label="Libro reseñado",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    revista_resenada = forms.ModelChoiceField(
+        queryset=Revista.objects.all(),
+        label="Revista reseñada",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    libro_publica = forms.ModelChoiceField(Libro.objects.all(), widget=wSelect, required=True)
-    revista_publica = forms.ModelChoiceField(Revista.objects.all(), widget=wSelect, required=True)
+    libro_publica = forms.ModelChoiceField(
+        queryset=Libro.objects.all(),
+        label="Libro que publica",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    revista_publica = forms.ModelChoiceField(
+        queryset=Revista.objects.all(),
+        label="Revista que publica",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
@@ -75,12 +124,18 @@ class ResenaForm(forms.ModelForm):
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
-    evento = forms.ModelChoiceField(Evento.objects.all(), widget=wSelect, required=True)
+    evento = forms.ModelChoiceField(
+        queryset=Evento.objects.all(),
+        label="Evento",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    responsabilidad = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'EVENTO__RESPONSABILIDAD', ), required=True)
+    responsabilidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'EVENTO__RESPONSABILIDAD', ), required=True)
     numero_ponentes = forms.CharField(widget=wNumberField, required=True)
     numero_asistentes = forms.CharField(widget=wNumberField, required=True)
-    ambito = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+    ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
 
     class Meta:
         model = OrganizacionEventoAcademico
@@ -90,11 +145,17 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    evento = forms.ModelChoiceField(Evento.objects.all(), widget=wSelect, required=True)
-    resumen_publicado = forms.BooleanField(required=False)
-    ambito = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
-    por_invitacion = forms.BooleanField(required=False)
-    ponencia_magistral = forms.BooleanField(required=False)
+    evento = forms.ModelChoiceField(
+        queryset=Evento.objects.all(),
+        label="Evento",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+    resumen_publicado = forms.BooleanField(required=False, label='Resumen publicado')
+    por_invitacion = forms.BooleanField(required=False, label='Participación por invitación')
+    ponencia_magistral = forms.BooleanField(required=False, label='Ponencia Magistral')
 
     class Meta:
         model = ParticipacionEventoAcademico
