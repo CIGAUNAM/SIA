@@ -543,7 +543,7 @@ class Proyecto(models.Model):
     organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
     modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
     tematica_genero = models.BooleanField(default=False)
-    problemas_nacionales_conacyt = models.ManyToManyField(ProblemaNacionalConacyt)
+    problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt)
     descripcion_problema_nacional_conacyt = models.TextField(blank=True)
     dependencias = models.ManyToManyField(Dependencia, related_name='proyecto_dependencias', blank=True)
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
@@ -660,8 +660,9 @@ class Libro(models.Model):
     usuarios = models.ManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='libro_coordinadores', blank=True)
-    editorial = models.ForeignKey(Editorial)
     ciudad = models.ForeignKey(Ciudad)
+    editorial = models.ForeignKey(Editorial)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     fecha = models.DateField(auto_now=False)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=0)
@@ -670,7 +671,6 @@ class Libro(models.Model):
     isbn = models.SlugField(max_length=30)
     url = models.URLField(blank=True)
     #tags = models.ManyToManyField(Tag, related_name='libro_tags', blank=True)
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
 
     def __str__(self):
         return "{} : {} : {}".format(self.nombre, self.editorial, self.isbn)

@@ -12,7 +12,7 @@ EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDI
 
 
 class MemoriaInExtenso(models.Model):
-    titulo = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255, unique=True, verbose_name='Título de memoria in extenso')
     #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     ciudad = models.ForeignKey(Ciudad)
@@ -30,7 +30,7 @@ class MemoriaInExtenso(models.Model):
     url = models.URLField(blank=True)
 
     def __str__(self):
-        return self.titulo
+        return self.nombre
     
     def get_absolute_url(self):
         return reverse('memoria_in_extenso_detalle', kwargs={'pk': self.pk})

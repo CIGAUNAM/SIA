@@ -193,7 +193,7 @@ class LibroInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = LibroInvestigacionForm
     model = LibroInvestigacion
     aux = LibroInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'libro_investigacion.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -212,7 +212,7 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = LibroInvestigacionForm
     model = LibroInvestigacion
     aux = LibroInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'libro_investigacion.html'
 
 
 class LibroInvestigacionEliminar(View):
