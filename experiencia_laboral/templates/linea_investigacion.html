@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>{{ form.linea_investigacion.label }}:</strong>{{ form.linea_investigacion }}</p>
+    <p><strong>{{ form.descripcion.label }}:</strong>{{ form.descripcion }}</p>
+    <p><strong>{{ form.institucion.label }}:</strong>{{ form.institucion }}</p>
+    <p><strong>{{ form.dependencia.label }}:</strong>{{ form.dependencia }}</p>
+    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>{{ form.linea_investigacion.label }}:</strong>{{ form.linea_investigacion }}</p>
+    <p><strong>{{ form.descripcion.label }}:</strong>{{ form.descripcion }}</p>
+    <p><strong>{{ form.institucion.label }}:</strong>{{ form.institucion }}</p>
+    <p><strong>{{ form.dependencia.label }}:</strong>{{ form.dependencia }}</p>
+    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+{% endblock %}

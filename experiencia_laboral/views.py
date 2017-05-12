@@ -33,14 +33,14 @@ class ExperienciaLaboralLista(ObjectCreateMixin, View):
     form_class = ExperienciaLaboralForm
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
-    template_name = 'main.html'
+    template_name = 'experiencia_laboral.html'
 
 
 class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
     form_class = ExperienciaLaboralForm
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
-    template_name = 'main.html'
+    template_name = 'experiencia_laboral.html'
 
 
 class ExperienciaLaboralEliminar(View):
@@ -70,14 +70,14 @@ class LineaInvestigacionLista(ObjectCreateMixin, View):
     form_class = LineaInvestigacionForm
     model = LineaInvestigacion
     aux = LineaInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'linea_investigacion.html'
 
 
 class LineaInvestigacionDetalle(ObjectUpdateMixin, View):
     form_class = LineaInvestigacionForm
     model = LineaInvestigacion
     aux = LineaInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'linea_investigacion.html'
 
 
 class LineaInvestigacionEliminar(View):
@@ -107,14 +107,14 @@ class CapacidadPotencialidadLista(ObjectCreateMixin, View):
     form_class = CapacidadPotencialidadForm
     model = CapacidadPotencialidad
     aux = CapacidadPotencialidadContext.contexto
-    template_name = 'main.html'
+    template_name = 'capacidad_potencialidad.html'
 
 
 class CapacidadPotencialidadDetalle(ObjectUpdateMixin, View):
     form_class = CapacidadPotencialidadForm
     model = CapacidadPotencialidad
     aux = CapacidadPotencialidadContext.contexto
-    template_name = 'main.html'
+    template_name = 'capacidad_potencialidad.html'
 
 
 class CapacidadPotencialidadEliminar(View):

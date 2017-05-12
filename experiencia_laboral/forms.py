@@ -5,13 +5,41 @@ from nucleo.models import *
 #
 
 class ExperienciaLaboralForm(forms.ModelForm):
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
-    nombramiento = forms.ModelChoiceField(Nombramiento.objects.all().order_by('nombramiento'), widget=wSelect, required=False)
-    es_nombramiento_definitivo = forms.BooleanField()
-    cargo = forms.ModelChoiceField(Cargo.objects.all().order_by('nombre'), widget=wSelect, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=False)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+    nombramiento = forms.ModelChoiceField(
+        queryset=Nombramiento.objects.all(),
+        label="Nombramiento",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    es_nombramiento_definitivo = forms.BooleanField(label='Es nombramiento definitivo?')
+    cargo = forms.ModelChoiceField(
+        queryset=Cargo.objects.all(),
+        label="Cargo",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
+    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
 
     class Meta:
         model = ExperienciaLaboral
@@ -19,11 +47,27 @@ class ExperienciaLaboralForm(forms.ModelForm):
 
 
 class LineaInvestigacionForm(forms.ModelForm):
-    linea_investigacion = forms.CharField(widget=wCharField, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=False)
+    linea_investigacion = forms.CharField(widget=wCharField, required=True, label='Línea de investigación')
+    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
 
     class Meta:
         model = LineaInvestigacion
@@ -31,10 +75,10 @@ class LineaInvestigacionForm(forms.ModelForm):
 
 
 class CapacidadPotencialidadForm(forms.ModelForm):
-    competencia = forms.CharField(widget=wCharField, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=False)
+    competencia = forms.CharField(widget=wCharField, required=True, label='Capacidad o Potencialidad')
+    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
+    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
 
     class Meta:
         model = CapacidadPotencialidad

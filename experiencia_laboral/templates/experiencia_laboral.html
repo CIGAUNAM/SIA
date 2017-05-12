@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>{{ form.institucion.label }}:</strong>{{ form.institucion }}</p>
+    <p><strong>{{ form.dependencia.label }}:</strong>{{ form.dependencia }}</p>
+    <p><strong>{{ form.nombramiento.label }}:</strong>{{ form.nombramiento }}</p>
+    <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
+    <p><strong>{{ form.cargo.label }}:</strong>{{ form.cargo }}</p>
+    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>{{ form.institucion.label }}:</strong>{{ form.institucion }}</p>
+    <p><strong>{{ form.dependencia.label }}:</strong>{{ form.dependencia }}</p>
+    <p><strong>{{ form.nombramiento.label }}:</strong>{{ form.nombramiento }}</p>
+    <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
+    <p><strong>{{ form.cargo.label }}:</strong>{{ form.cargo }}</p>
+    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+{% endblock %}

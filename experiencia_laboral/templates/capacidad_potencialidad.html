@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>{{ form.competencia.label }}:</strong>{{ form.competencia }}</p>
+    <p><strong>{{ form.descripcion.label }}:</strong>{{ form.descripcion }}</p>
+    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>{{ form.competencia.label }}:</strong>{{ form.competencia }}</p>
+    <p><strong>{{ form.descripcion.label }}:</strong>{{ form.descripcion }}</p>
+    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+{% endblock %}
