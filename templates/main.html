@@ -24,7 +24,6 @@
                 {% endif %}
 
 
-
             {% endif %}
             <li class="pull-left header"><i class="fa fa-inbox"></i></li>
         </ul>
@@ -81,9 +80,12 @@
                                     {% endblock %}
                                     <br/>
                                     <button class="btn btn-success" type="submit">Actualizar {{ aux.objeto }}</button>
-                                    <a class="btn btn-primary" style="color: #fff" href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                    <a class="btn btn-primary" style="color: #fff"
+                                       href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
 
-                                    <a class="btn btn-danger" style="float: right; color: #fff" href="#eliminar" data-toggle="modal" data-target="#eliminar">Eliminar</a> <span style="float: right">&nbsp;</span>
+                                    <a class="btn btn-danger" style="float: right; color: #fff" href="#eliminar"
+                                       data-toggle="modal" data-target="#eliminar">Eliminar</a> <span
+                                        style="float: right">&nbsp;</span>
                                 </form>
                             </div>
                         </div>
@@ -115,7 +117,8 @@
                                     {% endblock %}
                                     <br/>
                                     <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
-                                    <a class="btn btn-primary" style="color: #fff" href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                    <a class="btn btn-primary" style="color: #fff"
+                                       href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
                                 </form>
                             </div>
                         </div>
@@ -169,7 +172,8 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                    </button>
                     <h4 class="modal-title">Eliminar {{ aux.objeto }}</h4>
                 </div>
                 <div class="modal-body">

@@ -111,14 +111,14 @@ class MapaArbitradoLista(ObjectCreateVarMixin, View):
     form_class = MapaArbitradoForm
     model = MapaArbitrado
     aux = MapaArbitradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'mapa_arbitrado.html'
 
 
 class MapaArbitradoDetalle(ObjectUpdateVarMixin, View):
     form_class = MapaArbitradoForm
     model = MapaArbitrado
     aux = MapaArbitradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'mapa_arbitrado.html'
 
 
 class MapaArbitradoEliminar(View):
