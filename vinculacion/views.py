@@ -97,14 +97,14 @@ class ArbitrajeOtraActividadLista(ObjectCreateMixin, View):
     form_class = ArbitrajeOtraActividadForm
     model = ArbitrajeOtraActividad
     aux = ArbitrajeOtraActividadContext.contexto
-    template_name = 'main.html'
+    template_name = 'arbitraje_otra_actividad.html'
 
 
 class ArbitrajeOtraActividadDetalle(ObjectUpdateMixin, View):
     form_class = ArbitrajeOtraActividadForm
     model = ArbitrajeOtraActividad
     aux = ArbitrajeOtraActividadContext.contexto
-    template_name = 'main.html'
+    template_name = 'arbitraje_otra_actividad.html'
 
 
 class ArbitrajeOtraActividadEliminar(View):
@@ -213,14 +213,14 @@ class ServicioExternoEntidadNoAcademicaLista(ObjectCreateMixin, View):
     form_class = ServicioExternoEntidadNoAcademicaForm
     model = ServicioExternoEntidadNoAcademica
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'servicio_externo.html'
 
 
 class ServicioExternoEntidadNoAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ServicioExternoEntidadNoAcademicaForm
     model = ServicioExternoEntidadNoAcademica
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'servicio_externo.html'
 
 
 class ServicioExternoEntidadNoAcademicaEliminar(View):

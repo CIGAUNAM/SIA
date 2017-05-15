@@ -1,16 +1,38 @@
 from SIA.widgets import *
-from . models import *
+from .models import *
 
 from django import forms
+from django_select2.forms import Select2MultipleWidget
 
 #
 
 class CargoAcademicoAdministrativoForm(forms.ModelForm):
-    cargo = forms.ModelChoiceField(Cargo.objects.all(), widget=wSelect, required=True)
+    cargo = forms.ModelChoiceField(
+        queryset=Cargo.objects.all(),
+        label="Cargo",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all(), widget=wSelect, required=True)
-    cargo_inicio = forms.CharField(widget=wDateField, required=True)
-    cargo_fin = forms.CharField(widget=wDateField, required=True)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+    fecha_inicio = forms.CharField(widget=wDateField, required=True)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = CargoAcademicoAdministrativo
@@ -18,11 +40,32 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
 
 
 class RepresentacionOrganoColegiadoForm(forms.ModelForm):
-    representacion = forms.ModelChoiceField(Representacion.objects.all(), widget=wSelect, required=True)
-    ante = forms.ModelChoiceField(Dependencia.objects.all(), widget=wSelect, required=True)
+    representacion = forms.ModelChoiceField(
+        queryset=Representacion.objects.all(),
+        label="Representación",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    cargo_inicio = forms.CharField(widget=wDateField, required=True)
-    cargo_fin = forms.CharField(widget=wDateField, required=True)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+    fecha_inicio = forms.CharField(widget=wDateField, required=True)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = RepresentacionOrganoColegiado
@@ -30,7 +73,13 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
 
 
 class ComisionAcademicaForm(forms.ModelForm):
-    comision_academica = forms.ModelChoiceField(Comision.objects.all(), widget=wSelect, required=True)
+    comision_academica = forms.ModelChoiceField(
+        queryset=Comision.objects.all(),
+        label="Comisión",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     es_evaluacion = forms.BooleanField(required=False)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
@@ -39,14 +88,38 @@ class ComisionAcademicaForm(forms.ModelForm):
     class Meta:
         model = ComisionAcademica
         exclude = ['usuario', ]
+        widgets = {
+            'dependencias': Select2MultipleWidget,
+        }
 
 
 class ApoyoTecnicoForm(forms.ModelForm):
-    apoyo_tecnico = forms.ModelChoiceField(Actividad.objects.all(), widget=wSelect, required=True)
+    actividad_apoyo = forms.ModelChoiceField(
+        queryset=Actividad.objects.all(),
+        label="Actividad de apoyo",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all(), widget=wSelect, required=True)
-    apoyo_inicio = forms.CharField(widget=wDateField, required=True)
-    apoyo_fin = forms.CharField(widget=wDateField, required=True)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+    fecha_inicio = forms.CharField(widget=wDateField, required=True)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = ApoyoTecnico
@@ -63,5 +136,3 @@ class ApoyoOtraActividadForm(forms.ModelForm):
     class Meta:
         model = ApoyoOtraActividad
         exclude = ['usuario', ]
-
-

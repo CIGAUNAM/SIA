@@ -78,6 +78,9 @@ INSTALLED_APPS = [
     'django_adminlte_theme',
     'django.contrib.admin',
 
+
+    #'templates',
+
     #'sekizai',
     #'treebeard',
     #'filer',
@@ -184,9 +187,27 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_custom'),
 )
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                #'django.core.context_processors.request',
+            ],
+        },
+    },
+]
+
+#TEMPLATE_DIRS = (
+#    os.path.join(BASE_DIR, 'templates'),
+#)
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
