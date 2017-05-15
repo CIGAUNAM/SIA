@@ -174,8 +174,8 @@ class OtroProgramaVinculacion(models.Model):
     fecha = models.DateField()
     tipo = models.CharField(max_length=20, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
     descripcion = models.TextField()
-    dependencias = models.ManyToManyField(Dependencia)
     resultados = models.TextField(blank=True)
+    dependencias = models.ManyToManyField(Dependencia)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='otro_programa_vinculacion_tags', blank=True)
 

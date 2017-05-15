@@ -109,7 +109,7 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
     tema = forms.CharField(widget=wCharField, required=True)
     fecha = forms.CharField(widget=wDateField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    actividad = forms.ChoiceField(widget=Select3Widget, choices=(('PRODUCCION', 'Producciòn'), ('PARTICIPACION', 'Participaciòn'), ('ENTREVISTA', 'Entrevista'), ('OTRA', 'Otra')), required=True)
+    actividad = forms.ChoiceField(widget=Select3Widget, choices=(('PRODUCCION', 'Producción'), ('PARTICIPACION', 'Participación'), ('ENTREVISTA', 'Entrevista'), ('OTRA', 'Otra')), required=True)
     medio = forms.ChoiceField(widget=Select3Widget, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')), required=True)
     nombre_medio = forms.ModelChoiceField(
         queryset=MedioDivulgacion.objects.all(),

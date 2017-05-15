@@ -5,7 +5,7 @@ bc_seccion = 'Apoyo Institucional'
 
 class CargoAcademicoAdministrativoContext:
     obj = 'Cargo Académico-Administrativo'
-    objs = 'Cargo Académico-Administrativos'
+    objs = 'Cargos Académico-Administrativos'
     url_seccion = 'cargos-academico-dministrativos'
 
 

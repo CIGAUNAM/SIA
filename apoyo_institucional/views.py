@@ -25,14 +25,14 @@ class CargoAcademicoAdministrativoLista(ObjectCreateMixin, View):
     form_class = CargoAcademicoAdministrativoForm
     model = CargoAcademicoAdministrativo
     aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'main.html'
+    template_name = 'cargo_academico-administrativo.html'
 
 
 class CargoAcademicoAdministrativoDetalle(ObjectUpdateMixin, View):
     form_class = CargoAcademicoAdministrativoForm
     model = CargoAcademicoAdministrativo
     aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'main.html'
+    template_name = 'cargo_academico-administrativo.html'
 
 
 class CargoAcademicoAdministrativoEliminar(View):
@@ -61,14 +61,14 @@ class RepresentacionOrganoColegiadoLista(ObjectCreateMixin, View):
     form_class = RepresentacionOrganoColegiadoForm
     model = RepresentacionOrganoColegiado
     aux = RepresentacionOrganoColegiadoContext.contexto
-    template_name = 'main.html'
+    template_name = 'representacion_organo_colegiado.html'
 
 
 class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
     form_class = RepresentacionOrganoColegiadoForm
     model = RepresentacionOrganoColegiado
     aux = RepresentacionOrganoColegiadoContext.contexto
-    template_name = 'main.html'
+    template_name = 'representacion_organo_colegiado.html'
 
 
 class RepresentacionOrganoColegiadoEliminar(View):

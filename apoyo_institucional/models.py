@@ -63,51 +63,51 @@ class OrganoColegiado(models.Model):
 """
 
 class CargoAcademicoAdministrativo(models.Model):
-    nombre = models.ForeignKey(Cargo)
+    cargo = models.ForeignKey(Cargo)
     descripcion = models.TextField(blank=True)
     dependencia = models.ForeignKey(Dependencia)
-    cargo_inicio = models.DateField(auto_now=False)
-    cargo_fin = models.DateField(auto_now=False)
+    fecha_inicio = models.DateField(auto_now=False)
+    fecha_fin = models.DateField(auto_now=False)
     ##slug = AutoSlugField(populate_from='nombre', unique=True)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='cargo_academico_administrativo_tags', blank=True)
 
     def __str__(self):
-        return "[ {} : {} ] : {} : {} : {} : {}".format(self.user, self.nombre, self.dependencia.nombre, self.dependencia.institucion, self.cargo_inicio, self.cargo_fin)
+        return "[ {} : {} ] : {} : {} : {} : {}".format(self.user, self.cargo, self.dependencia.nombre, self.dependencia.institucion, self.fecha_inicio, self.cargo_fin)
 
     def get_absolute_url(self):
         return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Cargos Académico-Administrativos'
-        unique_together = ('nombre', 'usuario', 'dependencia', 'cargo_inicio')
-        ordering = ['-cargo_inicio']
-        get_latest_by = ['user', 'nombre']
+        unique_together = ('cargo', 'usuario', 'dependencia', 'fecha_inicio')
+        ordering = ['-fecha_inicio']
+        get_latest_by = ['user', 'cargo']
 
 
 class RepresentacionOrganoColegiado(models.Model):
     representacion = models.ForeignKey(Representacion)
-    ante = models.ForeignKey(Dependencia)
     descripcion = models.TextField(blank=True)
-    cargo_inicio = models.DateField(auto_now=False)
-    cargo_fin = models.DateField(auto_now=False)
+    dependencia = models.ForeignKey(Dependencia)
+    fecha_inicio = models.DateField(auto_now=False)
+    fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='representante_ante_organo_colegiado_tags', blank=True)
 
     def __str__(self):
-        return "{} : {} : {} - {}".format(self.representacion, self.ante, self.cargo_inicio, self.cargo_fin)
+        return "{} : {} : {} ".format(self.representacion, self.dependencia, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('representacion_organo_colegiado_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Representantes Ante Organos Colegiados'
-        unique_together = ('usuario', 'representacion', 'cargo_inicio')
-        ordering = ['-cargo_inicio']
+        unique_together = ('usuario', 'representacion', 'fecha_inicio')
+        ordering = ['-fecha_inicio']
 
 
 class ComisionAcademica(models.Model):
-    nombre = models.ForeignKey(Comision)
+    comision_academica = models.ForeignKey(Comision)
     #slug = AutoSlugField(populate_from='nombre', unique=True, max_length=255)
     descripcion = models.TextField(blank=True)
     es_evaluacion = models.BooleanField(default=False)
@@ -119,41 +119,41 @@ class ComisionAcademica(models.Model):
     #tags = models.ManyToManyField(Tag, related_name='comision_academica_tags', blank=True)
 
     def __str__(self):
-        return "[{}] : {} : {} : {}".format(self.user, self.nombre, self.fecha_inicio, self.fecha_fin)
+        return "[{}] : {} : {} : {}".format(self.user, self.comision_academica, self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('comision_academica_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Comisiones Académicas'
-        unique_together = ('nombre', 'usuario', 'fecha_inicio')
+        unique_together = ('comision_academica', 'usuario', 'fecha_inicio')
         ordering = ['fecha_inicio']
-        get_latest_by = ['user', 'nombre']
+        get_latest_by = ['user', 'comision_academica']
 
 
 
 class ApoyoTecnico(models.Model):
-    nombre = models.ForeignKey(Actividad)
+    actividad_apoyo = models.ForeignKey(Actividad)
     descripcion = models.TextField()
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
-    apoyo_inicio = models.DateField(auto_now=False)
-    apoyo_fin = models.DateField(auto_now=False)
+    fecha_inicio = models.DateField(auto_now=False)
+    fecha_fin = models.DateField(auto_now=False)
     ##slug = AutoSlugField(populate_from='nombre', unique=True)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='apoyo_tecnico_tags', blank=True)
 
     def __str__(self):
-        return "[{}] : {} : {} : {}".format(self.user, self.nombre, self.apoyo_inicio, self.apoyo_fin)
+        return "[{}] : {} : {}".format(self.usuario, self.actividad_apoyo, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('apoyo_tecnico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Apoyos de Técnicos'
-        unique_together = ('nombre', 'usuario', 'dependencia', 'apoyo_inicio')
-        ordering = ['-apoyo_inicio']
-        get_latest_by = ['user', 'nombre']
+        unique_together = ('actividad_apoyo', 'usuario', 'dependencia', 'fecha_inicio')
+        ordering = ['-fecha_inicio']
+        get_latest_by = ['usuario', 'actividad_apoyo']
 
 
 class ApoyoOtraActividad(models.Model):

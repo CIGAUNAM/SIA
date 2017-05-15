@@ -56,7 +56,7 @@ class CursoEspecializacionForm(forms.ModelForm):
             'area_conocimiento': NombreModelSelect3Widget,
         }
         help_texts = {
-            'nombre': 'Group to which this message belongs to',
+            "cargo": 'Group to which this message belongs to',
         }
 
 
