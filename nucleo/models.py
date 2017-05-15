@@ -543,7 +543,7 @@ class Proyecto(models.Model):
     organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
     modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
     tematica_genero = models.BooleanField(default=False)
-    problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt)
+    problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True)
     descripcion_problema_nacional_conacyt = models.TextField(blank=True)
     dependencias = models.ManyToManyField(Dependencia, related_name='proyecto_dependencias', blank=True)
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
@@ -714,3 +714,4 @@ class Asignatura(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+

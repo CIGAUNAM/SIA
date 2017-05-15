@@ -215,7 +215,7 @@ class LibroDivulgacionLista(ObjectCreateVarMixin, View):
     form_class = LibroDivulgacionForm
     model = LibroDivulgacion
     aux = LibroDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'libro_divulgacion.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -234,7 +234,7 @@ class LibroDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = LibroDivulgacionForm
     model = LibroDivulgacion
     aux = LibroDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'libro_divulgacion.html'
 
 
 class LibroDivulgacionEliminar(View):
