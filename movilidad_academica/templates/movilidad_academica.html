@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Académico:</strong>{{ form.academico }}</p>
+    <p><strong>Descripcion:</strong>{{ form.descripcion }}</p>
+    <p><strong>Institucion:</strong>{{ form.institucion }}</p>
+    <p><strong>Dependencia:</strong>{{ form.dependencia }}</p>
+    <p><strong>Actividades:</strong>{{ form.actividades }}</p>
+    <p><strong>Fecha inicio:</strong>{{ form.fecha_inicio }}</p>
+    <p><strong>Fecha fin:</strong>{{ form.fecha_fin }}</p>
+    <p><strong>Es intercambio UNAM: </strong>{{ form.intercambio_unam }}</p>
+    <p><strong>Financiamiento:</strong>{{ form.financiamiento }}</p>
+    <p><strong>Redes academicas:</strong>{{ form.redes_academicas }}</p>
+    <p><strong>Proyecto de investigacion:</strong>{{ form.proyecto_investigacion }}</p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Título de reseña:</strong>{{ form.titulo }}</p>
+    <p><strong>Libro Resenado:</strong>{{ form.libro_resenado }}</p>
+    <p><strong>Revista Reseñada:</strong>{{ form.revista_resenada }}</p>
+    <p><strong>Descripcion:</strong>{{ form.descripcion }}</p>
+    <p><strong>Libro que publica:</strong>{{ form.libro_publica }}</p>
+    <p><strong>Revista que publica:</strong>{{ form.revista_publica }}</p>
+    <p><strong>Página inicial:</strong>{{ form.pagina_inicio }}</p>
+    <p><strong>Página final:</strong>{{ form.pagina_fin }}</p>
+    <p><strong>URL:</strong>{{ form.url }}</p>
+{% endblock %}

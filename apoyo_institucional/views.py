@@ -133,14 +133,14 @@ class ApoyoTecnicoLista(ObjectCreateMixin, View):
     form_class = ApoyoTecnicoForm
     model = ApoyoTecnico
     aux = ApoyoTecnicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'apoyo.html'
 
 
 class ApoyoTecnicoDetalle(ObjectUpdateMixin, View):
     form_class = ApoyoTecnicoForm
     model = ApoyoTecnico
     aux = ApoyoTecnicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'apoyo.html'
 
 
 class ApoyoTecnicoEliminar(View):
@@ -169,14 +169,14 @@ class ApoyoOtraActividadLista(ObjectCreateMixin, View):
     form_class = ApoyoOtraActividadForm
     model = ApoyoOtraActividad
     aux = ApoyoOtraActividadContext.contexto
-    template_name = 'main.html'
+    template_name = 'apoyo.html'
 
 
 class ApoyoOtraActividadDetalle(ObjectUpdateMixin, View):
     form_class = ApoyoOtraActividadForm
     model = ApoyoOtraActividad
     aux = ApoyoOtraActividadContext.contexto
-    template_name = 'main.html'
+    template_name = 'apoyo.html'
 
 
 class ApoyoOtraActividadEliminar(View):
