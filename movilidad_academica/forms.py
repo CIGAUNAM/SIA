@@ -2,20 +2,62 @@ from SIA.widgets import *
 from . models import *
 
 from django import forms
+from nucleo.models import Institucion
+from django_select2.forms import Select2MultipleWidget
 
 #
 
 class MovilidadAcademicaForm(forms.ModelForm):
-    academico = forms.ModelChoiceField(User.objects.all().order_by('first_name'), widget=wSelect, required=True)
+    academico = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Académico",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all().order_by('dependencia'), widget=wSelect, required=True)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
     actividades = forms.CharField(widget=wTextarea, required=False)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
-    intercambio_unam = forms.BooleanField(required=False)
-    financiamiento = forms.ModelChoiceField(Financiamiento.objects.all().order_by('programa'), widget=wSelect, required=True)
-    proyecto_investigacion = forms.ModelChoiceField(Proyecto.objects.all().order_by('nombre_proyecto'), widget=wSelect, required=True)
+    intercambio_unam = forms.BooleanField(required=False, label='Es intercambio UNAM')
+    financiamiento = forms.ModelChoiceField(
+        queryset=Financiamiento.objects.all(),
+        label="Financiamiento",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
+    proyecto_investigacion = forms.ModelChoiceField(
+        queryset=Proyecto.objects.all(),
+        label="Proyecto de investigación",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            #dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
 
     class Meta:
         model = MovilidadAcademica
         exclude = ['tipo', 'usuario', ]
+        widgets = {
+            'redes_academicas': Select2MultipleWidget,
+        }

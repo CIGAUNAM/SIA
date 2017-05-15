@@ -23,8 +23,8 @@ class MovilidadJSON(View):
             items = MovilidadAcademica.objects.filter(usuario=usuarioid, tipo=self.tipo).values('pk',
                                                                                                 'academico__first_name',
                                                                                                 'academico__last_name',
-                                                                                                'dependencia__dependencia',
-                                                                                                'dependencia__ciudad__estado__pais__pais',
+                                                                                                'dependencia__nombre',
+                                                                                                'dependencia__ciudad__estado__pais__nombre',
                                                                                                 'fecha_inicio')
             # for i in items:
             #    i['fecha_inicio'] = str(i['fecha_inicio'])
@@ -35,8 +35,8 @@ class MovilidadJSON(View):
                 json += str(i['pk'])
                 json += ', "fields": {"academico": '
                 json += '"' + str(i['academico__first_name']) + ' ' + str(i['academico__last_name']) + '", '
-                json += '"dependencia": ' + '"' + str(i['dependencia__dependencia']) + '", '
-                json += '"pais": ' + '"' + str(i['dependencia__ciudad__estado__pais__pais']) + '", '
+                json += '"dependencia": ' + '"' + str(i['dependencia__nombre']) + '", '
+                json += '"pais": ' + '"' + str(i['dependencia__ciudad__estado__pais__nombre']) + '", '
                 json += '"fecha_inicio": ' + '"' + str(i['fecha_inicio']) + '"'
                 json += '}}, '
             json += ']'
@@ -96,7 +96,7 @@ class MovilidadLista(ObjectCreateMixin, View):
 
     aux = contexto
 
-    template_name = 'main.html'
+    template_name = 'movilidad_academica.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -132,7 +132,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
         return mi_contexto
 
     aux = contexto
-    template_name = 'main.html'
+    template_name = 'movilidad_academica.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)

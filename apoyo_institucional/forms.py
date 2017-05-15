@@ -127,11 +127,32 @@ class ApoyoTecnicoForm(forms.ModelForm):
 
 
 class ApoyoOtraActividadForm(forms.ModelForm):
-    apoyo_actividad = forms.ModelChoiceField(Actividad.objects.all(), widget=wSelect, required=True)
+    actividad_apoyo = forms.ModelChoiceField(
+        queryset=Actividad.objects.all(),
+        label="Actividad de apoyo",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all(), widget=wSelect, required=True)
-    apoyo_inicio = forms.CharField(widget=wDateField, required=True)
-    apoyo_fin = forms.CharField(widget=wDateField, required=True)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
+    fecha_inicio = forms.CharField(widget=wDateField, required=True)
+    fecha_fin = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = ApoyoOtraActividad

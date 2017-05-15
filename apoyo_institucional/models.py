@@ -157,24 +157,24 @@ class ApoyoTecnico(models.Model):
 
 
 class ApoyoOtraActividad(models.Model):
-    nombre = models.ForeignKey(Actividad)
+    actividad_apoyo = models.ForeignKey(Actividad)
     descripcion = models.TextField()
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
-    apoyo_inicio = models.DateField(auto_now=False)
-    apoyo_fin = models.DateField(auto_now=False)
+    fecha_inicio = models.DateField(auto_now=False)
+    fecha_fin = models.DateField(auto_now=False)
     ##slug = AutoSlugField(populate_from='apoyo_otra_actividad_tags', unique=True)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='apoyo_otra_actividad_tags', blank=True)
 
     def __str__(self):
-        return "[{}] : {} : {} : {}".format(self.user, self.nombre, self.apoyo_inicio, self.apoyo_fin)
+        return "[{}] : {} : {}".format(self.user, self.actividad_apoyo, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('apoyo_otra_actividad_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Apoyos en Otras Actividades'
-        unique_together = ('nombre', 'usuario', 'dependencia', 'apoyo_inicio')
-        ordering = ['-apoyo_inicio']
-        get_latest_by = ['user', 'nombre']
+        unique_together = ('actividad_apoyo', 'usuario', 'dependencia', 'fecha_inicio')
+        ordering = ['-fecha_inicio']
+        get_latest_by = ['usuario', 'actividad_apoyo']
