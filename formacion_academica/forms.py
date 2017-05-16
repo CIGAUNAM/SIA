@@ -15,17 +15,16 @@ class NombreModelSelect3Widget(ModelSelect3Widget):
 
 
 class CursoEspecializacionForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    nombre = forms.CharField(widget=wCharField, required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
+    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripciòn detallada adicional, por ejemplo informaciòn que no està contemplada en los demás campos.')
     tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
-    horas = forms.CharField(widget=wNumberField, required=True)
-    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True)
+    horas = forms.CharField(widget=wNumberField, required=True, label='Número de horas')
+    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
     area_conocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Área de conocimiento",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-            # dependent_fields={'dependencia': 'dependencia'},
         )
     )
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
@@ -52,11 +51,15 @@ class CursoEspecializacionForm(forms.ModelForm):
         model = CursoEspecializacion
         exclude = ['usuario', ]
         widgets = {
+            #'nombre': wCharField,
             'dependencia': NombreModelSelect3Widget,
             'area_conocimiento': NombreModelSelect3Widget,
         }
         help_texts = {
-            "cargo": 'Group to which this message belongs to',
+            "nombre": 'Group to which this message belongs to',
+            "descripcion": 'Group to which this message belongs to',
+            "tipo": 'Group to which this message belongs to',
+            "area_conocimiento": 'Group to which this message belongs to',
         }
 
 

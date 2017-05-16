@@ -24,6 +24,7 @@ class wCharField(Widget):
 
     def render(self, name, value, attrs=None):
         context = self.get_context(name, value, attrs)
+
         template = loader.get_template(self.template_name).render(context)
         return mark_safe(template)
 
@@ -220,11 +221,11 @@ class wSelect(Select):
         if value is None:
             value = ''
         final_attrs = self.build_attrs(attrs, name=name)
-        output = [format_html('<div class="form-group" style="margin-top: -10px;"><div class="input-group"><div class="input-group-addon"><i class="fa fa-list-alt"></i></div><select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
+        output = [format_html('<select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
         options = self.render_options([value])
         if options:
             output.append(options)
-        output.append('</select><div class="input-group-addon"><i class="fa fa-question-circle"></i></div></div>')
+        output.append('</select>')
         return mark_safe('\n'.join(output))
 
     def render_option(self, selected_choices, option_value, option_label):

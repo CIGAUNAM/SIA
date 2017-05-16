@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
     'nucleo.apps.NucleoConfig',
     'formacion_academica.apps.FormacionAcademicaConfig',
     'experiencia_laboral.apps.ExperienciaLaboralConfig',

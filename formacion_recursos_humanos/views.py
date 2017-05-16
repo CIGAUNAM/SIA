@@ -175,14 +175,14 @@ class ComiteCandidaturaDoctoralLista(ObjectCreateVarMixin, View):
     form_class = ComiteCandidaturaDoctoralForm
     model = ComiteCandidaturaDoctoral
     aux = ComiteCandidaturaDoctoralContext.contexto
-    template_name = 'main.html'
+    template_name = 'comite_candidatura_doctoral.html'
 
 
 class ComiteCandidaturaDoctoralDetalle(ObjectUpdateVarMixin, View):
     form_class = ComiteCandidaturaDoctoralForm
     model = ComiteCandidaturaDoctoral
     aux = ComiteCandidaturaDoctoralContext.contexto
-    template_name = 'main.html'
+    template_name = 'comite_candidatura_doctoral.html'
 
 
 class ComiteCandidaturaDoctoralEliminar(View):
