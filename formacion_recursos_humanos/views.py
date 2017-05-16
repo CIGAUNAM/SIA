@@ -43,14 +43,14 @@ class AsesorEstanciaLista(ObjectCreateMixin, View):
     form_class = AsesorEstanciaForm
     model = AsesorEstancia
     aux = AsesorEstanciaContext.contexto
-    template_name = 'main.html'
+    template_name = 'asesor_estancia.html'
 
 
 class AsesorEstanciaDetalle(ObjectUpdateMixin, View):
     form_class = AsesorEstanciaForm
     model = AsesorEstancia
     aux = AsesorEstanciaContext.contexto
-    template_name = 'main.html'
+    template_name = 'asesor_estancia.html'
 
 
 class AsesorEstanciaEliminar(View):
@@ -85,14 +85,14 @@ class DireccionTesisLista(ObjectCreateMixin, View):
     form_class = DireccionTesisForm
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
-    template_name = 'main.html'
+    template_name = 'direccion_tesis.html'
 
 
 class DireccionTesisDetalle(ObjectUpdateMixin, View):
     form_class = DireccionTesisForm
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
-    template_name = 'main.html'
+    template_name = 'direccion_tesis.html'
 
 
 class DireccionTesisEliminar(View):
@@ -135,14 +135,14 @@ class ComiteTutoralLista(ObjectCreateVarMixin, View):
     form_class = ComiteTutoralForm
     model = ComiteTutoral
     aux = ComiteTutoralContext.contexto
-    template_name = 'main.html'
+    template_name = 'comite_tutoral.html'
 
 
 class ComiteTutoralDetalle(ObjectUpdateVarMixin, View):
     form_class = ComiteTutoralForm
     model = ComiteTutoral
     aux = ComiteTutoralContext.contexto
-    template_name = 'main.html'
+    template_name = 'comite_tutoral.html'
 
 
 class ComiteTutoralEliminar(View):
