@@ -1,14 +1,2 @@
-<div class="form-group" style="margin-top: -10px;">
-    <div class="input-group date">
-        <div class="input-group-addon">
-            <i class="fa fa-pencil-square-o"></i>
-        </div>
-        <input class="form-control pull-right" id="id_{{ widget.name }}" maxlength="255" name="{{ widget.name }}"
-               type="text"{% if widget.value %} value="{{ widget.value }}"{% endif %}>
-        <div class="input-group-addon">
-            <a href="#" data-toggle="tooltip" data-placement="left" title="Ejemplo de texto de ayuda descriptiva por campo. Aquí deberá ir una explicación del tipo de contenido del campo{{ widget.help_text }}"><i class="fa fa-question-circle"></i></a>
-        </div>
-
-    </div>
-    <p>{{ widget.helptext }}</p>
-</div>
+<input class="form-control pull-right" id="id_{{ widget.name }}" maxlength="255" name="{{ widget.name }}"
+       type="text"{% if widget.value %} value="{{ widget.value }}"{% endif %}>

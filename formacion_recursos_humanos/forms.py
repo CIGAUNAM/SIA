@@ -201,13 +201,56 @@ class ComiteTutoralForm(forms.ModelForm):
 
 
 class ComiteCandidaturaDoctoralForm(forms.ModelForm):
-    asesorado = forms.ModelChoiceField(User.objects.all(), widget=wSelect, required=True)
-    asesor_principal = forms.ModelChoiceField(User.objects.all(), widget=wSelect, required=True)
-    proyecto = forms.ModelChoiceField(Proyecto.objects.all(), widget=wSelect, required=True)
-    programa_doctorado = forms.ModelChoiceField(ProgramaDoctorado.objects.all(), widget=wSelect, required=True)
-    dependencia = forms.ModelChoiceField(Dependencia.objects.all(), widget=wSelect, required=True)
+    asesorado = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Asesorado",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    asesor_principal = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Asesor principal",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    proyecto = forms.ModelChoiceField(
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    programa_doctorado = forms.ModelChoiceField(
+        queryset=ProgramaDoctorado.objects.all(),
+        label="Programa de doctorado",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
     fecha_defensa = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = ComiteCandidaturaDoctoral
         exclude = []
+        widgets = {
+            'otros_asesores': Select2MultipleWidget,
+            'sinodales': Select2MultipleWidget,
+        }
