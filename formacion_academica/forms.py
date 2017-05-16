@@ -16,7 +16,7 @@ class NombreModelSelect3Widget(ModelSelect3Widget):
 
 class CursoEspecializacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
-    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripciòn detallada adicional, por ejemplo informaciòn que no està contemplada en los demás campos.')
+    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
     tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
     horas = forms.CharField(widget=wNumberField, required=True, label='Número de horas')
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
