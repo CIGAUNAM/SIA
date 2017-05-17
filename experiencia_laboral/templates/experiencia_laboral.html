@@ -70,7 +70,7 @@
         </div>
     </div>
     </p>
-    <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
+    <p><strong>El nombramiento es definitivo: </strong><span style="margin-top: -2px">{{ form.es_nombramiento_definitivo }}</span></p>
     <p><strong>Cargo:</strong>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -104,7 +104,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de doctorado."><i
+                   title="Fecha de inicio del cargo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -119,7 +119,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                   title="Fecha de terminación del cargo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -128,7 +128,7 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Institución:</strong>
+        <p><strong>Institución:</strong>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -197,7 +197,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Es nombramiento definitivo: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
+    <p><strong>El nombramiento es definitivo: </strong>{{ form.es_nombramiento_definitivo }}</p>
     <p><strong>Cargo:</strong>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -231,7 +231,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de doctorado."><i
+                   title="Fecha de inicio del cargo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -246,7 +246,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                   title="Fecha de terminación del cargo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
