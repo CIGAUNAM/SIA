@@ -1,27 +1,329 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Programa de maestria:</strong>{{ form.programa }}</p>
-    <p><strong>Descripción:</strong>{{ form.descripcion }}</p>
-    <p><strong>Institucion:</strong>{{ form.institucion }}</p>
-    <p><strong>Dependencia:</strong>{{ form.dependencia }}</p>
-    <p><strong>Título de tesis:</strong>{{ form.titulo_tesis }}</p>
-    <p><strong>Documento de tesis:</strong>{{ form.tesis_doc }}</p>
-    <p><strong>URL de tesis:</strong>{{ form.tesis_url }}</p>
-    <p><strong>fecha de inicio:</strong>{{ form.fecha_inicio }}</p>
-    <p><strong>fecha de fin:</strong>{{ form.fecha_fin }}</p>
-    <p><strong>fecha de obtención de grado:</strong>{{ form.fecha_grado }}</p>
+    <p><strong>Programa de maestria:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.programa }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del programa de maestría.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un programa de maestría nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Programa de maestría acreditado.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"> </i> </a> </strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Institución:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Institución donde se llevó a cabo la maestría, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Dependencia:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Dependencia donde se llevó a cabo maestría, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Título de tesis:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.titulo_tesis }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Título de la tesis con que finalizó la maestría."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+
+        </div>
+    </div>
+    </p>
+    <p><strong>URL de tesis:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.tesis_url }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de inicio:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de inicio de la maestría."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de terminación de la maestría, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de obtención de grado:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_grado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de titulación y obtención de grado de maestría."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Programa de maestria:</strong>{{ form.programa }}</p>
-    <p><strong>Descripción:</strong>{{ form.descripcion }}</p>
-    <p><strong>Institucion:</strong>{{ form.institucion }}</p>
-    <p><strong>Dependencia:</strong>{{ form.dependencia }}</p>
-    <p><strong>Título de tesis:</strong>{{ form.titulo_tesis }}</p>
-    <p><strong>Documento de tesis:</strong>{{ form.tesis_doc }}</p>
-    <p><strong>URL de tesis:</strong>{{ form.tesis_url }}</p>
-    <p><strong>fecha de inicio:</strong>{{ form.fecha_inicio }}</p>
-    <p><strong>fecha de fin:</strong>{{ form.fecha_fin }}</p>
-    <p><strong>fecha de obtención de grado:</strong>{{ form.fecha_grado }}</p>
+    <p><strong>Programa de maestria:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.programa }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del programa de maestría.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un programa de maestría nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Programa de maestría acreditado.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"> </i> </a> </strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Institución:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Institución donde se llevó a cabo la maestría, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Dependencia:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Dependencia donde se llevó a cabo maestría, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Título de tesis:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.titulo_tesis }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Título de la tesis con que finalizó la maestría."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+
+        </div>
+    </div>
+    </p>
+    <p><strong>URL de tesis:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.tesis_url }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de inicio:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de inicio de la maestría."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de terminación de la maestría, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de obtención de grado:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_grado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de titulación y obtención de grado de maestría."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
 {% endblock %}
