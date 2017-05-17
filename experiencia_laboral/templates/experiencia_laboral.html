@@ -1,21 +1,255 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>{{ form.institucion.label }}:</strong>{{ form.institucion }}</p>
-    <p><strong>{{ form.dependencia.label }}:</strong>{{ form.dependencia }}</p>
-    <p><strong>{{ form.nombramiento.label }}:</strong>{{ form.nombramiento }}</p>
+    <p><strong>Institución:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Institución donde se llevó a cabo el doctorado, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Dependencia:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Dependencia donde se llevó a cabo el doctorado, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombramiento:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nombramiento }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
-    <p><strong>{{ form.cargo.label }}:</strong>{{ form.cargo }}</p>
-    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
-    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+    <p><strong>Cargo:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.cargo }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del cargo seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un cargo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Cargo relativo a la experiencia laboral que se está dando de alta, por ejemplo, Director general, Relaciones públicas, Almacenista, etc.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de inicio:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de inicio de doctorado."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>{{ form.institucion.label }}:</strong>{{ form.institucion }}</p>
-    <p><strong>{{ form.dependencia.label }}:</strong>{{ form.dependencia }}</p>
-    <p><strong>{{ form.nombramiento.label }}:</strong>{{ form.nombramiento }}</p>
-    <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
-    <p><strong>{{ form.cargo.label }}:</strong>{{ form.cargo }}</p>
-    <p><strong>{{ form.fecha_inicio.label }}:</strong>{{ form.fecha_inicio }}</p>
-    <p><strong>{{ form.fecha_fin.label }}:</strong>{{ form.fecha_fin }}</p>
+    <p><strong>Institución:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Institución donde se llevó a cabo el doctorado, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Dependencia:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Dependencia donde se llevó a cabo el doctorado, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombramiento:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nombramiento }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Es nombramiento definitivo: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
+    <p><strong>Cargo:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.cargo }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del cargo seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un cargo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Cargo relativo a la experiencia laboral que se está dando de alta, por ejemplo, Director general, Relaciones públicas, Almacenista, etc.">
+                    <i class="fa fa-question-circle"></i></a></div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de inicio:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de inicio de doctorado."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
 {% endblock %}
