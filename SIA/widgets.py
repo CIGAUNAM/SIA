@@ -86,6 +86,8 @@ class wDateField(DateInput):
                 'value': None,
             }}
 
+        value = None if value == '' else value
+
 
     def render(self, name, value, attrs=None):
         context = self.get_context(name, value, attrs)
