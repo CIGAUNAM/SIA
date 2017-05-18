@@ -20,7 +20,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el doctorado, la selección de
+                   title="Institución donde se adquirió esta experiencia, la selección de
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
                     <i class="fa fa-question-circle"></i>
@@ -48,7 +48,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el doctorado, las opciones
+                   title="Dependencia donde se adquirió esta experiencia, las opciones
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
@@ -104,7 +104,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de doctorado."><i
+                   title="Fecha de inicio de actividad."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -116,10 +116,10 @@
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha_inicio }}
+            {{ form.fecha_fin }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                   title="Fecha de terminación de actividad."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -147,7 +147,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el doctorado, la selección de
+                   title="Institución donde se adquirió esta experiencia, la selección de
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
                     <i class="fa fa-question-circle"></i>
@@ -175,7 +175,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el doctorado, las opciones
+                   title="Dependencia donde se adquirió esta experiencia, las opciones
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
@@ -197,7 +197,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Es nombramiento definitivo: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
+    <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>{{ form.es_nombramiento_definitivo }}</p>
     <p><strong>Cargo:</strong>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -231,7 +231,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de doctorado."><i
+                   title="Fecha de inicio de actividad."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -243,10 +243,10 @@
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha_inicio }}
+            {{ form.fecha_fin }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                   title="Fecha de terminación de actividad."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>

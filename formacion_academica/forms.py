@@ -211,8 +211,8 @@ class PostDoctoradoForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         ), required=False,
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
+    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de finalización')
 
     class Meta:
         model = PostDoctorado
