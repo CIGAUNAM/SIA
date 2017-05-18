@@ -29,7 +29,7 @@ class ExperienciaLaboralForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    es_nombramiento_definitivo = forms.BooleanField(label='Es nombramiento definitivo?')
+    es_nombramiento_definitivo = forms.BooleanField(label='Es nombramiento definitivo', required=False)
     cargo = forms.ModelChoiceField(
         queryset=Cargo.objects.all(),
         label="Cargo",

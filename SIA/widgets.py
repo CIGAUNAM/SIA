@@ -78,17 +78,23 @@ class wDateField(DateInput):
             except:
                 return {'widget': {
                     'name': name,
-                    'value': value,
+                    'value': None,
                 }}
         else:
             return {'widget': {
                 'name': name,
+                'value': None,
             }}
+
 
     def render(self, name, value, attrs=None):
         context = self.get_context(name, value, attrs)
         template = loader.get_template(self.template_name).render(context)
+        print("hola")
         return mark_safe(template)
+
+
+
 
 
 class wInput(Input):
@@ -162,42 +168,6 @@ class Select3Mixin(Select2Mixin):
         )
 
     media = property(_get_media)
-
-class wSelect1(Select):
-    input_type = 'select'
-    template_name = 'widgets/select.html'
-    option_template_name = 'widgets/select_option.html'
-    add_id_index = False
-    checked_attribute = {'selected': True}
-    option_inherits_attrs = False
-
-    def get_context(self, name, value, attrs):
-        context = super(Select, self).get_context(name, value, attrs)
-        if self.allow_multiple_selected:
-            context['widget']['attrs']['multiple'] = 'multiple'
-        return context
-
-    @staticmethod
-    def _choice_has_empty_value(choice):
-        """Return True if the choice's value is empty string or None."""
-        value, _ = choice
-        return (
-            (isinstance(value, six.string_types) and not bool(value)) or
-            value is None
-        )
-
-    def use_required_attribute(self, initial):
-        """
-        Don't render 'required' if the first <option> has a value, as that's
-        invalid HTML.
-        """
-        use_required_attribute = super(Select, self).use_required_attribute(initial)
-        # 'required' is always okay for <select multiple>.
-        if self.allow_multiple_selected:
-            return use_required_attribute
-
-        first_choice = next(iter(self.choices), None)
-        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
 
 
 class wSelect(Select):
