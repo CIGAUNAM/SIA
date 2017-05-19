@@ -23,7 +23,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')),
                              required=True)
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    solo_electronico = forms.BooleanField()
+    solo_electronico = forms.BooleanField(required=False)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False, label='Nombre abreviado WOS')
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha = forms.CharField(widget=wDateField, required=True, label='Fecha de publicación')
@@ -50,10 +50,10 @@ class ArticuloCientificoForm(forms.ModelForm):
         model = ArticuloCientifico
         exclude = []
         widgets = {
-            'usuarios': Select2MultipleWidget,
-            'alumnos': Select2MultipleWidget,
-            'indices': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'alumnos': Select3MultipleWidget,
+            'indices': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 

@@ -12,6 +12,8 @@ from django import forms
 from django.conf import settings
 from itertools import chain
 from django_select2.forms import Select2Mixin, ModelSelect2Widget, ModelSelect2Mixin, HeavySelect2Widget, HeavySelect2Mixin
+from django.utils.datastructures import MultiValueDict
+
 
 class wCharField(Widget):
     template_name = 'widgets/CharField.html'
@@ -227,6 +229,40 @@ class wSelect(Select):
                 output.append(self.render_option(selected_choices, option_value, option_label))
         return '\n'.join(output)
 
+
+class wSelectMultiple(Select):
+    allow_multiple_selected = True
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = []
+        final_attrs = self.build_attrs(attrs, name=name)
+        output = [format_html('<select style="width: 100%; line-height: 22px;" multiple="multiple"{}>', flatatt(final_attrs))]
+        options = self.render_options(value)
+        if options:
+            output.append(options)
+        output.append('</select>')
+        return mark_safe('\n'.join(output))
+
+    def value_from_datadict(self, data, files, name):
+        if isinstance(data, MultiValueDict):
+            return data.getlist(name)
+        return data.get(name)
+
+    def value_omitted_from_data(self, data, files, name):
+        # An unselected <select multiple> doesn't appear in POST data, so it's
+        # never known if the value is actually omitted.
+        return False
+
+
+class Select3MultipleWidget(Select2Mixin, wSelectMultiple):
+    """
+    Select2 drop in widget for multiple select.
+
+    Works just like :class:`.Select2Widget` but for multi select.
+    """
+
+    pass
 
 
 class Select3Widget(Select2Mixin, wSelect):

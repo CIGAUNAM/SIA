@@ -32,14 +32,14 @@ class ArticuloCientificoLista(ObjectCreateVarMixin, View):
     form_class = ArticuloCientificoForm
     model = ArticuloCientifico
     aux = ArticuloCientificoContext.contexto
-    template_name = 'main.html'
+    template_name = 'articulo_cientifico.html'
 
 
 class ArticuloCientificoDetalle(ObjectUpdateVarMixin, View):
     form_class = ArticuloCientificoForm
     model = ArticuloCientifico
     aux = ArticuloCientificoContext.contexto
-    template_name = 'main.html'
+    template_name = 'articulo_cientifico.html'
 
 
 class ArticuloCientificoEliminar(View):
