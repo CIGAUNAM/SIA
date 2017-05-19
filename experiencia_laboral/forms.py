@@ -75,7 +75,7 @@ class LineaInvestigacionForm(forms.ModelForm):
 
 
 class CapacidadPotencialidadForm(forms.ModelForm):
-    competencia = forms.CharField(widget=wCharField, required=True, label='Capacidad o Potencialidad')
+    nombre = forms.CharField(widget=wCharField, required=True, label='Capacidad o Potencialidad')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
     fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
     fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
