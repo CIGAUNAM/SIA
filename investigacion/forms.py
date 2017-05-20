@@ -75,7 +75,7 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
         model = CapituloLibroInvestigacion
         exclude = ['usuario', ]
         widgets = {
-            'proyectos': Select2MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -83,7 +83,7 @@ class MapaArbitradoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título del mapa')
     descripcion = forms.CharField(widget=wTextarea, required=False)
     escala = forms.CharField(widget=wCharField, required=True, label='Escala')
-    status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="Pais",
@@ -122,6 +122,7 @@ class MapaArbitradoForm(forms.ModelForm):
         label="Coleccion",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
+            required=False,
         )
     )
     volumen = forms.CharField(widget=wCharField, required=False)
@@ -132,10 +133,10 @@ class MapaArbitradoForm(forms.ModelForm):
         model = MapaArbitrado
         exclude = []
         widgets = {
-            'usuarios': Select2MultipleWidget,
-            'editores': Select2MultipleWidget,
-            'coordinadores': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'editores': Select3MultipleWidget,
+            'coordinadores': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -150,8 +151,8 @@ class InformeTecnicoForm(forms.ModelForm):
         model = InformeTecnico
         exclude = []
         widgets = {
-            'usuarios': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -188,7 +189,7 @@ class LibroInvestigacionForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ))
+    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     fecha = forms.CharField(widget=wDateField)
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
@@ -207,10 +208,10 @@ class LibroInvestigacionForm(forms.ModelForm):
         model = LibroInvestigacion
         exclude = ['tipo', ]
         widgets = {
-            'usuarios': Select2MultipleWidget,
-            'editores': Select2MultipleWidget,
-            'coordinadores': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'editores': Select3MultipleWidget,
+            'coordinadores': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -220,10 +221,10 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     es_permanente = forms.BooleanField()
     fecha_inicio = forms.CharField(widget=wDateField)
     fecha_fin = forms.CharField(widget=wDateField)
-    status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PROYECTO', ))
-    clasificacion = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'CLASIFICACION_PROYECTO', ))
-    organizacion = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'ORGANIZACION_PROYECTO', ))
-    modalidad = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'MODALIDAD_PROYECTO', ))
+    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PROYECTO', ))
+    clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CLASIFICACION_PROYECTO', ))
+    organizacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ORGANIZACION_PROYECTO', ))
+    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'MODALIDAD_PROYECTO', ))
     tematica_genero = forms.BooleanField()
     problema_nacional_conacyt = forms.ModelChoiceField(
         queryset=ProblemaNacionalConacyt.objects.all(),
@@ -238,16 +239,16 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         model = ProyectoInvestigacion
         exclude = ['tipo', ]
         widgets = {
-            'problemas_nacionales_conacyt': Select2MultipleWidget,
-            'usuarios': Select2MultipleWidget,
-            'participantes': Select2MultipleWidget,
-            'dependencias': Select2MultipleWidget,
-            'financiamientos': Select2MultipleWidget,
-            'metodologias': Select2MultipleWidget,
-            'especialidades': Select2MultipleWidget,
-            'impactos_sociales': Select2MultipleWidget,
-            'tecnicos': Select2MultipleWidget,
-            'alumnos_doctorado': Select2MultipleWidget,
-            'alumnos_maestria': Select2MultipleWidget,
-            'alumnos_licenciatura': Select2MultipleWidget,
+            'problemas_nacionales_conacyt': Select3MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'participantes': Select3MultipleWidget,
+            'dependencias': Select3MultipleWidget,
+            'financiamientos': Select3MultipleWidget,
+            'metodologias': Select3MultipleWidget,
+            'especialidades': Select3MultipleWidget,
+            'impactos_sociales': Select3MultipleWidget,
+            'tecnicos': Select3MultipleWidget,
+            'alumnos_doctorado': Select3MultipleWidget,
+            'alumnos_maestria': Select3MultipleWidget,
+            'alumnos_licenciatura': Select3MultipleWidget,
         }
