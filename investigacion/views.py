@@ -246,7 +246,7 @@ class ProyectoInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = ProyectoInvestigacionForm
     model = ProyectoInvestigacion
     aux = ProyectoInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'proyecto_investigacion.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -263,7 +263,7 @@ class ProyectoInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = ProyectoInvestigacionForm
     model = ProyectoInvestigacion
     aux = ProyectoInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'proyecto_investigacion.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
