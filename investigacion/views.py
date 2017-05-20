@@ -70,14 +70,14 @@ class CapituloLibroInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'capitulo_libro.html'
 
 
 class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'capitulo_libro.html'
 
 
 class CapituloLibroInvestigacionEliminar(View):
@@ -152,14 +152,14 @@ class InformeTecnicoLista(ObjectCreateVarMixin, View):
     form_class = InformeTecnicoForm
     model = InformeTecnico
     aux = InformeTecnicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'informe_tecnico_publico.html'
 
 
 class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
     form_class = InformeTecnicoForm
     model = InformeTecnico
     aux = InformeTecnicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'informe_tecnico_publico.html'
 
 
 class InformeTecnicoEliminar(View):
