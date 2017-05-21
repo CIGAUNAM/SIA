@@ -27,7 +27,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
         model = DesarrolloTecnologico
         exclude = []
         widgets = {
-            'proyectos': Select2MultipleWidget,
-            'autores': Select2MultipleWidget,
-            'agradecimientos': Select2MultipleWidget,
+            'proyectos': Select3MultipleWidget,
+            'autores': Select3MultipleWidget,
+            #'agradecimientos': Select3MultipleWidget,
         }

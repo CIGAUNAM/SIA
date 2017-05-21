@@ -195,8 +195,8 @@ class ComiteTutoralForm(forms.ModelForm):
         model = ComiteTutoral
         exclude = []
         widgets = {
-            'otros_asesores': Select2MultipleWidget,
-            'sinodales': Select2MultipleWidget,
+            'otros_asesores': Select3MultipleWidget,
+            'sinodales': Select3MultipleWidget,
         }
 
 
@@ -251,6 +251,6 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         model = ComiteCandidaturaDoctoral
         exclude = []
         widgets = {
-            'otros_asesores': Select2MultipleWidget,
-            'sinodales': Select2MultipleWidget,
+            'otros_asesores': Select3MultipleWidget,
+            'sinodales': Select3MultipleWidget,
         }

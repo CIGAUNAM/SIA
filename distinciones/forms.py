@@ -38,7 +38,7 @@ class DistincionAcademicoForm(forms.ModelForm):
         model = DistincionAcademico
         exclude = []
         widgets = {
-            'condecorados': Select2MultipleWidget,
+            'condecorados': Select3MultipleWidget,
         }
 
 
@@ -81,5 +81,5 @@ class DistincionAlumnoForm(forms.ModelForm):
         model = DistincionAlumno
         exclude = []
         widgets = {
-            'tutores': Select2MultipleWidget,
+            'tutores': Select3MultipleWidget,
         }
