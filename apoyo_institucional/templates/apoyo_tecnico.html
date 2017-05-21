@@ -1,26 +1,26 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Cargo:</strong>
+    <p><strong>Actividad de apoyo:</strong>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.cargo }}
+            {{ form.actividad_apoyo }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del cargo.">
+                   title="Mostrar los detalles adicionales de la actividad de apoyo.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un cargo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                   title="Agregar una actividad de apoyo nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Cargo académico-administrativo.">
+                   title="Actividad de apoyo técnico.">
                     <i class="fa fa-question-circle"></i>
                 </a>
             </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se desarrolló el cargo.">
+                   title="Institución donde se desarrolló el apoyo técnico.">
                     <i class="fa fa-question-circle"></i>
                 </a>
             </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se desarrolló el cargo, las opciones
+                   title="Dependencia donde se desarrolló el apoyo técnico, las opciones
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
@@ -94,7 +94,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del servicio."><i
+                   title="Fecha de inicio del apoyo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -109,7 +109,7 @@
             {{ form.fecha_fin }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de fin del servicio."><i
+                   title="Fecha de fin del apoyo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -118,26 +118,26 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Cargo:</strong>
+    <p><strong>Actividad de apoyo:</strong>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.cargo }}
+            {{ form.actividad_apoyo }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del cargo.">
+                   title="Mostrar los detalles adicionales de la actividad de apoyo.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un cargo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                   title="Agregar una actividad de apoyo nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se desarrolló el cargo.">
+                   title="Actividad de apoyo técnico.">
                     <i class="fa fa-question-circle"></i>
                 </a>
             </div>
@@ -168,7 +168,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se desarrolló el cargo.">
+                   title="Institución donde se desarrolló el apoyo técnico.">
                     <i class="fa fa-question-circle"></i>
                 </a>
             </div>
@@ -194,7 +194,7 @@
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se desarrolló el cargo, las opciones
+                   title="Dependencia donde se desarrolló el apoyo técnico, las opciones
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
@@ -211,7 +211,7 @@
             {{ form.fecha_inicio }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del servicio."><i
+                   title="Fecha de inicio del apoyo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -226,7 +226,7 @@
             {{ form.fecha_fin }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de fin del servicio."><i
+                   title="Fecha de fin del apoyo."><i
                         class="fa fa-question-circle"></i></a>
             </div>
         </div>

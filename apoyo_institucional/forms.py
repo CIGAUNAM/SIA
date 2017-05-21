@@ -89,7 +89,7 @@ class ComisionAcademicaForm(forms.ModelForm):
         model = ComisionAcademica
         exclude = ['usuario', ]
         widgets = {
-            'dependencias': Select2MultipleWidget,
+            'dependencias': Select3MultipleWidget,
         }
 
 

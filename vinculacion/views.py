@@ -249,14 +249,14 @@ class OtroProgramaVinculacionLista(ObjectCreateMixin, View):
     form_class = OtroProgramaVinculacionForm
     model = OtroProgramaVinculacion
     aux = OtroProgramaVinculacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'otro_programa_vinculacion.html'
 
 
 class OtroProgramaVinculacionDetalle(ObjectUpdateMixin, View):
     form_class = OtroProgramaVinculacionForm
     model = OtroProgramaVinculacion
     aux = OtroProgramaVinculacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'otro_programa_vinculacion.html'
 
 
 class OtroProgramaVinculacionEliminar(View):
