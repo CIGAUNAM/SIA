@@ -177,14 +177,14 @@ class ConvenioEntidadNoAcademicaLista(ObjectCreateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadNoAcademica
     aux = ConvenioEntidadNoAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'convenio.html'
 
 
 class ConvenioEntidadNoAcademicaDetalle(ObjectUpdateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadNoAcademica
     aux = ConvenioEntidadNoAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'convenio.html'
 
 
 class ConvenioEntidadNoAcademicaEliminar(View):

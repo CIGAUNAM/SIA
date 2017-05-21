@@ -114,8 +114,8 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
         model = ConvenioEntidadNoAcademica
         exclude = ['tags', ]
         widgets = {
-            'dependencias': Select2MultipleWidget,
-            'usuarios': Select2MultipleWidget,
+            'dependencias': Select3MultipleWidget,
+            'usuarios': Select3MultipleWidget,
         }
 
 
