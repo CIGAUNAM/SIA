@@ -32,7 +32,7 @@ class DesarrolloTecnologicoLista(ObjectCreateVarMixin, View):
     form_class = DesarrolloTecnologicoForm
     model = DesarrolloTecnologico
     aux = DesarrolloTecnologicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'desarrollo_tecnologico.html'
 
 
 
@@ -40,7 +40,7 @@ class DesarrolloTecnologicoDetalle(ObjectUpdateVarMixin, View):
     form_class = DesarrolloTecnologicoForm
     model = DesarrolloTecnologico
     aux = DesarrolloTecnologicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'desarrollo_tecnologico.html'
 
 
 class DesarrolloTecnologicoEliminar(View):
