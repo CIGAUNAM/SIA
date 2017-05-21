@@ -68,14 +68,14 @@ class PrologoLibroLista(ObjectCreateMixin, View):
     form_class = PrologoLibroForm
     model = PrologoLibro
     aux = PrologoLibroContext.contexto
-    template_name = 'main.html'
+    template_name = 'prologo_libro.html'
 
 
 class PrologoLibroDetalle(ObjectUpdateMixin, View):
     form_class = PrologoLibroForm
     model = PrologoLibro
     aux = PrologoLibroContext.contexto
-    template_name = 'main.html'
+    template_name = 'prologo_libro.html'
 
 
 class PrologoLibroEliminar(View):
@@ -140,14 +140,14 @@ class OrganizacionEventoAcademicoLista(ObjectCreateMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'organizacion_evento_academico.html'
 
 
 class OrganizacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'organizacion_evento_academico.html'
 
 
 class OrganizacionEventoAcademicoEliminar(View):
@@ -176,14 +176,14 @@ class ParticipacionEventoAcademicoLista(ObjectCreateMixin, View):
     form_class = ParticipacionEventoAcademicoForm
     model = ParticipacionEventoAcademico
     aux = ParticipacionEventoAcademicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'participacion_evento_academico.html'
 
 
 class ParticipacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
     form_class = ParticipacionEventoAcademicoForm
     model = ParticipacionEventoAcademico
     aux = ParticipacionEventoAcademicoContext.contexto
-    template_name = 'main.html'
+    template_name = 'participacion_evento_academico.html'
 
 
 class ParticipacionEventoAcademicoEliminar(View):

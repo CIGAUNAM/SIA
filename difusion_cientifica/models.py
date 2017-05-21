@@ -22,7 +22,7 @@ class MemoriaInExtenso(models.Model):
     editores = models.ManyToManyField(User, related_name='memoria_in_extenso_editores', blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='memoria_in_extenso_agradecimientos', blank=True)
-    pais_origen = models.ForeignKey(Pais)
+    #pais_origen = models.ForeignKey(Pais)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     issn = models.SlugField(max_length=20, blank=True)

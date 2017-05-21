@@ -25,14 +25,14 @@ class ArbitrajePublicacionAcademicaLista(ObjectCreateMixin, View):
     form_class = ArbitrajePublicacionAcademicaForm
     model = ArbitrajePublicacionAcademica
     aux = ArbitrajePublicacionAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'arbitraje_publicacion.html'
 
 
 class ArbitrajePublicacionAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ArbitrajePublicacionAcademicaForm
     model = ArbitrajePublicacionAcademica
     aux = ArbitrajePublicacionAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'arbitraje_publicacion.html'
 
 
 class ArbitrajePublicacionAcademicaEliminar(View):
@@ -61,14 +61,14 @@ class ArbitrajeProyectoInvestigacionLista(ObjectCreateMixin, View):
     form_class = ArbitrajeProyectoInvestigacionForm
     model = ArbitrajeProyectoInvestigacion
     aux = ArbitrajeProyectoInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'arbitraje_proyecto_investigacion.html'
 
 
 class ArbitrajeProyectoInvestigacionDetalle(ObjectUpdateMixin, View):
     form_class = ArbitrajeProyectoInvestigacionForm
     model = ArbitrajeProyectoInvestigacion
     aux = ArbitrajeProyectoInvestigacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'arbitraje_proyecto_investigacion.html'
 
 
 class ArbitrajeProyectoInvestigacionEliminar(View):
@@ -137,14 +137,14 @@ class RedAcademicaLista(ObjectCreateVarMixin, View):
     form_class = RedAcademicaForm
     model = RedAcademica
     aux = RedAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'red_academica.html'
 
 
 class RedAcademicaDetalle(ObjectUpdateVarMixin, View):
     form_class = RedAcademicaForm
     model = RedAcademica
     aux = RedAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'red_academica.html'
 
 
 class RedAcademicaEliminar(View):
