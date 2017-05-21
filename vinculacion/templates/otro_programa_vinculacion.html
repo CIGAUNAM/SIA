@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Nombre:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Nombre de programa de vinculación.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Tipo:</strong>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo }}
+            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
+                                              title="Tipo."><i class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Resultados: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Resultados del programa de vinculación.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.resultados }}
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+
+{% endblock %}

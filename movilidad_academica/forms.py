@@ -59,5 +59,5 @@ class MovilidadAcademicaForm(forms.ModelForm):
         model = MovilidadAcademica
         exclude = ['tipo', 'usuario', ]
         widgets = {
-            'redes_academicas': Select2MultipleWidget,
+            'redes_academicas': Select3MultipleWidget,
         }

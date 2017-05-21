@@ -97,14 +97,14 @@ class ComisionAcademicaLista(ObjectCreateMixin, View):
     form_class = ComisionAcademicaForm
     model = ComisionAcademica
     aux = ComisionAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'comision_academica.html'
 
 
 class ComisionAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ComisionAcademicaForm
     model = ComisionAcademica
     aux = ComisionAcademicaContext.contexto
-    template_name = 'main.html'
+    template_name = 'comision_academica.html'
 
 
 class ComisionAcademicaEliminar(View):
@@ -133,14 +133,14 @@ class ApoyoTecnicoLista(ObjectCreateMixin, View):
     form_class = ApoyoTecnicoForm
     model = ApoyoTecnico
     aux = ApoyoTecnicoContext.contexto
-    template_name = 'apoyo.html'
+    template_name = 'apoyo_tecnico.html'
 
 
 class ApoyoTecnicoDetalle(ObjectUpdateMixin, View):
     form_class = ApoyoTecnicoForm
     model = ApoyoTecnico
     aux = ApoyoTecnicoContext.contexto
-    template_name = 'apoyo.html'
+    template_name = 'apoyo_tecnico.html'
 
 
 class ApoyoTecnicoEliminar(View):
@@ -169,14 +169,14 @@ class ApoyoOtraActividadLista(ObjectCreateMixin, View):
     form_class = ApoyoOtraActividadForm
     model = ApoyoOtraActividad
     aux = ApoyoOtraActividadContext.contexto
-    template_name = 'apoyo.html'
+    template_name = 'apoyo_otra_actividad.html'
 
 
 class ApoyoOtraActividadDetalle(ObjectUpdateMixin, View):
     form_class = ApoyoOtraActividadForm
     model = ApoyoOtraActividad
     aux = ApoyoOtraActividadContext.contexto
-    template_name = 'apoyo.html'
+    template_name = 'apoyo_otra_actividad.html'
 
 
 class ApoyoOtraActividadEliminar(View):
