@@ -30,14 +30,14 @@ class ArticuloDivulgacionLista(ObjectCreateVarMixin, View):
     form_class = ArticuloDivulgacionForm
     model = ArticuloDivulgacion
     aux = ArticuloDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'articulo_divulgacion.html'
 
 
 class ArticuloDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = ArticuloDivulgacionForm
     model = ArticuloDivulgacion
     aux = ArticuloDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'articulo_divulgacion.html'
 
 
 class ArticuloDivulgacionEliminar(View):
@@ -66,14 +66,14 @@ class CapituloLibroDivulgacionLista(ObjectCreateMixin, View):
     form_class = CapituloLibroDivulgacionForm
     model = CapituloLibroDivulgacion
     aux = CapituloLibroDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'capitulo_libro_divulgacion.html'
 
 
 class CapituloLibroDivulgacionDetalle(ObjectUpdateMixin, View):
     form_class = CapituloLibroDivulgacionForm
     model = CapituloLibroDivulgacion
     aux = CapituloLibroDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'capitulo_libro_divulgacion.html'
 
 
 class CapituloLibroDivulgacionEliminar(View):
@@ -102,14 +102,14 @@ class OrganizacionEventoDivulgacionLista(ObjectCreateMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'organizacion_evento_divulgacion.html'
 
 
 class OrganizacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'organizacion_evento_divulgacion.html'
 
 
 class OrganizacionEventoDivulgacionEliminar(View):
@@ -138,13 +138,13 @@ class ParticipacionEventoDivulgacionLista(ObjectCreateMixin, View):
     form_class = ParticipacionEventoDivulgacionForm
     model = ParticipacionEventoDivulgacion
     aux = ParticipacionEventoDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'participacion_evento_divulgacion.html'
 
 
 class ParticipacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
     form_class = ParticipacionEventoDivulgacionForm
     model = ParticipacionEventoDivulgacion
-    template_name = 'main.html'
+    template_name = 'participacion_evento_divulgacion.html'
     aux = ParticipacionEventoDivulgacionContext.contexto
 
 
@@ -174,14 +174,14 @@ class ProgramaRadioTelevisionInternetLista(ObjectCreateMixin, View):
     form_class = ProgramaRadioTelevisionInternetForm
     model = ProgramaRadioTelevisionInternet
     aux = ProgramaRadioTelevisionInternetContext.contexto
-    template_name = 'main.html'
+    template_name = 'medio_divulgacion.html'
 
 
 class ProgramaRadioTelevisionInternetDetalle(ObjectUpdateMixin, View):
     form_class = ProgramaRadioTelevisionInternetForm
     model = ProgramaRadioTelevisionInternet
     aux = ProgramaRadioTelevisionInternetContext.contexto
-    template_name = 'main.html'
+    template_name = 'medio_divulgacion.html'
 
 
 class ProgramaRadioTelevisionInternetEliminar(View):

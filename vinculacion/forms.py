@@ -34,7 +34,7 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         model = ArbitrajePublicacionAcademica
         exclude = ['usuario', 'tags', ]
         widgets = {
-            'indices': Select2MultipleWidget,
+            'indices': Select3MultipleWidget,
         }
 
 
@@ -92,9 +92,9 @@ class RedAcademicaForm(forms.ModelForm):
         model = RedAcademica
         exclude = ['tags', ]
         widgets = {
-            'paises': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
-            'usuarios': Select2MultipleWidget,
+            'paises': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
+            'usuarios': Select3MultipleWidget,
         }
 
 

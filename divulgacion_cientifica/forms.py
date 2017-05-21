@@ -37,10 +37,10 @@ class ArticuloDivulgacionForm(forms.ModelForm):
         model = ArticuloDivulgacion
         exclude = []
         widgets = {
-            'usuarios': Select2MultipleWidget,
-            'alumnos': Select2MultipleWidget,
-            'indices': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'alumnos': Select3MultipleWidget,
+            'indices': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -62,7 +62,7 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
         model = CapituloLibroDivulgacion
         exclude = ['usuario', ]
         widgets = {
-            'proyectos': Select2MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -110,8 +110,7 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
     fecha = forms.CharField(widget=wDateField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     actividad = forms.ChoiceField(widget=Select3Widget, choices=(('PRODUCCION', 'Producción'), ('PARTICIPACION', 'Participación'), ('ENTREVISTA', 'Entrevista'), ('OTRA', 'Otra')), required=True)
-    medio = forms.ChoiceField(widget=Select3Widget, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')), required=True)
-    nombre_medio = forms.ModelChoiceField(
+    medio_divulgacion = forms.ModelChoiceField(
         queryset=MedioDivulgacion.objects.all(),
         label="Medio de divulgación",
         widget=ModelSelect3Widget(
@@ -176,8 +175,8 @@ class LibroDivulgacionForm(forms.ModelForm):
         model = LibroInvestigacion
         exclude = ['tipo', ]
         widgets = {
-            'usuarios': Select2MultipleWidget,
-            'editores': Select2MultipleWidget,
-            'coordinadores': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'editores': Select3MultipleWidget,
+            'coordinadores': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }

@@ -41,13 +41,13 @@ class MemoriaInExtensoForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    pais_origen = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="País de origen",
-        widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
-        )
-    )
+    #pais_origen = forms.ModelChoiceField(
+    #    queryset=Pais.objects.all(),
+    #    label="País de origen",
+    #    widget=ModelSelect3Widget(
+    #        search_fields=['nombre__icontains'],
+    #    )
+    #)
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     issn = forms.CharField(widget=wCharField, required=False)
@@ -57,11 +57,11 @@ class MemoriaInExtensoForm(forms.ModelForm):
         model = MemoriaInExtenso
         exclude = ['tags', ]
         widgets = {
-            'usuarios': Select2MultipleWidget,
-            'editores': Select2MultipleWidget,
-            'indices': Select2MultipleWidget,
-            'agradecimientos': Select2MultipleWidget,
-            'proyectos': Select2MultipleWidget,
+            'usuarios': Select3MultipleWidget,
+            'editores': Select3MultipleWidget,
+            'indices': Select3MultipleWidget,
+            'agradecimientos': Select3MultipleWidget,
+            'proyectos': Select3MultipleWidget,
         }
 
 
