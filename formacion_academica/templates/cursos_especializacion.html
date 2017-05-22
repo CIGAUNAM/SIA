@@ -108,10 +108,14 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span data-toggle="modal" data-target="#agregar-institucion">
+
+                    <a href="#agregar-institucion" data-toggle="tooltip" data-placement="left"
+                       title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+
+                </span>
             </div>
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
@@ -151,6 +155,11 @@
         </div>
     </div>
     </p>
+
+
+
+
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -307,3 +316,5 @@
     </div>
     </p>
 {% endblock %}
+
+

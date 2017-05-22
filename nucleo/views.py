@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from nucleo.models import *
 from nucleo.serializers import *
@@ -7,10 +7,40 @@ from rest_framework import generics
 from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrReadOnly
 from rest_framework import permissions
 
+from django.views.generic import View
+from SIA.utils import *
+from .forms import *
 
 
 def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
+
+
+class InstitucionCrear(View):
+    form_class = InstitucionForm
+    model = Institucion
+    template_name = 'agregar-institucion.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {'form_institucion': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            print(str(new_obj) + 'guardado')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            return render(request, self.template_name, {'form_institucion': bound_form})
+
+
+
+
+
+
+
+
+
 
 
 

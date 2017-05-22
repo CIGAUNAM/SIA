@@ -1,16 +1,36 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http.response import (Http404, HttpResponse)
 from nucleo.models import User
+
+from nucleo.forms import *
+
 #
+
+class NucleoObjectCreateMixin:
+    form_class = None
+    template_name = ''
+    aux = {}
+
+    def get(self, request):
+        return render(request, self.template_name, {'form': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'form': bound_form})
 
 
 class ObjectCreateMixin:
     form_class = None
     template_name = ''
     aux = {}
+    form_institucion = InstitucionForm
 
     def get(self, request):
-        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
+        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista', 'form_institucion': self.form_institucion})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
