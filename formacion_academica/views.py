@@ -13,6 +13,7 @@ from SIA.utils import *
 from .forms import *
 from .utils import *
 
+from nucleo.forms import *
 
 # Create your views here.
 

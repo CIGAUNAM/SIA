@@ -2,163 +2,179 @@ from . models import *
 from django import forms
 from django.core.exceptions import ValidationError
 
+from SIA.widgets import *
+
 #
 
 
+"""
 class TagForm(forms.ModelForm):
     class Meta:
         model = Tag
-        exclude = ['slug', ]
+        exclude = []
 
     def clean_tag(self):
         return self.cleaned_data['tag'].lower()
+"""
 
 
 class ZonaPaisForm(forms.ModelForm):
     class Meta:
         model = ZonaPais
-        exclude = ['slug', ]
+        exclude = []
 
 
 class PaisForm(forms.ModelForm):
     class Meta:
         model = Pais
-        exclude = ['slug', ]
+        exclude = []
 
 
 class EstadoForm(forms.ModelForm):
     class Meta:
         model = Estado
-        exclude = ['slug', ]
+        exclude = []
 
 
 class CiudadForm(forms.ModelForm):
     class Meta:
         model = Ciudad
-        exclude = ['slug', ]
+        exclude = []
 
 
 class InstitucionForm(forms.ModelForm):
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
     class Meta:
         model = Institucion
-        exclude = ['slug', ]
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }
 
 
 class DependenciaForm(forms.ModelForm):
     class Meta:
         model = Dependencia
-        exclude = ['slug', ]
+        exclude = []
 
 
 class DepartamentoForm(forms.ModelForm):
     class Meta:
         model = Departamento
-        exclude = ['slug', ]
+        exclude = []
 
 
 class CargoForm(forms.ModelForm):
     class Meta:
         model = Cargo
-        exclude = ['slug', ]
+        exclude = []
 
 
 class NombramientoForm(forms.ModelForm):
     class Meta:
         model = Nombramiento
-        exclude = ['slug', ]
+        exclude = []
 
 
 class AreaConocimientoForm(forms.ModelForm):
     class Meta:
         model = AreaConocimiento
-        exclude = ['slug', ]
+        exclude = []
 
 
 class AreaEspecialidadForm(forms.ModelForm):
     class Meta:
         model = AreaEspecialidad
-        exclude = ['slug', ]
+        exclude = []
 
 
 class ImpactoSocialForm(forms.ModelForm):
     class Meta:
         model = ImpactoSocial
-        exclude = ['slug', ]
+        exclude = []
 
 
-class ProgramaFinanciamientoForm(forms.ModelForm):
-    class Meta:
-        model = ProgramaFinanciamiento
-        exclude = ['slug', ]
+#class ProgramaFinanciamientoForm(forms.ModelForm):
+#    class Meta:
+#        model = ProgramaFinanciamiento
+#        exclude = []
 
 
 class FinanciamientoForm(forms.ModelForm):
     class Meta:
         model = Financiamiento
+        exclude = []
 
 
 class MetodologiaForm(forms.ModelForm):
     class Meta:
         model = Metodologia
-        exclude = ['slug', ]
+        exclude = []
 
 
 class BecaForm(forms.ModelForm):
     class Meta:
         model = Beca
-        exclude = ['slug', ]
+        exclude = []
 
 
 class ReconocimientoForm(forms.ModelForm):
     class Meta:
         model = Reconocimiento
-        exclude = ['slug', ]
+        exclude = []
 
-
+"""
 class TesisForm(forms.ModelForm):
     class Meta:
         model = DireccionTesis
-        exclude = ['slug', ]
-
+        exclude = []
+"""
 
 class ProgramaLicenciaturaForm(forms.ModelForm):
     class Meta:
         model = ProgramaLicenciatura
-        exclude = ['slug', ]
+        exclude = []
 
 
 class ProgramaMaestriaForm(forms.ModelForm):
     class Meta:
         model = ProgramaMaestria
-        exclude = ['slug', ]
+        exclude = []
 
 
 class ProgramaDoctoradoForm(forms.ModelForm):
     class Meta:
         model = ProgramaDoctorado
-        exclude = ['slug', ]
+        exclude = []
 
 
 class TipoEventoForm(forms.ModelForm):
     class Meta:
         model = TipoEvento
-        exclude = ['slug', ]
+        exclude = []
 
 
 class EventoForm(forms.ModelForm):
     class Meta:
         model = Evento
-        exclude = ['slug', ]
+        exclude = []
 
 
 class DistincionForm(forms.ModelForm):
     class Meta:
         model = Distincion
-        exclude = ['slug', ]
+        exclude = []
 
 
 class ProyectoForm(forms.ModelForm):
     class Meta:
         model = Proyecto
-        exclude = ['slug', ]
+        exclude = []
 

@@ -1,0 +1,75 @@
+<div id="agregar-institucion" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Agregar nueva institución</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Por favor introduzca los datos necesarios en el siguiente formulario:</h4>
+                <form action="/agregar-institucion/" method="post">
+                    {% csrf_token %}
+
+                    <p><strong>Nombre de institución:</strong>
+                    <div class="form-group" style="margin-top: -10px;">
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </div>
+                            {{ form_institucion.nombre }}
+                            <div class="input-group-addon">
+                                <a href="#" data-toggle="tooltip" data-placement="left"
+                                   title="Nombre del la institución, si tiene siglas ponerlas al final entre parentesis. Por ejemplo 'Universidad Nacional Autónoma de México (UNAM)'."><i
+                                        class="fa fa-question-circle"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                    </p>
+                    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                                               title="{{ form.descripcion.help_text }}">
+                        <i class="fa fa-question-circle"> </i> </a> </strong>
+                        {{ form_institucion.descripcion }}
+                    </p>
+                    <p><strong>País:</strong>
+                    <div class="form-group" style="margin-top: -10px;">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                            {{ form_institucion.pais }}
+                            <div class="input-group-addon">
+                                <a href="#" data-toggle="tooltip" data-placement="left"
+                                   title="Mostrar los detalles adicionales del país seleccionado.">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </div>
+                            <div class="input-group-addon">
+                                <a href="#" data-toggle="tooltip" data-placement="left"
+                                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                            <div class="input-group-addon">
+                                <a href="#" data-toggle="tooltip" data-placement="left"
+                                   title="Pais.">
+                                    <i class="fa fa-question-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </p>
+
+
+                    <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
+                    <a class="btn btn-primary" style="color: #fff"
+                       href="">Cancelar</a>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- <a class="btn btn-danger" style="color: #fff" href="eliminar">Eliminar</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button> -->
+            </div>
+        </div>
+
+    </div>
+</div>
