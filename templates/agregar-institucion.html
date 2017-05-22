@@ -23,7 +23,6 @@
                                    title="Nombre del la institución, si tiene siglas ponerlas al final entre parentesis. Por ejemplo 'Universidad Nacional Autónoma de México (UNAM)'."><i
                                         class="fa fa-question-circle"></i></a>
                             </div>
-
                         </div>
                     </div>
                     </p>
@@ -58,18 +57,27 @@
                         </div>
                     </div>
                     </p>
+                    <button class="btn btn-success" type="submit">Agregar institución</button>
 
-
-                    <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
-                    <a class="btn btn-primary" style="color: #fff"
-                       href="">Cancelar</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
                 </form>
             </div>
-            <div class="modal-footer">
-                <!-- <a class="btn btn-danger" style="color: #fff" href="eliminar">Eliminar</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button> -->
-            </div>
+            <!-- <div class="modal-footer">
+                 <a class="btn btn-danger" style="color: #fff" href="eliminar">Eliminar</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+            </div> -->
         </div>
 
     </div>
 </div>
+
+<script>
+$('#agregar-institucion1').submit(function() {
+
+    // submission stuff
+
+    $('#agregar-institucion1').modal('hide');
+    return false;
+});
+</script>
