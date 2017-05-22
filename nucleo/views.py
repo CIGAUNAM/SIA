@@ -10,6 +10,7 @@ from rest_framework import permissions
 from django.views.generic import View
 from SIA.utils import *
 from .forms import *
+import json
 
 
 def inicio(request):
@@ -30,6 +31,8 @@ class InstitucionCrear(View):
             new_obj = bound_form.save()
             print(str(new_obj) + 'guardado')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            #return HttpResponseRedirect("")
+            #return HttpResponse("<script>$('#agregar-institucion').modal('hide');</script>")
         else:
             return render(request, self.template_name, {'form_institucion': bound_form})
 
