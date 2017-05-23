@@ -41,8 +41,10 @@ urlpatterns = [
     url(r'^desarrollos-tecnologicos/', include('desarrollo_tecnologico.urls')),
     url(r'^distinciones/', include('distinciones.urls')),
 
+    url(r'^nucleo/', include('nucleo.urls')),
 
-    url(r'^agregar-institucion/', InstitucionCrear.as_view(), name='agregar_institucion'),
+
+    #url(r'^agregar-institucion/', InstitucionCrear.as_view(), name='agregar_institucion'),
 
 
 
