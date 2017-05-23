@@ -6,7 +6,7 @@ from nucleo.serializers import *
 from rest_framework import generics
 from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrReadOnly
 from rest_framework import permissions
-
+from django.core import serializers
 from django.views.generic import View
 
 from SIA.utils import *
@@ -35,14 +35,14 @@ class PaisLista(ObjectCreateMixin, View):
     form_class = PaisForm
     model = Pais
     aux = PaisContext.contexto
-    template_name = 'cargo_academico-administrativo.html'
+    template_name = 'main.html'
 
 
-class PaisDetalle(ObjectUpdateMixin, View):
+class PaisDetalle(ObjectUpdateMixinNucleo, View):
     form_class = PaisForm
     model = Pais
     aux = PaisContext.contexto
-    template_name = 'cargo_academico-administrativo.html'
+    template_name = 'main.html'
 
 
 class PaisEliminar(View):
