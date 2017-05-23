@@ -23,6 +23,24 @@ class NucleoObjectCreateMixin:
             return render(request, self.template_name, {'form': bound_form})
 
 
+class ObjectCreateMixinNucleo:
+    form_class = None
+    template_name = ''
+    aux = {}
+
+    def get(self, request):
+        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
+
+
+
 class ObjectUpdateMixinNucleo:
     form_class = None
     template_name = ''
@@ -47,10 +65,9 @@ class ObjectCreateMixin:
     form_class = None
     template_name = ''
     aux = {}
-    form_institucion = InstitucionForm
 
     def get(self, request):
-        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista', 'form_institucion': self.form_institucion})
+        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)

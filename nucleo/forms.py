@@ -344,7 +344,7 @@ class EventoForm(forms.ModelForm):
 
 
 class DistincionForm(forms.ModelForm):
-    tipo_cargo = forms.ChoiceField(widget=Select3Widget, choices=(
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=(
         ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'), ('RECONOCIMIENTO', 'Reconocimiento'),
         ('MEDALLA', 'Medalla'), ('GUGGENHEIM', 'Beca Guggenheim'), ('HONORIS_CAUSA', 'Doctorado Honoris Causa'),
         ('OTRO', 'Otro')))
@@ -359,7 +359,7 @@ class DistincionForm(forms.ModelForm):
 
 
 class ProyectoForm(forms.ModelForm):
-    tipo_cargo = forms.ChoiceField(widget=Select3Widget, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
     es_permanente = forms.BooleanField(required=False)
     fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
     fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de fin')

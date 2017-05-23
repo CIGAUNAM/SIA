@@ -39,10 +39,70 @@ urlpatterns = [
     # url(r'^cargos/(?P<pk>[\w\-]+)/eliminar$', CargoEliminar.as_view(), name='cargo_eliminar'),
     url(r'^cargos/(?P<pk>[\w\-]+)/$', CargoDetalle.as_view(), name='cargo_detalle'),
 
-    url(r'^areas_specialidad/json/', AreaEspecialidadJSON.as_view(), name='area_specialidad_lista__json'),
-    url(r'^areas_specialidad/$', AreaEspecialidadLista.as_view(), name='area_specialidad_lista'),
-    # url(r'^areas_specialidad/(?P<pk>[\w\-]+)/eliminar$', AreaEspecialidadEliminar.as_view(), name='area_specialidad_eliminar'),
-    url(r'^areas_specialidad/(?P<pk>[\w\-]+)/$', AreaEspecialidadDetalle.as_view(), name='area_specialidad_detalle'),
+    url(r'^areas-specialidad/json/', AreaEspecialidadJSON.as_view(), name='area_specialidad_lista__json'),
+    url(r'^areas-specialidad/$', AreaEspecialidadLista.as_view(), name='area_specialidad_lista'),
+    # url(r'^areas-specialidad/(?P<pk>[\w\-]+)/eliminar$', AreaEspecialidadEliminar.as_view(), name='area_specialidad_eliminar'),
+    url(r'^areas-specialidad/(?P<pk>[\w\-]+)/$', AreaEspecialidadDetalle.as_view(), name='area_specialidad_detalle'),
+
+    url(r'^impactos-sociales/json/', ImpactoSocialJSON.as_view(), name='impacto_social_lista__json'),
+    url(r'^impactos-sociales/$', ImpactoSocialLista.as_view(), name='impacto_social_lista'),
+    # url(r'^impactos-sociales/(?P<pk>[\w\-]+)/eliminar$', ImpactoSocialEliminar.as_view(), name='impacto_social_eliminar'),
+    url(r'^impactos-sociales/(?P<pk>[\w\-]+)/$', ImpactoSocialDetalle.as_view(), name='impacto_social_detalle'),
+
+    url(r'^financiamientos/json/', FinanciamientoJSON.as_view(), name='financiamiento_lista__json'),
+    url(r'^financiamientos/$', FinanciamientoLista.as_view(), name='financiamiento_lista'),
+    # url(r'^financiamientos/(?P<pk>[\w\-]+)/eliminar$', FinanciamientoEliminar.as_view(), name='financiamiento_eliminar'),
+    url(r'^financiamientos/(?P<pk>[\w\-]+)/$', FinanciamientoDetalle.as_view(), name='financiamiento_detalle'),
+
+    url(r'^metodologias/json/', MetodologiaJSON.as_view(), name='metodologia_lista__json'),
+    url(r'^metodologias/$', MetodologiaLista.as_view(), name='metodologia_lista'),
+    # url(r'^metodologias/(?P<pk>[\w\-]+)/eliminar$', MetodologiaEliminar.as_view(), name='metodologia_eliminar'),
+    url(r'^metodologias/(?P<pk>[\w\-]+)/$', MetodologiaDetalle.as_view(), name='metodologia_detalle'),
+
+    url(r'^becas/json/', BecaJSON.as_view(), name='beca_lista__json'),
+    url(r'^becas/$', BecaLista.as_view(), name='beca_lista'),
+    # url(r'^becas/(?P<pk>[\w\-]+)/eliminar$', BecaEliminar.as_view(), name='beca_eliminar'),
+    url(r'^becas/(?P<pk>[\w\-]+)/$', BecaDetalle.as_view(), name='beca_detalle'),
+
+    url(r'^reconocimientos/json/', ReconocimientoJSON.as_view(), name='reconocimiento_lista__json'),
+    url(r'^reconocimientos/$', ReconocimientoLista.as_view(), name='reconocimiento_lista'),
+    # url(r'^reconocimientos/(?P<pk>[\w\-]+)/eliminar$', ReconocimientoEliminar.as_view(), name='reconocimiento_eliminar'),
+    url(r'^reconocimientos/(?P<pk>[\w\-]+)/$', ReconocimientoDetalle.as_view(), name='reconocimiento_detalle'),
+
+    url(r'^programas-licenciatura/json/', ProgramaLicenciaturaJSON.as_view(), name='programa_licenciatura_lista__json'),
+    url(r'^programas-licenciatura/$', ProgramaLicenciaturaLista.as_view(), name='programa_licenciatura_lista'),
+    # url(r'^programas-licenciatura/(?P<pk>[\w\-]+)/eliminar$', ProgramaLicenciaturaEliminar.as_view(), name='programa_licenciatura_eliminar'),
+    url(r'^programas-licenciatura/(?P<pk>[\w\-]+)/$', ProgramaLicenciaturaDetalle.as_view(), name='programa_licenciatura_detalle'),
+
+    url(r'^programas-maestria/json/', ProgramaMaestriaJSON.as_view(), name='programa_maestria_lista__json'),
+    url(r'^programas-maestria/$', ProgramaMaestriaLista.as_view(), name='programa_maestria_lista'),
+    # url(r'^programas-maestria/(?P<pk>[\w\-]+)/eliminar$', ProgramaMaestriaEliminar.as_view(), name='programa_maestria_eliminar'),
+    url(r'^programas-maestria/(?P<pk>[\w\-]+)/$', ProgramaMaestriaDetalle.as_view(), name='programa_maestria_detalle'),
+
+    url(r'^programas-doctorado/json/', ProgramaDoctoradoJSON.as_view(), name='programa_doctorado_lista__json'),
+    url(r'^programas-doctorado/$', ProgramaDoctoradoLista.as_view(), name='programa_doctorado_lista'),
+    # url(r'^programas-doctorado/(?P<pk>[\w\-]+)/eliminar$', ProgramaDoctoradoEliminar.as_view(), name='programa_doctorado_eliminar'),
+    url(r'^programas-doctorado/(?P<pk>[\w\-]+)/$', ProgramaDoctoradoDetalle.as_view(), name='programa_doctorado_detalle'),
+
+    url(r'^tipos-evento/json/', TipoEventoJSON.as_view(), name='tipo_evento_lista__json'),
+    url(r'^tipos-evento/$', TipoEventoLista.as_view(), name='tipo_evento_lista'),
+    # url(r'^tipos-evento/(?P<pk>[\w\-]+)/eliminar$', TipoEventoEliminar.as_view(), name='tipo_evento_eliminar'),
+    url(r'^tipos-evento/(?P<pk>[\w\-]+)/$', TipoEventoDetalle.as_view(), name='tipo_evento_detalle'),
+
+    url(r'^eventos/json/', EventoJSON.as_view(), name='evento_lista__json'),
+    url(r'^eventos/$', EventoLista.as_view(), name='evento_lista'),
+    # url(r'^eventos/(?P<pk>[\w\-]+)/eliminar$', EventoEliminar.as_view(), name='evento_eliminar'),
+    url(r'^eventos/(?P<pk>[\w\-]+)/$', EventoDetalle.as_view(), name='evento_detalle'),
+
+    url(r'^distinciones/json/', DistincionJSON.as_view(), name='distincion_lista__json'),
+    url(r'^distinciones/$', DistincionLista.as_view(), name='distincion_lista'),
+    # url(r'^distinciones/(?P<pk>[\w\-]+)/eliminar$', DistincionEliminar.as_view(), name='distincion_eliminar'),
+    url(r'^distinciones/(?P<pk>[\w\-]+)/$', DistincionDetalle.as_view(), name='distincion_detalle'),
+
+    url(r'^proyectos/json/', ProyectoJSON.as_view(), name='proyecto_lista__json'),
+    url(r'^proyectos/$', ProyectoLista.as_view(), name='proyecto_lista'),
+    # url(r'^proyectos/(?P<pk>[\w\-]+)/eliminar$', ProyectoEliminar.as_view(), name='proyecto_eliminar'),
+    url(r'^proyectos/(?P<pk>[\w\-]+)/$', ProyectoDetalle.as_view(), name='proyecto_detalle'),
 
 
 
