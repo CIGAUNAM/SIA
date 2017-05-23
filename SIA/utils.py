@@ -54,7 +54,7 @@ class ObjectUpdateMixinNucleo:
         obj = get_object_or_404(self.model, pk=pk)
         bound_form = self.form_class(request.POST, instance=obj)
         if bound_form.is_valid():
-            det_obj = bound_form.save(commit=False)
+            #det_obj = bound_form.save(commit=False)
             det_obj = bound_form.save()
             return redirect(det_obj)
         else:

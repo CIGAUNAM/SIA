@@ -104,6 +104,36 @@ urlpatterns = [
     # url(r'^proyectos/(?P<pk>[\w\-]+)/eliminar$', ProyectoEliminar.as_view(), name='proyecto_eliminar'),
     url(r'^proyectos/(?P<pk>[\w\-]+)/$', ProyectoDetalle.as_view(), name='proyecto_detalle'),
 
+    url(r'^memorias/json/', MemoriaJSON.as_view(), name='memoria_lista__json'),
+    url(r'^memorias/$', MemoriaLista.as_view(), name='memoria_lista'),
+    # url(r'^memorias/(?P<pk>[\w\-]+)/eliminar$', MemoriaEliminar.as_view(), name='memoria_eliminar'),
+    url(r'^memorias/(?P<pk>[\w\-]+)/$', MemoriaDetalle.as_view(), name='memoria_detalle'),
+
+    url(r'^editoriales/json/', EditorialJSON.as_view(), name='editorial_lista__json'),
+    url(r'^editoriales/$', EditorialLista.as_view(), name='editorial_lista'),
+    # url(r'^editoriales/(?P<pk>[\w\-]+)/eliminar$', EditorialEliminar.as_view(), name='editorial_eliminar'),
+    url(r'^editoriales/(?P<pk>[\w\-]+)/$', EditorialDetalle.as_view(), name='editorial_detalle'),
+
+    url(r'^colecciones/json/', ColeccionJSON.as_view(), name='coleccion_lista__json'),
+    url(r'^colecciones/$', ColeccionLista.as_view(), name='coleccion_lista'),
+    # url(r'^colecciones/(?P<pk>[\w\-]+)/eliminar$', ColeccionEliminar.as_view(), name='coleccion_eliminar'),
+    url(r'^colecciones/(?P<pk>[\w\-]+)/$', ColeccionDetalle.as_view(), name='coleccion_detalle'),
+
+    url(r'^libros/json/', LibroJSON.as_view(), name='libro_lista__json'),
+    url(r'^libros/$', LibroLista.as_view(), name='libro_lista'),
+    # url(r'^libros/(?P<pk>[\w\-]+)/eliminar$', LibroEliminar.as_view(), name='libro_eliminar'),
+    url(r'^libros/(?P<pk>[\w\-]+)/$', LibroDetalle.as_view(), name='libro_detalle'),
+
+    url(r'^revistas/json/', RevistaJSON.as_view(), name='revista_lista__json'),
+    url(r'^revistas/$', RevistaLista.as_view(), name='revista_lista'),
+    # url(r'^revistas/(?P<pk>[\w\-]+)/eliminar$', RevistaEliminar.as_view(), name='revista_eliminar'),
+    url(r'^revistas/(?P<pk>[\w\-]+)/$', RevistaDetalle.as_view(), name='revista_detalle'),
+
+    url(r'^asignaturas/json/', AsignaturaJSON.as_view(), name='asignatura_lista__json'),
+    url(r'^asignaturas/$', AsignaturaLista.as_view(), name='asignatura_lista'),
+    # url(r'^asignaturas/(?P<pk>[\w\-]+)/eliminar$', AsignaturaEliminar.as_view(), name='asignatura_eliminar'),
+    url(r'^asignaturas/(?P<pk>[\w\-]+)/$', AsignaturaDetalle.as_view(), name='asignatura_detalle'),
+
 
 
 

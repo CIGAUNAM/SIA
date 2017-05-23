@@ -739,6 +739,221 @@ class ProyectoEliminar(View):
             raise Http404
 
 
+class MemoriaJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Memoria.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'estado'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class MemoriaLista(ObjectCreateMixinNucleo, View):
+    form_class = MemoriaForm
+    model = Memoria
+    aux = MemoriaContext.contexto
+    template_name = 'main.html'
+
+
+class MemoriaDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = MemoriaForm
+    model = Memoria
+    aux = MemoriaContext.contexto
+    template_name = 'main.html'
+
+
+class MemoriaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Memoria, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class EditorialJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Editorial.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'estado'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class EditorialLista(ObjectCreateMixinNucleo, View):
+    form_class = EditorialForm
+    model = Editorial
+    aux = EditorialContext.contexto
+    template_name = 'main.html'
+
+
+class EditorialDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = EditorialForm
+    model = Editorial
+    aux = EditorialContext.contexto
+    template_name = 'main.html'
+
+
+class EditorialEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Editorial, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class ColeccionJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Coleccion.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'estado'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ColeccionLista(ObjectCreateMixinNucleo, View):
+    form_class = ColeccionForm
+    model = Coleccion
+    aux = ColeccionContext.contexto
+    template_name = 'main.html'
+
+
+class ColeccionDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = ColeccionForm
+    model = Coleccion
+    aux = ColeccionContext.contexto
+    template_name = 'main.html'
+
+
+class ColeccionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Coleccion, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class LibroJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Libro.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'estado'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class LibroLista(ObjectCreateMixinNucleo, View):
+    form_class = LibroForm
+    model = Libro
+    aux = LibroContext.contexto
+    template_name = 'main.html'
+
+
+class LibroDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = LibroForm
+    model = Libro
+    aux = LibroContext.contexto
+    template_name = 'main.html'
+
+
+class LibroEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Libro, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class RevistaJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Revista.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'estado'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class RevistaLista(ObjectCreateMixinNucleo, View):
+    form_class = RevistaForm
+    model = Revista
+    aux = RevistaContext.contexto
+    template_name = 'main.html'
+
+
+class RevistaDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = RevistaForm
+    model = Revista
+    aux = RevistaContext.contexto
+    template_name = 'main.html'
+
+
+class RevistaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Revista, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class AsignaturaJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Asignatura.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'estado'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class AsignaturaLista(ObjectCreateMixinNucleo, View):
+    form_class = AsignaturaForm
+    model = Asignatura
+    aux = AsignaturaContext.contexto
+    template_name = 'main.html'
+
+
+class AsignaturaDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = AsignaturaForm
+    model = Asignatura
+    aux = AsignaturaContext.contexto
+    template_name = 'main.html'
+
+
+class AsignaturaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Asignatura, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 
 
