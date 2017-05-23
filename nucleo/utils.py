@@ -41,3 +41,738 @@ class PaisContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
+
+
+class EstadoContext:
+    obj = 'Estado'
+    objs = 'Estados'
+    url_seccion = 'estados'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Estado', 'País']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.pais"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class CiudadContext:
+    obj = 'Ciudad'
+    objs = 'Ciudades'
+    url_seccion = 'ciudades'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Ciudad', 'Estado']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.estado"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class InstitucionContext:
+    obj = 'Institución'
+    objs = 'Instituciones'
+    url_seccion = 'instituciones'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Institución', 'País']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.pais"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class DependenciaContext:
+    obj = 'Dependencia'
+    objs = 'Dependencias'
+    url_seccion = 'dependencias'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Dependencia', 'Institución']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.institucion"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class DepartamentoContext:
+    obj = 'Departamento'
+    objs = 'Departamentos'
+    url_seccion = 'departamentos'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Departamento', 'Dependencia']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class CargoContext:
+    obj = 'Cargo'
+    objs = 'Cargos'
+    url_seccion = 'cargos'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Cargo', 'Tipo de cargo']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.tipo_cargo"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class AreaEspecialidadContext:
+    obj = 'Área de Especialidad'
+    objs = 'Áreas de Especialidad'
+    url_seccion = 'areas-specialidad'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Área de Especialidad', 'Área de conocimiento']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.area_conocimiento"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class ImpactoSocialContext:
+    obj = 'Impacto Social'
+    objs = 'Impactos Sociales'
+    url_seccion = 'impactos-sociales'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Impacto Social']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class FinanciamientoContext:
+    obj = 'Financiamiento'
+    objs = 'Financiamientos'
+    url_seccion = 'financiamientos'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Financiamiento', 'Tipo']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.tipo_financiamiento"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class MetodologiaContext:
+    obj = 'Metodología'
+    objs = 'Metodologías'
+    url_seccion = 'metodologias'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Metodología']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class BecaContext:
+    obj = 'Beca'
+    objs = 'Becas'
+    url_seccion = 'becas'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Beca']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class ReconocimientoContext:
+    obj = 'Reconocimiento'
+    objs = 'Reconocimientos'
+    url_seccion = 'reconocimientos'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Reconocimiento']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class ProgramaLicenciaturaContext:
+    obj = 'Programa de licenciatura'
+    objs = 'Programas de licenciatura'
+    url_seccion = 'programas-licenciatura'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Programa de licenciatura', 'Área de conocimiento']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.area_conocimiento"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class ProgramaMaestriaContext:
+    obj = 'Programa de maestría'
+    objs = 'Programas de maestría'
+    url_seccion = 'programas-maestria'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Programa de maestría', 'Área de conocimiento']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.area_conocimiento"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class ProgramaDoctoradoContext:
+    obj = 'Programa de doctorado'
+    objs = 'Programas de doctorado'
+    url_seccion = 'programas-doctorado'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Programa de doctorado', 'Área de conocimiento']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.area_conocimiento"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class TipoEventoContext:
+    obj = 'Tipo de evento'
+    objs = 'Tipos de evento'
+    url_seccion = 'tipos-evento'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Tipo de evento']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class EventoContext:
+    obj = 'Evento'
+    objs = 'Eventos'
+    url_seccion = 'eventos'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Evento', 'tipo', 'Fecha inicio']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.tipo"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class DistincionContext:
+    obj = 'Distinción'
+    objs = 'Distinciones'
+    url_seccion = 'distinciones'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Distinción', 'Tipo']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.tipo"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class ProyectoContext:
+    obj = 'Proyecto'
+    objs = 'Proyecto'
+    url_seccion = 'distinciones'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Proyecto', 'Tipo', 'Fecha inicio', ]}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.tipo"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
