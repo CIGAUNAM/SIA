@@ -8,19 +8,66 @@ from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrRead
 from rest_framework import permissions
 
 from django.views.generic import View
+
 from SIA.utils import *
-from .forms import *
-import json
+from . forms import *
+from . utils import *
+from . models import *
 
 
 def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
 
 
+class PaisJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Pais.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'zona', 'codigo'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class PaisLista(ObjectCreateMixin, View):
+    form_class = PaisForm
+    model = Pais
+    aux = PaisContext.contexto
+    template_name = 'cargo_academico-administrativo.html'
+
+
+class PaisDetalle(ObjectUpdateMixin, View):
+    form_class = PaisForm
+    model = Pais
+    aux = PaisContext.contexto
+    template_name = 'cargo_academico-administrativo.html'
+
+
+class PaisEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Pais, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+
+
+
+
+
+
+
+"""
 class InstitucionCrear(View):
     form_class = InstitucionForm
     model = Institucion
-    template_name = 'agregar-institucion.html'
+    #template_name = 'agregar_institucion.html'
 
     def get(self, request):
         return render(request, self.template_name, {'form_institucion': self.form_class})
@@ -35,7 +82,7 @@ class InstitucionCrear(View):
             #return HttpResponse("<script>$('#agregar-institucion').modal('hide');</script>")
         else:
             return render(request, self.template_name, {'form_institucion': bound_form})
-
+"""
 
 
 
