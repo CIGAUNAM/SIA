@@ -149,7 +149,7 @@ class DepartamentoForm(forms.ModelForm):
 
 class CargoForm(forms.ModelForm):
     tipo_cargo = forms.ChoiceField(widget=Select3Widget, choices=(
-    ('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('OTRO', 'Otro')))
+        ('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('OTRO', 'Otro')))
 
     class Meta:
         model = Cargo
@@ -364,8 +364,10 @@ class ProyectoForm(forms.ModelForm):
     fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
     fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de fin')
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PROYECTO'), required=True)
-    clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CLASIFICACION_PROYECTO'), required=True)
-    organizacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ORGANIZACION_PROYECTO'), required=True)
+    clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CLASIFICACION_PROYECTO'),
+                                      required=True)
+    organizacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ORGANIZACION_PROYECTO'),
+                                     required=True)
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'MODALIDAD_PROYECTO'), required=True)
     tematica_genero = forms.BooleanField(required=False)
     problema_nacional_conacyt = forms.ModelChoiceField(
@@ -398,12 +400,112 @@ class ProyectoForm(forms.ModelForm):
         }
 
 
+class MemoriaForm(forms.ModelForm):
+    class Meta:
+        model = Memoria
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }
 
 
+class EditorialForm(forms.ModelForm):
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+
+    class Meta:
+        model = Editorial
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }
 
 
+class ColeccionForm(forms.ModelForm):
+    class Meta:
+        model = Coleccion
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }
 
 
+class LibroForm(forms.ModelForm):
+    tipo = forms.ChoiceField(widget=Select3Widget,
+                             choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación')))
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    editorial = forms.ModelChoiceField(
+        queryset=Editorial.objects.all(),
+        label="Editorial",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION'))
+    fecha = forms.CharField(widget=wDateField, required=True)
+    numero_edicion = forms.CharField(widget=wNumberField, required=True, label='Número de edición')
+    numero_paginas = forms.CharField(widget=wNumberField, required=True, label='Número de páginas')
+    coleccion = forms.ModelChoiceField(
+        queryset=Coleccion.objects.all(),
+        label="Colección",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+
+    class Meta:
+        model = Libro
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+            'usuarios': Select3MultipleWidget,
+            'editores': Select3MultipleWidget,
+            'coordinadores': Select3MultipleWidget,
+            'volumen': wCharField,
+            'isbn': wCharField,
+            'url': wCharField,
+        }
 
 
+class RevistaForm(forms.ModelForm):
+    editorial = forms.ModelChoiceField(
+        queryset=Editorial.objects.all(),
+        label="Editorial",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
+    class Meta:
+        model = Revista
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+            'url': wCharField,
+        }
+
+
+class AsignaturaForm(forms.ModelForm):
+    class Meta:
+        model = Asignatura
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }

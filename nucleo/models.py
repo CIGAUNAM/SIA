@@ -572,7 +572,7 @@ class Proyecto(models.Model):
 ###################
 
 
-
+"""
 class TipoDocumento(models.Model):
     nombre = models.CharField(max_length=50, unique=True)
     #slug = AutoSlugField(populate_from='tipo', unique=True)
@@ -588,7 +588,7 @@ class TipoDocumento(models.Model):
         ordering = ['nombre']
         verbose_name = 'Tipo de documento'
         verbose_name_plural = 'Tipos de documentos'
-
+"""
 
 class Indice(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
