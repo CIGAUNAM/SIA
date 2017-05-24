@@ -134,7 +134,10 @@ urlpatterns = [
     # url(r'^asignaturas/(?P<pk>[\w\-]+)/eliminar$', AsignaturaEliminar.as_view(), name='asignatura_eliminar'),
     url(r'^asignaturas/(?P<pk>[\w\-]+)/$', AsignaturaDetalle.as_view(), name='asignatura_detalle'),
 
-
+    url(r'^medios-divulgacion/json/', MedioDivulgacionJSON.as_view(), name='medio_divulgacion_lista__json'),
+    url(r'^medios-divulgacion/$', MedioDivulgacionLista.as_view(), name='medio_divulgacion_lista'),
+    # url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/eliminar$', MedioDivulgacionEliminar.as_view(), name='medio_divulgacion_eliminar'),
+    url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/$', MedioDivulgacionDetalle.as_view(), name='medio_divulgacion_detalle'),
 
 
 

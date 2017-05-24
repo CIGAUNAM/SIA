@@ -741,7 +741,7 @@ class DistincionContext:
 class ProyectoContext:
     obj = 'Proyecto'
     objs = 'Proyecto'
-    url_seccion = 'distinciones'
+    url_seccion = 'proyectos'
 
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
@@ -1005,6 +1005,47 @@ class AsignaturaContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class MedioDivulgacionContext:
+    obj = 'Medio de divulgación'
+    objs = 'Medios de divulgación'
+    url_seccion = 'medios-divulgacion'
+
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Nombre', 'Tipo', 'Canal', 'Ciudad', ]}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.nombre_medio",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre_medio + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.tipo"},\n' \
+                                    '{"data": "fields.canal"},\n' \
+                                    '{"data": "fields.ciudad"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

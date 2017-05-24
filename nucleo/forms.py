@@ -509,3 +509,24 @@ class AsignaturaForm(forms.ModelForm):
             'nombre': wCharField,
             'descripcion': wTextarea,
         }
+
+
+class MedioDivulgacionForm(forms.ModelForm):
+    tipo = forms.ChoiceField(widget=Select3Widget,
+                             choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+
+    class Meta:
+        model = MedioDivulgacion
+        exclude = []
+        widgets = {
+            'nombre_medio': wCharField,
+            'canal': wCharField,
+            'descripcion': wTextarea,
+        }

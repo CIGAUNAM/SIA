@@ -3,7 +3,7 @@ from django.db import models
 from django.conf import settings
 #from django.contrib.auth.models import User
 from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from nucleo.models import User, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice, MedioDivulgacion
 from django.core.urlresolvers import reverse
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
@@ -133,31 +133,6 @@ class ParticipacionEventoDivulgacion(models.Model):
     class Meta:
         verbose_name = 'Participación en evento académico'
         verbose_name_plural= 'Participación en eventos académicos'
-
-
-class MedioDivulgacion(models.Model):
-    nombre_medio = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre_medio', unique=True)
-    descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
-    canal = models.CharField(max_length=255)
-    ciudad = models.ForeignKey(Ciudad)
-    #tags = models.ManyToManyField(Tag, related_name='medio_divulgacion_tags', blank=True)
-
-    def __str__(self):
-        return self.nombre_medio
-
-    def get_absolute_url(self):
-        return reverse('medio_divulgacion_detalle', kwargs={'pk': self.pk})
-
-    def natural_key(self):
-        return (self.nombre_medio)
-
-    class Meta:
-        unique_together = ['canal', 'nombre_medio']
-        ordering = ['nombre_medio']
-        verbose_name = "Medio de difusión para divulgación"
-        verbose_name_plural = "Medios de difusión para divulgación"
 
 
 class ProgramaRadioTelevisionInternet(models.Model):

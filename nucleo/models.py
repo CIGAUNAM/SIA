@@ -715,3 +715,27 @@ class Asignatura(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+
+class MedioDivulgacion(models.Model):
+    nombre_medio = models.CharField(max_length=255, unique=True)
+    #slug = AutoSlugField(populate_from='nombre_medio', unique=True)
+    descripcion = models.TextField(blank=True)
+    tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
+    canal = models.CharField(max_length=255)
+    ciudad = models.ForeignKey(Ciudad)
+    #tags = models.ManyToManyField(Tag, related_name='medio_divulgacion_tags', blank=True)
+
+    def __str__(self):
+        return self.nombre_medio
+
+    def get_absolute_url(self):
+        return reverse('medio_divulgacion_detalle', kwargs={'pk': self.pk})
+
+    def natural_key(self):
+        return (self.nombre_medio)
+
+    class Meta:
+        unique_together = ['canal', 'nombre_medio']
+        ordering = ['nombre_medio']
+        verbose_name = "Medio de difusión para divulgación"
+        verbose_name_plural = "Medios de difusión para divulgación"
