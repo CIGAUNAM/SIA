@@ -1225,3 +1225,4 @@ class ProyectoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Proyecto.objects.all()
     serializer_class = ProyectoSerializer
 
+
