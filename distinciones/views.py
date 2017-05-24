@@ -18,7 +18,7 @@ class DistincionAcademicoJSON(View):
             else:
                 items = DistincionAcademico.objects.filter(condecorados=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('distincion', 'otorga', 'ambito', 'fecha'))
+                                         fields=('distincion', 'dependencia', 'ambito', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -59,7 +59,7 @@ class DistincionAlumnoJSON(View):
             else:
                 items = DistincionAlumno.objects.filter(tutores=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('distincion', 'alumno', 'grado_academico', 'otorga', 'ambito', 'fecha'))
+                                         fields=('distincion', 'alumno', 'grado_academico', 'dependencia', 'ambito', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

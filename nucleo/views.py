@@ -673,7 +673,7 @@ class DistincionJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Distincion.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
+                                         fields=('nombre', 'tipo'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -984,7 +984,7 @@ class MedioDivulgacionDetalle(ObjectUpdateMixinNucleo, View):
 class MedioDivulgacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(Asignatura, pk=pk)
+            item = get_object_or_404(MedioDivulgacion, pk=pk)
             item.delete()
             return redirect('../')
         except:
