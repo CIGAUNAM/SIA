@@ -267,3 +267,39 @@ class OtroProgramaVinculacionEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
+
+class ClasificacionServicioJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = ClasificacionServicio.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ClasificacionServicioLista(ObjectCreateMixinNucleo, View):
+    form_class = ClasificacionServicioForm
+    model = ClasificacionServicio
+    aux = ClasificacionServicioContext.contexto
+    template_name = 'main.html'
+
+
+class ClasificacionServicioDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = ClasificacionServicioForm
+    model = ClasificacionServicio
+    aux = ClasificacionServicioContext.contexto
+    template_name = 'main.html'
+
+
+class ClasificacionServicioEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ClasificacionServicio, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404

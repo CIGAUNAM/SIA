@@ -20,19 +20,20 @@ class Comision(models.Model):
         verbose_name_plural = 'Comisiones'
 
 
-class Actividad(models.Model):
-    actividad = models.CharField(max_length=255, unique=True)
+class ActividadApoyo(models.Model):
+    nombre = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='actividad', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
-        return self.actividad
+        return self.nombre
 
     def natural_key(self):
-        return (self.actividad)
+        return (self.nombre)
 
     class Meta:
-        verbose_name_plural = 'Actividades'
+        verbose_name = 'Actividad de apoyo'
+        verbose_name_plural = 'Actividades de apoyo'
 
 
 class Representacion(models.Model):
@@ -133,7 +134,7 @@ class ComisionAcademica(models.Model):
 
 
 class ApoyoTecnico(models.Model):
-    actividad_apoyo = models.ForeignKey(Actividad)
+    actividad_apoyo = models.ForeignKey(ActividadApoyo)
     descripcion = models.TextField()
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
@@ -157,7 +158,7 @@ class ApoyoTecnico(models.Model):
 
 
 class ApoyoOtraActividad(models.Model):
-    actividad_apoyo = models.ForeignKey(Actividad)
+    actividad_apoyo = models.ForeignKey(ActividadApoyo)
     descripcion = models.TextField()
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)

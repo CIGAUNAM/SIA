@@ -170,3 +170,13 @@ class OtroProgramaVinculacionForm(forms.ModelForm):
         widgets = {
             'dependencias': Select2MultipleWidget,
         }
+
+
+class ClasificacionServicioForm(forms.ModelForm):
+    class Meta:
+        model = ClasificacionServicio
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }

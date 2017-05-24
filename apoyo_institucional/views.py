@@ -189,3 +189,109 @@ class ApoyoOtraActividadEliminar(View):
             raise Http404
 
 
+class RepresentacionJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Representacion.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre',))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class RepresentacionLista(ObjectCreateMixinNucleo, View):
+    form_class = RepresentacionForm
+    model = Representacion
+    aux = RepresentacionContext.contexto
+    template_name = 'main.html'
+
+
+class RepresentacionDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = RepresentacionForm
+    model = Representacion
+    aux = RepresentacionContext.contexto
+    template_name = 'main.html'
+
+
+class RepresentacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Representacion, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class ComisionJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Comision.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre',))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ComisionLista(ObjectCreateMixinNucleo, View):
+    form_class = ComisionForm
+    model = Comision
+    aux = ComisionContext.contexto
+    template_name = 'main.html'
+
+
+class ComisionDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = ComisionForm
+    model = Comision
+    aux = ComisionContext.contexto
+    template_name = 'main.html'
+
+
+class ComisionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Comision, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class ActividadApoyoJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = ActividadApoyo.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre',))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ActividadApoyoLista(ObjectCreateMixinNucleo, View):
+    form_class = ActividadApoyoForm
+    model = ActividadApoyo
+    aux = ActividadApoyoContext.contexto
+    template_name = 'main.html'
+
+
+class ActividadApoyoDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = ActividadApoyoForm
+    model = ActividadApoyo
+    aux = ActividadApoyoContext.contexto
+    template_name = 'main.html'
+
+
+class ActividadApoyoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ActividadApoyo, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
