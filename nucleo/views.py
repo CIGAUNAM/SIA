@@ -709,7 +709,7 @@ class ProyectoJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Proyecto.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
+                                         fields=('nombre', 'tipo', 'fecha_inicio'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -781,7 +781,7 @@ class EditorialJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Editorial.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
+                                         fields=('nombre', 'pais'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -955,7 +955,40 @@ class AsignaturaEliminar(View):
             raise Http404
 
 
+class MedioDivulgacionJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = MedioDivulgacion.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre_medio', 'tipo', 'canal', 'ciudad'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
 
+
+class MedioDivulgacionLista(ObjectCreateMixinNucleo, View):
+    form_class = MedioDivulgacionForm
+    model = MedioDivulgacion
+    aux = MedioDivulgacionContext.contexto
+    template_name = 'main.html'
+
+
+class MedioDivulgacionDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = MedioDivulgacionForm
+    model = MedioDivulgacion
+    aux = MedioDivulgacionContext.contexto
+    template_name = 'main.html'
+
+
+class MedioDivulgacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Asignatura, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
 
 
 
@@ -1192,4 +1225,3 @@ class ProyectoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Proyecto.objects.all()
     serializer_class = ProyectoSerializer
 
-#@permission_classes((permissions.IsAuthenticatedOrReadOnly,))

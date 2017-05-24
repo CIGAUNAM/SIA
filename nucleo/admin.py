@@ -6,7 +6,7 @@ from . models import ZonaPais, Pais, Estado, Ciudad, Institucion, Dependencia, D
     User, AreaConocimiento, AreaEspecialidad, ImpactoSocial, Cargo, Financiamiento, \
     Metodologia, Beca, ProgramaLicenciatura, \
     ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, ProblemaNacionalConacyt, Proyecto, Nombramiento, \
-    Indice, Editorial, Coleccion, Libro, Revista, Asignatura
+    Indice, Editorial, Coleccion, Libro, Revista, Asignatura, MedioDivulgacion
 
 admin.site.register(ZonaPais)
 admin.site.register(Pais)
@@ -40,3 +40,4 @@ admin.site.register(Coleccion)
 admin.site.register(Libro)
 admin.site.register(Revista)
 admin.site.register(Asignatura)
+admin.site.register(MedioDivulgacion)
