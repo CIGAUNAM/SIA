@@ -1226,3 +1226,5 @@ class ProyectoDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProyectoSerializer
 
 
+
+
