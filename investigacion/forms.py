@@ -160,6 +160,7 @@ class LibroInvestigacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     pais = forms.ModelChoiceField(
+        required=False,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect3Widget(
@@ -167,6 +168,7 @@ class LibroInvestigacionForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
+        required=False,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect3Widget(
