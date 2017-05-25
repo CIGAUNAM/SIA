@@ -2,26 +2,45 @@
 
 {% block form_agregar %}
     <p><strong>Título de Post Doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Título de la tesis con que finalizó la licenciatura."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título de la tesis con que finalizó la licenciatura."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
                                title="Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.">
         <i class="fa fa-question-circle"> </i> </a> </strong>
         {{ form.descripcion }}
     </p>
+    <p><strong>Área de conocimiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Área de conocimiento a la que pertenece el trabajo de postdoctorado. Las áreas de conocimiento están tomadas del
+           catalogo de áreas del sitio Web of Science.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.area_conocimiento }}
+        </div>
+    </div>
+    </p>
+
+
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Institución donde se llevó a cabo el postdoctorado, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -33,23 +52,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el postdoctorado, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el postdoctorado, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -61,22 +78,18 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el postdoctorado, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto desarrollado durante el periodo de duración del postdoctorado.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -88,45 +101,37 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyecto desarrollado durante el periodo de duración del postdoctorado.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio de postdoctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de postdoctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de terminación de postdoctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de postdoctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -134,26 +139,45 @@
 
 {% block form_detalle %}
     <p><strong>Título de Post Doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Título de la tesis con que finalizó la licenciatura."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título de la tesis con que finalizó la licenciatura."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
                                title="Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.">
         <i class="fa fa-question-circle"> </i> </a> </strong>
         {{ form.descripcion }}
     </p>
+    <p><strong>Área de conocimiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Área de conocimiento a la que pertenece el trabajo de postdoctorado. Las áreas de conocimiento están tomadas del
+           catalogo de áreas del sitio Web of Science.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.area_conocimiento }}
+        </div>
+    </div>
+    </p>
+
+
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Institución donde se llevó a cabo el postdoctorado, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -165,23 +189,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el postdoctorado, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el postdoctorado, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -193,22 +215,18 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el postdoctorado, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto desarrollado durante el periodo de duración del postdoctorado.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -220,45 +238,37 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyecto desarrollado durante el periodo de duración del postdoctorado.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio de postdoctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de postdoctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de terminación de postdoctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de postdoctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>

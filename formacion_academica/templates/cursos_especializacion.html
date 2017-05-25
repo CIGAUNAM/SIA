@@ -2,18 +2,17 @@
 
 {% block form_agregar %}
     <p><strong>Nombre del curso:</strong>
+
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del curso."><i
+                class="fa fa-question-circle"></i></a>
+
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-
         </div>
     </div>
     </p>
@@ -23,80 +22,83 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Tipo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tipo de curso."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.tipo }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Tipo de curso."><i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Horas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número total de horas del curso.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.horas }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número total de horas del curso.">
-                <i class="fa fa-question-circle"></i></a></div>
+
         </div>
     </div>
     </p>
     <p><strong>Modalidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Modalidad en la que se efectuó el curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.modalidad }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Modalidad en la que se efectuó el curso."><i
-                    class="fa fa-question-circle"></i></a></div>
+
         </div>
     </div>
     </p>
-
     <p><strong>Área de conocimiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Área del conocimiento a la que se adhiere el curso. Las áreas aquí mostradas corresponden con las áreas provistas por el sitio Web of Science."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.area_conocimiento }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Área del conocimiento a la que se adhiere el curso. Las áreas aquí mostradas corresponden con las áreas provistas por el sitio Web of Science."><i
-                    class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de fin del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el curso, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -110,25 +112,22 @@
             <div class="input-group-addon">
                 <span data-toggle="modal" data-target="#agregar-institucion">
 
-                    <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                    <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                        title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                     </a>
-
                 </span>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el curso, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Dependencia donde se llevó a cabo el curso, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -140,37 +139,29 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el curso, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Nombre del curso:</strong>
+    <p><strong>Nombre del curso:</strong>
+
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del curso."><i
+                class="fa fa-question-circle"></i></a>
+
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-
         </div>
     </div>
     </p>
@@ -180,80 +171,83 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Tipo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tipo de curso."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.tipo }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Tipo de curso."><i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Horas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número total de horas del curso.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.horas }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número total de horas del curso.">
-                <i class="fa fa-question-circle"></i></a></div>
+
         </div>
     </div>
     </p>
     <p><strong>Modalidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Modalidad en la que se efectuó el curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.modalidad }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Modalidad en la que se efectuó el curso."><i
-                    class="fa fa-question-circle"></i></a></div>
+
         </div>
     </div>
     </p>
-
     <p><strong>Área de conocimiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Área del conocimiento a la que se adhiere el curso. Las áreas aquí mostradas corresponden con las áreas provistas por el sitio Web of Science."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.area_conocimiento }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Área del conocimiento a la que se adhiere el curso. Las áreas aquí mostradas corresponden con las áreas provistas por el sitio Web of Science."><i
-                    class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de fin del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el curso, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -267,25 +261,22 @@
             <div class="input-group-addon">
                 <span data-toggle="modal" data-target="#agregar-institucion">
 
-                    <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                    <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                        title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                     </a>
-
                 </span>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el curso, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="Dependencia donde se llevó a cabo el curso, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -297,18 +288,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el curso, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
