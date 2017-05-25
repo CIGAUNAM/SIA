@@ -66,14 +66,14 @@ class CapituloLibroInvestigacionJSON(View):
             raise Http404
 
 
-class CapituloLibroInvestigacionLista(ObjectCreateVarMixin, View):
+class CapituloLibroInvestigacionLista(ObjectCreateMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
     template_name = 'capitulo_libro.html'
 
 
-class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
+class CapituloLibroInvestigacionDetalle(ObjectUpdateMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
