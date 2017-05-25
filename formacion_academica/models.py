@@ -46,7 +46,7 @@ class Licenciatura(models.Model):
     dependencia = models.ForeignKey(Dependencia)
     titulo_tesis = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='titulo_tesis', unique=True)
-    tesis_doc = models.FileField(blank=True)
+    #tesis_doc = models.FileField(blank=True)
     tesis_url = models.URLField(blank=True)
     fecha_inicio = models.DateField('Fecha de inicio de licenciatura')
     fecha_fin = models.DateField('Fecha de terminación de licenciatura')
