@@ -183,7 +183,7 @@ class LibroInvestigacionJSON(View):
             else:
                 items = LibroInvestigacion.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre_libro', 'editorial', 'ciudad', 'status', 'fecha'))
+                                         fields=('nombre', 'editorial', 'ciudad', 'status', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

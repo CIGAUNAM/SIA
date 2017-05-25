@@ -196,6 +196,7 @@ class LibroInvestigacionForm(forms.ModelForm):
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
     coleccion = forms.ModelChoiceField(
+        required=False,
         queryset=Coleccion.objects.all(),
         label="Coleccion",
         widget=ModelSelect3Widget(
@@ -203,7 +204,7 @@ class LibroInvestigacionForm(forms.ModelForm):
         )
     )
     volumen = forms.CharField(widget=wCharField, required=False)
-    isbn = forms.CharField(widget=wCharField, required=False)
+    isbn = forms.CharField(widget=wCharField, required=True)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
 
     class Meta:
