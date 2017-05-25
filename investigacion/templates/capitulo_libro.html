@@ -2,19 +2,16 @@
 
 {% block form_agregar %}
     <p><strong>Título del capítulo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título del capítulo, no del libro.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.titulo }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título del capítulo, no del libro.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-
         </div>
     </div>
     </p>
@@ -24,6 +21,10 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Libro:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Libro al que pertenece el capítulo escrito.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -35,43 +36,41 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Libro al que pertenece el capítulo escrito.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Página inicial:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde inicia el capítulo.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.pagina_inicio }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número de página donde inicia el capítulo.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Página final:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde finaliza el capítulo.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.pagina_fin }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número de página donde finaliza el capítulo.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Proyectos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyectos relacionados al capítulo del libro, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
@@ -83,16 +82,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyectos relacionados al capítulo del libro, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
@@ -100,19 +94,16 @@
 
 {% block form_detalle %}
     <p><strong>Título del capítulo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título del capítulo, no del libro.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.titulo }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título del capítulo, no del libro.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-
         </div>
     </div>
     </p>
@@ -122,6 +113,10 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Libro:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Libro al que pertenece el capítulo escrito.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -133,43 +128,41 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Libro al que pertenece el capítulo escrito.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Página inicial:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde inicia el capítulo.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.pagina_inicio }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número de página donde inicia el capítulo.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Página final:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde finaliza el capítulo.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.pagina_fin }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número de página donde finaliza el capítulo.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Proyectos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyectos relacionados al capítulo del libro, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
@@ -181,16 +174,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyectos relacionados al capítulo del libro, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
