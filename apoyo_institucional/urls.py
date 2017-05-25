@@ -28,4 +28,19 @@ urlpatterns = [
     url(r'^otras-actividades/(?P<pk>[\w\-]+)/eliminar$', ApoyoOtraActividadEliminar.as_view(), name='apoyo_otra_actividad_eliminar'),
     url(r'^otras-actividades/(?P<pk>[\w\-]+)/$', ApoyoOtraActividadDetalle.as_view(), name='apoyo_otra_actividad_detalle'),
 
+    url(r'^representaciones/json/', RepresentacionJSON.as_view(), name='representacion_lista__json'),
+    url(r'^representaciones/$', RepresentacionLista.as_view(), name='representacion_lista'),
+    # url(r'^representaciones/(?P<pk>[\w\-]+)/eliminar$', RepresentacionEliminar.as_view(), name='representacion_eliminar'),
+    url(r'^representaciones/(?P<pk>[\w\-]+)/$', RepresentacionDetalle.as_view(), name='representacion_detalle'),
+
+    url(r'^comisiones/json/', ComisionJSON.as_view(), name='comision_lista__json'),
+    url(r'^comisiones/$', ComisionLista.as_view(), name='comision_lista'),
+    # url(r'^comisiones/(?P<pk>[\w\-]+)/eliminar$', ComisionEliminar.as_view(), name='comision_eliminar'),
+    url(r'^comisiones/(?P<pk>[\w\-]+)/$', ComisionDetalle.as_view(), name='comision_detalle'),
+
+    url(r'^actividades-apoyo/json/', ActividadApoyoJSON.as_view(), name='actividad_apoyo_lista__json'),
+    url(r'^actividades-apoyo/$', ActividadApoyoLista.as_view(), name='actividad_apoyo_lista'),
+    # url(r'^actividades-apoyo/(?P<pk>[\w\-]+)/eliminar$', ActividadApoyoEliminar.as_view(), name='actividad_apoyo_eliminar'),
+    url(r'^actividades-apoyo/(?P<pk>[\w\-]+)/$', ActividadApoyoDetalle.as_view(), name='actividad_apoyo_detalle'),
+
 ]

@@ -95,7 +95,7 @@ class ComisionAcademicaForm(forms.ModelForm):
 
 class ApoyoTecnicoForm(forms.ModelForm):
     actividad_apoyo = forms.ModelChoiceField(
-        queryset=Actividad.objects.all(),
+        queryset=ActividadApoyo.objects.all(),
         label="Actividad de apoyo",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
@@ -128,7 +128,7 @@ class ApoyoTecnicoForm(forms.ModelForm):
 
 class ApoyoOtraActividadForm(forms.ModelForm):
     actividad_apoyo = forms.ModelChoiceField(
-        queryset=Actividad.objects.all(),
+        queryset=ActividadApoyo.objects.all(),
         label="Actividad de apoyo",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
@@ -157,3 +157,33 @@ class ApoyoOtraActividadForm(forms.ModelForm):
     class Meta:
         model = ApoyoOtraActividad
         exclude = ['usuario', ]
+
+
+class RepresentacionForm(forms.ModelForm):
+    class Meta:
+        model = Representacion
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }
+
+
+class ComisionForm(forms.ModelForm):
+    class Meta:
+        model = Comision
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }
+
+
+class ActividadApoyoForm(forms.ModelForm):
+    class Meta:
+        model = ActividadApoyo
+        exclude = []
+        widgets = {
+            'nombre': wCharField,
+            'descripcion': wTextarea,
+        }

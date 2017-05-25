@@ -28,6 +28,7 @@ class CursoEspecializacionForm(forms.ModelForm):
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -65,14 +66,16 @@ class CursoEspecializacionForm(forms.ModelForm):
 
 
 class LicenciaturaForm(forms.ModelForm):
+
     carrera = forms.ModelChoiceField(
         queryset=ProgramaLicenciatura.objects.all(),
-        label="Institución",
+        label="Carrera",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
         )
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
+
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
@@ -89,12 +92,14 @@ class LicenciaturaForm(forms.ModelForm):
             max_results=500,
         )
     )
+
     titulo_tesis = forms.CharField(widget=wCharField, required=True)
     tesis_doc = forms.FileField(required=False)  # corregir y poner el campo como los demas
     tesis_url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
     fecha_grado = forms.CharField(widget=wDateField, required=True)
+
 
     class Meta:
         model = Licenciatura
@@ -104,7 +109,7 @@ class LicenciaturaForm(forms.ModelForm):
 class MaestriaForm(forms.ModelForm):
     programa = forms.ModelChoiceField(
         queryset=ProgramaMaestria.objects.all(),
-        label="Institución",
+        label="ProgramaMaestria",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
         )
@@ -140,8 +145,8 @@ class MaestriaForm(forms.ModelForm):
 
 class DoctoradoForm(forms.ModelForm):
     programa = forms.ModelChoiceField(
-        queryset=ProgramaMaestria.objects.all(),
-        label="Institución",
+        queryset=ProgramaDoctorado.objects.all(),
+        label="ProgramaDoctorado",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
         )
@@ -207,7 +212,7 @@ class PostDoctoradoForm(forms.ModelForm):
         label="Proyecto",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-        ), required=False,
+        ), required=True,
     )
     fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
     fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de finalización')

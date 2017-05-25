@@ -2,6 +2,9 @@
 
 {% block form_agregar %}
     <p><strong>Programa de doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Programa de doctorado acreditado.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -13,15 +16,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un programa de doctorado nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Programa de doctorado acreditado.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
@@ -31,6 +30,12 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el doctorado, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -42,23 +47,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el doctorado, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el doctorado, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -70,95 +73,76 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el doctorado, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Título de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título de la tesis con que finalizó el doctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.titulo_tesis }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título de la tesis con que finalizó el doctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-
         </div>
     </div>
     </p>
     <p><strong>URL de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.tesis_url }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio de doctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de doctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
+            {{ form.fecha_fin }}
         </div>
     </div>
     </p>
     <p><strong>Fecha de obtención de grado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de titulación y obtención de grado de doctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_grado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de titulación y obtención de grado de doctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -166,6 +150,9 @@
 
 {% block form_detalle %}
     <p><strong>Programa de doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Programa de doctorado acreditado.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -177,15 +164,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un programa de doctorado nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Programa de doctorado acreditado.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
@@ -195,6 +178,12 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el doctorado, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -206,23 +195,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el doctorado, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el doctorado, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -234,95 +221,76 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el doctorado, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Título de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título de la tesis con que finalizó el doctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.titulo_tesis }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título de la tesis con que finalizó el doctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-
         </div>
     </div>
     </p>
     <p><strong>URL de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.tesis_url }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio de doctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio de doctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de terminación de doctorado, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
+            {{ form.fecha_fin }}
         </div>
     </div>
     </p>
     <p><strong>Fecha de obtención de grado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de titulación y obtención de grado de doctorado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_grado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de titulación y obtención de grado de doctorado."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>

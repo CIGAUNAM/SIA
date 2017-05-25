@@ -16,19 +16,26 @@ from django.utils.datastructures import MultiValueDict
 
 
 class wCharField(Widget):
-    template_name = 'widgets/CharField.html'
+    input_type = None  # Subclasses must define this.
 
-    def get_context(self, name, value, attrs=None):
-        return {'widget': {
-            'name': name,
-            'value': value,
-        }}
+    def format_value(self, value):
+        if self.is_localized:
+            return formats.localize_input(value)
+        return value
 
     def render(self, name, value, attrs=None):
-        context = self.get_context(name, value, attrs)
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        if value != '':
+            # Only add the 'value' attribute if a value is non-empty.
+            final_attrs['value'] = force_text(self.format_value(value))
+        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
 
-        template = loader.get_template(self.template_name).render(context)
-        return mark_safe(template)
+
+
+
+
 
 class wNumberField(Widget):
     template_name = 'widgets/NumberField.html'
@@ -73,6 +80,7 @@ class wDateField(DateInput):
             try:
                 tfecha = tfecha.split("/")
                 fecha = str(tfecha[2]) + "-" + str(tfecha[1]) + "-" + str(tfecha[0])
+                fecha = "la fecha aqui"
                 return {'widget': {
                     'name': name,
                     'value': fecha,
@@ -80,7 +88,7 @@ class wDateField(DateInput):
             except:
                 return {'widget': {
                     'name': name,
-                    'value': None,
+                    #'value': None,
                 }}
         else:
             return {'widget': {
@@ -88,30 +96,18 @@ class wDateField(DateInput):
                 'value': None,
             }}
 
-        value = None if value == '' else value
 
-
-    def render(self, name, value, attrs=None):
-        context = self.get_context(name, value, attrs)
-        template = loader.get_template(self.template_name).render(context)
-        print("hola")
-        return mark_safe(template)
-
-
-
-
-
-class wInput(Input):
-    """
-    Base class for all <input> widgets (except type='checkbox' and
-    type='radio', which are special).
-    """
-    input_type = None  # Subclasses must define this.
+    #def __init__(self, attrs=None, format=None):
+    #    super(DateTimeBaseInput, self).__init__(attrs)
+    #    self.format = format if format else None
 
     def format_value(self, value):
-        if self.is_localized:
-            return formats.localize_input(value)
-        return value
+        return formats.localize_input(value, self.format or formats.get_format(self.format_key)[2])
+
+
+
+
+
 
     def render(self, name, value, attrs=None):
         if value is None:
@@ -120,7 +116,20 @@ class wInput(Input):
         if value != '':
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_text(self.format_value(value))
-        return format_html('<input{} />', flatatt(final_attrs))
+
+        return format_html('<input{} style="padding-left: 18px"; data-provide="datepicker" class="datepicker form-control pull-right"/>', flatatt(final_attrs))
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Select3Mixin(Select2Mixin):
     """

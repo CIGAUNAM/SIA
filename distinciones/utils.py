@@ -31,7 +31,7 @@ class DistincionAcademicoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.distincion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.otorga"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
@@ -57,7 +57,7 @@ class DistincionAcademicoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.distincion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.otorga"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
@@ -100,7 +100,7 @@ class DistincionAlumnoContext:
                                     '},\n' \
                                     '{"data": "fields.alumno"},\n' \
                                     '{"data": "fields.grado_academico"},\n' \
-                                    '{"data": "fields.otorga"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
@@ -128,7 +128,7 @@ class DistincionAlumnoContext:
                                     '},\n' \
                                     '{"data": "fields.alumno"},\n' \
                                     '{"data": "fields.grado_academico"},\n' \
-                                    '{"data": "fields.otorga"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
