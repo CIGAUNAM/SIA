@@ -2,19 +2,16 @@
 
 {% block form_agregar %}
     <p><strong>Título del libro:</strong>
+    <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Título del libro de investigación publicado.">
+                    <i class="fa fa-question-circle"></i>
+                </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título del libro de investigación publicado.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-
         </div>
     </div>
     </p>
