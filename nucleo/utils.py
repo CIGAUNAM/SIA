@@ -280,7 +280,7 @@ class CargoContext:
 class AreaEspecialidadContext:
     obj = 'Área de Especialidad'
     objs = 'Áreas de Especialidad'
-    url_seccion = 'areas-specialidad'
+    url_seccion = 'areas-especialidad'
 
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
@@ -947,7 +947,7 @@ class RevistaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Proyecto', 'Tipo', 'Fecha inicio', ]}
+                'titulos_tabla': ['Revista', 'Editorial']}
 
 
     tabla_mios =  '<script>\n' \

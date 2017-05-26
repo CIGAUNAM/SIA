@@ -889,7 +889,7 @@ class RevistaJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Revista.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
+                                         fields=('nombre', 'editorial'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

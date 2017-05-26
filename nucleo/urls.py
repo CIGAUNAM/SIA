@@ -39,10 +39,10 @@ urlpatterns = [
     # url(r'^cargos/(?P<pk>[\w\-]+)/eliminar$', CargoEliminar.as_view(), name='cargo_eliminar'),
     url(r'^cargos/(?P<pk>[\w\-]+)/$', CargoDetalle.as_view(), name='cargo_detalle'),
 
-    url(r'^areas-specialidad/json/', AreaEspecialidadJSON.as_view(), name='area_specialidad_lista__json'),
-    url(r'^areas-specialidad/$', AreaEspecialidadLista.as_view(), name='area_specialidad_lista'),
-    # url(r'^areas-specialidad/(?P<pk>[\w\-]+)/eliminar$', AreaEspecialidadEliminar.as_view(), name='area_specialidad_eliminar'),
-    url(r'^areas-specialidad/(?P<pk>[\w\-]+)/$', AreaEspecialidadDetalle.as_view(), name='area_specialidad_detalle'),
+    url(r'^areas-especialidad/json/', AreaEspecialidadJSON.as_view(), name='area_especialidad_lista__json'),
+    url(r'^areas-especialidad/$', AreaEspecialidadLista.as_view(), name='area_especialidad_lista'),
+    # url(r'^areas-especialidad/(?P<pk>[\w\-]+)/eliminar$', AreaEspecialidadEliminar.as_view(), name='area_especialidad_eliminar'),
+    url(r'^areas-especialidad/(?P<pk>[\w\-]+)/$', AreaEspecialidadDetalle.as_view(), name='area_especialidad_detalle'),
 
     url(r'^impactos-sociales/json/', ImpactoSocialJSON.as_view(), name='impacto_social_lista__json'),
     url(r'^impactos-sociales/$', ImpactoSocialLista.as_view(), name='impacto_social_lista'),
