@@ -2,19 +2,16 @@
 
 {% block form_agregar %}
     <p><strong>Título de <em>memoria in extenso</em>:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título de la memoria como aparece publicada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título de la memoria como aparece publicada.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-
         </div>
     </div>
     </p>
@@ -24,6 +21,10 @@
         {{ form.descripcion }}
     </p>
     <p><strong>País:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Pais.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -35,21 +36,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Pais.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Estado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Estado. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -61,21 +60,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Estado. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -87,36 +84,32 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Ciudad. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Evento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Evento de donde se recoge la memoria.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -128,21 +121,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un evento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Evento de donde se recoge la memoria.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Autores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Autores de la memoria, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -159,15 +150,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Autores de la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Editores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Editores de la memoria, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -184,28 +174,26 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Editores de la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Índices donde se registra:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Índices que registran o indexan la memoria en sus registros, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
             {{ form.indices }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Índices que registran o indexan la memoria en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Agradecimientos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Personas a quien se agradece en la memoria, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -222,52 +210,49 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Personas a quien se agradece en la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Número de página inicial:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En donde está publicado, en cuál número de pàgina inicia la memoria.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.pagina_inicio }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="En donde está publicado, en cuál número de pàgina inicia la memoria.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Número de página final:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En donde está publicado, en cuál número de pàgina termina la memoria.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.pagina_fin }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="En donde está publicado, en cuál número de pàgina termina la memoria.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>ISSN:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="ISSN asignado a la memoria donde está publicada."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.issn }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="ISSN asignado a la memoria donde está publicada."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Proyectos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyectos relacionados a la memoria, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
@@ -279,341 +264,29 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyectos relacionados a la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>URL de link a la memoria:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="URL de link a la memoria, en caso de estan publicado en algún lugar en internet."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-link"></i>
             </div>
             {{ form.url }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="URL de link a la memoria, en caso de estan publicado en algún lugar en internet."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Título de <em>memoria in extenso</em>:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Título de la memoria como aparece publicada.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
 
-        </div>
-    </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>País:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.pais }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del país seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Pais.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Estado:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.estado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del estado seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Estado. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Ciudad:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ciudad }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Ciudad. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Evento:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.evento }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del evento.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un evento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Evento de donde se recoge la memoria.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Autores:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Autores de la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Editores:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.editores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Editores de la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Índices donde se registra:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Índices que registran o indexan la memoria en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Agradecimientos:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.agradecimientos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de las personas a quien se agradece.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Personas a quien se agradece en la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Número de página inicial:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_inicio }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="En donde está publicado, en cuál número de pàgina inicia la memoria.">
-                <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Número de página final:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_fin }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="En donde está publicado, en cuál número de pàgina termina la memoria.">
-                <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>ISSN:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.issn }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="ISSN asignado a la memoria donde está publicada."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Proyectos:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyectos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los proyectos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyectos relacionados a la memoria, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>URL de link a la memoria:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-link"></i>
-            </div>
-            {{ form.url }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="URL de link a la memoria, en caso de estan publicado en algún lugar en internet."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
 {% endblock %}
