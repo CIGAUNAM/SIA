@@ -85,6 +85,7 @@ class MapaArbitradoForm(forms.ModelForm):
     escala = forms.CharField(widget=wCharField, required=True, label='Escala')
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     pais = forms.ModelChoiceField(
+        required=False,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect3Widget(
@@ -92,6 +93,7 @@ class MapaArbitradoForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
+        required=False,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect3Widget(
@@ -127,7 +129,7 @@ class MapaArbitradoForm(forms.ModelForm):
     )
     volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)  # corregir valiadr url
 
     class Meta:
         model = MapaArbitrado
@@ -137,6 +139,7 @@ class MapaArbitradoForm(forms.ModelForm):
             'editores': Select3MultipleWidget,
             'coordinadores': Select3MultipleWidget,
             'proyectos': Select3MultipleWidget,
+
         }
 
 
@@ -221,15 +224,16 @@ class LibroInvestigacionForm(forms.ModelForm):
 class ProyectoInvestigacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    es_permanente = forms.BooleanField()
+    es_permanente = forms.BooleanField(required=False)
     fecha_inicio = forms.CharField(widget=wDateField)
     fecha_fin = forms.CharField(widget=wDateField)
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PROYECTO', ))
     clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CLASIFICACION_PROYECTO', ))
     organizacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ORGANIZACION_PROYECTO', ))
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'MODALIDAD_PROYECTO', ))
-    tematica_genero = forms.BooleanField()
+    tematica_genero = forms.BooleanField(required=False)
     problema_nacional_conacyt = forms.ModelChoiceField(
+        required=False,
         queryset=ProblemaNacionalConacyt.objects.all(),
         label="Problema Nacional Conacyt",
         widget=ModelSelect3Widget(

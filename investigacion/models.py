@@ -89,7 +89,7 @@ class MapaArbitrado(models.Model):
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, blank=True)
     url = models.URLField(blank=True)
-    proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos')
+    proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos', blank=True)
     #tags = models.ManyToManyField(Tag, related_name='mapa_arbitrado_tags', blank=True)
 
     def __str__(self):
@@ -112,7 +112,7 @@ class InformeTecnico(models.Model):
     usuarios = models.ManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
     fecha = models.DateField(auto_now=False)
     numero_paginas = models.PositiveIntegerField(default=1)
-    proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos')
+    proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos', blank=True)
     url = models.URLField(blank=True)
     #tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
 
@@ -120,7 +120,7 @@ class InformeTecnico(models.Model):
         return "{} : {}".format(self.titulo, self.fecha)
 
     def get_absolute_url(self):
-        return reverse('informe_tecnico__publico_detalle', kwargs={'pk': self.pk})
+        return reverse('informe_tecnico_publico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = "Informe técnico de acceso público"
