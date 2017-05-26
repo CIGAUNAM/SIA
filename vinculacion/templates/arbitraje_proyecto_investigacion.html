@@ -2,17 +2,15 @@
 
 {% block form_agregar %}
     <p><strong>Fecha de dictamen:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha del dictamen."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -22,6 +20,8 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Proyecto de Investigación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto de investigación."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -33,14 +33,10 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyecto de investigación."><i class="fa fa-question-circle"></i></a>
             </div>
         </div>
     </div>
@@ -48,48 +44,5 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Fecha de dictamen:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>Proyecto de Investigación:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.proyecto }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del proyecto seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyecto de investigación."><i class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
+
 {% endblock %}
