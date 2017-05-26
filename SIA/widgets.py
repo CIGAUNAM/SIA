@@ -1,4 +1,4 @@
-from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput
+from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput
 from django.template import loader
 from django.utils.safestring import mark_safe
 import copy
@@ -31,6 +31,25 @@ class wCharField(Widget):
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_text(self.format_value(value))
         return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+
+
+class wUrlField(URLInput):
+    input_type = 'url'
+
+    def format_value(self, value):
+        if self.is_localized:
+            return formats.localize_input(value)
+        return value
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        if value != '':
+            # Only add the 'value' attribute if a value is non-empty.
+            final_attrs['value'] = force_text(self.format_value(value))
+        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+
 
 
 

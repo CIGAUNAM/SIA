@@ -2,18 +2,16 @@
 
 {% block form_agregar %}
     <p><strong>Nombre del proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del proyecto de investigación.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre del proyecto de investigación.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
@@ -22,38 +20,44 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Es permanente: </strong>{{ form.es_permanente }}</p>
+    <p><strong>Es permanente: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿El proyecto es permanente?">
+            <i class="fa fa-question-circle"></i>
+        </a>
+        {{ form.es_permanente }}
+    </p>
     <p><strong>Fecha inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del proyecto."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del proyecto."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de finalización del proyecto."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de finalización del proyecto."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Responsables:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Responsables del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -70,15 +74,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Responsables del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Participantes en el proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -95,61 +98,58 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Participantes en el proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Status:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Status del proyecto."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.status }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Status del proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Clasificación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Clasificación del proyecto."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.clasificacion }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Clasificación del proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Organización:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Organización del proyecto."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.organizacion }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Organización del proyecto."><i
-                    class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Modalidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Modalidad del proyecto."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.modalidad }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Modalidad del proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
-    <p><strong>El proyecto tiene temática de genero: </strong>{{ form.tematica_genero }}</p>
-    <p><strong>Problema Nacional Conacyt:</strong>
+    <p><strong>Tiene temática de género: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿El proyecto tiene temática de género?"><i class="fa fa-question-circle"></i></a>
+        {{ form.tematica_genero }}
+    </p>
+    <p><strong>Problema Nacional CONACYT:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Problema Nacional Conacyt al que atiende este proyecto."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -160,19 +160,20 @@
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Problema Nacional Conacyt al que atiende este proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
-    <p><strong>Detalles de problema nacional conacyt: <a href="#" data-toggle="tooltip" data-placement="right"
-                                                         title="Detalles de como este proyecto resuelve el problema nacional conacyt seleccionado.">
-        <i class="fa fa-question-circle"></i></a></strong>
+    <p><strong>Detalles de problema nacional CONACYT:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Detalles de como este proyecto resuelve el problema nacional conacyt seleccionado.">
+            <i class="fa fa-question-circle"></i></a>
         {{ form.descripcion_problema_nacional_conacyt }}
     </p>
     <p><strong>Depedencias involucradas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Depedencias involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-sitemap"></i></div>
@@ -184,20 +185,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Depedencias involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Financiamientos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Financiamientos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-money"></i></div>
@@ -209,20 +209,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/financiamientos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un financiamiento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Financiamientos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Metodologias:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Metodologias utilizadas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-sliders"></i></div>
@@ -234,20 +233,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/metodologias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una metodología nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Metodologias utilizadas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Especialidades:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Especialidades involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-flask"></i></div>
@@ -259,20 +257,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="#" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una especialidad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Especialidades involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Impactos sociales:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Impactos sociales derivados del desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-line-chart"></i></div>
@@ -289,15 +286,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Impactos sociales derivados del desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Técnicos participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Técnicos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -314,15 +310,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Técnicos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Alumnos de doctorado participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Alumnos de doctorado participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
@@ -339,15 +334,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Alumnos de doctorado participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
-    <p><strong>Alumnos de maestria participantes:</strong>
+    <p><strong>Alumnos de maestría participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Alumnos de maestría participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
@@ -364,15 +358,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Alumnos de maestria participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Alumnos de licenciatura participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Alumnos de licenciatura participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
@@ -389,411 +382,11 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Alumnos de licenciatura participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Nombre del proyecto:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre del proyecto de investigación.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>Es permanente: </strong>{{ form.es_permanente }}</p>
-    <p><strong>Fecha inicio:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del proyecto."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha fin:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de finalización del proyecto."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Responsables:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Responsables del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Participantes:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.participantes }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Participantes en el proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Status:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.status }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Status del proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Clasificación:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.clasificacion }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Clasificación del proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Organización:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.organizacion }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Organización del proyecto."><i
-                    class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Modalidad:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.modalidad }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Modalidad del proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>El proyecto tiene temática de genero: </strong>{{ form.tematica_genero }}</p>
-    <p><strong>Problema Nacional Conacyt:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.problema_nacional_conacyt }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles del Problema Nacional Conacyt seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Problema Nacional Conacyt al que atiende este proyecto."><i class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Detalles de problema nacional conacyt: <a href="#" data-toggle="tooltip" data-placement="right"
-                                                         title="Detalles de como este proyecto resuelve el problema nacional conacyt seleccionado.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion_problema_nacional_conacyt }}
-    </p>
-    <p><strong>Depedencias involucradas:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-sitemap"></i></div>
-            {{ form.usuarios }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de las dependencias.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Depedencias involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Financiamientos:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-money"></i></div>
-            {{ form.financiamientos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los financiamientos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un financiamiento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Financiamientos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Metodologias:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-sliders"></i></div>
-            {{ form.metodologias }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de las metodologías.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una metodología nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Metodologias utilizadas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Especialidades:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-flask"></i></div>
-            {{ form.metodologias }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de las especialidades.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una especialidad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Especialidades involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Impactos sociales:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-line-chart"></i></div>
-            {{ form.metodologias }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los impactos sociales.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una impacto social nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Impactos sociales derivados del desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Técnicos participantes:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.tecnicos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los técnicos participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un técnico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Técnicos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Alumnos de doctorado participantes:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
-            {{ form.alumnos_doctorado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los alumnos de doctorado participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un alumno nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Alumnos de doctorado participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Alumnos de maestria participantes:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
-            {{ form.alumnos_maestria }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los alumnos de maestria participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un alumno nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Alumnos de maestria participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Alumnos de licenciatura participantes:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
-            {{ form.alumnos_maestria }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los alumnos de licenciatura participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un alumno nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Alumnos de licenciatura participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
+
 {% endblock %}
