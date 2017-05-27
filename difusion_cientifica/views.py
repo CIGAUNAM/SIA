@@ -19,7 +19,7 @@ class MemoriaInExtensoJSON(View):
             else:
                 items = MemoriaInExtenso.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'ciudad', 'fecha', 'evento'))
+                                         fields=('nombre', 'ciudad', 'fecha', 'evento'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
