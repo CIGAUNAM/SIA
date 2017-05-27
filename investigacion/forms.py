@@ -120,6 +120,7 @@ class MapaArbitradoForm(forms.ModelForm):
     numero_edicion = forms.CharField(widget=wNumberField, required=True, label='Número de edición')
     numero_paginas = forms.CharField(widget=wNumberField, required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(
+        required=False,
         queryset=Coleccion.objects.all(),
         label="Coleccion",
         widget=ModelSelect3Widget(
