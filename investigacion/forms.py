@@ -61,7 +61,7 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título del capítulo')
     descripcion = forms.CharField(widget=wTextarea, required=False)
     libro = forms.ModelChoiceField(
-        queryset=Libro.objects.all(),
+        queryset=Libro.objects.filter(tipo='INVESTIGACION'),
         label="Libro",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],

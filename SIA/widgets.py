@@ -1,4 +1,4 @@
-from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput
+from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput, Textarea
 from django.template import loader
 from django.utils.safestring import mark_safe
 import copy
@@ -71,7 +71,7 @@ class wNumberField(Widget):
         return mark_safe(template)
 
 
-class wTextarea(Widget):
+class wTextarea1(Widget):
     template_name = 'widgets/Textarea.html'
     is_required = False
 
@@ -85,6 +85,23 @@ class wTextarea(Widget):
         context = self.get_context(name, value, attrs)
         template = loader.get_template(self.template_name).render(context)
         return mark_safe(template)
+
+
+class wTextarea(Widget):
+    def __init__(self, attrs=None):
+        # Use slightly better defaults than HTML's 20x2 box
+        #default_attrs = {'cols': '40', 'rows': '10'}
+        default_attrs = None
+
+        if attrs:
+            default_attrs.update(attrs)
+        super(wTextarea, self).__init__(default_attrs)
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, name=name)
+        return format_html('<div class="form-group" style="margin-top: -10px;"><textarea class="form-control" rows="3" placeholder="Descripción y detalles adicionales" {}>\r\n{}</textarea></div>', flatatt(final_attrs), force_text(value))
 
 
 class wDateField(DateInput):
