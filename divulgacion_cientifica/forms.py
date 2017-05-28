@@ -15,9 +15,9 @@ class ArticuloDivulgacionForm(forms.ModelForm):
         ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')),
                              required=True)
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    indizado = forms.BooleanField()
+    indizado = forms.BooleanField(required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
-    solo_electronico = forms.BooleanField()
+    solo_electronico = forms.BooleanField(required=False)
     revista = forms.ModelChoiceField(
         queryset=Revista.objects.all(),
         label="Revista",
@@ -48,7 +48,7 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título del capítulo')
     descripcion = forms.CharField(widget=wTextarea, required=False)
     libro = forms.ModelChoiceField(
-        queryset=Libro.objects.all(),
+        queryset=Libro.objects.filter(tipo='DIVULGACION'),
         label="Libro",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
@@ -127,6 +127,7 @@ class LibroDivulgacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     pais = forms.ModelChoiceField(
+        required=False,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect3Widget(
@@ -134,6 +135,7 @@ class LibroDivulgacionForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
+        required=False,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect3Widget(
@@ -161,6 +163,7 @@ class LibroDivulgacionForm(forms.ModelForm):
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
     coleccion = forms.ModelChoiceField(
+        required=False,
         queryset=Coleccion.objects.all(),
         label="Coleccion",
         widget=ModelSelect3Widget(
