@@ -26,7 +26,7 @@ class MemoriaInExtenso(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     issn = models.SlugField(max_length=20, blank=True)
-    proyectos = models.ManyToManyField(Proyecto)
+    proyectos = models.ManyToManyField(Proyecto, blank=True)
     url = models.URLField(blank=True)
 
     def __str__(self):

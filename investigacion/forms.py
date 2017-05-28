@@ -61,7 +61,7 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título del capítulo')
     descripcion = forms.CharField(widget=wTextarea, required=False)
     libro = forms.ModelChoiceField(
-        queryset=Libro.objects.all(),
+        queryset=Libro.objects.filter(tipo='INVESTIGACION'),
         label="Libro",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
@@ -120,6 +120,7 @@ class MapaArbitradoForm(forms.ModelForm):
     numero_edicion = forms.CharField(widget=wNumberField, required=True, label='Número de edición')
     numero_paginas = forms.CharField(widget=wNumberField, required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(
+        required=False,
         queryset=Coleccion.objects.all(),
         label="Coleccion",
         widget=ModelSelect3Widget(

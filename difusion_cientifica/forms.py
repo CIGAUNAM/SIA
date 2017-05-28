@@ -9,8 +9,8 @@ from django_select2.forms import Select2MultipleWidget
 class MemoriaInExtensoForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True, label='Título de memoria in extenso')
     descripcion = forms.CharField(widget=wTextarea, required=False)
-
     pais = forms.ModelChoiceField(
+        required=False,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect3Widget(
@@ -18,6 +18,7 @@ class MemoriaInExtensoForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
+        required=False,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect3Widget(
@@ -66,7 +67,7 @@ class MemoriaInExtensoForm(forms.ModelForm):
 
 
 class PrologoLibroForm(forms.ModelForm):
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    descripcion = forms.CharField(widget=wTextarea, required=True)
     libro = forms.ModelChoiceField(
         queryset=Libro.objects.all(),
         label="Libro",
@@ -86,6 +87,7 @@ class PrologoLibroForm(forms.ModelForm):
 class ResenaForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título de reseña')
     libro_resenado = forms.ModelChoiceField(
+        required=False,
         queryset=Libro.objects.all(),
         label="Libro reseñado",
         widget=ModelSelect3Widget(
@@ -93,6 +95,7 @@ class ResenaForm(forms.ModelForm):
         )
     )
     revista_resenada = forms.ModelChoiceField(
+        required=False,
         queryset=Revista.objects.all(),
         label="Revista reseñada",
         widget=ModelSelect3Widget(
@@ -101,6 +104,7 @@ class ResenaForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     libro_publica = forms.ModelChoiceField(
+        required=False,
         queryset=Libro.objects.all(),
         label="Libro que publica",
         widget=ModelSelect3Widget(
@@ -108,6 +112,7 @@ class ResenaForm(forms.ModelForm):
         )
     )
     revista_publica = forms.ModelChoiceField(
+        required=False,
         queryset=Revista.objects.all(),
         label="Revista que publica",
         widget=ModelSelect3Widget(
