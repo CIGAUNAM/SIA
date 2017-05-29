@@ -1,0 +1,81 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Nombre de la ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de la ciudad o municipio."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Estado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Estado (o provincia, o departamento; según sea el caso) al que pertenece la ciudad.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.estado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del estado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Nombre de la ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de la ciudad o municipio."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Estado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Estado (o provincia, o departamento; según sea el caso) al que pertenece la ciudad.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.estado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del estado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+{% endblock %}
