@@ -64,6 +64,9 @@ class Pais(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('pais_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name_plural = 'Paises'
@@ -81,6 +84,9 @@ class Estado(models.Model):
     def natural_key(self):
         return self.nombre
 
+    def get_absolute_url(self):
+        return reverse('estado_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         unique_together = ['nombre', 'pais']
         ordering = ['nombre']
@@ -96,6 +102,9 @@ class Ciudad(models.Model):
 
     def natural_key(self):
         return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('ciudad_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         unique_together = ['nombre', 'estado']
@@ -169,6 +178,9 @@ class User(AbstractUser):
     def natural_key(self):
         return "{} {} ".format(self.first_name, self.last_name)
 
+    def get_absolute_url(self):
+        return reverse('usuario_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         #ordering = ['first_name', 'last_name']
         pass
@@ -185,6 +197,9 @@ class Institucion(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('institucion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -212,6 +227,9 @@ class Dependencia(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('dependencia_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         unique_together = ('nombre', 'institucion')
         ordering = ['nombre']
@@ -230,6 +248,9 @@ class Departamento(models.Model):
     def natural_key(self):
         return self.nombre
 
+    def get_absolute_url(self):
+        return reverse('departamento_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         unique_together = ('nombre', 'dependencia')
         ordering = ['nombre', 'dependencia']
@@ -246,6 +267,9 @@ class Cargo(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('cargo_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         unique_together = ['nombre', 'tipo_cargo']
@@ -265,6 +289,9 @@ class Nombramiento(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('nombramiento_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['id']
 
@@ -283,6 +310,9 @@ class AreaConocimiento(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('area_conocimiento_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['categoria', 'nombre']
@@ -319,6 +349,9 @@ class ImpactoSocial(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('impacto_social_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Impacto social'
@@ -354,6 +387,9 @@ class Financiamiento(models.Model):
     def natural_key(self):
         return (self.tipo_financiamiento)
 
+    def get_absolute_url(self):
+        return reverse('financiamiento_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = 'Financiamiento'
         verbose_name_plural = 'Financiamientos'
@@ -369,6 +405,9 @@ class Metodologia(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('metodologia_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -386,6 +425,9 @@ class Beca(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('beca_detalle', kwargs={'pk': self.pk})
+
 
 class Reconocimiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
@@ -397,6 +439,9 @@ class Reconocimiento(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('reconocimiento_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -413,6 +458,9 @@ class ProgramaLicenciatura(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('programa_licenciatura_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -432,6 +480,9 @@ class ProgramaMaestria(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('programa_maestria_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Programa de maestria'
@@ -450,6 +501,9 @@ class ProgramaDoctorado(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('programa_doctorado_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Programa de doctorado'
@@ -466,6 +520,9 @@ class TipoEvento(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('tipo_evento_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Tipo de evento'
@@ -488,6 +545,9 @@ class Evento(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('evento_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['fecha_inicio', 'nombre']
         unique_together = ['fecha_inicio', 'nombre']
@@ -506,6 +566,9 @@ class Distincion(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('distincion_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Distinción'
@@ -522,6 +585,9 @@ class ProblemaNacionalConacyt(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('problema_nacional_conacyt_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = ['Problemática Nacional CONACYT']
@@ -564,6 +630,9 @@ class Proyecto(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('proyecto_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['fecha_inicio', 'nombre']
 
@@ -602,6 +671,9 @@ class Indice(models.Model):
         return (self.nombre)
 
     def get_absolute_url(self):
+        return reverse('indice_detalle', kwargs={'pk': self.pk})
+
+    def get_absolute_url(self):
         return reverse('/', kwargs={'pk': self.pk})
 
 
@@ -617,6 +689,9 @@ class Memoria(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('memoria_detalle', kwargs={'pk': self.pk})
+
 
 class Editorial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
@@ -629,6 +704,9 @@ class Editorial(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('editorial_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -645,6 +723,9 @@ class Coleccion(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('coleccion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -679,7 +760,7 @@ class Libro(models.Model):
         return (self.nombre)
 
     def get_absolute_url(self):
-        return reverse('libro_investigacion_detalle', kwargs={'pk': self.pk})
+        return reverse('libro_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -700,6 +781,9 @@ class Revista(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('revista_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         get_latest_by = ['fecha', 'nombre_revista', 'editorial']
@@ -714,6 +798,9 @@ class Asignatura(models.Model):
 
     def natural_key(self):
         return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('asignatura_detalle', kwargs={'pk': self.pk})
 
 
 class MedioDivulgacion(models.Model):
@@ -733,6 +820,9 @@ class MedioDivulgacion(models.Model):
 
     def natural_key(self):
         return (self.nombre_medio)
+
+    def get_absolute_url(self):
+        return reverse('medio_divulgacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         unique_together = ['canal', 'nombre_medio']

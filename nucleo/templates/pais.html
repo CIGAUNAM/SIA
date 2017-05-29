@@ -1,0 +1,109 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Nombre del país:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del país."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombre extendido:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del país de manera extendida, por ejemplo, el nombre simple de México es 'México' y su nombre extendido es 'Estados Unidos Mexicanos'.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre_extendido }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Código del país:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Código del país de dos dígitos, por ejemplo para México es MX."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.codigo }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Zona:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Zona continental a la que pertenece el país.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.zona }}
+        </div>
+    </div>
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Nombre del país:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del país."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombre extendido:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del país de manera extendida, por ejemplo, el nombre simple de México es 'México' y su nombre extendido es 'Estados Unidos Mexicanos'.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre_extendido }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Código del país:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Código del país de dos dígitos, por ejemplo para México es MX."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.codigo }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Zona:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Zona continental a la que pertenece el país.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.zona }}
+        </div>
+    </div>
+    </p>
+{% endblock %}

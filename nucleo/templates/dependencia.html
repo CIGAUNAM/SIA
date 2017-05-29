@@ -1,0 +1,163 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Nombre de la dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de la dependencia. Agregar después del nombre (si aplica) las siglas de ésta, entre paréntesis."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución a la que pertenene la dependencia.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad en donde se encuentra la dependencia.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ciudad }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la ciudad.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Subsistema UNAM:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, en caso contrario seleccionar 'No'.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.subsistema_unam }}
+        </div>
+    </div>
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Nombre de la dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de la dependencia. Agregar después del nombre (si aplica) las siglas de ésta, entre paréntesis."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución a la que pertenene la dependencia.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad en donde se encuentra la dependencia.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ciudad }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la ciudad.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Subsistema UNAM:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, en caso contrario seleccionar 'No'.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.subsistema_unam }}
+        </div>
+    </div>
+    </p>
+{% endblock %}

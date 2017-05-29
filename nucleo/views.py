@@ -35,14 +35,14 @@ class PaisLista(ObjectCreateMixinNucleo, View):
     form_class = PaisForm
     model = Pais
     aux = PaisContext.contexto
-    template_name = 'main.html'
+    template_name = 'pais.html'
 
 
 class PaisDetalle(ObjectUpdateMixinNucleo, View):
     form_class = PaisForm
     model = Pais
     aux = PaisContext.contexto
-    template_name = 'main.html'
+    template_name = 'pais.html'
 
 
 class PaisEliminar(View):
@@ -71,14 +71,14 @@ class EstadoLista(ObjectCreateMixinNucleo, View):
     form_class = EstadoForm
     model = Estado
     aux = EstadoContext.contexto
-    template_name = 'main.html'
+    template_name = 'estado.html'
 
 
 class EstadoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = EstadoForm
     model = Estado
     aux = EstadoContext.contexto
-    template_name = 'main.html'
+    template_name = 'estado.html'
 
 
 class EstadoEliminar(View):
@@ -107,14 +107,14 @@ class CiudadLista(ObjectCreateMixinNucleo, View):
     form_class = CiudadForm
     model = Ciudad
     aux = CiudadContext.contexto
-    template_name = 'main.html'
+    template_name = 'ciudad.html'
 
 
 class CiudadDetalle(ObjectUpdateMixinNucleo, View):
     form_class = CiudadForm
     model = Ciudad
     aux = CiudadContext.contexto
-    template_name = 'main.html'
+    template_name = 'ciudad.html'
 
 
 class CiudadEliminar(View):
@@ -143,14 +143,14 @@ class InstitucionLista(ObjectCreateMixinNucleo, View):
     form_class = InstitucionForm
     model = Institucion
     aux = InstitucionContext.contexto
-    template_name = 'main.html'
+    template_name = 'institucion.html'
 
 
 class InstitucionDetalle(ObjectUpdateMixinNucleo, View):
     form_class = InstitucionForm
     model = Institucion
     aux = InstitucionContext.contexto
-    template_name = 'main.html'
+    template_name = 'institucion.html'
 
 
 class InstitucionEliminar(View):
@@ -179,14 +179,14 @@ class DependenciaLista(ObjectCreateMixinNucleo, View):
     form_class = DependenciaForm
     model = Dependencia
     aux = DependenciaContext.contexto
-    template_name = 'main.html'
+    template_name = 'dependencia.html'
 
 
 class DependenciaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = DependenciaForm
     model = Dependencia
     aux = DependenciaContext.contexto
-    template_name = 'main.html'
+    template_name = 'dependencia.html'
 
 
 class DependenciaEliminar(View):
