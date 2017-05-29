@@ -196,8 +196,228 @@
         </div>
     </div>
     </p>
+    <p><strong>Fecha de defensa:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de defensa."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_examen }}
+        </div>
+    </div>
+    </p>
 {% endblock %}
 
 {% block form_detalle %}
-
+    <p><strong>Asesorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asesorado.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.asesorado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un asesorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Asesor principal:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asesor principal.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.asesor_principal }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesor seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un asesor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Otros asesores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.otros_asesores }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los otros asesores participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un asesor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Sinodales:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Otros sinodales participantes en el comité, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.sinodales }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los sinodales participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un sinodal nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto relacionado con el comité tutoral.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.proyecto }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre del proyecto seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un proyecto nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Programa de doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Programa de doctorado cursado por el alumno asesorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.programa_doctorado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre del doctorado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un doctorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el comité tutoral, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el comité tutoral, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de defensa:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de defensa."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_defensa }}
+        </div>
+    </div>
+    </p>
 {% endblock %}

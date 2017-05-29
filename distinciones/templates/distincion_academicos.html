@@ -2,6 +2,9 @@
 
 {% block form_agregar %}
     <p><strong>Distinción o premio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de la distincion o premio obtenido por un académico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-trophy"></i></div>
@@ -13,20 +16,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/distinciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/distinciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una distincion o premio nuevos. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre de la distincion o premio obtenido por un académico."><i
-                        class="fa fa-question-circle"></i></a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Condecorados:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Académicos condecorados relacionados con esta distinción o premio, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -43,15 +45,16 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Académicos condecorados relacionados con esta distinción o premio, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución que otorga la distinción o premio, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -63,23 +66,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución que otorga la distinción o premio, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia que otorga la distinción o premio, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -91,29 +92,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia que otorga la distinción o premio, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Ámbito:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ámbito de la distinción."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.ambito }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Ámbito de la distinción."><i class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -124,146 +117,11 @@
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de la entrega de la distinción."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Distinción o premio:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-trophy"></i></div>
-            {{ form.distincion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la distincion o premio seleccionados.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/distinciones" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una distincion o premio nuevos. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre de la distincion o premio obtenido por un académico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Condecorados:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.condecorados }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los académicos condecorados.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un académico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Académicos condecorados relacionados con esta distinción o premio, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Institución:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución que otorga la distinción o premio, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia que otorga la distinción o premio, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-                    <i class="fa fa-question-circle"></i></a></div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Ámbito:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ambito }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Ámbito de la distinción."><i class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha:</strong>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de la entrega de la distinción."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
+
 {% endblock %}

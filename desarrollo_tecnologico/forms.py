@@ -1,14 +1,14 @@
 from SIA.widgets import *
-from . models import *
+from .models import *
 from django import forms
 
 from django_select2.forms import Select2MultipleWidget
+
 
 #
 
 class DesarrolloTecnologicoForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
-
     descripcion = forms.CharField(widget=wTextarea, required=False)
     version = forms.CharField(widget=wCharField, required=True)
     patente = forms.CharField(widget=wCharField, required=True)
@@ -17,7 +17,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
         label="Licencia",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-            #dependent_fields={'dependencia': 'dependencia'},
+            # dependent_fields={'dependencia': 'dependencia'},
         )
     )
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
@@ -29,5 +29,15 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
         widgets = {
             'proyectos': Select3MultipleWidget,
             'autores': Select3MultipleWidget,
-            #'agradecimientos': Select3MultipleWidget,
+            # 'agradecimientos': Select3MultipleWidget,
         }
+
+
+class LicenciaForm(forms.ModelForm):
+    nombre = forms.CharField(widget=wCharField, required=True)
+    descripcion = forms.CharField(widget=wTextarea, required=False)
+    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+
+    class Meta:
+        model = Licencia
+        exclude = []
