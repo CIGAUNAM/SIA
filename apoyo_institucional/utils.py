@@ -28,14 +28,14 @@ class CargoAcademicoAdministrativoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.nombre",\n' \
+                                        '"data": "fields.cargo",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.cargo + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.cargo_inicio"},\n' \
-                                    '{"data": "fields.cargo_fin"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.fecha_fin"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -56,7 +56,7 @@ class RepresentacionOrganoColegiadoContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Representación', 'Ante', 'Inicio', 'Fin']}
+                'titulos_tabla': ['Representación', 'Ante dependencia', 'Inicio', 'Fin']}
 
 
     tabla_mios =  '<script>\n' \
@@ -70,14 +70,14 @@ class RepresentacionOrganoColegiadoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.nombre",\n' \
+                                        '"data": "fields.representacion",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.representacion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.ante"},\n' \
-                                    '{"data": "fields.cargo_inicio"},\n' \
-                                    '{"data": "fields.cargo_fin"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.fecha_fin"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -112,9 +112,9 @@ class ComisionAcademicaContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.nombre",\n' \
+                                        '"data": "fields.comision_academica",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.comision_academica + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
@@ -153,14 +153,14 @@ class ApoyoTecnicoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.nombre",\n' \
+                                        '"data": "fields.actividad_apoyo",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.actividad_apoyo + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.apoyo_inicio"},\n' \
-                                    '{"data": "fields.apoyo_fin"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.fecha_fin"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -195,14 +195,14 @@ class ApoyoOtraActividadContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.nombre",\n' \
+                                        '"data": "fields.actividad_apoyo",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.actividad_apoyo + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.apoyo_inicio"},\n' \
-                                    '{"data": "fields.apoyo_fin"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.fecha_fin"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

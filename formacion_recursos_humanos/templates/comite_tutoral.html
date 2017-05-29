@@ -2,16 +2,20 @@
 
 {% block form_agregar %}
     <p><strong>Grado académico:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Grado académico."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.grado_academico }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Grado académico."><i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Programa de maestría:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Programa de maestria. Seleccionar una maestria sólo si corresponde con el nivel seleccionado arriba.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -23,21 +27,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/programas-maestria" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/programas-maestria" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una maestria nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Programa de maestria. Seleccionar una maestria sólo si corresponde con el nivel seleccionado arriba.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Programa de doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Programa de doctorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -49,61 +51,55 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un doctorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Programa de doctorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Status:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Status."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.status }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Status."><i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de fin del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Asesorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asesorado.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -115,21 +111,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="#" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un asesorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Asesorado.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Asesor principal:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asesor principal.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -146,16 +140,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Asesor principal.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Otros asesores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -172,15 +164,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Sinodales:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Otros sinodales participantes en el comité, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -197,15 +188,13 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Otros sinodales participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto relacionado con el comité tutoral.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -217,19 +206,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyecto relacionado con el comité tutoral.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el comité tutoral, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -241,23 +232,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el comité tutoral, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el comité tutoral, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -269,18 +258,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el comité tutoral, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
@@ -288,16 +270,20 @@
 
 {% block form_detalle %}
     <p><strong>Grado académico:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Grado académico."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.grado_academico }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Grado académico."><i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Programa de maestría:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Programa de maestria. Seleccionar una maestria sólo si corresponde con el nivel seleccionado arriba.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -309,21 +295,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/programas-maestria" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/programas-maestria" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una maestria nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Programa de maestria. Seleccionar una maestria sólo si corresponde con el nivel seleccionado arriba.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Programa de doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Programa de doctorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -335,61 +319,55 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un doctorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Programa de doctorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Status:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Status."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.status }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Status."><i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin del curso."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de fin del curso."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Asesorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asesorado.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -401,21 +379,19 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="#" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un asesorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Asesorado.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Asesor principal:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asesor principal.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -432,16 +408,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Asesor principal.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Otros asesores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -458,15 +432,14 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Sinodales:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Otros sinodales participantes en el comité, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -483,15 +456,13 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Otros sinodales participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto relacionado con el comité tutoral.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -503,19 +474,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyecto relacionado con el comité tutoral.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el comité tutoral, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -527,23 +500,21 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Institución donde se llevó a cabo el comité tutoral, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el comité tutoral, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -555,18 +526,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Dependencia donde se llevó a cabo el comité tutoral, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>

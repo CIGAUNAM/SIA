@@ -15,7 +15,7 @@ class CargoAcademicoAdministrativoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = CargoAcademicoAdministrativo.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'dependencia', 'cargo_inicio', 'cargo_fin'))
+                                         fields=('cargo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -25,7 +25,7 @@ class CargoAcademicoAdministrativoLista(ObjectCreateMixin, View):
     form_class = CargoAcademicoAdministrativoForm
     model = CargoAcademicoAdministrativo
     aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'cargo_academico-administrativo.html'
+    template_name = 'main.html'
 
 
 class CargoAcademicoAdministrativoDetalle(ObjectUpdateMixin, View):
@@ -51,7 +51,7 @@ class RepresentacionOrganoColegiadoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = RepresentacionOrganoColegiado.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'ante', 'cargo_inicio', 'cargo_fin'))
+                                         fields=('representacion', 'dependencia', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -87,7 +87,7 @@ class ComisionAcademicaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ComisionAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'fecha_inicio', 'fecha_fin'))
+                                         fields=('comision_academica', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -123,7 +123,7 @@ class ApoyoTecnicoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ApoyoTecnico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'dependencia', 'apoyo_inicio', 'apoyo_fin'))
+                                         fields=('actividad_apoyo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -159,7 +159,7 @@ class ApoyoOtraActividadJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ApoyoOtraActividad.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'dependencia', 'apoyo_inicio', 'apoyo_fin'))
+                                         fields=('actividad_apoyo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

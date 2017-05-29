@@ -16,6 +16,7 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -49,6 +50,7 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -103,6 +105,7 @@ class ApoyoTecnicoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -136,6 +139,7 @@ class ApoyoOtraActividadForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(

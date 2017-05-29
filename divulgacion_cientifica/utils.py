@@ -197,7 +197,7 @@ class ProgramaRadioTelevisionInternetContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Tema', 'Fecha', 'Medio', 'Tipo']}
+                'titulos_tabla': ['Tema', 'Fecha', 'Actividad', 'Medio']}
 
 
     tabla_mios =  '<script>\n' \
@@ -217,8 +217,8 @@ class ProgramaRadioTelevisionInternetContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.fecha"},\n' \
-                                    '{"data": "fields.nombre_medio"},\n' \
-                                    '{"data": "fields.medio"},\n' \
+                                    '{"data": "fields.actividad"},\n' \
+                                    '{"data": "fields.medio_divulgacion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

@@ -2,44 +2,39 @@
 
 {% block form_agregar %}
     <p><strong>Nombre:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de programa de vinculación.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre de programa de vinculación.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Tipo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tipo."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.tipo }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Tipo."><i class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -49,12 +44,106 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Resultados: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Resultados del programa de vinculación.">
+                              title="Detalles de los resultados esperados u obtenidos de este programa de vinculación.">
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.resultados }}
+    </p>
+    <p><strong>Dependencias:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencias participantes en este programa de vinculación, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencias }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las dependencias participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
     </p>
 {% endblock %}
 
 {% block form_detalle %}
-
+    <p><strong>Nombre:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de programa de vinculación.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Tipo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tipo."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Resultados: <a href="#" data-toggle="tooltip" data-placement="right"
+                              title="Detalles de los resultados esperados u obtenidos de este programa de vinculación.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.resultados }}
+    </p>
+    <p><strong>Dependencias:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencias participantes en este programa de vinculación, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencias }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las dependencias participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
 {% endblock %}

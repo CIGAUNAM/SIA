@@ -8,6 +8,7 @@ from django_select2.forms import Select2MultipleWidget
 class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     revista = forms.ModelChoiceField(
+        required=False,
         queryset=Revista.objects.all(),
         label="Revista",
         widget=ModelSelect3Widget(
@@ -15,6 +16,7 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         )
     )
     libro = forms.ModelChoiceField(
+        required=False,
         queryset=Libro.objects.all(),
         label="Libro",
         widget=ModelSelect3Widget(
@@ -22,6 +24,7 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         )
     )
     capitulo_libro = forms.ModelChoiceField(
+        required=False,
         queryset=CapituloLibroInvestigacion.objects.all(),
         label="Capitulo en Libro de Investigación",
         widget=ModelSelect3Widget(
@@ -58,6 +61,7 @@ class ArbitrajeOtraActividadForm(forms.ModelForm):
     actividad = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -104,11 +108,11 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     es_agradecimiento = forms.BooleanField(required=False)
     clasificacion_entidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
-    objetivos = forms.CharField(widget=wTextarea, required=False)
+    objetivos = forms.CharField(widget=wTextarea, required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
     es_renovacion = forms.BooleanField(required=False)
-    incluye_financiamiento = forms.BooleanField()
+    incluye_financiamiento = forms.BooleanField(required=False)
 
     class Meta:
         model = ConvenioEntidadNoAcademica
@@ -132,6 +136,7 @@ class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -168,7 +173,7 @@ class OtroProgramaVinculacionForm(forms.ModelForm):
         model = OtroProgramaVinculacion
         exclude = ['usuario', 'tags', ]
         widgets = {
-            'dependencias': Select2MultipleWidget,
+            'dependencias': Select3MultipleWidget,
         }
 
 

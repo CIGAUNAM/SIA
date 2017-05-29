@@ -88,7 +88,7 @@ class ComiteTutoral(models.Model):
     asesor_principal = models.ForeignKey(User, related_name='comite_tutoral_asesor_principal')
     otros_asesores = models.ManyToManyField(User, related_name='comite_tutoral_otros_asesores', blank=True)
     sinodales = models.ManyToManyField(User, related_name='comite_tutoral_sinodales', blank=True)
-    proyecto = models.ForeignKey(Proyecto)
+    proyecto = models.ForeignKey(Proyecto, null=True, blank=True)
     dependencia = models.ForeignKey(Dependencia)
 
     def __str__(self):
@@ -108,7 +108,7 @@ class ComiteCandidaturaDoctoral(models.Model):
     asesor_principal = models.ForeignKey(User, related_name='comite_candidatura_doctoral_asesor_principal')
     otros_asesores = models.ManyToManyField(User, related_name='comite_candidatura_doctoral_otros_asesores', blank=True)
     sinodales = models.ManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
-    proyecto = models.ForeignKey(Proyecto)
+    proyecto = models.ForeignKey(Proyecto, null=True, blank=True)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado)
     dependencia = models.ForeignKey(Dependencia)
     fecha_defensa = models.DateField()
