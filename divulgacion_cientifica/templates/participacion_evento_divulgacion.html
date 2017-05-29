@@ -72,5 +72,72 @@
 {% endblock %}
 
 {% block form_detalle %}
-
+    <p><strong>Título de actividad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título o nombre de la actividad realizada en el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.titulo }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Evento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Evento de divulgación en el que se tuvo participaciòn.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.evento }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del evento.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un evento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Ámbito:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ámbito del evento."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ambito }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Resumen publicado: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿Hay resumen publicado?"><i class="fa fa-question-circle"></i></a>
+        {{ form.resumen_publicado }}
+    </p>
+    <p><strong>Participación por invitación: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿La participació fue por invitación?"><i class="fa fa-question-circle"></i></a>
+        {{ form.por_invitacion }}
+    </p>
+    <p><strong>Ponencia Magistral: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿La participación fue ponencia magistral?."><i class="fa fa-question-circle"></i></a>
+        {{ form.ponencia_magistral }}
+    </p>
 {% endblock %}

@@ -84,7 +84,7 @@ class RedAcademica(models.Model):
     descripcion = models.TextField(blank=True)
     clasificacion = models.CharField(max_length=20, choices=RED_ACADEMICA__CLASIFICACION)
     #regiones = models.ManyToManyField(Region, related_name='red_academica_regiones', blank=True)
-    paises = models.ManyToManyField(Pais, related_name='red_academica_paises', blank=True)
+    paises = models.ManyToManyField(Pais, related_name='red_academica_paises')
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
     vigente = models.BooleanField(default=False)

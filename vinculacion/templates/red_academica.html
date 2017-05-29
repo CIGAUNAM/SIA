@@ -79,10 +79,6 @@
     </p>
     <p><strong>Proyectos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-            <i class="fa fa-plus"></i>
-        </a>
-        <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyectos relacionados en la red académica, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
@@ -94,6 +90,12 @@
                 <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Mostrar los detalles adicionales de los proyectos relacionados.">
                     <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
+                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
@@ -126,5 +128,128 @@
 {% endblock %}
 
 {% block form_detalle %}
-
+    <p><strong>Nombre de red académica:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de red académica.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Clasificacion:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Clasificacion."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.clasificacion }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Paises:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Paises particimantes en la red académica, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.paises }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los paises participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Objetivos: <a href="#" data-toggle="tooltip" data-placement="right"
+                             title="Descripción detallada de los objetivos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.objetivos }}
+    </p>
+    <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de constitución de la red académica."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_constitucion }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Vigente: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿Está vigente en la actualidad?"><i class="fa fa-question-circle"></i></a>
+        {{ form.vigente }}
+    </p>
+    <p><strong>Proyectos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyectos relacionados en la red académica, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
+            {{ form.proyectos }}
+            <div class="input-group-addon">
+                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Mostrar los detalles adicionales de los proyectos relacionados.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
+                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Académicos participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Académicos participantes en la red académica, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.usuarios }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los académicos participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Agregar un académico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
 {% endblock %}

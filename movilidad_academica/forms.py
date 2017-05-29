@@ -18,6 +18,7 @@ class MovilidadAcademicaForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -34,7 +35,7 @@ class MovilidadAcademicaForm(forms.ModelForm):
             max_results=500,
         )
     )
-    actividades = forms.CharField(widget=wTextarea, required=False)
+    actividades = forms.CharField(widget=wTextarea, required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
     intercambio_unam = forms.BooleanField(required=False, label='Es intercambio UNAM')

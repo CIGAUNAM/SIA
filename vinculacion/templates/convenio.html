@@ -102,18 +102,15 @@
 
 {% block form_detalle %}
     <p><strong>Nombre de convenio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de red académica.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre de red académica.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
@@ -122,15 +119,18 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Es agradecimiento: </strong>{{ form.es_agradecimiento }}</p>
+    <p><strong>Es agradecimiento: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿El convenio se trata de un agradecimiento?"><i class="fa fa-question-circle"></i></a>
+        {{ form.es_agradecimiento }}
+    </p>
     <p><strong>Clasificacion de la entidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Clasificacion de la entidad."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.clasificacion_entidad }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Clasificacion de la entidad."><i class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -140,38 +140,45 @@
         {{ form.objetivos }}
     </p>
     <p><strong>Fecha inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del convenio."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_inicio }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de inicio del convenio."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Fecha fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin del convenio."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_fin }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de fin del convenio."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
-    <p><strong>Es renovación: </strong>{{ form.es_renovacion }}</p>
-    <p><strong>Incluye financiamiento: </strong>{{ form.incluye_financiamiento }}</p>
+    <p><strong>Es renovación: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿Se trata de una renovación?"><i class="fa fa-question-circle"></i></a>
+        {{ form.es_renovacion }}
+    </p>
+    <p><strong>Incluye financiamiento: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿El convenio incluye financiamiento?"><i class="fa fa-question-circle"></i></a>
+        {{ form.incluye_financiamiento }}
+    </p>
     <p><strong>Académicos participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Académicos participantes en la red académica, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -183,16 +190,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="#" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un académico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Académicos participantes en la red académica, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>

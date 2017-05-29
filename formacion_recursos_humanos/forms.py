@@ -19,6 +19,7 @@ class AsesorEstanciaForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select3Widget, choices=(('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social'), ('OTRO', 'Otro')), required=True)
     grado_academico = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
     programa_licenciatura = forms.ModelChoiceField(
+        required=False,
         queryset=ProgramaLicenciatura.objects.all(),
         label="Programa de licenciatura",
         widget=ModelSelect3Widget(
@@ -27,6 +28,7 @@ class AsesorEstanciaForm(forms.ModelForm):
         )
     )
     programa_maestria = forms.ModelChoiceField(
+        required=False,
         queryset=ProgramaMaestria.objects.all(),
         label="Programa de mestria",
         widget=ModelSelect3Widget(
@@ -35,6 +37,7 @@ class AsesorEstanciaForm(forms.ModelForm):
         )
     )
     programa_doctorado = forms.ModelChoiceField(
+        required=False,
         queryset=ProgramaDoctorado.objects.all(),
         label="Programa de doctorado",
         widget=ModelSelect3Widget(
@@ -43,6 +46,7 @@ class AsesorEstanciaForm(forms.ModelForm):
         )
     )
     beca = forms.ModelChoiceField(
+        required=False,
         queryset=Beca.objects.all(),
         label="Beca",
         widget=ModelSelect3Widget(
@@ -51,6 +55,7 @@ class AsesorEstanciaForm(forms.ModelForm):
         )
     )
     proyecto = forms.ModelChoiceField(
+        required=False,
         queryset=Proyecto.objects.all(),
         label="Proyecto",
         widget=ModelSelect3Widget(
@@ -59,6 +64,7 @@ class AsesorEstanciaForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -95,6 +101,7 @@ class DireccionTesisForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     grado_academico = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -112,6 +119,7 @@ class DireccionTesisForm(forms.ModelForm):
         )
     )
     beca = forms.ModelChoiceField(
+        required=False,
         queryset=Beca.objects.all(),
         label="Beca",
         widget=ModelSelect3Widget(
@@ -120,6 +128,7 @@ class DireccionTesisForm(forms.ModelForm):
         )
     )
     reconocimiento = forms.ModelChoiceField(
+        required=False,
         queryset=Reconocimiento.objects.all(),
         label="Reconocimiento",
         widget=ModelSelect3Widget(
@@ -127,7 +136,7 @@ class DireccionTesisForm(forms.ModelForm):
             # dependent_fields={'dependencia': 'dependencia'},
         )
     )
-    fecha_examen = forms.CharField(widget=wDateField, required=False)
+    fecha_examen = forms.CharField(widget=wDateField, required=True)
 
     class Meta:
         model = DireccionTesis
@@ -137,6 +146,7 @@ class DireccionTesisForm(forms.ModelForm):
 class ComiteTutoralForm(forms.ModelForm):
     grado_academico = forms.ChoiceField(widget=Select3Widget, choices=(('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
     programa_maestria = forms.ModelChoiceField(
+        required=False,
         queryset=ProgramaMaestria.objects.all(),
         label="Programa de maestria",
         widget=ModelSelect3Widget(
@@ -144,6 +154,7 @@ class ComiteTutoralForm(forms.ModelForm):
         )
     )
     programa_doctorado = forms.ModelChoiceField(
+        required=False,
         queryset=ProgramaDoctorado.objects.all(),
         label="Programa de doctorado",
         widget=ModelSelect3Widget(
@@ -168,6 +179,7 @@ class ComiteTutoralForm(forms.ModelForm):
         )
     )
     proyecto = forms.ModelChoiceField(
+        required=False,
         queryset=Proyecto.objects.all(),
         label="Proyecto",
         widget=ModelSelect3Widget(
@@ -175,6 +187,7 @@ class ComiteTutoralForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -216,6 +229,7 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         )
     )
     proyecto = forms.ModelChoiceField(
+        required=False,
         queryset=Proyecto.objects.all(),
         label="Proyecto",
         widget=ModelSelect3Widget(
@@ -230,6 +244,7 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
+        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
