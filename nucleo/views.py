@@ -215,7 +215,7 @@ class DepartamentoLista(ObjectCreateMixinNucleo, View):
     form_class = DepartamentoForm
     model = Departamento
     aux = DepartamentoContext.contexto
-    template_name = 'main.html'
+    template_name = 'departamento.html'
 
 
 class DepartamentoDetalle(ObjectUpdateMixinNucleo, View):
