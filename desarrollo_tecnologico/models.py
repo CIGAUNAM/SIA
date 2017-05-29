@@ -34,7 +34,7 @@ class Licencia(models.Model):
 class DesarrolloTecnologico(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     #tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
-    proyectos = models.ManyToManyField(Proyecto, related_name='desarrollo_tecnologico_proyectos')
+    proyectos = models.ManyToManyField(Proyecto, related_name='desarrollo_tecnologico_proyectos', blank=True)
     descripcion = models.TextField()
     version = models.CharField(max_length=100)
     patente = models.CharField(max_length=255, blank=True)

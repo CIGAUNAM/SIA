@@ -2,17 +2,15 @@
 
 {% block form_agregar %}
     <p><strong>Nombre:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -22,36 +20,35 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Version:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Versión del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.version }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Versión del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Patente:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Patente (si aplica) del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.patente }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Patente (si aplica) del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Licencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Licencia bajo la cual se libera o distribuye el desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -63,35 +60,33 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/licencias" data-toggle="tooltip" data-placement="left"
+                <a href="/desarrollos-tecnologicos/licencias" data-toggle="tooltip" data-placement="left"
+                   target="_blank"
                    title="Agregar una licencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Licencia bajo la cual se libera o distribuye el desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>URL:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="URL de link del desarrollo tecnológico, en caso de estè publicado en algún lugar en internet."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-link"></i>
             </div>
             {{ form.url }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="URL de link del desarrollo tecnológico, en caso de estè publicado en algún lugar en internet."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Autores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -108,30 +103,27 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de lanzamiento o liberación del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de lanzamiento o liberación del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Proyectos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyectos relacionados desarrollo tecnológico, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
@@ -143,16 +135,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos-investigacion/" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyectos relacionados desarrollo tecnológico, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
@@ -160,17 +147,15 @@
 
 {% block form_detalle %}
     <p><strong>Nombre:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Nombre del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
@@ -180,36 +165,35 @@
         {{ form.descripcion }}
     </p>
     <p><strong>Version:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Versión del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.version }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Versión del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Patente:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Patente (si aplica) del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.patente }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Patente (si aplica) del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Licencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Licencia bajo la cual se libera o distribuye el desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -221,35 +205,33 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/licencias" data-toggle="tooltip" data-placement="left"
+                <a href="/desarrollos-tecnologicos/licencias" data-toggle="tooltip" data-placement="left"
+                   target="_blank"
                    title="Agregar una licencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Licencia bajo la cual se libera o distribuye el desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>URL:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="URL de link del desarrollo tecnológico, en caso de estè publicado en algún lugar en internet."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-link"></i>
             </div>
             {{ form.url }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="URL de link del desarrollo tecnológico, en caso de estè publicado en algún lugar en internet."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Autores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -266,30 +248,27 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de lanzamiento o liberación del desarrollo tecnológico."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de lanzamiento o liberación del desarrollo tecnológico."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Proyectos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyectos relacionados desarrollo tecnológico, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
@@ -301,16 +280,11 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos-investigacion/" data-toggle="tooltip" data-placement="left"
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Proyectos relacionados desarrollo tecnológico, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
