@@ -222,7 +222,7 @@ class DepartamentoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = DepartamentoForm
     model = Departamento
     aux = DepartamentoContext.contexto
-    template_name = 'main.html'
+    template_name = 'departamento.html'
 
 
 class DepartamentoEliminar(View):
@@ -251,14 +251,14 @@ class CargoLista(ObjectCreateMixinNucleo, View):
     form_class = CargoForm
     model = Cargo
     aux = CargoContext.contexto
-    template_name = 'main.html'
+    template_name = 'cargo.html'
 
 
 class CargoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = CargoForm
     model = Cargo
     aux = CargoContext.contexto
-    template_name = 'main.html'
+    template_name = 'cargo.html'
 
 
 class CargoEliminar(View):
@@ -287,14 +287,14 @@ class AreaEspecialidadLista(ObjectCreateMixinNucleo, View):
     form_class = AreaEspecialidadForm
     model = AreaEspecialidad
     aux = AreaEspecialidadContext.contexto
-    template_name = 'main.html'
+    template_name = 'area_especialidad.html'
 
 
 class AreaEspecialidadDetalle(ObjectUpdateMixinNucleo, View):
     form_class = AreaEspecialidadForm
     model = AreaEspecialidad
     aux = AreaEspecialidadContext.contexto
-    template_name = 'main.html'
+    template_name = 'area_especialidad.html'
 
 
 class AreaEspecialidadEliminar(View):
@@ -323,14 +323,14 @@ class ImpactoSocialLista(ObjectCreateMixinNucleo, View):
     form_class = ImpactoSocialForm
     model = ImpactoSocial
     aux = ImpactoSocialContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class ImpactoSocialDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ImpactoSocialForm
     model = ImpactoSocial
     aux = ImpactoSocialContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class ImpactoSocialEliminar(View):
@@ -359,14 +359,14 @@ class FinanciamientoLista(ObjectCreateMixinNucleo, View):
     form_class = FinanciamientoForm
     model = Financiamiento
     aux = FinanciamientoContext.contexto
-    template_name = 'main.html'
+    template_name = 'financiamiento.html'
 
 
 class FinanciamientoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = FinanciamientoForm
     model = Financiamiento
     aux = FinanciamientoContext.contexto
-    template_name = 'main.html'
+    template_name = 'financiamiento.html'
 
 
 class FinanciamientoEliminar(View):
@@ -395,14 +395,14 @@ class MetodologiaLista(ObjectCreateMixinNucleo, View):
     form_class = MetodologiaForm
     model = Metodologia
     aux = MetodologiaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class MetodologiaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = MetodologiaForm
     model = Metodologia
     aux = MetodologiaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class MetodologiaEliminar(View):
@@ -431,14 +431,14 @@ class BecaLista(ObjectCreateMixinNucleo, View):
     form_class = BecaForm
     model = Beca
     aux = BecaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class BecaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = BecaForm
     model = Beca
     aux = BecaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class BecaEliminar(View):
@@ -467,14 +467,14 @@ class ReconocimientoLista(ObjectCreateMixinNucleo, View):
     form_class = ReconocimientoForm
     model = Reconocimiento
     aux = ReconocimientoContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class ReconocimientoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ReconocimientoForm
     model = Reconocimiento
     aux = ReconocimientoContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class ReconocimientoEliminar(View):
@@ -503,14 +503,14 @@ class ProgramaLicenciaturaLista(ObjectCreateMixinNucleo, View):
     form_class = ProgramaLicenciaturaForm
     model = ProgramaLicenciatura
     aux = ProgramaLicenciaturaContext.contexto
-    template_name = 'main.html'
+    template_name = 'programa_academico.html'
 
 
 class ProgramaLicenciaturaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ProgramaLicenciaturaForm
     model = ProgramaLicenciatura
     aux = ProgramaLicenciaturaContext.contexto
-    template_name = 'main.html'
+    template_name = 'programa_academico.html'
 
 
 class ProgramaLicenciaturaEliminar(View):
@@ -539,14 +539,14 @@ class ProgramaMaestriaLista(ObjectCreateMixinNucleo, View):
     form_class = ProgramaMaestriaForm
     model = ProgramaMaestria
     aux = ProgramaMaestriaContext.contexto
-    template_name = 'main.html'
+    template_name = 'programa_academico.html'
 
 
 class ProgramaMaestriaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ProgramaMaestriaForm
     model = ProgramaMaestria
     aux = ProgramaMaestriaContext.contexto
-    template_name = 'main.html'
+    template_name = 'programa_academico.html'
 
 
 class ProgramaMaestriaEliminar(View):
@@ -575,14 +575,14 @@ class ProgramaDoctoradoLista(ObjectCreateMixinNucleo, View):
     form_class = ProgramaDoctoradoForm
     model = ProgramaDoctorado
     aux = ProgramaDoctoradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'programa_academico.html'
 
 
 class ProgramaDoctoradoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ProgramaDoctoradoForm
     model = ProgramaDoctorado
     aux = ProgramaDoctoradoContext.contexto
-    template_name = 'main.html'
+    template_name = 'programa_academico.html'
 
 
 class ProgramaDoctoradoEliminar(View):
@@ -611,14 +611,14 @@ class TipoEventoLista(ObjectCreateMixinNucleo, View):
     form_class = TipoEventoForm
     model = TipoEvento
     aux = TipoEventoContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class TipoEventoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = TipoEventoForm
     model = TipoEvento
     aux = TipoEventoContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class TipoEventoEliminar(View):
@@ -647,14 +647,14 @@ class EventoLista(ObjectCreateMixinNucleo, View):
     form_class = EventoForm
     model = Evento
     aux = EventoContext.contexto
-    template_name = 'main.html'
+    template_name = 'evento.html'
 
 
 class EventoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = EventoForm
     model = Evento
     aux = EventoContext.contexto
-    template_name = 'main.html'
+    template_name = 'evento.html'
 
 
 class EventoEliminar(View):
