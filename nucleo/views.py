@@ -683,14 +683,14 @@ class DistincionLista(ObjectCreateMixinNucleo, View):
     form_class = DistincionForm
     model = Distincion
     aux = DistincionContext.contexto
-    template_name = 'main.html'
+    template_name = 'distincion.html'
 
 
 class DistincionDetalle(ObjectUpdateMixinNucleo, View):
     form_class = DistincionForm
     model = Distincion
     aux = DistincionContext.contexto
-    template_name = 'main.html'
+    template_name = 'distincion.html'
 
 
 class DistincionEliminar(View):
