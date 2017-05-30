@@ -332,6 +332,9 @@ class AreaEspecialidad(models.Model):
     def natural_key(self):
         return (self.nombre)
 
+    def get_absolute_url(self):
+        return reverse('area_especialidad_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Área de especialidad de WOS y otras entidades'
@@ -378,7 +381,7 @@ class Financiamiento(models.Model):
     tipo_financiamiento = models.CharField(max_length=80, choices=FINANCIAMIENTO_TIPO)
     descripcion = models.TextField(blank=True)
     #programas_financiamiento = models.ManyToManyField(ProgramaFinanciamiento, related_name='financiamiento_programas_financiamiento', blank=True)
-    dependencias_financiamiento = models.ManyToManyField(Dependencia, related_name='financiamiento_dependencias_financiamiento', blank=True)
+    dependencias_financiamiento = models.ManyToManyField(Dependencia, related_name='financiamiento_dependencias_financiamiento')
     #clave_proyecto = models.CharField(max_length=255)
 
     def __str__(self):
