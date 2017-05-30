@@ -828,7 +828,7 @@ class EditorialContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Proyecto', 'Tipo', 'Fecha inicio', ]}
+                'titulos_tabla': ['Editorial', 'País']}
 
 
     tabla_mios =  '<script>\n' \

@@ -755,14 +755,14 @@ class MemoriaLista(ObjectCreateMixinNucleo, View):
     form_class = MemoriaForm
     model = Memoria
     aux = MemoriaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class MemoriaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = MemoriaForm
     model = Memoria
     aux = MemoriaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class MemoriaEliminar(View):
@@ -791,14 +791,14 @@ class EditorialLista(ObjectCreateMixinNucleo, View):
     form_class = EditorialForm
     model = Editorial
     aux = EditorialContext.contexto
-    template_name = 'main.html'
+    template_name = 'editorial.html'
 
 
 class EditorialDetalle(ObjectUpdateMixinNucleo, View):
     form_class = EditorialForm
     model = Editorial
     aux = EditorialContext.contexto
-    template_name = 'main.html'
+    template_name = 'editorial.html'
 
 
 class EditorialEliminar(View):
@@ -827,14 +827,14 @@ class ColeccionLista(ObjectCreateMixinNucleo, View):
     form_class = ColeccionForm
     model = Coleccion
     aux = ColeccionContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class ColeccionDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ColeccionForm
     model = Coleccion
     aux = ColeccionContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class ColeccionEliminar(View):
@@ -899,14 +899,14 @@ class RevistaLista(ObjectCreateMixinNucleo, View):
     form_class = RevistaForm
     model = Revista
     aux = RevistaContext.contexto
-    template_name = 'main.html'
+    template_name = 'revista.html'
 
 
 class RevistaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = RevistaForm
     model = Revista
     aux = RevistaContext.contexto
-    template_name = 'main.html'
+    template_name = 'revista.html'
 
 
 class RevistaEliminar(View):
@@ -935,14 +935,14 @@ class AsignaturaLista(ObjectCreateMixinNucleo, View):
     form_class = AsignaturaForm
     model = Asignatura
     aux = AsignaturaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class AsignaturaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = AsignaturaForm
     model = Asignatura
     aux = AsignaturaContext.contexto
-    template_name = 'main.html'
+    template_name = 'simple.html'
 
 
 class AsignaturaEliminar(View):
@@ -971,14 +971,14 @@ class MedioDivulgacionLista(ObjectCreateMixinNucleo, View):
     form_class = MedioDivulgacionForm
     model = MedioDivulgacion
     aux = MedioDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'medio_divulgacion.html'
 
 
 class MedioDivulgacionDetalle(ObjectUpdateMixinNucleo, View):
     form_class = MedioDivulgacionForm
     model = MedioDivulgacion
     aux = MedioDivulgacionContext.contexto
-    template_name = 'main.html'
+    template_name = 'medio_divulgacion.html'
 
 
 class MedioDivulgacionEliminar(View):

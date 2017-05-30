@@ -140,6 +140,13 @@ urlpatterns = [
     url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/$', MedioDivulgacionDetalle.as_view(), name='medio_divulgacion_detalle'),
 
 
+    url(r'^usuarios/json/', MedioDivulgacionJSON.as_view(), name='medio_divulgacion_lista__json'),
+    url(r'^usuarios/$', MedioDivulgacionLista.as_view(), name='medio_divulgacion_lista'),
+    # url(r'^usuarios/(?P<pk>[\w\-]+)/eliminar$', MedioDivulgacionEliminar.as_view(), name='medio_divulgacion_eliminar'),
+    url(r'^usuarios/(?P<pk>[\w\-]+)/$', MedioDivulgacionDetalle.as_view(), name='medio_divulgacion_detalle'),
+
+
+
 
 
 
