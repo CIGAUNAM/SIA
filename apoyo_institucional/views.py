@@ -25,7 +25,7 @@ class CargoAcademicoAdministrativoLista(ObjectCreateMixin, View):
     form_class = CargoAcademicoAdministrativoForm
     model = CargoAcademicoAdministrativo
     aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'main.html'
+    template_name = 'cargo_academico-administrativo.html'
 
 
 class CargoAcademicoAdministrativoDetalle(ObjectUpdateMixin, View):

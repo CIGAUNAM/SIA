@@ -6,6 +6,7 @@ from nucleo.models import *
 
 class ExperienciaLaboralForm(forms.ModelForm):
     institucion = forms.ModelChoiceField(
+        required = False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -23,6 +24,7 @@ class ExperienciaLaboralForm(forms.ModelForm):
         )
     )
     nombramiento = forms.ModelChoiceField(
+        required=False,
         queryset=Nombramiento.objects.all(),
         label="Nombramiento",
         widget=ModelSelect3Widget(

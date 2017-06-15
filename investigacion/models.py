@@ -31,7 +31,8 @@ class ArticuloCientifico(models.Model):
     pagina_fin = models.PositiveIntegerField()
     id_doi = models.CharField(max_length=100, blank=True)
     id_wos = models.CharField(max_length=100, blank=True)
-    proyectos = models.ManyToManyField(Proyecto, related_name='articulo_cientifico_proyectos')
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+
     #usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='articulo_cientifico_tags', blank=True)
 

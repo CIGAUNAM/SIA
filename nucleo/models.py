@@ -637,7 +637,7 @@ class Proyecto(models.Model):
         return reverse('proyecto_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['fecha_inicio', 'nombre']
+        ordering = ['nombre']
 
 
 
