@@ -188,15 +188,15 @@ class ParticipacionEventoDivulgacionContext:
 
 
 class ProgramaRadioTelevisionInternetContext:
-    obj = 'Medio de Divulgración'
-    objs = 'Medios de Divulgración'
+    obj = 'Medio de Divulgación'
+    objs = 'Medios de Divulgación'
     url_seccion = 'medios-divulgacion'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': 'Programas de Radio/Televisión/Internet',
                 'titulos_tabla': ['Tema', 'Fecha', 'Actividad', 'Medio']}
 
 

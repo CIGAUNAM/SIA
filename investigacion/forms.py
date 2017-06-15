@@ -43,8 +43,14 @@ class ArticuloCientificoForm(forms.ModelForm):
     pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Número de página final')
     id_doi = forms.CharField(widget=wCharField, required=False, label='ID DOI')
     id_wos = forms.CharField(widget=wCharField, required=False, label='ID WOS')
-
-    # proyectos = forms.ModelMultipleChoiceField(Proyecto)
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = ArticuloCientifico
@@ -53,7 +59,6 @@ class ArticuloCientificoForm(forms.ModelForm):
             'usuarios': Select3MultipleWidget,
             'alumnos': Select3MultipleWidget,
             'indices': Select3MultipleWidget,
-            'proyectos': Select3MultipleWidget,
         }
 
 
