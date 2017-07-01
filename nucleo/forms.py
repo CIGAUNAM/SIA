@@ -533,49 +533,54 @@ class MedioDivulgacionForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
+    """
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Semblanza')
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=(
+        ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'),
+        ('OTRO', 'Otro')),
+                             required=True)
+    fecha_nacimiento = forms.CharField(widget=wDateField, required=True, label='Fecha de nacimiento')
 
 
-
-
-
-    email = models.EmailField(_('email address'), blank=True)
-    is_staff = models.BooleanField(
-        _('staff status'),
-        default=False,
-        help_text=_('Designates whether the user can log into this admin site.'),
+    pais_origen = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País de origen",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
     )
-    is_active = models.BooleanField(
-        _('active'),
-        default=True,
-        help_text=_(
-            'Designates whether this user should be treated as active. '
-            'Unselect this instead of deleting accounts.'
-        ),
+
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect3Widget(
+            dependent_fields={'pais_origen': 'pais'},
+            search_fields=['nombre__icontains'],
+        )
     )
-    date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect3Widget(
+            dependent_fields={'estado': 'estado'},
+            search_fields=['nombre__icontains'],
+        )
+    )
+    """
 
-    descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=30, choices=(('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('OTRO', 'Otro')), default='OTRO')
-    fecha_nacimiento = models.DateField(null=True, blank=True)
-    pais_origen = models.ForeignKey(Pais, default=1)
-    rfc = models.SlugField(max_length=20, unique=True)
-    direccion1 = models.CharField(max_length=255)
-    direccion2 = models.CharField(max_length=255, blank=True)
-    ciudad = models.ForeignKey(Ciudad, default=1)
-    telefono = models.SlugField(max_length=20, blank=True)
-    celular = models.SlugField(max_length=20, blank=True)
-    url = models.URLField(blank=True, null=True)
-    sni = models.PositiveSmallIntegerField(default=0)
-    pride = models.CharField(max_length=2, choices=(('-', '-'), ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')), default='-')
-    ingreso_unam = models.DateField(null=True, blank=True)
-    ingreso_entidad = models.DateField(null=True, blank=True)
+    class Meta:
+        model = User
+        exclude = []
+        """
+        widgets = {
+            'first_name': wCharField,
+            'last_name': wCharField,
+            'username': wCharField,
+            'email': wEmailField,
+            'rfc': wCharField,
+            'telefono': wCharField,
+            'celular': wCharField,
 
-    widgets = {
-        'first_name': wCharField,
-        'last_name': wCharField,
-        'username': wCharField,
-        'email': wEmailField,
-
-    }
+        }
+        """

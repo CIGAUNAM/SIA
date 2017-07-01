@@ -991,6 +991,42 @@ class MedioDivulgacionEliminar(View):
             raise Http404
 
 
+class UserJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = User.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('username', 'first_name', 'last_name', 'email', 'pais_origen', 'ciudad'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class UserLista(ObjectCreateMixinNucleo, View):
+    form_class = UserForm
+    model = User
+    aux = UserContext.contexto
+    template_name = 'main.html'
+
+
+class UserDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = UserForm
+    model = User
+    aux = UserContext.contexto
+    template_name = 'main.html'
+
+
+class UserEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(User, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 
 
 
