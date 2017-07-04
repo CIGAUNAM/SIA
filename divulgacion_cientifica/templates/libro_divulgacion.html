@@ -134,7 +134,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -158,7 +158,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un editor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -182,7 +182,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -313,6 +313,8 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
+            <div class="input-group-addon">
+            </div>
         </div>
     </div>
     </p>
@@ -433,7 +435,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -457,7 +459,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un editor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -481,7 +483,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -513,28 +515,32 @@
     </div>
     </p>
     <p><strong>Número de edición:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de edición.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.numero_edicion }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número de edición.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Número de páginas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de páginas.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
             {{ form.numero_paginas }}
-            <div class="input-group-addon"><a href="#" data-toggle="tooltip" data-placement="left"
-                                              title="Número de páginas.">
-                <i class="fa fa-question-circle"></i></a></div>
         </div>
     </div>
     </p>
     <p><strong>Colección:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Editorial que publicó la colección.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -546,64 +552,51 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/colecciones" data-toggle="tooltip" data-placement="left"
+                <a href="/nucleo/colecciones" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una colección nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Editorial que publicó la colección.">
-                    <i class="fa fa-question-circle"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Volumen:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número o letra de volumen de la revista (si aplica)."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.volumen }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Número o letra de volumen de la revista (si aplica)."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>ISBN:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="ISBN, también conocido como Número estándar internacional de libro.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.isbn }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="ISBN, también conocido como Número estándar internacional de libro.">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            </div>
-
         </div>
     </div>
     </p>
     <p><strong>URL de link al libro:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="URL de link al libro, en caso de estan publicado en algún lugar en internet."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-link"></i>
             </div>
             {{ form.url }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="URL de link al libro, en caso de estan publicado en algún lugar en internet."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
         </div>
     </div>
     </p>
