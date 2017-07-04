@@ -160,7 +160,7 @@ class User(AbstractUser):
     tipo = models.CharField(max_length=30, choices=(('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
     pais_origen = models.ForeignKey(Pais, default=1)
-    rfc = models.SlugField(max_length=20, unique=True)
+    rfc = models.SlugField(max_length=20, blank=True)
     direccion1 = models.CharField(max_length=255, blank=True)
     direccion2 = models.CharField(max_length=255, blank=True)
     ciudad = models.ForeignKey(Ciudad, default=1)

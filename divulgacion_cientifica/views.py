@@ -174,14 +174,14 @@ class ProgramaRadioTelevisionInternetLista(ObjectCreateMixin, View):
     form_class = ProgramaRadioTelevisionInternetForm
     model = ProgramaRadioTelevisionInternet
     aux = ProgramaRadioTelevisionInternetContext.contexto
-    template_name = 'medio_divulgacion.html'
+    template_name = 'medio_divulgacion_cientifica.html'
 
 
 class ProgramaRadioTelevisionInternetDetalle(ObjectUpdateMixin, View):
     form_class = ProgramaRadioTelevisionInternetForm
     model = ProgramaRadioTelevisionInternet
     aux = ProgramaRadioTelevisionInternetContext.contexto
-    template_name = 'medio_divulgacion.html'
+    template_name = 'medio_divulgacion_cientifica.html'
 
 
 class ProgramaRadioTelevisionInternetEliminar(View):
