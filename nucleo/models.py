@@ -752,7 +752,7 @@ class Libro(models.Model):
     numero_paginas = models.PositiveIntegerField(default=0)
     coleccion = models.ForeignKey(Coleccion, blank=True, null=True)
     volumen = models.CharField(max_length=255, blank=True)
-    isbn = models.SlugField(max_length=30)
+    isbn = models.SlugField(max_length=30, blank=True)
     url = models.URLField(blank=True)
     #tags = models.ManyToManyField(Tag, related_name='libro_tags', blank=True)
 

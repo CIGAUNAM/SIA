@@ -87,6 +87,18 @@ class ObjectUpdateMixin:
 
     def get(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
+        """
+        obj.institucion = None
+        obj.institucion_id = None
+        try:
+            obj.institucion = obj.dependencia.institucion
+            obj.institucion_id = obj.dependencia.institucion_id
+            print(obj.institucion)
+            print(obj.institucion_id)
+        except:
+            pass
+        """
+
         return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
 
     def post(self, request, pk):
