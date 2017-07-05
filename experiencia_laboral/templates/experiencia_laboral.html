@@ -76,24 +76,28 @@
         </div>
     </div>
     </p>
-    <p><strong>Nombramiento:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="left"
-           title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.nombramiento }}
+    <div id="f_nombramiento">
+        <p><strong>Nombramiento:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="left"
+               title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.nombramiento }}
+            </div>
         </div>
+        </p>
     </div>
-    </p>
-    <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>
-        <a href="#" data-toggle="tooltip" data-placement="left"
-           title="En caso de tener nombramiento, marcar la casilla si se trata de nombramiento definitivo.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-        {{ form.es_nombramiento_definitivo }}</p>
+    <div id="f_es_nombramiento_definitivo">
+        <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>
+            <a href="#" data-toggle="tooltip" data-placement="left"
+               title="En caso de tener nombramiento, marcar la casilla si se trata de nombramiento definitivo.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+            {{ form.es_nombramiento_definitivo }}</p>
+    </div>
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio de actividad."><i
@@ -120,6 +124,24 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $('#f_nombramiento').hide();
+        $('#f_es_nombramiento_definitivo').hide();
+
+        $("#id_institucion").on('change', function () {
+                if ($("#id_institucion").val() == 1) {
+                    $('#f_nombramiento').show();
+                    $('#f_es_nombramiento_definitivo').show();
+                } else {
+                    $("#id_nombramiento").empty().djangoSelect2();
+                    $('#id_es_nombramiento_definitivo').prop("checked", false);
+                    $('#f_nombramiento').hide();
+                    $('#f_es_nombramiento_definitivo').hide();
+                }
+            }
+        );
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
@@ -198,24 +220,28 @@
         </div>
     </div>
     </p>
-    <p><strong>Nombramiento:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="left"
-           title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.nombramiento }}
+    <div id="f_nombramiento">
+        <p><strong>Nombramiento:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="left"
+               title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.nombramiento }}
+            </div>
         </div>
+        </p>
     </div>
-    </p>
-    <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>
-        <a href="#" data-toggle="tooltip" data-placement="left"
-           title="En caso de tener nombramiento, marcar la casilla si se trata de nombramiento definitivo.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-        {{ form.es_nombramiento_definitivo }}</p>
+    <div id="f_es_nombramiento_definitivo">
+        <p><strong>{{ form.es_nombramiento_definitivo.label }}: &nbsp;</strong>
+            <a href="#" data-toggle="tooltip" data-placement="left"
+               title="En caso de tener nombramiento, marcar la casilla si se trata de nombramiento definitivo.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+            {{ form.es_nombramiento_definitivo }}</p>
+    </div>
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio de actividad."><i
@@ -242,4 +268,41 @@
         </div>
     </div>
     </p>
+
+    <script>
+        //$('#f_nombramiento').hide();
+        //$('#f_es_nombramiento_definitivo').hide();
+
+        //$("select2-id_institucion-container").select2({
+        //$("select2-id_institucion-container").djangoSelect2({
+        //$("id_institucion").djangoSelect2({
+        //    placeholder: 'Select an option'
+        //});
+
+        $("#id_institucion").attr('value', 0);
+        $("#id_institucion").attr('name', 0);
+
+
+
+
+        //inst.djangoSelect2({ data: ko.unwrap(items || [])});
+
+        alert(inst.val());
+        alert(inst2);
+
+
+        $("#id_institucion").on('change', function () {
+                if ($("#id_institucion").val() == 1) {
+                    $('#f_nombramiento').show();
+                    $('#f_es_nombramiento_definitivo').show();
+                } else {
+                    $("#id_nombramiento").empty().djangoSelect2();
+                    $('#id_es_nombramiento_definitivo').prop("checked", false);
+                    $('#f_nombramiento').hide();
+                    $('#f_es_nombramiento_definitivo').hide();
+                }
+            }
+        );
+    </script>
+    <p>prueba</p>
 {% endblock %}
