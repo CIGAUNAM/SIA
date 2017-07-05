@@ -6,12 +6,13 @@ from nucleo.models import *
 
 class ExperienciaLaboralForm(forms.ModelForm):
     institucion = forms.ModelChoiceField(
-        required = True,
+        required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-            dependent_fields={'dependencia': 'dependencia'},
+            #dependent_fields={'dependencia': 'dependencia'},
+
         )
     )
     dependencia = forms.ModelChoiceField(
