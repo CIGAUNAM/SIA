@@ -284,20 +284,22 @@
         </div>
     </div>
     </p>
-    <p><strong>ISBN:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISBN, también conocido como Número estándar internacional de libro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+    <div id="d_isbn">
+        <p><strong>ISBN:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="ISBN, también conocido como Número estándar internacional de libro.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.isbn }}
             </div>
-            {{ form.isbn }}
         </div>
+        </p>
     </div>
-    </p>
     <p><strong>URL de link al mapa:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="URL de link al mapa, en caso de estar publicado en algún lugar en internet."><i
@@ -311,15 +313,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Proyectos:</strong>
+    <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyectos relacionados con el mapa, al escribir el inicio del nombre o apellido se filtran
+           title="Proyecto relacionado con el mapa, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyectos }}
+            {{ form.proyecto }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -335,10 +337,26 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $('#d_isbn').hide();
+
+
+        $("#id_status").on('change', function () {
+                if ($("#id_status").val() == 'PUBLICADO') {
+                    $('#d_isbn').show();
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide();
+                }
+            }
+        );
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Título del mapa:</strong>
+    <p><strong>Título del mapa:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título del mapa publicado.">
             <i class="fa fa-question-circle"></i>
@@ -621,20 +639,22 @@
         </div>
     </div>
     </p>
-    <p><strong>ISBN:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISBN, también conocido como Número estándar internacional de libro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+    <div id="d_isbn">
+        <p><strong>ISBN:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="ISBN, también conocido como Número estándar internacional de libro.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.isbn }}
             </div>
-            {{ form.isbn }}
         </div>
+        </p>
     </div>
-    </p>
     <p><strong>URL de link al mapa:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="URL de link al mapa, en caso de estar publicado en algún lugar en internet."><i
@@ -648,15 +668,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Proyectos:</strong>
+    <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyectos relacionados con el mapa, al escribir el inicio del nombre o apellido se filtran
+           title="Proyecto relacionado con el mapa, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyectos }}
+            {{ form.proyecto }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -672,4 +692,23 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $('#d_isbn').hide();
+
+        if ($("#id_status").val() == 'PUBLICADO') {
+            $('#d_isbn').show();
+        }
+
+        $("#id_status").on('change', function () {
+                if ($("#id_status").val() == 'PUBLICADO') {
+                    $('#d_isbn').show();
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide();
+                }
+            }
+        );
+    </script>
+
 {% endblock %}

@@ -20,7 +20,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título de artículo')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
     tipo = forms.ChoiceField(widget=Select3Widget, choices=(
-    ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')),
+        ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')),
                              required=True)
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField(required=False)
@@ -75,13 +75,18 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
     )
     pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Número de página final')
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = CapituloLibroInvestigacion
         exclude = ['usuario', ]
-        widgets = {
-            'proyectos': Select3MultipleWidget,
-        }
 
 
 class MapaArbitradoForm(forms.ModelForm):
@@ -136,6 +141,14 @@ class MapaArbitradoForm(forms.ModelForm):
     volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
     url = forms.URLField(widget=wUrlField, required=False)  # corregir valiadr url
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = MapaArbitrado
@@ -144,8 +157,6 @@ class MapaArbitradoForm(forms.ModelForm):
             'usuarios': Select3MultipleWidget,
             'editores': Select3MultipleWidget,
             'coordinadores': Select3MultipleWidget,
-            'proyectos': Select3MultipleWidget,
-
         }
 
 
@@ -155,13 +166,20 @@ class InformeTecnicoForm(forms.ModelForm):
     fecha = forms.CharField(widget=wDateField, required=True)
     numero_paginas = forms.CharField(widget=wNumberField, required=True)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = InformeTecnico
         exclude = []
         widgets = {
             'usuarios': Select3MultipleWidget,
-            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -199,7 +217,7 @@ class LibroInvestigacionForm(forms.ModelForm):
             dependent_fields={'pais': 'pais'},
         )
     )
-    status = forms.ChoiceField(widget=Select3Widget(attrs={'placeholder': 'Catégorie', 'setdefault': 4}), choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     fecha = forms.CharField(widget=wDateField)
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
@@ -223,7 +241,6 @@ class LibroInvestigacionForm(forms.ModelForm):
             'editores': Select3MultipleWidget,
             'coordinadores': Select3MultipleWidget,
             'proyectos': Select3MultipleWidget,
-            'status': Select3Widget()
         }
 
 
