@@ -744,6 +744,8 @@ class Libro(models.Model):
     usuarios = models.ManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='libro_coordinadores', blank=True)
+    pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
     editorial = models.ForeignKey(Editorial)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)

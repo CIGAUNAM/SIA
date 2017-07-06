@@ -40,6 +40,7 @@ class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
     form_class = ExperienciaLaboralForm
     model = ExperienciaLaboral
     aux = ExperienciaLaboralContext.contexto
+
     template_name = 'experiencia_laboral.html'
 
 

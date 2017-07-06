@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.core.urlresolvers import reverse
 #from autoslug import AutoSlugField
-from nucleo.models import User, Dependencia, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Proyecto
+from nucleo.models import User, Dependencia, Institucion, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Proyecto
 
 CURSO_ESPECIALIZACION_TIPO = getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', (('', ''), ('', ''), ('CURSO', 'Curso'), ('DIPLOMADO', 'Diplomado'), ('CERTIFICACION', 'Certificación'), ('OTRO', 'Otro')))
 CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', (('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')))
@@ -22,6 +22,7 @@ class CursoEspecializacion(models.Model):
     fecha_fin = models.DateField('Fecha de finalización', blank=True, null=True)
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento')
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion')
     #tags = models.ManyToManyField(Tag, related_name='curso_especializacion_tags', blank=True)
@@ -43,6 +44,7 @@ class CursoEspecializacion(models.Model):
 class Licenciatura(models.Model):
     carrera = models.ForeignKey(ProgramaLicenciatura)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     titulo_tesis = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='titulo_tesis', unique=True)
@@ -68,6 +70,7 @@ class Licenciatura(models.Model):
 class Maestria(models.Model):
     programa = models.ForeignKey(ProgramaMaestria)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     titulo_tesis = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='titulo_tesis', unique=True)
@@ -93,6 +96,7 @@ class Maestria(models.Model):
 class Doctorado(models.Model):
     programa = models.ForeignKey(ProgramaDoctorado)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     titulo_tesis = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='titulo_tesis', unique=True)
@@ -124,6 +128,7 @@ class PostDoctorado(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, related_name='postdoctorado_area_conocimiento', verbose_name='Área de conocimiento')
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     proyecto = models.ForeignKey(Proyecto)
     fecha_inicio = models.DateField('Fecha de inicio de postdoctorado')

@@ -1,11 +1,12 @@
 from django.db import models
 from django.core.urlresolvers import reverse
-from nucleo.models import User, Cargo, Nombramiento, Dependencia
+from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion
 
 # Create your models here.
 
 
 class ExperienciaLaboral(models.Model):
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True)
     es_nombramiento_definitivo = models.BooleanField(default=False)
@@ -32,6 +33,7 @@ class ExperienciaLaboral(models.Model):
 class LineaInvestigacion(models.Model):
     linea_investigacion = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
