@@ -94,9 +94,7 @@ class DireccionTesisForm(forms.ModelForm):
     asesorado = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",
-        widget=ModelSelect3Widget(
-            search_fields=['first_name__icontains'],
-        )
+        widget=ModelSelect3Widget
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     grado_academico = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
