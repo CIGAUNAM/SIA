@@ -270,31 +270,26 @@
     </p>
 
     <script>
-        $('.django-select2').djangoSelect2({placeholder: 'Select an option'});
+        $('#f_nombramiento').hide();
+        $('#f_es_nombramiento_definitivo').hide();
 
-
-
-        //$('#f_nombramiento').hide();
-        //$('#f_es_nombramiento_definitivo').hide();
-
-        //$("select2-id_institucion-container").select2({
-        //$("select2-id_institucion-container").djangoSelect2({
-        //$("id_institucion").djangoSelect2({
-        //    placeholder: 'Select an option'
-        //});
-
-        /* $("#id_institucion").on('change', function () {
          if ($("#id_institucion").val() == 1) {
-         $('#f_nombramiento').show();
-         $('#f_es_nombramiento_definitivo').show();
-         } else {
-         $("#id_nombramiento").empty().djangoSelect2();
-         $('#id_es_nombramiento_definitivo').prop("checked", false);
-         $('#f_nombramiento').hide();
-         $('#f_es_nombramiento_definitivo').hide();
+             $('#f_nombramiento').show();
+             $('#f_es_nombramiento_definitivo').show();
          }
-         }
-         ); */
+
+        $("#id_institucion").on('change', function () {
+                if ($("#id_institucion").val() == 1) {
+                    $('#f_nombramiento').show();
+                    $('#f_es_nombramiento_definitivo').show();
+                } else {
+                    $("#id_nombramiento").empty().djangoSelect2();
+                    $('#id_es_nombramiento_definitivo').prop("checked", false);
+                    $('#f_nombramiento').hide();
+                    $('#f_es_nombramiento_definitivo').hide();
+                }
+            }
+        );
     </script>
 
 

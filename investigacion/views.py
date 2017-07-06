@@ -220,7 +220,7 @@ class LibroInvestigacionEliminar(View):
         try:
             item = get_object_or_404(LibroInvestigacion, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
             item.delete()
-            return redirect('../')
+            return redirect('/investigacion/libros-publicados/')
         except:
             raise Http404
 

@@ -8,6 +8,8 @@ class ExperienciaLaboralForm(forms.ModelForm):
     institucion = forms.ModelChoiceField(
         required=True,
         queryset=Institucion.objects.all(),
+
+
         label="Institución",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],

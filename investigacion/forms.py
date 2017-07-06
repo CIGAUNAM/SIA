@@ -169,7 +169,6 @@ class LibroInvestigacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     pais = forms.ModelChoiceField(
-        required=False,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect3Widget(
@@ -177,7 +176,6 @@ class LibroInvestigacionForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
-        required=False,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect3Widget(
@@ -198,9 +196,10 @@ class LibroInvestigacionForm(forms.ModelForm):
         label="Editorial",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
+            dependent_fields={'pais': 'pais'},
         )
     )
-    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    status = forms.ChoiceField(widget=Select3Widget(attrs={'placeholder': 'Catégorie', 'setdefault': 4}), choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     fecha = forms.CharField(widget=wDateField)
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
@@ -213,7 +212,7 @@ class LibroInvestigacionForm(forms.ModelForm):
         )
     )
     volumen = forms.CharField(widget=wCharField, required=False)
-    isbn = forms.CharField(widget=wCharField, required=True)
+    isbn = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
 
     class Meta:
@@ -224,6 +223,7 @@ class LibroInvestigacionForm(forms.ModelForm):
             'editores': Select3MultipleWidget,
             'coordinadores': Select3MultipleWidget,
             'proyectos': Select3MultipleWidget,
+            'status': Select3Widget()
         }
 
 

@@ -28,7 +28,7 @@ class CursoEspecializacionForm(forms.ModelForm):
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -77,11 +77,12 @@ class LicenciaturaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
 
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-        ), required=False,
+        )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
@@ -116,11 +117,12 @@ class MaestriaForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-        ), required=False,
+        )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
@@ -153,11 +155,12 @@ class DoctoradoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-        ), required=False,
+        )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
@@ -192,11 +195,12 @@ class PostDoctoradoForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
-        ), required=False,
+        )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),

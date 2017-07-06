@@ -95,7 +95,7 @@ class DireccionTesisForm(forms.ModelForm):
         queryset=User.objects.all(),
         label="Asesorado",
         widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['first_name__icontains'],
         )
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)

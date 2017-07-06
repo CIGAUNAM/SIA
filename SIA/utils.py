@@ -84,10 +84,11 @@ class ObjectUpdateMixin:
     form_class = None
     template_name = ''
     aux = {}
+    institucion = "blabla"
 
     def get(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
-        """
+
         obj.institucion = None
         obj.institucion_id = None
         try:
@@ -97,9 +98,9 @@ class ObjectUpdateMixin:
             print(obj.institucion_id)
         except:
             pass
-        """
 
-        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+
+        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'}, )
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk, usuario=request.user)
