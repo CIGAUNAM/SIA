@@ -244,7 +244,7 @@ class LibroInvestigacionContext:
     obj = 'Libro'
     objs = 'Libros'
     url_categoria = 'investigacion'
-    url_seccion = 'libros-publicados'
+    url_seccion = 'libros-investigacion'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

@@ -214,13 +214,27 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     aux = LibroInvestigacionContext.contexto
     template_name = 'libro_investigacion.html'
 
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+
+    def post(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        bound_form = self.form_class(request.POST, instance=obj)
+        if bound_form.is_valid():
+            det_obj = bound_form.save()
+            print(det_obj)
+            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk))  # corregir el redirect
+        else:
+            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
+
 
 class LibroInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
             item = get_object_or_404(LibroInvestigacion, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
             item.delete()
-            return redirect('/investigacion/libros-publicados/')
+            return redirect('/investigacion/libros-investigacion/')
         except:
             raise Http404
 

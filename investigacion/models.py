@@ -56,7 +56,8 @@ class CapituloLibroInvestigacion(models.Model):
     #status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_investigacion_proyectos', blank=True)
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    #proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_investigacion_proyectos', blank=True)
     usuario = models.ForeignKey(User, related_name='capitulo_libro_investigacion_usuario')
     #tags = models.ManyToManyField(Tag, related_name='capitulo_libro_investigacion_tags', blank=True)
 
@@ -81,6 +82,8 @@ class MapaArbitrado(models.Model):
     editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='mapa_arbitrado_coordinadores', blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
+    pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
     editorial = models.ForeignKey(Editorial)
     fecha = models.DateField(auto_now=False)
@@ -90,7 +93,8 @@ class MapaArbitrado(models.Model):
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, blank=True)
     url = models.URLField(blank=True)
-    proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos', blank=True)
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    #proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos', blank=True)
     #tags = models.ManyToManyField(Tag, related_name='mapa_arbitrado_tags', blank=True)
 
     def __str__(self):
@@ -113,7 +117,8 @@ class InformeTecnico(models.Model):
     usuarios = models.ManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
     fecha = models.DateField(auto_now=False)
     numero_paginas = models.PositiveIntegerField(default=1)
-    proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos', blank=True)
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    #proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos', blank=True)
     url = models.URLField(blank=True)
     #tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
 

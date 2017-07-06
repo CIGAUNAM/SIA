@@ -11,7 +11,7 @@ class AsesorEstanciaForm(forms.ModelForm):
         queryset=User.objects.all(),
         label="Asesorado",
         widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
             #dependent_fields={'dependencia': 'dependencia'},
         )
     )
@@ -94,7 +94,9 @@ class DireccionTesisForm(forms.ModelForm):
     asesorado = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",
-        widget=ModelSelect3Widget
+        widget=ModelSelect3Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+        )
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     grado_academico = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
@@ -166,14 +168,14 @@ class ComiteTutoralForm(forms.ModelForm):
         queryset=User.objects.all(),
         label="Asesorado",
         widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
         )
     )
     asesor_principal = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesor principal",
         widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
         )
     )
     proyecto = forms.ModelChoiceField(
@@ -216,14 +218,14 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         queryset=User.objects.all(),
         label="Asesorado",
         widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
         )
     )
     asesor_principal = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesor principal",
         widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
         )
     )
     proyecto = forms.ModelChoiceField(
