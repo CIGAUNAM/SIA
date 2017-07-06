@@ -54,9 +54,7 @@ class DistincionAlumnoForm(forms.ModelForm):
     alumno = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Alumno",
-        widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
-        )
+        widget=ModelSelect3Widget
     )
     grado_academico = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
     institucion = forms.ModelChoiceField(
