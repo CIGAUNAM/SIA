@@ -7,6 +7,7 @@ from django_select2.forms import Select2MultipleWidget
 
 class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', ), required=True)
     revista = forms.ModelChoiceField(
         required=False,
         queryset=Revista.objects.all(),
@@ -61,7 +62,6 @@ class ArbitrajeOtraActividadForm(forms.ModelForm):
     actividad = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -91,13 +91,19 @@ class RedAcademicaForm(forms.ModelForm):
     objetivos = forms.CharField(widget=wTextarea, required=True)
     fecha_constitucion = forms.CharField(widget=wDateField, required=True)
     vigente = forms.BooleanField(required=False)
+    proyecto = forms.ModelChoiceField(
+        queryset=Proyecto.objects.all(),
+        label="Proyecto de Investigación",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = RedAcademica
         exclude = ['tags', ]
         widgets = {
             'paises': Select3MultipleWidget,
-            'proyectos': Select3MultipleWidget,
             'usuarios': Select3MultipleWidget,
         }
 
@@ -108,7 +114,7 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     es_agradecimiento = forms.BooleanField(required=False)
     clasificacion_entidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
-    objetivos = forms.CharField(widget=wTextarea, required=True)
+    objetivos = forms.CharField(widget=wTextarea(attrs={'placeholder': 'Objetivos esperados o logrados con el convenio'}), required=True)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
     es_renovacion = forms.BooleanField(required=False)

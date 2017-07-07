@@ -47,6 +47,8 @@ ENTIDAD_NO_ACADEMICA__CLASIFICACION = (('FEDERAL', 'Gubernamental federal'), ('E
 DISTINCION__AMBITO = (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
 GRADO_ACADEMICO = (('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 RESENA__TIPO = (('LIBRO', 'Libro'), ('REVISTA', 'Revista'))
+ARBITRAJE_ACADEMCICA__TIPO = (('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación'))
+
 
 # Application definition
 

@@ -3,7 +3,7 @@ from . models import *
 from nucleo.models import Libro as LibroDivulgacion, Editorial, Coleccion
 from django import forms
 from django_select2.forms import Select2MultipleWidget
-from nucleo.models import Libro as LibroInvestigacion
+from nucleo.models import Libro as LibroDivulgacion
 from nucleo.models import Pais, Estado, Ciudad
 
 #
@@ -32,6 +32,13 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Número de página final')
     id_doi = forms.CharField(widget=wCharField, required=False, label='ID DOI')
+    proyecto = forms.ModelChoiceField(
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = ArticuloDivulgacion
@@ -40,7 +47,6 @@ class ArticuloDivulgacionForm(forms.ModelForm):
             'usuarios': Select3MultipleWidget,
             'alumnos': Select3MultipleWidget,
             'indices': Select3MultipleWidget,
-            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -57,13 +63,18 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
     )
     pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Número de página final')
+    proyecto = forms.ModelChoiceField(
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = CapituloLibroDivulgacion
         exclude = ['usuario', ]
-        widgets = {
-            'proyectos': Select3MultipleWidget,
-        }
+
 
 
 class OrganizacionEventoDivulgacionForm(forms.ModelForm):
@@ -127,7 +138,6 @@ class LibroDivulgacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     pais = forms.ModelChoiceField(
-        required=False,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect3Widget(
@@ -135,7 +145,6 @@ class LibroDivulgacionForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
-        required=False,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect3Widget(
@@ -156,6 +165,7 @@ class LibroDivulgacionForm(forms.ModelForm):
         label="Editorial",
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
+            dependent_fields={'pais': 'pais'},
         )
     )
     status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ))
@@ -175,11 +185,10 @@ class LibroDivulgacionForm(forms.ModelForm):
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
 
     class Meta:
-        model = LibroInvestigacion
+        model = LibroDivulgacion
         exclude = ['tipo', ]
         widgets = {
             'usuarios': Select3MultipleWidget,
             'editores': Select3MultipleWidget,
             'coordinadores': Select3MultipleWidget,
-            'proyectos': Select3MultipleWidget,
         }

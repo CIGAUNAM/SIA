@@ -79,7 +79,7 @@
     <div id="f_nombramiento">
         <p><strong>Nombramiento:</strong>
             <a href="#" data-toggle="tooltip" data-placement="left"
-               title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
+               title="Nombramiento recibido, llenar solo en caso de tener un cargo de los listados, si no, dejar en blanco.">
                 <i class="fa fa-question-circle"></i>
             </a>
         <div class="form-group" style="margin-top: -10px;">
@@ -124,24 +124,6 @@
         </div>
     </div>
     </p>
-
-    <script>
-        $('#f_nombramiento').hide();
-        $('#f_es_nombramiento_definitivo').hide();
-
-        $("#id_institucion").on('change', function () {
-                if ($("#id_institucion").val() == 1) {
-                    $('#f_nombramiento').show();
-                    $('#f_es_nombramiento_definitivo').show();
-                } else {
-                    $("#id_nombramiento").empty().djangoSelect2();
-                    $('#id_es_nombramiento_definitivo').prop("checked", false);
-                    $('#f_nombramiento').hide();
-                    $('#f_es_nombramiento_definitivo').hide();
-                }
-            }
-        );
-    </script>
 {% endblock %}
 
 {% block form_detalle %}
@@ -223,7 +205,7 @@
     <div id="f_nombramiento">
         <p><strong>Nombramiento:</strong>
             <a href="#" data-toggle="tooltip" data-placement="left"
-               title="Nombramiento recibido, solo aplica para cargos de la UNAM.">
+               title="Nombramiento recibido, llenar solo en caso de tener un cargo de los listados, si no, dejar en blanco.">
                 <i class="fa fa-question-circle"></i>
             </a>
         <div class="form-group" style="margin-top: -10px;">
@@ -268,30 +250,4 @@
         </div>
     </div>
     </p>
-
-    <script>
-        $('#f_nombramiento').hide();
-        $('#f_es_nombramiento_definitivo').hide();
-
-         if ($("#id_institucion").val() == 1) {
-             $('#f_nombramiento').show();
-             $('#f_es_nombramiento_definitivo').show();
-         }
-
-        $("#id_institucion").on('change', function () {
-                if ($("#id_institucion").val() == 1) {
-                    $('#f_nombramiento').show();
-                    $('#f_es_nombramiento_definitivo').show();
-                } else {
-                    $("#id_nombramiento").empty().djangoSelect2();
-                    $('#id_es_nombramiento_definitivo').prop("checked", false);
-                    $('#f_nombramiento').hide();
-                    $('#f_es_nombramiento_definitivo').hide();
-                }
-            }
-        );
-    </script>
-
-
-
 {% endblock %}

@@ -105,21 +105,21 @@ class wTextarea1(Widget):
         return mark_safe(template)
 
 
-class wTextarea(Widget):
+class wTextarea(Textarea):
     def __init__(self, attrs=None):
         # Use slightly better defaults than HTML's 20x2 box
-        #default_attrs = {'cols': '40', 'rows': '10'}
-        default_attrs = None
-
+        default_attrs = {'cols': '40', 'rows': '10'}
         if attrs:
             default_attrs.update(attrs)
-        super(wTextarea, self).__init__(default_attrs)
+        super(Textarea, self).__init__(default_attrs)
 
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
         final_attrs = self.build_attrs(attrs, name=name)
-        return format_html('<div class="form-group" style="margin-top: -10px;"><textarea class="form-control" rows="3" placeholder="Descripción y detalles adicionales" {}>\r\n{}</textarea></div>', flatatt(final_attrs), force_text(value))
+        return format_html('<div class="form-group" style="margin-top: -10px;"><textarea class="form-control" rows="3" {}>\r\n{}</textarea></div>', flatatt(final_attrs), force_text(value))
+
+
 
 
 class wDateField(DateInput):
