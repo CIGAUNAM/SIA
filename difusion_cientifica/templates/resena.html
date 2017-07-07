@@ -20,54 +20,68 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Libro reseñado:</strong>
+    <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Libro sobre el que se hizo la reseña de este registro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
+           title="Tipo de publicación reseñada, puede ser un libro o una revista."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            {{ form.libro_resenado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del libro seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo }}
         </div>
     </div>
     </p>
-    <p><strong>Revista reseñada:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Revista sobre el que se hizo la reseña de este registro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            {{ form.revista_resenada }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la revista seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+    <div id="d_libro_resenado">
+        <p><strong>Libro reseñado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Libro sobre el que se hizo la reseña de este registro.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-book"></i></div>
+                {{ form.libro_resenado }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del libro seleccionado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
             </div>
         </div>
+        </p>
     </div>
-    </p>
+    <div id="d_revista_resenada">
+        <p><strong>Revista reseñada:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Revista sobre el que se hizo la reseña de este registro.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-book"></i></div>
+                {{ form.revista_resenada }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Página inicial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de página donde inicia la reseña.">
@@ -90,7 +104,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Libro donde se publica la reseña:</strong>
+    <!-- <p><strong>Libro donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Libro donde se publica la reseña de este registro.">
             <i class="fa fa-question-circle"></i>
@@ -98,7 +112,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            {{ form.libro_publica }}
+            { - { form.libro_publica } - }
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales del libro seleccionado.">
@@ -113,7 +127,7 @@
             </div>
         </div>
     </div>
-    </p>
+    </p> -->
     <p><strong>Revista donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Revista donde se publica la reseña de este registro.">
@@ -151,6 +165,21 @@
         </div>
     </div>
     </p>
+    <script>
+        $('#d_revista_resenada').hide();
+        $("#id_tipo").on('change', function () {
+                if ($("#id_tipo").val() == 'REVISTA') {
+                    $('#d_revista_resenada').show();
+                    $('#d_libro_resenado').hide();
+                    $('#id_libro_resenado').val(null).trigger("change");
+                } else {
+                    $('#d_libro_resenado').show();
+                    $('#d_revista_resenada').hide();
+                    $('#id_revista_resenada').val(null).trigger("change");
+                }
+            }
+        );
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
@@ -173,54 +202,68 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Libro reseñado:</strong>
+    <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Libro sobre el que se hizo la reseña de este registro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
+           title="Tipo de publicación reseñada, puede ser un libro o una revista."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            {{ form.libro_resenado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del libro seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo }}
         </div>
     </div>
     </p>
-    <p><strong>Revista reseñada:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Revista sobre el que se hizo la reseña de este registro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            {{ form.revista_resenada }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la revista seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+    <div id="d_libro_resenado">
+        <p><strong>Libro reseñado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Libro sobre el que se hizo la reseña de este registro.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-book"></i></div>
+                {{ form.libro_resenado }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del libro seleccionado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
             </div>
         </div>
+        </p>
     </div>
-    </p>
+    <div id="d_revista_resenada">
+        <p><strong>Revista reseñada:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Revista sobre el que se hizo la reseña de este registro.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-book"></i></div>
+                {{ form.revista_resenada }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Página inicial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de página donde inicia la reseña.">
@@ -243,7 +286,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Libro donde se publica la reseña:</strong>
+    <!-- <p><strong>Libro donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Libro donde se publica la reseña de este registro.">
             <i class="fa fa-question-circle"></i>
@@ -251,7 +294,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            {{ form.libro_publica }}
+            { - { form.libro_publica } - }
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales del libro seleccionado.">
@@ -266,7 +309,7 @@
             </div>
         </div>
     </div>
-    </p>
+    </p> -->
     <p><strong>Revista donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Revista donde se publica la reseña de este registro.">
@@ -304,4 +347,26 @@
         </div>
     </div>
     </p>
+    <script>
+        $('#d_revista_resenada').hide();
+        $('#d_libro_resenado').hide();
+
+        if ($("#id_tipo").val() == 'REVISTA') {
+             $('#d_revista_resenada').show();
+         } else {
+             $('#d_libro_resenado').show();
+        }
+        $("#id_tipo").on('change', function () {
+                if ($("#id_tipo").val() == 'REVISTA') {
+                    $('#d_revista_resenada').show();
+                    $('#d_libro_resenado').hide();
+                    $('#id_libro_resenado').val(null).trigger("change");
+                } else {
+                    $('#d_libro_resenado').show();
+                    $('#d_revista_resenada').hide();
+                    $('#id_revista_resenada').val(null).trigger("change");
+                }
+            }
+        );
+    </script>
 {% endblock %}

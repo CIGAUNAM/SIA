@@ -94,7 +94,7 @@ class ResenaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = Resena.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'libro_resenado', 'revista_resenada', 'libro_publica', 'revista_publica'))
+                                         fields=('titulo', 'libro_resenado', 'revista_resenada', 'revista_publica'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

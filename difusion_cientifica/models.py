@@ -2,11 +2,12 @@ from django.db import models
 
 from django.conf import settings
 #from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from nucleo.models import User, Pais, Estado, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
 from django.core.urlresolvers import reverse
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
+RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('REVISTA', 'Revista')))
 
 # Create your models here.
 
@@ -15,6 +16,8 @@ class MemoriaInExtenso(models.Model):
     nombre = models.CharField(max_length=255, unique=True, verbose_name='Título de memoria in extenso')
     #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
+    pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
     fecha = models.DateField()
     evento = models.ForeignKey(Evento)
@@ -26,7 +29,8 @@ class MemoriaInExtenso(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     issn = models.SlugField(max_length=20, blank=True)
-    proyectos = models.ManyToManyField(Proyecto, blank=True)
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    #proyectos = models.ManyToManyField(Proyecto, blank=True)
     url = models.URLField(blank=True)
 
     def __str__(self):
@@ -63,12 +67,13 @@ class PrologoLibro(models.Model):
 
 class Resena(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
+    tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
     libro_resenado = models.ForeignKey(Libro, blank=True, null=True, related_name='resena_libro_resenado')
     revista_resenada = models.ForeignKey(Revista, blank=True, null=True, related_name='resena_revista_resenada')
     #slug = AutoSlugField(populate_from='titulo_resena', unique=True)
     descripcion = models.TextField(blank=True)
-    libro_publica = models.ForeignKey(Libro, related_name='resena_libro_publica', blank=True, null=True)
-    revista_publica = models.ForeignKey(Revista, related_name='resena_revista_publica', blank=True, null=True)
+    #libro_publica = models.ForeignKey(Libro, related_name='resena_libro_publica', blank=True, null=True)
+    revista_publica = models.ForeignKey(Revista, related_name='resena_revista_publica')
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)

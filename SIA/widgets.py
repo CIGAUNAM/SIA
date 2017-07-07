@@ -1,4 +1,4 @@
-from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput, Textarea, EmailInput
+from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput, Textarea, EmailInput, TextInput
 from django.template import loader
 from django.utils.safestring import mark_safe
 import copy
@@ -228,7 +228,7 @@ class Select3Mixin(Select2Mixin):
     media = property(_get_media)
 
 
-class wSelect(Select):
+class wSelect(Select, TextInput):
     allow_multiple_selected = False
 
     def __init__(self, attrs=None, choices=()):
