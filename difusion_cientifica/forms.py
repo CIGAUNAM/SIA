@@ -10,7 +10,6 @@ class MemoriaInExtensoForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True, label='Título de memoria in extenso')
     descripcion = forms.CharField(widget=wTextarea, required=False)
     pais = forms.ModelChoiceField(
-        required=False,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect3Widget(
@@ -18,7 +17,6 @@ class MemoriaInExtensoForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
-        required=False,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect3Widget(
@@ -42,17 +40,18 @@ class MemoriaInExtensoForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    #pais_origen = forms.ModelChoiceField(
-    #    queryset=Pais.objects.all(),
-    #    label="País de origen",
-    #    widget=ModelSelect3Widget(
-    #        search_fields=['nombre__icontains'],
-    #    )
-    #)
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     issn = forms.CharField(widget=wCharField, required=False)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=Proyecto.objects.all(),
+        label="Pais",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = MemoriaInExtenso
@@ -62,7 +61,6 @@ class MemoriaInExtensoForm(forms.ModelForm):
             'editores': Select3MultipleWidget,
             'indices': Select3MultipleWidget,
             'agradecimientos': Select3MultipleWidget,
-            'proyectos': Select3MultipleWidget,
         }
 
 
@@ -86,6 +84,7 @@ class PrologoLibroForm(forms.ModelForm):
 
 class ResenaForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título de reseña')
+    tipo = forms.ChoiceField(widget=Select3Widget(attrs={'placeholdar': 'probando'}), choices=getattr(settings, 'RESENA__TIPO', ), required=True)
     libro_resenado = forms.ModelChoiceField(
         required=False,
         queryset=Libro.objects.all(),
@@ -122,6 +121,10 @@ class ResenaForm(forms.ModelForm):
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+
+    def __init__(self, *args, **kwargs):
+        super(ResenaForm, self).__init__(*args, **kwargs)
+        #self.fields['tipo'].widget = forms.ChoiceField(attrs={'placeholder': 'Select Year'})
 
     class Meta:
         model = Resena

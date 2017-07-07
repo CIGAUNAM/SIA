@@ -138,8 +138,7 @@ class ResenaContext:
                                     'if (row.fields.revista_resenada == null) { return "Libro"; } else { return "Revista"; }}},\n' \
                                     '{"data": function ( row, type, val, meta ) {\n' \
                                     'if (row.fields.revista_resenada == null) { return row.fields.libro_resenado; } else { return row.fields.revista_resenada; }}},\n' \
-                                    '{"data": function ( row, type, val, meta ) {\n' \
-                                    'if (row.fields.revista_publica == null) { return row.fields.libro_publica; } else { return row.fields.revista_publica; }}}\n' \
+                                    '{"data": "fields.revista_publica" },\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
