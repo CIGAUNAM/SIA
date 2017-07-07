@@ -8,13 +8,14 @@ from django.core.urlresolvers import reverse
 
 RED_ACADEMICA__CLASIFICACION = getattr (settings, 'RED_ACADEMICA__CLASIFICACION', (('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 ENTIDAD_NO_ACADEMICA__CLASIFICACION = getattr (settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', (('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('PRIVADO', 'Sector privado'), ('NO_LUCRATIVO', 'Sector privado no lucrativo'), ('EXTRANJERO', 'Extranjero'), ('OTRO', 'Otro')))
+ARBITRAJE_ACADEMCICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', (('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación')))
 
 # Create your models here.
 
 class ArbitrajePublicacionAcademica(models.Model):
     descripcion = models.TextField(blank=True)
-    #tipo_publicacion = models.CharField(max_length=20, choices=(('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capitulo en libro')))
     indices = models.ManyToManyField(Indice, related_name='arbitraje_publicacion_indices', blank=True)
+    tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMCICA__TIPO)
     revista = models.ForeignKey(Revista, blank=True, null=True)
     libro = models.ForeignKey(Libro, blank=True, null=True)
     capitulo_libro = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True)
@@ -26,7 +27,7 @@ class ArbitrajePublicacionAcademica(models.Model):
         lista_titulos = [self.revista, self.libro, self.capitulo_libro]
         titulo = [x for x in lista_titulos if x != 'n/a']
         titulo = titulo[0]
-        return "{} : {}".format(self.tipo_publicacion.title(), titulo, self.fecha_dictamen)
+        return "{} : {}".format(self.tipo.title(), self.fecha_dictamen)
 
     def get_absolute_url(self):
         return reverse('arbitraje_publicacion_academica_detalle', kwargs={'pk': self.pk})
@@ -61,6 +62,7 @@ class ArbitrajeOtraActividad(models.Model):
     actividad = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='actividad', unique=True)
     descripcion = models.TextField(blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     fecha = models.DateField()
     usuario = models.ForeignKey(User)
@@ -88,7 +90,8 @@ class RedAcademica(models.Model):
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
     vigente = models.BooleanField(default=False)
-    proyectos = models.ManyToManyField(Proyecto, related_name='red_academica_proyectos', blank=True)
+    proyectos = models.ForeignKey(Proyecto, blank=True, null=True)
+    #proyectos = models.ManyToManyField(Proyecto, related_name='red_academica_proyectos', blank=True)
     usuarios = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
     #tags = models.ManyToManyField(Tag, related_name='red_academica_tags', blank=True)
 

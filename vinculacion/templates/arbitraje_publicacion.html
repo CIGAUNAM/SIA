@@ -18,74 +18,92 @@
         </div>
     </div>
     </p>
-    <p><strong>Revista:</strong>
+    <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de la revista del arbitraje."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.revista }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la revista seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Libro:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del libro del arbitraje."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.libro }}
-            <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del libro seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Capítulo en libro de investigación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del capítulo en libro de investigación del arbitraje."><i
+           title="Tipo de publicación arbitrada, puede ser un libro, una revista, o un capitulo de libro."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.capitulo_libro }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del capítulo en libro de investigación seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar un capítulo de libro. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo }}
         </div>
     </div>
     </p>
+    <div id="d_revista">
+        <p><strong>Revista:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre de la revista del arbitraje."><i class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.revista }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_libro">
+        <p><strong>Libro:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del libro del arbitraje."><i class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.libro }}
+                <div class="input-group-addon">
+                    <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del libro seleccionado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
+                       title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_capitulo_libro">
+        <p><strong>Capítulo en libro de investigación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del capítulo en libro de investigación del arbitraje."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.capitulo_libro }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del capítulo en libro de investigación seleccionado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
+                       title="Agregar un capítulo de libro. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Fecha de dictamen:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de dictamen del arbitraje."><i
@@ -99,6 +117,39 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $('#d_libro').hide();
+        $('#d_capitulo_libro').hide();
+
+        $("#id_tipo").on('change', function () {
+                if ($("#id_tipo").val() == 'LIBRO') {
+                    $('#d_libro').show();
+                    $('#id_revista').val(null).trigger("change");
+                    $('#d_revista').hide();
+                    $('#id_capitulo_libro').val(null).trigger("change");
+                    $('#d_capitulo_libro').hide();
+                } else if ($("#id_tipo").val() == 'REVISTA') {
+                    $('#d_revista').show();
+                    $('#id_libro').val(null).trigger("change");
+                    $('#d_libro').hide();
+                    $('#id_capitulo_libro').val(null).trigger("change");
+                    $('#d_capitulo_libro').hide();
+                } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
+                    $('#d_capitulo_libro').show();
+                    $('#id_libro').val(null).trigger("change");
+                    $('#d_libro').hide();
+                    $('#id_revista').val(null).trigger("change");
+                    $('#d_revista').hide();
+                } else {
+                    $('#d_revista').show();
+                    $('#d_libro').show();
+                    $('#d_capitulo_libro').show();
+                }
+            }
+        );
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -119,74 +170,92 @@
         </div>
     </div>
     </p>
-    <p><strong>Revista:</strong>
+    <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de la revista del arbitraje."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.revista }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la revista seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Libro:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del libro del arbitraje."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.libro }}
-            <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del libro seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Capítulo en libro de investigación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del capítulo en libro de investigación del arbitraje."><i
+           title="Tipo de publicación arbitrada, puede ser un libro, una revista, o un capitulo de libro."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.capitulo_libro }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del capítulo en libro de investigación seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar un capítulo de libro. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo }}
         </div>
     </div>
     </p>
+    <div id="d_revista">
+        <p><strong>Revista:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre de la revista del arbitraje."><i class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.revista }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_libro">
+        <p><strong>Libro:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del libro del arbitraje."><i class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.libro }}
+                <div class="input-group-addon">
+                    <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del libro seleccionado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
+                       title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_capitulo_libro">
+        <p><strong>Capítulo en libro de investigación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del capítulo en libro de investigación del arbitraje."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.capitulo_libro }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del capítulo en libro de investigación seleccionado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
+                       title="Agregar un capítulo de libro. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Fecha de dictamen:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de dictamen del arbitraje."><i
@@ -200,4 +269,50 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $('#d_revista').hide();
+        $('#d_libro').hide();
+        $('#d_capitulo_libro').hide();
+
+        if ($("#id_tipo").val() == 'REVISTA') {
+            $('#d_revista').show();
+        } else if ($("#id_tipo").val() == 'LIBRO') {
+            $('#d_libro').show();
+        } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
+            $('#d_capitulo_libro').show();
+        } else {
+            $('#d_revista').show();
+            $('#d_libro').show();
+            $('#d_capitulo_libro').show();
+        }
+
+        $("#id_tipo").on('change', function () {
+                if ($("#id_tipo").val() == 'LIBRO') {
+                    $('#d_libro').show();
+                    $('#id_revista').val(null).trigger("change");
+                    $('#d_revista').hide();
+                    $('#id_capitulo_libro').val(null).trigger("change");
+                    $('#d_capitulo_libro').hide();
+                } else if ($("#id_tipo").val() == 'REVISTA') {
+                    $('#d_revista').show();
+                    $('#id_libro').val(null).trigger("change");
+                    $('#d_libro').hide();
+                    $('#id_capitulo_libro').val(null).trigger("change");
+                    $('#d_capitulo_libro').hide();
+                } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
+                    $('#d_capitulo_libro').show();
+                    $('#id_libro').val(null).trigger("change");
+                    $('#d_libro').hide();
+                    $('#id_revista').val(null).trigger("change");
+                    $('#d_revista').hide();
+                } else {
+                    $('#d_revista').show();
+                    $('#d_libro').show();
+                    $('#d_capitulo_libro').show();
+                }
+            }
+        );
+    </script>
+
 {% endblock %}

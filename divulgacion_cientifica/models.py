@@ -33,7 +33,8 @@ class ArticuloDivulgacion(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     id_doi = models.CharField(max_length=100, blank=True)
-    proyectos = models.ManyToManyField(Proyecto, related_name='articulo_divulgracion_proyectos', blank=True)
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    #proyectos = models.ManyToManyField(Proyecto, related_name='articulo_divulgracion_proyectos', blank=True)
     #tags = models.ManyToManyField(Tag, related_name='articulo_divulgacion_tags', blank=True)
 
     def __str__(self):
@@ -73,7 +74,8 @@ class CapituloLibroDivulgacion(models.Model):
     #status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_divulgracion_proyectos', blank=True)
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    #proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_divulgracion_proyectos', blank=True)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='capitulo_libro_divulgacion_tags', blank=True)
 

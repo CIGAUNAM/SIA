@@ -749,7 +749,7 @@ class Libro(models.Model):
     ciudad = models.ForeignKey(Ciudad)
     editorial = models.ForeignKey(Editorial)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
-    fecha = models.DateField(auto_now=False)
+    fecha = models.DateField(blank=True, null=True)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=0)
     coleccion = models.ForeignKey(Coleccion, blank=True, null=True)
