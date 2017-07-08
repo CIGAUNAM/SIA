@@ -119,12 +119,27 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     fecha_fin = forms.CharField(widget=wDateField, required=True)
     es_renovacion = forms.BooleanField(required=False)
     incluye_financiamiento = forms.BooleanField(required=False)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
 
     class Meta:
         model = ConvenioEntidadNoAcademica
         exclude = ['tags', ]
         widgets = {
-            'dependencias': Select3MultipleWidget,
             'usuarios': Select3MultipleWidget,
         }
 
@@ -142,7 +157,6 @@ class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -174,13 +188,27 @@ class OtroProgramaVinculacionForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select3Widget, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     resultados = forms.CharField(widget=wTextarea, required=False)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
 
     class Meta:
         model = OtroProgramaVinculacion
         exclude = ['usuario', 'tags', ]
-        widgets = {
-            'dependencias': Select3MultipleWidget,
-        }
+
 
 
 class ClasificacionServicioForm(forms.ModelForm):
