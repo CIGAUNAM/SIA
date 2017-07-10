@@ -9,7 +9,7 @@ from vinculacion.models import RedAcademica
 # Create your models here.
 
 class CursoDocencia(models.Model):
-    nivel = models.CharField(max_length=30, choices=(('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')))
+    nivel = models.CharField(max_length=30, choices=(('OTRO', 'Otro'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
     tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
     licenciatura = models.ForeignKey(ProgramaLicenciatura, blank=True, null=True)
     maestria = models.ForeignKey(ProgramaMaestria, blank=True, null=True)
