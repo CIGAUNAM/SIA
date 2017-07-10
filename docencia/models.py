@@ -2,14 +2,14 @@ from django.db import models
 
 #from django.contrib.auth.models import User
 from autoslug import AutoSlugField
-from nucleo.models import User, Dependencia, Proyecto, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Asignatura
+from nucleo.models import User, Institucion, Dependencia, Proyecto, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Asignatura
 from vinculacion.models import RedAcademica
 
 
 # Create your models here.
 
 class CursoDocencia(models.Model):
-    nivel = models.CharField(max_length=30, choices=(('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+    nivel = models.CharField(max_length=30, choices=(('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')))
     tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
     licenciatura = models.ForeignKey(ProgramaLicenciatura, blank=True, null=True)
     maestria = models.ForeignKey(ProgramaMaestria, blank=True, null=True)
@@ -17,6 +17,7 @@ class CursoDocencia(models.Model):
     asignatura = models.ForeignKey(Asignatura)
     modalidad = models.CharField(max_length=30, choices=(('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea')))
     #nivel_participacion = models.CharField(max_length=30, choices=(('TITULAR', 'Titular / Responsable'), ('COLABORADOR', 'Colaborador / Invitado')))
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()

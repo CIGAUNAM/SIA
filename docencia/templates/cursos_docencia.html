@@ -255,6 +255,22 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $('#d_isbn').hide();
+
+
+        $("#id_status").on('change', function () {
+                if ($("#id_status").val() == 'PUBLICADO') {
+                    $('#d_isbn').show();
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide();
+                }
+            }
+        );
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
