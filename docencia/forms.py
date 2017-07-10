@@ -8,7 +8,7 @@ from django_select2.forms import Select2MultipleWidget
 #
 
 class CursoDocenciaForm(forms.ModelForm):
-    nivel = forms.ChoiceField(widget=Select3Widget, choices=(('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')), required=True)
+    nivel = forms.ChoiceField(widget=Select3Widget, choices=(('OTRO', 'Otro'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
     licenciatura = forms.ModelChoiceField(
         required=False,
         queryset=ProgramaLicenciatura.objects.all(),
