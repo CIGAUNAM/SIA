@@ -12,13 +12,11 @@ class MovilidadAcademicaForm(forms.ModelForm):
         queryset=User.objects.all(),
         label="Académico",
         widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
-            #dependent_fields={'dependencia': 'dependencia'},
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
         )
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(

@@ -1,5 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
+from numba.ir import Inst
+
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Departamento, Cargo
 from django.core.urlresolvers import reverse
 
@@ -66,6 +68,7 @@ class OrganoColegiado(models.Model):
 class CargoAcademicoAdministrativo(models.Model):
     cargo = models.ForeignKey(Cargo)
     descripcion = models.TextField(blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
@@ -89,6 +92,7 @@ class CargoAcademicoAdministrativo(models.Model):
 class RepresentacionOrganoColegiado(models.Model):
     representacion = models.ForeignKey(Representacion)
     descripcion = models.TextField(blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
@@ -112,7 +116,8 @@ class ComisionAcademica(models.Model):
     #slug = AutoSlugField(populate_from='nombre', unique=True, max_length=255)
     descripcion = models.TextField(blank=True)
     es_evaluacion = models.BooleanField(default=False)
-    dependencias = models.ManyToManyField(Dependencia)
+    institucion = models.ForeignKey(Institucion)
+    dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
@@ -136,6 +141,7 @@ class ComisionAcademica(models.Model):
 class ApoyoTecnico(models.Model):
     actividad_apoyo = models.ForeignKey(ActividadApoyo)
     descripcion = models.TextField()
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
@@ -160,6 +166,7 @@ class ApoyoTecnico(models.Model):
 class ApoyoOtraActividad(models.Model):
     actividad_apoyo = models.ForeignKey(ActividadApoyo)
     descripcion = models.TextField()
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     #ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)

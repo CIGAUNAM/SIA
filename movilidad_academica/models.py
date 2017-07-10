@@ -1,7 +1,7 @@
 from django.db import models
 
 from autoslug import AutoSlugField
-from nucleo.models import User, Dependencia, Financiamiento, Proyecto
+from nucleo.models import User, Institucion, Dependencia, Financiamiento, Proyecto
 from vinculacion.models import RedAcademica
 
 
@@ -12,6 +12,7 @@ class MovilidadAcademica(models.Model):
     tipo = models.CharField(max_length=30, choices=(('INVITACION', 'Invitación'), ('ESTANCIA', 'Estancia de colaboración'), ('SABATICO', 'Sabático')))
     academico = models.ForeignKey(User, related_name='movilidad_academica_academico')
     descripcion = models.TextField(blank=True)
+    institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     actividades = models.TextField()
     fecha_inicio = models.DateField()

@@ -16,7 +16,6 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -50,7 +49,6 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -86,13 +84,27 @@ class ComisionAcademicaForm(forms.ModelForm):
     es_evaluacion = forms.BooleanField(required=False)
     fecha_inicio = forms.CharField(widget=wDateField, required=True)
     fecha_fin = forms.CharField(widget=wDateField, required=True)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            max_results=500,
+        )
+    )
 
     class Meta:
         model = ComisionAcademica
         exclude = ['usuario', ]
-        widgets = {
-            'dependencias': Select3MultipleWidget,
-        }
+
 
 
 class ApoyoTecnicoForm(forms.ModelForm):
@@ -105,7 +117,6 @@ class ApoyoTecnicoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -139,7 +150,6 @@ class ApoyoOtraActividadForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
