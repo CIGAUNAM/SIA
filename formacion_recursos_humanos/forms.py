@@ -64,7 +64,6 @@ class AsesorEstanciaForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -101,7 +100,6 @@ class DireccionTesisForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     grado_academico = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -187,7 +185,6 @@ class ComiteTutoralForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
@@ -244,7 +241,6 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect3Widget(
