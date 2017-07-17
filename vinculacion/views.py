@@ -16,7 +16,19 @@ class ArbitrajePublicacionAcademicaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ArbitrajePublicacionAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('fecha_dictamen'))
+                                         fields=('tipo', 'revista', 'libro', 'capitulo_libro', 'fecha_dictamen'))
+            json = json.replace('REVISTA', 'Revista')
+            json = json.replace('CAPITULO_LIBRO', 'Capítulo de libro')
+            json = json.replace('LIBRO', 'Libro')
+
+            json = json.replace('"revista": null,', '')
+            json = json.replace('"libro": null,', '')
+            json = json.replace('"capitulo_libro": null,', '')
+
+            json = json.replace('"revista"', '"publicacion"')
+            json = json.replace('"libro"', '"publicacion"')
+            json = json.replace('"capitulo_libro"', '"publicacion"')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

@@ -6,18 +6,6 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Índices que lo registran:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registran o indexan el arbitraje en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-        </div>
-    </div>
-    </p>
     <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de publicación arbitrada, puede ser un libro, una revista, o un capitulo de libro."><i
@@ -117,36 +105,61 @@
         </div>
     </div>
     </p>
+    <p><strong>Índices que lo registran:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Índices que registran o indexan el arbitraje en sus registros, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
+            {{ form.indices }}
+        </div>
+    </div>
+    </p>
 
     <script>
         $('#d_libro').hide();
         $('#d_capitulo_libro').hide();
+        $('#id_revista').attr("required", "true");
 
         $("#id_tipo").on('change', function () {
-                if ($("#id_tipo").val() == 'LIBRO') {
-                    $('#d_libro').show();
-                    $('#id_revista').val(null).trigger("change");
-                    $('#d_revista').hide();
-                    $('#id_capitulo_libro').val(null).trigger("change");
-                    $('#d_capitulo_libro').hide();
-                } else if ($("#id_tipo").val() == 'REVISTA') {
-                    $('#d_revista').show();
-                    $('#id_libro').val(null).trigger("change");
-                    $('#d_libro').hide();
-                    $('#id_capitulo_libro').val(null).trigger("change");
-                    $('#d_capitulo_libro').hide();
-                } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
-                    $('#d_capitulo_libro').show();
-                    $('#id_libro').val(null).trigger("change");
-                    $('#d_libro').hide();
-                    $('#id_revista').val(null).trigger("change");
-                    $('#d_revista').hide();
-                } else {
-                    $('#d_revista').show();
-                    $('#d_libro').show();
-                    $('#d_capitulo_libro').show();
+                    if ($("#id_tipo").val() == 'LIBRO') {
+                        $('#d_libro').show();
+                        $('#id_libro').attr("required", "true");
+                        $('#id_revista').attr("required", null);
+                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_revista').val(null).trigger("change");
+                        $('#d_revista').hide();
+                        $('#id_capitulo_libro').val(null).trigger("change");
+                        $('#d_capitulo_libro').hide();
+                    } else if ($("#id_tipo").val() == 'REVISTA') {
+                        $('#d_revista').show();
+                        $('#id_libro').attr("required", null);
+                        $('#id_revista').attr("required", "true");
+                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_libro').val(null).trigger("change");
+                        $('#d_libro').hide();
+                        $('#id_capitulo_libro').val(null).trigger("change");
+                        $('#d_capitulo_libro').hide();
+                    } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
+                        $('#d_capitulo_libro').show();
+                        $('#id_libro').attr("required", null);
+                        $('#id_revista').attr("required", null);
+                        $('#id_capitulo_libro').attr("required", "true");
+                        $('#id_libro').val(null).trigger("change");
+                        $('#d_libro').hide();
+                        $('#id_revista').val(null).trigger("change");
+                        $('#d_revista').hide();
+                    } else {
+                        $('#d_revista').show();
+                        $('#d_libro').show();
+                        $('#d_capitulo_libro').show();
+                        $('#id_libro').attr("required", null);
+                        $('#id_revista').attr("required", null);
+                        $('#id_capitulo_libro').attr("required", null);
+                    }
                 }
-            }
         );
     </script>
 
@@ -158,18 +171,6 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Índices que lo registran:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registran o indexan el arbitraje en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-        </div>
-    </div>
-    </p>
     <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de publicación arbitrada, puede ser un libro, una revista, o un capitulo de libro."><i
@@ -269,6 +270,26 @@
         </div>
     </div>
     </p>
+    <p><strong>Índices que lo registran:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Índices que registran o indexan el arbitraje en sus registros, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
+            {{ form.indices }}
+        </div>
+    </div>
+    </p>
+
+    <script>
+        //$('#d_revista').hide();
+        //$('#d_libro').hide();
+        //$('#d_capitulo_libro').hide();
+
+
+    </script>
 
     <script>
         $('#d_revista').hide();
@@ -277,42 +298,61 @@
 
         if ($("#id_tipo").val() == 'REVISTA') {
             $('#d_revista').show();
+            $('#id_revista').attr("required", "true");
         } else if ($("#id_tipo").val() == 'LIBRO') {
             $('#d_libro').show();
+            $('#id_libro').attr("required", "true");
         } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
             $('#d_capitulo_libro').show();
+            $('#id_capitulo_libro').attr("required", "true");
         } else {
             $('#d_revista').show();
             $('#d_libro').show();
             $('#d_capitulo_libro').show();
+            $('#id_libro').attr("required", null);
+            $('#id_revista').attr("required", null);
+            $('#id_capitulo_libro').attr("required", null);
         }
 
         $("#id_tipo").on('change', function () {
-                if ($("#id_tipo").val() == 'LIBRO') {
-                    $('#d_libro').show();
-                    $('#id_revista').val(null).trigger("change");
-                    $('#d_revista').hide();
-                    $('#id_capitulo_libro').val(null).trigger("change");
-                    $('#d_capitulo_libro').hide();
-                } else if ($("#id_tipo").val() == 'REVISTA') {
-                    $('#d_revista').show();
-                    $('#id_libro').val(null).trigger("change");
-                    $('#d_libro').hide();
-                    $('#id_capitulo_libro').val(null).trigger("change");
-                    $('#d_capitulo_libro').hide();
-                } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
-                    $('#d_capitulo_libro').show();
-                    $('#id_libro').val(null).trigger("change");
-                    $('#d_libro').hide();
-                    $('#id_revista').val(null).trigger("change");
-                    $('#d_revista').hide();
-                } else {
-                    $('#d_revista').show();
-                    $('#d_libro').show();
-                    $('#d_capitulo_libro').show();
+                    if ($("#id_tipo").val() == 'LIBRO') {
+                        $('#d_libro').show();
+                        $('#id_libro').attr("required", "true");
+                        $('#id_revista').attr("required", null);
+                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_revista').val(null).trigger("change");
+                        $('#d_revista').hide();
+                        $('#id_capitulo_libro').val(null).trigger("change");
+                        $('#d_capitulo_libro').hide();
+                    } else if ($("#id_tipo").val() == 'REVISTA') {
+                        $('#d_revista').show();
+                        $('#id_libro').attr("required", null);
+                        $('#id_revista').attr("required", "true");
+                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_libro').val(null).trigger("change");
+                        $('#d_libro').hide();
+                        $('#id_capitulo_libro').val(null).trigger("change");
+                        $('#d_capitulo_libro').hide();
+                    } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
+                        $('#d_capitulo_libro').show();
+                        $('#id_libro').attr("required", null);
+                        $('#id_revista').attr("required", null);
+                        $('#id_capitulo_libro').attr("required", "true");
+                        $('#id_libro').val(null).trigger("change");
+                        $('#d_libro').hide();
+                        $('#id_revista').val(null).trigger("change");
+                        $('#d_revista').hide();
+                    } else {
+                        $('#d_revista').show();
+                        $('#d_libro').show();
+                        $('#d_capitulo_libro').show();
+                        $('#id_libro').attr("required", null);
+                        $('#id_revista').attr("required", null);
+                        $('#id_capitulo_libro').attr("required", null);
+                    }
                 }
-            }
         );
     </script>
+
 
 {% endblock %}
