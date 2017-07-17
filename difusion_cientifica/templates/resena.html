@@ -165,21 +165,29 @@
         </div>
     </div>
     </p>
+
     <script>
         $('#d_revista_resenada').hide();
+        $('#id_libro_resenado').attr("required", "true");
+
         $("#id_tipo").on('change', function () {
-                if ($("#id_tipo").val() == 'REVISTA') {
-                    $('#d_revista_resenada').show();
-                    $('#d_libro_resenado').hide();
-                    $('#id_libro_resenado').val(null).trigger("change");
-                } else {
-                    $('#d_libro_resenado').show();
-                    $('#d_revista_resenada').hide();
-                    $('#id_revista_resenada').val(null).trigger("change");
+                    if ($("#id_tipo").val() == 'REVISTA') {
+                        $('#d_revista_resenada').show();
+                        $('#id_revista_resenada').attr("required", "true");
+                        $('#d_libro_resenado').hide();
+                        $('#id_libro_resenado').attr("required", null);
+                        $('#id_libro_resenado').val(null).trigger("change");
+                    } else {
+                        $('#d_libro_resenado').show();
+                        $('#id_libro_resenado').attr("required", "true");
+                        $('#d_revista_resenada').hide();
+                        $('#id_revista_resenada').attr("required", null);
+                        $('#id_revista_resenada').val(null).trigger("change");
+                    }
                 }
-            }
         );
     </script>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -347,26 +355,34 @@
         </div>
     </div>
     </p>
+
     <script>
         $('#d_revista_resenada').hide();
         $('#d_libro_resenado').hide();
 
         if ($("#id_tipo").val() == 'REVISTA') {
-             $('#d_revista_resenada').show();
-         } else {
-             $('#d_libro_resenado').show();
+            $('#d_revista_resenada').show();
+            $('#id_revista_resenada').attr("required", "true");
+        } else {
+            $('#d_libro_resenado').show();
+            $('#id_libro_resenado').attr("required", "true");
         }
         $("#id_tipo").on('change', function () {
-                if ($("#id_tipo").val() == 'REVISTA') {
-                    $('#d_revista_resenada').show();
-                    $('#d_libro_resenado').hide();
-                    $('#id_libro_resenado').val(null).trigger("change");
-                } else {
-                    $('#d_libro_resenado').show();
-                    $('#d_revista_resenada').hide();
-                    $('#id_revista_resenada').val(null).trigger("change");
+                    if ($("#id_tipo").val() == 'REVISTA') {
+                        $('#d_revista_resenada').show();
+                        $('#id_revista_resenada').attr("required", "true");
+                        $('#d_libro_resenado').hide();
+                        $('#id_libro_resenado').attr("required", null);
+                        $('#id_libro_resenado').val(null).trigger("change");
+                    } else {
+                        $('#d_libro_resenado').show();
+                        $('#id_libro_resenado').attr("required", "true");
+                        $('#d_revista_resenada').hide();
+                        $('#id_revista_resenada').attr("required", null);
+                        $('#id_revista_resenada').val(null).trigger("change");
+                    }
                 }
-            }
         );
     </script>
+
 {% endblock %}
