@@ -43,7 +43,6 @@ class AsesorEstanciaContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class DireccionTesisContext:
     obj = 'Dirección de Tesis'
     objs = 'Direcciones de Tesis'
@@ -83,7 +82,6 @@ class DireccionTesisContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
 
 
 class ComiteTutoralContext:

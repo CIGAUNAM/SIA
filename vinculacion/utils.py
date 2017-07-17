@@ -11,7 +11,7 @@ class ArbitrajePublicacionAcademicaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Fecha',]}
+                'titulos_tabla': ['Fecha de dictamen', 'Tipo de publicación', 'Publicación']}
 
 
     tabla_mios =  '<script>\n' \
@@ -29,7 +29,9 @@ class ArbitrajePublicacionAcademicaContext:
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.fecha_dictamen + "</a>");\n' \
                                         '}\n' \
-                                    '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.tipo"},\n' \
+                                    '{"data": "fields.publicacion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -195,7 +197,7 @@ class ConvenioEntidadNoAcademicaContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Nombre', 'es_agradecimiento', 'Clasificación', 'Inicio', 'Fin']}
+                'titulos_tabla': ['Nombre', 'Es agradecimiento', 'Clasificación', 'Inicio', 'Fin']}
 
 
     tabla_mios =  '<script>\n' \

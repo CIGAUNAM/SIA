@@ -23,6 +23,19 @@ class ArticuloCientificoJSON(View):
                 articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
                                          fields=('titulo', 'tipo', 'revista', 'status', 'fecha'))
+
+            json = json.replace('ARTICULO', 'Artículo')
+            json = json.replace('ACTA', 'Acta')
+            json = json.replace('CARTA', 'Carta')
+            json = json.replace('RESENA', 'Reseña')
+            json = json.replace('OTRO', 'Otro')
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('ENVIADO', 'Enviado')
+            json = json.replace('ENVIADO', 'Enviado')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -102,6 +115,13 @@ class MapaArbitradoJSON(View):
                 items = MapaArbitrado.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'status', 'editorial', 'fecha'))
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('ENVIADO', 'Enviado')
+            json = json.replace('ENVIADO', 'Enviado')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -184,6 +204,13 @@ class LibroInvestigacionJSON(View):
                 items = LibroInvestigacion.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial', 'ciudad', 'status', 'fecha'))
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('ENVIADO', 'Enviado')
+            json = json.replace('ENVIADO', 'Enviado')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -251,6 +278,19 @@ class ProyectoInvestigacionJSON(View):
                 items = ProyectoInvestigacion.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'status', 'clasificacion', 'modalidad'))
+
+            json = json.replace('NUEVO', 'Nuevo')
+            json = json.replace('EN_PROCESO', 'En proceso')
+            json = json.replace('CONCLUIDO', 'Concluído')
+            json = json.replace('OTRO', 'Otro')
+
+            json = json.replace('BASICO', 'Básico')
+            json = json.replace('APLICADO', 'Aplicado')
+            json = json.replace('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico')
+            json = json.replace('INNOVACION', 'Innovación')
+            json = json.replace('INVESTIGACION_FRONTERA', 'Investigación de frontera')
+            json = json.replace('OTRO', 'Otro')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
