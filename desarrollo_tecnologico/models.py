@@ -13,6 +13,12 @@ class TipoDesarrollo(models.Model):
     def __str__(self):
         return self.nombre
 
+    def natural_key(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('tipo_desarrollo_tecnologico_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Tipo de desarrollo'
@@ -27,6 +33,12 @@ class Licencia(models.Model):
     def __str__(self):
         return self.nombre
 
+    def natural_key(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('licencia_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
 
@@ -34,7 +46,7 @@ class Licencia(models.Model):
 class DesarrolloTecnologico(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     #tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
-    proyectos = models.ManyToManyField(Proyecto, related_name='desarrollo_tecnologico_proyectos', blank=True)
+    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
     descripcion = models.TextField()
     version = models.CharField(max_length=100)
     patente = models.CharField(max_length=255, blank=True)

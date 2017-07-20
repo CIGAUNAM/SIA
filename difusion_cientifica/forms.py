@@ -84,7 +84,7 @@ class PrologoLibroForm(forms.ModelForm):
 
 class ResenaForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True, label='Título de reseña')
-    tipo = forms.ChoiceField(widget=Select3Widget(attrs={'placeholdar': 'probando'}), choices=getattr(settings, 'RESENA__TIPO', ), required=True)
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'RESENA__TIPO', ), required=True)
     libro_resenado = forms.ModelChoiceField(
         required=False,
         queryset=Libro.objects.all(),

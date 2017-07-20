@@ -131,6 +131,17 @@ class OrganizacionEventoAcademicoJSON(View):
             items = OrganizacionEventoAcademico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'responsabilidad', 'ambito'))
+
+            json = json.replace('COORDINADOR', 'Coordinador general')
+            json = json.replace('COMITE', 'Comité organizador')
+            json = json.replace('AYUDANTE', 'Ayudante')
+            json = json.replace('TECNICO', 'Apoyo técnico')
+            json = json.replace('OTRO', 'Otro')
+            json = json.replace('INSTITUCIONAL', 'Institucional')
+            json = json.replace('REGIONAL', 'Regional')
+            json = json.replace('NACIONAL', 'Nacional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -167,6 +178,17 @@ class ParticipacionEventoAcademicoJSON(View):
             items = ParticipacionEventoAcademico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'evento', 'ambito'))
+
+            json = json.replace('COORDINADOR', 'Coordinador general')
+            json = json.replace('COMITE', 'Comité organizador')
+            json = json.replace('AYUDANTE', 'Ayudante')
+            json = json.replace('TECNICO', 'Apoyo técnico')
+            json = json.replace('OTRO', 'Otro')
+            json = json.replace('INSTITUCIONAL', 'Institucional')
+            json = json.replace('REGIONAL', 'Regional')
+            json = json.replace('NACIONAL', 'Nacional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

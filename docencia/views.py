@@ -22,6 +22,12 @@ class CursoDocenciaEscolarizadoJSON(View):
                 items = CursoDocencia.objects.filter(Q(usuarios__id__exact=usuarioid, tipo='ESCOLARIZADO') | Q(usuario=usuarioid, tipo='ESCOLARIZADO'))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
+
+            json = json.replace('LICENCIATURA', 'Licenciatura')
+            json = json.replace('MAESTRIA', 'Maestría')
+            json = json.replace('DOCTORADO', 'Doctorado')
+            json = json.replace('OTRO', 'Otro')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -73,6 +79,12 @@ class CursoDocenciaExtracurricularJSON(View):
                 items = CursoDocencia.objects.filter(Q(usuarios__id__exact=usuarioid, tipo='EXTRACURRICULAR') | Q(usuario=usuarioid, tipo='EXTRACURRICULAR'))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
+
+            json = json.replace('LICENCIATURA', 'Licenciatura')
+            json = json.replace('MAESTRIA', 'Maestría')
+            json = json.replace('DOCTORADO', 'Doctorado')
+            json = json.replace('OTRO', 'Otro')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

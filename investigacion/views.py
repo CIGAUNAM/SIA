@@ -209,7 +209,6 @@ class LibroInvestigacionJSON(View):
             json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ACEPTADO', 'Aceptado')
             json = json.replace('ENVIADO', 'Enviado')
-            json = json.replace('ENVIADO', 'Enviado')
 
             return HttpResponse(json, content_type='application/json')
         except:

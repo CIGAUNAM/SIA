@@ -19,6 +19,13 @@ class DistincionAcademicoJSON(View):
                 items = DistincionAcademico.objects.filter(condecorados=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'dependencia', 'ambito', 'fecha'))
+
+            json = json.replace('INSTITUCIONAL', 'Institucional')
+            json = json.replace('REGIONAL', 'Regional')
+            json = json.replace('NACIONAL', 'Nacional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('OTRO', 'Otro')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -60,6 +67,17 @@ class DistincionAlumnoJSON(View):
                 items = DistincionAlumno.objects.filter(tutores=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'alumno', 'grado_academico', 'dependencia', 'ambito', 'fecha'))
+
+            json = json.replace('INSTITUCIONAL', 'Institucional')
+            json = json.replace('REGIONAL', 'Regional')
+            json = json.replace('NACIONAL', 'Nacional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('OTRO', 'Otro')
+
+            json = json.replace('LICENCIATURA', 'Licenciatura')
+            json = json.replace('MAESTRIA', 'Maestría')
+            json = json.replace('DOCTORADO', 'Doctorado')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

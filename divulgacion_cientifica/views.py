@@ -93,6 +93,17 @@ class OrganizacionEventoDivulgacionJSON(View):
             items = OrganizacionEventoDivulgacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'responsabilidad', 'ambito'))
+
+            json = json.replace('INSTITUCIONAL', 'Institucional')
+            json = json.replace('REGIONAL', 'Regional')
+            json = json.replace('NACIONAL', 'Nacional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('OTRO', 'Otro')
+            json = json.replace('COORDINADOR', 'Coordinador general')
+            json = json.replace('COMITE', 'Comité organizador')
+            json = json.replace('AYUDANTE', 'Ayudante')
+            json = json.replace('TECNICO', 'Apoyo técnico')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -129,6 +140,17 @@ class ParticipacionEventoDivulgacionJSON(View):
             items = ParticipacionEventoDivulgacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'evento', 'ambito'))
+
+            json = json.replace('INSTITUCIONAL', 'Institucional')
+            json = json.replace('REGIONAL', 'Regional')
+            json = json.replace('NACIONAL', 'Nacional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('OTRO', 'Otro')
+            json = json.replace('COORDINADOR', 'Coordinador general')
+            json = json.replace('COMITE', 'Comité organizador')
+            json = json.replace('AYUDANTE', 'Ayudante')
+            json = json.replace('TECNICO', 'Apoyo técnico')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -165,6 +187,12 @@ class ProgramaRadioTelevisionInternetJSON(View):
             items = ProgramaRadioTelevisionInternet.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('tema', 'fecha', 'actividad', 'medio_divulgacion'))
+
+            json = json.replace('PRODUCCION', 'Producciòn')
+            json = json.replace('PARTICIPACION', 'Participaciòn')
+            json = json.replace('ENTREVISTA', 'Entrevista')
+            json = json.replace('OTRA', 'Otra')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
