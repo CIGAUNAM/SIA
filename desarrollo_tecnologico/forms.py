@@ -22,12 +22,20 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
     )
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     fecha = forms.CharField(widget=wDateField, required=True)
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=Proyecto.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            # dependent_fields={'dependencia': 'dependencia'},
+        )
+    )
 
     class Meta:
         model = DesarrolloTecnologico
         exclude = []
         widgets = {
-            'proyectos': Select3MultipleWidget,
             'autores': Select3MultipleWidget,
             # 'agradecimientos': Select3MultipleWidget,
         }

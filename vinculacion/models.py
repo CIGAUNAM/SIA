@@ -143,6 +143,13 @@ class ClasificacionServicio(models.Model):
 
     def __str__(self):
         return self.nombre
+
+    def natural_key(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('clasificacion_servicio_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = 'Clasificación de servicio'
         verbose_name_plural = 'Clasificaciones de servicios'

@@ -36,7 +36,7 @@ class ArticuloCientificoForm(forms.ModelForm):
         )
     )
     volumen = forms.CharField(widget=wCharField, required=False)
-    numero = forms.CharField(widget=wNumberField, required=False, label='Número')
+    numero = forms.CharField(widget=wCharField, required=False, label='Número')
     issn_impreso = forms.CharField(widget=wCharField, required=False, label='ISSN Impreso')
     issn_online = forms.CharField(widget=wCharField, required=False, label='ISSN Impreso')
     pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Número de página donde inicia')

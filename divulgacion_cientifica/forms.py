@@ -27,12 +27,13 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     )
     fecha = forms.CharField(widget=wDateField, required=True, label='Fecha de publicación')
     volumen = forms.CharField(widget=wCharField, required=False)
-    numero = forms.CharField(widget=wNumberField, required=False, label='Número')
+    numero = forms.CharField(widget=wCharField, required=False, label='Número')
     issn = forms.CharField(widget=wCharField, required=False, label='ISSN Impreso')
     pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Número de página final')
     id_doi = forms.CharField(widget=wCharField, required=False, label='ID DOI')
     proyecto = forms.ModelChoiceField(
+        required=False,
         queryset=Proyecto.objects.all(),
         label="Proyecto",
         widget=ModelSelect3Widget(

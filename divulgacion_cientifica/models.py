@@ -26,7 +26,7 @@ class ArticuloDivulgacion(models.Model):
     url = models.URLField(blank=True)
     solo_electronico = models.BooleanField(default=False)
     revista = models.ForeignKey(Revista)
-    fecha = models.DateField(auto_now=False)
+    fecha = models.DateField()
     volumen = models.CharField(max_length=100, blank=True)
     numero = models.CharField(max_length=100, blank=True)
     issn = models.CharField(max_length=30, blank=True)
