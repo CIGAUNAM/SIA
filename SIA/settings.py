@@ -89,6 +89,8 @@ INSTALLED_APPS = [
     #'filer',
     #'easy_thumbnails',
 
+    'sortedm2m',
+
     'table',
     'django_select2',
 ]

@@ -4,6 +4,7 @@ from django.conf import settings
 from autoslug import AutoSlugField
 from django.core.urlresolvers import reverse
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, Revista, Indice, Libro, Editorial, Coleccion
+from sortedm2m.fields import SortedManyToManyField
 
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
 
@@ -22,7 +23,7 @@ class ArticuloCientifico(models.Model):
     issn_online = models.CharField(max_length=40, blank=True, verbose_name='ISSN Online')
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     solo_electronico = models.BooleanField(default=False)
-    usuarios = models.ManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
+    usuarios = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
     nombre_abreviado_wos = models.CharField(max_length=255, blank=True)
