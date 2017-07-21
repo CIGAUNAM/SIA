@@ -9,7 +9,7 @@ from nucleo.models import Proyecto as ProyectoInvestigacion, ProblemaNacionalCon
 from django import forms
 
 from django.conf import settings
-from django_select2.forms import Select2MultipleWidget
+from django_select2.forms import Select2MultipleWidget, Select2TagWidget
 
 from django_select2.forms import Select2Widget, ModelSelect2MultipleWidget
 
