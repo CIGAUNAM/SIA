@@ -150,14 +150,8 @@ class wDateField(DateInput):
                 'value': None,
             }}
 
-
-    #def __init__(self, attrs=None, format=None):
-    #    super(DateTimeBaseInput, self).__init__(attrs)
-    #    self.format = format if format else None
-
     def format_value(self, value):
         return formats.localize_input(value, self.format or formats.get_format(self.format_key)[2])
-
 
     def render(self, name, value, attrs=None):
         if value is None:
@@ -168,12 +162,6 @@ class wDateField(DateInput):
             final_attrs['value'] = force_text(self.format_value(value))
 
         return format_html('<input{} style="padding-left: 18px"; data-provide="datepicker" class="datepicker form-control pull-right"/>', flatatt(final_attrs))
-
-
-
-
-
-
 
 
 class Select3Mixin(Select2Mixin):
@@ -295,6 +283,8 @@ class wOrderedSelect(Select, TextInput):
         # more than once.
         self.choices = list(choices)
 
+
+
     def __deepcopy__(self, memo):
         obj = copy.copy(self)
         obj.attrs = self.attrs.copy()
@@ -328,20 +318,29 @@ class wOrderedSelect(Select, TextInput):
 
     def render_options(self, selected_choices):
         # Normalize to strings.
-        print(selected_choices)
         selected_choices = [force_text(v) for v in selected_choices]
-        print(selected_choices)
-
         output = []
+
+        for i in selected_choices:
+            for option_value, option_label in self.choices:
+                if str(option_value) == i:
+                    if isinstance(option_label, (list, tuple)):
+                        output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                        for option in option_label:
+                            output.append(self.render_option(selected_choices, *option))
+                        output.append('</optgroup>')
+                    else:
+                        output.append(self.render_option(selected_choices, option_value, option_label))
+
         for option_value, option_label in self.choices:
-            if isinstance(option_label, (list, tuple)):
-                output.append(format_html('<optgroup label="{}">', force_text(option_value)))
-                for option in option_label:
-                    output.append(self.render_option(selected_choices, *option))
-                output.append('</optgroup>')
-            else:
-                output.append(self.render_option(selected_choices, option_value, option_label))
-        print(output)
+            if str(option_value) not in selected_choices:
+                if isinstance(option_label, (list, tuple)):
+                    output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                    for option in option_label:
+                        output.append(self.render_option(selected_choices, *option))
+                    output.append('</optgroup>')
+                else:
+                    output.append(self.render_option(selected_choices, option_value, option_label))
         return '\n'.join(output)
 
 
@@ -358,7 +357,6 @@ class wSelectMultiple(wSelect):
         if options:
             output.append(options)
         output.append('</select>')
-        ### print(options)
         return mark_safe('\n'.join(output))
 
     def value_from_datadict(self, data, files, name):
@@ -385,7 +383,6 @@ class wOrderedSelectMultiple(wOrderedSelect):
         if options:
             output.append(options)
         output.append('</select>')
-        ### print(options)
         return mark_safe('\n'.join(output))
 
     def value_from_datadict(self, data, files, name):
