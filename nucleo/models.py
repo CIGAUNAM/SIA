@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from autoslug import AutoSlugField
+from sortedm2m.fields import SortedManyToManyField
 
 
 STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
@@ -182,7 +183,7 @@ class User(AbstractUser):
         return reverse('usuario_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        #ordering = ['first_name', 'last_name']
+        ordering = ['first_name', 'last_name']
         pass
 
 
@@ -741,7 +742,7 @@ class Libro(models.Model):
     #slug = AutoSlugField(populate_from='nombre_libro', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación')))
-    usuarios = models.ManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
+    usuarios = SortedManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='libro_coordinadores', blank=True)
     pais = models.ForeignKey(Pais)

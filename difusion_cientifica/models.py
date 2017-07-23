@@ -4,6 +4,8 @@ from django.conf import settings
 #from autoslug import AutoSlugField
 from nucleo.models import User, Pais, Estado, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
 from django.core.urlresolvers import reverse
+from sortedm2m.fields import SortedManyToManyField
+
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
@@ -21,7 +23,7 @@ class MemoriaInExtenso(models.Model):
     ciudad = models.ForeignKey(Ciudad)
     fecha = models.DateField()
     evento = models.ForeignKey(Evento)
-    usuarios = models.ManyToManyField(User, related_name='memoria_in_extenso_autores_externos', verbose_name='Autores')
+    usuarios = SortedManyToManyField(User, related_name='memoria_in_extenso_autores_externos', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='memoria_in_extenso_editores', blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='memoria_in_extenso_agradecimientos', blank=True)

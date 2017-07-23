@@ -5,6 +5,8 @@ from django.conf import settings
 from autoslug import AutoSlugField
 from nucleo.models import User, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice, MedioDivulgacion
 from django.core.urlresolvers import reverse
+from sortedm2m.fields import SortedManyToManyField
+
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
@@ -20,7 +22,7 @@ class ArticuloDivulgacion(models.Model):
     tipo = models.CharField(max_length=16, choices=(('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     indizado = models.BooleanField(default=False)
-    usuarios = models.ManyToManyField(User, related_name='articulo_divulgracion_autores', verbose_name='Autores')
+    usuarios = SortedManyToManyField(User, related_name='articulo_divulgracion_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_divulgracion_alumnos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='articulo_divulgracion_indices', blank=True)
     url = models.URLField(blank=True)
