@@ -2081,7 +2081,7 @@ for i in Licenciaturas:
         Dependencia.objects.filter(nombre=i[2][0], institucion=Institucion.objects.get(nombre=i[2][1]).id)[0].id
     else:
         dep_id = Dependencia.objects.get(nombre=i[2][0]).id
-    c = Licenciatura(carrera=ProgramaLicenciatura.objects.get(nombre=i[0]), dependencia=Dependencia.objects.get(pk=dep_id), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
+    c = Licenciatura(carrera=ProgramaLicenciatura.objects.get(nombre=i[0]), institucion=Dependencia.objects.get(pk=dep_id).institucion, dependencia=Dependencia.objects.get(pk=dep_id), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     c.save()
     print(c)
 
@@ -2155,7 +2155,7 @@ Maestrias = (
 
 
 for i in Maestrias:
-    m = Maestria(programa=ProgramaMaestria.objects.get(nombre=i[0]), dependencia=Dependencia.objects.get(nombre=i[2]), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
+    m = Maestria(programa=ProgramaMaestria.objects.get(nombre=i[0]), institucion=Dependencia.objects.get(nombre=i[2]).institucion, dependencia=Dependencia.objects.get(nombre=i[2]), titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1), fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     m.save()
     print(m)
 
@@ -2220,7 +2220,7 @@ Doctorados = (
 #                              0                                1                                                                                          2                                            3   4   5    6     7     8     9
 
 for i in Doctorados:
-    m = Doctorado(programa=ProgramaDoctorado.objects.get(nombre=i[0]),
+    m = Doctorado(programa=ProgramaDoctorado.objects.get(nombre=i[0]), institucion=Dependencia.objects.get(nombre=i[1]).institucion,
                   dependencia=Dependencia.objects.get(nombre=i[1]), titulo_tesis=i[2],
                   fecha_inicio=datetime(int(i[3]), int(i[4]), 1), fecha_fin=datetime(int(i[5]), int(i[6]), 28),
                   fecha_grado=datetime(int(i[7]), int(i[8]), 1), usuario=User.objects.get(rfc=i[9]))
@@ -2254,7 +2254,8 @@ postdoctorados = (
 
 for i in postdoctorados:
     p = PostDoctorado(nombre=str(uuid.uuid1()), proyecto=Proyecto.objects.get(nombre='Ningúno'),
-                      area_conocimiento=AreaConocimiento.objects.get(nombre='Otra'), dependencia=Dependencia.objects.get(nombre=i[0]),
+                      area_conocimiento=AreaConocimiento.objects.get(nombre='Otra'),
+                      institucion=Dependencia.objects.get(nombre=i[0]).institucion, dependencia=Dependencia.objects.get(nombre=i[0]),
                       fecha_inicio=datetime(i[1], i[2], 1), fecha_fin=datetime(i[3], i[4], 1),
                       usuario=User.objects.get(rfc=i[5]))
     p.save()
@@ -2589,9 +2590,9 @@ for i in experiencias:
         raise Exception
 
     if int(i[8]) == 0 and int(i[9]) == 0:
-        e = ExperienciaLaboral(dependencia=Dependencia.objects.get(nombre=i[5]), nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 1), usuario=User.objects.get(rfc=i[10]))
+        e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[5]).institucion, dependencia=Dependencia.objects.get(nombre=i[5]), nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 1), usuario=User.objects.get(rfc=i[10]))
     else:
-        e = ExperienciaLaboral(dependencia=Dependencia.objects.get(nombre=i[5]), nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 28), fecha_fin=date(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
+        e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[5]).institucion, dependencia=Dependencia.objects.get(nombre=i[5]), nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1], cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 28), fecha_fin=date(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     e.save()
     print(e)
 
