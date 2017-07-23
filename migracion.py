@@ -8,7 +8,7 @@ django.setup()
 
 from datetime import datetime, date
 from django.db import models
-#from django.contrib.auth.models import AbstractUser
+
 from django.conf import settings
 
 #from autoslug import AutoSlugField
@@ -1434,7 +1434,7 @@ Usuarios = (
     ('usr_st',              'usr_st',       'usr_st',           'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'Aso3U'),
     ('alex',                'alex',         'alex',             'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'rWKXd'),
     ('16ymf',               '16ymf',        '16ymf',            'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', '16ymf1'),
-    ('mario.figueroa',      'Figueroa Cárdenas',    'Mario',    'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', '16ymf'),
+    ('mario.figueroa',      'Mario',        'Figueroa Cárdenas','OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', '16ymf'),
     ('yunsh',               'yunsh',        'yunsh',            'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'yunsh'),
 
     ('berenice.solis',      'Berenice',            'Solis Castillo',       'INVESTIGADOR', Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '6ESlj'),
@@ -1997,7 +1997,7 @@ CursosEspecializacion = (
 )
 
 for i in CursosEspecializacion:
-    c = CursoEspecializacion(nombre=i[0], tipo=i[1], horas=int(i[2]), fecha_inicio=datetime(int(i[4]), int(i[3]), 1), fecha_fin=datetime(int(i[6]), int(i[5]), 28), dependencia=Dependencia.objects.get(nombre=i[8][0]), modalidad='PRESENCIAL', area_conocimiento=AreaConocimiento.objects.get(nombre=i[7]), usuario=User.objects.get(rfc=i[9]))
+    c = CursoEspecializacion(nombre=i[0], tipo=i[1], horas=int(i[2]), fecha_inicio=datetime(int(i[4]), int(i[3]), 1), fecha_fin=datetime(int(i[6]), int(i[5]), 28), institucion=Dependencia.objects.get(nombre=i[8][0]).institucion, dependencia=Dependencia.objects.get(nombre=i[8][0]), modalidad='PRESENCIAL', area_conocimiento=AreaConocimiento.objects.get(nombre=i[7]), usuario=User.objects.get(rfc=i[9]))
     c.save()
     print(c)
 
