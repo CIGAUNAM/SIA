@@ -290,6 +290,20 @@
         </div>
     </div>
     </p>
+
+    <script>
+        //$("#id_usuarios").select2();
+
+        $("#id_usuarios").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -582,4 +596,19 @@
         </div>
     </div>
     </p>
+
+    <script>
+        //$("#id_usuarios").select2();
+
+        $("#id_usuarios").on ("select2:load", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change.select2");
+        });
+    </script>
+
 {% endblock %}
+
