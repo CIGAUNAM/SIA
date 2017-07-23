@@ -56,7 +56,7 @@ class ArticuloCientificoForm(forms.ModelForm):
         model = ArticuloCientifico
         exclude = []
         widgets = {
-            'usuarios': Select3MultipleWidget,
+            'usuarios': Select3MultipleWidgetOrdered,
             'alumnos': Select3MultipleWidget,
             'indices': Select3MultipleWidget,
         }
