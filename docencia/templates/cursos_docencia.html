@@ -245,7 +245,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.academicos_participantes }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de las académicos participantes.">
@@ -269,37 +269,37 @@
 
 
         $("#id_nivel").on('change', function () {
-                    if ($("#id_nivel").val() == 'OTRO') {
-                        $('#id_licenciatura').val(null).trigger("change");
-                        $('#d_licenciatura').hide();
-                        $('#id_maestria').val(null).trigger("change");
-                        $('#d_maestria').hide();
-                        $('#id_doctorado').val(null).trigger("change");
-                        $('#d_doctorado').hide();
-                    } else if ($("#id_nivel").val() == 'LICENCIATURA') {
-                        $('#d_licenciatura').show();
-                        $('#id_maestria').val(null).trigger("change");
-                        $('#d_maestria').hide();
-                        $('#id_doctorado').val(null).trigger("change");
-                        $('#d_doctorado').hide();
-                    } else if ($("#id_nivel").val() == 'MAESTRIA') {
-                        $('#id_licenciatura').val(null).trigger("change");
-                        $('#d_licenciatura').hide();
-                        $('#d_maestria').show();
-                        $('#id_doctorado').val(null).trigger("change");
-                        $('#d_doctorado').hide();
-                    } else if ($("#id_nivel").val() == 'DOCTORADO') {
-                        $('#id_licenciatura').val(null).trigger("change");
-                        $('#d_licenciatura').hide();
-                        $('#id_maestria').val(null).trigger("change");
-                        $('#d_maestria').hide();
-                        $('#d_doctorado').show();
-                    } else {
-                        $('#d_licenciatura').show();
-                        $('#d_maestria').show();
-                        $('#d_doctorado').show();
-                    }
+                if ($("#id_nivel").val() == 'OTRO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'LICENCIATURA') {
+                    $('#d_licenciatura').show();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'MAESTRIA') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#d_maestria').show();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'DOCTORADO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#d_doctorado').show();
+                } else {
+                    $('#d_licenciatura').show();
+                    $('#d_maestria').show();
+                    $('#d_doctorado').show();
                 }
+            }
         );
     </script>
 
@@ -550,7 +550,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.academicos_participantes }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de las académicos participantes.">
@@ -585,37 +585,37 @@
         }
 
         $("#id_nivel").on('change', function () {
-                    if ($("#id_nivel").val() == 'OTRO') {
-                        $('#id_licenciatura').val(null).trigger("change");
-                        $('#d_licenciatura').hide();
-                        $('#id_maestria').val(null).trigger("change");
-                        $('#d_maestria').hide();
-                        $('#id_doctorado').val(null).trigger("change");
-                        $('#d_doctorado').hide();
-                    } else if ($("#id_nivel").val() == 'LICENCIATURA') {
-                        $('#d_licenciatura').show();
-                        $('#id_maestria').val(null).trigger("change");
-                        $('#d_maestria').hide();
-                        $('#id_doctorado').val(null).trigger("change");
-                        $('#d_doctorado').hide();
-                    } else if ($("#id_nivel").val() == 'MAESTRIA') {
-                        $('#id_licenciatura').val(null).trigger("change");
-                        $('#d_licenciatura').hide();
-                        $('#d_maestria').show();
-                        $('#id_doctorado').val(null).trigger("change");
-                        $('#d_doctorado').hide();
-                    } else if ($("#id_nivel").val() == 'DOCTORADO') {
-                        $('#id_licenciatura').val(null).trigger("change");
-                        $('#d_licenciatura').hide();
-                        $('#id_maestria').val(null).trigger("change");
-                        $('#d_maestria').hide();
-                        $('#d_doctorado').show();
-                    } else {
-                        $('#d_licenciatura').show();
-                        $('#d_maestria').show();
-                        $('#d_doctorado').show();
-                    }
+                if ($("#id_nivel").val() == 'OTRO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'LICENCIATURA') {
+                    $('#d_licenciatura').show();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'MAESTRIA') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#d_maestria').show();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'DOCTORADO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#d_doctorado').show();
+                } else {
+                    $('#d_licenciatura').show();
+                    $('#d_maestria').show();
+                    $('#d_doctorado').show();
                 }
+            }
         );
     </script>
 

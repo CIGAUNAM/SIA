@@ -17,9 +17,9 @@ class CursoDocenciaEscolarizadoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = CursoDocencia.objects.filter(tipo='ESCOLARIZADO').exclude(usuarios__id__exact=usuarioid).exclude(usuario=usuarioid)
+                items = CursoDocencia.objects.filter(tipo='ESCOLARIZADO').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
             else:
-                items = CursoDocencia.objects.filter(Q(usuarios__id__exact=usuarioid, tipo='ESCOLARIZADO') | Q(usuario=usuarioid, tipo='ESCOLARIZADO'))
+                items = CursoDocencia.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='ESCOLARIZADO') | Q(usuario=usuarioid, tipo='ESCOLARIZADO'))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
 
@@ -74,9 +74,9 @@ class CursoDocenciaExtracurricularJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = CursoDocencia.objects.filter(tipo='EXTRACURRICULAR').exclude(usuarios__id__exact=usuarioid).exclude(usuario=usuarioid)
+                items = CursoDocencia.objects.filter(tipo='EXTRACURRICULAR').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
             else:
-                items = CursoDocencia.objects.filter(Q(usuarios__id__exact=usuarioid, tipo='EXTRACURRICULAR') | Q(usuario=usuarioid, tipo='EXTRACURRICULAR'))
+                items = CursoDocencia.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='EXTRACURRICULAR') | Q(usuario=usuarioid, tipo='EXTRACURRICULAR'))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
 
@@ -128,7 +128,7 @@ class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
 class CursoDocenciaEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(CursoDocencia, Q(pk=pk, usuarios=request.user) | Q(pk=pk, usuario=request.user))
+            item = get_object_or_404(CursoDocencia, Q(pk=pk, academicos_participantes=request.user) | Q(pk=pk, usuario=request.user))
             item.delete()
             return redirect('../')
         except:
