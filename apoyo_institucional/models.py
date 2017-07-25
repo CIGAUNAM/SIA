@@ -1,6 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
-from numba.ir import Inst
+#from numba.ir import Inst
 
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Departamento, Cargo
 from django.core.urlresolvers import reverse
