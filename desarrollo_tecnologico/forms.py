@@ -21,7 +21,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
         )
     )
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=Proyecto.objects.all(),

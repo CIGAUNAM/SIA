@@ -25,7 +25,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    fecha = forms.CharField(widget=wDateField, required=True, label='Fecha de publicación')
+    fecha = forms.DateField(widget=wDateField, required=True, label='Fecha de publicación')
     volumen = forms.CharField(widget=wCharField, required=False)
     numero = forms.CharField(widget=wCharField, required=False, label='Número')
     issn = forms.CharField(widget=wCharField, required=False, label='ISSN Impreso')
@@ -119,7 +119,7 @@ class ParticipacionEventoDivulgacionForm(forms.ModelForm):
 
 class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
     tema = forms.CharField(widget=wCharField, required=True)
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     actividad = forms.ChoiceField(widget=Select3Widget, choices=(('PRODUCCION', 'Producción'), ('PARTICIPACION', 'Participación'), ('ENTREVISTA', 'Entrevista'), ('OTRA', 'Otra')), required=True)
     medio_divulgacion = forms.ModelChoiceField(
@@ -170,7 +170,7 @@ class LibroDivulgacionForm(forms.ModelForm):
         )
     )
     status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ))
-    fecha = forms.CharField(widget=wDateField)
+    fecha = forms.DateField(widget=wDateField)
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
     coleccion = forms.ModelChoiceField(

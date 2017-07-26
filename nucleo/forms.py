@@ -329,8 +329,8 @@ class EventoForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de fin')
+    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de fin')
 
     class Meta:
         model = Evento
@@ -361,8 +361,8 @@ class DistincionForm(forms.ModelForm):
 class ProyectoForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select3Widget, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
     es_permanente = forms.BooleanField(required=False)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de fin')
+    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de fin')
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PROYECTO'), required=True)
     clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CLASIFICACION_PROYECTO'),
                                       required=True)
@@ -456,7 +456,7 @@ class LibroForm(forms.ModelForm):
         )
     )
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION'))
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
     numero_edicion = forms.CharField(widget=wNumberField, required=True, label='Número de edición')
     numero_paginas = forms.CharField(widget=wNumberField, required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(

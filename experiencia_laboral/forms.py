@@ -43,8 +43,8 @@ class ExperienciaLaboralForm(forms.ModelForm):
         )
     )
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
-    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
+    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de finalización')
 
     class Meta:
         model = ExperienciaLaboral
@@ -71,8 +71,8 @@ class LineaInvestigacionForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
+    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de finalización')
 
     class Meta:
         model = LineaInvestigacion
@@ -82,8 +82,8 @@ class LineaInvestigacionForm(forms.ModelForm):
 class CapacidadPotencialidadForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True, label='Capacidad o Potencialidad')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
-    fecha_inicio = forms.CharField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.CharField(widget=wDateField, required=False, label='Fecha de finalización')
+    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
+    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de finalización')
 
     class Meta:
         model = CapacidadPotencialidad

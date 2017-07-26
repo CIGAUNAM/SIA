@@ -31,8 +31,8 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = CargoAcademicoAdministrativo
@@ -64,8 +64,8 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = RepresentacionOrganoColegiado
@@ -82,8 +82,8 @@ class ComisionAcademicaForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     es_evaluacion = forms.BooleanField(required=False)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
@@ -132,8 +132,8 @@ class ApoyoTecnicoForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = ApoyoTecnico
@@ -165,8 +165,8 @@ class ApoyoOtraActividadForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = ApoyoOtraActividad

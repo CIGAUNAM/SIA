@@ -26,7 +26,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     solo_electronico = forms.BooleanField(required=False)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False, label='Nombre abreviado WOS')
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
-    fecha = forms.CharField(widget=wDateField, required=True, label='Fecha de publicación')
+    fecha = forms.DateField(widget=wDateField, required=True, label='Fecha de publicación')
     revista = forms.ModelChoiceField(
         queryset=Revista.objects.all(),
         label="Revista",
@@ -126,7 +126,7 @@ class MapaArbitradoForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    fecha = forms.CharField(widget=wDateField, required=True, label='fecha de liberación')
+    fecha = forms.DateField(widget=wDateField, required=True, label='fecha de liberación')
     numero_edicion = forms.CharField(widget=wNumberField, required=True, label='Número de edición')
     numero_paginas = forms.CharField(widget=wNumberField, required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(
@@ -163,7 +163,7 @@ class MapaArbitradoForm(forms.ModelForm):
 class InformeTecnicoForm(forms.ModelForm):
     titulo = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
     numero_paginas = forms.CharField(widget=wNumberField, required=True)
     url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
     proyecto = forms.ModelChoiceField(
@@ -218,7 +218,7 @@ class LibroInvestigacionForm(forms.ModelForm):
         )
     )
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    fecha = forms.CharField(widget=wDateField)
+    fecha = forms.DateField(widget=wDateField)
     numero_edicion = forms.CharField(widget=wNumberField)
     numero_paginas = forms.CharField(widget=wNumberField)
     coleccion = forms.ModelChoiceField(
@@ -248,8 +248,8 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     es_permanente = forms.BooleanField(required=False)
-    fecha_inicio = forms.CharField(widget=wDateField)
-    fecha_fin = forms.CharField(widget=wDateField)
+    fecha_inicio = forms.DateField(widget=wDateField)
+    fecha_fin = forms.DateField(widget=wDateField)
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PROYECTO', ))
     clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CLASIFICACION_PROYECTO', ))
     organizacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ORGANIZACION_PROYECTO', ))
