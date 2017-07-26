@@ -1016,6 +1016,11 @@ class UserDetalle(ObjectUpdateMixinNucleo, View):
     aux = UserContext.contexto
     template_name = 'main.html'
 
+    def get(self, request):
+        obj = get_object_or_404(self.model, pk=request.user.id)
+        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+
+
 
 class UserEliminar(View):
     def get(self, request, pk):

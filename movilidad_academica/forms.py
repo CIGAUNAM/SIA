@@ -34,8 +34,8 @@ class MovilidadAcademicaForm(forms.ModelForm):
         )
     )
     actividades = forms.CharField(widget=wTextarea, required=True)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
     intercambio_unam = forms.BooleanField(required=False, label='Es intercambio UNAM')
     financiamiento = forms.ModelChoiceField(
         queryset=Financiamiento.objects.all(),

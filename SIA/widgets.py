@@ -142,7 +142,7 @@ class wDateField(DateInput):
             except:
                 return {'widget': {
                     'name': name,
-                    #'value': None,
+                    'value': None,
                 }}
         else:
             return {'widget': {

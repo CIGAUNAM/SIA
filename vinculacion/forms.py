@@ -32,7 +32,7 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    fecha_dictamen = forms.CharField(widget=wDateField, required=True)
+    fecha_dictamen = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = ArbitrajePublicacionAcademica
@@ -43,7 +43,7 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
 
 
 class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     proyecto = forms.ModelChoiceField(
         queryset=Proyecto.objects.all(),
@@ -77,7 +77,7 @@ class ArbitrajeOtraActividadForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = ArbitrajeOtraActividad
@@ -89,7 +89,7 @@ class RedAcademicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=wTextarea, required=True)
-    fecha_constitucion = forms.CharField(widget=wDateField, required=True)
+    fecha_constitucion = forms.DateField(widget=wDateField, required=True)
     vigente = forms.BooleanField(required=False)
     proyecto = forms.ModelChoiceField(
         queryset=Proyecto.objects.all(),
@@ -115,8 +115,8 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     es_agradecimiento = forms.BooleanField(required=False)
     clasificacion_entidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=wTextarea(attrs={'placeholder': 'Objetivos esperados o logrados con el convenio'}), required=True)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
     es_renovacion = forms.BooleanField(required=False)
     incluye_financiamiento = forms.BooleanField(required=False)
     institucion = forms.ModelChoiceField(
@@ -173,8 +173,8 @@ class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
         )
     )
     clasificacion_entidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
     incluye_financiamiento = forms.BooleanField(required=False)
 
     class Meta:
@@ -184,7 +184,7 @@ class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
 
 class OtroProgramaVinculacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
     tipo = forms.ChoiceField(widget=Select3Widget, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     resultados = forms.CharField(widget=wTextarea, required=False)

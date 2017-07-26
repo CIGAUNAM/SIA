@@ -80,8 +80,8 @@ class AsesorEstanciaForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = AsesorEstancia
@@ -134,7 +134,7 @@ class DireccionTesisForm(forms.ModelForm):
             # dependent_fields={'dependencia': 'dependencia'},
         )
     )
-    fecha_examen = forms.CharField(widget=wDateField, required=True)
+    fecha_examen = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = DireccionTesis
@@ -160,8 +160,8 @@ class ComiteTutoralForm(forms.ModelForm):
         )
     )
     status = forms.ChoiceField(widget=Select3Widget, choices=(('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído')), required=True)
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=False)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=False)
     asesorado = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",
@@ -256,7 +256,7 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_defensa = forms.CharField(widget=wDateField, required=True)
+    fecha_defensa = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = ComiteCandidaturaDoctoral

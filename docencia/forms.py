@@ -62,8 +62,8 @@ class CursoDocenciaForm(forms.ModelForm):
             max_results=500,
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
     total_horas = forms.CharField(widget=wNumberField, required=True)
 
     class Meta:

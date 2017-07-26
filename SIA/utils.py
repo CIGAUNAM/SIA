@@ -94,8 +94,6 @@ class ObjectUpdateMixin:
         try:
             obj.institucion = obj.dependencia.institucion
             obj.institucion_id = obj.dependencia.institucion_id
-            print(obj.institucion)
-            print(obj.institucion_id)
         except:
             pass
 
@@ -127,7 +125,6 @@ class ObjectCreateVarMixin:
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
             new_obj = bound_form.save()
-            print(new_obj)
             return redirect(new_obj)
         else:
             return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
@@ -147,7 +144,6 @@ class ObjectUpdateVarMixin:
         bound_form = self.form_class(request.POST, instance=obj)
         if bound_form.is_valid():
             det_obj = bound_form.save()
-            print(det_obj)
             return redirect(det_obj)
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})

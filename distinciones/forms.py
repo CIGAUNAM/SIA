@@ -33,7 +33,7 @@ class DistincionAcademicoForm(forms.ModelForm):
         )
     )
     ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'DISTINCION__AMBITO', ), required=True)
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = DistincionAcademico
@@ -77,7 +77,7 @@ class DistincionAlumnoForm(forms.ModelForm):
         )
     )
     ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'DISTINCION__AMBITO', ), required=True)
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
 
     class Meta:
         model = DistincionAlumno

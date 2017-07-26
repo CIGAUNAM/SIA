@@ -32,7 +32,7 @@ class MemoriaInExtensoForm(forms.ModelForm):
             dependent_fields={'estado': 'estado'},
         )
     )
-    fecha = forms.CharField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateField, required=True)
     evento = forms.ModelChoiceField(
         queryset=Evento.objects.all(),
         label="Evento",

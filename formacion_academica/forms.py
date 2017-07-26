@@ -25,8 +25,10 @@ class CursoEspecializacionForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=False)
+    #fecha_inicio = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=False)
+    #fecha_fin = forms.CharField(widget=wDateField, required=False)
     institucion = forms.ModelChoiceField(
         required=True,
         queryset=Institucion.objects.all(),
@@ -97,9 +99,9 @@ class LicenciaturaForm(forms.ModelForm):
     titulo_tesis = forms.CharField(widget=wCharField, required=True)
     tesis_doc = forms.FileField(required=False)  # corregir y poner el campo como los demas
     tesis_url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
-    fecha_grado = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    fecha_grado = forms.DateField(widget=wDateField, required=True)
 
 
     class Meta:
@@ -136,9 +138,9 @@ class MaestriaForm(forms.ModelForm):
     titulo_tesis = forms.CharField(widget=wCharField, required=True)
     tesis_doc = forms.FileField(required=False)  # corregir y poner el campo como los demas
     tesis_url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
-    fecha_grado = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=False)
+    fecha_grado = forms.DateField(widget=wDateField, required=False)
 
     class Meta:
         model = Maestria
@@ -174,9 +176,9 @@ class DoctoradoForm(forms.ModelForm):
     titulo_tesis = forms.CharField(widget=wCharField, required=True)
     tesis_doc = forms.FileField(required=False)  # corregir y poner el campo como los demas
     tesis_url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
-    fecha_inicio = forms.CharField(widget=wDateField, required=True)
-    fecha_fin = forms.CharField(widget=wDateField, required=True)
-    fecha_grado = forms.CharField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=False)
+    fecha_grado = forms.DateField(widget=wDateField, required=False)
 
     class Meta:
         model = Doctorado
