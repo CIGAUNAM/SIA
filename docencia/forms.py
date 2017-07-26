@@ -70,6 +70,6 @@ class CursoDocenciaForm(forms.ModelForm):
         model = CursoDocencia
         exclude = ['usuario', 'tipo', ]
         widgets = {
-            'usuarios': Select3MultipleWidget,
+            'academicos_participantes': Select3MultipleWidget,
             'otras_dependencias_participantes': Select3MultipleWidget,
         }
