@@ -172,6 +172,7 @@ class User(AbstractUser):
     pride = models.CharField(max_length=2, choices=(('-', '-'), ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')), default='-')
     ingreso_unam = models.DateField(null=True, blank=True)
     ingreso_entidad = models.DateField(null=True, blank=True)
+    avatar = models.ImageField(upload_to='avatares')
 
     def __str__(self):
         return "{} {} ".format(self.first_name, self.last_name)
@@ -180,7 +181,7 @@ class User(AbstractUser):
         return "{} {} ".format(self.first_name, self.last_name)
 
     def get_absolute_url(self):
-        return reverse('usuario_detalle', kwargs={'pk': self.pk})
+        return reverse('perfil_usuario')
 
     class Meta:
         ordering = ['first_name', 'last_name']
