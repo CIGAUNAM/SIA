@@ -192,6 +192,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_custom'),
 )
 
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
