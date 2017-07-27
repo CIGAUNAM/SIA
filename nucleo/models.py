@@ -134,36 +134,38 @@ class Region(models.Model):
 
 
 class Ubicacion(models.Model):
-    direccion1 = models.CharField('Dirección', max_length=255)
-    direccion2 = models.CharField('Dirección (continuación)', blank=True, max_length=255)
-    #slug = AutoSlugField(populate_from='direccion1', unique=True)
+    direccion = models.CharField('Dirección', max_length=255)
+    direccion_continuacion = models.CharField('Dirección (continuación)', blank=True, max_length=255)
+    #slug = AutoSlugField(populate_from='direccion', unique=True)
     descripcion = models.TextField(blank=True)
     ciudad = models.ForeignKey(Ciudad)
     codigo_postal = models.CharField(max_length=7, blank=True)
     telefono = models.SlugField(max_length=20, blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.direccion1, self.direccion2, self.ciudad)
+        return "{} : {} : {}".format(self.direccion, self.direccion_continuacion, self.ciudad)
 
     def natural_key(self):
-        return (self.direccion1)
+        return (self.direccion)
 
     class Meta:
-        ordering = ['ciudad', 'direccion1']
-        unique_together = ['direccion1', 'direccion2', 'ciudad']
+        ordering = ['ciudad', 'direccion']
+        unique_together = ['direccion', 'direccion_continuacion', 'ciudad']
         verbose_name = 'Ubicación'
         verbose_name_plural = 'Ubicaciones'
 """
 
 
 class User(AbstractUser):
-    descripcion = models.TextField(blank=True)
+    descripcion = models.TextField(blank=True, verbose_name='Semblanza')
     tipo = models.CharField(max_length=30, choices=(('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
-    pais_origen = models.ForeignKey(Pais, default=1)
+    pais_origen = models.ForeignKey(Pais, default=1, verbose_name='País de origen', related_name='user_pais_origen')
     rfc = models.SlugField(max_length=20, blank=True)
-    direccion1 = models.CharField(max_length=255, blank=True)
-    direccion2 = models.CharField(max_length=255, blank=True)
+    direccion = models.CharField(max_length=255, blank=True)
+    direccion_continuacion = models.CharField(max_length=255, blank=True)
+    pais = models.ForeignKey(Pais, default=1, related_name='user_pais')
+    estado = models.ForeignKey(Estado, default=1)
     ciudad = models.ForeignKey(Ciudad, default=1)
     telefono = models.SlugField(max_length=20, blank=True)
     celular = models.SlugField(max_length=20, blank=True)
@@ -172,13 +174,13 @@ class User(AbstractUser):
     pride = models.CharField(max_length=2, choices=(('-', '-'), ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')), default='-')
     ingreso_unam = models.DateField(null=True, blank=True)
     ingreso_entidad = models.DateField(null=True, blank=True)
-    avatar = models.ImageField(upload_to='avatares')
+    avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
 
     def __str__(self):
-        return "{} {} ".format(self.first_name, self.last_name)
+        return "{} {}".format(self.first_name, self.last_name)
 
     def natural_key(self):
-        return "{} {} ".format(self.first_name, self.last_name)
+        return "{} {}".format(self.first_name, self.last_name)
 
     def get_absolute_url(self):
         return reverse('perfil_usuario')

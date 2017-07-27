@@ -533,45 +533,11 @@ class MedioDivulgacionForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
-    """
-    descripcion = forms.CharField(widget=wTextarea, required=False, label='Semblanza')
-    tipo = forms.ChoiceField(widget=Select3Widget, choices=(
-        ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'),
-        ('OTRO', 'Otro')),
-                             required=True)
-    fecha_nacimiento = forms.CharField(widget=wDateField, required=True, label='Fecha de nacimiento')
 
-
-    pais_origen = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="País de origen",
-        widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
-        )
-    )
-
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect3Widget(
-            dependent_fields={'pais_origen': 'pais'},
-            search_fields=['nombre__icontains'],
-        )
-    )
-
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect3Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-        )
-    )
-    """
 
     class Meta:
         model = User
-        exclude = []
+        exclude = ['date_joined', 'is_staff', 'is_active', 'last_login', 'is_superuser', 'groups', 'user_permissions']
         """
         widgets = {
             'first_name': wCharField,

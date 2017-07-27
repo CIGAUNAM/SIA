@@ -39,7 +39,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name', 'tipo', 'fecha_nacimiento', 'pais_origen', 'rfc',
-                  'direccion1', 'direccion2', 'ciudad', 'telefono', 'celular', 'url', 'sni', 'pride', 'ingreso_unam', 'ingreso_entidad',
+                  'direccion', 'direccion_continuacion', 'ciudad', 'telefono', 'celular', 'url', 'sni', 'pride', 'ingreso_unam', 'ingreso_entidad',
                   'cursos_especializacion', 'licenciaturas', 'maestrias', 'doctorados', 'postdoctorados')
         read_only_fields = ('username',)
 
