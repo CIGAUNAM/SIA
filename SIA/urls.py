@@ -44,7 +44,7 @@ urlpatterns = [
 
     url(r'^nucleo/', include('nucleo.urls')),
 
-    url(r'^perfil-usuario/$', UserDetalle.as_view(), name='perfil_usuario'),
+    url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),
 
 
     #url(r'^agregar-institucion/', InstitucionCrear.as_view(), name='agregar_institucion'),

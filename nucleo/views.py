@@ -1010,25 +1010,11 @@ class UserLista(ObjectCreateMixinNucleo, View):
     template_name = 'main.html'
 
 
-class UserDetalle(View):
+class UserDetalle(ObjectUpdateMixinNucleo, View):
     form_class = UserForm
     model = User
     aux = UserContext.contexto
     template_name = 'main.html'
-
-    def get(self, request):
-        obj = get_object_or_404(self.model, pk=request.user.pk)
-        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
-
-    def post(self, request):
-        obj = get_object_or_404(self.model, pk=request.user.pk)
-        bound_form = self.form_class(request.POST, instance=obj)
-        if bound_form.is_valid():
-            #det_obj = bound_form.save(commit=False)
-            det_obj = bound_form.save()
-            return redirect(det_obj)
-        else:
-            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
 
 class UserEliminar(View):
@@ -1041,7 +1027,25 @@ class UserEliminar(View):
             raise Http404
 
 
+class PerfilUsuario(View):
+    form_class = UserForm
+    model = User
+    aux = UserContext.contexto
+    template_name = 'perfil_usuario.html'
 
+    def get(self, request):
+        obj = get_object_or_404(self.model, pk=request.user.pk)
+        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+
+    def post(self, request):
+        obj = get_object_or_404(self.model, pk=request.user.pk)
+        bound_form = self.form_class(request.POST, request.FILES or None, instance=obj)
+        if bound_form.is_valid():
+            #det_obj = bound_form.save(commit=False)
+            det_obj = bound_form.save()
+            return redirect('/perfil-usuario/')
+        else:
+            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
 
 

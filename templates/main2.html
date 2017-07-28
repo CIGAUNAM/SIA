@@ -1,0 +1,197 @@
+{% extends 'ebase.html' %}
+
+{% block content %}
+
+
+    <div class="box box-solid box-primary nav-tabs-custom">
+        <ul class="nav nav-tabs pull-right ui-sortable-handle">
+            {% if active == 'detalle' %}
+                <li><a href="../#lista" data-toggle="tab" aria-expanded="true">{{ aux.tab_lista }}</a></li>
+                <li {% if active == 'detalle' %}class="active"{% endif %}><a href="#detalle" data-toggle="tab"
+                                                                             aria-expanded="true">{{ aux.tab_detalle }}</a>
+                </li>
+                {% if aux.tab_otros %}
+                    <li><a href="../#lista-otros" data-toggle="tab" aria-expanded="true">{{ aux.tab_otros }}</a></li>
+                {% endif %}
+
+            {% else %}
+                <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab"
+                                                                           aria-expanded="true">{{ aux.tab_lista }}</a>
+                </li>
+                <li><a href="#agregar" data-toggle="tab" aria-expanded="true">{{ aux.tab_agregar }}</a></li>
+                {% if aux.tab_otros %}
+                    <li><a href="#lista-otros" data-toggle="tab" aria-expanded="true">{{ aux.tab_otros }}</a></li>
+                {% endif %}
+
+
+            {% endif %}
+            <li class="pull-left header"><i class="fa fa-inbox"></i></li>
+        </ul>
+
+        <div class="tab-content no-padding">
+            <div id="lista" class="tab-pane{% if active == 'lista' %} active{% endif %}">
+                <div class="bg-light-blue-active box-header with-border">
+                    <h3 class="box-title">{{ aux.titulo_lista }}</h3>
+                    <div class="box-tools pull-right">
+                        <!-- Buttons, labels, and many other things can be placed here! -->
+                        <!-- Here is a label for example -->
+                    </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body">
+
+                    {{ aux.tabla_mios|safe }}
+
+                    <table id="tabla_json" class="dataTables_wrapper form-inline dt-bootstrap" style="width: 100%">
+                        <thead>
+                        <tr>
+                            {% for titulo in aux.titulos_tabla %}
+                                <th>
+                                    <nobr>{{ titulo }}</nobr>
+                                </th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div><!-- /.box-body -->
+
+            </div>
+
+
+            {% if active == 'detalle' %}
+
+                <div id="detalle" class="tab-pane active">
+                    <div class="bg-light-blue-active box-header with-border">
+                        <h3 class="box-title">{{ aux.titulo_detalle }}</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Buttons, labels, and many other things can be placed here! -->
+                            <!-- Here is a label for example -->
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+
+                    {# {% if aux.success %}<p>algo aqui</p>{% endif %} #}
+
+                    <div class="box-body">
+                        <div>
+                            <div>
+                                <form action="" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% block form_detalle %}
+                                        {{ form.as_p }}
+                                    {% endblock %}
+                                    <br/>
+                                    <button class="btn btn-success" type="submit">Actualizar {{ aux.objeto }}</button>
+                                    <a class="btn btn-primary" style="color: #fff"
+                                       href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+
+                                    <a class="btn btn-danger" style="float: right; color: #fff" href="#eliminar"
+                                       data-toggle="modal" data-target="#eliminar">Eliminar</a> <span
+                                        style="float: right">&nbsp;</span>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- /.box-body -->
+
+                </div>
+
+
+
+            {% else %}
+
+                <div id="agregar" class="tab-pane{% if active == 'agregar' %} active{% endif %}">
+
+                    <div class="bg-light-blue-active box-header with-border">
+                        <h3 class="box-title">{{ aux.titulo_agregar }}</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Buttons, labels, and many other things can be placed here! -->
+                            <!-- Here is a label for example -->
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+
+                    <div class="box-body">
+                        <div>
+                            <div>
+                                <form action="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% block form_agregar %}
+                                        {{ form.as_p }}
+                                    {% endblock %}
+                                    <br/>
+                                    <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
+                                    <a class="btn btn-primary" style="color: #fff"
+                                       href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- /.box-body -->
+
+                </div>
+
+            {% endif %}
+
+            {% if aux.tab_otros %}
+
+                <div id="lista-otros" class="tab-pane{% if active == 'lista-otros' %} active{% endif %}">
+                    <div class="bg-light-blue-active box-header with-border">
+                        <h3 class="box-title">{{ aux.titulo_lista_otros }}</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Buttons, labels, and many other things can be placed here! -->
+                            <!-- Here is a label for example -->
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+
+                        {{ aux.tabla_otros|safe }}
+
+                        <table id="tabla_json_otros" class="dataTables_wrapper form-inline dt-bootstrap"
+                               style="width: 100%">
+                            <thead>
+                            <tr>
+                                {% for titulo in aux.titulos_tabla %}
+                                    <th>
+                                        <nobr>{{ titulo }}</nobr>
+                                    </th>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div><!-- /.box-body -->
+
+                </div>
+            {% endif %}
+
+
+        </div>
+    </div><!-- /.box -->
+
+    <!-- Modal -->
+    <div id="eliminar" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Eliminar {{ aux.objeto }}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está seguro que desea eliminar este elemento?</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-danger" style="color: #fff" href="eliminar">Eliminar</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {#% include "agregar_institucion.html" %#}
+
+
+
+{% endblock %}
