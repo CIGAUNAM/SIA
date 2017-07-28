@@ -16,7 +16,7 @@ from django.utils.datastructures import MultiValueDict
 
 
 class wCharField(Widget):
-    input_type = None  # Subclasses must define this.
+    input_type = 'text'  # Subclasses must define this.
 
     def format_value(self, value):
         if self.is_localized:
@@ -31,6 +31,11 @@ class wCharField(Widget):
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_text(self.format_value(value))
         return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+
+
+class wPasswordField(wCharField):
+    input_type = 'password'
+
 
 
 class wUrlField(URLInput):
