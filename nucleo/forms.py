@@ -533,12 +533,12 @@ class MedioDivulgacionForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
-
+    pass
 
     class Meta:
         model = User
         exclude = ['date_joined', 'is_staff', 'is_active', 'last_login', 'is_superuser', 'groups', 'user_permissions']
-        """
+
         widgets = {
             'first_name': wCharField,
             'last_name': wCharField,
@@ -548,5 +548,7 @@ class UserForm(forms.ModelForm):
             'telefono': wCharField,
             'celular': wCharField,
 
+            'password': wCharField,
+            'descripcion': wTextarea,
+
         }
-        """

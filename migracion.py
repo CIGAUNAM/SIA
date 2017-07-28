@@ -1427,7 +1427,7 @@ for i in Instituciones:
 
 
 User.objects.create_superuser(username='admin', email='cesar.benjamin@enesmorelia.unam.mx', password='ciga2017',
-                              pais_origen=Pais.objects.get(nombre='México'), ciudad=Ciudad.objects.get(nombre='Morelia'))
+                              pais_origen=Pais.objects.get(nombre='México'), pais=Pais.objects.get(nombre='México'), estado=Estado.objects.get(nombre='Michoacán de Ocampo'), ciudad=Ciudad.objects.get(nombre='Morelia'))
 
 
 Usuarios = (
@@ -1525,7 +1525,9 @@ Usuarios = (
     ('luis.macias',         'José Luis',            'Macías',               'OTRO',         Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Morelia').id, '-', '00041'))
 for i in Usuarios:
     u = User.objects.create_user(username=i[0], first_name=i[1], last_name=i[2], tipo=i[3], pais_origen=Pais(pk=i[4]),
-                                 ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion1=i[0], password=i[7],
+                                 ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion=i[0], password=i[7],
+                                 pais=Pais(pk=i[4]),
+                                 estado=Estado.objects.get(nombre='Michoacán de Ocampo'),
                                  email=i[0] + '@ciga.unam.mx')
     print(u)
 
@@ -1811,7 +1813,9 @@ Usuarios = (
 
 for i in Usuarios:
     u = User.objects.create_user(username=i[0], first_name=i[2], last_name=i[1], tipo=i[3], pais_origen=Pais(pk=i[4]),
-                                 ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion1=i[0], password=i[7],
+                                 ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion=i[0], password=i[7],
+                                 pais=Pais(pk=i[4]),
+                                 estado=Estado.objects.get(nombre='Michoacán de Ocampo'),
                                  email=i[0] + '@ciga.unam.mx')
     print(u)
 
