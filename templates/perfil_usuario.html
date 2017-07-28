@@ -29,16 +29,56 @@
         </div>
     </div>
     </p>
-
+    <p><strong>Nombre(s):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre o nombres como constan en el acta de nacimiento, no debe tener espacios al principio ni al final.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.first_name }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Apellidos:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Apellidos como constan en el acta de nacimiento, no debe tener espacios al principio ni al final.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.last_name }}
+        </div>
+    </div>
+    </p>
     <p><strong>Semblanza: <a href="#" data-toggle="tooltip" data-placement="right"
                              title="Breve semblanza de la trayectorìa propia.">
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Tipo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="left" title="Tipo de artículo.">
+    <p><strong>Correo electrónico:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dirección principal de correo electrónico.">
             <i class="fa fa-question-circle"></i>
         </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.email }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Tipo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tipo de cargo o participación, este campo no se puede modificar, en caso de así requerirlo debe pedirse a un administrador. Los tipos posibles son: Investigador, Administrativo, Técnico, Otro."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -46,6 +86,192 @@
         </div>
     </div>
     </p>
+    <p><strong>Fecha de nacimiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de nacimiento."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_nacimiento }}
+        </div>
+    </div>
+    </p>
+    <p><strong>País de origen:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="País de nacimiento."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais_origen }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del país seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>RFC:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="El RFC (Registro Federal de Contribuyentes) es una clave de identificación única para cada ciudadano mexicano. En caso de tener nacionalidad no mexicana poner la clave respectiva que se use en el país de origen.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.rfc }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Domicilio de residencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Domicilio actual de residencia (calle y número; edificio, si aplica, etc.).">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.direccion }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Domicilio de residencia (continuación):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Domicilio actual de residencia (colonia, localidad, etc).">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.direccion_continuacion }}
+        </div>
+    </div>
+    </p>
+    <p><strong>País de residencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="País de residencia actual."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del país seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Estado de residencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Estado de residencia, al seleccionar un país se muestran solo los estados de ese país."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.estado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del estado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Ciudad de residencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad de residencia, al seleccionar un estado se muestran solo las ciudades de ese estado."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ciudad }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Teléfono fijo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de teléfono fijo.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.telefono }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Teléfono celular (movil):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de teléfono celular o movil.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.celular }}
+        </div>
+    </div>
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
@@ -92,19 +318,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del artículo en el medio que haya sido publicado."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-        </div>
-    </div>
-    </p>
+
     <p><strong>ISSN en revista impresa:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="ISSN asignado a la revista impresa donde está publicado el articulo. En caso de estar publicado en revista impresa."><i
@@ -308,7 +522,8 @@
 
     <script>
         $("#id_username").attr("disabled", "disabled");
-
+        $("#id_tipo").attr("disabled", "disabled");
+        $("#id_tipo").attr("style", "width: 100%;");
 
     </script>
 

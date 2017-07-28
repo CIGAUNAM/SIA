@@ -533,7 +533,36 @@ class MedioDivulgacionForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
-    pass
+    pais_origen = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País de origen",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+        )
+    )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'pais': 'pais'},
+        )
+    )
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect3Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'estado': 'estado'},
+        )
+    )
 
     class Meta:
         model = User
@@ -544,11 +573,15 @@ class UserForm(forms.ModelForm):
             'last_name': wCharField,
             'username': wCharField,
             'email': wEmailField,
-            'rfc': wCharField,
-            'telefono': wCharField,
-            'celular': wCharField,
 
             'password': wPasswordField,
             'descripcion': wTextarea,
-
+            'fecha_nacimiento': wDateField,
+            'rfc': wCharField,
+            'direccion': wCharField,
+            'direccion_continuacion': wCharField,
+            'telefono': wCharField,
+            'celular': wCharField,
         }
+
+
