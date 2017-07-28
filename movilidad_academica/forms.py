@@ -30,7 +30,6 @@ class MovilidadAcademicaForm(forms.ModelForm):
         widget=ModelSelect3Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
         )
     )
     actividades = forms.CharField(widget=wTextarea, required=True)
