@@ -3,7 +3,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 
 from SIA.widgets import *
-
+from django.forms import widgets
 #
 
 
@@ -548,7 +548,7 @@ class UserForm(forms.ModelForm):
             'telefono': wCharField,
             'celular': wCharField,
 
-            'password': wCharField,
+            'password': wPasswordField,
             'descripcion': wTextarea,
 
         }
