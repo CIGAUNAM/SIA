@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 
 from SIA.widgets import *
 from django.forms import widgets
+
 #
 
 
@@ -513,7 +514,8 @@ class AsignaturaForm(forms.ModelForm):
 
 class MedioDivulgacionForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select3Widget,
-                             choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
+                             choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'),
+                                      ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
@@ -583,5 +585,3 @@ class UserForm(forms.ModelForm):
             'telefono': wCharField,
             'celular': wCharField,
         }
-
-
