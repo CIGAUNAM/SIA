@@ -21,13 +21,18 @@ from django.contrib.auth import views as auth_views
 #from nucleo.views import inicio
 from nucleo.views import *
 from django.conf.urls.static import static
-
+from django.conf.urls import url
 
 
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'adminlte/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'adminlte/login.html'}, name='login'),
+
+    #url(r'^password_change/$', auth_views.password_change, name='password_change'),
+    #url(r'^password_change/done/$', auth_views.password_change_done, name='password_change_done'),
+    #url(r'^password_reset/$', auth_views.password_reset, name='password_reset'),
+    #url(r'^password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
 
     url(r'^formacion-academica/', include('formacion_academica.urls')),
     url(r'^experiencia/', include('experiencia_laboral.urls')),
@@ -47,13 +52,11 @@ urlpatterns = [
     url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),
 
 
-    #url(r'^agregar-institucion/', InstitucionCrear.as_view(), name='agregar_institucion'),
-
-
-
 
     url(r'^admin/', admin.site.urls),
     url(r'^$', inicio),
     url(r'^select2/', include('django_select2.urls')),
+
+    url('^', include('django.contrib.auth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

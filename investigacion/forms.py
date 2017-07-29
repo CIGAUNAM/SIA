@@ -25,7 +25,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField(required=False)
     nombre_abreviado_wos = forms.CharField(widget=wCharField, required=False, label='Nombre abreviado WOS')
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
     fecha = forms.DateField(widget=wDateField, required=True, label='Fecha de publicación')
     revista = forms.ModelChoiceField(
         queryset=Revista.objects.all(),
@@ -140,7 +140,7 @@ class MapaArbitradoForm(forms.ModelForm):
     )
     volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
-    url = forms.URLField(widget=wUrlField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=Proyecto.objects.all(),
@@ -165,7 +165,7 @@ class InformeTecnicoForm(forms.ModelForm):
     descripcion = forms.CharField(widget=wTextarea, required=False)
     fecha = forms.DateField(widget=wDateField, required=True)
     numero_paginas = forms.CharField(widget=wNumberField, required=True)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=Proyecto.objects.all(),
@@ -231,7 +231,7 @@ class LibroInvestigacionForm(forms.ModelForm):
     )
     volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
 
     class Meta:
         model = LibroInvestigacion

@@ -93,6 +93,8 @@ class wNumberField(Widget):
         template = loader.get_template(self.template_name).render(context)
         return mark_safe(template)
 
+class wNoNegativeNumberField(wNumberField):
+    template_name = 'widgets/NoNegativeNumberField.html'
 
 class wTextarea1(Widget):
     template_name = 'widgets/Textarea.html'

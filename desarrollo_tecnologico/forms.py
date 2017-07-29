@@ -20,7 +20,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
             # dependent_fields={'dependencia': 'dependencia'},
         )
     )
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
     fecha = forms.DateField(widget=wDateField, required=True)
     proyecto = forms.ModelChoiceField(
         required=False,
@@ -44,7 +44,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
 class LicenciaForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
 
     class Meta:
         model = Licencia

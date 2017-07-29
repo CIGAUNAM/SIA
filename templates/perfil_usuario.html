@@ -15,20 +15,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Password:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Password para acceder al sistema.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.password }}
-        </div>
-    </div>
-    </p>
+
     <p><strong>Nombre(s):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre o nombres como constan en el acta de nacimiento, no debe tener espacios al principio ni al final.">
@@ -78,7 +65,8 @@
     </p>
     <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de cargo o participación, este campo no se puede modificar, en caso de así requerirlo debe pedirse a un administrador. Los tipos posibles son: Investigador, Administrativo, Técnico, Otro."><i class="fa fa-question-circle"></i></a>
+           title="Tipo de cargo o participación, este campo no se puede modificar, en caso de así requerirlo debe pedirse a un administrador. Los tipos posibles son: Investigador, Administrativo, Técnico, Otro."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -187,7 +175,8 @@
     </p>
     <p><strong>Estado de residencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Estado de residencia, al seleccionar un país se muestran solo los estados de ese país."><i class="fa fa-question-circle"></i></a>
+           title="Estado de residencia, al seleccionar un país se muestran solo los estados de ese país."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -209,7 +198,8 @@
     </p>
     <p><strong>Ciudad de residencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ciudad de residencia, al seleccionar un estado se muestran solo las ciudades de ese estado."><i class="fa fa-question-circle"></i></a>
+           title="Ciudad de residencia, al seleccionar un estado se muestran solo las ciudades de ese estado."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -271,265 +261,50 @@
         </div>
     </div>
     </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <p><strong>Revista:</strong>
+    <p><strong>Nivel de SNI:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
+           title="Nivel de SNI, si no se tiene, usar 0.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.sni }}
+        </div>
+    </div>
+    </p>
+    <p><strong>PRIDE:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nivel de PRIDE, si no se cuenta con èl seleccionar -."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.first_name }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la revista seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.pride }}
         </div>
     </div>
     </p>
-    <p><strong>Volumen:</strong>
+    <p><strong>Fecha de ingreso a la UNAM:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número o letra de volumen de la revista (si aplica)."><i
+           title="Fecha en la que se ingresó a la UNAM por primer vez."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+                <i class="fa fa-calendar"></i>
             </div>
-            {{ form.volumen }}
+            {{ form.ingreso_unam }}
         </div>
     </div>
     </p>
-    <p><strong>Número:</strong>
+    <p><strong>Fecha de adscripción a la Entidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de la revista.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.numero }}
-        </div>
-    </div>
-    </p>
-
-    <p><strong>ISSN en revista impresa:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISSN asignado a la revista impresa donde está publicado el articulo. En caso de estar publicado en revista impresa."><i
+           title="Fecha en la que se ingresó a la entidad."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+                <i class="fa fa-calendar"></i>
             </div>
-            {{ form.issn_impreso }}
-        </div>
-    </div>
-    </p>
-    <p><strong>ISSN en revista digital o en línea:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISSN asignado a la revista en línea donde está publicado el articulo. En caso de estar publicado en línea."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.issn_online }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Status:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.status }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Solo electronico: </strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
-        {{ form.solo_electronico }}</p>
-    <p><strong>Autores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Alumnos participantes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Alumnos particimantes en el artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.alumnos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los alumnos participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un alumno nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Índices que lo registran:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Nombre abreviado en Web of Science (WOS):</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre abreviado en Web of Science (WOS).">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.nombre_abreviado_wos }}
-        </div>
-    </div>
-    </p>
-    <p><strong>URL de link al artículo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="URL de link al artículo, en caso de estan publicado en algún lugar en internet."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-link"></i>
-            </div>
-            {{ form.url }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Número de página inicial:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="En la revista donde está publicado, en cuál número de pàgina inicia el artìculo.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_inicio }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Número de página final:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="En la revista donde está publicado, en cuál número de pàgina termina el artìculo.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_fin }}
-        </div>
-    </div>
-    </p>
-    <p><strong>ID DOI:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ID DOI.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.id_doi }}
-        </div>
-    </div>
-    </p>
-    <p><strong>ID WOS:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ID WOS.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.id_wos }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Proyecto:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto relacionados con este articulo, puede ser uno o varios, si no hay un articulo relacionado con el artículo, seleccionar 'Ninguno'.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyecto }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del proyecto seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.ingreso_entidad }}
         </div>
     </div>
     </p>
