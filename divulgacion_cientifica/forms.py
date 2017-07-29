@@ -16,7 +16,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
                              required=True)
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     indizado = forms.BooleanField(required=False)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
     solo_electronico = forms.BooleanField(required=False)
     revista = forms.ModelChoiceField(
         queryset=Revista.objects.all(),
@@ -183,7 +183,7 @@ class LibroDivulgacionForm(forms.ModelForm):
     )
     volumen = forms.CharField(widget=wCharField, required=False)
     isbn = forms.CharField(widget=wCharField, required=False)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
 
     class Meta:
         model = LibroDivulgacion

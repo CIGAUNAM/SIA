@@ -43,7 +43,7 @@ class MemoriaInExtensoForm(forms.ModelForm):
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
     issn = forms.CharField(widget=wCharField, required=False)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=Proyecto.objects.all(),
@@ -75,7 +75,7 @@ class PrologoLibroForm(forms.ModelForm):
     )
     pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Páginal inicial')
     pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Páginal final')
-    url = forms.CharField(widget=wCharField, required=False, label='URL')  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
 
     class Meta:
         model = PrologoLibro
@@ -120,7 +120,7 @@ class ResenaForm(forms.ModelForm):
     )
     pagina_inicio = forms.CharField(widget=wNumberField, required=True)
     pagina_fin = forms.CharField(widget=wNumberField, required=True)
-    url = forms.CharField(widget=wCharField, required=False)  # corregir valiadr url
+    url = forms.URLField(widget=wUrlField, required=False)
 
     def __init__(self, *args, **kwargs):
         super(ResenaForm, self).__init__(*args, **kwargs)

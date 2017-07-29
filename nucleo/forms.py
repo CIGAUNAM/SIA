@@ -479,7 +479,7 @@ class LibroForm(forms.ModelForm):
             'coordinadores': Select3MultipleWidget,
             'volumen': wCharField,
             'isbn': wCharField,
-            'url': wCharField,
+            'url': wUrlField,
         }
 
 
@@ -498,7 +498,7 @@ class RevistaForm(forms.ModelForm):
         widgets = {
             'nombre': wCharField,
             'descripcion': wTextarea,
-            'url': wCharField,
+            'url': wUrlField,
         }
 
 
@@ -584,4 +584,9 @@ class UserForm(forms.ModelForm):
             'direccion_continuacion': wCharField,
             'telefono': wCharField,
             'celular': wCharField,
+            'sni': wNoNegativeNumberField,
+            'url': wUrlField,
+            'pride': wCharField,
+            'ingreso_unam': wDateField,
+            'ingreso_entidad': wDateField,
         }

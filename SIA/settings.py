@@ -17,7 +17,6 @@ DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -29,26 +28,47 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.203', '10.1.11.2', '201.144.41.229']
 
-STATUS_PUBLICACION = (('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'), ('OTRO', 'Otro'))
+STATUS_PUBLICACION = (
+('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'),
+('OTRO', 'Otro'))
 STATUS_PROYECTO = (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro'))
-CLASIFICACION_PROYECTO = (('BASICO', 'Básico'), ('APLICADO', 'Aplicado'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'), ('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'), ('OTRA', 'Otra'))
+CLASIFICACION_PROYECTO = (
+('BASICO', 'Básico'), ('APLICADO', 'Aplicado'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'),
+('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'), ('OTRA', 'Otra'))
 ORGANIZACION_PROYECTO = (('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo'))
-MODALIDAD_PROYECTO = (('DISCIPLINARIO', 'Disciplinario'), ('MULTIDISCIPLINARIO', 'Multidisciplinario'), ('INTERDISCIPLINARIO', 'Interisciplinario'), ('TRANSDISCIPLINARIO', 'Transdisciplinario'), ('OTRA', 'Otra'))
-FINANCIAMIENTO_UNAM = (('ASIGNADO', 'Presupuesto asignado a la entidad'), ('CONCURSADO', 'Presupuesto concursado por la entidad'), ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'), ('OTRO', 'Otro'))
-FINANCIAMIENTO_EXTERNO = (('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'))
+MODALIDAD_PROYECTO = (('DISCIPLINARIO', 'Disciplinario'), ('MULTIDISCIPLINARIO', 'Multidisciplinario'),
+                      ('INTERDISCIPLINARIO', 'Interisciplinario'), ('TRANSDISCIPLINARIO', 'Transdisciplinario'),
+                      ('OTRA', 'Otra'))
+FINANCIAMIENTO_UNAM = (
+('ASIGNADO', 'Presupuesto asignado a la entidad'), ('CONCURSADO', 'Presupuesto concursado por la entidad'),
+('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'), ('OTRO', 'Otro'))
+FINANCIAMIENTO_EXTERNO = (
+('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'),
+('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'))
 FINANCIAMIENTO_TIPO = (('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO))
-CURSO_ESPECIALIZACION_TIPO = (('CURSO', 'Curso'), ('DIPLOMADO', 'Diplomado'), ('CERTIFICACION', 'Certificación'), ('OTRO', 'Otro'))
-CURSO_ESPECIALIZACION_MODALIDAD = (('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro'))
+CURSO_ESPECIALIZACION_TIPO = (
+('CURSO', 'Curso'), ('DIPLOMADO', 'Diplomado'), ('CERTIFICACION', 'Certificación'), ('OTRO', 'Otro'))
+CURSO_ESPECIALIZACION_MODALIDAD = (
+('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro'))
 CARGO__TIPO_CARGO = (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'))
-EVENTO__AMBITO = (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
-EVENTO__RESPONSABILIDAD = (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro'))
-RED_ACADEMICA__CLASIFICACION = (('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
-ENTIDAD_NO_ACADEMICA__CLASIFICACION = (('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('PRIVADO', 'Sector privado'), ('NO_LUCRATIVO', 'Sector privado no lucrativo'), ('EXTRANJERO', 'Extranjero'), ('OTRO', 'Otro'))
-DISTINCION__AMBITO = (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
-GRADO_ACADEMICO = (('OTRO', 'Otro'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
+EVENTO__AMBITO = (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'),
+                  ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
+EVENTO__RESPONSABILIDAD = (
+('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'),
+('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro'))
+RED_ACADEMICA__CLASIFICACION = (
+('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'),
+('OTRO', 'Otro'))
+ENTIDAD_NO_ACADEMICA__CLASIFICACION = (
+('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('PRIVADO', 'Sector privado'),
+('NO_LUCRATIVO', 'Sector privado no lucrativo'), ('EXTRANJERO', 'Extranjero'), ('OTRO', 'Otro'))
+DISTINCION__AMBITO = (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'),
+                      ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
+GRADO_ACADEMICO = (
+('OTRO', 'Otro'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 RESENA__TIPO = (('LIBRO', 'Libro'), ('REVISTA', 'Revista'))
-ARBITRAJE_ACADEMCICA__TIPO = (('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación'))
-
+ARBITRAJE_ACADEMCICA__TIPO = (
+('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación'))
 
 # Application definition
 
@@ -59,7 +79,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 
     'nucleo.apps.NucleoConfig',
     'formacion_academica.apps.FormacionAcademicaConfig',
@@ -81,18 +100,21 @@ INSTALLED_APPS = [
     'django_adminlte_theme',
     'django.contrib.admin',
 
+    # 'templates',
 
-    #'templates',
-
-    #'sekizai',
-    #'treebeard',
-    #'filer',
-    #'easy_thumbnails',
+    # 'sekizai',
+    # 'treebeard',
+    # 'filer',
+    # 'easy_thumbnails',
 
     'sortedm2m',
 
     'table',
     'django_select2',
+]
+
+TEMPLATE_CONTEXT_PROCESSORS = [
+    'django.core.context_processors.request',
 ]
 
 AUTH_USER_MODEL = 'nucleo.User'
@@ -128,7 +150,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'SIA.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -143,8 +164,6 @@ DATABASES = {
         'USER': 'root'
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -164,7 +183,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -178,7 +196,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
@@ -187,12 +204,9 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_custom'),
 )
-
-
 
 TEMPLATES = [
     {
@@ -206,15 +220,15 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'django.core.context_processors.request',
+                # 'django.core.context_processors.request',
             ],
         },
     },
 ]
 
-#TEMPLATE_DIRS = (
+# TEMPLATE_DIRS = (
 #    os.path.join(BASE_DIR, 'templates'),
-#)
+# )
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
@@ -233,7 +247,6 @@ import logging.config
 if DEBUG:
     # will output to your console
     logging.basicConfig(
-        level = logging.DEBUG,
-        format = '%(asctime)s %(levelname)s %(message)s',
+        level=logging.DEBUG,
+        format='%(asctime)s %(levelname)s %(message)s',
     )
-
