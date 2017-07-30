@@ -97,8 +97,9 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'django_adminlte',
-    'django_adminlte_theme',
     'django.contrib.admin',
+    'django_adminlte_theme',
+
 
     # 'templates',
 
