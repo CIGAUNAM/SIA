@@ -2,6 +2,13 @@
 
 {% block content %}
 
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
     <div class="box box-solid box-primary nav-tabs-custom">
         <ul class="nav nav-tabs pull-right ui-sortable-handle">
@@ -82,12 +89,32 @@
                                     {% endblock %}
                                     <br/>
                                     <button class="btn btn-success" type="submit">Actualizar {{ aux.objeto }}</button>
+
                                     <a class="btn btn-primary" style="color: #fff"
                                        href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
 
                                     <a class="btn btn-danger" style="float: right; color: #fff" href="#eliminar"
                                        data-toggle="modal" data-target="#eliminar">Eliminar</a> <span
                                         style="float: right">&nbsp;</span>
+
+                                    <!-- <div class="submit-row">
+                                        { % if show_delete_link % }
+                                            <p class="deletelink-box"><a href="./eliminar/%}" class="deletelink">"Eliminar"</a>
+                                            </p>
+                                        { % endif % }
+                                        <input type="submit" value="Guardar" name="_save"/>
+                                        <input type="submit" value="Guardar y agregar otro" name="_addanother"/>
+                                        <input type="submit" value="Guardar y continuar editando" name="_continue"/>
+                                        <a class="btn btn-primary"
+                                           style="background: #337ab7; padding: 10px 15px; border: none; border-radius: 4px; color: #fff"
+                                           href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                        <a class="btn btn-danger"
+                                           style="padding: 10px 15px; border: none; border-radius: 4px; float: right; color: #fff"
+                                           href="#eliminar"
+                                           data-toggle="modal" data-target="#eliminar">Eliminar</a> <span
+                                            style="float: right">&nbsp;</span>
+                                    </div> -->
+
                                 </form>
                             </div>
                         </div>
@@ -121,6 +148,21 @@
                                     <button class="btn btn-success" type="submit">Agregar {{ aux.objeto }}</button>
                                     <a class="btn btn-primary" style="color: #fff"
                                        href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+
+                                    <!-- <div class="submit-row">
+                                        { % if show_delete_link % }
+                                            <p class="deletelink-box"><a href="./eliminar/%}" class="deletelink">"Eliminar"</a>
+                                            </p>
+                                        { % endif % }
+                                        <input type="submit" value="Guardar" name="_save"/>
+                                        <input type="submit" value="Guardar y agregar otro" name="_addanother"/>
+                                        <input type="submit" value="Guardar y continuar editando" name="_continue"/>
+                                        <a class="btn btn-primary"
+                                           style="background: #79aec8; padding: 10px 15px; border: none; border-radius: 4px; color: #fff"
+                                           href="/{{ aux.url_categoria }}/{{ aux.url_seccion }}">Cancelar</a>
+                                    </div> -->
+
+
                                 </form>
                             </div>
                         </div>
@@ -167,6 +209,10 @@
         </div>
     </div><!-- /.box -->
 
+
+
+
+
     <!-- Modal -->
     <div id="eliminar" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
@@ -190,8 +236,13 @@
         </div>
     </div>
 
-    {#% include "agregar_institucion.html" %#}
-
-
-
 {% endblock %}
+
+<script type="text/javascript"
+        id="django-admin-form-add-constants"
+        src="/static/admin/js/change_form.js"
+        {% if adminform and add %}
+        data-model-name="{{ opts.model_name }}"
+        {% endif %}>
+</script>
+
