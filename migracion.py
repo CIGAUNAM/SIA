@@ -2908,3 +2908,5 @@ t.save()
 e = Evento(nombre='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 10, 10), tipo=TipoEvento.objects.get(nombre='Otro'))
 e.save()
 l = Libro(nombre='Otro', )
+
+
