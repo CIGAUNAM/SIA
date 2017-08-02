@@ -33,6 +33,7 @@ class CursoEspecializacionJSON(View):
             raise Http404
 
 
+
 class CursoEspecializacionLista(ObjectCreateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion
@@ -44,6 +45,9 @@ class CursoEspecializacionDetalle(ObjectUpdateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion
     aux = CursoEspecializacionContext.contexto
+    success_message = 'Creado jeje'
+    success_url = '/success/'
+
     template_name = 'cursos_especializacion.html'
 
 

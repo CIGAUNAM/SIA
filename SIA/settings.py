@@ -109,15 +109,14 @@ INSTALLED_APPS = [
     # 'easy_thumbnails',
 
     'sortedm2m',
+    #'django_addanother',
 
     'table',
     'django_select2',
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = [
-    'django.core.context_processors.request',
-]
-
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+MESSAGE_LEVEL = 'DEBUG'
 AUTH_USER_MODEL = 'nucleo.User'
 
 MIDDLEWARE = [
