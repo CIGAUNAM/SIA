@@ -13,6 +13,7 @@ from django.conf import settings
 from itertools import chain
 from django_select2.forms import Select2Mixin, ModelSelect2Widget, ModelSelect2Mixin, HeavySelect2Widget, HeavySelect2Mixin
 from django.utils.datastructures import MultiValueDict
+from django.utils.translation import get_language
 
 
 class wCharField(Widget):
@@ -26,12 +27,18 @@ class wCharField(Widget):
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        final_attrs = self.build_attrs(attrs)
         if value != '':
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_text(self.format_value(value))
         return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
 
+
+"""
+class wCharField(TextInput):
+    input_type = 'text'
+    template_name = 'django/forms/widgets/text.html'
+"""
 
 class wPasswordField(wCharField):
     input_type = 'password'
@@ -49,11 +56,12 @@ class wUrlField(URLInput):
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        final_attrs = self.build_attrs(attrs, type=self.input_type)
         if value != '':
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_text(self.format_value(value))
         return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+
 
 
 class wEmailField(EmailInput):
@@ -67,7 +75,7 @@ class wEmailField(EmailInput):
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        final_attrs = self.build_attrs(attrs, type=self.input_type)
         if value != '':
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_text(self.format_value(value))
@@ -123,9 +131,8 @@ class wTextarea(Textarea):
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(attrs)
         return format_html('<div class="form-group" style="margin-top: -10px;"><textarea class="form-control" rows="3" {}>\r\n{}</textarea></div>', flatatt(final_attrs), force_text(value))
-
 
 
 
@@ -163,7 +170,7 @@ class wDateField(DateInput):
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        final_attrs = self.build_attrs(attrs, type=self.input_type)
         if value != '':
             # Only add the 'value' attribute if a value is non-empty.
             final_attrs['value'] = force_text(self.format_value(value))
@@ -215,8 +222,14 @@ class Select3Mixin(Select2Mixin):
         .. Note:: For more information visit
             https://docs.djangoproject.com/en/1.8/topics/forms/media/#media-as-a-dynamic-property
         """
+        try:
+            # get_language() will always return a lower case language code, where some files are named upper case.
+            i = [x.lower() for x in settings.SELECT2_I18N_AVAILABLE_LANGUAGES].index(get_language())
+            i18n_file = ('%s/%s.js' % (settings.SELECT2_I18N_PATH, settings.SELECT2_I18N_AVAILABLE_LANGUAGES[i]), )
+        except ValueError:
+            i18n_file = ()
         return forms.Media(
-            js=(settings.SELECT2_JS, 'django_select2/django_select2.js'),
+            js=(settings.SELECT2_JS,) + i18n_file + ('django_select2/django_select2.js',),
             css={'screen': (settings.SELECT2_CSS,)}
         )
 
@@ -243,7 +256,7 @@ class wSelect(Select, TextInput):
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(attrs)
         output = [format_html('<select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
         options = self.render_options([value])
         if options:
@@ -280,6 +293,7 @@ class wSelect(Select, TextInput):
         return '\n'.join(output)
 
 
+
 class wOrderedSelect(Select, TextInput):
     allow_multiple_selected = False
 
@@ -302,7 +316,7 @@ class wOrderedSelect(Select, TextInput):
     def render(self, name, value, attrs=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(attrs)
         output = [format_html('<select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
         options = self.render_options([value])
         if options:
@@ -357,7 +371,7 @@ class wSelectMultiple(wSelect):
     def render(self, name, value, attrs=None):
         if value is None:
             value = []
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(attrs)
         output = [format_html('<select style="width: 100%; line-height: 22px;" multiple="multiple"{}>', flatatt(final_attrs))]
         options = self.render_options(value)
 
@@ -383,7 +397,7 @@ class wOrderedSelectMultiple(wOrderedSelect):
     def render(self, name, value, attrs=None):
         if value is None:
             value = []
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(attrs)
         output = [format_html('<select style="width: 100%; line-height: 22px;" multiple="multiple"{}>', flatatt(final_attrs))]
         options = self.render_options(value)
 
@@ -470,9 +484,9 @@ class HeavySelect3Widget(HeavySelect2Mixin, Select3Widget):
 
 
 class ModelSelect3Widget(ModelSelect2Mixin, HeavySelect3Widget):
-    search_fields = [
-        'nombre__icontains',
-    ]
+    #search_fields = [
+    #    'nombre__icontains',
+    #]
     """
     Select2 drop in model select widget.
 

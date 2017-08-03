@@ -11,7 +11,7 @@ class NombreModelSelect3Widget(ModelSelect3Widget):
         'nombre__icontains',
     ]
 
-
+"""
 class CursoEspecializacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wCharField, required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
@@ -62,8 +62,49 @@ class CursoEspecializacionForm(forms.ModelForm):
             "tipo": 'Group to which this message belongs to',
             "area_conocimiento": 'Group to which this message belongs to',
         }
+"""
 
+class CursoEspecializacionForm(forms.ModelForm):
+    nombre = forms.CharField(widget=wCharField, required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
+    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
+    tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
+    horas = forms.CharField(widget=wNumberField, required=True, label='Número de horas')
+    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
+    area_conocimiento = forms.ChoiceField(
+        #queryset=AreaConocimiento.objects.all(),
+        label="Área de conocimiento",
+        widget=ModelSelect3Widget(
+            model='AreaConocimiento',
+            queryset=AreaConocimiento.objects.all(),
+            search_fields=['nombre__icontains'],
+        )
+    )
+    fecha_inicio = forms.DateField(required=True)
+    fecha_fin = forms.DateField(required=False)
+    institucion = forms.ModelChoiceField(
+        required=True,
+        queryset=Institucion.objects.all(),
+        label="Institución",
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+    )
 
+    class Meta:
+        model = CursoEspecializacion
+        exclude = ['usuario', ]
+        widgets = {
+            #'nombre': wCharField,
+            #'dependencia': NombreModelSelect3Widget,
+            'area_conocimiento': ModelSelect3Widget(model='AreaConocimiento', search_fields=['nombre__icontains']),
+        }
+        help_texts = {
+            "nombre": 'Group to which this message belongs to',
+            "descripcion": 'Group to which this message belongs to',
+            "tipo": 'Group to which this message belongs to',
+            "area_conocimiento": 'Group to which this message belongs to',
+        }
 
 
 
