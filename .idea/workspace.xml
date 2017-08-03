@@ -1,0 +1,1502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="link para usuarios">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SIA.iml" afterPath="$PROJECT_DIR$/.idea/SIA.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/widgets.py" afterPath="$PROJECT_DIR$/SIA/widgets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_academica/forms.py" afterPath="$PROJECT_DIR$/formacion_academica/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_academica/views.py" afterPath="$PROJECT_DIR$/formacion_academica/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sky.html" afterPath="$PROJECT_DIR$/sky.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/admin-lte/dist/js/app.js" afterPath="$PROJECT_DIR$/static/admin-lte/dist/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/admin-lte/dist/js/app.min.js" afterPath="$PROJECT_DIR$/static/admin-lte/dist/js/app.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/admin-lte/dist/js/demo.js" afterPath="$PROJECT_DIR$/static/admin-lte/dist/js/demo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/admin-lte/dist/js/pages/dashboard.js" afterPath="$PROJECT_DIR$/static/admin-lte/dist/js/pages/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/admin-lte/dist/js/pages/dashboard2.js" afterPath="$PROJECT_DIR$/static/admin-lte/dist/js/pages/dashboard2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/static/bootstrap/dist/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/static/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/static/bootstrap/dist/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/static/bootstrap/dist/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bootstrap/dist/js/npm.js" afterPath="$PROJECT_DIR$/static/bootstrap/dist/js/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/conflicts/conflicts.css" afterPath="$PROJECT_DIR$/static/conflicts/conflicts.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.css.map" afterPath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/icheck.js" afterPath="$PROJECT_DIR$/static/icheck/icheck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/icheck.min.js" afterPath="$PROJECT_DIR$/static/icheck/icheck.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/all.css" afterPath="$PROJECT_DIR$/static/icheck/skins/all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/_all.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/aero.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/blue.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/flat.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/flat.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/green.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/grey.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/orange.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/pink.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/purple.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/red.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/flat/yellow.css" afterPath="$PROJECT_DIR$/static/icheck/skins/flat/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/futurico/futurico.css" afterPath="$PROJECT_DIR$/static/icheck/skins/futurico/futurico.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/_all.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/aero.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/blue.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/green.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/grey.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/line.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/line.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/orange.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/pink.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/purple.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/red.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/line/yellow.css" afterPath="$PROJECT_DIR$/static/icheck/skins/line/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/_all.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/aero.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/blue.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/green.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/grey.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/minimal.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/minimal.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/orange.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/pink.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/purple.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/red.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/minimal/yellow.css" afterPath="$PROJECT_DIR$/static/icheck/skins/minimal/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/polaris/polaris.css" afterPath="$PROJECT_DIR$/static/icheck/skins/polaris/polaris.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/_all.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/aero.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/blue.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/green.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/grey.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/orange.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/pink.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/purple.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/red.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/square.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/square.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/icheck/skins/square/yellow.css" afterPath="$PROJECT_DIR$/static/icheck/skins/square/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jquery/dist/jquery.js" afterPath="$PROJECT_DIR$/static/jquery/dist/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/jquery/dist/jquery.min.js" afterPath="$PROJECT_DIR$/static/jquery/dist/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/css/bootstrap-tweaks.css" afterPath="$PROJECT_DIR$/static/rest_framework/css/bootstrap-tweaks.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/static/rest_framework/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/css/default.css" afterPath="$PROJECT_DIR$/static/rest_framework/css/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/css/prettify.css" afterPath="$PROJECT_DIR$/static/rest_framework/css/prettify.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/js/ajax-form.js" afterPath="$PROJECT_DIR$/static/rest_framework/js/ajax-form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/static/rest_framework/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/js/csrf.js" afterPath="$PROJECT_DIR$/static/rest_framework/js/csrf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/js/default.js" afterPath="$PROJECT_DIR$/static/rest_framework/js/default.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/js/jquery-1.12.4.min.js" afterPath="$PROJECT_DIR$/static/rest_framework/js/jquery-1.12.4.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/rest_framework/js/prettify-min.js" afterPath="$PROJECT_DIR$/static/rest_framework/js/prettify-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/table/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/static/table/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/table/js/bootstrap.dataTables.js" afterPath="$PROJECT_DIR$/static/table/js/bootstrap.dataTables.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/table/js/dataTables.fixedColumns.min.js" afterPath="$PROJECT_DIR$/static/table/js/dataTables.fixedColumns.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/table/js/jquery.dataTables.min.js" afterPath="$PROJECT_DIR$/static/table/js/jquery.dataTables.min.js" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SIA$migracion.coverage" NAME="migracion Coverage Results" MODIFIED="1495643746032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SIA$utils.coverage" NAME="utils Coverage Results" MODIFIED="1490318215608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/formacion_academica" />
+    <SUITE FILE_PATH="coverage/SIA$vp1.coverage" NAME="vp1 Coverage Results" MODIFIED="1498614052885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SIA" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="widgets.py" pinned="false" current-in-tab="true">
+        <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>avatar_url</find>
+      <find>frida</find>
+      <find>UserDe</find>
+      <find>User</find>
+      <find>tipo</find>
+      <find>pais</find>
+      <find>dependen</find>
+      <find>url</find>
+      <find>row</find>
+      <find>form</find>
+      <find>form_ag</find>
+      <find>submi</find>
+      <find>submit_</find>
+      <find>static</find>
+      <find>TEMPLATE_CONTEXT_PROCESSORS</find>
+      <find>django.contrib.messages</find>
+      <find>MESSAGE_STORAGE</find>
+      <find>MESSAGE_LEVEL</find>
+      <find>success</find>
+      <find>libro</find>
+      <find>char</find>
+      <find>-hd</find>
+      <find>name</find>
+      <find>build_at</find>
+      <find>name=na</find>
+      <find>render</find>
+      <find>Select2</find>
+      <find>get_lang</find>
+      <find>TextIn</find>
+      <find>renderer</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>BooleanField(required=False)</replace>
+      <replace>('', ''),</replace>
+      <replace>,</replace>
+      <replace>Andosoles</replace>
+      <replace>Fluvisoles</replace>
+      <replace>Regosoles</replace>
+      <replace>acrisoles</replace>
+      <replace>data-placement=&quot;right&quot;</replace>
+      <replace>planosoles</replace>
+      <replace>Planosoles</replace>
+      <replace>gleysoles</replace>
+      <replace>-estandar</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="OrderedM2M" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/investigacion/templates/proyecto_investigacion.html" />
+        <option value="$PROJECT_DIR$/difusion_cientifica/templates/memoria_in_extenso.html" />
+        <option value="$PROJECT_DIR$/difusion_cientifica/forms.py" />
+        <option value="$PROJECT_DIR$/difusion_cientifica/models.py" />
+        <option value="$PROJECT_DIR$/difusion_cientifica/views.py" />
+        <option value="$PROJECT_DIR$/difusion_cientifica/utils.py" />
+        <option value="$PROJECT_DIR$/difusion_cientifica/templates/resena.html" />
+        <option value="$PROJECT_DIR$/divulgacion_cientifica/models.py" />
+        <option value="$PROJECT_DIR$/divulgacion_cientifica/templates/articulo_divulgacion.html" />
+        <option value="$PROJECT_DIR$/divulgacion_cientifica/templates/libro_divulgacion.html" />
+        <option value="$PROJECT_DIR$/divulgacion_cientifica/forms.py" />
+        <option value="$PROJECT_DIR$/divulgacion_cientifica/templates/capitulo_libro_divulgacion.html" />
+        <option value="$PROJECT_DIR$/experiencia_laboral/templates/experiencia_laboral.html" />
+        <option value="$PROJECT_DIR$/vinculacion/urls.py" />
+        <option value="$PROJECT_DIR$/vinculacion/views.py" />
+        <option value="$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion.html" />
+        <option value="$PROJECT_DIR$/vinculacion/templates/arbitraje_proyecto_investigacion.html" />
+        <option value="$PROJECT_DIR$/vinculacion/forms.py" />
+        <option value="$PROJECT_DIR$/vinculacion/templates/red_academica.html" />
+        <option value="$PROJECT_DIR$/vinculacion/models.py" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/models.py" />
+        <option value="$PROJECT_DIR$/investigacion/migrations/0010_auto_20170724_1324.py" />
+        <option value="$PROJECT_DIR$/difusion_cientifica/migrations/0007_auto_20170724_1324.py" />
+        <option value="$PROJECT_DIR$/divulgacion_cientifica/migrations/0005_auto_20170724_1324.py" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/urls.py" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/utils.py" />
+        <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
+        <option value="$PROJECT_DIR$/docencia/forms.py" />
+        <option value="$PROJECT_DIR$/docencia/views.py" />
+        <option value="$PROJECT_DIR$/docencia/templates/cursos_docencia.html" />
+        <option value="$PROJECT_DIR$/templates/adminlte/lib/_adminlte_helpers.py" />
+        <option value="$PROJECT_DIR$/SIA/urls.py" />
+        <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_header.html" />
+        <option value="$PROJECT_DIR$/nucleo/models.py" />
+        <option value="$PROJECT_DIR$/nucleo/views.py" />
+        <option value="$PROJECT_DIR$/movilidad_academica/forms.py" />
+        <option value="$PROJECT_DIR$/nucleo/forms.py" />
+        <option value="$PROJECT_DIR$/templates/perfil_usuario.html" />
+        <option value="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" />
+        <option value="$PROJECT_DIR$/SIA/settings.py" />
+        <option value="$PROJECT_DIR$/SIA/utils.py" />
+        <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/formacion_academica/fixtures/initial_data.json" />
+        <option value="$PROJECT_DIR$/fix.js" />
+        <option value="$PROJECT_DIR$/test_migracion.py" />
+        <option value="$PROJECT_DIR$/migracion.py" />
+        <option value="$PROJECT_DIR$/sky.html" />
+        <option value="$PROJECT_DIR$/templates/adminlte/base.html" />
+        <option value="$PROJECT_DIR$/formacion_academica/views.py" />
+        <option value="$PROJECT_DIR$/SIA/widgets.py" />
+        <option value="$PROJECT_DIR$/formacion_academica/forms.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1861" />
+    <option name="height" value="1084" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="formacion_academica" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="formacion_academica" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="select2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="select2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6.1 (C:\WinPython-64bit-3.6.1.0Qt5\python-3.6.1.amd64\python.exe) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6.1 (C:\WinPython-64bit-3.6.1.0Qt5\python-3.6.1.amd64\python.exe) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6.1 (C:\WinPython-64bit-3.6.1.0Qt5\python-3.6.1.amd64\python.exe) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6.1 (C:\WinPython-64bit-3.6.1.0Qt5\python-3.6.1.amd64\python.exe) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="django_select2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6.1 (C:\WinPython-64bit-3.6.1.0Qt5\python-3.6.1.amd64\python.exe) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6.1 (C:\WinPython-64bit-3.6.1.0Qt5\python-3.6.1.amd64\python.exe) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="django_select2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django_select2/forms.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\formacion_academica\fixtures" />
+      <recent name="C:\Users\SIE\PycharmProjects\SIA" />
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\geom\fao" />
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\formacion_academica\templates" />
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\templates\widgets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\geom\fao" />
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\nucleo\templates" />
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\investigacion\templates" />
+      <recent name="C:\Users\SIE\PycharmProjects\SIA\SIA" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.SIA">
+    <configuration name="SIA" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="SIA.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8001" />
+      <option name="host" value="10.10.2.203" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\WinPython-3523Qt5\python-3.5.2.amd64\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="10.10.2.203" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="SIA" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration name="migracion" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SIA" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/migracion.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Django server.SIA" />
+      <item index="1" class="java.lang.String" itemvalue="Python.migracion" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.migracion" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="" />
+      <created>1490810303150</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1490810303150</updated>
+    </task>
+    <task id="LOCAL-00050" summary="primeros widgets para forms">
+      <created>1494525076404</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1494525076405</updated>
+    </task>
+    <task id="LOCAL-00051" summary="primeros widgets para forms">
+      <created>1494534498690</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1494534498690</updated>
+    </task>
+    <task id="LOCAL-00052" summary="primeros widgets para forms">
+      <created>1494535241503</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1494535241503</updated>
+    </task>
+    <task id="LOCAL-00053" summary="primeros widgets para forms">
+      <created>1494551565177</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1494551565177</updated>
+    </task>
+    <task id="LOCAL-00054" summary="primeros widgets para forms">
+      <created>1494552445137</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1494552445137</updated>
+    </task>
+    <task id="LOCAL-00055" summary="primeros widgets para forms">
+      <created>1494557838541</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1494557838541</updated>
+    </task>
+    <task id="LOCAL-00056" summary="primeros widgets para forms">
+      <created>1494594602052</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1494594602052</updated>
+    </task>
+    <task id="LOCAL-00057" summary="primeros widgets para forms">
+      <created>1494607512551</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1494607512551</updated>
+    </task>
+    <task id="LOCAL-00058" summary="primeros widgets para forms">
+      <created>1494621745924</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1494621745924</updated>
+    </task>
+    <task id="LOCAL-00059" summary="primeros widgets para forms">
+      <created>1494626373881</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1494626373881</updated>
+    </task>
+    <task id="LOCAL-00060" summary="primeros widgets para forms">
+      <created>1494630777472</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1494630777472</updated>
+    </task>
+    <task id="LOCAL-00061" summary="primeros widgets para forms">
+      <created>1494966436292</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1494966436292</updated>
+    </task>
+    <task id="LOCAL-00062" summary="primeros widgets para forms">
+      <created>1494979775112</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1494979775112</updated>
+    </task>
+    <task id="LOCAL-00063" summary="primeros widgets para forms">
+      <created>1494988027743</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1494988027743</updated>
+    </task>
+    <task id="LOCAL-00064" summary="primeros widgets para forms">
+      <created>1495069265942</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1495069265942</updated>
+    </task>
+    <task id="LOCAL-00065" summary="primeros widgets para forms">
+      <created>1495069495951</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1495069495951</updated>
+    </task>
+    <task id="LOCAL-00066" summary="primeros widgets para forms">
+      <created>1495151789457</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1495151789458</updated>
+    </task>
+    <task id="LOCAL-00067" summary="primeros widgets para forms">
+      <created>1495502701945</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1495502701945</updated>
+    </task>
+    <task id="LOCAL-00068" summary="primeros widgets para forms">
+      <created>1495505895141</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1495505895141</updated>
+    </task>
+    <task id="LOCAL-00069" summary="primeros widgets para forms">
+      <created>1495587197296</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1495587197296</updated>
+    </task>
+    <task id="LOCAL-00070" summary="primeros widgets para forms">
+      <created>1495590119829</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1495590119829</updated>
+    </task>
+    <task id="LOCAL-00071" summary="primeros widgets para forms">
+      <created>1495590127247</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1495590127247</updated>
+    </task>
+    <task id="LOCAL-00072" summary="primeros widgets para forms">
+      <created>1495652136168</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1495652136168</updated>
+    </task>
+    <task id="LOCAL-00073" summary="primeros widgets para forms">
+      <created>1495671576167</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1495671576167</updated>
+    </task>
+    <task id="LOCAL-00074" summary="primeros widgets para forms">
+      <created>1495749615967</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1495749615967</updated>
+    </task>
+    <task id="LOCAL-00075" summary="primeros widgets para forms">
+      <created>1495762451263</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1495762451268</updated>
+    </task>
+    <task id="LOCAL-00076" summary="primeros widgets para forms">
+      <created>1495820936206</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1495820936206</updated>
+    </task>
+    <task id="LOCAL-00077" summary="primeros widgets para forms">
+      <created>1496087647052</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1496087647052</updated>
+    </task>
+    <task id="LOCAL-00078" summary="primeros widgets para forms">
+      <created>1496109022875</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1496109022875</updated>
+    </task>
+    <task id="LOCAL-00079" summary="primeros widgets para forms">
+      <created>1496109745361</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1496109745361</updated>
+    </task>
+    <task id="LOCAL-00080" summary="primeros widgets para forms">
+      <created>1496194236150</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1496194236150</updated>
+    </task>
+    <task id="LOCAL-00081" summary="correciones v1">
+      <created>1497560868257</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1497560868257</updated>
+    </task>
+    <task id="LOCAL-00082" summary="link para usuarios">
+      <created>1498871448945</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1498871448945</updated>
+    </task>
+    <task id="LOCAL-00083" summary="link para usuarios">
+      <created>1499131507245</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1499131507245</updated>
+    </task>
+    <task id="LOCAL-00084" summary="link para usuarios">
+      <created>1499203549445</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1499203549445</updated>
+    </task>
+    <task id="LOCAL-00085" summary="link para usuarios">
+      <created>1499278784712</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1499278784712</updated>
+    </task>
+    <task id="LOCAL-00086" summary="link para usuarios">
+      <created>1499288114239</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1499288114239</updated>
+    </task>
+    <task id="LOCAL-00087" summary="link para usuarios">
+      <created>1499301179462</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1499301179462</updated>
+    </task>
+    <task id="LOCAL-00088" summary="link para usuarios">
+      <created>1499302065882</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1499302065882</updated>
+    </task>
+    <task id="LOCAL-00089" summary="link para usuarios">
+      <created>1499372765435</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1499372765436</updated>
+    </task>
+    <task id="LOCAL-00090" summary="link para usuarios">
+      <created>1499387249359</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1499387249359</updated>
+    </task>
+    <task id="LOCAL-00091" summary="link para usuarios">
+      <created>1499463080561</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1499463080562</updated>
+    </task>
+    <task id="LOCAL-00092" summary="link para usuarios">
+      <created>1501013708318</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1501013708319</updated>
+    </task>
+    <task id="LOCAL-00093" summary="link para usuarios">
+      <created>1501116500139</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1501116500139</updated>
+    </task>
+    <task id="LOCAL-00094" summary="link para usuarios">
+      <created>1501193951632</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1501193951632</updated>
+    </task>
+    <task id="LOCAL-00095" summary="link para usuarios">
+      <created>1501280309169</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1501280309170</updated>
+    </task>
+    <task id="LOCAL-00096" summary="link para usuarios">
+      <created>1501280647817</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1501280647817</updated>
+    </task>
+    <task id="LOCAL-00097" summary="link para usuarios">
+      <created>1501633520813</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1501633520813</updated>
+    </task>
+    <task id="LOCAL-00098" summary="link para usuarios">
+      <created>1501635384079</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1501635384080</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="1861" height="1084" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35965848" sideWeight="0.50441015" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31243244" sideWeight="0.49779493" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28216216" sideWeight="0.49228224" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36756757" sideWeight="0.49558985" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@SIA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264865" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17268184" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="form libro,  y natural keys de nucleo" />
+    <MESSAGE value="casi listo divulgracion cientifica, solo falta libros de divulgracion" />
+    <MESSAGE value="casi listo vinculacion" />
+    <MESSAGE value="empezando docencia" />
+    <MESSAGE value="distinciones&#10;" />
+    <MESSAGE value="corrigiendo vistas en todo el proyecto (las primeras urls tenian vistas que no cumplen con DRY)" />
+    <MESSAGE value="corregido el active del menu para que se quede activa la opcion seleccionada." />
+    <MESSAGE value="boton eliminar para las primeras categorías" />
+    <MESSAGE value="primeros widgets para forms" />
+    <MESSAGE value="correciones v1" />
+    <MESSAGE value="link para usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="link para usuarios" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/investigacion/models.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/formacion_recursos_humanos/templates/comite_candidatura_doctoral.html</url>
+          <line>2</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion.html</url>
+          <line>2</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/.PyCharm2016.3/system/python_stubs/-46005267/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="4716" column="27" lean-forward="false" selection-start-line="4716" selection-start-column="27" selection-end-line="4716" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_main_footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django_adminlte/templatetags/adminlte_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_main_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0018_auto_20170727_1353.py" />
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0018_auto_20170727_1355.py" />
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0017_auto_20170727_1344.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0016_user_avatar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0015_remove_user_avatar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0014_auto_20170727_1231.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0013_auto_20170726_1344.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/auth/validators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/auth/base_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="1033" column="35" lean-forward="false" selection-start-line="1033" selection-start-column="35" selection-end-line="1033" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apoyo_institucional/templates/cargo_academico-administrativo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1632">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apoyo_institucional/templates/comision_academica.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" lean-forward="false" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/templates/desarrollo_tecnologico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1836">
+          <caret line="18" column="58" lean-forward="true" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/templates/memoria_in_extenso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="153" column="10" lean-forward="true" selection-start-line="153" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="89" column="37" lean-forward="true" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/templates/resena.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="592" column="0" lean-forward="false" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movilidad_academica/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="318" column="14" lean-forward="false" selection-start-line="318" selection-start-column="4" selection-end-line="318" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/template/context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/admin/templatetags/admin_modify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="41" column="42" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="118" column="22" lean-forward="false" selection-start-line="118" selection-start-column="22" selection-end-line="118" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/perfil_usuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ebase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/admin/templates/admin/submit_line.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/admin/templates/admin/change_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/admin/templates/admin/base_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/admin/templates/admin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-476">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/fixtures/initial_data.json" />
+    <entry file="file://$PROJECT_DIR$/fix.js" />
+    <entry file="file://$PROJECT_DIR$/test_migracion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sky.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/1346409832/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1548">
+          <caret line="719" column="6" lean-forward="false" selection-start-line="719" selection-start-column="6" selection-end-line="719" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminlte/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="63" column="16" lean-forward="false" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apoyo_institucional/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2329">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="165" column="10" lean-forward="false" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
+          <folding>
+            <element signature="e#4522#6068#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migracion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="2912" column="0" lean-forward="false" selection-start-line="2912" selection-start-column="0" selection-end-line="2912" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django_select2/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="243" column="64" lean-forward="false" selection-start-line="243" selection-start-column="64" selection-end-line="243" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="84" column="11" lean-forward="true" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
