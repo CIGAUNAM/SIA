@@ -2,77 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/css/select2.css" afterPath="$PROJECT_DIR$/static/select22222/css/select2.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/css/select2.min.css" afterPath="$PROJECT_DIR$/static/select22222/css/select2.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/ar.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/ar.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/az.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/az.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/bg.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/bg.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/ca.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/ca.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/cs.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/cs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/da.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/da.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/de.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/de.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/el.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/el.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/en.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/en.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/es.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/es.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/et.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/et.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/eu.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/eu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/fa.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/fa.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/fi.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/fi.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/fr.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/fr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/gl.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/gl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/he.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/he.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/hi.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/hi.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/hr.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/hr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/hu.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/hu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/id.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/id.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/is.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/is.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/it.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/it.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/ja.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/ja.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/km.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/km.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/ko.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/ko.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/lt.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/lt.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/lv.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/lv.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/mk.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/mk.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/ms.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/ms.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/nb.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/nb.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/nl.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/nl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/pl.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/pl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/pt-BR.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/pt-BR.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/pt.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/pt.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/ro.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/ro.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/ru.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/ru.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/sk.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/sk.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/sr-Cyrl.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/sr-Cyrl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/sr.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/sr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/sv.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/sv.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/th.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/th.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/tr.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/tr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/uk.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/uk.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/vi.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/vi.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/zh-CN.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/zh-CN.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/i18n/zh-TW.js" afterPath="$PROJECT_DIR$/static/select22222/js/i18n/zh-TW.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/select2.full.js" afterPath="$PROJECT_DIR$/static/select22222/js/select2.full.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/select2.full.min.js" afterPath="$PROJECT_DIR$/static/select22222/js/select2.full.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/select2.js" afterPath="$PROJECT_DIR$/static/select22222/js/select2.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/select2/js/select2.min.js" afterPath="$PROJECT_DIR$/static/select22222/js/select2.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/widgets.py" afterPath="$PROJECT_DIR$/SIA/widgets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apoyo_institucional/forms.py" afterPath="$PROJECT_DIR$/apoyo_institucional/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desarrollo_tecnologico/forms.py" afterPath="$PROJECT_DIR$/desarrollo_tecnologico/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/difusion_cientifica/forms.py" afterPath="$PROJECT_DIR$/difusion_cientifica/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/forms.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/forms.py" afterPath="$PROJECT_DIR$/docencia/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiencia_laboral/forms.py" afterPath="$PROJECT_DIR$/experiencia_laboral/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_academica/forms.py" afterPath="$PROJECT_DIR$/formacion_academica/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_recursos_humanos/forms.py" afterPath="$PROJECT_DIR$/formacion_recursos_humanos/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investigacion/forms.py" afterPath="$PROJECT_DIR$/investigacion/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nucleo/forms.py" afterPath="$PROJECT_DIR$/nucleo/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_custom/select2/js/select2.full.js" afterPath="$PROJECT_DIR$/static_custom/select2/js/select2.full.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_custom/select2/js/select2.full.min.js" afterPath="$PROJECT_DIR$/static_custom/select2/js/select2.full.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_custom/select2/js/select2.js" afterPath="$PROJECT_DIR$/static_custom/select2/js/select2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_custom/select2/js/select2.min.js" afterPath="$PROJECT_DIR$/static_custom/select2/js/select2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/widgets/select.html" afterPath="$PROJECT_DIR$/templates/widgets/select.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vinculacion/forms.py" afterPath="$PROJECT_DIR$/vinculacion/forms.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,18 +30,8 @@
       <file leaf-file-name="widgets.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="286" column="25" lean-forward="true" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="select.html" pinned="false" current-in-tab="false">
-        <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/templates/django/forms/widgets/select.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="231">
+              <caret line="445" column="6" lean-forward="false" selection-start-line="445" selection-start-column="6" selection-end-line="445" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -142,8 +62,8 @@
       <file leaf-file-name="widgets.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="214">
+              <caret line="54" column="25" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
               <folding>
                 <element signature="e#0#140#0" expanded="true" />
                 <element signature="e#7765#10045#0" expanded="false" />
@@ -197,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/nucleo/templates/widgets/wnoNegativeNumber.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -897,13 +817,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490810303150</updated>
     </task>
-    <task id="LOCAL-00051" summary="primeros widgets para forms">
-      <created>1494534498690</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1494534498690</updated>
-    </task>
     <task id="LOCAL-00052" summary="primeros widgets para forms">
       <created>1494535241503</created>
       <option name="number" value="00052" />
@@ -1240,7 +1153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501724423899</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="actualizaciòn a django 1.11">
+      <created>1501807820725</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1501807820725</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1323,13 +1243,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/auth/base_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -1619,28 +1532,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="56" column="57" lean-forward="false" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/templates/django/forms/widgets/number.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="286" column="25" lean-forward="true" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1680,7 +1575,7 @@
     <entry file="file://$PROJECT_DIR$/nucleo/templates/widgets/wnoNegativeNumber.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1693,10 +1588,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="56" column="57" lean-forward="false" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/templates/django/forms/widgets/textarea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="445" column="6" lean-forward="false" selection-start-line="445" selection-start-column="6" selection-end-line="445" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="214">
+          <caret line="54" column="25" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
           <folding>
             <element signature="e#0#140#0" expanded="true" />
             <element signature="e#7765#10045#0" expanded="false" />
