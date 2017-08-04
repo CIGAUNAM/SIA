@@ -52,7 +52,7 @@ class ExperienciaLaboralForm(forms.ModelForm):
 
 
 class LineaInvestigacionForm(forms.ModelForm):
-    linea_investigacion = forms.CharField(widget=wCharField, required=True, label='Línea de investigación')
+    linea_investigacion = forms.CharField(widget=wTextInput, required=True, label='Línea de investigación')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
@@ -80,7 +80,7 @@ class LineaInvestigacionForm(forms.ModelForm):
 
 
 class CapacidadPotencialidadForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True, label='Capacidad o Potencialidad')
+    nombre = forms.CharField(widget=wTextInput, required=True, label='Capacidad o Potencialidad')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
     fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
     fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de finalización')

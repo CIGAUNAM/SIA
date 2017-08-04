@@ -1,4 +1,4 @@
-from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput, Textarea, EmailInput, TextInput
+from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput, Textarea, EmailInput, TextInput, NumberInput
 from django.template import loader
 from django.utils.safestring import mark_safe
 import copy
@@ -16,70 +16,26 @@ from django.utils.datastructures import MultiValueDict
 from django.utils.translation import get_language
 
 
-class wCharField(Widget):
-    input_type = 'text'  # Subclasses must define this.
 
-    def format_value(self, value):
-        if self.is_localized:
-            return formats.localize_input(value)
-        return value
-
-    def render(self, name, value, attrs=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(attrs)
-        if value != '':
-            # Only add the 'value' attribute if a value is non-empty.
-            final_attrs['value'] = force_text(self.format_value(value))
-        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
-
-
-"""
-class wCharField(TextInput):
+class wTextInput(TextInput):
     input_type = 'text'
-    template_name = 'django/forms/widgets/text.html'
-"""
+    template_name = 'widgets/wtext.html'
 
-class wPasswordField(wCharField):
+class wPasswordInput(wTextInput):
     input_type = 'password'
+    template_name = 'widgets/wtext.html'
 
-
-
-class wUrlField(URLInput):
+class wURLInput(URLInput):
     input_type = 'url'
+    template_name = 'widgets/wtext.html'
 
-    def format_value(self, value):
-        if self.is_localized:
-            return formats.localize_input(value)
-        return value
-
-    def render(self, name, value, attrs=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(attrs, type=self.input_type)
-        if value != '':
-            # Only add the 'value' attribute if a value is non-empty.
-            final_attrs['value'] = force_text(self.format_value(value))
-        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
-
-
-
-class wEmailField(EmailInput):
+class wEmailInput(EmailInput):
     input_type = 'email'
+    template_name = 'widgets/wtext.html'
 
-    def format_value(self, value):
-        if self.is_localized:
-            return formats.localize_input(value)
-        return value
-
-    def render(self, name, value, attrs=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(attrs, type=self.input_type)
-        if value != '':
-            # Only add the 'value' attribute if a value is non-empty.
-            final_attrs['value'] = force_text(self.format_value(value))
-        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+class wNumberInput(NumberInput):
+    input_type = 'number'
+    template_name = 'widgets/wtext.html'
 
 
 
@@ -87,21 +43,7 @@ class wEmailField(EmailInput):
 
 
 
-class wNumberField(Widget):
-    template_name = 'widgets/NumberField.html'
-
-    def get_context(self, name, value, attrs=None):
-        return {'widget': {
-            'name': name,
-            'value': value,
-        }}
-
-    def render(self, name, value, attrs=None):
-        context = self.get_context(name, value, attrs)
-        template = loader.get_template(self.template_name).render(context)
-        return mark_safe(template)
-
-class wNoNegativeNumberField(wNumberField):
+class wNoNegativeNumberField(wNumberInput):
     template_name = 'widgets/NoNegativeNumberField.html'
 
 class wTextarea1(Widget):
@@ -183,7 +125,7 @@ class Select3Mixin(Select2Mixin):
     The base mixin of all Select2 widgets.
 
     This mixin is responsible for rendering the necessary
-    data attributes for select2 as well as adding the static
+    data attributes for select22222 as well as adding the static
     form media.
     """
 
@@ -236,7 +178,45 @@ class Select3Mixin(Select2Mixin):
     media = property(_get_media)
 
 
-class wSelect(Select, TextInput):
+class wSelect(Select):
+    input_type = 'select'
+    template_name = 'django/forms/widgets/select.html'
+    option_template_name = 'django/forms/widgets/select_option.html'
+    add_id_index = False
+    checked_attribute = {'selected': True}
+    option_inherits_attrs = False
+
+    def get_context(self, name, value, attrs):
+        context = super(Select, self).get_context(name, value, attrs)
+        if self.allow_multiple_selected:
+            context['widget']['attrs']['multiple'] = 'multiple'
+        return context
+
+    @staticmethod
+    def _choice_has_empty_value(choice):
+        """Return True if the choice's value is empty string or None."""
+        value, _ = choice
+        return (
+            (isinstance(value, six.string_types) and not bool(value)) or
+            value is None
+        )
+
+    def use_required_attribute(self, initial):
+        """
+        Don't render 'required' if the first <option> has a value, as that's
+        invalid HTML.
+        """
+        use_required_attribute = super(Select, self).use_required_attribute(initial)
+        # 'required' is always okay for <select multiple>.
+        if self.allow_multiple_selected:
+            return use_required_attribute
+
+        first_choice = next(iter(self.choices), None)
+        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
+
+
+
+class wSelect1(Select, TextInput):
     allow_multiple_selected = False
 
     def __init__(self, attrs=None, choices=()):
@@ -483,10 +463,10 @@ class HeavySelect3Widget(HeavySelect2Mixin, Select3Widget):
     pass
 
 
-class ModelSelect3Widget(ModelSelect2Mixin, HeavySelect3Widget):
-    #search_fields = [
-    #    'nombre__icontains',
-    #]
+class ModelSelect3Widget(ModelSelect2Widget, HeavySelect3Widget):
+    search_fields = [
+        'nombre__icontains',
+    ]
     """
     Select2 drop in model select widget.
 
@@ -525,3 +505,82 @@ class ModelSelect3Widget(ModelSelect2Mixin, HeavySelect3Widget):
 
 
 #test
+
+
+"""
+class wTextInput(Widget):
+    input_type = 'text'  # Subclasses must define this.
+
+    def format_value(self, value):
+        if self.is_localized:
+            return formats.localize_input(value)
+        return value
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs)
+        if value != '':
+            # Only add the 'value' attribute if a value is non-empty.
+            final_attrs['value'] = force_text(self.format_value(value))
+        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+
+
+class wTextInput(TextInput):
+    input_type = 'text'
+    template_name = 'django/forms/widgets/text.html'
+"""
+
+"""
+class wUrlField1(URLInput):
+    input_type = 'url'
+
+    def format_value(self, value):
+        if self.is_localized:
+            return formats.localize_input(value)
+        return value
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, type=self.input_type)
+        if value != '':
+            # Only add the 'value' attribute if a value is non-empty.
+            final_attrs['value'] = force_text(self.format_value(value))
+        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+"""
+
+"""
+class wEmailField1(EmailInput):
+    input_type = 'email'
+
+    def format_value(self, value):
+        if self.is_localized:
+            return formats.localize_input(value)
+        return value
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, type=self.input_type)
+        if value != '':
+            # Only add the 'value' attribute if a value is non-empty.
+            final_attrs['value'] = force_text(self.format_value(value))
+        return format_html('<input{} class="form-control pull-right"/>', flatatt(final_attrs))
+"""
+
+"""
+class wNumberField1(Widget):
+    template_name = 'widgets/NumberField.html'
+
+    def get_context(self, name, value, attrs=None):
+        return {'widget': {
+            'name': name,
+            'value': value,
+        }}
+
+    def render(self, name, value, attrs=None):
+        context = self.get_context(name, value, attrs)
+        template = loader.get_template(self.template_name).render(context)
+        return mark_safe(template)
+"""

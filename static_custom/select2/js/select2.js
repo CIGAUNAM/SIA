@@ -983,7 +983,7 @@ S2.define('select2/results',[
       }
 
       var $childrenContainer = $('<ul></ul>', {
-        'class': 'select2-results__options select2-results__options--nested'
+        'class': 'select22222-results__options select22222-results__options--nested'
       });
 
       $childrenContainer.append($children);
@@ -1430,7 +1430,7 @@ S2.define('select2/selection/base',[
 
       var $select = $target.closest('.select2');
 
-      var $all = $('.select2.select2-container--open');
+      var $all = $('.select22222.select22222-container--open');
 
       $all.each(function () {
         var $this = $(this);
@@ -1835,7 +1835,7 @@ S2.define('select2/selection/search',[
 
   Search.prototype.render = function (decorated) {
     var $search = $(
-      '<li class="select2-search select2-search--inline">' +
+      '<li class="select22222-search select22222-search--inline">' +
         '<input class="select2-search__field" type="search" tabindex="-1"' +
         ' autocomplete="off" autocorrect="off" autocapitalize="off"' +
         ' spellcheck="false" role="textbox" aria-autocomplete="list" />' +
@@ -3886,7 +3886,7 @@ S2.define('select2/dropdown/search',[
     var $rendered = decorated.call(this);
 
     var $search = $(
-      '<span class="select2-search select2-search--dropdown">' +
+      '<span class="select22222-search select22222-search--dropdown">' +
         '<input class="select2-search__field" type="search" tabindex="-1"' +
         ' autocomplete="off" autocorrect="off" autocapitalize="off"' +
         ' spellcheck="false" role="textbox" />' +
@@ -4097,7 +4097,7 @@ S2.define('select2/dropdown/infiniteScroll',[
   InfiniteScroll.prototype.createLoadingMore = function () {
     var $option = $(
       '<li ' +
-      'class="select2-results__option select2-results__option--load-more"' +
+      'class="select22222-results__option select22222-results__option--load-more"' +
       'role="treeitem" aria-disabled="true"></li>'
     );
 
@@ -4300,10 +4300,10 @@ S2.define('select2/dropdown/attachBody',[
 
     if (newDirection != null) {
       this.$dropdown
-        .removeClass('select2-dropdown--below select2-dropdown--above')
+        .removeClass('select22222-dropdown--below select22222-dropdown--above')
         .addClass('select2-dropdown--' + newDirection);
       this.$container
-        .removeClass('select2-container--below select2-container--above')
+        .removeClass('select22222-container--below select22222-container--above')
         .addClass('select2-container--' + newDirection);
     }
 
@@ -5619,7 +5619,7 @@ S2.define('select2/core',[
 
   Select2.prototype.render = function () {
     var $container = $(
-      '<span class="select2 select2-container">' +
+      '<span class="select22222 select22222-container">' +
         '<span class="selection"></span>' +
         '<span class="dropdown-wrapper" aria-hidden="true"></span>' +
       '</span>'

@@ -59,7 +59,7 @@ class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
 
 
 class ArbitrajeOtraActividadForm(forms.ModelForm):
-    actividad = forms.CharField(widget=wCharField, required=True)
+    actividad = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
@@ -85,7 +85,7 @@ class ArbitrajeOtraActividadForm(forms.ModelForm):
 
 
 class RedAcademicaForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True)
+    nombre = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=wTextarea, required=True)
@@ -110,7 +110,7 @@ class RedAcademicaForm(forms.ModelForm):
 
 
 class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True)
+    nombre = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     es_agradecimiento = forms.BooleanField(required=False)
     clasificacion_entidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
@@ -145,7 +145,7 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
 
 
 class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
-    nombre_servicio = forms.CharField(widget=wCharField, required=True, label='Nombre de servicio')
+    nombre_servicio = forms.CharField(widget=wTextInput, required=True, label='Nombre de servicio')
     clasificacion_servicio = forms.ModelChoiceField(
         queryset=ClasificacionServicio.objects.all(),
         label="Clasificacion de servicio",
@@ -183,7 +183,7 @@ class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
 
 
 class OtroProgramaVinculacionForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True)
+    nombre = forms.CharField(widget=wTextInput, required=True)
     fecha = forms.DateField(widget=wDateField, required=True)
     tipo = forms.ChoiceField(widget=Select3Widget, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
@@ -216,6 +216,6 @@ class ClasificacionServicioForm(forms.ModelForm):
         model = ClasificacionServicio
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }

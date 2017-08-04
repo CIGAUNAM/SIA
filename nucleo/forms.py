@@ -39,9 +39,9 @@ class PaisForm(forms.ModelForm):
         model = Pais
         exclude = []
         widgets = {
-            'nombre': wCharField,
-            'nombre_extendido': wCharField,
-            'codigo': wCharField,
+            'nombre': wTextInput,
+            'nombre_extendido': wTextInput,
+            'codigo': wTextInput,
         }
 
 
@@ -58,7 +58,7 @@ class EstadoForm(forms.ModelForm):
         model = Estado
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
         }
 
 
@@ -75,7 +75,7 @@ class CiudadForm(forms.ModelForm):
         model = Ciudad
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
         }
 
 
@@ -92,7 +92,7 @@ class InstitucionForm(forms.ModelForm):
         model = Institucion
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -125,7 +125,7 @@ class DependenciaForm(forms.ModelForm):
         model = Dependencia
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -143,7 +143,7 @@ class DepartamentoForm(forms.ModelForm):
         model = Departamento
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -156,7 +156,7 @@ class CargoForm(forms.ModelForm):
         model = Cargo
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -186,7 +186,7 @@ class AreaEspecialidadForm(forms.ModelForm):
         model = AreaEspecialidad
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -196,7 +196,7 @@ class ImpactoSocialForm(forms.ModelForm):
         model = ImpactoSocial
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -214,7 +214,7 @@ class FinanciamientoForm(forms.ModelForm):
         model = Financiamiento
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
             'dependencias_financiamiento': Select3MultipleWidget,
         }
@@ -225,7 +225,7 @@ class MetodologiaForm(forms.ModelForm):
         model = Metodologia
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -235,7 +235,7 @@ class BecaForm(forms.ModelForm):
         model = Beca
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -245,7 +245,7 @@ class ReconocimientoForm(forms.ModelForm):
         model = Reconocimiento
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -271,7 +271,7 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
         model = ProgramaLicenciatura
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -289,7 +289,7 @@ class ProgramaMaestriaForm(forms.ModelForm):
         model = ProgramaMaestria
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -307,7 +307,7 @@ class ProgramaDoctoradoForm(forms.ModelForm):
         model = ProgramaDoctorado
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -317,7 +317,7 @@ class TipoEventoForm(forms.ModelForm):
         model = TipoEvento
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -337,10 +337,10 @@ class EventoForm(forms.ModelForm):
         model = Evento
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
             'dependencias': Select3MultipleWidget,
-            'ubicacion': wCharField,
+            'ubicacion': wTextInput,
         }
 
 
@@ -354,7 +354,7 @@ class DistincionForm(forms.ModelForm):
         model = Distincion
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -384,7 +384,7 @@ class ProyectoForm(forms.ModelForm):
         model = Proyecto
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
             'descripcion_problema_nacional_conacyt': wTextarea,
             'usuarios': Select3MultipleWidget,
@@ -406,7 +406,7 @@ class MemoriaForm(forms.ModelForm):
         model = Memoria
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -424,7 +424,7 @@ class EditorialForm(forms.ModelForm):
         model = Editorial
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -434,7 +434,7 @@ class ColeccionForm(forms.ModelForm):
         model = Coleccion
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -458,8 +458,8 @@ class LibroForm(forms.ModelForm):
     )
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION'))
     fecha = forms.DateField(widget=wDateField, required=True)
-    numero_edicion = forms.CharField(widget=wNumberField, required=True, label='Número de edición')
-    numero_paginas = forms.CharField(widget=wNumberField, required=True, label='Número de páginas')
+    numero_edicion = forms.CharField(widget=wNumberInput, required=True, label='Número de edición')
+    numero_paginas = forms.CharField(widget=wNumberInput, required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(
         queryset=Coleccion.objects.all(),
         label="Colección",
@@ -472,14 +472,14 @@ class LibroForm(forms.ModelForm):
         model = Libro
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
             'usuarios': Select3MultipleWidget,
             'editores': Select3MultipleWidget,
             'coordinadores': Select3MultipleWidget,
-            'volumen': wCharField,
-            'isbn': wCharField,
-            'url': wUrlField,
+            'volumen': wTextInput,
+            'isbn': wTextInput,
+            'url': wURLInput,
         }
 
 
@@ -496,9 +496,9 @@ class RevistaForm(forms.ModelForm):
         model = Revista
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
-            'url': wUrlField,
+            'url': wURLInput,
         }
 
 
@@ -507,7 +507,7 @@ class AsignaturaForm(forms.ModelForm):
         model = Asignatura
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -528,8 +528,8 @@ class MedioDivulgacionForm(forms.ModelForm):
         model = MedioDivulgacion
         exclude = []
         widgets = {
-            'nombre_medio': wCharField,
-            'canal': wCharField,
+            'nombre_medio': wTextInput,
+            'canal': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -571,22 +571,22 @@ class UserForm(forms.ModelForm):
         exclude = ['date_joined', 'is_staff', 'is_active', 'last_login', 'is_superuser', 'groups', 'user_permissions']
 
         widgets = {
-            'first_name': wCharField,
-            'last_name': wCharField,
-            'username': wCharField,
-            'email': wEmailField,
+            'first_name': wTextInput,
+            'last_name': wTextInput,
+            'username': wTextInput,
+            'email': wEmailInput,
 
-            'password': wPasswordField,
+            'password': wPasswordInput,
             'descripcion': wTextarea,
             'fecha_nacimiento': wDateField,
-            'rfc': wCharField,
-            'direccion': wCharField,
-            'direccion_continuacion': wCharField,
-            'telefono': wCharField,
-            'celular': wCharField,
+            'rfc': wTextInput,
+            'direccion': wTextInput,
+            'direccion_continuacion': wTextInput,
+            'telefono': wTextInput,
+            'celular': wTextInput,
             'sni': wNoNegativeNumberField,
-            'url': wUrlField,
-            'pride': wCharField,
+            'url': wURLInput,
+            'pride': wTextInput,
             'ingreso_unam': wDateField,
             'ingreso_entidad': wDateField,
         }

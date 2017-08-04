@@ -89,7 +89,7 @@ class AsesorEstanciaForm(forms.ModelForm):
 
 
 class DireccionTesisForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True)
+    titulo = forms.CharField(widget=wTextInput, required=True)
     asesorado = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",

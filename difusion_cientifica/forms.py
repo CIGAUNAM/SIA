@@ -7,7 +7,7 @@ from django_select2.forms import Select2MultipleWidget
 #
 
 class MemoriaInExtensoForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True, label='Título de memoria in extenso')
+    nombre = forms.CharField(widget=wTextInput, required=True, label='Título de memoria in extenso')
     descripcion = forms.CharField(widget=wTextarea, required=False)
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
@@ -40,10 +40,10 @@ class MemoriaInExtensoForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    pagina_inicio = forms.CharField(widget=wNumberField, required=True)
-    pagina_fin = forms.CharField(widget=wNumberField, required=True)
-    issn = forms.CharField(widget=wCharField, required=False)
-    url = forms.URLField(widget=wUrlField, required=False)
+    pagina_inicio = forms.CharField(widget=wNumberInput, required=True)
+    pagina_fin = forms.CharField(widget=wNumberInput, required=True)
+    issn = forms.CharField(widget=wTextInput, required=False)
+    url = forms.URLField(widget=wURLInput, required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=Proyecto.objects.all(),
@@ -73,9 +73,9 @@ class PrologoLibroForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Páginal inicial')
-    pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Páginal final')
-    url = forms.URLField(widget=wUrlField, required=False)
+    pagina_inicio = forms.CharField(widget=wNumberInput, required=True, label='Páginal inicial')
+    pagina_fin = forms.CharField(widget=wNumberInput, required=True, label='Páginal final')
+    url = forms.URLField(widget=wURLInput, required=False)
 
     class Meta:
         model = PrologoLibro
@@ -83,7 +83,7 @@ class PrologoLibroForm(forms.ModelForm):
 
 
 class ResenaForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True, label='Título de reseña')
+    titulo = forms.CharField(widget=wTextInput, required=True, label='Título de reseña')
     tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'RESENA__TIPO', ), required=True)
     libro_resenado = forms.ModelChoiceField(
         required=False,
@@ -118,9 +118,9 @@ class ResenaForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    pagina_inicio = forms.CharField(widget=wNumberField, required=True)
-    pagina_fin = forms.CharField(widget=wNumberField, required=True)
-    url = forms.URLField(widget=wUrlField, required=False)
+    pagina_inicio = forms.CharField(widget=wNumberInput, required=True)
+    pagina_fin = forms.CharField(widget=wNumberInput, required=True)
+    url = forms.URLField(widget=wURLInput, required=False)
 
     def __init__(self, *args, **kwargs):
         super(ResenaForm, self).__init__(*args, **kwargs)
@@ -141,8 +141,8 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     responsabilidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'EVENTO__RESPONSABILIDAD', ), required=True)
-    numero_ponentes = forms.CharField(widget=wNumberField, required=True)
-    numero_asistentes = forms.CharField(widget=wNumberField, required=True)
+    numero_ponentes = forms.CharField(widget=wNumberInput, required=True)
+    numero_asistentes = forms.CharField(widget=wNumberInput, required=True)
     ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
 
     class Meta:
@@ -151,7 +151,7 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True)
+    titulo = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     evento = forms.ModelChoiceField(
         queryset=Evento.objects.all(),
