@@ -178,7 +178,7 @@ class RepresentacionForm(forms.ModelForm):
         model = Representacion
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -188,7 +188,7 @@ class ComisionForm(forms.ModelForm):
         model = Comision
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }
 
@@ -198,6 +198,6 @@ class ActividadApoyoForm(forms.ModelForm):
         model = ActividadApoyo
         exclude = []
         widgets = {
-            'nombre': wCharField,
+            'nombre': wTextInput,
             'descripcion': wTextarea,
         }

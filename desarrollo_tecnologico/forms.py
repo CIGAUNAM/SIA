@@ -8,10 +8,10 @@ from django_select2.forms import Select2MultipleWidget
 #
 
 class DesarrolloTecnologicoForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True)
+    nombre = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    version = forms.CharField(widget=wCharField, required=True)
-    patente = forms.CharField(widget=wCharField, required=True)
+    version = forms.CharField(widget=wTextInput, required=True)
+    patente = forms.CharField(widget=wTextInput, required=True)
     licencia = forms.ModelChoiceField(
         queryset=Licencia.objects.all(),
         label="Licencia",
@@ -20,7 +20,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
             # dependent_fields={'dependencia': 'dependencia'},
         )
     )
-    url = forms.URLField(widget=wUrlField, required=False)
+    url = forms.URLField(widget=wURLInput, required=False)
     fecha = forms.DateField(widget=wDateField, required=True)
     proyecto = forms.ModelChoiceField(
         required=False,
@@ -42,9 +42,9 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
 
 
 class LicenciaForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True)
+    nombre = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
-    url = forms.URLField(widget=wUrlField, required=False)
+    url = forms.URLField(widget=wURLInput, required=False)
 
     class Meta:
         model = Licencia

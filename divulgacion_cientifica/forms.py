@@ -9,14 +9,14 @@ from nucleo.models import Pais, Estado, Ciudad
 #
 
 class ArticuloDivulgacionForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True, label='Título de artículo')
+    titulo = forms.CharField(widget=wTextInput, required=True, label='Título de artículo')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción')
     tipo = forms.ChoiceField(widget=Select3Widget, choices=(
         ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')),
                              required=True)
     status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     indizado = forms.BooleanField(required=False)
-    url = forms.URLField(widget=wUrlField, required=False)
+    url = forms.URLField(widget=wURLInput, required=False)
     solo_electronico = forms.BooleanField(required=False)
     revista = forms.ModelChoiceField(
         queryset=Revista.objects.all(),
@@ -26,12 +26,12 @@ class ArticuloDivulgacionForm(forms.ModelForm):
         )
     )
     fecha = forms.DateField(widget=wDateField, required=True, label='Fecha de publicación')
-    volumen = forms.CharField(widget=wCharField, required=False)
-    numero = forms.CharField(widget=wCharField, required=False, label='Número')
-    issn = forms.CharField(widget=wCharField, required=False, label='ISSN Impreso')
-    pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Número de página donde inicia')
-    pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Número de página final')
-    id_doi = forms.CharField(widget=wCharField, required=False, label='ID DOI')
+    volumen = forms.CharField(widget=wTextInput, required=False)
+    numero = forms.CharField(widget=wTextInput, required=False, label='Número')
+    issn = forms.CharField(widget=wTextInput, required=False, label='ISSN Impreso')
+    pagina_inicio = forms.CharField(widget=wNumberInput, required=True, label='Número de página donde inicia')
+    pagina_fin = forms.CharField(widget=wNumberInput, required=True, label='Número de página final')
+    id_doi = forms.CharField(widget=wTextInput, required=False, label='ID DOI')
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=Proyecto.objects.all(),
@@ -52,7 +52,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
 
 
 class CapituloLibroDivulgacionForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True, label='Título del capítulo')
+    titulo = forms.CharField(widget=wTextInput, required=True, label='Título del capítulo')
     descripcion = forms.CharField(widget=wTextarea, required=False)
     libro = forms.ModelChoiceField(
         queryset=Libro.objects.filter(tipo='DIVULGACION'),
@@ -62,8 +62,8 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
             # dependent_fields={'dependencia': 'dependencia'},
         )
     )
-    pagina_inicio = forms.CharField(widget=wNumberField, required=True, label='Número de página donde inicia')
-    pagina_fin = forms.CharField(widget=wNumberField, required=True, label='Número de página final')
+    pagina_inicio = forms.CharField(widget=wNumberInput, required=True, label='Número de página donde inicia')
+    pagina_fin = forms.CharField(widget=wNumberInput, required=True, label='Número de página final')
     proyecto = forms.ModelChoiceField(
         queryset=Proyecto.objects.all(),
         label="Proyecto",
@@ -88,8 +88,8 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=wTextarea, required=False)
     responsabilidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'EVENTO__RESPONSABILIDAD', ), required=True)
-    numero_ponentes = forms.CharField(widget=wNumberField, required=True)
-    numero_asistentes = forms.CharField(widget=wNumberField, required=True)
+    numero_ponentes = forms.CharField(widget=wNumberInput, required=True)
+    numero_asistentes = forms.CharField(widget=wNumberInput, required=True)
     ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
 
     class Meta:
@@ -98,7 +98,7 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
 
 
 class ParticipacionEventoDivulgacionForm(forms.ModelForm):
-    titulo = forms.CharField(widget=wCharField, required=True)
+    titulo = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     evento = forms.ModelChoiceField(
         queryset=Evento.objects.all(),
@@ -118,7 +118,7 @@ class ParticipacionEventoDivulgacionForm(forms.ModelForm):
 
 
 class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
-    tema = forms.CharField(widget=wCharField, required=True)
+    tema = forms.CharField(widget=wTextInput, required=True)
     fecha = forms.DateField(widget=wDateField, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     actividad = forms.ChoiceField(widget=Select3Widget, choices=(('PRODUCCION', 'Producción'), ('PARTICIPACION', 'Participación'), ('ENTREVISTA', 'Entrevista'), ('OTRA', 'Otra')), required=True)
@@ -136,7 +136,7 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
 
 
 class LibroDivulgacionForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wCharField, required=True)
+    nombre = forms.CharField(widget=wTextInput, required=True)
     descripcion = forms.CharField(widget=wTextarea, required=False)
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
@@ -171,8 +171,8 @@ class LibroDivulgacionForm(forms.ModelForm):
     )
     status = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'STATUS_PUBLICACION', ))
     fecha = forms.DateField(widget=wDateField)
-    numero_edicion = forms.CharField(widget=wNumberField)
-    numero_paginas = forms.CharField(widget=wNumberField)
+    numero_edicion = forms.CharField(widget=wNumberInput)
+    numero_paginas = forms.CharField(widget=wNumberInput)
     coleccion = forms.ModelChoiceField(
         required=False,
         queryset=Coleccion.objects.all(),
@@ -181,9 +181,9 @@ class LibroDivulgacionForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
         )
     )
-    volumen = forms.CharField(widget=wCharField, required=False)
-    isbn = forms.CharField(widget=wCharField, required=False)
-    url = forms.URLField(widget=wUrlField, required=False)
+    volumen = forms.CharField(widget=wTextInput, required=False)
+    isbn = forms.CharField(widget=wTextInput, required=False)
+    url = forms.URLField(widget=wURLInput, required=False)
 
     class Meta:
         model = LibroDivulgacion
