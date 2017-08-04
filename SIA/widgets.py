@@ -37,30 +37,8 @@ class wNumberInput(NumberInput):
     input_type = 'number'
     template_name = 'widgets/wtext.html'
 
-
-
-
-
-
-
 class wNoNegativeNumberField(wNumberInput):
     template_name = 'widgets/NoNegativeNumberField.html'
-
-class wTextarea1(Widget):
-    template_name = 'widgets/Textarea.html'
-    is_required = False
-
-    def get_context(self, name, value, attrs=None):
-        return {'widget': {
-            'name': name,
-            'value': value,
-        }}
-
-    def render(self, name, value, attrs=None):
-        context = self.get_context(name, value, attrs)
-        template = loader.get_template(self.template_name).render(context)
-        return mark_safe(template)
-
 
 class wTextarea(Textarea):
     def __init__(self, attrs=None):
@@ -583,4 +561,38 @@ class wNumberField1(Widget):
         context = self.get_context(name, value, attrs)
         template = loader.get_template(self.template_name).render(context)
         return mark_safe(template)
+"""
+
+"""
+class wTextarea1(Widget):
+    template_name = 'widgets/Textarea.html'
+    is_required = False
+
+    def get_context(self, name, value, attrs=None):
+        return {'widget': {
+            'name': name,
+            'value': value,
+        }}
+
+    def render(self, name, value, attrs=None):
+        context = self.get_context(name, value, attrs)
+        template = loader.get_template(self.template_name).render(context)
+        return mark_safe(template)
+"""
+
+
+"""
+class Textarea11(Widget):
+    def __init__(self, attrs=None):
+        # Use slightly better defaults than HTML's 20x2 box
+        default_attrs = {'cols': '40', 'rows': '10'}
+        if attrs:
+            default_attrs.update(attrs)
+        super(Textarea, self).__init__(default_attrs)
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, name=name)
+        return format_html('<textarea{}>\r\n{}</textarea>', flatatt(final_attrs), force_text(value))
 """
