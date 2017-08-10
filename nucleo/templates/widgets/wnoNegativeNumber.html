@@ -1,0 +1,2 @@
+<input class="form-control pull-right" type="{{ widget.type }}" name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% else %} value="0"{% endif %}{% include "django/forms/widgets/attrs.html" %} min=0/>
+
