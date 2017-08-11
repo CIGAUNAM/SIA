@@ -67,21 +67,20 @@ class CursoEspecializacionForm(forms.ModelForm):
 class CursoEspecializacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=wTextInput, required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
     descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
-    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'class' : 'form-control pull-right '}), choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
-    horas = forms.CharField(widget=wNumberInput, required=True, label='Número de horas')
+    tipo = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
+    horas = forms.CharField(widget=wNumberInput(attrs={'min': 1}), required=True, label='Número de horas')
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
-    """
-    area_conocimiento = forms.ChoiceField(
-        #queryset=AreaConocimiento.objects.all(),
+    area_conocimiento = forms.ModelChoiceField(
+        queryset=AreaConocimiento.objects.all(),
         label="Área de conocimiento",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             model='AreaConocimiento',
             queryset=AreaConocimiento.objects.all(),
             search_fields=['nombre__icontains'],
         )
-    )"""
-    fecha_inicio = forms.DateField(required=True)
-    fecha_fin = forms.DateField(required=False)
+    )
+    fecha_inicio = forms.DateField(widget=wDateField, required=True)
+    fecha_fin = forms.DateField(widget=wDateField, required=False)
     institucion = forms.ModelChoiceField(
         required=True,
         queryset=Institucion.objects.all(),
@@ -96,7 +95,7 @@ class CursoEspecializacionForm(forms.ModelForm):
         model = CursoEspecializacion
         exclude = ['usuario', ]
         widgets = {
-            #'nombre': wTextInput,
+
             #'dependencia': NombreModelSelect3Widget,
             'area_conocimiento': wSelect,
         }

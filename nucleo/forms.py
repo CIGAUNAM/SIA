@@ -498,6 +498,7 @@ class RevistaForm(forms.ModelForm):
         widgets = {
             'nombre': wTextInput,
             'descripcion': wTextarea,
+            'factor_impacto': wNumberInput,
             'url': wURLInput,
         }
 
