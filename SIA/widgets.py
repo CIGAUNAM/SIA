@@ -55,47 +55,16 @@ class wTextarea(Textarea):
         return format_html('<div class="form-group" style="margin-top: -10px;"><textarea class="form-control" rows="3" {}>\r\n{}</textarea></div>', flatatt(final_attrs), force_text(value))
 
 
-
 class wDateField(DateInput):
-    template_name = 'widgets/DateField.html'
     format_key = 'DATE_INPUT_FORMATS'
-    format = None
-
-    def get_context(self, name, value, attrs=None):
-
-        if value:
-            tfecha = str(formats.localize_input(value, formats.get_format(self.format_key)[0]))
-            try:
-                tfecha = tfecha.split("/")
-                fecha = str(tfecha[2]) + "-" + str(tfecha[1]) + "-" + str(tfecha[0])
-                fecha = "la fecha aqui"
-                return {'widget': {
-                    'name': name,
-                    'value': fecha,
-                }}
-            except:
-                return {'widget': {
-                    'name': name,
-                    'value': None,
-                }}
-        else:
-            return {'widget': {
-                'name': name,
-                'value': None,
-            }}
+    template_name = 'widgets/wdate.html'
 
     def format_value(self, value):
-        return formats.localize_input(value, self.format or formats.get_format(self.format_key)[2])
+        if value is not None:
+            return formats.localize_input(value, self.format or formats.get_format(self.format_key)[2])
 
-    def render(self, name, value, attrs=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(attrs, type=self.input_type)
-        if value != '':
-            # Only add the 'value' attribute if a value is non-empty.
-            final_attrs['value'] = force_text(self.format_value(value))
 
-        return format_html('<input{} style="padding-left: 18px"; data-provide="datepicker" class="datepicker form-control pull-right"/>', flatatt(final_attrs))
+
 
 
 class Select3Mixin(Select2Mixin):
@@ -158,39 +127,12 @@ class Select3Mixin(Select2Mixin):
 
 class wSelect(Select):
     input_type = 'select'
-    template_name = 'django/forms/widgets/select.html'
+    template_name = 'widgets/wselect.html'
     option_template_name = 'django/forms/widgets/select_option.html'
     add_id_index = False
     checked_attribute = {'selected': True}
     option_inherits_attrs = False
 
-    def get_context(self, name, value, attrs):
-        context = super(Select, self).get_context(name, value, attrs)
-        if self.allow_multiple_selected:
-            context['widget']['attrs']['multiple'] = 'multiple'
-        return context
-
-    @staticmethod
-    def _choice_has_empty_value(choice):
-        """Return True if the choice's value is empty string or None."""
-        value, _ = choice
-        return (
-            (isinstance(value, six.string_types) and not bool(value)) or
-            value is None
-        )
-
-    def use_required_attribute(self, initial):
-        """
-        Don't render 'required' if the first <option> has a value, as that's
-        invalid HTML.
-        """
-        use_required_attribute = super(Select, self).use_required_attribute(initial)
-        # 'required' is always okay for <select multiple>.
-        if self.allow_multiple_selected:
-            return use_required_attribute
-
-        first_choice = next(iter(self.choices), None)
-        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
 
 
 
@@ -478,11 +420,9 @@ class ModelSelect3Widget(ModelSelect2Widget, HeavySelect3Widget):
         Therefore you don't need to define a QuerySet,
         if you just drop in the widget for a ForeignKey field.
     """
-
     pass
 
 
-#test
 
 
 """
@@ -595,4 +535,47 @@ class Textarea11(Widget):
             value = ''
         final_attrs = self.build_attrs(attrs, name=name)
         return format_html('<textarea{}>\r\n{}</textarea>', flatatt(final_attrs), force_text(value))
+"""
+
+"""
+class wDateField1(DateInput):
+    template_name = 'widgets/DateField.html'
+    format_key = 'DATE_INPUT_FORMATS'
+    format = None
+
+    def get_context(self, name, value, attrs=None):
+
+        if value:
+            tfecha = str(formats.localize_input(value, formats.get_format(self.format_key)[0]))
+            try:
+                tfecha = tfecha.split("/")
+                fecha = str(tfecha[2]) + "-" + str(tfecha[1]) + "-" + str(tfecha[0])
+                fecha = "la fecha aqui"
+                return {'widget': {
+                    'name': name,
+                    'value': fecha,
+                }}
+            except:
+                return {'widget': {
+                    'name': name,
+                    'value': None,
+                }}
+        else:
+            return {'widget': {
+                'name': name,
+                'value': None,
+            }}
+
+    def format_value(self, value):
+        return formats.localize_input(value, self.format or formats.get_format(self.format_key)[2])
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs, type=self.input_type)
+        if value != '':
+            # Only add the 'value' attribute if a value is non-empty.
+            final_attrs['value'] = force_text(self.format_value(value))
+
+        return format_html('<input{} style="padding-left: 18px"; data-provide="datepicker" class="datepicker form-control pull-right"/>', flatatt(final_attrs))
 """

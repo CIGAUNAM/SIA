@@ -782,6 +782,7 @@ class Revista(models.Model):
     descripcion = models.TextField(blank=True)
     editorial = models.ForeignKey(Editorial)
     #pais = models.ForeignKey(Pais)
+    factor_impacto = models.DecimalField(max_digits=6, decimal_places=3, blank=True, null=True)
     url = models.URLField(blank=True)
 
     def __str__(self):
