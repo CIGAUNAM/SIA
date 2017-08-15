@@ -6,10 +6,13 @@ from django.conf import settings
 from django_select2.forms import ModelSelect2Widget, Select2Widget, Select2MultipleWidget
 from nucleo.models import Institucion
 
-class NombreModelSelect3Widget(ModelSelect3Widget):
+class NombreModelSelect2Widget(ModelSelect2Widget):
     search_fields = [
         'nombre__icontains',
     ]
+
+
+
 
 """
 class CursoEspecializacionForm(forms.ModelForm):
@@ -71,14 +74,19 @@ class CursoEspecializacionForm(forms.ModelForm):
     horas = forms.CharField(widget=wNumberInput(attrs={'min': 1}), required=True, label='Número de horas')
     modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
     area_conocimiento = forms.ModelChoiceField(
+        required=True,
         queryset=AreaConocimiento.objects.all(),
         label="Área de conocimiento",
         widget=ModelSelect2Widget(
-            model='AreaConocimiento',
-            queryset=AreaConocimiento.objects.all(),
             search_fields=['nombre__icontains'],
+            queryset=AreaConocimiento.objects.all(),
         )
     )
+
+
+
+
+
     fecha_inicio = forms.DateField(widget=wDateField, required=True)
     fecha_fin = forms.DateField(widget=wDateField, required=False)
     institucion = forms.ModelChoiceField(
@@ -97,7 +105,7 @@ class CursoEspecializacionForm(forms.ModelForm):
         widgets = {
 
             #'dependencia': NombreModelSelect3Widget,
-            'area_conocimiento': wSelect,
+
         }
         help_texts = {
             "nombre": 'Group to which this message belongs to',

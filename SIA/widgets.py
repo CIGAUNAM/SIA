@@ -64,6 +64,83 @@ class wDateField(DateInput):
             return formats.localize_input(value, self.format or formats.get_format(self.format_key)[2])
 
 
+class wSelect(Select):
+    input_type = 'select'
+    template_name = 'widgets/wselect.html'
+    option_template_name = 'django/forms/widgets/select_option.html'
+    add_id_index = False
+    checked_attribute = {'selected': True}
+    option_inherits_attrs = False
+
+
+class wOrderedSelect(Select, TextInput):
+    allow_multiple_selected = False
+
+    def __init__(self, attrs=None, choices=()):
+        super(Select, self).__init__(attrs)
+        # choices can be any iterable, but we may need to render this widget
+        # multiple times. Thus, collapse it into a list so it can be consumed
+        # more than once.
+        self.choices = list(choices)
+
+    def __deepcopy__(self, memo):
+        obj = copy.copy(self)
+        obj.attrs = self.attrs.copy()
+        obj.choices = copy.copy(self.choices)
+        memo[id(self)] = obj
+        return obj
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs)
+        output = [format_html('<select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
+        options = self.render_options([value])
+        if options:
+            output.append(options)
+        output.append('</select>')
+        return mark_safe('\n'.join(output))
+
+    def render_option(self, selected_choices, option_value, option_label):
+        if option_value is None:
+            option_value = ''
+        option_value = force_text(option_value)
+        if option_value in selected_choices:
+            selected_html = mark_safe(' selected="selected"')
+            if not self.allow_multiple_selected:
+                # Only allow for a single selection.
+                selected_choices.remove(option_value)
+        else:
+            selected_html = ''
+        return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, force_text(option_label))
+
+    def render_options(self, selected_choices):
+        # Normalize to strings.
+        selected_choices = [force_text(v) for v in selected_choices]
+        output = []
+
+        for i in selected_choices:
+            for option_value, option_label in self.choices:
+                if str(option_value) == i:
+                    if isinstance(option_label, (list, tuple)):
+                        output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                        for option in option_label:
+                            output.append(self.render_option(selected_choices, *option))
+                        output.append('</optgroup>')
+                    else:
+                        output.append(self.render_option(selected_choices, option_value, option_label))
+
+        for option_value, option_label in self.choices:
+            if str(option_value) not in selected_choices:
+                if isinstance(option_label, (list, tuple)):
+                    output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                    for option in option_label:
+                        output.append(self.render_option(selected_choices, *option))
+                    output.append('</optgroup>')
+                else:
+                    output.append(self.render_option(selected_choices, option_value, option_label))
+        return '\n'.join(output)
+
 
 
 
@@ -125,144 +202,7 @@ class Select3Mixin(Select2Mixin):
     media = property(_get_media)
 
 
-class wSelect(Select):
-    input_type = 'select'
-    template_name = 'widgets/wselect.html'
-    option_template_name = 'django/forms/widgets/select_option.html'
-    add_id_index = False
-    checked_attribute = {'selected': True}
-    option_inherits_attrs = False
 
-
-
-
-class wSelect1(Select, TextInput):
-    allow_multiple_selected = False
-
-    def __init__(self, attrs=None, choices=()):
-        super(Select, self).__init__(attrs)
-        # choices can be any iterable, but we may need to render this widget
-        # multiple times. Thus, collapse it into a list so it can be consumed
-        # more than once.
-        self.choices = list(choices)
-
-    def __deepcopy__(self, memo):
-        obj = copy.copy(self)
-        obj.attrs = self.attrs.copy()
-        obj.choices = copy.copy(self.choices)
-        memo[id(self)] = obj
-        return obj
-
-    def render(self, name, value, attrs=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(attrs)
-        output = [format_html('<select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
-        options = self.render_options([value])
-        if options:
-            output.append(options)
-        output.append('</select>')
-        return mark_safe('\n'.join(output))
-
-    def render_option(self, selected_choices, option_value, option_label):
-        if option_value is None:
-            option_value = ''
-        option_value = force_text(option_value)
-        if option_value in selected_choices:
-            selected_html = mark_safe(' selected="selected"')
-            if not self.allow_multiple_selected:
-                # Only allow for a single selection.
-                selected_choices.remove(option_value)
-        else:
-            selected_html = ''
-        return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, force_text(option_label))
-
-    def render_options(self, selected_choices):
-        # Normalize to strings.
-        selected_choices = set(force_text(v) for v in selected_choices)
-
-        output = []
-        for option_value, option_label in self.choices:
-            if isinstance(option_label, (list, tuple)):
-                output.append(format_html('<optgroup label="{}">', force_text(option_value)))
-                for option in option_label:
-                    output.append(self.render_option(selected_choices, *option))
-                output.append('</optgroup>')
-            else:
-                output.append(self.render_option(selected_choices, option_value, option_label))
-        return '\n'.join(output)
-
-
-
-class wOrderedSelect(Select, TextInput):
-    allow_multiple_selected = False
-
-    def __init__(self, attrs=None, choices=()):
-        super(Select, self).__init__(attrs)
-        # choices can be any iterable, but we may need to render this widget
-        # multiple times. Thus, collapse it into a list so it can be consumed
-        # more than once.
-        self.choices = list(choices)
-
-
-
-    def __deepcopy__(self, memo):
-        obj = copy.copy(self)
-        obj.attrs = self.attrs.copy()
-        obj.choices = copy.copy(self.choices)
-        memo[id(self)] = obj
-        return obj
-
-    def render(self, name, value, attrs=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(attrs)
-        output = [format_html('<select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
-        options = self.render_options([value])
-        if options:
-            output.append(options)
-        output.append('</select>')
-        return mark_safe('\n'.join(output))
-
-    def render_option(self, selected_choices, option_value, option_label):
-        if option_value is None:
-            option_value = ''
-        option_value = force_text(option_value)
-        if option_value in selected_choices:
-            selected_html = mark_safe(' selected="selected"')
-            if not self.allow_multiple_selected:
-                # Only allow for a single selection.
-                selected_choices.remove(option_value)
-        else:
-            selected_html = ''
-        return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, force_text(option_label))
-
-    def render_options(self, selected_choices):
-        # Normalize to strings.
-        selected_choices = [force_text(v) for v in selected_choices]
-        output = []
-
-        for i in selected_choices:
-            for option_value, option_label in self.choices:
-                if str(option_value) == i:
-                    if isinstance(option_label, (list, tuple)):
-                        output.append(format_html('<optgroup label="{}">', force_text(option_value)))
-                        for option in option_label:
-                            output.append(self.render_option(selected_choices, *option))
-                        output.append('</optgroup>')
-                    else:
-                        output.append(self.render_option(selected_choices, option_value, option_label))
-
-        for option_value, option_label in self.choices:
-            if str(option_value) not in selected_choices:
-                if isinstance(option_label, (list, tuple)):
-                    output.append(format_html('<optgroup label="{}">', force_text(option_value)))
-                    for option in option_label:
-                        output.append(self.render_option(selected_choices, *option))
-                    output.append('</optgroup>')
-                else:
-                    output.append(self.render_option(selected_choices, option_value, option_label))
-        return '\n'.join(output)
 
 
 class wSelectMultiple(wSelect):
@@ -578,4 +518,63 @@ class wDateField1(DateInput):
             final_attrs['value'] = force_text(self.format_value(value))
 
         return format_html('<input{} style="padding-left: 18px"; data-provide="datepicker" class="datepicker form-control pull-right"/>', flatatt(final_attrs))
+"""
+
+
+"""
+class wSelect1(Select, TextInput):
+    allow_multiple_selected = False
+
+    def __init__(self, attrs=None, choices=()):
+        super(Select, self).__init__(attrs)
+        # choices can be any iterable, but we may need to render this widget
+        # multiple times. Thus, collapse it into a list so it can be consumed
+        # more than once.
+        self.choices = list(choices)
+
+    def __deepcopy__(self, memo):
+        obj = copy.copy(self)
+        obj.attrs = self.attrs.copy()
+        obj.choices = copy.copy(self.choices)
+        memo[id(self)] = obj
+        return obj
+
+    def render(self, name, value, attrs=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(attrs)
+        output = [format_html('<select style="width: 100%; line-height: 22px;"{}>', flatatt(final_attrs))]
+        options = self.render_options([value])
+        if options:
+            output.append(options)
+        output.append('</select>')
+        return mark_safe('\n'.join(output))
+
+    def render_option(self, selected_choices, option_value, option_label):
+        if option_value is None:
+            option_value = ''
+        option_value = force_text(option_value)
+        if option_value in selected_choices:
+            selected_html = mark_safe(' selected="selected"')
+            if not self.allow_multiple_selected:
+                # Only allow for a single selection.
+                selected_choices.remove(option_value)
+        else:
+            selected_html = ''
+        return format_html('<option value="{}"{}>{}</option>', option_value, selected_html, force_text(option_label))
+
+    def render_options(self, selected_choices):
+        # Normalize to strings.
+        selected_choices = set(force_text(v) for v in selected_choices)
+
+        output = []
+        for option_value, option_label in self.choices:
+            if isinstance(option_label, (list, tuple)):
+                output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                for option in option_label:
+                    output.append(self.render_option(selected_choices, *option))
+                output.append('</optgroup>')
+            else:
+                output.append(self.render_option(selected_choices, option_value, option_label))
+        return '\n'.join(output)
 """
