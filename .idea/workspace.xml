@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_misc/test1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_misc/test1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,17 +29,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="widgets.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="widgets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="291" column="17" lean-forward="true" selection-start-line="291" selection-start-column="17" selection-end-line="291" selection-end-column="17" />
+            <state relative-caret-position="323">
+              <caret line="486" column="0" lean-forward="true" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
               <folding>
                 <element signature="e#0#140#0" expanded="true" />
                 <element signature="e#1455#2043#0" expanded="false" />
                 <element signature="e#2353#2588#0" expanded="false" />
                 <element signature="e#2636#5628#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_misc/test1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="64" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="289" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test1.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_misc/test1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,7 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>form</find>
       <find>form_ag</find>
       <find>submi</find>
       <find>submit_</find>
@@ -137,6 +158,7 @@
       <find>class</find>
       <find>wSelect</find>
       <find>ModelSelect3Widget</find>
+      <find>xs</find>
     </findStrings>
     <replaceStrings>
       <replace>BooleanField(required=False)</replace>
@@ -165,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/divulgacion_cientifica/templates/capitulo_libro_divulgacion.html" />
         <option value="$PROJECT_DIR$/experiencia_laboral/templates/experiencia_laboral.html" />
         <option value="$PROJECT_DIR$/vinculacion/urls.py" />
         <option value="$PROJECT_DIR$/vinculacion/views.py" />
@@ -216,11 +237,19 @@
         <option value="$PROJECT_DIR$/nucleo/templates/widgets/wselect_option.html" />
         <option value="$PROJECT_DIR$/SIA/widgets.py" />
         <option value="$PROJECT_DIR$/formacion_academica/forms.py" />
+        <option value="$PROJECT_DIR$/_misc/test1.html" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -254,6 +283,11 @@
             <path>
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="_misc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
@@ -786,13 +820,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490810303150</updated>
     </task>
-    <task id="LOCAL-00056" summary="primeros widgets para forms">
-      <created>1494594602052</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1494594602052</updated>
-    </task>
     <task id="LOCAL-00057" summary="primeros widgets para forms">
       <created>1494607512551</created>
       <option name="number" value="00057" />
@@ -1129,7 +1156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502766988049</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="actualizaciòn a django 1.11">
+      <created>1502913741166</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1502913741167</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1212,20 +1246,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/perfil_usuario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ebase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/WinPython-3523Qt5/python-3.5.2.amd64/Lib/site-packages/django/contrib/admin/templates/admin/submit_line.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1516,7 +1536,7 @@
         <state relative-caret-position="357">
           <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1526,8 +1546,8 @@
         <state relative-caret-position="85">
           <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1584,14 +1604,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="291" column="17" lean-forward="true" selection-start-line="291" selection-start-column="17" selection-end-line="291" selection-end-column="17" />
+        <state relative-caret-position="323">
+          <caret line="486" column="0" lean-forward="true" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
           <folding>
             <element signature="e#0#140#0" expanded="true" />
             <element signature="e#1455#2043#0" expanded="false" />
             <element signature="e#2353#2588#0" expanded="false" />
             <element signature="e#2636#5628#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_misc/test1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="64" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="289" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_misc/test1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
