@@ -6,6 +6,8 @@ from django.conf import settings
 from django_select2.forms import ModelSelect2Widget, Select2Widget, Select2MultipleWidget
 from nucleo.models import Institucion
 
+
+
 class NombreModelSelect2Widget(ModelSelect2Widget):
     search_fields = [
         'nombre__icontains',
@@ -68,11 +70,11 @@ class CursoEspecializacionForm(forms.ModelForm):
 """
 
 class CursoEspecializacionForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wTextInput, required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
-    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
-    tipo = forms.ChoiceField(widget=wSelect, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
+    tipo = forms.ChoiceField(widget=Select(attrs={'class': 'form-control pull-right', 'placeholder': 'dsad'}), choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
     horas = forms.CharField(widget=wNumberInput(attrs={'min': 1}), required=True, label='Número de horas')
-    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
+    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%'}), choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
     area_conocimiento = forms.ModelChoiceField(
         required=True,
         queryset=AreaConocimiento.objects.all(),
@@ -80,6 +82,7 @@ class CursoEspecializacionForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=AreaConocimiento.objects.all(),
+            attrs={'style': 'width: 100%'}
         )
     )
 
