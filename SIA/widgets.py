@@ -1,20 +1,17 @@
-from django.forms.widgets import Widget, Select, Input, DateTimeBaseInput, DateInput, URLInput, Textarea, EmailInput, TextInput, NumberInput
-from django.template import loader
+from django.forms.widgets import Select, DateInput, URLInput, Textarea, EmailInput, TextInput, NumberInput
 from django.utils.safestring import mark_safe
 import copy
-from django.utils.html import conditional_escape, format_html, html_safe
-from django.forms.utils import flatatt, to_current_timezone
-from django.utils.encoding import (
-    force_str, force_text, python_2_unicode_compatible,
-)
-from django.utils import datetime_safe, formats, six
+from django.utils.html import format_html
+from django.forms.utils import flatatt
+from django.utils.encoding import force_text
+from django.utils import formats, six
 from django import forms
 from django.conf import settings
 from itertools import chain
-from django_select2.forms import Select2Mixin, ModelSelect2Widget, ModelSelect2Mixin, HeavySelect2Widget, HeavySelect2Mixin
+from django_select2.forms import Select2Mixin, ModelSelect2Mixin, HeavySelect2Mixin
 from django.utils.datastructures import MultiValueDict
 from django.utils.translation import get_language
-
+from django.core import signing
 
 
 class wTextInput(TextInput):
@@ -64,6 +61,8 @@ class wDateField(DateInput):
             return formats.localize_input(value, self.format or formats.get_format(self.format_key)[2])
 
 
+
+
 class wSelect(Select):
     input_type = 'select'
     template_name = 'widgets/wselect.html'
@@ -71,6 +70,71 @@ class wSelect(Select):
     add_id_index = False
     checked_attribute = {'selected': True}
     option_inherits_attrs = False
+
+    def get_context(self, name, value, attrs):
+        context = super(wSelect, self).get_context(name, value, attrs)
+        if self.allow_multiple_selected:
+            context['widget']['attrs']['multiple'] = 'multiple'
+        return context
+
+    @staticmethod
+    def _choice_has_empty_value(choice):
+        """Return True if the choice's value is empty string or None."""
+        value, _ = choice
+        return (
+            (isinstance(value, six.string_types) and not bool(value)) or
+            value is None
+        )
+
+    def use_required_attribute(self, initial):
+        """
+        Don't render 'required' if the first <option> has a value, as that's
+        invalid HTML.
+        """
+        use_required_attribute = super(wSelect, self).use_required_attribute(initial)
+        # 'required' is always okay for <select multiple>.
+        if self.allow_multiple_selected:
+            return use_required_attribute
+
+        first_choice = next(iter(self.choices), None)
+        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
+
+
+class w3Select(wSelect):
+    input_type = 'select'
+    template_name = 'widgets/w3select.html'
+    option_template_name = 'django/forms/widgets/select_option.html'
+    add_id_index = False
+    checked_attribute = {'selected': True}
+    option_inherits_attrs = False
+
+    def get_context(self, name, value, attrs):
+        context = super(w3Select, self).get_context(name, value, attrs)
+        if self.allow_multiple_selected:
+            context['widget']['attrs']['multiple'] = 'multiple'
+        return context
+
+    @staticmethod
+    def _choice_has_empty_value(choice):
+        """Return True if the choice's value is empty string or None."""
+        value, _ = choice
+        return (
+            (isinstance(value, six.string_types) and not bool(value)) or
+            value is None
+        )
+
+    def use_required_attribute(self, initial):
+        """
+        Don't render 'required' if the first <option> has a value, as that's
+        invalid HTML.
+        """
+        use_required_attribute = super(w3Select, self).use_required_attribute(initial)
+        # 'required' is always okay for <select multiple>.
+        if self.allow_multiple_selected:
+            return use_required_attribute
+
+        first_choice = next(iter(self.choices), None)
+        return use_required_attribute and first_choice is not None and self._choice_has_empty_value(first_choice)
 
 
 class wOrderedSelect(Select, TextInput):
@@ -323,7 +387,40 @@ class HeavySelect3Widget(HeavySelect2Mixin, Select3Widget):
     pass
 
 
-class ModelSelect3Widget(ModelSelect2Widget, HeavySelect3Widget):
+class HeavySelect3Mixin(HeavySelect2Mixin):
+    def build_attrs(self, *args, **kwargs):
+        """Set select2's AJAX attributes."""
+        attrs = super(HeavySelect3Mixin, self).build_attrs(*args, **kwargs)
+
+        # encrypt instance Id
+        self.widget_id = signing.dumps(id(self))
+
+        attrs['data-field_id'] = self.widget_id
+        attrs.setdefault('data-ajax--url', self.get_url())
+        attrs.setdefault('data-ajax--cache', "true")
+        attrs.setdefault('data-ajax--type', "GET")
+        attrs.setdefault('data-minimum-input-length', 2)
+        if self.dependent_fields:
+            attrs.setdefault('data-select2-dependent-fields', " ".join(self.dependent_fields))
+
+        attrs['class'] += ' django-select2-heavy'
+        attrs['class'] += ' form-control'
+        attrs['class'] += ' pull-right'
+        return attrs
+
+class Select3Widget(Select2Mixin, wSelect):
+    pass
+
+class Select3Widget2(Select2Mixin, w3Select):
+    pass
+
+class HeavySelect3Widget(HeavySelect2Mixin, Select3Widget2):
+    pass
+
+class ModelSelect3Mixin(ModelSelect2Mixin):
+    pass
+
+class ModelSelect3Widget(ModelSelect3Mixin, HeavySelect3Widget):
     search_fields = [
         'nombre__icontains',
     ]
