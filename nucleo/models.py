@@ -778,7 +778,6 @@ class Libro(models.Model):
 
 class Revista(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre_revista', unique=True)
     descripcion = models.TextField(blank=True)
     editorial = models.ForeignKey(Editorial)
     #pais = models.ForeignKey(Pais)
