@@ -3,7 +3,7 @@ from . models import *
 from django import forms
 
 from nucleo.models import Institucion
-from django_select2.forms import Select2MultipleWidget
+from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Select2Widget
 
 #
 
@@ -11,35 +11,39 @@ class DistincionAcademicoForm(forms.ModelForm):
     distincion = forms.ModelChoiceField(
         queryset=Distincion.objects.all(),
         label="Distincion",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Distincion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'DISTINCION__AMBITO', ), required=True)
-    fecha = forms.DateField(widget=wDateField, required=True)
+    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'DISTINCION__AMBITO', ), required=True)
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = DistincionAcademico
         exclude = []
         widgets = {
-            'condecorados': Select3MultipleWidget,
+            'condecorados': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -47,41 +51,47 @@ class DistincionAlumnoForm(forms.ModelForm):
     distincion = forms.ModelChoiceField(
         queryset=Distincion.objects.all(),
         label="Distincion",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Distincion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     alumno = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Alumno",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    grado_academico = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
+    grado_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    ambito = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'DISTINCION__AMBITO', ), required=True)
-    fecha = forms.DateField(widget=wDateField, required=True)
+    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'DISTINCION__AMBITO', ), required=True)
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = DistincionAlumno
         exclude = []
         widgets = {
-            'tutores': Select3MultipleWidget,
+            'tutores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
