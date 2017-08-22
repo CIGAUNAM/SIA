@@ -2882,7 +2882,7 @@ revistas = (
 )
 
 for i in revistas:
-    r = Revista(nombre=i[0], editorial=Editorial.objects.get(nombre=i[2]))
+    r = Revista(nombre=i[0], editorial=Editorial.objects.get(nombre=i[2]), pais=Pais.objects.get(nombre='México'))
     r.save()
     print(r)
 
