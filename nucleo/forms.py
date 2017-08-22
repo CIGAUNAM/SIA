@@ -1,37 +1,25 @@
 from .models import *
 from django import forms
 from django.core.exceptions import ValidationError
+from django_select2.forms import Select2Widget, ModelSelect2Widget, ModelSelect2MultipleWidget, Select2MultipleWidget
+
 
 from SIA.widgets import *
-from django.forms import widgets
 
 #
 
 
-"""
-class TagForm(forms.ModelForm):
-    class Meta:
-        model = Tag
-        exclude = []
 
-    def clean_tag(self):
-        return self.cleaned_data['tag'].lower()
-"""
-
-"""
-class ZonaPaisForm(forms.ModelForm):
-    class Meta:
-        model = ZonaPais
-        exclude = []
-"""
 
 
 class PaisForm(forms.ModelForm):
     zona = forms.ModelChoiceField(
         queryset=ZonaPais.objects.all(),
         label="Zona",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=ZonaPais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -39,9 +27,9 @@ class PaisForm(forms.ModelForm):
         model = Pais
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'nombre_extendido': wTextInput,
-            'codigo': wTextInput,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre_extendido': TextInput(attrs={'class': 'form-control pull-right'}),
+            'codigo': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -49,8 +37,10 @@ class EstadoForm(forms.ModelForm):
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -58,7 +48,7 @@ class EstadoForm(forms.ModelForm):
         model = Estado
         exclude = []
         widgets = {
-            'nombre': wTextInput,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -66,8 +56,10 @@ class CiudadForm(forms.ModelForm):
     estado = forms.ModelChoiceField(
         queryset=Estado.objects.all(),
         label="Estado",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -75,7 +67,7 @@ class CiudadForm(forms.ModelForm):
         model = Ciudad
         exclude = []
         widgets = {
-            'nombre': wTextInput,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -83,8 +75,10 @@ class InstitucionForm(forms.ModelForm):
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -92,8 +86,8 @@ class InstitucionForm(forms.ModelForm):
         model = Institucion
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -101,19 +95,23 @@ class DependenciaForm(forms.ModelForm):
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Ciudad.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    subsistema_unam = forms.ChoiceField(widget=Select3Widget,
-                                        choices=(('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+    subsistema_unam = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                                        choices=(('', 'Seleccionar Subsistema UNAM, si aplica '), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
                                                  ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
                                                  ('HUMANIDADES', 'Subsistema de Humanidades'),
                                                  ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
@@ -125,8 +123,8 @@ class DependenciaForm(forms.ModelForm):
         model = Dependencia
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -134,8 +132,10 @@ class DepartamentoForm(forms.ModelForm):
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -143,21 +143,23 @@ class DepartamentoForm(forms.ModelForm):
         model = Departamento
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
 class CargoForm(forms.ModelForm):
-    tipo_cargo = forms.ChoiceField(widget=Select3Widget, choices=(
-        ('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('OTRO', 'Otro')))
+    tipo_cargo = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=(('', 'Seleccionar tipo de cargo'), ('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), 
+                 ('OTRO', 'Otro')))
 
     class Meta:
         model = Cargo
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -177,8 +179,10 @@ class AreaEspecialidadForm(forms.ModelForm):
     area_conocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=AreaConocimiento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -186,8 +190,8 @@ class AreaEspecialidadForm(forms.ModelForm):
         model = AreaEspecialidad
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -196,8 +200,8 @@ class ImpactoSocialForm(forms.ModelForm):
         model = ImpactoSocial
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -208,15 +212,15 @@ class ImpactoSocialForm(forms.ModelForm):
 
 
 class FinanciamientoForm(forms.ModelForm):
-    tipo_financiamiento = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'FINANCIAMIENTO_TIPO', ), )
+    tipo_financiamiento = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'FINANCIAMIENTO_TIPO', ), )
 
     class Meta:
         model = Financiamiento
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
-            'dependencias_financiamiento': Select3MultipleWidget,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'dependencias_financiamiento': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -225,8 +229,8 @@ class MetodologiaForm(forms.ModelForm):
         model = Metodologia
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -235,8 +239,8 @@ class BecaForm(forms.ModelForm):
         model = Beca
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -245,8 +249,8 @@ class ReconocimientoForm(forms.ModelForm):
         model = Reconocimiento
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -262,8 +266,10 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
     area_conocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=AreaConocimiento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -271,8 +277,8 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
         model = ProgramaLicenciatura
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -280,8 +286,10 @@ class ProgramaMaestriaForm(forms.ModelForm):
     area_conocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=AreaConocimiento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -289,8 +297,8 @@ class ProgramaMaestriaForm(forms.ModelForm):
         model = ProgramaMaestria
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -298,8 +306,10 @@ class ProgramaDoctoradoForm(forms.ModelForm):
     area_conocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=AreaConocimiento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -307,8 +317,8 @@ class ProgramaDoctoradoForm(forms.ModelForm):
         model = ProgramaDoctorado
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -317,8 +327,8 @@ class TipoEventoForm(forms.ModelForm):
         model = TipoEvento
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -326,55 +336,70 @@ class EventoForm(forms.ModelForm):
     tipo = forms.ModelChoiceField(
         queryset=TipoEvento.objects.all(),
         label="Tipo de evento",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=TipoEvento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de fin')
+    fecha_inicio = forms.CharField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
+    fecha_fin = forms.CharField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de fin')
 
     class Meta:
         model = Evento
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
-            'dependencias': Select3MultipleWidget,
-            'ubicacion': wTextInput,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'ubicacion': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
 class DistincionForm(forms.ModelForm):
-    tipo = forms.ChoiceField(widget=Select3Widget, choices=(
-        ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'), ('RECONOCIMIENTO', 'Reconocimiento'),
-        ('MEDALLA', 'Medalla'), ('GUGGENHEIM', 'Beca Guggenheim'), ('HONORIS_CAUSA', 'Doctorado Honoris Causa'),
-        ('OTRO', 'Otro')))
+    tipo = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=(('', 'Seleccionar tipo de distinción'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
+                 ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'), ('GUGGENHEIM', 'Beca Guggenheim'), 
+                 ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
 
     class Meta:
         model = Distincion
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
 class ProyectoForm(forms.ModelForm):
-    tipo = forms.ChoiceField(widget=Select3Widget, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
+    tipo = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=(('', 'Seleccionar tipo de proyecto'), ('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
     es_permanente = forms.BooleanField(required=False)
-    fecha_inicio = forms.DateField(widget=wDateField, required=True, label='Fecha de inicio')
-    fecha_fin = forms.DateField(widget=wDateField, required=False, label='Fecha de fin')
-    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PROYECTO'), required=True)
-    clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CLASIFICACION_PROYECTO'),
-                                      required=True)
-    organizacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ORGANIZACION_PROYECTO'),
-                                     required=True)
-    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'MODALIDAD_PROYECTO'), required=True)
+    fecha_inicio = forms.CharField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), 
+        required=True, label='Fecha de inicio')
+    fecha_fin = forms.CharField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), 
+        required=False, label='Fecha de fin')
+    status = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=getattr(settings, 'STATUS_PROYECTO'), required=True)
+    clasificacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=getattr(settings, 'CLASIFICACION_PROYECTO'), required=True)
+    organizacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=getattr(settings, 'ORGANIZACION_PROYECTO'), required=True)
+    modalidad = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=getattr(settings, 'MODALIDAD_PROYECTO'), required=True)
     tematica_genero = forms.BooleanField(required=False)
     problema_nacional_conacyt = forms.ModelChoiceField(
         queryset=ProblemaNacionalConacyt.objects.all(),
         label="Problema Nacional Conacyt",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
         ),
         required=False
@@ -384,20 +409,20 @@ class ProyectoForm(forms.ModelForm):
         model = Proyecto
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
-            'descripcion_problema_nacional_conacyt': wTextarea,
-            'usuarios': Select3MultipleWidget,
-            'participantes': Select3MultipleWidget,
-            'dependencias': Select3MultipleWidget,
-            'financiamientos': Select3MultipleWidget,
-            'metodologias': Select3MultipleWidget,
-            'especialidades': Select3MultipleWidget,
-            'impactos_sociales': Select3MultipleWidget,
-            'tecnicos': Select3MultipleWidget,
-            'alumnos_doctorado': Select3MultipleWidget,
-            'alumnos_maestria': Select3MultipleWidget,
-            'alumnos_licenciatura': Select3MultipleWidget,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'descripcion_problema_nacional_conacyt': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'financiamientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'metodologias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'especialidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'impactos_sociales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'tecnicos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'alumnos_doctorado': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'alumnos_maestria': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'alumnos_licenciatura': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -406,8 +431,8 @@ class MemoriaForm(forms.ModelForm):
         model = Memoria
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -415,8 +440,10 @@ class EditorialForm(forms.ModelForm):
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -424,8 +451,8 @@ class EditorialForm(forms.ModelForm):
         model = Editorial
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -434,37 +461,43 @@ class ColeccionForm(forms.ModelForm):
         model = Coleccion
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
 class LibroForm(forms.ModelForm):
-    tipo = forms.ChoiceField(widget=Select3Widget,
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                              choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación')))
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Ciudad.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     editorial = forms.ModelChoiceField(
         queryset=Editorial.objects.all(),
         label="Editorial",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Editorial.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    status = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'STATUS_PUBLICACION'))
-    fecha = forms.DateField(widget=wDateField, required=True)
-    numero_edicion = forms.CharField(widget=wNumberInput, required=True, label='Número de edición')
-    numero_paginas = forms.CharField(widget=wNumberInput, required=True, label='Número de páginas')
+    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'STATUS_PUBLICACION'))
+    fecha = forms.CharField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Número de edición')
+    numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(
         queryset=Coleccion.objects.all(),
         label="Colección",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Coleccion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -472,14 +505,14 @@ class LibroForm(forms.ModelForm):
         model = Libro
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
-            'usuarios': Select3MultipleWidget,
-            'editores': Select3MultipleWidget,
-            'coordinadores': Select3MultipleWidget,
-            'volumen': wTextInput,
-            'isbn': wTextInput,
-            'url': wURLInput,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'editores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'coordinadores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'volumen': TextInput(attrs={'class': 'form-control pull-right'}),
+            'isbn': TextInput(attrs={'class': 'form-control pull-right'}),
+            'url': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -487,8 +520,10 @@ class RevistaForm(forms.ModelForm):
     editorial = forms.ModelChoiceField(
         queryset=Editorial.objects.all(),
         label="Editorial",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Editorial.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -496,10 +531,9 @@ class RevistaForm(forms.ModelForm):
         model = Revista
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
-            'factor_impacto': wNumberInput,
-            'url': wURLInput,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'url': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -508,20 +542,21 @@ class AsignaturaForm(forms.ModelForm):
         model = Asignatura
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
 class MedioDivulgacionForm(forms.ModelForm):
-    tipo = forms.ChoiceField(widget=Select3Widget,
-                             choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'),
-                                      ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                             choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Ciudad.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -529,65 +564,56 @@ class MedioDivulgacionForm(forms.ModelForm):
         model = MedioDivulgacion
         exclude = []
         widgets = {
-            'nombre_medio': wTextInput,
-            'canal': wTextInput,
-            'descripcion': wTextarea,
+            'nombre_medio': TextInput(attrs={'class': 'form-control pull-right'}),
+            'canal': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
 class UserForm(forms.ModelForm):
+    """
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Semblanza')
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(
+        ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'),
+        ('OTRO', 'Otro')),
+                             required=True)
+    fecha_nacimiento = forms.CharField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de nacimiento')
     pais_origen = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País de origen",
-        widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
-        )
-    )
-    pais = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="País",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
         )
     )
     estado = forms.ModelChoiceField(
         queryset=Estado.objects.all(),
         label="Estado",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
+            dependent_fields={'pais_origen': 'pais'},
             search_fields=['nombre__icontains'],
-            dependent_fields={'pais': 'pais'},
         )
     )
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
-        widget=ModelSelect3Widget(
-            search_fields=['nombre__icontains'],
+        widget=ModelSelect2Widget(
             dependent_fields={'estado': 'estado'},
+            search_fields=['nombre__icontains'],
         )
     )
+    """
 
     class Meta:
         model = User
-        exclude = ['date_joined', 'is_staff', 'is_active', 'last_login', 'is_superuser', 'groups', 'user_permissions']
-
+        exclude = []
+        """
         widgets = {
-            'first_name': wTextInput,
-            'last_name': wTextInput,
-            'username': wTextInput,
-            'email': wEmailInput,
-
-            'password': wPasswordInput,
-            'descripcion': wTextarea,
-            'fecha_nacimiento': wDateField,
-            'rfc': wTextInput,
-            'direccion': wTextInput,
-            'direccion_continuacion': wTextInput,
-            'telefono': wTextInput,
-            'celular': wTextInput,
-            'sni': wNoNegativeNumberField,
-            'url': wURLInput,
-            'pride': wTextInput,
-            'ingreso_unam': wDateField,
-            'ingreso_entidad': wDateField,
+            'first_name': TextInput(attrs={'class': 'form-control pull-right'}),
+            'last_name': TextInput(attrs={'class': 'form-control pull-right'}),
+            'username': TextInput(attrs={'class': 'form-control pull-right'}),
+            'email': wEmailField,
+            'rfc': TextInput(attrs={'class': 'form-control pull-right'}),
+            'telefono': TextInput(attrs={'class': 'form-control pull-right'}),
+            'celular': TextInput(attrs={'class': 'form-control pull-right'}),
         }
+        """

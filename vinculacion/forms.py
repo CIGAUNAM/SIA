@@ -1,55 +1,66 @@
 from SIA.widgets import *
 from . models import *
 from django import forms
-from django_select2.forms import Select2MultipleWidget
+from django_select2.forms import Select2MultipleWidget,Select2Widget, ModelSelect2Widget
 
 #
 
 class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
-    descripcion = forms.CharField(widget=wTextarea, required=False)
-    tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', ), required=True)
+    descripcion = forms.CharField(
+        widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    tipo = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
+        choices=getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', ), required=True)
     revista = forms.ModelChoiceField(
         required=False,
         queryset=Revista.objects.all(),
         label="Revista",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Revista.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     libro = forms.ModelChoiceField(
         required=False,
         queryset=Libro.objects.all(),
         label="Libro",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Libro.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     capitulo_libro = forms.ModelChoiceField(
         required=False,
         queryset=CapituloLibroInvestigacion.objects.all(),
         label="Capitulo en Libro de Investigación",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=CapituloLibroInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_dictamen = forms.DateField(widget=wDateField, required=True)
+    fecha_dictamen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = ArbitrajePublicacionAcademica
         exclude = ['usuario', 'tags', ]
         widgets = {
-            'indices': Select3MultipleWidget,
+            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
 class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
-    fecha = forms.DateField(widget=wDateField, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     proyecto = forms.ModelChoiceField(
         queryset=Proyecto.objects.all(),
         label="Proyecto de Investigación",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Proyecto.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -59,25 +70,28 @@ class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
 
 
 class ArbitrajeOtraActividadForm(forms.ModelForm):
-    actividad = forms.CharField(widget=wTextInput, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    actividad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}            
         )
     )
-    fecha = forms.DateField(widget=wDateField, required=True)
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = ArbitrajeOtraActividad
@@ -85,17 +99,19 @@ class ArbitrajeOtraActividadForm(forms.ModelForm):
 
 
 class RedAcademicaForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wTextInput, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
-    clasificacion = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
-    objetivos = forms.CharField(widget=wTextarea, required=True)
-    fecha_constitucion = forms.DateField(widget=wDateField, required=True)
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    clasificacion = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
+    objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
+    fecha_constitucion = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     vigente = forms.BooleanField(required=False)
     proyecto = forms.ModelChoiceField(
         queryset=Proyecto.objects.all(),
         label="Proyecto de Investigación",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Proyecto.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -103,36 +119,39 @@ class RedAcademicaForm(forms.ModelForm):
         model = RedAcademica
         exclude = ['tags', ]
         widgets = {
-            'paises': Select3MultipleWidget,
-            'usuarios': Select3MultipleWidget,
+            'paises': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
 
 class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wTextInput, required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     es_agradecimiento = forms.BooleanField(required=False)
-    clasificacion_entidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
-    objetivos = forms.CharField(widget=wTextarea(attrs={'placeholder': 'Objetivos esperados o logrados con el convenio'}), required=True)
-    fecha_inicio = forms.DateField(widget=wDateField, required=True)
-    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    clasificacion_entidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
+    objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     es_renovacion = forms.BooleanField(required=False)
     incluye_financiamiento = forms.BooleanField(required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -140,41 +159,45 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
         model = ConvenioEntidadNoAcademica
         exclude = ['tags', ]
         widgets = {
-            'usuarios': Select3MultipleWidget,
+            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
 class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
-    nombre_servicio = forms.CharField(widget=wTextInput, required=True, label='Nombre de servicio')
+    nombre_servicio = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre de servicio')
     clasificacion_servicio = forms.ModelChoiceField(
         queryset=ClasificacionServicio.objects.all(),
         label="Clasificacion de servicio",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=ClasificacionServicio.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    clasificacion_entidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
-    fecha_inicio = forms.DateField(widget=wDateField, required=True)
-    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    clasificacion_entidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', ), required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     incluye_financiamiento = forms.BooleanField(required=False)
 
     class Meta:
@@ -183,25 +206,28 @@ class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
 
 
 class OtroProgramaVinculacionForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wTextInput, required=True)
-    fecha = forms.DateField(widget=wDateField, required=True)
-    tipo = forms.ChoiceField(widget=Select3Widget, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
-    descripcion = forms.CharField(widget=wTextarea, required=False)
-    resultados = forms.CharField(widget=wTextarea, required=False)
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar un tipo de programa'), ('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'), ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')), required=True)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    resultados = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -216,6 +242,6 @@ class ClasificacionServicioForm(forms.ModelForm):
         model = ClasificacionServicio
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }

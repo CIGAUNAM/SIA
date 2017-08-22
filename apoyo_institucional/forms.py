@@ -2,7 +2,7 @@ from SIA.widgets import *
 from .models import *
 
 from django import forms
-from django_select2.forms import Select2MultipleWidget
+from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget
 
 #
 
@@ -10,29 +10,34 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
     cargo = forms.ModelChoiceField(
         queryset=Cargo.objects.all(),
         label="Cargo",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Cargo.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_inicio = forms.DateField(widget=wDateField, required=True)
-    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = CargoAcademicoAdministrativo
@@ -43,29 +48,34 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
     representacion = forms.ModelChoiceField(
         queryset=Representacion.objects.all(),
         label="Representación",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Representacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_inicio = forms.DateField(widget=wDateField, required=True)
-    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = RepresentacionOrganoColegiado
@@ -76,28 +86,33 @@ class ComisionAcademicaForm(forms.ModelForm):
     comision_academica = forms.ModelChoiceField(
         queryset=Comision.objects.all(),
         label="Comisión",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Comision.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     es_evaluacion = forms.BooleanField(required=False)
-    fecha_inicio = forms.DateField(widget=wDateField, required=True)
-    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -111,29 +126,34 @@ class ApoyoTecnicoForm(forms.ModelForm):
     actividad_apoyo = forms.ModelChoiceField(
         queryset=ActividadApoyo.objects.all(),
         label="Actividad de apoyo",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=ActividadApoyo.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_inicio = forms.DateField(widget=wDateField, required=True)
-    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = ApoyoTecnico
@@ -144,29 +164,34 @@ class ApoyoOtraActividadForm(forms.ModelForm):
     actividad_apoyo = forms.ModelChoiceField(
         queryset=ActividadApoyo.objects.all(),
         label="Actividad de apoyo",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=ActividadApoyo.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=wTextarea, required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
-        widget=ModelSelect3Widget(
+        widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             dependent_fields={'institucion': 'institucion'},
-            max_results=500,
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_inicio = forms.DateField(widget=wDateField, required=True)
-    fecha_fin = forms.DateField(widget=wDateField, required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = ApoyoOtraActividad
@@ -178,8 +203,8 @@ class RepresentacionForm(forms.ModelForm):
         model = Representacion
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -188,8 +213,8 @@ class ComisionForm(forms.ModelForm):
         model = Comision
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -198,6 +223,6 @@ class ActividadApoyoForm(forms.ModelForm):
         model = ActividadApoyo
         exclude = []
         widgets = {
-            'nombre': wTextInput,
-            'descripcion': wTextarea,
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
