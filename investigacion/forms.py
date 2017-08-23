@@ -9,6 +9,7 @@ from django import forms
 from django.conf import settings
 from django_select2.forms import Select2Widget, ModelSelect2Widget, ModelSelect2MultipleWidget, Select2MultipleWidget
 
+from sortedm2m.forms import SortedMultipleChoiceField
 
 #
 
@@ -54,8 +55,10 @@ class ArticuloCientificoForm(forms.ModelForm):
         model = ArticuloCientifico
         exclude = []
         widgets = {
-            #'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'})Ordered,
-            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            #'usuarios': SortedMultipleChoiceField(queryset=User.objects.all(), attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            #'usuarios': SortedMultipleChoiceField(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            #'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
@@ -313,3 +316,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
             'alumnos_maestria': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos_licenciatura': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
+
+
+
+
