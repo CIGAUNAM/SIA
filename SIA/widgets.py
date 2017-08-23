@@ -8,7 +8,7 @@ from django.utils import formats, six
 from django import forms
 from django.conf import settings
 from itertools import chain
-from django_select2.forms import Select2Mixin, ModelSelect2Mixin, HeavySelect2Mixin
+from django_select2.forms import Select2Mixin, ModelSelect2Mixin, HeavySelect2Mixin, Select2MultipleWidget
 from django.utils.datastructures import MultiValueDict
 from django.utils.translation import get_language
 from django.core import signing
@@ -106,7 +106,7 @@ class wOrderedSelect(Select, TextInput):
 
 
 
-class wOrderedSelectMultiple(wOrderedSelect):
+class wOrderedSelectMultiple1(wOrderedSelect):
     allow_multiple_selected = True
 
     def render(self, name, value, attrs=None):
@@ -132,9 +132,13 @@ class wOrderedSelectMultiple(wOrderedSelect):
         return False
 
 
+class wOrderedSelectMultiple(forms.SelectMultiple):
+    pass
 
 
-class Select3MultipleWidgetOrdered(Select2Mixin, wOrderedSelectMultiple):
+
+class wSortedSelect2MultipleWidget(Select2Mixin, forms.SelectMultiple):
+    a = (Select2MultipleWidget, Select2Mixin, wOrderedSelectMultiple)
     """
     Select2 drop in widget for multiple select.
 
