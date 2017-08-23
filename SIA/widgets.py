@@ -27,7 +27,7 @@ class wDateInput(DateInput):
 
 
 
-
+"""
 class wOrderedSelect(Select, TextInput):
     allow_multiple_selected = False
 
@@ -134,18 +134,37 @@ class wOrderedSelectMultiple1(wOrderedSelect):
 
 class wOrderedSelectMultiple(forms.SelectMultiple):
     pass
+"""
 
 
+class wSortedSelect2MultipleWidget(Select2MultipleWidget):
 
-class wSortedSelect2MultipleWidget(Select2Mixin, forms.SelectMultiple):
-    a = (Select2MultipleWidget, Select2Mixin, wOrderedSelectMultiple)
-    """
-    Select2 drop in widget for multiple select.
+    def render_options(self, selected_choices):
+        # Normalize to strings.
+        selected_choices = [force_text(v) for v in selected_choices]
+        output = []
 
-    Works just like :class:`.Select2Widget` but for multi select.
-    """
+        for i in selected_choices:
+            for option_value, option_label in self.choices:
+                if str(option_value) == i:
+                    if isinstance(option_label, (list, tuple)):
+                        output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                        for option in option_label:
+                            output.append(self.render_option(selected_choices, *option))
+                        output.append('</optgroup>')
+                    else:
+                        output.append(self.render_option(selected_choices, option_value, option_label))
 
-    pass
+        for option_value, option_label in self.choices:
+            if str(option_value) not in selected_choices:
+                if isinstance(option_label, (list, tuple)):
+                    output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                    for option in option_label:
+                        output.append(self.render_option(selected_choices, *option))
+                    output.append('</optgroup>')
+                else:
+                    output.append(self.render_option(selected_choices, option_value, option_label))
+        return '\n'.join(output)
 
 
 
