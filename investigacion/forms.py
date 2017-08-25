@@ -64,6 +64,7 @@ class ArticuloCientificoForm(forms.ModelForm):
         }
 
 
+
 class CapituloLibroInvestigacionForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título del capítulo')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)

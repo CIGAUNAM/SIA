@@ -91,18 +91,11 @@ INSTALLED_APPS = [
     'django_adminlte_theme',
 
 
-    # 'templates',
-
-    # 'sekizai',
-    # 'treebeard',
-    # 'filer',
-    # 'easy_thumbnails',
 
     'sortedm2m',
-    #'django_addanother',
-
     'table',
     'django_select2',
+
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
