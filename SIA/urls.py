@@ -22,6 +22,7 @@ from django.contrib.auth import views as auth_views
 from nucleo.views import *
 from django.conf.urls.static import static
 from django.conf.urls import url
+from SIA.views import Dashboard
 
 
 
@@ -54,7 +55,7 @@ urlpatterns = [
 
 
     url(r'^admin/', admin.site.urls),
-    url(r'^$', inicio),
+    url(r'^$', Dashboard.as_view(), name='dashboard'),
     url(r'^select2/', include('django_select2.urls')),
 
     url('^', include('django.contrib.auth.urls')),

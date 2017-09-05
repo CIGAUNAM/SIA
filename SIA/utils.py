@@ -84,7 +84,7 @@ class ObjectUpdateMixin:
     form_class = None
     template_name = ''
     aux = {}
-    institucion = "blabla"
+    institucion = None
 
     def get(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk, usuario=request.user)

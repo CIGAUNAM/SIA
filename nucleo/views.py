@@ -19,6 +19,34 @@ def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class PaisJSON(View):
     def get(self, request):
         try:
