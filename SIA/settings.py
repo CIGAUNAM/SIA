@@ -96,6 +96,8 @@ INSTALLED_APPS = [
     'table',
     'django_select2',
 
+    'django_stats2',
+
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -233,3 +235,33 @@ if DEBUG:
         level=logging.DEBUG,
         format='%(asctime)s %(levelname)s %(message)s',
     )
+
+
+
+
+
+
+# Prefix for the cache keys
+STATS2_CACHE_PREFIX = 'stats2'
+
+# Cache key from settings.CACHES
+STATS2_CACHE_KEY = 'default'
+
+# Cache-Database interaction
+# Can't be the same setting, if cache is disabled, database direct
+# insert should be enabled (otherwise your stats would't be stored!)
+STATS2_USE_CACHE = True
+
+STATS2_DDBB_DIRECT_INSERT = False
+
+# Cache timeouts for the key types
+# Cache timeout for the totals
+STATS2_CACHE_TIMEOUT_TOTAL = None
+
+# Cache timeout for a certain date
+STATS2_CACHE_TIMEOUT_HISTORY = None
+
+# Cache timeout for between dates
+STATS2_CACHE_TIMEOUT_BETWEEN = 60*60*24
+
+
