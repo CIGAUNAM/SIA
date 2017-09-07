@@ -13,7 +13,7 @@ from django.utils.datastructures import MultiValueDict
 from django.utils.translation import get_language
 from django.core import signing
 from django.forms.models import ModelChoiceIterator
-
+from django.forms.widgets import ChoiceWidget, SelectMultiple
 
 class wDateInput(DateInput):
     format_key = 'DATE_INPUT_FORMATS'
@@ -82,7 +82,7 @@ class wSelect2Mixin(object):
     media = property(_get_media)
 
 
-class wChoiceWidget(Widget):
+class wChoiceWidget(ChoiceWidget):
     allow_multiple_selected = False
     input_type = None
     template_name = None
@@ -96,8 +96,9 @@ class wChoiceWidget(Widget):
         # choices can be any iterable, but we may need to render this widget
         # multiple times. Thus, collapse it into a list so it can be consumed
         # more than once.
-        self.choices = list(choices)
 
+        self.choices = list(choices)
+        print(self.choices)
 
     def __deepcopy__(self, memo):
         obj = copy.copy(self)
@@ -121,15 +122,15 @@ class wChoiceWidget(Widget):
             for option in group[1]:
                 yield option
 
-
     def optgroups(self, name, value, attrs=None):
         """Return a list of optgroups for this widget."""
         groups = []
         has_selected = False
 
-        #print(self.choices)
-        #for i in self.choices:
-        #    print(i)
+        print(self.choices)
+        print(type(self.choices))
+        print(dir(self.choices))
+
 
         for index, (option_value, option_label) in enumerate(chain(self.choices)):
             if option_value is None:
@@ -146,11 +147,13 @@ class wChoiceWidget(Widget):
                 choices = [(option_value, option_label)]
             groups.append((group_name, subgroup, index))
 
+
             for subvalue, sublabel in choices:
                 selected = (
                     force_text(subvalue) in value and
                     (has_selected is False or self.allow_multiple_selected)
                 )
+
                 if selected is True and has_selected is False:
                     has_selected = True
                 subgroup.append(self.create_option(
@@ -159,8 +162,8 @@ class wChoiceWidget(Widget):
                 ))
                 if subindex is not None:
                     subindex += 1
-        return groups
 
+        return groups
 
     def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
         index = str(index) if subindex is None else "%s_%s" % (index, subindex)
@@ -186,7 +189,6 @@ class wChoiceWidget(Widget):
         context = super(wChoiceWidget, self).get_context(name, value, attrs)
         context['widget']['optgroups'] = self.optgroups(name, context['widget']['value'], attrs)
         context['wrap_label'] = True
-        print(context)
         return context
 
     def id_for_label(self, id_, index='0'):
