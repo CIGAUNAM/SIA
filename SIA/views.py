@@ -58,13 +58,10 @@ class Dashboard(View):
                 for i in cursos_year:
                     h += i.horas
 
-
                 horas_periodo_anual['year'] = 0
 
             if h > 0:
                 usuarios_con_cursos += 1
-
-
             h = 0
 
 
