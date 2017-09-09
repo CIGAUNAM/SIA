@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/widgets.py" afterPath="$PROJECT_DIR$/SIA/widgets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/divulgacion_cientifica/models.py" afterPath="$PROJECT_DIR$/divulgacion_cientifica/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nucleo/templates/widgets/w_select.html" afterPath="$PROJECT_DIR$/nucleo/templates/widgets/w_select.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/views.py" afterPath="$PROJECT_DIR$/SIA/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/formacion_academica/models.py" afterPath="$PROJECT_DIR$/formacion_academica/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/models.py">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SIA/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="2919" column="46" lean-forward="false" selection-start-line="2919" selection-start-column="43" selection-end-line="2919" selection-end-column="46" />
+            <state relative-caret-position="-238">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion_academica/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -42,56 +51,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/investigacion/forms.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SIA/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="73" column="36" lean-forward="false" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+            <state relative-caret-position="425">
+              <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="widgets.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SIA/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="35" />
               <folding>
-                <marker date="1504837910563" expanded="true" signature="0:33" ph="import ..." />
+                <element signature="e#0#54#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widgets.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="655" column="6" lean-forward="false" selection-start-line="655" selection-start-column="6" selection-end-line="655" selection-end-column="6" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -109,7 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>canal 22</find>
       <find>206</find>
       <find>unicab</find>
       <find>215</find>
@@ -139,6 +115,7 @@
       <find>379</find>
       <find>Select2Mixin</find>
       <find>alex</find>
+      <find>curso_esco</find>
     </findStrings>
     <replaceStrings>
       <replace>BooleanField(required=False)</replace>
@@ -184,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test_migracion.py" />
         <option value="$PROJECT_DIR$/templates/adminlte/base.html" />
         <option value="$PROJECT_DIR$/formacion_academica/views.py" />
         <option value="$PROJECT_DIR$/templates/widgets/text.html" />
@@ -227,7 +203,6 @@
         <option value="$PROJECT_DIR$/SIA/urls.py" />
         <option value="$PROJECT_DIR$/SIA/utils.py" />
         <option value="$PROJECT_DIR$/templates/dashboard.html" />
-        <option value="$PROJECT_DIR$/SIA/views.py" />
         <option value="$PROJECT_DIR$/cans.html" />
         <option value="$PROJECT_DIR$/sky.html" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/models.py" />
@@ -235,6 +210,8 @@
         <option value="C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django_select2/forms.py" />
         <option value="$PROJECT_DIR$/investigacion/forms.py" />
         <option value="$PROJECT_DIR$/SIA/widgets.py" />
+        <option value="$PROJECT_DIR$/formacion_academica/models.py" />
+        <option value="$PROJECT_DIR$/SIA/views.py" />
       </list>
     </option>
   </component>
@@ -274,7 +251,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,31 +261,7 @@
             <path>
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="investigacion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="investigacion" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="nucleo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="nucleo" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="nucleo" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+              <item name="formacion_academica" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
@@ -326,6 +278,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -660,13 +613,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490810303150</updated>
-    </task>
-    <task id="LOCAL-00069" summary="primeros widgets para forms">
-      <created>1495587197296</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1495587197296</updated>
     </task>
     <task id="LOCAL-00070" summary="primeros widgets para forms">
       <created>1495590119829</created>
@@ -1004,7 +950,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504813853748</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="actualizaciòn a django 1.11, forms corregidos y limpios, cambiado el estilo y class css en attrs de los widgets en los forms en lugar de sobreescribir widgets heredando.">
+      <created>1504838271194</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1504838271194</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1017,18 +970,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1863" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1865" height="1096" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35965848" sideWeight="0.50441015" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31163287" sideWeight="0.49779493" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3425827" sideWeight="0.49228224" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27214515" sideWeight="0.49558985" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3425827" sideWeight="0.49228224" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27214515" sideWeight="0.49558985" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@SIA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32550693" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19190238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1534626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3276414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3991462" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1038,8 +990,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@SIA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32550693" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3276414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1264,13 +1216,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formacion_academica/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1285,26 +1230,6 @@
           <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding>
-            <element signature="e#637#678#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1340,14 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="240" column="0" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sky.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1359,7 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1367,7 +1283,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1383,7 +1298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,17 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1193">
           <caret line="719" column="6" lean-forward="false" selection-start-line="719" selection-start-column="6" selection-end-line="719" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="2919" column="46" lean-forward="false" selection-start-line="2919" selection-start-column="43" selection-end-line="2919" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1409,7 +1312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1417,15 +1319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="1736" column="57" lean-forward="false" selection-start-line="1736" selection-start-column="52" selection-end-line="1736" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="655" column="6" lean-forward="false" selection-start-line="655" selection-start-column="6" selection-end-line="655" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1437,6 +1330,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#21#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="129" column="8" lean-forward="true" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#114#0" expanded="true" />
+            <marker date="1504837910563" expanded="true" signature="0:33" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/investigacion/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1445,12 +1359,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
+    <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="396">
+          <caret line="2919" column="46" lean-forward="false" selection-start-line="2919" selection-start-column="43" selection-end-line="2919" selection-end-column="46" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1463,12 +1377,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
+    <entry file="file://C:/WinPython-64bit-3.6.1.0Qt5/python-3.6.1.amd64/Lib/site-packages/django/forms/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="48">
+          <caret line="655" column="6" lean-forward="false" selection-start-line="655" selection-start-column="6" selection-end-line="655" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
-            <marker date="1504837910563" expanded="true" signature="0:33" ph="import ..." />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="43" column="35" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>

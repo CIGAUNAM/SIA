@@ -7,12 +7,15 @@ from nucleo.models import User, Dependencia, Institucion, AreaConocimiento, Prog
 CURSO_ESPECIALIZACION_TIPO = getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', (('', ''), ('', ''), ('CURSO', 'Curso'), ('DIPLOMADO', 'Diplomado'), ('CERTIFICACION', 'Certificación'), ('OTRO', 'Otro')))
 CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', (('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')))
 
+from django_stats2.mixins import StatsMixin
+from django_stats2.fields import StatField
+
 # Create your models here.
 
 
 
 
-class CursoEspecializacion(models.Model):
+class CursoEspecializacion(StatsMixin, models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Nombre del curso', help_text='Nombre del curso texto de ayuda')
     #slug = AutoSlugField(populate_from='nombre', max_length=150, unique=True)
     descripcion = models.TextField(verbose_name='Descripción', blank=True)
@@ -26,6 +29,8 @@ class CursoEspecializacion(models.Model):
     dependencia = models.ForeignKey(Dependencia)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion')
     #tags = models.ManyToManyField(Tag, related_name='curso_especializacion_tags', blank=True)
+
+    read_count = StatField()
 
     def __str__(self):
         return self.nombre
