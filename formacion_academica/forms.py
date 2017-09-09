@@ -95,6 +95,7 @@ class CursoEspecializacionForm(forms.ModelForm):
         label="Dependencia",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
