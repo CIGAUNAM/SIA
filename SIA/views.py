@@ -29,20 +29,46 @@ class Dashboard(View):
         obj = range(self.ten_years_ago, self.this_year)
 
 
-        # obj es donde se guarda la info de los datos
+
         obj = {}
 
         # obtener los datos de las horas de cursos de especializacion por año de los ultimos 10 años del usuario
         for year in range(self.ten_years_ago, self.this_year+1):
             h = 0
-            c_year = request.user.cursos_especializacion.filter(fecha_inicio__year=year)
-            for i in c_year:
+            cursos_year = request.user.cursos_especializacion.filter(fecha_inicio__year=year)
+            for i in cursos_year:
                 h += i.horas
             obj['mishorascursos-'+str(year)] = h
 
-        usuarios_con_cursos = []
-        for i in User.objects.all():
-            if i.cursos_especializacion.filter(fecha_inicio__year=2015).count()
+        horas_periodo_anual = {}
+        usuarios_con_cursos = 0
+
+        for year in range(self.ten_years_ago, self.this_year + 1):
+            horas_periodo_anual['year'] = 0
+
+
+        usuarios = User.objects.exclude(pk=request.user.pk)
+        for usuario in usuarios:
+            h = 0
+
+            # paa cada usuario iterar los ultimos 10 años, y para cada año:
+            for year in range(self.ten_years_ago, self.this_year + 1):
+
+                cursos_year = usuario.cursos_especializacion.filter(fecha_inicio__year=year)
+                for i in cursos_year:
+                    h += i.horas
+
+
+                horas_periodo_anual['year'] = 0
+
+            if h > 0:
+                usuarios_con_cursos += 1
+
+
+            h = 0
+
+
+
 
 
 
