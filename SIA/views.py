@@ -46,5 +46,6 @@ class Dashboard(View):
 
 
 
+
         return render(request, self.template_name,
                       {'aux': self.aux, 'obj': obj, 'active': 'detalle'}, )
