@@ -15,6 +15,7 @@ class SIAYearModelCounter(models.Model):
 
     class Meta:
         unique_together = ['model', 'year']
+        ordering = ['model', 'year']
 
 class SIAUserModelCounter(models.Model):
     model = models.CharField(max_length=20)
@@ -27,3 +28,4 @@ class SIAUserModelCounter(models.Model):
 
     class Meta:
         unique_together = ['model', 'year']
+        ordering = ['model', 'year']
