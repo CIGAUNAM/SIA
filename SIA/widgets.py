@@ -23,7 +23,11 @@ class wSortedChoiceWidget(ChoiceWidget):
         has_selected = False
 
         id_value = []
+        if value == ['']:
+            value = []
         for i in value:
+            #if i != '':
+            #    id_value.append(int(i))
             id_value.append(int(i))
         sorted_choices = []
 
