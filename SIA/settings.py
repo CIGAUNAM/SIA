@@ -70,6 +70,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.admin',
+
     'nucleo.apps.NucleoConfig',
     'formacion_academica.apps.FormacionAcademicaConfig',
     'experiencia_laboral.apps.ExperienciaLaboralConfig',
@@ -83,25 +85,22 @@ INSTALLED_APPS = [
     'formacion_recursos_humanos.apps.FormacionRecursosHumanosConfig',
     'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
     'distinciones.apps.DistincionesConfig',
+    'sia_stats.apps.SiaStatsConfig',
 
     'rest_framework',
-
     'django_adminlte',
-    'django.contrib.admin',
-    'django_adminlte_theme',
-
-
-
     'sortedm2m',
     'table',
     'django_select2',
 
-    'django_stats2',
-
+    #'django_adminlte_theme',
+    #'django_stats2',
 ]
 
-MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-MESSAGE_LEVEL = 'DEBUG'
+#MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+#MESSAGE_LEVEL = 'DEBUG'
+
+
 AUTH_USER_MODEL = 'nucleo.User'
 
 MIDDLEWARE = [
@@ -116,6 +115,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'SIA.urls'
 
+'''
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -128,6 +128,25 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+'''
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                # 'django.core.context_processors.request',
             ],
         },
     },
@@ -193,23 +212,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_custom'),
 )
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
 
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                # 'django.core.context_processors.request',
-            ],
-        },
-    },
-]
 
 # TEMPLATE_DIRS = (
 #    os.path.join(BASE_DIR, 'templates'),
@@ -226,6 +229,8 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
 
+
+'''
 import logging
 import logging.config
 
@@ -235,33 +240,9 @@ if DEBUG:
         level=logging.DEBUG,
         format='%(asctime)s %(levelname)s %(message)s',
     )
+'''
 
 
 
-
-
-
-# Prefix for the cache keys
-STATS2_CACHE_PREFIX = 'stats2'
-
-# Cache key from settings.CACHES
-STATS2_CACHE_KEY = 'default'
-
-# Cache-Database interaction
-# Can't be the same setting, if cache is disabled, database direct
-# insert should be enabled (otherwise your stats would't be stored!)
-STATS2_USE_CACHE = True
-
-STATS2_DDBB_DIRECT_INSERT = False
-
-# Cache timeouts for the key types
-# Cache timeout for the totals
-STATS2_CACHE_TIMEOUT_TOTAL = None
-
-# Cache timeout for a certain date
-STATS2_CACHE_TIMEOUT_HISTORY = None
-
-# Cache timeout for between dates
-STATS2_CACHE_TIMEOUT_BETWEEN = 60*60*24
 
 
