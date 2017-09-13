@@ -5,14 +5,17 @@ from autoslug import AutoSlugField
 from django.core.urlresolvers import reverse
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, Revista, Indice, Libro, Editorial, Coleccion
 from sortedm2m.fields import SortedManyToManyField
+from sia_stats.models import SIAYearModelCounter
+
 
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
 
 # Create your models here.
 
+
 class ArticuloCientifico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='titulo', unique=True)
+    # slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=16, choices=(('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     revista = models.ForeignKey(Revista)
@@ -34,14 +37,68 @@ class ArticuloCientifico(models.Model):
     id_wos = models.CharField(max_length=100, blank=True)
     proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
 
-    #usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='articulo_cientifico_tags', blank=True)
-
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
 
     def get_absolute_url(self):
         return reverse('articulo_cientifico_detalle', kwargs={'pk': self.pk})
+
+    def save(self, *args, **kwargs):
+        nuevo_item = None
+
+        if self.pk is None:
+            nuevo_item = True
+        else:
+            old_year = self.objects.get(pk=self.pk).fecha.year
+            nuevo_item = False
+
+        # guardar el nuevo elemento y despues de guardar hacer los calculos de horas
+        super(CursoEspecializacion, self).save(*args, **kwargs)
+
+        try:
+            year_data = SIAYearModelCounter.objects.get(year=self.fecha_inicio.year, model='CursoEspecializacion')
+            # si el registro es nuevo
+            if nuevo_item:
+                year_data.counter = year_data.counter + self.horas
+                year_data.save()
+                year_data.users.add(self.usuario)
+            # si el registro no es nuevo (si se está editando)
+            else:
+                # si el año no cambia
+                if old_year == self.fecha_inicio.year:
+                    year_data.counter = year_data.counter - old_horas + self.horas
+                    year_data.save()
+                # si el año cambia
+                else:
+                    # quitar las horas del año viejo
+                    old_year_data = SIAYearModelCounter.objects.get(year=old_year, model='CursoEspecializacion')
+                    old_year_data.counter = old_year_data.counter - old_horas
+                    old_year_data.save()
+                    # quitar usuario si no hay otros cursos en el mismo año
+                    if User.objects.filter(cursos_especializacion__usuario=self.usuario,
+                                           cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
+                        old_year_data.users.remove(self.usuario)
+                    # poner horas nuevas al año nuevo
+                    year_data.counter = year_data.counter + self.horas
+                    year_data.save()
+                    year_data.users.add(self.usuario)
+        except SIAYearModelCounter.DoesNotExist:
+            if nuevo_item:
+                y = SIAYearModelCounter(model='CursoEspecializacion', year=self.fecha_inicio.year, counter=self.horas)
+                y.save()
+                y.users.add(self.usuario)
+            else:
+                # quitar horas del año viejo
+                old_year_data = SIAYearModelCounter.objects.get(year=old_year, model='CursoEspecializacion')
+                old_year_data.counter = old_year_data.counter - old_horas
+                old_year_data.save()
+                if User.objects.filter(cursos_especializacion__usuario=self.usuario,
+                                       cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
+                    old_year_data.users.remove(self.usuario)
+                y = SIAYearModelCounter(model='CursoEspecializacion', year=self.fecha_inicio.year, counter=self.horas)
+                y.save()
+                y.users.add(self.usuario)
+
 
     class Meta:
         verbose_name = "Artículo científico"
