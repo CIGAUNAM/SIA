@@ -89,31 +89,34 @@ class Dashboard(View):
             pass
         '''
 
-"""
-
-
-
-# devuelve la suma total de horas de cursos por año de todos los usuarios (que tengan cursos ese año)
-c = CursoEspecializacion.objects.filter(fecha_inicio__year=2007).aggregate(year_users=Sum('horas'))
-CursoEspecializacion.objects.filter(fecha_inicio__year=2007).aggregate(Sum('horas'))['horas__sum']
-
-
-# cantidad de usuarios que tienen al menos un curso, por año.
-u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2007).annotate(Count('pk', distinct=True)).count()
-
-# suma de horas por usuario por año
-u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2005).annotate(Sum('cursos_especializacion__horas'))
-
-# usuario que tiene la mayor cantidad de horas en el año
-u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2005).annotate(Sum('cursos_especializacion__horas')).aggregate(Max('cursos_especializacion__horas__sum'))
-
-# usuario que tiene la menor cantidad de horas en el año
-u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2005).annotate(Sum('cursos_especializacion__horas')).aggregate(Min('cursos_especializacion__horas__sum'))['cursos_especializacion__horas__sum__min']
-
-
-"""
-
-
+        """
+        
+        # obtener años en los que hay cursos registrados
+        c = CursoEspecializacion.objects.dates('fecha_inicio','year',order='DESC')
+        
+        for i in reversed(c[:11]):
+            print(i.year)   
+        
+        
+        # devuelve la suma total de horas de cursos por año de todos los usuarios (que tengan cursos ese año)
+        c = CursoEspecializacion.objects.filter(fecha_inicio__year=2007).aggregate(year_users=Sum('horas'))
+        CursoEspecializacion.objects.filter(fecha_inicio__year=2007).aggregate(Sum('horas'))['horas__sum']
+        
+        
+        # cantidad de usuarios que tienen al menos un curso, por año.
+        u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2007).annotate(Count('pk', distinct=True)).count()
+        
+        # suma de horas por usuario por año
+        u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2005).annotate(Sum('cursos_especializacion__horas'))
+        
+        # usuario que tiene la mayor cantidad de horas en el año
+        u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2005).annotate(Sum('cursos_especializacion__horas')).aggregate(Max('cursos_especializacion__horas__sum'))
+        
+        # usuario que tiene la menor cantidad de horas en el año
+        u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2005).annotate(Sum('cursos_especializacion__horas')).aggregate(Min('cursos_especializacion__horas__sum'))['cursos_especializacion__horas__sum__min']
+        
+        
+        """
 
 
 
