@@ -96,6 +96,15 @@ class ArticuloCientifico(models.Model):
                 y.save()
                 y.users.add(self.usuario)
 
+    def delete(self, *args, **kwargs):
+        year_data = SIAYearModelCounter.objects.get(year=self.fecha.year, model='ArticuloCientifico')
+        year_data.counter = year_data.counter - 1
+        year_data.save()
+        print(self.usuarios)
+        super(ArticuloCientifico, self).delete(*args, **kwargs)
+        for usuario in self.usuarios:
+            if User.objects.filter(articulo_cientifico_autores__usuarios=usuario, articulo_cientifico__fecha__year=self.fecha.year).count() == 0:
+                year_data.users.remove(usuario)
 
     class Meta:
         verbose_name = "Artículo científico"
