@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="421c07a5-361c-4dcd-a500-e33bd54a7c48" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/views.py" afterPath="$PROJECT_DIR$/SIA/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investigacion/models.py" afterPath="$PROJECT_DIR$/investigacion/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/investigacion/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
-              <caret line="106" column="33" lean-forward="true" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+              <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -56,8 +54,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SIA/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state relative-caret-position="344">
+              <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -596,20 +594,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490810303150</updated>
     </task>
-    <task id="LOCAL-00077" summary="primeros widgets para forms">
-      <created>1496087647052</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1496087647052</updated>
-    </task>
-    <task id="LOCAL-00078" summary="primeros widgets para forms">
-      <created>1496109022875</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1496109022875</updated>
-    </task>
     <task id="LOCAL-00079" summary="primeros widgets para forms">
       <created>1496109745361</created>
       <option name="number" value="00079" />
@@ -939,7 +923,21 @@
       <option name="project" value="LOCAL" />
       <updated>1505332642913</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="actualizaciòn a django 1.11, forms corregidos y limpios, cambiado el estilo y class css en attrs de los widgets en los forms en lugar de sobreescribir widgets heredando.">
+      <created>1505361305360</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1505361305360</updated>
+    </task>
+    <task id="LOCAL-00127" summary="actualizaciòn a django 1.11, forms corregidos y limpios, cambiado el estilo y class css en attrs de los widgets en los forms en lugar de sobreescribir widgets heredando.">
+      <created>1505362147998</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1505362147998</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TodoView">
@@ -958,7 +956,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.49779493" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35965848" sideWeight="0.50441015" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31163287" sideWeight="0.49779493" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.49228224" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5122732" sideWeight="0.49228224" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5720384" sideWeight="0.49558985" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870865" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15661317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1372,7 +1370,7 @@
     <entry file="file://$PROJECT_DIR$/investigacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
-          <caret line="106" column="33" lean-forward="true" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+          <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1399,8 +1397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SIA/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        <state relative-caret-position="344">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
