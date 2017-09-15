@@ -6,11 +6,11 @@ from django.core.urlresolvers import reverse_lazy
 from django.core import serializers
 
 from nucleo.models import User
-
-import datetime
 from datetime import datetime
+from django.db.models import Max, Min, Count, Sum
 
 from sia_stats.models import SIAYearModelCounter
+from formacion_academica.models import CursoEspecializacion
 
 # Create your views here.
 
@@ -43,14 +43,42 @@ class Dashboard(View):
 
             obj['curso_especializacion'] = {}
 
+            years_cursos_especializacion = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
 
-            for i in range(len(years_curso_especializacion)):
-                try:
-                    #obj['curso_especializacion'][str(years_curso_especializacion[i].year)] = round(years_curso_especializacion[i].counter / years_curso_especializacion[i].users.count(), 2)
-                    obj['curso_especializacion'][str(years_curso_especializacion[i].year)] = str(years_curso_especializacion[i].counter) + " " + str(years_curso_especializacion[i].users.count())
-                except ZeroDivisionError:
-                    obj['curso_especializacion'][str(years_curso_especializacion[i].year)] = 0.0
-
+            for i in reversed(years_cursos_especializacion[:10]):
+                c = CursoEspecializacion.objects.filter(fecha_inicio__year=i.year).aggregate(Sum('horas'))['horas__sum']
+                print(i.year)  # Año
+                obj['curso_especializacion'][str(i.year) + '__horas_sum'] = c
+                print(c)
+                u = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year).annotate(
+                    Count('pk', distinct=True)).count()  # cantidad de usuarios que tienen al menos un curso, por año.
+                obj['curso_especializacion'][str(i.year) + '__usuarios_sum'] = u
+                print(u)
+                if u > 0:
+                    print(round(c / u, 2))
+                    obj['curso_especializacion'][str(i.year) + '__horas_prom'] = round(c / u,
+                                                                                                                2)
+                else:
+                    obj['curso_especializacion'][str(i.year) + '__horas_prom'] = 0
+                h = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year,
+                                        cursos_especializacion__usuario=request.user).aggregate(
+                    Sum('cursos_especializacion__horas'))[
+                    'cursos_especializacion__horas__sum']  # horas del usuario en el año actual
+                if not h:
+                    h = 0
+                print(h)
+                obj['curso_especializacion'][str(i.year) + '__horas_usuario'] = h
+                hM = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year).annotate(
+                    Sum('cursos_especializacion__horas')).aggregate(Max('cursos_especializacion__horas__sum'))[
+                    'cursos_especializacion__horas__sum__max']  # maximo de horas de un solo usuario
+                print(hM)
+                obj['curso_especializacion'][str(i.year) + '__horas_max'] = hM
+                hm = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year).annotate(
+                    Sum('cursos_especializacion__horas')).aggregate(Min('cursos_especializacion__horas__sum'))[
+                    'cursos_especializacion__horas__sum__min']  # minimo
+                print(hm)
+                obj['curso_especializacion'][str(i.year) + '__horas_min'] = hm
+                print()
 
         '''
         try:            
