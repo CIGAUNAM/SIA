@@ -532,6 +532,7 @@ class RevistaForm(forms.ModelForm):
         exclude = []
         widgets = {
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre_abreviado_wos': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'url': TextInput(attrs={'class': 'form-control pull-right'}),
         }

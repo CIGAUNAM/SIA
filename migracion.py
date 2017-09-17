@@ -2427,7 +2427,7 @@ Usuarios = (
     ('l.menéndez.carrera', 'Menéndez Carrera', 'L', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'l.menéndez.carrera'),
     ('georges.seingier', 'Seingier', 'Georges', 'OTRO', Pais.objects.get(nombre='México').id,
-     Ciudad.objects.get(nombre='Morelia').id, '-', 'georges.seingier')
+    ('', '', '', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', '')
 )
 
 for i in Usuarios:
@@ -3900,7 +3900,7 @@ revistas = (
     ('Ecological Indicators', None, 'Otra', 'México', 3.44),
     ('Ecology and Society', 'E&S', 'Otra', 'México', 4.36),
     ('Economic Botany', ' ECON BOT', 'Otra', 'México', 1.10),
-    ('Economía, Sociedad y territorio', 'EST', 'Otra', 'México', None),
+    ('Economía, Sociedad y Territorio', 'EST', 'Otra', 'México', None),
     ('Ecosistemas y Recursos Agropecuarios', None, 'Otra', 'México', None),
     ('Ecosphere Journal', 'Ecosphere', 'Otra', 'México', 2.25),
     ('Energy for Sustainable Development', None, 'Otra', 'México', 2.38),
@@ -3929,7 +3929,7 @@ revistas = (
     ('Heredity', 'Heredity', 'Otra', 'México', 3.80),
     ('Hidrobiológica', None, 'Otra', 'México', 0.10),
     ('Human Ecology', None, 'Otra', 'México', 1.89),
-    ('Interciencia', None, 'Otra', 'México', 0.37),
+    ('Interciencia, Revista de Ciencia y Tecnología de América Latina', None, 'Otra', 'México', 0.37),
     ('International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives', None, 'Otra', 'México', None),
     ('International Encyclopedia of Anthropology', None, 'Otra', 'México', None),
     ('International Forestry Review', None, 'Otra', 'México', 1.73),
@@ -3937,27 +3937,25 @@ revistas = (
     ('International Journal of Wildland Fire', 'IntlJWildlandFire', 'Otra', 'México', 2.08),
     ('International Review of Forestry', 'IntRevFor', 'Otra', 'México', None),
     ('Intersticios Sociales', 'Intersticios', 'Otra', 'México', None),
-    ('Investigaciones Geográficas', None, 'Otra', 'México', 0.13),
+    ('Investigaciones Geográficas, Boletín del Instituto de Geografía', None, 'Otra', 'Chile', 0.13),
     ('Investigación Ambiental', None, 'Otra', 'México', None),
     ('ISPRS International Journal of Geo-Information', None, 'Otra', 'México', 0.65),
     ('Journal of Applied Research and technology', 'J App R T', 'Otra', 'México', 0.81),
-    ('Journal of Cave and Karst Studies', None, 'Otra', 'México', None),
+    ('Journal of Cave and Karst Studies', None, 'Otra', 'México', 1.32),
     ('Journal of Environmental Management', None, 'Otra', 'México', 2.72),
     ('Journal of Ethnobiology and Ethnomedicine', 'J Ethnobiol Ethnmed', 'Otra', 'México', 2.41),
     ('Journal of Forests and Livelihoods', None, 'Otra', 'México', None),
     ('Journal Of Geographic Information System', 'JGIS', 'Otra', 'México', 1.03),
-    ('Journal of Latin America Geography', 'JLAG', 'Otra', 'México', None),
-    ('Journal of Latin American Geography', None, 'Otra', 'México', None),
+    ('Journal of Latin American Geography', 'JLAG', 'Otra', 'México', None),
     ('Journal of Maps', None, 'Otra', 'México', 0.62),
     ('Journal of Rural Studies', None, 'Otra', 'México', 2.20),
-    ('Journal of Studies of Cave and Karst', 'JSCK', 'Otra', 'México', 1.32),
     ('La Revue d´ethnoécologie', None, 'Otra', 'México', None),
     ('La Zaranda de Ideas', None, 'Otra', 'México', None),
     ('Land Degradation and Development', None, 'Otra', 'México', 8.14),
     ('Land Use Policy', None, 'Otra', 'México', 3.13),
     ('Landscape Research', 'Landsc. Res.', 'Otra', 'México', 1.08),
     ('LANIA Newsletter', None, 'Otra', 'México', None),
-    ('Latimag Letters Special Issues Proceedings Sao Paulo, Brasil', 'Latinmag', 'Otra', 'México', None),
+    ('Latimag Letters', 'Latinmag', 'Otra', 'Brasil', None),
     ('Latinmag Letters', None, 'Otra', 'México', None),
     ('Les Cahiers des Amériques Latines', 'Les Cahiers des Amériques Latines', 'Otra', 'México', None),
     ('Madera y Bosque', None, 'Otra', 'México', 0.29),
@@ -3969,7 +3967,7 @@ revistas = (
     ('Photogrammetric Engineering and Remote Sensing', None, 'Otra', 'México', 1.80),
     ('Physical Geography', None, 'Otra', 'México', None),
     ('Plant Ecology', None, 'Otra', 'México', None),
-    ('Plos One', 'plos1', 'Otra', 'México', 3.23),
+    ('Plos One', 'Plos1', 'Otra', 'México', 3.23),
     ('Polibotánica', 'Polibotánica', 'Otra', 'México', None),
     ('Polígonos, Revista de Geografía', None, 'Otra', 'México', None),
     ('Procedia Engineering', None, 'Otra', 'México', 0.73),
@@ -3987,13 +3985,13 @@ revistas = (
     ('Revista Mexicana de Ingeniería Química', 'RMIQ', 'Otra', 'México', 0.92),
     ('Revista Agricultura Familiar', None, 'Otra', 'México', None),
     ('Revista Cartográfica', None, 'Otra', 'México', None),
-    ('Revista Catalana de Geografía', None, 'Otra', 'México', None),
+    ('Revista Catalana de Geografía', None, 'Otra', 'España', None),
     ('Revista Chapingo Serie Ciencias Forestales y del Ambiente', 'RCSFA', 'Otra', 'México', 0.11),
     ('Revista Chapingo Serie Horticultura', None, 'Otra', 'México', 0.12),
     ('Revista de Agroecología', None, 'Otra', 'México', None),
     ('Revista de Ciencia y Tecnología de América', None, 'Otra', 'México', 0.30),
     ('Revista De Investigación En Ciencias De La Administración', 'INCEPTUM', 'Otra', 'México', None),
-    ('Revista Del Jardín Botánico Nacional De Cuba', None, 'Otra', 'México', None),
+    ('Revista Del Jardín Botánico Nacional De Cuba', None, 'Otra', 'Cuba', None),
     ('Revista del Museo de Antropología', 'RMA', 'Otra', 'México', None),
     ('Revista Española de Antropología Americana', 'REAA', 'Otra', 'México', None),
     ('Revista Geográfica De América Central', None, 'Otra', 'México', None),
@@ -4002,13 +4000,13 @@ revistas = (
     ('Revista Mexicana de Biodiversidad', None, 'Otra', 'México', 0.50),
     ('Revista Mexicana de Ciencias Geológicas', 'Rev Mex C Geol', 'Otra', 'México', 0.57),
     ('Revista Mexicana de Ingeniería Química', None, 'Otra', 'México', None),
-    ('Revista Mexicana De Sociología', None, 'Otra', 'México', None),
+    ('Revista Mexicana de Sociología', None, 'Otra', 'México', None),
     ('Revue Anthropologie des Connaissances', None, 'Otra', 'México', None),
     ('Science Technology and Human Values', 'SCI TECHNOL HUM VAL', 'Otra', 'México', 2.19),
     ('Singapore Journal Of Tropical Geography', 'TROPICAL GEOGRAPHY ', 'Otra', 'Singapur', 0.87),
     ('Sociedad Española de Agricultura Ecológica (SEAE)', 'SEAE', 'Otra', 'España', None),
     ('Society & Natural Resources', None, 'Otra', 'México', 1.06),
-    ('Spanish Journal of Soil Science', 'sjss', 'Otra', 'México', None),
+    ('Spanish Journal of Soil Science', 'sjss', 'Otra', 'España', None),
     ('Tecnología en Marcha', 'Tec. en Marcha', 'Otra', 'México', None),
     ('Teknokultura. Revista de Cultura Digital y Movimientos Sociales', 'Teknokultura', 'Otra', 'México', 0.50),
     ('The Geographical Journal', 'TGJ', 'Otra', 'México', 1.93),
@@ -4020,7 +4018,7 @@ revistas = (
 )
 
 for i in revistas:
-    r = Revista(nombre=i[0], editorial=Editorial.objects.get(nombre=i[2]), pais=Pais.objects.get(nombre='México'))
+    r = Revista(nombre=i[0], nombre_abreviado_wos=i[1], editorial=Editorial.objects.get(nombre=i[2]), pais=Pais.objects.get(nombre='México'))
     r.save()
     print(r)
 
@@ -4054,3 +4052,11 @@ e = Evento(nombre='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 
            tipo=TipoEvento.objects.get(nombre='Otro'))
 e.save()
 l = Libro(nombre='Otro', )
+
+
+"""
+SELECT titulo, revista, volumen, numeros, anio, issn, becarios AS status, electronica, autores_iimas, indices, pagina_i, pagina_f, doi,  
+
+
+
+"""

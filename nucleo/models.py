@@ -778,6 +778,7 @@ class Libro(models.Model):
 
 class Revista(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
+    nombre_abreviado_wos = models.CharField(max_length=255, blank=True)
     descripcion = models.TextField(blank=True)
     editorial = models.ForeignKey(Editorial)
     #pais = models.ForeignKey(Pais)

@@ -3,6 +3,8 @@ from django.db import models
 from django.conf import settings
 from autoslug import AutoSlugField
 from django.core.urlresolvers import reverse
+#from table.tests.test_utils import Article
+
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, Revista, Indice, Libro, Editorial, Coleccion
 from sortedm2m.fields import SortedManyToManyField
 from sia_stats.models import SIAYearModelCounter
@@ -29,7 +31,7 @@ class ArticuloCientifico(models.Model):
     usuarios = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
-    nombre_abreviado_wos = models.CharField(max_length=255, blank=True)
+    #nombre_abreviado_wos = models.CharField(max_length=255, blank=True)
     url = models.URLField(blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
@@ -87,7 +89,7 @@ class ArticuloCientifico(models.Model):
             else:
                 # quitar horas del año viejo
                 old_year_data = SIAYearModelCounter.objects.get(year=old_year, model='ArticuloCientifico')
-                old_year_data.counter = old_year_data.counter - old_horas
+                old_year_data.counter = old_year_data.counter - 1
                 old_year_data.save()
                 if User.objects.filter(cursos_especializacion__usuario=self.usuario,
                                        cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
