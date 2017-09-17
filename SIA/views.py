@@ -117,8 +117,13 @@ class Dashboard(View):
             pass
         '''
 
-        """
-        
+
+
+        from formacion_academica.models import CursoEspecializacion
+        from django.db.models import Sum, Count, Max
+
+
+
         # obtener años en los que hay cursos registrados
         c = CursoEspecializacion.objects.dates('fecha_inicio','year',order='DESC')
         
@@ -128,7 +133,7 @@ class Dashboard(View):
         
         # devuelve la suma total de horas de cursos por año de todos los usuarios (que tengan cursos ese año)
         c = CursoEspecializacion.objects.filter(fecha_inicio__year=2007).aggregate(year_users=Sum('horas'))
-        CursoEspecializacion.objects.filter(fecha_inicio__year=2007).aggregate(Sum('horas'))['horas__sum']
+        c = CursoEspecializacion.objects.filter(fecha_inicio__year=2007).aggregate(Sum('horas'))['horas__sum']
         
         
         # cantidad de usuarios que tienen al menos un curso, por año.
@@ -144,7 +149,6 @@ class Dashboard(View):
         u = User.objects.filter(cursos_especializacion__fecha_inicio__year=2005).annotate(Sum('cursos_especializacion__horas')).aggregate(Min('cursos_especializacion__horas__sum'))['cursos_especializacion__horas__sum__min']
         
         
-        """
 
 
 

@@ -26,8 +26,6 @@ class ArticuloCientificoForm(forms.ModelForm):
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField(required=False)
-    nombre_abreviado_wos = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
-                                           label='Nombre abreviado WOS')
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
