@@ -774,8 +774,8 @@ Instituciones = (
 
     ('Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)',
      Pais.objects.get(nombre='Francia').id, [(
-                                             'Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)',
-                                             Ciudad.objects.get(nombre='París').id)]),
+        'Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)',
+        Ciudad.objects.get(nombre='París').id)]),
 
     ('El Colegio de Michoacán, A.C. (COLMICH)', Pais.objects.get(nombre='México').id,
      [('El Colegio de Michoacán, A.C. (COLMICH)', Ciudad.objects.get(nombre='La Piedad de Cabadas').id)]),
@@ -917,8 +917,8 @@ Instituciones = (
 
     ('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)',
      Pais.objects.get(nombre='México').id, [(
-                                            'Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)',
-                                            Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
+        'Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)',
+        Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
     ('Universidad Autónoma del Estado de México (UAEMex)', Pais.objects.get(nombre='México').id,
      (
@@ -968,9 +968,9 @@ Instituciones = (
      [('Universidad Autónoma Chapingo', Ciudad.objects.get(nombre='Texcoco de Mora').id)]),
 
     ('Sistema de la Integración Centroamericana (SICA)', Pais.objects.get(nombre='México').id, [(
-                                                                                                'Comisión Centroamericana de Ambiente y Desarrollo (CCAD)',
-                                                                                                Ciudad.objects.get(
-                                                                                                    nombre='Ciudad de México, CDMX').id)]),
+        'Comisión Centroamericana de Ambiente y Desarrollo (CCAD)',
+        Ciudad.objects.get(
+            nombre='Ciudad de México, CDMX').id)]),
 
     ('National Aeronautics and Space Administration (NASA)', Pais.objects.get(nombre='Estados Unidos de América').id,
      [('National Aeronautics and Space Administration (NASA)', Ciudad.objects.get(nombre='Washington, D.C.').id)]),
@@ -994,8 +994,8 @@ Instituciones = (
 
     ('Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)',
      Pais.objects.get(nombre='México').id, [(
-                                            'Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)',
-                                            Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
+        'Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)',
+        Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
     ('Sociedad Mexicana de Geografía y Estadística, A.C.', Pais.objects.get(nombre='México').id,
      [('Sociedad Mexicana de Geografía y Estadística, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
@@ -1019,9 +1019,9 @@ Instituciones = (
      ),
 
     ('Instituto Mexicano de la Propiedad Industrial (IMPI)', Pais.objects.get(nombre='México').id, [(
-                                                                                                    'Instituto Mexicano de la Propiedad Industrial (IMPI)',
-                                                                                                    Ciudad.objects.get(
-                                                                                                        nombre='Ciudad de México, CDMX').id)]),
+        'Instituto Mexicano de la Propiedad Industrial (IMPI)',
+        Ciudad.objects.get(
+            nombre='Ciudad de México, CDMX').id)]),
 
     ('Universidad Tecmilenio', Pais.objects.get(nombre='México').id,
      (
@@ -1044,8 +1044,8 @@ Instituciones = (
      (
          ('Universidad Mayor se San Simón', Ciudad.objects.get(nombre='Cochabamba').id),
          (
-         'Centro de Levantamientos Aeroespaciales y Aplicaciones SIG para el Desarrollo Sostenible de los Recursos Naturales (CLAS)',
-         Ciudad.objects.get(nombre='Cochabamba').id)
+             'Centro de Levantamientos Aeroespaciales y Aplicaciones SIG para el Desarrollo Sostenible de los Recursos Naturales (CLAS)',
+             Ciudad.objects.get(nombre='Cochabamba').id)
      )
      ),
 
@@ -1088,17 +1088,17 @@ Instituciones = (
      [('Centro de capacitación de alto rendimiento', Ciudad.objects.get(nombre='Morelia').id)]),
 
     ('Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)', Pais.objects.get(nombre='México').id, [(
-                                                                                                                     'Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)',
-                                                                                                                     Ciudad.objects.get(
-                                                                                                                         nombre='Ciudad de México, CDMX').id)]),
+        'Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)',
+        Ciudad.objects.get(
+            nombre='Ciudad de México, CDMX').id)]),
 
     ('Universidad Politécnica de Madrid', Pais.objects.get(nombre='España').id,
      [('Universidad Politécnica de Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
     ('Academia Mexicana de Impacto Ambiental, A.C.(AMIA, A.C.)', Pais.objects.get(nombre='México').id, [(
-                                                                                                        'Academia Mexicana de Impacto Ambiental, A.C.(AMIA, A.C.)',
-                                                                                                        Ciudad.objects.get(
-                                                                                                            nombre='Ciudad de México, CDMX').id)]),
+        'Academia Mexicana de Impacto Ambiental, A.C.(AMIA, A.C.)',
+        Ciudad.objects.get(
+            nombre='Ciudad de México, CDMX').id)]),
 
     ('Advanced Analytical Systems, S.A. de C.V.', Pais.objects.get(nombre='México').id,
      [('Advanced Analytical Systems, S.A. de C.V.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
@@ -1122,9 +1122,9 @@ Instituciones = (
      ),
 
     ('Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.', Pais.objects.get(nombre='México').id, [(
-                                                                                                                      'Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.',
-                                                                                                                      Ciudad.objects.get(
-                                                                                                                          nombre='Ciudad de México, CDMX').id)]),
+        'Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.',
+        Ciudad.objects.get(
+            nombre='Ciudad de México, CDMX').id)]),
 
     ('Centro de Investigación en Matemáticas (CIMAT)', Pais.objects.get(nombre='México').id,
      [('Centro de Investigación en Matemáticas (CIMAT)', Ciudad.objects.get(nombre='Guanajuato').id)]),
@@ -1245,9 +1245,9 @@ Instituciones = (
      ),
 
     ('El Colegio de la Frontera Sur Unidad San Cristóbal (ECOSUR)', Pais.objects.get(nombre='México').id, [(
-                                                                                                           'El Colegio de la Frontera Sur Unidad San Cristóbal (ECOSUR)',
-                                                                                                           Ciudad.objects.get(
-                                                                                                               nombre='San Cristóbal de las Casas').id)]),
+        'El Colegio de la Frontera Sur Unidad San Cristóbal (ECOSUR)',
+        Ciudad.objects.get(
+            nombre='San Cristóbal de las Casas').id)]),
 
     ('Universidad Federal de Minas Gerais', Pais.objects.get(nombre='Brasil').id,
      [('Universidad Federal de Minas Gerais', Ciudad.objects.get(nombre='Belo Horizonte').id)]),
@@ -1262,14 +1262,14 @@ Instituciones = (
      [('Universidad de Granada', Ciudad.objects.get(nombre='Granada').id)]),
 
     ('Centro de Investigación en Alimentación y Desarrollo, A.C. (CIAD)', Pais.objects.get(nombre='México').id, [(
-                                                                                                                 'Centro de Investigación en Alimentación y Desarrollo, A.C. (CIAD)',
-                                                                                                                 Ciudad.objects.get(
-                                                                                                                     nombre='Culiacán Rosales').id)]),
+        'Centro de Investigación en Alimentación y Desarrollo, A.C. (CIAD)',
+        Ciudad.objects.get(
+            nombre='Culiacán Rosales').id)]),
 
     ('Instituto Nacional de Investigaciones Forestles, Agrícolas y Pecuarias (INIFAP)',
      Pais.objects.get(nombre='México').id, [(
-                                            'Instituto Nacional de Investigaciones Forestles, Agrícolas y Pecuarias (INIFAP)',
-                                            Ciudad.objects.get(nombre='Morelia').id)]),
+        'Instituto Nacional de Investigaciones Forestles, Agrícolas y Pecuarias (INIFAP)',
+        Ciudad.objects.get(nombre='Morelia').id)]),
 
     ('Universidad de Guanajuato', Pais.objects.get(nombre='México').id,
      (
@@ -1301,17 +1301,17 @@ Instituciones = (
      [('Reserva de la Biosfera de la Mariposa Monarca', Ciudad.objects.get(nombre='El Rosario').id)]),
 
     ('Fondo Mexicano para la Conservación de la Naturaleza, A.C. (FMCN)', Pais.objects.get(nombre='México').id, [(
-                                                                                                                 'Fondo Mexicano para la Conservación de la Naturaleza, A.C. (FMCN)',
-                                                                                                                 Ciudad.objects.get(
-                                                                                                                     nombre='Ciudad de México, CDMX').id)]),
+        'Fondo Mexicano para la Conservación de la Naturaleza, A.C. (FMCN)',
+        Ciudad.objects.get(
+            nombre='Ciudad de México, CDMX').id)]),
 
     ('Agencia Nacional de Promoción Científica y Tecnológica', Pais.objects.get(nombre='Argentina').id,
      [('Agencia Nacional de Promoción Científica y Tecnológica', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
     ('Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)', Pais.objects.get(nombre='Argentina').id, [(
-                                                                                                                       'Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)',
-                                                                                                                       Ciudad.objects.get(
-                                                                                                                           nombre='Buenos Aires').id)]),
+        'Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)',
+        Ciudad.objects.get(
+            nombre='Buenos Aires').id)]),
 
     ('Global Water Watch México', Pais.objects.get(nombre='México').id,
      [('Global Water Watch México', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
@@ -1351,8 +1351,8 @@ Instituciones = (
 
     ('Centro Nacional para la Investigación Científica (Centre National de la Recherche Scientifique CNRS)',
      Pais.objects.get(nombre='Francia').id, [(
-                                             'Centro Nacional para la Investigación Científica (Centre National de la Recherche Scientifique CNRS)',
-                                             Ciudad.objects.get(nombre='París').id)]),
+        'Centro Nacional para la Investigación Científica (Centre National de la Recherche Scientifique CNRS)',
+        Ciudad.objects.get(nombre='París').id)]),
 
     ('Ministerio de Asuntos Exteriores y Desarrollo Internacional francés', Pais.objects.get(nombre='Francia').id,
      [('Ministerio de Asuntos Exteriores y Desarrollo Internacional francés', Ciudad.objects.get(nombre='París').id)]),
@@ -1456,9 +1456,9 @@ Instituciones = (
      ),
 
     ('Grupo Interdisciplinario de Tecnología Rural Apropiada, A.C. (GIRA)', Pais.objects.get(nombre='México').id, [(
-                                                                                                                   'Grupo Interdisciplinario de Tecnología Rural Apropiada, A.C. (GIRA)',
-                                                                                                                   Ciudad.objects.get(
-                                                                                                                       nombre='Pátzcuaro').id)]),
+        'Grupo Interdisciplinario de Tecnología Rural Apropiada, A.C. (GIRA)',
+        Ciudad.objects.get(
+            nombre='Pátzcuaro').id)]),
 
     ('International Maize and Wheat Improvement Center (CIMMYT)', Pais.objects.get(nombre='México').id,
      [('International Maize and Wheat Improvement Center (CIMMYT)', Ciudad.objects.get(nombre='El Batán').id)]),
@@ -1518,9 +1518,9 @@ Instituciones = (
      [('Universidad Internacional de Andalucía (UNIA)', Ciudad.objects.get(nombre='Sevilla').id)]),
 
     ('Universidad de los Llanos (UNILLANOS)', Pais.objects.get(nombre='Colombia').id, [(
-                                                                                       'Facultad de Ciencias Agropecuarias y Recursos Naturales (FCARN)',
-                                                                                       Ciudad.objects.get(
-                                                                                           nombre='Villavicencio').id)]),
+        'Facultad de Ciencias Agropecuarias y Recursos Naturales (FCARN)',
+        Ciudad.objects.get(
+            nombre='Villavicencio').id)]),
 
     ('Universidad Nacional de La Plata (UNLP)', Pais.objects.get(nombre='Argentina').id,
      [('Facultad de Humanidades y Ciencias de la Educación', Ciudad.objects.get(nombre='La Plata').id)]),
@@ -1529,9 +1529,9 @@ Instituciones = (
      [('Universidad Nacional de Cuyo (UNCUYO)', Ciudad.objects.get(nombre='Mendoza').id)]),
 
     ('Facultad Latinoamericana de Ciencias Sociales (FLACSO)', Pais.objects.get(nombre='México').id, [(
-                                                                                                      'Facultad Latinoamericana de Ciencias Sociales (FLACSO)',
-                                                                                                      Ciudad.objects.get(
-                                                                                                          nombre='Ciudad de México, CDMX').id)]),
+        'Facultad Latinoamericana de Ciencias Sociales (FLACSO)',
+        Ciudad.objects.get(
+            nombre='Ciudad de México, CDMX').id)]),
 
     ('Universidad Autónoma del Estado de Morelos', Pais.objects.get(nombre='México').id,
      [('Universidad Autónoma del Estado de Morelos', Ciudad.objects.get(nombre='Cuernavaca').id)]),
@@ -1599,9 +1599,9 @@ Instituciones = (
      [('Instituto Venezolano de Investigaciones Científicas (IVIC)', Ciudad.objects.get(nombre='Los Salias').id)]),
 
     ('Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.', Pais.objects.get(nombre='México').id, [(
-                                                                                                             'Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.',
-                                                                                                             Ciudad.objects.get(
-                                                                                                                 nombre='San Cristóbal de las Casas').id)]),
+        'Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.',
+        Ciudad.objects.get(
+            nombre='San Cristóbal de las Casas').id)]),
 
     ('Signos Diseño & Publicidad', Pais.objects.get(nombre='México').id,
      [('Signos Diseño & Publicidad', Ciudad.objects.get(nombre='Morelia').id)]),
@@ -1629,8 +1629,8 @@ Instituciones = (
 
     ('International Society for the Study of Religion, Nature and Culture (ISSRNC)',
      Pais.objects.get(nombre='Estados Unidos de América').id, [(
-                                                               'International Society for the Study of Religion, Nature and Culture (ISSRNC)',
-                                                               Ciudad.objects.get(nombre='Gainesville').id)]),
+        'International Society for the Study of Religion, Nature and Culture (ISSRNC)',
+        Ciudad.objects.get(nombre='Gainesville').id)]),
 
     ('Conference of Latin Americanist Geographers (CLAG)', Pais.objects.get(nombre='Estados Unidos de América').id,
      [('Conference of Latin Americanist Geographers (CLAG)', Ciudad.objects.get(nombre='Gainesville').id)]),
@@ -1694,8 +1694,9 @@ User.objects.create_superuser(username='admin', email='cesar.benjamin@enesmoreli
 
 Usuarios = (
     (
-    'usr_st', 'usr_st', 'usr_st', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id,
-    '-', 'Aso3U'),
+        'usr_st', 'usr_st', 'usr_st', 'OTRO', Pais.objects.get(nombre='México').id,
+        Ciudad.objects.get(nombre='Morelia').id,
+        '-', 'Aso3U'),
     ('alex', 'alex', 'alex', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-',
      'rWKXd'),
     ('mario.figueroa', 'Figueroa Cárdenas', 'Mario', 'OTRO', Pais.objects.get(nombre='México').id,
@@ -1749,7 +1750,7 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, 'B', 'DgFdm'),
     ('claudio.garibay', 'Claudio', 'Garibay Orozco', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, 'C', '88SSU'),
-    ('ana.burgos', 'Ana', 'Burgos', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
+    ('ana.burgos', 'Ana Laura', 'Burgos Tornadú', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'jEvFg'),
     ('gerardo.bocco', 'Gerardo Héctor Rubén', 'Bocco Verdinelli', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, 'D', 'f4r8Q'),
@@ -1876,7 +1877,8 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', '00041'))
 for i in Usuarios:
     u = User.objects.create_user(username=i[0], first_name=i[1], last_name=i[2], tipo=i[3], pais_origen=Pais(pk=i[4]),
-                                 pais=Pais.objects.get(nombre='México'), estado=Estado.objects.get(nombre='Michoacán de Ocampo'),
+                                 pais=Pais.objects.get(nombre='México'),
+                                 estado=Estado.objects.get(nombre='Michoacán de Ocampo'),
                                  ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion=i[0], password=i[7],
                                  email=i[0] + '@ciga.unam.mx')
     print(u)
@@ -2423,13 +2425,66 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', 'l.menéndez.carrera'),
     ('georges.seingier', 'Seingier', 'Georges', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'l.menéndez.carrera'),
+    ('dalma.albarracin', 'Dalma', 'Albarracín', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'dalma.albarracin'),
+    ('gabriela.alvarez', 'Alvarez Gamboa', 'Gabriela', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'gabriela.alvarez'),
+    ('fabiana.bekerman', 'Fabiana', 'Bekerman', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'fabiana.bekerman'),
+    ('ana.cinti', 'Ana', 'Cinti', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id,
+     '-', 'ana.cinti'),
+    ('leticia.curti', 'Leticia', 'Curti', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'leticia.curti'),
+    ('cristina.flores', 'Cristina', 'Flores', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'cristina.flores'),
+    ('rosana.guber', 'Rosana', 'Guber', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'rosana.guber'),
+    ('sergio.kaminker', 'Sergio Andres', 'Kaminker', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'sergio.kaminker'),
+    ('carolina.laztra', 'Carolina', 'Laztra', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'carolina.laztra'),
+    ('isabelle.sanchez', 'Isabelle', 'Sanchez Rose', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'isabelle.sanchez'),
+    ('javier.serrano', 'Javier', 'Serrano', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'javier.serrano'),
+    ('marcos.sourrouille', 'Marcos', 'Sourrouille', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'marcos.sourrouille'),
+    ('damian.taire', 'Damián Leonardo', 'Taire', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'damian.taire'),
+    ('julio.vezub', 'Julio', 'Vezub', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'julio.vezub'),
+    ('joaquin.sosa', 'Joaquín', 'Sosa Ramírez', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'joaquin.sosa'),
+    ('donald.brand', 'Donald. D', 'Brand', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'donald.brand'),
+    ('victor.toledo', 'Victor M.', 'Toledo', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'victor.toledo'),
+    ('alfred.zinck', 'Joseph Alfred', 'Zinck', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'alfred.zinck'),
+    ('hector.delvalle', 'Héctor Francisco', 'Del Valle', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'hector.delvalle'),
+    ('carlos.paredes', 'Carlos', 'Paredes Martínez', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'carlos.paredes'),
+    ('victoria.canino', 'Ma Victoria', 'Canino', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'victoria.canino'),
+    ('rosa.bolivar', 'Rosa', 'Bolivar', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'rosa.bolivar'),
+    ('ana.castellanos', 'Ana', 'Castellanos', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'ana.castellanos'),
+    ('ana.castellanos', 'Ana', 'Castellanos', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'ana.castellanos'),
+    ('Maria Alejandra Aray', 'Ana', 'Castellanos', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'ana.castellanos'),
+
+
 )
 
-
 for i in Usuarios:
-    u = User.objects.create_user(username=i[0], first_name=i[2], last_name=i[1], tipo=i[3], pais_origen=Pais(pk=i[4]), pais=Pais.objects.get(nombre='México'), estado=Estado.objects.get(nombre='Michoacán de Ocampo'), ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion=i[0], password=i[7], email=i[0] + '@ciga.unam.mx')
+    u = User.objects.create_user(username=i[0], first_name=i[2], last_name=i[1], tipo=i[3], pais_origen=Pais(pk=i[4]),
+                                 pais=Pais.objects.get(nombre='México'),
+                                 estado=Estado.objects.get(nombre='Michoacán de Ocampo'), ciudad=Ciudad(pk=i[5]),
+                                 pride=i[6], rfc=i[7], direccion=i[0], password=i[7], email=i[0] + '@ciga.unam.mx')
     print(u)
-
 
 adscritos = (
     'jean.mas', 'adrian.ghilardi', 'maria.ramirez', 'alejandro.velazquez', 'gerardo.bocco', 'angel.priego',
@@ -2441,7 +2496,6 @@ adscritos = (
     'brian.napoletano', 'manuel.bollo', 'alejandra.larrazabal', 'teresa.ramirez', 'maria.ramirez', 'arturo.balderas',
     'mariana.vallejo', 'alejandro.velazquez'
 )
-
 
 LSBM = ('Agriculture', 'Allergy', 'Anatomy & Morphology', 'Anesthesiology', 'Anthropology', 'Behavioral Sciences',
         'Biochemistry & Molecular Biology', 'Biodiversity & Conservation', 'Biophysics',
@@ -2463,15 +2517,18 @@ LSBM = ('Agriculture', 'Allergy', 'Anatomy & Morphology', 'Anesthesiology', 'Ant
         'Virology', 'Zoology')
 
 PHYS = (
-'Astronomy & Astrophysics', 'Chemistry', 'Crystallography', 'Electrochemistry', 'Geochemistry & Geophysics', 'Geology',
-'Mathematics', 'Meteorology & Atmospheric Sciences', 'Mineralogy', 'Mining & Mineral Processing', 'Oceanography',
-'Optics', 'Physical Geography', 'Physics', 'Polymer Science', 'Thermodynamics', 'Water Resources')
+    'Astronomy & Astrophysics', 'Chemistry', 'Crystallography', 'Electrochemistry', 'Geochemistry & Geophysics',
+    'Geology',
+    'Mathematics', 'Meteorology & Atmospheric Sciences', 'Mineralogy', 'Mining & Mineral Processing', 'Oceanography',
+    'Optics', 'Physical Geography', 'Physics', 'Polymer Science', 'Thermodynamics', 'Water Resources')
 TECH = (
-'Acoustics', 'Automation & Control Systems', 'Computer Science', 'Construction & Building Technology', 'Energy & Fuels',
-'Engineering', 'Imaging Science & Photographic Technology', 'Information Science & Library Science',
-'Instruments & Instrumentation', 'Materials Science', 'Mechanics', 'Metallurgy & Metallurgical Engineering',
-'Microscopy', 'Nuclear Science & Technology', 'Operations Research & Management Science', 'Remote Sensing', 'Robotics',
-'Science & Technology Other Topics', 'Spectroscopy', 'Telecommunications', 'Transportation')
+    'Acoustics', 'Automation & Control Systems', 'Computer Science', 'Construction & Building Technology',
+    'Energy & Fuels',
+    'Engineering', 'Imaging Science & Photographic Technology', 'Information Science & Library Science',
+    'Instruments & Instrumentation', 'Materials Science', 'Mechanics', 'Metallurgy & Metallurgical Engineering',
+    'Microscopy', 'Nuclear Science & Technology', 'Operations Research & Management Science', 'Remote Sensing',
+    'Robotics',
+    'Science & Technology Other Topics', 'Spectroscopy', 'Telecommunications', 'Transportation')
 ARTH = ('Architecture', 'Art', 'Arts & Humanities Other Topics', 'Asian Studies', 'Classics', 'Dance',
         'Film, Radio & Television', 'History', 'History & Philosophy of Science', 'Literature', 'Music', 'Philosophy',
         'Religion', 'Theater')
@@ -2511,8 +2568,9 @@ for i in SOCS:
 
 CursosEspecializacion = (
     (
-    'Gobernanza y visión territorial en las políticas públicas: Orígenes y nuevas perspectivas', 'CURSO', 9, 2, 2015, 2,
-    2015, 'Public Administration', ['Facultad de Ciencias Políticas y Sociales'], '58Tln'),
+        'Gobernanza y visión territorial en las políticas públicas: Orígenes y nuevas perspectivas', 'CURSO', 9, 2,
+        2015, 2,
+        2015, 'Public Administration', ['Facultad de Ciencias Políticas y Sociales'], '58Tln'),
     ('Estudios Avanzados en Desarrollo Sustentable y Medio Ambiente', 'CERTIFICACION', 480, 11, 2004, 9, 2006,
      'Environmental Sciences & Ecology', ['El Colegio de México, A.C.', 'LEAD International'], 'Y9jOf'),
     ('Uso de la información geográfica en la página del internet del INEGI', 'CURSO', 4, 5, 2015, 5, 2015,
@@ -2522,8 +2580,9 @@ CursosEspecializacion = (
     ('Geografía del Paisaje', 'CURSO', 32, 1, 2015, 5, 2015, 'Physical Geography',
      ['Centro de Investigaciones en Geografía Ambiental (CIGA)'], 'J8YEd'),
     (
-    'Gobernanza y visión territorial en las políticas públicas: Orígenes y nuevas perspectivas', 'CURSO', 9, 2, 2015, 2,
-    2015, 'Public Administration', ['Facultad de Ciencias Políticas y Sociales'], 'J8YEd'),
+        'Gobernanza y visión territorial en las políticas públicas: Orígenes y nuevas perspectivas', 'CURSO', 9, 2,
+        2015, 2,
+        2015, 'Public Administration', ['Facultad de Ciencias Políticas y Sociales'], 'J8YEd'),
     ('Historia y paisaje', 'CURSO', 6, 2, 2015, 2, 2015, 'Physical Geography',
      ['Centro de Investigaciones en Geografía Ambiental (CIGA)'], 'J8YEd'),
     ('Manejo del SIG libre QGIS 2.2', 'CURSO', 24, 6, 2014, 6, 2014, 'Remote Sensing',
@@ -2534,8 +2593,9 @@ CursosEspecializacion = (
      'Physical Geography', ['Universidad Autónoma del Estado de México (UAEMex)', 'Open Geospatial Consortium (OGC)'],
      'J8YEd'),
     (
-    'Land Change Modeling: calibration, validation, extrapolation, and interpretation', 'CURSO', 16, 10, 2011, 10, 2011,
-    'Physical Geography', ['Centro de Investigaciones en Geografía Ambiental (CIGA)'], 'J8YEd'),
+        'Land Change Modeling: calibration, validation, extrapolation, and interpretation', 'CURSO', 16, 10, 2011, 10,
+        2011,
+        'Physical Geography', ['Centro de Investigaciones en Geografía Ambiental (CIGA)'], 'J8YEd'),
     ('Writing scientific papers for publication in English', 'CURSO', 40, 11, 2012, 11, 2012,
      'Education & Educational Research', ['Centro de Investigaciones en Geografía Ambiental (CIGA)'], 'J8YEd'),
     ('3er. Evento Internacional de Geotecnología y Soluciones Avanzadas en Seguridad', 'OTRO', 16, 5, 2011, 5, 2011,
@@ -2551,14 +2611,16 @@ CursosEspecializacion = (
     ('Redacción de artículos y documentos técnicos', 'CURSO', 10, 6, 2005, 6, 2005, 'Education & Educational Research',
      ['Instituto Nacional de Ecología y Cambio Climático (INECC)'], 'J8YEd'),
     (
-    'Aplicación de mapeo y sistemas de información geográfica participativos en espacios urbanos', 'CURSO', 50, 2, 2005,
-    3, 2005, 'Physical Geography', ['International Institute for Geo-Information Sciences and Earth Observation (ITC)'],
-    'J8YEd'),
+        'Aplicación de mapeo y sistemas de información geográfica participativos en espacios urbanos', 'CURSO', 50, 2,
+        2005,
+        3, 2005, 'Physical Geography',
+        ['International Institute for Geo-Information Sciences and Earth Observation (ITC)'],
+        'J8YEd'),
     ('Trabajo en equipo Nivel 3', 'CURSO', 20, 1, 2005, 1, 2005, 'Public Administration', ['Ibero OnLine'], 'J8YEd'),
     (
-    'Taller con los sectores Científico y Académico para la discusión y selección de una definición operativa de humedal y de una propuesta de Sistema de Clasificación de humedales en México',
-    'CURSO', 8, 1, 2015, 1, 2015, 'Environmental Sciences & Ecology',
-    ['Instituto Nacional de Ecología y Cambio Climático (INECC)'], 'J8YEd'),
+        'Taller con los sectores Científico y Académico para la discusión y selección de una definición operativa de humedal y de una propuesta de Sistema de Clasificación de humedales en México',
+        'CURSO', 8, 1, 2015, 1, 2015, 'Environmental Sciences & Ecology',
+        ['Instituto Nacional de Ecología y Cambio Climático (INECC)'], 'J8YEd'),
     ('Curso de Redacción', 'CURSO', 30, 11, 2004, 12, 2004, 'Education & Educational Research',
      ['Instituto Nacional de Ecología y Cambio Climático (INECC)'], 'J8YEd'),
     ('Introducción al Análisis de Imágenes de Satélite', 'CURSO', 48, 6, 2004, 6, 2004, 'Remote Sensing',
@@ -2568,9 +2630,9 @@ CursosEspecializacion = (
     ('Planeación Estratégica', 'CURSO', 16, 6, 2003, 6, 2003, 'Public Administration',
      ['Centro de Capacitación en Calidad Sanitaria S.A. DE C.V.'], 'J8YEd'),
     (
-    'Teoría y aplicaciones de modelos de elevación digital (Shuttle radar topography mision) y aplicaciones de MODIS (Moderate Resolution Imaging Spectroradiometer)',
-    'CURSO', 8, 10, 2003, 10, 2003, 'Remote Sensing', ['Comisión Centroamericana de Ambiente y Desarrollo (CCAD)'],
-    'J8YEd'),
+        'Teoría y aplicaciones de modelos de elevación digital (Shuttle radar topography mision) y aplicaciones de MODIS (Moderate Resolution Imaging Spectroradiometer)',
+        'CURSO', 8, 10, 2003, 10, 2003, 'Remote Sensing', ['Comisión Centroamericana de Ambiente y Desarrollo (CCAD)'],
+        'J8YEd'),
     ('ArcView Spatial Analyst y ArcView 3D Analyst', 'CURSO', 40, 12, 2002, 12, 2002, 'Physical Geography',
      ['Sistemas de Información Geográfica, S.A. de C.V.'], 'J8YEd'),
     ('Redacción intermedia', 'CURSO', 15, 10, 2002, 10, 2002, 'Linguistics',
@@ -2582,9 +2644,10 @@ CursosEspecializacion = (
     ('Conceptos básicos y fundamentos de ERDAS IMAGINE', 'CURSO', 24, 4, 2002, 4, 2002, 'Remote Sensing',
      ['Sistemas de Información Geográfica, S.A. de C.V.'], 'J8YEd'),
     (
-    'El Ordenamiento ecológico en la gestión y manejo de recursos naturales de cara al siglo XXI', 'CURSO', 24, 9, 2001,
-    9, 2001, 'Environmental Sciences & Ecology', ['Instituto Nacional de Ecología y Cambio Climático (INECC)'],
-    'J8YEd'),
+        'El Ordenamiento ecológico en la gestión y manejo de recursos naturales de cara al siglo XXI', 'CURSO', 24, 9,
+        2001,
+        9, 2001, 'Environmental Sciences & Ecology', ['Instituto Nacional de Ecología y Cambio Climático (INECC)'],
+        'J8YEd'),
     ('Introducción a Oracle con SQL', 'CURSO', 20, 1, 2015, 1, 2015, 'Science & Technology Other Topics',
      ['Instituto Nacional de Ecología y Cambio Climático (INECC)'], 'J8YEd'),
     ('Introducción a la informática', 'CURSO', 8, 6, 2001, 6, 2001, 'Science & Technology Other Topics',
@@ -2593,8 +2656,9 @@ CursosEspecializacion = (
      'Environmental Sciences & Ecology',
      ['Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)'], 'J8YEd'),
     (
-    'Los sistemas de información geográfica en la evaluación de riesgos, prevención de desastres y operación de programas de emergencia',
-    'CURSO', 24, 1, 2015, 1, 2015, 'Physical Geography', ['Sistemas de Información Geográfica, S.A. de C.V.'], 'J8YEd'),
+        'Los sistemas de información geográfica en la evaluación de riesgos, prevención de desastres y operación de programas de emergencia',
+        'CURSO', 24, 1, 2015, 1, 2015, 'Physical Geography', ['Sistemas de Información Geográfica, S.A. de C.V.'],
+        'J8YEd'),
     ('AML (Arc Macro Language)', 'CURSO', 24, 12, 1999, 12, 1999, 'Physical Geography',
      ['Sistemas de Información Geográfica, S.A. de C.V.'], 'J8YEd'),
     ('X Congreso Nacional de Geografía', 'OTRO', 24, 3, 1985, 3, 1985, 'Physical Geography',
@@ -2612,14 +2676,16 @@ CursosEspecializacion = (
     ('Del Barroco español al neobarroco hispanoamericano, Cátedra Extraordinaria Maestros del Exilio Español', 'CURSO',
      30, 11, 2000, 4, 2001, 'History', ['Facultad de Filosofía y Letras'], 'fEVor'),
     (
-    'Narrativa cubana de adentro y de afuera, Cátedra Extraordinaria Maestros del Exilio Español', 'CURSO', 30, 5, 2001,
-    9, 2001, 'History', ['Facultad de Filosofía y Letras'], 'fEVor'),
+        'Narrativa cubana de adentro y de afuera, Cátedra Extraordinaria Maestros del Exilio Español', 'CURSO', 30, 5,
+        2001,
+        9, 2001, 'History', ['Facultad de Filosofía y Letras'], 'fEVor'),
     (
-    'Sistemas de Información Geográfica y Mapeo Participativos para la Planeación en Colaboración y para el Manejo de los Recursos Naturales',
-    'CURSO', 120, 1, 2005, 2, 2005, 'Remote Sensing', ['Unidad Académica de Geografía, Morelia (UNAM Morelia)'],
-    'fEVor'),
+        'Sistemas de Información Geográfica y Mapeo Participativos para la Planeación en Colaboración y para el Manejo de los Recursos Naturales',
+        'CURSO', 120, 1, 2005, 2, 2005, 'Remote Sensing', ['Unidad Académica de Geografía, Morelia (UNAM Morelia)'],
+        'fEVor'),
     (
-    'Escritura del idioma teenek', 'CURSO', 15, 5, 2005, 6, 2005, 'History', ['Coordinación de Antropología'], 'fEVor'),
+        'Escritura del idioma teenek', 'CURSO', 15, 5, 2005, 6, 2005, 'History', ['Coordinación de Antropología'],
+        'fEVor'),
     ('Fotografìa de paisaje', 'CURSO', 18, 3, 2008, 3, 2008, 'Imaging Science & Photographic Technology',
      ['Centro de Investigaciones en Geografía Ambiental (CIGA)'], 'fEVor'),
     ('Introducción al ArcGIS 9.', 'CURSO', 10, 4, 2008, 4, 2008, 'Automation & Control Systems',
@@ -2655,8 +2721,9 @@ CursosEspecializacion = (
     ('Geographic Information Systems and application (Water Management)', 'DIPLOMADO', 50, 11, 2003, 11, 2003,
      'Remote Sensing', ['International Institute for Geo-Information Sciences and Earth Observation (ITC)'], 'wjZ8d'),
     (
-    'Questionary design for social sciences (en linea)', 'CURSO', 36, 11, 2015, 1, 2016, 'Social Sciences Other Topics',
-    ['Universidad de Míchigan'], 'Ersp5'),
+        'Questionary design for social sciences (en linea)', 'CURSO', 36, 11, 2015, 1, 2016,
+        'Social Sciences Other Topics',
+        ['Universidad de Míchigan'], 'Ersp5'),
     ('Slope deposits and Processes', 'CURSO', 60, 3, 2016, 3, 2016, 'Geology', ['Universidad de Wurzburgo'], '6ESlj'),
     ('Modelación de cambio de uso del suelo', 'DIPLOMADO', 20, 3, 2016, 3, 2016, 'Geology', ['Instituto de Geografía'],
      'GUKjy'),
@@ -2697,8 +2764,9 @@ CursosEspecializacion = (
     ('Sistema de Patentes Mexicano (IMPI)', 'OTRO', 40, 11, 2005, 11, 2005, 'Government & Law',
      ['Instituto Tecnológico de Morelia (ITM)'], 'n80rn'),
     (
-    'Linux', 'OTRO', 40, 11, 2005, 11, 2005, 'Automation & Control Systems', ['Instituto Tecnológico de Morelia (ITM)'],
-    'n80rn'),
+        'Linux', 'OTRO', 40, 11, 2005, 11, 2005, 'Automation & Control Systems',
+        ['Instituto Tecnológico de Morelia (ITM)'],
+        'n80rn'),
     ('Manejo de Información y Productos Estadísticos del INEGI', 'OTRO', 40, 6, 2006, 6, 2006,
      'Information Science & Library Science', ['Universidad Don Vasco'], 'n80rn'),
     ('Programación Java Server Page', 'CURSO', 30, 6, 2006, 6, 2006, 'Automation & Control Systems',
@@ -2734,13 +2802,14 @@ CursosEspecializacion = (
     ('Monitoreo de Redes', 'CURSO', 8, 4, 2010, 4, 2010, 'Telecommunications',
      ['Corporación Universitaria para el Desarrollo de Internet, A.C. (CUDI)'], 'n80rn'),
     (
-    'Instalación, operación y mantenimiento de estaciones meteorológicas automáticas (EMA´s) Marca: FTS FOREST TECHNOLOGY SYSTEMS LTD., con sistema de comunicación satelital goes',
-    'CURSO', 40, 5, 2010, 6, 2010, 'Telecommunications',
-    ['Instituto de Investigaciones en Ecosistemas y Sustentabilidad (IIES)'], 'n80rn'),
+        'Instalación, operación y mantenimiento de estaciones meteorológicas automáticas (EMA´s) Marca: FTS FOREST TECHNOLOGY SYSTEMS LTD., con sistema de comunicación satelital goes',
+        'CURSO', 40, 5, 2010, 6, 2010, 'Telecommunications',
+        ['Instituto de Investigaciones en Ecosistemas y Sustentabilidad (IIES)'], 'n80rn'),
     (
-    'Tercer Encuentro Nacional sobre Ciencia, Tecnología en Innovación en México durante la última década: UNA VISIÓN CRITICA AL FUTURO y del 6to. Congreso Estatal de Ciencia y Tecnología',
-    'OTRO', 30, 9, 2010, 9, 2010, 'Science & Technology Other Topics', ['Centro de capacitación de alto rendimiento'],
-    'n80rn'),
+        'Tercer Encuentro Nacional sobre Ciencia, Tecnología en Innovación en México durante la última década: UNA VISIÓN CRITICA AL FUTURO y del 6to. Congreso Estatal de Ciencia y Tecnología',
+        'OTRO', 30, 9, 2010, 9, 2010, 'Science & Technology Other Topics',
+        ['Centro de capacitación de alto rendimiento'],
+        'n80rn'),
     ('Administración y actualización de Fortimail en la versión 4.0', 'CURSO', 12, 5, 2012, 1, 2012,
      'Telecommunications', ['Centro de capacitación de alto rendimiento'], 'n80rn'),
     ('Administración de Sistemas de Almacenamiento en equipos Equallogic', 'CURSO', 40, 5, 2012, 5, 2012,
@@ -2782,9 +2851,10 @@ CursosEspecializacion = (
     ('Cartografia Del Paisaje', 'CURSO', 32, 3, 2016, 3, 2016, 'Physical Geography',
      ['Centro de Investigaciones en Geografía Ambiental (CIGA)'], 'h8fvn'),
     (
-    '1° Curso Internacional de Geomorfología de Campo del Noroeste Argentino. Geoarqueología de los Valles Calchaquíes',
-    'CURSO', 40, 8, 2016, 8, 2016, 'Geology', ['Laboratorio de Geoarqueología de la Facultad de Ciencias Naturales'],
-    'h8fvn'),
+        '1° Curso Internacional de Geomorfología de Campo del Noroeste Argentino. Geoarqueología de los Valles Calchaquíes',
+        'CURSO', 40, 8, 2016, 8, 2016, 'Geology',
+        ['Laboratorio de Geoarqueología de la Facultad de Ciencias Naturales'],
+        'h8fvn'),
     ('Introducción a la divulgación escrita', 'CURSO', 8, 8, 2016, 9, 2016, 'Education & Educational Research',
      ['Sociedad Mexicana para la Divulgación de la Ciencia y la Técnica, A.C.'], 'Yrcbo'),
     ('Taller de Herramientas para la Divulgación Científica', 'CURSO', 3, 8, 2016, 8, 2016,
@@ -2917,8 +2987,9 @@ Licenciaturas = (
      'La importancia de Turismo para el desarrollo económico en la ciudad de Urumqi, XinJiang, China', 1994, 9, 1998, 7,
      1998, 7, 'UiSNj'),
     (
-    'Sociología', 'Sociology', ['Facultad de Ciencias Políticas y Sociales'], 'Arenas Políticas en la Meseta Purépecha',
-    1975, 1, 1979, 1, 1995, 1, '88SSU'),
+        'Sociología', 'Sociology', ['Facultad de Ciencias Políticas y Sociales'],
+        'Arenas Políticas en la Meseta Purépecha',
+        1975, 1, 1979, 1, 1995, 1, '88SSU'),
     ('Licenciatura en Geografía', 'Physical Geography', ['Colegio de Geografia (Facultad de Filosofía y Letras)'],
      'Estudio Geomorfológico de la Porción Sureste del Golfo de México', 1986, 9, 1991, 6, 1994, 10, 'wjZ8d'),
     ('Licenciatura en Ciencias Antropológicas (orientación Arqueológica)', 'Anthropology',
@@ -2946,7 +3017,8 @@ Licenciaturas = (
      'Los Métodos de Cálculo de Horas Frío: el Método Gómez-Morales', 1979, 8, 1984, 6, 1990, 3, 'ftTrS'),
     ('Licenciatura en Administración de Empresas Agropecuárias', 'Business & Economics',
      ['Escuela de Ciencias Agropecuarias'],
-     'Eficiencia Biológica Y Económica Del Proceso De Producción De Papaya En El Trópico Seco De Michoacán', 1995, 9, 1999, 7, 2000, 7, '16ymf'))
+     'Eficiencia Biológica Y Económica Del Proceso De Producción De Papaya En El Trópico Seco De Michoacán', 1995, 9,
+     1999, 7, 2000, 7, '16ymf'))
 
 for i in Licenciaturas:
     if len(i[2]) > 1:
@@ -3086,7 +3158,8 @@ Maestrias = (
 
 
 for i in Maestrias:
-    m = Maestria(programa=ProgramaMaestria.objects.get(nombre=i[0]), institucion=Dependencia.objects.get(nombre=i[2]).institucion,
+    m = Maestria(programa=ProgramaMaestria.objects.get(nombre=i[0]),
+                 institucion=Dependencia.objects.get(nombre=i[2]).institucion,
                  dependencia=Dependencia.objects.get(nombre=i[2]),
                  titulo_tesis=i[3], fecha_inicio=datetime(int(i[4]), int(i[5]), 1),
                  fecha_fin=datetime(int(i[6]), int(i[7]), 28), fecha_grado=datetime(int(i[8]), int(i[9]), 1),
@@ -3465,8 +3538,9 @@ experiencias = (
     ('Ningúno', False, False, False, 'Colaborador', 'Instituto de Geografía', 1993, 1, 1994, 12, 'J8YEd'),
     ('Ningúno', False, False, False, 'Colaborador', 'Instituto de Ecología', 1991, 1, 1992, 12, 'J8YEd'),
     (
-    'Ningúno', False, False, False, 'Digitalizador', 'Sistemas de Información Geográfica, S.A. de C.V.', 1989, 10, 1990,
-    12, 'J8YEd'),
+        'Ningúno', False, False, False, 'Digitalizador', 'Sistemas de Información Geográfica, S.A. de C.V.', 1989, 10,
+        1990,
+        12, 'J8YEd'),
     ('Ningúno', False, False, False, 'Analista', 'Instituto Nacional de Estadística y Geografía (INEGI)', 1989, 1, 1989,
      8, 'J8YEd'),
     ('Investigador Titular A, Medio tiempo', True, False, False, 'Otro',
@@ -3488,8 +3562,9 @@ experiencias = (
     ('Técnico Académico Asociado (docencia) C, Tiempo Completo', False, False, False, 'Otro',
      'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2007, 3, 2011, 6, 'n80rn'),
     (
-    'Ningúno', False, False, False, 'Responsable de Computo', 'Centro de Investigaciones en Geografía Ambiental (CIGA)',
-    2006, 3, 2007, 2, 'n80rn'),
+        'Ningúno', False, False, False, 'Responsable de Computo',
+        'Centro de Investigaciones en Geografía Ambiental (CIGA)',
+        2006, 3, 2007, 2, 'n80rn'),
     ('Ningúno', False, False, False, 'Encargado del Área de Computación', 'Signos Diseño & Publicidad', 2001, 1, 2005,
      12, 'n80rn'),
     ('Ningúno', False, False, False, 'Servicio Social', 'Instituto Tecnológico de Morelia (ITM)', 2004, 6, 2004, 12,
@@ -3497,8 +3572,9 @@ experiencias = (
     ('Ningúno', False, False, False, 'Servicio Social',
      'Centro de Bachillerato Tecnológico Agropecuario #89 José Vasconcelos (CBTA 89)', 1999, 2, 1999, 8, 'n80rn'),
     (
-    'Técnico Académico Auxiliar (investigación) A, Medio tiempo', False, False, False, 'Otro', 'Instituto de Geografía',
-    1994, 1, 1996, 2, 'GUKjy'),
+        'Técnico Académico Auxiliar (investigación) A, Medio tiempo', False, False, False, 'Otro',
+        'Instituto de Geografía',
+        1994, 1, 1996, 2, 'GUKjy'),
     ('Investigador Asociado C, Medio tiempo', False, False, False, 'Otro', 'Universidad Autónoma de Campeche (UACAM)',
      1996, 2, 2000, 3, 'GUKjy'),
     ('Investigador Asociado C, Medio tiempo', False, False, False, 'Otro',
@@ -3542,16 +3618,18 @@ experiencias = (
      'Comisión para la elaboración del Nuevo Plan de la Licenciatura en Ciencias Ambientales',
      'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2010, 12, 2012, 4, 'fEVor'),
     (
-    'Ningúno', False, False, False, 'Representante del Director ante el Consejo Académico de Área en Ciencias Sociales',
-    'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2008, 8, 2012, 6, 'fEVor'),
+        'Ningúno', False, False, False,
+        'Representante del Director ante el Consejo Académico de Área en Ciencias Sociales',
+        'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2008, 8, 2012, 6, 'fEVor'),
     ('Ningúno', False, False, False,
      'Representante del personal académico del CIGA ante el Consejo Académico de la Licenciatura en Ciencias Ambientales',
      'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2011, 11, 2012, 6, 'fEVor'),
     ('Ningúno', False, False, False, 'Miembro del Comité Académico Asesor de la Licenciatura en Ciencias Ambientales',
      'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2013, 10, 2014, 10, 'fEVor'),
     (
-    'Ningúno', False, False, False, 'Comisión para la Creación de la Licenciatura en Estudios Sociales y Gestión Local',
-    'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2013, 2, 2014, 3, 'fEVor'),
+        'Ningúno', False, False, False,
+        'Comisión para la Creación de la Licenciatura en Estudios Sociales y Gestión Local',
+        'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2013, 2, 2014, 3, 'fEVor'),
     ('Ningúno', False, False, False, 'Miembro de la Comisión para la Creación del Bachillerato Regional UNAM Michoacán',
      'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2014, 2, 2014, 12, 'fEVor'),
     ('Ningúno', False, False, False, 'Miembro del Comité Académico Asesor de la Licenciatura en Geohistoria',
@@ -3582,7 +3660,8 @@ experiencias = (
     ('Profesor de Asignatura A', False, 'Profesor', False, False,
      'Escuela Nacional de Estudios Superiores, Unidad Morelia (ENES Morelia)', 2012, 8, 0, 0, '4th7o'),
     (
-    'Ningúno', False, 'Profesor invitado', False, False, 'Universidad Autónoma de Tlaxcala', 2012, 7, 2012, 8, '4th7o'),
+        'Ningúno', False, 'Profesor invitado', False, False, 'Universidad Autónoma de Tlaxcala', 2012, 7, 2012, 8,
+        '4th7o'),
     ('Técnico Académico Titular (docencia) C, Tiempo Completo', True, 'Otro', False, False,
      'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2013, 6, 0, 0, 'zF8gk'),
     ('Investigador Asociado C, Tiempo Completo', True, 'Profesor Investigador', False, False,
@@ -3600,8 +3679,9 @@ experiencias = (
     ('Ningúno', False, False, False, 'Administrador de Sistemas de información (SIGs)',
      'Coordinación General de Gabinete y Planeación (CPLADE)', 2004, 8, 2004, 12, 'biabG'),
     (
-    'Ningúno', False, False, False, 'Técico Superior', 'Instituto Nacional de Estadística y Geografía (INEGI)', 2005, 7,
-    2005, 12, 'biabG'),
+        'Ningúno', False, False, False, 'Técico Superior', 'Instituto Nacional de Estadística y Geografía (INEGI)',
+        2005, 7,
+        2005, 12, 'biabG'),
     ('Ningúno', False, False, False, 'Encargada de Sistemas', 'Harlen Administrativo SA de CV', 2005, 6, 2007, 3,
      'biabG'),
     ('Ningúno', False, False, False, 'Técnico Informático de Zona',
@@ -3645,8 +3725,9 @@ experiencias = (
      'Universidad Michoacana de San Nicolás de Hidalgo (UMSNH)', 2009, 1, 2010, 12, 'c3fhV'),
     ('Ningúno', False, False, False, 'Desarrollador Web', 'TECIF', 2009, 1, 2009, 10, 'c3fhV'),
     (
-    'Ningúno', False, False, False, 'Servicio Social', 'Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)',
-    1900, 1, 0, 0, 'c3fhV'),
+        'Ningúno', False, False, False, 'Servicio Social',
+        'Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)',
+        1900, 1, 0, 0, 'c3fhV'),
     ('Técnico Académico Auxiliar (docencia) B, Tiempo Completo', False, False, False, 'Otro', 'Facultad de Ingeniería',
      1984, 8, 1986, 10, 'ftTrS'),
     ('Técnico Académico Asociado (investigación) C, Tiempo Completo', False, False, False,
@@ -3692,12 +3773,14 @@ for i in experiencias:
         raise Exception
 
     if int(i[8]) == 0 and int(i[9]) == 0:
-        e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[5]).institucion, dependencia=Dependencia.objects.get(nombre=i[5]),
+        e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[5]).institucion,
+                               dependencia=Dependencia.objects.get(nombre=i[5]),
                                nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1],
                                cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 1),
                                usuario=User.objects.get(rfc=i[10]))
     else:
-        e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[0]).institucion, dependencia=Dependencia.objects.get(nombre=i[5]),
+        e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[0]).institucion,
+                               dependencia=Dependencia.objects.get(nombre=i[5]),
                                nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1],
                                cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 28),
                                fecha_fin=date(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
@@ -3714,8 +3797,8 @@ capacidades = (
     ('Diseño de imágenes: Photoshop, Corel Draw, Flash (Multimedia), Adobe Illustrator, Page Maker', 2000, 'no',
      'n80rn'),
     (
-    'Programación: Visual Basic, Visual C++, JBuilder, Java, C++, PHP, HTML, JavaSever Page, Javascript, Servlets, etc.',
-    2002, 'no', 'n80rn'),
+        'Programación: Visual Basic, Visual C++, JBuilder, Java, C++, PHP, HTML, JavaSever Page, Javascript, Servlets, etc.',
+        2002, 'no', 'n80rn'),
     ('Levantamiento, clasificación y cartografía de paisajes físico-geográficos', 1987, 'no', '9hUCZ'),
     ('Heterogeneidad geoecológica y su relación con la distribución de la biodiversidad ', 1994, 'no', '9hUCZ'),
     ('Ordenamiento ecológico territorial ', 1987, 'no', '9hUCZ'),
@@ -3723,8 +3806,8 @@ capacidades = (
     ('Redes: Análisis, diseño e instalación de redes LAN y WAN (switches y ruteadores CISCO), Seguridad ', 2005, 'no',
      'n80rn'),
     (
-    'Redes Internas conectadas a Internet (Firewall´s) (Packeeteer, CISCO, Fortinet, SonicWall), Instalación y configuración de Servidores Web, Correo, FTP, etc.',
-    2005, 'no', 'n80rn'),
+        'Redes Internas conectadas a Internet (Firewall´s) (Packeeteer, CISCO, Fortinet, SonicWall), Instalación y configuración de Servidores Web, Correo, FTP, etc.',
+        2005, 'no', 'n80rn'),
     ('Administración y configuración de terminales VOIP en un conmutador NEC NEAX IPX 2400', 2007, 'no', 'n80rn'),
     ('Uso y administración de videoconferencias utilizando el estándar H.323 (Polycom, Sony, Tandberg).', 2007, 'no',
      'n80rn'),
@@ -3733,16 +3816,16 @@ capacidades = (
     ('SIG Internet: Map Server, Alov Map, etc.', 2009, 'no', 'n80rn'),
     ('Experiencia en modelado y análisis de procesos de cambio de uso y cubierta del suelo.', 1994, 'no', 'J8YEd'),
     (
-    'Manejo especializado de los principales Sistemas de Información Geográfica: ArcGis 10x, ArcInfo 9.0, ArcView, Ilwis, QGis.',
-    1989, 'no', 'J8YEd'),
+        'Manejo especializado de los principales Sistemas de Información Geográfica: ArcGis 10x, ArcInfo 9.0, ArcView, Ilwis, QGis.',
+        1989, 'no', 'J8YEd'),
     ('Monitoreo de la deforestación con base en imágenes de satélite', 1998, 'no', 'GUKjy'),
     ('Modelación de los cambios de cubierta/uso del suelo', 2000, 'no', 'GUKjy'),
     ('Cartografía de la vegetación con base en percepción remota y SIG', 2000, 'no', 'GUKjy'),
     ('territorialidad, cultura y politica', 2014, 'no', 'Yl5I4'),
     ('La perspectiva sociocultural de la vulnerabilidad a desastres', 2014, 'no', 'Yl5I4'),
     (
-    'La perspectiva critica de los sistemas de informacion geografica y la integracion de las nuevas tecnologias de comunicacion',
-    2014, 'no', 'Yl5I4'),
+        'La perspectiva critica de los sistemas de informacion geografica y la integracion de las nuevas tecnologias de comunicacion',
+        2014, 'no', 'Yl5I4'),
     ('Ciencia del suelo, clasificación y evaluación', 2008, 'no', 'EeGJW'),
     ('Geomorfología del paisaje y edafología', 2008, 'no', 'EeGJW'),
     ('Modelación de cuencas', 2010, 'no', 'EeGJW'),
@@ -3751,11 +3834,12 @@ capacidades = (
     ('Influencia antrópica en los procesos geomórficos y erosión del suelo', 2010, 'no', 'EeGJW'),
     ('El manejo de forestería comunitaria ', 1978, 'no', 'YxU7H'),
     (
-    'Implicaciones en política del cambio climático global. Deforestación, degradación, forestería comunitaria y fortalecimiento de capacidades institucionales locales; el mercado de carbono ',
-    2000, 'no', 'YxU7H'),
+        'Implicaciones en política del cambio climático global. Deforestación, degradación, forestería comunitaria y fortalecimiento de capacidades institucionales locales; el mercado de carbono ',
+        2000, 'no', 'YxU7H'),
     ('Bioenergía y biofuels; impactos sociales  ', 2007, '2012', 'YxU7H'),
     (
-    'Género y energía. Perspectiva de género y herramientas de planeación en uso de la energía', 1995, '2003', 'YxU7H'),
+        'Género y energía. Perspectiva de género y herramientas de planeación en uso de la energía', 1995, '2003',
+        'YxU7H'),
     ('Foresteria comunitaria y captura de carbono', 2003, 'no', 'YxU7H'),
     ('Políticas para promover el carbono forestal', 2007, 'no', 'YxU7H'),
     ('Gestión pública', 2005, 'no', 'usmv1'),
@@ -3768,11 +3852,11 @@ capacidades = (
     ('Valoración y percepción del paisaje', 2009, 'no', 'prgh0'),
     ('Conservación y desarrollo en ANP', 2009, 'no', 'prgh0'),
     (
-    'Modelado espacio-temporal de los impactos ambientales por la extracción y producción de leña y carbón vegetal bajo patrones de aprovechamiento tradicional',
-    2003, 'no', 'DgFdm'),
+        'Modelado espacio-temporal de los impactos ambientales por la extracción y producción de leña y carbón vegetal bajo patrones de aprovechamiento tradicional',
+        2003, 'no', 'DgFdm'),
     (
-    'Modelado prospectivo del potencial de los recursos dendroenergéticos bajo patrones de aprovechamiento tecnificado ',
-    2006, 'no', 'DgFdm'),
+        'Modelado prospectivo del potencial de los recursos dendroenergéticos bajo patrones de aprovechamiento tecnificado ',
+        2006, 'no', 'DgFdm'),
     ('Seguridad energética de la población rural y urbana de bajos recursos', 2011, 'no', 'DgFdm'),
     ('Geografía del Paisaje', 2001, 'no', 'Y9jOf'),
     ('Uso del suelo', 2001, 'no', 'Y9jOf'),
@@ -3784,22 +3868,22 @@ capacidades = (
     ('Sistemas de Información geográfica participativos', 2016, 'no', 'h8fvn'),
     ('SIG y análisis espaciales', 2010, 'no', 'h8fvn'),
     (
-    'historia ambiental, arqueogeografía, geohistoria, relación sociedad, medio ambiente, patrón de asentamiento, reconstrucción de las formas del paisaje...',
-    2003, 'no', '7Gs53'),
+        'historia ambiental, arqueogeografía, geohistoria, relación sociedad, medio ambiente, patrón de asentamiento, reconstrucción de las formas del paisaje...',
+        2003, 'no', '7Gs53'),
     ('Historia y paisaje desde el cambio de uso de suelo y tenencia de la tierra', 2016, 'no', 'fEVor'),
     ('Teoría e historiografía de la geografía histórica e historia ambiental', 2016, 'no', 'fEVor'),
     ('Geografía cultural y paisajes históricos', 2016, 'no', 'fEVor'),
     ('Economía Ambiental. Instrumentos de Política Ambiental. Desarrollo Sustentable.', 2000, 'no', 'gb4go'),
     (
-    'Especialización avanzada en el manejo de Sistemas de Información Geográfica aplicando diversos programas (ArcView, ArcGIS, Erdas, ILWIS).',
-    2000, 'no', 'Ersp5'),
+        'Especialización avanzada en el manejo de Sistemas de Información Geográfica aplicando diversos programas (ArcView, ArcGIS, Erdas, ILWIS).',
+        2000, 'no', 'Ersp5'),
     ('Elaboración de modelos y análisis de cambio de coberturas y uso de suelo', 2000, 'no', 'Ersp5'),
     (
-    'Aplicación de técnicas de análisis por criterios múltiples en relación a la caracterización, diagnóstico y priorización de sistemas ambientales con fines de conservación.',
-    2000, 'no', 'Ersp5'),
+        'Aplicación de técnicas de análisis por criterios múltiples en relación a la caracterización, diagnóstico y priorización de sistemas ambientales con fines de conservación.',
+        2000, 'no', 'Ersp5'),
     (
-    'Aplicación de conceptos asociados a la Ecología del Paisaje con capacidad de determinar y recolectar el tipo de información necesaria en suelo y vegetación',
-    2000, 'no', 'Ersp5'),
+        'Aplicación de conceptos asociados a la Ecología del Paisaje con capacidad de determinar y recolectar el tipo de información necesaria en suelo y vegetación',
+        2000, 'no', 'Ersp5'),
     ('Aplicación de Técnicas geoestadísticas en el análisis de datos espaciales', 2000, 'no', 'Ersp5'),
     ('Conocimiento avanzado en técnicas participativas de cartografía y realización de talleres', 2000, 'no', 'Ersp5'),
     ('Conocimiento sobre diseño y uso de cuestionarios y encuestas.', 2000, 'no', 'Ersp5'),
@@ -3821,8 +3905,8 @@ capacidades = (
     ('Valoración del conocimiento local sobre el ambiente, recursos naturales y formas de manejo', 2000, 'no', '98big'),
     ('Diseño de modelos de evaluación de la aptitud/calidad de los recursos naturales.', 2000, 'no', '98big'),
     (
-    'Evaluación de tierras en sentido amplio, incluyendo ambientes urbanos, rurales, periurbanos, industriales y mineros, con las siguientes tres sublíneas',
-    2000, 'no', '98big'),
+        'Evaluación de tierras en sentido amplio, incluyendo ambientes urbanos, rurales, periurbanos, industriales y mineros, con las siguientes tres sublíneas',
+        2000, 'no', '98big'),
     ('Percepción Remota (Teledetección)', 2000, 'no', 'ftTrS'),
     ('Análisis Espacial (Modelado)', 2000, 'no', 'ftTrS'),
     ('Drones (Operación y Aplicaciones Científicas)', 2000, 'no', 'ftTrS'),
@@ -3924,7 +4008,8 @@ revistas = (
     ('Hidrobiológica', None, 'Otra', 'México', 0.10),
     ('Human Ecology', None, 'Otra', 'México', 1.89),
     ('Interciencia, Revista de Ciencia y Tecnología de América Latina', None, 'Otra', 'México', 0.37),
-    ('International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives', None, 'Otra', 'México', None),
+    ('International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives',
+     None, 'Otra', 'México', None),
     ('International Encyclopedia of Anthropology', None, 'Otra', 'México', None),
     ('International Forestry Review', None, 'Otra', 'México', 1.73),
     ('International Journal of Geosciences', 'IJGeosci', 'Otra', 'México', 0.78),
@@ -3966,7 +4051,8 @@ revistas = (
     ('Polígonos, Revista de Geografía', None, 'Otra', 'México', None),
     ('Procedia Engineering', None, 'Otra', 'México', 0.73),
     ('Proceedings of National Academy of Sciences of USA', None, 'Otra', 'México', None),
-    ('Proceedings of the 8th International Congress on Environmental Modelling and Software (iEMSs)', None, 'Otra', 'México', None),
+    ('Proceedings of the 8th International Congress on Environmental Modelling and Software (iEMSs)', None, 'Otra',
+     'México', None),
     ('Programmnye produkty i sistemy', None, 'Otra', 'México', None),
     ('Progress in Development Studies Journal', None, 'Otra', 'México', 0.79),
     ('Progress in Physical Geography', None, 'Otra', 'México', 2.78),
@@ -4012,7 +4098,8 @@ revistas = (
 )
 
 for i in revistas:
-    r = Revista(nombre=i[0], nombre_abreviado_wos=i[1], editorial=Editorial.objects.get(nombre=i[2]), pais=Pais.objects.get(nombre='México'))
+    r = Revista(nombre=i[0], nombre_abreviado_wos=i[1], editorial=Editorial.objects.get(nombre=i[2]),
+                pais=Pais.objects.get(nombre='México'))
     r.save()
     print(r)
 
@@ -4046,7 +4133,6 @@ e = Evento(nombre='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 
            tipo=TipoEvento.objects.get(nombre='Otro'))
 e.save()
 l = Libro(nombre='Otro', )
-
 
 """
 SELECT titulo, revista, volumen, numeros, anio, issn, becarios AS status, electronica, autores_iimas, indices, pagina_i, pagina_f, doi,  
