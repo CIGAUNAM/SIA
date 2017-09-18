@@ -1698,8 +1698,6 @@ Usuarios = (
     '-', 'Aso3U'),
     ('alex', 'alex', 'alex', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-',
      'rWKXd'),
-    ('16ymf', '16ymf', '16ymf', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id,
-     '-', '16ymf1'),
     ('mario.figueroa', 'Figueroa Cárdenas', 'Mario', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', '16ymf'),
     ('yunsh', 'yunsh', 'yunsh', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id,
@@ -2369,9 +2367,6 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', 'jorge.morfin'),
     ('citlalli.lopez', 'López Binqüist', 'Citlalli', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'citlalli.lopez'),
-
-    #
-
     ('neyra.sosa', 'Sosa Gutiérrez', 'Neyra', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'neyra.sosa'),
     ('lorena.soto', 'Soto Pinto', 'Lorena', 'OTRO', Pais.objects.get(nombre='México').id,
@@ -2427,16 +2422,14 @@ Usuarios = (
     ('l.menéndez.carrera', 'Menéndez Carrera', 'L', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'l.menéndez.carrera'),
     ('georges.seingier', 'Seingier', 'Georges', 'OTRO', Pais.objects.get(nombre='México').id,
-    ('', '', '', 'OTRO', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', '')
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'l.menéndez.carrera'),
 )
 
+
 for i in Usuarios:
-    u = User.objects.create_user(username=i[0], first_name=i[2], last_name=i[1], tipo=i[3], pais_origen=Pais(pk=i[4]),
-                                 pais=Pais.objects.get(nombre='México'),
-                                 estado=Estado.objects.get(nombre='Michoacán de Ocampo'),
-                                 ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion=i[0], password=i[7],
-                                 email=i[0] + '@ciga.unam.mx')
+    u = User.objects.create_user(username=i[0], first_name=i[2], last_name=i[1], tipo=i[3], pais_origen=Pais(pk=i[4]), pais=Pais.objects.get(nombre='México'), estado=Estado.objects.get(nombre='Michoacán de Ocampo'), ciudad=Ciudad(pk=i[5]), pride=i[6], rfc=i[7], direccion=i[0], password=i[7], email=i[0] + '@ciga.unam.mx')
     print(u)
+
 
 adscritos = (
     'jean.mas', 'adrian.ghilardi', 'maria.ramirez', 'alejandro.velazquez', 'gerardo.bocco', 'angel.priego',
@@ -2448,6 +2441,7 @@ adscritos = (
     'brian.napoletano', 'manuel.bollo', 'alejandra.larrazabal', 'teresa.ramirez', 'maria.ramirez', 'arturo.balderas',
     'mariana.vallejo', 'alejandro.velazquez'
 )
+
 
 LSBM = ('Agriculture', 'Allergy', 'Anatomy & Morphology', 'Anesthesiology', 'Anthropology', 'Behavioral Sciences',
         'Biochemistry & Molecular Biology', 'Biodiversity & Conservation', 'Biophysics',
@@ -2467,6 +2461,7 @@ LSBM = ('Agriculture', 'Allergy', 'Anatomy & Morphology', 'Anesthesiology', 'Ant
         'Research & Experimental Medicine', 'Respiratory System', 'Rheumatology', 'Sport Sciences', 'Substance Abuse',
         'Surgery', 'Toxicology', 'Transplantation', 'Tropical Medicine', 'Urology & Nephrology', 'Veterinary Sciences',
         'Virology', 'Zoology')
+
 PHYS = (
 'Astronomy & Astrophysics', 'Chemistry', 'Crystallography', 'Electrochemistry', 'Geochemistry & Geophysics', 'Geology',
 'Mathematics', 'Meteorology & Atmospheric Sciences', 'Mineralogy', 'Mining & Mineral Processing', 'Oceanography',
@@ -2951,8 +2946,7 @@ Licenciaturas = (
      'Los Métodos de Cálculo de Horas Frío: el Método Gómez-Morales', 1979, 8, 1984, 6, 1990, 3, 'ftTrS'),
     ('Licenciatura en Administración de Empresas Agropecuárias', 'Business & Economics',
      ['Escuela de Ciencias Agropecuarias'],
-     'Eficiencia Biológica Y Económica Del Proceso De Producción De Papaya En El Trópico Seco De Michoacán', 1995, 9,
-     1999, 7, 2000, 7, '16ymf'))
+     'Eficiencia Biológica Y Económica Del Proceso De Producción De Papaya En El Trópico Seco De Michoacán', 1995, 9, 1999, 7, 2000, 7, '16ymf'))
 
 for i in Licenciaturas:
     if len(i[2]) > 1:
