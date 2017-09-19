@@ -446,6 +446,22 @@ class EditorialForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect2Widget(
+            dependent_fields={'pais_origen': 'pais'},
+            search_fields=['nombre__icontains'],
+        )
+    )
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect2Widget(
+            dependent_fields={'estado': 'estado'},
+            search_fields=['nombre__icontains'],
+        )
+    )
 
     class Meta:
         model = Editorial
