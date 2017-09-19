@@ -705,6 +705,8 @@ class Editorial(models.Model):
     #slug = AutoSlugField(populate_from='editorial', unique=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
+    ciudad = models.ForeignKey(Ciudad)
 
     def __str__(self):
         return self.nombre
