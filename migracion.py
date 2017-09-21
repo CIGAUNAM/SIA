@@ -23,6 +23,18 @@ from experiencia_laboral.models import *
 
 import uuid
 
+print("Borrando Libros")
+Libro.objects.all().delete()
+
+print("Borrando Eventos")
+Evento.objects.all().delete()
+
+print("Borrando Tipos Evento")
+TipoEvento.objects.all().delete()
+
+print("Borrando Tipos Evento")
+TipoEvento.objects.all().delete()
+
 print("Borrando problemas conacyt")
 ProblemaNacionalConacyt.objects.all().delete()
 
@@ -3972,7 +3984,7 @@ for i in capacidades:
     c.save()
     print(c)
 
-ed = Editorial(nombre='Otra', pais=Pais.objects.get(nombre='México'), estado=Estado.objects.get(nombre='Michoacán'), ciudad=Ciudad.objects.get(nombre='Morelia'))
+ed = Editorial(nombre='Otra', pais=Pais.objects.get(nombre='México'), estado=Estado.objects.get(nombre='Michoacán de Ocampo'), ciudad=Ciudad.objects.get(nombre='Morelia'))
 ed.save()
 print("Agregada Editorial 'Otra'")
 
@@ -4125,7 +4137,6 @@ revistas = (
     ('Revista INVI', None, 'Otra', 'México', 0.12),
     ('Revista Mexicana de Biodiversidad', None, 'Otra', 'México', 0.50),
     ('Revista Mexicana de Ciencias Geológicas', 'Rev Mex C Geol', 'Otra', 'México', 0.57),
-    ('Revista Mexicana de Ingeniería Química', None, 'Otra', 'México', None),
     ('Revista Mexicana de Sociología', None, 'Otra', 'México', None),
     ('Revue Anthropologie des Connaissances', None, 'Otra', 'México', None),
     ('Science Technology and Human Values', 'SCI TECHNOL HUM VAL', 'Otra', 'México', 2.19),
@@ -4144,8 +4155,7 @@ revistas = (
 )
 
 for i in revistas:
-    r = Revista(nombre=i[0], nombre_abreviado_wos=i[1], editorial=Editorial.objects.get(nombre=i[2]),
-                pais=Pais.objects.get(nombre='México'))
+    r = Revista(nombre=i[0], nombre_abreviado_wos=i[1], editorial=Editorial.objects.get(nombre=i[2]))
     r.save()
     print(r)
 
@@ -4175,9 +4185,13 @@ for i in problemas:
 
 t = TipoEvento(nombre='Otro')
 t.save()
-e = Evento(nombre='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 10, 10),
-           tipo=TipoEvento.objects.get(nombre='Otro'))
+print("agregado tipo evento", t)
+
+e = Evento(nombre='Otro', fecha_inicio=date(2010, 10, 10), fecha_fin=date(2010, 10, 10), tipo=TipoEvento.objects.get(nombre='Otro'))
 e.save()
+print("agregado evento", e)
+
+
 l = Libro(nombre='Otro', )
 
 """
