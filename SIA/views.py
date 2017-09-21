@@ -27,18 +27,13 @@ class Dashboard(View):
     this_year = now.year
     ten_years_ago = now.year - 10
 
-
     def get(self, request):
-        #obj = get_object_or_404(User, username__iexact=request.user)
+        # obj = get_object_or_404(User, username__iexact=request.user)
         obj = range(self.ten_years_ago, self.this_year)
 
         years_curso_especializacion = SIAYearModelCounter.objects.filter(model='CursoEspecializacion')
 
-
-
-
         obj = {}
-
 
         if request.user.is_authenticated:
             years_curso_especializacion = SIAYearModelCounter.objects.filter(model='CursoEspecializacion')
@@ -59,12 +54,14 @@ class Dashboard(View):
                 print(u)
                 if u > 0:
                     print(round(c / u, 2))
-                    obj['curso_especializacion'][str(i.year) + '__horas_prom'] = round(c / u,
-                                                                                                                2)
+                    obj['curso_especializacion'][str(i.year) + '__horas_prom'] = round(c / u, 2)
+                    h = None
                 else:
                     obj['curso_especializacion'][str(i.year) + '__horas_prom'] = 0
-                    h = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year, cursos_especializacion__usuario=request.user).aggregate(Sum('cursos_especializacion__horas'))[
-                    'cursos_especializacion__horas__sum']  # horas del usuario en el año actual
+                    h = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year,
+                                            cursos_especializacion__usuario=request.user).aggregate(
+                        Sum('cursos_especializacion__horas'))[
+                        'cursos_especializacion__horas__sum']  # horas del usuario en el año actual
                 if not h:
                     h = 0
                 print(h)
@@ -81,14 +78,8 @@ class Dashboard(View):
                 obj['curso_especializacion'][str(i.year) + '__horas_min'] = hm
                 print()
 
-
-
-
-
-
-
-
-
-
         return render(request, self.template_name,
                       {'aux': self.aux, 'obj': obj, 'active': 'detalle'}, )
+
+
+
