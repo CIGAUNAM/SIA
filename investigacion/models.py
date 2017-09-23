@@ -21,8 +21,8 @@ class ArticuloCientifico(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=16, choices=(('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     revista = models.ForeignKey(Revista)
-    volumen = models.CharField(max_length=100, blank=True)
-    numero = models.CharField(max_length=100, blank=True)
+    volumen = models.CharField(max_length=100, null=True, blank=True)
+    numero = models.CharField(max_length=100, null=True, blank=True)
     fecha = models.DateField(auto_now=False)
     issn_impreso = models.CharField(max_length=40, blank=True, verbose_name='ISSN Impreso')
     issn_online = models.CharField(max_length=40, blank=True, verbose_name='ISSN Online')
@@ -30,13 +30,13 @@ class ArticuloCientifico(models.Model):
     solo_electronico = models.BooleanField(default=False)
     usuarios = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
-    indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
+    indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', null=True, blank=True)
     #nombre_abreviado_wos = models.CharField(max_length=255, blank=True)
     url = models.URLField(blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    id_doi = models.CharField(max_length=100, blank=True)
-    id_wos = models.CharField(max_length=100, blank=True)
+    id_doi = models.CharField(max_length=100, null=True, blank=True)
+    id_wos = models.CharField(max_length=100, null=True, blank=True)
     proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
 
     def __str__(self):
@@ -45,7 +45,7 @@ class ArticuloCientifico(models.Model):
     def get_absolute_url(self):
         return reverse('articulo_cientifico_detalle', kwargs={'pk': self.pk})
 
-    def save(self, *args, **kwargs):
+    def save1(self, *args, **kwargs):
         nuevo_item = None
 
         if self.pk is None:
@@ -83,7 +83,7 @@ class ArticuloCientifico(models.Model):
                     year_data.users.add(self.usuario)
         except SIAYearModelCounter.DoesNotExist:
             if nuevo_item:
-                y = SIAYearModelCounter(model='ArticuloCientifico', year=self.fecha_inicio.year, counter=self.horas)
+                y = SIAYearModelCounter(model='ArticuloCientifico', year=self.fecha.year, counter=self.horas)
                 y.save()
                 y.users.add(self.usuario)
             else:
@@ -94,11 +94,11 @@ class ArticuloCientifico(models.Model):
                 if User.objects.filter(cursos_especializacion__usuario=self.usuario,
                                        cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
                     old_year_data.users.remove(self.usuario)
-                y = SIAYearModelCounter(model='CursoEspecializacion', year=self.fecha_inicio.year, counter=self.horas)
+                y = SIAYearModelCounter(model='CursoEspecializacion', year=self.fecha.year, counter=self.horas)
                 y.save()
                 y.users.add(self.usuario)
 
-    def delete(self, *args, **kwargs):
+    def delete1(self, *args, **kwargs):
         year_data = SIAYearModelCounter.objects.get(year=self.fecha.year, model='ArticuloCientifico')
         year_data.counter = year_data.counter - 1
         year_data.save()

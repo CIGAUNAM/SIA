@@ -2149,7 +2149,7 @@ Usuarios = (
     ('gilbert.nduru', 'M. Nduru', 'Gilbert', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'gilbert.nduru'),
     ('miguel.maass', 'Maass Moreno', 'Miguel', 'OTRO', Pais.objects.get(nombre='México').id,
-     Ciudad.objects.get(nombre='Morelia').id, '-', 'manuel.maass'),
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'miguel.maass'),
     ('javier.martinez', 'Martínez', 'Javier', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'javier.martinez'),
     ('y.martinez.ruiz', 'Martínez Ruíz', 'Y.', 'OTRO', Pais.objects.get(nombre='México').id,
@@ -2327,7 +2327,7 @@ Usuarios = (
     ('p.moreno.casasola', 'Moreno Casasola', 'P.', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'p.moreno.casasola'),
     ('ja.lopez.portillo', 'López Portillo', 'J. A.', 'OTRO', Pais.objects.get(nombre='México').id,
-     Ciudad.objects.get(nombre='Morelia').id, '-', 'j.lopez.portillo'),
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'ja.lopez.portillo'),
 
     ('h.hernandez.trejo', 'Hernández Trejo', 'H.', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'h.hernandez.trejo'),
