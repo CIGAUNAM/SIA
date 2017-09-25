@@ -32,38 +32,32 @@ cur = conn.cursor()
 #cur.execute("SELECT DISTINCT area, area_wos FROM fa_maestria ORDER BY area")
 #cur.execute("SELECT DISTINCT area, area_wos FROM fa_doctorado ORDER BY area")
 #cur.execute("SELECT area, institucion, tesis, anio_ini, mes_ini, anio_fin, mes_fin, grado_fin, grado_ini, idu FROM fa_doctorado")
-cur.execute("SELECT titulo, revista, volumen, numeros, anio, issn, becarios AS status, electronica, autores_iimas, indices, pagina_i, pagina_f, doi FROM ir_articuloscientificos")
+cur.execute("SELECT titulo, ciudad_publi, casas_ed, estado, anio_pub, num_ed, pag_tot, isbn, vinculo, autores FROM ir_librosentidad")
 
 
 
 for i in cur:
-    l = "('"
+    l = "['"
     l += i[0]  # titulo
     l += "', '"
-    l += i[1]  # revista
+    l += i[1]  # ciudad_publi
     l += "', '"
-    l += i[2]  # volumen
+    l += i[2]  # casas_ed
     l += "', '"
-    l += i[3]  # numero
+    l += i[3]  # estado
     l += "', "
-    l += i[4]  # anio
-    l += ", '"
-    l += i[5]  # issn
-    l += "', '"
-    l += i[6]  # status
-    l += "', '"
-    l += i[7]  # electronica
-    l += "', '"
-    l += i[8]  # autores
-    l += "', '"
-    l += i[9]  # indices
-    l += "', "
-    l += i[10]  # pag i
+    l += i[4]  # anio_pub
     l += ", "
-    l += i[11]  # pag f
+    l += i[5]  # num_ed
+    l += ", "
+    l += i[6]  # pag_tot
     l += ", '"
-    l += i[12]  # doi
-    l += "'),"
+    l += i[7]  # isbn
+    l += "', '"
+    l += i[8]  # vinculo
+    l += "', '"
+    l += i[9]  # autores
+    l += "'],"
     print(l)
 
 
