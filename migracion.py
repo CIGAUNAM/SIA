@@ -4161,7 +4161,7 @@ revistas = (
 )
 
 for i in revistas:
-    r = Revista(nombre=i[0], nombre_abreviado_wos=i[1], editorial=Editorial.objects.get(nombre=i[2]))
+    r = Revista(nombre=i[0], nombre_abreviado_wos=i[1], pais=Pais.objects.get(nombre=i[3]), factor_impacto=i[4])
     r.save()
     print(r)
 

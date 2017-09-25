@@ -533,12 +533,12 @@ class LibroForm(forms.ModelForm):
 
 
 class RevistaForm(forms.ModelForm):
-    editorial = forms.ModelChoiceField(
-        queryset=Editorial.objects.all(),
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
         label="Editorial",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Editorial.objects.all(),
+            queryset=Pais.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
