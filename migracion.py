@@ -467,6 +467,9 @@ Estados = (
     ('Minho', Pais.objects.get(nombre='Portugal').id),
     ('Guatemala', Pais.objects.get(nombre='Guatemala').id),
     ('Dar es-Salam', Pais.objects.get(nombre='Tanzania').id),
+    ('Santa Cruz', Pais.objects.get(nombre='Argentina').id),
+    ('Witney', Pais.objects.get(nombre='Reino Unido').id),
+    ('Luxemburgo', Pais.objects.get(nombre='Luxemburgo').id),
 )
 
 for i in Estados:
@@ -612,7 +615,10 @@ Ciudades = (
     ('Berkeley', Estado.objects.get(nombre='California').id),
     ('Wageningen', Estado.objects.get(nombre='Güeldres').id),
     ('Tlaxcala de Xicohténcatl', Estado.objects.get(nombre='Tlaxcala').id),
-    ('Zaragoza', Estado.objects.get(nombre='Aragón').id)
+    ('Zaragoza', Estado.objects.get(nombre='Aragón').id),
+    ('Río Gallegos', Estado.objects.get(nombre='Santa Cruz').id),
+    ('Long Hanborough', Estado.objects.get(nombre='Witney').id),
+    ('Luxemburgo', Estado.objects.get(nombre='Luxemburgo').id),
 )
 
 for i in Ciudades:

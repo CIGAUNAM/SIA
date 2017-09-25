@@ -23,8 +23,41 @@ from experiencia_laboral.models import *
 
 from investigacion.models import ArticuloCientifico
 
+
+print("Borrando libros")
+Libro.objects.all().delete()
+
 print("Borrando articulos")
 ArticuloCientifico.objects.all().delete()
+
+print("Borrando editoriales")
+Editorial.objects.all().delete()
+
+
+
+
+
+
+editoriales = (
+('CIGA-UNAM', 'Morelia', 'Michoacán de Ocampo', 'México'),
+('UNPA', 'Río Gallegos', 'Santa Cruz', 'Argentina'),
+('INECOL', 'Xalapa', 'Veracruz de Ignacio de la Llave', 'México'),
+('Skiu', 'Ciudad de México, CDMX', 'Ciudad de México', 'México'),
+('FAO', 'Roma', 'Ciudad metropolitana de Roma Capital', 'Italia'),
+('Lovell-Johns', 'Long Hanborough', 'Witney', 'Reino Unido'),
+('Morevalladolid', 'Morelia', 'Michoacán de Ocampo', 'México'),
+('CIDEM', 'Morelia', 'Michoacán de Ocampo', 'México'),
+('ENES Unidad Morelia', 'Morelia', 'Michoacán de Ocampo', 'México'),
+('Fundación Escuela Editorial El perro y la rana', 'Caracas', 'Caracas', 'Venezuela'),
+('Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'Madrid', 'Comunidad de Madrid', 'España'),
+('Springer', 'Luxemburgo', 'Luxemburgo', 'Luxemburgo'),
+('UNESCO', 'París', 'Isla de Francia', 'Francia'),
+)
+
+for i in editoriales:
+    e = Editorial(nombre=i[0], ciudad=Ciudad.objects.get(nombre=i[1]), estado=Estado.objects.get(nombre=i[2]), pais=Pais.objects.get(nombre=i[3]))
+    e.save()
+    print("Guardada la editorial", e)
 
 articulos = (
     ['Charcoal contribution accumulation at different scales of production among the rural population of Mutomo District in Kenya', 'Energy for Sustainable Development', '33', '', 2016, '0973-0826', 'PUBLICADO', 'No', 'adrian.ghilardi', 'Web of Science: SCI/SSCI/SCI-EX', 167, 175, '10.1016/j.esd.2016.05.002'],
@@ -280,3 +313,67 @@ for i in articulos:
         for j in i[9].split('; '):
             print("       ", j)
             a.indices.add(Indice.objects.get(nombre=j))
+
+libros_inv = (
+    ['Dimensiones Sociales en el Manejo de Cuencas', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 320, '978-607-02-6883-0', '', 'ana.burgos^gerardo.bocco^joaquin.sosa'],
+    ['Morelia y sus ríos. Relaciones entre los procesos históricos, biofísicos y sociales en el contexto urbano.', 'Morelia', 'CIGA-UNAM', 'ACEPTADO', 2017, 1, 1, '', '', 'frida.guiza^manuel.mendoza^pedro.urquijo'],
+    ['Tres niveles de análisis en la Sierra-Costa michoacana (insumos para el ordenamiento ecológico)', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 223, '978-607-02-6530-3', 'http://www.ciga.unam.mx/publicaciones/', 'gerardo.bocco^angel.priego'],
+    ['Conocimiento, paisaje, territorio. Procesos de cambio individual y colectivo', 'Comodoro Rivadavia', 'UNPA', 'PUBLICADO', 2015, 1, 400, '978-987-3714-06-1', '', 'hebe.vessuri^gerardo.bocco'],
+    ['XIX Reunión Nacional SELPER México. Memorias', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2012, 1, 420, '978-607-02-3172-8', 'http://www.ciga.unam.mx/publicaciones/', 'gabriela.cuevas^jean.mas'],
+    ['La regionalización físico-geográfica del estado de Guerrero, México', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 157, '978-607-02-6706-2', 'http://www.ciga.unam.mx/publicaciones/images/abook_file/9786070267062.pdf', 'angel.priego^manuel.bollo^angel.priego^alberto.ortiz'],
+    ['Tres niveles de análisis en la Sierra-Costa Michoacana (Insumos para el ordenamiento ecológico).', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 223, '978-607-02-6530-3', 'http://www.ciga.unam.mx/publicaciones/index.php?option=com_abook&view=book&catid=12%3Acoleccionesciga&id=74%3Atres-niveles-de-analisis-en-la-sierra-costa-michoacana&Itemid=16', 'angel.priego^gerardo.bocco'],
+    ['Una propuesta de regionalización físico-geográfica de México', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 59, '978-607-02-6527-3', 'http://www.ciga.unam.mx/publicaciones/images/abook_file/PropuestadelaRFGdeMexico.pdf', 'angel.priego^manuel.bollo'],
+    ['Propuesta para la generación de unidades de paisajes de manera semi-automatizada. Fundamentos y método', 'Ciudad de México, CDMX', 'CIGA-UNAM', 'PUBLICADO', 2010, 1, 104, '978-968-817-923-9', 'http://www2.inecc.gob.mx/publicaciones/descarga.html?cv_pub=633&tipo_file=pdf&filename=633', 'angel.priego^gerardo.bocco^manuel.mendoza'],
+    ['La cartografía de sistemas naturales como base geográfica para la planeación territorial. Una revisión de la bibliografía', 'Ciudad de México, CDMX', 'CIGA-UNAM', 'PUBLICADO', 2010, 1, 72, '978-968-817-920-8', 'http://www.ciga.unam.mx/publicaciones/index.php?option=com_abook&view=book&catid=12%3Acoleccionesciga&id=15%3Ala-cartografia-de-los-sistemas-naturales-como-base-geografica-para-la-planeacion-territorial&Itemid=16', 'angel.priego^gerardo.bocco^manuel.mendoza^ana.burgos'],
+    ['30 Años en el Paisaje Costero Veracruzano: Central Nucleoeléctrica Laguna Verde.', 'Xalapa, Veracruz.', 'INECOL', 'PUBLICADO', 2008, 1, 239, '970-709-106-1', '', 'angel.priego^p.moreno.casasola^e.vera.isunza'],
+    ['Procesos Urbanos, Pobreza y Ambiente. Experiencias en Megaciudades y Ciudades Medias', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2016, 1, 179, '978-607-02-8098-6', '', 'yadira.mendez^antonio.vieyra^alejandra.larrazabal'],
+    ['Consejos a los jóvenes con vocación científica o de cómo perderle el miedo al estudio de las ciencias', 'México D.F.', 'Skiu', 'PUBLICADO', 2015, 2, 227, '978-607-96883-0-1', '', 'francisco.bautista'],
+    ['La evaluación automatizada de las funciones ambientales del suelo con base en datos de perfiles', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 109, '978-607-02-6600-3', '', 'francisco.bautista'],
+    ['Atlas de Solos da América Latina e Caribe', 'Morelia', 'FAO', 'PUBLICADO', 2015, 1, 1, '', '', 'francisco.bautista^'],
+    ['Soil Atlas of Latin America and Caribbean', 'N/A', 'Lovell-Johns', 'PUBLICADO', 2015, 1, 1, '978-92-79-25599-1', '', 'francisco.bautista'],
+    ['Una propuesta de Regionalización Físico-Geográfica de México.', 'Morelia ', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 60, '978-607-02-6527-3', 'http://www.ciga.unam.mx/publicaciones/', 'manuel.bollo^ramon.hernandez^angel.priego^rigel.zaragoza'],
+    ['La Regionalización físico-geográfica del Estado de Guerrero, México', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 152, '978-607-02-6706-2', 'http://www.ciga.unam.mx/publicaciones/', 'manuel.bollo^angel.priego^alberto.ortiz'],
+    ['La Región como categoría geográfica.', 'Morelia', 'Morevalladolid', 'PUBLICADO', 2016, 2, 108, '978-607-02-7872-3. ', 'http://www.ciga.unam.mx/publicaciones/', 'manuel.bollo'],
+    ['Humboldt y el Jorullo. Historia de una exploración', 'Morelia', 'CIDEM', 'PUBLICADO', 2008, 1, 103, '978-703-475-0', '', 'pedro.urquijo'],
+    ['Proyectos de educación en México. Perspectivas históricas', 'Morelia', 'ENES Unidad Morelia', 'PUBLICADO', 2014, 1, 494, '978-607-02-6251-7', '', 'pedro.urquijo'],
+    ['Estudio costero del suroccidente de México', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2013, 1, 264, '978-607-02-4149-9', '', 'donald.brand'],
+    ['Corografía y escala local. Enfoques desde la geografía humana. ', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2012, 1, 116, '978-607-02-3152-0', 'http://www.ciga.unam.mx/publicaciones/', 'pedro.urquijo'],
+    ['Cocula contra Coatepec de los Costales: un conflicto territorial, 1802-1804. Archivo Dr. Fructuoso Martínez Román', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2011, 1, 30, '978-607-02-2497-3', 'http://www.ciga.unam.mx/publicaciones/', 'claudio.garibay^pedro.urquijo'],
+    ['Geografía y ambiente en América Latina', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2011, 1, 355, '978-607-02-2496-6', 'http://www2.ine.gob.mx/publicaciones/index.html', 'gerardo.bocco^pedro.urquijo^antonio.vieyra'],
+    ['Temas de geografía latinoamericana', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2009, 1, 443, '978-968-9529-12-5', '', 'pedro.urquijo'],
+    ['Science for Sustainable Development (Agenda 2030', 'Paris', 'UNESCO', 'PUBLICADO', 2016, 1, 16, '', 'http://creative commons/licenses/by-sa/3.0/igo/', 'hebe.vessuri'],
+    ['Etonoagroforestería en México', 'Morelia', 'ENES Unidad Morelia', 'PUBLICADO', 2015, 1, 432, '978-607-02-8164-8', '', 'mariana.vallejo^ana.moreno^alejandro.casas^victor.toledo'],
+    ['Standardized Hierarchical, Vegetation, Classification, Mexican and Global Patterns', 'NA', 'Springer', 'PUBLICADO', 2016, 1, 143, '978-3-319-41221-4', 'https://scholar.google.es/scholar?q=Standardized+Hierarchical+Vegetation+Classification+Mexican+and+Global+Patterns&&&&btnG=&&&&hl=es&&&&as_sdt=0%2C5&&&&as_vis=1', 'alejandro.velazquez^consuelo.medina^elvira.duran^alfredo.amador'],
+    ['La memoria de los nombres : la toponimia en la conformación histórica del territorio. De Mesoamerica a México ', 'Morelia', 'CIGA-UNAM', 'EN_PRENSA', N/A, 1, 475, '', '', 'karine.lefebvre^carlos.paredes^'],
+    ['The global social science world  under and beyond Western universalism.', 'Stuttgart', 'Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'PUBLICADO', 2016, 1, 278, '978-3-8382-0893-0', '', 'hebe.vessuri^michael.kuhn^hebe.vessuri^kwang.yeong^huri.islamoglu^doris.weidermann^mauricio.nieto^reinerg.grundmann^sujata.patel^igor.yegorov^pal.tamas^kumaran.rajagopal^kazumi.okamoto'],
+    ['Some Contributions to Alternative Concepts of Knowledge', 'Stuttgart', 'Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'PUBLICADO', 2016, 1, 272, '978-3-8382-0894-7', '', 'hebe.vessuri^michael.kuhn^juan.vazquez^pablo.reyna^leon.nkolo^christiane.hartnack^roger.magazine^claudia.magallanes^leandro.rodriguez^ivan.costa^michel.christie^kumaran.rajagopal^quodratullah.qorbani'],
+    ['Conocimiento, Paisaje y Territorio. Procesos de cambio individual y colectivo.', 'Buenos Aires', 'UNPA', 'PUBLICADO', 2016, 1, 400, '978-987-3714-0', '', 'dalma.albarracin^gabriela.alvarez^fabiana.bekerman^gerardo.bocco^ana.cinti^leticia.curti^cristina.flores^rosana.guber^sergio.kaminker^carolina.laztra^javier.serrano^marcos.sourrouille^damian.taire^pedro.urquijo^hebe.vessuri'],
+    ['La Otra, El Mismo. Mujeres en la ciencia y la tecnología en Venezuela', 'Caracas', 'Fundación Escuela Editorial El perro y la rana', 'EN_PRENSA', 2016, 1, 1, '', '', 'hebe.vessuri^victoria.canino^rosa.bolivar^ana.castellanos^alejandra.aray'],
+    ['Procesos Urbanos, Pobreza y Ambiente. Implicaciones en Ciudades Medias y Megaciudades', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2016, 1, 1, '978-607-02-8100-6 ', '', 'yadira.mendez^antonio.vieyra^alejandra.larrazabal'],
+    ['Procesos periurbanos: Desequilibrios territoriales, desigualdades sociales, ambientales y pobreza', 'Morelia', 'CIGA-UNAM', 'EN_PRENSA', 2016, 1, 1, '', '', 'yadira.mendez^antonio.vieyra^alejandra.larrazabal'],
+    ['Geopedology. An integration of Geomorphology and Pedology for Soil and Landscape Studies', 'New York', 'Springer', 'PUBLICADO', 2015, 1, 556, '978-3-319-19158-4', 'http://www.doi.org/10.1007/978-3-319-19159-1', 'gerardo.bocco^alfred.zinck^graciela.metternicht^hector.delvalle'],
+)
+
+for i in libros_inv:
+    if i[8] == '':
+        i[8] = None
+    if i[7] == '':
+        i[7] = None
+
+    l = Libro(nombre=i[0], tipo='INVESTIGACION',
+              pais=Pais.objects.get(nombre=Ciudad.objects.get(nombre=i[1]).estado.pais),
+              estado=Estado.objects.get(nombre=Ciudad.objects.get(nombre=i[1]).estado),
+              ciudad=Ciudad.objects.get(nombre=Ciudad.objects.get(nombre=i[1])),
+              editorial=Editorial.objects.get(nombre=Editorial.objects.get(nombre=i[2])),
+              status=i[3],
+              fecha=datetime(i[4], 1, 1),
+              numero_edicion=i[5],
+              numero_paginas=i[6],
+              isbn=i[7],
+              url=i[8],
+              )
+    l.save()
+
+    for j in i[9].split('^'):
+        print("       ", j)
+        l.usuarios.add(User.objects.get(username=j))
