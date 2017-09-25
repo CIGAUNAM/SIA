@@ -30,7 +30,7 @@ class ArticuloCientifico(models.Model):
     solo_electronico = models.BooleanField(default=False)
     usuarios = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
-    indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', null=True, blank=True)
+    indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
     #nombre_abreviado_wos = models.CharField(max_length=255, blank=True)
     url = models.URLField(blank=True)
     pagina_inicio = models.PositiveIntegerField()
