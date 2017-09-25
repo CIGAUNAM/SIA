@@ -760,8 +760,8 @@ class Libro(models.Model):
     numero_paginas = models.PositiveIntegerField(default=0)
     coleccion = models.ForeignKey(Coleccion, blank=True, null=True)
     volumen = models.CharField(max_length=255, blank=True)
-    isbn = models.SlugField(max_length=30, blank=True)
-    url = models.URLField(blank=True)
+    isbn = models.SlugField(max_length=30, null=True, blank=True)
+    url = models.URLField(null=True, blank=True)
     #tags = models.ManyToManyField(Tag, related_name='libro_tags', blank=True)
 
     def __str__(self):
@@ -782,13 +782,13 @@ class Revista(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     nombre_abreviado_wos = models.CharField(max_length=255, null=True, blank=True)
     descripcion = models.TextField(blank=True)
-    editorial = models.ForeignKey(Editorial)
+    #editorial = models.ForeignKey(Editorial)
     pais = models.ForeignKey(Pais)
     factor_impacto = models.DecimalField(max_digits=6, decimal_places=3, blank=True, null=True)
     url = models.URLField(blank=True)
 
     def __str__(self):
-        return "{} : {}".format(self.nombre, self.editorial)
+        return "{} : {}".format(self.nombre, self.pais)
 
     def natural_key(self):
         return (self.nombre)
@@ -798,7 +798,7 @@ class Revista(models.Model):
 
     class Meta:
         ordering = ['nombre']
-        get_latest_by = ['fecha', 'nombre_revista', 'editorial']
+        get_latest_by = ['nombre_revista']
 
 
 class Asignatura(models.Model):
