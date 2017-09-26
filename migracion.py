@@ -473,6 +473,7 @@ Estados = (
     ('Cambridgeshire', Pais.objects.get(nombre='Reino Unido').id),
     ('Baden-Wurtemberg', Pais.objects.get(nombre='Alemania').id),
     ('Oxfordshire', Pais.objects.get(nombre='Reino Unido').id),
+    ('Provincia de Estocolmo', Pais.objects.get(nombre='Suecia').id),
 )
 
 for i in Estados:
@@ -624,6 +625,7 @@ Ciudades = (
     ('Luxemburgo', Estado.objects.get(nombre='Luxemburgo').id),
     ('Stuttgart', Estado.objects.get(nombre='Baden-Wurtemberg').id),
     ('Oxford', Estado.objects.get(nombre='Oxfordshire').id),
+    ('Estocolmo', Estado.objects.get(nombre='Provincia de Estocolmo').id),
 )
 
 for i in Ciudades:
