@@ -417,12 +417,11 @@ for i in libros_inv:
 ['Diálogos sobre la relación entre arqueología, antropología, e historia', 'Zamora', 'El Colegio de Michoacán', 'OTRO', 2016, 1, 1, '', '', 'sara.barrasa']
 ['Dimensiones Sociales en el Manejo de Cuencas', 'Morelia', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-6883-0', '', 'ana.burgos^gerardo.bocco']
 ['Ecosistema de Manglar en el Archipiélago Cubano', 'La Habana', 'Editorial Academia', 'OTRO', 2006, 1, 1, '959- 270-090-7', '', 'angel.priego']
-
 ['El análisis geoespacial en los estudios urbanos', 'Morelia', 'SELPER', 'OTRO', 2015, 1, 1, '', '', 'frida.guiza^keith.mccall^jean.mas']
+['El ecosistema de manglar en América Latina y la cuenca del Caribe: Su manejo y conservación', 'Nueva York', 'Rossentiel School of Marine and Atmospheric Science', 'OTRO', 1994, 1, 1, '0-9642315-0-6', '', 'angel.priego^']
+['El Manejo Integral de Cuencas en México', 'Ciudad de México, CDMX', 'INE-SEMARNAT', 'OTRO', 2007, 1, 1, '978-968-817-861-4', '', 'angel.priego']
 
-['El ecosistema de manglar en América Latina y la cuenca del Caribe: Su manejo y conservación', 'Nueva York', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
+['Els Sòls de Catalunya: Conca Dellà (Pallars Jussà). Monografies tècniques', '', '', 'OTRO', , 1, 1, '', '', '']
 ['', '', '', 'OTRO', , 1, 1, '', '', '']
 ['', '', '', 'OTRO', , 1, 1, '', '', '']
 ['', '', '', 'OTRO', , 1, 1, '', '', '']

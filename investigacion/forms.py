@@ -69,11 +69,7 @@ class ArticuloCientificoForm(forms.ModelForm):
         model = ArticuloCientifico
         exclude = []
         widgets = {
-            'usuarios': wSortedSelect2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            # 'usuarios': SortedMultipleChoiceField(queryset=User.objects.all(), attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            # 'usuarios': SortedMultipleChoiceField(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            # 'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
@@ -110,7 +106,10 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
 
     class Meta:
         model = CapituloLibroInvestigacion
-        exclude = ['usuario', ]
+        exclude = []
+        widgets = {
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class MapaArbitradoForm(forms.ModelForm):
