@@ -420,13 +420,13 @@ for i in libros_inv:
 ['El análisis geoespacial en los estudios urbanos', 'Morelia', 'SELPER', 'OTRO', 2015, 1, 1, '', '', 'frida.guiza^keith.mccall^jean.mas']
 ['El ecosistema de manglar en América Latina y la cuenca del Caribe: Su manejo y conservación', 'Nueva York', 'Rossentiel School of Marine and Atmospheric Science', 'OTRO', 1994, 1, 1, '0-9642315-0-6', '', 'angel.priego^']
 ['El Manejo Integral de Cuencas en México', 'Ciudad de México, CDMX', 'INE-SEMARNAT', 'OTRO', 2007, 1, 1, '978-968-817-861-4', '', 'angel.priego']
+['Els Sòls de Catalunya: Conca Dellà (Pallars Jussà). Monografies tècniques', 'Barcelona', 'Institut Geològic de Catalunya', 'OTRO', 2011, 1, 1, '978-843-938-586-8', '', 'lourdes.gonzalez']
+['Energía, Ambiente y Sociedad', 'Morelia', 'UNAM', 'OTRO', 2016, 1, 1, '', '', 'omar.masera^marta.astier']
+['Entomología Mexicana', 'Xalapa', 'Sociedad Mexicana de Entomoogía', 'OTRO', 2009, 1, 1, '968-839-559-2', '', 'alejandro.velazquez^angel.priego']
+['Entre Pasados y Presentes II. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', 'Vázquez Mazzini Editores', 'OTRO', 2009, 1, 1, '978-987-23545-1-0', '', 'alina.alvarez^jp.carbonelli^v.palamarczuk']
+['Entre Pasados y Presentes III. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', Editorial Mnemosyne', 'OTRO', 2012, 1, 1, '978-987-1829-21-7', '', 'alina.alvarez']
 
-['Els Sòls de Catalunya: Conca Dellà (Pallars Jussà). Monografies tècniques', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
+['Environmental Management of River Basin Ecosystems', 'Estocolmo', 'Springer', 'OTRO', 2015, 1, 1, '978-3-319-13425-3', '', 'yan.gao']
 ['', '', '', 'OTRO', , 1, 1, '', '', '']
 ['', '', '', 'OTRO', , 1, 1, '', '', '']
 ['', '', '', 'OTRO', , 1, 1, '', '', '']
@@ -445,6 +445,11 @@ for i in libros_inv:
 ['', '', '', 'OTRO', , 1, 1, '', '', '']
 
 
-Universidad Nacional de Río Negro/ Universidad Nacional de la Patagonia Austral/ Centro Nacional Patagónico-CONICET
+
+
+
+
+
+
 
 """
