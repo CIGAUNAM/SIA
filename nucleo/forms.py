@@ -516,6 +516,7 @@ class LibroForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    es_libro_completo = forms.BooleanField(required=False)
 
     class Meta:
         model = Libro

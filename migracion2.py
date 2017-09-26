@@ -40,6 +40,7 @@ Editorial.objects.all().delete()
 
 editoriales = (
 ('CIGA-UNAM', 'Morelia', 'Michoacán de Ocampo', 'México'),
+('UNAM', 'Ciudad de México, CDMX', 'Ciudad de México', 'México'),
 ('UNPA', 'Río Gallegos', 'Santa Cruz', 'Argentina'),
 ('INECOL', 'Xalapa', 'Veracruz de Ignacio de la Llave', 'México'),
 ('Skiu', 'Ciudad de México, CDMX', 'Ciudad de México', 'México'),
@@ -52,6 +53,7 @@ editoriales = (
 ('Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'Madrid', 'Comunidad de Madrid', 'España'),
 ('Springer', 'Luxemburgo', 'Luxemburgo', 'Luxemburgo'),
 ('UNESCO', 'París', 'Isla de Francia', 'Francia'),
+('Centro Nacional de Biodiversidad del Instituto de Ecología y Sistemática', 'La Habana', 'La Habana', 'Cuba'),
 )
 
 for i in editoriales:
@@ -369,6 +371,7 @@ for i in libros_inv:
               numero_paginas=i[6],
               isbn=i[7],
               url=i[8],
+              libro_completo=True
               )
     l.save()
     print(l)
@@ -376,3 +379,47 @@ for i in libros_inv:
     for j in i[9].split('^'):
         print("       ", j)
         l.usuarios.add(User.objects.get(username=j))
+
+
+
+
+
+"""
+
+['Geopedology. An integration of Geomorphology and Pedology for Soil and Landscape Studies', 'Nueva York', 'Springer', 'PUBLICADO', 2015, 1, 556, '978-3-319-19158-4', 'http://www.doi.org/10.1007/978-3-319-19159-1', 'gerardo.bocco^alfred.zinck^graciela.metternicht^hector.delvalle'],
+
+['Monarchs in a changing world: biology and conservation of an iconic insect', 'Cornell University Press', ]
+
+
+
+
+['La biodiversidad en Michoacán. Estudio de Estado', 'Morelia', 'CONABIO', 'OTRO', 2005, 1, 1, '970-900-028-4', 'https://doi.org/10.5962/bhl.title.118635', 'oscar.leal^laura.villaseñor^manuel.mendoza^francisco.bautista'],
+['Informality: Re-Viewing Latin American Cities', 'Cambridge', 'Department of Architecture, Cambridge', 'OTRO', 2011, 1, 4, '', 'http://www.crassh.cam.ac.uk/events/1324/', 'felipe.hernandez^brian.napoletano^antonio.vieyra^jaime.paneque']
+['70 años del Instituto de Geografía: Historia, actualidad y perspectiva', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-7321-6', 'http://www.publicaciones.igg.unam.mx/index.php/ig/catalog/book/75', 'admin']
+['Estudio Nacional sobre la Diversidad Biológica en la República de Cuba', 'La Habana', 'Centro Nacional de Biodiversidad del Instituto de Ecología y Sistemática', 'OTRO', 1998, 1, 429, '', 'ftp://169.158.189.34/pub/PROYECTOS/Cambio%20Climatico/libros/Estudio%20de%20Pais%20DB%201998.pdf', 'alberto.alvarez^angel.priego']
+['Atlas del Patrimonio Natural, Histórico y Cultural de Veracruz, Tomo I: Patrimonio Natural', 'Xalapa', 'UNAM', 'OTRO', 2010, 1, 1, '978-607-951-315-3', 'https://www.sev.gob.mx/', 'juan.ortiz^angel.priego']
+['Atzala de la Asunción, Guerrero Agua entre rocas', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '', '', 'admin']
+['Biodiversidad de la Sierra Madre del Sur', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '978-607-027906-5', '', 'isolda.lunavega^alejandro.velazquez']
+['Biogeografía de Sistemas Litorales. Dinámica y Conservación', 'Sevilla', 'Asociación de Geógrafos Españoles', 'OTRO', 2014, 1, 408, ' 978-84-617-1068-3',  'http://digibuo.uniovi.es/dspace/bitstream/10651/30573/1/Din%C3%A1mica_Bosques_Aramo.pdf', 'rafael.camaraartigas^angel.priego']
+['Ciencias Ambientales: Temáticas para el Desarrollo', 'Puebla', 'BUAP', 'OTRO', 2004, 1, 1, '978-968-863-987-0', '', 'jesus.ruizcareaga^angel.priego']
+['Conflictos Ambientales en Latinoamérica', 'Buenos Aires', 'UNGS', 'OTRO', 2017, 1, 1, '', '', 'jaime.paneque^maria.ramirez^claudio.garibay^pedro.urquijo']
+['Conocimiento, ambiente y poder. Perspectivas desde la ecología política', 'San Luis Potosí', 'El Colegio de San Luis', 'OTRO', 2017, 1, 1, '', '', 'claudio.garibay']
+['Conocimiento, paisaje, territorio. Procesos de cambio individual y colectivo', 'Río Gallegos', 'UNPA', 'OTRO', 2015, 1, 1, '978-987-3714-06-1', 'http://www.ub.es/geocrit/b3w-1012.htm', 'gerardo.bocco^pedro.urquijo']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+['', '', '', 'OTRO', , , , '', '', '']
+
+
+Universidad Nacional de Río Negro/ Universidad Nacional de la Patagonia Austral/ Centro Nacional Patagónico-CONICET
+
+"""

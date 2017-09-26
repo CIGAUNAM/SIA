@@ -470,6 +470,7 @@ Estados = (
     ('Santa Cruz', Pais.objects.get(nombre='Argentina').id),
     ('Witney', Pais.objects.get(nombre='Reino Unido').id),
     ('Luxemburgo', Pais.objects.get(nombre='Luxemburgo').id),
+    ('Cambridgeshire', Pais.objects.get(nombre='Reino Unido').id),
 )
 
 for i in Estados:
@@ -546,7 +547,7 @@ Ciudades = (
     ('Lérida', Estado.objects.get(nombre='Cataluña').id),
     ('Aguascalientes', Estado.objects.get(nombre='Aguascalientes').id),
     ('Wayland', Estado.objects.get(nombre='Massachusetts').id),
-    ('Cambridge', Estado.objects.get(nombre='Massachusetts').id),
+    ('Cambridge', Estado.objects.get(nombre='Cambridgeshire').id),
     ('Norcross', Estado.objects.get(nombre='Georgia').id),
     ('Tepic', Estado.objects.get(nombre='Nayarit').id),
     ('Boston', Estado.objects.get(nombre='Massachusetts').id),
@@ -2195,8 +2196,6 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', 'alfred.gichu'),
     ('francis.wegulo', 'N. Wegulo', 'Francis', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'francis.wegulo'),
-    ('antonio.napoletano', 'Napoletano', 'Antonio', 'OTRO', Pais.objects.get(nombre='México').id,
-     Ciudad.objects.get(nombre='Morelia').id, '-', 'antonio.napoletano'),
     ('alejandro.nene', 'Nené Preciado', 'Alejandro Jalmacin', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'alejandro.nene'),
     ('julie.noriega', 'Noriega', 'Julie', 'OTRO', Pais.objects.get(nombre='México').id,
@@ -2540,8 +2539,29 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', 'kazumi.okamoto'),
     ('ramon.hernandez', 'Hernández Santana', 'José Ramón', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'ramon.hernandez'),
-    ('rigel.zaragoza', 'Zaragoza', 'Rigel Alfonso ', 'OTRO', Pais.objects.get(nombre='México').id,
+    ('rigel.zaragoza', 'Zaragoza', 'Rigel Alfonso', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'rigel.zaragoza'),
+    ('oscar.leal', 'Leal Nares', 'Oscar Adrián', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'oscar.leal'),
+    ('laura.villaseñor', 'Villaseñor Gómez', 'Laura', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'oscar.leal'),
+    ('felipe.hernandez', 'Hernández', 'Felipe', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'felipe.hernandez'),
+    ('jose.moncada', 'Moncada Maya', 'José Omar', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'jose.moncada'),
+    ('alvaro.lopez', 'López López', 'Álvaro', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'alvaro.lopez'),
+    ('alberto.alvarez', 'Álvarez', 'Alberto', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'alberto.alvarez'),
+    ('juan.ortiz', 'Ortiz Escamilla', 'Juan', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'juan.ortiz'),
+    ('isolda.lunavega', 'Luna Vega', 'Isolda', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'isolda.lunavega'),
+    ('rafael.camaraartigas', 'Cámara Artigas', 'Rafael', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'rafael.camaraartigas'),
+    ('jesus.ruizcareaga', 'Ruiz Careaga', 'Jesús', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'jesus.ruizcareaga'),
+
 )
 
 for i in Usuarios:
