@@ -471,6 +471,8 @@ Estados = (
     ('Witney', Pais.objects.get(nombre='Reino Unido').id),
     ('Luxemburgo', Pais.objects.get(nombre='Luxemburgo').id),
     ('Cambridgeshire', Pais.objects.get(nombre='Reino Unido').id),
+    ('Baden-Wurtemberg', Pais.objects.get(nombre='Alemania').id),
+    ('Oxfordshire', Pais.objects.get(nombre='Reino Unido').id),
 )
 
 for i in Estados:
@@ -620,6 +622,8 @@ Ciudades = (
     ('Río Gallegos', Estado.objects.get(nombre='Santa Cruz').id),
     ('Long Hanborough', Estado.objects.get(nombre='Witney').id),
     ('Luxemburgo', Estado.objects.get(nombre='Luxemburgo').id),
+    ('Stuttgart', Estado.objects.get(nombre='Baden-Wurtemberg').id),
+    ('Oxford', Estado.objects.get(nombre='Oxfordshire').id),
 )
 
 for i in Ciudades:
@@ -2561,6 +2565,8 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', 'rafael.camaraartigas'),
     ('jesus.ruizcareaga', 'Ruiz Careaga', 'Jesús', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'jesus.ruizcareaga'),
+    ('mauricio.perea', 'Perea Peña', 'Mauricio', 'OTRO', Pais.objects.get(nombre='México').id,
+     Ciudad.objects.get(nombre='Morelia').id, '-', 'mauricio.perea'),
 
 )
 
