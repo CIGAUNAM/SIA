@@ -382,74 +382,51 @@ for i in libros_inv:
 
 
 
+libros = (
+    ['Geopedology. An integration of Geomorphology and Pedology for Soil and Landscape Studies', 'Nueva York', 'Springer', 'PUBLICADO', 2015, 1, 556, '978-3-319-19158-4', 'http://www.doi.org/10.1007/978-3-319-19159-1', 'gerardo.bocco^alfred.zinck^graciela.metternicht^hector.delvalle'],
+    ['La biodiversidad en Michoacán. Estudio de Estado', 'Morelia', 'CONABIO', 'OTRO', 2005, 1, 1, '970-900-028-4', 'https://doi.org/10.5962/bhl.title.118635', 'oscar.leal^laura.villaseñor^manuel.mendoza^francisco.bautista'],
+    ['Informality: Re-Viewing Latin American Cities', 'Cambridge', 'Department of Architecture, Cambridge', 'OTRO', 2011, 1, 4, '', 'http://www.crassh.cam.ac.uk/events/1324/', 'felipe.hernandez^brian.napoletano^antonio.vieyra^jaime.paneque'],
+    ['70 años del Instituto de Geografía: Historia, actualidad y perspectiva', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-7321-6', 'http://www.publicaciones.igg.unam.mx/index.php/ig/catalog/book/75', 'admin'],
+    ['Estudio Nacional sobre la Diversidad Biológica en la República de Cuba', 'La Habana', 'Centro Nacional de Biodiversidad del Instituto de Ecología y Sistemática', 'OTRO', 1998, 1, 429, '', 'ftp://169.158.189.34/pub/PROYECTOS/Cambio%20Climatico/libros/Estudio%20de%20Pais%20DB%201998.pdf', 'alberto.alvarez^angel.priego'],
+    ['Atlas del Patrimonio Natural, Histórico y Cultural de Veracruz, Tomo I: Patrimonio Natural', 'Xalapa', 'UNAM', 'OTRO', 2010, 1, 1, '978-607-951-315-3', 'https://www.sev.gob.mx/', 'juan.ortiz^angel.priego'],
+    ['Atzala de la Asunción, Guerrero Agua entre rocas', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '', '', 'admin'],
+    ['Biodiversidad de la Sierra Madre del Sur', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '978-607-027906-5', '', 'isolda.lunavega^alejandro.velazquez'],
+    ['Biogeografía de Sistemas Litorales. Dinámica y Conservación', 'Sevilla', 'Asociación de Geógrafos Españoles', 'OTRO', 2014, 1, 408, ' 978-84-617-1068-3',  'http://digibuo.uniovi.es/dspace/bitstream/10651/30573/1/Din%C3%A1mica_Bosques_Aramo.pdf', 'rafael.camaraartigas^angel.priego'],
+    ['Ciencias Ambientales: Temáticas para el Desarrollo', 'Puebla', 'BUAP', 'OTRO', 2004, 1, 1, '978-968-863-987-0', '', 'jesus.ruizcareaga^angel.priego'],
+    ['Conflictos Ambientales en Latinoamérica', 'Buenos Aires', 'UNGS', 'OTRO', 2017, 1, 1, '', '', 'jaime.paneque^maria.ramirez^claudio.garibay^pedro.urquijo'],
+    ['Conocimiento, ambiente y poder. Perspectivas desde la ecología política', 'San Luis Potosí', 'El Colegio de San Luis', 'OTRO', 2017, 1, 1, '', '', 'claudio.garibay'],
+    ['Conocimiento, paisaje, territorio. Procesos de cambio individual y colectivo', 'Río Gallegos', 'UNPA', 'OTRO', 2015, 1, 1, '978-987-3714-06-1', 'http://www.ub.es/geocrit/b3w-1012.htm', 'gerardo.bocco^pedro.urquijo'],
+    ['Continuidades y rupturas: una historia tensa de la ciencia en México', 'Morelia', 'UAEH', 'OTRO', 2010, 1, 1, '978-607-424-196-7', '', 'pedro.urquijo'],
+    ['Contributions to Alternative Concepts of Knowledge', 'Stuttgart', 'Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'OTRO', 2016, 1, 1, '978-3-8382-0894-7', '', 'michael.kuhn^hebe.vessuri'],
+    ['Convergencias teóricas y empíricas en el espacio-tiempo', 'Morelia', 'CIGA-UNAM', 'OTRO', 2010, 1, 1, '', '', 'sara.barrasa'],
+    ['Corografía y escala local. Enfoques desde la geografía humana', 'Corografía y escala local. Enfoques desde la geografía humana', 'CIGA-UNAM', 'OTRO', 2012, 1, 1, '978-607-02-3152-0', 'http://www.ciga.unam.mx/publicaciones', 'pedro.urquijo^claudio.garibay^gerardo.bocco'],
+    ['Cosmos. Enciclopedia de las ciencias y la tecnología en México. Geografía', 'Ciudad de México, CDMX', 'UAM', 'OTRO', 2011, 1, 1, '978-607-477-137-4', '', 'pedro.urquijo^gerardo.bocco'],
+    ['Cubierta y Uso del Territorio. Conceptos, enfoques y métodos de análisis', 'Morelia', 'CIGA-UNAM', 'OTRO', 2010, 1, 1, '', '', 'maria.ramirez^brian.napoletano^frida.guiza^'],
+    ['Cultural Dynamics and Production Activities in Ancient Western Mexico', 'Oxford', 'BAR', 'OTRO', 2016, 1, 1, '', '', 'karine.lefebvre^jean.mas'],
+    ['Desarrollo desde lo local y dinámicas territoriales', 'Ciudad de México, CDMX', 'Editorial Fontamara', 'OTRO', 2016, 1, 1, '978-607-736-265-4', '', 'ana.burgos^gerardo.bocco'],
+    ['Diálogos en la diversidad. Investigaciones postdoctorales 2015', 'Morelia', 'UMSNH', 'OTRO', 2015, 1, 1, '', '', 'mario.figueroa^mauricio.perea^encarnacion.bobadilla^alberto.orozco^jesus.luna'],
+    ['Diálogos sobre la relación entre arqueología, antropología, e historia', 'Zamora', 'El Colegio de Michoacán', 'OTRO', 2016, 1, 1, '', '', 'sara.barrasa'],
+    ['Dimensiones Sociales en el Manejo de Cuencas', 'Morelia', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-6883-0', '', 'ana.burgos^gerardo.bocco'],
+    ['Ecosistema de Manglar en el Archipiélago Cubano', 'La Habana', 'Editorial Academia', 'OTRO', 2006, 1, 1, '959- 270-090-7', '', 'angel.priego'],
+    ['El análisis geoespacial en los estudios urbanos', 'Morelia', 'SELPER', 'OTRO', 2015, 1, 1, '', '', 'frida.guiza^keith.mccall^jean.mas'],
+    ['El ecosistema de manglar en América Latina y la cuenca del Caribe: Su manejo y conservación', 'Nueva York', 'Rossentiel School of Marine and Atmospheric Science', 'OTRO', 1994, 1, 1, '0-9642315-0-6', '', 'angel.priego'],
+    ['El Manejo Integral de Cuencas en México', 'Ciudad de México, CDMX', 'INE-SEMARNAT', 'OTRO', 2007, 1, 1, '978-968-817-861-4', '', 'angel.priego'],
+    ['Els Sòls de Catalunya: Conca Dellà (Pallars Jussà). Monografies tècniques', 'Barcelona', 'Institut Geològic de Catalunya', 'OTRO', 2011, 1, 1, '978-843-938-586-8', '', 'lourdes.gonzalez'],
+    ['Energía, Ambiente y Sociedad', 'Morelia', 'UNAM', 'OTRO', 2016, 1, 1, '', '', 'omar.masera^marta.astier'],
+    ['Entomología Mexicana', 'Xalapa', 'Sociedad Mexicana de Entomoogía', 'OTRO', 2009, 1, 1, '968-839-559-2', '', 'alejandro.velazquez^angel.priego'],
+    ['Entre Pasados y Presentes II. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', 'Vázquez Mazzini Editores', 'OTRO', 2009, 1, 1, '978-987-23545-1-0', '', 'alina.alvarez^jp.carbonelli^v.palamarczuk'],
+    ['Entre Pasados y Presentes III. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', 'Editorial Mnemosyne', 'OTRO', 2012, 1, 1, '978-987-1829-21-7', '', 'alina.alvarez'],
+    ['Environmental Management of River Basin Ecosystems', 'Estocolmo', 'Springer', 'OTRO', 2015, 1, 1, '978-3-319-13425-3', '', 'yan.gao'],
+    ['Estudio costero del suroccidente de México', 'Morelia', 'UNAM', 'OTRO', 2013, 1, 1, '978-607-02-4149-9', '', 'pedro.urquijo'],
+    ['Estudio de los grupos insulares y zonas litorales del archipiélago cubano con fines turísticos', 'La Habana', 'Editorial Científico-Técnica', 'OTRO', 1990, 1, 1, '', '', 'angel.priego'],
+    ['Estudio Nacional sobre la Diversidad Biológica en la República de Cuba', 'Madriod', 'Editorial CESYTA', 'OTRO', 1998, 1, 1, '', '', 'angel.priego'],
+)
 
 
-"""
-
-['Geopedology. An integration of Geomorphology and Pedology for Soil and Landscape Studies', 'Nueva York', 'Springer', 'PUBLICADO', 2015, 1, 556, '978-3-319-19158-4', 'http://www.doi.org/10.1007/978-3-319-19159-1', 'gerardo.bocco^alfred.zinck^graciela.metternicht^hector.delvalle'],
-
-['Monarchs in a changing world: biology and conservation of an iconic insect', 'Cornell University Press', ]
-
-
-
-
-['La biodiversidad en Michoacán. Estudio de Estado', 'Morelia', 'CONABIO', 'OTRO', 2005, 1, 1, '970-900-028-4', 'https://doi.org/10.5962/bhl.title.118635', 'oscar.leal^laura.villaseñor^manuel.mendoza^francisco.bautista'],
-['Informality: Re-Viewing Latin American Cities', 'Cambridge', 'Department of Architecture, Cambridge', 'OTRO', 2011, 1, 4, '', 'http://www.crassh.cam.ac.uk/events/1324/', 'felipe.hernandez^brian.napoletano^antonio.vieyra^jaime.paneque']
-['70 años del Instituto de Geografía: Historia, actualidad y perspectiva', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-7321-6', 'http://www.publicaciones.igg.unam.mx/index.php/ig/catalog/book/75', 'admin']
-['Estudio Nacional sobre la Diversidad Biológica en la República de Cuba', 'La Habana', 'Centro Nacional de Biodiversidad del Instituto de Ecología y Sistemática', 'OTRO', 1998, 1, 429, '', 'ftp://169.158.189.34/pub/PROYECTOS/Cambio%20Climatico/libros/Estudio%20de%20Pais%20DB%201998.pdf', 'alberto.alvarez^angel.priego']
-['Atlas del Patrimonio Natural, Histórico y Cultural de Veracruz, Tomo I: Patrimonio Natural', 'Xalapa', 'UNAM', 'OTRO', 2010, 1, 1, '978-607-951-315-3', 'https://www.sev.gob.mx/', 'juan.ortiz^angel.priego']
-['Atzala de la Asunción, Guerrero Agua entre rocas', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '', '', 'admin']
-['Biodiversidad de la Sierra Madre del Sur', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '978-607-027906-5', '', 'isolda.lunavega^alejandro.velazquez']
-['Biogeografía de Sistemas Litorales. Dinámica y Conservación', 'Sevilla', 'Asociación de Geógrafos Españoles', 'OTRO', 2014, 1, 408, ' 978-84-617-1068-3',  'http://digibuo.uniovi.es/dspace/bitstream/10651/30573/1/Din%C3%A1mica_Bosques_Aramo.pdf', 'rafael.camaraartigas^angel.priego']
-['Ciencias Ambientales: Temáticas para el Desarrollo', 'Puebla', 'BUAP', 'OTRO', 2004, 1, 1, '978-968-863-987-0', '', 'jesus.ruizcareaga^angel.priego']
-['Conflictos Ambientales en Latinoamérica', 'Buenos Aires', 'UNGS', 'OTRO', 2017, 1, 1, '', '', 'jaime.paneque^maria.ramirez^claudio.garibay^pedro.urquijo']
-['Conocimiento, ambiente y poder. Perspectivas desde la ecología política', 'San Luis Potosí', 'El Colegio de San Luis', 'OTRO', 2017, 1, 1, '', '', 'claudio.garibay']
-['Conocimiento, paisaje, territorio. Procesos de cambio individual y colectivo', 'Río Gallegos', 'UNPA', 'OTRO', 2015, 1, 1, '978-987-3714-06-1', 'http://www.ub.es/geocrit/b3w-1012.htm', 'gerardo.bocco^pedro.urquijo']
-['Continuidades y rupturas: una historia tensa de la ciencia en México', 'Morelia', 'UAEH', 'OTRO', 2010, 1, 1, '978-607-424-196-7', '', 'pedro.urquijo']
-['Contributions to Alternative Concepts of Knowledge', 'Stuttgart', 'Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'OTRO', 2016, 1, 1, '978-3-8382-0894-7', '', 'michael.kuhn^hebe.vessuri']
-['Convergencias teóricas y empíricas en el espacio-tiempo', 'Morelia', 'CIGA-UNAM', 'OTRO', 2010, 1, 1, '', '', 'sara.barrasa']
-['Corografía y escala local. Enfoques desde la geografía humana', 'Corografía y escala local. Enfoques desde la geografía humana', 'CIGA-UNAM', 'OTRO', 2012, 1, 1, '978-607-02-3152-0', 'http://www.ciga.unam.mx/publicaciones', 'pedro.urquijo^claudio.garibay^gerardo.bocco']
-['Cosmos. Enciclopedia de las ciencias y la tecnología en México. Geografía', 'Ciudad de México, CDMX', 'UAM', 'OTRO', 2011, 1, 1, '978-607-477-137-4', '', 'pedro.urquijo^gerardo.bocco']
-['Cubierta y Uso del Territorio. Conceptos, enfoques y métodos de análisis', 'Morelia', 'CIGA-UNAM', 'OTRO', 2010, 1, 1, '', '', 'maria.ramirez^brian.napoletano^frida.guiza^']
-['Cultural Dynamics and Production Activities in Ancient Western Mexico', 'Oxford', 'BAR', 'OTRO', 2016, 1, 1, '', '', 'karine.lefebvre^jean.mas']
-['Desarrollo desde lo local y dinámicas territoriales', 'Ciudad de México, CDMX', 'Editorial Fontamara', 'OTRO', 2016, 1, 1, '978-607-736-265-4', '', 'ana.burgos^gerardo.bocco^']
-['Diálogos en la diversidad. Investigaciones postdoctorales 2015', 'Morelia', 'UMSNH', 'OTRO', 2015, 1, 1, '', '', 'mario.figueroa^mauricio.perea^encarnacion.bobadilla^alberto.orozco^jesus.luna']
-['Diálogos sobre la relación entre arqueología, antropología, e historia', 'Zamora', 'El Colegio de Michoacán', 'OTRO', 2016, 1, 1, '', '', 'sara.barrasa']
-['Dimensiones Sociales en el Manejo de Cuencas', 'Morelia', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-6883-0', '', 'ana.burgos^gerardo.bocco']
-['Ecosistema de Manglar en el Archipiélago Cubano', 'La Habana', 'Editorial Academia', 'OTRO', 2006, 1, 1, '959- 270-090-7', '', 'angel.priego']
-['El análisis geoespacial en los estudios urbanos', 'Morelia', 'SELPER', 'OTRO', 2015, 1, 1, '', '', 'frida.guiza^keith.mccall^jean.mas']
-['El ecosistema de manglar en América Latina y la cuenca del Caribe: Su manejo y conservación', 'Nueva York', 'Rossentiel School of Marine and Atmospheric Science', 'OTRO', 1994, 1, 1, '0-9642315-0-6', '', 'angel.priego^']
-['El Manejo Integral de Cuencas en México', 'Ciudad de México, CDMX', 'INE-SEMARNAT', 'OTRO', 2007, 1, 1, '978-968-817-861-4', '', 'angel.priego']
-['Els Sòls de Catalunya: Conca Dellà (Pallars Jussà). Monografies tècniques', 'Barcelona', 'Institut Geològic de Catalunya', 'OTRO', 2011, 1, 1, '978-843-938-586-8', '', 'lourdes.gonzalez']
-['Energía, Ambiente y Sociedad', 'Morelia', 'UNAM', 'OTRO', 2016, 1, 1, '', '', 'omar.masera^marta.astier']
-['Entomología Mexicana', 'Xalapa', 'Sociedad Mexicana de Entomoogía', 'OTRO', 2009, 1, 1, '968-839-559-2', '', 'alejandro.velazquez^angel.priego']
-['Entre Pasados y Presentes II. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', 'Vázquez Mazzini Editores', 'OTRO', 2009, 1, 1, '978-987-23545-1-0', '', 'alina.alvarez^jp.carbonelli^v.palamarczuk']
-['Entre Pasados y Presentes III. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', Editorial Mnemosyne', 'OTRO', 2012, 1, 1, '978-987-1829-21-7', '', 'alina.alvarez']
-
-['Environmental Management of River Basin Ecosystems', 'Estocolmo', 'Springer', 'OTRO', 2015, 1, 1, '978-3-319-13425-3', '', 'yan.gao']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
-['', '', '', 'OTRO', , 1, 1, '', '', '']
+('Centro Nacional de Biodiversidad del Instituto de Ecología y Sistemática', 'La Habana', 'La Habana', 'Cuba'),
 
 
 
 
 
 
-
-
-
-"""
