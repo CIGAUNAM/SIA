@@ -116,16 +116,12 @@ class ArticuloCientifico(models.Model):
 
 class CapituloLibroInvestigacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro)
-    #status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
-    #proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_investigacion_proyectos', blank=True)
-    usuario = models.ForeignKey(User, related_name='capitulo_libro_investigacion_usuario')
-    #tags = models.ManyToManyField(Tag, related_name='capitulo_libro_investigacion_tags', blank=True)
+    usuarios = SortedManyToManyField(User, related_name='capitulo_libro_investigacion_autores', verbose_name='Autores')
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)
@@ -141,7 +137,6 @@ class CapituloLibroInvestigacion(models.Model):
 
 class MapaArbitrado(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     escala = models.CharField(max_length=30)
     usuarios = SortedManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores')

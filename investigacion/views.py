@@ -71,7 +71,12 @@ class CapituloLibroInvestigacionJSON(View):
 
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = CapituloLibroInvestigacion.objects.filter(usuario__id__exact=usuarioid)
+
+            if self.otros:
+                items = CapituloLibroInvestigacion.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                items = CapituloLibroInvestigacion.objects.filter(usuarios__id__exact=usuarioid)
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro', 'pagina_inicio', 'pagina_fin'))
             return HttpResponse(json, content_type='application/json')
@@ -79,14 +84,14 @@ class CapituloLibroInvestigacionJSON(View):
             raise Http404
 
 
-class CapituloLibroInvestigacionLista(ObjectCreateMixin, View):
+class CapituloLibroInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
     template_name = 'capitulo_libro.html'
 
 
-class CapituloLibroInvestigacionDetalle(ObjectUpdateMixin, View):
+class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = CapituloLibroInvestigacionForm
     model = CapituloLibroInvestigacion
     aux = CapituloLibroInvestigacionContext.contexto
