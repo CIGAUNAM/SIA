@@ -763,6 +763,7 @@ class Libro(models.Model):
     isbn = models.SlugField(max_length=30, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
     #tags = models.ManyToManyField(Tag, related_name='libro_tags', blank=True)
+    es_libro_completo = models.BooleanField(default=False)
 
     def __str__(self):
         return "{} : {} : {}".format(self.nombre, self.editorial, self.isbn)
