@@ -21,10 +21,21 @@ from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, O
 from formacion_academica.models import CursoEspecializacion, Licenciatura, Maestria, Doctorado, PostDoctorado
 from experiencia_laboral.models import *
 
+from investigacion.models import ArticuloCientifico
+
 import uuid
 
-print("Borrando Libros")
+print("Borrando articulos")
+ArticuloCientifico.objects.all().delete()
+
+print("Borrando libros")
 Libro.objects.all().delete()
+
+print("Borrando libros")
+Revista.objects.all().delete()
+
+print("Borrando editoriales")
+Editorial.objects.all().delete()
 
 print("Borrando Eventos")
 Evento.objects.all().delete()
@@ -4226,12 +4237,5 @@ e.save()
 print("agregado evento", e)
 
 
-l = Libro(nombre='Otro', )
 
-"""
-SELECT titulo, revista, volumen, numeros, anio, issn, becarios AS status, electronica, autores_iimas, indices, pagina_i, pagina_f, doi,  
-
-
-
-"""
 
