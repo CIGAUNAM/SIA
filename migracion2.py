@@ -24,14 +24,7 @@ from experiencia_laboral.models import *
 from investigacion.models import ArticuloCientifico
 
 
-print("Borrando libros")
-Libro.objects.all().delete()
 
-print("Borrando articulos")
-ArticuloCientifico.objects.all().delete()
-
-print("Borrando editoriales")
-Editorial.objects.all().delete()
 
 
 
@@ -278,7 +271,6 @@ articulos = (
     ['La comunicación científica en contextos de complejidad: el acceso abierto', 'LANIA Newsletter', '17', '57/58', 2016, '', 'PUBLICADO', 'Si', 'saray.bucio^hebe.vessuri', '', 0, 0, ''],
     ['La evolución del campo de los estudios sociales de la ciencia y la tecnología en Venezuela: notas de memoria', 'Espacio Abierto', '25', '4', 2016, '1315-0006', 'EN_PRENSA', 'No', 'saray.bucio^hebe.vessuri', 'Web of Science: SCI/SSCI/SCI-EX; SciELO', 0, 0, ''],
     ['The science and policy of REDD+ in a sink: Case of Mexico', 'Environmental Science && Policy', '', '', 2016, '1462-9011', 'ENVIADO', 'No', 'margaret.skutsch^jaime.paneque^adrian.ghilardi^jorge.morfin^josemaria.michel^oswaldo.carrillo', '', 0, 0, ''],
-    ['Urbanscapes of disaster. The sociopolitical and environmental factors underpinning a disaster processes within a vulnerable slum in Mexico', 'City and Community', '', '', 2016, '1540-6040', 'ACEPTADO', 'No', 'yadira.mendez^frida.guiza^keith.mccall', '', 0, 0, ''],
     ['How social capital enables/restricts the livelihoods of poor peri-urban farmers in Mexico', 'Development in Practice', '', '', 2016, '0961-4524', 'ACEPTADO', 'No', 'yadira.mendez^antonio.vieyra', '', 0, 0, ''],
     ['Periurbanization, agricultural livelihoods and ejidatarios´ social capital: Lessons from a periphery municipality in Michoacán, Mexico', 'Procedia Engineering', '', '', 2016, '1877-7058', 'ENVIADO', 'No', 'yadira.mendez^antonio.vieyra^lorena.poncela', 'Scopus', 0, 0, ''],
     ['IVAKY: Índice de la vulnerabilidad del acuífero kárstico yucateco a la contaminación', 'Revista Mexicana de Ingeniería Química', '15', '3', 2016, '2395-8472', 'PUBLICADO', 'No', 'yameli.aguilar^francisco.bautista^manuel.mendoza^oscar.frausto^thomas.j.ihl^o.delgado.carranza', 'Web of Science: SCI/SSCI/SCI-EX', 913, 930, 'http://rmiq.org/iqfvp/Pdfs/Vol.%2015,%20No.%203/IA1/RMIQTemplate.pdf'],
@@ -323,7 +315,6 @@ libros_inv = (
     ['Conocimiento, paisaje, territorio. Procesos de cambio individual y colectivo', 'Comodoro Rivadavia', 'UNPA', 'PUBLICADO', 2015, 1, 400, '978-987-3714-06-1', '', 'hebe.vessuri^gerardo.bocco'],
     ['XIX Reunión Nacional SELPER México. Memorias', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2012, 1, 420, '978-607-02-3172-8', 'http://www.ciga.unam.mx/publicaciones/', 'gabriela.cuevas^jean.mas'],
     ['La regionalización físico-geográfica del estado de Guerrero, México', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 157, '978-607-02-6706-2', 'http://www.ciga.unam.mx/publicaciones/images/abook_file/9786070267062.pdf', 'angel.priego^manuel.bollo^angel.priego^alberto.ortiz'],
-    ['Tres niveles de análisis en la Sierra-Costa Michoacana (Insumos para el ordenamiento ecológico)', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 223, '978-607-02-6530-3', 'http://www.ciga.unam.mx/publicaciones/index.php?option=com_abook&view=book&catid=12%3Acoleccionesciga&id=74%3Atres-niveles-de-analisis-en-la-sierra-costa-michoacana&Itemid=16', 'angel.priego^gerardo.bocco'],
     ['Una propuesta de regionalización físico-geográfica de México', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2015, 1, 59, '978-607-02-6527-3', 'http://www.ciga.unam.mx/publicaciones/images/abook_file/PropuestadelaRFGdeMexico.pdf', 'angel.priego^manuel.bollo^ramon.hernandez^rigel.zaragoza'],
     ['Propuesta para la generación de unidades de paisajes de manera semi-automatizada. Fundamentos y método', 'Ciudad de México, CDMX', 'CIGA-UNAM', 'PUBLICADO', 2010, 1, 104, '978-968-817-923-9', 'http://www2.inecc.gob.mx/publicaciones/descarga.html?cv_pub=633&tipo_file=pdf&filename=633', 'angel.priego^gerardo.bocco^manuel.mendoza'],
     ['La cartografía de sistemas naturales como base geográfica para la planeación territorial. Una revisión de la bibliografía', 'Ciudad de México, CDMX', 'CIGA-UNAM', 'PUBLICADO', 2010, 1, 72, '978-968-817-920-8', 'http://www.ciga.unam.mx/publicaciones/index.php?option=com_abook&view=book&catid=12%3Acoleccionesciga&id=15&Itemid=16', 'angel.priego^gerardo.bocco^manuel.mendoza^ana.burgos'],
@@ -344,14 +335,13 @@ libros_inv = (
     ['Science for Sustainable Development (Agenda 2030', 'Paris', 'UNESCO', 'PUBLICADO', 2016, 1, 16, '', 'http://creative commons/licenses/by-sa/3.0/igo/', 'hebe.vessuri'],
     ['Etonoagroforestería en México', 'Morelia', 'ENES Unidad Morelia', 'PUBLICADO', 2015, 1, 432, '978-607-02-8164-8', '', 'mariana.vallejo^ana.moreno^alejandro.casas^victor.toledo'],
     ['Standardized Hierarchical, Vegetation, Classification, Mexican and Global Patterns', 'Ciudad de México, CDMX', 'Springer', 'PUBLICADO', 2016, 1, 143, '978-3-319-41221-4', 'https://scholar.google.es/scholar?q=Standardized+Hierarchical+Vegetation+Classification+Mexican+and+Global+Patterns&&&&btnG=&&&&hl=es&&&&as_sdt=0%2C5&&&&as_vis=1', 'alejandro.velazquez^consuelo.medina^elvira.duran^alfredo.amador'],
-    ['La memoria de los nombres : la toponimia en la conformación histórica del territorio. De Mesoamerica a México ', 'Morelia', 'CIGA-UNAM', 'EN_PRENSA', 2015, 1, 475, '', '', 'karine.lefebvre^carlos.paredes^'],
+    ['La memoria de los nombres: la toponimia en la conformación histórica del territorio. De Mesoamerica a México ', 'Morelia', 'CIGA-UNAM', 'EN_PRENSA', 2015, 1, 475, '', '', 'karine.lefebvre^carlos.paredes'],
     ['The global social science world  under and beyond Western universalism', 'Morelia', 'Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'PUBLICADO', 2016, 1, 278, '978-3-8382-0893-0', '', 'hebe.vessuri^michael.kuhn^hebe.vessuri^kwang.yeong^huri.islamoglu^doris.weidermann^mauricio.nieto^reinerg.grundmann^sujata.patel^igor.yegorov^pal.tamas^kumaran.rajagopal^kazumi.okamoto'],
     ['Some Contributions to Alternative Concepts of Knowledge', 'Morelia', 'Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'PUBLICADO', 2016, 1, 272, '978-3-8382-0894-7', '', 'hebe.vessuri^michael.kuhn^juan.vazquez^pablo.reyna^leon.nkolo^christiane.hartnack^roger.magazine^claudia.magallanes^leandro.rodriguez^ivan.costa^michel.christie^kumaran.rajagopal^quodratullah.qorbani'],
     ['Conocimiento, Paisaje y Territorio. Procesos de cambio individual y colectivo', 'Buenos Aires', 'UNPA', 'PUBLICADO', 2016, 1, 400, '978-987-3714-0', '', 'dalma.albarracin^gabriela.alvarez^fabiana.bekerman^gerardo.bocco^ana.cinti^leticia.curti^cristina.flores^rosana.guber^sergio.kaminker^carolina.laztra^javier.serrano^marcos.sourrouille^damian.taire^pedro.urquijo^hebe.vessuri'],
     ['La Otra, El Mismo. Mujeres en la ciencia y la tecnología en Venezuela', 'Caracas', 'Fundación Escuela Editorial El perro y la rana', 'EN_PRENSA', 2016, 1, 1, '', '', 'hebe.vessuri^victoria.canino^rosa.bolivar^ana.castellanos^alejandra.aray'],
     ['Procesos Urbanos, Pobreza y Ambiente. Implicaciones en Ciudades Medias y Megaciudades', 'Morelia', 'CIGA-UNAM', 'PUBLICADO', 2016, 1, 1, '978-607-02-8100-6 ', '', 'yadira.mendez^antonio.vieyra^alejandra.larrazabal'],
     ['Procesos periurbanos: Desequilibrios territoriales, desigualdades sociales, ambientales y pobreza', 'Morelia', 'CIGA-UNAM', 'EN_PRENSA', 2016, 1, 1, '', '', 'yadira.mendez^antonio.vieyra^alejandra.larrazabal'],
-    ['Geopedology. An integration of Geomorphology and Pedology for Soil and Landscape Studies', 'Nueva York', 'Springer', 'PUBLICADO', 2015, 1, 556, '978-3-319-19158-4', 'http://www.doi.org/10.1007/978-3-319-19159-1', 'gerardo.bocco^alfred.zinck^graciela.metternicht^hector.delvalle'],
 )
 
 for i in libros_inv:
@@ -371,7 +361,7 @@ for i in libros_inv:
               numero_paginas=i[6],
               isbn=i[7],
               url=i[8],
-              libro_completo=True
+              es_libro_completo=True
               )
     l.save()
     print(l)
@@ -382,8 +372,8 @@ for i in libros_inv:
 
 
 
-libros = (
-    ['Geopedology. An integration of Geomorphology and Pedology for Soil and Landscape Studies', 'Nueva York', 'Springer', 'PUBLICADO', 2015, 1, 556, '978-3-319-19158-4', 'http://www.doi.org/10.1007/978-3-319-19159-1', 'gerardo.bocco^alfred.zinck^graciela.metternicht^hector.delvalle'],
+libros_cap = (
+    ['Geopedology. An integration of Geomorphology and Pedology for Soil and Landscape Studies', 'Nueva York', 'Springer', 'PUBLICADO', 2015, 1, 556, '978-3-319-19158-4', 'http://www.doi.org/10.1007/978-3-319-19159-1', 'gerardo.bocco^alfred.zinck^hector.delvalle'],
     ['La biodiversidad en Michoacán. Estudio de Estado', 'Morelia', 'CONABIO', 'OTRO', 2005, 1, 1, '970-900-028-4', 'https://doi.org/10.5962/bhl.title.118635', 'oscar.leal^laura.villaseñor^manuel.mendoza^francisco.bautista'],
     ['Informality: Re-Viewing Latin American Cities', 'Cambridge', 'Department of Architecture, Cambridge', 'OTRO', 2011, 1, 4, '', 'http://www.crassh.cam.ac.uk/events/1324/', 'felipe.hernandez^brian.napoletano^antonio.vieyra^jaime.paneque'],
     ['70 años del Instituto de Geografía: Historia, actualidad y perspectiva', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-7321-6', 'http://www.publicaciones.igg.unam.mx/index.php/ig/catalog/book/75', 'admin'],
@@ -392,21 +382,21 @@ libros = (
     ['Atzala de la Asunción, Guerrero Agua entre rocas', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '', '', 'admin'],
     ['Biodiversidad de la Sierra Madre del Sur', 'Ciudad de México, CDMX', 'UNAM', 'OTRO', 2000, 1, 1, '978-607-027906-5', '', 'isolda.lunavega^alejandro.velazquez'],
     ['Biogeografía de Sistemas Litorales. Dinámica y Conservación', 'Sevilla', 'Asociación de Geógrafos Españoles', 'OTRO', 2014, 1, 408, ' 978-84-617-1068-3',  'http://digibuo.uniovi.es/dspace/bitstream/10651/30573/1/Din%C3%A1mica_Bosques_Aramo.pdf', 'rafael.camaraartigas^angel.priego'],
-    ['Ciencias Ambientales: Temáticas para el Desarrollo', 'Puebla', 'BUAP', 'OTRO', 2004, 1, 1, '978-968-863-987-0', '', 'jesus.ruizcareaga^angel.priego'],
+    ['Ciencias Ambientales: Temáticas para el Desarrollo', 'Puebla de Zaragoza', 'BUAP', 'OTRO', 2004, 1, 1, '978-968-863-987-0', '', 'jesus.ruizcareaga^angel.priego'],
     ['Conflictos Ambientales en Latinoamérica', 'Buenos Aires', 'UNGS', 'OTRO', 2017, 1, 1, '', '', 'jaime.paneque^maria.ramirez^claudio.garibay^pedro.urquijo'],
     ['Conocimiento, ambiente y poder. Perspectivas desde la ecología política', 'San Luis Potosí', 'El Colegio de San Luis', 'OTRO', 2017, 1, 1, '', '', 'claudio.garibay'],
-    ['Conocimiento, paisaje, territorio. Procesos de cambio individual y colectivo', 'Río Gallegos', 'UNPA', 'OTRO', 2015, 1, 1, '978-987-3714-06-1', 'http://www.ub.es/geocrit/b3w-1012.htm', 'gerardo.bocco^pedro.urquijo'],
+    #['Conocimiento, paisaje, territorio. Procesos de cambio individual y colectivo', 'Río Gallegos', 'UNPA', 'OTRO', 2015, 1, 1, '978-987-3714-06-1', 'http://www.ub.es/geocrit/b3w-1012.htm', 'gerardo.bocco^pedro.urquijo'],
     ['Continuidades y rupturas: una historia tensa de la ciencia en México', 'Morelia', 'UAEH', 'OTRO', 2010, 1, 1, '978-607-424-196-7', '', 'pedro.urquijo'],
     ['Contributions to Alternative Concepts of Knowledge', 'Stuttgart', 'Ibidem Sociedad Editorial De Formacion Juridica Y Economica S. L.', 'OTRO', 2016, 1, 1, '978-3-8382-0894-7', '', 'michael.kuhn^hebe.vessuri'],
     ['Convergencias teóricas y empíricas en el espacio-tiempo', 'Morelia', 'CIGA-UNAM', 'OTRO', 2010, 1, 1, '', '', 'sara.barrasa'],
-    ['Corografía y escala local. Enfoques desde la geografía humana', 'Corografía y escala local. Enfoques desde la geografía humana', 'CIGA-UNAM', 'OTRO', 2012, 1, 1, '978-607-02-3152-0', 'http://www.ciga.unam.mx/publicaciones', 'pedro.urquijo^claudio.garibay^gerardo.bocco'],
+    ['Corografía y escala local. Enfoques desde la geografía humana', 'Morelia', 'CIGA-UNAM', 'OTRO', 2012, 1, 1, '978-607-02-3152-0', 'http://www.ciga.unam.mx/publicaciones', 'pedro.urquijo^claudio.garibay^gerardo.bocco'],
     ['Cosmos. Enciclopedia de las ciencias y la tecnología en México. Geografía', 'Ciudad de México, CDMX', 'UAM', 'OTRO', 2011, 1, 1, '978-607-477-137-4', '', 'pedro.urquijo^gerardo.bocco'],
-    ['Cubierta y Uso del Territorio. Conceptos, enfoques y métodos de análisis', 'Morelia', 'CIGA-UNAM', 'OTRO', 2010, 1, 1, '', '', 'maria.ramirez^brian.napoletano^frida.guiza^'],
+    ['Cubierta y Uso del Territorio. Conceptos, enfoques y métodos de análisis', 'Morelia', 'CIGA-UNAM', 'OTRO', 2010, 1, 1, '', '', 'maria.ramirez^brian.napoletano^frida.guiza'],
     ['Cultural Dynamics and Production Activities in Ancient Western Mexico', 'Oxford', 'BAR', 'OTRO', 2016, 1, 1, '', '', 'karine.lefebvre^jean.mas'],
     ['Desarrollo desde lo local y dinámicas territoriales', 'Ciudad de México, CDMX', 'Editorial Fontamara', 'OTRO', 2016, 1, 1, '978-607-736-265-4', '', 'ana.burgos^gerardo.bocco'],
     ['Diálogos en la diversidad. Investigaciones postdoctorales 2015', 'Morelia', 'UMSNH', 'OTRO', 2015, 1, 1, '', '', 'mario.figueroa^mauricio.perea^encarnacion.bobadilla^alberto.orozco^jesus.luna'],
     ['Diálogos sobre la relación entre arqueología, antropología, e historia', 'Zamora', 'El Colegio de Michoacán', 'OTRO', 2016, 1, 1, '', '', 'sara.barrasa'],
-    ['Dimensiones Sociales en el Manejo de Cuencas', 'Morelia', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-6883-0', '', 'ana.burgos^gerardo.bocco'],
+    #['Dimensiones Sociales en el Manejo de Cuencas', 'Morelia', 'UNAM', 'OTRO', 2015, 1, 1, '978-607-02-6883-0', '', 'ana.burgos^gerardo.bocco'],
     ['Ecosistema de Manglar en el Archipiélago Cubano', 'La Habana', 'Editorial Academia', 'OTRO', 2006, 1, 1, '959- 270-090-7', '', 'angel.priego'],
     ['El análisis geoespacial en los estudios urbanos', 'Morelia', 'SELPER', 'OTRO', 2015, 1, 1, '', '', 'frida.guiza^keith.mccall^jean.mas'],
     ['El ecosistema de manglar en América Latina y la cuenca del Caribe: Su manejo y conservación', 'Nueva York', 'Rossentiel School of Marine and Atmospheric Science', 'OTRO', 1994, 1, 1, '0-9642315-0-6', '', 'angel.priego'],
@@ -417,13 +407,46 @@ libros = (
     ['Entre Pasados y Presentes II. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', 'Vázquez Mazzini Editores', 'OTRO', 2009, 1, 1, '978-987-23545-1-0', '', 'alina.alvarez^jp.carbonelli^v.palamarczuk'],
     ['Entre Pasados y Presentes III. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', 'Editorial Mnemosyne', 'OTRO', 2012, 1, 1, '978-987-1829-21-7', '', 'alina.alvarez'],
     ['Environmental Management of River Basin Ecosystems', 'Estocolmo', 'Springer', 'OTRO', 2015, 1, 1, '978-3-319-13425-3', '', 'yan.gao'],
-    ['Estudio costero del suroccidente de México', 'Morelia', 'UNAM', 'OTRO', 2013, 1, 1, '978-607-02-4149-9', '', 'pedro.urquijo'],
+    #['Estudio costero del suroccidente de México', 'Morelia', 'UNAM', 'OTRO', 2013, 1, 1, '978-607-02-4149-9', '', 'pedro.urquijo'],
     ['Estudio de los grupos insulares y zonas litorales del archipiélago cubano con fines turísticos', 'La Habana', 'Editorial Científico-Técnica', 'OTRO', 1990, 1, 1, '', '', 'angel.priego'],
-    ['Estudio Nacional sobre la Diversidad Biológica en la República de Cuba', 'Madriod', 'Editorial CESYTA', 'OTRO', 1998, 1, 1, '', '', 'angel.priego'],
+    ['Estudio Nacional sobre la Diversidad Biológica en la República de Cuba', 'Madrid', 'Editorial CESYTA', 'OTRO', 1998, 1, 1, '', '', 'angel.priego'],
 )
 
 
-('Centro Nacional de Biodiversidad del Instituto de Ecología y Sistemática', 'La Habana', 'La Habana', 'Cuba'),
+for i in libros_cap:
+    try:
+        te = Editorial.objects.get(nombre=i[2])
+        te = None
+        pass
+    except:
+        e = Editorial(nombre=i[2], pais=Pais.objects.get(nombre=Ciudad.objects.get(nombre=i[1]).estado.pais),
+                      estado=Estado.objects.get(nombre=Ciudad.objects.get(nombre=i[1]).estado),
+                      ciudad=Ciudad.objects.get(nombre=i[1]))
+        e.save()
+        print(e)
+
+for i in libros_cap:
+    l = Libro(nombre=i[0], tipo='INVESTIGACION',
+              pais=Pais.objects.get(nombre=Ciudad.objects.get(nombre=i[1]).estado.pais),
+              estado=Estado.objects.get(nombre=Ciudad.objects.get(nombre=i[1]).estado),
+              ciudad=Ciudad.objects.get(nombre=i[1]),
+              editorial=Editorial.objects.get(nombre=Editorial.objects.get(nombre=i[2])),
+              status=i[3],
+              fecha=datetime(i[4], 1, 1),
+              numero_edicion=i[5],
+              numero_paginas=i[6],
+              isbn=i[7],
+              url=i[8],
+              es_libro_completo=False)
+    l.save()
+
+    print(l)
+
+    for j in i[9].split('^'):
+        print("       ", j)
+        l.usuarios.add(User.objects.get(username=j))
+
+
 
 
 
