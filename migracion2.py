@@ -408,7 +408,6 @@ libros_cap = (
     ['Entre Pasados y Presentes III. Estudios contemporáneos en Ciencias Antropológicas', 'Buenos Aires', 'Editorial Mnemosyne', 'OTRO', 2012, 1, 1, '978-987-1829-21-7', '', 'alina.alvarez'],
     ['Environmental Management of River Basin Ecosystems', 'Estocolmo', 'Springer', 'OTRO', 2015, 1, 1, '978-3-319-13425-3', '', 'yan.gao'],
     ['Estudio de los grupos insulares y zonas litorales del archipiélago cubano con fines turísticos', 'La Habana', 'Editorial Científico-Técnica', 'OTRO', 1990, 1, 1, '', '', 'angel.priego'],
-    ['Estudio Nacional sobre la Diversidad Biológica en la República de Cuba', 'Madrid', 'Editorial CESYTA', 'OTRO', 1998, 1, 1, '', '', 'angel.priego'],
 )
 
 

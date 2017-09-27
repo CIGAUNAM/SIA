@@ -76,8 +76,21 @@ class Dashboard(View):
                     'cursos_especializacion__horas__sum__min']  # minimo
                 print(hm)
                 obj['curso_especializacion'][str(i.year) + '__horas_min'] = hm
-                print()
 
+        cursos = [
+            ['Año', 'Personas', 'Mis horas', 'Promedio Horas', 'Max horas', 'Min horas'],
+            [2007,   1,           ],
+            [2008,   3],
+            [2209,   2],
+            [2010,   2],
+            [2011,   4],
+            [2012,   3],
+            [2013,   3],
+            [2014,   2],
+            [2015,   8],
+            [2016,   17],
+
+        ]
         return render(request, self.template_name,
                       {'aux': self.aux, 'obj': obj, 'active': 'detalle'}, )
 
