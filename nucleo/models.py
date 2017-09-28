@@ -174,6 +174,7 @@ class User(AbstractUser):
     pride = models.CharField(max_length=2, choices=(('-', '-'), ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')), default='-')
     ingreso_unam = models.DateField(null=True, blank=True)
     ingreso_entidad = models.DateField(null=True, blank=True)
+    egreso_entidad = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
 
     def __str__(self):
