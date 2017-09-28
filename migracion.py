@@ -4239,3 +4239,41 @@ print("agregado evento", e)
 
 
 
+"""
+
+
+'maria.ramirez', (2007, 10, 1),  
+'rosaura.paez',  (2007, 11, 1),  
+'yadira.mendez', (2011, 4, 1),
+'maria.carmona', (2007, 8, 1),
+'hugo.zavala', (2007, 3, 1),
+'luis.morales', (2007, 1, 1),
+'gabriela.cuevas', (2011, 04, 1),
+'manuel.mendoza', (2007, 4, 1),
+'gerardo.bocco', (2007, 1, 1),
+'lourdes.gonzalez', (2014, 8, 1),
+'lorena.poncela', (2010, 1, 1),
+'jean.mas', (2001, 7, 1),
+'quetzalcoatl.orozco', (2015, 3, 1),
+'alejandra.larrazabal', (2007, 8, 1),
+'frida.guiza', (2014, 10, 1),
+'berenice.solis', (2016, 1, 1),
+'keith.mccall', (2008, 10, 1),
+'pedro.urquijo', (2007, 8, 1),
+'sara.barrasa', (2014, 11, 1),
+'saray.bucio', (2015, 9, 1),
+'mariana.vallejo', (2015, 3, 1),
+'yan.gao', (2013, 4, 1),
+'adrian.ghilardi', (2011, 4, 1),
+'hilda.rivas', (2007, 9, 1),
+'claudio.garibay', (2007, 3, 1),
+'raquel.gonzalez', (2010, 3, 1),
+'antonio.vieyra', (2007, 1, 1),
+'fabiola.velazquez', (2016, 1, 1),
+'karine.lefebvre', (2014, 9, 1),
+'mario.figueroa', (2016, 1, 1),
+'', (20, , 1),
+'', (20, , 1),
+
+
+"""
