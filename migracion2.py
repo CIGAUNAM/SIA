@@ -444,11 +444,3 @@ for i in libros_cap:
         print("       ", j)
         l.usuarios.add(User.objects.get(username=j))
 
-
-
-
-
-
-
-
-

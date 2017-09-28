@@ -4,6 +4,9 @@
     <p>Bienvenido {{ request.user.first_name }} {{ request.user.last_name }} ({{ request.user.username }})</p>
 
     <p>{{ obj }}</p>
+    <p>Horas de cursos de especialización</p>
     <p>{{ chart_cursos_especializacion.as_html }}</p>
+    <p>Articulos cientificos</p>
+    <p>{{ chart_articulos_investigacion.as_html }}</p>
 {% endblock %}
 
