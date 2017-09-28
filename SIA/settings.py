@@ -92,6 +92,7 @@ INSTALLED_APPS = [
     'sortedm2m',
     'table',
     'django_select2',
+    'graphos',
 
     #'django_adminlte_theme',
     #'django_stats2',
