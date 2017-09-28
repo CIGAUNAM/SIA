@@ -14,6 +14,11 @@ from django.db.models import Max, Min, Count, Sum
 from sia_stats.models import SIAYearModelCounter
 
 
+from graphos.sources.simple import SimpleDataSource
+#from graphos.renderers.morris import LineChart, AreaChart
+from graphos.renderers.highcharts import LineChart
+
+
 # Create your views here.
 
 
@@ -34,15 +39,19 @@ class Dashboard(View):
         years_curso_especializacion = SIAYearModelCounter.objects.filter(model='CursoEspecializacion')
 
         obj = {}
+        context = {}
 
         if request.user.is_authenticated:
-            years_curso_especializacion = SIAYearModelCounter.objects.filter(model='CursoEspecializacion')
-            years_curso_especializacion = years_curso_especializacion[years_curso_especializacion.count() - 11:]
+            #years_curso_especializacion = SIAYearModelCounter.objects.filter(model='CursoEspecializacion')
+            #years_curso_especializacion = years_curso_especializacion[years_curso_especializacion.count() - 11:]
 
-            obj['curso_especializacion'] = {}
+            years_cursos_especializacion_dates = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
+            years_cursos_especializacion = []
 
-            years_cursos_especializacion = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
+            for i in reversed(years_cursos_especializacion_dates[:10]):
+                years_cursos_especializacion.append(i.year)
 
+            """
             for i in reversed(years_cursos_especializacion[:10]):
                 c = CursoEspecializacion.objects.filter(fecha_inicio__year=i.year).aggregate(Sum('horas'))['horas__sum']
                 print(i.year)  # Año
@@ -58,10 +67,9 @@ class Dashboard(View):
                     h = None
                 else:
                     obj['curso_especializacion'][str(i.year) + '__horas_prom'] = 0
-                    h = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year,
-                                            cursos_especializacion__usuario=request.user).aggregate(
-                        Sum('cursos_especializacion__horas'))[
-                        'cursos_especializacion__horas__sum']  # horas del usuario en el año actual
+                h = User.objects.filter(cursos_especializacion__fecha_inicio__year=i.year,
+                                        cursos_especializacion__usuario=request.user).aggregate(
+                    Sum('cursos_especializacion__horas'))['cursos_especializacion__horas__sum']  # horas del usuario en el año actual
                 if not h:
                     h = 0
                 print(h)
@@ -76,23 +84,50 @@ class Dashboard(View):
                     'cursos_especializacion__horas__sum__min']  # minimo
                 print(hm)
                 obj['curso_especializacion'][str(i.year) + '__horas_min'] = hm
+            """
 
-        cursos = [
-            ['Año', 'Personas', 'Mis horas', 'Promedio Horas', 'Max horas', 'Min horas'],
-            [2007,   1,           ],
-            [2008,   3],
-            [2209,   2],
-            [2010,   2],
-            [2011,   4],
-            [2012,   3],
-            [2013,   3],
-            [2014,   2],
-            [2015,   8],
-            [2016,   17],
+            cursos_data = [['Año', 'Personas', 'Total horas', 'Mis horas', 'Promedio Horas', 'Max horas', 'Min horas']]
+            print(years_cursos_especializacion)
 
-        ]
-        return render(request, self.template_name,
-                      {'aux': self.aux, 'obj': obj, 'active': 'detalle'}, )
+            for i in range(10):
+                year = years_cursos_especializacion[i]
+                cursos_data.append([years_cursos_especializacion[i]])
+                u = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                    Count('pk', distinct=True)).count()
+                cursos_data[i + 1].append(u)
+                th = CursoEspecializacion.objects.filter(fecha_inicio__year=year).aggregate(Sum('horas'))['horas__sum']
+                cursos_data[i + 1].append(th)
+                hu = User.objects.filter(cursos_especializacion__fecha_inicio__year=year,
+                                         cursos_especializacion__usuario=request.user).aggregate(
+                    Sum('cursos_especializacion__horas'))['cursos_especializacion__horas__sum']
+                if not hu:
+                    hu = 0
+                cursos_data[i + 1].append(hu)
+                cursos_data[i + 1].append(round(th / u, 2))
+                Mh = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                    Sum('cursos_especializacion__horas')).aggregate(Max('cursos_especializacion__horas__sum'))[
+                    'cursos_especializacion__horas__sum__max']
+                cursos_data[i + 1].append(Mh)
+                mh = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                    Sum('cursos_especializacion__horas')).aggregate(Min('cursos_especializacion__horas__sum'))[
+                    'cursos_especializacion__horas__sum__min']
+                cursos_data[i + 1].append(mh)
+
+            # obj['curso_especializacion'] = cursos_data
+
+
+            data_source = SimpleDataSource(data=cursos_data)
+
+
+
+            chart_cursos_especializacion = LineChart(data_source)
+
+
+            context['chart_cursos_especializacion'] = chart_cursos_especializacion
+
+
+
+        return render(request, self.template_name, context)
 
 
 
