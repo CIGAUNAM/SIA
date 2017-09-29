@@ -106,10 +106,18 @@ class Dashboard(View):
             for i in range(num_years):
                 year = years_cursos_especializacion[i]
                 cursos_data.append([years_cursos_especializacion[i]])
-                u = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
-                    Count('pk', distinct=True)).count()
+                # u = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                # Count('pk', distinct=True)).count()
+                u = User.objects.filter(Q(cursos_especializacion__fecha_inicio__year=year) & (
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos tomados en el año
                 #cursos_data[i + 1].append(u)
-                th = CursoEspecializacion.objects.filter(fecha_inicio__year=year).aggregate(Sum('horas'))['horas__sum']
+                #th = CursoEspecializacion.objects.filter(fecha_inicio__year=year).aggregate(Sum('horas'))['horas__sum']
+                th = CursoEspecializacion.objects.filter(fecha_inicio__year=year).filter((
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                    Sum('horas'))['horas__sum']
+
                 #cursos_data[i + 1].append(th)
                 hu = User.objects.filter(cursos_especializacion__fecha_inicio__year=year,
                                          cursos_especializacion__usuario=request.user).aggregate(
