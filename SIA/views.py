@@ -10,7 +10,8 @@ from investigacion.models import ArticuloCientifico
 
 from nucleo.models import User
 from datetime import datetime
-from django.db.models import Max, Min, Count, Sum
+from django.db.models import Q, Max, Min, Count, Sum
+
 
 from sia_stats.models import SIAYearModelCounter
 
@@ -47,9 +48,16 @@ class Dashboard(View):
             #years_curso_especializacion = years_curso_especializacion[years_curso_especializacion.count() - 11:]
 
             num_years = 10
-            last_ten_years = []
+            last_x_years = []
             for i in range(datetime.now().year - num_years + 1, datetime.now().year + 1):
-                last_ten_years.append(i)
+                last_x_years.append(i)
+
+            active_users_per_last_x_year = []
+            for i in range(datetime.now().year - num_years + 1, datetime.now().year + 1):
+                u = User.objects.filter((Q(ingreso_entidad__year__lte=last_x_years[i]) & Q(egreso_entidad__year__gt=last_x_years[i])) |
+                                        (Q(ingreso_entidad__year__lte=last_x_years[i]) & Q(egreso_entidad=None)))
+                active_users_per_last_x_year.append(u.count())
+
 
             years_cursos_especializacion_dates = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
             years_cursos_especializacion = []
@@ -127,7 +135,7 @@ class Dashboard(View):
 
             articulos_investigacion_data = [['Año', 'Total artículos', 'Mis artículos', 'Promedio artículos', 'Max artículos', 'Min artículos']]
             for i in range(num_years):
-                year = last_ten_years[i]
+                year = last_x_years[i]
                 articulos_investigacion_data.append([str(year)])
                 u = User.objects.filter(articulo_cientifico_autores__fecha__year=year).annotate(
                     Count('pk', distinct=True)).count() # usuarios con articulo en el año
