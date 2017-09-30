@@ -85,12 +85,12 @@ class Dashboard(View):
                 if     total_course_hours_year_sum == None:
                         total_course_hours_year_sum = 0
 
-                request_user_course_hours_year_sum = User.objects.filter(cursos_especializacion__fecha_inicio__year=year,
+                request_user_articulo_cientifico_year_sum = User.objects.filter(cursos_especializacion__fecha_inicio__year=year,
                     cursos_especializacion__usuario=request.user).aggregate(
                     Sum('cursos_especializacion__horas'))['cursos_especializacion__horas__sum']
-                if not request_user_course_hours_year_sum:
-                    request_user_course_hours_year_sum = 0
-                cursos_data[i + 1].append(request_user_course_hours_year_sum)
+                if not request_user_articulo_cientifico_year_sum:
+                    request_user_articulo_cientifico_year_sum = 0
+                cursos_data[i + 1].append(request_user_articulo_cientifico_year_sum)
 
                 if users_with_articles_year_count == None:
                     users_with_articles_year_count = 0
@@ -99,14 +99,14 @@ class Dashboard(View):
                 else:
                     cursos_data[i + 1].append(round(0, 2))
 
-                max_hours_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                max_articulo_cientifico_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(Max('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__max']
-                if max_hours_year_user == None:
-                    max_hours_year_user = 0
-                cursos_data[i + 1].append(max_hours_year_user)
+                if max_articulo_cientifico_year_user == None:
+                    max_articulo_cientifico_year_user = 0
+                cursos_data[i + 1].append(max_articulo_cientifico_year_user)
 
                 min_hours_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
@@ -122,37 +122,59 @@ class Dashboard(View):
             context['chart_cursos_especializacion'] = chart_cursos_especializacion
 
 
-            articulos_investigacion_data = [['Año', 'Total artículos', 'Mis artículos', 'Promedio artículos', 'Max artículos', 'Min artículos']]
+            articulos_investigacion_publicados_data = [['Año', 'Mis artículos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
-                articulos_investigacion_data.append([str(year)])
+                articulos_investigacion_publicados_data.append([str(year)])
 
-                u = ArticuloCientifico.objects.filter(fecha__year=year).count()
-                articulos_investigacion_data[i + 1].append(u)
+                total_articulos_cientificos_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                                                                                         status='PUBLICADO').count()
+
+                request_user_articulo_cientifico_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                                                                                              status='PUBLICADO',
+                                                                                              usuarios=request.user).count()
+                if not request_user_articulo_cientifico_year_sum:
+                    request_user_articulo_cientifico_year_sum = 0
+                articulos_investigacion_publicados_data[i + 1].append(request_user_articulo_cientifico_year_sum)
 
                 users_with_articles_year_count = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-
                 if users_with_articles_year_count == None:
                     users_with_articles_year_count = 0
 
-                ta = ArticuloCientifico.objects.filter(fecha__year=year).count()
-                articulos_investigacion_data[i + 1].append(
-                    users_with_articles_year_count)  # numero de articulos en el año de todos los usuarios
-                ma = ArticuloCientifico.objects.filter(fecha__year=year, usuarios=request.user).count()
-                articulos_investigacion_data[i + 1].append(ma)  # numero de articulos del usuario
-                articulos_investigacion_data[i + 1].append(round(0, 2))
+                if users_with_articles_year_count > 0:
+                    articulos_investigacion_publicados_data[i + 1].append(
+                        round(total_articulos_cientificos_year_sum / users_with_articles_year_count, 2))
+                else:
+                    articulos_investigacion_publicados_data[i + 1].append(0)
 
+                max_articulo_cientifico_year_user = User.objects.filter(
+                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
+                    'articulo_cientifico_autores__count__max']
+                if max_articulo_cientifico_year_user == None:
+                    max_articulo_cientifico_year_user = 0
+                articulos_investigacion_publicados_data[i + 1].append(max_articulo_cientifico_year_user)
 
+                min_articulo_cientifico_year_user = User.objects.filter(
+                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('articulo_cientifico_autores')).aggregate(Min('articulo_cientifico_autores__count'))[
+                    'articulo_cientifico_autores__count__min']
+                if min_articulo_cientifico_year_user == None:
+                    min_articulo_cientifico_year_user = 0
+                articulos_investigacion_publicados_data[i + 1].append(min_articulo_cientifico_year_user)
 
-        print(articulos_investigacion_data)
-        data_source = SimpleDataSource(data=articulos_investigacion_data)
-        chart_articulos_investigacion = LineChart(data_source)
-        context['chart_articulos_investigacion'] = chart_articulos_investigacion
-
+            print(articulos_investigacion_publicados_data)
+            data_source = SimpleDataSource(data=articulos_investigacion_publicados_data)
+            chart_articulos_investigacion_publicados = LineChart(data_source)
+            context['chart_articulos_investigacion_publicados'] = chart_articulos_investigacion_publicados
 
         return render(request, self.template_name, context)
 
