@@ -60,56 +60,62 @@ for i in cur:
     l += "'],"
     print(l)
 
+    libros_investigacion_publicado_data = [
+        ['Año', 'Mis Libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+    for i in range(num_years):
+        year = last_x_years[i]
+        libros_investigacion_publicado_data.append([str(year)])
 
+        total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
+                                                                 es_libro_completo=True,
+                                                                 status='PUBLICADO').count()
+        request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
+                                                                         es_libro_completo=True,
+                                                                         status='PUBLICADO',
+                                                                         usuarios=request.user).count()
+        if not request_user_libro_investigacion_year_sum:
+            request_user_libro_investigacion_year_sum = 0
+        libros_investigacion_publicado_data[i + 1].append(request_user_libro_investigacion_year_sum)
 
+        users_with_libros_investigacion_year_count = User.objects.filter(
+            Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+              libro_autores__es_libro_completo=True, libro_autores__status='PUBLICADO') &
+            ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+             (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+            Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+        if users_with_libros_investigacion_year_count == None:
+            users_with_libros_investigacion_year_count = 0
+        if users_with_libros_investigacion_year_count > 0:
+            libros_investigacion_publicado_data[i + 1].append(
+                round(total_libros_cientificos_year_sum / users_with_libros_investigacion_year_count, 2))
+        else:
+            libros_investigacion_publicado_data[i + 1].append(0)
 
-articulos_investigacion_enprensa_data = [['Año', 'Mis artículos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
-for i in range(num_years):
-    year = last_x_years[i]
-    articulos_investigacion_enprensa_data.append([str(year)])
+        max_libro_investigacion_year_user = User.objects.filter(
+            Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+              libro_autores__es_libro_completo=True, libro_autores__status='PUBLICADO') &
+            ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+             (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+            Count('libro_autores')).aggregate(Max('libro_autores__count'))[
+            'libro_autores__count__max']
+        if max_libro_investigacion_year_user == None:
+            max_libro_investigacion_year_user = 0
+        libros_investigacion_publicado_data[i + 1].append(max_libro_investigacion_year_user)
 
-    total_articulos_cientificos_year_sum = ArticuloCientifico.objects.filter(fecha__year=year, status='EN_PRENSA').count()
-    request_user_articulo_cientifico_year_sum = ArticuloCientifico.objects.filter(fecha__year=year, status='EN_PRENSA', usuarios=request.user).count()
-    if not request_user_articulo_cientifico_year_sum:
-        request_user_articulo_cientifico_year_sum = 0
-    articulos_investigacion_enprensa_data[i + 1].append(request_user_articulo_cientifico_year_sum)
+        min_libro_investigacion_year_user = User.objects.filter(
+            Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+              libro_autores__es_libro_completo=True, libro_autores__status='PUBLICADO') &
+            ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+             (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+            Count('libro_autores')).aggregate(Min('libro_autores__count'))[
+            'libro_autores__count__min']
+        if min_libro_investigacion_year_user == None:
+            min_libro_investigacion_year_user = 0
+        libros_investigacion_publicado_data[i + 1].append(min_libro_investigacion_year_user)
 
-    users_with_articles_year_count = User.objects.filter(
-        Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
-        ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-         (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-        Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-    if users_with_articles_year_count == None:
-        users_with_articles_year_count = 0
-    if users_with_articles_year_count > 0:
-        articulos_investigacion_enprensa_data[i + 1].append(
-            round(total_articulos_cientificos_year_sum / users_with_articles_year_count, 2))
-    else:
-        articulos_investigacion_enprensa_data[i + 1].append(0)
-
-    max_articulo_cientifico_year_user = User.objects.filter(
-        Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
-        ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-         (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-        Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
-        'articulo_cientifico_autores__count__max']
-    if max_articulo_cientifico_year_user == None:
-        max_articulo_cientifico_year_user = 0
-    articulos_investigacion_enprensa_data[i + 1].append(max_articulo_cientifico_year_user)
-
-    min_articulo_cientifico_year_user = User.objects.filter(
-        Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
-        ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-         (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-        Count('articulo_cientifico_autores')).aggregate(Min('articulo_cientifico_autores__count'))[
-        'articulo_cientifico_autores__count__min']
-    if min_articulo_cientifico_year_user == None:
-        min_articulo_cientifico_year_user = 0
-    articulos_investigacion_enprensa_data[i + 1].append(min_articulo_cientifico_year_user)
-
-print(articulos_investigacion_enprensa_data)
-data_source = SimpleDataSource(data=articulos_investigacion_enprensa_data)
-chart_articulos_investigacion_enprensa = LineChart(data_source)
-context['chart_articulos_investigacion_enprensa'] = chart_articulos_investigacion_enprensa
+    print(libros_investigacion_publicado_data)
+    data_source = SimpleDataSource(data=libros_investigacion_publicado_data)
+    chart_libros_investigacion_publicado = LineChart(data_source)
+    context['chart_libros_investigacion_publicado'] = chart_libros_investigacion_publicado
 
 
