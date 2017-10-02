@@ -6,7 +6,9 @@ from django.core.urlresolvers import reverse_lazy
 from django.core import serializers
 
 from formacion_academica.models import CursoEspecializacion
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico
+from difusion_cientifica.models import MemoriaInExtenso
+
 
 from nucleo.models import User, Libro
 from datetime import datetime
@@ -687,6 +689,409 @@ class Dashboard(View):
             chart_capitulos_libros_investigacion = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_aceptado'] = chart_capitulos_libros_investigacion
 
+            items_data = [
+                ['Año', 'Mis Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                                                                    status='PUBLICADO').filter(
+                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                                                                           status='PUBLICADO',
+                                                                           usuarios=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(total_items_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('mapa_arbitrado_autores')).aggregate(Max('mapa_arbitrado_autores__count'))[
+                    'mapa_arbitrado_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('mapa_arbitrado_autores')).aggregate(Min('mapa_arbitrado_autores__count'))[
+                    'mapa_arbitrado_autores__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_mapas_arbitrados_publicados = LineChart(data_source)
+            context['chart_mapas_arbitrados_publicados'] = chart_mapas_arbitrados_publicados
+
+            items_data = [
+                ['Año', 'Mis Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                                                                    status='EN_PRENSA').filter(
+                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                                                                           status='EN_PRENSA',
+                                                                           usuarios=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(total_items_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('mapa_arbitrado_autores')).aggregate(Max('mapa_arbitrado_autores__count'))[
+                    'mapa_arbitrado_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('mapa_arbitrado_autores')).aggregate(Min('mapa_arbitrado_autores__count'))[
+                    'mapa_arbitrado_autores__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_mapas_arbitrados_enprensa = LineChart(data_source)
+            context['chart_mapas_arbitrados_enprensa'] = chart_mapas_arbitrados_enprensa
+
+            items_data = [
+                ['Año', 'Mis Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                                                                    status='ACEPTADO').filter(
+                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                                                                           status='ACEPTADO',
+                                                                           usuarios=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(total_items_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('mapa_arbitrado_autores')).aggregate(Max('mapa_arbitrado_autores__count'))[
+                    'mapa_arbitrado_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('mapa_arbitrado_autores')).aggregate(Min('mapa_arbitrado_autores__count'))[
+                    'mapa_arbitrado_autores__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_mapas_arbitrados_aceptados = LineChart(data_source)
+            context['chart_mapas_arbitrados_aceptados'] = chart_mapas_arbitrados_aceptados
+
+            items_data = [
+                ['Año', 'Mis Informes Técnicos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
+                                                                     status='PUBLICADO').filter(
+                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
+                                                                            status='PUBLICADO',
+                                                                            usuarios=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(total_items_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('informe_tecnico_autores')).aggregate(Max('informe_tecnico_autores__count'))[
+                    'informe_tecnico_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='PUBLICADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('informe_tecnico_autores')).aggregate(Min('informe_tecnico_autores__count'))[
+                    'informe_tecnico_autores__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_informes_tecnicos_publicados = LineChart(data_source)
+            context['chart_informes_tecnicos_publicados'] = chart_informes_tecnicos_publicados
+
+            items_data = [
+                ['Año', 'Mis Informes Técnicos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
+                                                                     status='EN_PRENSA').filter(
+                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
+                                                                            status='EN_PRENSA',
+                                                                            usuarios=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='EN_PRENSA') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(total_items_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='EN_PRENSA') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('informe_tecnico_autores')).aggregate(Max('informe_tecnico_autores__count'))[
+                    'informe_tecnico_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='EN_PRENSA') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('informe_tecnico_autores')).aggregate(Min('informe_tecnico_autores__count'))[
+                    'informe_tecnico_autores__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_informes_tecnicos_enprensa = LineChart(data_source)
+            context['chart_informes_tecnicos_enprensa'] = chart_informes_tecnicos_enprensa
+
+            items_data = [
+                ['Año', 'Mis Informes Técnicos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
+                                                                     status='ACEPTADO').filter(
+                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
+                                                                            status='ACEPTADO',
+                                                                            usuarios=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='ACEPTADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(total_items_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='ACEPTADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('informe_tecnico_autores')).aggregate(Max('informe_tecnico_autores__count'))[
+                    'informe_tecnico_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(informe_tecnico_autores__fecha__year=year, informe_tecnico_autores__status='ACEPTADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('informe_tecnico_autores')).aggregate(Min('informe_tecnico_autores__count'))[
+                    'informe_tecnico_autores__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_informes_tecnicos_aceptados = LineChart(data_source)
+            context['chart_informes_tecnicos_aceptados'] = chart_informes_tecnicos_aceptados
+
+            items_data = [
+                ['Año', 'Mis Proyectos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = Proyecto.objects.filter(tipo='INVESTIGACION').filter(
+                    (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+                    | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).filter(
+                    (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
+                    | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
+
+                request_user_items_year_sum = Proyecto.objects.filter(tipo='INVESTIGACION',
+                                                                      usuarios=request.user).filter(
+                    (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+                    | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
+                    (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+                    | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).filter(
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(total_items_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
+                    (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+                    | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))
+                ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                          (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('proyecto_responsables')).aggregate(Max('proyecto_responsables__count'))[
+                    'proyecto_responsables__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(max_items_year_user)
+
+                min_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
+                    (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+                    | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))
+                ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                          (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('proyecto_responsables')).aggregate(Min('proyecto_responsables__count'))[
+                    'proyecto_responsables__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_proyectos_investigacion = LineChart(data_source)
+            context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
 
 
 

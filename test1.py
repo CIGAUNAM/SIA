@@ -1,7 +1,6 @@
 import os
 import django
 
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SIA.settings")
 
 django.setup()
@@ -10,31 +9,27 @@ from datetime import datetime, date
 from django.db import models
 from django.conf import settings
 
-
-
 from formacion_academica.models import CursoEspecializacion, Licenciatura, Maestria, Doctorado, PostDoctorado
 from experiencia_laboral.models import *
 
 import uuid
 
-
 from nucleo.models import ZonaPais, Pais, Estado, Ciudad, Institucion, Dependencia, User, Revista, Indice
 from investigacion.models import *
 
-
 import pymysql
+
 conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='cigacurricula')
 cur = conn.cursor()
-#cur.execute("SELECT curso, tipo, horas, mes_ini, anio_ini, mes_fin, anio_fin, area, instituciones, idu FROM fa_especializacion")
-#cur.execute("SELECT DISTINCT area FROM `fa_especializacion` ORDER BY `fa_especializacion`.`area` ASC ")
-#cur.execute("SELECT carrera, area, institucion, tesis, anio_ini, mes_ini, anio_fin, mes_fin, grado_fin, grado_ini, idu FROM fa_licenciatura")
-#cur.execute("SELECT area, area_wos, institucion, tesis, anio_ini, mes_ini, anio_fin, mes_fin, grado_fin, grado_ini, idu FROM fa_maestria")
-#cur.execute("SELECT DISTINCT area, area_wos FROM fa_maestria ORDER BY area")
-#cur.execute("SELECT DISTINCT area, area_wos FROM fa_doctorado ORDER BY area")
-#cur.execute("SELECT area, institucion, tesis, anio_ini, mes_ini, anio_fin, mes_fin, grado_fin, grado_ini, idu FROM fa_doctorado")
-cur.execute("SELECT titulo, ciudad_publi, casas_ed, estado, anio_pub, num_ed, pag_tot, isbn, vinculo, autores FROM ir_librosentidad")
-
-
+# cur.execute("SELECT curso, tipo, horas, mes_ini, anio_ini, mes_fin, anio_fin, area, instituciones, idu FROM fa_especializacion")
+# cur.execute("SELECT DISTINCT area FROM `fa_especializacion` ORDER BY `fa_especializacion`.`area` ASC ")
+# cur.execute("SELECT carrera, area, institucion, tesis, anio_ini, mes_ini, anio_fin, mes_fin, grado_fin, grado_ini, idu FROM fa_licenciatura")
+# cur.execute("SELECT area, area_wos, institucion, tesis, anio_ini, mes_ini, anio_fin, mes_fin, grado_fin, grado_ini, idu FROM fa_maestria")
+# cur.execute("SELECT DISTINCT area, area_wos FROM fa_maestria ORDER BY area")
+# cur.execute("SELECT DISTINCT area, area_wos FROM fa_doctorado ORDER BY area")
+# cur.execute("SELECT area, institucion, tesis, anio_ini, mes_ini, anio_fin, mes_fin, grado_fin, grado_ini, idu FROM fa_doctorado")
+cur.execute(
+    "SELECT titulo, ciudad_publi, casas_ed, estado, anio_pub, num_ed, pag_tot, isbn, vinculo, autores FROM ir_librosentidad")
 
 for i in cur:
     l = "['"
@@ -60,32 +55,26 @@ for i in cur:
     l += "'],"
     print(l)
 
-
-
-
-
-
-
     items_data = [
-        ['Año', 'Mis Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+        ['Año', 'Mis Proyectos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
     for i in range(num_years):
         year = last_x_years[i]
         items_data.append([str(year)])
 
-        total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
-                                                            status='PUBLICADO').filter(
-            ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+        total_items_year_sum = MemoriaInExtenso.objects.filter(
+            (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
+            | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-        request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
-                                                                   status='PUBLICADO',
-                                                                   usuarios=request.user).count()
+        request_user_items_year_sum = MemoriaInExtenso.objects.filter(usuarios=request.user).filter(
+            (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+            | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).count()
         if not request_user_items_year_sum:
             request_user_items_year_sum = 0
         items_data[i + 1].append(request_user_items_year_sum)
 
-        users_with_items_year_count = User.objects.filter(
-            Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
+        users_with_items_year_count = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
+            (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+            | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).filter(
             ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
              (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
             Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -98,27 +87,29 @@ for i in cur:
         else:
             items_data[i + 1].append(0)
 
-        max_cursos_especializacion_year_user = User.objects.filter(
-            Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
-            ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-             (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-            Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
-            'articulo_cientifico_autores__count__max']
-        if max_cursos_especializacion_year_user == None:
-            max_cursos_especializacion_year_user = 0
-        items_data[i + 1].append(max_cursos_especializacion_year_user)
+        max_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
+            (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+            | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))
+        ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                  (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+            Count('proyecto_responsables')).aggregate(Max('proyecto_responsables__count'))[
+            'proyecto_responsables__count__max']
+        if max_items_year_user == None:
+            max_items_year_user = 0
+        items_data[i + 1].append(max_items_year_user)
 
-        min_articulo_cientifico_year_user = User.objects.filter(
-            Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
-            ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-             (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-            Count('articulo_cientifico_autores')).aggregate(Min('articulo_cientifico_autores__count'))[
-            'articulo_cientifico_autores__count__min']
-        if min_articulo_cientifico_year_user == None:
-            min_articulo_cientifico_year_user = 0
-        items_data[i + 1].append(min_articulo_cientifico_year_user)
+        min_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
+            (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
+            | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))
+        ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                  (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+            Count('proyecto_responsables')).aggregate(Min('proyecto_responsables__count'))[
+            'proyecto_responsables__count__min']
+        if min_items_year_user == None:
+            min_items_year_user = 0
+        items_data[i + 1].append(min_items_year_user)
 
     print(items_data)
     data_source = SimpleDataSource(data=items_data)
-    chart_mapas_arbitrados_aceptados = LineChart(data_source)
-    context['chart_mapas_arbitrados_enprensa'] = chart_mapas_arbitrados_aceptados
+    chart_proyectos_investigacion = LineChart(data_source)
+    context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
