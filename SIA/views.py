@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.core import serializers
 
 from formacion_academica.models import CursoEspecializacion
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado
 
 from nucleo.models import User, Libro
 from datetime import datetime
@@ -52,9 +52,9 @@ class Dashboard(View):
                 last_x_years.append(i)
 
             for i in last_x_years:
-                users_with_libros_investigacion_year_count = User.objects.filter((Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad__year__gt=i)) |
+                users_with_cursos_especializacion_year_count = User.objects.filter((Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad__year__gt=i)) |
                                         (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad=None)))
-                active_users_per_last_x_year.append(users_with_libros_investigacion_year_count.count())
+                active_users_per_last_x_year.append(users_with_cursos_especializacion_year_count.count())
 
             #years_cursos_especializacion_dates = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
             #years_cursos_especializacion = []
@@ -71,13 +71,13 @@ class Dashboard(View):
                 year = last_x_years[i]
                 cursos_data.append([str(last_x_years[i])])
 
-                users_with_libros_investigacion_year_count = User.objects.filter(
+                users_with_cursos_especializacion_year_count = User.objects.filter(
                     Q(cursos_especializacion__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
 
                 total_course_hours_year_sum = CursoEspecializacion.objects.filter(fecha_inicio__year=year).filter((
                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
@@ -92,21 +92,21 @@ class Dashboard(View):
                     request_user_articulo_cientifico_enprensa_year_sum = 0
                 cursos_data[i + 1].append(request_user_articulo_cientifico_enprensa_year_sum)
 
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
-                if users_with_libros_investigacion_year_count > 0:
-                    cursos_data[i + 1].append(round(total_course_hours_year_sum / users_with_libros_investigacion_year_count, 2))
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
+                if users_with_cursos_especializacion_year_count > 0:
+                    cursos_data[i + 1].append(round(total_course_hours_year_sum / users_with_cursos_especializacion_year_count, 2))
                 else:
                     cursos_data[i + 1].append(round(0, 2))
 
-                max_articulo_cientifico_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                max_cursos_especializacion_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(Max('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__max']
-                if max_articulo_cientifico_year_user == None:
-                    max_articulo_cientifico_year_user = 0
-                cursos_data[i + 1].append(max_articulo_cientifico_year_user)
+                if max_cursos_especializacion_year_user == None:
+                    max_cursos_especializacion_year_user = 0
+                cursos_data[i + 1].append(max_cursos_especializacion_year_user)
 
                 min_hours_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
@@ -139,29 +139,29 @@ class Dashboard(View):
                     request_user_articulo_cientifico_enprensa_year_sum = 0
                 articulos_investigacion_publicados_data[i + 1].append(request_user_articulo_cientifico_enprensa_year_sum)
 
-                users_with_libros_investigacion_year_count = User.objects.filter(
+                users_with_cursos_especializacion_year_count = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
 
-                if users_with_libros_investigacion_year_count > 0:
+                if users_with_cursos_especializacion_year_count > 0:
                     articulos_investigacion_publicados_data[i + 1].append(
-                        round(total_articulos_cientificos_enprensa_year_sum / users_with_libros_investigacion_year_count, 2))
+                        round(total_articulos_cientificos_enprensa_year_sum / users_with_cursos_especializacion_year_count, 2))
                 else:
                     articulos_investigacion_publicados_data[i + 1].append(0)
 
-                max_articulo_cientifico_year_user = User.objects.filter(
+                max_cursos_especializacion_year_user = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
                     'articulo_cientifico_autores__count__max']
-                if max_articulo_cientifico_year_user == None:
-                    max_articulo_cientifico_year_user = 0
-                articulos_investigacion_publicados_data[i + 1].append(max_articulo_cientifico_year_user)
+                if max_cursos_especializacion_year_user == None:
+                    max_cursos_especializacion_year_user = 0
+                articulos_investigacion_publicados_data[i + 1].append(max_cursos_especializacion_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
@@ -196,28 +196,28 @@ class Dashboard(View):
                     request_user_articulo_cientifico_enprensa_year_sum = 0
                 articulos_investigacion_enprensa_data[i + 1].append(request_user_articulo_cientifico_enprensa_year_sum)
 
-                users_with_libros_investigacion_year_count = User.objects.filter(
+                users_with_cursos_especializacion_year_count = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
-                if users_with_libros_investigacion_year_count > 0:
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
+                if users_with_cursos_especializacion_year_count > 0:
                     articulos_investigacion_enprensa_data[i + 1].append(
-                        round(total_articulos_cientificos_enprensa_year_sum / users_with_libros_investigacion_year_count, 2))
+                        round(total_articulos_cientificos_enprensa_year_sum / users_with_cursos_especializacion_year_count, 2))
                 else:
                     articulos_investigacion_enprensa_data[i + 1].append(0)
 
-                max_articulo_cientifico_year_user = User.objects.filter(
+                max_cursos_especializacion_year_user = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
                     'articulo_cientifico_autores__count__max']
-                if max_articulo_cientifico_year_user == None:
-                    max_articulo_cientifico_year_user = 0
-                articulos_investigacion_enprensa_data[i + 1].append(max_articulo_cientifico_year_user)
+                if max_cursos_especializacion_year_user == None:
+                    max_cursos_especializacion_year_user = 0
+                articulos_investigacion_enprensa_data[i + 1].append(max_cursos_especializacion_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
@@ -249,28 +249,28 @@ class Dashboard(View):
                     request_user_articulo_cientifico_year_sum = 0
                 articulos_investigacion_aceptado_data[i + 1].append(request_user_articulo_cientifico_year_sum)
 
-                users_with_libros_investigacion_year_count = User.objects.filter(
+                users_with_cursos_especializacion_year_count = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
-                if users_with_libros_investigacion_year_count > 0:
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
+                if users_with_cursos_especializacion_year_count > 0:
                     articulos_investigacion_aceptado_data[i + 1].append(
-                        round(total_articulos_cientificos_year_sum / users_with_libros_investigacion_year_count, 2))
+                        round(total_articulos_cientificos_year_sum / users_with_cursos_especializacion_year_count, 2))
                 else:
                     articulos_investigacion_aceptado_data[i + 1].append(0)
 
-                max_articulo_cientifico_year_user = User.objects.filter(
+                max_cursos_especializacion_year_user = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
                     'articulo_cientifico_autores__count__max']
-                if max_articulo_cientifico_year_user == None:
-                    max_articulo_cientifico_year_user = 0
-                articulos_investigacion_aceptado_data[i + 1].append(max_articulo_cientifico_year_user)
+                if max_cursos_especializacion_year_user == None:
+                    max_cursos_especializacion_year_user = 0
+                articulos_investigacion_aceptado_data[i + 1].append(max_cursos_especializacion_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='ACEPTADO') &
@@ -309,17 +309,17 @@ class Dashboard(View):
                     request_user_libro_investigacion_year_sum = 0
                 libros_investigacion_publicado_data[i + 1].append(request_user_libro_investigacion_year_sum)
 
-                users_with_libros_investigacion_year_count = User.objects.filter(
+                users_with_cursos_especializacion_year_count = User.objects.filter(
                     Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__es_libro_completo=True, libro_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
-                if users_with_libros_investigacion_year_count > 0:
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
+                if users_with_cursos_especializacion_year_count > 0:
                     libros_investigacion_publicado_data[i + 1].append(
-                        round(total_libros_cientificos_year_sum / users_with_libros_investigacion_year_count, 2))
+                        round(total_libros_cientificos_year_sum / users_with_cursos_especializacion_year_count, 2))
                 else:
                     libros_investigacion_publicado_data[i + 1].append(0)
 
@@ -367,17 +367,17 @@ class Dashboard(View):
                     request_user_libro_investigacion_year_sum = 0
                 libros_investigacion_enprensa_data[i + 1].append(request_user_libro_investigacion_year_sum)
 
-                users_with_libros_investigacion_year_count = User.objects.filter(
+                users_with_cursos_especializacion_year_count = User.objects.filter(
                     Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__es_libro_completo=True, libro_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
-                if users_with_libros_investigacion_year_count > 0:
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
+                if users_with_cursos_especializacion_year_count > 0:
                     libros_investigacion_enprensa_data[i + 1].append(
-                        round(total_libros_cientificos_year_sum / users_with_libros_investigacion_year_count, 2))
+                        round(total_libros_cientificos_year_sum / users_with_cursos_especializacion_year_count, 2))
                 else:
                     libros_investigacion_enprensa_data[i + 1].append(0)
 
@@ -425,17 +425,17 @@ class Dashboard(View):
                     request_user_libro_investigacion_year_sum = 0
                 libros_investigacion_aceptado_data[i + 1].append(request_user_libro_investigacion_year_sum)
 
-                users_with_libros_investigacion_year_count = User.objects.filter(
+                users_with_cursos_especializacion_year_count = User.objects.filter(
                     Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__es_libro_completo=True, libro_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_libros_investigacion_year_count == None:
-                    users_with_libros_investigacion_year_count = 0
-                if users_with_libros_investigacion_year_count > 0:
+                if users_with_cursos_especializacion_year_count == None:
+                    users_with_cursos_especializacion_year_count = 0
+                if users_with_cursos_especializacion_year_count > 0:
                     libros_investigacion_aceptado_data[i + 1].append(
-                        round(total_libros_cientificos_year_sum / users_with_libros_investigacion_year_count, 2))
+                        round(total_libros_cientificos_year_sum / users_with_cursos_especializacion_year_count, 2))
                 else:
                     libros_investigacion_aceptado_data[i + 1].append(0)
 
@@ -686,6 +686,12 @@ class Dashboard(View):
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_aceptado_data)
             chart_capitulos_libros_investigacion = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_aceptado'] = chart_capitulos_libros_investigacion
+
+
+
+
+
+
 
 
         return render(request, self.template_name, context)
