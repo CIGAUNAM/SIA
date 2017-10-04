@@ -10,7 +10,6 @@ CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODAL
 #from django_stats2.mixins import StatsMixin
 #from django_stats2.fields import StatField
 
-from sia_stats.models import SIAYearModelCounter, SIAUserModelCounter
 # Create your models here.
 
 
@@ -38,76 +37,6 @@ class CursoEspecializacion(models.Model):
 
     def get_absolute_url(self):
         return reverse('curso_especializacion_detalle', kwargs={'pk': self.pk})
-
-    def save(self, *args, **kwargs):
-        old_horas = 0
-        old_year = 0
-
-        nuevo_item = None
-
-        if self.pk is None:
-            nuevo_item = True
-        else:
-            old_horas = CursoEspecializacion.objects.get(pk=self.pk).horas
-            old_year = CursoEspecializacion.objects.get(pk=self.pk).fecha_inicio.year
-            nuevo_item = False
-        # guardar el nuevo elemento y despues de guardar hacer los calculos de horas
-        super(CursoEspecializacion, self).save(*args, **kwargs)
-
-        try:
-            year_data = SIAYearModelCounter.objects.get(year=self.fecha_inicio.year, model='CursoEspecializacion')
-            # si el registro es nuevo
-            if nuevo_item:
-                year_data.counter = year_data.counter + self.horas
-                year_data.save()
-                year_data.users.add(self.usuario)
-            # si el registro no es nuevo (si se está editando)
-            else:
-                # si el año no cambia
-                if old_year == self.fecha_inicio.year:
-                    year_data.counter = year_data.counter - old_horas + self.horas
-                    year_data.save()
-                # si el año cambia
-                else:
-                    # quitar las horas del año viejo
-                    old_year_data = SIAYearModelCounter.objects.get(year=old_year, model='CursoEspecializacion')
-                    old_year_data.counter = old_year_data.counter - old_horas
-                    old_year_data.save()
-                    # quitar usuario si no hay otros cursos en el mismo año
-                    if User.objects.filter(cursos_especializacion__usuario=self.usuario,
-                                           cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
-                        old_year_data.users.remove(self.usuario)
-                    # poner horas nuevas al año nuevo
-                    year_data.counter = year_data.counter + self.horas
-                    year_data.save()
-                    year_data.users.add(self.usuario)
-        except SIAYearModelCounter.DoesNotExist:
-            if nuevo_item:
-                y = SIAYearModelCounter(model='CursoEspecializacion', year=self.fecha_inicio.year, counter=self.horas)
-                y.save()
-                y.users.add(self.usuario)
-            else:
-                # quitar horas del año viejo
-                old_year_data = SIAYearModelCounter.objects.get(year=old_year, model='CursoEspecializacion')
-                old_year_data.counter = old_year_data.counter - old_horas
-                old_year_data.save()
-                if User.objects.filter(cursos_especializacion__usuario=self.usuario,
-                                       cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
-                    old_year_data.users.remove(self.usuario)
-                y = SIAYearModelCounter(model='CursoEspecializacion', year=self.fecha_inicio.year, counter=self.horas)
-                y.save()
-                y.users.add(self.usuario)
-
-    def delete(self, *args, **kwargs):
-        year_data = SIAYearModelCounter.objects.get(year=self.fecha_inicio.year, model='CursoEspecializacion')
-        year_data.counter = year_data.counter - self.horas
-        year_data.save()
-        print(self.usuario)
-        super(CursoEspecializacion, self).delete(*args, **kwargs)
-        if User.objects.filter(cursos_especializacion__usuario=self.usuario,
-                               cursos_especializacion__fecha_inicio__year=self.fecha_inicio.year).count() == 0:
-            year_data.users.remove(self.usuario)
-
 
     class Meta:
         ordering = ['fecha_inicio']

@@ -85,7 +85,6 @@ INSTALLED_APPS = [
     'formacion_recursos_humanos.apps.FormacionRecursosHumanosConfig',
     'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
     'distinciones.apps.DistincionesConfig',
-    'sia_stats.apps.SiaStatsConfig',
 
     'rest_framework',
     'django_adminlte',

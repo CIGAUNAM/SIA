@@ -7,7 +7,6 @@ from django.core.urlresolvers import reverse
 
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, Revista, Indice, Libro, Editorial, Coleccion
 from sortedm2m.fields import SortedManyToManyField
-from sia_stats.models import SIAYearModelCounter
 
 
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
@@ -44,69 +43,6 @@ class ArticuloCientifico(models.Model):
 
     def get_absolute_url(self):
         return reverse('articulo_cientifico_detalle', kwargs={'pk': self.pk})
-
-    def save1(self, *args, **kwargs):
-        nuevo_item = None
-
-        if self.pk is None:
-            nuevo_item = True
-        else:
-            old_year = self.objects.get(pk=self.pk).fecha.year
-            nuevo_item = False
-
-        # guardar el nuevo elemento y despues de guardar hacer los calculos de horas
-        super(ArticuloCientifico, self).save(*args, **kwargs)
-
-        try:
-            year_data = SIAYearModelCounter.objects.get(year=self.fecha.year, model='ArticuloCientifico')
-            # si el registro es nuevo
-            if nuevo_item:
-                year_data.counter = year_data.counter + 1
-                year_data.save()
-                for user in self.usuarios:
-                    year_data.users.add(self.user)
-            # si el registro no es nuevo (si se está editando)
-            else:
-                # si el año cambia
-                if old_year != self.fecha.year:
-                    # quitar el curso del año viejo
-                    old_year_data = SIAYearModelCounter.objects.get(year=old_year, model='ArticuloCientifico')
-                    old_year_data.counter = old_year_data.counter - 1
-                    old_year_data.save()
-                    # quitar usuario si no hay otros cursos en el mismo año
-                    if User.objects.filter(articulo_cientifico_autores__usuarios=self.usuario,
-                                           cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
-                        old_year_data.users.remove(self.usuario)
-                    # poner horas nuevas al año nuevo
-                    year_data.counter = year_data.counter + self.horas
-                    year_data.save()
-                    year_data.users.add(self.usuario)
-        except SIAYearModelCounter.DoesNotExist:
-            if nuevo_item:
-                y = SIAYearModelCounter(model='ArticuloCientifico', year=self.fecha.year, counter=self.horas)
-                y.save()
-                y.users.add(self.usuario)
-            else:
-                # quitar horas del año viejo
-                old_year_data = SIAYearModelCounter.objects.get(year=old_year, model='ArticuloCientifico')
-                old_year_data.counter = old_year_data.counter - 1
-                old_year_data.save()
-                if User.objects.filter(cursos_especializacion__usuario=self.usuario,
-                                       cursos_especializacion__fecha_inicio__year=old_year).count() == 0:
-                    old_year_data.users.remove(self.usuario)
-                y = SIAYearModelCounter(model='CursoEspecializacion', year=self.fecha.year, counter=self.horas)
-                y.save()
-                y.users.add(self.usuario)
-
-    def delete1(self, *args, **kwargs):
-        year_data = SIAYearModelCounter.objects.get(year=self.fecha.year, model='ArticuloCientifico')
-        year_data.counter = year_data.counter - 1
-        year_data.save()
-        print(self.usuarios)
-        super(ArticuloCientifico, self).delete(*args, **kwargs)
-        for usuario in self.usuarios:
-            if User.objects.filter(articulo_cientifico_autores__usuarios=usuario, articulo_cientifico__fecha__year=self.fecha.year).count() == 0:
-                year_data.users.remove(usuario)
 
     class Meta:
         verbose_name = "Artículo científico"
