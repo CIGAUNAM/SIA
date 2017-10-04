@@ -1075,8 +1075,8 @@ class Dashboard(View):
                       prologo_libro_autor__libro__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('libro_autores')).aggregate(Max('libro_autores__count'))[
-                    'libro_autores__count__max']
+                    Count('prologo_libro_autor')).aggregate(Max('prologo_libro_autor__count'))[
+                    'prologo_libro_autor__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
@@ -1089,8 +1089,8 @@ class Dashboard(View):
                       prologo_libro_autor__libro__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('libro_autores')).aggregate(Min('libro_autores__count'))[
-                    'libro_autores__count__min']
+                    Count('prologo_libro_autor')).aggregate(Min('prologo_libro_autor__count'))[
+                    'prologo_libro_autor__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
@@ -1145,8 +1145,8 @@ class Dashboard(View):
                       prologo_libro_autor__libro__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('libro_autores')).aggregate(Max('libro_autores__count'))[
-                    'libro_autores__count__max']
+                    Count('prologo_libro_autor')).aggregate(Max('prologo_libro_autor__count'))[
+                    'prologo_libro_autor__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
@@ -1159,8 +1159,8 @@ class Dashboard(View):
                       prologo_libro_autor__libro__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('libro_autores')).aggregate(Min('libro_autores__count'))[
-                    'libro_autores__count__min']
+                    Count('prologo_libro_autor')).aggregate(Min('prologo_libro_autor__count'))[
+                    'prologo_libro_autor__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
@@ -1215,8 +1215,8 @@ class Dashboard(View):
                       prologo_libro_autor__libro__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('libro_autores')).aggregate(Max('libro_autores__count'))[
-                    'libro_autores__count__max']
+                    Count('prologo_libro_autor')).aggregate(Max('prologo_libro_autor__count'))[
+                    'prologo_libro_autor__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
@@ -1229,8 +1229,8 @@ class Dashboard(View):
                       prologo_libro_autor__libro__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('libro_autores')).aggregate(Min('libro_autores__count'))[
-                    'libro_autores__count__min']
+                    Count('prologo_libro_autor')).aggregate(Min('prologo_libro_autor__count'))[
+                    'prologo_libro_autor__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
@@ -1240,6 +1240,70 @@ class Dashboard(View):
             data_source = SimpleDataSource(data=items_data)
             chart_prologo_libro_investigacion_aceptado = LineChart(data_source)
             context['chart_prologo_libro_investigacion_aceptado'] = chart_prologo_libro_investigacion_aceptado
+
+            items_data = [
+                ['Año', 'Mis Reseñas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = Resena.objects.filter(libro__fecha__year=year).count()
+
+                request_user_items_year_sum = Resena.objects.filter(libro__fecha__year=year,
+                                                                    usuario=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(
+                    request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(resena_autor__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(
+                            total_items_year_sum / users_with_items_year_count,
+                            2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(resena_autor__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('resena_autor')).aggregate(Max('resena_autor__count'))[
+                    'libro_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(
+                    max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(resena_autor__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('resena_autor')).aggregate(Min('resena_autor__count'))[
+                    'resena_autor__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(
+                    min_items_year_user)
+
+            print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_resena = LineChart(data_source)
+            context['chart_resena'] = chart_resena
+
+
+
+
+
+
+
 
 
 
