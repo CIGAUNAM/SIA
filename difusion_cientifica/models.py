@@ -51,7 +51,7 @@ class PrologoLibro(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, related_name='prologo_libro_autor')
     #tags = models.ManyToManyField(Tag, related_name='prologo_libro_tags', blank=True)
 
     def __str__(self):
@@ -68,18 +68,16 @@ class PrologoLibro(models.Model):
 
 class Resena(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
     libro_resenado = models.ForeignKey(Libro, blank=True, null=True, related_name='resena_libro_resenado')
     revista_resenada = models.ForeignKey(Revista, blank=True, null=True, related_name='resena_revista_resenada')
-    #slug = AutoSlugField(populate_from='titulo_resena', unique=True)
-    descripcion = models.TextField(blank=True)
-    #libro_publica = models.ForeignKey(Libro, related_name='resena_libro_publica', blank=True, null=True)
+    fecha = models.DateField()
     revista_publica = models.ForeignKey(Revista, related_name='resena_revista_publica')
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
     usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='resena_tags', blank=True)
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.titulo)
