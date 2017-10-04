@@ -77,7 +77,7 @@ class Resena(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, related_name='resena_autor')
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.titulo)
