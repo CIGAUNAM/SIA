@@ -125,43 +125,43 @@
 
         $("#id_tipo").on('change', function () {
                     if ($("#id_tipo").val() == 'LIBRO') {
-                        $('#d_libro').show();
+                        $('#d_libro').show('slow');
                         $('#id_libro').attr("required", "true");
                         $('#id_revista').attr("required", null);
                         $('#id_capitulo_libro').attr("required", null);
                         $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide();
+                        $('#d_revista').hide('slow');
                         $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide();
+                        $('#d_capitulo_libro').hide('slow');
                     } else if ($("#id_tipo").val() == 'REVISTA') {
-                        $('#d_revista').show();
+                        $('#d_revista').show('slow');
                         $('#id_libro').attr("required", null);
                         $('#id_revista').attr("required", "true");
                         $('#id_capitulo_libro').attr("required", null);
                         $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide();
+                        $('#d_libro').hide('slow');
                         $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide();
+                        $('#d_capitulo_libro').hide('slow');
                     } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
-                        $('#d_capitulo_libro').show();
+                        $('#d_capitulo_libro').show('slow');
                         $('#id_libro').attr("required", null);
                         $('#id_revista').attr("required", null);
                         $('#id_capitulo_libro').attr("required", "true");
                         $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide();
+                        $('#d_libro').hide('slow');
                         $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide();
+                        $('#d_revista').hide('slow');
                     } else {
-                        $('#d_revista').show();
-                        $('#d_libro').show();
-                        $('#d_capitulo_libro').show();
+                        $('#d_revista').show('slow');
+                        $('#d_libro').show('slow');
+                        $('#d_capitulo_libro').show('slow');
                         $('#id_libro').attr("required", null);
                         $('#id_revista').attr("required", null);
                         $('#id_capitulo_libro').attr("required", null);
                     }
-                }
+                });
     </script>
-    );
+
 
 {% endblock %}
 
@@ -316,36 +316,36 @@
 
         $("#id_tipo").on('change', function () {
                     if ($("#id_tipo").val() == 'LIBRO') {
-                        $('#d_libro').show();
+                        $('#d_libro').show('slow');
                         $('#id_libro').attr("required", "true");
                         $('#id_revista').attr("required", null);
                         $('#id_capitulo_libro').attr("required", null);
                         $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide();
+                        $('#d_revista').hide('slow');
                         $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide();
+                        $('#d_capitulo_libro').hide('slow');
                     } else if ($("#id_tipo").val() == 'REVISTA') {
-                        $('#d_revista').show();
+                        $('#d_revista').show('slow');
                         $('#id_libro').attr("required", null);
                         $('#id_revista').attr("required", "true");
                         $('#id_capitulo_libro').attr("required", null);
                         $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide();
+                        $('#d_libro').hide('slow');
                         $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide();
+                        $('#d_capitulo_libro').hide('slow');
                     } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
-                        $('#d_capitulo_libro').show();
+                        $('#d_capitulo_libro').show('slow');
                         $('#id_libro').attr("required", null);
                         $('#id_revista').attr("required", null);
                         $('#id_capitulo_libro').attr("required", "true");
                         $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide();
+                        $('#d_libro').hide('slow');
                         $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide();
+                        $('#d_revista').hide('slow');
                     } else {
-                        $('#d_revista').show();
-                        $('#d_libro').show();
-                        $('#d_capitulo_libro').show();
+                        $('#d_revista').show('slow');
+                        $('#d_libro').show('slow');
+                        $('#d_capitulo_libro').show('slow');
                         $('#id_libro').attr("required", null);
                         $('#id_revista').attr("required", null);
                         $('#id_capitulo_libro').attr("required", null);
