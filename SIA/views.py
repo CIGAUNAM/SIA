@@ -10,6 +10,7 @@ from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion,
 from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, OrganizacionEventoAcademico, ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica
+from docencia.models import CursoDocencia
 
 from nucleo.models import User, Libro, Proyecto
 from datetime import datetime
@@ -24,6 +25,11 @@ from graphos.renderers.morris import LineChart, AreaChart
 
 # Create your views here.
 
+from graphos.renderers import gchart
+
+class CustomGchart(gchart.LineChart):
+    def get_template(self):
+        return "demo/gchart_line.html"
 
 
 
@@ -2299,6 +2305,141 @@ class Dashboard(View):
             chart_arbitrajepublicacionacademica = LineChart(data_source)
             context['chart_arbitrajepublicacionacademica'] = chart_arbitrajepublicacionacademica
 
+
+
+
+
+            items_data = [['Año', 'Mis horas de docencia escolarizada', 'Promedio horas', 'Max horas', 'Min horas']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(last_x_years[i])])
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(cursodocencia_usuario__fecha_inicio__year=year, cursodocencia_usuario__tipo='ESCOLARIZADO') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                total_hours_year_sum = \
+                CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='ESCOLARIZADO').filter((
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                    Sum('total_horas'))[
+                    'total_horas__sum']
+                if total_hours_year_sum == None:
+                    total_hours_year_sum = 0
+
+                request_user_years_year_sum = User.objects.filter(cursodocencia_usuario__fecha_inicio__year=year,
+                                                                  cursodocencia_usuario__tipo='ESCOLARIZADO',
+                                                                  cursodocencia_usuario__usuario=request.user).aggregate(
+                    Sum('cursodocencia_usuario__total_horas'))['cursodocencia_usuario__total_horas__sum']
+                if not request_user_years_year_sum:
+                    request_user_years_year_sum = 0
+                items_data[i + 1].append(request_user_years_year_sum)
+
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(round(total_hours_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(round(0, 2))
+
+                max_item_year_user = User.objects.filter(cursodocencia_usuario__fecha_inicio__year=year,
+                                                         cursodocencia_usuario__tipo='ESCOLARIZADO').annotate(
+                    Sum('cursodocencia_usuario__total_horas')).filter((
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Max('cursodocencia_usuario__total_horas__sum'))[
+                    'cursodocencia_usuario__total_horas__sum__max']
+                if max_item_year_user == None:
+                    max_item_year_user = 0
+                items_data[i + 1].append(max_item_year_user)
+
+                min_item_year_user = User.objects.filter(cursodocencia_usuario__fecha_inicio__year=year,
+                                                         cursodocencia_usuario__tipo='ESCOLARIZADO').annotate(
+                    Sum('cursodocencia_usuario__total_horas')).filter((
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Min('cursodocencia_usuario__total_horas__sum'))[
+                    'cursodocencia_usuario__total_horas__sum__min']
+                if not min_item_year_user:
+                    min_item_year_user = 0
+                items_data[i + 1].append(min_item_year_user)
+
+            data_source = SimpleDataSource(data=items_data)
+            chart_cursodocencia_escolarizado = LineChart(data_source)
+            context['chart_cursodocencia_escolarizado'] = chart_cursodocencia_escolarizado
+
+
+
+            items_data = [['Año', 'Mis horas de docencia extracurricular', 'Promedio horas', 'Max horas', 'Min horas']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(last_x_years[i])])
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(cursodocencia_usuario__fecha_inicio__year=year, cursodocencia_usuario__tipo='EXTRACURRICULAR') &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                total_hours_year_sum = \
+                CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='EXTRACURRICULAR').filter((
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                    Sum('total_horas'))[
+                    'total_horas__sum']
+                if total_hours_year_sum == None:
+                    total_hours_year_sum = 0
+
+                request_user_years_year_sum = User.objects.filter(cursodocencia_usuario__fecha_inicio__year=year,
+                                                                  cursodocencia_usuario__tipo='EXTRACURRICULAR',
+                                                                  cursodocencia_usuario__usuario=request.user).aggregate(
+                    Sum('cursodocencia_usuario__total_horas'))['cursodocencia_usuario__total_horas__sum']
+                if not request_user_years_year_sum:
+                    request_user_years_year_sum = 0
+                items_data[i + 1].append(request_user_years_year_sum)
+
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(round(total_hours_year_sum / users_with_items_year_count, 2))
+                else:
+                    items_data[i + 1].append(round(0, 2))
+
+                max_item_year_user = User.objects.filter(cursodocencia_usuario__fecha_inicio__year=year,
+                                                         cursodocencia_usuario__tipo='EXTRACURRICULAR').annotate(
+                    Sum('cursodocencia_usuario__total_horas')).filter((
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Max('cursodocencia_usuario__total_horas__sum'))[
+                    'cursodocencia_usuario__total_horas__sum__max']
+                if max_item_year_user == None:
+                    max_item_year_user = 0
+                items_data[i + 1].append(max_item_year_user)
+
+                min_item_year_user = User.objects.filter(cursodocencia_usuario__fecha_inicio__year=year,
+                                                         cursodocencia_usuario__tipo='EXTRACURRICULAR').annotate(
+                    Sum('cursodocencia_usuario__total_horas')).filter((
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Min('cursodocencia_usuario__total_horas__sum'))[
+                    'cursodocencia_usuario__total_horas__sum__min']
+                if not min_item_year_user:
+                    min_item_year_user = 0
+                items_data[i + 1].append(min_item_year_user)
+
+            data_source = SimpleDataSource(data=items_data)
+            chart_cursodocencia_extracurricular = LineChart(data_source)
+            context['chart_cursodocencia_extracurricular'] = chart_cursodocencia_extracurricular
+
+
+
+            context['chart.width'] = 100
 
 
 
