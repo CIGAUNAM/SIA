@@ -22,8 +22,8 @@ class CursoDocencia(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
-    usuario = models.ForeignKey(User, related_name='curso_escolarizado_usuario')
-    academicos_participantes = models.ManyToManyField(User, related_name='curso_escolarizado_usuarioa', blank=True, verbose_name='Académicos participantes')
+    usuario = models.ForeignKey(User, related_name='cursodocencia_usuario')
+    academicos_participantes = models.ManyToManyField(User, related_name='cursodocencia_academicos_participantes', blank=True, verbose_name='Académicos participantes')
     otras_dependencias_participantes = models.ManyToManyField(Dependencia, related_name='curso_escolarizado_otras_dependencias_participantes', blank=True)
 
     def __str__(self):
