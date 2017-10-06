@@ -401,7 +401,30 @@
         </ul>
     </li>
 
+    {% if request.user.is_staff %}
 
+    <li class="treeview{% if aux.url_categoria == "distincionessasa" %} active{% endif %}">
+        <a href="#">
+            <i class="fa fa-lock fa-fw"></i> <span>Reportes y gráficas</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'reporte_anual' %} class="active"{% endif %}>
+                <a href="/reportes/historico">
+                    <i class="fa fa-circle-o"></i> Estadística histórica
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'graficas_comparacion' %} class="active"{% endif %}>
+                <a href="/distinciones/alumnosd">
+                    <i class="fa fa-circle-o"></i> Recibidos por alumnos
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    {% endif %}
 
 
 {% endblock nav_links %}

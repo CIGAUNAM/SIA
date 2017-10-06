@@ -1,4 +1,5 @@
 {% extends 'ebase.html' %}
+
 {% block content %}
 
     <p>Bienvenido {{ request.user.first_name }} {{ request.user.last_name }} ({{ request.user.username }})</p>
@@ -80,41 +81,470 @@
     <p>{{ chart_cursodocencia_extracurricular.as_html }}</p> -->
 
     <div class="row">
-    <div class="col-md-6">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Area Chart</h3>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Horas en cursos de especialización</h3>
 
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
+
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_cursos_especializacion.as_html }}
                 </div>
             </div>
-            <div class="box-body chart-responsive">
-                {{ chart_cursos_especializacion.as_html }}
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Artículos de investigación publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_articulos_investigacion_publicados.as_html }}
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Area Chart</h3>
 
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Artículos de investigación en prensa</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_articulos_investigacion_enprensa.as_html }}
                 </div>
             </div>
-            <div class="box-body chart-responsive">
-                {{ chart_cursodocencia_extracurricular.as_html }}
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Artículos de investigación aceptados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_articulos_investigacion_aceptado.as_html }}
+                </div>
             </div>
         </div>
-
     </div>
-    </di>
 
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Libros de investigación en publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_libros_investigacion_publicado.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Libros de investigación en prensa</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_libros_investigacion_enprensa.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Libros de investigación en aceptados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_libros_investigacion_aceptados.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Capítulos en libros de investigación publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_capitulos_libros_investigacion_publicado.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Capítulos en libros de investigación en prensa</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_capitulos_libros_investigacion_enprensa.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Capítulos en libros de investigación aceptados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_capitulos_libros_investigacion_aceptado.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Mapas arbitrados publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_mapas_arbitrados_publicados.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Mapas arbitrados en prensa</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_mapas_arbitrados_enprensa.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Mapas arbitrados aceptados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_mapas_arbitrados_aceptados.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Informes Técnicos de acceso público</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_informes_tecnicos.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Proyectos de investigación</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_proyectos_investigacion.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Memorias in extenso</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_memoria_in_extenso.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Prologos en libros de investigación publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_prologo_libro_investigacion_publicado.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Reseñas</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_resena.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Organización de eventos académicos</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_organizacioneventoacademico.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Participación en eventos académicos</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_participacioneventoacademico.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Artículos de divulgación publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_articulo_divulgacion_publicados.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Artículos de divulgación en prensa</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_articulo_divulgacion_enprensa.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Artículos de divulgación aceptados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_articulo_divulgacion_aceptados.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Libros de divulgación publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_libros_divulgacion_publicados.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Libros de divulgación en prensa</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_libros_divulgacion_enprensa.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Libros de divulgación aceptados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_libros_divulgacion_aceptados.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Capitulos en libros de divulgación publicados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_capitulos_libros_divulgacion_publicados.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Capitulos en libros de divulgación en prensa</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_capitulos_libros_divulgacion_enprensa.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Capitulos en libros de divulgación aceptados</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_capitulos_libros_divulgacion_aceptados.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Organización de eventos de divulgación</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_organizacioneventodivulgacion.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Participación en eventos de divulgación</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_participacioneventodivulgacion.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Participación en Programas de Radio, Television, Internet</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_programaradiotelevisioninternet.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Arbitraje de Publicaciones Academicas</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_arbitrajepublicacionacademica.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Horas de docencia escolarizada</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_cursodocencia_escolarizado.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Horas de docencia extracurricular</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_cursodocencia_extracurricular.as_html }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Desarrollos tecnológicos</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_desarrollo_tecnologico.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-th"></i>
+                    <h3 class="box-title"> Distinciones recibidas por académicos</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                    {{ chart_distincion_academicos.as_html }}
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
