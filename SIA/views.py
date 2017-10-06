@@ -11,6 +11,8 @@ from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, O
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica
 from docencia.models import CursoDocencia
+from desarrollo_tecnologico.models import DesarrolloTecnologico
+from distinciones.models import DistincionAcademico
 
 from nucleo.models import User, Libro, Proyecto
 from datetime import datetime
@@ -180,7 +182,7 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulos_investigacion_publicados = LineChart(data_source)
             context['chart_articulos_investigacion_publicados'] = chart_articulos_investigacion_publicados
@@ -235,7 +237,7 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulos_investigacion_enprensa = LineChart(data_source)
             context['chart_articulos_investigacion_enprensa'] = chart_articulos_investigacion_enprensa
@@ -289,7 +291,7 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulos_investigacion_aceptado = LineChart(data_source)
             context['chart_articulos_investigacion_aceptado'] = chart_articulos_investigacion_aceptado
@@ -360,7 +362,7 @@ class Dashboard(View):
                     min_libro_investigacion_year_user = 0
                 libros_investigacion_publicado_data[i + 1].append(min_libro_investigacion_year_user)
 
-            print(libros_investigacion_publicado_data)
+            #print(libros_investigacion_publicado_data)
             data_source = SimpleDataSource(data=libros_investigacion_publicado_data)
             chart_libros_investigacion_publicado = LineChart(data_source)
             context['chart_libros_investigacion_publicado'] = chart_libros_investigacion_publicado
@@ -421,7 +423,7 @@ class Dashboard(View):
                     min_libro_investigacion_year_user = 0
                 libros_investigacion_enprensa_data[i + 1].append(min_libro_investigacion_year_user)
 
-            print(libros_investigacion_enprensa_data)
+            #print(libros_investigacion_enprensa_data)
             data_source = SimpleDataSource(data=libros_investigacion_enprensa_data)
             chart_libros_investigacion_enprensa = LineChart(data_source)
             context['chart_libros_investigacion_enprensa'] = chart_libros_investigacion_enprensa
@@ -481,7 +483,7 @@ class Dashboard(View):
                     min_libro_investigacion_year_user = 0
                 libros_investigacion_aceptado_data[i + 1].append(min_libro_investigacion_year_user)
 
-            print(libros_investigacion_aceptado_data)
+            #print(libros_investigacion_aceptado_data)
             data_source = SimpleDataSource(data=libros_investigacion_aceptado_data)
             chart_libros_investigacion_aceptados = LineChart(data_source)
             context['chart_libros_investigacion_aceptados'] = chart_libros_investigacion_aceptados
@@ -559,7 +561,7 @@ class Dashboard(View):
                 capitulos_libros_investigacion_publicado_data[i + 1].append(
                     min_capitulos_libros_investigacion_year_user)
 
-            print(capitulos_libros_investigacion_publicado_data)
+            #print(capitulos_libros_investigacion_publicado_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_publicado_data)
             chart_capitulos_libros_investigacion_publicado = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_publicado'] = chart_capitulos_libros_investigacion_publicado
@@ -634,7 +636,7 @@ class Dashboard(View):
                 capitulos_libros_investigacion_enprensa_data[i + 1].append(
                     min_capitulos_libros_investigacion_year_user)
 
-            print(capitulos_libros_investigacion_enprensa_data)
+            #print(capitulos_libros_investigacion_enprensa_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_enprensa_data)
             chart_capitulos_libros_investigacion_enprensa = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_enprensa'] = chart_capitulos_libros_investigacion_enprensa
@@ -708,7 +710,7 @@ class Dashboard(View):
                 capitulos_libros_investigacion_aceptado_data[i + 1].append(
                     min_capitulos_libros_investigacion_year_user)
 
-            print(capitulos_libros_investigacion_aceptado_data)
+            #print(capitulos_libros_investigacion_aceptado_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_aceptado_data)
             chart_capitulos_libros_investigacion_aceptado = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_aceptado'] = chart_capitulos_libros_investigacion_aceptado
@@ -771,7 +773,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_mapas_arbitrados_publicados = LineChart(data_source)
             context['chart_mapas_arbitrados_publicados'] = chart_mapas_arbitrados_publicados
@@ -829,7 +831,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_mapas_arbitrados_enprensa = LineChart(data_source)
             context['chart_mapas_arbitrados_enprensa'] = chart_mapas_arbitrados_enprensa
@@ -887,10 +889,13 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_mapas_arbitrados_aceptados = LineChart(data_source)
             context['chart_mapas_arbitrados_aceptados'] = chart_mapas_arbitrados_aceptados
+
+
+
 
 
 
@@ -945,7 +950,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_informes_tecnicos = LineChart(data_source)
             context['chart_informes_tecnicos'] = chart_informes_tecnicos
@@ -1014,7 +1019,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_proyectos_investigacion = LineChart(data_source)
             context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
@@ -1075,10 +1080,13 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_memoria_in_extenso = LineChart(data_source)
             context['chart_memoria_in_extenso'] = chart_memoria_in_extenso
+
+
+
 
             items_data = [
                 ['Año', 'Mis Prologos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -1147,152 +1155,32 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_prologo_libro_investigacion_publicado = LineChart(data_source)
             context['chart_prologo_libro_investigacion_publicado'] = chart_prologo_libro_investigacion_publicado
 
-            items_data = [
-                ['Año', 'Mis Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                items_data.append([str(year)])
 
-                total_items_year_sum = PrologoLibro.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__tiene_participacion_prologo=True, libro__status='EN_PRENSA').filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = PrologoLibro.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__tiene_participacion_prologo=True, libro__status='EN_PRENSA',
-                    usuario=request.user).count()
-                if not request_user_items_year_sum:
-                    request_user_items_year_sum = 0
-                items_data[i + 1].append(
-                    request_user_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(
-                    Q(prologo_libro_autor__libro__fecha__year=year,
-                      prologo_libro_autor__libro__tipo='INVESTIGACION',
-                      prologo_libro_autor__libro__tiene_participacion_prologo=True,
-                      prologo_libro_autor__libro__status='EN_PRENSA') &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    items_data[i + 1].append(
-                        round(
-                            total_items_year_sum / users_with_items_year_count,
-                            2))
-                else:
-                    items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(
-                    Q(prologo_libro_autor__libro__fecha__year=year,
-                      prologo_libro_autor__libro__tipo='INVESTIGACION',
-                      prologo_libro_autor__libro__tiene_participacion_prologo=True,
-                      prologo_libro_autor__libro__status='EN_PRENSA') &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('prologo_libro_autor')).aggregate(Max('prologo_libro_autor__count'))[
-                    'prologo_libro_autor__count__max']
-                if max_items_year_user == None:
-                    max_items_year_user = 0
-                items_data[i + 1].append(
-                    max_items_year_user)
 
-                min_items_year_user = User.objects.filter(
-                    Q(prologo_libro_autor__libro__fecha__year=year,
-                      prologo_libro_autor__libro__tipo='INVESTIGACION',
-                      prologo_libro_autor__libro__tiene_participacion_prologo=True,
-                      prologo_libro_autor__libro__status='EN_PRENSA') &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('prologo_libro_autor')).aggregate(Min('prologo_libro_autor__count'))[
-                    'prologo_libro_autor__count__min']
-                if min_items_year_user == None:
-                    min_items_year_user = 0
-                items_data[i + 1].append(
-                    min_items_year_user)
 
-            print(items_data)
-            data_source = SimpleDataSource(data=items_data)
-            chart_prologo_libro_investigacion_enprensa = LineChart(data_source)
-            context['chart_prologo_libro_investigacion_enprensa'] = chart_prologo_libro_investigacion_enprensa
 
-            items_data = [
-                ['Año', 'Mis Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                items_data.append([str(year)])
 
-                total_items_year_sum = PrologoLibro.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__tiene_participacion_prologo=True, libro__status='ACEPTADO').filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = PrologoLibro.objects.filter(libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__tiene_participacion_prologo=True, libro__status='ACEPTADO', usuario=request.user).count()
-                if not request_user_items_year_sum:
-                    request_user_items_year_sum = 0
-                items_data[i + 1].append(
-                    request_user_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(
-                    Q(prologo_libro_autor__libro__fecha__year=year,
-                      prologo_libro_autor__libro__tipo='INVESTIGACION',
-                      prologo_libro_autor__libro__tiene_participacion_prologo=True,
-                      prologo_libro_autor__libro__status='ACEPTADO') &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    items_data[i + 1].append(
-                        round(
-                            total_items_year_sum / users_with_items_year_count,
-                            2))
-                else:
-                    items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(
-                    Q(prologo_libro_autor__libro__fecha__year=year,
-                      prologo_libro_autor__libro__tipo='INVESTIGACION',
-                      prologo_libro_autor__libro__tiene_participacion_prologo=True,
-                      prologo_libro_autor__libro__status='ACEPTADO') &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('prologo_libro_autor')).aggregate(Max('prologo_libro_autor__count'))[
-                    'prologo_libro_autor__count__max']
-                if max_items_year_user == None:
-                    max_items_year_user = 0
-                items_data[i + 1].append(
-                    max_items_year_user)
 
-                min_items_year_user = User.objects.filter(
-                    Q(prologo_libro_autor__libro__fecha__year=year,
-                      prologo_libro_autor__libro__tipo='INVESTIGACION',
-                      prologo_libro_autor__libro__tiene_participacion_prologo=True,
-                      prologo_libro_autor__libro__status='ACEPTADO') &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('prologo_libro_autor')).aggregate(Min('prologo_libro_autor__count'))[
-                    'prologo_libro_autor__count__min']
-                if min_items_year_user == None:
-                    min_items_year_user = 0
-                items_data[i + 1].append(
-                    min_items_year_user)
 
-            print(items_data)
-            data_source = SimpleDataSource(data=items_data)
-            chart_prologo_libro_investigacion_aceptado = LineChart(data_source)
-            context['chart_prologo_libro_investigacion_aceptado'] = chart_prologo_libro_investigacion_aceptado
+
+
+
+
+
+
+
+
 
 
 
@@ -1349,7 +1237,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_resena = LineChart(data_source)
             context['chart_resena'] = chart_resena
@@ -1408,7 +1296,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_organizacioneventoacademico = LineChart(data_source)
             context['chart_organizacioneventoacademico'] = chart_organizacioneventoacademico
@@ -1467,7 +1355,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_participacioneventoacademico = LineChart(data_source)
             context['chart_participacioneventoacademico'] = chart_participacioneventoacademico
@@ -1525,7 +1413,7 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulo_divulgacion_publicados = LineChart(data_source)
             context['chart_articulo_divulgacion_publicados'] = chart_articulo_divulgacion_publicados
@@ -1581,7 +1469,7 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulo_divulgacion_enprensa = LineChart(data_source)
             context['chart_articulo_divulgacion_enprensa'] = chart_articulo_divulgacion_enprensa
@@ -1636,7 +1524,7 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulo_divulgacion_aceptados = LineChart(data_source)
             context['chart_articulo_divulgacion_aceptados'] = chart_articulo_divulgacion_aceptados
@@ -1716,7 +1604,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_libros_divulgacion_publicados = LineChart(data_source)
             context['chart_libros_divulgacion_publicados'] = chart_libros_divulgacion_publicados
@@ -1777,7 +1665,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_libros_divulgacion_enprensa = LineChart(data_source)
             context['chart_libros_divulgacion_enprensa'] = chart_libros_divulgacion_enprensa
@@ -1837,7 +1725,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 libros_investigacion_aceptado_data[i + 1].append(min_items_year_user)
 
-            print(libros_investigacion_aceptado_data)
+            #print(libros_investigacion_aceptado_data)
             data_source = SimpleDataSource(data=libros_investigacion_aceptado_data)
             chart_libros_divulgacion_aceptados = LineChart(data_source)
             context['chart_libros_divulgacion_aceptados'] = chart_libros_divulgacion_aceptados
@@ -1910,7 +1798,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_capitulos_libros_divulgacion_publicados = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_publicados'] = chart_capitulos_libros_divulgacion_publicados
@@ -1983,7 +1871,7 @@ class Dashboard(View):
                 capitulos_libros_investigacion_enprensa_data[i + 1].append(
                     min_items_year_user)
 
-            print(capitulos_libros_investigacion_enprensa_data)
+            #print(capitulos_libros_investigacion_enprensa_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_enprensa_data)
             chart_capitulos_libros_divulgacion_enprensa = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_enprensa'] = chart_capitulos_libros_divulgacion_enprensa
@@ -2056,7 +1944,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_capitulos_libros_divulgacion_aceptados = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_aceptados'] = chart_capitulos_libros_divulgacion_aceptados
@@ -2117,7 +2005,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_organizacioneventodivulgacion = LineChart(data_source)
             context['chart_organizacioneventodivulgacion'] = chart_organizacioneventodivulgacion
@@ -2176,7 +2064,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_participacioneventodivulgacion = LineChart(data_source)
             context['chart_participacioneventodivulgacion'] = chart_participacioneventodivulgacion
@@ -2237,7 +2125,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_programaradiotelevisioninternet = LineChart(data_source)
             context['chart_programaradiotelevisioninternet'] = chart_programaradiotelevisioninternet
@@ -2300,7 +2188,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_arbitrajepublicacionacademica = LineChart(data_source)
             context['chart_arbitrajepublicacionacademica'] = chart_arbitrajepublicacionacademica
@@ -2439,7 +2327,130 @@ class Dashboard(View):
 
 
 
-            context['chart.width'] = 100
+            items_data = [
+                ['Año', 'Mis desarrollos tecnológicos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = DesarrolloTecnologico.objects.filter(fecha__year=year).filter(
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) |
+                     (Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = DesarrolloTecnologico.objects.filter(fecha__year=year, autores=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(
+                    request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(desarrollo_tecnologico_autores__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(
+                            total_items_year_sum / users_with_items_year_count,
+                            2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(desarrollo_tecnologico_autores__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('desarrollo_tecnologico_autores')).aggregate(Max('desarrollo_tecnologico_autores__count'))[
+                    'desarrollo_tecnologico_autores__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(
+                    max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(desarrollo_tecnologico_autores__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('desarrollo_tecnologico_autores')).aggregate(Min('desarrollo_tecnologico_autores__count'))[
+                    'desarrollo_tecnologico_autores__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(
+                    min_items_year_user)
+
+            #print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_desarrollo_tecnologico = LineChart(data_source)
+            context['chart_desarrollo_tecnologico'] = chart_desarrollo_tecnologico
+
+
+
+            items_data = [
+                ['Año', 'Mis distinciones', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                items_data.append([str(year)])
+
+                total_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year).filter(
+                    ((Q(condecorados__ingreso_entidad__year__lte=year) & Q(
+                        condecorados__egreso_entidad__year__gt=year)) |
+                     (Q(condecorados__ingreso_entidad__year__lte=year) & Q(condecorados__egreso_entidad=None)))).count()
+
+                request_user_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year, condecorados=request.user).count()
+                if not request_user_items_year_sum:
+                    request_user_items_year_sum = 0
+                items_data[i + 1].append(
+                    request_user_items_year_sum)
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+                if users_with_items_year_count > 0:
+                    items_data[i + 1].append(
+                        round(
+                            total_items_year_sum / users_with_items_year_count,
+                            2))
+                else:
+                    items_data[i + 1].append(0)
+
+                max_items_year_user = User.objects.filter(
+                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('distincion_academico_condecorados')).aggregate(
+                    Max('distincion_academico_condecorados__count'))[
+                    'distincion_academico_condecorados__count__max']
+                if max_items_year_user == None:
+                    max_items_year_user = 0
+                items_data[i + 1].append(
+                    max_items_year_user)
+
+                min_items_year_user = User.objects.filter(
+                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('distincion_academico_condecorados')).aggregate(
+                    Min('distincion_academico_condecorados__count'))[
+                    'distincion_academico_condecorados__count__min']
+                if min_items_year_user == None:
+                    min_items_year_user = 0
+                items_data[i + 1].append(
+                    min_items_year_user)
+
+            #print(items_data)
+            data_source = SimpleDataSource(data=items_data)
+            chart_distincion_academicos = LineChart(data_source)
+            context['chart_distincion_academicos'] = chart_distincion_academicos
+
+
+
+
 
 
 
@@ -2454,4 +2465,17 @@ class Dashboard(View):
         return render(request, self.template_name, context)
 
 
+class ReporteHistorico(View):
+    form_class = None
+    template_name = 'main.html'
+    aux = {}
+    now = datetime.now()
+    this_year = now.year
+    ten_years_ago = now.year - 10
 
+
+
+    def get(self, request):
+        context = {}
+
+        return render(request, self.template_name, context)
