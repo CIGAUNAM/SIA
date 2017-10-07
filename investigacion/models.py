@@ -129,3 +129,6 @@ class InformeTecnico(models.Model):
         verbose_name = "Informe técnico de acceso público"
         verbose_name_plural = "Informes técnicos de acceso público"
         ordering = ['fecha', 'titulo']
+
+
+

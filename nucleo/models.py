@@ -620,6 +620,9 @@ class Proyecto(models.Model):
     problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True)
     descripcion_problema_nacional_conacyt = models.TextField(blank=True)
     dependencias = models.ManyToManyField(Dependencia, related_name='proyecto_dependencias', blank=True)
+    financiamiento_conacyt = models.CharField(max_length=20, unique=True)
+    financiamiento_papiit = models.CharField(max_length=20, unique=True)
+
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_metodologias', blank=True)
     especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_especialidades', blank=True)
