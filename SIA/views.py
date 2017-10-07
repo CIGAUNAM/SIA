@@ -2549,14 +2549,6 @@ class ReporteHistorico(View):
                     (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad=None)))
                 active_users_per_last_x_year.append(users_with_items_year_count.count())
 
-            # years_cursos_especializacion_dates = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
-            # years_cursos_especializacion = []
-
-            # for i in reversed(years_cursos_especializacion_dates[:num_years]):
-            #    years_cursos_especializacion.append(str(i.year))
-
-            # cursos_data = [['Año', 'Personas', 'Total horas', 'Total horas', 'Promedio Horas', 'Max horas', 'Min horas']]
-
 
             cursos_data = [['Año', 'Total horas', 'Promedio horas', 'Max horas', 'Min horas', 'Personas activas']]
             for i in range(num_years):
@@ -2619,23 +2611,23 @@ class ReporteHistorico(View):
             hchart_cursos_especializacion = LineChart(data_source)
             context['hchart_cursos_especializacion'] = hchart_cursos_especializacion
 
+
             items_data = [
-                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas', 'Indexados']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
-                                                                                                  status='PUBLICADO').filter(
+                total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year, status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                status='PUBLICADO',
                                                                                usuarios=request.user).count()
-                if not total_articulos_cientificos_enprensa_year_sum:
-                    total_articulos_cientificos_enprensa_year_sum = 0
-                items_data[i + 1].append(total_articulos_cientificos_enprensa_year_sum)
+                if not total_items_year_sum:
+                    total_items_year_sum = 0
+                items_data[i + 1].append(total_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
@@ -2647,7 +2639,7 @@ class ReporteHistorico(View):
 
                 if users_with_items_year_count > 0:
                     items_data[i + 1].append(
-                        round(total_articulos_cientificos_enprensa_year_sum / users_with_items_year_count, 2))
+                        round(total_items_year_sum / users_with_items_year_count, 2))
                 else:
                     items_data[i + 1].append(0)
 
@@ -2672,6 +2664,15 @@ class ReporteHistorico(View):
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
                 items_data[i + 1].append(users_with_items_year_count)
 
+                total_items_indexados_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                                                                                   status='PUBLICADO').exclude(
+                    Q(id_doi__isnull=True) & Q(indices__isnull=True)).filter(
+                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+
+                items_data[i + 1].append(total_items_indexados_year_sum)
+
+
             # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             hchart_articulos_investigacion_publicados = LineChart(data_source)
@@ -2683,7 +2684,7 @@ class ReporteHistorico(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                                   status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
@@ -2691,9 +2692,9 @@ class ReporteHistorico(View):
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                status='EN_PRENSA',
                                                                                usuarios=request.user).count()
-                if not total_articulos_cientificos_enprensa_year_sum:
-                    total_articulos_cientificos_enprensa_year_sum = 0
-                items_data[i + 1].append(total_articulos_cientificos_enprensa_year_sum)
+                if not total_items_year_sum:
+                    total_items_year_sum = 0
+                items_data[i + 1].append(total_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
                     Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
@@ -2704,7 +2705,7 @@ class ReporteHistorico(View):
                     users_with_items_year_count = 0
                 if users_with_items_year_count > 0:
                     items_data[i + 1].append(
-                        round(total_articulos_cientificos_enprensa_year_sum / users_with_items_year_count, 2))
+                        round(total_items_year_sum / users_with_items_year_count, 2))
                 else:
                     items_data[i + 1].append(0)
 
