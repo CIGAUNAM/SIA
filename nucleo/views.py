@@ -374,10 +374,9 @@ class ImpactoSocialEliminar(View):
 class FinanciamientoJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = Financiamiento.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'tipo_financiamiento'))
+                                         fields=('nombre', 'tipo_financiamiento', 'dependencia'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

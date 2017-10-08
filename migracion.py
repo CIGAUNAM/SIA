@@ -3388,10 +3388,6 @@ ningunproyecto = Proyecto(nombre='Ninguno', status='OTRO', clasificacion='OTRO',
                           modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1))
 ningunproyecto.save()
 
-otroproyecto = Proyecto(nombre='Otro', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', modalidad='OTRA',
-                        fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1))
-otroproyecto.save()
-
 postdoctorados = (
     ('Centro de Investigaciones en Geografía Ambiental (CIGA)', 2014, 3, 2015, 12, 'hnSDn'),
     ('Instituto de Geografía', 2004, 4, 2006, 4, '9hUCZ'),
