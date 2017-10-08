@@ -365,7 +365,7 @@ class FinanciamientoContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Financiamiento', 'Tipo']}
+                'titulos_tabla': ['Financiamiento', 'Tipo', 'dependencia']}
 
 
     tabla_mios =  '<script>\n' \
@@ -385,6 +385,7 @@ class FinanciamientoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.tipo_financiamiento"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

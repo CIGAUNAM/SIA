@@ -14,6 +14,11 @@
         </div>
     </div>
     </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
     <p><strong>Tipo de financiamiento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de financiamiento.">
@@ -26,90 +31,10 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>Dependencias:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencias particimantes en el financiamiento, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la búsqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.dependencias_financiamiento }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de de las dependencias.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
+
+
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Nombre de {{ aux.objeto }}:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de {{ aux.objeto }}."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.nombre }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Tipo de financiamiento:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de financiamiento.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.tipo_financiamiento }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>Dependencias:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencias particimantes en el financiamiento, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la búsqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.dependencias_financiamiento }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de de las dependencias.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
+
 {% endblock %}
