@@ -365,26 +365,11 @@ class ImpactoSocial(models.Model):
         verbose_name = 'Impacto social'
         verbose_name_plural = 'Impactos sociales'
 
-"""
-class ProgramaFinanciamiento(models.Model):
-    programa_financiamiento = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='programa_financiamiento', unique=True)
-    descripcion = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.programa_financiamiento
-
-    def natural_key(self):
-        return (self.programa_financiamiento)
-
-    class Meta:
-        ordering = ['programa_financiamiento']
-"""
 
 class Financiamiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    tipo_financiamiento = models.CharField(max_length=80, choices=FINANCIAMIENTO_TIPO)
     descripcion = models.TextField(blank=True)
+    tipo_financiamiento = models.CharField(max_length=80, choices=FINANCIAMIENTO_TIPO)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
 
@@ -603,13 +588,14 @@ class ProblemaNacionalConacyt(models.Model):
 
 class Proyecto(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre_proyecto', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
     es_permanente = models.BooleanField(default=False)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
-    usuarios = models.ManyToManyField(User, related_name='proyecto_responsables', verbose_name='Responsables')
+    institucion = models.ForeignKey(Institucion)
+    dependencia = models.ForeignKey(Dependencia)
+    usuarios = SortedManyToManyField(User, related_name='proyecto_responsables', verbose_name='Responsables')
     participantes = models.ManyToManyField(User, related_name='proyecto_participantes', blank=True)
     status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
     clasificacion = models.CharField(max_length=30, choices=CLASIFICACION_PROYECTO)
@@ -618,11 +604,12 @@ class Proyecto(models.Model):
     tematica_genero = models.BooleanField(default=False)
     problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True)
     descripcion_problema_nacional_conacyt = models.TextField(blank=True)
-    dependencias = models.ManyToManyField(Dependencia, related_name='proyecto_dependencias', blank=True)
+    #dependencias = models.ManyToManyField(Dependencia, related_name='proyecto_dependencias', blank=True)
+
+    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     financiamiento_conacyt = models.CharField(max_length=20, unique=True, null=True, blank=True)
     financiamiento_papiit = models.CharField(max_length=20, unique=True, null=True, blank=True)
 
-    otros_financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_metodologias', blank=True)
     especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_especialidades', blank=True)
     impactos_sociales = models.ManyToManyField(ImpactoSocial, related_name='proyecto_impactos_sociales', blank=True)
@@ -650,24 +637,6 @@ class Proyecto(models.Model):
 
 ###################
 
-
-"""
-class TipoDocumento(models.Model):
-    nombre = models.CharField(max_length=50, unique=True)
-    #slug = AutoSlugField(populate_from='tipo', unique=True)
-    descripcion = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.nombre
-
-    def natural_key(self):
-        return (self.nombre)
-
-    class Meta:
-        ordering = ['nombre']
-        verbose_name = 'Tipo de documento'
-        verbose_name_plural = 'Tipos de documentos'
-"""
 
 class Indice(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
