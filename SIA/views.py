@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.core import serializers
 
 from formacion_academica.models import CursoEspecializacion
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, ProyectoInvestigacion
 from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, OrganizacionEventoAcademico, ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
@@ -14,7 +14,7 @@ from docencia.models import CursoDocencia
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 
-from nucleo.models import User, Libro, ProyectoInvestigacion
+from nucleo.models import User, Libro
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum
 
@@ -965,22 +965,22 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION').filter(
+                total_items_year_sum = ProyectoInvestigacion.objects.filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).filter(
                     (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
                     | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-                request_user_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION', usuarios=request.user).filter(
+                request_user_items_year_sum = ProyectoInvestigacion.objects.filter(usuarios=request.user).filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin__year__gt=year))
-                    | (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin=None))).filter(
+                users_with_items_year_count = User.objects.filter(
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -993,24 +993,24 @@ class Dashboard(View):
                 else:
                     items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin__year__gt=year))
-                    | (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin=None))
+                max_items_year_user = User.objects.filter(
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_responsables')).aggregate(Max('proyecto_responsables__count'))[
-                    'proyecto_responsables__count__max']
+                    Count('proyecto_investigacion_responsables')).aggregate(Max('proyecto_investigacion_responsables__count'))[
+                    'proyecto_investigacion_responsables__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
-                min_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin__year__gt=year))
-                    | (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin=None))
+                min_items_year_user = User.objects.filter(
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_responsables')).aggregate(Min('proyecto_responsables__count'))[
-                    'proyecto_responsables__count__min']
+                    Count('proyecto_investigacion_responsables')).aggregate(Min('proyecto_investigacion_responsables__count'))[
+                    'proyecto_investigacion_responsables__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
@@ -3443,11 +3443,11 @@ class ReporteHistorico(View):
                     total_items_year_sum = 0
                 items_data[i + 1].append(total_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(
-                        proyecto_responsables__fecha_fin__year__gt=year))
-                    | (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(
-                        proyecto_responsables__fecha_fin=None))).filter(
+                users_with_items_year_count = User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin=None))).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -3460,28 +3460,28 @@ class ReporteHistorico(View):
                 else:
                     items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(
-                        proyecto_responsables__fecha_fin__year__gt=year))
+                max_items_year_user = User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                     | (
-                    Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin=None))
+                    Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_responsables')).aggregate(Max('proyecto_responsables__count'))[
-                    'proyecto_responsables__count__max']
+                    Count('proyecto_investigacion_responsables')).aggregate(Max('proyecto_investigacion_responsables__count'))[
+                    'proyecto_investigacion_responsables__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
-                min_items_year_user = User.objects.filter(proyecto_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(
-                        proyecto_responsables__fecha_fin__year__gt=year))
+                min_items_year_user = User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                     | (
-                    Q(proyecto_responsables__fecha_inicio__year__lte=year) & Q(proyecto_responsables__fecha_fin=None))
+                    Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_responsables')).aggregate(Min('proyecto_responsables__count'))[
-                    'proyecto_responsables__count__min']
+                    Count('proyecto_investigacion_responsables')).aggregate(Min('proyecto_investigacion_responsables__count'))[
+                    'proyecto_investigacion_responsables__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
