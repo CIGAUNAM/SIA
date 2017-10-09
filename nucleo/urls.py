@@ -99,11 +99,6 @@ urlpatterns = [
     # url(r'^distinciones/(?P<pk>[\w\-]+)/eliminar$', DistincionEliminar.as_view(), name='distincion_eliminar'),
     url(r'^distinciones/(?P<pk>[\w\-]+)/$', DistincionDetalle.as_view(), name='distincion_detalle'),
 
-    url(r'^memorias/json/', MemoriaJSON.as_view(), name='memoria_lista__json'),
-    url(r'^memorias/$', MemoriaLista.as_view(), name='memoria_lista'),
-    # url(r'^memorias/(?P<pk>[\w\-]+)/eliminar$', MemoriaEliminar.as_view(), name='memoria_eliminar'),
-    url(r'^memorias/(?P<pk>[\w\-]+)/$', MemoriaDetalle.as_view(), name='memoria_detalle'),
-
     url(r'^editoriales/json/', EditorialJSON.as_view(), name='editorial_lista__json'),
     url(r'^editoriales/$', EditorialLista.as_view(), name='editorial_lista'),
     # url(r'^editoriales/(?P<pk>[\w\-]+)/eliminar$', EditorialEliminar.as_view(), name='editorial_eliminar'),
