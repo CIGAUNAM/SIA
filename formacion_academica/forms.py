@@ -266,11 +266,11 @@ class PostDoctoradoForm(forms.ModelForm):
     )
     proyecto = forms.ModelChoiceField(
         required=True,
-        queryset=Proyecto.objects.all(),
+        queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

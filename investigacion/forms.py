@@ -2,7 +2,8 @@ from SIA.widgets import *
 
 from .models import *
 from nucleo.models import Libro as LibroInvestigacion
-from nucleo.models import Proyecto as ProyectoInvestigacion, ProblemaNacionalConacyt
+from nucleo.models import ProblemaNacionalConacyt
+
 
 from django import forms
 
@@ -56,11 +57,11 @@ class ArticuloCientificoForm(forms.ModelForm):
                              label='ID WOS')
     proyecto = forms.ModelChoiceField(
         required=False,
-        queryset=Proyecto.objects.all(),
-        label="Proyecto",
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -95,11 +96,11 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
                                  required=True, label='Número de página final')
     proyecto = forms.ModelChoiceField(
         required=False,
-        queryset=Proyecto.objects.all(),
-        label="Proyecto",
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -184,11 +185,11 @@ class MapaArbitradoForm(forms.ModelForm):
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
-        queryset=Proyecto.objects.all(),
-        label="Proyecto",
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -215,11 +216,11 @@ class InformeTecnicoForm(forms.ModelForm):
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
-        queryset=Proyecto.objects.all(),
-        label="Proyecto",
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

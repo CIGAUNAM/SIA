@@ -70,7 +70,7 @@ Doctorado.objects.all().delete()
 print("Borrando ProgramasDoctorado")
 ProgramaDoctorado.objects.all().delete()
 print("Borrando Proyectos")
-Proyecto.objects.all().delete()
+ProyectoInvestigacion.objects.all().delete()
 print("Borrando Maestrias")
 Maestria.objects.all().delete()
 print("Borrando ProgramaMaestria")
@@ -3384,10 +3384,10 @@ for i in Doctorados:
     m.save()
     print(m)
 
-ningunproyecto = Proyecto(nombre='Ninguno', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', tipo='INVESTIGACION',
-                          modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1),
-                          institucion=Institucion.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'),
-                          dependencia=Dependencia.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'))
+ningunproyecto = ProyectoInvestigacion(nombre='Ninguno', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', tipo='INVESTIGACION',
+                                       modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1),
+                                       institucion=Institucion.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'),
+                                       dependencia=Dependencia.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'))
 ningunproyecto.save()
 
 postdoctorados = (
@@ -3409,7 +3409,7 @@ postdoctorados = (
     ('Universidad Nacional Autónoma de México (UNAM)', 2016, 8, 2016, 12, '16ymf'))
 
 for i in postdoctorados:
-    p = PostDoctorado(nombre=str(uuid.uuid1()), proyecto=Proyecto.objects.get(nombre='Ninguno'),
+    p = PostDoctorado(nombre=str(uuid.uuid1()), proyecto=ProyectoInvestigacion.objects.get(nombre='Ninguno'),
                       area_conocimiento=AreaConocimiento.objects.get(nombre='Otra'),
                       institucion=Dependencia.objects.get(nombre=i[0]).institucion,
                       dependencia=Dependencia.objects.get(nombre=i[0]),

@@ -3,7 +3,8 @@ from django.db import models
 from django.conf import settings
 # from django.contrib.auth.models import User
 from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice, MedioDivulgacion
+from nucleo.models import User, Pais, Ciudad, TipoEvento, Evento, Libro, Revista, Indice, MedioDivulgacion
+from investigacion.models import ProyectoInvestigacion
 from django.core.urlresolvers import reverse
 from sortedm2m.fields import SortedManyToManyField
 
@@ -42,7 +43,7 @@ class ArticuloDivulgacion(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     id_doi = models.CharField(max_length=100, blank=True)
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
 
 
     def __str__(self):
@@ -66,7 +67,7 @@ class CapituloLibroDivulgacion(models.Model):
     # status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     # proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_divulgracion_proyectos', blank=True)
     usuario = models.ForeignKey(User)
 

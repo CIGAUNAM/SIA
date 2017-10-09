@@ -25,11 +25,11 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
     fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     proyecto = forms.ModelChoiceField(
         required=False,
-        queryset=Proyecto.objects.all(),
+        queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

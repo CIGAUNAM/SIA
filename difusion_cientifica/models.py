@@ -2,7 +2,8 @@ from django.db import models
 
 from django.conf import settings
 #from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Estado, Ciudad, Proyecto, TipoEvento, Evento, Libro, Revista, Indice
+from nucleo.models import User, Pais, Estado, Ciudad, TipoEvento, Evento, Libro, Revista, Indice
+from investigacion.models import ProyectoInvestigacion
 from django.core.urlresolvers import reverse
 from sortedm2m.fields import SortedManyToManyField
 
@@ -30,7 +31,7 @@ class MemoriaInExtenso(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     issn = models.SlugField(max_length=20, blank=True)
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     #proyectos = models.ManyToManyField(Proyecto, blank=True)
     url = models.URLField(blank=True)
 

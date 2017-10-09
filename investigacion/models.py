@@ -5,13 +5,71 @@ from autoslug import AutoSlugField
 from django.core.urlresolvers import reverse
 #from table.tests.test_utils import Article
 
-from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, Revista, Indice, Libro, Editorial, Coleccion
+from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, \
+    Revista, Indice, Libro, Editorial, Coleccion, ProblemaNacionalConacyt, Financiamiento, Metodologia, \
+    AreaEspecialidad, ImpactoSocial 
 from sortedm2m.fields import SortedManyToManyField
 
 
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
+STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
+CLASIFICACION_PROYECTO = getattr(settings, 'CLASIFICACION_PROYECTO', (('BASICO', 'Ciencia Básica'), ('APLICADO', 'Investigaciòn Aplicada'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'), ('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'), ('OTRO', 'Otro')))
+ORGANIZACION_PROYECTO = getattr(settings, 'ORGANIZACION_PROYECTO', (('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo')))
+MODALIDAD_PROYECTO = getattr(settings, 'MODALIDAD_PROYECTO', (('DISCIPLINARIO', 'Disciplinario'), ('MULTIDISCIPLINARIO', 'Multidisciplinario'), ('INTERDISCIPLINARIO', 'Interisciplinario'), ('TRANSDISCIPLINARIO', 'Transdisciplinario'), ('OTRA', 'Otra')))
+FINANCIAMIENTO_UNAM = getattr(settings, 'FINANCIAMIENTO_UNAM', (('ASIGNADO', 'Presupuesto asignado a la entidad'), ('CONCURSADO', 'Presupuesto concursado por la entidad'), ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'), ('OTRO', 'Otro')))
+FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_UNAM', (('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'), ('OTRO', 'Otro')))
+FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO)))
 
 # Create your models here.
+
+
+class ProyectoInvestigacion(models.Model):
+    nombre = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField(blank=True)
+    #tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
+    es_permanente = models.BooleanField(default=False)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField(null=True, blank=True)
+    institucion = models.ForeignKey(Institucion)
+    dependencia = models.ForeignKey(Dependencia)
+    usuarios = SortedManyToManyField(User, related_name='proyecto_investigacion_responsables', verbose_name='Responsables')
+    participantes = models.ManyToManyField(User, related_name='proyecto_investigacion_participantes', blank=True)
+    status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
+    clasificacion = models.CharField(max_length=30, choices=CLASIFICACION_PROYECTO)
+    organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
+    modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
+    tematica_genero = models.BooleanField(default=False)
+    problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True)
+    descripcion_problema_nacional_conacyt = models.TextField(blank=True)
+    #dependencias = models.ManyToManyField(Dependencia, related_name='proyecto_investigacion_dependencias', blank=True)
+
+    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
+    financiamiento_conacyt = models.CharField(max_length=20, unique=True, null=True, blank=True)
+    financiamiento_papiit = models.CharField(max_length=20, unique=True, null=True, blank=True)
+
+    metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
+    especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades', blank=True)
+    impactos_sociales = models.ManyToManyField(ImpactoSocial, related_name='proyecto_investigacion_impactos_sociales', blank=True)
+    tecnicos = models.ManyToManyField(User, related_name='proyecto_investigacion_impactos_tecnicos', blank=True)
+    alumnos_doctorado = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_doctorado', blank=True)
+    alumnos_maestria = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_maestria', blank=True)
+    alumnos_licenciatura = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_licenciatura', blank=True)
+
+    def __str__(self):
+        if self.nombre == 'Ninguno':
+            return 'Ninguno'
+        else:
+            return "{} : {}".format(self.nombre, self.fecha_inicio)
+
+    def natural_key(self):
+        return (self.nombre)
+
+    def get_absolute_url(self):
+        return reverse('proyecto_investigacion_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['nombre']
+
 
 
 class ArticuloCientifico(models.Model):
@@ -36,7 +94,7 @@ class ArticuloCientifico(models.Model):
     pagina_fin = models.PositiveIntegerField()
     id_doi = models.CharField(max_length=100, null=True, blank=True)
     id_wos = models.CharField(max_length=100, null=True, blank=True)
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
@@ -56,7 +114,7 @@ class CapituloLibroInvestigacion(models.Model):
     libro = models.ForeignKey(Libro)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     usuarios = SortedManyToManyField(User, related_name='capitulo_libro_investigacion_autores', verbose_name='Autores')
 
     def __str__(self):
@@ -90,7 +148,7 @@ class MapaArbitrado(models.Model):
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, blank=True)
     url = models.URLField(blank=True)
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     #proyectos = models.ManyToManyField(Proyecto, related_name='mapa_arbitrado_proyectos', blank=True)
     #tags = models.ManyToManyField(Tag, related_name='mapa_arbitrado_tags', blank=True)
 
@@ -114,7 +172,7 @@ class InformeTecnico(models.Model):
     usuarios = SortedManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
     fecha = models.DateField(auto_now=False)
     numero_paginas = models.PositiveIntegerField(default=1)
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     #proyectos = models.ManyToManyField(Proyecto, related_name='informe_tecnico_proyectos', blank=True)
     url = models.URLField(blank=True)
     #tags = models.ManyToManyField(Tag, related_name='informe_tecnico_tags', blank=True)
