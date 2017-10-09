@@ -3384,8 +3384,10 @@ for i in Doctorados:
     m.save()
     print(m)
 
-ningunproyecto = Proyecto(nombre='Ninguno', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL',
-                          modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1))
+ningunproyecto = Proyecto(nombre='Ninguno', status='OTRO', clasificacion='OTRO', organizacion='INDIVIDUAL', tipo='INVESTIGACION',
+                          modalidad='OTRA', fecha_inicio=datetime(1900, 1, 1), fecha_fin=datetime(9900, 1, 1),
+                          institucion=Institucion.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'),
+                          dependencia=Dependencia.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'))
 ningunproyecto.save()
 
 postdoctorados = (

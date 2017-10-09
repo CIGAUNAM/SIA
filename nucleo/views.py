@@ -738,6 +738,7 @@ class ProyectoJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'tipo', 'fecha_inicio'))
             return HttpResponse(json, content_type='application/json')
+
         except:
             raise Http404
 

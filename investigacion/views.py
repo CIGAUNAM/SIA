@@ -287,6 +287,7 @@ class ProyectoInvestigacionJSON(View):
             json = json.replace('EN_PROCESO', 'En proceso')
             json = json.replace('CONCLUIDO', 'Concluído')
             json = json.replace('OTRO', 'Otro')
+            json = json.replace('OTRA', 'Otra')
 
             json = json.replace('BASICO', 'Básico')
             json = json.replace('APLICADO', 'Aplicado')
