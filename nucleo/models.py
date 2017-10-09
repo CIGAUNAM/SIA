@@ -586,52 +586,6 @@ class ProblemaNacionalConacyt(models.Model):
         verbose_name_plural = ['Problemáticas Nacionales CONACYT']
 
 
-class Proyecto(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
-    es_permanente = models.BooleanField(default=False)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField(null=True, blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
-    usuarios = SortedManyToManyField(User, related_name='proyecto_responsables', verbose_name='Responsables')
-    participantes = models.ManyToManyField(User, related_name='proyecto_participantes', blank=True)
-    status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
-    clasificacion = models.CharField(max_length=30, choices=CLASIFICACION_PROYECTO)
-    organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
-    modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
-    tematica_genero = models.BooleanField(default=False)
-    problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True)
-    descripcion_problema_nacional_conacyt = models.TextField(blank=True)
-    #dependencias = models.ManyToManyField(Dependencia, related_name='proyecto_dependencias', blank=True)
-
-    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
-    financiamiento_conacyt = models.CharField(max_length=20, unique=True, null=True, blank=True)
-    financiamiento_papiit = models.CharField(max_length=20, unique=True, null=True, blank=True)
-
-    metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_metodologias', blank=True)
-    especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_especialidades', blank=True)
-    impactos_sociales = models.ManyToManyField(ImpactoSocial, related_name='proyecto_impactos_sociales', blank=True)
-    tecnicos = models.ManyToManyField(User, related_name='proyecto_impactos_tecnicos', blank=True)
-    alumnos_doctorado = models.ManyToManyField(User, related_name='proyecto_alumnos_doctorado', blank=True)
-    alumnos_maestria = models.ManyToManyField(User, related_name='proyecto_alumnos_maestria', blank=True)
-    alumnos_licenciatura = models.ManyToManyField(User, related_name='proyecto_alumnos_licenciatura', blank=True)
-
-    def __str__(self):
-        if self.nombre == 'Ninguno':
-            return 'Ninguno'
-        else:
-            return "{} : {}".format(self.nombre, self.fecha_inicio)
-
-    def natural_key(self):
-        return (self.nombre)
-
-    def get_absolute_url(self):
-        return reverse('proyecto_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['nombre']
 
 
 
@@ -654,22 +608,6 @@ class Indice(models.Model):
 
     def get_absolute_url(self):
         return reverse('/', kwargs={'pk': self.pk})
-
-
-
-class Memoria(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    #slug = AutoSlugField(populate_from='memoria')
-
-    def __str__(self):
-        return self.nombre
-
-    def natural_key(self):
-        return (self.nombre)
-
-    def get_absolute_url(self):
-        return reverse('memoria_detalle', kwargs={'pk': self.pk})
 
 
 class Editorial(models.Model):

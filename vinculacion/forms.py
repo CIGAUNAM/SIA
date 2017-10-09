@@ -55,11 +55,11 @@ class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
     fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     proyecto = forms.ModelChoiceField(
-        queryset=Proyecto.objects.all(),
+        queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto de Investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -106,11 +106,11 @@ class RedAcademicaForm(forms.ModelForm):
     fecha_constitucion = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     vigente = forms.BooleanField(required=False)
     proyecto = forms.ModelChoiceField(
-        queryset=Proyecto.objects.all(),
+        queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto de Investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

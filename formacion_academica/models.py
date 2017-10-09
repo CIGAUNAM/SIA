@@ -2,7 +2,8 @@ from django.db import models
 from django.conf import settings
 from django.core.urlresolvers import reverse
 #from autoslug import AutoSlugField
-from nucleo.models import User, Dependencia, Institucion, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Proyecto
+from nucleo.models import User, Dependencia, Institucion, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
+from investigacion.models import ProyectoInvestigacion
 
 CURSO_ESPECIALIZACION_TIPO = getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', (('', ''), ('', ''), ('CURSO', 'Curso'), ('DIPLOMADO', 'Diplomado'), ('CERTIFICACION', 'Certificación'), ('OTRO', 'Otro')))
 CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', (('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')))
@@ -135,7 +136,7 @@ class PostDoctorado(models.Model):
     area_conocimiento = models.ForeignKey(AreaConocimiento, related_name='postdoctorado_area_conocimiento', verbose_name='Área de conocimiento')
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
-    proyecto = models.ForeignKey(Proyecto)
+    proyecto = models.ForeignKey(ProyectoInvestigacion)
     fecha_inicio = models.DateField('Fecha de inicio de postdoctorado')
     fecha_fin = models.DateField('Fecha de terminación de postdoctorado', blank=True, null=True)
     usuario = models.ForeignKey(User, related_name='postdoctorados')

@@ -119,5 +119,5 @@ class ProgramaDoctoradoSerializer(serializers.ModelSerializer):
 
 class ProyectoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Proyecto
+        model = ProyectoInvestigacion
         fields = ('id', 'nombre_proyecto', 'descripcion', 'es_permanente', 'fecha_inicio', 'fecha_fin', 'responsables', 'participantes', 'status', 'clasificacion', 'organizacion', 'modalidad', 'tematica_genero', 'dependencias', 'financiamientos', 'metodologias', 'especialidades', 'impactos_sociales', 'tecnicos', 'alumnos_doctorado', 'alumnos_maestria', 'alumnos_licenciatura')

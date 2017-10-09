@@ -2,8 +2,8 @@ from django.db import models
 
 from django.conf import settings
 from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Proyecto, Revista, Indice, Libro, Editorial, Coleccion
-from investigacion.models import CapituloLibroInvestigacion
+from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Revista, Indice, Libro, Editorial, Coleccion
+from investigacion.models import CapituloLibroInvestigacion, ProyectoInvestigacion
 from django.core.urlresolvers import reverse
 
 RED_ACADEMICA__CLASIFICACION = getattr (settings, 'RED_ACADEMICA__CLASIFICACION', (('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
@@ -42,7 +42,7 @@ class ArbitrajePublicacionAcademica(models.Model):
 class ArbitrajeProyectoInvestigacion(models.Model):
     fecha = models.DateField()
     descripcion = models.TextField(blank=True)
-    proyecto = models.ForeignKey(Proyecto)
+    proyecto = models.ForeignKey(ProyectoInvestigacion)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='arbitraje_proyecto_investigacion_tags', blank=True)
 
@@ -90,7 +90,7 @@ class RedAcademica(models.Model):
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
     vigente = models.BooleanField(default=False)
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     #proyectos = models.ManyToManyField(Proyecto, related_name='red_academica_proyectos', blank=True)
     usuarios = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
     #tags = models.ManyToManyField(Tag, related_name='red_academica_tags', blank=True)

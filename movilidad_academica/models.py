@@ -1,7 +1,8 @@
 from django.db import models
 
 from autoslug import AutoSlugField
-from nucleo.models import User, Institucion, Dependencia, Financiamiento, Proyecto
+from nucleo.models import User, Institucion, Dependencia, Financiamiento
+from investigacion.models import ProyectoInvestigacion
 from vinculacion.models import RedAcademica
 
 
@@ -20,7 +21,7 @@ class MovilidadAcademica(models.Model):
     intercambio_unam = models.BooleanField(default=False)
     financiamiento = models.ForeignKey(Financiamiento)
     redes_academicas = models.ManyToManyField(RedAcademica, related_name='vinculacion_redes_academicas', blank=True)
-    proyecto_investigacion = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto_investigacion = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     usuario = models.ForeignKey(User, related_name='movilidad_academica_usuario')
     #tags = models.ManyToManyField(Tag, related_name='vinculacion_tags', blank=True)
 

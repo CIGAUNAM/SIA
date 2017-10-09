@@ -14,7 +14,7 @@ from docencia.models import CursoDocencia
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 
-from nucleo.models import User, Libro, Proyecto
+from nucleo.models import User, Libro, ProyectoInvestigacion
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum
 
@@ -965,13 +965,13 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = Proyecto.objects.filter(tipo='INVESTIGACION').filter(
+                total_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION').filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).filter(
                     (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
                     | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-                request_user_items_year_sum = Proyecto.objects.filter(tipo='INVESTIGACION', usuarios=request.user).filter(
+                request_user_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION', usuarios=request.user).filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).count()
                 if not request_user_items_year_sum:
@@ -3429,14 +3429,14 @@ class ReporteHistorico(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = Proyecto.objects.filter(tipo='INVESTIGACION').filter(
+                total_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION').filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).filter(
                     (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
                     | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-                request_user_items_year_sum = Proyecto.objects.filter(tipo='INVESTIGACION',
-                                                                      usuarios=request.user).filter(
+                request_user_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION',
+                                                                                   usuarios=request.user).filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).count()
                 if not total_items_year_sum:

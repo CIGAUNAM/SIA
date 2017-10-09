@@ -2,7 +2,8 @@ from django.db import models
 
 #from django.contrib.auth.models import User
 from autoslug import AutoSlugField
-from nucleo.models import User, Institucion, Dependencia, Proyecto, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Asignatura
+from nucleo.models import User, Institucion, Dependencia, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, Asignatura
+from investigacion.models import ProyectoInvestigacion
 from vinculacion.models import RedAcademica
 
 

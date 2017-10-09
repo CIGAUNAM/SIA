@@ -51,11 +51,11 @@ class MovilidadAcademicaForm(forms.ModelForm):
         )
     )
     proyecto_investigacion = forms.ModelChoiceField(
-        queryset=Proyecto.objects.all(),
+        queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto de investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

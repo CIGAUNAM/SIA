@@ -5,7 +5,7 @@ from django.contrib import admin
 from . models import ZonaPais, Pais, Estado, Ciudad, Institucion, Dependencia, Departamento, \
     User, AreaConocimiento, AreaEspecialidad, ImpactoSocial, Cargo, Financiamiento, \
     Metodologia, Beca, ProgramaLicenciatura, \
-    ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, ProblemaNacionalConacyt, Proyecto, Nombramiento, \
+    ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, ProblemaNacionalConacyt, Nombramiento, \
     Indice, Editorial, Coleccion, Libro, Revista, Asignatura, MedioDivulgacion
 
 admin.site.register(ZonaPais)
@@ -29,7 +29,6 @@ admin.site.register(ProgramaDoctorado)
 admin.site.register(TipoEvento)
 admin.site.register(Evento)
 admin.site.register(ProblemaNacionalConacyt)
-admin.site.register(Proyecto)
 admin.site.register(Nombramiento)
 
 

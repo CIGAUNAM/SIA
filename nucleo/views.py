@@ -730,43 +730,6 @@ class DistincionEliminar(View):
             raise Http404
 
 
-class ProyectoJSON(View):
-    def get(self, request):
-        try:
-            #usuarioid = User.objects.get(username=request.user.username).id
-            items = Proyecto.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'tipo', 'fecha_inicio'))
-            return HttpResponse(json, content_type='application/json')
-
-        except:
-            raise Http404
-
-
-class ProyectoLista(ObjectCreateMixinNucleo, View):
-    form_class = ProyectoForm
-    model = Proyecto
-    aux = ProyectoContext.contexto
-    template_name = 'main.html'
-
-
-class ProyectoDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ProyectoForm
-    model = Proyecto
-    aux = ProyectoContext.contexto
-    template_name = 'main.html'
-
-
-class ProyectoEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(Proyecto, pk=pk)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
 class MemoriaJSON(View):
     def get(self, request):
         try:
@@ -775,30 +738,6 @@ class MemoriaJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'estado'))
             return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class MemoriaLista(ObjectCreateMixinNucleo, View):
-    form_class = MemoriaForm
-    model = Memoria
-    aux = MemoriaContext.contexto
-    template_name = 'simple.html'
-
-
-class MemoriaDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = MemoriaForm
-    model = Memoria
-    aux = MemoriaContext.contexto
-    template_name = 'simple.html'
-
-
-class MemoriaEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(Memoria, pk=pk)
-            item.delete()
-            return redirect('../')
         except:
             raise Http404
 
@@ -1299,12 +1238,12 @@ class ProgramaDoctoradoDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class ProyectoList(generics.ListCreateAPIView):
-    queryset = Proyecto.objects.all()
+    queryset = ProyectoInvestigacion.objects.all()
     serializer_class = ProyectoSerializer
 
 class ProyectoDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Proyecto.objects.all()
+    queryset = ProyectoInvestigacion.objects.all()
     serializer_class = ProyectoSerializer
 
 

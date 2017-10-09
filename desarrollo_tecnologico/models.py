@@ -2,7 +2,8 @@ from django.db import models
 
 #from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from nucleo.models import User, Dependencia, ImpactoSocial, Proyecto, Indice
+from nucleo.models import User, Dependencia, ImpactoSocial, Indice
+from investigacion.models import ProyectoInvestigacion
 
 # Create your models here.
 
@@ -46,7 +47,7 @@ class Licencia(models.Model):
 class DesarrolloTecnologico(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     #tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
-    proyecto = models.ForeignKey(Proyecto, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     descripcion = models.TextField()
     version = models.CharField(max_length=100)
     patente = models.CharField(max_length=255, blank=True)

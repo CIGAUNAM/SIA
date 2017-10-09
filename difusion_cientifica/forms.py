@@ -55,11 +55,11 @@ class MemoriaInExtensoForm(forms.ModelForm):
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
-        queryset=Proyecto.objects.all(),
+        queryset=ProyectoInvestigacion.objects.all(),
         label="Pais",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Proyecto.objects.all(),
+            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
         )
     )
