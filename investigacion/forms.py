@@ -309,48 +309,72 @@ class LibroInvestigacionForm(forms.ModelForm):
 
 
 class ProyectoInvestigacionForm(forms.ModelForm):
-    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                                  required=False)
+    tipo = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', 'Seleccionar tipo de proyecto'), ('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
     es_permanente = forms.BooleanField(required=False)
-    fecha_inicio = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
-    fecha_fin = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
-    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                               choices=getattr(settings, 'STATUS_PROYECTO', ))
-    clasificacion = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'CLASIFICACION_PROYECTO', ))
-    organizacion = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'ORGANIZACION_PROYECTO', ))
-    modalidad = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'MODALIDAD_PROYECTO', ))
-    tematica_genero = forms.BooleanField(required=False)
-    problema_nacional_conacyt = forms.ModelChoiceField(
-        required=False,
-        queryset=ProblemaNacionalConacyt.objects.all(),
-        label="Problema Nacional Conacyt",
+    fecha_inicio = forms.CharField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True, label='Fecha de inicio')
+    fecha_fin = forms.CharField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de fin')
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=ProblemaNacionalConacyt.objects.all(),
+            queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion_problema_nacional_conacyt = forms.CharField(
-        widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    status = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'STATUS_PROYECTO'), required=True)
+    clasificacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'CLASIFICACION_PROYECTO'), required=True)
+    organizacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'ORGANIZACION_PROYECTO'), required=True)
+    modalidad = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'MODALIDAD_PROYECTO'), required=True)
+    tematica_genero = forms.BooleanField(required=False)
+    problema_nacional_conacyt = forms.ModelChoiceField(
+        queryset=ProblemaNacionalConacyt.objects.all(),
+        label="Problema Nacional Conacyt",
+        widget=ModelSelect2Widget(
+            queryset=ProblemaNacionalConacyt.objects.all(),
+            search_fields=['nombre__icontains'],
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        ),
+        required=False
+    )
 
     class Meta:
         model = ProyectoInvestigacion
-        exclude = ['tipo', ]
+        exclude = []
         widgets = {
-            'problemas_nacionales_conacyt': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'descripcion_problema_nacional_conacyt': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'participantes': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'financiamiento_conacyt': TextInput(attrs={'class': 'form-control pull-right'}),
+            'financiamiento_papiit': TextInput(attrs={'class': 'form-control pull-right'}),
             'metodologias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'especialidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'impactos_sociales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
