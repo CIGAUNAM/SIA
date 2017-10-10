@@ -21,26 +21,4 @@ from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, O
 from formacion_academica.models import CursoEspecializacion, Licenciatura, Maestria, Doctorado, PostDoctorado
 from experiencia_laboral.models import *
 
-from investigacion.models import ArticuloCientifico
-
-
-print("Borrando articulos")
-ArticuloCientifico.objects.all().delete()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
