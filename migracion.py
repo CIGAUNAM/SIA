@@ -697,7 +697,6 @@ Instituciones = (
          ('Laboratorio de Análisis Físicos y Químicos del Ambiente (LAFQA)',
           Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
          ('Colegio de Geografia (Facultad de Filosofía y Letras)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
-         ('Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
      ]
      ),
 
