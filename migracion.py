@@ -20,6 +20,9 @@ from investigacion.models import ArticuloCientifico, ProyectoInvestigacion
 
 import uuid
 
+print("Borrando financciamientos")
+Financiamiento.objects.all().delete()
+
 print("Borrando articulos")
 ArticuloCientifico.objects.all().delete()
 
@@ -693,8 +696,8 @@ Instituciones = (
          ('Colegio de Historia', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
          ('Laboratorio de Análisis Físicos y Químicos del Ambiente (LAFQA)',
           Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
-         ('Colegio de Geografia (Facultad de Filosofía y Letras)',
-          Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+         ('Colegio de Geografia (Facultad de Filosofía y Letras)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+         ('Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
      ]
      ),
 
@@ -4696,6 +4699,6 @@ p = Financiamiento(nombre='CONACYT', tipo_financiamiento='FEDERAL', institucion=
 p.save()
 print('Financiamiento', p)
 
-p = Financiamiento(nombre='CONACYT', tipo_financiamiento='FEDERAL', institucion=Institucion.objects.get(nombre='Consejo Nacional de Ciencia y Tecnología (CONACYT)'), dependencia=Dependencia.objects.get(nombre='Consejo Nacional de Ciencia y Tecnología (CONACYT)'))
+p = Financiamiento(nombre='PAPIIT', tipo_financiamiento='OTRO', institucion=Institucion.objects.get(nombre='Consejo Nacional de Ciencia y Tecnología (CONACYT)'), dependencia=Dependencia.objects.get(nombre='Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT)'))
 p.save()
 print('Financiamiento', p)
