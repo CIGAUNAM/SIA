@@ -69,6 +69,7 @@ class ProyectoInvestigacion(models.Model):
 
     class Meta:
         ordering = ['nombre']
+        unique_together = ['financiamiento_conacyt', 'financiamiento_papiit']
 
 
 
