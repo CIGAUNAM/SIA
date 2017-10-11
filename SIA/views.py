@@ -1526,25 +1526,6 @@ class Dashboard(View):
             context['chart_articulo_divulgacion_aceptados'] = chart_articulo_divulgacion_aceptados
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             items_data = [
                 ['Año', 'Mis Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
@@ -2245,7 +2226,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            print(items_data)
+            #print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_arbitrajeproyectoinvestigacion = LineChart(data_source)
             context['chart_arbitrajeproyectoinvestigacion'] = chart_arbitrajeproyectoinvestigacion
@@ -2529,8 +2510,6 @@ class ReporteHistorico(View):
     now = datetime.now()
     this_year = now.year
     ten_years_ago = now.year - 10
-
-
 
     def get(self, request):
         context = {}
@@ -4920,3 +4899,94 @@ class ReporteHistorico(View):
         return render(request, self.template_name, context)
 
 
+
+
+class ReporteHistorico(View):
+    form_class = None
+    template_name = 'informe_actividades.html'
+    aux = {}
+    now = datetime.now()
+    this_year = now.year
+    ten_years_ago = now.year - 10
+
+    def get(self, request):
+        context = {}
+
+        if request.user.is_authenticated:
+            num_years = 10
+            last_x_years = []
+            active_users_per_last_x_year = []
+
+
+            for i in range(datetime.now().year - num_years + 1, datetime.now().year + 1):
+                last_x_years.append(i)
+
+            for i in last_x_years:
+                users_with_items_year_count = User.objects.filter(
+                    (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad__year__gt=i)) |
+                    (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad=None)))
+                active_users_per_last_x_year.append(users_with_items_year_count.count())
+
+
+            cursos_data = [['Año', 'Total horas', 'Promedio horas', 'Max horas', 'Min horas', 'Personas activas']]
+            for i in range(num_years):
+                year = last_x_years[i]
+                cursos_data.append([str(last_x_years[i])])
+
+                users_with_items_year_count = User.objects.filter(
+                    Q(cursos_especializacion__fecha_inicio__year=year) &
+                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+
+                total_course_hours_year_sum = CursoEspecializacion.objects.filter(fecha_inicio__year=year).filter((
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                    Sum('horas'))['horas__sum']
+                if total_course_hours_year_sum == None:
+                    total_course_hours_year_sum = 0
+
+                request_user_item_year_sum = User.objects.filter(cursos_especializacion__fecha_inicio__year=year,
+                                                                 cursos_especializacion__usuario=request.user).aggregate(
+                    Sum('cursos_especializacion__horas'))['cursos_especializacion__horas__sum']
+
+                if not total_course_hours_year_sum:
+                    total_course_hours_year_sum = 0
+                cursos_data[i + 1].append(total_course_hours_year_sum)
+
+                if users_with_items_year_count == None:
+                    users_with_items_year_count = 0
+                if users_with_items_year_count > 0:
+                    cursos_data[i + 1].append(round(total_course_hours_year_sum / users_with_items_year_count, 2))
+                else:
+                    cursos_data[i + 1].append(round(0, 2))
+
+                max_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                    Sum('cursos_especializacion__horas')).filter((
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Max('cursos_especializacion__horas__sum'))[
+                    'cursos_especializacion__horas__sum__max']
+                if max_item_year_user == None:
+                    max_item_year_user = 0
+                cursos_data[i + 1].append(max_item_year_user)
+
+                min_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
+                    Sum('cursos_especializacion__horas')).filter((
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Min('cursos_especializacion__horas__sum'))[
+                    'cursos_especializacion__horas__sum__min']
+                if not min_item_year_user:
+                    min_item_year_user = 0
+                cursos_data[i + 1].append(min_item_year_user)
+
+                cursos_data[i + 1].append(users_with_items_year_count)
+
+            data_source = SimpleDataSource(data=cursos_data)
+            hchart_cursos_especializacion = LineChart(data_source)
+            context['hchart_cursos_especializacion'] = hchart_cursos_especializacion
+
+            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=2016, financiamiento_conacyt__isnull=False)
