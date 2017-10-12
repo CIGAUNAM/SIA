@@ -4984,6 +4984,7 @@ class InformeActividades(View):
 
 
 
+
             # concluidos este año:
             proy_thisy_conc = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year).count()
 
