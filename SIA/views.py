@@ -14,7 +14,7 @@ from docencia.models import CursoDocencia
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 
-from nucleo.models import User, Libro
+from nucleo.models import User, Libro, Pais
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum
 
@@ -76,8 +76,7 @@ class Dashboard(View):
                 users_with_items_year_count = User.objects.filter(
                     Q(cursos_especializacion__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
                 if users_with_items_year_count == None:
                     users_with_items_year_count = 0
 
@@ -4905,12 +4904,12 @@ class ReporteHistorico(View):
     form_class = None
     template_name = 'informe_actividades.html'
     aux = {}
-    now = datetime.now()
-    this_year = now.year
-    ten_years_ago = now.year - 10
+    this_year = datetime.now().year
+
 
     def get(self, request):
         context = {}
+        this_year = self.this_year
 
         if request.user.is_authenticated:
             num_years = 10
@@ -4989,4 +4988,32 @@ class ReporteHistorico(View):
             hchart_cursos_especializacion = LineChart(data_source)
             context['hchart_cursos_especializacion'] = hchart_cursos_especializacion
 
-            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=2016, financiamiento_conacyt__isnull=False)
+            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=2016, financiamiento_conacyt__isnull=False).filter(Q(fecha))
+
+            # concluidos año anterior:
+            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1)
+
+            # concluidos año anterior conacyt:
+            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=False)
+
+            # concluidos año anterior papiit:
+            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_papiit__isnull=False)
+
+            # concluidos año anterior ingresos ext, nacionales:
+            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True,
+                                                     financiamiento_papiit__isnull=True).filter(
+                Q(financiamientos__institucion__pais__nombre='México')).annotate(Count('pk', distinct=True))
+
+            # concluidos año anterior ingresos ext, internacionales:
+
+            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True,
+                                                     financiamiento_papiit__isnull=True).filter(
+                Q(financiamientos__institucion__pais__nombre='México') & Q(financiamiento_conacyt__isnull=True,
+                                                                           financiamiento_papiit__isnull=True))
+
+
+
+            #.annotate(Count('pk', distinct=True)).annotate(Count('pk', distinct=True))
+
+
+

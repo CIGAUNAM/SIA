@@ -277,9 +277,9 @@ class ProyectoInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION').exclude(usuarios__id__exact=usuarioid)
+                items = ProyectoInvestigacion.objects.all().exclude(usuarios__id__exact=usuarioid)
             else:
-                items = ProyectoInvestigacion.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
+                items = ProyectoInvestigacion.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'status', 'clasificacion', 'modalidad'))
 
@@ -311,7 +311,6 @@ class ProyectoInvestigacionLista(ObjectCreateVarMixin, View):
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
             new_obj = bound_form.save(commit=False)
-            new_obj.tipo = 'INVESTIGACION'
             new_obj = bound_form.save()
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
         else:
@@ -337,7 +336,7 @@ class ProyectoInvestigacionDetalle(ObjectUpdateVarMixin, View):
 class ProyectoInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ProyectoInvestigacion, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
+            item = get_object_or_404(ProyectoInvestigacion, pk=pk, usuarios=request.user)
             item.delete()
             return redirect('../')
         except:
