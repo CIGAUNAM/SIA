@@ -22,7 +22,7 @@ from django.contrib.auth import views as auth_views
 from nucleo.views import *
 from django.conf.urls.static import static
 from django.conf.urls import url
-from SIA.views import Dashboard, ReporteHistorico
+from SIA.views import *
 
 
 
@@ -51,7 +51,8 @@ urlpatterns = [
 
     url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),
 
-    url(r'^reportes/historico$', ReporteHistorico.as_view(), name='perfil_usuario'),
+    url(r'^reportes/historico$', ReporteHistorico.as_view(), name='reporte_historico'),
+    url(r'^reportes/informe-actividades$', InformeActividades.as_view(), name='informe_actividades'),
 
 
     url(r'^admin/', admin.site.urls),
