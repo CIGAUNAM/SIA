@@ -4913,9 +4913,6 @@ class InformeActividades(View):
 
         if request.user.is_staff:
 
-            # concluidos año anterior:
-            proy_pasty_conc = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1).count()
-
             # concluidos año anterior conacyt:
             proy_pasty_conc_conacyt = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=False).count()
 
@@ -4943,21 +4940,21 @@ class InformeActividades(View):
 
 
 
-            # concluidos año anterior:
+            # en proceso año anterior:
             proy_pasty_proc = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None).count()
 
-            # concluidos año anterior conacyt:
+            # en proceso año anterior conacyt:
             proy_pasty_proc_conacyt = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_conacyt__isnull=False).count()
 
-            # concluidos año anterior papiit:
+            # en proceso año anterior papiit:
             proy_pasty_proc_papiit = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_papiit__isnull=False).count()
 
-            # concluidos año anterior ingresos ext, nacionales:
+            # en proceso año anterior ingresos ext, nacionales:
             proy_pasty_proc_extnal = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_conacyt__isnull=True,
                                                      financiamiento_papiit__isnull=True).filter(
                 Q(financiamientos__institucion__pais__nombre='México')).annotate(Count('pk', distinct=True)).count()
 
-            # concluidos año anterior ingresos ext, internacionales:
+            # en proceso año anterior ingresos ext, internacionales:
             proy_pasty_proc_extint_tmp = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True)
             proy_pasty_proc_extint = 0
             for i in proy_pasty_proc_extint_tmp:
