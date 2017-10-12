@@ -73,6 +73,7 @@ class ProyectoInvestigacion(models.Model):
 
 
 
+
 class ArticuloCientifico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     # slug = AutoSlugField(populate_from='titulo', unique=True)

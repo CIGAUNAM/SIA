@@ -445,17 +445,34 @@
     </p>
 
     <script>
-        $('#d_financiamiento_conacyt').hide();
-        $('#d_financiamiento_papiit').hide();
+        //$('#d_financiamiento_conacyt').hide();
+        //$('#d_financiamiento_papiit').hide();
 
-        $("#id_financiamientos").on('change', function () {
-                if ($("#id_status").val() == 'PUBLICADO') {
-                    //
-                } else {
-                    //
-                }
+        $("#id_financiamiento_conacyt").on('change', function () {
+            if ($("#id_financiamiento_conacyt").val() != '') {
+                $("#id_financiamiento_papiit").prop("value", '');
+                $("#id_financiamiento_papiit").prop("disabled", true);
+                $("#id_financiamientos").val(null).trigger('change');
+                $("#id_financiamientos").prop("disabled", true);
+            } else if ($("#id_financiamiento_conacyt").val() == '') {
+                $("#id_financiamiento_papiit").prop("disabled", false);
+                $("#id_financiamientos").prop("disabled", false);
+
             }
-        );
+        });
+
+        $("#id_financiamiento_papiit").on('change', function () {
+            if ($("#id_financiamiento_papiit").val() != '') {
+                $("#id_financiamiento_conacyt").prop("value", '');
+                $("#id_financiamiento_conacyt").prop("disabled", true);
+                $("#id_financiamientos").val(null).trigger('change');
+                $("#id_financiamientos").prop("disabled", true);
+            } else if ($("#id_financiamiento_papiit").val() == '') {
+                $("#id_financiamiento_conacyt").prop("disabled", false);
+                $("#id_financiamientos").prop("disabled", false);
+
+            }
+        });
     </script>
 
 {% endblock %}
@@ -903,4 +920,44 @@
         </div>
     </div>
     </p>
+
+    <script>
+        if ($("#id_financiamiento_conacyt").val() != '') {
+            $("#id_financiamiento_papiit").prop("value", '');
+            $("#id_financiamiento_papiit").prop("disabled", true);
+            $("#id_financiamientos").prop("disabled", true);
+        }
+        if ($("#id_financiamiento_papiit").val() != '') {
+            $("#id_financiamiento_conacyt").prop("value", '');
+            $("#id_financiamiento_conacyt").prop("disabled", true);
+            $("#id_financiamientos").prop("disabled", true);
+        }
+
+        $("#id_financiamiento_conacyt").on('change', function () {
+            if ($("#id_financiamiento_conacyt").val() != '') {
+                $("#id_financiamiento_papiit").prop("value", '');
+                $("#id_financiamiento_papiit").prop("disabled", true);
+                $("#id_financiamientos").val(null).trigger('change');
+                $("#id_financiamientos").prop("disabled", true);
+            } else if ($("#id_financiamiento_conacyt").val() == '') {
+                $("#id_financiamiento_papiit").prop("disabled", false);
+                $("#id_financiamientos").prop("disabled", false);
+
+            }
+        });
+
+        $("#id_financiamiento_papiit").on('change', function () {
+            if ($("#id_financiamiento_papiit").val() != '') {
+                $("#id_financiamiento_conacyt").prop("value", '');
+                $("#id_financiamiento_conacyt").prop("disabled", true);
+                $("#id_financiamientos").val(null).trigger('change');
+                $("#id_financiamientos").prop("disabled", true);
+            } else if ($("#id_financiamiento_papiit").val() == '') {
+                $("#id_financiamiento_conacyt").prop("disabled", false);
+                $("#id_financiamientos").prop("disabled", false);
+
+            }
+        });
+    </script>
+
 {% endblock %}

@@ -310,9 +310,6 @@ class LibroInvestigacionForm(forms.ModelForm):
 
 
 class ProyectoInvestigacionForm(forms.ModelForm):
-    tipo = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', 'Seleccionar tipo de proyecto'), ('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
     es_permanente = forms.BooleanField(required=False)
     fecha_inicio = forms.CharField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
@@ -370,8 +367,8 @@ class ProyectoInvestigacionForm(forms.ModelForm):
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'descripcion_problema_nacional_conacyt': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'participantes': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'financiamiento_conacyt': TextInput(attrs={'class': 'form-control pull-right'}),

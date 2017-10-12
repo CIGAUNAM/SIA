@@ -4692,12 +4692,3 @@ for i in libros_cap:
         print("       ", j)
         l.usuarios.add(User.objects.get(username=j))
 
-
-
-p = Financiamiento(nombre='CONACYT', tipo_financiamiento='FEDERAL', institucion=Institucion.objects.get(nombre='Consejo Nacional de Ciencia y Tecnología (CONACYT)'), dependencia=Dependencia.objects.get(nombre='Consejo Nacional de Ciencia y Tecnología (CONACYT)'))
-p.save()
-print('Financiamiento', p)
-
-p = Financiamiento(nombre='PAPIIT', tipo_financiamiento='OTRO', institucion=Institucion.objects.get(nombre='Consejo Nacional de Ciencia y Tecnología (CONACYT)'), dependencia=Dependencia.objects.get(nombre='Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT)'))
-p.save()
-print('Financiamiento', p)
