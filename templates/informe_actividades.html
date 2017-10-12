@@ -1,0 +1,12 @@
+{% extends 'ebase.html' %}
+
+{% block content %}
+
+    <p>Informe de actividades</p>
+
+    <p>{{ chart_proyectos_investigacion.as_html }}</p>
+    <script>
+        $('.morris-hover.morris-default-style').remove();
+    </script>
+{% endblock %}
+

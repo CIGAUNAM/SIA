@@ -21,7 +21,7 @@ from django.db.models import Q, Max, Min, Count, Sum
 
 
 from graphos.sources.simple import SimpleDataSource, BaseDataSource
-from graphos.renderers.morris import LineChart, AreaChart
+from graphos.renderers.morris import LineChart, AreaChart, BarChart
 #from graphos.renderers.highcharts import LineChart
 
 
@@ -4900,7 +4900,7 @@ class ReporteHistorico(View):
 
 
 
-class ReporteHistorico(View):
+class InformeActividades(View):
     form_class = None
     template_name = 'informe_actividades.html'
     aux = {}
@@ -4911,109 +4911,164 @@ class ReporteHistorico(View):
         context = {}
         this_year = self.this_year
 
-        if request.user.is_authenticated:
-            num_years = 10
-            last_x_years = []
-            active_users_per_last_x_year = []
-
-
-            for i in range(datetime.now().year - num_years + 1, datetime.now().year + 1):
-                last_x_years.append(i)
-
-            for i in last_x_years:
-                users_with_items_year_count = User.objects.filter(
-                    (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad__year__gt=i)) |
-                    (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad=None)))
-                active_users_per_last_x_year.append(users_with_items_year_count.count())
-
-
-            cursos_data = [['Año', 'Total horas', 'Promedio horas', 'Max horas', 'Min horas', 'Personas activas']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                cursos_data.append([str(last_x_years[i])])
-
-                users_with_items_year_count = User.objects.filter(
-                    Q(cursos_especializacion__fecha_inicio__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-
-                total_course_hours_year_sum = CursoEspecializacion.objects.filter(fecha_inicio__year=year).filter((
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
-                    Sum('horas'))['horas__sum']
-                if total_course_hours_year_sum == None:
-                    total_course_hours_year_sum = 0
-
-                request_user_item_year_sum = User.objects.filter(cursos_especializacion__fecha_inicio__year=year,
-                                                                 cursos_especializacion__usuario=request.user).aggregate(
-                    Sum('cursos_especializacion__horas'))['cursos_especializacion__horas__sum']
-
-                if not total_course_hours_year_sum:
-                    total_course_hours_year_sum = 0
-                cursos_data[i + 1].append(total_course_hours_year_sum)
-
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    cursos_data[i + 1].append(round(total_course_hours_year_sum / users_with_items_year_count, 2))
-                else:
-                    cursos_data[i + 1].append(round(0, 2))
-
-                max_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
-                    Sum('cursos_especializacion__horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
-                    Max('cursos_especializacion__horas__sum'))[
-                    'cursos_especializacion__horas__sum__max']
-                if max_item_year_user == None:
-                    max_item_year_user = 0
-                cursos_data[i + 1].append(max_item_year_user)
-
-                min_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
-                    Sum('cursos_especializacion__horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
-                    Min('cursos_especializacion__horas__sum'))[
-                    'cursos_especializacion__horas__sum__min']
-                if not min_item_year_user:
-                    min_item_year_user = 0
-                cursos_data[i + 1].append(min_item_year_user)
-
-                cursos_data[i + 1].append(users_with_items_year_count)
-
-            data_source = SimpleDataSource(data=cursos_data)
-            hchart_cursos_especializacion = LineChart(data_source)
-            context['hchart_cursos_especializacion'] = hchart_cursos_especializacion
-
-            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=2016, financiamiento_conacyt__isnull=False).filter(Q(fecha))
+        if request.user.is_staff:
 
             # concluidos año anterior:
-            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1)
+            proy_pasty_conc = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1).count()
 
             # concluidos año anterior conacyt:
-            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=False)
+            proy_pasty_conc_conacyt = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=False).count()
 
             # concluidos año anterior papiit:
-            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_papiit__isnull=False)
+            proy_pasty_conc_papiit = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_papiit__isnull=False).count()
 
             # concluidos año anterior ingresos ext, nacionales:
-            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True,
+            proy_pasty_conc_extnal = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True,
                                                      financiamiento_papiit__isnull=True).filter(
-                Q(financiamientos__institucion__pais__nombre='México')).annotate(Count('pk', distinct=True))
+                Q(financiamientos__institucion__pais__nombre='México')).annotate(Count('pk', distinct=True)).count()
 
             # concluidos año anterior ingresos ext, internacionales:
+            proy_pasty_conc_extint_tmp = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True)
+            proy_pasty_conc_extint = 0
+            for i in proy_pasty_conc_extint_tmp:
+                print()
+                paises = []
+                for j in i.financiamientos.all():
+                    if j.institucion.pais.nombre not in paises:
+                        paises.append(j.institucion.pais.nombre)
+                if 'México' in paises and len(paises) > 1 or 'México' not in paises and len(paises) > 0:
+                    proy_pasty_conc_extint += 1
+                    print(paises)
 
-            a = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True,
+
+
+
+            # concluidos año anterior:
+            proy_pasty_proc = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None).count()
+
+            # concluidos año anterior conacyt:
+            proy_pasty_proc_conacyt = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_conacyt__isnull=False).count()
+
+            # concluidos año anterior papiit:
+            proy_pasty_proc_papiit = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_papiit__isnull=False).count()
+
+            # concluidos año anterior ingresos ext, nacionales:
+            proy_pasty_proc_extnal = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_conacyt__isnull=True,
                                                      financiamiento_papiit__isnull=True).filter(
-                Q(financiamientos__institucion__pais__nombre='México') & Q(financiamiento_conacyt__isnull=True,
-                                                                           financiamiento_papiit__isnull=True))
+                Q(financiamientos__institucion__pais__nombre='México')).annotate(Count('pk', distinct=True)).count()
+
+            # concluidos año anterior ingresos ext, internacionales:
+            proy_pasty_proc_extint_tmp = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year - 1, fecha_fin=None, financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True)
+            proy_pasty_proc_extint = 0
+            for i in proy_pasty_proc_extint_tmp:
+                print()
+                paises = []
+                for j in i.financiamientos.all():
+                    if j.institucion.pais.nombre not in paises:
+                        paises.append(j.institucion.pais.nombre)
+                if 'México' in paises and len(paises) > 1 or 'México' not in paises and len(paises) > 0:
+                    proy_pasty_proc_extint += 1
+                    print(paises)
 
 
 
-            #.annotate(Count('pk', distinct=True)).annotate(Count('pk', distinct=True))
 
 
+
+
+
+
+            # concluidos este año:
+            proy_thisy_conc = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year).count()
+
+            # concluidos este año conacyt:
+            proy_thisy_conc_conacyt = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year,
+                                                                           financiamiento_conacyt__isnull=False).count()
+
+            # concluidos este año papiit:
+            proy_thisy_conc_papiit = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year,
+                                                                          financiamiento_papiit__isnull=False).count()
+
+            # concluidos este año ingresos ext, nacionales:
+            proy_thisy_conc_extnal = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year,
+                                                                          financiamiento_conacyt__isnull=True,
+                                                                          financiamiento_papiit__isnull=True).filter(
+                Q(financiamientos__institucion__pais__nombre='México')).annotate(
+                Count('pk', distinct=True)).count()
+
+            # concluidos este año ingresos ext, internacionales:
+            proy_thisy_conc_extint_tmp = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year,
+                                                                              financiamiento_conacyt__isnull=True,
+                                                                              financiamiento_papiit__isnull=True)
+            proy_thisy_conc_extint = 0
+            for i in proy_thisy_conc_extint_tmp:
+                print()
+                paises = []
+                for j in i.financiamientos.all():
+                    if j.institucion.pais.nombre not in paises:
+                        paises.append(j.institucion.pais.nombre)
+                if 'México' in paises and len(paises) > 1 or 'México' not in paises and len(paises) > 0:
+                    proy_thisy_conc_extint += 1
+                    print(paises)
+
+
+
+
+            # en proceso este año:
+            proy_thisy_proc = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year,
+                                                                   fecha_fin=None).count()
+
+            # en proceso este año conacyt:
+            proy_thisy_proc_conacyt = ProyectoInvestigacion.objects.filter(
+                fecha_inicio__year__lte=this_year, fecha_fin=None,
+                financiamiento_conacyt__isnull=False).count()
+
+            # en proceso este año papiit:
+            proy_thisy_proc_papiit = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year,
+                                                                          fecha_fin=None,
+                                                                          financiamiento_papiit__isnull=False).count()
+
+            # en proceso este año ingresos ext, nacionales:
+            proy_thisy_proc_extnal = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year,
+                                                                          fecha_fin=None,
+                                                                          financiamiento_conacyt__isnull=True,
+                                                                          financiamiento_papiit__isnull=True).filter(
+                Q(financiamientos__institucion__pais__nombre='México')).annotate(
+                Count('pk', distinct=True)).count()
+
+            # en proceso este año ingresos ext, internacionales:
+            proy_thisy_proc_extint_tmp = ProyectoInvestigacion.objects.filter(
+                fecha_inicio__year__lte=this_year, fecha_fin=None, financiamiento_conacyt__isnull=True,
+                financiamiento_papiit__isnull=True)
+            proy_thisy_proc_extint = 0
+            for i in proy_thisy_proc_extint_tmp:
+                print()
+                paises = []
+                for j in i.financiamientos.all():
+                    if j.institucion.pais.nombre not in paises:
+                        paises.append(j.institucion.pais.nombre)
+                if 'México' in paises and len(paises) > 1 or 'México' not in paises and len(paises) > 0:
+                    proy_thisy_proc_extint += 1
+                    print(paises)
+
+            conc_pastyl = 'Concluidos ' + str(this_year - 1)
+            proc_pastyl = 'En proceso ' + str(this_year - 1)
+            conc_thisyl = 'Concluidos ' + str(this_year)
+            proc_thisyl = 'En proceso ' + str(this_year)
+
+            #proyectos = [['Etiqueta', 'CONACYT',                'PAPIIT',               'Ext. Nacional', 'Ext. Internacional'],
+            proyectos = [['Etiqueta', 'CONACYT',                'PAPIIT',               'Ext. Nacional', 'Ext. Internacional'],
+                         [conc_pastyl, proy_pasty_conc_conacyt, proy_pasty_conc_papiit, proy_pasty_conc_extnal, proy_pasty_conc_extint],
+                         [proc_pastyl, proy_pasty_proc_conacyt, proy_pasty_proc_papiit, proy_pasty_proc_extnal, proy_pasty_proc_extint],
+                         [conc_thisyl, proy_thisy_conc_conacyt, proy_thisy_conc_papiit, proy_thisy_conc_extnal, proy_thisy_conc_extint],
+                         [proc_thisyl, proy_thisy_proc_conacyt, proy_thisy_proc_papiit, proy_thisy_proc_extnal, proy_thisy_proc_extint],
+                         ]
+
+            data_source = SimpleDataSource(data=proyectos)
+            chart_proyectos_investigacion = BarChart(data_source)
+            context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
+
+
+
+        return render(request, self.template_name, context)
 
