@@ -9,7 +9,11 @@
 
     <p>Informe de actividades</p>
 
-    <input id="toggle-event" data-toggle="toggle" type="checkbox" data-on="Mostrar Leyendas" data-off="Mostrar Leyendas">
+    <div id="console-event"></div>
+    <button id="ocultar-leyendas" class="btn btn-circle btn-danger">Ocultar Leyendas</button>
+    </p>
+
+
 
     <p>{{ chart_proyectos_investigacion.as_html }}</p>
     <p>
@@ -18,9 +22,8 @@
         <button class="btn" style="background-color: #4da74d; color: white">Externo Nacional</button>
         <button class="btn" style="background-color: #afd8f8; color: white">Externo Extranjero</button>
 
-    <div id="console-event"></div>
 
-    </p>
+
 
 
 
@@ -54,14 +57,13 @@
     </table>
 
 
-    <script>
-        //$('.morris-hover.morris-default-style').remove();
-    </script>
 
-        <script>
+
+    <script>
         $(function () {
-            $('#toggle-event').change(function () {
+            $('#ocultar-leyendas').click(function () {
                 $('.morris-hover.morris-default-style').remove();
+                $('#ocultar-leyendas').remove();
 
 
             })

@@ -4915,18 +4915,24 @@ class InformeActividades(View):
 
             # concluidos año anterior conacyt:
             proy_pasty_conc_conacyt = ProyectoInvestigacion.objects.filter(
-                fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=False).count()
+                financiamiento_conacyt__isnull=False).filter(
+                Q(fecha_fin__year=this_year - 2) | Q(fecha_fin__year=this_year - 1)).count()
 
             # concluidos año anterior papiit:
-            proy_pasty_conc_papiit = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_papiit__isnull=False).count()
+            proy_pasty_conc_papiit = ProyectoInvestigacion.objects.filter(
+                financiamiento_papiit__isnull=False).filter(
+                Q(fecha_fin__year=this_year - 2) | Q(fecha_fin__year=this_year - 1)).count()
 
             # concluidos año anterior ingresos ext, nacionales:
-            proy_pasty_conc_extnal = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True,
-                                                     financiamiento_papiit__isnull=True).filter(
-                Q(financiamientos__institucion__pais__nombre='México')).annotate(Count('pk', distinct=True)).count()
+            proy_pasty_conc_extnal = ProyectoInvestigacion.objects.filter(
+                financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True).filter(
+                Q(financiamientos__institucion__pais__nombre='México')).filter(
+                Q(fecha_fin__year=this_year - 2) | Q(fecha_fin__year=this_year - 1)).annotate(Count('pk', distinct=True)).count()
 
             # concluidos año anterior ingresos ext, internacionales:
-            proy_pasty_conc_extint_tmp = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year - 1, financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True)
+            proy_pasty_conc_extint_tmp = ProyectoInvestigacion.objects.filter(
+                financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True).filter(
+                Q(fecha_fin__year=this_year - 2) | Q(fecha_fin__year=this_year - 1))
             proy_pasty_conc_extint = 0
             for i in proy_pasty_conc_extint_tmp:
                 print()
@@ -5053,10 +5059,10 @@ class InformeActividades(View):
                     proy_thisy_proc_extint += 1
                     print(paises)
 
-            conc_pastyl = 'Concluidos ' + str(this_year - 1)
-            proc_pastyl = 'En proceso ' + str(this_year - 1)
-            conc_thisyl = 'Concluidos ' + str(this_year)
-            proc_thisyl = 'En proceso ' + str(this_year)
+            conc_pastyl = 'Concluidos ' + str(this_year - 2) + "-" + str(this_year - 1)
+            proc_pastyl = 'En proceso ' + str(this_year - 2) + "-" + str(this_year - 1)
+            conc_thisyl = 'Concluidos ' + str(this_year - 1) + "-" + str(this_year)
+            proc_thisyl = 'En proceso ' + str(this_year - 1) + "-" + str(this_year)
 
             proyectos = [['Etiqueta', 'CONACYT',                'PAPIIT',               'Ext. Nacional', 'Ext. Internacional'],
                          [conc_pastyl, proy_pasty_conc_conacyt, proy_pasty_conc_papiit, proy_pasty_conc_extnal, proy_pasty_conc_extint],
@@ -5070,31 +5076,33 @@ class InformeActividades(View):
             context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
 
 
-            tecnicos_en_proyectos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
+
+
+            invest_en_proyectos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(proyecto_investigacion_responsables__fecha_inicio__year=this_year - 2) | Q(
                     proyecto_investigacion_responsables__fecha_inicio__year=this_year - 1)) &
                 Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 2)).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
 
-            tecnicos_activos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
+            invest_activos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
 
-            invest_perc_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2)
+            invest_perc_ant = round(invest_en_proyectos_ant / invest_activos_ant, 2)
 
-            tecnicos_en_proyectos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
+            invest_en_proyectos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(proyecto_investigacion_responsables__fecha_inicio__year=this_year - 1) | Q(
                     proyecto_investigacion_responsables__fecha_inicio__year=this_year)) &
                 Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1)).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).count()
 
-            tecnicos_activos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
+            invest_activos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).count()
 
-            invest_perc_act = round(tecnicos_en_proyectos_act / tecnicos_activos_act, 2)
+            invest_perc_act = round(invest_en_proyectos_act / invest_activos_act, 2)
 
 
 
