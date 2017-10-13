@@ -5081,7 +5081,7 @@ class InformeActividades(View):
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
 
-            invest_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2)
+            invest_perc_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2)
 
             tecnicos_en_proyectos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(proyecto_investigacion_responsables__fecha_inicio__year=this_year - 1) | Q(
@@ -5094,7 +5094,7 @@ class InformeActividades(View):
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).count()
 
-            inves_act = round(tecnicos_en_proyectos_act / tecnicos_activos_act, 2)
+            invest_perc_act = round(tecnicos_en_proyectos_act / tecnicos_activos_act, 2)
 
 
 
@@ -5110,7 +5110,7 @@ class InformeActividades(View):
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                     Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
 
-            tec_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2)
+            tec_perc_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2) * 100
 
             tecnicos_en_proyectos_act = User.objects.filter(tipo='TECNICO').filter(
                 (Q(proyecto_investigacion_responsables__fecha_inicio__year=this_year - 1) | Q(
@@ -5124,9 +5124,9 @@ class InformeActividades(View):
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).count()
 
-            tec_act = round(tecnicos_en_proyectos_act / tecnicos_activos_act, 2)
+            tec_perc_act = round(tecnicos_en_proyectos_act / tecnicos_activos_act, 2) * 100
 
-            proy_financiados_ant  = ProyectoInvestigacion.objects.filter(
+            proy_financiados_ant = ProyectoInvestigacion.objects.filter(
                 Q(financiamientos__isnull=False) |
                 Q(financiamiento_conacyt__isnull=False) |
                 Q(financiamiento_papiit__isnull=False)).filter(
@@ -5146,22 +5146,39 @@ class InformeActividades(View):
                  Q(fecha_fin=None))).annotate(
                 Count('pk', distinct=True)).count()
 
-            proy_financiados_tot_ant = ProyectoInvestigacion.objects.filter(
+            proy_tot_ant = ProyectoInvestigacion.objects.filter(
                 (Q(fecha_inicio__year=this_year - 2) |
                  Q(fecha_inicio__year=this_year - 1)) &
                 (Q(fecha_fin__year=this_year - 1) |
                  Q(fecha_fin__year=this_year))).annotate(
                 Count('pk', distinct=True)).count()
 
-            proy_financiados_tot_act = ProyectoInvestigacion.objects.filter(
+            proy_tot_act = ProyectoInvestigacion.objects.filter(
                 (Q(fecha_inicio__year=this_year - 1) |
                  Q(fecha_inicio__year=this_year)) &
                 (Q(fecha_fin__year=this_year) |
                  Q(fecha_fin=None))).annotate(
                 Count('pk', distinct=True)).count()
+            try:
+                proy_ant_perc = round(proy_financiados_ant / proy_tot_ant, 2) * 100
+            except:
+                proy_ant_perc = 0
+            try:
+                proy_act_perc = round(proy_financiados_act / proy_tot_act, 2) * 100
+            except:
+                proy_act_perc = 0
 
-            proy_ant_perc = round(proy_financiados_ant / proy_financiados_tot_ant, 2)
-            proy_act_perc = round(proy_financiados_act / proy_financiados_tot_act, 2)
+
+            context['this_year'] = this_year
+            context['this_year_1'] = this_year - 1
+            context['this_year_2'] = this_year - 2
+
+            context['table_proyectos'] = {'invest_perc_ant': invest_perc_ant, 'invest_perc_act': invest_perc_act,
+                                          'tec_perc_ant': tec_perc_ant, 'tec_perc_act': tec_perc_act,
+                                          'proy_financiados_ant': proy_financiados_ant, 'proy_ant_perc': proy_ant_perc,
+                                          'proy_financiados_act': proy_financiados_act, 'proy_act_perc': proy_act_perc,}
+
+
 
 
 
