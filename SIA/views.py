@@ -4985,9 +4985,6 @@ class InformeActividades(View):
 
 
 
-            # concluidos este año:
-            proy_thisy_conc = ProyectoInvestigacion.objects.filter(fecha_fin__year=this_year).count()
-
             # concluidos este año conacyt:
             proy_thisy_conc_conacyt = ProyectoInvestigacion.objects.filter(
                 fecha_fin__year=this_year, financiamiento_conacyt__isnull=False).count()
@@ -5026,25 +5023,24 @@ class InformeActividades(View):
             # en proceso este año conacyt:
             proy_thisy_proc_conacyt = ProyectoInvestigacion.objects.filter(
                 financiamiento_conacyt__isnull=False).filter(
-                Q(fecha_fin__year=this_year - 1) | Q(fecha_fin=None)).count()
+                Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
 
             # en proceso este año papiit:
             proy_thisy_proc_papiit = ProyectoInvestigacion.objects.filter(
                 financiamiento_papiit__isnull=False).filter(
-                Q(fecha_fin__year=this_year - 1) | Q(fecha_fin=None)).count()
+                Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
 
             # en proceso este año ingresos ext, nacionales:
-            proy_thisy_proc_extnal = ProyectoInvestigacion.objects.filter(fecha_inicio__year__lte=this_year,
-                                                                          fecha_fin=None,
-                                                                          financiamiento_conacyt__isnull=True,
-                                                                          financiamiento_papiit__isnull=True).filter(
+            proy_thisy_proc_extnal = ProyectoInvestigacion.objects.filter(
+                financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True).filter(
+                Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).filter(
                 Q(financiamientos__institucion__pais__nombre='México')).annotate(
                 Count('pk', distinct=True)).count()
 
             # en proceso este año ingresos ext, internacionales:
             proy_thisy_proc_extint_tmp = ProyectoInvestigacion.objects.filter(
-                fecha_inicio__year__lte=this_year, fecha_fin=None, financiamiento_conacyt__isnull=True,
-                financiamiento_papiit__isnull=True)
+                financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True).filter(
+                Q(fecha_fin__year=this_year) | Q(fecha_fin=None))
             proy_thisy_proc_extint = 0
             for i in proy_thisy_proc_extint_tmp:
                 print()
@@ -5061,7 +5057,6 @@ class InformeActividades(View):
             conc_thisyl = 'Concluidos ' + str(this_year)
             proc_thisyl = 'En proceso ' + str(this_year)
 
-            #proyectos = [['Etiqueta', 'CONACYT',                'PAPIIT',               'Ext. Nacional', 'Ext. Internacional'],
             proyectos = [['Etiqueta', 'CONACYT',                'PAPIIT',               'Ext. Nacional', 'Ext. Internacional'],
                          [conc_pastyl, proy_pasty_conc_conacyt, proy_pasty_conc_papiit, proy_pasty_conc_extnal, proy_pasty_conc_extint],
                          [proc_pastyl, proy_pasty_proc_conacyt, proy_pasty_proc_papiit, proy_pasty_proc_extnal, proy_pasty_proc_extint],
