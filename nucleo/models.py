@@ -112,53 +112,11 @@ class Ciudad(models.Model):
         ordering = ['nombre']
         verbose_name_plural = 'Ciudades'
 
-"""
-class Region(models.Model):
-    region = models.CharField(max_length=200)
-    #slug = AutoSlugField(populate_from='region', unique=True)
-    descripcion = models.TextField(blank=True)
-    paises = models.ManyToManyField(Pais, related_name='region_paises', blank=True)
-    estados = models.ManyToManyField(Estado, related_name='region_estados', blank=True)
-    ciudades = models.ManyToManyField(Ciudad, related_name='region_ciudades', blank=True)
-
-    def __str__(self):
-        return self.region
-
-    def natural_key(self):
-        return (self.region)
-
-    class Meta:
-        ordering = ['region']
-        verbose_name = 'Región'
-        verbose_name_plural = 'Regiones'
-
-
-class Ubicacion(models.Model):
-    direccion = models.CharField('Dirección', max_length=255)
-    direccion_continuacion = models.CharField('Dirección (continuación)', blank=True, max_length=255)
-    #slug = AutoSlugField(populate_from='direccion', unique=True)
-    descripcion = models.TextField(blank=True)
-    ciudad = models.ForeignKey(Ciudad)
-    codigo_postal = models.CharField(max_length=7, blank=True)
-    telefono = models.SlugField(max_length=20, blank=True)
-
-    def __str__(self):
-        return "{} : {} : {}".format(self.direccion, self.direccion_continuacion, self.ciudad)
-
-    def natural_key(self):
-        return (self.direccion)
-
-    class Meta:
-        ordering = ['ciudad', 'direccion']
-        unique_together = ['direccion', 'direccion_continuacion', 'ciudad']
-        verbose_name = 'Ubicación'
-        verbose_name_plural = 'Ubicaciones'
-"""
 
 
 class User(AbstractUser):
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
-    tipo = models.CharField(max_length=30, choices=(('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('OTRO', 'Otro')), default='OTRO')
+    tipo = models.CharField(max_length=30, choices=(('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
     pais_origen = models.ForeignKey(Pais, default=1, verbose_name='País de origen', related_name='user_pais_origen')
     rfc = models.SlugField(max_length=20, blank=True)
@@ -190,6 +148,15 @@ class User(AbstractUser):
         ordering = ['first_name', 'last_name']
         pass
 
+
+class InvestigadorConacyt(models.Model):
+    investigador = models.ForeignKey(User)
+
+class InvestigadorUnam(models.Model):
+    investigador = models.ForeignKey(User)
+
+class InvestigadorInvitado(models.Model):
+    investigador = models.ForeignKey(User)
 
 class Institucion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
