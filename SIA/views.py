@@ -5196,6 +5196,26 @@ class InformeActividades(View):
 
 
 
+            proymod_sum =  ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year-1).count()
+            proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
+            proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
+            proymod_inter = ProyectoInvestigacion.objects.filter(modalidad='INTERDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
+            proymod_trans = ProyectoInvestigacion.objects.filter(modalidad='TRANSDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
+
+            proymod_disc = proymod_disc / proymod_sum * 100
+            proymod_mult = proymod_mult / proymod_sum * 100
+            proymod_inter = proymod_inter / proymod_sum * 100
+            proymod_trans = proymod_trans / proymod_sum * 100
+
+
+
+
+
+
+
+
+
+
 
 
 
