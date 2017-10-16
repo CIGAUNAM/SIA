@@ -21,7 +21,7 @@ from django.db.models import Q, Max, Min, Count, Sum
 
 
 from graphos.sources.simple import SimpleDataSource, BaseDataSource
-from graphos.renderers.morris import LineChart, AreaChart, BarChart
+from graphos.renderers.morris import LineChart, AreaChart, BarChart, DonutChart
 #from graphos.renderers.highcharts import LineChart
 
 
@@ -5206,6 +5206,14 @@ class InformeActividades(View):
             proymod_mult = proymod_mult / proymod_sum * 100
             proymod_inter = proymod_inter / proymod_sum * 100
             proymod_trans = proymod_trans / proymod_sum * 100
+
+            proymod_data = [['Disciplinario', 'Multidisciplinario', 'Interdisciplinario', 'Transdisciplinario'],
+                            [proymod_disc, proymod_mult, proymod_inter, proymod_trans]]
+
+
+            data_source = SimpleDataSource(data=proymod_data)
+            chart_modalidad_proyectos = DonutChart(data_source)
+            context['chart_modalidad_proyectos'] = chart_modalidad_proyectos
 
 
 
