@@ -3352,33 +3352,33 @@ class ReporteHistorico(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = \
-                User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
-                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
-                    | (
-                        Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
-                            proyecto_investigacion_responsables__fecha_fin=None))
-                ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                          (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_investigacion_responsables')).aggregate(
-                    Max('proyecto_investigacion_responsables__count'))[
-                    'proyecto_investigacion_responsables__count__max']
+                    User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                        (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                            proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                        | (
+                            Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                                proyecto_investigacion_responsables__fecha_fin=None))
+                    ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                              (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                        Count('proyecto_investigacion_responsables')).aggregate(
+                        Max('proyecto_investigacion_responsables__count'))[
+                        'proyecto_investigacion_responsables__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
                 min_items_year_user = \
-                User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
-                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
-                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
-                    | (
-                        Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
-                            proyecto_investigacion_responsables__fecha_fin=None))
-                ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                          (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_investigacion_responsables')).aggregate(
-                    Min('proyecto_investigacion_responsables__count'))[
-                    'proyecto_investigacion_responsables__count__min']
+                    User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                        (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                            proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                        | (
+                            Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                                proyecto_investigacion_responsables__fecha_fin=None))
+                    ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                              (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                        Count('proyecto_investigacion_responsables')).aggregate(
+                        Min('proyecto_investigacion_responsables__count'))[
+                        'proyecto_investigacion_responsables__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
@@ -5188,10 +5188,6 @@ class InformeActividades(View):
                                                     'p_proymod_transp': p_proymod_transp,
                                                     }
 
-
-
-
-
             proyorg_ind = ProyectoInvestigacion.objects.filter(organizacion='INDIVIDUAL',
                                                                fecha_inicio__year__gte=this_year - 1).count()
             proyorg_col = ProyectoInvestigacion.objects.filter(organizacion='COLECTIVO',
@@ -5227,21 +5223,20 @@ class InformeActividades(View):
             context['p_chart_organizacion_proyectos'] = p_chart_organizacion_proyectos
 
             context['table_proyectos_organizacion'] = {'proyorg_ind': proyorg_ind,
-                                                    'proyorg_col': proyorg_col,
-                                                    'proyorg_indp': proyorg_indp,
-                                                    'proyorg_colp': proyorg_colp,
-                                                    'p_proyorg_ind': p_proyorg_ind,
-                                                    'p_proyorg_col': p_proyorg_col,
-                                                    'p_proyorg_indp': p_proyorg_indp,
-                                                    'p_proyorg_colp': p_proyorg_colp,
-                                                    }
-
-
+                                                       'proyorg_col': proyorg_col,
+                                                       'proyorg_indp': proyorg_indp,
+                                                       'proyorg_colp': proyorg_colp,
+                                                       'p_proyorg_ind': p_proyorg_ind,
+                                                       'p_proyorg_col': p_proyorg_col,
+                                                       'p_proyorg_indp': p_proyorg_indp,
+                                                       'p_proyorg_colp': p_proyorg_colp,
+                                                       }
 
             proygen_y = ProyectoInvestigacion.objects.filter(tematica_genero=True,
                                                              fecha_inicio__year__gte=this_year - 1).count()
             proygen_n = ProyectoInvestigacion.objects.filter(tematica_genero=False,
                                                              fecha_inicio__year__gte=this_year - 1).count()
+
             proygen_yp = round(proygen_y / proythisy_count * 100, 2)
             proygen_np = round(proygen_n / proythisy_count * 100, 2)
 
@@ -5264,12 +5259,55 @@ class InformeActividades(View):
             p_proygen_np = round(p_proygen_n / p_proythisy_count * 100, 2)
 
             proymod_data = [['Enfoque de género', 'Porcentaje'],
-                            ['Si', p_proygen_y],
-                            ['No', p_proygen_n]
+                            ['Si', p_proygen_yp],
+                            ['No', p_proygen_np]
                             ]
 
             data_source = SimpleDataSource(data=proymod_data)
             p_chart_genero_proyectos = DonutChart(data_source)
             context['p_chart_genero_proyectos'] = p_chart_genero_proyectos
+
+            context['table_proyectos_genero'] = {'proygen_y': proygen_y,
+                                                 'proygen_n': proygen_n,
+                                                 'proygen_yp': proygen_yp,
+                                                 'proygen_np': proygen_np,
+                                                 'p_proygen_y': p_proygen_y,
+                                                 'p_proygen_n': p_proygen_n,
+                                                 'p_proygen_yp': p_proygen_yp,
+                                                 'p_proygen_np': p_proygen_np,
+
+                                                 }
+
+            p_gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Gestión integral del agua, seguridad hídrica y derecho del agua',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1)
+            gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Gestión integral del agua, seguridad hídrica y derecho del agua',
+                fecha_inicio__year__gte=this_year - 1)
+            p_gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Mitigación y adaptación al cambio climático',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1)
+            gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Mitigación y adaptación al cambio climático',
+                fecha_inicio__year__gte=this_year - 1)
+
+            """
+            problemas = [
+                'Gestión integral del agua, seguridad hídrica y derecho del agua',
+             'Mitigación y adaptación al cambio climático', 
+             'Resiliencia frente a desastres naturales y tecnológicos',
+             'Aprovechamiento y protección de ecosistemas y de la biodiversidad', 
+             'Los océanos y su aprovechamiento',
+             'Alimentos y su producción', 'Ciudades y desarrollo urbano',
+             'Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones',
+             'Manufactura de alta tecnología', 
+             'Consumo sustentable de energía',
+             'Desarrollo y aprovechamiento de energías renovables limpias, conducta humana y prevención de adicciones',
+             'Enfermedades emergentes y de importancia nacional', 
+             'Combate a la pobreza y seguridad alimentaria',
+             'Migraciones y asentamientos humanos', 
+             'Seguridad ciudadana', 'Economía y gestión del conocimiento',
+             'Prevención de riesgos naturales', ]
+            """
 
         return render(request, self.template_name, context)
