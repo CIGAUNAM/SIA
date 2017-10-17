@@ -5196,19 +5196,28 @@ class InformeActividades(View):
 
 
 
-            proymod_sum =  ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year-1).count()
+            proythisy_count =  ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year-1).count()
+            p_proythisy_count =  ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+
+
+
+
             proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
             proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
             proymod_inter = ProyectoInvestigacion.objects.filter(modalidad='INTERDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
             proymod_trans = ProyectoInvestigacion.objects.filter(modalidad='TRANSDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
 
-            proymod_disc = proymod_disc / proymod_sum * 100
-            proymod_mult = proymod_mult / proymod_sum * 100
-            proymod_inter = proymod_inter / proymod_sum * 100
-            proymod_trans = proymod_trans / proymod_sum * 100
+            proymod_disc = round(proymod_disc / proythisy_count * 100, 2)
+            proymod_mult = round(proymod_mult / proythisy_count * 100, 2)
+            proymod_inter = round(proymod_inter / proythisy_count * 100, 2)
+            proymod_trans = round(proymod_trans / proythisy_count * 100, 2)
 
-            proymod_data = [['Disciplinario', 'Multidisciplinario', 'Interdisciplinario', 'Transdisciplinario'],
-                            [proymod_disc, proymod_mult, proymod_inter, proymod_trans]]
+            proymod_data = [['Modalidad', 'Porcentaje'],
+                            ['Disciplinario', proymod_disc],
+                            ['Multidisciplinario', proymod_mult],
+                            ['Interdisciplinario', proymod_inter],
+                            ['Transdisciplinario', proymod_trans]
+                            ]
 
 
             data_source = SimpleDataSource(data=proymod_data)
@@ -5217,8 +5226,99 @@ class InformeActividades(View):
 
 
 
+            p_proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            p_proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            p_proymod_inter = ProyectoInvestigacion.objects.filter(modalidad='INTERDISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            p_proymod_trans = ProyectoInvestigacion.objects.filter(modalidad='TRANSDISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+
+            p_proymod_disc = round(p_proymod_disc / p_proythisy_count * 100, 2)
+            p_proymod_mult = round(p_proymod_mult / p_proythisy_count * 100, 2)
+            p_proymod_inter = round(p_proymod_inter / p_proythisy_count * 100, 2)
+            p_proymod_trans = round(p_proymod_trans / p_proythisy_count * 100, 2)
+
+            p_proymod_data = [['Modalidad', 'Porcentaje'],
+                            ['Disciplinario', p_proymod_disc],
+                            ['Multidisciplinario', p_proymod_mult],
+                            ['Interdisciplinario', p_proymod_inter],
+                            ['Transdisciplinario', p_proymod_trans]
+                            ]
 
 
+            data_source = SimpleDataSource(data=p_proymod_data)
+            p_chart_modalidad_proyectos = DonutChart(data_source)
+            context['p_chart_modalidad_proyectos'] = p_chart_modalidad_proyectos
+
+
+            
+
+
+
+            
+            proyorg_ind = ProyectoInvestigacion.objects.filter(organizacion='INDIVIDUAL', fecha_inicio__year__gte=this_year - 1).count()
+            proyorg_col = ProyectoInvestigacion.objects.filter(organizacion='COLECTIVO', fecha_inicio__year__gte=this_year - 1).count()
+            proyorg_ind = round(proyorg_ind / proythisy_count * 100, 2)
+            proyorg_col = round(proyorg_col / proythisy_count * 100, 2)
+
+            proymod_data = [['Organización', 'Porcentaje'],
+                            ['Individual', proyorg_ind],
+                            ['Colectivo', proyorg_col]
+                            ]
+
+            data_source = SimpleDataSource(data=proymod_data)
+            chart_organizacion_proyectos = DonutChart(data_source)
+            context['chart_organizacion_proyectos'] = chart_organizacion_proyectos
+
+
+            p_proyorg_ind = ProyectoInvestigacion.objects.filter(organizacion='INDIVIDUAL', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            p_proyorg_col = ProyectoInvestigacion.objects.filter(organizacion='COLECTIVO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            p_proyorg_ind = round(p_proyorg_ind / p_proythisy_count * 100, 2)
+            p_proyorg_col = round(p_proyorg_col / p_proythisy_count * 100, 2)
+
+            proymod_data = [['Organización', 'Porcentaje'],
+                            ['Individual', p_proyorg_ind],
+                            ['Colectivo', p_proyorg_col]
+                            ]
+
+            data_source = SimpleDataSource(data=proymod_data)
+            p_chart_organizacion_proyectos = DonutChart(data_source)
+            context['p_chart_organizacion_proyectos'] = p_chart_organizacion_proyectos
+
+
+
+
+
+            
+
+
+
+
+            proygen_y = ProyectoInvestigacion.objects.filter(tematica_genero=True, fecha_inicio__year__gte=this_year - 1).count()
+            proygen_n = ProyectoInvestigacion.objects.filter(tematica_genero=False, fecha_inicio__year__gte=this_year - 1).count()
+            proygen_y = round(proygen_y / proythisy_count * 100, 2)
+            proygen_n = round(proygen_n / proythisy_count * 100, 2)
+
+            proymod_data = [['Enfoque de género', 'Porcentaje'],
+                            ['Si', proygen_y],
+                            ['No', proygen_n]
+                            ]
+
+            data_source = SimpleDataSource(data=proymod_data)
+            chart_genero_proyectos = DonutChart(data_source)
+            context['chart_genero_proyectos'] = chart_genero_proyectos
+
+            p_proygen_y = ProyectoInvestigacion.objects.filter(tematica_genero=True, fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            p_proygen_n = ProyectoInvestigacion.objects.filter(tematica_genero=False, fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            p_proygen_y = round(p_proygen_y / p_proythisy_count * 100, 2)
+            p_proygen_n = round(p_proygen_n / p_proythisy_count * 100, 2)
+
+            proymod_data = [['Enfoque de género', 'Porcentaje'],
+                            ['Si', p_proygen_y],
+                            ['No', p_proygen_n]
+                            ]
+
+            data_source = SimpleDataSource(data=proymod_data)
+            p_chart_genero_proyectos = DonutChart(data_source)
+            context['p_chart_genero_proyectos'] = p_chart_genero_proyectos
 
 
 
