@@ -6,9 +6,12 @@ from django.core.urlresolvers import reverse_lazy
 from django.core import serializers
 
 from formacion_academica.models import CursoEspecializacion
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, ProyectoInvestigacion
-from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, OrganizacionEventoAcademico, ParticipacionEventoAcademico
-from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, \
+    ProyectoInvestigacion
+from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, OrganizacionEventoAcademico, \
+    ParticipacionEventoAcademico
+from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
+    ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
 from docencia.models import CursoDocencia
 from desarrollo_tecnologico.models import DesarrolloTecnologico
@@ -18,21 +21,19 @@ from nucleo.models import User, Libro, Pais
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum
 
-
-
 from graphos.sources.simple import SimpleDataSource, BaseDataSource
 from graphos.renderers.morris import LineChart, AreaChart, BarChart, DonutChart
-#from graphos.renderers.highcharts import LineChart
+# from graphos.renderers.highcharts import LineChart
 
 
 # Create your views here.
 
 from graphos.renderers import gchart
 
+
 class CustomGchart(gchart.LineChart):
     def get_template(self):
         return "demo/gchart_line.html"
-
 
 
 class Dashboard(View):
@@ -55,17 +56,18 @@ class Dashboard(View):
                 last_x_years.append(i)
 
             for i in last_x_years:
-                users_with_items_year_count = User.objects.filter((Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad__year__gt=i)) |
-                                        (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad=None)))
+                users_with_items_year_count = User.objects.filter(
+                    (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad__year__gt=i)) |
+                    (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad=None)))
                 active_users_per_last_x_year.append(users_with_items_year_count.count())
 
-            #years_cursos_especializacion_dates = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
-            #years_cursos_especializacion = []
+            # years_cursos_especializacion_dates = CursoEspecializacion.objects.dates('fecha_inicio', 'year', order='DESC')
+            # years_cursos_especializacion = []
 
-            #for i in reversed(years_cursos_especializacion_dates[:num_years]):
+            # for i in reversed(years_cursos_especializacion_dates[:num_years]):
             #    years_cursos_especializacion.append(str(i.year))
 
-            #cursos_data = [['Año', 'Personas', 'Total horas', 'Mis horas', 'Promedio Horas', 'Max horas', 'Min horas']]
+            # cursos_data = [['Año', 'Personas', 'Total horas', 'Mis horas', 'Promedio Horas', 'Max horas', 'Min horas']]
 
 
             cursos_data = [['Año', 'Mis horas', 'Promedio horas', 'Max horas', 'Min horas']]
@@ -76,18 +78,20 @@ class Dashboard(View):
                 users_with_items_year_count = User.objects.filter(
                     Q(cursos_especializacion__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
+                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
+                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
                 if users_with_items_year_count == None:
                     users_with_items_year_count = 0
 
                 total_course_hours_year_sum = CursoEspecializacion.objects.filter(fecha_inicio__year=year).filter((
                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(Sum('horas'))['horas__sum']
-                if     total_course_hours_year_sum == None:
-                        total_course_hours_year_sum = 0
+                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                    Sum('horas'))['horas__sum']
+                if total_course_hours_year_sum == None:
+                    total_course_hours_year_sum = 0
 
                 request_user_item_year_sum = User.objects.filter(cursos_especializacion__fecha_inicio__year=year,
-                    cursos_especializacion__usuario=request.user).aggregate(
+                                                                 cursos_especializacion__usuario=request.user).aggregate(
                     Sum('cursos_especializacion__horas'))['cursos_especializacion__horas__sum']
                 if not request_user_item_year_sum:
                     request_user_item_year_sum = 0
@@ -103,7 +107,8 @@ class Dashboard(View):
                 max_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(Max('cursos_especializacion__horas__sum'))[
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Max('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__max']
                 if max_item_year_user == None:
                     max_item_year_user = 0
@@ -112,7 +117,8 @@ class Dashboard(View):
                 min_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(Min('cursos_especializacion__horas__sum'))[
+                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                    Min('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__min']
                 if not min_item_year_user:
                     min_item_year_user = 0
@@ -122,11 +128,8 @@ class Dashboard(View):
             chart_cursos_especializacion = LineChart(data_source)
             context['chart_cursos_especializacion'] = chart_cursos_especializacion
 
-
-
-
-
-            items_data = [['Año', 'Mis artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            items_data = [
+                ['Año', 'Mis artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -134,11 +137,11 @@ class Dashboard(View):
                 total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                                   status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
-                                                                                              status='PUBLICADO',
-                                                                                              usuarios=request.user).count()
+                                                                               status='PUBLICADO',
+                                                                               usuarios=request.user).count()
                 if not request_user_item_year_sum:
                     request_user_item_year_sum = 0
                 items_data[i + 1].append(request_user_item_year_sum)
@@ -177,12 +180,13 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulos_investigacion_publicados = LineChart(data_source)
             context['chart_articulos_investigacion_publicados'] = chart_articulos_investigacion_publicados
 
-            items_data = [['Año', 'Mis artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            items_data = [
+                ['Año', 'Mis artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -190,11 +194,11 @@ class Dashboard(View):
                 total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                                   status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
-                                                                                              status='EN_PRENSA',
-                                                                                              usuarios=request.user).count()
+                                                                               status='EN_PRENSA',
+                                                                               usuarios=request.user).count()
                 if not request_user_item_year_sum:
                     request_user_item_year_sum = 0
                 items_data[i + 1].append(request_user_item_year_sum)
@@ -232,20 +236,21 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulos_investigacion_enprensa = LineChart(data_source)
             context['chart_articulos_investigacion_enprensa'] = chart_articulos_investigacion_enprensa
 
-            items_data = [['Año', 'Mis artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            items_data = [
+                ['Año', 'Mis artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
                 total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
-                                                                                         status='ACEPTADO').filter(
+                                                                         status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_articulo_cientifico_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                               status='ACEPTADO',
                                                                                               usuarios=request.user).count()
@@ -286,21 +291,10 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulos_investigacion_aceptado = LineChart(data_source)
             context['chart_articulos_investigacion_aceptado'] = chart_articulos_investigacion_aceptado
-
-
-
-
-
-
-
-
-
-
-
 
             libros_investigacion_publicado_data = [
                 ['Año', 'Mis Libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -312,7 +306,7 @@ class Dashboard(View):
                                                                          es_libro_completo=True,
                                                                          status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  es_libro_completo=True,
                                                                                  status='PUBLICADO',
@@ -357,11 +351,10 @@ class Dashboard(View):
                     min_libro_investigacion_year_user = 0
                 libros_investigacion_publicado_data[i + 1].append(min_libro_investigacion_year_user)
 
-            #print(libros_investigacion_publicado_data)
+            # print(libros_investigacion_publicado_data)
             data_source = SimpleDataSource(data=libros_investigacion_publicado_data)
             chart_libros_investigacion_publicado = LineChart(data_source)
             context['chart_libros_investigacion_publicado'] = chart_libros_investigacion_publicado
-
 
             libros_investigacion_enprensa_data = [
                 ['Año', 'Mis Libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -373,7 +366,7 @@ class Dashboard(View):
                                                                          es_libro_completo=True,
                                                                          status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  es_libro_completo=True,
                                                                                  status='EN_PRENSA',
@@ -418,7 +411,7 @@ class Dashboard(View):
                     min_libro_investigacion_year_user = 0
                 libros_investigacion_enprensa_data[i + 1].append(min_libro_investigacion_year_user)
 
-            #print(libros_investigacion_enprensa_data)
+            # print(libros_investigacion_enprensa_data)
             data_source = SimpleDataSource(data=libros_investigacion_enprensa_data)
             chart_libros_investigacion_enprensa = LineChart(data_source)
             context['chart_libros_investigacion_enprensa'] = chart_libros_investigacion_enprensa
@@ -433,7 +426,7 @@ class Dashboard(View):
                                                                          es_libro_completo=True,
                                                                          status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  es_libro_completo=True,
                                                                                  status='ACEPTADO',
@@ -478,16 +471,10 @@ class Dashboard(View):
                     min_libro_investigacion_year_user = 0
                 libros_investigacion_aceptado_data[i + 1].append(min_libro_investigacion_year_user)
 
-            #print(libros_investigacion_aceptado_data)
+            # print(libros_investigacion_aceptado_data)
             data_source = SimpleDataSource(data=libros_investigacion_aceptado_data)
             chart_libros_investigacion_aceptados = LineChart(data_source)
             context['chart_libros_investigacion_aceptados'] = chart_libros_investigacion_aceptados
-
-
-
-
-
-
 
             capitulos_libros_investigacion_publicado_data = [
                 ['Año', 'Mis Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -499,7 +486,7 @@ class Dashboard(View):
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__es_libro_completo=False, libro__status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
@@ -556,13 +543,10 @@ class Dashboard(View):
                 capitulos_libros_investigacion_publicado_data[i + 1].append(
                     min_capitulos_libros_investigacion_year_user)
 
-            #print(capitulos_libros_investigacion_publicado_data)
+            # print(capitulos_libros_investigacion_publicado_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_publicado_data)
             chart_capitulos_libros_investigacion_publicado = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_publicado'] = chart_capitulos_libros_investigacion_publicado
-
-
-
 
             capitulos_libros_investigacion_enprensa_data = [
                 ['Año', 'Mis Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -574,7 +558,7 @@ class Dashboard(View):
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__es_libro_completo=False, libro__status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
@@ -631,12 +615,10 @@ class Dashboard(View):
                 capitulos_libros_investigacion_enprensa_data[i + 1].append(
                     min_capitulos_libros_investigacion_year_user)
 
-            #print(capitulos_libros_investigacion_enprensa_data)
+            # print(capitulos_libros_investigacion_enprensa_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_enprensa_data)
             chart_capitulos_libros_investigacion_enprensa = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_enprensa'] = chart_capitulos_libros_investigacion_enprensa
-
-
 
             capitulos_libros_investigacion_aceptado_data = [
                 ['Año', 'Mis Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -648,7 +630,7 @@ class Dashboard(View):
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__es_libro_completo=False, libro__status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
@@ -705,16 +687,10 @@ class Dashboard(View):
                 capitulos_libros_investigacion_aceptado_data[i + 1].append(
                     min_capitulos_libros_investigacion_year_user)
 
-            #print(capitulos_libros_investigacion_aceptado_data)
+            # print(capitulos_libros_investigacion_aceptado_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_aceptado_data)
             chart_capitulos_libros_investigacion_aceptado = LineChart(data_source)
             context['chart_capitulos_libros_investigacion_aceptado'] = chart_capitulos_libros_investigacion_aceptado
-
-
-
-
-
-
 
             items_data = [
                 ['Año', 'Mis Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -768,11 +744,10 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_mapas_arbitrados_publicados = LineChart(data_source)
             context['chart_mapas_arbitrados_publicados'] = chart_mapas_arbitrados_publicados
-
 
             items_data = [
                 ['Año', 'Mis Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -826,11 +801,10 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_mapas_arbitrados_enprensa = LineChart(data_source)
             context['chart_mapas_arbitrados_enprensa'] = chart_mapas_arbitrados_enprensa
-
 
             items_data = [
                 ['Año', 'Mis Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -884,16 +858,10 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_mapas_arbitrados_aceptados = LineChart(data_source)
             context['chart_mapas_arbitrados_aceptados'] = chart_mapas_arbitrados_aceptados
-
-
-
-
-
-
 
             items_data = [
                 ['Año', 'Mis Informes Técnicos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -945,18 +913,10 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_informes_tecnicos = LineChart(data_source)
             context['chart_informes_tecnicos'] = chart_informes_tecnicos
-
-
-
-
-
-
-
-
 
             items_data = [
                 ['Año', 'Mis Proyectos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -978,8 +938,10 @@ class Dashboard(View):
                 items_data[i + 1].append(request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin__year__gt=year))
-                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin=None))).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -993,41 +955,37 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin__year__gt=year))
-                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_investigacion_responsables')).aggregate(Max('proyecto_investigacion_responsables__count'))[
+                    Count('proyecto_investigacion_responsables')).aggregate(
+                    Max('proyecto_investigacion_responsables__count'))[
                     'proyecto_investigacion_responsables__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin__year__gt=year))
-                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
+                    (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin__year__gt=year))
+                    | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                        proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_investigacion_responsables')).aggregate(Min('proyecto_investigacion_responsables__count'))[
+                    Count('proyecto_investigacion_responsables')).aggregate(
+                    Min('proyecto_investigacion_responsables__count'))[
                     'proyecto_investigacion_responsables__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_proyectos_investigacion = LineChart(data_source)
             context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
-
-
-
-
-
-
-
-
-
-
 
             items_data = [
                 ['Año', 'Mis Memorias in extenso', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -1039,7 +997,8 @@ class Dashboard(View):
                     (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
                     | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-                request_user_items_year_sum = MemoriaInExtenso.objects.filter(fecha__year=year, usuarios=request.user).count()
+                request_user_items_year_sum = MemoriaInExtenso.objects.filter(fecha__year=year,
+                                                                              usuarios=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
@@ -1075,13 +1034,10 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_memoria_in_extenso = LineChart(data_source)
             context['chart_memoria_in_extenso'] = chart_memoria_in_extenso
-
-
-
 
             items_data = [
                 ['Año', 'Mis Prologos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -1150,34 +1106,10 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_prologo_libro_investigacion_publicado = LineChart(data_source)
             context['chart_prologo_libro_investigacion_publicado'] = chart_prologo_libro_investigacion_publicado
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             items_data = [
                 ['Año', 'Mis Reseñas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -1232,12 +1164,10 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_resena = LineChart(data_source)
             context['chart_resena'] = chart_resena
-
-
 
             items_data = [['Año', 'Mis Organizaciones de eventos académicos', 'Promedio por persona', 'Max por persona',
                            'Min por persona']]
@@ -1245,12 +1175,14 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = OrganizacionEventoAcademico.objects.filter(evento__fecha_inicio__year=year).filter(
+                total_items_year_sum = OrganizacionEventoAcademico.objects.filter(
+                    evento__fecha_inicio__year=year).filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                      (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = OrganizacionEventoAcademico.objects.filter(evento__fecha_inicio__year=year,
-                                                                                         usuario=request.user).count()
+                request_user_items_year_sum = OrganizacionEventoAcademico.objects.filter(
+                    evento__fecha_inicio__year=year,
+                    usuario=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -1291,25 +1223,26 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_organizacioneventoacademico = LineChart(data_source)
             context['chart_organizacioneventoacademico'] = chart_organizacioneventoacademico
 
-
-
-            items_data = [['Año', 'Mis Participaciones en eventos académicos', 'Promedio por persona', 'Max por persona',
-                           'Min por persona']]
+            items_data = [
+                ['Año', 'Mis Participaciones en eventos académicos', 'Promedio por persona', 'Max por persona',
+                 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=year).filter(
+                total_items_year_sum = ParticipacionEventoAcademico.objects.filter(
+                    evento__fecha_inicio__year=year).filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                      (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=year,
-                                                                                         usuario=request.user).count()
+                request_user_items_year_sum = ParticipacionEventoAcademico.objects.filter(
+                    evento__fecha_inicio__year=year,
+                    usuario=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -1350,32 +1283,30 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_participacioneventoacademico = LineChart(data_source)
             context['chart_participacioneventoacademico'] = chart_participacioneventoacademico
 
-
-
-
-
-
-            items_data = [['Año', 'Mis artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            items_data = [
+                ['Año', 'Mis artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year, status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
-                request_user_item_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year, status='PUBLICADO', usuarios=request.user).count()
+                request_user_item_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year, status='PUBLICADO',
+                                                                                usuarios=request.user).count()
                 if not request_user_item_year_sum:
                     request_user_item_year_sum = 0
                 items_data[i + 1].append(request_user_item_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(articulo_divulgacion_autores__fecha__year=year, articulo_divulgacion_autores__status='PUBLICADO') &
+                    Q(articulo_divulgacion_autores__fecha__year=year,
+                      articulo_divulgacion_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -1389,7 +1320,8 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_item_year_user = User.objects.filter(
-                    Q(articulo_divulgacion_autores__fecha__year=year, articulo_divulgacion_autores__status='PUBLICADO') &
+                    Q(articulo_divulgacion_autores__fecha__year=year,
+                      articulo_divulgacion_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_divulgacion_autores')).aggregate(Max('articulo_divulgacion_autores__count'))[
@@ -1399,7 +1331,8 @@ class Dashboard(View):
                 items_data[i + 1].append(max_item_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
-                    Q(articulo_divulgacion_autores__fecha__year=year, articulo_divulgacion_autores__status='PUBLICADO') &
+                    Q(articulo_divulgacion_autores__fecha__year=year,
+                      articulo_divulgacion_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_divulgacion_autores')).aggregate(Min('articulo_divulgacion_autores__count'))[
@@ -1408,31 +1341,32 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulo_divulgacion_publicados = LineChart(data_source)
             context['chart_articulo_divulgacion_publicados'] = chart_articulo_divulgacion_publicados
 
-
-            items_data = [['Año', 'Mis artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            items_data = [
+                ['Año', 'Mis artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
-                                                                                                  status='EN_PRENSA').filter(
+                                                                          status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
-                                                                                              status='EN_PRENSA',
-                                                                                              usuarios=request.user).count()
+                                                                                status='EN_PRENSA',
+                                                                                usuarios=request.user).count()
                 if not request_user_item_year_sum:
                     request_user_item_year_sum = 0
                 items_data[i + 1].append(request_user_item_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(articulo_divulgacion_autores__fecha__year=year, articulo_divulgacion_autores__status='EN_PRENSA') &
+                    Q(articulo_divulgacion_autores__fecha__year=year,
+                      articulo_divulgacion_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -1445,7 +1379,8 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_item_year_user = User.objects.filter(
-                    Q(articulo_divulgacion_autores__fecha__year=year, articulo_divulgacion_autores__status='EN_PRENSA') &
+                    Q(articulo_divulgacion_autores__fecha__year=year,
+                      articulo_divulgacion_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_divulgacion_autores')).aggregate(Max('articulo_divulgacion_autores__count'))[
@@ -1455,7 +1390,8 @@ class Dashboard(View):
                 items_data[i + 1].append(max_item_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
-                    Q(articulo_divulgacion_autores__fecha__year=year, articulo_divulgacion_autores__status='EN_PRENSA') &
+                    Q(articulo_divulgacion_autores__fecha__year=year,
+                      articulo_divulgacion_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_divulgacion_autores')).aggregate(Min('articulo_divulgacion_autores__count'))[
@@ -1464,24 +1400,24 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulo_divulgacion_enprensa = LineChart(data_source)
             context['chart_articulo_divulgacion_enprensa'] = chart_articulo_divulgacion_enprensa
 
-
-            items_data = [['Año', 'Mis artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
+            items_data = [
+                ['Año', 'Mis artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
-                                                                                         status='ACEPTADO').filter(
+                                                                          status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                    Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
-                                                                                              status='ACEPTADO',
-                                                                                              usuarios=request.user).count()
+                                                                                 status='ACEPTADO',
+                                                                                 usuarios=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
@@ -1519,11 +1455,10 @@ class Dashboard(View):
                     min_articulo_cientifico_year_user = 0
                 items_data[i + 1].append(min_articulo_cientifico_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_articulo_divulgacion_aceptados = LineChart(data_source)
             context['chart_articulo_divulgacion_aceptados'] = chart_articulo_divulgacion_aceptados
-
 
             items_data = [
                 ['Año', 'Mis Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -1580,11 +1515,10 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_libros_divulgacion_publicados = LineChart(data_source)
             context['chart_libros_divulgacion_publicados'] = chart_libros_divulgacion_publicados
-
 
             items_data = [
                 ['Año', 'Mis Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -1641,7 +1575,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_libros_divulgacion_enprensa = LineChart(data_source)
             context['chart_libros_divulgacion_enprensa'] = chart_libros_divulgacion_enprensa
@@ -1701,7 +1635,7 @@ class Dashboard(View):
                     min_items_year_user = 0
                 libros_investigacion_aceptado_data[i + 1].append(min_items_year_user)
 
-            #print(libros_investigacion_aceptado_data)
+            # print(libros_investigacion_aceptado_data)
             data_source = SimpleDataSource(data=libros_investigacion_aceptado_data)
             chart_libros_divulgacion_aceptados = LineChart(data_source)
             context['chart_libros_divulgacion_aceptados'] = chart_libros_divulgacion_aceptados
@@ -1774,7 +1708,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_capitulos_libros_divulgacion_publicados = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_publicados'] = chart_capitulos_libros_divulgacion_publicados
@@ -1847,7 +1781,7 @@ class Dashboard(View):
                 capitulos_libros_investigacion_enprensa_data[i + 1].append(
                     min_items_year_user)
 
-            #print(capitulos_libros_investigacion_enprensa_data)
+            # print(capitulos_libros_investigacion_enprensa_data)
             data_source = SimpleDataSource(data=capitulos_libros_investigacion_enprensa_data)
             chart_capitulos_libros_divulgacion_enprensa = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_enprensa'] = chart_capitulos_libros_divulgacion_enprensa
@@ -1920,27 +1854,26 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_capitulos_libros_divulgacion_aceptados = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_aceptados'] = chart_capitulos_libros_divulgacion_aceptados
 
-
-
-
-
-            items_data = [['Año', 'Mis Organizaciones de eventos de divulgación', 'Promedio por persona', 'Max por persona',
-                           'Min por persona']]
+            items_data = [
+                ['Año', 'Mis Organizaciones de eventos de divulgación', 'Promedio por persona', 'Max por persona',
+                 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = OrganizacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=year).filter(
+                total_items_year_sum = OrganizacionEventoDivulgacion.objects.filter(
+                    evento__fecha_inicio__year=year).filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                      (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = OrganizacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=year,
-                                                                                         usuario=request.user).count()
+                request_user_items_year_sum = OrganizacionEventoDivulgacion.objects.filter(
+                    evento__fecha_inicio__year=year,
+                    usuario=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -1981,25 +1914,26 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_organizacioneventodivulgacion = LineChart(data_source)
             context['chart_organizacioneventodivulgacion'] = chart_organizacioneventodivulgacion
 
-
-
-            items_data = [['Año', 'Mis Participaciones en eventos de divulgación', 'Promedio por persona', 'Max por persona',
-                           'Min por persona']]
+            items_data = [
+                ['Año', 'Mis Participaciones en eventos de divulgación', 'Promedio por persona', 'Max por persona',
+                 'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = ParticipacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=year).filter(
+                total_items_year_sum = ParticipacionEventoDivulgacion.objects.filter(
+                    evento__fecha_inicio__year=year).filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                      (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = ParticipacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=year,
-                                                                                         usuario=request.user).count()
+                request_user_items_year_sum = ParticipacionEventoDivulgacion.objects.filter(
+                    evento__fecha_inicio__year=year,
+                    usuario=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -2040,16 +1974,14 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_participacioneventodivulgacion = LineChart(data_source)
             context['chart_participacioneventodivulgacion'] = chart_participacioneventodivulgacion
 
-
-
-
             items_data = [
-                ['Año', 'Mis Participaciones en Programas de Radio, Television, Internet, etc.', 'Promedio por persona', 'Max por persona',
+                ['Año', 'Mis Participaciones en Programas de Radio, Television, Internet, etc.', 'Promedio por persona',
+                 'Max por persona',
                  'Min por persona']]
             for i in range(num_years):
                 year = last_x_years[i]
@@ -2101,15 +2033,10 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_programaradiotelevisioninternet = LineChart(data_source)
             context['chart_programaradiotelevisioninternet'] = chart_programaradiotelevisioninternet
-
-
-
-
-
 
             items_data = [
                 ['Año', 'Mis Arbitrajes de Publicaciones Academicas', 'Promedio por persona', 'Max por persona',
@@ -2164,13 +2091,10 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_arbitrajepublicacionacademica = LineChart(data_source)
             context['chart_arbitrajepublicacionacademica'] = chart_arbitrajepublicacionacademica
-
-
-
 
             items_data = [
                 ['Año', 'Mis Arbitrajes de Proyectos de investigación', 'Promedio por persona', 'Max por persona',
@@ -2225,28 +2149,10 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_arbitrajeproyectoinvestigacion = LineChart(data_source)
             context['chart_arbitrajeproyectoinvestigacion'] = chart_arbitrajeproyectoinvestigacion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             items_data = [['Año', 'Mis horas de docencia escolarizada', 'Promedio horas', 'Max horas', 'Min horas']]
             for i in range(num_years):
@@ -2262,11 +2168,11 @@ class Dashboard(View):
                     users_with_items_year_count = 0
 
                 total_hours_year_sum = \
-                CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='ESCOLARIZADO').filter((
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
-                    Sum('total_horas'))[
-                    'total_horas__sum']
+                    CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='ESCOLARIZADO').filter((
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                        Sum('total_horas'))[
+                        'total_horas__sum']
                 if total_hours_year_sum == None:
                     total_hours_year_sum = 0
 
@@ -2311,8 +2217,6 @@ class Dashboard(View):
             chart_cursodocencia_escolarizado = LineChart(data_source)
             context['chart_cursodocencia_escolarizado'] = chart_cursodocencia_escolarizado
 
-
-
             items_data = [['Año', 'Mis horas de docencia extracurricular', 'Promedio horas', 'Max horas', 'Min horas']]
             for i in range(num_years):
                 year = last_x_years[i]
@@ -2327,11 +2231,11 @@ class Dashboard(View):
                     users_with_items_year_count = 0
 
                 total_hours_year_sum = \
-                CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='EXTRACURRICULAR').filter((
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
-                    Sum('total_horas'))[
-                    'total_horas__sum']
+                    CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='EXTRACURRICULAR').filter((
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                        Sum('total_horas'))[
+                        'total_horas__sum']
                 if total_hours_year_sum == None:
                     total_hours_year_sum = 0
 
@@ -2376,8 +2280,6 @@ class Dashboard(View):
             chart_cursodocencia_extracurricular = LineChart(data_source)
             context['chart_cursodocencia_extracurricular'] = chart_cursodocencia_extracurricular
 
-
-
             items_data = [
                 ['Año', 'Mis desarrollos tecnológicos', 'Promedio por persona', 'Max por persona', 'Min por persona']]
             for i in range(num_years):
@@ -2388,7 +2290,8 @@ class Dashboard(View):
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) |
                      (Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = DesarrolloTecnologico.objects.filter(fecha__year=year, autores=request.user).count()
+                request_user_items_year_sum = DesarrolloTecnologico.objects.filter(fecha__year=year,
+                                                                                   autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -2431,12 +2334,10 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_desarrollo_tecnologico = LineChart(data_source)
             context['chart_desarrollo_tecnologico'] = chart_desarrollo_tecnologico
-
-
 
             items_data = [
                 ['Año', 'Mis distinciones', 'Promedio por persona', 'Max por persona', 'Min por persona']]
@@ -2449,7 +2350,8 @@ class Dashboard(View):
                         condecorados__egreso_entidad__year__gt=year)) |
                      (Q(condecorados__ingreso_entidad__year__lte=year) & Q(condecorados__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year, condecorados=request.user).count()
+                request_user_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year,
+                                                                                 condecorados=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -2494,7 +2396,7 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            #print(items_data)
+            # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_distincion_academicos = LineChart(data_source)
             context['chart_distincion_academicos'] = chart_distincion_academicos
@@ -2526,7 +2428,6 @@ class ReporteHistorico(View):
                     (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad__year__gt=i)) |
                     (Q(ingreso_entidad__year__lte=i) & Q(egreso_entidad=None)))
                 active_users_per_last_x_year.append(users_with_items_year_count.count())
-
 
             cursos_data = [['Año', 'Total horas', 'Promedio horas', 'Max horas', 'Min horas', 'Personas activas']]
             for i in range(num_years):
@@ -2589,9 +2490,9 @@ class ReporteHistorico(View):
             hchart_cursos_especializacion = LineChart(data_source)
             context['hchart_cursos_especializacion'] = hchart_cursos_especializacion
 
-
             items_data = [
-                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas', 'Indexados']]
+                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona',
+                 'Min por persona', 'Personas activas', 'Indexados']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -2650,20 +2551,20 @@ class ReporteHistorico(View):
 
                 items_data[i + 1].append(total_items_indexados_year_sum)
 
-
             # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             hchart_articulos_investigacion_publicados = LineChart(data_source)
             context['hchart_articulos_investigacion_publicados'] = hchart_articulos_investigacion_publicados
 
             items_data = [
-                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona',
+                 'Min por persona', 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
                 total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
-                                                                                                  status='EN_PRENSA').filter(
+                                                                         status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
@@ -2714,7 +2615,8 @@ class ReporteHistorico(View):
             context['hchart_articulos_investigacion_enprensa'] = hchart_articulos_investigacion_enprensa
 
             items_data = [
-                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total artículos de investigación', 'Promedio por persona', 'Max por persona',
+                 'Min por persona', 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -2770,7 +2672,8 @@ class ReporteHistorico(View):
             context['hchart_articulos_investigacion_aceptado'] = hchart_articulos_investigacion_aceptado
 
             items_data = [
-                ['Año', 'Total Libros', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Libros', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -2831,7 +2734,8 @@ class ReporteHistorico(View):
             context['hchart_libros_investigacion_publicado'] = hchart_libros_investigacion_publicado
 
             items_data = [
-                ['Año', 'Total Libros', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Libros', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -2892,7 +2796,8 @@ class ReporteHistorico(View):
             context['hchart_libros_investigacion_enprensa'] = hchart_libros_investigacion_enprensa
 
             items_data = [
-                ['Año', 'Total Libros', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Libros', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -2953,7 +2858,8 @@ class ReporteHistorico(View):
             context['hchart_libros_investigacion_aceptados'] = hchart_libros_investigacion_aceptados
 
             items_data = [
-                ['Año', 'Total Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3025,7 +2931,8 @@ class ReporteHistorico(View):
             context['hchart_capitulos_libros_investigacion_publicado'] = hchart_capitulos_libros_investigacion_publicado
 
             items_data = [
-                ['Año', 'Total Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3098,7 +3005,8 @@ class ReporteHistorico(View):
             context['hchart_capitulos_libros_investigacion_enprensa'] = hchart_capitulos_libros_investigacion_enprensa
 
             items_data = [
-                ['Año', 'Total Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Capitulos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3170,9 +3078,9 @@ class ReporteHistorico(View):
             hchart_capitulos_libros_investigacion_aceptado = LineChart(data_source)
             context['hchart_capitulos_libros_investigacion_aceptado'] = hchart_capitulos_libros_investigacion_aceptado
 
-
             items_data = [
-                ['Año', 'Total Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3230,7 +3138,8 @@ class ReporteHistorico(View):
             context['hchart_mapas_arbitrados_publicados'] = hchart_mapas_arbitrados_publicados
 
             items_data = [
-                ['Año', 'Total Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3288,7 +3197,8 @@ class ReporteHistorico(View):
             context['hchart_mapas_arbitrados_enprensa'] = hchart_mapas_arbitrados_enprensa
 
             items_data = [
-                ['Año', 'Total Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Mapas', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3346,7 +3256,8 @@ class ReporteHistorico(View):
             context['hchart_mapas_arbitrados_aceptados'] = hchart_mapas_arbitrados_aceptados
 
             items_data = [
-                ['Año', 'Total Informes Técnicos', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Informes Técnicos', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3402,7 +3313,8 @@ class ReporteHistorico(View):
             context['hchart_informes_tecnicos'] = hchart_informes_tecnicos
 
             items_data = [
-                ['Año', 'Total Proyectos de investigación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Proyectos de investigación', 'Promedio por persona', 'Max por persona',
+                 'Min por persona', 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3421,7 +3333,8 @@ class ReporteHistorico(View):
                     total_items_year_sum = 0
                 items_data[i + 1].append(total_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                users_with_items_year_count = User.objects.filter(
+                    proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
                     (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                         proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                     | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
@@ -3438,27 +3351,33 @@ class ReporteHistorico(View):
                 else:
                     items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                max_items_year_user = \
+                User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
                     (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                         proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                     | (
-                    Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
+                        Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                            proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_investigacion_responsables')).aggregate(Max('proyecto_investigacion_responsables__count'))[
+                    Count('proyecto_investigacion_responsables')).aggregate(
+                    Max('proyecto_investigacion_responsables__count'))[
                     'proyecto_investigacion_responsables__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
-                min_items_year_user = User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                min_items_year_user = \
+                User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
                     (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                         proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                     | (
-                    Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(proyecto_investigacion_responsables__fecha_fin=None))
+                        Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                            proyecto_investigacion_responsables__fecha_fin=None))
                 ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                           (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('proyecto_investigacion_responsables')).aggregate(Min('proyecto_investigacion_responsables__count'))[
+                    Count('proyecto_investigacion_responsables')).aggregate(
+                    Min('proyecto_investigacion_responsables__count'))[
                     'proyecto_investigacion_responsables__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
@@ -3471,7 +3390,8 @@ class ReporteHistorico(View):
             context['hchart_proyectos_investigacion'] = hchart_proyectos_investigacion
 
             items_data = [
-                ['Año', 'Total Memorias in extenso', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Memorias in extenso', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3524,7 +3444,8 @@ class ReporteHistorico(View):
             context['hchart_memoria_in_extenso'] = hchart_memoria_in_extenso
 
             items_data = [
-                ['Año', 'Total Prologos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Prologos en libros', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3596,7 +3517,8 @@ class ReporteHistorico(View):
             context['hchart_prologo_libro_investigacion_publicado'] = hchart_prologo_libro_investigacion_publicado
 
             items_data = [
-                ['Año', 'Total Reseñas', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Reseñas', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3654,8 +3576,9 @@ class ReporteHistorico(View):
             hchart_resena = LineChart(data_source)
             context['hchart_resena'] = hchart_resena
 
-            items_data = [['Año', 'Total Organizaciones de eventos académicos', 'Promedio por persona', 'Max por persona',
-                           'Min por persona', 'Personas activas']]
+            items_data = [
+                ['Año', 'Total Organizaciones de eventos académicos', 'Promedio por persona', 'Max por persona',
+                 'Min por persona', 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3775,7 +3698,8 @@ class ReporteHistorico(View):
             context['hchart_participacioneventoacademico'] = hchart_participacioneventoacademico
 
             items_data = [
-                ['Año', 'Total artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3834,7 +3758,8 @@ class ReporteHistorico(View):
             context['hchart_articulo_divulgacion_publicados'] = hchart_articulo_divulgacion_publicados
 
             items_data = [
-                ['Año', 'Total artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3894,7 +3819,8 @@ class ReporteHistorico(View):
             context['hchart_articulo_divulgacion_enprensa'] = hchart_articulo_divulgacion_enprensa
 
             items_data = [
-                ['Año', 'Total artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total artículos de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -3950,7 +3876,8 @@ class ReporteHistorico(View):
             context['hchart_articulo_divulgacion_aceptados'] = hchart_articulo_divulgacion_aceptados
 
             items_data = [
-                ['Año', 'Total Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -4011,7 +3938,8 @@ class ReporteHistorico(View):
             context['hchart_libros_divulgacion_publicados'] = hchart_libros_divulgacion_publicados
 
             items_data = [
-                ['Año', 'Total Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -4072,7 +4000,8 @@ class ReporteHistorico(View):
             context['hchart_libros_divulgacion_enprensa'] = hchart_libros_divulgacion_enprensa
 
             items_data = [
-                ['Año', 'Total Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total Libros de divulgación', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -4474,7 +4403,8 @@ class ReporteHistorico(View):
             context['hchart_participacioneventodivulgacion'] = hchart_participacioneventodivulgacion
 
             items_data = [
-                ['Año', 'Total Participaciones en Programas de Radio, Television, Internet, etc.', 'Promedio por persona',
+                ['Año', 'Total Participaciones en Programas de Radio, Television, Internet, etc.',
+                 'Promedio por persona',
                  'Max por persona',
                  'Min por persona', 'Personas activas']]
             for i in range(num_years):
@@ -4646,7 +4576,8 @@ class ReporteHistorico(View):
             hchart_arbitrajeproyectoinvestigacion = LineChart(data_source)
             context['hchart_arbitrajeproyectoinvestigacion'] = hchart_arbitrajeproyectoinvestigacion
 
-            items_data = [['Año', 'Total horas de docencia escolarizada', 'Promedio horas', 'Max horas', 'Min horas', 'Personas activas']]
+            items_data = [['Año', 'Total horas de docencia escolarizada', 'Promedio horas', 'Max horas', 'Min horas',
+                           'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(last_x_years[i])])
@@ -4711,7 +4642,8 @@ class ReporteHistorico(View):
             hchart_cursodocencia_escolarizado = LineChart(data_source)
             context['hchart_cursodocencia_escolarizado'] = hchart_cursodocencia_escolarizado
 
-            items_data = [['Año', 'Total horas de docencia extracurricular', 'Promedio horas', 'Max horas', 'Min horas', 'Personas activas']]
+            items_data = [['Año', 'Total horas de docencia extracurricular', 'Promedio horas', 'Max horas', 'Min horas',
+                           'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(last_x_years[i])])
@@ -4777,7 +4709,8 @@ class ReporteHistorico(View):
             context['hchart_cursodocencia_extracurricular'] = hchart_cursodocencia_extracurricular
 
             items_data = [
-                ['Año', 'Total desarrollos tecnológicos', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total desarrollos tecnológicos', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -4835,7 +4768,8 @@ class ReporteHistorico(View):
             context['hchart_desarrollo_tecnologico'] = hchart_desarrollo_tecnologico
 
             items_data = [
-                ['Año', 'Total distinciones', 'Promedio por persona', 'Max por persona', 'Min por persona', 'Personas activas']]
+                ['Año', 'Total distinciones', 'Promedio por persona', 'Max por persona', 'Min por persona',
+                 'Personas activas']]
             for i in range(num_years):
                 year = last_x_years[i]
                 items_data.append([str(year)])
@@ -4898,14 +4832,11 @@ class ReporteHistorico(View):
         return render(request, self.template_name, context)
 
 
-
-
 class InformeActividades(View):
     form_class = None
     template_name = 'informe_actividades.html'
     aux = {}
     this_year = datetime.now().year
-
 
     def get(self, request):
         context = {}
@@ -4927,7 +4858,8 @@ class InformeActividades(View):
             proy_pasty_conc_extnal = ProyectoInvestigacion.objects.filter(
                 financiamiento_conacyt__isnull=True, financiamiento_papiit__isnull=True).filter(
                 Q(financiamientos__institucion__pais__nombre='México')).filter(
-                Q(fecha_fin__year=this_year - 2) | Q(fecha_fin__year=this_year - 1)).annotate(Count('pk', distinct=True)).count()
+                Q(fecha_fin__year=this_year - 2) | Q(fecha_fin__year=this_year - 1)).annotate(
+                Count('pk', distinct=True)).count()
 
             # concluidos año anterior ingresos ext, internacionales:
             proy_pasty_conc_extint_tmp = ProyectoInvestigacion.objects.filter(
@@ -4943,14 +4875,6 @@ class InformeActividades(View):
                 if 'México' in paises and len(paises) > 1 or 'México' not in paises and len(paises) > 0:
                     proy_pasty_conc_extint += 1
                     print(paises)
-
-
-
-
-
-
-
-
 
             # en proceso año anterior conacyt:
             proy_pasty_proc_conacyt = ProyectoInvestigacion.objects.filter(
@@ -4983,15 +4907,6 @@ class InformeActividades(View):
                     proy_pasty_proc_extint += 1
                     print(paises)
 
-
-
-
-
-
-
-
-
-
             # concluidos este año conacyt:
             proy_thisy_conc_conacyt = ProyectoInvestigacion.objects.filter(
                 fecha_fin__year=this_year, financiamiento_conacyt__isnull=False).count()
@@ -5021,11 +4936,6 @@ class InformeActividades(View):
                 if 'México' in paises and len(paises) > 1 or 'México' not in paises and len(paises) > 0:
                     proy_thisy_conc_extint += 1
                     print(paises)
-
-
-
-
-
 
             # en proceso este año conacyt:
             proy_thisy_proc_conacyt = ProyectoInvestigacion.objects.filter(
@@ -5060,35 +4970,36 @@ class InformeActividades(View):
             conc_thisyl = 'Concluidos ' + str(this_year - 1) + "-" + str(this_year)
             proc_thisyl = 'En proceso ' + str(this_year - 1) + "-" + str(this_year)
 
-            proyectos = [['Etiqueta', 'CONACYT',                'PAPIIT',               'Ext. Nacional', 'Ext. Internacional'],
-                         [conc_pastyl, proy_pasty_conc_conacyt, proy_pasty_conc_papiit, proy_pasty_conc_extnal, proy_pasty_conc_extint],
-                         [proc_pastyl, proy_pasty_proc_conacyt, proy_pasty_proc_papiit, proy_pasty_proc_extnal, proy_pasty_proc_extint],
-                         [conc_thisyl, proy_thisy_conc_conacyt, proy_thisy_conc_papiit, proy_thisy_conc_extnal, proy_thisy_conc_extint],
-                         [proc_thisyl, proy_thisy_proc_conacyt, proy_thisy_proc_papiit, proy_thisy_proc_extnal, proy_thisy_proc_extint],
+            proyectos = [['Etiqueta', 'CONACYT', 'PAPIIT', 'Ext. Nacional', 'Ext. Internacional'],
+                         [conc_pastyl, proy_pasty_conc_conacyt, proy_pasty_conc_papiit, proy_pasty_conc_extnal,
+                          proy_pasty_conc_extint],
+                         [proc_pastyl, proy_pasty_proc_conacyt, proy_pasty_proc_papiit, proy_pasty_proc_extnal,
+                          proy_pasty_proc_extint],
+                         [conc_thisyl, proy_thisy_conc_conacyt, proy_thisy_conc_papiit, proy_thisy_conc_extnal,
+                          proy_thisy_conc_extint],
+                         [proc_thisyl, proy_thisy_proc_conacyt, proy_thisy_proc_papiit, proy_thisy_proc_extnal,
+                          proy_thisy_proc_extint],
                          ]
 
             data_source = SimpleDataSource(data=proyectos)
             chart_proyectos_investigacion = BarChart(data_source)
             context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
 
-
-
-
             invest_en_proyectos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
                 Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=this_year - 1) &
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
 
             invest_activos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).count()
 
             invest_perc_ant = round(invest_en_proyectos_ant / invest_activos_ant, 2)
 
             invest_en_proyectos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
-                Q(proyecto_investigacion_responsables__fecha_inicio__year__gte=this_year - 1)  &
+                Q(proyecto_investigacion_responsables__fecha_inicio__year__gte=this_year - 1) &
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
@@ -5099,9 +5010,6 @@ class InformeActividades(View):
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).count()
 
             invest_perc_act = round(invest_en_proyectos_act / invest_activos_act, 2)
-
-
-
 
             tecnicos_en_proyectos_ant = User.objects.filter(tipo='TECNICO').filter(
                 Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=this_year - 1) &
@@ -5117,11 +5025,11 @@ class InformeActividades(View):
             tec_perc_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2) * 100
 
             tecnicos_en_proyectos_act = User.objects.filter(tipo='TECNICO').filter(
-                Q(proyecto_investigacion_responsables__fecha_inicio__year__gte=this_year - 1)  &
+                Q(proyecto_investigacion_responsables__fecha_inicio__year__gte=this_year - 1) &
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
-                    (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).count()
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).count()
 
             tecnicos_activos_act = User.objects.filter(tipo='TECNICO').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
@@ -5171,145 +5079,189 @@ class InformeActividades(View):
             except:
                 proy_act_perc = 0
 
-
             context['this_year'] = this_year
             context['this_year_1'] = this_year - 1
             context['this_year_2'] = this_year - 2
 
-            proyectos = [['Etiqueta', 'CONACYT',                'PAPIIT',               'Ext. Nacional', 'Ext. Internacional'],
-                         [conc_pastyl, proy_pasty_conc_conacyt, proy_pasty_conc_papiit, proy_pasty_conc_extnal, proy_pasty_conc_extint],
-                         [proc_pastyl, proy_pasty_proc_conacyt, proy_pasty_proc_papiit, proy_pasty_proc_extnal, proy_pasty_proc_extint],
-                         [conc_thisyl, proy_thisy_conc_conacyt, proy_thisy_conc_papiit, proy_thisy_conc_extnal, proy_thisy_conc_extint],
-                         [proc_thisyl, proy_thisy_proc_conacyt, proy_thisy_proc_papiit, proy_thisy_proc_extnal, proy_thisy_proc_extint],
+            proyectos = [['Etiqueta', 'CONACYT', 'PAPIIT', 'Ext. Nacional', 'Ext. Internacional'],
+                         [conc_pastyl, proy_pasty_conc_conacyt, proy_pasty_conc_papiit, proy_pasty_conc_extnal,
+                          proy_pasty_conc_extint],
+                         [proc_pastyl, proy_pasty_proc_conacyt, proy_pasty_proc_papiit, proy_pasty_proc_extnal,
+                          proy_pasty_proc_extint],
+                         [conc_thisyl, proy_thisy_conc_conacyt, proy_thisy_conc_papiit, proy_thisy_conc_extnal,
+                          proy_thisy_conc_extint],
+                         [proc_thisyl, proy_thisy_proc_conacyt, proy_thisy_proc_papiit, proy_thisy_proc_extnal,
+                          proy_thisy_proc_extint],
                          ]
 
-            context['table_proyectos'] = {'proy_pasty_conc_conacyt': proy_pasty_conc_conacyt, 'proy_pasty_conc_papiit': proy_pasty_conc_papiit,
-                                          'proy_pasty_conc_extnal': proy_pasty_conc_extnal, 'proy_pasty_conc_extint': proy_pasty_conc_extint,
-                                          'proy_thisy_conc_conacyt': proy_thisy_conc_conacyt, 'proy_thisy_conc_papiit': proy_thisy_conc_papiit,
-                                          'proy_thisy_conc_extnal': proy_thisy_conc_extnal, 'proy_thisy_conc_extint': proy_thisy_conc_extint,
-                                          'proy_thisy_proc_conacyt': proy_thisy_proc_conacyt, 'proy_thisy_proc_papiit': proy_thisy_proc_papiit,
-                                          'proy_thisy_proc_extnal': proy_thisy_proc_extnal, 'proy_thisy_proc_extint': proy_thisy_proc_extint,
+            context['table_proyectos'] = {'proy_pasty_conc_conacyt': proy_pasty_conc_conacyt,
+                                          'proy_pasty_conc_papiit': proy_pasty_conc_papiit,
+                                          'proy_pasty_conc_extnal': proy_pasty_conc_extnal,
+                                          'proy_pasty_conc_extint': proy_pasty_conc_extint,
+                                          'proy_thisy_conc_conacyt': proy_thisy_conc_conacyt,
+                                          'proy_thisy_conc_papiit': proy_thisy_conc_papiit,
+                                          'proy_thisy_conc_extnal': proy_thisy_conc_extnal,
+                                          'proy_thisy_conc_extint': proy_thisy_conc_extint,
+                                          'proy_thisy_proc_conacyt': proy_thisy_proc_conacyt,
+                                          'proy_thisy_proc_papiit': proy_thisy_proc_papiit,
+                                          'proy_thisy_proc_extnal': proy_thisy_proc_extnal,
+                                          'proy_thisy_proc_extint': proy_thisy_proc_extint,
                                           'invest_perc_ant': invest_perc_ant, 'invest_perc_act': invest_perc_act,
                                           'tec_perc_ant': tec_perc_ant, 'tec_perc_act': tec_perc_act,
                                           'proy_financiados_ant': proy_financiados_ant, 'proy_ant_perc': proy_ant_perc,
-                                          'proy_financiados_act': proy_financiados_act, 'proy_act_perc': proy_act_perc,}
+                                          'proy_financiados_act': proy_financiados_act,
+                                          'proy_act_perc': proy_act_perc, }
 
+            proythisy_count = ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year - 1).count()
+            p_proythisy_count = ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year - 2,
+                                                                     fecha_fin__year__lte=this_year - 1).count()
 
+            proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO',
+                                                                fecha_inicio__year__gte=this_year - 1).count()
+            proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO',
+                                                                fecha_inicio__year__gte=this_year - 1).count()
+            proymod_inter = ProyectoInvestigacion.objects.filter(modalidad='INTERDISCIPLINARIO',
+                                                                 fecha_inicio__year__gte=this_year - 1).count()
+            proymod_trans = ProyectoInvestigacion.objects.filter(modalidad='TRANSDISCIPLINARIO',
+                                                                 fecha_inicio__year__gte=this_year - 1).count()
 
-            proythisy_count =  ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year-1).count()
-            p_proythisy_count =  ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-
-
-
-
-            proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
-            proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
-            proymod_inter = ProyectoInvestigacion.objects.filter(modalidad='INTERDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
-            proymod_trans = ProyectoInvestigacion.objects.filter(modalidad='TRANSDISCIPLINARIO', fecha_inicio__year__gte=this_year-1).count()
-
-            proymod_disc = round(proymod_disc / proythisy_count * 100, 2)
-            proymod_mult = round(proymod_mult / proythisy_count * 100, 2)
-            proymod_inter = round(proymod_inter / proythisy_count * 100, 2)
-            proymod_trans = round(proymod_trans / proythisy_count * 100, 2)
+            proymod_discp = round(proymod_disc / proythisy_count * 100, 2)
+            proymod_multp = round(proymod_mult / proythisy_count * 100, 2)
+            proymod_interp = round(proymod_inter / proythisy_count * 100, 2)
+            proymod_transp = round(proymod_trans / proythisy_count * 100, 2)
 
             proymod_data = [['Modalidad', 'Porcentaje'],
-                            ['Disciplinario', proymod_disc],
-                            ['Multidisciplinario', proymod_mult],
-                            ['Interdisciplinario', proymod_inter],
-                            ['Transdisciplinario', proymod_trans]
+                            ['Disciplinario', proymod_discp],
+                            ['Multidisciplinario', proymod_multp],
+                            ['Interdisciplinario', proymod_interp],
+                            ['Transdisciplinario', proymod_transp]
                             ]
-
 
             data_source = SimpleDataSource(data=proymod_data)
             chart_modalidad_proyectos = DonutChart(data_source)
             context['chart_modalidad_proyectos'] = chart_modalidad_proyectos
 
+            p_proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO',
+                                                                  fecha_inicio__year__gte=this_year - 2,
+                                                                  fecha_fin__year__lte=this_year - 1).count()
+            p_proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO',
+                                                                  fecha_inicio__year__gte=this_year - 2,
+                                                                  fecha_fin__year__lte=this_year - 1).count()
+            p_proymod_inter = ProyectoInvestigacion.objects.filter(modalidad='INTERDISCIPLINARIO',
+                                                                   fecha_inicio__year__gte=this_year - 2,
+                                                                   fecha_fin__year__lte=this_year - 1).count()
+            p_proymod_trans = ProyectoInvestigacion.objects.filter(modalidad='TRANSDISCIPLINARIO',
+                                                                   fecha_inicio__year__gte=this_year - 2,
+                                                                   fecha_fin__year__lte=this_year - 1).count()
 
-
-            p_proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            p_proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            p_proymod_inter = ProyectoInvestigacion.objects.filter(modalidad='INTERDISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            p_proymod_trans = ProyectoInvestigacion.objects.filter(modalidad='TRANSDISCIPLINARIO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-
-            p_proymod_disc = round(p_proymod_disc / p_proythisy_count * 100, 2)
-            p_proymod_mult = round(p_proymod_mult / p_proythisy_count * 100, 2)
-            p_proymod_inter = round(p_proymod_inter / p_proythisy_count * 100, 2)
-            p_proymod_trans = round(p_proymod_trans / p_proythisy_count * 100, 2)
+            p_proymod_discp = round(p_proymod_disc / p_proythisy_count * 100, 2)
+            p_proymod_multp = round(p_proymod_mult / p_proythisy_count * 100, 2)
+            p_proymod_interp = round(p_proymod_inter / p_proythisy_count * 100, 2)
+            p_proymod_transp = round(p_proymod_trans / p_proythisy_count * 100, 2)
 
             p_proymod_data = [['Modalidad', 'Porcentaje'],
-                            ['Disciplinario', p_proymod_disc],
-                            ['Multidisciplinario', p_proymod_mult],
-                            ['Interdisciplinario', p_proymod_inter],
-                            ['Transdisciplinario', p_proymod_trans]
-                            ]
-
+                              ['Disciplinario', p_proymod_discp],
+                              ['Multidisciplinario', p_proymod_multp],
+                              ['Interdisciplinario', p_proymod_interp],
+                              ['Transdisciplinario', p_proymod_transp]
+                              ]
 
             data_source = SimpleDataSource(data=p_proymod_data)
             p_chart_modalidad_proyectos = DonutChart(data_source)
             context['p_chart_modalidad_proyectos'] = p_chart_modalidad_proyectos
 
+            context['table_proyectos_modalidad'] = {'proymod_disc': proymod_disc,
+                                                    'proymod_mult': proymod_mult,
+                                                    'proymod_inter': proymod_inter,
+                                                    'proymod_trans': proymod_trans,
+                                                    'proymod_discp': proymod_discp,
+                                                    'proymod_multp': proymod_multp,
+                                                    'proymod_interp': proymod_interp,
+                                                    'proymod_transp': proymod_transp,
+                                                    'p_proymod_disc': p_proymod_disc,
+                                                    'p_proymod_mult': p_proymod_mult,
+                                                    'p_proymod_inter': p_proymod_inter,
+                                                    'p_proymod_trans': p_proymod_trans,
+                                                    'p_proymod_discp': p_proymod_discp,
+                                                    'p_proymod_multp': p_proymod_multp,
+                                                    'p_proymod_interp': p_proymod_interp,
+                                                    'p_proymod_transp': p_proymod_transp,
+                                                    }
 
-            
 
 
 
-            
-            proyorg_ind = ProyectoInvestigacion.objects.filter(organizacion='INDIVIDUAL', fecha_inicio__year__gte=this_year - 1).count()
-            proyorg_col = ProyectoInvestigacion.objects.filter(organizacion='COLECTIVO', fecha_inicio__year__gte=this_year - 1).count()
-            proyorg_ind = round(proyorg_ind / proythisy_count * 100, 2)
-            proyorg_col = round(proyorg_col / proythisy_count * 100, 2)
+
+            proyorg_ind = ProyectoInvestigacion.objects.filter(organizacion='INDIVIDUAL',
+                                                               fecha_inicio__year__gte=this_year - 1).count()
+            proyorg_col = ProyectoInvestigacion.objects.filter(organizacion='COLECTIVO',
+                                                               fecha_inicio__year__gte=this_year - 1).count()
+            proyorg_indp = round(proyorg_ind / proythisy_count * 100, 2)
+            proyorg_colp = round(proyorg_col / proythisy_count * 100, 2)
 
             proymod_data = [['Organización', 'Porcentaje'],
-                            ['Individual', proyorg_ind],
-                            ['Colectivo', proyorg_col]
+                            ['Individual', proyorg_indp],
+                            ['Colectivo', proyorg_colp]
                             ]
 
             data_source = SimpleDataSource(data=proymod_data)
             chart_organizacion_proyectos = DonutChart(data_source)
             context['chart_organizacion_proyectos'] = chart_organizacion_proyectos
 
-
-            p_proyorg_ind = ProyectoInvestigacion.objects.filter(organizacion='INDIVIDUAL', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            p_proyorg_col = ProyectoInvestigacion.objects.filter(organizacion='COLECTIVO', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            p_proyorg_ind = round(p_proyorg_ind / p_proythisy_count * 100, 2)
-            p_proyorg_col = round(p_proyorg_col / p_proythisy_count * 100, 2)
+            p_proyorg_ind = ProyectoInvestigacion.objects.filter(organizacion='INDIVIDUAL',
+                                                                 fecha_inicio__year__gte=this_year - 2,
+                                                                 fecha_fin__year__lte=this_year - 1).count()
+            p_proyorg_col = ProyectoInvestigacion.objects.filter(organizacion='COLECTIVO',
+                                                                 fecha_inicio__year__gte=this_year - 2,
+                                                                 fecha_fin__year__lte=this_year - 1).count()
+            p_proyorg_indp = round(p_proyorg_ind / p_proythisy_count * 100, 2)
+            p_proyorg_colp = round(p_proyorg_col / p_proythisy_count * 100, 2)
 
             proymod_data = [['Organización', 'Porcentaje'],
-                            ['Individual', p_proyorg_ind],
-                            ['Colectivo', p_proyorg_col]
+                            ['Individual', p_proyorg_indp],
+                            ['Colectivo', p_proyorg_colp]
                             ]
 
             data_source = SimpleDataSource(data=proymod_data)
             p_chart_organizacion_proyectos = DonutChart(data_source)
             context['p_chart_organizacion_proyectos'] = p_chart_organizacion_proyectos
 
+            context['table_proyectos_organizacion'] = {'proyorg_ind': proyorg_ind,
+                                                    'proyorg_col': proyorg_col,
+                                                    'proyorg_indp': proyorg_indp,
+                                                    'proyorg_colp': proyorg_colp,
+                                                    'p_proyorg_ind': p_proyorg_ind,
+                                                    'p_proyorg_col': p_proyorg_col,
+                                                    'p_proyorg_indp': p_proyorg_indp,
+                                                    'p_proyorg_colp': p_proyorg_colp,
+                                                    }
 
 
 
-
-            
-
-
-
-
-            proygen_y = ProyectoInvestigacion.objects.filter(tematica_genero=True, fecha_inicio__year__gte=this_year - 1).count()
-            proygen_n = ProyectoInvestigacion.objects.filter(tematica_genero=False, fecha_inicio__year__gte=this_year - 1).count()
-            proygen_y = round(proygen_y / proythisy_count * 100, 2)
-            proygen_n = round(proygen_n / proythisy_count * 100, 2)
+            proygen_y = ProyectoInvestigacion.objects.filter(tematica_genero=True,
+                                                             fecha_inicio__year__gte=this_year - 1).count()
+            proygen_n = ProyectoInvestigacion.objects.filter(tematica_genero=False,
+                                                             fecha_inicio__year__gte=this_year - 1).count()
+            proygen_yp = round(proygen_y / proythisy_count * 100, 2)
+            proygen_np = round(proygen_n / proythisy_count * 100, 2)
 
             proymod_data = [['Enfoque de género', 'Porcentaje'],
-                            ['Si', proygen_y],
-                            ['No', proygen_n]
+                            ['Si', proygen_yp],
+                            ['No', proygen_np]
                             ]
 
             data_source = SimpleDataSource(data=proymod_data)
             chart_genero_proyectos = DonutChart(data_source)
             context['chart_genero_proyectos'] = chart_genero_proyectos
 
-            p_proygen_y = ProyectoInvestigacion.objects.filter(tematica_genero=True, fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            p_proygen_n = ProyectoInvestigacion.objects.filter(tematica_genero=False, fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            p_proygen_y = round(p_proygen_y / p_proythisy_count * 100, 2)
-            p_proygen_n = round(p_proygen_n / p_proythisy_count * 100, 2)
+            p_proygen_y = ProyectoInvestigacion.objects.filter(tematica_genero=True,
+                                                               fecha_inicio__year__gte=this_year - 2,
+                                                               fecha_fin__year__lte=this_year - 1).count()
+            p_proygen_n = ProyectoInvestigacion.objects.filter(tematica_genero=False,
+                                                               fecha_inicio__year__gte=this_year - 2,
+                                                               fecha_fin__year__lte=this_year - 1).count()
+            p_proygen_yp = round(p_proygen_y / p_proythisy_count * 100, 2)
+            p_proygen_np = round(p_proygen_n / p_proythisy_count * 100, 2)
 
             proymod_data = [['Enfoque de género', 'Porcentaje'],
                             ['Si', p_proygen_y],
@@ -5320,13 +5272,4 @@ class InformeActividades(View):
             p_chart_genero_proyectos = DonutChart(data_source)
             context['p_chart_genero_proyectos'] = p_chart_genero_proyectos
 
-
-
-
-
-
-
-
-
         return render(request, self.template_name, context)
-

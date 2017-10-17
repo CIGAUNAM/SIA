@@ -10,192 +10,366 @@
     <h3>Informe de actividades</h3>
 
     <div class="row">
-    <button id="ocultar-leyendas" class="btn btn-circle btn-danger float-right" style="margin-right: 15px;" >Ocultar Leyendas</button><p><br /><br /></p>
+        <button id="ocultar-leyendas" class="btn btn-circle btn-danger float-right" style="margin-right: 15px;">Ocultar
+            Leyendas
+        </button>
+        <p><br/><br/></p>
     </div>
 
 
     <div class="row">
-    <div class="col-md-6">
-        <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs pull-right">
-                <li class="active"><a href="#finplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
-                <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Datos</a></li>
+        <div class="col-md-6">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#finplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#findatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
-                <li class="pull-left header"><i class="fa fa-th"></i> Proyectos financiados</li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="finplot">
-                    {{ chart_proyectos_investigacion.as_html }}
+                    <li class="pull-left header"><i class="fa fa-th"></i> Proyectos financiados</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="finplot">
+                        {{ chart_proyectos_investigacion.as_html }}
+
+                        <!-- <hr/>
+                        <p>
+                            &nbsp;<button class="btn" style="background-color: #0b62a4; color: white">CONACYT</button>
+                            <button class="btn" style="background-color: #7a92a3; color: white">PAPIIT</button>
+                            <button class="btn" style="background-color: #4da74d; color: white">Externo Nacional
+                            </button>
+                            <button class="btn" style="background-color: #afd8f8; color: white">Externo Extranjero
+                            </button>
+                        </p> -->
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="findatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>{{ this_year_2 }}-{{ this_year_1 }}</th>
+                                <th>{{ this_year_1 }}-{{ this_year }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_conc_conacyt }} proyectos con financiamiento CONACYT
+                                    concluidos
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_conc_conacyt }} proyectos con financiamiento CONACYT
+                                    concluidos
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_conc_papiit }} proyectos con financiamiento PAPIIT
+                                    concluidos
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_conc_papiit }} proyectos con financiamiento PAPIIT
+                                    concluidos
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_conc_extnal }} proyectos con financiamiento externo
+                                    nacional concluidos
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_conc_extnal }} proyectos con financiamiento externo
+                                    nacional concluidos
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_conc_extint }} proyectos con financiamiento externo
+                                    internacional
+                                    concluidos
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_conc_extint }} proyectos con financiamiento externo
+                                    internacional
+                                    concluidos
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_proc_conacyt }} proyectos con financiamiento CONACYT
+                                    en proceso
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_proc_conacyt }} proyectos con financiamiento CONACYT
+                                    en proceso
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_proc_papiit }} proyectos con financiamiento PAPIIT en
+                                    proceso
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_proc_papiit }} proyectos con financiamiento PAPIIT en
+                                    proceso
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_proc_extnal }} proyectos con financiamiento externo
+                                    nacional en proceso
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_proc_extnal }} proyectos con financiamiento externo
+                                    nacional en proceso
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.proy_pasty_proc_extint }} proyectos con financiamiento externo
+                                    internacional en
+                                    proceso
+                                </td>
+                                <td>{{ table_proyectos.proy_thisy_proc_extint }} proyectos con financiamiento externo
+                                    internacional en
+                                    proceso
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>{{ table_proyectos.invest_perc_ant }}% de los investigadores fueron responsables
+                                </td>
+                                <td>{{ table_proyectos.invest_perc_act }}% de los investigadores fueron responsables
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.tec_perc_ant }}% de los técnicos fueron responsables</td>
+                                <td>{{ table_proyectos.tec_perc_act }}% de los técnicos fueron responsables</td>
+                            </tr>
+                            <tr>
+                                <td>{{ table_proyectos.proy_financiados_ant }} Proyectos de investigación financiados
+                                    ({{ table_proyectos.proy_ant_perc }}%)
+                                </td>
+                                <td>{{ table_proyectos.proy_financiados_act }} Proyectos de investigación financiados
+                                    ({{ table_proyectos.proy_act_perc }}%)
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="tab_3-2">
+
+                    </div>
+                    <!-- /.tab-pane -->
                 </div>
-                <!-- /.tab-pane -->
-                <div class="tab-pane" id="tab_2-2">
-                    <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-            <th>{{ this_year_2 }}-{{ this_year_1 }}</th>
-            <th>{{ this_year_1 }}-{{ this_year }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_conc_conacyt }} proyectos con financiamiento CONACYT concluidos</td>
-            <td>{{ table_proyectos.proy_thisy_conc_conacyt }} proyectos con financiamiento CONACYT concluidos</td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_conc_papiit }} proyectos con financiamiento PAPIIT concluidos</td>
-            <td>{{ table_proyectos.proy_thisy_conc_papiit }} proyectos con financiamiento PAPIIT concluidos</td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_conc_extnal }} proyectos con financiamiento externo nacional concluidos
-            </td>
-            <td>{{ table_proyectos.proy_thisy_conc_extnal }} proyectos con financiamiento externo nacional concluidos
-            </td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_conc_extint }} proyectos con financiamiento externo internacional
-                concluidos
-            </td>
-            <td>{{ table_proyectos.proy_thisy_conc_extint }} proyectos con financiamiento externo internacional
-                concluidos
-            </td>
-        </tr>
-
-
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_proc_conacyt }} proyectos con financiamiento CONACYT en proceso</td>
-            <td>{{ table_proyectos.proy_thisy_proc_conacyt }} proyectos con financiamiento CONACYT en proceso</td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_proc_papiit }} proyectos con financiamiento PAPIIT en proceso</td>
-            <td>{{ table_proyectos.proy_thisy_proc_papiit }} proyectos con financiamiento PAPIIT en proceso</td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_proc_extnal }} proyectos con financiamiento externo nacional en proceso
-            </td>
-            <td>{{ table_proyectos.proy_thisy_proc_extnal }} proyectos con financiamiento externo nacional en proceso
-            </td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.proy_pasty_proc_extint }} proyectos con financiamiento externo internacional en
-                proceso
-            </td>
-            <td>{{ table_proyectos.proy_thisy_proc_extint }} proyectos con financiamiento externo internacional en
-                proceso
-            </td>
-        </tr>
-
-
-        <tr>
-            <td>{{ table_proyectos.invest_perc_ant }}% de los investigadores fueron responsables</td>
-            <td>{{ table_proyectos.invest_perc_act }}% de los investigadores fueron responsables</td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.tec_perc_ant }}% de los técnicos fueron responsables</td>
-            <td>{{ table_proyectos.tec_perc_act }}% de los técnicos fueron responsables</td>
-        </tr>
-        <tr>
-            <td>{{ table_proyectos.proy_financiados_ant }} Proyectos de investigación financiados
-                ({{ table_proyectos.proy_ant_perc }}%)
-            </td>
-            <td>{{ table_proyectos.proy_financiados_act }} Proyectos de investigación financiados
-                ({{ table_proyectos.proy_act_perc }}%)
-            </td>
-        </tr>
-        </tbody>
-    </table>
-                </div>
-                <!-- /.tab-pane -->
-                <div class="tab-pane" id="tab_3-2">
-
-                </div>
-                <!-- /.tab-pane -->
+                <!-- /.tab-content -->
             </div>
-            <!-- /.tab-content -->
+            <!-- nav-tabs-custom -->
         </div>
-        <!-- nav-tabs-custom -->
-    </div>
 
-    <div class="col-md-6">
-        <!-- Custom Tabs (Pulled to the right) -->
-        <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs pull-right">
-                <li class="active"><a href="#tab_1-1" data-toggle="tab" aria-expanded="true">Tab 1</a></li>
-                <li class=""><a href="#tab_2-2" data-toggle="tab" aria-expanded="false">Tab 2</a></li>
-                <li class=""><a href="#tab_3-2" data-toggle="tab" aria-expanded="false">Tab 3</a></li>
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#modplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#moddatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
-                <li class="pull-left header"><i class="fa fa-th"></i> Custom Tabs</li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="tab_1-1">
-                    <b>How to use:</b>
+                    <li class="pull-left header"><i class="fa fa-th"></i> Modalidad proyectos</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="modplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>{{ this_year_2 }}-{{ this_year_1 }} (%)</h5>
+                                {{ p_chart_modalidad_proyectos.as_html }}
+                            </div>
+                            <div class="col-md-6">
+                                <h5>{{ this_year_1 }}-{{ this_year }} (%)</h5>
+                                {{ chart_modalidad_proyectos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="moddatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>{{ this_year_2 }}-{{ this_year_1 }}</th>
+                                <th>{{ this_year_1 }}-{{ this_year }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Num. Disciplinarios: {{ table_proyectos_modalidad.p_proymod_disc  }} </td>
+                                <td>Num. Disciplinarios: {{ table_proyectos_modalidad.proymod_disc }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. Multidisciplinarios: {{ table_proyectos_modalidad.p_proymod_mult }} </td>
+                                <td>Num. Multidisciplinarios: {{ table_proyectos_modalidad.proymod_mult }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. Interdisciplinarios: {{ table_proyectos_modalidad.p_proymod_inter }} </td>
+                                <td>Num. Interdisciplinarios: {{ table_proyectos_modalidad.proymod_inter }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. Transdisciplinarios: {{ table_proyectos_modalidad.p_proymod_trans }} </td>
+                                <td>Num. Transdisciplinarios: {{ table_proyectos_modalidad.proymod_trans }} </td>
+                            </tr>
 
-                    <p>Exactly like the original bootstrap tabs except you should use
-                        the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                    A wonderful serenity has taken possession of my entire soul,
-                    like these sweet mornings of spring which I enjoy with my whole heart.
-                    I am alone, and feel the charm of existence in this spot,
-                    which was created for the bliss of souls like mine. I am so happy,
-                    my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                    that I neglect my talents. I should be incapable of drawing a single stroke
-                    at the present moment; and yet I feel that I never was a greater artist than now.
+                            <tr>
+                                <td>Disciplinarios: {{ table_proyectos_modalidad.p_proymod_discp }} %</td>
+                                <td>Disciplinarios: {{ table_proyectos_modalidad.proymod_discp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>Multidisciplinarios: {{ table_proyectos_modalidad.p_proymod_multp }} %</td>
+                                <td>Multidisciplinarios: {{ table_proyectos_modalidad.proymod_multp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>Interdisciplinarios: {{ table_proyectos_modalidad.p_proymod_interp }} %</td>
+                                <td>Interdisciplinarios: {{ table_proyectos_modalidad.proymod_interp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>Transdisciplinarios: {{ table_proyectos_modalidad.p_proymod_transp }} %</td>
+                                <td>Transdisciplinarios: {{ table_proyectos_modalidad.proymod_transp }} %</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
                 </div>
-                <!-- /.tab-pane -->
-                <div class="tab-pane" id="tab_2-2">
-                    The European languages are members of the same family. Their separate existence is a myth.
-                    For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
-                    in their grammar, their pronunciation and their most common words. Everyone realizes why a
-                    new common language would be desirable: one could refuse to pay expensive translators. To
-                    achieve this, it would be necessary to have uniform grammar, pronunciation and more common
-                    words. If several languages coalesce, the grammar of the resulting language is more simple
-                    and regular than that of the individual languages.
-                </div>
-                <!-- /.tab-pane -->
-                <div class="tab-pane" id="tab_3-2">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    It has survived not only five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                    sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                </div>
-                <!-- /.tab-pane -->
+                <!-- /.tab-content -->
             </div>
-            <!-- /.tab-content -->
+            <!-- nav-tabs-custom -->
         </div>
-        <!-- nav-tabs-custom -->
-    </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#orgplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#orgdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
-    <p>Proyectos de investigación</p>
-    <p>{{ chart_proyectos_investigacion.as_html }}</p>
-    <p>
-        <button class="btn" style="background-color: #0b62a4; color: white">CONACYT</button>
-        <button class="btn" style="background-color: #7a92a3; color: white">PAPIIT</button>
-        <button class="btn" style="background-color: #4da74d; color: white">Externo Nacional</button>
-        <button class="btn" style="background-color: #afd8f8; color: white">Externo Extranjero</button>
-    </p>
+                    <li class="pull-left header"><i class="fa fa-th"></i> Organización proyectos</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="orgplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>{{ this_year_2 }}-{{ this_year_1 }} (%)</h5>
+                                {{ p_chart_organizacion_proyectos.as_html }}
+                            </div>
+                            <div class="col-md-6">
+                                <h5>{{ this_year_1 }}-{{ this_year }} (%)</h5>
+                                {{ chart_organizacion_proyectos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="orgdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>{{ this_year_2 }}-{{ this_year_1 }}</th>
+                                <th>{{ this_year_1 }}-{{ this_year }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Num. Individuales: {{ table_proyectos_organizacion.p_proyorg_ind  }} </td>
+                                <td>Num. Individuales: {{ table_proyectos_organizacion.proyorg_ind }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. Colectivos: {{ table_proyectos_organizacion.p_proyorg_col }} </td>
+                                <td>Num. Colectivos: {{ table_proyectos_organizacion.proyorg_col }} </td>
+                            </tr>
+
+                            <tr>
+                                <td>Individuales: {{ table_proyectos_organizacion.p_proyorg_indp  }} %</td>
+                                <td>Individuales: {{ table_proyectos_organizacion.proyorg_indp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>Colectivos: {{ table_proyectos_organizacion.p_proyorg_colp }} %</td>
+                                <td>Colectivos: {{ table_proyectos_organizacion.proyorg_colp }} %</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#modplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#moddatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i> Modalidad proyectos</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="modplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>{{ this_year_2 }}-{{ this_year_1 }} (%)</h5>
+                                {{ p_chart_genero_proyectos.as_html }}
+                            </div>
+                            <div class="col-md-6">
+                                <h5>{{ this_year_1 }}-{{ this_year }} (%)</h5>
+                                {{ chart_genero_proyectos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="moddatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>{{ this_year_2 }}-{{ this_year_1 }}</th>
+                                <th>{{ this_year_1 }}-{{ this_year }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Num. Disciplinarios: {{ table_proyectos_modalidad.p_proymod_disc  }} </td>
+                                <td>Num. Disciplinarios: {{ table_proyectos_modalidad.proymod_disc }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. Multidisciplinarios: {{ table_proyectos_modalidad.p_proymod_mult }} </td>
+                                <td>Num. Multidisciplinarios: {{ table_proyectos_modalidad.proymod_mult }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. Interdisciplinarios: {{ table_proyectos_modalidad.p_proymod_inter }} </td>
+                                <td>Num. Interdisciplinarios: {{ table_proyectos_modalidad.proymod_inter }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. Transdisciplinarios: {{ table_proyectos_modalidad.p_proymod_trans }} </td>
+                                <td>Num. Transdisciplinarios: {{ table_proyectos_modalidad.proymod_trans }} </td>
+                            </tr>
+
+                            <tr>
+                                <td>Disciplinarios: {{ table_proyectos_modalidad.p_proymod_discp }} %</td>
+                                <td>Disciplinarios: {{ table_proyectos_modalidad.proymod_discp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>Multidisciplinarios: {{ table_proyectos_modalidad.p_proymod_multp }} %</td>
+                                <td>Multidisciplinarios: {{ table_proyectos_modalidad.proymod_multp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>Interdisciplinarios: {{ table_proyectos_modalidad.p_proymod_interp }} %</td>
+                                <td>Interdisciplinarios: {{ table_proyectos_modalidad.proymod_interp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>Transdisciplinarios: {{ table_proyectos_modalidad.p_proymod_transp }} %</td>
+                                <td>Transdisciplinarios: {{ table_proyectos_modalidad.proymod_transp }} %</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+    </div>
 
 
 
-    <p>Modalidad </p>
-    <p>{{ chart_modalidad_proyectos.as_html }}</p>
-
-    <p>Modalidad p</p>
-    <p>{{ p_chart_modalidad_proyectos.as_html }}</p>
-
-    <p>Organización</p>
-    <p>{{ chart_organizacion_proyectos.as_html }}</p>
-
-    <p>Organización p</p>
-    <p>{{ p_chart_organizacion_proyectos.as_html }}</p>
-
-    <p>Género</p>
-    <p>{{ chart_genero_proyectos.as_html }}</p>
-
-    <p>Género p</p>
-    <p>{{ p_chart_genero_proyectos.as_html }}</p>
 
 
 
