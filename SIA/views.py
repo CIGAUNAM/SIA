@@ -5275,39 +5275,136 @@ class InformeActividades(View):
                                                  'p_proygen_n': p_proygen_n,
                                                  'p_proygen_yp': p_proygen_yp,
                                                  'p_proygen_np': p_proygen_np,
-
                                                  }
 
-            p_gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
-                problema_nacional_conacyt__nombre='Gestión integral del agua, seguridad hídrica y derecho del agua',
-                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1)
-            gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
-                problema_nacional_conacyt__nombre='Gestión integral del agua, seguridad hídrica y derecho del agua',
-                fecha_inicio__year__gte=this_year - 1)
-            p_gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
-                problema_nacional_conacyt__nombre='Mitigación y adaptación al cambio climático',
-                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1)
-            gest_seg_derecho_agua = ProyectoInvestigacion.objects.filter(
-                problema_nacional_conacyt__nombre='Mitigación y adaptación al cambio climático',
-                fecha_inicio__year__gte=this_year - 1)
 
-            """
-            problemas = [
-                'Gestión integral del agua, seguridad hídrica y derecho del agua',
-             'Mitigación y adaptación al cambio climático', 
-             'Resiliencia frente a desastres naturales y tecnológicos',
-             'Aprovechamiento y protección de ecosistemas y de la biodiversidad', 
-             'Los océanos y su aprovechamiento',
-             'Alimentos y su producción', 'Ciudades y desarrollo urbano',
-             'Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones',
-             'Manufactura de alta tecnología', 
-             'Consumo sustentable de energía',
-             'Desarrollo y aprovechamiento de energías renovables limpias, conducta humana y prevención de adicciones',
-             'Enfermedades emergentes y de importancia nacional', 
-             'Combate a la pobreza y seguridad alimentaria',
-             'Migraciones y asentamientos humanos', 
-             'Seguridad ciudadana', 'Economía y gestión del conocimiento',
-             'Prevención de riesgos naturales', ]
-            """
+            p_gestion_agua = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Gestión integral del agua, seguridad hídrica y derecho del agua',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            gestion_agua = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Gestión integral del agua, seguridad hídrica y derecho del agua',
+                fecha_inicio__year__gte=this_year - 1).count()
 
-        return render(request, self.template_name, context)
+            p_mitigacion_cambio_climatico = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Mitigación y adaptación al cambio climático',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            mitigacion_cambio_climatico = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Mitigación y adaptación al cambio climático',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_resiliencia_desastres_nt = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Resiliencia frente a desastres naturales y tecnológicos',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            resiliencia_desastres_nt = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Resiliencia frente a desastres naturales y tecnológicos',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_aprovechamiento_ecosistemas = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Aprovechamiento y protección de ecosistemas y de la biodiversidad',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            aprovechamiento_ecosistemas = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Aprovechamiento y protección de ecosistemas y de la biodiversidad',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_oceanos_aprovechamiento = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Los océanos y su aprovechamiento',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            oceanos_aprovechamiento = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Los océanos y su aprovechamiento',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_alimentos_produccion = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Alimentos y su producción',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            alimentos_produccion = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Alimentos y su producción',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_ciudades_desarrollo_urbano = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Ciudades y desarrollo urbano',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            ciudades_desarrollo_urbano = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Ciudades y desarrollo urbano',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_conectividad_informatica = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            conectividad_informatica = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_manufactura_alta_tecnologia = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Manufactura de alta tecnología',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            manufactura_alta_tecnologia = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Manufactura de alta tecnología',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_consumo_sustentable_energia = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Consumo sustentable de energía',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            consumo_sustentable_energia = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Consumo sustentable de energía',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_aprovechamiento_energias_renovables = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Desarrollo y aprovechamiento de energías renovables limpias, conducta humana y prevención de adicciones',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            aprovechamiento_energias_renovables = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Desarrollo y aprovechamiento de energías renovables limpias, conducta humana y prevención de adicciones',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_enfermedades_emergentes = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Enfermedades emergentes y de importancia nacional',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            enfermedades_emergentes = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Enfermedades emergentes y de importancia nacional',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_combate_pobreza = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Combate a la pobreza y seguridad alimentaria',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            combate_pobreza = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Combate a la pobreza y seguridad alimentaria',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_migracion_humana = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Migraciones y asentamientos humanos',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            migracion_humana = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Migraciones y asentamientos humanos',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_seguridad_ciudadana = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Seguridad ciudadana',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            seguridad_ciudadana = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Seguridad ciudadana',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_gestion_conocimiento = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Economía y gestión del conocimiento',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            gestion_conocimiento = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Economía y gestión del conocimiento',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_prevencion_riesgos_naturales = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Prevención de riesgos naturales',
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            prevencion_riesgos_naturales = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__nombre='Prevención de riesgos naturales',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_proyectos_problemas_conacyt = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__isnull=False,
+                fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            proyectos_problemas_conacyt = ProyectoInvestigacion.objects.filter(
+                problema_nacional_conacyt__isnull=False,
+                fecha_inicio__year__gte=this_year - 1).count()
+
+
+
+
+            return render(request, self.template_name, context)
