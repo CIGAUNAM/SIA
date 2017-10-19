@@ -5523,7 +5523,6 @@ class InformeActividades(View):
             chart_proyectos_problemas_conacyt = PieChart(data_source)
             context['chart_proyectos_problemas_conacyt'] = chart_proyectos_problemas_conacyt
 
-            print(data_source)
 
             context['table_proyectos_problemas_conacyt'] = {'p_proyectos_problemas_conacyt_count': p_proyectos_problemas_conacyt_count,
                                                             'proyectos_problemas_conacyt_count': proyectos_problemas_conacyt_count,
@@ -5626,7 +5625,6 @@ class InformeActividades(View):
             convenios_nolucrativas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
                                                                           fecha_inicio__year__gte=this_year - 1).count()
 
-
             p_convenios_extranjeras = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
                                                                             fecha_inicio__year__gte=this_year - 2,
                                                                             fecha_fin__year__lte=this_year - 1).count()
@@ -5642,33 +5640,109 @@ class InformeActividades(View):
             p_convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
             convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 1).count()
 
-
             p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
             convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
-
             p_convenios_estatalesp = round(p_convenios_estatales / p_convenios_externos_count * 100, 2)
             convenios_estatalesp = round(convenios_estatales / convenios_externos_count * 100, 2)
-
-
-
-
+            p_convenios_municipalesp  = round(p_convenios_municipales / p_convenios_externos_count * 100, 2)
+            convenios_municipalesp = round(convenios_municipales / convenios_externos_count * 100, 2)
+            p_convenios_privadasp = round(p_convenios_privadas / p_convenios_externos_count * 100, 2)
+            convenios_privadasp = round(convenios_privadas  / convenios_externos_count * 100, 2)
+            p_convenios_nolucrativasp = round(p_convenios_nolucrativas / p_convenios_externos_count * 100, 2)
+            convenios_nolucrativasp = round(convenios_nolucrativas / convenios_externos_count * 100, 2)
+            p_convenios_extranjerasp = round(p_convenios_extranjeras / p_convenios_externos_count * 100, 2)
+            convenios_extranjerasp = round(convenios_extranjeras / convenios_externos_count * 100, 2)
+            p_convenios_academicasp = round(p_convenios_academicas / p_convenios_externos_count * 100, 2)
+            convenios_academicasp = round(convenios_academicas / convenios_externos_count * 100, 2)
             p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
             convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
 
-            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
-            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+            p_convenios_externos_data = [['Convenios con entidades externas', 'Porcentaje'],
+                                         ['Gubernamental federal', p_convenios_federales],
+                                         ['Gubernamental estatal', p_convenios_estatales],
+                                         ['Gubernamental municipal', p_convenios_municipales],
+                                         ['', aprovechamiento_ecosistemas],
+                                         ['Los océanos y su aprovechamiento', oceanos_aprovechamiento],
+                                         ]
 
-            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
-            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
 
-            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
-            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
 
-            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
-            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+            data_source = SimpleDataSource(data=proyectos_problemas_conacyt_data)
+            chart_proyectos_problemas_conacyt = PieChart(data_source)
+            context['chart_proyectos_problemas_conacyt'] = chart_proyectos_problemas_conacyt
 
-            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
-            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+            context['table_proyectos_problemas_conacyt'] = {'p_proyectos_problemas_conacyt_count': p_proyectos_problemas_conacyt_count,
+                                                            'proyectos_problemas_conacyt_count': proyectos_problemas_conacyt_count,
+                                                            'p_gestion_agua': p_gestion_agua,
+                                                            'p_mitigacion_cambio_climatico': p_mitigacion_cambio_climatico,
+                                                            'p_resiliencia_desastres_nt': p_resiliencia_desastres_nt,
+                                                            'p_aprovechamiento_ecosistemas': p_aprovechamiento_ecosistemas,
+                                                            'p_oceanos_aprovechamiento': p_oceanos_aprovechamiento,
+                                                            'p_alimentos_produccion': p_alimentos_produccion,
+                                                            'p_ciudades_desarrollo_urbano': p_ciudades_desarrollo_urbano,
+                                                            'p_conectividad_informatica': p_conectividad_informatica,
+                                                            'p_manufactura_alta_tecnologia': p_manufactura_alta_tecnologia,
+                                                            'p_consumo_sustentable_energia': p_consumo_sustentable_energia,
+                                                            'p_aprovechamiento_energias_renovables': p_aprovechamiento_energias_renovables,
+                                                            'p_enfermedades_emergentes': p_enfermedades_emergentes,
+                                                            'p_combate_pobreza': p_combate_pobreza,
+                                                            'p_migracion_humana': p_migracion_humana,
+                                                            'p_seguridad_ciudadana': p_seguridad_ciudadana,
+                                                            'p_gestion_conocimiento': p_gestion_conocimiento,
+                                                            'p_prevencion_riesgos_naturales': p_prevencion_riesgos_naturales,
+                                                            'gestion_agua': gestion_agua,
+                                                            'mitigacion_cambio_climatico': mitigacion_cambio_climatico,
+                                                            'resiliencia_desastres_nt': resiliencia_desastres_nt,
+                                                            'aprovechamiento_ecosistemas': aprovechamiento_ecosistemas,
+                                                            'oceanos_aprovechamiento': oceanos_aprovechamiento,
+                                                            'alimentos_produccion': alimentos_produccion,
+                                                            'ciudades_desarrollo_urbano': ciudades_desarrollo_urbano,
+                                                            'conectividad_informatica': conectividad_informatica,
+                                                            'manufactura_alta_tecnologia': manufactura_alta_tecnologia,
+                                                            'consumo_sustentable_energia': consumo_sustentable_energia,
+                                                            'aprovechamiento_energias_renovables': aprovechamiento_energias_renovables,
+                                                            'enfermedades_emergentes': enfermedades_emergentes,
+                                                            'combate_pobreza': combate_pobreza,
+                                                            'migracion_humana': migracion_humana,
+                                                            'seguridad_ciudadana': seguridad_ciudadana,
+                                                            'gestion_conocimiento': gestion_conocimiento,
+                                                            'prevencion_riesgos_naturales': prevencion_riesgos_naturales,
+                                                            'p_gestion_aguap': p_gestion_aguap,
+                                                            'p_mitigacion_cambio_climaticop': p_mitigacion_cambio_climaticop,
+                                                            'p_resiliencia_desastres_ntp': p_resiliencia_desastres_ntp,
+                                                            'p_aprovechamiento_ecosistemasp': p_aprovechamiento_ecosistemasp,
+                                                            'p_oceanos_aprovechamientop': p_oceanos_aprovechamientop,
+                                                            'p_alimentos_produccionp': p_alimentos_produccionp,
+                                                            'p_ciudades_desarrollo_urbanop': p_ciudades_desarrollo_urbanop,
+                                                            'p_conectividad_informaticap': p_conectividad_informaticap,
+                                                            'p_manufactura_alta_tecnologiap': p_manufactura_alta_tecnologiap,
+                                                            'p_consumo_sustentable_energiap': p_consumo_sustentable_energiap,
+                                                            'p_aprovechamiento_energias_renovablesp': p_aprovechamiento_energias_renovablesp,
+                                                            'p_enfermedades_emergentesp': p_enfermedades_emergentesp,
+                                                            'p_combate_pobrezap': p_combate_pobrezap,
+                                                            'p_migracion_humanap': p_migracion_humanap,
+                                                            'p_seguridad_ciudadanap': p_seguridad_ciudadanap,
+                                                            'p_gestion_conocimientop': p_gestion_conocimientop,
+                                                            'p_prevencion_riesgos_naturalesp': p_prevencion_riesgos_naturalesp,
+                                                            'gestion_aguap': gestion_aguap,
+                                                            'mitigacion_cambio_climaticop': mitigacion_cambio_climaticop,
+                                                            'resiliencia_desastres_ntp': resiliencia_desastres_ntp,
+                                                            'aprovechamiento_ecosistemasp': aprovechamiento_ecosistemasp,
+                                                            'oceanos_aprovechamientop': oceanos_aprovechamientop,
+                                                            'alimentos_produccionp': alimentos_produccionp,
+                                                            'ciudades_desarrollo_urbanop': ciudades_desarrollo_urbanop,
+                                                            'conectividad_informaticap': conectividad_informaticap,
+                                                            'manufactura_alta_tecnologiap': manufactura_alta_tecnologiap,
+                                                            'consumo_sustentable_energiap': consumo_sustentable_energiap,
+                                                            'aprovechamiento_energias_renovablesp': aprovechamiento_energias_renovablesp,
+                                                            'enfermedades_emergentesp': enfermedades_emergentesp,
+                                                            'combate_pobrezap': combate_pobrezap,
+                                                            'migracion_humanap': migracion_humanap,
+                                                            'seguridad_ciudadanap': seguridad_ciudadanap,
+                                                            'gestion_conocimientop': gestion_conocimientop,
+                                                            'prevencion_riesgos_naturalesp': prevencion_riesgos_naturalesp,
+                                                            }
 
 
 
