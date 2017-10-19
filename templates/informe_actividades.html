@@ -16,7 +16,6 @@
         <p><br/><br/></p>
     </div>
 
-
     <div class="row">
         <div class="col-md-6">
             <div class="nav-tabs-custom">
@@ -351,6 +350,157 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#ppconacytplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#ppconacytdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i> Proyectos problemas nacionales CONACYT {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="ppconacytplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ p_chart_proyectos_problemas_conacyt.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="ppconacytdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th> </th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Gestión integral del agua, seguridad hídrica y derecho del agua: {{ table_proyectos_problemas_conacyt.p_gestion_agua }} ({{ table_proyectos_problemas_conacyt.p_gestion_aguap }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Mitigación y adaptación al cambio climático: {{ table_proyectos_problemas_conacyt.p_mitigacion_cambio_climatico }} ({{ table_proyectos_problemas_conacyt.p_mitigacion_cambio_climaticop }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Resiliencia frente a desastres naturales y tecnológicos: {{ table_proyectos_problemas_conacyt.p_resiliencia_desastres_nt }} ({{ table_proyectos_problemas_conacyt.p_resiliencia_desastres_ntp }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Aprovechamiento y protección de ecosistemas y de la biodiversidad: {{ table_proyectos_problemas_conacyt.p_aprovechamiento_ecosistemas }} ({{ table_proyectos_problemas_conacyt.p_aprovechamiento_ecosistemasp }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Los océanos y su aprovechamiento: {{ table_proyectos_problemas_conacyt.p_oceanos_aprovechamiento }} ({{ table_proyectos_problemas_conacyt.p_oceanos_aprovechamientop }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Alimentos y su producción: {{ table_proyectos_problemas_conacyt.p_alimentos_produccion }} ({{ table_proyectos_problemas_conacyt.p_alimentos_produccionp }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Ciudades y desarrollo urbano: {{ table_proyectos_problemas_conacyt.p_ciudades_desarrollo_urbano }} ({{ table_proyectos_problemas_conacyt.p_ciudades_desarrollo_urbanop }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones: {{ table_proyectos_problemas_conacyt.p_conectividad_informatica }} ({{ table_proyectos_problemas_conacyt.p_conectividad_informaticap }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Manufactura de alta tecnología: {{ table_proyectos_problemas_conacyt.p_manufactura_alta_tecnologia }} ({{ table_proyectos_problemas_conacyt.p_manufactura_alta_tecnologiap }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Consumo sustentable de energía: {{ table_proyectos_problemas_conacyt.p_consumo_sustentable_energia }} ({{ table_proyectos_problemas_conacyt.p_consumo_sustentable_energiap }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Desarrollo y aprovechamiento de energías renovables limpias, conducta humana y prevención de adicciones: {{ table_proyectos_problemas_conacyt.p_aprovechamiento_energias_renovables }} ({{ table_proyectos_problemas_conacyt.p_aprovechamiento_energias_renovablesp }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Enfermedades emergentes y de importancia nacional: {{ table_proyectos_problemas_conacyt.p_enfermedades_emergentes }} ({{ table_proyectos_problemas_conacyt.p_enfermedades_emergentesp }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Combate a la pobreza y seguridad alimentaria: {{ table_proyectos_problemas_conacyt.p_combate_pobreza }} ({{ table_proyectos_problemas_conacyt.p_combate_pobrezap }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Migraciones y asentamientos humanos: {{ table_proyectos_problemas_conacyt.p_migracion_humana }} ({{ table_proyectos_problemas_conacyt.p_migracion_humanap }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Seguridad ciudadana: {{ table_proyectos_problemas_conacyt.p_seguridad_ciudadana }} ({{ table_proyectos_problemas_conacyt.p_seguridad_ciudadanap }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Economía y gestión del conocimiento: {{ table_proyectos_problemas_conacyt.p_gestion_conocimiento }} ({{ table_proyectos_problemas_conacyt.p_gestion_conocimientop }} %) </td>
+                            </tr>
+                            <tr>
+                                <td>Prevención de riesgos naturales: {{ table_proyectos_problemas_conacyt.p_prevencion_riesgos_naturales }} ({{ table_proyectos_problemas_conacyt.p_prevencion_riesgos_naturalesp }} %) </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#genplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#gendatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i> Proyectos problemas nacionales CONACYT {{ this_year_1 }}-{{ this_year }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="genplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ chart_proyectos_problemas_conacyt.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="gendatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>{{ this_year_2 }}-{{ this_year_1 }}</th>
+                                <th>{{ this_year_1 }}-{{ this_year }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Num. que contiene enfoque de género: {{ table_proyectos_problemas_conacyt.p_proygen_y  }} </td>
+                                <td>Num. que contiene enfoque de género: {{ table_proyectos_genero.proygen_y }} </td>
+                            </tr>
+                            <tr>
+                                <td>Num. que no contiene enfoque de género: {{ table_proyectos_genero.p_proygen_n }} </td>
+                                <td>Num. que no contiene enfoque de género: {{ table_proyectos_genero.proygen_n }} </td>
+                            </tr>
+
+                            <tr>
+                                <td>Contiene enfoque de género: {{ table_proyectos_genero.p_proygen_yp  }} %</td>
+                                <td>Contiene enfoque de género: {{ table_proyectos_genero.proygen_yp }} %</td>
+                            </tr>
+                            <tr>
+                                <td>No contiene enfoque de género: {{ table_proyectos_genero.p_proygen_np }} %</td>
+                                <td>No contiene enfoque de género: {{ table_proyectos_genero.proygen_np }} %</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+    </div>
+
+
+
+
+
+    {{ chart_proyectos_problemas_conacyt.as_html }}
 
 
 

@@ -4236,7 +4236,7 @@ for i in indices:
     I.save()
     print('Agregado indice ' + I.nombre)
 
-problemas = ['Gestión integral del agua, seguridad hídrica y derecho del agua',
+problemas = ['Gestión integral del agua, \n\r<br >seguridad hídrica y derecho del agua',
              'Mitigación y adaptación al cambio climático',
              'Resiliencia frente a desastres naturales y tecnológicos',
              'Aprovechamiento y protección de ecosistemas y de la biodiversidad',
