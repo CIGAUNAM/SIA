@@ -1,9 +1,6 @@
 from django.http.response import Http404, HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import View
-from django.core.urlresolvers import reverse_lazy
-
-from django.core import serializers
 
 from formacion_academica.models import CursoEspecializacion
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, \
@@ -16,15 +13,15 @@ from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoI
 from docencia.models import CursoDocencia
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
-
+from vinculacion.models import ConvenioEntidadExterna
 from nucleo.models import User, Libro, Pais
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum
 
-from graphos.sources.simple import SimpleDataSource, BaseDataSource
-from graphos.renderers.morris import LineChart, AreaChart, BarChart, DonutChart
-# from graphos.renderers.highcharts import LineChart
+from graphos.sources.simple import SimpleDataSource
+from graphos.renderers.morris import LineChart, BarChart, DonutChart
 from graphos.renderers.gchart import PieChart
+
 
 # Create your views here.
 
@@ -5599,5 +5596,87 @@ class InformeActividades(View):
                                                             'gestion_conocimientop': gestion_conocimientop,
                                                             'prevencion_riesgos_naturalesp': prevencion_riesgos_naturalesp,
                                                             }
+
+
+
+            p_convenios_federales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='FEDERAL', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            convenios_federales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='FEDERAL', fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_estatales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ESTATAL',
+                                                                          fecha_inicio__year__gte=this_year - 2,
+                                                                          fecha_fin__year__lte=this_year - 1).count()
+            convenios_estatales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ESTATAL',
+                                                                        fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='MUNICIPAL',
+                                                                          fecha_inicio__year__gte=this_year - 2,
+                                                                          fecha_fin__year__lte=this_year - 1).count()
+            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='MUNICIPAL',
+                                                                        fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
+                                                                            fecha_inicio__year__gte=this_year - 2,
+                                                                            fecha_fin__year__lte=this_year - 1).count()
+            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
+                                                                          fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
+                                                                            fecha_inicio__year__gte=this_year - 2,
+                                                                            fecha_fin__year__lte=this_year - 1).count()
+            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
+                                                                          fecha_inicio__year__gte=this_year - 1).count()
+
+
+            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
+                                                                            fecha_inicio__year__gte=this_year - 2,
+                                                                            fecha_fin__year__lte=this_year - 1).count()
+            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
+                                                                          fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
+                                                                            fecha_inicio__year__gte=this_year - 2,
+                                                                            fecha_fin__year__lte=this_year - 1).count()
+            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
+                                                                          fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
+            convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 1).count()
+
+
+            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
+            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+            p_convenios_estatalesp = round(p_convenios_estatales / p_convenios_externos_count * 100, 2)
+            convenios_estatalesp = round(convenios_estatales / convenios_externos_count * 100, 2)
+
+
+
+
+            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
+            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
+            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
+            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
+            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
+            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+            p_convenios_federalesp = round(p_convenios_federales / p_convenios_externos_count * 100, 2)
+            convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
+
+
+
+
+
+
+
+
+
 
             return render(request, self.template_name, context)
