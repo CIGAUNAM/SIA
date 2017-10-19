@@ -5116,6 +5116,11 @@ class InformeActividades(View):
             p_proythisy_count = ProyectoInvestigacion.objects.filter(fecha_inicio__year__gte=this_year - 2,
                                                                      fecha_fin__year__lte=this_year - 1).count()
 
+            if proythisy_count == 0:
+                proythisy_count = 0.001
+            if p_proythisy_count == 0:
+                p_proythisy_count = 0.001
+
             proymod_disc = ProyectoInvestigacion.objects.filter(modalidad='DISCIPLINARIO',
                                                                 fecha_inicio__year__gte=this_year - 1).count()
             proymod_mult = ProyectoInvestigacion.objects.filter(modalidad='MULTIDISCIPLINARIO',
@@ -5523,7 +5528,9 @@ class InformeActividades(View):
 
             print(data_source)
 
-            context['table_proyectos_problemas_conacyt'] = {'p_gestion_agua': p_gestion_agua,
+            context['table_proyectos_problemas_conacyt'] = {'p_proyectos_problemas_conacyt_count': p_proyectos_problemas_conacyt_count,
+                                                            'proyectos_problemas_conacyt_count': proyectos_problemas_conacyt_count,
+                                                            'p_gestion_agua': p_gestion_agua,
                                                             'p_mitigacion_cambio_climatico': p_mitigacion_cambio_climatico,
                                                             'p_resiliencia_desastres_nt': p_resiliencia_desastres_nt,
                                                             'p_aprovechamiento_ecosistemas': p_aprovechamiento_ecosistemas,

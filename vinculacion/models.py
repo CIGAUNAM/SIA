@@ -6,9 +6,9 @@ from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, 
 from investigacion.models import CapituloLibroInvestigacion, ProyectoInvestigacion
 from django.core.urlresolvers import reverse
 
-RED_ACADEMICA__CLASIFICACION = getattr (settings, 'RED_ACADEMICA__CLASIFICACION', (('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
-ENTIDAD_NO_ACADEMICA__CLASIFICACION = getattr (settings, 'ENTIDAD_NO_ACADEMICA__CLASIFICACION', (('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('PRIVADO', 'Sector privado'), ('NO_LUCRATIVO', 'Sector privado no lucrativo'), ('EXTRANJERO', 'Extranjero'), ('OTRO', 'Otro')))
-ARBITRAJE_ACADEMCICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', (('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación')))
+RED_ACADEMICA__CLASIFICACION = getattr (settings, 'RED_ACADEMICA__CLASIFICACION', (('', '-------'), ('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
+CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = getattr (settings, 'CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION', (('', '-------'), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'), ('PRIVADA', 'Sector privado'), ('ACADEMICA', 'Académica'), ('NO_LUCRATIVA', 'Sector privado no lucrativo'), ('EXTRANJERA', 'Extranjero')))
+ARBITRAJE_ACADEMCICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', (('', '-------'), ('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación')))
 
 # Create your models here.
 
@@ -107,13 +107,11 @@ class RedAcademica(models.Model):
         verbose_name_plural = 'Redes académicas'
 
 
-class ConvenioEntidadNoAcademica(models.Model):
+class ConvenioEntidadExterna(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
     es_agradecimiento = models.BooleanField(blank=True)
-    clasificacion_entidad = models.CharField(max_length=20, choices=ENTIDAD_NO_ACADEMICA__CLASIFICACION)
-    #dependencias = models.ManyToManyField(Dependencia, related_name='convenio_entidad_no_academica_dependencias')
+    clasificacion_entidad = models.CharField(max_length=20, choices=CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     objetivos = models.TextField()
@@ -122,7 +120,6 @@ class ConvenioEntidadNoAcademica(models.Model):
     es_renovacion = models.BooleanField(default=False)
     incluye_financiamiento = models.BooleanField(default=False)
     usuarios = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios', verbose_name='Académicos participantes')
-    #tags = models.ManyToManyField(Tag, related_name='convenio_entidad_academica_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_inicio)
@@ -132,8 +129,8 @@ class ConvenioEntidadNoAcademica(models.Model):
 
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = 'Convenio con entidades no académicas'
-        verbose_name_plural = 'Convenios con entidades no académicas'
+        verbose_name = 'Convenio con entidade externa'
+        verbose_name_plural = 'Convenios con entidades externas'
 
 
 class ClasificacionServicio(models.Model):
@@ -162,7 +159,7 @@ class ServicioExternoEntidadNoAcademica(models.Model):
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
-    clasificacion_entidad = models.CharField(max_length=20, choices=ENTIDAD_NO_ACADEMICA__CLASIFICACION)
+    clasificacion_entidad = models.CharField(max_length=20, choices=CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     incluye_financiamiento = models.BooleanField(default=False)
