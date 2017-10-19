@@ -5614,29 +5614,29 @@ class InformeActividades(View):
             convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='MUNICIPAL',
                                                                         fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
+            p_convenios_privadas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
                                                                             fecha_inicio__year__gte=this_year - 2,
                                                                             fecha_fin__year__lte=this_year - 1).count()
-            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
+            convenios_privadas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
                                                                           fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
+            p_convenios_nolucrativas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
                                                                             fecha_inicio__year__gte=this_year - 2,
                                                                             fecha_fin__year__lte=this_year - 1).count()
-            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
+            convenios_nolucrativas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
                                                                           fecha_inicio__year__gte=this_year - 1).count()
 
 
-            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
+            p_convenios_extranjeras = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
                                                                             fecha_inicio__year__gte=this_year - 2,
                                                                             fecha_fin__year__lte=this_year - 1).count()
-            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
+            convenios_extranjeras = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
                                                                           fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
+            p_convenios_academicas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
                                                                             fecha_inicio__year__gte=this_year - 2,
                                                                             fecha_fin__year__lte=this_year - 1).count()
-            convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
+            convenios_academicas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
                                                                           fecha_inicio__year__gte=this_year - 1).count()
 
             p_convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
