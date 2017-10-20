@@ -644,13 +644,131 @@
 
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#pconveniosplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#pconveniosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i> Convenios con entidades externas {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="pconveniosplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ p_convenios_externos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="pconveniosdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Gubernamentales federales: {{ table_convenios_externos.p_convenios_federales }} ({{ table_convenios_externos.p_convenios_federalesp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Gubernamentales estatales: {{ table_convenios_externos.p_convenios_estatales }} ({{ table_convenios_externos.p_convenios_estatalesp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Gubernamentales municipales: {{ table_convenios_externos.p_convenios_municipales }} ({{ table_convenios_externos.p_convenios_municipalesp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Sector privado: {{ table_convenios_externos.p_convenios_privadas }} ({{ table_convenios_externos.p_convenios_privadasp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Sector privado no lucrativo: {{ table_convenios_externos.p_convenios_nolucrativas }} ({{ table_convenios_externos.p_convenios_nolucrativasp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Entidades extranjeras: {{ table_convenios_externos.p_convenios_extranjeras }} ({{ table_convenios_externos.p_convenios_extranjerasp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>'Entidades Académicas: {{ table_convenios_externos.p_convenios_academicas }} ({{ table_convenios_externos.p_convenios_academicasp }} %)</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#conveniosplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
+                    <li class=""><a href="#conveniosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i> Convenios con entidades externas {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="conveniosplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ convenios_externos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="conveniosdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Gubernamentales federales: {{ table_convenios_externos.convenios_federales }} ({{ table_convenios_externos.convenios_federalesp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Gubernamentales estatales: {{ table_convenios_externos.convenios_estatales }} ({{ table_convenios_externos.convenios_estatalesp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Gubernamentales municipales: {{ table_convenios_externos.convenios_municipales }} ({{ table_convenios_externos.convenios_municipalesp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Sector privado: {{ table_convenios_externos.convenios_privadas }} ({{ table_convenios_externos.convenios_privadasp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Sector privado no lucrativo: {{ table_convenios_externos.convenios_nolucrativas }} ({{ table_convenios_externos.convenios_nolucrativasp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>Entidades extranjeras: {{ table_convenios_externos.convenios_extranjeras }} ({{ table_convenios_externos.convenios_extranjerasp }} %)</td>
+                            </tr>
+                            <tr>
+                                <td>'Entidades Académicas: {{ table_convenios_externos.convenios_academicas }} ({{ table_convenios_externos.convenios_academicasp }} %)</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+    </div>
 
 
 
 
 
 
-    {{ chart_proyectos_problemas_conacyt.as_html }}
+
 
 
 
