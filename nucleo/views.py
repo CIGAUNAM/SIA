@@ -8,6 +8,7 @@ from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrRead
 from rest_framework import permissions
 from django.core import serializers
 from django.views.generic import View
+from django.db.models import Q
 
 from SIA.utils import *
 from . forms import *
@@ -267,7 +268,7 @@ class CargoJSON(View):
     def get(self, request):
         try:
             #usuarioid = User.objects.get(username=request.user.username).id
-            items = Cargo.objects.all()
+            items = Cargo.objects.all().exclude(nombre='Cátedras CONACYT').exclude(nombre='Investigador UNAM').exclude(nombre='Investigador Postdoctoral').exclude(nombre='Investigador por convenio')
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'tipo_cargo'))
             return HttpResponse(json, content_type='application/json')

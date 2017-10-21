@@ -14,7 +14,10 @@ from docencia.models import CursoDocencia
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 from vinculacion.models import ConvenioEntidadExterna
-from nucleo.models import User, Libro, Pais
+from nucleo.models import User, Libro
+from experiencia_laboral.models import ExperienciaLaboral
+
+
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum
 
@@ -5680,12 +5683,12 @@ class InformeActividades(View):
                                        ]
 
             p_data_source = SimpleDataSource(data=p_convenios_externos_data)
-            p_convenios_externos = PieChart(data_source)
-            context['p_convenios_externos'] = p_convenios_externos
+            p_chart_convenios_externos = PieChart(p_data_source)
+            context['p_chart_convenios_externos'] = p_chart_convenios_externos
 
             data_source = SimpleDataSource(data=convenios_externos_data)
-            convenios_externos = PieChart(data_source)
-            context['convenios_externos'] = convenios_externos
+            chart_convenios_externos = PieChart(data_source)
+            context['chart_convenios_externos'] = chart_convenios_externos
 
             context['table_convenios_externos'] = {'p_convenios_externos_count': p_convenios_externos_count,
                                                    'convenios_externos_count': convenios_externos_count,
@@ -5721,6 +5724,98 @@ class InformeActividades(View):
                                                    'convenios_academicasp': convenios_academicasp,
                                                    }
 
+            p_investigadores_unam = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Investigador UNAM', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+
+            p_investigadores_catedra = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Cátedras CONACYT', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+
+            p_investigadores_postdoctoral = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Investigador Postdoctoral', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+
+            p_investigadores_convenio = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Investigador por convenio', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+
+            investigadores_unam = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Investigador UNAM', fecha_inicio__year__gte=this_year - 1).count()
+
+            investigadores_catedra = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Cátedras CONACYT', fecha_inicio__year__gte=this_year - 1).count()
+
+            investigadores_postdoctoral = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Investigador Postdoctoral', fecha_inicio__year__gte=this_year - 1).count()
+
+            investigadores_convenio = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                cargo__nombre='Investigador por convenio', fecha_inicio__year__gte=this_year - 1).count()
+
+
+            p_investigadores_count = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+            investigadores_count = ExperienciaLaboral.objects.filter(
+                dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
+                fecha_inicio__year__gte=this_year - 1).count()
+
+            p_investigadores_unamp = round(p_investigadores_unam / p_investigadores_count * 100, 2)
+            investigadores_unamp = round(investigadores_unam / investigadores_count * 100, 2)
+            p_investigadores_catedrap = round(p_investigadores_catedra / p_investigadores_count * 100, 2)
+            investigadores_catedrap = round(investigadores_catedra / investigadores_count * 100, 2)
+            p_investigadores_postdoctoralp = round(p_investigadores_postdoctoral / p_investigadores_count * 100, 2)
+            investigadores_postdoctoralp = round(investigadores_postdoctoral / investigadores_count * 100, 2)
+            p_investigadores_conveniop = round(p_investigadores_convenio / p_investigadores_count * 100, 2)
+            investigadores_conveniop = round(investigadores_convenio / investigadores_count * 100, 2)
+
+
+            p_investigadores_data = [['Investigadores', 'Porcentaje'],
+                                         ['Investigadores UNAM', p_investigadores_unam],
+                                         ['Cátedras CONACYT', p_investigadores_catedra],
+                                         ['Investigador Postdoctoral', p_investigadores_postdoctoral],
+                                         ['Investigador por convenio', p_investigadores_convenio],
+                                         ]
+
+            investigadores_data = [['Investigadores', 'Porcentaje'],
+                                         ['Investigadores UNAM', investigadores_unam],
+                                         ['Cátedras CONACYT', investigadores_catedra],
+                                         ['Investigador Postdoctoral', investigadores_postdoctoral],
+                                         ['Investigador por convenio', investigadores_convenio],
+                                       ]
+
+            p_data_source = SimpleDataSource(data=p_convenios_externos_data)
+            p_chart_investigadores = PieChart(p_data_source)
+            context['p_chart_investigadores'] = p_chart_investigadores
+
+            data_source = SimpleDataSource(data=convenios_externos_data)
+            chart_investigadores = PieChart(data_source)
+            context['chart_investigadores'] = chart_investigadores
+
+            context['table_investigadores'] = {'p_investigadores_count': p_investigadores_count,
+                                               'investigadores_count': investigadores_count,
+                                               'p_investigadores_unam': p_investigadores_unam,
+                                               'p_investigadores_catedra': p_investigadores_catedra,
+                                               'p_investigadores_postdoctoral': p_investigadores_postdoctoral,
+                                               'p_investigadores_convenio': p_investigadores_convenio,
+                                               'investigadores_unam': investigadores_unam,
+                                               'investigadores_catedra': investigadores_catedra,
+                                               'investigadores_postdoctoral': investigadores_postdoctoral,
+                                               'investigadores_convenio': investigadores_convenio,
+
+                                               'p_investigadores_unamp': p_investigadores_unamp,
+                                               'p_investigadores_catedrap': p_investigadores_catedrap,
+                                               'p_investigadores_postdoctoralp': p_investigadores_postdoctoralp,
+                                               'p_investigadores_conveniop': p_investigadores_conveniop,
+                                               'investigadores_unamp': investigadores_unamp,
+                                               'investigadores_catedrap': investigadores_catedrap,
+                                               'investigadores_postdoctoralp': investigadores_postdoctoralp,
+                                               'investigadores_conveniop': investigadores_conveniop,
+                                               }
 
 
 
@@ -5730,4 +5825,10 @@ class InformeActividades(View):
 
 
 
-            return render(request, self.template_name, context)
+
+
+
+
+
+
+        return render(request, self.template_name, context)
