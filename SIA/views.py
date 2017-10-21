@@ -5817,6 +5817,47 @@ class InformeActividades(View):
                                                'investigadores_conveniop': investigadores_conveniop,
                                                }
 
+            p_investigadores_asocA_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado A, Medio tiempo',
+                                                                          )
+            p_investigadores_asocB_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado B, Medio tiempo')
+            p_investigadores_asocC_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado C, Medio tiempo')
+            p_investigadores_asocA_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado A, Tiempo Completo')
+            p_investigadores_asocB_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado B, Tiempo Completo')
+            p_investigadores_asocC_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado C, Tiempo Completo')
+
+            p_investigadores_titA_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular A, Medio tiempo')
+            p_investigadores_titB_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular B, Medio tiempo')
+            p_investigadores_titC_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular C, Medio tiempo')
+            p_investigadores_titA_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular A, Tiempo Completo')
+            p_investigadores_titB_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular B, Tiempo Completo')
+            p_investigadores_titC_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular C, Tiempo Completo')
+
+            p_tecnicos_auxA_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar A, Medio tiempo')
+            p_tecnicos_auxB_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar B, Medio tiempo')
+            p_tecnicos_auxC_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar C, Medio tiempo')
+            p_tecnicos_auxA_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar A, Tiempo Completo')
+            p_tecnicos_auxB_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar B, Tiempo Completo')
+            p_tecnicos_auxC_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar C, Tiempo Completo')
+
+            p_tecnicos_asocA_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado A, Medio tiempo')
+            p_tecnicos_asocB_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado B, Medio tiempo')
+            p_tecnicos_asocC_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado C, Medio tiempo')
+            p_tecnicos_asocA_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado A, Tiempo Completo')
+            p_tecnicos_asocB_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado B, Tiempo Completo')
+            p_tecnicos_asocC_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado C, Tiempo Completo')
+
+            p_tecnicos_titA_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular A, Medio tiempo')
+            p_tecnicos_titB_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular B, Medio tiempo')
+            p_tecnicos_titC_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular C, Medio tiempo')
+            p_tecnicos_titA_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular A, Tiempo Completo')
+            p_tecnicos_titB_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular B, Tiempo Completo')
+            p_tecnicos_titC_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular C, Tiempo Completo')
+
+            a = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo', ).filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) |
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None)))
+
 
 
 
