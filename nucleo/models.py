@@ -116,8 +116,9 @@ class Ciudad(models.Model):
 
 class User(AbstractUser):
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
-    tipo = models.CharField(max_length=30, choices=(('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
+    tipo = models.CharField(max_length=30, choices=(('', '-------'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
+    genero = models.CharField(max_length=10, choices=(('', '-------'), ('M', 'Masculino'), ('F', 'Femenino')))
     pais_origen = models.ForeignKey(Pais, default=1, verbose_name='País de origen', related_name='user_pais_origen')
     rfc = models.SlugField(max_length=20, blank=True)
     direccion = models.CharField(max_length=255, blank=True)
