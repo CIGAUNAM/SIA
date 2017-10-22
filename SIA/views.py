@@ -17,14 +17,12 @@ from vinculacion.models import ConvenioEntidadExterna
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral
 
-
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum
 
 from graphos.sources.simple import SimpleDataSource
 from graphos.renderers.morris import LineChart, BarChart, DonutChart
 from graphos.renderers.gchart import PieChart
-
 
 # Create your views here.
 
@@ -5501,18 +5499,27 @@ class InformeActividades(View):
             context['p_chart_proyectos_problemas_conacyt'] = p_chart_proyectos_problemas_conacyt
 
             proyectos_problemas_conacyt_data = [['Problema nacional CONACYT', 'Porcentaje'],
-                                                ['Gestión integral del agua, seguridad hídrica y derecho del agua', gestion_agua],
-                                                ['Mitigación y adaptación al cambio climático', mitigacion_cambio_climatico],
-                                                ['Resiliencia frente a desastres naturales y tecnológicos', resiliencia_desastres_nt],
-                                                ['Aprovechamiento y protección de ecosistemas y de la biodiversidad', aprovechamiento_ecosistemas],
+                                                ['Gestión integral del agua, seguridad hídrica y derecho del agua',
+                                                 gestion_agua],
+                                                ['Mitigación y adaptación al cambio climático',
+                                                 mitigacion_cambio_climatico],
+                                                ['Resiliencia frente a desastres naturales y tecnológicos',
+                                                 resiliencia_desastres_nt],
+                                                ['Aprovechamiento y protección de ecosistemas y de la biodiversidad',
+                                                 aprovechamiento_ecosistemas],
                                                 ['Los océanos y su aprovechamiento', oceanos_aprovechamiento],
                                                 ['Alimentos y su producción', alimentos_produccion],
                                                 ['Ciudades y desarrollo urbano', ciudades_desarrollo_urbano],
-                                                ['Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones', conectividad_informatica],
+                                                [
+                                                    'Conectividad informática y desarrollo de las tecnologías de la información, la comunicación y las telecomunicaciones',
+                                                    conectividad_informatica],
                                                 ['Manufactura de alta tecnología', manufactura_alta_tecnologia],
                                                 ['Consumo sustentable de energía', consumo_sustentable_energia],
-                                                ['Desarrollo y aprovechamiento de energías renovables limpias, conducta humana y prevención de adicciones', aprovechamiento_energias_renovables],
-                                                ['Enfermedades emergentes y de importancia nacional', enfermedades_emergentes],
+                                                [
+                                                    'Desarrollo y aprovechamiento de energías renovables limpias, conducta humana y prevención de adicciones',
+                                                    aprovechamiento_energias_renovables],
+                                                ['Enfermedades emergentes y de importancia nacional',
+                                                 enfermedades_emergentes],
                                                 ['Combate a la pobreza y seguridad alimentaria', combate_pobreza],
                                                 ['Migraciones y asentamientos humanos', migracion_humana],
                                                 ['Seguridad ciudadana', seguridad_ciudadana],
@@ -5520,89 +5527,88 @@ class InformeActividades(View):
                                                 ['Prevención de riesgos naturales', prevencion_riesgos_naturales]
                                                 ]
 
-
-
             data_source = SimpleDataSource(data=proyectos_problemas_conacyt_data)
             chart_proyectos_problemas_conacyt = PieChart(data_source)
             context['chart_proyectos_problemas_conacyt'] = chart_proyectos_problemas_conacyt
 
+            context['table_proyectos_problemas_conacyt'] = {
+                'p_proyectos_problemas_conacyt_count': p_proyectos_problemas_conacyt_count,
+                'proyectos_problemas_conacyt_count': proyectos_problemas_conacyt_count,
+                'p_gestion_agua': p_gestion_agua,
+                'p_mitigacion_cambio_climatico': p_mitigacion_cambio_climatico,
+                'p_resiliencia_desastres_nt': p_resiliencia_desastres_nt,
+                'p_aprovechamiento_ecosistemas': p_aprovechamiento_ecosistemas,
+                'p_oceanos_aprovechamiento': p_oceanos_aprovechamiento,
+                'p_alimentos_produccion': p_alimentos_produccion,
+                'p_ciudades_desarrollo_urbano': p_ciudades_desarrollo_urbano,
+                'p_conectividad_informatica': p_conectividad_informatica,
+                'p_manufactura_alta_tecnologia': p_manufactura_alta_tecnologia,
+                'p_consumo_sustentable_energia': p_consumo_sustentable_energia,
+                'p_aprovechamiento_energias_renovables': p_aprovechamiento_energias_renovables,
+                'p_enfermedades_emergentes': p_enfermedades_emergentes,
+                'p_combate_pobreza': p_combate_pobreza,
+                'p_migracion_humana': p_migracion_humana,
+                'p_seguridad_ciudadana': p_seguridad_ciudadana,
+                'p_gestion_conocimiento': p_gestion_conocimiento,
+                'p_prevencion_riesgos_naturales': p_prevencion_riesgos_naturales,
+                'gestion_agua': gestion_agua,
+                'mitigacion_cambio_climatico': mitigacion_cambio_climatico,
+                'resiliencia_desastres_nt': resiliencia_desastres_nt,
+                'aprovechamiento_ecosistemas': aprovechamiento_ecosistemas,
+                'oceanos_aprovechamiento': oceanos_aprovechamiento,
+                'alimentos_produccion': alimentos_produccion,
+                'ciudades_desarrollo_urbano': ciudades_desarrollo_urbano,
+                'conectividad_informatica': conectividad_informatica,
+                'manufactura_alta_tecnologia': manufactura_alta_tecnologia,
+                'consumo_sustentable_energia': consumo_sustentable_energia,
+                'aprovechamiento_energias_renovables': aprovechamiento_energias_renovables,
+                'enfermedades_emergentes': enfermedades_emergentes,
+                'combate_pobreza': combate_pobreza,
+                'migracion_humana': migracion_humana,
+                'seguridad_ciudadana': seguridad_ciudadana,
+                'gestion_conocimiento': gestion_conocimiento,
+                'prevencion_riesgos_naturales': prevencion_riesgos_naturales,
+                'p_gestion_aguap': p_gestion_aguap,
+                'p_mitigacion_cambio_climaticop': p_mitigacion_cambio_climaticop,
+                'p_resiliencia_desastres_ntp': p_resiliencia_desastres_ntp,
+                'p_aprovechamiento_ecosistemasp': p_aprovechamiento_ecosistemasp,
+                'p_oceanos_aprovechamientop': p_oceanos_aprovechamientop,
+                'p_alimentos_produccionp': p_alimentos_produccionp,
+                'p_ciudades_desarrollo_urbanop': p_ciudades_desarrollo_urbanop,
+                'p_conectividad_informaticap': p_conectividad_informaticap,
+                'p_manufactura_alta_tecnologiap': p_manufactura_alta_tecnologiap,
+                'p_consumo_sustentable_energiap': p_consumo_sustentable_energiap,
+                'p_aprovechamiento_energias_renovablesp': p_aprovechamiento_energias_renovablesp,
+                'p_enfermedades_emergentesp': p_enfermedades_emergentesp,
+                'p_combate_pobrezap': p_combate_pobrezap,
+                'p_migracion_humanap': p_migracion_humanap,
+                'p_seguridad_ciudadanap': p_seguridad_ciudadanap,
+                'p_gestion_conocimientop': p_gestion_conocimientop,
+                'p_prevencion_riesgos_naturalesp': p_prevencion_riesgos_naturalesp,
+                'gestion_aguap': gestion_aguap,
+                'mitigacion_cambio_climaticop': mitigacion_cambio_climaticop,
+                'resiliencia_desastres_ntp': resiliencia_desastres_ntp,
+                'aprovechamiento_ecosistemasp': aprovechamiento_ecosistemasp,
+                'oceanos_aprovechamientop': oceanos_aprovechamientop,
+                'alimentos_produccionp': alimentos_produccionp,
+                'ciudades_desarrollo_urbanop': ciudades_desarrollo_urbanop,
+                'conectividad_informaticap': conectividad_informaticap,
+                'manufactura_alta_tecnologiap': manufactura_alta_tecnologiap,
+                'consumo_sustentable_energiap': consumo_sustentable_energiap,
+                'aprovechamiento_energias_renovablesp': aprovechamiento_energias_renovablesp,
+                'enfermedades_emergentesp': enfermedades_emergentesp,
+                'combate_pobrezap': combate_pobrezap,
+                'migracion_humanap': migracion_humanap,
+                'seguridad_ciudadanap': seguridad_ciudadanap,
+                'gestion_conocimientop': gestion_conocimientop,
+                'prevencion_riesgos_naturalesp': prevencion_riesgos_naturalesp,
+                }
 
-            context['table_proyectos_problemas_conacyt'] = {'p_proyectos_problemas_conacyt_count': p_proyectos_problemas_conacyt_count,
-                                                            'proyectos_problemas_conacyt_count': proyectos_problemas_conacyt_count,
-                                                            'p_gestion_agua': p_gestion_agua,
-                                                            'p_mitigacion_cambio_climatico': p_mitigacion_cambio_climatico,
-                                                            'p_resiliencia_desastres_nt': p_resiliencia_desastres_nt,
-                                                            'p_aprovechamiento_ecosistemas': p_aprovechamiento_ecosistemas,
-                                                            'p_oceanos_aprovechamiento': p_oceanos_aprovechamiento,
-                                                            'p_alimentos_produccion': p_alimentos_produccion,
-                                                            'p_ciudades_desarrollo_urbano': p_ciudades_desarrollo_urbano,
-                                                            'p_conectividad_informatica': p_conectividad_informatica,
-                                                            'p_manufactura_alta_tecnologia': p_manufactura_alta_tecnologia,
-                                                            'p_consumo_sustentable_energia': p_consumo_sustentable_energia,
-                                                            'p_aprovechamiento_energias_renovables': p_aprovechamiento_energias_renovables,
-                                                            'p_enfermedades_emergentes': p_enfermedades_emergentes,
-                                                            'p_combate_pobreza': p_combate_pobreza,
-                                                            'p_migracion_humana': p_migracion_humana,
-                                                            'p_seguridad_ciudadana': p_seguridad_ciudadana,
-                                                            'p_gestion_conocimiento': p_gestion_conocimiento,
-                                                            'p_prevencion_riesgos_naturales': p_prevencion_riesgos_naturales,
-                                                            'gestion_agua': gestion_agua,
-                                                            'mitigacion_cambio_climatico': mitigacion_cambio_climatico,
-                                                            'resiliencia_desastres_nt': resiliencia_desastres_nt,
-                                                            'aprovechamiento_ecosistemas': aprovechamiento_ecosistemas,
-                                                            'oceanos_aprovechamiento': oceanos_aprovechamiento,
-                                                            'alimentos_produccion': alimentos_produccion,
-                                                            'ciudades_desarrollo_urbano': ciudades_desarrollo_urbano,
-                                                            'conectividad_informatica': conectividad_informatica,
-                                                            'manufactura_alta_tecnologia': manufactura_alta_tecnologia,
-                                                            'consumo_sustentable_energia': consumo_sustentable_energia,
-                                                            'aprovechamiento_energias_renovables': aprovechamiento_energias_renovables,
-                                                            'enfermedades_emergentes': enfermedades_emergentes,
-                                                            'combate_pobreza': combate_pobreza,
-                                                            'migracion_humana': migracion_humana,
-                                                            'seguridad_ciudadana': seguridad_ciudadana,
-                                                            'gestion_conocimiento': gestion_conocimiento,
-                                                            'prevencion_riesgos_naturales': prevencion_riesgos_naturales,
-                                                            'p_gestion_aguap': p_gestion_aguap,
-                                                            'p_mitigacion_cambio_climaticop': p_mitigacion_cambio_climaticop,
-                                                            'p_resiliencia_desastres_ntp': p_resiliencia_desastres_ntp,
-                                                            'p_aprovechamiento_ecosistemasp': p_aprovechamiento_ecosistemasp,
-                                                            'p_oceanos_aprovechamientop': p_oceanos_aprovechamientop,
-                                                            'p_alimentos_produccionp': p_alimentos_produccionp,
-                                                            'p_ciudades_desarrollo_urbanop': p_ciudades_desarrollo_urbanop,
-                                                            'p_conectividad_informaticap': p_conectividad_informaticap,
-                                                            'p_manufactura_alta_tecnologiap': p_manufactura_alta_tecnologiap,
-                                                            'p_consumo_sustentable_energiap': p_consumo_sustentable_energiap,
-                                                            'p_aprovechamiento_energias_renovablesp': p_aprovechamiento_energias_renovablesp,
-                                                            'p_enfermedades_emergentesp': p_enfermedades_emergentesp,
-                                                            'p_combate_pobrezap': p_combate_pobrezap,
-                                                            'p_migracion_humanap': p_migracion_humanap,
-                                                            'p_seguridad_ciudadanap': p_seguridad_ciudadanap,
-                                                            'p_gestion_conocimientop': p_gestion_conocimientop,
-                                                            'p_prevencion_riesgos_naturalesp': p_prevencion_riesgos_naturalesp,
-                                                            'gestion_aguap': gestion_aguap,
-                                                            'mitigacion_cambio_climaticop': mitigacion_cambio_climaticop,
-                                                            'resiliencia_desastres_ntp': resiliencia_desastres_ntp,
-                                                            'aprovechamiento_ecosistemasp': aprovechamiento_ecosistemasp,
-                                                            'oceanos_aprovechamientop': oceanos_aprovechamientop,
-                                                            'alimentos_produccionp': alimentos_produccionp,
-                                                            'ciudades_desarrollo_urbanop': ciudades_desarrollo_urbanop,
-                                                            'conectividad_informaticap': conectividad_informaticap,
-                                                            'manufactura_alta_tecnologiap': manufactura_alta_tecnologiap,
-                                                            'consumo_sustentable_energiap': consumo_sustentable_energiap,
-                                                            'aprovechamiento_energias_renovablesp': aprovechamiento_energias_renovablesp,
-                                                            'enfermedades_emergentesp': enfermedades_emergentesp,
-                                                            'combate_pobrezap': combate_pobrezap,
-                                                            'migracion_humanap': migracion_humanap,
-                                                            'seguridad_ciudadanap': seguridad_ciudadanap,
-                                                            'gestion_conocimientop': gestion_conocimientop,
-                                                            'prevencion_riesgos_naturalesp': prevencion_riesgos_naturalesp,
-                                                            }
-
-
-
-            p_convenios_federales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='FEDERAL', fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            convenios_federales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='FEDERAL', fecha_inicio__year__gte=this_year - 1).count()
+            p_convenios_federales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='FEDERAL',
+                                                                          fecha_inicio__year__gte=this_year - 2,
+                                                                          fecha_fin__year__lte=this_year - 1).count()
+            convenios_federales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='FEDERAL',
+                                                                        fecha_inicio__year__gte=this_year - 1).count()
 
             p_convenios_estatales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ESTATAL',
                                                                           fecha_inicio__year__gte=this_year - 2,
@@ -5611,22 +5617,22 @@ class InformeActividades(View):
                                                                         fecha_inicio__year__gte=this_year - 1).count()
 
             p_convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='MUNICIPAL',
-                                                                          fecha_inicio__year__gte=this_year - 2,
-                                                                          fecha_fin__year__lte=this_year - 1).count()
+                                                                            fecha_inicio__year__gte=this_year - 2,
+                                                                            fecha_fin__year__lte=this_year - 1).count()
             convenios_municipales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='MUNICIPAL',
-                                                                        fecha_inicio__year__gte=this_year - 1).count()
+                                                                          fecha_inicio__year__gte=this_year - 1).count()
 
             p_convenios_privadas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
-                                                                            fecha_inicio__year__gte=this_year - 2,
-                                                                            fecha_fin__year__lte=this_year - 1).count()
+                                                                         fecha_inicio__year__gte=this_year - 2,
+                                                                         fecha_fin__year__lte=this_year - 1).count()
             convenios_privadas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='PRIVADA',
-                                                                          fecha_inicio__year__gte=this_year - 1).count()
+                                                                       fecha_inicio__year__gte=this_year - 1).count()
 
             p_convenios_nolucrativas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
-                                                                            fecha_inicio__year__gte=this_year - 2,
-                                                                            fecha_fin__year__lte=this_year - 1).count()
+                                                                             fecha_inicio__year__gte=this_year - 2,
+                                                                             fecha_fin__year__lte=this_year - 1).count()
             convenios_nolucrativas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='NO_LUCRATIVA',
-                                                                          fecha_inicio__year__gte=this_year - 1).count()
+                                                                           fecha_inicio__year__gte=this_year - 1).count()
 
             p_convenios_extranjeras = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='EXTRANJERA',
                                                                             fecha_inicio__year__gte=this_year - 2,
@@ -5635,12 +5641,15 @@ class InformeActividades(View):
                                                                           fecha_inicio__year__gte=this_year - 1).count()
 
             p_convenios_academicas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
-                                                                            fecha_inicio__year__gte=this_year - 2,
-                                                                            fecha_fin__year__lte=this_year - 1).count()
-            convenios_academicas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA', fecha_inicio__year__gte=this_year - 1).count()
+                                                                           fecha_inicio__year__gte=this_year - 2,
+                                                                           fecha_fin__year__lte=this_year - 1).count()
+            convenios_academicas = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='ACADEMICA',
+                                                                         fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 2, fecha_fin__year__lte=this_year - 1).count()
-            convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 1).count()
+            p_convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 2,
+                                                                               fecha_fin__year__lte=this_year - 1).count()
+            convenios_externos_count = ConvenioEntidadExterna.objects.filter(
+                fecha_inicio__year__gte=this_year - 1).count()
 
             if p_convenios_externos_count == 0:
                 p_convenios_externos_count = 0.001
@@ -5651,7 +5660,7 @@ class InformeActividades(View):
             convenios_federalesp = round(convenios_federales / convenios_externos_count * 100, 2)
             p_convenios_estatalesp = round(p_convenios_estatales / p_convenios_externos_count * 100, 2)
             convenios_estatalesp = round(convenios_estatales / convenios_externos_count * 100, 2)
-            p_convenios_municipalesp  = round(p_convenios_municipales / p_convenios_externos_count * 100, 2)
+            p_convenios_municipalesp = round(p_convenios_municipales / p_convenios_externos_count * 100, 2)
             convenios_municipalesp = round(convenios_municipales / convenios_externos_count * 100, 2)
             p_convenios_privadasp = round(p_convenios_privadas / p_convenios_externos_count * 100, 2)
             convenios_privadasp = round(convenios_privadas / convenios_externos_count * 100, 2)
@@ -5726,19 +5735,23 @@ class InformeActividades(View):
 
             p_investigadores_unam = ExperienciaLaboral.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
-                cargo__nombre='Investigador UNAM', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+                cargo__nombre='Investigador UNAM', fecha_inicio__year__gte=this_year - 2,
+                fecha_inicio__year__lte=this_year - 1).count()
 
             p_investigadores_catedra = ExperienciaLaboral.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
-                cargo__nombre='Cátedras CONACYT', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+                cargo__nombre='Cátedras CONACYT', fecha_inicio__year__gte=this_year - 2,
+                fecha_inicio__year__lte=this_year - 1).count()
 
             p_investigadores_postdoctoral = ExperienciaLaboral.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
-                cargo__nombre='Investigador Postdoctoral', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+                cargo__nombre='Investigador Postdoctoral', fecha_inicio__year__gte=this_year - 2,
+                fecha_inicio__year__lte=this_year - 1).count()
 
             p_investigadores_convenio = ExperienciaLaboral.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
-                cargo__nombre='Investigador por convenio', fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
+                cargo__nombre='Investigador por convenio', fecha_inicio__year__gte=this_year - 2,
+                fecha_inicio__year__lte=this_year - 1).count()
 
             investigadores_unam = ExperienciaLaboral.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
@@ -5756,7 +5769,6 @@ class InformeActividades(View):
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Investigador por convenio', fecha_inicio__year__gte=this_year - 1).count()
 
-
             p_investigadores_count = ExperienciaLaboral.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
@@ -5773,20 +5785,19 @@ class InformeActividades(View):
             p_investigadores_conveniop = round(p_investigadores_convenio / p_investigadores_count * 100, 2)
             investigadores_conveniop = round(investigadores_convenio / investigadores_count * 100, 2)
 
-
             p_investigadores_data = [['Investigadores', 'Porcentaje'],
-                                         ['Investigadores UNAM', p_investigadores_unam],
-                                         ['Cátedras CONACYT', p_investigadores_catedra],
-                                         ['Investigador Postdoctoral', p_investigadores_postdoctoral],
-                                         ['Investigador por convenio', p_investigadores_convenio],
-                                         ]
+                                     ['Investigadores UNAM', p_investigadores_unam],
+                                     ['Cátedras CONACYT', p_investigadores_catedra],
+                                     ['Investigador Postdoctoral', p_investigadores_postdoctoral],
+                                     ['Investigador por convenio', p_investigadores_convenio],
+                                     ]
 
             investigadores_data = [['Investigadores', 'Porcentaje'],
-                                         ['Investigadores UNAM', investigadores_unam],
-                                         ['Cátedras CONACYT', investigadores_catedra],
-                                         ['Investigador Postdoctoral', investigadores_postdoctoral],
-                                         ['Investigador por convenio', investigadores_convenio],
-                                       ]
+                                   ['Investigadores UNAM', investigadores_unam],
+                                   ['Cátedras CONACYT', investigadores_catedra],
+                                   ['Investigador Postdoctoral', investigadores_postdoctoral],
+                                   ['Investigador por convenio', investigadores_convenio],
+                                   ]
 
             p_data_source = SimpleDataSource(data=p_convenios_externos_data)
             p_chart_investigadores = PieChart(p_data_source)
@@ -5817,52 +5828,503 @@ class InformeActividades(View):
                                                'investigadores_conveniop': investigadores_conveniop,
                                                }
 
-            p_investigadores_asocA_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado A, Medio tiempo',
-                                                                          )
-            p_investigadores_asocB_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado B, Medio tiempo')
-            p_investigadores_asocC_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado C, Medio tiempo')
-            p_investigadores_asocA_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado A, Tiempo Completo')
-            p_investigadores_asocB_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado B, Tiempo Completo')
-            p_investigadores_asocC_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Asociado C, Tiempo Completo')
-
-            p_investigadores_titA_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular A, Medio tiempo')
-            p_investigadores_titB_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular B, Medio tiempo')
-            p_investigadores_titC_tm = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular C, Medio tiempo')
-            p_investigadores_titA_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular A, Tiempo Completo')
-            p_investigadores_titB_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular B, Tiempo Completo')
-            p_investigadores_titC_tc = ExperienciaLaboral.objects.filter(nombramiento='Investigador Titular C, Tiempo Completo')
-
-            p_tecnicos_auxA_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar A, Medio tiempo')
-            p_tecnicos_auxB_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar B, Medio tiempo')
-            p_tecnicos_auxC_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar C, Medio tiempo')
-            p_tecnicos_auxA_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar A, Tiempo Completo')
-            p_tecnicos_auxB_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar B, Tiempo Completo')
-            p_tecnicos_auxC_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Auxiliar C, Tiempo Completo')
-
-            p_tecnicos_asocA_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado A, Medio tiempo')
-            p_tecnicos_asocB_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado B, Medio tiempo')
-            p_tecnicos_asocC_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado C, Medio tiempo')
-            p_tecnicos_asocA_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado A, Tiempo Completo')
-            p_tecnicos_asocB_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado B, Tiempo Completo')
-            p_tecnicos_asocC_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Asociado C, Tiempo Completo')
-
-            p_tecnicos_titA_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular A, Medio tiempo')
-            p_tecnicos_titB_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular B, Medio tiempo')
-            p_tecnicos_titC_tm = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular C, Medio tiempo')
-            p_tecnicos_titA_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular A, Tiempo Completo')
-            p_tecnicos_titB_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular B, Tiempo Completo')
-            p_tecnicos_titC_tc = ExperienciaLaboral.objects.filter(nombramiento='Técnico Académico Titular C, Tiempo Completo')
-
-            a = User.objects.filter(
-                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo', ).filter(
-                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) |
-                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None)))
 
 
 
+            p_investigadores_asocA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo',).filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_asocB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_asocC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_asocA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_asocB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_asocC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
 
+            p_investigadores_titA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_titB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_titC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_titA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_titB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_investigadores_titC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
 
+            p_tecnicos_auxA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_auxB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_auxC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_auxA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_auxB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_auxC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
 
+            p_tecnicos_asocA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_asocB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_asocC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_asocA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_asocB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_asocC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+
+            p_tecnicos_titA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_titB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_titC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_titA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_titB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            p_tecnicos_titC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            
+            #
+            
+            investigadores_asocA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo',).filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_asocB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_asocC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_asocA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_asocB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_asocC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+
+            investigadores_titA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_titB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_titC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_titA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_titB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            investigadores_titC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+
+            tecnicos_auxA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_auxB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_auxC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_auxA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_auxB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_auxC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+
+            tecnicos_asocA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_asocB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_asocC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_asocA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_asocB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_asocC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+
+            tecnicos_titA_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_titB_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_titC_tm = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_titA_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_titB_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+            tecnicos_titC_tc = User.objects.filter(
+                experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
+                (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
+                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__nombramiento__fecha_fin=None))).count()
+
+            
+            
 
 
 
