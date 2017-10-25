@@ -6324,7 +6324,7 @@ class InformeActividades(View):
                 experiencialaboral__nombramiento__fecha_fin=None))).count()
 
 
-            p_investigadores_count = User.objects.filter(
+            p_nom_investigadores_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                     Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
@@ -6333,7 +6333,7 @@ class InformeActividades(View):
                 experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__nombramiento__fecha_fin=None))).count()
 
-            investigadores_count = User.objects.filter(
+            nom_investigadores_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
@@ -6342,7 +6342,7 @@ class InformeActividades(View):
                 experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__nombramiento__fecha_fin=None))).count()
 
-            p_tecnicos_count = User.objects.filter(
+            p_nom_tecnicos_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                     Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
@@ -6351,7 +6351,7 @@ class InformeActividades(View):
                 experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__nombramiento__fecha_fin=None))).count()
 
-            tecnicos_count = User.objects.filter(
+            nom_tecnicos_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
@@ -6362,122 +6362,284 @@ class InformeActividades(View):
 
 
 
-            p_investigadores_asocA_tmp = round(p_investigadores_asocA_tm / p_investigadores_count * 100, 2)
-            p_investigadores_asocB_tmp = round(p_investigadores_asocB_tm / p_investigadores_count * 100, 2)
-            p_investigadores_asocB_tmp = round(p_investigadores_asocB_tm / p_investigadores_count * 100, 2)
-            p_investigadores_asocA_tcp = round(p_investigadores_asocA_tc / p_investigadores_count * 100, 2)
-            p_investigadores_asocB_tcp = round(p_investigadores_asocB_tc / p_investigadores_count * 100, 2)
-            p_investigadores_asocC_tcp = round(p_investigadores_asocC_tc / p_investigadores_count * 100, 2)
+            p_investigadores_asocA_tmp = round(p_investigadores_asocA_tm / p_nom_investigadores_count * 100, 2)
+            p_investigadores_asocB_tmp = round(p_investigadores_asocB_tm / p_nom_investigadores_count * 100, 2)
+            p_investigadores_asocC_tmp = round(p_investigadores_asocC_tm / p_nom_investigadores_count * 100, 2)
+            p_investigadores_asocA_tcp = round(p_investigadores_asocA_tc / p_nom_investigadores_count * 100, 2)
+            p_investigadores_asocB_tcp = round(p_investigadores_asocB_tc / p_nom_investigadores_count * 100, 2)
+            p_investigadores_asocC_tcp = round(p_investigadores_asocC_tc / p_nom_investigadores_count * 100, 2)
 
-            p_investigadores_titA_tmp = round(p_investigadores_titA_tm / p_investigadores_count * 100, 2)
-            p_investigadores_titB_tmp = round(p_investigadores_titB_tm / p_investigadores_count * 100, 2)
-            p_investigadores_titC_tmp = round(p_investigadores_titC_tm / p_investigadores_count * 100, 2)
-            p_investigadores_titA_tcp = round(p_investigadores_titA_tc / p_investigadores_count * 100, 2)
-            p_investigadores_titB_tcp = round(p_investigadores_titB_tc / p_investigadores_count * 100, 2)
-            p_investigadores_titC_tcp = round(p_investigadores_titC_tc / p_investigadores_count * 100, 2)
+            p_investigadores_titA_tmp = round(p_investigadores_titA_tm / p_nom_investigadores_count * 100, 2)
+            p_investigadores_titB_tmp = round(p_investigadores_titB_tm / p_nom_investigadores_count * 100, 2)
+            p_investigadores_titC_tmp = round(p_investigadores_titC_tm / p_nom_investigadores_count * 100, 2)
+            p_investigadores_titA_tcp = round(p_investigadores_titA_tc / p_nom_investigadores_count * 100, 2)
+            p_investigadores_titB_tcp = round(p_investigadores_titB_tc / p_nom_investigadores_count * 100, 2)
+            p_investigadores_titC_tcp = round(p_investigadores_titC_tc / p_nom_investigadores_count * 100, 2)
 
-            p_tecnicos_auxA_tmp = round(p_tecnicos_auxA_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_auxB_tmp = round(p_tecnicos_auxB_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_auxC_tmp = round(p_tecnicos_auxC_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_auxA_tcp = round(p_tecnicos_auxA_tc / p_tecnicos_count * 100, 2)
-            p_tecnicos_auxB_tcp = round(p_tecnicos_auxB_tc / p_tecnicos_count * 100, 2)
-            p_tecnicos_auxC_tcp = round(p_tecnicos_auxC_tc / p_tecnicos_count * 100, 2)
+            p_tecnicos_auxA_tmp = round(p_tecnicos_auxA_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_auxB_tmp = round(p_tecnicos_auxB_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_auxC_tmp = round(p_tecnicos_auxC_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_auxA_tcp = round(p_tecnicos_auxA_tc / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_auxB_tcp = round(p_tecnicos_auxB_tc / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_auxC_tcp = round(p_tecnicos_auxC_tc / p_nom_tecnicos_count * 100, 2)
 
-            p_tecnicos_asocA_tmp = round(p_tecnicos_asocA_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_asocB_tmp = round(p_tecnicos_asocB_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_asocC_tmp = round(p_tecnicos_asocC_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_asocA_tcp = round(p_tecnicos_asocA_tc / p_tecnicos_count * 100, 2)
-            p_tecnicos_asocB_tcp = round(p_tecnicos_asocB_tc / p_tecnicos_count * 100, 2)
-            p_tecnicos_asocC_tcp = round(p_tecnicos_asocC_tc / p_tecnicos_count * 100, 2)
+            p_tecnicos_asocA_tmp = round(p_tecnicos_asocA_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_asocB_tmp = round(p_tecnicos_asocB_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_asocC_tmp = round(p_tecnicos_asocC_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_asocA_tcp = round(p_tecnicos_asocA_tc / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_asocB_tcp = round(p_tecnicos_asocB_tc / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_asocC_tcp = round(p_tecnicos_asocC_tc / p_nom_tecnicos_count * 100, 2)
 
-            p_tecnicos_titA_tmp = round(p_tecnicos_titA_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_titB_tmp = round(p_tecnicos_titB_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_titC_tmp = round(p_tecnicos_titC_tm / p_tecnicos_count * 100, 2)
-            p_tecnicos_titA_tcp = round(p_tecnicos_titA_tc / p_tecnicos_count * 100, 2)
-            p_tecnicos_titB_tcp = round(p_tecnicos_titB_tc / p_tecnicos_count * 100, 2)
-            p_tecnicos_titC_tcp = round(p_tecnicos_titC_tc / p_tecnicos_count * 100, 2)
+            p_tecnicos_titA_tmp = round(p_tecnicos_titA_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_titB_tmp = round(p_tecnicos_titB_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_titC_tmp = round(p_tecnicos_titC_tm / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_titA_tcp = round(p_tecnicos_titA_tc / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_titB_tcp = round(p_tecnicos_titB_tc / p_nom_tecnicos_count * 100, 2)
+            p_tecnicos_titC_tcp = round(p_tecnicos_titC_tc / p_nom_tecnicos_count * 100, 2)
 
-            investigadores_asocA_tmp = round(investigadores_asocA_tm / investigadores_count * 100, 2)
-            investigadores_asocB_tmp = round(investigadores_asocB_tm / investigadores_count * 100, 2)
-            investigadores_asocC_tmp = round(investigadores_asocC_tm / investigadores_count * 100, 2)
-            investigadores_asocA_tcp = round(investigadores_asocA_tc / investigadores_count * 100, 2)
-            investigadores_asocB_tcp = round(investigadores_asocB_tc / investigadores_count * 100, 2)
-            investigadores_asocC_tcp = round(investigadores_asocC_tc / investigadores_count * 100, 2)
+            investigadores_asocA_tmp = round(investigadores_asocA_tm / nom_investigadores_count * 100, 2)
+            investigadores_asocB_tmp = round(investigadores_asocB_tm / nom_investigadores_count * 100, 2)
+            investigadores_asocC_tmp = round(investigadores_asocC_tm / nom_investigadores_count * 100, 2)
+            investigadores_asocA_tcp = round(investigadores_asocA_tc / nom_investigadores_count * 100, 2)
+            investigadores_asocB_tcp = round(investigadores_asocB_tc / nom_investigadores_count * 100, 2)
+            investigadores_asocC_tcp = round(investigadores_asocC_tc / nom_investigadores_count * 100, 2)
 
-            investigadores_titA_tmp = round(investigadores_titA_tm / investigadores_count * 100, 2)
-            investigadores_titB_tmp = round(investigadores_titB_tm / investigadores_count * 100, 2)
-            investigadores_titC_tmp = round(investigadores_titC_tm / investigadores_count * 100, 2)
-            investigadores_titA_tcp = round(investigadores_titA_tc / investigadores_count * 100, 2)
-            investigadores_titB_tcp = round(investigadores_titB_tc / investigadores_count * 100, 2)
-            investigadores_titC_tcp = round(investigadores_titC_tc / investigadores_count * 100, 2)
+            investigadores_titA_tmp = round(investigadores_titA_tm / nom_investigadores_count * 100, 2)
+            investigadores_titB_tmp = round(investigadores_titB_tm / nom_investigadores_count * 100, 2)
+            investigadores_titC_tmp = round(investigadores_titC_tm / nom_investigadores_count * 100, 2)
+            investigadores_titA_tcp = round(investigadores_titA_tc / nom_investigadores_count * 100, 2)
+            investigadores_titB_tcp = round(investigadores_titB_tc / nom_investigadores_count * 100, 2)
+            investigadores_titC_tcp = round(investigadores_titC_tc / nom_investigadores_count * 100, 2)
 
-            tecnicos_auxA_tmp = round(tecnicos_auxA_tm / tecnicos_count * 100, 2)
-            tecnicos_auxB_tmp = round(tecnicos_auxB_tm / tecnicos_count * 100, 2)
-            tecnicos_auxC_tmp = round(tecnicos_auxC_tm / tecnicos_count * 100, 2)
-            tecnicos_auxA_tcp = round(tecnicos_auxA_tc / tecnicos_count * 100, 2)
-            tecnicos_auxB_tcp = round(tecnicos_auxB_tc / tecnicos_count * 100, 2)
-            tecnicos_auxC_tcp = round(tecnicos_auxC_tc / tecnicos_count * 100, 2)
+            tecnicos_auxA_tmp = round(tecnicos_auxA_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_auxB_tmp = round(tecnicos_auxB_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_auxC_tmp = round(tecnicos_auxC_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_auxA_tcp = round(tecnicos_auxA_tc / nom_tecnicos_count * 100, 2)
+            tecnicos_auxB_tcp = round(tecnicos_auxB_tc / nom_tecnicos_count * 100, 2)
+            tecnicos_auxC_tcp = round(tecnicos_auxC_tc / nom_tecnicos_count * 100, 2)
 
-            tecnicos_asocA_tmp = round(tecnicos_asocA_tm / tecnicos_count * 100, 2)
-            tecnicos_asocB_tmp = round(tecnicos_asocB_tm / tecnicos_count * 100, 2)
-            tecnicos_asocC_tmp = round(tecnicos_asocC_tm / tecnicos_count * 100, 2)
-            tecnicos_asocA_tcp = round(tecnicos_asocA_tc / tecnicos_count * 100, 2)
-            tecnicos_asocB_tcp = round(tecnicos_asocB_tc / tecnicos_count * 100, 2)
-            tecnicos_asocC_tcp = round(tecnicos_asocC_tc / tecnicos_count * 100, 2)
+            tecnicos_asocA_tmp = round(tecnicos_asocA_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_asocB_tmp = round(tecnicos_asocB_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_asocC_tmp = round(tecnicos_asocC_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_asocA_tcp = round(tecnicos_asocA_tc / nom_tecnicos_count * 100, 2)
+            tecnicos_asocB_tcp = round(tecnicos_asocB_tc / nom_tecnicos_count * 100, 2)
+            tecnicos_asocC_tcp = round(tecnicos_asocC_tc / nom_tecnicos_count * 100, 2)
 
-            tecnicos_titA_tmp = round(tecnicos_titA_tm / tecnicos_count * 100, 2)
-            tecnicos_titB_tmp = round(tecnicos_titB_tm / tecnicos_count * 100, 2)
-            tecnicos_titC_tmp = round(tecnicos_titC_tm / tecnicos_count * 100, 2)
-            tecnicos_titA_tcp = round(tecnicos_titA_tc / tecnicos_count * 100, 2)
-            tecnicos_titB_tcp = round(tecnicos_titB_tc / tecnicos_count * 100, 2)
-            tecnicos_titC_tcp = round(tecnicos_titC_tc / tecnicos_count * 100, 2)
-
-
+            tecnicos_titA_tmp = round(tecnicos_titA_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_titB_tmp = round(tecnicos_titB_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_titC_tmp = round(tecnicos_titC_tm / nom_tecnicos_count * 100, 2)
+            tecnicos_titA_tcp = round(tecnicos_titA_tc / nom_tecnicos_count * 100, 2)
+            tecnicos_titB_tcp = round(tecnicos_titB_tc / nom_tecnicos_count * 100, 2)
+            tecnicos_titC_tcp = round(tecnicos_titC_tc / nom_tecnicos_count * 100, 2)
 
 
+            p_nom_investigadores_data = [['Investigadores', 'Porcentaje'],
+                                         ['Investigadores asociados A, medio tiempo', p_investigadores_asocA_tm],
+                                         ['Investigadores asociados B, medio tiempo', p_investigadores_asocB_tm],
+                                         ['Investigadores asociados C, medio tiempo', p_investigadores_asocC_tm],
+                                         ['Investigadores asociados A, tiempo completo', p_investigadores_asocA_tc],
+                                         ['Investigadores asociados B, tiempo completo', p_investigadores_asocB_tc],
+                                         ['Investigadores asociados C, tiempo completo', p_investigadores_asocC_tc],
+                                         ['Investigadores titulares A, medio tiempo', p_investigadores_titA_tm],
+                                         ['Investigadores titulares B, medio tiempo', p_investigadores_titB_tm],
+                                         ['Investigadores titulares C, medio tiempo', p_investigadores_titC_tm],
+                                         ['Investigadores titulares A, tiempo completo', p_investigadores_titA_tc],
+                                         ['Investigadores titulares B, tiempo completo', p_investigadores_titB_tc],
+                                         ['Investigadores titulares C, tiempo completo', p_investigadores_titC_tc],
+                                         ]
+            
+            nom_investigadores_data = [['Investigadores', 'Porcentaje'],
+                                       ['Investigadores asociados A, medio tiempo', investigadores_asocA_tm],
+                                       ['Investigadores asociados B, medio tiempo', investigadores_asocB_tm],
+                                       ['Investigadores asociados C, medio tiempo', investigadores_asocC_tm],
+                                       ['Investigadores asociados A, tiempo completo', investigadores_asocA_tc],
+                                       ['Investigadores asociados B, tiempo completo', investigadores_asocB_tc],
+                                       ['Investigadores asociados C, tiempo completo', investigadores_asocC_tc],
+                                       ['Investigadores titulares A, medio tiempo', investigadores_titA_tm],
+                                       ['Investigadores titulares B, medio tiempo', investigadores_titB_tm],
+                                       ['Investigadores titulares C, medio tiempo', investigadores_titC_tm],
+                                       ['Investigadores titulares A, tiempo completo', investigadores_titA_tc],
+                                       ['Investigadores titulares B, tiempo completo', investigadores_titB_tc],
+                                       ['Investigadores titulares C, tiempo completo', investigadores_titC_tc],
+                                       ]
+            
 
-            p_investigadores_data = [['Investigadores', 'Porcentaje'],
-                                     ['Investigadores UNAM', p_investigadores_unam],
-                                     ['Cátedras CONACYT', p_investigadores_catedra],
-                                     ['Investigador Postdoctoral', p_investigadores_postdoctoral],
-                                     ['Investigador por convenio', p_investigadores_convenio],
-                                     ]
-
-            investigadores_data = [['Investigadores', 'Porcentaje'],
-                                   ['Investigadores UNAM', investigadores_unam],
-                                   ['Cátedras CONACYT', investigadores_catedra],
-                                   ['Investigador Postdoctoral', investigadores_postdoctoral],
-                                   ['Investigador por convenio', investigadores_convenio],
-                                   ]
-
-            p_data_source = SimpleDataSource(data=p_convenios_externos_data)
-            p_chart_investigadores = PieChart(p_data_source)
-            context['p_chart_investigadores'] = p_chart_investigadores
+            p_data_source = SimpleDataSource(data=p_nom_investigadores_data)
+            p_chart_nom_investigadores_data = PieChart(p_data_source)
+            context['p_chart_nom_investigadores_data'] = p_chart_nom_investigadores_data
 
             data_source = SimpleDataSource(data=convenios_externos_data)
-            chart_investigadores = PieChart(data_source)
-            context['chart_investigadores'] = chart_investigadores
+            chart_nom_investigadores_data = PieChart(data_source)
+            context['chart_nom_investigadores_data'] = chart_nom_investigadores_data
 
-            context['table_investigadores'] = {'p_investigadores_count': p_investigadores_count,
-                                               'investigadores_count': investigadores_count,
-                                               'p_investigadores_unam': p_investigadores_unam,
-                                               'p_investigadores_catedra': p_investigadores_catedra,
-                                               'p_investigadores_postdoctoral': p_investigadores_postdoctoral,
-                                               'p_investigadores_convenio': p_investigadores_convenio,
-                                               'investigadores_unam': investigadores_unam,
-                                               'investigadores_catedra': investigadores_catedra,
-                                               'investigadores_postdoctoral': investigadores_postdoctoral,
-                                               'investigadores_convenio': investigadores_convenio,
-
-                                               'p_investigadores_unamp': p_investigadores_unamp,
-                                               'p_investigadores_catedrap': p_investigadores_catedrap,
-                                               'p_investigadores_postdoctoralp': p_investigadores_postdoctoralp,
-                                               'p_investigadores_conveniop': p_investigadores_conveniop,
-                                               'investigadores_unamp': investigadores_unamp,
-                                               'investigadores_catedrap': investigadores_catedrap,
-                                               'investigadores_postdoctoralp': investigadores_postdoctoralp,
-                                               'investigadores_conveniop': investigadores_conveniop,
+            context['table_nom_investigadores'] = {'p_nom_investigadores_count': p_nom_investigadores_count,
+                                                   'nom_investigadores_count': nom_investigadores_count,
+                                                   'p_investigadores_asocA_tm': p_investigadores_asocA_tm,
+                                                   'p_investigadores_asocB_tm': p_investigadores_asocB_tm,
+                                                   'p_investigadores_asocC_tm': p_investigadores_asocC_tm,
+                                                   'p_investigadores_asocA_tc': p_investigadores_asocA_tc,
+                                                   'p_investigadores_asocB_tc': p_investigadores_asocB_tc,
+                                                   'p_investigadores_asocC_tc': p_investigadores_asocC_tc,
+                                                   'p_investigadores_titA_tm': p_investigadores_titA_tm,
+                                                   'p_investigadores_titB_tm': p_investigadores_titB_tm,
+                                                   'p_investigadores_titC_tm': p_investigadores_titC_tm,
+                                                   'p_investigadores_titA_tc': p_investigadores_titA_tc,
+                                                   'p_investigadores_titB_tc': p_investigadores_titB_tc,
+                                                   'p_investigadores_titC_tc': p_investigadores_titC_tc,
+                                                   'p_investigadores_asocA_tmp': p_investigadores_asocA_tmp,
+                                                   'p_investigadores_asocB_tmp': p_investigadores_asocB_tmp,
+                                                   'p_investigadores_asocC_tmp': p_investigadores_asocC_tmp,
+                                                   'p_investigadores_asocA_tcp': p_investigadores_asocA_tcp,
+                                                   'p_investigadores_asocB_tcp': p_investigadores_asocB_tcp,
+                                                   'p_investigadores_asocC_tcp': p_investigadores_asocC_tcp,
+                                                   'p_investigadores_titA_tmp': p_investigadores_titA_tmp,
+                                                   'p_investigadores_titB_tmp': p_investigadores_titB_tmp,
+                                                   'p_investigadores_titC_tmp': p_investigadores_titC_tmp,
+                                                   'p_investigadores_titA_tcp': p_investigadores_titA_tcp,
+                                                   'p_investigadores_titB_tcp': p_investigadores_titB_tcp,
+                                                   'p_investigadores_titC_tcp': p_investigadores_titC_tcp,    
+                                                   'investigadores_asocA_tm': investigadores_asocA_tm,
+                                                   'investigadores_asocB_tm': investigadores_asocB_tm,
+                                                   'investigadores_asocC_tm': investigadores_asocC_tm,
+                                                   'investigadores_asocA_tc': investigadores_asocA_tc,
+                                                   'investigadores_asocB_tc': investigadores_asocB_tc,
+                                                   'investigadores_asocC_tc': investigadores_asocC_tc,
+                                                   'investigadores_titA_tm': investigadores_titA_tm,
+                                                   'investigadores_titB_tm': investigadores_titB_tm,
+                                                   'investigadores_titC_tm': investigadores_titC_tm,
+                                                   'investigadores_titA_tc': investigadores_titA_tc,
+                                                   'investigadores_titB_tc': investigadores_titB_tc,
+                                                   'investigadores_titC_tc': investigadores_titC_tc,
+                                                   'investigadores_asocA_tmp': investigadores_asocA_tmp,
+                                                   'investigadores_asocB_tmp': investigadores_asocB_tmp,
+                                                   'investigadores_asocC_tmp': investigadores_asocC_tmp,
+                                                   'investigadores_asocA_tcp': investigadores_asocA_tcp,
+                                                   'investigadores_asocB_tcp': investigadores_asocB_tcp,
+                                                   'investigadores_asocC_tcp': investigadores_asocC_tcp,
+                                                   'investigadores_titA_tmp': investigadores_titA_tmp,
+                                                   'investigadores_titB_tmp': investigadores_titB_tmp,
+                                                   'investigadores_titC_tmp': investigadores_titC_tmp,
+                                                   'investigadores_titA_tcp': investigadores_titA_tcp,
+                                                   'investigadores_titB_tcp': investigadores_titB_tcp,
+                                                   'investigadores_titC_tcp': investigadores_titC_tcp
                                                }
+            
+            
+
+            p_nom_tecnicos_data = [['Técnicos', 'Porcentaje'],
+                                   ['Técnicos auxiliares A, medio tiempo', p_tecnicos_auxA_tm],
+                                   ['Técnicos auxiliares B, medio tiempo', p_tecnicos_auxB_tm],
+                                   ['Técnicos auxiliares C, medio tiempo', p_tecnicos_auxC_tm],
+                                   ['Técnicos auxiliares A, tiempo completo', p_tecnicos_auxA_tc],
+                                   ['Técnicos auxiliares B, tiempo completo', p_tecnicos_auxB_tc],
+                                   ['Técnicos auxiliares C, tiempo completo', p_tecnicos_auxC_tc],
+                                   ['Técnicos asociados A, medio tiempo', p_tecnicos_asocA_tm],
+                                   ['Técnicos asociados B, medio tiempo', p_tecnicos_asocB_tm],
+                                   ['Técnicos asociados C, medio tiempo', p_tecnicos_asocC_tm],
+                                   ['Técnicos asociados A, tiempo completo', p_tecnicos_asocA_tc],
+                                   ['Técnicos asociados B, tiempo completo', p_tecnicos_asocB_tc],
+                                   ['Técnicos asociados C, tiempo completo', p_tecnicos_asocC_tc],
+                                   ['Técnicos titulares A, medio tiempo', p_tecnicos_titA_tm],
+                                   ['Técnicos titulares B, medio tiempo', p_tecnicos_titB_tm],
+                                   ['Técnicos titulares C, medio tiempo', p_tecnicos_titC_tm],
+                                   ['Técnicos titulares A, tiempo completo', p_tecnicos_titA_tc],
+                                   ['Técnicos titulares B, tiempo completo', p_tecnicos_titB_tc],
+                                   ['Técnicos titulares C, tiempo completo', p_tecnicos_titC_tc],
+                                   ]
+
+            nom_tecnicos_data = [['Técnicos', 'Porcentaje'],
+                                 ['Técnicos auxiliares A, medio tiempo', tecnicos_auxA_tm],
+                                 ['Técnicos auxiliares B, medio tiempo', tecnicos_auxB_tm],
+                                 ['Técnicos auxiliares C, medio tiempo', tecnicos_auxC_tm],
+                                 ['Técnicos auxiliares A, tiempo completo', tecnicos_auxA_tc],
+                                 ['Técnicos auxiliares B, tiempo completo', tecnicos_auxB_tc],
+                                 ['Técnicos auxiliares C, tiempo completo', tecnicos_auxC_tc],
+                                 ['Técnicos asociados A, medio tiempo', tecnicos_asocA_tm],
+                                 ['Técnicos asociados B, medio tiempo', tecnicos_asocB_tm],
+                                 ['Técnicos asociados C, medio tiempo', tecnicos_asocC_tm],
+                                 ['Técnicos asociados A, tiempo completo', tecnicos_asocA_tc],
+                                 ['Técnicos asociados B, tiempo completo', tecnicos_asocB_tc],
+                                 ['Técnicos asociados C, tiempo completo', tecnicos_asocC_tc],
+                                 ['Técnicos titulares A, medio tiempo', tecnicos_titA_tm],
+                                 ['Técnicos titulares B, medio tiempo', tecnicos_titB_tm],
+                                 ['Técnicos titulares C, medio tiempo', tecnicos_titC_tm],
+                                 ['Técnicos titulares A, tiempo completo', tecnicos_titA_tc],
+                                 ['Técnicos titulares B, tiempo completo', tecnicos_titB_tc],
+                                 ['Técnicos titulares C, tiempo completo', tecnicos_titC_tc],
+                                 ]
+
+            p_data_source = SimpleDataSource(data=p_nom_tecnicos_data)
+            p_chart_nom_tecnicos_data = PieChart(p_data_source)
+            context['p_chart_nom_tecnicos_data'] = p_chart_nom_tecnicos_data
+
+            data_source = SimpleDataSource(data=convenios_externos_data)
+            chart_nom_tecnicos_data = PieChart(data_source)
+            context['chart_nom_tecnicos_data'] = chart_nom_tecnicos_data
+
+            context['table_nom_tecnicos'] = {'p_nom_tecnicos_count': p_nom_tecnicos_count,
+                                             'nom_tecnicos_count': nom_tecnicos_count,
+                                             'p_tecnicos_auxA_tm': p_tecnicos_auxA_tm,
+                                             'p_tecnicos_auxB_tm': p_tecnicos_auxB_tm,
+                                             'p_tecnicos_auxC_tm': p_tecnicos_auxC_tm,
+                                             'p_tecnicos_auxA_tc': p_tecnicos_auxA_tc,
+                                             'p_tecnicos_auxB_tc': p_tecnicos_auxB_tc,
+                                             'p_tecnicos_auxC_tc': p_tecnicos_auxC_tc,
+                                             'p_tecnicos_asocA_tm': p_tecnicos_asocA_tm,
+                                             'p_tecnicos_asocB_tm': p_tecnicos_asocB_tm,
+                                             'p_tecnicos_asocC_tm': p_tecnicos_asocC_tm,
+                                             'p_tecnicos_asocA_tc': p_tecnicos_asocA_tc,
+                                             'p_tecnicos_asocB_tc': p_tecnicos_asocB_tc,
+                                             'p_tecnicos_asocC_tc': p_tecnicos_asocC_tc,
+                                             'p_tecnicos_titA_tm': p_tecnicos_titA_tm,
+                                             'p_tecnicos_titB_tm': p_tecnicos_titB_tm,
+                                             'p_tecnicos_titC_tm': p_tecnicos_titC_tm,
+                                             'p_tecnicos_titA_tc': p_tecnicos_titA_tc,
+                                             'p_tecnicos_titB_tc': p_tecnicos_titB_tc,
+                                             'p_tecnicos_titC_tc': p_tecnicos_titC_tc,
+                                             'p_tecnicos_asocA_tmp': p_tecnicos_asocA_tmp,
+                                             'p_tecnicos_asocB_tmp': p_tecnicos_asocB_tmp,
+                                             'p_tecnicos_asocC_tmp': p_tecnicos_asocC_tmp,
+                                             'p_tecnicos_asocA_tcp': p_tecnicos_asocA_tcp,
+                                             'p_tecnicos_asocB_tcp': p_tecnicos_asocB_tcp,
+                                             'p_tecnicos_asocC_tcp': p_tecnicos_asocC_tcp,
+                                             'p_tecnicos_titA_tmp': p_tecnicos_titA_tmp,
+                                             'p_tecnicos_titB_tmp': p_tecnicos_titB_tmp,
+                                             'p_tecnicos_titC_tmp': p_tecnicos_titC_tmp,
+                                             'p_tecnicos_titA_tcp': p_tecnicos_titA_tcp,
+                                             'p_tecnicos_titB_tcp': p_tecnicos_titB_tcp,
+                                             'p_tecnicos_titC_tcp': p_tecnicos_titC_tcp,
+
+                                             'tecnicos_auxA_tm': tecnicos_auxA_tm,
+                                             'tecnicos_auxB_tm': tecnicos_auxB_tm,
+                                             'tecnicos_auxC_tm': tecnicos_auxC_tm,
+                                             'tecnicos_auxA_tc': tecnicos_auxA_tc,
+                                             'tecnicos_auxB_tc': tecnicos_auxB_tc,
+                                             'tecnicos_auxC_tc': tecnicos_auxC_tc,
+                                             'tecnicos_asocA_tm': tecnicos_asocA_tm,
+                                             'tecnicos_asocB_tm': tecnicos_asocB_tm,
+                                             'tecnicos_asocC_tm': tecnicos_asocC_tm,
+                                             'tecnicos_asocA_tc': tecnicos_asocA_tc,
+                                             'tecnicos_asocB_tc': tecnicos_asocB_tc,
+                                             'tecnicos_asocC_tc': tecnicos_asocC_tc,
+                                             'tecnicos_titA_tm': tecnicos_titA_tm,
+                                             'tecnicos_titB_tm': tecnicos_titB_tm,
+                                             'tecnicos_titC_tm': tecnicos_titC_tm,
+                                             'tecnicos_titA_tc': tecnicos_titA_tc,
+                                             'tecnicos_titB_tc': tecnicos_titB_tc,
+                                             'tecnicos_titC_tc': tecnicos_titC_tc,
+                                             'tecnicos_asocA_tmp': tecnicos_asocA_tmp,
+                                             'tecnicos_asocB_tmp': tecnicos_asocB_tmp,
+                                             'tecnicos_asocC_tmp': tecnicos_asocC_tmp,
+                                             'tecnicos_asocA_tcp': tecnicos_asocA_tcp,
+                                             'tecnicos_asocB_tcp': tecnicos_asocB_tcp,
+                                             'tecnicos_asocC_tcp': tecnicos_asocC_tcp,
+                                             'tecnicos_titA_tmp': tecnicos_titA_tmp,
+                                             'tecnicos_titB_tmp': tecnicos_titB_tmp,
+                                             'tecnicos_titC_tmp': tecnicos_titC_tmp,
+                                             'tecnicos_titA_tcp': tecnicos_titA_tcp,
+                                             'tecnicos_titB_tcp': tecnicos_titB_tcp,
+                                             'tecnicos_titC_tcp': tecnicos_titC_tcp
+                                             }
 
 
 
