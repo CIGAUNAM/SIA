@@ -934,7 +934,7 @@
                     <div class="tab-pane active" id="pnominvestigadoresplot">
                         <div class="row">
                             <div class="col-md-6">
-                                {{ p_chart_nom_investigadores_data.as_html }}
+                                {{ p_chart_nom_investigadores.as_html }}
                             </div>
                         </div>
                     </div>
@@ -947,19 +947,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr><td>Investigadores Asociados A, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocA_tm }}({{ table_nom_investigadores.p_investigadores_asocA_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados B, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocB_tm }}({{ table_nom_investigadores.p_investigadores_asocB_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados C, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocC_tm }}({{ table_nom_investigadores.p_investigadores_asocC_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados A, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocA_tc }}({{ table_nom_investigadores.p_investigadores_asocA_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados B, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocB_tc }}({{ table_nom_investigadores.p_investigadores_asocB_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados C, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocC_tc }}({{ table_nom_investigadores.p_investigadores_asocC_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados A, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocA_tm }} ({{ table_nom_investigadores.p_investigadores_asocA_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados B, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocB_tm }} ({{ table_nom_investigadores.p_investigadores_asocB_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados C, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocC_tm }} ({{ table_nom_investigadores.p_investigadores_asocC_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados A, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocA_tc }} ({{ table_nom_investigadores.p_investigadores_asocA_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados B, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocB_tc }} ({{ table_nom_investigadores.p_investigadores_asocB_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados C, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocC_tc }} ({{ table_nom_investigadores.p_investigadores_asocC_tcp }} %)</td></tr>
 
-                            <tr><td>Investigadores Titulares A, medio tiempo: {{ table_nom_investigadores.p_investigadores_titA_tm }}({{ table_nom_investigadores.p_investigadores_titA_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares B, medio tiempo: {{ table_nom_investigadores.p_investigadores_titB_tm }}({{ table_nom_investigadores.p_investigadores_titB_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares C, medio tiempo: {{ table_nom_investigadores.p_investigadores_titC_tm }}({{ table_nom_investigadores.p_investigadores_titC_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares A, tiempo completo: {{ table_nom_investigadores.p_investigadores_titA_tc }}({{ table_nom_investigadores.p_investigadores_asocA_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares B, tiempo completo: {{ table_nom_investigadores.p_investigadores_titB_tc }}({{ table_nom_investigadores.p_investigadores_asocB_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares C, tiempo completo: {{ table_nom_investigadores.p_investigadores_titC_tc }}({{ table_nom_investigadores.p_investigadores_asocC_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares A, medio tiempo: {{ table_nom_investigadores.p_investigadores_titA_tm }} ({{ table_nom_investigadores.p_investigadores_titA_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares B, medio tiempo: {{ table_nom_investigadores.p_investigadores_titB_tm }} ({{ table_nom_investigadores.p_investigadores_titB_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares C, medio tiempo: {{ table_nom_investigadores.p_investigadores_titC_tm }} ({{ table_nom_investigadores.p_investigadores_titC_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares A, tiempo completo: {{ table_nom_investigadores.p_investigadores_titA_tc }} ({{ table_nom_investigadores.p_investigadores_asocA_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares B, tiempo completo: {{ table_nom_investigadores.p_investigadores_titB_tc }} ({{ table_nom_investigadores.p_investigadores_asocB_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares C, tiempo completo: {{ table_nom_investigadores.p_investigadores_titC_tc }} ({{ table_nom_investigadores.p_investigadores_asocC_tcp }} %)</td></tr>
 
 
                             </tbody>
@@ -976,23 +976,24 @@
             <!-- Custom Tabs (Pulled to the right) -->
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs pull-right">
-                    <li class="active"><a href="#pnominvestigadoresplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    <li class="active"><a href="#nominvestigadoresplot" data-toggle="tab" aria-expanded="true">Plot</a>
                     </li>
-                    <li class=""><a href="#pnominvestigadoresdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+                    <li class=""><a href="#nominvestigadoresdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
                     <li class="pull-left header"><i class="fa fa-th"></i>
                         Investigadores por categoría {{ this_year_2 }}-{{ this_year_1 }}</li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="pnominvestigadoresplot">
+                    <div class="tab-pane active" id="nominvestigadoresplot">
                         <div class="row">
                             <div class="col-md-6">
-                                {{ p_chart_nom_investigadores_data.as_html }}
+
+                                {{ chart_nom_investigadores.as_html }}
                             </div>
                         </div>
                     </div>
                     <!-- /.tab-pane -->
-                    <div class="tab-pane" id="pnominvestigadoresdatos">
+                    <div class="tab-pane" id="nominvestigadoresdatos">
                         <table class="table table-striped table-bordered">
                             <thead>
                             <tr>
@@ -1000,19 +1001,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr><td>Investigadores Asociados A, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocA_tm }}({{ table_nom_investigadores.p_investigadores_asocA_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados B, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocB_tm }}({{ table_nom_investigadores.p_investigadores_asocB_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados C, medio tiempo: {{ table_nom_investigadores.p_investigadores_asocC_tm }}({{ table_nom_investigadores.p_investigadores_asocC_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados A, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocA_tc }}({{ table_nom_investigadores.p_investigadores_asocA_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados B, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocB_tc }}({{ table_nom_investigadores.p_investigadores_asocB_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Asociados C, tiempo completo: {{ table_nom_investigadores.p_investigadores_asocC_tc }}({{ table_nom_investigadores.p_investigadores_asocC_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados A, medio tiempo: {{ table_nom_investigadores.investigadores_asocA_tm }} ({{ table_nom_investigadores.investigadores_asocA_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados B, medio tiempo: {{ table_nom_investigadores.investigadores_asocB_tm }} ({{ table_nom_investigadores.investigadores_asocB_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados C, medio tiempo: {{ table_nom_investigadores.investigadores_asocC_tm }} ({{ table_nom_investigadores.investigadores_asocC_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados A, tiempo completo: {{ table_nom_investigadores.investigadores_asocA_tc }} ({{ table_nom_investigadores.investigadores_asocA_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados B, tiempo completo: {{ table_nom_investigadores.investigadores_asocB_tc }} ({{ table_nom_investigadores.investigadores_asocB_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Asociados C, tiempo completo: {{ table_nom_investigadores.investigadores_asocC_tc }} ({{ table_nom_investigadores.investigadores_asocC_tcp }} %)</td></tr>
 
-                            <tr><td>Investigadores Titulares A, medio tiempo: {{ table_nom_investigadores.p_investigadores_titA_tm }}({{ table_nom_investigadores.p_investigadores_titA_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares B, medio tiempo: {{ table_nom_investigadores.p_investigadores_titB_tm }}({{ table_nom_investigadores.p_investigadores_titB_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares C, medio tiempo: {{ table_nom_investigadores.p_investigadores_titC_tm }}({{ table_nom_investigadores.p_investigadores_titC_tmp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares A, tiempo completo: {{ table_nom_investigadores.p_investigadores_titA_tc }}({{ table_nom_investigadores.p_investigadores_asocA_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares B, tiempo completo: {{ table_nom_investigadores.p_investigadores_titB_tc }}({{ table_nom_investigadores.p_investigadores_asocB_tcp }} %)</td></tr>
-                            <tr><td>Investigadores Titulares C, tiempo completo: {{ table_nom_investigadores.p_investigadores_titC_tc }}({{ table_nom_investigadores.p_investigadores_asocC_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares A, medio tiempo: {{ table_nom_investigadores.investigadores_titA_tm }} ({{ table_nom_investigadores.investigadores_titA_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares B, medio tiempo: {{ table_nom_investigadores.investigadores_titB_tm }} ({{ table_nom_investigadores.investigadores_titB_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares C, medio tiempo: {{ table_nom_investigadores.investigadores_titC_tm }} ({{ table_nom_investigadores.investigadores_titC_tmp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares A, tiempo completo: {{ table_nom_investigadores.investigadores_titA_tc }} ({{ table_nom_investigadores.investigadores_asocA_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares B, tiempo completo: {{ table_nom_investigadores.investigadores_titB_tc }} ({{ table_nom_investigadores.investigadores_asocB_tcp }} %)</td></tr>
+                            <tr><td>Investigadores Titulares C, tiempo completo: {{ table_nom_investigadores.investigadores_titC_tc }} ({{ table_nom_investigadores.investigadores_asocC_tcp }} %)</td></tr>
 
 
                             </tbody>

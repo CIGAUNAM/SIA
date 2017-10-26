@@ -5835,246 +5835,246 @@ class InformeActividades(View):
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo',).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             p_investigadores_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_investigadores_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             p_tecnicos_auxA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_auxB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_auxC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_auxA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_auxB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_auxC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             p_tecnicos_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             p_tecnicos_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             p_tecnicos_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             
             #
             
@@ -6082,283 +6082,283 @@ class InformeActividades(View):
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo',).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             investigadores_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             investigadores_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             tecnicos_auxA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_auxB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_auxC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_auxA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_auxB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_auxC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             tecnicos_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             tecnicos_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
             tecnicos_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                 Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
 
             p_nom_investigadores_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                     Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             nom_investigadores_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             p_nom_tecnicos_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
                     Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year - 1)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 2) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
             nom_tecnicos_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin__year__gte=this_year)) | (Q(
-                experiencialaboral__nombramiento__fecha_inicio__year__lte=this_year - 1) & Q(
-                experiencialaboral__nombramiento__fecha_fin=None))).count()
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
+                experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
+                experiencialaboral__fecha_fin=None))).count()
 
 
 
@@ -6465,12 +6465,12 @@ class InformeActividades(View):
             
 
             p_data_source = SimpleDataSource(data=p_nom_investigadores_data)
-            p_chart_nom_investigadores_data = PieChart(p_data_source)
-            context['p_chart_nom_investigadores_data'] = p_chart_nom_investigadores_data
+            p_chart_nom_investigadores = PieChart(p_data_source)
+            context['p_chart_nom_investigadores'] = p_chart_nom_investigadores
 
-            data_source = SimpleDataSource(data=convenios_externos_data)
-            chart_nom_investigadores_data = PieChart(data_source)
-            context['chart_nom_investigadores_data'] = chart_nom_investigadores_data
+            data_source = SimpleDataSource(data=nom_investigadores_data)
+            chart_nom_investigadores = PieChart(data_source)
+            context['chart_nom_investigadores'] = chart_nom_investigadores
 
             context['table_nom_investigadores'] = {'p_nom_investigadores_count': p_nom_investigadores_count,
                                                    'nom_investigadores_count': nom_investigadores_count,
