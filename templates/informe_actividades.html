@@ -916,8 +916,6 @@
         </div>
     </div>
 
-
-
     <div class="row">
         <div class="col-md-6">
             <!-- Custom Tabs (Pulled to the right) -->
@@ -1029,7 +1027,231 @@
 
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#pnomtecnicosplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+                    <li class=""><a href="#pnomtecnicosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Técnicos por categoría {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="pnomtecnicosplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ p_chart_nom_tecnicos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="pnomtecnicosdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>Técnicos Auxiliares A, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_auxA_tm }} ({{ table_nom_tecnicos.p_tecnicos_auxA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares B, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_auxB_tm }} ({{ table_nom_tecnicos.p_tecnicos_auxB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares C, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_auxC_tm }} ({{ table_nom_tecnicos.p_tecnicos_auxC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares A, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_auxA_tc }} ({{ table_nom_tecnicos.p_tecnicos_auxA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares B, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_auxB_tc }} ({{ table_nom_tecnicos.p_tecnicos_auxB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares C, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_auxC_tc }} ({{ table_nom_tecnicos.p_tecnicos_auxC_tcp }} %)</td></tr>
+
+                            <tr><td>Técnicos Asociados A, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_asocA_tm }} ({{ table_nom_tecnicos.p_tecnicos_asocA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados B, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_asocB_tm }} ({{ table_nom_tecnicos.p_tecnicos_asocB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados C, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_asocC_tm }} ({{ table_nom_tecnicos.p_tecnicos_asocC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados A, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_asocA_tc }} ({{ table_nom_tecnicos.p_tecnicos_asocA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados B, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_asocB_tc }} ({{ table_nom_tecnicos.p_tecnicos_asocB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados C, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_asocC_tc }} ({{ table_nom_tecnicos.p_tecnicos_asocC_tcp }} %)</td></tr>
+
+                            <tr><td>Técnicos Titulares A, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_titA_tm }} ({{ table_nom_tecnicos.p_tecnicos_titA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares B, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_titB_tm }} ({{ table_nom_tecnicos.p_tecnicos_titB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares C, medio tiempo: {{ table_nom_tecnicos.p_tecnicos_titC_tm }} ({{ table_nom_tecnicos.p_tecnicos_titC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares A, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_titA_tc }} ({{ table_nom_tecnicos.p_tecnicos_asocA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares B, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_titB_tc }} ({{ table_nom_tecnicos.p_tecnicos_asocB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares C, tiempo completo: {{ table_nom_tecnicos.p_tecnicos_titC_tc }} ({{ table_nom_tecnicos.p_tecnicos_asocC_tcp }} %)</td></tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#nomtecnicosplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+                    <li class=""><a href="#nomtecnicosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Técnicos por categoría {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="nomtecnicosplot">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                {{ chart_nom_tecnicos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="nomtecnicosdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>Técnicos Auxiliares A, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxA_tm }} ({{ table_nom_tecnicos.tecnicos_auxA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares B, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxB_tm }} ({{ table_nom_tecnicos.tecnicos_auxB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares C, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxC_tm }} ({{ table_nom_tecnicos.tecnicos_auxC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares A, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxA_tc }} ({{ table_nom_tecnicos.tecnicos_auxA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares B, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxB_tc }} ({{ table_nom_tecnicos.tecnicos_auxB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares C, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxC_tc }} ({{ table_nom_tecnicos.tecnicos_auxC_tcp }} %)</td></tr>
+
+                            <tr><td>Técnicos Asociados A, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocA_tm }} ({{ table_nom_tecnicos.tecnicos_asocA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados B, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocB_tm }} ({{ table_nom_tecnicos.tecnicos_asocB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados C, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocC_tm }} ({{ table_nom_tecnicos.tecnicos_asocC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados A, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocA_tc }} ({{ table_nom_tecnicos.tecnicos_asocA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados B, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocB_tc }} ({{ table_nom_tecnicos.tecnicos_asocB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados C, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocC_tc }} ({{ table_nom_tecnicos.tecnicos_asocC_tcp }} %)</td></tr>
+
+                            <tr><td>Técnicos Titulares A, medio tiempo: {{ table_nom_tecnicos.tecnicos_titA_tm }} ({{ table_nom_tecnicos.tecnicos_titA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares B, medio tiempo: {{ table_nom_tecnicos.tecnicos_titB_tm }} ({{ table_nom_tecnicos.tecnicos_titB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares C, medio tiempo: {{ table_nom_tecnicos.tecnicos_titC_tm }} ({{ table_nom_tecnicos.tecnicos_titC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares A, tiempo completo: {{ table_nom_tecnicos.tecnicos_titA_tc }} ({{ table_nom_tecnicos.tecnicos_asocA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares B, tiempo completo: {{ table_nom_tecnicos.tecnicos_titB_tc }} ({{ table_nom_tecnicos.tecnicos_asocB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares C, tiempo completo: {{ table_nom_tecnicos.tecnicos_titC_tc }} ({{ table_nom_tecnicos.tecnicos_asocC_tcp }} %)</td></tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#pedadinvestplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Edad promedio de investigadores {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="pedadinvestplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ p_chart_edad_investigadores.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#edadinvestplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Edad promedio de investigadores {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="edadinvestplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ chart_edad_investigadores.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#pedadinvestplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Edad promedio de técnicos {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="pedadinvestplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ p_chart_edad_tecnicos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#edadinvestplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Edad promedio de técnicos {{ this_year_2 }}-{{ this_year_1 }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="edadinvestplot">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ chart_edad_tecnicos.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+    </div>
 
 
 
