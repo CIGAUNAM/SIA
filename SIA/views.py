@@ -4988,11 +4988,13 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             invest_activos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             invest_perc_ant = round(invest_en_proyectos_ant / invest_activos_ant, 2)
 
@@ -5001,11 +5003,13 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             invest_activos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             invest_perc_act = round(invest_en_proyectos_act / invest_activos_act, 2)
 
@@ -5014,11 +5018,13 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             tecnicos_activos_ant = User.objects.filter(tipo='TECNICO').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             tec_perc_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2) * 100
 
@@ -5027,11 +5033,13 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             tecnicos_activos_act = User.objects.filter(tipo='TECNICO').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(Count('pk', distinct=True)).count()
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                Count('pk', distinct=True)).count()
 
             tec_perc_act = round(tecnicos_en_proyectos_act / tecnicos_activos_act, 2) * 100
 
@@ -5492,8 +5500,6 @@ class InformeActividades(View):
                                                   ['Prevención de riesgos naturales', p_prevencion_riesgos_naturales]
                                                   ]
 
-
-
             data_source = SimpleDataSource(data=p_proyectos_problemas_conacyt_data)
             p_chart_proyectos_problemas_conacyt = PieChart(data_source)
             context['p_chart_proyectos_problemas_conacyt'] = p_chart_proyectos_problemas_conacyt
@@ -5602,7 +5608,7 @@ class InformeActividades(View):
                 'seguridad_ciudadanap': seguridad_ciudadanap,
                 'gestion_conocimientop': gestion_conocimientop,
                 'prevencion_riesgos_naturalesp': prevencion_riesgos_naturalesp,
-                }
+            }
 
             p_convenios_federales = ConvenioEntidadExterna.objects.filter(clasificacion_entidad='FEDERAL',
                                                                           fecha_inicio__year__gte=this_year - 2,
@@ -5828,13 +5834,10 @@ class InformeActividades(View):
                                                'investigadores_conveniop': investigadores_conveniop,
                                                }
 
-
-
-
             p_investigadores_asocA_tm = User.objects.filter(
-                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo',).filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5842,7 +5845,7 @@ class InformeActividades(View):
             p_investigadores_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5850,7 +5853,7 @@ class InformeActividades(View):
             p_investigadores_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5858,7 +5861,7 @@ class InformeActividades(View):
             p_investigadores_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5866,7 +5869,7 @@ class InformeActividades(View):
             p_investigadores_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5874,7 +5877,7 @@ class InformeActividades(View):
             p_investigadores_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5883,7 +5886,7 @@ class InformeActividades(View):
             p_investigadores_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5891,7 +5894,7 @@ class InformeActividades(View):
             p_investigadores_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5899,7 +5902,7 @@ class InformeActividades(View):
             p_investigadores_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5907,7 +5910,7 @@ class InformeActividades(View):
             p_investigadores_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5915,7 +5918,7 @@ class InformeActividades(View):
             p_investigadores_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5923,7 +5926,7 @@ class InformeActividades(View):
             p_investigadores_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5932,7 +5935,7 @@ class InformeActividades(View):
             p_tecnicos_auxA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5940,7 +5943,7 @@ class InformeActividades(View):
             p_tecnicos_auxB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5948,7 +5951,7 @@ class InformeActividades(View):
             p_tecnicos_auxC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5956,7 +5959,7 @@ class InformeActividades(View):
             p_tecnicos_auxA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5964,7 +5967,7 @@ class InformeActividades(View):
             p_tecnicos_auxB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5972,7 +5975,7 @@ class InformeActividades(View):
             p_tecnicos_auxC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5981,7 +5984,7 @@ class InformeActividades(View):
             p_tecnicos_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5989,7 +5992,7 @@ class InformeActividades(View):
             p_tecnicos_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5997,7 +6000,7 @@ class InformeActividades(View):
             p_tecnicos_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6005,7 +6008,7 @@ class InformeActividades(View):
             p_tecnicos_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6013,7 +6016,7 @@ class InformeActividades(View):
             p_tecnicos_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6021,7 +6024,7 @@ class InformeActividades(View):
             p_tecnicos_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6030,7 +6033,7 @@ class InformeActividades(View):
             p_tecnicos_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6038,7 +6041,7 @@ class InformeActividades(View):
             p_tecnicos_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6046,7 +6049,7 @@ class InformeActividades(View):
             p_tecnicos_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6054,7 +6057,7 @@ class InformeActividades(View):
             p_tecnicos_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6062,7 +6065,7 @@ class InformeActividades(View):
             p_tecnicos_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6070,18 +6073,18 @@ class InformeActividades(View):
             p_tecnicos_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin=None))).annotate(Count('pk', distinct=True)).count()
-            
+
             #
-            
+
             investigadores_asocA_tm = User.objects.filter(
-                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo',).filter(
+                experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6089,7 +6092,7 @@ class InformeActividades(View):
             investigadores_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6097,7 +6100,7 @@ class InformeActividades(View):
             investigadores_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6105,7 +6108,7 @@ class InformeActividades(View):
             investigadores_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6113,7 +6116,7 @@ class InformeActividades(View):
             investigadores_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6121,7 +6124,7 @@ class InformeActividades(View):
             investigadores_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6130,7 +6133,7 @@ class InformeActividades(View):
             investigadores_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6138,7 +6141,7 @@ class InformeActividades(View):
             investigadores_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6146,7 +6149,7 @@ class InformeActividades(View):
             investigadores_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6154,7 +6157,7 @@ class InformeActividades(View):
             investigadores_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6162,7 +6165,7 @@ class InformeActividades(View):
             investigadores_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6170,7 +6173,7 @@ class InformeActividades(View):
             investigadores_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6179,7 +6182,7 @@ class InformeActividades(View):
             tecnicos_auxA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6187,7 +6190,7 @@ class InformeActividades(View):
             tecnicos_auxB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6195,7 +6198,7 @@ class InformeActividades(View):
             tecnicos_auxC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6203,7 +6206,7 @@ class InformeActividades(View):
             tecnicos_auxA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6211,7 +6214,7 @@ class InformeActividades(View):
             tecnicos_auxB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6219,7 +6222,7 @@ class InformeActividades(View):
             tecnicos_auxC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6228,7 +6231,7 @@ class InformeActividades(View):
             tecnicos_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6236,7 +6239,7 @@ class InformeActividades(View):
             tecnicos_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6244,7 +6247,7 @@ class InformeActividades(View):
             tecnicos_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6252,7 +6255,7 @@ class InformeActividades(View):
             tecnicos_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6260,7 +6263,7 @@ class InformeActividades(View):
             tecnicos_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6268,7 +6271,7 @@ class InformeActividades(View):
             tecnicos_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6277,7 +6280,7 @@ class InformeActividades(View):
             tecnicos_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6285,7 +6288,7 @@ class InformeActividades(View):
             tecnicos_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6293,7 +6296,7 @@ class InformeActividades(View):
             tecnicos_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6301,7 +6304,7 @@ class InformeActividades(View):
             tecnicos_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6309,7 +6312,7 @@ class InformeActividades(View):
             tecnicos_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6317,12 +6320,11 @@ class InformeActividades(View):
             tecnicos_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin=None))).annotate(Count('pk', distinct=True)).count()
-
 
             p_nom_investigadores_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', ).filter(
@@ -6368,10 +6370,6 @@ class InformeActividades(View):
                 p_nom_tecnicos_count = 0.001
             if nom_tecnicos_count == 0:
                 nom_tecnicos_count = 0.001
-
-
-
-
 
             p_investigadores_asocA_tmp = round(p_investigadores_asocA_tm / p_nom_investigadores_count * 100, 2)
             p_investigadores_asocB_tmp = round(p_investigadores_asocB_tm / p_nom_investigadores_count * 100, 2)
@@ -6443,7 +6441,6 @@ class InformeActividades(View):
             tecnicos_titB_tcp = round(tecnicos_titB_tc / nom_tecnicos_count * 100, 2)
             tecnicos_titC_tcp = round(tecnicos_titC_tc / nom_tecnicos_count * 100, 2)
 
-
             p_nom_investigadores_data = [['Investigadores', 'Porcentaje'],
                                          ['Investigadores asociados A, medio tiempo', p_investigadores_asocA_tm],
                                          ['Investigadores asociados B, medio tiempo', p_investigadores_asocB_tm],
@@ -6458,7 +6455,7 @@ class InformeActividades(View):
                                          ['Investigadores titulares B, tiempo completo', p_investigadores_titB_tc],
                                          ['Investigadores titulares C, tiempo completo', p_investigadores_titC_tc],
                                          ]
-            
+
             nom_investigadores_data = [['Investigadores', 'Porcentaje'],
                                        ['Investigadores asociados A, medio tiempo', investigadores_asocA_tm],
                                        ['Investigadores asociados B, medio tiempo', investigadores_asocB_tm],
@@ -6473,7 +6470,6 @@ class InformeActividades(View):
                                        ['Investigadores titulares B, tiempo completo', investigadores_titB_tc],
                                        ['Investigadores titulares C, tiempo completo', investigadores_titC_tc],
                                        ]
-            
 
             p_data_source = SimpleDataSource(data=p_nom_investigadores_data)
             p_chart_nom_investigadores = PieChart(p_data_source)
@@ -6508,7 +6504,7 @@ class InformeActividades(View):
                                                    'p_investigadores_titC_tmp': p_investigadores_titC_tmp,
                                                    'p_investigadores_titA_tcp': p_investigadores_titA_tcp,
                                                    'p_investigadores_titB_tcp': p_investigadores_titB_tcp,
-                                                   'p_investigadores_titC_tcp': p_investigadores_titC_tcp,    
+                                                   'p_investigadores_titC_tcp': p_investigadores_titC_tcp,
                                                    'investigadores_asocA_tm': investigadores_asocA_tm,
                                                    'investigadores_asocB_tm': investigadores_asocB_tm,
                                                    'investigadores_asocC_tm': investigadores_asocC_tm,
@@ -6533,9 +6529,7 @@ class InformeActividades(View):
                                                    'investigadores_titA_tcp': investigadores_titA_tcp,
                                                    'investigadores_titB_tcp': investigadores_titB_tcp,
                                                    'investigadores_titC_tcp': investigadores_titC_tcp
-                                               }
-            
-            
+                                                   }
 
             p_nom_tecnicos_data = [['Técnicos', 'Porcentaje'],
                                    ['Técnicos auxiliares A, medio tiempo', p_tecnicos_auxA_tm],
@@ -6665,8 +6659,6 @@ class InformeActividades(View):
                                              'tecnicos_titC_tcp': tecnicos_titC_tcp
                                              }
 
-
-
             p_edad_investigadores = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', genero='M').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
@@ -6688,8 +6680,6 @@ class InformeActividades(View):
                 p_edad_investigadores = p_edad_investigadores_sumy / p_edad_investigadores_sumc
             else:
                 p_edad_investigadores = 0
-                
-                
 
             p_edad_investigadoras = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', genero='F').filter(
@@ -6712,7 +6702,6 @@ class InformeActividades(View):
                 p_edad_investigadoras = p_edad_investigadoras_sumy / p_edad_investigadoras_sumc
             else:
                 p_edad_investigadoras = 0
-                
 
             edad_investigadores = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', genero='M').filter(
@@ -6757,9 +6746,7 @@ class InformeActividades(View):
                 edad_investigadoras = edad_investigadoras_sumy / edad_investigadoras_sumc
             else:
                 edad_investigadoras = 0
-            
-            
-            
+
             #
             #
 
@@ -6864,14 +6851,14 @@ class InformeActividades(View):
                                         ]
 
             p_edad_tecnicos_data = [['Técnicos', 'Porcentaje'],
-                                          ['Técnicos', p_edad_tecnicos],
-                                          ['Técnicas', p_edad_tecnicas],
-                                          ]
+                                    ['Técnicos', p_edad_tecnicos],
+                                    ['Técnicas', p_edad_tecnicas],
+                                    ]
 
             edad_tecnicos_data = [['Investigadores', 'Porcentaje'],
-                                        ['Técnicos', edad_tecnicos],
-                                        ['Técnicas', edad_tecnicas],
-                                        ]
+                                  ['Técnicos', edad_tecnicos],
+                                  ['Técnicas', edad_tecnicas],
+                                  ]
 
             p_data_source = SimpleDataSource(data=p_edad_investigadores_data)
             p_chart_edad_investigadores = PieChart(p_data_source)
@@ -6881,7 +6868,6 @@ class InformeActividades(View):
             chart_edad_investigadores = PieChart(data_source)
             context['chart_edad_investigadores'] = chart_edad_investigadores
 
-
             p_data_source = SimpleDataSource(data=p_edad_tecnicos_data)
             p_chart_edad_tecnicos = PieChart(p_data_source)
             context['p_chart_edad_tecnicos'] = p_chart_edad_tecnicos
@@ -6890,13 +6876,12 @@ class InformeActividades(View):
             chart_edad_tecnicos = PieChart(data_source)
             context['chart_edad_tecnicos'] = chart_edad_tecnicos
 
-
-
             #
             #
 
 
-            p_articulos_cientificos_int_indwos = ArticuloCientifico.objects.exclude(revista__pais__nombre='México').filter(
+            p_articulos_cientificos_int_indwos = ArticuloCientifico.objects.exclude(
+                revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
                 Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') | Q(indices__nombre='Scopus')).count()
@@ -6905,12 +6890,14 @@ class InformeActividades(View):
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
                 Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).exclude(
-                Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') & Q(indices__nombre='Scopus') & Q(indices__isnull=True)).count()
+                Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') & Q(indices__nombre='Scopus') & Q(
+                    indices__isnull=True)).count()
 
             p_articulos_cientificos_int_indno = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(indices__isnull=True).count()
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                indices__isnull=True).count()
 
             #
             p_articulos_cientificos_nal_indwos = ArticuloCientifico.objects.filter(
@@ -6929,7 +6916,8 @@ class InformeActividades(View):
             p_articulos_cientificos_nal_indno = ArticuloCientifico.objects.filter(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(indices__isnull=True).count()
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                indices__isnull=True).count()
 
             #
 
@@ -6973,38 +6961,69 @@ class InformeActividades(View):
                 indices__isnull=True).count()
 
             articulos_cientificos_data = [['Etiqueta', 'Ind. WOS / Scopus', 'Otros indices', 'No indexadas'],
-                         ['2016 Int.', p_articulos_cientificos_int_indwos, p_articulos_cientificos_int_indotros, p_articulos_cientificos_int_indno],
-                         ['2017 Int.', articulos_cientificos_int_indwos, articulos_cientificos_int_indotros, articulos_cientificos_int_indno],
-                         ['2016 Nal.', p_articulos_cientificos_nal_indwos, p_articulos_cientificos_nal_indotros, p_articulos_cientificos_nal_indno],
-                         ['2017 Nal.', articulos_cientificos_nal_indwos, articulos_cientificos_nal_indotros, articulos_cientificos_nal_indno],
-                         ]
+                                          ['2016 Int.', p_articulos_cientificos_int_indwos, p_articulos_cientificos_int_indotros, p_articulos_cientificos_int_indno],
+                                          ['2017 Int.', articulos_cientificos_int_indwos, articulos_cientificos_int_indotros, articulos_cientificos_int_indno],
+                                          ['2016 Nal.', p_articulos_cientificos_nal_indwos, p_articulos_cientificos_nal_indotros, p_articulos_cientificos_nal_indno],
+                                          ['2017 Nal.', articulos_cientificos_nal_indwos, articulos_cientificos_nal_indotros, articulos_cientificos_nal_indno],
+                                          ]
 
             data_source = SimpleDataSource(data=articulos_cientificos_data)
             chart_articulos_cientificos = BarChart(data_source)
             context['chart_articulos_cientificos'] = chart_articulos_cientificos
 
-            p_avg_articulos_usuario = round(User.objects.filter((Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad__year__gt=this_year-1)) | (Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad=None))).filter(
-                articulo_cientifico_autores__fecha__year=this_year-1).exclude(Q(articulo_cientifico_autores__status='ENVIADO') & Q(articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))['pk__count__avg'], 2)
+            p_avg_articulos_usuario = round(User.objects.filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
+                articulo_cientifico_autores__fecha__year=this_year - 1).exclude(
+                Q(articulo_cientifico_autores__status='ENVIADO') & Q(
+                    articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
+                                                'pk__count__avg'], 2)
 
-            avg_articulos_usuario = round(User.objects.filter((Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad__year__gt=this_year-1)) | (Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad=None))).filter(
-                articulo_cientifico_autores__fecha__year=this_year).exclude(Q(articulo_cientifico_autores__status='ENVIADO') & Q(articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))['pk__count__avg'], 2)
+            avg_articulos_usuario = round(User.objects.filter(
+                (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
+                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
+                articulo_cientifico_autores__fecha__year=this_year).exclude(
+                Q(articulo_cientifico_autores__status='ENVIADO') & Q(
+                    articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
+                                              'pk__count__avg'], 2)
+
+            context['table_articulos_cientificos'] = {
+                'p_articulos_cientificos_int_indwos': p_articulos_cientificos_int_indwos,
+                'p_articulos_cientificos_int_indotros': p_articulos_cientificos_int_indotros,
+                'p_articulos_cientificos_int_indno': p_articulos_cientificos_int_indno,
+                'articulos_cientificos_int_indwos': articulos_cientificos_int_indwos,
+                'articulos_cientificos_int_indotros': articulos_cientificos_int_indotros,
+                'articulos_cientificos_int_indno': articulos_cientificos_int_indno,
+                'p_articulos_cientificos_nal_indwos': p_articulos_cientificos_nal_indwos,
+                'p_articulos_cientificos_nal_indotros': p_articulos_cientificos_nal_indotros,
+                'p_articulos_cientificos_nal_indno': p_articulos_cientificos_nal_indno,
+                'articulos_cientificos_nal_indwos': articulos_cientificos_nal_indwos,
+                'articulos_cientificos_nal_indotros': articulos_cientificos_nal_indotros,
+                'articulos_cientificos_nal_indno': articulos_cientificos_nal_indno,
+                'p_avg_articulos_usuario': p_avg_articulos_usuario,
+                'avg_articulos_usuario': avg_articulos_usuario,
+                }
 
 
-            context['table_articulos_cientificos'] = {'p_articulos_cientificos_int_indwos': p_articulos_cientificos_int_indwos,
-                                                      'p_articulos_cientificos_int_indotros': p_articulos_cientificos_int_indotros,
-                                                      'p_articulos_cientificos_int_indno': p_articulos_cientificos_int_indno,
-                                                      'articulos_cientificos_int_indwos': articulos_cientificos_int_indwos,
-                                                      'articulos_cientificos_int_indotros': articulos_cientificos_int_indotros,
-                                                      'articulos_cientificos_int_indno': articulos_cientificos_int_indno,
-                                                      'p_articulos_cientificos_nal_indwos': p_articulos_cientificos_nal_indwos,
-                                                      'p_articulos_cientificos_nal_indotros': p_articulos_cientificos_nal_indotros,
-                                                      'p_articulos_cientificos_nal_indno': p_articulos_cientificos_nal_indno,
-                                                      'articulos_cientificos_nal_indwos': articulos_cientificos_nal_indwos,
-                                                      'articulos_cientificos_nal_indotros': articulos_cientificos_nal_indotros,
-                                                      'articulos_cientificos_nal_indno': articulos_cientificos_nal_indno,
-                                                      'p_avg_articulos_usuario': p_avg_articulos_usuario,
-                                                      'avg_articulos_usuario': avg_articulos_usuario,
-                                                      }
+            #
+
+            p_libros_nal = Libro.objects.filter(es_libro_completo=True, pais='México', fecha__year__gte=this_year - 2,
+                                                fecha__year__lte=this_year - 1).exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+
+            libros_nal = Libro.objects.filter(es_libro_completo=True, pais='México', fecha__year__gte=this_year - 1,
+                                                 fecha__year__lte=this_year).exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+
+            p_libros_intl = Libro.objects.filter(es_libro_completo=True, fecha__year__gte=this_year - 2,
+                                                fecha__year__lte=this_year - 1).exclude(pais='México').exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+
+            libros_intl = Libro.objects.filter(es_libro_completo=True, fecha__year__gte=this_year - 1,
+                                              fecha__year__lte=this_year).exclude(pais='México').exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+
+
+
+
+
+
 
 
 
