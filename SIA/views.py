@@ -18,7 +18,7 @@ from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral
 
 from datetime import datetime
-from django.db.models import Q, Max, Min, Count, Sum
+from django.db.models import Q, Max, Min, Count, Sum, Avg
 
 from graphos.sources.simple import SimpleDataSource
 from graphos.renderers.morris import LineChart, BarChart, DonutChart
@@ -6983,25 +6983,28 @@ class InformeActividades(View):
             chart_articulos_cientificos = BarChart(data_source)
             context['chart_articulos_cientificos'] = chart_articulos_cientificos
 
+            p_avg_articulos_usuario = round(User.objects.filter((Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad__year__gt=this_year-1)) | (Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad=None))).filter(
+                articulo_cientifico_autores__fecha__year=this_year-1).exclude(Q(articulo_cientifico_autores__status='ENVIADO') & Q(articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))['pk__count__avg'], 2)
+
+            avg_articulos_usuario = round(User.objects.filter((Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad__year__gt=this_year-1)) | (Q(ingreso_entidad__year__lte=this_year-2) & Q(egreso_entidad=None))).filter(
+                articulo_cientifico_autores__fecha__year=this_year).exclude(Q(articulo_cientifico_autores__status='ENVIADO') & Q(articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))['pk__count__avg'], 2)
 
 
-            context['table_articulos_cientificos'] = {'proy_pasty_conc_conacyt': proy_pasty_conc_conacyt,
-                                          'proy_pasty_conc_papiit': proy_pasty_conc_papiit,
-                                          'proy_pasty_conc_extnal': proy_pasty_conc_extnal,
-                                          'proy_pasty_conc_extint': proy_pasty_conc_extint,
-                                          'proy_thisy_conc_conacyt': proy_thisy_conc_conacyt,
-                                          'proy_thisy_conc_papiit': proy_thisy_conc_papiit,
-                                          'proy_thisy_conc_extnal': proy_thisy_conc_extnal,
-                                          'proy_thisy_conc_extint': proy_thisy_conc_extint,
-                                          'proy_thisy_proc_conacyt': proy_thisy_proc_conacyt,
-                                          'proy_thisy_proc_papiit': proy_thisy_proc_papiit,
-                                          'proy_thisy_proc_extnal': proy_thisy_proc_extnal,
-                                          'proy_thisy_proc_extint': proy_thisy_proc_extint,
-                                          'invest_perc_ant': invest_perc_ant, 'invest_perc_act': invest_perc_act,
-                                          'tec_perc_ant': tec_perc_ant, 'tec_perc_act': tec_perc_act,
-                                          'proy_financiados_ant': proy_financiados_ant, 'proy_ant_perc': proy_ant_perc,
-                                          'proy_financiados_act': proy_financiados_act,
-                                          'proy_act_perc': proy_act_perc, }
+            context['table_articulos_cientificos'] = {'p_articulos_cientificos_int_indwos': p_articulos_cientificos_int_indwos,
+                                                      'p_articulos_cientificos_int_indotros': p_articulos_cientificos_int_indotros,
+                                                      'p_articulos_cientificos_int_indno': p_articulos_cientificos_int_indno,
+                                                      'articulos_cientificos_int_indwos': articulos_cientificos_int_indwos,
+                                                      'articulos_cientificos_int_indotros': articulos_cientificos_int_indotros,
+                                                      'articulos_cientificos_int_indno': articulos_cientificos_int_indno,
+                                                      'p_articulos_cientificos_nal_indwos': p_articulos_cientificos_nal_indwos,
+                                                      'p_articulos_cientificos_nal_indotros': p_articulos_cientificos_nal_indotros,
+                                                      'p_articulos_cientificos_nal_indno': p_articulos_cientificos_nal_indno,
+                                                      'articulos_cientificos_nal_indwos': articulos_cientificos_nal_indwos,
+                                                      'articulos_cientificos_nal_indotros': articulos_cientificos_nal_indotros,
+                                                      'articulos_cientificos_nal_indno': articulos_cientificos_nal_indno,
+                                                      'p_avg_articulos_usuario': p_avg_articulos_usuario,
+                                                      'avg_articulos_usuario': avg_articulos_usuario,
+                                                      }
 
 
 
