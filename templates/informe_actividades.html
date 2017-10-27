@@ -29,15 +29,6 @@
                     <div class="tab-pane active" id="finplot">
                         {{ chart_proyectos_investigacion.as_html }}
 
-                        <!-- <hr/>
-                        <p>
-                            &nbsp;<button class="btn" style="background-color: #0b62a4; color: white">CONACYT</button>
-                            <button class="btn" style="background-color: #7a92a3; color: white">PAPIIT</button>
-                            <button class="btn" style="background-color: #4da74d; color: white">Externo Nacional
-                            </button>
-                            <button class="btn" style="background-color: #afd8f8; color: white">Externo Extranjero
-                            </button>
-                        </p> -->
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="findatos">
@@ -359,8 +350,7 @@
                     <li class="active"><a href="#ppconacytplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
                     <li class=""><a href="#ppconacytdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
-                    <li class="pull-left header"><i class="fa fa-th"></i> Proyectos problemas nacionales
-                        CONACYT {{ this_year_2 }}-{{ this_year_1 }}</li>
+                    <li class="pull-left header"><i class="fa fa-th"></i> Proyectos problemas nacionales CONACYT {{ this_year_2 }}-{{ this_year_1 }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="ppconacytplot">
@@ -505,8 +495,7 @@
                     <li class="active"><a href="#pconacytplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
                     <li class=""><a href="#pconacytdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
-                    <li class="pull-left header"><i class="fa fa-th"></i> Proyectos problemas nacionales
-                        CONACYT {{ this_year_2 }}-{{ this_year_1 }}</li>
+                    <li class="pull-left header"><i class="fa fa-th"></i> Proyectos problemas nacionales CONACYT {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="pconacytplot">
@@ -654,8 +643,7 @@
                     <li class="active"><a href="#pconveniosplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
                     <li class=""><a href="#pconveniosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
-                    <li class="pull-left header"><i class="fa fa-th"></i> Convenios con entidades
-                        externas {{ this_year_2 }}-{{ this_year_1 }}</li>
+                    <li class="pull-left header"><i class="fa fa-th"></i> Convenios con entidades externas {{ this_year_2 }}-{{ this_year_1 }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="pconveniosplot">
@@ -727,8 +715,7 @@
                     <li class="active"><a href="#conveniosplot" data-toggle="tab" aria-expanded="true">Plot</a></li>
                     <li class=""><a href="#conveniosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
-                    <li class="pull-left header"><i class="fa fa-th"></i> Convenios con entidades
-                        externas {{ this_year_2 }}-{{ this_year_1 }}</li>
+                    <li class="pull-left header"><i class="fa fa-th"></i> Convenios con entidades externas {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="conveniosplot">
@@ -864,7 +851,7 @@
                     <li class=""><a href="#investigadoresdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
                     <li class="pull-left header"><i class="fa fa-th"></i>
-                        Investigadores {{ this_year_2 }}-{{ this_year_1 }}</li>
+                        Investigadores {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="investigadoresplot">
@@ -979,7 +966,7 @@
                     <li class=""><a href="#nominvestigadoresdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
                     <li class="pull-left header"><i class="fa fa-th"></i>
-                        Investigadores por categoría {{ this_year_2 }}-{{ this_year_1 }}</li>
+                        Investigadores por categoría {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="nominvestigadoresplot">
@@ -1097,7 +1084,7 @@
                     <li class=""><a href="#nomtecnicosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
                     <li class="pull-left header"><i class="fa fa-th"></i>
-                        Técnicos por categoría {{ this_year_2 }}-{{ this_year_1 }}</li>
+                        Técnicos por categoría {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="nomtecnicosplot">
@@ -1183,7 +1170,7 @@
                     </li>
 
                     <li class="pull-left header"><i class="fa fa-th"></i>
-                        Edad promedio de investigadores {{ this_year_2 }}-{{ this_year_1 }}</li>
+                        Edad promedio de investigadores {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="edadinvestplot">
@@ -1235,7 +1222,7 @@
                     </li>
 
                     <li class="pull-left header"><i class="fa fa-th"></i>
-                        Edad promedio de técnicos {{ this_year_2 }}-{{ this_year_1 }}</li>
+                        Edad promedio de técnicos {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="edadinvestplot">
@@ -1253,8 +1240,122 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#particulosplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+                    <li class=""><a href="#particulosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Artículos científicos {{ this_year_1 }}-{{ this_year }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="particulosplot">
+                        <div class="row">
 
+                                {{ chart_articulos_cientificos.as_html }}
+
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="particulosdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>Internacionales WOS / Scopus ({{ this_year_1 }}): {{ table_articulos_cientificos.p_articulos_cientificos_int_indwos }}</td></tr>
+                            <tr><td>Internacionales WOS / Scopus ({{ this_year }}): {{ table_articulos_cientificos.articulos_cientificos_int_indwos }}</td></tr>
+                            <tr><td>Internacionales Otros indices ({{ this_year_1 }}): {{ table_articulos_cientificos.p_articulos_cientificos_int_indotros }}</td></tr>
+                            <tr><td>Internacionales Otros indices ({{ this_year }}): {{ table_articulos_cientificos.articulos_cientificos_int_indotros }}</td></tr>
+                            <tr><td>Internacionales No indexados ({{ this_year_1 }}): {{ table_articulos_cientificos.p_articulos_cientificos_int_indno }}</td></tr>
+                            <tr><td>Internacionales No indexados ({{ this_year }}): {{ table_articulos_cientificos.articulos_cientificos_int_indno }}</td></tr>
+                            <tr><td></td></tr>
+                            <tr><td>Nacionales WOS / Scopus ({{ this_year_1 }}): {{ table_articulos_cientificos.p_articulos_cientificos_nal_indwos }}</td></tr>
+                            <tr><td>Nacionales WOS / Scopus ({{ this_year }}): {{ table_articulos_cientificos.articulos_cientificos_nal_indwos }}</td></tr>
+                            <tr><td>Nacionales Otros indices ({{ this_year_1 }}): {{ table_articulos_cientificos.p_articulos_cientificos_nal_indotros }}</td></tr>
+                            <tr><td>Nacionales Otros indices ({{ this_year }}): {{ table_articulos_cientificos.articulos_cientificos_nal_indotros }}</td></tr>
+                            <tr><td>Nacionales No indexados ({{ this_year_1 }}): {{ table_articulos_cientificos.p_articulos_cientificos_nal_indno }}</td></tr>
+                            <tr><td>Nacionales No indexados ({{ this_year }}): {{ table_articulos_cientificos.articulos_cientificos_nal_indno }}</td></tr>
+                            <tr><td></td></tr>
+                            <tr><td>Promedio de artículos por investigador ({{ this_year_1 }}): {{ table_articulos_cientificos.p_avg_articulos_usuario }}%</td></tr>
+                            <tr><td>Promedio de artículos por investigador ({{ this_year }}): {{ table_articulos_cientificos.avg_articulos_usuario }}%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+
+        <div class="col-md-6">
+            <!-- Custom Tabs (Pulled to the right) -->
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#articulosplot" data-toggle="tab" aria-expanded="true">Plot</a>
+                    </li>
+                    <li class=""><a href="#articulosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
+
+                    <li class="pull-left header"><i class="fa fa-th"></i>
+                        Artículos científicos {{ this_year_1 }}-{{ this_year }}</li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="articulosplot">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                {{ sadsd.as_html }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="articulosdatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>Técnicos Auxiliares A, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxA_tm }} ({{ table_nom_tecnicos.tecnicos_auxA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares B, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxB_tm }} ({{ table_nom_tecnicos.tecnicos_auxB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares C, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxC_tm }} ({{ table_nom_tecnicos.tecnicos_auxC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares A, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxA_tc }} ({{ table_nom_tecnicos.tecnicos_auxA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares B, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxB_tc }} ({{ table_nom_tecnicos.tecnicos_auxB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Auxiliares C, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxC_tc }} ({{ table_nom_tecnicos.tecnicos_auxC_tcp }} %)</td></tr>
+
+                            <tr><td>Técnicos Asociados A, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocA_tm }} ({{ table_nom_tecnicos.tecnicos_asocA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados B, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocB_tm }} ({{ table_nom_tecnicos.tecnicos_asocB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados C, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocC_tm }} ({{ table_nom_tecnicos.tecnicos_asocC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados A, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocA_tc }} ({{ table_nom_tecnicos.tecnicos_asocA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados B, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocB_tc }} ({{ table_nom_tecnicos.tecnicos_asocB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Asociados C, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocC_tc }} ({{ table_nom_tecnicos.tecnicos_asocC_tcp }} %)</td></tr>
+
+                            <tr><td>Técnicos Titulares A, medio tiempo: {{ table_nom_tecnicos.tecnicos_titA_tm }} ({{ table_nom_tecnicos.tecnicos_titA_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares B, medio tiempo: {{ table_nom_tecnicos.tecnicos_titB_tm }} ({{ table_nom_tecnicos.tecnicos_titB_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares C, medio tiempo: {{ table_nom_tecnicos.tecnicos_titC_tm }} ({{ table_nom_tecnicos.tecnicos_titC_tmp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares A, tiempo completo: {{ table_nom_tecnicos.tecnicos_titA_tc }} ({{ table_nom_tecnicos.tecnicos_asocA_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares B, tiempo completo: {{ table_nom_tecnicos.tecnicos_titB_tc }} ({{ table_nom_tecnicos.tecnicos_asocB_tcp }} %)</td></tr>
+                            <tr><td>Técnicos Titulares C, tiempo completo: {{ table_nom_tecnicos.tecnicos_titC_tc }} ({{ table_nom_tecnicos.tecnicos_asocC_tcp }} %)</td></tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- nav-tabs-custom -->
+        </div>
+    </div>
+<p></p>
 
 
 
