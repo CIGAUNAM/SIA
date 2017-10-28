@@ -1301,54 +1301,18 @@
                 <ul class="nav nav-tabs pull-right">
                     <li class="active"><a href="#articulosplot" data-toggle="tab" aria-expanded="true">Plot</a>
                     </li>
-                    <li class=""><a href="#articulosdatos" data-toggle="tab" aria-expanded="false">Datos</a></li>
 
                     <li class="pull-left header"><i class="fa fa-th"></i>
-                        Artículos científicos {{ this_year_1 }}-{{ this_year }}</li>
+                        Produccion Primaria {{ this_year_2 }}-{{ this_year_1 }} / {{ this_year_1 }}-{{ this_year }}</li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="articulosplot">
                         <div class="row">
-                            <div class="col-md-6">
-
-                                {{ sadsd.as_html }}
-                            </div>
+                                {{ chart_produccion.as_html }}
                         </div>
                     </div>
                     <!-- /.tab-pane -->
-                    <div class="tab-pane" id="articulosdatos">
-                        <table class="table table-striped table-bordered">
-                            <thead>
-                            <tr>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr><td>Técnicos Auxiliares A, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxA_tm }} ({{ table_nom_tecnicos.tecnicos_auxA_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Auxiliares B, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxB_tm }} ({{ table_nom_tecnicos.tecnicos_auxB_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Auxiliares C, medio tiempo: {{ table_nom_tecnicos.tecnicos_auxC_tm }} ({{ table_nom_tecnicos.tecnicos_auxC_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Auxiliares A, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxA_tc }} ({{ table_nom_tecnicos.tecnicos_auxA_tcp }} %)</td></tr>
-                            <tr><td>Técnicos Auxiliares B, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxB_tc }} ({{ table_nom_tecnicos.tecnicos_auxB_tcp }} %)</td></tr>
-                            <tr><td>Técnicos Auxiliares C, tiempo completo: {{ table_nom_tecnicos.tecnicos_auxC_tc }} ({{ table_nom_tecnicos.tecnicos_auxC_tcp }} %)</td></tr>
 
-                            <tr><td>Técnicos Asociados A, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocA_tm }} ({{ table_nom_tecnicos.tecnicos_asocA_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Asociados B, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocB_tm }} ({{ table_nom_tecnicos.tecnicos_asocB_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Asociados C, medio tiempo: {{ table_nom_tecnicos.tecnicos_asocC_tm }} ({{ table_nom_tecnicos.tecnicos_asocC_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Asociados A, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocA_tc }} ({{ table_nom_tecnicos.tecnicos_asocA_tcp }} %)</td></tr>
-                            <tr><td>Técnicos Asociados B, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocB_tc }} ({{ table_nom_tecnicos.tecnicos_asocB_tcp }} %)</td></tr>
-                            <tr><td>Técnicos Asociados C, tiempo completo: {{ table_nom_tecnicos.tecnicos_asocC_tc }} ({{ table_nom_tecnicos.tecnicos_asocC_tcp }} %)</td></tr>
-
-                            <tr><td>Técnicos Titulares A, medio tiempo: {{ table_nom_tecnicos.tecnicos_titA_tm }} ({{ table_nom_tecnicos.tecnicos_titA_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Titulares B, medio tiempo: {{ table_nom_tecnicos.tecnicos_titB_tm }} ({{ table_nom_tecnicos.tecnicos_titB_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Titulares C, medio tiempo: {{ table_nom_tecnicos.tecnicos_titC_tm }} ({{ table_nom_tecnicos.tecnicos_titC_tmp }} %)</td></tr>
-                            <tr><td>Técnicos Titulares A, tiempo completo: {{ table_nom_tecnicos.tecnicos_titA_tc }} ({{ table_nom_tecnicos.tecnicos_asocA_tcp }} %)</td></tr>
-                            <tr><td>Técnicos Titulares B, tiempo completo: {{ table_nom_tecnicos.tecnicos_titB_tc }} ({{ table_nom_tecnicos.tecnicos_asocB_tcp }} %)</td></tr>
-                            <tr><td>Técnicos Titulares C, tiempo completo: {{ table_nom_tecnicos.tecnicos_titC_tc }} ({{ table_nom_tecnicos.tecnicos_asocC_tcp }} %)</td></tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->
             </div>
@@ -1356,7 +1320,6 @@
         </div>
     </div>
 <p></p>
-
 
 
 
