@@ -26,7 +26,6 @@ FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCI
 class ProyectoInvestigacion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    #tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('OTRO', 'Otro')))
     es_permanente = models.BooleanField(default=False)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)

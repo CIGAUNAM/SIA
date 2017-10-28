@@ -3317,14 +3317,13 @@ class ReporteHistorico(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION').filter(
+                total_items_year_sum = ProyectoInvestigacion.objects.filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).filter(
                     (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
                     | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-                request_user_items_year_sum = ProyectoInvestigacion.objects.filter(tipo='INVESTIGACION',
-                                                                                   usuarios=request.user).filter(
+                request_user_items_year_sum = ProyectoInvestigacion.objects.filter(usuarios=request.user).filter(
                     (Q(fecha_inicio__year__lte=year) & Q(fecha_fin__year__gt=year))
                     | (Q(fecha_inicio__year__lte=year) & Q(fecha_fin=None))).count()
                 if not total_items_year_sum:
@@ -3332,7 +3331,6 @@ class ReporteHistorico(View):
                 items_data[i + 1].append(total_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
                     (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                         proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                     | (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
@@ -3350,7 +3348,7 @@ class ReporteHistorico(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = \
-                    User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                    User.objects.filter(
                         (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                             proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                         | (
@@ -3366,7 +3364,7 @@ class ReporteHistorico(View):
                 items_data[i + 1].append(max_items_year_user)
 
                 min_items_year_user = \
-                    User.objects.filter(proyecto_investigacion_responsables__tipo='INVESTIGACION').filter(
+                    User.objects.filter(
                         (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                             proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                         | (
@@ -6961,10 +6959,10 @@ class InformeActividades(View):
                 indices__isnull=True).count()
 
             articulos_cientificos_data = [['Etiqueta', 'Ind. WOS / Scopus', 'Otros indices', 'No indexadas'],
-                                          ['2016 Int.', p_articulos_cientificos_int_indwos, p_articulos_cientificos_int_indotros, p_articulos_cientificos_int_indno],
-                                          ['2017 Int.', articulos_cientificos_int_indwos, articulos_cientificos_int_indotros, articulos_cientificos_int_indno],
-                                          ['2016 Nal.', p_articulos_cientificos_nal_indwos, p_articulos_cientificos_nal_indotros, p_articulos_cientificos_nal_indno],
-                                          ['2017 Nal.', articulos_cientificos_nal_indwos, articulos_cientificos_nal_indotros, articulos_cientificos_nal_indno],
+                                          [str(this_year-1) + ' Int.', p_articulos_cientificos_int_indwos, p_articulos_cientificos_int_indotros, p_articulos_cientificos_int_indno],
+                                          [str(this_year) + ' Int.', articulos_cientificos_int_indwos, articulos_cientificos_int_indotros, articulos_cientificos_int_indno],
+                                          [str(this_year-1) + ' Nal.', p_articulos_cientificos_nal_indwos, p_articulos_cientificos_nal_indotros, p_articulos_cientificos_nal_indno],
+                                          [str(this_year) + ' Nal.', articulos_cientificos_nal_indwos, articulos_cientificos_nal_indotros, articulos_cientificos_nal_indno],
                                           ]
 
             data_source = SimpleDataSource(data=articulos_cientificos_data)
@@ -7007,17 +7005,84 @@ class InformeActividades(View):
 
             #
 
-            p_libros_nal = Libro.objects.filter(es_libro_completo=True, pais='México', fecha__year__gte=this_year - 2,
-                                                fecha__year__lte=this_year - 1).exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+            p_libros_nal = Libro.objects.filter(es_libro_completo=True, tipo='INVESTIGACION', pais__nombre='México', fecha__year__gte=this_year - 2,
+                                                fecha__year__lte=this_year - 1).exclude(Q(status='ENVIADO') & Q(status='OTRO')).count()
 
-            libros_nal = Libro.objects.filter(es_libro_completo=True, pais='México', fecha__year__gte=this_year - 1,
-                                                 fecha__year__lte=this_year).exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+            libros_nal = Libro.objects.filter(es_libro_completo=True, tipo='INVESTIGACION', pais__nombre='México', fecha__year__gte=this_year - 1,
+                                                 fecha__year__lte=this_year).exclude(Q(status='ENVIADO') & Q(status='OTRO')).count()
 
-            p_libros_intl = Libro.objects.filter(es_libro_completo=True, fecha__year__gte=this_year - 2,
-                                                fecha__year__lte=this_year - 1).exclude(pais='México').exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+            p_libros_intl = Libro.objects.filter(es_libro_completo=True, tipo='INVESTIGACION', fecha__year__gte=this_year - 2,
+                                                fecha__year__lte=this_year - 1).exclude(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).count()
 
-            libros_intl = Libro.objects.filter(es_libro_completo=True, fecha__year__gte=this_year - 1,
-                                              fecha__year__lte=this_year).exclude(pais='México').exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+            libros_intl = Libro.objects.filter(es_libro_completo=True, tipo='INVESTIGACION', fecha__year__gte=this_year - 1,
+                                              fecha__year__lte=this_year).exclude(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).count()
+
+
+            p_capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México', libro__fecha__year__gte=this_year - 2,
+                                                                               libro__fecha__year__lte=this_year - 1).exclude(
+                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+
+            capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México', libro__fecha__year__gte=this_year - 1,
+                                                                             libro__fecha__year__lte=this_year).exclude(
+                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+
+            p_capitulos_libros_intl = CapituloLibroInvestigacion.objects.filter(libro__fecha__year__gte=this_year - 2,
+                                                                                libro__fecha__year__lte=this_year - 1).exclude(libro__pais__nombre='México').exclude(
+                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+
+            capitulos_libros_intl = CapituloLibroInvestigacion.objects.filter(libro__fecha__year__gte=this_year - 1,
+                                                                              libro__fecha__year__lte=this_year).exclude(libro__pais__nombre='México').exclude(
+                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+
+
+            #
+
+            p_articulos_nal = ArticuloCientifico.objects.filter(revista__pais__nombre='México',
+                                                                fecha__year__gte=this_year - 2,
+                                                                fecha__year__lte=this_year - 1).exclude(
+                Q(status='ENVIADO') & Q(status='OTRO')).count()
+
+            articulos_nal = ArticuloCientifico.objects.filter(revista__pais__nombre='México',
+                                                                             fecha__year__gte=this_year - 1,
+                                                                             fecha__year__lte=this_year).exclude(
+                Q(status='ENVIADO') & Q(status='OTRO')).count()
+
+            p_articulos_intl = ArticuloCientifico.objects.filter(fecha__year__gte=this_year - 2,
+                                                                                fecha__year__lte=this_year - 1).exclude(
+                revista__pais__nombre='México').exclude(
+                Q(status='ENVIADO') & Q(status='OTRO')).count()
+
+            articulos_intl = ArticuloCientifico.objects.filter(fecha__year__gte=this_year - 1,
+                                                                              fecha__year__lte=this_year).exclude(
+                revista__pais__nombre='México').exclude(
+                Q(status='ENVIADO') & Q(status='OTRO')).count()
+
+
+
+
+            produccion_data = [['Etiqueta', 'Libros', 'Capitulos de libros', 'Artìculos'],
+
+                           [str(this_year-2) + '-' + str(this_year-1) + ' Nal.', p_libros_nal, p_capitulos_libros_nal, p_articulos_nal],
+                           [str(this_year-1) + '-' + str(this_year) + ' Nal.', libros_nal, capitulos_libros_nal, articulos_nal],
+                           [str(this_year-2) + '-' + str(this_year-1) + ' Intl.', p_libros_intl, p_capitulos_libros_intl, p_articulos_intl],
+                           [str(this_year-1) + '-' + str(this_year) + ' Intl.', libros_intl, capitulos_libros_intl, articulos_intl],
+                           ]
+
+
+
+
+            data_source = SimpleDataSource(data=produccion_data)
+            chart_produccion  = BarChart(data_source)
+            context['chart_produccion'] = chart_produccion
+
+            
+            
+
+
+
+
+
+
 
 
 
