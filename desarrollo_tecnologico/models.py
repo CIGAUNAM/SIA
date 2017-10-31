@@ -61,7 +61,7 @@ class DesarrolloTecnologico(models.Model):
         return self.nombre
 
     def get_absolute_url(self):
-        return reverse('comite_tutoral_detalle', kwargs={'pk': self.pk})
+        return reverse('desarrollo_tecnologico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']

@@ -8,60 +8,6 @@ from nucleo.models import Institucion
 from SIA.widgets import wDateInput
 
 
-"""
-class CursoEspecializacionForm(forms.ModelForm):
-    nombre = forms.CharField(widget=wTextInput, required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
-    descripcion = forms.CharField(widget=wTextarea, required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
-    tipo = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', ), required=True)
-    horas = forms.CharField(widget=wNumberInput, required=True, label='Número de horas')
-    modalidad = forms.ChoiceField(widget=Select3Widget, choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
-    area_conocimiento = forms.ModelChoiceField(
-        queryset=AreaConocimiento.objects.all(),
-        label="Área de conocimiento",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-        )
-    )
-    #fecha_inicio = forms.CharField(widget=wDateInput, required=True)
-    fecha_inicio = forms.DateField(widget=wDateInput, required=True)
-    fecha_fin = forms.DateField(widget=wDateInput, required=False)
-    #fecha_fin = forms.CharField(widget=wDateInput, required=False)
-    institucion = forms.ModelChoiceField(
-        required=True,
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            #dependent_fields={'dependencia': 'dependencia'},
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            max_results=500,
-        )
-    )
-
-    class Meta:
-        model = CursoEspecializacion
-        exclude = ['usuario', ]
-        widgets = {
-            #'nombre': wTextInput,
-            'dependencia': NombreModelSelect2Widget,
-            'area_conocimiento': NombreModelSelect2Widget,
-        }
-        help_texts = {
-            "nombre": 'Group to which this message belongs to',
-            "descripcion": 'Group to which this message belongs to',
-            "tipo": 'Group to which this message belongs to',
-            "area_conocimiento": 'Group to which this message belongs to',
-        }
-"""
-
-
 class CursoEspecializacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre del curso', help_text='Nombre del curso de especializacion como aparece en la constancia del mismo')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Descripción', help_text='Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.')
