@@ -4994,6 +4994,9 @@ class InformeActividades(View):
                     Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
+            if invest_activos_ant == 0:
+                invest_activos_ant = 0.001
+
             invest_perc_ant = round(invest_en_proyectos_ant / invest_activos_ant, 2)
 
             invest_en_proyectos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
@@ -5009,6 +5012,8 @@ class InformeActividades(View):
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
+            if invest_activos_act == 0:
+                invest_activos_act = 0.001
             invest_perc_act = round(invest_en_proyectos_act / invest_activos_act, 2)
 
             tecnicos_en_proyectos_ant = User.objects.filter(tipo='TECNICO').filter(
@@ -5024,6 +5029,9 @@ class InformeActividades(View):
                     Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
+            if tecnicos_activos_ant == 0:
+                tecnicos_activos_ant = 0.001
+
             tec_perc_ant = round(tecnicos_en_proyectos_ant / tecnicos_activos_ant, 2) * 100
 
             tecnicos_en_proyectos_act = User.objects.filter(tipo='TECNICO').filter(
@@ -5038,6 +5046,9 @@ class InformeActividades(View):
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
                     Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
+
+            if tecnicos_activos_act == 0:
+                tecnicos_activos_act = 0.001
 
             tec_perc_act = round(tecnicos_en_proyectos_act / tecnicos_activos_act, 2) * 100
 
@@ -5779,6 +5790,12 @@ class InformeActividades(View):
             investigadores_count = ExperienciaLaboral.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 fecha_inicio__year__gte=this_year - 1).count()
+
+            if p_investigadores_count == 0:
+                p_investigadores_count = 0.001
+
+            if investigadores_count == 0:
+                investigadores_count = 0.001
 
             p_investigadores_unamp = round(p_investigadores_unam / p_investigadores_count * 100, 2)
             investigadores_unamp = round(investigadores_unam / investigadores_count * 100, 2)
@@ -6969,21 +6986,30 @@ class InformeActividades(View):
             chart_articulos_cientificos = BarChart(data_source)
             context['chart_articulos_cientificos'] = chart_articulos_cientificos
 
-            p_avg_articulos_usuario = round(User.objects.filter(
+            p_avg_articulos_usuario = User.objects.filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
                 articulo_cientifico_autores__fecha__year=this_year - 1).exclude(
                 Q(articulo_cientifico_autores__status='ENVIADO') & Q(
                     articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
-                                                'pk__count__avg'], 2)
+                                                'pk__count__avg']
+            if p_avg_articulos_usuario:
+                p_avg_articulos_usuario = round(p_avg_articulos_usuario, 2)
+            else:
+                p_avg_articulos_usuario = 0
 
-            avg_articulos_usuario = round(User.objects.filter(
+
+            avg_articulos_usuario = User.objects.filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
                 articulo_cientifico_autores__fecha__year=this_year).exclude(
                 Q(articulo_cientifico_autores__status='ENVIADO') & Q(
                     articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
-                                              'pk__count__avg'], 2)
+                                              'pk__count__avg']
+            if avg_articulos_usuario:
+                avg_articulos_usuario = round(avg_articulos_usuario, 2)
+            else:
+                avg_articulos_usuario = 0
 
             context['table_articulos_cientificos'] = {
                 'p_articulos_cientificos_int_indwos': p_articulos_cientificos_int_indwos,
