@@ -7068,29 +7068,21 @@ class InformeActividades(View):
                            [str(this_year-1) + '-' + str(this_year) + ' Intl.', libros_intl, capitulos_libros_intl, articulos_intl],
                            ]
 
-
-
-
             data_source = SimpleDataSource(data=produccion_data)
             chart_produccion  = BarChart(data_source)
             context['chart_produccion'] = chart_produccion
 
-            
-            
+            p_eventos_organizados = OrganizacionEventoAcademico.objects.filter(Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
+            eventos_organizados = OrganizacionEventoAcademico.objects.filter(Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
 
+            eventos_organizados_data = [['Etiqueta', 'Libros', 'Capitulos de libros', 'Artìculos'],
+                                        [str(this_year - 2) + '-' + str(this_year - 1) + ' Nal.', p_libros_nal, p_capitulos_libros_nal, p_articulos_nal],
+                                        [str(this_year - 1) + '-' + str(this_year) + ' Nal.', libros_nal, capitulos_libros_nal, articulos_nal],
+                                        ]
 
-
-
-
-
-
-
-
-
-
-
-
-
+            data_source = SimpleDataSource(data=produccion_data)
+            chart_produccion = BarChart(data_source)
+            context['chart_produccion'] = chart_produccion
 
 
 
