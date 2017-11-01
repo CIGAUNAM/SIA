@@ -39,6 +39,7 @@ class FormatoServicioTransporte(models.Model):
 
 
 class FormatoLicenciaGoceSueldo(models.Model):
+    fecha = models.DateField(auto_now_add=True)
     usuario = models.ForeignKey(User)
     evento = models.ForeignKey(Evento)
     tipo_participacion = models.CharField()
@@ -65,4 +66,12 @@ class FormatoLicenciaGoceSueldo(models.Model):
         ordering = ['fecha', 'usuario']
         verbose_name = 'Formato de licencia con goce de sueldo'
         verbose_name_plural = 'Formatos de licencia con goce de sueldo'
+
+class FormatoPagoViatico(models.Model):
+    fecha = models.DateField(auto_now_add=True)
+    usuario = models.ForeignKey(User)
+    evento = models.ForeignKey(Evento)
+    fecha_salida = models.DateTimeField()
+    fecha_regreso = models.DateTimeField()
+
 

@@ -356,6 +356,35 @@ class EventoForm(forms.ModelForm):
     )
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de fin')
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect2Widget(
+            dependent_fields={'pais': 'pais'},
+            search_fields=['nombre__icontains'],
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect2Widget(
+            dependent_fields={'estado': 'estado'},
+            search_fields=['nombre__icontains'],
+            queryset=Ciudad.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     class Meta:
         model = Evento
@@ -364,7 +393,7 @@ class EventoForm(forms.ModelForm):
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'ubicacion': TextInput(attrs={'class': 'form-control pull-right'}),
+            'ubicacion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -400,6 +429,8 @@ class EditorialForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             dependent_fields={'pais_origen': 'pais'},
             search_fields=['nombre__icontains'],
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     ciudad = forms.ModelChoiceField(
@@ -408,6 +439,8 @@ class EditorialForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             dependent_fields={'estado': 'estado'},
             search_fields=['nombre__icontains'],
+            queryset=Ciudad.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
@@ -539,37 +572,6 @@ class MedioDivulgacionForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
-    """
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Semblanza')
-    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(
-        ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'),
-        ('OTRO', 'Otro')),
-                             required=True)
-    fecha_nacimiento = forms.CharField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de nacimiento')
-    pais_origen = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="País de origen",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-        )
-    )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais_origen': 'pais'},
-            search_fields=['nombre__icontains'],
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-        )
-    )
-    """
 
     class Meta:
         model = User
