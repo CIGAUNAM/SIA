@@ -69,9 +69,87 @@
         </div>
     </div>
     </p>
-    <p><strong>Dependencias:</strong>
+    <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencias participantes en el financiamiento, al escribir el inicio del nombre se filtran
+           title="País donde se lleva a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del país.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Estado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Estado (o provincia, o departamento; según sea el caso) donde se lleva a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.estado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del estado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad donde se lleva a cabo el evento. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ciudad }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+
+    <p><strong>Ubicación: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Ubicación (domicilio, o referencias del lugar) donde se realiza el evento.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.ubicacion }}
+    </p>
+    </p><p><strong>Dependencias:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencias participantes en el evento, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la búsqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
@@ -93,19 +171,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Ubicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ubicación (domicilio, o referencias del lugar) donde se realizó el evento."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.ubicacion }}
-        </div>
-    </div>
-    </p>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -177,9 +243,94 @@
         </div>
     </div>
     </p>
-    <p><strong>Dependencias:</strong>
+    <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencias participantes en el financiamiento, al escribir el inicio del nombre se filtran
+           title="País donde se lleva a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del país.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Estado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Estado (o provincia, o departamento; según sea el caso) donde se lleva a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.estado }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del estado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad donde se lleva a cabo el evento. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ciudad }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Ubicación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ubicación (domicilio, o referencias del lugar) donde se realizó el evento."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.ubicacion }}
+        </div>
+    </div>
+    </p>
+    </p><p><strong>Dependencias:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencias participantes en el evento, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la búsqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
@@ -201,17 +352,5 @@
         </div>
     </div>
     </p>
-    <p><strong>Ubicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ubicación (domicilio, o referencias del lugar) donde se realizó el evento."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.ubicacion }}
-        </div>
-    </div>
-    </p>
+
 {% endblock %}

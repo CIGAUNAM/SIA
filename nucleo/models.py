@@ -498,6 +498,9 @@ class Evento(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     dependencias = models.ManyToManyField(Dependencia, related_name='evento_dependencias')
+    pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
+    ciudad = models.ForeignKey(Ciudad)
     ubicacion = models.TextField(blank=True)
 
     def __str__(self):

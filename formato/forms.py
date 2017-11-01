@@ -1,12 +1,9 @@
 from SIA.widgets import *
 from .models import *
 from django_select2.forms import Select2Widget, ModelSelect2Widget, ModelSelect2MultipleWidget, Select2MultipleWidget
-
+from django.forms.widgets import DateTimeInput
 
 class FormatoServicioTransporteForm(forms.ModelForm):
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True)
     uso = forms.ChoiceField(widget=Select2Widget(attrs={'class': 'form-control pull-right'}),
                             choices=(('', '-------'), ('DOCENCIA' 'Docencia'), ('INVESTIGACION', 'Investigaciòn')))
     num_pasajeros = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), label='Número de pasajeros')
@@ -36,11 +33,28 @@ class FormatoServicioTransporteForm(forms.ModelForm):
     gasto_casetas = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
                                      label='Gasto en casetas')
     fecha_inicio = forms.DateTimeField(
-        widget=wDateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     fecha_fin = forms.DateTimeField(
-        widget=wDateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
+    salidas_diarias = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True,
+                            label='Salidas diarias')
+    tiempo_completo = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True,
+                            label='Tiempo completo (días)')
+    objetivo = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                               required=False, label='Objetivos', help_text='Objetivos.')
+
+    class Meta:
+        model = FormatoServicioTransporte
+        exclude = ['fecha', 'usuario', ]
+
+
+class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
+
+    class Meta:
+        model = FormatoLicenciaGoceSueldo
+        exclude = ['fecha', 'usuario', ]
 
 
 

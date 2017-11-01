@@ -69,14 +69,25 @@
     </p>
     <p><strong>Ciudad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de la ciudad o municipio."><i
-                class="fa fa-question-circle"></i></a>
+           title="Ciudad o municipio. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ciudad }}
             <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
             </div>
-            {{ form.nombre }}
+            <div class="input-group-addon">
+                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>
@@ -151,14 +162,25 @@
     </p>
     <p><strong>Ciudad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de la ciudad o municipio."><i
-                class="fa fa-question-circle"></i></a>
+           title="Ciudad o municipio. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ciudad }}
             <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
             </div>
-            {{ form.nombre }}
+            <div class="input-group-addon">
+                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>
