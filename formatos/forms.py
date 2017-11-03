@@ -54,7 +54,7 @@ class FormatoServicioTransporteForm(forms.ModelForm):
 
 class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
     evento = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=Evento.objects.all(),
         label="Evento",
         widget=ModelSelect2Widget(
@@ -71,7 +71,7 @@ class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
         widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     importancia = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                               required=False, label='Importancia', help_text='')
+                               required=True, label='Importancia', help_text='')
     costo = forms.DecimalField(widget=NumberInput(attrs={'min': 0.0, 'class': 'form-control pull-right'}),
                                      label='Costo')
     proyecto = forms.ModelChoiceField(
@@ -89,6 +89,8 @@ class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
     carta_invitacion = forms.BooleanField(label='Tiene carta de invitación', required=False)
     aceptacion_ponencia = forms.BooleanField(label='Aceptación de ponencia', required=False)
     otro = forms.BooleanField(label='Otro', required=False)
+    otro_anexo = forms.CharField(label='Otro', widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                         help_text='Otro.')
 
     class Meta:
         model = FormatoLicenciaGoceSueldo

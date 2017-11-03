@@ -50,7 +50,7 @@ class FormatoLicenciaGoceSueldoContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Fecha de inicio', 'Ciudad']}
+                'titulos_tabla': ['Evento', 'Fecha de inicio']}
 
 
     tabla_mios =  '<script>\n' \
@@ -64,12 +64,12 @@ class FormatoLicenciaGoceSueldoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.fecha_inicio",\n' \
+                                        '"data": "fields.evento",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.fecha_inicio + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.evento + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.ciudad"},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
