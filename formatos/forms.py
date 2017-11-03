@@ -8,7 +8,7 @@ class FormatoServicioTransporteForm(forms.ModelForm):
     uso = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                             choices=(('', '-------'), ('DOCENCIA', 'Docencia'), ('INVESTIGACION', 'Investigaciòn')))
     #modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', ), required=True, help_text='Modalidad help text')
-    num_pasajeros = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), label='Número de pasajeros')
+    num_pasajeros = forms.IntegerField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), label='Número de pasajeros')
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                             choices=(('', '-------'), ('LOCAL', 'Local (dentro del área metropolitana)'), ('FORANEO', 'Foraneo (fuera del área metropolitana)')), label='Tipo de servicio')
     estado = forms.ModelChoiceField(
@@ -31,8 +31,8 @@ class FormatoServicioTransporteForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    km_aprox = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), label='Kilometros aproximados')
-    gasto_casetas = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+    km_aprox = forms.IntegerField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), label='Kilometros aproximados')
+    gasto_casetas = forms.DecimalField(widget=NumberInput(attrs={'min': 0.0, 'class': 'form-control pull-right'}),
                                      label='Gasto en casetas')
     fecha_inicio = forms.DateTimeField(
         widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
@@ -40,9 +40,9 @@ class FormatoServicioTransporteForm(forms.ModelForm):
     fecha_fin = forms.DateTimeField(
         widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
-    salidas_diarias = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True,
+    salidas_diarias = forms.IntegerField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True,
                             label='Salidas diarias')
-    tiempo_completo = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True,
+    tiempo_completo = forms.IntegerField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True,
                             label='Tiempo completo (días)')
     objetivo = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                required=False, label='Objetivos', help_text='')
@@ -72,7 +72,7 @@ class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
         required=True)
     importancia = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                required=False, label='Importancia', help_text='')
-    costo = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+    costo = forms.DecimalField(widget=NumberInput(attrs={'min': 0.0, 'class': 'form-control pull-right'}),
                                      label='Costo')
     proyecto = forms.ModelChoiceField(
         required=False,
@@ -84,7 +84,7 @@ class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    presupuesto_personal = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+    presupuesto_personal = forms.DecimalField(widget=NumberInput(attrs={'min': 0.0, 'class': 'form-control pull-right'}),
                                      label='Presupuesto Personal')
     carta_invitacion = forms.BooleanField(label='Tiene carta de invitación', required=False)
     aceptacion_ponencia = forms.BooleanField(label='Aceptación de ponencia', required=False)
@@ -106,13 +106,43 @@ class FormatoPagoViaticoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    tipo_participacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Tipo de participación', help_text='Tipo de participación')
     fecha_salida = forms.DateTimeField(
         widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     fecha_regreso = forms.DateTimeField(
         widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
+    actividades = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                                  required=False, label='Actividades', help_text='')
+    importe = forms.DecimalField(widget=NumberInput(attrs={'min': 0.0, 'class': 'form-control pull-right'}),
+                                     label='Importe')
+    num_acta = forms.IntegerField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), label='Número de acta de consejo interno')
+    nombre_cheque = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Nombre del cheque",
+        widget=ModelSelect2Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    cargo_papiit = forms.BooleanField(required=False)
+    cargo_conacyt = forms.BooleanField(required=False)
+    cargo_papime = forms.BooleanField(required=False)
+    cargo_ie = forms.BooleanField(required=False)
+    cargo_po = forms.BooleanField(required=False)
+    cargo_paep = forms.BooleanField(required=False)
+    cargo_otro = forms.BooleanField(required=False)
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ProyectoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     class Meta:
         model = FormatoPagoViatico
