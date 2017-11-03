@@ -9,10 +9,10 @@ class DistincionAcademicoContext:
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
+                'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Distinción', 'Otorga', 'Ámbito', 'fecha']}
+                'titulos_tabla': ['Distinción', 'Institución', 'Ámbito', 'fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -31,7 +31,7 @@ class DistincionAcademicoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.distincion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
@@ -41,6 +41,7 @@ class DistincionAcademicoContext:
 
     contexto['tabla_mios'] = tabla_mios
 
+    """
     tabla_otros = '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
                     '       $jquery("#tabla_json_otros").dataTable({\n' \
@@ -66,7 +67,7 @@ class DistincionAcademicoContext:
                   '</script>'
 
     contexto['tabla_otros'] = tabla_otros
-
+    """
 
 
 class DistincionAlumnoContext:
@@ -79,7 +80,7 @@ class DistincionAlumnoContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Distinción', 'alumno', 'grado_academico', 'Otorga', 'Ámbito', 'fecha']}
+                'titulos_tabla': ['Distinción', 'alumno', 'Grado académico', 'Institución', 'Ámbito', 'fecha']}
 
 
     tabla_mios = '<script>\n' \

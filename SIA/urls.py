@@ -47,6 +47,7 @@ urlpatterns = [
     url(r'^formacion-recursos-humanos/', include('formacion_recursos_humanos.urls')),
     url(r'^desarrollos-tecnologicos/', include('desarrollo_tecnologico.urls')),
     url(r'^distinciones/', include('distinciones.urls')),
+    url(r'^formatos/', include('formatos.urls')),
     url(r'^nucleo/', include('nucleo.urls')),
 
     url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),

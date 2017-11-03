@@ -2344,19 +2344,19 @@ class Dashboard(View):
                 items_data.append([str(year)])
 
                 total_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year).filter(
-                    ((Q(condecorados__ingreso_entidad__year__lte=year) & Q(
-                        condecorados__egreso_entidad__year__gt=year)) |
-                     (Q(condecorados__ingreso_entidad__year__lte=year) & Q(condecorados__egreso_entidad=None)))).count()
+                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(
+                        usuario__egreso_entidad__year__gt=year)) |
+                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year,
-                                                                                 condecorados=request.user).count()
+                                                                                 usuario=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
                     request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    Q(distincion_academico_usuario__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -2371,24 +2371,24 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    Q(distincion_academico_usuario__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('distincion_academico_condecorados')).aggregate(
-                    Max('distincion_academico_condecorados__count'))[
-                    'distincion_academico_condecorados__count__max']
+                    Count('distincion_academico_usuario')).aggregate(
+                    Max('distincion_academico_usuario__count'))[
+                    'distincion_academico_usuario__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
                     max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    Q(distincion_academico_usuario__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('distincion_academico_condecorados')).aggregate(
-                    Min('distincion_academico_condecorados__count'))[
-                    'distincion_academico_condecorados__count__min']
+                    Count('distincion_academico_usuario')).aggregate(
+                    Min('distincion_academico_usuario__count'))[
+                    'distincion_academico_usuario__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
@@ -4771,18 +4771,18 @@ class ReporteHistorico(View):
                 items_data.append([str(year)])
 
                 total_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year).filter(
-                    ((Q(condecorados__ingreso_entidad__year__lte=year) & Q(
-                        condecorados__egreso_entidad__year__gt=year)) |
-                     (Q(condecorados__ingreso_entidad__year__lte=year) & Q(condecorados__egreso_entidad=None)))).count()
+                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(
+                        usuario__egreso_entidad__year__gt=year)) |
+                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = DistincionAcademico.objects.filter(fecha__year=year,
-                                                                                 condecorados=request.user).count()
+                                                                                 usuario=request.user).count()
                 if not total_items_year_sum:
                     total_items_year_sum = 0
                 items_data[i + 1].append(total_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    Q(distincion_academico_usuario__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -4797,24 +4797,24 @@ class ReporteHistorico(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    Q(distincion_academico_usuario__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('distincion_academico_condecorados')).aggregate(
-                    Max('distincion_academico_condecorados__count'))[
-                    'distincion_academico_condecorados__count__max']
+                    Count('distincion_academico_usuario')).aggregate(
+                    Max('distincion_academico_usuario__count'))[
+                    'distincion_academico_usuario__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
                 items_data[i + 1].append(users_with_items_year_count)
 
                 min_items_year_user = User.objects.filter(
-                    Q(distincion_academico_condecorados__fecha__year=year) &
+                    Q(distincion_academico_usuario__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('distincion_academico_condecorados')).aggregate(
-                    Min('distincion_academico_condecorados__count'))[
-                    'distincion_academico_condecorados__count__min']
+                    Count('distincion_academico_usuario')).aggregate(
+                    Min('distincion_academico_usuario__count'))[
+                    'distincion_academico_usuario__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
@@ -7098,17 +7098,54 @@ class InformeActividades(View):
             chart_produccion  = BarChart(data_source)
             context['chart_produccion'] = chart_produccion
 
+            #
+
             p_eventos_organizados = OrganizacionEventoAcademico.objects.filter(Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
             eventos_organizados = OrganizacionEventoAcademico.objects.filter(Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
 
             eventos_organizados_data = [['Etiqueta', 'Eventos organizados'],
-                                        [str(this_year - 2) + '-' + str(this_year - 1), p_eventos_organizados ],
+                                        [str(this_year - 2) + '-' + str(this_year - 1), p_eventos_organizados],
                                         [str(this_year - 1) + '-' + str(this_year), eventos_organizados],
                                         ]
 
             data_source = SimpleDataSource(data=eventos_organizados_data)
-            chart_produccion = BarChart(data_source)
-            context['chart_produccion'] = chart_produccion
+            chart_eventos_organizados = BarChart(data_source)
+            context['chart_eventos_organizados'] = chart_eventos_organizados
+
+            #
+
+            p_asistencia_eventos_academicos_nal = ParticipacionEventoAcademico.objects.exclude(ambito='INTERNACIONAL').filter(
+                Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
+            asistencia_eventos_academicos_nal = OrganizacionEventoAcademico.objects.exclude(ambito='INTERNACIONAL').filter(
+                Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
+
+            p_asistencia_eventos_academicos_intl = ParticipacionEventoAcademico.objects.filter(ambito='INTERNACIONAL').filter(
+                Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
+            asistencia_eventos_academicos_intl = OrganizacionEventoAcademico.objects.filter(ambito='INTERNACIONAL').filter(
+                Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
+
+            asistencia_eventos_academicos_data = [['Etiqueta', 'Nacionales', 'Internacionales'],
+                                        [str(this_year - 2) + '-' + str(this_year - 1), p_asistencia_eventos_academicos_nal, p_asistencia_eventos_academicos_intl],
+                                        [str(this_year - 1) + '-' + str(this_year), asistencia_eventos_academicos_nal, asistencia_eventos_academicos_intl],
+                                        ]
+
+            data_source = SimpleDataSource(data=asistencia_eventos_academicos_data)
+            chart_asistencia_eventos_academicos = BarChart(data_source)
+            context['chart_asistencia_eventos_academicos'] = chart_asistencia_eventos_academicos
+
+            p_disticion_academicos = DistincionAcademico.objects.filter(fecha__year__gte=this_year - 2, fecha__year__lte=this_year - 1)
+            disticion_academicos = DistincionAcademico.objects.filter(fecha__year__gte=this_year - 1, fecha__year__lte=this_year)
+
+            context['p_disticion_academicos'] = p_disticion_academicos
+            context['disticion_academicos'] = disticion_academicos
+
+
+
+
+
+
+
+
 
 
 
