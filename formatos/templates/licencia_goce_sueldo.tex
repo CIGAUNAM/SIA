@@ -1,0 +1,104 @@
+\documentclass[12pt,letterpaper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+
+\usepackage[left=2cm,right=2cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage[many]{tcolorbox} 
+\pagenumbering{gobble}
+ 
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{2pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\dontdone}{\rlap{$\square$}{\large\hspace{11pt}}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+  
+\newtcolorbox{mybox}[1]{%
+    tikznode boxed title,
+    enhanced,
+    arc=0mm,
+    interior style={white},
+    attach boxed title to top left= {yshift=-\tcboxedtitleheight/2},
+    fonttitle=\bfseries,
+    colbacktitle=white,coltitle=black,
+    boxed title style={size=normal,colframe=white,boxrule=0pt},
+    title={#1}}
+    
+\begin{document}
+
+
+\begin{tabular}{l r}
+logo unam &
+logo ciga 
+\end{tabular} 
+
+
+\hspace*{\fill} Folio: \underline{  {{ pk }}  } \\
+\hspace*{\fill} Morelia, Michoacán; a \underline{  {{ fecha.day }} de {{ fecha.month }} de {{ fecha.year }} } \\
+
+\textbf{Dr. José Antonio Vieyra Medrano} \\
+\textbf{Director del Centro de Investigaciones en Geografía Ambiental} \\
+\textbf{P r e s e n t e}
+
+Por medio del presente solicito a usted, que de acuerdo con los artículos 97 b), 98 b) y 100 del Estatuto del Personal Académico, se sirva tramitar ante el Consejo Técnico de la Investigación Científica, una licencia con goce de sueldo, para el efecto hago de su conocimiento los siguientes datos:
+
+\textbf{Nombre:} \underline{ {{ usuario }} } \textbf{ RFC:} \underline{ {{ rfc }} } \textbf{Clase, Categoría y Nivel:} \underline{ {{ usuario.cargo.nombramiento }} } 
+
+\textbf{Antigüedad:} \underline{  {{ years }} años, {{ months }} meses } \textbf{Último contrato:} \underline{ {{ usuario.ultimocontrato }} } 
+
+\begin{mybox}{EVENTO}
+{{ evento.nombre }} 
+\end{mybox}
+
+\textbf{Lugar:} \underline{  {{ evento.ciudad.nombre }}, {{ evento.estado.nombre }}; {{ evento.pais.nombre }}  }
+
+\textbf{Tipo de participación:} \underline{ {{ tipoparticipacion }} }
+
+\begin{center}
+\begin{tabular}{ l  r }
+\textbf{Fecha de inicio:} \underline{  {{ fechainicio }}  } &
+\textbf{Fecha de fin:} \underline{  {{ fechafin }}  }
+\end{tabular}
+\end{center}
+
+\begin{mybox}{Importancia para la dependencia}
+{{ importancia }} 
+\end{mybox}
+
+\textbf{Costo total en pesos:} \underline{ {{ costo }} }  \textbf{Proyecto:} \underline{ {{ proyecto }} }
+
+\begin{mybox}{Anexo:}
+\begin{center}
+\begin{tabular}{l|l|l}
+\dontdone Carta de invitación &
+\dontdone Aceptación de ponencia &
+\done \underline{ {{ Otro }} }
+\end{tabular}
+\end{center}
+\end{mybox}
+
+\vspace{0.2cm} 
+\hspace{0.2cm} A t e n t a m e n t e:
+
+\begin{tabular}{cc}
+\framebox(238,80){} & \framebox(238,80){} \\ 
+
+Nombre y firma del responsable & Vo.Bo. Nombre, cargo y firma
+
+\end{tabular} 
+
+\vspace{\fill}
+\footnotesize{Centro de Investigaciones en Geografía Ambiental. UNAM. Campus Morelia\\
+Antigua carretera a Pátzcuaro 8701, Col. Exhacienda de San José de la Huerta. C.P. 58190\\
+Morelia, Michoacán, México. Tel. (443) 322 3865, (55) 5623 2865; Fax (443) 322 3880, (55) 5623 2880}
+
+
+\end{document}

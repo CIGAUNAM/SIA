@@ -58,7 +58,7 @@ class FormatoLicenciaGoceSueldoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = FormatoLicenciaGoceSueldo.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
-                                         fields=('fecha_inicio', 'ciudad'),
+                                         fields=('evento', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -69,14 +69,14 @@ class FormatoLicenciaGoceSueldoLista(ObjectCreateMixin, View):
     form_class = FormatoLicenciaGoceSueldoForm
     model = FormatoLicenciaGoceSueldo
     aux = FormatoLicenciaGoceSueldoContext.contexto
-    template_name = 'main.html'
+    template_name = 'licencia_goce_sueldo.html'
 
 
 class FormatoLicenciaGoceSueldoDetalle(ObjectUpdateMixin, View):
     form_class = FormatoLicenciaGoceSueldoForm
     model = FormatoLicenciaGoceSueldo
     aux = FormatoLicenciaGoceSueldoContext.contexto
-    template_name = 'main.html'
+    template_name = 'licencia_goce_sueldo.html'
 
 
 class FormatoLicenciaGoceSueldoEliminar(View):

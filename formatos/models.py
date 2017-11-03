@@ -50,7 +50,7 @@ class FormatoLicenciaGoceSueldo(models.Model):
     presupuesto_personal = models.BooleanField(default=False)
     carta_invitacion = models.BooleanField(default=False)
     aceptacion_ponencia = models.BooleanField(default=False)
-    otro = models.CharField(max_length=255, blank=True, null=True)
+    otro_anexo = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return "{} : {}".format(self.fecha_inicio, self.usuario)
