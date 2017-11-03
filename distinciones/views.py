@@ -16,9 +16,9 @@ class DistincionAcademicoJSON(View):
             if self.otros:
                 items = DistincionAcademico.objects.all().exclude(condecorados=usuarioid)
             else:
-                items = DistincionAcademico.objects.filter(condecorados=usuarioid)
+                items = DistincionAcademico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('distincion', 'dependencia', 'ambito', 'fecha'))
+                                         fields=('distincion', 'institucion', 'ambito', 'fecha'))
 
             json = json.replace('INSTITUCIONAL', 'Institucional')
             json = json.replace('REGIONAL', 'Regional')
@@ -31,14 +31,14 @@ class DistincionAcademicoJSON(View):
             raise Http404
 
 
-class DistincionAcademicoLista(ObjectCreateVarMixin, View):
+class DistincionAcademicoLista(ObjectCreateMixin, View):
     form_class = DistincionAcademicoForm
     model = DistincionAcademico
     aux = DistincionAcademicoContext.contexto
     template_name = 'distincion_academicos.html'
 
 
-class DistincionAcademicoDetalle(ObjectUpdateVarMixin, View):
+class DistincionAcademicoDetalle(ObjectUpdateMixin, View):
     form_class = DistincionAcademicoForm
     model = DistincionAcademico
     aux = DistincionAcademicoContext.contexto

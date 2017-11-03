@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 
-EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
+EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
 RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('REVISTA', 'Revista')))
 
@@ -114,16 +114,13 @@ class OrganizacionEventoAcademico(models.Model):
 
 class ParticipacionEventoAcademico(models.Model):
     titulo = models.CharField(max_length=255)
-    #slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento)
-    #autores = models.ManyToManyField(User, related_name='participacion_evento_academico_autores')
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     resumen_publicado = models.BooleanField(default=False)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
     usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='participacion_evento_academico_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)

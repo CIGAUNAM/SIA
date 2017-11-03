@@ -7,7 +7,7 @@
         </a>
     </li>
 
-    <li class="treeview{% if aux.url_categoria == "formacion-academica" %} active{% endif %}" >
+    <li class="treeview{% if aux.url_categoria == "formacion-academica" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-graduation-cap fa-fw"></i> <span>Formación académica</span>
             <span class="pull-right-container">
@@ -16,7 +16,7 @@
         </a>
         <ul class="treeview-menu">
             <li{% if aux.url_seccion == 'cursos-especializacion' %} class="active"{% endif %}>
-                <a href="/formacion-academica/cursos-especializacion" >
+                <a href="/formacion-academica/cursos-especializacion">
                     <i class="fa fa-circle-o"></i> Cursos de especialización
                 </a>
             </li>
@@ -401,28 +401,54 @@
         </ul>
     </li>
 
-    {% if request.user.is_staff %}
-
-    <li class="treeview{% if aux.url_categoria == "distincionessasa" %} active{% endif %}">
+    <li class="treeview{% if aux.url_categoria == "formatos" %} active{% endif %}">
         <a href="#">
-            <i class="fa fa-lock fa-fw"></i> <span>Reportes y gráficas</span>
+            <i class="fa fa-trophy fa-fw"></i> <span>Formatos</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu">
-            <li{% if aux.url_seccion == 'reporte_anual' %} class="active"{% endif %}>
-                <a href="/reportes/historico">
-                    <i class="fa fa-circle-o"></i> Estadística histórica
+            <li{% if aux.url_seccion == 'servicio-transporte' %} class="active"{% endif %}>
+                <a href="/formatos/servicio-transporte">
+                    <i class="fa fa-circle-o"></i> Servicio de transporte
                 </a>
             </li>
-            <li{% if aux.url_seccion == 'reporte_actividades' %} class="active"{% endif %}>
-                <a href="/reportes/informe-actividades">
-                    <i class="fa fa-circle-o"></i> Informe anual actividades
+            <li{% if aux.url_seccion == 'licencia-goce-sueldo' %} class="active"{% endif %}>
+                <a href="/formatos/licencia-goce-sueldo">
+                    <i class="fa fa-circle-o"></i> Licencia con goce de sueldo
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'pago-viaticos' %} class="active"{% endif %}>
+                <a href="/formatos/pago-viaticos">
+                    <i class="fa fa-circle-o"></i> Pago de viaticos
                 </a>
             </li>
         </ul>
     </li>
+
+    {% if request.user.is_staff %}
+
+        <li class="treeview{% if aux.url_categoria == "distincionessasa" %} active{% endif %}">
+            <a href="#">
+                <i class="fa fa-lock fa-fw"></i> <span>Reportes y gráficas</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li{% if aux.url_seccion == 'reporte_anual' %} class="active"{% endif %}>
+                    <a href="/reportes/historico">
+                        <i class="fa fa-circle-o"></i> Estadística histórica
+                    </a>
+                </li>
+                <li{% if aux.url_seccion == 'reporte_actividades' %} class="active"{% endif %}>
+                    <a href="/reportes/informe-actividades">
+                        <i class="fa fa-circle-o"></i> Informe anual actividades
+                    </a>
+                </li>
+            </ul>
+        </li>
 
     {% endif %}
 
