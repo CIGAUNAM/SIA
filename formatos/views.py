@@ -96,7 +96,7 @@ class FormatoPagoViaticoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = FormatoPagoViatico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
-                                         fields=('fecha_inicio', 'ciudad'),
+                                         fields=('evento', 'fecha_salida'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -107,14 +107,14 @@ class FormatoPagoViaticoLista(ObjectCreateMixin, View):
     form_class = FormatoPagoViaticoForm
     model = FormatoPagoViatico
     aux = FormatoPagoViaticoContext.contexto
-    template_name = 'main.html'
+    template_name = 'pago_viaticos.html'
 
 
 class FormatoPagoViaticoDetalle(ObjectUpdateMixin, View):
     form_class = FormatoPagoViaticoForm
     model = FormatoPagoViatico
     aux = FormatoPagoViaticoContext.contexto
-    template_name = 'main.html'
+    template_name = 'pago_viaticos.html'
 
 
 class FormatoPagoViaticoEliminar(View):

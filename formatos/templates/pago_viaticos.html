@@ -1,10 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main.html' %}
 
-</body>
-</html>
+{% block form_agregar %}
+    <p><strong>Evento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Evento.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.evento }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del evento.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un evento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de salida:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de salida."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_salida }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de regreso:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de regreso."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_regreso }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Actividades: <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
+                               title="Actividades a realizar en el evento.">
+        <i class="fa fa-question-circle"> </i> </a> </strong>
+        {{ form.actividades }}
+    </p>
+    <p><strong>Importe:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Importe solicitado.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.importe }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número de acta de consejo interno:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Importe solicitado.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_acta }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombre en el cheque:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre a mostrar en el cheque.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nombre_cheque }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la persona seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Con cargo a PAPIIT: </strong> {{ form.cargo_papiit }}</p>
+    <p><strong>Con cargo a CONACYT: </strong> {{ form.cargo_conacyt }}</p>
+    <p><strong>Con cargo a PAPIME: </strong> {{ form.cargo_papime }}</p>
+    <p><strong>Con cargo a I.E.: </strong> {{ form.cargo_ie }}</p>
+    <p><strong>Con cargo a P.O.: </strong> {{ form.cargo_po }}</p>
+    <p><strong>Con cargo a PAEP: </strong> {{ form.cargo_paep }}</p>
+    <p><strong>Con cargo a Otro: </strong> {{ form.cargo_otro }}</p>
+    <p><strong>Proyecto de investigación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto de investigación.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.proyecto }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del proyecto.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Evento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Evento.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.evento }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del evento.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un evento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de salida:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de salida."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_salida }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de regreso:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de regreso."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_regreso }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Actividades: <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
+                               title="Actividades a realizar en el evento.">
+        <i class="fa fa-question-circle"> </i> </a> </strong>
+        {{ form.actividades }}
+    </p>
+    <p><strong>Importe:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Importe solicitado.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.importe }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número de acta de consejo interno:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Importe solicitado.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_acta }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombre en el cheque:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre a mostrar en el cheque.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nombre_cheque }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la persona seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Con cargo a PAPIIT: </strong> {{ form.cargo_papiit }}</p>
+    <p><strong>Con cargo a CONACYT: </strong> {{ form.cargo_conacyt }}</p>
+    <p><strong>Con cargo a PAPIME: </strong> {{ form.cargo_papime }}</p>
+    <p><strong>Con cargo a I.E.: </strong> {{ form.cargo_ie }}</p>
+    <p><strong>Con cargo a P.O.: </strong> {{ form.cargo_po }}</p>
+    <p><strong>Con cargo a PAEP: </strong> {{ form.cargo_paep }}</p>
+    <p><strong>Con cargo a Otro: </strong> {{ form.cargo_otro }}</p>
+    <p><strong>Proyecto de investigación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto de investigación.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.proyecto }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del proyecto.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <a class="btn btn-warning" style="color: #fff" href="./pdf"
+       data-toggle="modal" data-target="./pdf">Descargar PDF</a>
+{% endblock %}

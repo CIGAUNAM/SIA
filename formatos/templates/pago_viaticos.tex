@@ -1,0 +1,113 @@
+\documentclass[12pt,letterpaper]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=1.5cm]{geometry}
+\usepackage[many]{tcolorbox} 
+\pagenumbering{gobble}
+ 
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{2pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\dontdone}{\rlap{$\square$}{\large\hspace{11pt}}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+  
+\newtcolorbox{mybox}[1]{%
+    tikznode boxed title,
+    enhanced,
+    arc=0mm,
+    interior style={white},
+    attach boxed title to top left= {yshift=-\tcboxedtitleheight/2},
+    fonttitle=\bfseries,
+    colbacktitle=white,coltitle=black,
+    boxed title style={size=normal,colframe=white,boxrule=0pt},
+    title={#1}}
+    
+\begin{document}
+
+\begin{center}
+\begin{tabular}{l c r}
+logo unam &
+
+\begin{tabular}{c}
+DELEGACIÓN ADMINISTRATIVA \\
+311.21 \\
+\textbf{SOLICITUD DE PAGO DE VIÁTICOS} \\
+\textbf{AUTORIZACIÓN DE SALIDA}
+\end{tabular} 
+logo ciga & 
+\end{tabular} 
+\end{center}
+
+\hspace*{\fill} Folio: \underline{  {{ pk }}  } \\
+\hspace*{\fill} Fecha: \underline{  {{ fecha }}  }
+
+\textbf{Nombre del académico solicitante:} \underline{  {{ usuario }}  } 
+
+\begin{mybox}{EVENTO}
+{{ evento.nombre }} \\
+{{ evento.descripcion }} 
+\end{mybox}
+
+\begin{center}
+\begin{tabular}{ l  r }
+\textbf{Fecha de salida:} \underline{  {{ fechasalida }}  } &
+\textbf{Fecha de regreso:} \underline{  {{ fecharegreso }}  }
+\end{tabular}
+\end{center}
+
+\textbf{Lugar:} \underline{  {{ evento.ciudad.nombre }}, {{ evento.estado.nombre }}; {{ evento.pais.nombre }}  }
+
+\begin{mybox}{Actividades a realizar}
+{{ actividades }}
+\end{mybox}
+
+\begin{center}
+\begin{tabular}{ l  r }
+\textbf{Importe solicitado:} \underline{  \${{ importe }}  } &
+\textbf{Acta de consejo interno no.} \underline{  {{ numacta }}  }
+\end{tabular}
+\end{center}
+
+\begin{mybox}{Con cargo a}
+\begin{center}
+\begin{tabular}{l|l|l|l|l|l|l}
+\dontdone PAPPIT &
+\dontdone CONACYT &
+\done PAPIME &
+\done I.E. &
+\done P.O. &
+\done PAEP &
+\done OTRO
+\end{tabular}
+\end{center}
+\end{mybox}
+
+\begin{mybox}{Proyecto}
+{{ proyecto.nombre }} \\
+{{ proyecto.descripcion }}
+\end{mybox}
+
+\vspace{1cm}
+
+\begin{tabular}{cc}
+\framebox(238,100){} & \framebox(238,100){\vspace*{-2.6cm}Dr. José Antonio Vieyra Medrano} \\ 
+
+Nombre y firma del responsable & Vo.Bo. Director del centro
+
+\end{tabular} 
+
+\vspace{\fill}
+\footnotesize{Tarifa nacional: \$1,188.00 día/persona; Tarifa frontera norte y sur: \$1,512.00 día/persona; Tarifa puntos marítimos (excepto Acapulco y Ensenada}: \$1,350.00 día/persona; Tarifa extranjero: \$220.00 USD día/persona.
+
+
+\end{document}
