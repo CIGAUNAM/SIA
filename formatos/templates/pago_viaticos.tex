@@ -48,59 +48,63 @@ logo ciga &
 \end{tabular} 
 \end{center}
 
-\hspace*{\fill} Folio: \underline{  {{ pk }}  } \\
-\hspace*{\fill} Fecha: \underline{  {{ fecha }}  }
+\hspace*{\fill} Folio: \underline{  {{ content.pk }}  } \\
+\hspace*{\fill} Fecha: \underline{  {{ content.fecha }}  }
 
-\textbf{Nombre del académico solicitante:} \underline{  {{ usuario }}  } 
+\textbf{Nombre del académico solicitante:} \underline{  {{ content.usuario.first_name }} {{ content.usuario.last_name }} }
 
 \begin{mybox}{EVENTO}
-{{ evento.nombre }} \\
-{{ evento.descripcion }} 
+{{ content.evento.nombre }} \\
+{{ content.evento.descripcion }}
 \end{mybox}
 
 \begin{center}
 \begin{tabular}{ l  r }
-\textbf{Fecha de salida:} \underline{  {{ fechasalida }}  } &
-\textbf{Fecha de regreso:} \underline{  {{ fecharegreso }}  }
+\textbf{Fecha de salida:} \underline{  {{ content.fecha_salida }}  } &
+\textbf{Fecha de regreso:} \underline{  {{ content.fecha_regreso }}  }
 \end{tabular}
 \end{center}
 
-\textbf{Lugar:} \underline{  {{ evento.ciudad.nombre }}, {{ evento.estado.nombre }}; {{ evento.pais.nombre }}  }
+\textbf{Lugar:} \underline{  {{ content.evento.ciudad.nombre }}, {{ content.evento.estado.nombre }}; {{ content.evento.pais.nombre }}  }
 
 \begin{mybox}{Actividades a realizar}
-{{ actividades }}
+{{ content.actividades }}
 \end{mybox}
 
 \begin{center}
 \begin{tabular}{ l  r }
-\textbf{Importe solicitado:} \underline{  \${{ importe }}  } &
-\textbf{Acta de consejo interno no.} \underline{  {{ numacta }}  }
+\textbf{Importe solicitado:} \underline{  \${{ content.importe }}  } &
+\textbf{Acta de consejo interno no.} \underline{  {{ content.num_acta }}  }
 \end{tabular}
 \end{center}
 
 \begin{mybox}{Con cargo a}
 \begin{center}
 \begin{tabular}{l|l|l|l|l|l|l}
-\dontdone PAPPIT &
-\dontdone CONACYT &
-\done PAPIME &
-\done I.E. &
-\done P.O. &
-\done PAEP &
-\done OTRO
+{% if content.cargo_papiit %} \done {% else %} \dontdone {% endif %} PAPPIT &
+{% if content.cargo_conacyt %} \done {% else %} \dontdone {% endif %} CONACYT &
+
+{% if content.cargo_papime %} \done {% else %} \dontdone {% endif %} PAPIME &
+{% if content.cargo_ie %} \done {% else %} \dontdone {% endif %} I.E. &
+{% if content.cargo_po %} \done {% else %} \dontdone {% endif %} P.O. &
+{% if content.cargo_paep %} \done {% else %} \dontdone {% endif %} PAEP &
+{% if content.cargo_otro %} \done {% else %} \dontdone {% endif %} Otro
+
+
+
 \end{tabular}
 \end{center}
 \end{mybox}
 
 \begin{mybox}{Proyecto}
-{{ proyecto.nombre }} \\
-{{ proyecto.descripcion }}
+{{ content.proyecto.nombre }} \\
+{{ content.proyecto.descripcion }}
 \end{mybox}
 
 \vspace{1cm}
 
 \begin{tabular}{cc}
-\framebox(238,100){} & \framebox(238,100){\vspace*{-2.6cm}Dr. José Antonio Vieyra Medrano} \\ 
+\framebox(238,100){} & \framebox(238,100){\vspace*{-2.6cm}Dr. José Antonio Vieyra Medrano} \\
 
 Nombre y firma del responsable & Vo.Bo. Director del centro
 
