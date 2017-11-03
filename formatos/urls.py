@@ -17,5 +17,8 @@ urlpatterns = [
     url(r'^pago-viaticos/$', FormatoPagoViaticoLista.as_view(), name='formato_pago_viatico_lista'),
     url(r'^pago-viaticos/(?P<pk>[\w\-]+)/eliminar$', FormatoPagoViaticoEliminar.as_view(), name='formato_pago_viatico_eliminar'),
     url(r'^pago-viaticos/(?P<pk>[\w\-]+)/$', FormatoPagoViaticoDetalle.as_view(), name='formato_pago_viatico_detalle'),
+    url(r'^pago-viaticos/(?P<pk>[\w\-]+)/pdf$', FormatoPagoViaticoPDF.as_view(), name='formato_pago_viatico_pdf'),
+
+
 
 ]

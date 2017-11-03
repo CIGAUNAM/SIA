@@ -10,6 +10,11 @@ from .forms import *
 from .utils import *
 
 from formatos.forms import *
+from django.template import Context
+from django.template.loader import get_template
+from subprocess import Popen, PIPE
+import tempfile
+import os, sys
 
 # Create your views here.
 
@@ -125,3 +130,33 @@ class FormatoPagoViaticoEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
+
+class FormatoPagoViaticoPDF(View):
+
+    def get(self, request, pk):
+        item = FormatoPagoViatico.objects.get(pk=pk)
+        print(pk)
+        print(item)
+        context = {
+            'content': item
+        }
+        template = get_template('pago_viaticos.tex')
+
+        rendered_tpl = template.render(context).encode('utf-8')
+        print(rendered_tpl)
+
+        with tempfile.TemporaryDirectory() as tempdir:
+            for i in range(2):
+                process = Popen(
+                    ['pdflatex', '-output-directory', tempdir],
+                    stdin=PIPE,
+                    stdout=PIPE,
+                )
+                process.communicate(rendered_tpl)
+            with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
+                pdf = f.read()
+
+        r = HttpResponse(content_type='application/pdf')
+        r.write(pdf)
+        return r
