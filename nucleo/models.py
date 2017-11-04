@@ -115,6 +115,7 @@ class Ciudad(models.Model):
 
 
 class User(AbstractUser):
+    titulo = models.CharField(max_length=10, null=True, blank=True, choices=(('', '-------'), ('Dr', 'Doctor'), ('Dra', 'Doctora')))
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
     tipo = models.CharField(max_length=30, choices=(('', '-------'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
