@@ -15,7 +15,6 @@ class ExperienciaLaboral(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='experiencia_laboral_tags', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.usuario, self.dependencia, self.cargo)

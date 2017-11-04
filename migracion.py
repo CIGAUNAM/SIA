@@ -1809,8 +1809,8 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', '10002', 'M'),
     ('maria.ramirez', 'María Isabel', 'Ramírez Ramírez', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, 'D', 'Y9jOf', 'F'),
-    ('jaime.paneque', 'Jaime', 'Paneque Gálvez', 'INVESTIGADOR', Pais.objects.get(nombre='España').id,
-     Ciudad.objects.get(nombre='Morelia').id, 'B', 'Y6pdF', 'M'),
+    ('jaime.paneque', 'Jaime', 'Paneque Gálvez', 'INVESTIGADOR', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Morelia').id, 'B', 'Y6pdF', 'M'),
+    ('cinthia.ruiz', 'Cinthia', 'Ruiz López', 'INVESTIGADOR', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').id, '-', 'cinthia.ruiz', 'F'),
     ('frida.guiza', 'Frida Nadiezda', 'Güiza Valverde', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', 'Yl5I4', 'F'),
     ('mariana.vallejo', 'Mariana', 'Vallejo Ramos', 'OTRO', Pais.objects.get(nombre='México').id,
@@ -1839,7 +1839,7 @@ Usuarios = (
      Ciudad.objects.get(nombre='Morelia').id, '-', '00008', 'F'),
     ('pablo.argueta', 'Pablo', 'Argueta', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', '00009', 'M'),
-    ('beatriz.tejera', 'Beatriz', 'Tejera', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
+    ('beatriz.tejera', 'Beatriz', 'de la Tejera', 'INVESTIGADOR', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', '00010', 'F'),
     ('ana.moreno', 'Ana Isabel', 'Moreno Calles', 'OTRO', Pais.objects.get(nombre='México').id,
      Ciudad.objects.get(nombre='Morelia').id, '-', '00011', 'F'),
@@ -3613,6 +3613,8 @@ cargos = (
     (False, False, 'Evaluador Del Proyecto'),
     ('Investigador', False, False),
     ('Investigador UNAM', False, False),
+    ('Investigador CONACYT', False, False),
+    ('Investigador Invitado', False, False),
     ('Cátedras CONACYT', False, False),
     ('Investigador Postdoctoral', False, False),
     ('Investigador por convenio', False, False),
@@ -3777,9 +3779,7 @@ experiencias = (
     ('Ninguno', True, False, False, 'Unversitaire Hoog Docent', 'University of Twente', 1982, 9, 2008, 6, 'YxU7H'),
     ('Profesor de Asignatura A', False, 'Profesor', False, False,
      'Escuela Nacional de Estudios Superiores, Unidad Morelia (ENES Morelia)', 2012, 8, 0, 0, '4th7o'),
-    (
-        'Ninguno', False, 'Profesor invitado', False, False, 'Universidad Autónoma de Tlaxcala', 2012, 7, 2012, 8,
-        '4th7o'),
+    ('Ninguno', False, 'Profesor invitado', False, False, 'Universidad Autónoma de Tlaxcala', 2012, 7, 2012, 8, '4th7o'),
     ('Técnico Académico Titular C, Tiempo Completo', True, 'Otro', False, False,
      'Centro de Investigaciones en Geografía Ambiental (CIGA)', 2013, 6, 0, 0, 'zF8gk'),
     ('Investigador Asociado C, Tiempo Completo', True, 'Profesor Investigador', False, False,
@@ -3904,6 +3904,9 @@ for i in experiencias:
                                fecha_fin=date(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     e.save()
     print(e)
+
+
+
 
 capacidades = (
     ('Planificación del territorio', 2007, 'no', 'hnSDn'),
@@ -4721,3 +4724,94 @@ for i in libros_cap:
         print("       ", j)
         l.usuarios.add(User.objects.get(username=j))
 
+
+investigadores_unam = [
+['Dra', 'marta.astier', 'mastier@ciga.unam.mx', '(443) 322-3876'],
+['Dra', 'sara.barrasa', 'sbarrasa@ciga.unam.mx', '(443) 322-3846'],
+['Dr', 'francisco.bautista', 'leptosol@ciga.unam.mx', '(443) 322-3869'],
+['Dr', 'gerardo.bocco', 'gbocco@ciga.unam.mx', '(443) 322-3834'],
+['Dra', 'ana.burgos', 'aburgos@ciga.unam.mx', '(443) 322-3833'],
+['Dra', 'yan.gao', 'ygao@ciga.unam.mx', '(443) 322-2777'],
+['Dr', 'claudio.garibay', 'claudio.garibay@gmail.com', '(443) 322-3864'],
+['Dr', 'adrian.ghilardi', 'aghilardi@ciga.unam.mx', '(443) 322-3854'],
+['Dra', 'karine.lefebvre', 'klefebvre@ciga.unam.mx', '(443) 322-3865'],
+['Dr', 'jean.mas', 'jfmas@ciga.unam.mx', '(443) 322-3835'],
+['Dr', 'keith.mccall', 'mccall@ciga.unam.mx', '(443) 322-3879'],
+['Dra', 'yadira.mendez', 'ymendez@ciga.unam.mx', '(443) 322-2777'],
+['Dr', 'manuel.mendoza', 'mmendoza@ciga.unam.mx', '(443) 322-3839'],
+['Dr', 'brian.napoletano', 'brian@ciga.unam.mx', '(443) 322-2777'],
+['Dr', 'jaime.paneque', 'jpanequegalvez@ciga.unam.mx', '(443) 322-2777'],
+['Dr', 'angel.priego', 'apriego@ciga.unam.mx', '(443) 322-3874'],
+['Dra', 'maria.ramirez', 'isabelrr@ciga.unam.mx', '(443) 322-3841'],
+['Dra', 'cinthia.ruiz', 'cruiz@ciga.unam.mx', '(443) 322-3880'],
+['Dra', 'margaret.skutsch', 'mskutsch@ciga.unam.mx', '(443) 322-3849'],
+['Dr', 'pedro.urquijo', 'psurquijo@ciga.unam.mx', '(443) 322-2777'],
+['Dr', 'alejandro.velazquez', 'alex@ciga.unam.mx', '(443) 322-3842'],
+['Dr', 'antonio.vieyra', 'avieyra@ciga.unam.mx', '(443) 322-3844'],
+]
+
+investigadores_conacyt = [
+['Dra', 'armonia.borrego', 'aborrego@ciga.unam.mx', '(443) 322-2777'],
+['Dra', 'frida.guiza', 'fguiza@ciga.unam.mx', '(443) 322-2777'],
+['Dra', 'berenice.solis', 'solis@ciga.unam.mx', '(443) 322-3880'],
+]
+
+investigadores_invitados = [
+['Dra', 'beatriz.tejera', 'bdelatejera@ciga.unam.mx', '(443) 322-2777'],
+['Dra', 'hebe.vessuri', 'hvessuri@gmail.com', '(443) 323-5651']
+]
+
+
+
+for i in investigadores_unam:
+    a = User.objects.get(username=i[1])
+    a.titulo = i[0]
+    a.email = i[2]
+    a.telefono = i[3]
+    a.save()
+
+for i in investigadores_unam:
+    e = ExperienciaLaboral(institucion=Institucion.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'),
+                           dependencia=Dependencia.objects.get(
+                               nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)'),
+                           cargo=Cargo.objects.get(nombre='Investigador UNAM'), fecha_inicio=date(2015, 1, 1),
+                           usuario=User.objects.get(username=i[1]))
+    e.save()
+    print(i)
+    print(e)
+
+
+for i in investigadores_conacyt:
+    a = User.objects.get(username=i[1])
+    a.titulo = i[0]
+    a.email = i[2]
+    a.telefono = i[3]
+    a.save()
+
+for i in investigadores_conacyt:
+    e = ExperienciaLaboral(institucion=Institucion.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'),
+                           dependencia=Dependencia.objects.get(
+                               nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)'),
+                           cargo=Cargo.objects.get(nombre='Investigador CONACYT'), fecha_inicio=date(2015, 1, 1),
+                           usuario=User.objects.get(username=i[1]))
+    e.save()
+    print(i)
+    print(e)
+
+
+for i in investigadores_invitados:
+    a = User.objects.get(username=i[1])
+    a.titulo = i[0]
+    a.email = i[2]
+    a.telefono = i[3]
+    a.save()
+
+for i in investigadores_invitados:
+    e = ExperienciaLaboral(institucion=Institucion.objects.get(nombre='Universidad Nacional Autónoma de México (UNAM)'),
+                           dependencia=Dependencia.objects.get(
+                               nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)'),
+                           cargo=Cargo.objects.get(nombre='Investigador Invitado'), fecha_inicio=date(2015, 1, 1),
+                           usuario=User.objects.get(username=i[1]))
+    e.save()
+    print(i)
+    print(e)

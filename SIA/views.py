@@ -7152,3 +7152,9 @@ class InformeActividades(View):
 
 
         return render(request, self.template_name, context)
+
+class CVInvestigadoresLista(View):
+    template_name = 'main3.html'
+
+    def get(self, request):
+        investigadoresUNAM = User.objects.filter()

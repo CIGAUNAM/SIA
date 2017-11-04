@@ -1,7 +1,6 @@
 from SIA.widgets import *
 from .models import *
 from django_select2.forms import Select2Widget, ModelSelect2Widget, ModelSelect2MultipleWidget, Select2MultipleWidget
-from django.forms.widgets import DateTimeInput
 from investigacion.models import ProyectoInvestigacion
 
 class FormatoServicioTransporteForm(forms.ModelForm):
@@ -34,11 +33,11 @@ class FormatoServicioTransporteForm(forms.ModelForm):
     km_aprox = forms.IntegerField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), label='Kilometros aproximados')
     gasto_casetas = forms.DecimalField(widget=NumberInput(attrs={'min': 0.0, 'class': 'form-control pull-right'}),
                                      label='Gasto en casetas')
-    fecha_inicio = forms.DateTimeField(
-        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+    fecha_inicio = forms.DateField(
+        widget=DateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
-    fecha_fin = forms.DateTimeField(
-        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+    fecha_fin = forms.DateField(
+        widget=DateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     salidas_diarias = forms.IntegerField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True,
                             label='Salidas diarias')
@@ -64,11 +63,11 @@ class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
         )
     )
     tipo_participacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Tipo de participación', help_text='Tipo de participación')
-    fecha_inicio = forms.DateTimeField(
-        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+    fecha_inicio = forms.DateField(
+        widget=DateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
-    fecha_fin = forms.DateTimeField(
-        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+    fecha_fin = forms.DateField(
+        widget=DateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     importancia = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                required=True, label='Importancia', help_text='')
@@ -108,11 +107,11 @@ class FormatoPagoViaticoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_salida = forms.DateTimeField(
-        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+    fecha_salida = forms.DateField(
+        widget=DateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
-    fecha_regreso = forms.DateTimeField(
-        widget=DateTimeInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+    fecha_regreso = forms.DateField(
+        widget=DateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     actividades = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False, label='Actividades', help_text='')
