@@ -7157,6 +7157,26 @@ class InformeActividades(View):
 
 class CVInvestigadoresLista(View):
     template_name = 'main3.html'
+    this_year = datetime.now().year
 
     def get(self, request):
-        investigadoresUNAM = User.objects.filter()
+        context = {}
+        this_year = self.this_year
+        investigadoresUNAM = User.objects.filter(experiencialaboral__cargo__nombre='Investigador UNAM',
+                                                 experiencialaboral__fecha_inicio__year__lte=this_year,
+                                                 experiencialaboral__fecha_fin__isnull=True)
+        investigadoresCONACYT = User.objects.filter(experiencialaboral__cargo__nombre='Investigador CONACYT',
+                                                    experiencialaboral__fecha_inicio__year__lte=this_year,
+                                                    experiencialaboral__fecha_fin__isnull=True)
+        investigadoresInvitado = User.objects.filter(experiencialaboral__cargo__nombre='Investigador Invitado',
+                                                     experiencialaboral__fecha_inicio__year__lte=this_year,
+                                                     experiencialaboral__fecha_fin__isnull=True)
+
+        context['investigadoresUNAM'] = investigadoresUNAM
+        context['investigadoresCONACYT'] = investigadoresCONACYT
+        context['investigadoresInvitado'] = investigadoresInvitado
+
+        return render(request, self.template_name, context)
+
+
+
