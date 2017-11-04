@@ -50,6 +50,10 @@ urlpatterns = [
     url(r'^formatos/', include('formatos.urls')),
     url(r'^nucleo/', include('nucleo.urls')),
 
+    url(r'^web/cv-investigadores', PerfilUsuario.as_view(), name='perfil_usuario'),
+
+    url(r'^web/proyectos-actuales', PerfilUsuario.as_view(), name='perfil_usuario'),
+
     url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),
 
     url(r'^reportes/historico$', ReporteHistorico.as_view(), name='reporte_historico'),
