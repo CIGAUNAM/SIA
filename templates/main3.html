@@ -10,31 +10,63 @@
     {% endblock %}
 {% endblock %}
 
-    {% block content_header %}
-        <section class="content-header">
-            <h1> {{ aux.titulo_pagina }}
-                {% block page_name %}{% endblock %}
-                {% block no_description %}
-                    <small>{% block page_description %}{% endblock %}</small>
-                {% endblock %}
-            </h1>
-            {% block breadcrumbs %}
-                {# Breadcrumb implementation left to developers #}
-                <ol class="breadcrumb">
-                    <li><a href="/">Inicio</a></li>
-                    <li>{{ aux.breadcrumb_seccion }}</li>
-                    <li class="active">{{ aux.titulo_pagina }}</li>
-                </ol>
+{% block content_header %}
+    <section class="content-header">
+        <h1> {{ aux.titulo_pagina }}
+            {% block page_name %}{% endblock %}
+            {% block no_description %}
+                <small>{% block page_description %}{% endblock %}</small>
             {% endblock %}
-        </section>
-    {% endblock %}
+        </h1>
+        {% block breadcrumbs %}
+            {# Breadcrumb implementation left to developers #}
+            <ol class="breadcrumb">
+                <li><a href="/">Inicio</a></li>
+                <li>{{ aux.breadcrumb_seccion }}</li>
+                <li class="active">{{ aux.titulo_pagina }}</li>
+            </ol>
+        {% endblock %}
+    </section>
+{% endblock %}
 
 
 
-    {% block content %}
+{% block content %}
+    <h3>Investigadores UNAM</h3>
+
+    <div class="row">
+        {% for inv_unam in investigadoresUNAM %}
+        <div class="col-md-4">
+            <!-- Widget: user widget style 1 -->
+            <div class="box box-widget widget-user-2">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header" style="color: #eee; background-color: #c9c256; !important;">
+                    <div class="widget-user-image">
+                        <img class="img-circle" src="../dist/img/user7-128x128.jpg" alt="User Avatar">
+                    </div>
+                    <!-- /.widget-user-image -->
+                    <a href="./{{ inv_unam.pk }}"><h3 style="font-size: 18px;" class="widget-user-username">{{ inv_unam.titulo }}. {{ inv_unam.first_name}}<br />{{ inv_unam.last_name}}</h3></a>
+                    <a href="mailto:mastier@ciga.unam.mx"><h6 class="widget-user-desc">{{ inv_unam.email }}</h6></a>
+                </div>
+                <div class="box-footer no-padding">
+                    <ul class="nav nav-stacked">
+                        <li><a>País de origen <span class="pull-right badge">{{ inv_unam.pais_origen }}</span></a></li>
+                        <li><a>Teléfono <span class="pull-right badge">{{ inv_unam.telefono }}</span></a></li>
+                        <li><a>Miembro desde <span class="pull-right badge">{{ inv_unam.ingreso_entidad }}</span></a></li>
+                        <li><a href="{% if inv_unam.url %}{{ inv_unam.url }}{% else %}#{% endif %}">Sitio web<span class="pull-right fa fa-external-link"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.widget-user -->
+        </div>
+        <!-- /.col -->
+        {% endfor %}
+    </div>
+
+
     <p> {{ investigadoresUNAM }} </p>
     <p> {{ investigadoresCONACYT }} </p>
     <p> {{ investigadoresInvitado }} </p>
-    {% endblock %}
+{% endblock %}
 
 
