@@ -7155,7 +7155,7 @@ class InformeActividades(View):
 
 
 
-class CVInvestigadoresLista(View):
+class CVInvestigadorLista(View):
     template_name = 'main3.html'
     this_year = datetime.now().year
 
@@ -7179,4 +7179,16 @@ class CVInvestigadoresLista(View):
         return render(request, self.template_name, context)
 
 
+class CVInvestigadorDetalle(View):
+    template_name = 'main4.html'
+    this_year = datetime.now().year
+
+    def get(self, request, pk):
+        context = {}
+        this_year = self.this_year
+        usuario = User.objects.get(pk=pk)
+
+        context['usuario'] = usuario
+
+        return render(request, self.template_name, context)
 
