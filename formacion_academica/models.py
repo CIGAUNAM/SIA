@@ -31,8 +31,6 @@ class CursoEspecializacion(models.Model):
     usuario = models.ForeignKey(User, related_name='cursos_especializacion')
     #tags = models.ManyToManyField(Tag, related_name='curso_especializacion_tags', blank=True)
 
-
-
     def __str__(self):
         return self.nombre
 
@@ -44,7 +42,6 @@ class CursoEspecializacion(models.Model):
         verbose_name = 'Curso de especialización'
         verbose_name_plural = 'Cursos de especialización'
         unique_together = ['nombre', 'usuario', 'fecha_fin']
-
 
 
 class Licenciatura(models.Model):
@@ -63,7 +60,7 @@ class Licenciatura(models.Model):
     #tags = models.ManyToManyField(Tag, related_name='licenciatura_tags', blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.dependencia, str(self.carrera.nombre), self.titulo_tesis)
+        return "{}, {}, {}".format(str(self.carrera.nombre), self.dependencia, self.titulo_tesis)
 
     def get_absolute_url(self):
         return reverse('licenciatura_detalle', kwargs={'pk': self.pk})
@@ -89,7 +86,7 @@ class Maestria(models.Model):
     #tags = models.ManyToManyField(Tag, related_name='maestria_tags', blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.dependencia, self.programa.nombre, self.titulo_tesis)
+        return "{}, {}, {}".format(self.programa.nombre, self.dependencia, self.titulo_tesis)
 
     def get_absolute_url(self):
         return reverse('maestria_detalle', kwargs={'pk': self.pk})
@@ -115,7 +112,7 @@ class Doctorado(models.Model):
     #tags = models.ManyToManyField(Tag, related_name='doctorado_tags', blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.dependencia, self.programa.nombre, self.titulo_tesis)
+        return "{}, {}, {}".format(self.programa.nombre, self.dependencia,  self.titulo_tesis)
 
     def get_absolute_url(self):
         return reverse('doctorado_detalle', kwargs={'pk': self.pk})

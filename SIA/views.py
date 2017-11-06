@@ -15,7 +15,9 @@ from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 from vinculacion.models import ConvenioEntidadExterna
 from nucleo.models import User, Libro
-from experiencia_laboral.models import ExperienciaLaboral
+from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
+from formacion_academica.models import Doctorado, Maestria, Licenciatura
+
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -7188,7 +7190,64 @@ class CVInvestigadorDetalle(View):
         this_year = self.this_year
         usuario = User.objects.get(pk=pk)
 
+        num_articulos = ArticuloCientifico.objects.filter(usuarios__pk=pk).filter(Q(fecha__year=this_year)).count()
+        num_libros = Libro.objects.filter(tipo='INVESTIGACION', usuarios__pk=pk).filter(Q(fecha__year=this_year)).count()
+        num_proyectos_investigacion = ProyectoInvestigacion.objects.filter(usuarios__pk=pk).filter(Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
+        doctorados = Doctorado.objects.filter(usuario=pk)
+        maestrias = Maestria.objects.filter(usuario=pk)
+        licenciaturas = Licenciatura.objects.filter(usuario=pk)
+        cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
+        exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by('-fecha_inicio')
+        exp_prof_unam_prom = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by('-fecha_inicio')
+
+        exp_prof_ext = ExperienciaLaboral.objects.filter(usuario=pk).exclude(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
+        capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
+        articulos_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).exclude(revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).filter(revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).exclude(revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).filter(revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        libros_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, es_libro_completo=True).exclude(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        libros_editoriales_mexicanas= Libro.objects.filter(usuarios=pk, es_libro_completo=True).filter(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        capitulos_libros_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__es_libro_completo=False).exclude(
+            libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
+        capitulos_libros_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__es_libro_completo=False).filter(
+            libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
+
+        #memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
+        #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        #memoriainextenso_mexicanas = MemoriaInExtenso.objects.filter(usuarios=pk).filter(
+        #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(usuarios=pk).exclude(
+            editorial__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
+            editorial__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+
         context['usuario'] = usuario
+        context['num_articulos'] = num_articulos
+        context['num_libros'] = num_libros
+        context['num_proyectos_investigacion'] = num_proyectos_investigacion
+
+        context['doctorados'] = doctorados
+        context['maestrias'] = maestrias
+        context['licenciaturas'] = licenciaturas
+        context['cursos_especializacion'] = cursos_especializacion
+        context['exp_prof_unam'] = exp_prof_unam
+        context['exp_prof_unam_prom'] = exp_prof_unam_prom
+        context['exp_prof_ext'] = exp_prof_ext
+        context['lineas_investigacion'] = lineas_investigacion
+        context['capacidades_potencialidades'] = capacidades_potencialidades
+        context['articulos_indexadas_extranjeras'] = articulos_indexadas_extranjeras
+        context['articulos_indexadas_mexicanas'] = articulos_indexadas_mexicanas
+        context['articulos_no_indexadas_extranjeras'] = articulos_no_indexadas_extranjeras
+        context['articulos_no_indexadas_mexicanas'] = articulos_no_indexadas_mexicanas
+        context['libros_editoriales_mexicanas '] = libros_editoriales_mexicanas
+        context['libros_editoriales_extranjeras '] = libros_editoriales_extranjeras
+        context['capitulos_libros_editoriales_extranjeras '] = capitulos_libros_editoriales_extranjeras
+        context['capitulos_libros_editoriales_mexicanas '] = capitulos_libros_editoriales_mexicanas
+        context['mapas_publicaciones_extranjeras '] = mapas_publicaciones_extranjeras
+        context['mapas_publicaciones_mexicanas '] = mapas_publicaciones_mexicanas
 
         return render(request, self.template_name, context)
 

@@ -51,6 +51,16 @@ class MemoriaInExtensoForm(forms.ModelForm):
     )
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
+    revista = forms.ModelChoiceField(
+        required=False,
+        queryset=Revista.objects.all(),
+        label="Revista",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Revista.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     issn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
