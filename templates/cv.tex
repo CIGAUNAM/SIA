@@ -1,0 +1,358 @@
+\documentclass[12pt]{report}
+\usepackage[left= 2.5 cm,right= 2.5 cm,top= 2.5 cm,bottom= 2.5 cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\setlistdepth{20}
+
+\begin{document}
+
+\begin{center}
+ CENTRO DE INVESTIGACIONES EN GEOGRAFÍA AMBIENTAL \\
+CURRICULUM VITAE\\
+\today
+\end{center}
+
+\renewcommand{\labelenumi}{%
+ \textbf{\theenumi}.- }
+
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{%
+ \textbf{\theenumi}.\theenumii.- }
+
+\renewcommand{\theenumiii}{\arabic{enumiii}}
+\renewcommand{\labelenumiii}{%
+ \textbf{\theenumi}.\theenumii.\theenumiii.-}
+
+
+\begin{enumerate}
+
+\item \textbf{DATOS PERSONALES}
+
+Nombre: {{ usuario }} \\
+fecha de nacimiento: {{ usuario.fecha_nacimiento }} \\
+País de origen: {{ usuario.pais }} \\
+RFC: {{ usuario.rfc }}\\
+CURP: {{ usuario.curp }} \\
+Correo electrónico: {{ usuario.email }}
+
+\textbf{\item FORMACIÓN PROFESIONAL}
+\begin{enumerate}
+\item Estudios profesionales
+  \begin{itemize}
+    {% for i in licenciaturas %}
+        \item {{ i.fecha_grado }}, {{ i.carrera }}, {{ i.titulo_tesis }}
+    {% endfor %}
+  \end{itemize}
+
+\item Estudios de posgrado
+	\begin{itemize}
+		\item[a)] Maestria
+		      \begin{itemize}
+                {% for i in maestrias %}
+                    \item {{ i.fecha_grado }}, {{ i.programa }}, {{ i.titulo_tesis }} \\
+                {% endfor %}
+              \end{itemize}
+
+		\item[b)] Doctorado
+		      \begin{itemize}
+                {% for i in doctorados %}
+                    \item {{ i.fecha_grado }}, {{ i.programa }}, {{ i.titulo_tesis }} \\
+                {% endfor %}
+              \end{itemize}
+		\item[c)] Otros grados
+	\end{itemize}
+
+
+\end{enumerate}
+
+\textbf{\item EXPERIENCIA PROFESIONAL (en investigación o técnica)}
+	\begin{enumerate}
+		\item En la UNAM
+		\item Promociones
+		\item Fuera de la UNAM
+	\end{enumerate}
+
+\textbf{\item LABOR ACADÉMICA-ADMINISTRATIVA EN LA UNAM}
+	\begin{enumerate}
+		\item Servicios directivos y académicos-administrativos
+		\item Comisiones institucionales
+	\end{enumerate}
+
+\textbf{\item PRINCIPALES LÍNEAS DE INVESTIGACIÓN}
+
+\textbf{\item PUBLICACIONES}
+
+	\begin{enumerate}
+		\item Producción científica
+			\begin{enumerate}
+				\item Artículos en revistas arbitradas
+					\begin{enumerate}
+						\item[6.1.1.1] En revistas indexadas
+							\begin{itemize}
+								\item[a)] En revistas extranjeras
+								\item[b)] En revistas mexicanas
+							\end{itemize}
+
+						\item[6.1.1.2] En revistas no indexadas
+							\begin{itemize}
+								\item[a)] En revistas extranjeras
+								\item[b)] En revistas mexicanas \\
+							\end{itemize}
+					\end{enumerate}
+				\item Libros  %6.1.2
+					\begin{itemize}
+					\item[a)] De editoriales mexicanas
+					\item[b)] De editoriales extranjeras \\
+					\end{itemize}
+
+				\item Capítulos de libros
+					\begin{itemize}
+					\item[a)] En libros de editoriales mexicanas
+					\item[b)] En libros de editoriales extranjeras \\
+					\end{itemize}
+
+				\item Artículos ``in extenso'' en Memorias de Congresos
+					\begin{itemize}
+					\item[a)] En publicaciones mexicanas
+					\item[a)] En publicaciones extranjeras \\
+					\end{itemize}
+
+				\item Mapas
+					\begin{itemize}
+					\item[a)] Publicaciones mexicanas
+					\item[b)] Publicaciones extranjeras \\
+					\end{itemize}
+
+				\item Informes técnicos
+					\begin{itemize}
+					\item[a)] De proyectos en México
+					\item[b)] De proyectos en el extranjero \\
+					\end{itemize}
+			\end{enumerate}
+
+	\item  Producción de divulgación científica (no dirigida a pares)
+
+			\begin{enumerate}
+			\item Artículos impresos o electrónicos
+					\begin{itemize}
+					\item[a)] En publicaciones mexicanas
+					\item[b)] En publicaciones extranjeras \\
+					\end{itemize}
+
+			\item Libros de divulgación
+					\begin{itemize}
+					\item[a)] En editoriales mexicanas
+					\item[b)] En editoriales extranjeras \\
+					\end{itemize}
+			\item Otros productos publicados
+					\begin{itemize}
+					\item[6.2.3.1] Reseñas
+					\item[6.2.3.2] Traducciones
+					\item[6.2.3.3] Material para medios (cuando el académico es autor)
+						\begin{itemize}
+						\item[a)] Notas de prensa
+						\item[b)] TV y radio
+						\item[c)] Podcast y Webcast
+						\end{itemize}
+					\item[6.2.3.4] Otros
+					\end{itemize}
+			\end{enumerate}
+	\item Producción para la docencia
+			\begin{enumerate}
+			\item Artículos
+			\item Libros \\
+			\end{enumerate}
+	\item Producción tecnológica
+	\end{enumerate}
+
+\textbf{\item OTRAS ACTIVIDADES ACADÉMICAS}
+
+	\begin{enumerate}
+	\item Participación en proyectos
+		\begin{itemize}
+		\item[a)] Responsable
+		\item[b)] Participante \\
+		\end{itemize}
+    \item Participación como ponente en eventos académicos
+    	\begin{enumerate}
+    	\item Nacionales
+    		\begin{itemize}
+    		\item[a)] Por invitación
+			\item[b)] Participación
+    		\end{itemize}
+		\item Internacionales
+			\begin{itemize}
+			\item[a)] Por invitación
+			\item[b)] Participación \\
+			\end{itemize}
+
+    	\end{enumerate}
+ 	\item Organización de eventos académicos
+ 		\begin{itemize}
+ 		\item[a)] Nacionales
+		\item[b)] Internacionales \\
+ 		\end{itemize}
+	\item Participación en Comisiones Dictaminadoras\\ {\small (De proyectos, de becas de agencias financiadoras, etc.)}
+		\begin{itemize}
+		\item[a)] Nacionales
+		\item[b)] Internacionales \\
+		\end{itemize}
+	\item Participación en Actividades Editoriales
+		\begin{enumerate}
+		\item Dictámenes de artículos en revistas
+			\begin{itemize}
+			\item[a)] Mexicanas
+			\item[b)] Extranjeras
+			\end{itemize}
+		\item Dictámenes de libros
+			\begin{itemize}
+			\item[a)] De editoriales mexicanas
+			\item[b)] De editoriales extranjeras \\
+			\end{itemize}
+		\end{enumerate}
+	\item Convenios académicos nacionales e internacionales
+		\begin{enumerate}
+		\item Estancias académicas
+		\item Profesores visitantes
+		\item Años o Semestres sabáticos
+		\item Participación en redes académicas \\
+		\end{enumerate}
+	\item Vinculación con la sociedad
+		\begin{enumerate}
+		\item Promoción de convenios de colaboración con entidades no académicas
+		\item Servicios y asesorías externas
+		\item Organización de eventos de divulgación (no dirigidos a pares)
+		\item Conferencias de divulgación (no dirigidas a pares) \\
+		\end{enumerate}
+     \item Otros \\
+	\textbf{En el caso de los técnicos} incluir además:
+	\begin{small}
+	 \begin{itemize}
+	\item[-] Contribución al desarrollo de infraestructura para la investigación
+	\item[-] Desarrollo y adaptación de tecnología y servicios técnicos (importancia, grado participación, impacto).
+	\item[-] Actividades técnicas de servicio en bibliotecas, talleres, unidades de apoyo, etc.
+	\end{itemize}
+	 \end{small}
+	\end{enumerate}
+
+\textbf{\item {\small FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}}
+	\begin{enumerate}
+	\item Cursos impartidos
+		\begin{enumerate}
+		\item Cursos extracurriculares
+			\begin{itemize}
+			\item[8.1.1.1] En la UNAM
+			\item[8.1.1.2] En otras instituciones
+			\begin{itemize}
+			\item[a)] Nacionales
+			\item[b)] Internacionales
+			\end{itemize}
+			\end{itemize}
+		\item Cursos escolarizados
+			\begin{enumerate}
+			\item[8.1.2.1] Licenciatura
+				\begin{itemize}
+				\item[a)] Profesor titular o coordinador
+				\item[b)] Colaborador o invitado
+				\end{itemize}
+
+			\item [8.1.2.2]Posgrado
+				\begin{itemize}
+				\item[a)] Profesor titular o coordinador
+				\item[b)] Colaborador o invitado
+				\end{itemize}
+			\end{enumerate}
+	    \item Apoyo a la docencia
+
+		\end{enumerate}
+
+	\item Personal formado
+		\begin{enumerate}
+		\item Tesis dirigidas
+			\begin{itemize}
+			\item[a)] Licenciatura
+			\item[b)] Maestría
+			\item[c)] Doctorado
+			\end{itemize}
+        \item Tesis en proceso
+        	\begin{itemize}
+			\item[a)] Licenciatura
+			\item[b)] Maestría
+			\item[c)] Doctorado
+			\end{itemize}
+
+		\item Tutorías o asesorías a estudiantes
+		\item Becario de proyecto
+		\item Servicios sociales
+		\item Supervisión de investigadores posdoctorales
+		\end{enumerate}
+	\item Desarrollo de áreas o grupos de investigación internos
+	\item Miembro de comités tutorales o sinodales
+		\begin{enumerate}
+		\item Sinodal de tesis de licenciatura
+		\item Maestría
+			\begin{itemize}
+			\item[a)] Comité tutoral
+			\item[b)] Sinodal de tesis
+			\end{itemize}
+		\item Doctorado
+			\begin{itemize}
+			\item[a)] Comité tutoral
+			\item[b)] Sinodal de tesis
+			\end{itemize}
+		\end{enumerate}
+	\item Participación en candidaturas al grado de doctor
+	\end{enumerate}
+
+\textbf{\item DISTINCIONES}
+	\begin{enumerate}
+	\item Premios
+		\begin{itemize}
+		\item[a)] Nacionales
+		\item[b)] Internacionales
+		\end{itemize}
+	\item Reconocimientos de instituciones
+		\begin{itemize}
+		\item[a)] Nacionales
+		\item[b)] Internacionales
+		\end{itemize}
+	\item Participación en comisiones de expertos
+		\begin{itemize}
+		\item[a)] Nacionales
+		\item[b)] Internacionales
+		\end{itemize}
+	\item Participaciones en sociedades científicas
+		\begin{itemize}
+		\item[a)] Nacionales
+		\item[b)] Internacionales
+		\end{itemize}
+	\end{enumerate}
+
+\textbf{\item RECONOCIMIENTO AL TRABAJO}
+	\begin{enumerate}
+	\item Citas en publicaciones
+		\begin{itemize}
+		\item[a)] De circulación internacional
+		\item[b)] De circulación nacional
+		\end{itemize}
+	\item Presencia en medios
+		\begin{itemize}
+		\item[-] Lugar y fecha
+		\item[-] Grado, nombre y firma
+		\end{itemize}
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}

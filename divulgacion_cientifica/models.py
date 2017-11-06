@@ -23,11 +23,8 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (
 
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    # documento_articulo = models.FileField(blank=True)
-    # slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=16, choices=(
-        ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
+    tipo = models.CharField(max_length=16, choices=(('', '-------'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     indizado = models.BooleanField(default=False)
     usuarios = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')

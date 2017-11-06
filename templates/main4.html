@@ -52,7 +52,7 @@
                             <b>Artículos</b> <a class="pull-right">{{ num_articulos }}</a>
                         </li>
                         <li class="list-group-item">
-                            <b>Libros de investigación</b> <a class="pull-right">{{ num_libros }}</a>
+                            <b>Libros de investigación</b> <a class="pull-right">{{ num_libros_investigacion }}</a>
                         </li>
                         <li class="list-group-item">
                             <b>Proyectos de investigación</b> <a
@@ -60,7 +60,7 @@
                         </li>
                     </ul>
 
-                    <a href="./pdf/" style="color: #fff;" class="btn btn-primary btn-block"><b>Descargar CV en
+                    <a href="./pdf/" style="color: #fff;" class="btn btn-primary btn-block" target="_blank"><b>Descargar CV en
                         PDF</b></a>
                 </div>
                 <!-- /.box-body -->
@@ -488,7 +488,7 @@
                                 <div class="timeline-body">
                                     <ul>
 
-                                        {% for i in libros_editoriales_mexicanas %}
+                                        {% for i in libros_investigacion_editoriales_mexicanas %}
                                             <li>
                                                 {{ i }};
                                                 {% for j in i.usuarios.all %}
@@ -509,7 +509,7 @@
                                 <div class="timeline-body">
                                     <ul>
 
-                                        {% for i in libros_editoriales_extranjeras %}
+                                        {% for i in libros_investigacion_editoriales_extranjeras %}
                                             <li>
                                                 {{ i }};
                                                 {% for j in i.usuarios.all %}
@@ -538,7 +538,7 @@
                                 <div class="timeline-body">
                                     <ul>
 
-                                        {% for i in capitulos_libros_editoriales_mexicanas %}
+                                        {% for i in capitulos_libros_investigacion_editoriales_mexicanas %}
                                             <li>
                                                 {{ i }};
                                                 {% for j in i.usuarios.all %}
@@ -559,7 +559,7 @@
                                 <div class="timeline-body">
                                     <ul>
 
-                                        {% for i in capitulos_libros_editoriales_extranjeras %}
+                                        {% for i in capitulos_libros_investigacion_editoriales_extranjeras %}
                                             <li>
                                                 {{ i }};
                                                 {% for j in i.usuarios.all %}
@@ -638,10 +638,395 @@
                             </div>
                         </li>
 
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Informes técnicos</a>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Informes técnicos de acceso público (proyectos
+                                    en México)</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in informes_tecnicos_mex %}
+                                            <li>
+                                                {{ i }};
+                                                {% for j in i.usuarios.all %}
+                                                    {{ j }},
+                                                {% endfor %}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Informes técnicos de acceso público (proyectos
+                                    en el extranjero)</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in informes_tecnicos_intl %}
+                                            <li>
+                                                {{ i }};
+                                                {% for j in i.usuarios.all %}
+                                                    {{ j }},
+                                                {% endfor %}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Producción de divulgación científica </a>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Artículos impresos o electrónicos en
+                                    publicaciones mexicanas</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in articulos_divulgacion_mex %}
+                                            <li>
+                                                {{ i }};
+                                                {% for j in i.usuarios.all %}
+                                                    {{ j }},
+                                                {% endfor %}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Artículos impresos o electrónicos en
+                                    publicaciones extranjeras</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in articulos_divulgacion_intl %}
+                                            <li>
+                                                {{ i }};
+                                                {% for j in i.usuarios.all %}
+                                                    {{ j }},
+                                                {% endfor %}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
 
 
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Libros de divulgación en editoriales
+                                    mexicanas</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
 
+                                        {% for i in libros_divulgacion_editoriales_extranjeras %}
+                                            <li>
+                                                {{ i }};
+                                                {% for j in i.usuarios.all %}
+                                                    {{ j }},
+                                                {% endfor %}
+                                            </li>
+                                        {% endfor %}
 
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Libros de divulgación en editoriales
+                                    extranjeras</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in libros_divulgacion_editoriales_extranjeras %}
+                                            <li>
+                                                {{ i }};
+                                                {% for j in i.usuarios.all %}
+                                                    {{ j }},
+                                                {% endfor %}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Otros productos publicados</a>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Reseñas</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in resenas %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Traducciones</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+                                            <li>
+                                                No hay modelo de traducciones
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Material para medios</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in material_medios %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Producción para la docencia</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+                                        <li>
+                                            No hay modelo de traducciones, ni aplicacion correspondiente, por lo que
+                                            no hay modelos de libros, articulos, programas de estudio, ni producción
+                                            tecnológica
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="time-label">
+                            <span class="bg-yellow">Otras actividades académicas</span>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Participación en proyectos</a>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Responsable en proyectos</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in participacion_proyectos_responsable %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Participación en proyectos</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in participacion_proyectos_participante %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Participación como ponente en eventos
+                                    académicos</a>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Nacionales por invitación</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in ponente_eventos_academicos_nal_invitacion %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Nacionales participación</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in ponente_eventos_academicos_nal_participacion %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Internacionales por invitación</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in ponente_eventos_academicos_intl_invitacion %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Internacionales participación</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in ponente_eventos_academicos_intl_participacion %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Organización de eventos académicos</a>
+                                </h3>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Organización de eventos académicos nacionales</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in ponente_eventos_academicos_intl_invitacion %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">Organización de eventos académicos internacionales</a>
+                                </h3>
+                                <div class="timeline-body">
+                                    <ul>
+
+                                        {% for i in ponente_eventos_academicos_intl_participacion %}
+                                            <li>
+                                                {{ i }}
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
 
 
                     </ul>
