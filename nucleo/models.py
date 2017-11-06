@@ -494,7 +494,6 @@ class TipoEvento(models.Model):
 
 class Evento(models.Model):
     nombre = models.CharField(max_length=255)
-    #slug = AutoSlugField(populate_from='nombre_evento', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.ForeignKey(TipoEvento)
     fecha_inicio = models.DateField()

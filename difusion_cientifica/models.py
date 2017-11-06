@@ -102,7 +102,7 @@ class OrganizacionEventoAcademico(models.Model):
     #tags = models.ManyToManyField(Tag, related_name='organizacion_evento_academico_tags', blank=True)
 
     def __str__(self):
-        return str(self.evento)
+        return "{}, {}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio, self.evento.ciudad, self.evento.estado, self.evento.pais)
 
     def get_absolute_url(self):
         return reverse('organizacion_evento_academico_detalle', kwargs={'pk': self.pk})
