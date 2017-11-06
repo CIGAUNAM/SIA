@@ -32,42 +32,187 @@
 
 
 {% block content %}
-    <h3>Investigadores UNAM</h3>
 
-    <div class="row">
-        {% for inv_unam in investigadoresUNAM %}
-        <div class="col-md-4">
-            <!-- Widget: user widget style 1 -->
-            <div class="box box-widget widget-user-2">
-                <!-- Add the bg color to the header using any of the bg-* classes -->
-                <div class="widget-user-header" style="color: #eee; background-color: #c9c256; !important;">
-                    <div class="widget-user-image">
-                        <img class="img-circle" src="../dist/img/user7-128x128.jpg" alt="User Avatar">
+
+
+
+    <div class="rowdsd">
+        <div class="col-md-12">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#unam" data-toggle="tab" aria-expanded="true">Investigadores UNAM</a>
+                    </li>
+                    <li class=""><a href="#conacyt" data-toggle="tab" aria-expanded="false">Investigadores CONACYT</a>
+                    </li>
+                    <li class=""><a href="#invitados" data-toggle="tab" aria-expanded="false">Investigadores Invitados</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="unam">
+                        <!-- Post -->
+                        <div class="post">
+
+                            <h3> Investigadores UNAM</h3>
+                            <hr/>
+                            <div class="row">
+                                {% for inv_unam in investigadoresUNAM %}
+                                    <div class="col-md-4 ">
+                                        <!-- Widget: user widget style 1 -->
+                                        <div class="box box-widget widget-user-2 with-border">
+                                            <!-- Add the bg color to the header using any of the bg-* classes -->
+                                            <div class="widget-user-header"
+                                                 style="color: #eee; background-color: #c9c256; !important;">
+                                                <div class="widget-user-image">
+                                                    <img class="img-circle" src="../dist/img/user7-128x128.jpg"
+                                                         alt="User Avatar">
+                                                </div>
+                                                <!-- /.widget-user-image -->
+                                                <a href="./{{ inv_unam.pk }}"><h3 style="font-size: 18px;"
+                                                                                  class="widget-user-username">{{ inv_unam.titulo }}. {{ inv_unam.first_name }}<br/>{{ inv_unam.last_name }}
+                                                </h3></a>
+                                                <a href="mailto:mastier@ciga.unam.mx"><h6
+                                                        class="widget-user-desc">{{ inv_unam.email }}</h6></a>
+                                            </div>
+                                            <div class="box-footer no-padding" style="background-color: #ddd">
+                                                <ul class="nav nav-stacked">
+                                                    <li><a>País de origen <span
+                                                            class="pull-right badge">{{ inv_unam.pais_origen }}</span></a>
+                                                    </li>
+                                                    <li><a>Teléfono <span
+                                                            class="pull-right badge">{{ inv_unam.telefono }}</span></a>
+                                                    </li>
+                                                    <li><a>Miembro desde <span
+                                                            class="pull-right badge">{{ inv_unam.ingreso_entidad }}</span></a>
+                                                    </li>
+                                                    <li><a href="
+                                                            {% if inv_unam.url %}{{ inv_unam.url }}{% else %}#{% endif %}">Sitio
+                                                        web<span class="pull-right fa fa-external-link"></span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.widget-user -->
+                                    </div>
+                                    <!-- /.col -->
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                        <!-- /.post -->
                     </div>
-                    <!-- /.widget-user-image -->
-                    <a href="./{{ inv_unam.pk }}"><h3 style="font-size: 18px;" class="widget-user-username">{{ inv_unam.titulo }}. {{ inv_unam.first_name}}<br />{{ inv_unam.last_name}}</h3></a>
-                    <a href="mailto:mastier@ciga.unam.mx"><h6 class="widget-user-desc">{{ inv_unam.email }}</h6></a>
-                </div>
-                <div class="box-footer no-padding">
-                    <ul class="nav nav-stacked">
-                        <li><a>País de origen <span class="pull-right badge">{{ inv_unam.pais_origen }}</span></a></li>
-                        <li><a>Teléfono <span class="pull-right badge">{{ inv_unam.telefono }}</span></a></li>
-                        <li><a>Miembro desde <span class="pull-right badge">{{ inv_unam.ingreso_entidad }}</span></a></li>
-                        <li><a href="{% if inv_unam.url %}{{ inv_unam.url }}{% else %}#{% endif %}">Sitio web<span class="pull-right fa fa-external-link"></span></a></li>
-                    </ul>
-                </div>
-            </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="conacyt">
+                        <!-- Post -->
+                        <div class="post">
 
-            <!-- /.widget-user -->
+                            <h3> Investigadores CONACYT</h3>
+                            <hr/>
+                            <div class="row">
+                                {% for inv_unam in investigadoresCONACYT %}
+                                    <div class="col-md-4 ">
+                                        <!-- Widget: user widget style 1 -->
+                                        <div class="box box-widget widget-user-2 with-border">
+                                            <!-- Add the bg color to the header using any of the bg-* classes -->
+                                            <div class="widget-user-header"
+                                                 style="color: #eee; background-color: #c9c256; !important;">
+                                                <div class="widget-user-image">
+                                                    <img class="img-circle" src="../dist/img/user7-128x128.jpg"
+                                                         alt="User Avatar">
+                                                </div>
+                                                <!-- /.widget-user-image -->
+                                                <a href="./{{ inv_unam.pk }}"><h3 style="font-size: 18px;"
+                                                                                  class="widget-user-username">{{ inv_unam.titulo }}. {{ inv_unam.first_name }}<br/>{{ inv_unam.last_name }}
+                                                </h3></a>
+                                                <a href="mailto:mastier@ciga.unam.mx"><h6
+                                                        class="widget-user-desc">{{ inv_unam.email }}</h6></a>
+                                            </div>
+                                            <div class="box-footer no-padding" style="background-color: #ddd">
+                                                <ul class="nav nav-stacked">
+                                                    <li><a>País de origen <span
+                                                            class="pull-right badge">{{ inv_unam.pais_origen }}</span></a>
+                                                    </li>
+                                                    <li><a>Teléfono <span
+                                                            class="pull-right badge">{{ inv_unam.telefono }}</span></a>
+                                                    </li>
+                                                    <li><a>Miembro desde <span
+                                                            class="pull-right badge">{{ inv_unam.ingreso_entidad }}</span></a>
+                                                    </li>
+                                                    <li><a href="
+                                                            {% if inv_unam.url %}{{ inv_unam.url }}{% else %}#{% endif %}">Sitio
+                                                        web<span class="pull-right fa fa-external-link"></span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.widget-user -->
+                                    </div>
+                                    <!-- /.col -->
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                        <!-- /.post -->
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="invitados">
+                        <!-- Post -->
+                        <div class="post">
+
+                            <h3> Investigadores Invitados</h3>
+                            <hr/>
+                            <div class="row">
+                                {% for inv_unam in investigadoresInvitado %}
+                                    <div class="col-md-4 ">
+                                        <!-- Widget: user widget style 1 -->
+                                        <div class="box box-widget widget-user-2 with-border">
+                                            <!-- Add the bg color to the header using any of the bg-* classes -->
+                                            <div class="widget-user-header"
+                                                 style="color: #eee; background-color: #c9c256; !important;">
+                                                <div class="widget-user-image">
+                                                    <img class="img-circle" src="../dist/img/user7-128x128.jpg"
+                                                         alt="User Avatar">
+                                                </div>
+                                                <!-- /.widget-user-image -->
+                                                <a href="./{{ inv_unam.pk }}"><h3 style="font-size: 18px;"
+                                                                                  class="widget-user-username">{{ inv_unam.titulo }}. {{ inv_unam.first_name }}<br/>{{ inv_unam.last_name }}
+                                                </h3></a>
+                                                <a href="mailto:mastier@ciga.unam.mx"><h6
+                                                        class="widget-user-desc">{{ inv_unam.email }}</h6></a>
+                                            </div>
+                                            <div class="box-footer no-padding" style="background-color: #ddd">
+                                                <ul class="nav nav-stacked">
+                                                    <li><a>País de origen <span
+                                                            class="pull-right badge">{{ inv_unam.pais_origen }}</span></a>
+                                                    </li>
+                                                    <li><a>Teléfono <span
+                                                            class="pull-right badge">{{ inv_unam.telefono }}</span></a>
+                                                    </li>
+                                                    <li><a>Miembro desde <span
+                                                            class="pull-right badge">{{ inv_unam.ingreso_entidad }}</span></a>
+                                                    </li>
+                                                    <li><a href="
+                                                            {% if inv_unam.url %}{{ inv_unam.url }}{% else %}#{% endif %}">Sitio
+                                                        web<span class="pull-right fa fa-external-link"></span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.widget-user -->
+                                    </div>
+                                    <!-- /.col -->
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                        <!-- /.post -->
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+            </div>
+            <!-- /.nav-tabs-custom -->
         </div>
-        <!-- /.col -->
-        {% endfor %}
     </div>
 
-
-    <p> {{ investigadoresUNAM }} </p>
-    <p> {{ investigadoresCONACYT }} </p>
-    <p> {{ investigadoresInvitado }} </p>
 {% endblock %}
 
 

@@ -30,9 +30,9 @@ class MemoriaInExtenso(models.Model):
     agradecimientos = models.ManyToManyField(User, related_name='memoria_in_extenso_agradecimientos', blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
+    revista = models.ForeignKey(Revista)
     issn = models.SlugField(max_length=20, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
-    #proyectos = models.ManyToManyField(Proyecto, blank=True)
     url = models.URLField(blank=True)
 
     def __str__(self):

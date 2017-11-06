@@ -37,21 +37,6 @@ class AsesorEstancia(models.Model):
         unique_together = ['usuario', 'asesorado', 'grado_academico']
 
 
-"""
-class DireccionTesis1(models.Model):
-    asesor = models.ForeignKey(User, related_name='direccion_tesis_asesor')
-    fecha_inicio = models.DateField()
-    tesis = models.ForeignKey(DireccionTesis)
-
-    def __str__(self):
-        return "{} : {} : {}".format(self.tesis, self.asesor, self.fecha_inicio)
-
-    class Meta:
-        ordering = ['-fecha_inicio']
-        verbose_name = 'Dirección de tesis'
-        verbose_name_plural = 'Direcciones de tesis'
-"""
-
 class DireccionTesis(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='titulo')
