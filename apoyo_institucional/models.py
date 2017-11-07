@@ -113,16 +113,13 @@ class RepresentacionOrganoColegiado(models.Model):
 
 class ComisionAcademica(models.Model):
     comision_academica = models.ForeignKey(Comision)
-    #slug = AutoSlugField(populate_from='nombre', unique=True, max_length=255)
     descripcion = models.TextField(blank=True)
     es_evaluacion = models.BooleanField(default=False)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
-    #ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='comision_academica_tags', blank=True)
 
     def __str__(self):
         return "[{}] : {} : {} : {}".format(self.user, self.comision_academica, self.fecha_inicio, self.fecha_fin)
