@@ -1,3 +1,4 @@
+{% autoescape off %}
 \documentclass[12pt]{report}
 \usepackage[left= 2.5 cm,right= 2.5 cm,top= 2.5 cm,bottom= 2.5 cm]{geometry}
 \usepackage[utf8]{inputenc}
@@ -30,12 +31,13 @@ Para cualquier trámite que involucre a la Dependencia
 
 \renewcommand{\labelitemi}{\tiny$\blacksquare$}
 \renewcommand{\labelitemii}{\tiny$\blacksquare$}
+\renewcommand{\labelitemiii}{\tiny$\blacksquare$}
 
 
 
     \begin{enumerate}
 
-        \item{ \textbf{DATOS PERSONALES} \\ \\
+        \item[1.]{ \textbf{DATOS PERSONALES} \\ \\
             Nombre: {{ usuario }} \\
             fecha de nacimiento: {{ usuario.fecha_nacimiento }} \\
             País de origen: {{ usuario.pais }} \\
@@ -44,11 +46,11 @@ Para cualquier trámite que involucre a la Dependencia
             Correo electrónico: {{ usuario.email }} \\
             }
 
-        \item{ \textbf{ FORMACIÓN PROFESIONAL }
+        \item[2.]{ \textbf{ FORMACIÓN PROFESIONAL }
             \begin{enumerate}
 
                 {% if licenciaturas %}
-                \item[2.1.]{ Estudios profesionales
+                \item[2.1.]{ \textbf{Estudios profesionales}
                       \begin{itemize}
                           {% for i in licenciaturas %}
                               \item {{ i.fecha_grado }},\textbf{ {{ i.carrera }}}, {{ i.institucion }}, {{ i.dependencia }}
@@ -61,71 +63,182 @@ Para cualquier trámite que involucre a la Dependencia
                  {% endif %}
 
                 {% if maestrias or doctorados or postdoctorados %}
-                \item[2.2.]{ Estudios de posgrado
+                \item[2.2.]{ \textbf{Estudios de posgrado}
         	          \begin{itemize}[label=\FilledSmallSquare]
+
         	              {% if maestrias %}
-        		          \item[a)] Maestría
-        		              \begin{itemize}
-                                  {% for i in maestrias %}
-                                      \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
-                                          \begin{itemize}
-                                              \item[]{\textit{ {{ i.titulo_tesis }} }}
-                                          \end{itemize}
-                                  {% endfor %}
-                              \end{itemize}
+        		              \item[a)] Maestría
+        		                  \begin{itemize}
+                                      {% for i in maestrias %}
+                                          \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                              \begin{itemize}
+                                                  \item[]{\textit{ {{ i.titulo_tesis }} }}
+                                              \end{itemize}
+                                      {% endfor %}
+                                  \end{itemize}
                           {% endif %}
 
                           {% if doctorados %}
                               \item[b)] Doctorado
+                                  \begin{itemize}
+                                      {% for i in doctorados %}
+                                          \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                              \begin{itemize}
+                                                  \item[]{\textit{ {{ i.titulo_tesis }} }}
+                                              \end{itemize}
+                                      {% endfor %}
+                                  \end{itemize}
         		          {% endif %}
 
-                          {% if doctorados %}
-        		              \item[c)] Otros grados
+                          {% if postdoctorados %}
+        		              \item[c)] Postdoctorados
+        		                  \begin{itemize}
+                                      {% for i in postdoctorados %}
+                                          \item {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                      {% endfor %}
+                                  \end{itemize}
         		          {% endif %}
 
         	          \end{itemize}
         	        }
         	     {% endif %}
 
-                \item[2.3.] Cursos de especialización o capacitación \\ (Incluir sólo en el caso de los técnicos académicos.)
-
+                {% if usuario.tipo == 'TECNICO'%}
+                    \item[2.3.] \textbf{Cursos de especialización o capacitación}
+                        \begin{itemize}
+                            {% for i in cursos_especializacion %}
+                                \item{ {{ i.fecha_inicio }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
+                            {% endfor %}
+                        \end{itemize}
+                {% endif %}
             \end{enumerate}
             }
 
-        \textbf{\item EXPERIENCIA PROFESIONAL (en investigación o técnica)}
+        {% if exp_prof_unam or exp_prof_unam_prom or exp_prof_ext %}
+        \vspace{0.5cm}
+        \item[3.] \textbf{EXPERIENCIA PROFESIONAL}
         	\begin{enumerate}
-        		\item En la UNAM
-        		\item Promociones
-        		\item Fuera de la UNAM
+
+        	    {% if exp_prof_unam or exp_prof_unam_prom %}
+        	        \item[3.1.] En la UNAM
+                        {% if exp_prof_unam %}
+                            \begin{itemize}
+                                {% for i in exp_prof_unam %}
+                                    \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }}}
+                                {% endfor %}
+                            \end{itemize}
+        		        {% endif %}
+
+        		    {% if exp_prof_unam_prom %}
+        		        \begin{itemize}
+        		            \item[3.1.1.] Promociones
+                                \begin{itemize}
+                                    {% for i in exp_prof_unam_prom %}
+                                        \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}, {{ i.nombramiento }}}, {{ i.dependencia }}}
+                                    {% endfor %}
+                                \end{itemize}
+        		        \end{itemize}
+        		    {% endif %}
+        		{% endif %}
+
+        		{% if exp_prof_ext %}
+        		    \item[3.2.] Fuera de la UNAM
+        		        \begin{itemize}
+                            {% for i in exp_prof_ext %}
+                                \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
+                            {% endfor %}
+                        \end{itemize}
+        		{% endif %}
         	\end{enumerate}
+        {% endif %}
 
-        \textbf{\item LABOR ACADÉMICA-ADMINISTRATIVA EN LA UNAM}
+        {% if servicios_acad_admn_drvos or comisiones_institucionales %}
+            \vspace{.5cm}
+            \item[4] \textbf{LABOR ACADÉMICO-ADMINISTRATIVA EN LA UNAM}
+                \begin{enumerate}
+                    {% if servicios_acad_admn_drvos %}
+                        \item[4.1] Servicios directivos y académicos-administrativos
+                            \begin{itemize}
+                                {% for i in servicios_acad_admn_drvos %}
+                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.tipo_cargo.capitalize }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }}
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
+
+                    {% if comisiones_institucionales %}
+                        \item[4.2] Comisiones institucionales
+                            \begin{itemize}
+                                {% for i in comisiones_institucionales %}
+                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.comision_academica }}}, {{ i.dependencia }}
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
+                \end{enumerate}
+        {% endif %}
+
+        {% if usuario.tipo == 'INVESTIGADOR' %}
+            {% if lineas_investigacion %}
+                \vspace{0.5cm}
+                \item[5.] \textbf{PRINCIPALES LÍNEAS DE INVESTIGACIÓN}
+                    {% for i in lineas_investigacion %}
+                        {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.linea_investigacion }}}
+                    {% endfor %}
+            {% endif %}
+        {% endif %}
+
+        {% if usuario.tipo == 'TECNICO' %}
+            {% if capacidades_potencialidades %}
+                \vspace{0.5cm}
+                \item[5.] \textbf{CAPACIDADES Y POTENCIALIDADES}
+                    {% for i in capacidades_potencialidades %}
+                        {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.nombre }}}
+                    {% endfor %}
+            {% endif %}
+        {% endif %}
+
+        {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
+        \vspace{0.5cm}
+        \item[6.] \textbf{PUBLICACIONES}
+
         	\begin{enumerate}
-        		\item Servicios directivos y académicos-administrativos
-        		\item Comisiones institucionales
-        	\end{enumerate}
 
-        \textbf{\item PRINCIPALES LÍNEAS DE INVESTIGACIÓN}
-
-        \textbf{\item PUBLICACIONES}
-
-        	\begin{enumerate}
-        		\item Producción científica
+        		\item[6.1.]{ Producción científica
         			\begin{enumerate}
-        				\item Artículos en revistas arbitradas
+        			    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
+        				\item[6.1.1.] Artículos en revistas arbitradas
         					\begin{enumerate}
-        						\item[6.1.1.1] En revistas indexadas
+        					    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas %}
+        						\item[6.1.1.1.] En revistas indexadas
         							\begin{itemize}
-        								\item[a)] En revistas extranjeras
-        								\item[b)] En revistas mexicanas
+        							    {% if articulos_indexadas_extranjeras %}
+        								    \item[a)] En revistas extranjeras
+        								        \begin{itemize}
+        								            {% for i in articulos_indexadas_extranjeras %}
+        								                \item{ {% for u in i.usuarios.all %} {{ u }} {% endfor %} {{ i }} }
+        								            {% endfor %}
+        								        \end{itemize}
+        								{% endif %}
+        								{% if articulos_indexadas_mexicanas %}
+        								    \item[b)] En revistas mexicanas
+        								        \begin{itemize}
+        								            {% for i in articulos_indexadas_mexicanas %}
+        								                \item{ {% for u in i.usuarios.all %} {{ u.author_name }}, {% endfor %} {{ i }} }
+        								            {% endfor %}
+        								        \end{itemize}
+        								{% endif %}
         							\end{itemize}
+        						{% endif %}
 
-        						\item[6.1.1.2] En revistas no indexadas
+        						{% if articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
+        						\item[6.1.1.2.] En revistas no indexadas
         							\begin{itemize}
         								\item[a)] En revistas extranjeras
         								\item[b)] En revistas mexicanas \\
         							\end{itemize}
+        						{% endif %}
+
         					\end{enumerate}
+        				{% endif %}
         				\item Libros  %6.1.2
         					\begin{itemize}
         					\item[a)] De editoriales mexicanas
@@ -156,6 +269,8 @@ Para cualquier trámite que involucre a la Dependencia
         					\item[b)] De proyectos en el extranjero \\
         					\end{itemize}
         			\end{enumerate}
+        		}
+
 
         	\item  Producción de divulgación científica (no dirigida a pares)
 
@@ -191,6 +306,7 @@ Para cualquier trámite que involucre a la Dependencia
         			\end{enumerate}
         	\item Producción tecnológica
         	\end{enumerate}
+        {% endif %}
 
         \textbf{\item OTRAS ACTIVIDADES ACADÉMICAS}
 
@@ -378,3 +494,4 @@ Para cualquier trámite que involucre a la Dependencia
 
 
 \end{document}
+{% endautoescape %}

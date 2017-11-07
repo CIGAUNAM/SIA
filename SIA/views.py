@@ -16,8 +16,8 @@ from distinciones.models import DistincionAcademico
 from vinculacion.models import ConvenioEntidadExterna
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
-from formacion_academica.models import Doctorado, Maestria, Licenciatura
-
+from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
+from apoyo_institucional.models import ComisionAcademica
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -7311,9 +7311,10 @@ class CVInvestigadorPDF(View):
             Q(fecha__year=this_year)).count()
         num_proyectos_investigacion = ProyectoInvestigacion.objects.filter(usuarios__pk=pk).filter(
             Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
-        doctorados = Doctorado.objects.filter(usuario=pk)
-        maestrias = Maestria.objects.filter(usuario=pk)
         licenciaturas = Licenciatura.objects.filter(usuario=pk)
+        maestrias = Maestria.objects.filter(usuario=pk)
+        doctorados = Doctorado.objects.filter(usuario=pk)
+        postdoctorados = PostDoctorado.objects.filter(usuario=pk)
         cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by(
@@ -7324,17 +7325,26 @@ class CVInvestigadorPDF(View):
 
         exp_prof_ext = ExperienciaLaboral.objects.filter(usuario=pk).exclude(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+
+        servicios_acad_admn_drvos = ExperienciaLaboral.objects.filter(usuario=pk).filter(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').exclude(cargo__tipo_cargo='OTRO').order_by(
+            '-fecha_inicio')
+        comisiones_institucionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')
+
         lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
+
+
+
         articulos_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).exclude(
-            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).filter(
-            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk,
                                                                                indices__isnull=True).exclude(
-            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).filter(
-            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+            revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
         libros_investigacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='INVESTIGACION',
                                                                             es_libro_completo=True).exclude(
             pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
@@ -7414,13 +7424,16 @@ class CVInvestigadorPDF(View):
         context['num_libros'] = num_libros_investigacion
         context['num_proyectos_investigacion'] = num_proyectos_investigacion
 
-        context['doctorados'] = doctorados
-        context['maestrias'] = maestrias
         context['licenciaturas'] = licenciaturas
+        context['maestrias'] = maestrias
+        context['doctorados'] = doctorados
+        context['postdoctorados'] = postdoctorados
         context['cursos_especializacion'] = cursos_especializacion
         context['exp_prof_unam'] = exp_prof_unam
         context['exp_prof_unam_prom'] = exp_prof_unam_prom
         context['exp_prof_ext'] = exp_prof_ext
+        context['servicios_acad_admn_drvos'] = servicios_acad_admn_drvos
+        context['comisiones_institucionales'] = comisiones_institucionales
         context['lineas_investigacion'] = lineas_investigacion
         context['capacidades_potencialidades'] = capacidades_potencialidades
         context['articulos_indexadas_extranjeras'] = articulos_indexadas_extranjeras

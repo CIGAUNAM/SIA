@@ -139,6 +139,18 @@ class User(AbstractUser):
     ultimo_contrato = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
 
+    def author_name(self):
+        names = self.first_name.split()
+        initials = ""
+        for i in range(len(names)):
+            if i == len(names) - 1:
+                initials = initials + names[i][0] + "."
+            else:
+                initials = initials + names[i][0] + ". "
+
+        surnames = self.last_name.title().replace(" ", "-")
+        return "{}, {}".format(surnames, initials)
+
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
 
@@ -236,7 +248,7 @@ class Cargo(models.Model):
     nombre = models.CharField(max_length=255)
     #slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
-    tipo_cargo = models.CharField(max_length=20, choices=(('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('OTRO', 'Otro')))
+    tipo_cargo = models.CharField(max_length=20, choices=(('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('DIRECTIVO', 'Directivo'), ('OTRO', 'Otro')))
 
     def __str__(self):
         return self.nombre
