@@ -7486,3 +7486,4 @@ class CVInvestigadorPDF(View):
         r = HttpResponse(content_type='application/pdf')
         r.write(pdf)
         return r
+
