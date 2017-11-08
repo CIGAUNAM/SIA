@@ -303,17 +303,49 @@ Para cualquier trámite que involucre a la Dependencia
                                 \end{itemize}
         				{% endif %}
 
-        				\item[6.1.4.] Artículos ``in extenso'' en Memorias de Congresos
-        					\begin{itemize}
-        					\item[a)] En publicaciones mexicanas
-        					\item[a)] En publicaciones extranjeras \\
-        					\end{itemize}
+                        {% if memoriainextenso_extranjeras or memoriainextenso_mexicanas %}
+                            \item[6.1.4.]{ Artículos ``in extenso'' en Memorias de Congresos
+                                \begin{itemize}
+                                {% if memoriainextenso_mexicanas }
+                                    \item[a)] En publicaciones mexicanas
+                                        \begin{itemize}
+                                            {% for i in memoriainextenso_mexicanas %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}) ``{{ i.nombre }}''. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
 
+                                {% if memoriainextenso_extranjeras }
+                                    \item[b)] En publicaciones extranjeras
+                                        \begin{itemize}
+                                            {% for i in memoriainextenso_extranjeras %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}) ``{{ i.nombre }}''. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                \end{itemize}
+                                }
+        				{% endif %}
+
+                        {% if mapas_publicaciones_extranjeras or mapas_publicaciones_mexicanas %}
         				\item Mapas
         					\begin{itemize}
-        					\item[a)] Publicaciones mexicanas
-        					\item[b)] Publicaciones extranjeras \\
+        					{% if mapas_publicaciones_mexicanas %}
+        					    \item[a)] Publicaciones mexicanas
+        					        {% for i in mapas_publicaciones_mexicanas %}
+        					            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}) ``{{ i.nombre }}'' ({{ i.escala }}). {{ i.coleccion }}, {% if volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial.nombre }}, {{ i.ciudad.nombre }}, {{ i.pais.nombre }}. {{ i.url }} }
+        					        {% endfor %}
+        					{% endif %}
+
+        					{% if mapas_publicaciones_extranjeras %}
+        					    \item[b)] Publicaciones extranjeras
+        					        {% for i in mapas_publicaciones_extranjeras %}
+        					            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}) ``{{ i.nombre }}'' ({{ i.escala }}). {{ i.coleccion }}, {% if volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial.nombre }}, {{ i.ciudad.nombre }}, {{ i.pais.nombre }}. {{ i.url }} }
+        					        {% endfor %}
+        					{% endif %}
+
         					\end{itemize}
+        					{% endif %}
 
         				\item Informes técnicos
         					\begin{itemize}
