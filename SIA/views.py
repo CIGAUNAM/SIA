@@ -7363,10 +7363,10 @@ class CVInvestigadorPDF(View):
             libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by(
             '-libro__fecha')
 
-        # memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
-        #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        # memoriainextenso_mexicanas = MemoriaInExtenso.objects.filter(usuarios=pk).filter(
-        #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
+            evento__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        memoriainextenso_mexicanas = MemoriaInExtenso.objects.filter(usuarios=pk).filter(
+            evento__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(usuarios=pk).exclude(
             editorial__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
@@ -7443,8 +7443,11 @@ class CVInvestigadorPDF(View):
         context['libros_investigacion_editoriales_extranjeras'] = libros_investigacion_editoriales_extranjeras
         context['capitulos_libros_investigacion_editoriales_extranjeras'] = capitulos_libros_investigacion_editoriales_extranjeras
         context['capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
-        context['mapas_publicaciones_extranjeras '] = mapas_publicaciones_extranjeras
-        context['mapas_publicaciones_mexicanas '] = mapas_publicaciones_mexicanas
+        context['memoriainextenso_extranjeras'] = memoriainextenso_extranjeras
+        context['memoriainextenso_mexicanas'] = memoriainextenso_mexicanas
+
+        context['mapas_publicaciones_extranjeras'] = mapas_publicaciones_extranjeras
+        context['mapas_publicaciones_mexicanas'] = mapas_publicaciones_mexicanas
         context['informes_tecnicos_mex'] = informes_tecnicos_mex
         context['informes_tecnicos_intl'] = informes_tecnicos_intl
         context['libros_divulgacion_editoriales_extranjeras'] = libros_divulgacion_editoriales_extranjeras
