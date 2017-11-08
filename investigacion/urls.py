@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^articulos-cientificos/(?P<pk>[\w\-]+)/$', ArticuloCientificoDetalle.as_view(), name='articulo_cientifico_detalle'),
 
     url(r'^capitulos-libros-investigacion/json/', CapituloLibroInvestigacionJSON.as_view(), name='capitulo_libro_investigacion_lista__json'),
+    url(r'^capitulos-libros-investigacion/json-otros/', CapituloLibroInvestigacionJSON.as_view(otros=True), name='capitulo_libro_investigacion_lista__json'),
     url(r'^capitulos-libros-investigacion/$', CapituloLibroInvestigacionLista.as_view(), name='capitulo_libro_investigacion_lista'),
     url(r'^capitulos-libros-investigacion/(?P<pk>[\w\-]+)/eliminar$', CapituloLibroInvestigacionEliminar.as_view(), name='capitulo_libro_investigacion_eliminar'),
     url(r'^capitulos-libros-investigacion/(?P<pk>[\w\-]+)/$', CapituloLibroInvestigacionDetalle.as_view(), name='capitulo_libro_investigacion_detalle'),

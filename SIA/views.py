@@ -489,13 +489,13 @@ class Dashboard(View):
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='PUBLICADO').filter(
+                    libro__status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='PUBLICADO',
+                    libro__status='PUBLICADO',
                     libro__usuarios=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
                     request_user_capitulos_libros_investigacion_year_sum = 0
@@ -561,13 +561,13 @@ class Dashboard(View):
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='EN_PRENSA').filter(
+                    libro__status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='EN_PRENSA',
+                    libro__status='EN_PRENSA',
                     libro__usuarios=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
                     request_user_capitulos_libros_investigacion_year_sum = 0
@@ -633,13 +633,13 @@ class Dashboard(View):
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='ACEPTADO').filter(
+                    libro__status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='ACEPTADO',
+                    libro__status='ACEPTADO',
                     libro__usuarios=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
                     request_user_capitulos_libros_investigacion_year_sum = 0
@@ -2871,13 +2871,13 @@ class ReporteHistorico(View):
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='PUBLICADO').filter(
+                    libro__status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='PUBLICADO',
+                    libro__status='PUBLICADO',
                     libro__usuarios=request.user).count()
 
                 if not total_capitulos_libros_investigacion_year_sum:
@@ -2944,13 +2944,13 @@ class ReporteHistorico(View):
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='EN_PRENSA').filter(
+                    libro__status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='EN_PRENSA',
+                    libro__status='EN_PRENSA',
                     libro__usuarios=request.user).count()
 
                 if not total_capitulos_libros_investigacion_year_sum:
@@ -3018,13 +3018,13 @@ class ReporteHistorico(View):
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='ACEPTADO').filter(
+                    libro__status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
-                    libro__es_libro_completo=False, libro__status='ACEPTADO',
+                    libro__status='ACEPTADO',
                     libro__usuarios=request.user).count()
 
                 if not total_capitulos_libros_investigacion_year_sum:
@@ -7213,12 +7213,13 @@ class CVInvestigadorDetalle(View):
         articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).filter(revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).exclude(revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).filter(revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='INVESTIGACION', es_libro_completo=True).exclude(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        libros_investigacion_editoriales_mexicanas= Libro.objects.filter(usuarios=pk, tipo='INVESTIGACION', es_libro_completo=True).filter(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION', libro__es_libro_completo=False).exclude(
-            libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
-        capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION', libro__es_libro_completo=False).filter(
-            libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
+        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION', es_libro_completo=True).filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION', es_libro_completo=True).filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+
+        capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION').exclude(
+            libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-libro__fecha')
+        capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION').filter(
+            libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-libro__fecha')
 
         #memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
         #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
@@ -7237,8 +7238,8 @@ class CVInvestigadorDetalle(View):
                                                                             es_libro_completo=True).exclude(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         libros_divulgacion_editoriales_mexicanas = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION',
                                                                           es_libro_completo=True).filter(pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION', libro__es_libro_completo=False).exclude(libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
-        capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION', libro__es_libro_completo=False).filter(libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
+        capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION').exclude(libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
+        capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION').filter(libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-fecha')
         resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
         material_medios = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).order_by('-fecha')
         participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by('-fecha_inicio')
@@ -7270,10 +7271,10 @@ class CVInvestigadorDetalle(View):
         context['articulos_indexadas_mexicanas'] = articulos_indexadas_mexicanas
         context['articulos_no_indexadas_extranjeras'] = articulos_no_indexadas_extranjeras
         context['articulos_no_indexadas_mexicanas'] = articulos_no_indexadas_mexicanas
-        context['libros_editoriales_mexicanas '] = libros_investigacion_editoriales_mexicanas
-        context['libros_editoriales_extranjeras '] = libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_editoriales_extranjeras '] = capitulos_libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_editoriales_mexicanas '] = capitulos_libros_investigacion_editoriales_mexicanas
+        context['libros_investigacion_editoriales_mexicanas'] = libros_investigacion_editoriales_mexicanas
+        context['libros_investigacion_editoriales_extranjeras'] = libros_investigacion_editoriales_extranjeras
+        context['capitulos_libros_investigacion_editoriales_extranjeras'] = capitulos_libros_investigacion_editoriales_extranjeras
+        context['capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
         context['mapas_publicaciones_extranjeras '] = mapas_publicaciones_extranjeras
         context['mapas_publicaciones_mexicanas '] = mapas_publicaciones_mexicanas
         context['informes_tecnicos_mex'] = informes_tecnicos_mex
@@ -7334,8 +7335,6 @@ class CVInvestigadorPDF(View):
         lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
 
-
-
         articulos_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).exclude(
             revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).filter(
@@ -7345,22 +7344,24 @@ class CVInvestigadorPDF(View):
             revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).filter(
             revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
-        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='INVESTIGACION',
-                                                                            es_libro_completo=True).exclude(
-            pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(usuarios=pk, tipo='INVESTIGACION',
+
+        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION',
+                                                                            es_libro_completo=True).filter(
+            Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(pais__nombre='México').exclude(
+            Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION',
                                                                           es_libro_completo=True).filter(
-            pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+            Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(pais__nombre='México').exclude(
+            Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+
         capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
-                                                                                                           libro__tipo='INVESTIGACION',
-                                                                                                           libro__es_libro_completo=False).exclude(
+                                                                                                           libro__tipo='INVESTIGACION').exclude(
             libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by(
-            '-fecha')
+            '-libro__fecha')
         capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
-                                                                                                         libro__tipo='INVESTIGACION',
-                                                                                                         libro__es_libro_completo=False).filter(
+                                                                                                         libro__tipo='INVESTIGACION').filter(
             libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by(
-            '-fecha')
+            '-libro__fecha')
 
         # memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
         #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
@@ -7386,13 +7387,11 @@ class CVInvestigadorPDF(View):
                                                                         es_libro_completo=True).filter(
             pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
-                                                                                                         libro__tipo='DIVULGACION',
-                                                                                                         libro__es_libro_completo=False).exclude(
+                                                                                                         libro__tipo='DIVULGACION').exclude(
             libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by(
             '-fecha')
         capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
-                                                                                                       libro__tipo='DIVULGACION',
-                                                                                                       libro__es_libro_completo=False).filter(
+                                                                                                       libro__tipo='DIVULGACION').filter(
             libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by(
             '-fecha')
         resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
@@ -7440,10 +7439,10 @@ class CVInvestigadorPDF(View):
         context['articulos_indexadas_mexicanas'] = articulos_indexadas_mexicanas
         context['articulos_no_indexadas_extranjeras'] = articulos_no_indexadas_extranjeras
         context['articulos_no_indexadas_mexicanas'] = articulos_no_indexadas_mexicanas
-        context['libros_editoriales_mexicanas '] = libros_investigacion_editoriales_mexicanas
-        context['libros_editoriales_extranjeras '] = libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_editoriales_extranjeras '] = capitulos_libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_editoriales_mexicanas '] = capitulos_libros_investigacion_editoriales_mexicanas
+        context['libros_investigacion_editoriales_mexicanas'] = libros_investigacion_editoriales_mexicanas
+        context['libros_investigacion_editoriales_extranjeras'] = libros_investigacion_editoriales_extranjeras
+        context['capitulos_libros_investigacion_editoriales_extranjeras'] = capitulos_libros_investigacion_editoriales_extranjeras
+        context['capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
         context['mapas_publicaciones_extranjeras '] = mapas_publicaciones_extranjeras
         context['mapas_publicaciones_mexicanas '] = mapas_publicaciones_mexicanas
         context['informes_tecnicos_mex'] = informes_tecnicos_mex
@@ -7467,10 +7466,9 @@ class CVInvestigadorPDF(View):
 
 
         template = get_template('cv.tex')
-        print(template.render(context))
+
         rendered_tpl = template.render(context).encode('utf-8')
-        print("aqui")
-        print(rendered_tpl)
+
 
         with tempfile.TemporaryDirectory() as tempdir:
             for i in range(2):

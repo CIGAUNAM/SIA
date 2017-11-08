@@ -94,17 +94,6 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
                                     required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                  required=True, label='Número de página final')
-    proyecto = forms.ModelChoiceField(
-        required=False,
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto de investigación",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-
     class Meta:
         model = CapituloLibroInvestigacion
         exclude = []
