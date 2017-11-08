@@ -7364,9 +7364,9 @@ class CVInvestigadorPDF(View):
             '-libro__fecha')
 
         memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
-            evento__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+            evento__pais__nombre='México').order_by('-fecha')
         memoriainextenso_mexicanas = MemoriaInExtenso.objects.filter(usuarios=pk).filter(
-            evento__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+            evento__pais__nombre='México').order_by('-fecha')
         mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(usuarios=pk).exclude(
             editorial__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
