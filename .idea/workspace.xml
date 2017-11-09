@@ -24,8 +24,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SIA/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="7490" column="22" lean-forward="true" selection-start-line="7490" selection-start-column="22" selection-end-line="7490" selection-end-column="22" />
+            <state relative-caret-position="193">
+              <caret line="7492" column="18" lean-forward="true" selection-start-line="7492" selection-start-column="18" selection-end-line="7492" selection-end-column="18" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -541,13 +541,6 @@
       <option name="presentableId" value="Default" />
       <updated>1505766858927</updated>
     </task>
-    <task id="LOCAL-00010" summary="libros">
-      <created>1506656696361</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1506656696361</updated>
-    </task>
     <task id="LOCAL-00011" summary="libros">
       <created>1506761609326</created>
       <option name="number" value="00011" />
@@ -884,7 +877,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510209223589</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="reporte graficas historico general y de usuario">
+      <created>1510209619113</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1510209619113</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1387,8 +1387,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SIA/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="7490" column="22" lean-forward="true" selection-start-line="7490" selection-start-column="22" selection-end-line="7490" selection-end-column="22" />
+        <state relative-caret-position="193">
+          <caret line="7492" column="18" lean-forward="true" selection-start-line="7492" selection-start-column="18" selection-end-line="7492" selection-end-column="18" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>

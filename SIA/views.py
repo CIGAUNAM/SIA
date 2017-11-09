@@ -7487,10 +7487,14 @@ class CVInvestigadorPDF(View):
                     try:
                         pdf = f.read()
                     except:
-                        makepdf()
+                        pdf = None
             return pdf
 
-        pdf = makepdf()
+        pdf = None
+        while True:
+            pdf = makepdf()
+            if pdf:
+                break
 
 
         r = HttpResponse(content_type='application/pdf')
