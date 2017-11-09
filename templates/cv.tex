@@ -327,50 +327,96 @@ Para cualquier trámite que involucre a la Dependencia
                                 }
         				{% endif %}
 
+        				{% if mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras %}
+                            \item[6.1.5.]{ Mapas
+                                \begin{itemize}
+                                {% if mapas_publicaciones_mexicanas %}
+                                    \item[a)] En publicaciones mexicanas
+                                        \begin{itemize}
+                                            {% for i in mapas_publicaciones_mexicanas %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, ({{ i.fecha.year }}). \textit{´´{{ i.titulo }}''}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
 
-        				\item Informes técnicos
-        					\begin{itemize}
-        					\item[a)] De proyectos en México
-        					\item[b)] De proyectos en el extranjero \\
-        					\end{itemize}
+                                {% if mapas_publicaciones_extranjeras %}
+                                    \item[b)] En publicaciones extranjeras
+                                        \begin{itemize}
+                                            {% for i in mapas_publicaciones_extranjeras %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, ({{ i.fecha.year }}). \textit{´´{{ i.titulo }}''}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                \end{itemize}
+                                }
+        				{% endif %}
+
+        				{% if informes_tecnicos_mex or informes_tecnicos_intl %}
+                            \item[6.1.6.]{ Informes técnicos
+                                \begin{itemize}
+                                {% if informes_tecnicos_mex %}
+                                    \item[a)] De proyectos en México
+                                        \begin{itemize}
+                                            {% for i in informes_tecnicos_mex %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if informes_tecnicos_intl %}
+                                    \item[b)] De proyectos en el extranjero
+                                        \begin{itemize}
+                                            {% for i in informes_tecnicos_intl %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                \end{itemize}
+                                }
+        				{% endif %}
+
         			\end{enumerate}
         		}
 
 
-        	\item  Producción de divulgación científica (no dirigida a pares)
+                \item{ Producción de divulgación científica (no dirigida a pares)
+                    \begin{enumerate}
+                        \item Artículos impresos o electrónicos
+                                \begin{itemize}
+                                \item[a)] En publicaciones mexicanas
+                                \item[b)] En publicaciones extranjeras \\
+                                \end{itemize}
 
-        			\begin{enumerate}
-        			\item Artículos impresos o electrónicos
-        					\begin{itemize}
-        					\item[a)] En publicaciones mexicanas
-        					\item[b)] En publicaciones extranjeras \\
-        					\end{itemize}
+                        \item Libros de divulgación
+                                \begin{itemize}
+                                \item[a)] En editoriales mexicanas
+                                \item[b)] En editoriales extranjeras \\
+                                \end{itemize}
+                        \item Otros productos publicados
+                                \begin{itemize}
+                                    \item[6.2.3.1] Reseñas
+                                    \item[6.2.3.2] Traducciones
+                                    \item[6.2.3.3] Material para medios (cuando el académico es autor)
+                                        \begin{itemize}
+                                        \item[a)] Notas de prensa
+                                        \item[b)] TV y radio
+                                        \item[c)] Podcast y Webcast
+                                        \end{itemize}
+                                    \item[6.2.3.4] Otros
+                                \end{itemize}
+                        \end{enumerate}
+                     }
 
-        			\item Libros de divulgación
-        					\begin{itemize}
-        					\item[a)] En editoriales mexicanas
-        					\item[b)] En editoriales extranjeras \\
-        					\end{itemize}
-        			\item Otros productos publicados
-        					\begin{itemize}
-        					\item[6.2.3.1] Reseñas
-        					\item[6.2.3.2] Traducciones
-        					\item[6.2.3.3] Material para medios (cuando el académico es autor)
-        						\begin{itemize}
-        						\item[a)] Notas de prensa
-        						\item[b)] TV y radio
-        						\item[c)] Podcast y Webcast
-        						\end{itemize}
-        					\item[6.2.3.4] Otros
-        					\end{itemize}
-        			\end{enumerate}
-        	\item Producción para la docencia
-        			\begin{enumerate}
-        			\item Artículos
-        			\item Libros \\
-        			\end{enumerate}
-        	\item Producción tecnológica
-        	\end{enumerate}
+
+                \item{ Producción para la docencia
+                            \begin{enumerate}
+                                \item Artículos
+                                \item Libros \\
+                            \end{enumerate}
+                        \item Producción tecnológica
+                     }
+            \end{enumerate}
+
         {% endif %}
 
         \textbf{\item OTRAS ACTIVIDADES ACADÉMICAS}
