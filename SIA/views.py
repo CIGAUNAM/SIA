@@ -7474,27 +7474,20 @@ class CVInvestigadorPDF(View):
 
 
 
-        def makepdf():
-            with tempfile.TemporaryDirectory() as tempdir:
-                for i in range(2):
-                    process = Popen(
-                        ['pdflatex', '-output-directory', tempdir],
-                        stdin=PIPE,
-                        stdout=PIPE,
-                    )
-                    process.communicate(rendered_tpl)
-                with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
-                    try:
-                        pdf = f.read()
-                    except:
-                        pdf = None
-            return pdf
 
-        pdf = None
-        while True:
-            pdf = makepdf()
-            if pdf:
-                break
+        with tempfile.TemporaryDirectory() as tempdir:
+            for i in range(2):
+                process = Popen(
+                    ['pdflatex', '-output-directory', tempdir],
+                    stdin=PIPE,
+                    stdout=PIPE,
+                )
+                process.communicate(rendered_tpl)
+            with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
+                pdf = f.read()
+
+
+
 
 
         r = HttpResponse(content_type='application/pdf')
