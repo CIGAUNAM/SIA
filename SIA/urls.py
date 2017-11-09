@@ -54,8 +54,16 @@ urlpatterns = [
     url(r'^web/cv-investigadores/(?P<pk>[\w\-]+)/$', CVInvestigadorDetalle.as_view(), name='cv_investigador_detalle'),
     url(r'^web/cv-investigadores/(?P<pk>[\w\-]+)/pdf/$', CVInvestigadorPDF.as_view(), name='cv_investigador_detalle'),
 
-    url(r'^web/publicaciones/$', WepPublicacionLista.as_view(), name='web_publicacion_lista'),
-    url(r'^web/publicaciones/(?P<pk>[\w\-]+)/$', WepPublicacionDetalle.as_view(), name='web_publicacion_lista'),
+    url(r'^web/publicaciones/$', WebPublicacionLista.as_view(), name='web_publicacion_lista'),
+    url(r'^web/publicaciones/(?P<pk>[\w\-]+)/$', WebPublicacionDetalle.as_view(), name='web_publicacion_detalle'),
+
+    url(r'^web/articulos/$', WebArticuloLista.as_view(), name='web_articulo_lista'),
+    url(r'^web/articulos/(?P<pk>[\w\-]+)/$', WebArticuloDetalle.as_view(), name='web_articulo_detalle'),
+
+    url(r'^web/proyectos/$', WebProyectoLista.as_view(), name='web_proyecto_lista'),
+    url(r'^web/proyectos/(?P<pk>[\w\-]+)/$', WebProyectoDetalle.as_view(), name='web_proyecto_detalle'),
+
+
 
     url(r'^web/proyectos-actuales', PerfilUsuario.as_view(), name='perfil_usuario'),
 

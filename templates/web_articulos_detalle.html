@@ -20,16 +20,15 @@
             <div class="box box-warning">
                 <div class="box-header with-border">
 
-                    <h2>{{ publicacion.nombre }}</h2>
+                    <h2>{{ articulo.titulo }}</h2>
                     <hr>
                     <h3>{% for u in publicacion.usuarios.all %} {{ u.author_name }},{% endfor %}</h3>
                     {% if publicacion.descripcion %}
-                    <h4>Descripción</h4>
+                    <h4>Abstract:</h4>
                     {% endif %}
-                    <p><strong>Editorial: </strong> {{ publicacion.editorial }}</p>
-                    <p><strong>Fecha: </strong> {{ publicacion.fecha }}</p>
-                    <p><strong>Ciudad: </strong> {{ publicacion.ciudad }}</p>
-                    <p><strong>País: </strong> {{ publicacion.pais }}</p>
+                    <p><strong>Fecha: </strong> {{ articulo.fecha }}</p>
+                    <p><strong>Revista: </strong> {{ articulo.revista }}</p>
+                    <p><strong>País: </strong> {{ articulo.revista.pais }}</p>
                     <p><strong>URL: </strong> {{ publicacion.url }}</p>
 
 

@@ -20,19 +20,10 @@
             <div class="box box-warning">
                 <div class="box-header with-border">
 
-                    <h2>{{ publicacion.nombre }}</h2>
-                    <hr>
-                    <h3>{% for u in publicacion.usuarios.all %} {{ u.author_name }},{% endfor %}</h3>
-                    {% if publicacion.descripcion %}
-                    <h4>Descripción</h4>
-                    {% endif %}
-                    <p><strong>Editorial: </strong> {{ publicacion.editorial }}</p>
-                    <p><strong>Fecha: </strong> {{ publicacion.fecha }}</p>
-                    <p><strong>Ciudad: </strong> {{ publicacion.ciudad }}</p>
-                    <p><strong>País: </strong> {{ publicacion.pais }}</p>
-                    <p><strong>URL: </strong> {{ publicacion.url }}</p>
-
-
+                    {% for i in proyectos %}
+                        <p><a href="./{{ i.pk }}/" onclick="window.open(this.href,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800,height=600'); return false;"><em>{{ i.nombre }}</em></a></p>
+                    <p>{{ i.descripcion|truncatechars:20 }}</p>
+                    {% endfor %}
                     <!-- /.box-tools -->
                 </div>
                 <!-- /.box-header -->

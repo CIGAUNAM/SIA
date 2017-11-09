@@ -20,18 +20,19 @@
             <div class="box box-warning">
                 <div class="box-header with-border">
 
-                    <h2>{{ publicacion.nombre }}</h2>
+                    <h2>{{ proyecto.nombre }}</h2>
                     <hr>
                     <h3>{% for u in publicacion.usuarios.all %} {{ u.author_name }},{% endfor %}</h3>
                     {% if publicacion.descripcion %}
                     <h4>Descripción</h4>
                     {% endif %}
-                    <p><strong>Editorial: </strong> {{ publicacion.editorial }}</p>
-                    <p><strong>Fecha: </strong> {{ publicacion.fecha }}</p>
-                    <p><strong>Ciudad: </strong> {{ publicacion.ciudad }}</p>
-                    <p><strong>País: </strong> {{ publicacion.pais }}</p>
-                    <p><strong>URL: </strong> {{ publicacion.url }}</p>
-
+                    <p><strong>Fecha inicio: </strong> {{ proyecto.fecha_inicio }}</p>
+                    <p><strong>Fecha fin: </strong> {{ proyecto.fecha_fin }}</p>
+                    <p><strong>Institucion: </strong> {{ proyecto.institucion }}</p>
+                    <p><strong>Clasificación: </strong> {{ proyecto.clasificacion }}</p>
+                    {% if problema_nacional_conacyt %}
+                    <p><strong>Atiende problema nacional CONACYT: </strong> {{ proyecto.problema_nacional_conacyt }}</p>
+                    {% endif %}
 
                     <!-- /.box-tools -->
                 </div>
