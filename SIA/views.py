@@ -7186,21 +7186,21 @@ class CVInvestigadorLista(View):
         return render(request, self.template_name, context)
 
 
-class WepPublicacionLista(View):
+class WebPublicacionLista(View):
     template_name = 'web_publicaciones.html'
     this_year = datetime.now().year
 
     def get(self, request):
         context = {}
         this_year = self.this_year
-        publicaciones = Libro.objects.filter(fecha__year=this_year).exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+        publicaciones = Libro.objects.filter(fecha__year=this_year).exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
 
         context['publicaciones'] = publicaciones
 
         return render(request, self.template_name, context)
 
 
-class WepPublicacionDetalle(View):
+class WebPublicacionDetalle(View):
     template_name = 'web_publicaciones_detalle.html'
     this_year = datetime.now().year
 
@@ -7210,6 +7210,60 @@ class WepPublicacionDetalle(View):
         publicacion = Libro.objects.get(pk=pk)
 
         context['publicacion'] = publicacion
+
+        return render(request, self.template_name, context)
+
+
+class WebArticuloLista(View):
+    template_name = 'web_articulos.html'
+    this_year = datetime.now().year
+
+    def get(self, request):
+        context = {}
+        this_year = self.this_year
+        articulos = ArticuloCientifico.objects.filter(fecha__year=this_year).exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+
+        context['articulos'] = articulos
+
+        return render(request, self.template_name, context)
+
+
+class WebArticuloDetalle(View):
+    template_name = 'web_articulos_detalle.html'
+    this_year = datetime.now().year
+
+    def get(self, request, pk):
+        context = {}
+        this_year = self.this_year
+        articulo = ArticuloCientifico.objects.get(pk=pk)
+
+        context['articulo'] = articulo
+
+        return render(request, self.template_name, context)
+
+
+class WebProyectoLista(View):
+    template_name = 'web_proyectos.html'
+    this_year = datetime.now().year
+
+    def get(self, request):
+        context = {}
+        this_year = self.this_year
+        proyectos = ProyectoInvestigacion.objects.filter(Q(fecha_inicio__year=this_year) | Q(fecha_fin=None) | Q(fecha_fin__year__gte=this_year)).order_by('-fecha_inicio')
+
+        context['proyectos'] = proyectos
+
+        return render(request, self.template_name, context)
+
+
+class WebProyectoDetalle(View):
+    template_name = 'web_proyectos_detalle.html'
+    this_year = datetime.now().year
+
+    def get(self, request, pk):
+        context = {}
+        proyecto = ProyectoInvestigacion.objects.get(pk=pk)
+        context['proyecto'] = proyecto
 
         return render(request, self.template_name, context)
 
