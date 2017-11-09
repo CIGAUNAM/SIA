@@ -57,7 +57,6 @@ urlpatterns = [
     url(r'^web/publicaciones/$', WepPublicacionLista.as_view(), name='web_publicacion_lista'),
     url(r'^web/publicaciones/(?P<pk>[\w\-]+)/$', WepPublicacionDetalle.as_view(), name='web_publicacion_lista'),
 
-
     url(r'^web/proyectos-actuales', PerfilUsuario.as_view(), name='perfil_usuario'),
 
     url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),
