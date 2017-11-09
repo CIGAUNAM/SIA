@@ -7482,7 +7482,9 @@ class CVInvestigadorPDF(View):
                     stdin=PIPE,
                     stdout=PIPE,
                 )
-                process.communicate(rendered_tpl)
+                print(process)
+                a = process.communicate(rendered_tpl)
+                print(a)
             with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
                 pdf = f.read()
 
