@@ -1,3 +1,4 @@
+{% autoescape off %}
 \documentclass[12pt]{report}
 \usepackage[left= 2.0cm, right= 2.0cm, top=2.0cm, bottom=2.0cm]{geometry}
 \usepackage[utf8]{inputenc}
@@ -36,195 +37,343 @@ Para cualquier trámite que involucre a la Dependencia
     \begin{enumerate}
 
         \item[1.]{ \textbf{DATOS PERSONALES} \\ \\
-            Nombre: Adrián Ghilardi \\
-            fecha de nacimiento: None \\
-            País de origen: México \\
-            RFC: DgFdm \\
-            CURP:  \\
-            Correo electrónico: aghilardi@ciga.unam.mx \\
+            Nombre: {{ usuario }} \\
+            fecha de nacimiento: {{ usuario.fecha_nacimiento }} \\
+            País de origen: {{ usuario.pais }} \\
+            RFC: {{ usuario.rfc }} \\
+            CURP: {{ usuario.curp }} \\
+            Correo electrónico: {{ usuario.email }} \\
             }
 
         \item[2.]{ \textbf{ FORMACIÓN PROFESIONAL }
             \begin{enumerate}
 
-
+                {% if licenciaturas %}
                 \item[2.1.]{ \textbf{Estudios profesionales}
                       \begin{itemize}
-
-                              \item 1 de Marzo de 2000,\textbf{ Licenciatura en Ciencias Biológicas}, Universidad Nacional de Córdoba (UNC), Universidad Nacional de Córdoba (UNC)
+                          {% for i in licenciaturas %}
+                              \item {{ i.fecha_grado }},\textbf{ {{ i.carrera }}}, {{ i.institucion }}, {{ i.dependencia }}
                                   \begin{itemize}
-                                      \item[]{\textit{ Caracterización de volátiles en mieles del centro de Argentina }}
+                                      \item[]{\textit{ {{ i.titulo_tesis }} }}
                                   \end{itemize}
-
+                          {% endfor %}
                       \end{itemize}
                       }
+                 {% endif %}
 
-
-
+                {% if maestrias or doctorados or postdoctorados %}
                 \item[2.2.]{ \textbf{Estudios de posgrado}
-                          \begin{itemize}[label=\FilledSmallSquare]
+        	          \begin{itemize}[label=\FilledSmallSquare]
 
+        	              {% if maestrias %}
+        		              \item[a)] Maestría
+        		                  \begin{itemize}
+                                      {% for i in maestrias %}
+                                          \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                              \begin{itemize}
+                                                  \item[]{\textit{ {{ i.titulo_tesis }} }}
+                                              \end{itemize}
+                                      {% endfor %}
+                                  \end{itemize}
+                          {% endif %}
 
-
-
+                          {% if doctorados %}
                               \item[b)] Doctorado
                                   \begin{itemize}
-
-                                          \item 1 de Junio de 2008,\textbf{ Posgrado en Ciencias Biológicas}, Universidad Nacional Autónoma de México (UNAM), Facultad de Ciencias
+                                      {% for i in doctorados %}
+                                          \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
                                               \begin{itemize}
-                                                  \item[]{\textit{ Análisis multi-escalar de los patrones espaciales de oferta y demanda de leña para uso residencial en México }}
+                                                  \item[]{\textit{ {{ i.titulo_tesis }} }}
                                               \end{itemize}
-
+                                      {% endfor %}
                                   \end{itemize}
+        		          {% endif %}
 
-
-
-                                      \item[c)] Postdoctorados
-                                          \begin{itemize}
-
-                                          \item 1 de Septiembre de 2008 - 1 de Agosto de 2010,\textbf{ c1a495ab-c4e6-11e7-bb63-9eb3153f17dd}, Universidad Nacional Autónoma de México (UNAM), Universidad Nacional Autónoma de México (UNAM)
-
+                          {% if postdoctorados %}
+        		              \item[c)] Postdoctorados
+        		                  \begin{itemize}
+                                      {% for i in postdoctorados %}
+                                          \item {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                      {% endfor %}
                                   \end{itemize}
+        		          {% endif %}
 
+        	          \end{itemize}
+        	        }
+        	     {% endif %}
 
-                          \end{itemize}
-                        }
-
-
-
+                {% if usuario.tipo == 'TECNICO'%}
+                    \item[2.3.] \textbf{Cursos de especialización o capacitación}
+                        \begin{itemize}
+                            {% for i in cursos_especializacion %}
+                                \item{ {{ i.fecha_inicio }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
+                            {% endfor %}
+                        \end{itemize}
+                {% endif %}
             \end{enumerate}
             }
 
-
+        {% if exp_prof_unam or exp_prof_unam_prom or exp_prof_ext %}
             \vspace{0.5cm}
             \item[3.] \textbf{EXPERIENCIA PROFESIONAL}
                 \begin{enumerate}
 
-
+                    {% if exp_prof_unam or exp_prof_unam_prom %}
                         \item[3.1.] En la UNAM
-
+                            {% if exp_prof_unam %}
                                 \begin{itemize}
-
-                                        \item{ 1 de Enero de 2015,\textbf{ Investigador UNAM}, Centro de Investigaciones en Geografía Ambiental (CIGA)}
-
+                                    {% for i in exp_prof_unam %}
+                                        \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }}}
+                                    {% endfor %}
                                 \end{itemize}
+                            {% endif %}
 
-
-
+                        {% if exp_prof_unam_prom %}
                             \begin{itemize}
                                 \item[3.1.1.] Promociones
                                     \begin{itemize}
-
-                                            \item{ 1 de Abril de 2016,\textbf{ Otro, Investigador Titular A, Tiempo Completo}, Centro de Investigaciones en Geografía Ambiental (CIGA)}
-
-                                            \item{ 28 de Abril de 2011,\textbf{ Otro, Investigador Asociado C, Tiempo Completo}, Centro de Investigaciones en Geografía Ambiental (CIGA)}
-
+                                        {% for i in exp_prof_unam_prom %}
+                                            \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}, {{ i.nombramiento }}}, {{ i.dependencia }}}
+                                        {% endfor %}
                                     \end{itemize}
                             \end{itemize}
+                        {% endif %}
+                    {% endif %}
 
-
-
-
+                    {% if exp_prof_ext %}
+                        \item[3.2.] Fuera de la UNAM
+                            \begin{itemize}
+                                {% for i in exp_prof_ext %}
+                                    \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
                 \end{enumerate}
+        {% endif %}
 
-
-
+        {% if servicios_acad_admn_drvos or comisiones_institucionales %}
             \vspace{.5cm}
             \item[4] \textbf{LABOR ACADÉMICO-ADMINISTRATIVA EN LA UNAM}
                 \begin{enumerate}
-
+                    {% if servicios_acad_admn_drvos %}
                         \item[4.1] Servicios directivos y académicos-administrativos
                             \begin{itemize}
-
-                                    \item{ 1 de Enero de 2015 - None, ,\textbf{ Investigador UNAM}, Centro de Investigaciones en Geografía Ambiental (CIGA) }
-
+                                {% for i in servicios_acad_admn_drvos %}
+                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.tipo_cargo.capitalize }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }} }
+                                {% endfor %}
                             \end{itemize}
+                    {% endif %}
 
-
-
+                    {% if comisiones_institucionales %}
+                        \item[4.2] Comisiones institucionales
+                            \begin{itemize}
+                                {% for i in comisiones_institucionales %}
+                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.comision_academica }}}, {{ i.dependencia }} }
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
                 \end{enumerate}
+        {% endif %}
 
+        {% if usuario.tipo == 'INVESTIGADOR' %}
+            {% if lineas_investigacion %}
+                \vspace{0.5cm}
+                \item[5.] \textbf{PRINCIPALES LÍNEAS DE INVESTIGACIÓN}
+                    {% for i in lineas_investigacion %}
+                        {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.linea_investigacion }}}
+                    {% endfor %}
+            {% endif %}
+        {% endif %}
 
+        {% if usuario.tipo == 'TECNICO' %}
+            {% if capacidades_potencialidades %}
+                \vspace{0.5cm}
+                \item[5.] \textbf{CAPACIDADES Y POTENCIALIDADES}
+                    {% for i in capacidades_potencialidades %}
+                        {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.nombre }}}
+                    {% endfor %}
+            {% endif %}
+        {% endif %}
 
-
-
-
-
-
-
+        {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
         \vspace{0.5cm}
         \item[6.] \textbf{PUBLICACIONES}
 
-                \begin{enumerate}
+        	\begin{enumerate}
 
-                        \item[6.1.]{ Producción científica
-                                \begin{enumerate}
+        		\item[6.1.]{ Producción científica
+        			\begin{enumerate}
+        			    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl %}
+        				\item[6.1.1.] Artículos en revistas arbitradas
+        					\begin{enumerate}
+        					    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas %}
+        						\item[6.1.1.1.] En revistas indexadas
+        							\begin{itemize}
+        							    {% if articulos_indexadas_extranjeras %}
+        								    \item[a)] En revistas extranjeras
+        								        \begin{itemize}
+        								            {% for i in articulos_indexadas_extranjeras %}
+        								                \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
+        								            {% endfor %}
+        								        \end{itemize}
+        								{% endif %}
+        								{% if articulos_indexadas_mexicanas %}
+        								    \item[b)] En revistas mexicanas
+        								        \begin{itemize}
+        								            {% for i in articulos_indexadas_mexicanas %}
+        								                \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
+        								            {% endfor %}
+        								        \end{itemize}
+        								{% endif %}
+        							\end{itemize}
+        						{% endif %}
 
-                                        \item[6.1.1.] Artículos en revistas arbitradas
-                                                \begin{enumerate}
-
-                                                        \item[6.1.1.1.] En revistas indexadas
-                                                                \begin{itemize}
-
-
-                                                                            \item[b)] En revistas mexicanas
-                                                                                \begin{itemize}
-
-                                                                                        \item{  Ghilardi, A., \textit{ Charcoal contribution accumulation at different scales of production among the rural population of Mutomo District in Kenya}, Energy for Sustainable Development (33) 0: 167-175. ISSN . DOI-:  (Web of Science: SCI/SSCI/SCI-EX [IF: 2,380])}
-
-                                                                                        \item{  Ghilardi, A., Espinoza-Medrano, B., Mas, J. F., Skutsch, M., Masera, O. R.,\textit{ Spatiotemporal modeling of fuelwood environmental impacts: towards improved accounting for non-renewable biomass}, Environmental Modelling & Software (82) 0: 241-254. ISSN . DOI-:  (Web of Science: SCI/SSCI/SCI-EX [IF: 4,540])}
-
-                                                                                        \item{  Ghilardi, A., Gao, Y., Mas, J. F., Paneque-Gálvez, J., Skutsch, M.,\textit{ Evaluation of annual modis PTC data for deforestation and forest degradation analysis}, International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives (0) 0: 9-13. ISSN . DOI-:  (Scopus)}
-
-                                                                                        \item{  Aguilar-Romero, R., García-Oliva, F., Pineda-García, F., Torres-García, I., Peña-Vega, F., Ghilardi, A., Oyama, A. K.,\textit{ Patterns of distribution along environmental gradients of nine Quercus species in central Mexico}, Botanical Sciences (94) 3: 471-482. ISSN . DOI-:  (Web of Science: SCI/SSCI/SCI-EX [IF: 0,620])}
-
-                                                                                        \item{  Ghilardi, A., Skutsch, M., Masera, O. R.,\textit{ Sustainable bioenergy options for Mexico: GHG mitigation and costs}, Renewable and Sustainable Energy Reviews (43) 0: 545-552. ISSN . DOI-:  (Web of Science: SCI/SSCI/SCI-EX [IF: 5,510])}
-
-                                                                                        \item{  Ghilardi, A., Masera, O. R., Espinoza-Medrano, B.,\textit{ The carbon footprint of traditional woodfuels}, Nature Climate Change (5) 0: 266-272. ISSN . DOI-:  (Web of Science: SCI/SSCI/SCI-EX [IF: 15,300])}
-
-                                                                                        \item{  Ghilardi, A., Masera, O. R., Espinoza-Medrano, B.,\textit{ Environmental Burden of Traditional Bioenergy Use}, Annual Review of Environment and Resources (40) 0: 121-150. ISSN . DOI-:  (Web of Science: SCI/SSCI/SCI-EX [IF: 5,890])}
-
-                                                                                        \item{  Ghilardi, A., Oyama, A. K., Masera, O. R.,\textit{ Análisis de la producción de carbón vegetal en la Cuenca del Lago de Cuitzeo, Michoacán, México: implicaciones para una producción sustentable}, Investigación Ambiental (6) 2: 127-138. ISSN . DOI-:  (Otros Indices)}
-
-                                                                                \end{itemize}
-
-                                                                \end{itemize}
-
-
-
-                                                        \item[6.1.1.2.] En revistas no indexadas
-                                                                \begin{itemize}
-
-
+        						{% if articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
+        						\item[6.1.1.2.] En revistas no indexadas
+        							\begin{itemize}
+        							    {% if articulos_no_indexadas_extranjeras %}
                                             \item[a)] En revistas extranjeras
                                                 \begin{itemize}
-
-                                                        \item{  Paneque-Gálvez, J., Gao, Y., Ghilardi, A., Skutsch, M., Mas, J. F.,\textit{ Validation of MODIS Vegetation Continuos Fields for monitoring deforestation and forest degradation: two cases in Mexico}, Geocarto International (31) 9: 1019-1031. ISSN . DOI-:  }
-
-                                                        \item{  Paneque-Gálvez, J., Skutsch, M., Ghilardi, A., Balderas-Torres, A.,\textit{ Quantifying the Mexican forest carbon sink}, Environmental Research Letters (0) 0: 0-0. ISSN . DOI-:  }
-
-                                                        \item{  Skutsch, M., Paneque-Gálvez, J., Ghilardi, A., Morfin-Rios, J., Michel-Fuentes, J. M., Carrillo, O.,\textit{ The science and policy of REDD+ in a sink: Case of Mexico}, Environmental Science && Policy (0) 0: 0-0. ISSN . DOI-:  }
-
+                                                    {% for i in articulos_no_indexadas_extranjeras %}
+                                                        \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} }
+                                                    {% endfor %}
                                                 \end{itemize}
+                                        {% endif %}
+                                        {% if articulos_no_indexadas_mexicanas %}
+                                            \item[a)] En revistas extranjeras
+                                                \begin{itemize}
+                                                    {% for i in articulos_no_indexadas_mexicanas %}
+                                                        \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} }
+                                                    {% endfor %}
+                                                \end{itemize}
+                                        {% endif %}
+        							\end{itemize}
+        						{% endif %}
 
-                                                                \end{itemize}
+        					\end{enumerate}
+        				{% endif %}
 
+                        {% if libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas %}
+                            \item[6.1.2.]{ Libros
+                                \begin{itemize}
+                                    {% if libros_investigacion_editoriales_mexicanas %}
+                                        \item[a)] De editoriales mexicanas
+                                            \begin{itemize}
+                                                {% for i in libros_investigacion_editoriales_mexicanas %}
+                                                    \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %} {{ i.fecha.year }}.\textit{ {{ i.nombre }}}, {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
 
-                                                \end{enumerate}
+                                    {% if libros_investigacion_editoriales_extranjeras %}
+                                        \item[b)] De editoriales extranjeras
+                                            \begin{itemize}
+                                                {% for i in libros_investigacion_editoriales_extranjeras %}
+                                                    \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %} {{ i.fecha.year }}.\textit{ {{ i.nombre }}}, {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
+                                \end{itemize}
+                                }
+        				{% endif %}
 
+                        {% if capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
+                            \item[6.1.3.] Capítulos de libros
+                                \begin{itemize}
+                                    {% if capitulos_libros_investigacion_editoriales_mexicanas %}
+                                        \item[a)] En libros de editoriales mexicanas
+                                            \begin{itemize}
+                                                {% for i in capitulos_libros_investigacion_editoriales_mexicanas %}
+                                                    \item{ {% for u in i.libro.usuarios.all %} {{ u.author_name }},{% endfor %} {{ i.libro.fecha.year }}.\textit{``{{ i.titulo }}''}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
 
+                                    {% if capitulos_libros_investigacion_editoriales_extranjeras %}
+                                        \item[b)] En libros de editoriales extranjeras
+                                            \begin{itemize}
+                                                {% for i in capitulos_libros_investigacion_editoriales_extranjeras %}
+                                                    \item{ {% for u in i.libro.usuarios.all %} {{ u.author_name }},{% endfor %} {{ i.libro.fecha.year }}.\textit{``{{ i.titulo }}''}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
+                                \end{itemize}
+        				{% endif %}
 
+                        {% if memoriainextenso_extranjeras or memoriainextenso_mexicanas %}
+                            \item[6.1.4.]{ Artículos ``in extenso'' en Memorias de Congresos
+                                \begin{itemize}
+                                {% if memoriainextenso_mexicanas %}
+                                    \item[a)] En publicaciones mexicanas
+                                        \begin{itemize}
+                                            {% for i in memoriainextenso_mexicanas %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}) ``{{ i.nombre }}''. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
 
+                                {% if memoriainextenso_extranjeras %}
+                                    \item[b)] En publicaciones extranjeras
+                                        \begin{itemize}
+                                            {% for i in memoriainextenso_extranjeras %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}) ``{{ i.nombre }}''. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                \end{itemize}
+                                }
+        				{% endif %}
 
+        				{% if mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras %}
+                            \item[6.1.5.]{ Mapas
+                                \begin{itemize}
+                                {% if mapas_publicaciones_mexicanas %}
+                                    \item[a)] En publicaciones mexicanas
+                                        \begin{itemize}
+                                            {% for i in mapas_publicaciones_mexicanas %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, ({{ i.fecha.year }}). \textit{´´{{ i.titulo }}''}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
 
+                                {% if mapas_publicaciones_extranjeras %}
+                                    \item[b)] En publicaciones extranjeras
+                                        \begin{itemize}
+                                            {% for i in mapas_publicaciones_extranjeras %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, ({{ i.fecha.year }}). \textit{´´{{ i.titulo }}''}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                \end{itemize}
+                                }
+        				{% endif %}
 
+        				{% if informes_tecnicos_mex or informes_tecnicos_intl %}
+                            \item[6.1.6.]{ Informes técnicos
+                                \begin{itemize}
+                                {% if informes_tecnicos_mex %}
+                                    \item[a)] De proyectos en México
+                                        \begin{itemize}
+                                            {% for i in informes_tecnicos_mex %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
 
+                                {% if informes_tecnicos_intl %}
+                                    \item[b)] De proyectos en el extranjero
+                                        \begin{itemize}
+                                            {% for i in informes_tecnicos_intl %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                \end{itemize}
+                                }
+        				{% endif %}
 
-
-
-
-                                \end{enumerate}
-                        }
+        			\end{enumerate}
+        		}
 
 
                 \item{ Producción de divulgación científica (no dirigida a pares)
@@ -265,185 +414,185 @@ Para cualquier trámite que involucre a la Dependencia
                      }
             \end{enumerate}
 
-
+        {% endif %}
 
         \textbf{\item OTRAS ACTIVIDADES ACADÉMICAS}
 
-                \begin{enumerate}
-                \item Participación en proyectos
-                        \begin{itemize}
-                        \item[a)] Responsable
-                        \item[b)] Participante \\
-                        \end{itemize}
+        	\begin{enumerate}
+        	\item Participación en proyectos
+        		\begin{itemize}
+        		\item[a)] Responsable
+        		\item[b)] Participante \\
+        		\end{itemize}
             \item Participación como ponente en eventos académicos
-                \begin{enumerate}
-                \item Nacionales
-                        \begin{itemize}
-                        \item[a)] Por invitación
-                                \item[b)] Participación
-                        \end{itemize}
-                        \item Internacionales
-                                \begin{itemize}
-                                \item[a)] Por invitación
-                                \item[b)] Participación \\
-                                \end{itemize}
+            	\begin{enumerate}
+            	\item Nacionales
+            		\begin{itemize}
+            		\item[a)] Por invitación
+        			\item[b)] Participación
+            		\end{itemize}
+        		\item Internacionales
+        			\begin{itemize}
+        			\item[a)] Por invitación
+        			\item[b)] Participación \\
+        			\end{itemize}
 
 
-                \end{enumerate}
-                \item Organización de eventos académicos
-                        \begin{itemize}
-                        \item[a)] Nacionales
-                        \item[b)] Internacionales \\
-                        \end{itemize}
-                \item Participación en Comisiones Dictaminadoras\\ {\small (De proyectos, de becas de agencias financiadoras, etc.)}
-                        \begin{itemize}
-                        \item[a)] Nacionales
-                        \item[b)] Internacionales \\
-                        \end{itemize}
-                \item Participación en Actividades Editoriales
-                        \begin{enumerate}
-                        \item Dictámenes de artículos en revistas
-                                \begin{itemize}
-                                \item[a)] Mexicanas
-                                \item[b)] Extranjeras
-                                \end{itemize}
-                        \item Dictámenes de libros
-                                \begin{itemize}
-                                \item[a)] De editoriales mexicanas
-                                \item[b)] De editoriales extranjeras \\
-                                \end{itemize}
-                        \end{enumerate}
-                \item Convenios académicos nacionales e internacionales
-                        \begin{enumerate}
-                        \item Estancias académicas
-                        \item Profesores visitantes
-                        \item Años o Semestres sabáticos
-                        \item Participación en redes académicas \\
-                        \end{enumerate}
-                \item Vinculación con la sociedad
-                        \begin{enumerate}
-                        \item Promoción de convenios de colaboración con entidades no académicas
-                        \item Servicios y asesorías externas
-                        \item Organización de eventos de divulgación (no dirigidos a pares)
-                        \item Conferencias de divulgación (no dirigidas a pares) \\
-                        \end{enumerate}
+            	\end{enumerate}
+         	\item Organización de eventos académicos
+         		\begin{itemize}
+         		\item[a)] Nacionales
+        		\item[b)] Internacionales \\
+         		\end{itemize}
+        	\item Participación en Comisiones Dictaminadoras\\ {\small (De proyectos, de becas de agencias financiadoras, etc.)}
+        		\begin{itemize}
+        		\item[a)] Nacionales
+        		\item[b)] Internacionales \\
+        		\end{itemize}
+        	\item Participación en Actividades Editoriales
+        		\begin{enumerate}
+        		\item Dictámenes de artículos en revistas
+        			\begin{itemize}
+        			\item[a)] Mexicanas
+        			\item[b)] Extranjeras
+        			\end{itemize}
+        		\item Dictámenes de libros
+        			\begin{itemize}
+        			\item[a)] De editoriales mexicanas
+        			\item[b)] De editoriales extranjeras \\
+        			\end{itemize}
+        		\end{enumerate}
+        	\item Convenios académicos nacionales e internacionales
+        		\begin{enumerate}
+        		\item Estancias académicas
+        		\item Profesores visitantes
+        		\item Años o Semestres sabáticos
+        		\item Participación en redes académicas \\
+        		\end{enumerate}
+        	\item Vinculación con la sociedad
+        		\begin{enumerate}
+        		\item Promoción de convenios de colaboración con entidades no académicas
+        		\item Servicios y asesorías externas
+        		\item Organización de eventos de divulgación (no dirigidos a pares)
+        		\item Conferencias de divulgación (no dirigidas a pares) \\
+        		\end{enumerate}
              \item Otros \\
-                \textbf{En el caso de los técnicos} incluir además:
-                \begin{small}
-                 \begin{itemize}
-                \item[-] Contribución al desarrollo de infraestructura para la investigación
-                \item[-] Desarrollo y adaptación de tecnología y servicios técnicos (importancia, grado participación, impacto).
-                \item[-] Actividades técnicas de servicio en bibliotecas, talleres, unidades de apoyo, etc.
-                \end{itemize}
-                 \end{small}
-                \end{enumerate}
+        	\textbf{En el caso de los técnicos} incluir además:
+        	\begin{small}
+        	 \begin{itemize}
+        	\item[-] Contribución al desarrollo de infraestructura para la investigación
+        	\item[-] Desarrollo y adaptación de tecnología y servicios técnicos (importancia, grado participación, impacto).
+        	\item[-] Actividades técnicas de servicio en bibliotecas, talleres, unidades de apoyo, etc.
+        	\end{itemize}
+        	 \end{small}
+        	\end{enumerate}
 
         \textbf{\item {\small FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}}
-                \begin{enumerate}
-                \item Cursos impartidos
-                        \begin{enumerate}
-                        \item Cursos extracurriculares
-                                \begin{itemize}
-                                \item[8.1.1.1] En la UNAM
-                                \item[8.1.1.2] En otras instituciones
-                                \begin{itemize}
-                                \item[a)] Nacionales
-                                \item[b)] Internacionales
-                                \end{itemize}
-                                \end{itemize}
-                        \item Cursos escolarizados
-                                \begin{enumerate}
-                                \item[8.1.2.1] Licenciatura
-                                        \begin{itemize}
-                                        \item[a)] Profesor titular o coordinador
-                                        \item[b)] Colaborador o invitado
-                                        \end{itemize}
+        	\begin{enumerate}
+        	\item Cursos impartidos
+        		\begin{enumerate}
+        		\item Cursos extracurriculares
+        			\begin{itemize}
+        			\item[8.1.1.1] En la UNAM
+        			\item[8.1.1.2] En otras instituciones
+        			\begin{itemize}
+        			\item[a)] Nacionales
+        			\item[b)] Internacionales
+        			\end{itemize}
+        			\end{itemize}
+        		\item Cursos escolarizados
+        			\begin{enumerate}
+        			\item[8.1.2.1] Licenciatura
+        				\begin{itemize}
+        				\item[a)] Profesor titular o coordinador
+        				\item[b)] Colaborador o invitado
+        				\end{itemize}
 
-                                \item [8.1.2.2]Posgrado
-                                        \begin{itemize}
-                                        \item[a)] Profesor titular o coordinador
-                                        \item[b)] Colaborador o invitado
-                                        \end{itemize}
-                                \end{enumerate}
-                    \item Apoyo a la docencia
+        			\item [8.1.2.2]Posgrado
+        				\begin{itemize}
+        				\item[a)] Profesor titular o coordinador
+        				\item[b)] Colaborador o invitado
+        				\end{itemize}
+        			\end{enumerate}
+        	    \item Apoyo a la docencia
 
-                        \end{enumerate}
+        		\end{enumerate}
 
-                \item Personal formado
-                        \begin{enumerate}
-                        \item Tesis dirigidas
-                                \begin{itemize}
-                                \item[a)] Licenciatura
-                                \item[b)] Maestría
-                                \item[c)] Doctorado
-                                \end{itemize}
+        	\item Personal formado
+        		\begin{enumerate}
+        		\item Tesis dirigidas
+        			\begin{itemize}
+        			\item[a)] Licenciatura
+        			\item[b)] Maestría
+        			\item[c)] Doctorado
+        			\end{itemize}
                 \item Tesis en proceso
-                        \begin{itemize}
-                                \item[a)] Licenciatura
-                                \item[b)] Maestría
-                                \item[c)] Doctorado
-                                \end{itemize}
+                	\begin{itemize}
+        			\item[a)] Licenciatura
+        			\item[b)] Maestría
+        			\item[c)] Doctorado
+        			\end{itemize}
 
-                        \item Tutorías o asesorías a estudiantes
-                        \item Becario de proyecto
-                        \item Servicios sociales
-                        \item Supervisión de investigadores posdoctorales
-                        \end{enumerate}
-                \item Desarrollo de áreas o grupos de investigación internos
-                \item Miembro de comités tutorales o sinodales
-                        \begin{enumerate}
-                        \item Sinodal de tesis de licenciatura
-                        \item Maestría
-                                \begin{itemize}
-                                \item[a)] Comité tutoral
-                                \item[b)] Sinodal de tesis
-                                \end{itemize}
-                        \item Doctorado
-                                \begin{itemize}
-                                \item[a)] Comité tutoral
-                                \item[b)] Sinodal de tesis
-                                \end{itemize}
-                        \end{enumerate}
-                \item Participación en candidaturas al grado de doctor
-                \end{enumerate}
+        		\item Tutorías o asesorías a estudiantes
+        		\item Becario de proyecto
+        		\item Servicios sociales
+        		\item Supervisión de investigadores posdoctorales
+        		\end{enumerate}
+        	\item Desarrollo de áreas o grupos de investigación internos
+        	\item Miembro de comités tutorales o sinodales
+        		\begin{enumerate}
+        		\item Sinodal de tesis de licenciatura
+        		\item Maestría
+        			\begin{itemize}
+        			\item[a)] Comité tutoral
+        			\item[b)] Sinodal de tesis
+        			\end{itemize}
+        		\item Doctorado
+        			\begin{itemize}
+        			\item[a)] Comité tutoral
+        			\item[b)] Sinodal de tesis
+        			\end{itemize}
+        		\end{enumerate}
+        	\item Participación en candidaturas al grado de doctor
+        	\end{enumerate}
 
         \textbf{\item DISTINCIONES}
-                \begin{enumerate}
-                \item Premios
-                        \begin{itemize}
-                        \item[a)] Nacionales
-                        \item[b)] Internacionales
-                        \end{itemize}
-                \item Reconocimientos de instituciones
-                        \begin{itemize}
-                        \item[a)] Nacionales
-                        \item[b)] Internacionales
-                        \end{itemize}
-                \item Participación en comisiones de expertos
-                        \begin{itemize}
-                        \item[a)] Nacionales
-                        \item[b)] Internacionales
-                        \end{itemize}
-                \item Participaciones en sociedades científicas
-                        \begin{itemize}
-                        \item[a)] Nacionales
-                        \item[b)] Internacionales
-                        \end{itemize}
-                \end{enumerate}
+        	\begin{enumerate}
+        	\item Premios
+        		\begin{itemize}
+        		\item[a)] Nacionales
+        		\item[b)] Internacionales
+        		\end{itemize}
+        	\item Reconocimientos de instituciones
+        		\begin{itemize}
+        		\item[a)] Nacionales
+        		\item[b)] Internacionales
+        		\end{itemize}
+        	\item Participación en comisiones de expertos
+        		\begin{itemize}
+        		\item[a)] Nacionales
+        		\item[b)] Internacionales
+        		\end{itemize}
+        	\item Participaciones en sociedades científicas
+        		\begin{itemize}
+        		\item[a)] Nacionales
+        		\item[b)] Internacionales
+        		\end{itemize}
+        	\end{enumerate}
 
         \textbf{\item RECONOCIMIENTO AL TRABAJO}
-                \begin{enumerate}
-                \item Citas en publicaciones
-                        \begin{itemize}
-                        \item[a)] De circulación internacional
-                        \item[b)] De circulación nacional
-                        \end{itemize}
-                \item Presencia en medios
-                        \begin{itemize}
-                        \item[-] Lugar y fecha
-                        \item[-] Grado, nombre y firma
-                        \end{itemize}
-                \end{enumerate}
+        	\begin{enumerate}
+        	\item Citas en publicaciones
+        		\begin{itemize}
+        		\item[a)] De circulación internacional
+        		\item[b)] De circulación nacional
+        		\end{itemize}
+        	\item Presencia en medios
+        		\begin{itemize}
+        		\item[-] Lugar y fecha
+        		\item[-] Grado, nombre y firma
+        		\end{itemize}
+        	\end{enumerate}
     \end{enumerate}
 
 
@@ -454,3 +603,4 @@ Para cualquier trámite que involucre a la Dependencia
 
 
 \end{document}
+{% endautoescape %}
