@@ -7186,6 +7186,34 @@ class CVInvestigadorLista(View):
         return render(request, self.template_name, context)
 
 
+class WepPublicacionLista(View):
+    template_name = 'web_publicaciones.html'
+    this_year = datetime.now().year
+
+    def get(self, request):
+        context = {}
+        this_year = self.this_year
+        publicaciones = Libro.objects.filter(fecha__year=this_year).exclude(Q(status='ENVIADO') & Q(status='OTRO'))
+
+        context['publicaciones'] = publicaciones
+
+        return render(request, self.template_name, context)
+
+
+class WepPublicacionDetalle(View):
+    template_name = 'web_publicaciones_detalle.html'
+    this_year = datetime.now().year
+
+    def get(self, request, pk):
+        context = {}
+        this_year = self.this_year
+        publicacion = Libro.objects.get(pk=pk)
+
+        context['publicacion'] = publicacion
+
+        return render(request, self.template_name, context)
+
+
 class CVInvestigadorDetalle(View):
     template_name = 'main4.html'
     this_year = datetime.now().year

@@ -1,0 +1,39 @@
+{% extends 'pbase.html' %}
+
+
+{% block title %}SIA : {{ aux.breadcrumb_seccion }} - {{ aux.titulo_pagina }} {% endblock %}
+{% block extra_head %}
+    <!-- comentario extra en head -->
+    {% block stylesheets %}
+        {% include 'adminlte/lib/_styles.html' %}
+
+    {% endblock %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <div class="box-header with-border">
+
+                    {% for i in publicaciones %}
+                        <p><a href="./{{ i.pk }}/" onclick="window.open(this.href,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800,height=600'); return false;"><em>{{ i.nombre }}</em></a></p>
+                    <p>{% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %} {{ i.fecha.year }}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} </p>
+                    {% endfor %}
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+    </div>
+
+
+{% endblock %}
+
+
