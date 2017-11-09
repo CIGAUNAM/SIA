@@ -7473,30 +7473,19 @@ class CVInvestigadorPDF(View):
         rendered_tpl = template.render(context).replace('&', '\&').encode('utf-8')
 
 
-        def pdf():
-            with tempfile.TemporaryDirectory() as tempdir:
-                for i in range(2):
-                    process = Popen(
-                        ['pdflatex', '-output-directory', tempdir],
-                        stdin=PIPE,
-                        stdout=PIPE,
-                    )
-                    process.communicate(rendered_tpl)
-                with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
-                    pdf = f.read()
-        try:
-            pdf()
-        except FileNotFoundError:
-            print(1)
-            print(rendered_tpl)
-            try:
-                print(2)
-                print(rendered_tpl)
-                pdf()
-            except:
-                print(3)
-                print(rendered_tpl)
-                pdf()
+
+
+        with tempfile.TemporaryDirectory() as tempdir:
+            for i in range(2):
+                process = Popen(
+                    ['pdflatex', '-output-directory', tempdir],
+                    stdin=PIPE,
+                    stdout=PIPE,
+                )
+                process.communicate(rendered_tpl)
+            with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
+                pdf = f.read()
+
 
 
         r = HttpResponse(content_type='application/pdf')
