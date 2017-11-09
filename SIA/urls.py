@@ -54,6 +54,10 @@ urlpatterns = [
     url(r'^web/cv-investigadores/(?P<pk>[\w\-]+)/$', CVInvestigadorDetalle.as_view(), name='cv_investigador_detalle'),
     url(r'^web/cv-investigadores/(?P<pk>[\w\-]+)/pdf/$', CVInvestigadorPDF.as_view(), name='cv_investigador_detalle'),
 
+    url(r'^web/publicaciones/$', WepPublicacionLista.as_view(), name='web_publicacion_lista'),
+    url(r'^web/publicaciones/(?P<pk>[\w\-]+)/$', WepPublicacionDetalle.as_view(), name='web_publicacion_lista'),
+
+
     url(r'^web/proyectos-actuales', PerfilUsuario.as_view(), name='perfil_usuario'),
 
     url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),

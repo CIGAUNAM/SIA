@@ -1,0 +1,48 @@
+{% extends 'pbase.html' %}
+
+
+{% block title %}SIA : {{ aux.breadcrumb_seccion }} - {{ aux.titulo_pagina }} {% endblock %}
+{% block extra_head %}
+    <!-- comentario extra en head -->
+    {% block stylesheets %}
+        {% include 'adminlte/lib/_styles.html' %}
+
+    {% endblock %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <div class="box-header with-border">
+
+                    <h2>{{ publicacion.nombre }}</h2>
+                    <hr>
+                    <h3>{% for u in publicacion.usuarios.all %} {{ u.author_name }},{% endfor %}</h3>
+                    {% if publicacion.descripcion %}
+                    <h4>Descripcion</h4>
+                    {% endif %}
+                    <p><strong>Editorial: </strong> {{ publicacion.editorial }}</p>
+                    <p><strong>Fecha: </strong> {{ publicacion.fecha }}</p>
+                    <p><strong>Ciudad: </strong> {{ publicacion.ciudad }}</p>
+                    <p><strong>País: </strong> {{ publicacion.pais }}</p>
+                    <p><strong>URL: </strong> {{ publicacion.url }}</p>
+
+
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+    </div>
+
+
+{% endblock %}
+
+
