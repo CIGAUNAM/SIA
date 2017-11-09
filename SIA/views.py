@@ -7472,6 +7472,7 @@ class CVInvestigadorPDF(View):
 
         rendered_tpl = template.render(context).replace('&', '\&').encode('utf-8')
 
+
         def pdf():
             with tempfile.TemporaryDirectory() as tempdir:
                 for i in range(2):
@@ -7486,7 +7487,17 @@ class CVInvestigadorPDF(View):
         try:
             pdf()
         except FileNotFoundError:
-            pdf()
+            print(1)
+            print(rendered_tpl)
+            try:
+                print(2)
+                print(rendered_tpl)
+                pdf()
+            except:
+                print(3)
+                print(rendered_tpl)
+                pdf()
+
 
         r = HttpResponse(content_type='application/pdf')
         r.write(pdf)
