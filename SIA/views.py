@@ -7470,9 +7470,7 @@ class CVInvestigadorPDF(View):
 
         template = get_template('cv.tex')
 
-        rendered_tpl = template.render(context).encode('utf-8')
-
-
+        rendered_tpl = template.render(context).replace('&', '\&').encode('utf-8')
 
 
         with tempfile.TemporaryDirectory() as tempdir:
@@ -7485,10 +7483,6 @@ class CVInvestigadorPDF(View):
                 process.communicate(rendered_tpl)
             with open(os.path.join(tempdir, 'texput.pdf'), 'rb') as f:
                 pdf = f.read()
-
-
-
-
 
         r = HttpResponse(content_type='application/pdf')
         r.write(pdf)
