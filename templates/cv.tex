@@ -203,7 +203,7 @@ Para cualquier trámite que involucre a la Dependencia
 
         		\item[6.1.]{ Producción científica
         			\begin{enumerate}
-        			    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
+        			    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl %}
         				\item[6.1.1.] Artículos en revistas arbitradas
         					\begin{enumerate}
         					    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas %}
@@ -253,8 +253,6 @@ Para cualquier trámite que involucre a la Dependencia
         					\end{enumerate}
         				{% endif %}
 
-
-
                         {% if libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas %}
                             \item[6.1.2.]{ Libros
                                 \begin{itemize}
@@ -278,7 +276,6 @@ Para cualquier trámite que involucre a la Dependencia
                                 \end{itemize}
                                 }
         				{% endif %}
-
 
                         {% if capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
                             \item[6.1.3.] Capítulos de libros

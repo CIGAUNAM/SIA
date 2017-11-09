@@ -1,4 +1,4 @@
-{% extends 'adminlte/base.html' %}
+{% extends 'pbase.html' %}
 
 
 {% block title %}SIA : {{ aux.breadcrumb_seccion }} - {{ aux.titulo_pagina }} {% endblock %}
@@ -10,24 +10,7 @@
     {% endblock %}
 {% endblock %}
 
-{% block content_header %}
-    <section class="content-header">
-        <h1> {{ aux.titulo_pagina }}
-            {% block page_name %}{% endblock %}
-            {% block no_description %}
-                <small>{% block page_description %}{% endblock %}</small>
-            {% endblock %}
-        </h1>
-        {% block breadcrumbs %}
-            {# Breadcrumb implementation left to developers #}
-            <ol class="breadcrumb">
-                <li><a href="/">Inicio</a></li>
-                <li>{{ aux.breadcrumb_seccion }}</li>
-                <li class="active">{{ aux.titulo_pagina }}</li>
-            </ol>
-        {% endblock %}
-    </section>
-{% endblock %}
+<p>fjhsfjsdhfjkdshfjkdshfjksdhfjkh</p>
 
 
 
