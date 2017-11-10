@@ -375,40 +375,76 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
         			\end{enumerate}
         		}
 
-
-                \item{ Producción de divulgación científica (no dirigida a pares)
+                {% if True %}
+                \item[6.2.]{ Producción de divulgación científica
                     \begin{enumerate}
-                        \item Artículos impresos o electrónicos
+                        {% if articulos_divulgacion_mex or articulos_divulgacion_intl %}
+                            \item[6.2.1.] Artículos impresos o electrónicos
                                 \begin{itemize}
-                                \item[a)] En publicaciones mexicanas
-                                \item[b)] En publicaciones extranjeras \\
-                                \end{itemize}
+                                    {% if articulos_divulgacion_mex %}
+                                        \item[a)] En publicaciones mexicanas
+                                            \begin{itemize}
+                                                {% for i in articulos_divulgacion_mex %}
+                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
 
-                        \item Libros de divulgación
-                                \begin{itemize}
-                                \item[a)] En editoriales mexicanas
-                                \item[b)] En editoriales extranjeras \\
+                                    {% if articulos_divulgacion_intl %}
+                                        \item[b)] En publicaciones extranjeras
+                                            \begin{itemize}
+                                                {% for i in articulos_divulgacion_intl %}
+                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
                                 \end{itemize}
-                        \item Otros productos publicados
-                                \begin{itemize}
-                                    \item[6.2.3.1] Reseñas
-                                    \item[6.2.3.2] Traducciones
-                                    \item[6.2.3.3] Material para medios (cuando el académico es autor)
+                        {% endif %}
+
+                        {% if libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras %}
+                        \item[6.2.2.] Libros de divulgación
+                            \begin{itemize}
+                                {% if libros_divulgacion_editoriales_mexicanas %}
+                                    \item[a)] En editoriales mexicanas
                                         \begin{itemize}
-                                        \item[a)] Notas de prensa
-                                        \item[b)] TV y radio
-                                        \item[c)] Podcast y Webcast
+                                            {% for i in libros_divulgacion_editoriales_mexicanas %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                            {% endfor %}
                                         \end{itemize}
-                                    \item[6.2.3.4] Otros
-                                \end{itemize}
+                                {% endif %}
+
+                                {% if libros_divulgacion_editoriales_extranjeras %}
+                                    \item[b)] En editoriales extranjeras
+                                {% endif %}
+                            \end{itemize}
+                        {% endif %}
+
+                        {% if True %}
+                            \item[6.2.3.] Otros productos publicados
+                                    \begin{itemize}
+                                        {% if resenas %}
+                                            \item[6.2.3.1.] Reseñas
+
+                                        {% endif %}
+                                        \item[6.2.3.2.] Traducciones
+                                        \item[6.2.3.3.] Material para medios
+                                            \begin{itemize}
+                                            \item[a)] Notas de prensa
+                                            \item[b)] TV y radio
+                                            \item[c)] Podcast y Webcast
+                                            \end{itemize}
+                                        \item[6.2.3.4.] Otros
+                                    \end{itemize}
+                        {% endif %}
+
                         \end{enumerate}
                      }
+                {% endif %}
 
-
-                \item{ Producción para la docencia
+                \item[6.3.] { Producción para la docencia
                             \begin{enumerate}
-                                \item Artículos
-                                \item Libros \\
+                                \item[6.3.1.] Artículos
+                                \item[6.3.2.] Libros
                             \end{enumerate}
                         \item Producción tecnológica
                      }

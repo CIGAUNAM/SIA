@@ -7532,6 +7532,9 @@ class CVInvestigadorPDF(View):
         context['mapas_publicaciones_mexicanas'] = mapas_publicaciones_mexicanas
         context['informes_tecnicos_mex'] = informes_tecnicos_mex
         context['informes_tecnicos_intl'] = informes_tecnicos_intl
+        context['articulos_divulgacion_mex'] = articulos_divulgacion_mex
+        context['articulos_divulgacion_intl'] = articulos_divulgacion_intl
+
         context['libros_divulgacion_editoriales_extranjeras'] = libros_divulgacion_editoriales_extranjeras
         context['libros_divulgacion_editoriales_mexicanas'] = libros_divulgacion_editoriales_mexicanas
         context[

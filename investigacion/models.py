@@ -114,7 +114,6 @@ class CapituloLibroInvestigacion(models.Model):
     libro = models.ForeignKey(Libro)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    # proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
     usuarios = SortedManyToManyField(User, related_name='capitulo_libro_investigacion_autores', verbose_name='Autores')
 
     def __str__(self):
