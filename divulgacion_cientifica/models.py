@@ -42,7 +42,6 @@ class ArticuloDivulgacion(models.Model):
     id_doi = models.CharField(max_length=100, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
 
-
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
 
