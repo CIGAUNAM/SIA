@@ -123,7 +123,7 @@ class ResenaForm(forms.ModelForm):
     articulo_resenado = forms.ModelChoiceField(
         required=False,
         queryset=ArticuloCientifico.objects.all(),
-        label="Revista reseñada",
+        label="Artículo",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=ArticuloCientifico.objects.all(),
@@ -133,16 +133,6 @@ class ResenaForm(forms.ModelForm):
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
-    libro_publica = forms.ModelChoiceField(
-        required=False,
-        queryset=Libro.objects.all(),
-        label="Libro que publica",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Libro.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     revista_publica = forms.ModelChoiceField(
         required=False,
         queryset=Revista.objects.all(),
@@ -157,13 +147,46 @@ class ResenaForm(forms.ModelForm):
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
 
-    def __init__(self, *args, **kwargs):
-        super(ResenaForm, self).__init__(*args, **kwargs)
-        #self.fields['tipo'].widget = forms.ChoiceField(attrs={'placeholder': 'Select Year'})
-
     class Meta:
         model = Resena
         exclude = ['usuario', ]
+
+
+class TraduccionForm(forms.ModelForm):
+    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título')
+    titulo_original = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título original')
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                                  required=False)
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RESENA__TIPO', ), required=True)
+    libro = forms.ModelChoiceField(
+        required=False,
+        queryset=Libro.objects.all(),
+        label="Libro",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Libro.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    articulo = forms.ModelChoiceField(
+        required=False,
+        queryset=ArticuloCientifico.objects.all(),
+        label="Artículo",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ArticuloCientifico.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    fecha = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+
+    class Meta:
+        model = Traduccion
+        exclude = ['usuario', ]
+
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
