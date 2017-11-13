@@ -6,14 +6,12 @@ class MemoriaInExtensoContext:
     objs = 'Memorias In Extenso'
     url_seccion = 'memorias-in-extenso'
 
-
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Título', 'Ciudad', 'Fecha', 'Evento']}
-
 
     tabla_mios =  '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
@@ -115,7 +113,7 @@ class ResenaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Titulo', 'Tipo', 'Publicación', 'Publicado en']}
+                'titulos_tabla': ['Título', 'Tipo', 'Publicación', 'Publicado en']}
 
 
     tabla_mios =  '<script>\n' \
@@ -135,10 +133,52 @@ class ResenaContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": function ( row, type, val, meta ) {\n' \
-                                    'if (row.fields.revista_resenada == null) { return "Libro"; } else { return "Revista"; }}},\n' \
+                                    'if (row.fields.articulo_resenado == null) { return "Libro"; } else { return "Artículo"; }}},\n' \
                                     '{"data": function ( row, type, val, meta ) {\n' \
-                                    'if (row.fields.revista_resenada == null) { return row.fields.libro_resenado; } else { return row.fields.revista_resenada; }}},\n' \
+                                    'if (row.fields.articulo_resenado == null) { return row.fields.libro_resenado; } else { return row.fields.articulo_resenado; }}},\n' \
                                     '{"data": "fields.revista_publica" },\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+class ResenaContext:
+    obj = 'Traduccion'
+    objs = 'Traducciones'
+    url_seccion = 'traducciones'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulos_tabla': ['Título Original', 'Tipo', 'Publicación', 'fecha']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.titulo_original",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo_original + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": function ( row, type, val, meta ) {\n' \
+                                    'if (row.fields.articulo == null) { return "Libro"; } else { return "Artículo"; }}},\n' \
+                                    '{"data": function ( row, type, val, meta ) {\n' \
+                                    'if (row.fields.articulo == null) { return row.fields.libro; } else { return row.fields.articulo; }}},\n' \
+                                    '{"data": "fields.fecha" },\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
