@@ -120,13 +120,13 @@ class ResenaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    revista_resenada = forms.ModelChoiceField(
+    articulo_resenado = forms.ModelChoiceField(
         required=False,
-        queryset=Revista.objects.all(),
+        queryset=ArticuloCientifico.objects.all(),
         label="Revista reseñada",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Revista.objects.all(),
+            queryset=ArticuloCientifico.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

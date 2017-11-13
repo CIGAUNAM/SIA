@@ -415,6 +415,11 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
                                 {% if libros_divulgacion_editoriales_extranjeras %}
                                     \item[b)] En editoriales extranjeras
+                                        \begin{itemize}
+                                            {% for i in libros_divulgacion_editoriales_extranjeras %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                            {% endfor %}
+                                        \end{itemize}
                                 {% endif %}
                             \end{itemize}
                         {% endif %}
@@ -424,8 +429,23 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \begin{itemize}
                                         {% if resenas %}
                                             \item[6.2.3.1.] Reseñas
-
+                                                \begin{itemize}
+                                                    {% for i in resenas %}
+                                                        \item{ \textit{´´{{ i.titulo }}''}, {{ i.fecha.year }}. {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }} {% endif %}{% if i.tipo == 'REVISTA' %}Revista: {{ i.revista_resenada.nombre }} {% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}\\{{ i.url }} }
+                                                    {% endfor %}
+                                                \end{itemize}
                                         {% endif %}
+
+                                        {% if traducciones %}
+                                            \item[6.2.3.2.] Traducciones
+                                                \begin{itemize}
+                                                    {% for i in resenas %}
+                                                        \item{ \textit{´´{{ i.titulo }}''}, {{ i.fecha.year }}. {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }} {% endif %}{% if i.tipo == 'REVISTA' %}Revista: {{ i.revista_resenada.nombre }} {% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}\\{{ i.url }} }
+                                                    {% endfor %}
+                                                \end{itemize}
+                                        {% endif %}
+
+
                                         \item[6.2.3.2.] Traducciones
                                         \item[6.2.3.3.] Material para medios
                                             \begin{itemize}
