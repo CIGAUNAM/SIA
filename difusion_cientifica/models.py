@@ -3,14 +3,14 @@ from django.db import models
 from django.conf import settings
 #from autoslug import AutoSlugField
 from nucleo.models import User, Pais, Estado, Ciudad, TipoEvento, Evento, Libro, Revista, Indice
-from investigacion.models import ProyectoInvestigacion
+from investigacion.models import ProyectoInvestigacion, ArticuloCientifico
 from django.core.urlresolvers import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'), ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
-RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('REVISTA', 'Revista')))
+RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO', 'Artículo')))
 
 # Create your models here.
 
@@ -72,13 +72,35 @@ class Resena(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
     libro_resenado = models.ForeignKey(Libro, blank=True, null=True, related_name='resena_libro_resenado')
-    revista_resenada = models.ForeignKey(Revista, blank=True, null=True, related_name='resena_revista_resenada')
+    articulo_resenado = models.ForeignKey(ArticuloCientifico, blank=True, null=True, related_name='resena_revista_resenada')
     fecha = models.DateField()
     revista_publica = models.ForeignKey(Revista, related_name='resena_revista_publica')
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
     usuario = models.ForeignKey(User, related_name='resena_autor')
+
+    def __str__(self):
+        return '{} : {}'.format(self.usuario, self.titulo)
+
+    def get_absolute_url(self):
+        return reverse('resena_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name = 'Reseña de libro'
+        verbose_name_plural = 'Reseñas de libros'
+
+
+class Traduccion(models.Model):
+    titulo = models.CharField(max_length=255, unique=True)
+    titulo_original = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField(blank=True)
+    tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
+    libro = models.ForeignKey(Libro, blank=True, null=True)
+    articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True)
+    fecha = models.DateField()
+    url = models.URLField(blank=True)
+    usuario = models.ForeignKey(User)
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.titulo)

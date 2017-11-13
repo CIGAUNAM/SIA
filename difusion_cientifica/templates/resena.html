@@ -56,25 +56,25 @@
         </div>
         </p>
     </div>
-    <div id="d_revista_resenada">
-        <p><strong>Revista reseñada:</strong>
+    <div id="d_articulo_resenado">
+        <p><strong>Artículo reseñada:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Revista sobre el que se hizo la reseña de este registro.">
+               title="Artículo sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
             </a>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-book"></i></div>
-                {{ form.revista_resenada }}
+                {{ form.articulo_resenado }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                       title="Mostrar los detalles adicionales del artículo seleccionado.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -180,22 +180,22 @@
     </p>
 
     <script>
-        $('#d_revista_resenada').hide();
+        $('#d_articulo_resenado').hide();
         $('#id_libro_resenado').attr("required", "true");
 
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'REVISTA') {
-                        $('#d_revista_resenada').show();
-                        $('#id_revista_resenada').attr("required", "true");
+                    if ($("#id_tipo").val() == 'ARTICULO') {
+                        $('#d_articulo_resenado').show();
+                        $('#id_articulo_resenado').attr("required", "true");
                         $('#d_libro_resenado').hide();
                         $('#id_libro_resenado').attr("required", null);
                         $('#id_libro_resenado').val(null).trigger("change");
                     } else {
                         $('#d_libro_resenado').show();
                         $('#id_libro_resenado').attr("required", "true");
-                        $('#d_revista_resenada').hide();
-                        $('#id_revista_resenada').attr("required", null);
-                        $('#id_revista_resenada').val(null).trigger("change");
+                        $('#d_articulo_resenado').hide();
+                        $('#id_articulo_resenado').attr("required", null);
+                        $('#id_articulo_resenado').val(null).trigger("change");
                     }
                 }
         );
@@ -259,25 +259,25 @@
         </div>
         </p>
     </div>
-    <div id="d_revista_resenada">
-        <p><strong>Revista reseñada:</strong>
+    <div id="d_articulo_resenado">
+        <p><strong>Artículo reseñada:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Revista sobre el que se hizo la reseña de este registro.">
+               title="Artículo sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
             </a>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-book"></i></div>
-                {{ form.revista_resenada }}
+                {{ form.articulo_resenado }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                       title="Mostrar los detalles adicionales del artículo seleccionado.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -383,29 +383,29 @@
     </p>
 
     <script>
-        $('#d_revista_resenada').hide();
+        $('#d_articulo_resenado').hide();
         $('#d_libro_resenado').hide();
 
         if ($("#id_tipo").val() == 'REVISTA') {
-            $('#d_revista_resenada').show();
-            $('#id_revista_resenada').attr("required", "true");
+            $('#d_articulo_resenado').show();
+            $('#id_articulo_resenado').attr("required", "true");
         } else {
             $('#d_libro_resenado').show();
             $('#id_libro_resenado').attr("required", "true");
         }
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'REVISTA') {
-                        $('#d_revista_resenada').show();
-                        $('#id_revista_resenada').attr("required", "true");
+                    if ($("#id_tipo").val() == 'ARTICULO') {
+                        $('#d_articulo_resenado').show();
+                        $('#id_articulo_resenado').attr("required", "true");
                         $('#d_libro_resenado').hide();
                         $('#id_libro_resenado').attr("required", null);
                         $('#id_libro_resenado').val(null).trigger("change");
                     } else {
                         $('#d_libro_resenado').show();
                         $('#id_libro_resenado').attr("required", "true");
-                        $('#d_revista_resenada').hide();
-                        $('#id_revista_resenada').attr("required", null);
-                        $('#id_revista_resenada').val(null).trigger("change");
+                        $('#d_articulo_resenado').hide();
+                        $('#id_articulo_resenado').attr("required", null);
+                        $('#id_articulo_resenado').val(null).trigger("change");
                     }
                 }
         );
