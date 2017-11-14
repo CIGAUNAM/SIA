@@ -124,6 +124,42 @@ class ResenaEliminar(View):
             raise Http404
 
 
+class TraduccionJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = Traduccion.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('titulo_original', 'tipo', 'fecha'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class TraduccionLista(ObjectCreateMixin, View):
+    form_class = TraduccionForm
+    model = Traduccion
+    aux = TraduccionContext.contexto
+    template_name = 'traduccion.html'
+
+
+class TraduccionDetalle(ObjectUpdateMixin, View):
+    form_class = TraduccionForm
+    model = Traduccion
+    aux = TraduccionContext.contexto
+    template_name = 'traduccion.html'
+
+
+class TraduccionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Resena, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class OrganizacionEventoAcademicoJSON(View):
     def get(self, request):
         try:

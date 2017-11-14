@@ -106,7 +106,7 @@ class Traduccion(models.Model):
         return '{} : {}'.format(self.usuario, self.titulo)
 
     def get_absolute_url(self):
-        return reverse('resena_detalle', kwargs={'pk': self.pk})
+        return reverse('traduccion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Reseña de libro'
