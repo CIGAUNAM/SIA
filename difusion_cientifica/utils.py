@@ -176,9 +176,7 @@ class TraduccionContext:
                                     '},\n' \
                                     '{"data": function ( row, type, val, meta ) {\n' \
                                     'if (row.fields.articulo == null) { return "Libro"; } else { return "Artículo"; }}},\n' \
-                                    '{"data": function ( row, type, val, meta ) {\n' \
-                                    'if (row.fields.articulo == null) { return row.fields.libro; } else { return row.fields.articulo; }}},\n' \
-                                    '{"data": "fields.fecha" },\n' \
+                                    '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
