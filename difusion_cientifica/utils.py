@@ -145,7 +145,7 @@ class ResenaContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-class ResenaContext:
+class TraduccionContext:
     obj = 'Traduccion'
     objs = 'Traducciones'
     url_seccion = 'traducciones'
@@ -155,7 +155,7 @@ class ResenaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Título Original', 'Tipo', 'Publicación', 'fecha']}
+                'titulos_tabla': ['Título Original', 'Tipo', 'fecha']}
 
 
     tabla_mios =  '<script>\n' \

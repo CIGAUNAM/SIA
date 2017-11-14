@@ -19,6 +19,11 @@ urlpatterns = [
     url(r'^resenas/(?P<pk>[\w\-]+)/eliminar$', ResenaEliminar.as_view(), name='resena_eliminar'),
     url(r'^resenas/(?P<pk>[\w\-]+)/$', ResenaDetalle.as_view(), name='resena_detalle'),
 
+    url(r'^traducciones/json/', TraduccionJSON.as_view(), name='traduccion_lista__json'),
+    url(r'^traducciones/$', TraduccionLista.as_view(), name='traduccion_lista'),
+    url(r'^traducciones/(?P<pk>[\w\-]+)/eliminar$', TraduccionEliminar.as_view(), name='traduccion_eliminar'),
+    url(r'^traducciones/(?P<pk>[\w\-]+)/$', TraduccionDetalle.as_view(), name='traduccion_detalle'),
+
     url(r'^organizacion-eventos-academicos/json/', OrganizacionEventoAcademicoJSON.as_view(), name='organizacion_evento_academico_lista__json'),
     url(r'^organizacion-eventos-academicos/$', OrganizacionEventoAcademicoLista.as_view(), name='organizacion_evento_academico_lista'),
     url(r'^organizacion-eventos-academicos/(?P<pk>[\w\-]+)/eliminar$', OrganizacionEventoAcademicoEliminar.as_view(), name='organizacion_evento_academico_eliminar'),
