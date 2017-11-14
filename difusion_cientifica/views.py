@@ -140,7 +140,7 @@ class TraduccionLista(ObjectCreateMixin, View):
     form_class = TraduccionForm
     model = Traduccion
     aux = TraduccionContext.contexto
-    template_name = 'traduccion.html'
+    template_name = 'main.html'
 
 
 class TraduccionDetalle(ObjectUpdateMixin, View):
