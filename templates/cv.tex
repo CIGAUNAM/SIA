@@ -375,7 +375,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
         			\end{enumerate}
         		}
 
-                {% if True %}
+                {% if articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras %}
                 \item[6.2.]{ Producción de divulgación científica
                     \begin{enumerate}
                         {% if articulos_divulgacion_mex or articulos_divulgacion_intl %}
@@ -424,7 +424,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{itemize}
                         {% endif %}
 
-                        {% if True %}
+                        {% if resenas or traducciones or material_medios_produccion %}
                             \item[6.2.3.] Otros productos publicados
                                     \begin{itemize}
                                         {% if resenas %}
@@ -445,29 +445,48 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \end{itemize}
                                         {% endif %}
 
-
-                                        \item[6.2.3.2.] Traducciones
-                                        \item[6.2.3.3.] Material para medios
-                                            \begin{itemize}
-                                            \item[a)] Notas de prensa
-                                            \item[b)] TV y radio
-                                            \item[c)] Podcast y Webcast
-                                            \end{itemize}
-                                        \item[6.2.3.4.] Otros
+                                        {% if material_medios_produccion %}
+                                            \item[6.2.3.3.] Material para medios
+                                                \begin{ itemize}
+                                                    {% for i in material_medios_produccion %}
+                                                        \item{ \textit{``{{ i.tema }}''}, {{ i.fecha }}, {{ i.medio_divulgacion.ciudad.nombre }}. {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.canal }}, {{ i.medio_divulgacion.tipo }}) }
+                                                    {% endfor %}
+                                                \end{itemize}
+                                        {% endif %}
                                     \end{itemize}
                         {% endif %}
-
-                        \end{enumerate}
-                     }
+                    \end{enumerate}
+                    }
                 {% endif %}
 
-                \item[6.3.] { Producción para la docencia
-                            \begin{enumerate}
+                {% if articulos_docencia or libros_docencia or programas_estudio_docencia %}
+                    \item[6.3.] { Producción para la docencia
+                        \begin{enumerate}
+                            {% if articulos_docencia %}
                                 \item[6.3.1.] Artículos
+                                    {% for i in articulos_docencia %}
+                                        \item{  }
+                                    {% endfor %}
+                            {% endif %}
+
+                            {% if libros_docencia %}
                                 \item[6.3.2.] Libros
-                            \end{enumerate}
-                        \item Producción tecnológica
-                     }
+                                    {% for i in libros_docencia %}
+                                        \item{  }
+                                    {% endfor %}
+                            {% endif %}
+
+                            {% if programas_estudio_docencia %}
+                                \item[6.3.3.] Programas de estudio
+                                    {% for i in programas_estudio_docencia %}
+                                        \item{  }
+                                    {% endfor %}
+                            {% endif %}
+                        \end{enumerate}
+                    }
+                {% endif %}
+
+                \item Producción tecnológica
             \end{enumerate}
 
         {% endif %}

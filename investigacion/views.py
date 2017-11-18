@@ -6,6 +6,7 @@ from django.core import serializers
 from SIA.utils import *
 from . forms import *
 from . utils import *
+from nucleo.forms import LibroForm
 
 
 # Create your views here.
@@ -204,9 +205,9 @@ class LibroInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = LibroInvestigacion.objects.filter(tipo='INVESTIGACION').exclude(usuarios__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='INVESTIGACION').exclude(usuarios__id__exact=usuarioid)
             else:
-                items = LibroInvestigacion.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
+                items = Libro.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial', 'ciudad', 'status', 'fecha'))
 
@@ -221,8 +222,8 @@ class LibroInvestigacionJSON(View):
 
 
 class LibroInvestigacionLista(ObjectCreateVarMixin, View):
-    form_class = LibroInvestigacionForm
-    model = LibroInvestigacion
+    form_class = LibroForm
+    model = Libro
     aux = LibroInvestigacionContext.contexto
     template_name = 'libro_investigacion.html'
 
@@ -240,8 +241,8 @@ class LibroInvestigacionLista(ObjectCreateVarMixin, View):
 
 
 class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
-    form_class = LibroInvestigacionForm
-    model = LibroInvestigacion
+    form_class = LibroForm
+    model = Libro
     aux = LibroInvestigacionContext.contexto
     template_name = 'libro_investigacion.html'
 
@@ -263,7 +264,7 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
 class LibroInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(LibroInvestigacion, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
+            item = get_object_or_404(Libro, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
             item.delete()
             return redirect('/investigacion/libros-investigacion/')
         except:

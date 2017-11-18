@@ -201,7 +201,6 @@ class MapaArbitradoContext:
     contexto['tabla_otros'] = tabla_otros
 
 
-
 class InformeTecnicoContext:
     obj = 'Informe Técnico Público'
     objs = 'Informes Técnicos Públicos'
@@ -333,7 +332,6 @@ class LibroInvestigacionContext:
                   '</script>'
 
     contexto['tabla_otros'] = tabla_otros
-
 
 
 class ProyectoInvestigacionContext:

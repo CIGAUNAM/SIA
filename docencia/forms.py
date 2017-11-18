@@ -79,3 +79,82 @@ class CursoDocenciaForm(forms.ModelForm):
             'academicos_participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'otras_dependencias_participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
+
+
+class ArticuloDocenciaForm(forms.ModelForm):
+    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                             label='Título de artículo')
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                                  required=False, label='Descripción')
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                             choices=(
+                             ('', 'Seleccionar un tipo de artículo'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'),
+                             ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')), required=True)
+    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                               choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    solo_electronico = forms.BooleanField(required=False)
+    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    fecha = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True, label='Fecha de publicación')
+    revista = forms.ModelChoiceField(
+        queryset=Revista.objects.all(),
+        label="Revista",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Revista.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    numero = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                             label='Número')
+    issn_impreso = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                   label='ISSN Impreso')
+    issn_online = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                  label='ISSN Impreso')
+    pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                    required=True, label='Número de página donde inicia')
+    pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                 required=True, label='Número de página final')
+    id_doi = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                             label='ID DOI')
+    id_wos = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                             label='ID WOS')
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ProyectoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+
+    class Meta:
+        model = ArticuloDocencia
+        exclude = []
+        widgets = {
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
+
+
+class ProgramaEstudioForm(forms.ModelForm):
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                             label='Nombre del programa de estudio.')
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                                  required=False, label='Descripción')
+    nivel = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                             choices=(
+                                 ('', 'Seleccionar un nivel académico'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'),
+                                 ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')), required=True)
+    fecha = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True, label='Fecha de publicación')
+
+    class Meta:
+        model = ProgramaEstudio
+        exclude = ['usuario', ]

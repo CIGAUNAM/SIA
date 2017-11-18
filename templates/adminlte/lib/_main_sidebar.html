@@ -333,6 +333,21 @@
                     <i class="fa fa-circle-o"></i> Cursos extracurriculares
                 </a>
             </li>
+            <li{% if aux.url_seccion == 'articulos-docencia' %} class="active"{% endif %}>
+                <a href="/docencia/articulos-docencia">
+                    <i class="fa fa-circle-o"></i> Artículos para docencia
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'libros-docencia' %} class="active"{% endif %}>
+                <a href="/docencia/libros-docencia">
+                    <i class="fa fa-circle-o"></i> Libros para docencia
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'programas-estudio' %} class="active"{% endif %}>
+                <a href="/docencia/programas-estudio">
+                    <i class="fa fa-circle-o"></i> Programas de estudio
+                </a>
+            </li>
         </ul>
     </li>
 
