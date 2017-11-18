@@ -641,7 +641,7 @@ class Libro(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     #slug = AutoSlugField(populate_from='nombre_libro', unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación')))
+    tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'), ('DOCENCIA', 'Docencia')))
     usuarios = SortedManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='libro_coordinadores', blank=True)
@@ -657,7 +657,6 @@ class Libro(models.Model):
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
-    #tags = models.ManyToManyField(Tag, related_name='libro_tags', blank=True)
     es_libro_completo = models.BooleanField(default=False)
     tiene_participacion_prologo = models.BooleanField(default=False)
 
@@ -714,12 +713,10 @@ class Asignatura(models.Model):
 
 class MedioDivulgacion(models.Model):
     nombre_medio = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre_medio', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     canal = models.CharField(max_length=255)
     ciudad = models.ForeignKey(Ciudad)
-    #tags = models.ManyToManyField(Tag, related_name='medio_divulgacion_tags', blank=True)
 
     def __str__(self):
         return self.nombre_medio

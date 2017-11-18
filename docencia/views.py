@@ -124,11 +124,192 @@ class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
 
-
 class CursoDocenciaEliminar(View):
     def get(self, request, pk):
         try:
             item = get_object_or_404(CursoDocencia, Q(pk=pk, academicos_participantes=request.user) | Q(pk=pk, usuario=request.user))
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+class ArticuloDocenciaJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                articulos = ArticuloDocencia.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                articulos = ArticuloDocencia.objects.filter(usuarios__id__exact=usuarioid)
+            json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'tipo', 'revista', 'status', 'fecha'))
+
+            json = json.replace('ARTICULO', 'Artículo')
+            json = json.replace('ACTA', 'Acta')
+            json = json.replace('CARTA', 'Carta')
+            json = json.replace('RESENA', 'Reseña')
+            json = json.replace('OTRO', 'Otro')
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('ENVIADO', 'Enviado')
+            json = json.replace('ENVIADO', 'Enviado')
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ArticuloDocenciaLista(ObjectCreateVarMixin, View):
+    form_class = ArticuloDocenciaForm
+    model = ArticuloDocencia
+    aux = ArticuloDocenciaContext.contexto
+    template_name = 'articulo_cientifico.html'
+
+
+class ArticuloDocenciaDetalle(ObjectUpdateVarMixin, View):
+    form_class = ArticuloDocenciaForm
+    model = ArticuloDocencia
+    aux = ArticuloDocenciaContext.contexto
+    template_name = 'articulo_cientifico.html'
+
+
+class ArticuloDocenciaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ArticuloDocencia, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class LibroDocenciaJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                items = Libro.objects.filter(tipo='DOCENCIA').exclude(usuarios__id__exact=usuarioid)
+            else:
+                items = Libro.objects.filter(usuarios__id__exact=usuarioid, tipo='DOCENCIA')
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'editorial', 'ciudad', 'status', 'fecha'))
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('ENVIADO', 'Enviado')
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class LibroDocenciaLista(ObjectCreateVarMixin, View):
+    form_class = LibroForm
+    model = Libro
+    aux = LibroDocenciaContext.contexto
+    template_name = 'libro_docencia.html'
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save(commit=False)
+            new_obj.tipo = 'DOCENCIA'
+            new_obj = bound_form.save()
+
+            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
+
+        else:
+            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
+
+
+class LibroDocenciaDetalle(ObjectUpdateVarMixin, View):
+    form_class = LibroForm
+    model = Libro
+    aux = LibroDocenciaContext.contexto
+    template_name = 'libro_docencia.html'
+
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+
+    def post(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        bound_form = self.form_class(request.POST, instance=obj)
+        if bound_form.is_valid():
+            det_obj = bound_form.save()
+            print(det_obj)
+            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk))  # corregir el redirect
+        else:
+            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
+
+
+class LibroDocenciaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Libro, pk=pk, tipo='DOCENCIA', usuarios=request.user)
+            item.delete()
+            return redirect('/docencia/libros-docencia/')
+        except:
+            raise Http404
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class ProgramaEstudioJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ProgramaEstudio.objects.filter(usuario__id__exact=usuarioid,)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'nivel', 'fecha'))
+
+            json = json.replace('LICENCIATURA', 'Licenciatura')
+            json = json.replace('MAESTRIA', 'Maestría')
+            json = json.replace('DOCTORADO', 'Doctorado')
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+class ProgramaEstudioLista(ObjectCreateMixin, View):
+    form_class = ProgramaEstudioForm
+    model = ProgramaEstudio
+    aux = ProgramaEstudioContext.contexto
+    template_name = 'programa_estudio.html'
+
+
+class ProgramaEstudioDetalle(ObjectUpdateMixin, View):
+    form_class = ProgramaEstudioForm
+    model = ProgramaEstudio
+    aux = ProgramaEstudioContext.contexto
+    template_name = 'programa_estudio.html'
+
+
+class ProgramaEstudioEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ProgramaEstudio, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:

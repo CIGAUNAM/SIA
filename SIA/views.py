@@ -5,12 +5,12 @@ from django.views.generic import View
 from formacion_academica.models import CursoEspecializacion
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, \
     ProyectoInvestigacion
-from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, OrganizacionEventoAcademico, \
+from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, Traduccion, OrganizacionEventoAcademico, \
     ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
     ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
-from docencia.models import CursoDocencia
+from docencia.models import CursoDocencia, ArticuloDocencia
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 from vinculacion.models import ConvenioEntidadExterna
@@ -7366,7 +7366,7 @@ class CVInvestigadorDetalle(View):
         context['capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
         context['capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
         context['resenas'] = resenas
-        context['material_medios'] = material_medios
+        context['material_medios_produccion'] = material_medios_produccion
         context['participacion_proyectos_responsable'] = participacion_proyectos_responsable
         context['participacion_proyectos_participante'] = participacion_proyectos_participante
         context['ponente_eventos_academicos_nal_invitacion'] = ponente_eventos_academicos_nal_invitacion
@@ -7477,7 +7477,13 @@ class CVInvestigadorPDF(View):
             libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by(
             '-fecha')
         resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
-        material_medios = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).order_by('-fecha')
+        traducciones = Traduccion.objects.filter(usuario=pk).order_by('-fecha')
+        material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk, actividad='PRODUCCION').order_by('-fecha')
+
+        articulos_docencia = ArticuloDocencia.objects.filter(usuario=pk).order_by('-fecha')
+
+
+
         participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by(
             '-fecha_inicio')
         participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by(
@@ -7542,7 +7548,11 @@ class CVInvestigadorPDF(View):
         context[
             'capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
         context['resenas'] = resenas
-        context['material_medios'] = material_medios
+        context['traducciones'] = traducciones
+        context['material_medios_produccion'] = material_medios_produccion
+
+        context['articulos_docencia'] = articulos_docencia
+
         context['participacion_proyectos_responsable'] = participacion_proyectos_responsable
         context['participacion_proyectos_participante'] = participacion_proyectos_participante
         context['ponente_eventos_academicos_nal_invitacion'] = ponente_eventos_academicos_nal_invitacion
@@ -7554,9 +7564,10 @@ class CVInvestigadorPDF(View):
 
 
         template = get_template('cv.tex')
-
+        
         rendered_tpl = template.render(context).replace('&', '\&').encode('utf-8')
 
+        print(template.render(context).replace('&', '\&'))
 
         with tempfile.TemporaryDirectory() as tempdir:
             for i in range(2):

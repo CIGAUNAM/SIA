@@ -1,0 +1,93 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Nombre del programa:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del programa de estudio.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Nivel:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nivel académico del programa desarrollado."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nivel }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de creaciòn del programa de estudio."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+        </div>
+    </div>
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Nombre del programa:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del programa de estudio.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Nivel:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nivel académico del programa desarrollado."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nivel }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de creaciòn del programa de estudio."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+        </div>
+    </div>
+    </p>
+{% endblock %}

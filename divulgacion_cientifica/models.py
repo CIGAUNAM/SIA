@@ -137,10 +137,7 @@ class ProgramaRadioTelevisionInternet(models.Model):
         ('PRODUCCION', 'Producciòn'), ('PARTICIPACION', 'Participaciòn'), ('ENTREVISTA', 'Entrevista'),
         ('OTRA', 'Otra')))
     medio_divulgacion = models.ForeignKey(MedioDivulgacion)
-    # partiticipantes = models.ManyToManyField(User, related_name='programa_radio_television_internet_participantes')
     usuario = models.ForeignKey(User)
-
-    # tags = models.ManyToManyField(Tag, related_name='programa_radio_television_internet_tags', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.nombre_medio, self.tema, self.fecha)

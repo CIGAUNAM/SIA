@@ -14,4 +14,22 @@ urlpatterns = [
     url(r'^cursos-extracurriculares/$', CursoDocenciaExtracurricularLista.as_view(), name='curso_docencia_extracurriculares_lista'),
     url(r'^cursos-extracurriculares/(?P<pk>[\w\-]+)/eliminar$', CursoDocenciaEliminar.as_view(), name='curso_docencia_extracurriculares_eliminar'),
     url(r'^cursos-extracurriculares/(?P<pk>[\w\-]+)/$', CursoDocenciaExtracurricularDetalle.as_view(), name='curso_docencia_extracurriculares_detalle'),
+
+    url(r'^articulos-docencia/json/', ArticuloDocenciaJSON.as_view(), name='articulos_docencia_lista__json'),
+    url(r'^articulos-docencia/json-otros/', ArticuloDocenciaJSON.as_view(otros=True), name='articulos_docencia_lista__json_otros'),
+    url(r'^articulos-docencia/$', ArticuloDocenciaLista.as_view(), name='articulos_docencia_lista'),
+    url(r'^articulos-docencia/(?P<pk>[\w\-]+)/eliminar$', ArticuloDocenciaEliminar.as_view(), name='articulos_docencia_eliminar'),
+    url(r'^articulos-docencia/(?P<pk>[\w\-]+)/$', ArticuloDocenciaDetalle.as_view(), name='articulos_docencia_detalle'),
+
+    url(r'^libros-docencia/json/', LibroDocenciaJSON.as_view(), name='libros_docencia_lista__json'),
+    url(r'^libros-docencia/json-otros/', LibroDocenciaJSON.as_view(otros=True), name='libros_docencia_lista__json_otros'),
+    url(r'^libros-docencia/$', LibroDocenciaLista.as_view(), name='libros_docencia_lista'),
+    url(r'^libros-docencia/(?P<pk>[\w\-]+)/eliminar$', LibroDocenciaEliminar.as_view(), name='libros_docencia_eliminar'),
+    url(r'^libros-docencia/(?P<pk>[\w\-]+)/$', LibroDocenciaDetalle.as_view(), name='libros_docencia_detalle'),
+
+    url(r'^programas-estudio/json/', ProgramaEstudioJSON.as_view(), name='programas_estudio_lista__json'),
+    url(r'^programas-estudio/$', ProgramaEstudioLista.as_view(), name='programas_estudio_lista'),
+    url(r'^programas-estudio/(?P<pk>[\w\-]+)/eliminar$', ProgramaEstudioEliminar.as_view(), name='programas_estudio_eliminar'),
+    url(r'^programas-estudio/(?P<pk>[\w\-]+)/$', ProgramaEstudioDetalle.as_view(), name='programas_estudio_detalle'),
+
 ]
