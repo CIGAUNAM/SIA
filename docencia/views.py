@@ -169,14 +169,14 @@ class ArticuloDocenciaLista(ObjectCreateVarMixin, View):
     form_class = ArticuloDocenciaForm
     model = ArticuloDocencia
     aux = ArticuloDocenciaContext.contexto
-    template_name = 'articulo_cientifico.html'
+    template_name = 'articulo_docencia.html'
 
 
 class ArticuloDocenciaDetalle(ObjectUpdateVarMixin, View):
     form_class = ArticuloDocenciaForm
     model = ArticuloDocencia
     aux = ArticuloDocenciaContext.contexto
-    template_name = 'articulo_cientifico.html'
+    template_name = 'articulo_docencia.html'
 
 
 class ArticuloDocenciaEliminar(View):

@@ -4,7 +4,7 @@ from django.conf import settings
 
 from autoslug import AutoSlugField
 from nucleo.models import User, Institucion, Dependencia, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, \
-    Asignatura, Revista
+    Asignatura, Revista, Indice
 from investigacion.models import ProyectoInvestigacion
 from vinculacion.models import RedAcademica
 from django.core.urlresolvers import reverse
@@ -53,8 +53,9 @@ class ArticuloDocencia(models.Model):
     issn_online = models.CharField(max_length=40, blank=True, verbose_name='ISSN Online')
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     solo_electronico = models.BooleanField(default=False)
-    usuarios = SortedManyToManyField(User, related_name='articulo_dcencia_autores', verbose_name='Autores')
+    usuarios = SortedManyToManyField(User, related_name='articulo_docencia_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_docencia_alumnos', blank=True)
+    indices = models.ManyToManyField(Indice, related_name='articulo_docencia_indices', blank=True)
     url = models.URLField(blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
