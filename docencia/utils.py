@@ -217,7 +217,6 @@ class LibroDocenciaContext:
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Título', 'Editorial', 'Ciudad', 'Status', 'Fecha']}
 
-
     tabla_mios =  '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
                     '       $jquery("#tabla_json").dataTable({\n' \
