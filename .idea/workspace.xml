@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="reporte graficas historico general y de usuario">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/difusion_cientifica/migrations/0006_auto_20171118_0945.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/difusion_cientifica/migrations/0007_merge_20171118_1039.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docencia/migrations/0005_auto_20171118_1141.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docencia/templates/articulo_docencia.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/forms.py" afterPath="$PROJECT_DIR$/docencia/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/models.py" afterPath="$PROJECT_DIR$/docencia/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/urls.py" afterPath="$PROJECT_DIR$/docencia/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/utils.py" afterPath="$PROJECT_DIR$/docencia/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docencia/views.py" afterPath="$PROJECT_DIR$/docencia/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/views.py" afterPath="$PROJECT_DIR$/SIA/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cv.tex" afterPath="$PROJECT_DIR$/templates/cv.tex" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,9 +25,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SIA/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="7482" column="35" lean-forward="false" selection-start-line="7482" selection-start-column="35" selection-end-line="7482" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="169">
+              <caret line="7485" column="98" lean-forward="false" selection-start-line="7485" selection-start-column="98" selection-end-line="7485" selection-end-column="98" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,8 +37,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docencia/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+            <state relative-caret-position="186">
+              <caret line="76" column="6" lean-forward="false" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -52,102 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docencia/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-506">
-              <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
-              <folding>
-                <element signature="e#97#4039#0" expanded="false" />
-                <element signature="e#4089#8042#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docencia/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-572">
-              <caret line="88" column="70" lean-forward="false" selection-start-line="88" selection-start-column="70" selection-end-line="88" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#253#3884#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docencia/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="articulo_docencia.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docencia/templates/articulo_docencia.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="529" column="13" lean-forward="false" selection-start-line="529" selection-start-column="13" selection-end-line="529" selection-end-column="13" />
-              <folding>
-                <element signature="n#block#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docencia/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="178" column="38" lean-forward="false" selection-start-line="178" selection-start-column="38" selection-end-line="178" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-                <element signature="e#329#1376#0" expanded="false" />
-                <element signature="e#1446#2157#0" expanded="false" />
-                <element signature="e#2229#2872#0" expanded="false" />
-                <element signature="e#2925#3981#0" expanded="false" />
-                <element signature="e#4054#4771#0" expanded="false" />
-                <element signature="e#4846#5492#0" expanded="false" />
-                <element signature="e#5534#5811#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/investigacion/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-858">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cv.tex" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cv.tex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/cv.tex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="467" column="345" lean-forward="true" selection-start-line="467" selection-start-column="345" selection-end-line="467" selection-end-column="345" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/investigacion/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="95" column="68" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="68" />
+            <state relative-caret-position="495">
+              <caret line="498" column="35" lean-forward="false" selection-start-line="498" selection-start-column="35" selection-end-line="498" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -165,11 +68,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Usuario</find>
-      <find>widget-user-desc</find>
-      <find>settin</find>
-      <find>unam</find>
-      <find>doctorados</find>
       <find>Indexa</find>
       <find>consult</find>
       <find>revist</find>
@@ -195,6 +93,11 @@
       <find>resenas</find>
       <find>resena</find>
       <find>articulos_do</find>
+      <find>libros_d</find>
+      <find>libros_</find>
+      <find>libros_do</find>
+      <find>articulos_docencia</find>
+      <find>programas_estudio_docencia</find>
     </findStrings>
     <replaceStrings>
       <replace>Ninguno</replace>
@@ -231,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/formato/apps.py" />
         <option value="$PROJECT_DIR$/SIA/settings.py" />
         <option value="$PROJECT_DIR$/formacion_academica/forms.py" />
         <option value="$PROJECT_DIR$/templates/main.html" />
@@ -271,17 +173,18 @@
         <option value="$PROJECT_DIR$/templates/web_proyectos.html" />
         <option value="$PROJECT_DIR$/templates/web_publicaciones_detalle.html" />
         <option value="$PROJECT_DIR$/templates/web_proyectos_detalle.html" />
-        <option value="$PROJECT_DIR$/SIA/views.py" />
         <option value="$PROJECT_DIR$/difusion_cientifica/forms.py" />
         <option value="$PROJECT_DIR$/difusion_cientifica/templates/resena.html" />
         <option value="$PROJECT_DIR$/difusion_cientifica/models.py" />
-        <option value="$PROJECT_DIR$/templates/cv.tex" />
         <option value="$PROJECT_DIR$/docencia/views.py" />
         <option value="$PROJECT_DIR$/docencia/templates/articulo_docencia.html" />
-        <option value="$PROJECT_DIR$/docencia/forms.py" />
         <option value="$PROJECT_DIR$/docencia/urls.py" />
         <option value="$PROJECT_DIR$/docencia/models.py" />
         <option value="$PROJECT_DIR$/docencia/utils.py" />
+        <option value="$PROJECT_DIR$/docencia/templates/libro_docencia.html" />
+        <option value="$PROJECT_DIR$/docencia/forms.py" />
+        <option value="$PROJECT_DIR$/SIA/views.py" />
+        <option value="$PROJECT_DIR$/templates/cv.tex" />
       </list>
     </option>
   </component>
@@ -359,18 +262,7 @@
             <path>
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="docencia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="docencia" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="investigacion" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -640,20 +532,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505766858927</updated>
-    </task>
-    <task id="LOCAL-00022" summary="reporte graficas historico general y de usuario">
-      <created>1507508580127</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1507508580127</updated>
-    </task>
-    <task id="LOCAL-00023" summary="reporte graficas historico general y de usuario">
-      <created>1507534027286</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1507534027286</updated>
     </task>
     <task id="LOCAL-00024" summary="reporte graficas historico general y de usuario">
       <created>1507652176848</created>
@@ -984,7 +862,21 @@
       <option name="project" value="LOCAL" />
       <updated>1510552053299</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="reporte graficas historico general y de usuario">
+      <created>1511029352819</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1511029352819</updated>
+    </task>
+    <task id="LOCAL-00072" summary="reporte graficas historico general y de usuario">
+      <created>1511200304622</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1511200304622</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1044,14 +936,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/templates/desarrollo_tecnologico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="15" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1133,6 +1017,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="319" column="35" lean-forward="false" selection-start-line="319" selection-start-column="35" selection-end-line="319" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,37 +1308,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cv.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="467" column="345" lean-forward="true" selection-start-line="467" selection-start-column="345" selection-end-line="467" selection-end-column="345" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="7482" column="35" lean-forward="false" selection-start-line="7482" selection-start-column="35" selection-end-line="7482" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/investigacion/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
-          <caret line="95" column="68" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="68" />
+          <caret line="95" column="68" lean-forward="false" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="68" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docencia/templates/articulo_docencia.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="529" column="13" lean-forward="false" selection-start-line="529" selection-start-column="13" selection-end-line="529" selection-end-column="13" />
-          <folding>
-            <element signature="n#block#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1462,18 +1321,7 @@
         <state relative-caret-position="1430">
           <caret line="74" column="113" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="113" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docencia/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-572">
-          <caret line="88" column="70" lean-forward="false" selection-start-line="88" selection-start-column="70" selection-end-line="88" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#253#3884#0" expanded="false" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1483,24 +1331,7 @@
         <state relative-caret-position="-858">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docencia/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="178" column="38" lean-forward="false" selection-start-line="178" selection-start-column="38" selection-end-line="178" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-            <element signature="e#329#1376#0" expanded="false" />
-            <element signature="e#1446#2157#0" expanded="false" />
-            <element signature="e#2229#2872#0" expanded="false" />
-            <element signature="e#2925#3981#0" expanded="false" />
-            <element signature="e#4054#4771#0" expanded="false" />
-            <element signature="e#4846#5492#0" expanded="false" />
-            <element signature="e#5534#5811#0" expanded="false" />
+            <element signature="e#0#35#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1516,31 +1347,95 @@
     <entry file="file://$PROJECT_DIR$/docencia/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docencia/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-704">
+          <caret line="88" column="70" lean-forward="false" selection-start-line="88" selection-start-column="70" selection-end-line="88" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#25#0" expanded="false" />
+            <element signature="e#253#3884#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docencia/templates/libro_docencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="309" column="0" lean-forward="false" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docencia/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="217" column="86" lean-forward="false" selection-start-line="217" selection-start-column="86" selection-end-line="217" selection-end-column="86" />
+          <folding>
+            <element signature="e#97#4039#0" expanded="false" />
+            <element signature="e#4089#8042#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docencia/templates/articulo_docencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="677">
+          <caret line="529" column="13" lean-forward="false" selection-start-line="529" selection-start-column="13" selection-end-line="529" selection-end-column="13" />
+          <folding>
+            <element signature="n#block#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docencia/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="178" column="38" lean-forward="false" selection-start-line="178" selection-start-column="38" selection-end-line="178" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+            <element signature="e#329#1376#0" expanded="false" />
+            <element signature="e#1446#2157#0" expanded="false" />
+            <element signature="e#2229#2872#0" expanded="false" />
+            <element signature="e#2925#3981#0" expanded="false" />
+            <element signature="e#4054#4771#0" expanded="false" />
+            <element signature="e#4846#5492#0" expanded="false" />
+            <element signature="e#5534#5811#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="7485" column="98" lean-forward="false" selection-start-line="7485" selection-start-column="98" selection-end-line="7485" selection-end-column="98" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docencia/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+        <state relative-caret-position="186">
+          <caret line="76" column="6" lean-forward="false" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docencia/utils.py">
+    <entry file="file://$PROJECT_DIR$/templates/cv.tex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-506">
-          <caret line="194" column="44" lean-forward="false" selection-start-line="194" selection-start-column="44" selection-end-line="194" selection-end-column="44" />
-          <folding>
-            <element signature="e#97#4039#0" expanded="false" />
-            <element signature="e#4089#8042#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="498" column="35" lean-forward="false" selection-start-line="498" selection-start-column="35" selection-end-line="498" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
