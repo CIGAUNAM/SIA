@@ -10,7 +10,7 @@ from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, T
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
     ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
-from docencia.models import CursoDocencia, ArticuloDocencia
+from docencia.models import CursoDocencia, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 from vinculacion.models import ConvenioEntidadExterna
@@ -7481,6 +7481,9 @@ class CVInvestigadorPDF(View):
         material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk, actividad='PRODUCCION').order_by('-fecha')
 
         articulos_docencia = ArticuloDocencia.objects.filter(usuario=pk).order_by('-fecha')
+        libros_docencia = Libro.objects.filter(usuarios=pk, tipo='DOCENCIA', es_libro_completo=True).exclude(
+            Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
+        programas_estudio_docencia = ProgramaEstudio.objects.filter(usuario=pk).order_by('-fecha')
 
 
 
@@ -7552,6 +7555,7 @@ class CVInvestigadorPDF(View):
         context['material_medios_produccion'] = material_medios_produccion
 
         context['articulos_docencia'] = articulos_docencia
+        context['libros_docencia'] = libros_docencia
 
         context['participacion_proyectos_responsable'] = participacion_proyectos_responsable
         context['participacion_proyectos_participante'] = participacion_proyectos_participante

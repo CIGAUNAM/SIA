@@ -408,7 +408,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[a)] En editoriales mexicanas
                                         \begin{itemize}
                                             {% for i in libros_divulgacion_editoriales_mexicanas %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }} p. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -417,7 +417,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[b)] En editoriales extranjeras
                                         \begin{itemize}
                                             {% for i in libros_divulgacion_editoriales_extranjeras %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }} p. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -464,29 +464,42 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         \begin{enumerate}
                             {% if articulos_docencia %}
                                 \item[6.3.1.] Artículos
-                                    {% for i in articulos_docencia %}
-                                        \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
-                                    {% endfor %}
+                                    \begin{itemize}
+                                        {% for i in articulos_docencia %}
+                                            \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
+                                        {% endfor %}
+                                    \end{itemize}
                             {% endif %}
 
                             {% if libros_docencia %}
                                 \item[6.3.2.] Libros
-                                    {% for i in libros_docencia %}
-                                        \item{  }
-                                    {% endfor %}
+                                    \begin{itemize}
+                                        {% for i in libros_docencia %}
+                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }} p. \\{{ i.url }} }
+                                        {% endfor %}
+                                    \end{itemize}
                             {% endif %}
 
                             {% if programas_estudio_docencia %}
                                 \item[6.3.3.] Programas de estudio
-                                    {% for i in programas_estudio_docencia %}
-                                        \item{  }
-                                    {% endfor %}
+                                    \begin{itemize}
+                                        {% for i in programas_estudio_docencia %}
+                                            \item{ \textit{ {{ i.nombre }} }, {{ i.nivel }}. {{ i.fecha.year }} }
+                                        {% endfor %}
+                                    \end{itemize}
                             {% endif %}
                         \end{enumerate}
                     }
                 {% endif %}
 
-                \item Producción tecnológica
+                {% if produccion_tecnologica %}
+                    \item[6.4.] Producción tecnológica
+                        \begin{itemize}
+                            {% for i in produccion_tecnologica %}
+                                \item{  }
+                            {% endfor %}
+                        \end{itemize}
+                {% endif %}
             \end{enumerate}
 
         {% endif %}
