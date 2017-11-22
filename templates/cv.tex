@@ -50,16 +50,16 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
                 {% if licenciaturas %}
                 \item[2.1.]{ \textbf{Estudios profesionales}
-                      \begin{itemize}
-                          {% for i in licenciaturas %}
-                              \item {{ i.fecha_grado }},\textbf{ {{ i.carrera }}}, {{ i.institucion }}, {{ i.dependencia }}
-                                  \begin{itemize}
-                                      \item[]{\textit{ {{ i.titulo_tesis }} }}
-                                  \end{itemize}
-                          {% endfor %}
-                      \end{itemize}
-                      }
-                 {% endif %}
+                    \begin{itemize}
+                        {% for i in licenciaturas %}
+                            \item {{ i.fecha_grado }},\textbf{ {{ i.carrera }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                \begin{itemize}
+                                    \item[]{\textit{ {{ i.titulo_tesis }} }}
+                                \end{itemize}
+                        {% endfor %}
+                    \end{itemize}
+                }
+                {% endif %}
 
                 {% if maestrias or doctorados or postdoctorados %}
                 \item[2.2.]{ \textbf{Estudios de posgrado}
@@ -195,15 +195,17 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             {% endif %}
         {% endif %}
 
-        {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
+
+
+        {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl or articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras or resenas or traducciones or material_medios_produccion or articulos_docencia or libros_docencia or programas_estudio_docencia or produccion_tecnologica %}
         \vspace{0.5cm}
         \item[6.] \textbf{PUBLICACIONES}
-
         	\begin{enumerate}
 
+                {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl %}
         		\item[6.1.]{ Producción científica
         			\begin{enumerate}
-        			    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl %}
+        			    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
         				\item[6.1.1.] Artículos en revistas arbitradas
         					\begin{enumerate}
         					    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas %}
@@ -374,8 +376,9 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
         			\end{enumerate}
         		}
+                {% endif %}
 
-                {% if articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras %}
+                {% if articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras or resenas or traducciones or material_medios_produccion %}
                 \item[6.2.]{ Producción de divulgación científica
                     \begin{enumerate}
                         {% if articulos_divulgacion_mex or articulos_divulgacion_intl %}
@@ -466,7 +469,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 \item[6.3.1.] Artículos
                                     \begin{itemize}
                                         {% for i in articulos_docencia %}
-                                            \item{ {% for u in i.usuarios.all %} {{ u.author_name }},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
+                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},{% endfor %}\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
                                         {% endfor %}
                                     \end{itemize}
                             {% endif %}
@@ -496,7 +499,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     \item[6.4.] Producción tecnológica
                         \begin{itemize}
                             {% for i in produccion_tecnologica %}
-                                \item{  }
+                                \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{ {{ i.nombre }} }, {{ i.fecha.year }}. {% if i.version %}Versión: {{ i.version }}{% endif %}, {% if i.patente %}Patente: {{ i.patente }}{% endif %}, {% if i.licencia %}Licencia: {{ i.licencia.nombre }}{% endif %}, {% if i.proyecto %}Proyecto: {{ i.proyecto.nombre }}{% endif %}{% if i.url %}\\{{ i.url }}{% endif %} }
                             {% endfor %}
                         \end{itemize}
                 {% endif %}
@@ -504,76 +507,137 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
         {% endif %}
 
-        \textbf{\item OTRAS ACTIVIDADES ACADÉMICAS}
+        {% if True %}
+            \item[7.] \textbf{OTRAS ACTIVIDADES ACADÉMICAS}
+                \begin{enumerate}
+                    {% if participacion_proyectos_responsable or participacion_proyectos_participante %}
+                        \item[7.1.] Participación en proyectos
+                            \begin{itemize}
+                                {% if participacion_proyectos_responsable %}
+                                    \item[a)] Responsable
+                                        \begin{itemize}
+                                            {% for i in participacion_proyectos_responsable %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{´´{{ i.nombre }}''}. {% if i.financiamiento_conacyt %}Financiamiento CONACYT, clave {{ i.financiamiento_conacyt }}{% endif %}{% if i.financiamiento_papiit %}Financiamiento PAPIIT, clave {{ i.financiamiento_papiit }}{% endif %}{% if i.financiamientos %}Financiamientos: {% for f in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ i.tipo_financiamiento.get_choices_display }}, {{ f.nombre }}, {{ f.institucion.nombre }};{% endfor %}{% endif %}. {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %}. }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if participacion_proyectos_participante %}
+                                    \item[b)] Participante
+                                        \begin{itemize}
+                                            {% for i in participacion_proyectos_participante %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{´´{{ i.nombre }}''}. {% if i.financiamiento_conacyt %}Financiamiento CONACYT, clave {{ i.financiamiento_conacyt }}{% endif %}{% if i.financiamiento_papiit %}Financiamiento PAPIIT, clave {{ i.financiamiento_papiit }}{% endif %}{% if i.financiamientos %}Financiamientos: {% for f in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ i.tipo_financiamiento.get_choices_display }}, {{ f.nombre }}, {{ f.institucion.nombre }};{% endfor %}{% endif %}. {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %}. }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{itemize}
+                    {% endif %}
 
-        	\begin{enumerate}
-        	\item Participación en proyectos
-        		\begin{itemize}
-        		\item[a)] Responsable
-        		\item[b)] Participante \\
-        		\end{itemize}
-            \item Participación como ponente en eventos académicos
-            	\begin{enumerate}
-            	\item Nacionales
-            		\begin{itemize}
-            		\item[a)] Por invitación
-        			\item[b)] Participación
-            		\end{itemize}
-        		\item Internacionales
-        			\begin{itemize}
-        			\item[a)] Por invitación
-        			\item[b)] Participación \\
-        			\end{itemize}
+                    {% if ponente_eventos_academicos_nal_invitacion or ponente_eventos_academicos_nal_participacion or ponente_eventos_academicos_intl_invitacion or ponente_eventos_academicos_intl_participacion %}
+                        \item[7.2.] Participación como ponente en eventos académicos
+                            \begin{enumerate}
+                                {% if ponente_eventos_academicos_nal_invitacion or ponente_eventos_academicos_nal_participacion %}
+                                    \item[7.2.1.] Nacionales
+                                        \begin{itemize}
+                                            {% if ponente_eventos_academicos_nal_invitacion %}
+                                                \item[a)] Por invitación
+                                                    \begin{itemize}
+                                                        {% for i in ponente_eventos_academicos_nal_invitacion %}
+                                                            \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                            {% if ponente_eventos_academicos_nal_participacion %}
+                                                \item[b)] Participación
+                                                    \begin{itemize}
+                                                        {% for i in ponente_eventos_academicos_nal_participacion %}
+                                                            \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
 
+                                {% if ponente_eventos_academicos_intl_invitacion or ponente_eventos_academicos_intl_participacion %}
+                                    \item[7.2.2.] Internacionales
+                                        \begin{itemize}
+                                            {% if ponente_eventos_academicos_intl_invitacion %}
+                                                \item[a)] Por invitación
+                                                    \begin{itemize}
+                                                        {% for i in ponente_eventos_academicos_intl_invitacion %}
+                                                            \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                            {% if ponente_eventos_academicos_intl_participacion %}
+                                                \item[b)] Participación
+                                                    \begin{itemize}
+                                                        {% for i in ponente_eventos_academicos_intl_participacion %}
+                                                            \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
 
-            	\end{enumerate}
-         	\item Organización de eventos académicos
-         		\begin{itemize}
-         		\item[a)] Nacionales
-        		\item[b)] Internacionales \\
-         		\end{itemize}
-        	\item Participación en Comisiones Dictaminadoras\\ {\small (De proyectos, de becas de agencias financiadoras, etc.)}
-        		\begin{itemize}
-        		\item[a)] Nacionales
-        		\item[b)] Internacionales \\
-        		\end{itemize}
-        	\item Participación en Actividades Editoriales
-        		\begin{enumerate}
-        		\item Dictámenes de artículos en revistas
-        			\begin{itemize}
-        			\item[a)] Mexicanas
-        			\item[b)] Extranjeras
-        			\end{itemize}
-        		\item Dictámenes de libros
-        			\begin{itemize}
-        			\item[a)] De editoriales mexicanas
-        			\item[b)] De editoriales extranjeras \\
-        			\end{itemize}
-        		\end{enumerate}
-        	\item Convenios académicos nacionales e internacionales
-        		\begin{enumerate}
-        		\item Estancias académicas
-        		\item Profesores visitantes
-        		\item Años o Semestres sabáticos
-        		\item Participación en redes académicas \\
-        		\end{enumerate}
-        	\item Vinculación con la sociedad
-        		\begin{enumerate}
-        		\item Promoción de convenios de colaboración con entidades no académicas
-        		\item Servicios y asesorías externas
-        		\item Organización de eventos de divulgación (no dirigidos a pares)
-        		\item Conferencias de divulgación (no dirigidas a pares) \\
-        		\end{enumerate}
-             \item Otros \\
-        	\textbf{En el caso de los técnicos} incluir además:
-        	\begin{small}
-        	 \begin{itemize}
-        	\item[-] Contribución al desarrollo de infraestructura para la investigación
-        	\item[-] Desarrollo y adaptación de tecnología y servicios técnicos (importancia, grado participación, impacto).
-        	\item[-] Actividades técnicas de servicio en bibliotecas, talleres, unidades de apoyo, etc.
-        	\end{itemize}
-        	 \end{small}
-        	\end{enumerate}
+                    {% if True %}
+                    \item[7.3.] Organización de eventos académicos
+                        \begin{itemize}
+                            {% if organizacion_eventos_academicos_nacionales %}
+                                \item[a)] Nacionales
+                                    \begin{itemize}
+                                        {% for i in organizacion_eventos_academicos_nacionales %}
+                                            \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
+                                        {% endfor %}
+                                    \end{itemize}
+                            {% endif %}
+                                \item[b)] Internacionales
+                        \end{itemize}
+
+                    \item[7.4.] Participación en Comisiones Dictaminadoras\\ {\small (De proyectos, de becas de agencias financiadoras, etc.)}
+                        \begin{itemize}
+                            \item[a)] Nacionales
+                            \item[b)] Internacionales \\
+                        \end{itemize}
+                    \item Participación en Actividades Editoriales
+                        \begin{enumerate}
+                        \item Dictámenes de artículos en revistas
+                            \begin{itemize}
+                            \item[a)] Mexicanas
+                            \item[b)] Extranjeras
+                            \end{itemize}
+                        \item Dictámenes de libros
+                            \begin{itemize}
+                            \item[a)] De editoriales mexicanas
+                            \item[b)] De editoriales extranjeras \\
+                            \end{itemize}
+                        \end{enumerate}
+                    \item Convenios académicos nacionales e internacionales
+                        \begin{enumerate}
+                        \item Estancias académicas
+                        \item Profesores visitantes
+                        \item Años o Semestres sabáticos
+                        \item Participación en redes académicas \\
+                        \end{enumerate}
+                    \item Vinculación con la sociedad
+                        \begin{enumerate}
+                        \item Promoción de convenios de colaboración con entidades no académicas
+                        \item Servicios y asesorías externas
+                        \item Organización de eventos de divulgación (no dirigidos a pares)
+                        \item Conferencias de divulgación (no dirigidas a pares) \\
+                        \end{enumerate}
+                    \item Otros \\
+                    \textbf{En el caso de los técnicos} incluir además:
+                    \begin{small}
+                    \begin{itemize}
+                    \item[-] Contribución al desarrollo de infraestructura para la investigación
+                    \item[-] Desarrollo y adaptación de tecnología y servicios técnicos (importancia, grado participación, impacto).
+                    \item[-] Actividades técnicas de servicio en bibliotecas, talleres, unidades de apoyo, etc.
+                    \end{itemize}
+                    \end{small}
+                \end{enumerate}
+        {% endif %}
 
         \textbf{\item {\small FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}}
         	\begin{enumerate}
@@ -692,3 +756,8 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
 \end{document}
 {% endautoescape %}
+\begin{document}
+
+
+
+\end{document}
