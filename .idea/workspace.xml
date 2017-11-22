@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="reporte graficas historico general y de usuario">
+    <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIA/views.py" afterPath="$PROJECT_DIR$/SIA/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desarrollo_tecnologico/models.py" afterPath="$PROJECT_DIR$/desarrollo_tecnologico/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/cv.tex" afterPath="$PROJECT_DIR$/templates/cv.tex" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +27,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SIA/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="7485" column="98" lean-forward="false" selection-start-line="7485" selection-start-column="98" selection-end-line="7485" selection-end-column="98" />
+            <state relative-caret-position="183">
+              <caret line="7565" column="59" lean-forward="false" selection-start-line="7565" selection-start-column="17" selection-end-line="7565" selection-end-column="59" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -35,10 +37,33 @@
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docencia/models.py">
+        <entry file="file://$PROJECT_DIR$/difusion_cientifica/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="76" column="6" lean-forward="false" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
+            <state relative-caret-position="193">
+              <caret line="115" column="6" lean-forward="false" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#2387#3142#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nucleo/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="510" column="16" lean-forward="false" selection-start-line="510" selection-start-column="4" selection-end-line="510" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="7" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -49,8 +74,8 @@
       <file leaf-file-name="cv.tex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/cv.tex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="498" column="35" lean-forward="false" selection-start-line="498" selection-start-column="35" selection-end-line="498" selection-end-column="35" />
+            <state relative-caret-position="294">
+              <caret line="589" column="94" lean-forward="false" selection-start-line="589" selection-start-column="94" selection-end-line="589" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -68,27 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Indexa</find>
-      <find>consult</find>
-      <find>revist</find>
-      <find>capitu</find>
-      <find>capitulo_libro_investigacion_autores</find>
-      <find>Instituto para el Desarrollo Sustentable</find>
-      <find>Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.</find>
-      <find>curso</find>
-      <find>safe</find>
-      <find>ComisionAcademica</find>
-      <find>exp_prof_ext</find>
-      <find>User</find>
-      <find>comisiones_institucionales</find>
-      <find>Count</find>
-      <find>(Count</find>
-      <find>annotate(Count</find>
-      <find>usuarios</find>
-      <find>postdo</find>
-      <find>Servicios directivos y académicos-administrativos</find>
-      <find>item{</find>
-      <find>Libro</find>
       <find>6.2.3</find>
       <find>resenas</find>
       <find>resena</find>
@@ -96,8 +100,29 @@
       <find>libros_d</find>
       <find>libros_</find>
       <find>libros_do</find>
+      <find>libros_investigacion_editoriales_extranjeras</find>
+      <find>informes_te</find>
+      <find>articulos_indexadas_mexicanas</find>
+      <find>articulos_no_indexadas_extranjeras</find>
+      <find>articulos_indexadas_extranjeras</find>
+      <find>mapas_publicaciones_extranjeras</find>
+      <find>mapas_publicaciones_mexicanas</find>
+      <find>memoriainextenso_mexicanas</find>
+      <find>memoriainextenso_extranjeras</find>
+      <find>capitulos_libros_investigacion_editoriales_mexicanas</find>
+      <find>libros_investigacion_editoriales_extranjeras</find>
+      <find>articulos_no_indexadas_mexicanas</find>
+      <find>capitulos_libros_investigacion_editoriales_extranjeras</find>
       <find>articulos_docencia</find>
+      <find>informes_tecnicos_mex</find>
+      <find>material_medios_produccion</find>
+      <find>informes_tecnicos_intl</find>
+      <find>DesarrolloTecnologico</find>
+      <find>textit</find>
+      <find>produccion_tecnologica</find>
       <find>programas_estudio_docencia</find>
+      <find>ponente_eventos_academicos_nal_invitacion</find>
+      <find>organizacion_eventos_academicos_nacionales</find>
     </findStrings>
     <replaceStrings>
       <replace>Ninguno</replace>
@@ -134,8 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SIA/settings.py" />
-        <option value="$PROJECT_DIR$/formacion_academica/forms.py" />
         <option value="$PROJECT_DIR$/templates/main.html" />
         <option value="$PROJECT_DIR$/movilidad_academica/models.py" />
         <option value="$PROJECT_DIR$/distinciones/forms.py" />
@@ -183,6 +206,8 @@
         <option value="$PROJECT_DIR$/docencia/utils.py" />
         <option value="$PROJECT_DIR$/docencia/templates/libro_docencia.html" />
         <option value="$PROJECT_DIR$/docencia/forms.py" />
+        <option value="$PROJECT_DIR$/desarrollo_tecnologico/models.py" />
+        <option value="$PROJECT_DIR$/templates/cv2.tex" />
         <option value="$PROJECT_DIR$/SIA/views.py" />
         <option value="$PROJECT_DIR$/templates/cv.tex" />
       </list>
@@ -206,10 +231,13 @@
           <State>
             <id />
           </State>
+          <State>
+            <id>LaTeX</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>AngularJS</id>
+            <id>LatexNonMatchingEnvironment</id>
           </State>
         </selected-state>
       </profile-state>
@@ -230,6 +258,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -252,23 +297,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,135 +314,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nizhi\PycharmProjects\SIA\_misc" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/SIA/views.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/divulgacion_cientifica/models.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/forms.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/models.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/urls.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/utils.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/views.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/investigacion/forms.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/investigacion/utils.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/investigacion/views.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nucleo/forms.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nucleo/models.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/templates/cv.tex</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/difusion_cientifica/migrations/0006_auto_20171114_0918.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/migrations/0003_articulodocencia.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/migrations/0004_auto_20171117_1912.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/templates/libro_docencia.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/docencia/templates/programa_estudio.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nucleo/migrations/0006_auto_20171117_0923.py</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -532,13 +431,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505766858927</updated>
-    </task>
-    <task id="LOCAL-00024" summary="reporte graficas historico general y de usuario">
-      <created>1507652176848</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1507652176848</updated>
     </task>
     <task id="LOCAL-00025" summary="reporte graficas historico general y de usuario">
       <created>1507794971759</created>
@@ -876,23 +768,29 @@
       <option name="project" value="LOCAL" />
       <updated>1511200304622</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="reporte graficas historico general y de usuario">
+      <created>1511280607153</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1511280607153</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1940463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5048026" sideWeight="0.50441015" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3778015" sideWeight="0.49558985" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37673426" sideWeight="0.49779493" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@SIA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33191034" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24145535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37673426" sideWeight="0.49779493" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -901,6 +799,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@SIA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33191034" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -936,26 +835,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1708">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/migracion2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1017,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="319" column="35" lean-forward="false" selection-start-line="319" selection-start-column="35" selection-end-line="319" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1163,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="23" column="248" lean-forward="true" selection-start-line="23" selection-start-column="248" selection-end-line="23" selection-end-column="248" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,14 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1166">
           <caret line="62" column="25" lean-forward="false" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="678" column="6" lean-forward="false" selection-start-line="678" selection-start-column="6" selection-end-line="678" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1222,62 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="280" column="48" lean-forward="false" selection-start-line="280" selection-start-column="48" selection-end-line="280" selection-end-column="48" />
-          <folding>
-            <marker date="1510633423436" expanded="true" signature="11370:11666" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="11370:11681" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="11370:11705" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="11370:18467" ph="{% block form_detalle ... %}" />
-            <marker date="1510633423436" expanded="true" signature="11431:11624" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="11740:13000" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="11752:12018" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="11857:12009" ph="..." />
-            <marker date="1510633423436" expanded="false" signature="12050:12068" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="12069:12976" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="12107:12961" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="12280:12546" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="12357:12523" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="12594:12942" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="12723:12919" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13008:13185" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13097:13180" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13126:13176" ph="..." />
-            <marker date="1510633423436" expanded="false" signature="13217:13235" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13236:13440" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13275:13429" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13319:13385" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13457:13674" ph="..." />
-            <marker date="1510633423436" expanded="false" signature="13706:13724" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13725:13916" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13764:13905" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="13933:14150" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="14029:14145" ph="..." />
-            <marker date="1510633423436" expanded="false" signature="14182:14200" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="14201:14389" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="14240:14378" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="14408:15539" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="15549:15807" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="15667:15802" ph="..." />
-            <marker date="1510633423436" expanded="false" signature="15839:15857" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="15858:16675" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="15892:16664" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16051:16298" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16124:16279" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16342:16649" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16446:16630" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16692:16920" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16779:16915" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16861:16911" ph="..." />
-            <marker date="1510633423436" expanded="false" signature="16952:16970" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="16971:17169" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="17010:17158" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="17054:17116" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="17192:18450" ph="..." />
-            <marker date="1510633423436" expanded="true" signature="17322:17444" ph="{...}" />
-            <marker date="1510633423436" expanded="true" signature="17450:17566" ph="{...}" />
-            <marker date="1510633423436" expanded="true" signature="17614:18426" ph="{...}" />
-            <marker date="1510633423436" expanded="true" signature="17675:18037" ph="{...}" />
-            <marker date="1510633423436" expanded="true" signature="18043:18408" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1285,7 +1094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="24" column="59" lean-forward="false" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1293,26 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/difusion_cientifica/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#2387#3142#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="95" column="68" lean-forward="false" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1369,7 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="309" column="0" lean-forward="false" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1388,9 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="677">
           <caret line="529" column="13" lean-forward="false" selection-start-line="529" selection-start-column="13" selection-end-line="529" selection-end-column="13" />
-          <folding>
-            <element signature="n#block#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1411,30 +1195,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views.py">
+    <entry file="file://$PROJECT_DIR$/docencia/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="7485" column="98" lean-forward="false" selection-start-line="7485" selection-start-column="98" selection-end-line="7485" selection-end-column="98" />
+        <state relative-caret-position="303">
+          <caret line="77" column="10" lean-forward="false" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="10" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docencia/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/cv2.tex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="76" column="6" lean-forward="false" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
+        <state relative-caret-position="309">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desarrollo_tecnologico/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="7" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="510" column="16" lean-forward="false" selection-start-line="510" selection-start-column="4" selection-end-line="510" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="115" column="6" lean-forward="false" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#2387#3142#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="7565" column="59" lean-forward="false" selection-start-line="7565" selection-start-column="17" selection-end-line="7565" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cv.tex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="498" column="35" lean-forward="false" selection-start-line="498" selection-start-column="35" selection-end-line="498" selection-end-column="35" />
+        <state relative-caret-position="294">
+          <caret line="589" column="94" lean-forward="false" selection-start-line="589" selection-start-column="94" selection-end-line="589" selection-end-column="94" />
           <folding />
         </state>
       </provider>

@@ -7366,7 +7366,7 @@ class CVInvestigadorDetalle(View):
         context['capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
         context['capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
         context['resenas'] = resenas
-        context['material_medios_produccion'] = material_medios_produccion
+
         context['participacion_proyectos_responsable'] = participacion_proyectos_responsable
         context['participacion_proyectos_participante'] = participacion_proyectos_participante
         context['ponente_eventos_academicos_nal_invitacion'] = ponente_eventos_academicos_nal_invitacion
@@ -7484,13 +7484,11 @@ class CVInvestigadorPDF(View):
         libros_docencia = Libro.objects.filter(usuarios=pk, tipo='DOCENCIA', es_libro_completo=True).exclude(
             Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         programas_estudio_docencia = ProgramaEstudio.objects.filter(usuario=pk).order_by('-fecha')
+        produccion_tecnologica = DesarrolloTecnologico.objects.filter(autores=pk).order_by('-fecha')
 
+        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by('-fecha_inicio')
+        participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by('-fecha_inicio')
 
-
-        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by(
-            '-fecha_inicio')
-        participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by(
-            '-fecha_inicio')
         ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
                                                                                                 por_invitacion=True).filter(
             evento__pais__nombre='México').order_by('-evento__fecha_inicio')
@@ -7556,6 +7554,8 @@ class CVInvestigadorPDF(View):
 
         context['articulos_docencia'] = articulos_docencia
         context['libros_docencia'] = libros_docencia
+        context['programas_estudio_docencia'] = programas_estudio_docencia
+        context['produccion_tecnologica'] = produccion_tecnologica
 
         context['participacion_proyectos_responsable'] = participacion_proyectos_responsable
         context['participacion_proyectos_participante'] = participacion_proyectos_participante
