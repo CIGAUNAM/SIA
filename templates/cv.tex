@@ -581,47 +581,75 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{enumerate}
                     {% endif %}
 
-                    {% if True %}
-                    \item[7.3.] Organización de eventos académicos
-                        \begin{itemize}
-                            {% if organizacion_eventos_academicos_nacionales %}
-                                \item[a)] Nacionales
-                                    \begin{itemize}
-                                        {% for i in organizacion_eventos_academicos_nacionales %}
-                                            \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                                \item[b)] Internacionales
-                        \end{itemize}
+                    {% if organizacion_eventos_academicos_nacionales or organizacion_eventos_academicos_internacionales %}
+                        \item[7.3.] Organización de eventos académicos
+                            \begin{itemize}
+                                {% if organizacion_eventos_academicos_nacionales %}
+                                    \item[a)] Nacionales
+                                        \begin{itemize}
+                                            {% for i in organizacion_eventos_academicos_nacionales %}
+                                                \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if organizacion_eventos_academicos_internacionales %}
+                                    \item[b)] Internacionales
+                                        \begin{itemize}
+                                            {% for i in organizacion_eventos_academicos_internacionales %}
+                                                \item{ \textit{´´{{ i.titulo }}''}. {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}.{% if i.ponencia_magistral %}\\PONENCIA MAGISTRAL{% endif %} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{itemize}
                     {% endif %}
 
-                    \item[7.4.] Participación en Comisiones Dictaminadoras\\ {\small (De proyectos, de becas de agencias financiadoras, etc.)}
-                        \begin{itemize}
-                            \item[a)] Nacionales
-                            \item[b)] Internacionales \\
-                        \end{itemize}
-                    \item Participación en Actividades Editoriales
-                        \begin{enumerate}
-                        \item Dictámenes de artículos en revistas
+                    {% if participacion_comisiones_dictaminadoras_nacionales or participacion_comisiones_dictaminadoras_internacionales %}
+                        \item[7.4.] Participación en Comisiones Dictaminadoras
                             \begin{itemize}
-                            \item[a)] Mexicanas
-                            \item[b)] Extranjeras
+                                {% if participacion_comisiones_dictaminadoras_nacionales %}
+                                    \item[a)] Nacionales
+                                        \begin{itemize}
+                                            {% for i in participacion_comisiones_dictaminadoras_nacionales %}
+                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}, {{ i.dependencia }}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if participacion_comisiones_dictaminadoras_internacionales %}
+                                    \item[b)] Internacionales
+                                        \begin{itemize}
+                                            {% for i in participacion_comisiones_dictaminadoras_internacionales %}
+                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}, {{ i.dependencia }}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
                             \end{itemize}
-                        \item Dictámenes de libros
-                            \begin{itemize}
-                            \item[a)] De editoriales mexicanas
-                            \item[b)] De editoriales extranjeras \\
-                            \end{itemize}
-                        \end{enumerate}
-                    \item Convenios académicos nacionales e internacionales
+                    {% endif %}
+
+                    {% if True %}
+                        \item[7.5.] Participación en Actividades Editoriales
+                            \begin{enumerate}
+                            \item Dictámenes de artículos en revistas
+                                \begin{itemize}
+                                \item[a)] Mexicanas
+                                \item[b)] Extranjeras
+                                \end{itemize}
+                            \item Dictámenes de libros
+                                \begin{itemize}
+                                \item[a)] De editoriales mexicanas
+                                \item[b)] De editoriales extranjeras \\
+                                \end{itemize}
+                            \end{enumerate}
+                    {% if True %}
+
+                    \item[7.6.] Convenios académicos nacionales e internacionales
                         \begin{enumerate}
                         \item Estancias académicas
                         \item Profesores visitantes
                         \item Años o Semestres sabáticos
                         \item Participación en redes académicas \\
                         \end{enumerate}
-                    \item Vinculación con la sociedad
+
+                    \item[7.7.] Vinculación con la sociedad
                         \begin{enumerate}
                         \item Promoción de convenios de colaboración con entidades no académicas
                         \item Servicios y asesorías externas
