@@ -7507,6 +7507,12 @@ class CVInvestigadorPDF(View):
         organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(
             usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
+        participacion_comisiones_dictaminadoras_nacionales = ComisionAcademica.objects.filter(usuario=pk).filter(
+            institucion__pais__nombre='México').order_by('-fecha_inicio')
+
+        participacion_comisiones_dictaminadoras_internacionales = ComisionAcademica.objects.filter(usuario=pk).exclude(
+            institucion__pais__nombre='México').order_by('-fecha_inicio')
+
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
         context['num_libros'] = num_libros_investigacion
@@ -7544,10 +7550,8 @@ class CVInvestigadorPDF(View):
 
         context['libros_divulgacion_editoriales_extranjeras'] = libros_divulgacion_editoriales_extranjeras
         context['libros_divulgacion_editoriales_mexicanas'] = libros_divulgacion_editoriales_mexicanas
-        context[
-            'capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
-        context[
-            'capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
+        context['capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
+        context['capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
         context['resenas'] = resenas
         context['traducciones'] = traducciones
         context['material_medios_produccion'] = material_medios_produccion
@@ -7565,6 +7569,8 @@ class CVInvestigadorPDF(View):
         context['ponente_eventos_academicos_intl_participacion'] = ponente_eventos_academicos_intl_participacion
         context['organizacion_eventos_academicos_nacionales'] = organizacion_eventos_academicos_nacionales
         context['organizacion_eventos_academicos_internacionales'] = organizacion_eventos_academicos_internacionales
+        context['participacion_comisiones_dictaminadoras_nacionales'] = participacion_comisiones_dictaminadoras_nacionales
+        context['participacion_comisiones_dictaminadoras_internacionales'] = participacion_comisiones_dictaminadoras_internacionales
 
 
         template = get_template('cv.tex')
