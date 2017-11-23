@@ -653,8 +653,15 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% if True %}
                                     \item[7.5.2.] Dictámenes de libros
                                         \begin{itemize}
-                                        \item[a)] De editoriales mexicanas
-                                        \item[b)] De editoriales extranjeras \\
+                                            {% if dictamenes_libros_editoriales_mexicanas %}
+                                                \item[a)] De editoriales mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in dictamenes_libros_editoriales_mexicanas %}
+                                                            \item{ {{ i.fecha_dictamen }}, \textit{´´{{ i.libro.nombre }}''}, {{ i.libro.editorial.nombre }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                            \item[b)] De editoriales extranjeras \\
                                         \end{itemize}
                                 {% endif %}
                             \end{enumerate}
