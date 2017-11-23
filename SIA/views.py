@@ -7513,6 +7513,12 @@ class CVInvestigadorPDF(View):
         participacion_comisiones_dictaminadoras_internacionales = ComisionAcademica.objects.filter(usuario=pk).exclude(
             institucion__pais__nombre='México').order_by('-fecha_inicio')
 
+        dictamenes_articulos_revistas_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').filter(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_articulos_revistas_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').exclude(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_libros_editoriales_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').filter(libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_libros_editoriales_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').exclude(libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
+
+
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
         context['num_libros'] = num_libros_investigacion
@@ -7571,6 +7577,10 @@ class CVInvestigadorPDF(View):
         context['organizacion_eventos_academicos_internacionales'] = organizacion_eventos_academicos_internacionales
         context['participacion_comisiones_dictaminadoras_nacionales'] = participacion_comisiones_dictaminadoras_nacionales
         context['participacion_comisiones_dictaminadoras_internacionales'] = participacion_comisiones_dictaminadoras_internacionales
+        context['dictamenes_articulos_revistas_mexicanas'] = dictamenes_articulos_revistas_mexicanas
+        context['dictamenes_articulos_revistas_extranjeras'] = dictamenes_articulos_revistas_extranjeras
+        context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros_editoriales_mexicanas
+        context['dictamenes_libros_editoriales_extranjeras'] = dictamenes_libros_editoriales_extranjeras
 
 
         template = get_template('cv.tex')

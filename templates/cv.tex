@@ -628,18 +628,37 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% if True %}
                         \item[7.5.] Participación en Actividades Editoriales
                             \begin{enumerate}
-                            \item Dictámenes de artículos en revistas
-                                \begin{itemize}
-                                \item[a)] Mexicanas
-                                \item[b)] Extranjeras
-                                \end{itemize}
-                            \item Dictámenes de libros
-                                \begin{itemize}
-                                \item[a)] De editoriales mexicanas
-                                \item[b)] De editoriales extranjeras \\
-                                \end{itemize}
+                                {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras %}
+                                    \item[7.5.1.] Dictámenes de artículos en revistas
+                                        \begin{itemize}
+                                            {% if dictamenes_articulos_revistas_mexicanas %}
+                                                \item[a)] Mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in dictamenes_articulos_revistas_mexicanas %}
+                                                            \item{ {{ i.fecha_dictamen }}, \textit{´´{{ i.articulo.titulo }}''}, {{ i.articulo.revista.nombre }}, {% if i.articulo.indices %}{% for u in i.articulo.indices.all %}{% if not forloop.first %}, {% endif %}{{ u.nombre }}{% endfor %}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                            {% if dictamenes_articulos_revistas_extranjeras %}
+                                                \item[b)] Extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in dictamenes_articulos_revistas_extranjeras %}
+                                                            \item{ {{ i.fecha_dictamen }}, \textit{´´{{ i.articulo.titulo }}''}, {{ i.articulo.revista.nombre }}, {% if i.articulo.indices %}{% for u in i.articulo.indices.all %}{% if not forloop.first %}, {% endif %}{{ u.nombre }}{% endfor %}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if True %}
+                                    \item[7.5.2.] Dictámenes de libros
+                                        \begin{itemize}
+                                        \item[a)] De editoriales mexicanas
+                                        \item[b)] De editoriales extranjeras \\
+                                        \end{itemize}
+                                {% endif %}
                             \end{enumerate}
-                    {% if True %}
+                    {% endif %}
 
                     \item[7.6.] Convenios académicos nacionales e internacionales
                         \begin{enumerate}

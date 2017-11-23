@@ -3,31 +3,31 @@ from django.db import models
 from django.conf import settings
 from autoslug import AutoSlugField
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Revista, Indice, Libro, Editorial, Coleccion
-from investigacion.models import CapituloLibroInvestigacion, ProyectoInvestigacion
+from investigacion.models import CapituloLibroInvestigacion, ProyectoInvestigacion, ArticuloCientifico
 from django.core.urlresolvers import reverse
 
 RED_ACADEMICA__CLASIFICACION = getattr (settings, 'RED_ACADEMICA__CLASIFICACION', (('', '-------'), ('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = getattr (settings, 'CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION', (('', '-------'), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'), ('PRIVADA', 'Sector privado'), ('ACADEMICA', 'Académica'), ('NO_LUCRATIVA', 'Sector privado no lucrativo'), ('EXTRANJERA', 'Extranjero')))
-ARBITRAJE_ACADEMCICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', (('', '-------'), ('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación')))
+ARBITRAJE_ACADEMICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO', (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro')))
 
 # Create your models here.
 
 class ArbitrajePublicacionAcademica(models.Model):
     descripcion = models.TextField(blank=True)
     indices = models.ManyToManyField(Indice, related_name='arbitraje_publicacion_indices', blank=True)
-    tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMCICA__TIPO)
-    revista = models.ForeignKey(Revista, blank=True, null=True)
+    tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICA__TIPO)
+    #revista = models.ForeignKey(Revista, blank=True, null=True)
+    articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True)
     libro = models.ForeignKey(Libro, blank=True, null=True)
-    capitulo_libro = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True)
     fecha_dictamen = models.DateField()
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='arbitraje_publicacion_academica_tags', blank=True)
 
     def __str__(self):
-        lista_titulos = [self.revista, self.libro, self.capitulo_libro]
+        lista_titulos = [self.articulo, self.libro]
         titulo = [x for x in lista_titulos if x != 'n/a']
         titulo = titulo[0]
-        return "{} : {}".format(self.tipo.title(), self.fecha_dictamen)
+        return "{} : {}".format(self.tipo.title(), self.titulo, self.fecha_dictamen)
 
     def get_absolute_url(self):
         return reverse('arbitraje_publicacion_academica_detalle', kwargs={'pk': self.pk})
@@ -36,7 +36,6 @@ class ArbitrajePublicacionAcademica(models.Model):
         ordering = ['-fecha_dictamen']
         verbose_name = 'Arbitraje en publicaciones académicas'
         verbose_name_plural = 'Arbitrajes en publicaciones académicas'
-        unique_together = ['usuario', 'fecha_dictamen', 'revista', 'libro', 'capitulo_libro']
 
 
 class ArbitrajeProyectoInvestigacion(models.Model):

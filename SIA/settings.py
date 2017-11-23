@@ -46,7 +46,7 @@ CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = (('', '-------'), ('FEDERAL', 'Guberna
 DISTINCION__AMBITO = (('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'),                       ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
 GRADO_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 RESENA__TIPO = (('', '-------'), ('LIBRO', 'Libro'), ('ARTICULO', 'Artículo'))
-ARBITRAJE_ACADEMCICA__TIPO = (('', '-------'), ('REVISTA', 'Revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo en libro de investigación'))
+ARBITRAJE_ACADEMICA__TIPO = (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro'))
 
 # Application definition
 

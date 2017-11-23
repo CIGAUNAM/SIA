@@ -10,14 +10,14 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     tipo = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
-        choices=getattr(settings, 'ARBITRAJE_ACADEMCICA__TIPO', ), required=True)
-    revista = forms.ModelChoiceField(
+        choices=getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO', ), required=True)
+    articulo = forms.ModelChoiceField(
         required=False,
-        queryset=Revista.objects.all(),
-        label="Revista",
+        queryset=ArticuloCientifico.objects.all(),
+        label="Artículo Científico",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Revista.objects.all(),
+            queryset=ArticuloCientifico.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -28,16 +28,6 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=Libro.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    capitulo_libro = forms.ModelChoiceField(
-        required=False,
-        queryset=CapituloLibroInvestigacion.objects.all(),
-        label="Capitulo en Libro de Investigación",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=CapituloLibroInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
