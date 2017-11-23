@@ -17,23 +17,23 @@
         </div>
     </div>
     </p>
-    <div id="d_revista">
-        <p><strong>Revista:</strong>
+    <div id="d_articulo">
+        <p><strong>Artículo:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre de la revista del arbitraje."><i class="fa fa-question-circle"></i></a>
+               title="Artículo sobre el que se realizó el dictamen."><i class="fa fa-question-circle"></i></a>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.revista }}
+                {{ form.articulo }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                       title="Mostrar los detalles adicionales del artículo seleccionado.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <a href="/investigacion/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -59,32 +59,6 @@
                     <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left"
                        target="_blank"
                        title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
-    </div>
-    <div id="d_capitulo_libro">
-        <p><strong>Capítulo en libro de investigación:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre del capítulo en libro de investigación del arbitraje."><i
-                    class="fa fa-question-circle"></i></a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.capitulo_libro }}
-                <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del capítulo en libro de investigación seleccionado.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left"
-                       target="_blank"
-                       title="Agregar un capítulo de libro. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -120,44 +94,26 @@
 
     <script>
         $('#d_libro').hide();
-        $('#d_capitulo_libro').hide();
-        $('#id_revista').attr("required", "true");
+        $('#d_articulo').hide();
 
         $("#id_tipo").on('change', function () {
                     if ($("#id_tipo").val() == 'LIBRO') {
                         $('#d_libro').show('slow');
                         $('#id_libro').attr("required", "true");
-                        $('#id_revista').attr("required", null);
-                        $('#id_capitulo_libro').attr("required", null);
-                        $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide('slow');
-                        $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide('slow');
-                    } else if ($("#id_tipo").val() == 'REVISTA') {
-                        $('#d_revista').show('slow');
+                        $('#id_articulo').attr("required", null);
+                        $('#id_articulo').val(null).trigger("change");
+                        $('#d_articulo').hide('slow');
+                    } else if ($("#id_tipo").val() == 'ARTICULO') {
+                        $('#d_articulo').show('slow');
                         $('#id_libro').attr("required", null);
-                        $('#id_revista').attr("required", "true");
-                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_articulo').attr("required", "true");
                         $('#id_libro').val(null).trigger("change");
                         $('#d_libro').hide('slow');
-                        $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide('slow');
-                    } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
-                        $('#d_capitulo_libro').show('slow');
-                        $('#id_libro').attr("required", null);
-                        $('#id_revista').attr("required", null);
-                        $('#id_capitulo_libro').attr("required", "true");
-                        $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide('slow');
-                        $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide('slow');
                     } else {
-                        $('#d_revista').show('slow');
-                        $('#d_libro').show('slow');
-                        $('#d_capitulo_libro').show('slow');
+                        $('#d_articulo').show();
+                        $('#d_libro').show();
                         $('#id_libro').attr("required", null);
-                        $('#id_revista').attr("required", null);
-                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_articulo').attr("required", null);
                     }
                 });
     </script>
@@ -182,23 +138,23 @@
         </div>
     </div>
     </p>
-    <div id="d_revista">
-        <p><strong>Revista:</strong>
+    <div id="d_articulo">
+        <p><strong>Artículo:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre de la revista del arbitraje."><i class="fa fa-question-circle"></i></a>
+               title="Artículo sobre el que se realizó el dictamen."><i class="fa fa-question-circle"></i></a>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.revista }}
+                {{ form.articulo }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                       title="Mostrar los detalles adicionales del artículo seleccionado.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <a href="/investigacion/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -224,32 +180,6 @@
                     <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left"
                        target="_blank"
                        title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
-    </div>
-    <div id="d_capitulo_libro">
-        <p><strong>Capítulo en libro de investigación:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre del capítulo en libro de investigación del arbitraje."><i
-                    class="fa fa-question-circle"></i></a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.capitulo_libro }}
-                <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del capítulo en libro de investigación seleccionado.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left"
-                       target="_blank"
-                       title="Agregar un capítulo de libro. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -294,65 +224,40 @@
     <script>
         $('#d_revista').hide();
         $('#d_libro').hide();
-        $('#d_capitulo_libro').hide();
 
-        if ($("#id_tipo").val() == 'REVISTA') {
-            $('#d_revista').show();
-            $('#id_revista').attr("required", "true");
+        if ($("#id_tipo").val() == 'ARTICULO') {
+            $('#d_articulo').show();
+            $('#id_articulo').attr("required", "true");
         } else if ($("#id_tipo").val() == 'LIBRO') {
             $('#d_libro').show();
             $('#id_libro').attr("required", "true");
-        } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
-            $('#d_capitulo_libro').show();
-            $('#id_capitulo_libro').attr("required", "true");
         } else {
-            $('#d_revista').show();
+            $('#d_articulo').show();
             $('#d_libro').show();
-            $('#d_capitulo_libro').show();
             $('#id_libro').attr("required", null);
-            $('#id_revista').attr("required", null);
-            $('#id_capitulo_libro').attr("required", null);
+            $('#id_articulo').attr("required", null);
         }
 
         $("#id_tipo").on('change', function () {
                     if ($("#id_tipo").val() == 'LIBRO') {
                         $('#d_libro').show('slow');
                         $('#id_libro').attr("required", "true");
-                        $('#id_revista').attr("required", null);
-                        $('#id_capitulo_libro').attr("required", null);
-                        $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide('slow');
-                        $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide('slow');
-                    } else if ($("#id_tipo").val() == 'REVISTA') {
-                        $('#d_revista').show('slow');
+                        $('#id_articulo').attr("required", null);
+                        $('#id_articulo').val(null).trigger("change");
+                        $('#d_articulo').hide('slow');
+                    } else if ($("#id_tipo").val() == 'ARTICULO') {
+                        $('#d_articulo').show('slow');
                         $('#id_libro').attr("required", null);
-                        $('#id_revista').attr("required", "true");
-                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_articulo').attr("required", "true");
                         $('#id_libro').val(null).trigger("change");
                         $('#d_libro').hide('slow');
-                        $('#id_capitulo_libro').val(null).trigger("change");
-                        $('#d_capitulo_libro').hide('slow');
-                    } else if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
-                        $('#d_capitulo_libro').show('slow');
-                        $('#id_libro').attr("required", null);
-                        $('#id_revista').attr("required", null);
-                        $('#id_capitulo_libro').attr("required", "true");
-                        $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide('slow');
-                        $('#id_revista').val(null).trigger("change");
-                        $('#d_revista').hide('slow');
                     } else {
-                        $('#d_revista').show('slow');
-                        $('#d_libro').show('slow');
-                        $('#d_capitulo_libro').show('slow');
+                        $('#d_articulo').show();
+                        $('#d_libro').show();
                         $('#id_libro').attr("required", null);
-                        $('#id_revista').attr("required", null);
-                        $('#id_capitulo_libro').attr("required", null);
+                        $('#id_articulo').attr("required", null);
                     }
-                }
-        );
+                });
     </script>
-
 
 {% endblock %}
