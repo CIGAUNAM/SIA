@@ -625,7 +625,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{itemize}
                     {% endif %}
 
-                    {% if True %}
+                    {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
                         \item[7.5.] Participación en Actividades Editoriales
                             \begin{enumerate}
                                 {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras %}
@@ -650,7 +650,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
 
-                                {% if True %}
+                                {% if dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
                                     \item[7.5.2.] Dictámenes de libros
                                         \begin{itemize}
                                             {% if dictamenes_libros_editoriales_mexicanas %}
@@ -661,7 +661,14 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
-                                            \item[b)] De editoriales extranjeras \\
+                                            {% if dictamenes_libros_editoriales_extranjeras %}
+                                            \item[b)] De editoriales extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in dictamenes_libros_editoriales_extranjeras %}
+                                                            \item{ {{ i.fecha_dictamen }}, \textit{´´{{ i.libro.nombre }}''}, {{ i.libro.editorial.nombre }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
                                         \end{itemize}
                                 {% endif %}
                             \end{enumerate}
