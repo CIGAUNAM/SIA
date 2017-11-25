@@ -15,7 +15,7 @@ FINANCIAMIENTO_UNAM = getattr(settings, 'FINANCIAMIENTO_UNAM', (('ASIGNADO', 'Pr
 FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_EXTERNO', (('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'), ('OTRO', 'Otro')))
 FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO)))
 CARGO__TIPO_CARGO  = getattr(settings, 'CARGO__TIPO_CARGO', (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo')))
-GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
 
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
 
@@ -113,21 +113,40 @@ class Ciudad(models.Model):
         verbose_name_plural = 'Ciudades'
 
 
+class GradoAcademico(models.Model):
+
+    grado_abreviación = models.CharField(max_length=254, unique=True)
+    grado= models.CharField(max_length=254, unique=True)
+
+    def __str__(self):
+        return self.grado
+
+    def natural_key(self):
+        return self.grado
+
+    def get_absolute_url(self):
+        return reverse('grado_academico_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['grado']
+        verbose_name = 'Grado académico'
+        verbose_name_plural = 'Grados académicos'
+
 
 class User(AbstractUser):
-    titulo = models.CharField(max_length=10, null=True, blank=True, choices=(('', '-------'), ('Dr', 'Doctor'), ('Dra', 'Doctora')))
+    grado = models.ForeignKey(GradoAcademico, blank=True, null=True)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
-    tipo = models.CharField(max_length=30, choices=(('', '-------'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
+    tipo = models.CharField(max_length=30, choices=(('', 'Seleccionar tipo de usuario'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
-    genero = models.CharField(max_length=10, choices=(('', '-------'), ('M', 'Masculino'), ('F', 'Femenino')))
+    genero = models.CharField(max_length=10, choices=(('', 'Seleccionar género'), ('M', 'Masculino'), ('F', 'Femenino')))
     pais_origen = models.ForeignKey(Pais, default=1, verbose_name='País de origen', related_name='user_pais_origen')
     rfc = models.SlugField(max_length=20, blank=True)
     curp = models.SlugField(max_length=20, blank=True)
     direccion = models.CharField(max_length=255, blank=True)
     direccion_continuacion = models.CharField(max_length=255, blank=True)
-    pais = models.ForeignKey(Pais, related_name='user_pais')
-    estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
+    estado = models.ForeignKey(Estado)
+    pais = models.ForeignKey(Pais, related_name='user_pais')
     telefono = models.SlugField(max_length=20, blank=True)
     celular = models.SlugField(max_length=20, blank=True)
     url = models.URLField(blank=True, null=True)

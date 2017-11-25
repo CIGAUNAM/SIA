@@ -18,6 +18,7 @@ from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
 from apoyo_institucional.models import ComisionAcademica
+from movilidad_academica.models import MovilidadAcademica
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -7518,6 +7519,9 @@ class CVInvestigadorPDF(View):
         dictamenes_libros_editoriales_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').filter(libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
         dictamenes_libros_editoriales_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').exclude(libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
 
+        estancias_academicas = MovilidadAcademica.objects.filter(usuario=pk, tipo='ESTANCIA').order_by('-fecha_inicio')
+        profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio')
+        sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7581,6 +7585,13 @@ class CVInvestigadorPDF(View):
         context['dictamenes_articulos_revistas_extranjeras'] = dictamenes_articulos_revistas_extranjeras
         context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros_editoriales_mexicanas
         context['dictamenes_libros_editoriales_extranjeras'] = dictamenes_libros_editoriales_extranjeras
+
+        context['estancias_academicas'] = estancias_academicas
+        context['profesores_visitantes'] = profesores_visitantes
+        context['sabaticos'] = sabaticos
+
+
+
 
 
         template = get_template('cv.tex')
