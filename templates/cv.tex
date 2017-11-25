@@ -678,7 +678,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         \item[7.6.] Convenios académicos nacionales e internacionales
                             \begin{enumerate}
                                 {% if estancias_academicas %}
-                                    \item Estancias académicas
+                                    \item[7.6.1.] Estancias académicas
                                         \begin{itemize}
                                             {% for i in estancias_academicas %}
                                                 \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {% if i.academico.grado %}{{ i.academico.grado.grado_abreviado }}.{% endif %} {{ i.academico.first_name }} {{ i.academico.last_name }} ({{ i.institucion.nombre }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.ciudad.estado.pais.nombre }}). {% if i.proyecto_investigacion }}\\Proyecto: \textit{´´{{ i.proyecto_investigacion.nombre }}''}. {% endif %} {% if i.financiamiento %}{{ i.financiamiento.nombre }}. {% endif %} {% if i.descripcion %}Objetivo: {{ i.descripcion }}{% endif %} }
@@ -686,7 +686,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if True %}
-                                    \item Profesores visitantes
+                                    \item[7.6.2.] Profesores visitantes
                                         \begin{itemize}
                                             {% for i in profesores_visitantes %}
                                                 \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {% if i.academico.grado %}{{ i.academico.grado.grado_abreviado }}.{% endif %} {{ i.academico.first_name }} {{ i.academico.last_name }} ({{ i.institucion.nombre }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.ciudad.estado.pais.nombre }}). {% if i.proyecto_investigacion }}\\Proyecto: \textit{´´{{ i.proyecto_investigacion.nombre }}''}. {% endif %} {% if i.financiamiento %}{{ i.financiamiento.nombre }}. {% endif %} {% if i.descripcion %}Objetivo: {{ i.descripcion }}{% endif %} }
@@ -694,7 +694,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if True %}
-                                    \item Años o Semestres sabáticos
+                                    \item[7.6.3.] Años o Semestres sabáticos
                                         \begin{itemize}
                                             {% for i in sabaticos %}
                                                 \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {% if i.academico.grado %}{{ i.academico.grado.grado_abreviado }}.{% endif %} {{ i.academico.first_name }} {{ i.academico.last_name }} ({{ i.institucion.nombre }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.ciudad.estado.pais.nombre }}). {% if i.proyecto_investigacion }}\\Proyecto: \textit{´´{{ i.proyecto_investigacion.nombre }}''}. {% endif %} {% if i.financiamiento %}{{ i.financiamiento.nombre }}. {% endif %} {% if i.descripcion %}Objetivo: {{ i.descripcion }}{% endif %} }
