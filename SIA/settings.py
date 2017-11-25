@@ -44,7 +44,7 @@ EVENTO__RESPONSABILIDAD = (('', '-------'), ('COORDINADOR', 'Coordinador general
 RED_ACADEMICA__CLASIFICACION = (('', '-------'), ('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
 CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = (('', '-------'), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'), ('PRIVADA', 'Sector privado'), ('ACADEMICA', 'Académica'), ('NO_LUCRATIVA', 'Sector privado no lucrativo'), ('EXTRANJERA', 'Extranjero'))
 DISTINCION__AMBITO = (('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'),                       ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
-GRADO_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
+NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 RESENA__TIPO = (('', '-------'), ('LIBRO', 'Libro'), ('ARTICULO', 'Artículo'))
 ARBITRAJE_ACADEMICA__TIPO = (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro'))
 

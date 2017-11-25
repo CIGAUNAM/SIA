@@ -675,13 +675,27 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if True %}
-                    \item[7.6.] Convenios académicos nacionales e internacionales
-                        \begin{enumerate}
-                        \item Estancias académicas
-                        \item Profesores visitantes
-                        \item Años o Semestres sabáticos
-                        \item Participación en redes académicas \\
-                        \end{enumerate}
+                        \item[7.6.] Convenios académicos nacionales e internacionales
+                            \begin{enumerate}
+                                {% if estancias_academicas %}
+                                    \item Estancias académicas
+                                        \begin{itemize}
+                                            {% for i in estancias_academicas %}
+                                                \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {% if i.academico.grado %}{{ i.academico.grado.grado_abreviado }}.{% endif %} {{ i.academico.first_name }} {{ i.academico.last_name }} ({{ i.institucion.nombre }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.ciudad.estado.pais.nombre }}). {% if i.proyecto_investigacion }}\\Proyecto: \textit{´´{{ i.proyecto_investigacion.nombre }}''}. {% endif %} {% if i.financiamiento %}{{ i.financiamiento.nombre }}. {% endif %} {% if i.descripcion %}Objetivo: {{ i.descripcion }}{% endif %} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if True %}
+                                    \item Profesores visitantes
+                                {% endif %}
+                                {% if True %}
+                                    \item Años o Semestres sabáticos
+                                {% endif %}
+                                {% if True %}
+                                    \item Participación en redes académicas
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
 
                     \item[7.7.] Vinculación con la sociedad
                         \begin{enumerate}
@@ -819,3 +833,17 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
 \end{document}
 {% endautoescape %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
