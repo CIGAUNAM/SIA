@@ -40,13 +40,13 @@
         </div>
     </div>
     </p>
-    <p><strong>Grado académico:</strong>
+    <p><strong>Nivel académico:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Grado académico de asesoría."><i class="fa fa-question-circle"></i></a>
+           title="Nivel académico de asesoría."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.grado_academico }}
+            {{ form.nivel_academico }}
 
         </div>
     </div>
@@ -261,27 +261,27 @@
         $('#d_programa_doctorado').hide();
 
 
-        $("#id_grado_academico").on('change', function () {
-                    if ($("#id_grado_academico").val() == 'OTRO') {
+        $("#id_nivel_academico").on('change', function () {
+                    if ($("#id_nivel_academico").val() == 'OTRO') {
                         $('#id_programa_licenciatura').val(null).trigger("change");
                         $('#d_programa_licenciatura').hide();
                         $('#id_programa_maestria').val(null).trigger("change");
                         $('#d_programa_maestria').hide();
                         $('#id_programa_doctorado').val(null).trigger("change");
                         $('#d_programa_doctorado').hide();
-                    } else if ($("#id_grado_academico").val() == 'LICENCIATURA') {
+                    } else if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
                         $('#d_programa_licenciatura').show();
                         $('#id_programa_maestria').val(null).trigger("change");
                         $('#d_programa_maestria').hide();
                         $('#id_programa_doctorado').val(null).trigger("change");
                         $('#d_programa_doctorado').hide();
-                    } else if ($("#id_grado_academico").val() == 'MAESTRIA') {
+                    } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
                         $('#id_programa_licenciatura').val(null).trigger("change");
                         $('#d_programa_licenciatura').hide();
                         $('#d_programa_maestria').show();
                         $('#id_programa_doctorado').val(null).trigger("change");
                         $('#d_programa_doctorado').hide();
-                    } else if ($("#id_grado_academico").val() == 'DOCTORADO') {
+                    } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
                         $('#id_programa_licenciatura').val(null).trigger("change");
                         $('#d_programa_licenciatura').hide();
                         $('#id_programa_maestria').val(null).trigger("change");
@@ -338,13 +338,13 @@
         </div>
     </div>
     </p>
-    <p><strong>Grado académico:</strong>
+    <p><strong>Nivel académico:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Grado académico de asesoría."><i class="fa fa-question-circle"></i></a>
+           title="Nivel académico de asesoría."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.grado_academico }}
+            {{ form.nivel_academico }}
 
         </div>
     </div>
@@ -561,11 +561,11 @@
 
 
 
-        if ($("#id_grado_academico").val() == 'LICENCIATURA') {
+        if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
             $('#d_programa_licenciatura').show();
-        } else if ($("#id_grado_academico").val() == 'MAESTRIA') {
+        } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
             $('#d_maestria').show();
-        } else if ($("#id_grado_academico").val() == 'DOCTORADO') {
+        } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
             $('#d_doctorado').show();
         } else {
             $('#d_licenciatura').hide();
@@ -574,27 +574,27 @@
         }
 
 
-        $("#id_grado_academico").on('change', function () {
-                    if ($("#id_grado_academico").val() == 'OTRO') {
+        $("#id_nivel_academico").on('change', function () {
+                    if ($("#id_nivel_academico").val() == 'OTRO') {
                         $('#id_programa_licenciatura').val(null).trigger("change");
                         $('#d_programa_licenciatura').hide();
                         $('#id_programa_maestria').val(null).trigger("change");
                         $('#d_programa_maestria').hide();
                         $('#id_programa_doctorado').val(null).trigger("change");
                         $('#d_programa_doctorado').hide();
-                    } else if ($("#id_grado_academico").val() == 'LICENCIATURA') {
+                    } else if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
                         $('#d_programa_licenciatura').show();
                         $('#id_programa_maestria').val(null).trigger("change");
                         $('#d_programa_maestria').hide();
                         $('#id_programa_doctorado').val(null).trigger("change");
                         $('#d_programa_doctorado').hide();
-                    } else if ($("#id_grado_academico").val() == 'MAESTRIA') {
+                    } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
                         $('#id_programa_licenciatura').val(null).trigger("change");
                         $('#d_programa_licenciatura').hide();
                         $('#d_programa_maestria').show();
                         $('#id_programa_doctorado').val(null).trigger("change");
                         $('#d_programa_doctorado').hide();
-                    } else if ($("#id_grado_academico").val() == 'DOCTORADO') {
+                    } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
                         $('#id_programa_licenciatura').val(null).trigger("change");
                         $('#d_programa_licenciatura').hide();
                         $('#id_programa_maestria').val(null).trigger("change");
