@@ -198,6 +198,8 @@ class Institucion(models.Model):
     #slug = AutoSlugField(populate_from='institucion', max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
+    ciudad = models.ForeignKey(Ciudad)
 
     def __str__(self):
         return self.nombre
@@ -216,9 +218,10 @@ class Institucion(models.Model):
 
 class Dependencia(models.Model):
     nombre = models.CharField(max_length=255)
-    #slug = AutoSlugField(populate_from='dependencia', max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion)
+    pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
     subsistema_unam = models.CharField(max_length=50, choices=(('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
                                                           ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),

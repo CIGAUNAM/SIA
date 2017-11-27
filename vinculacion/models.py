@@ -81,18 +81,15 @@ class ArbitrajeOtraActividad(models.Model):
 
 class RedAcademica(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
-    clasificacion = models.CharField(max_length=20, choices=RED_ACADEMICA__CLASIFICACION)
-    #regiones = models.ManyToManyField(Region, related_name='red_academica_regiones', blank=True)
-    paises = models.ManyToManyField(Pais, related_name='red_academica_paises')
+    ambito = models.CharField(max_length=20, choices=RED_ACADEMICA__CLASIFICACION)
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
     vigente = models.BooleanField(default=False)
+    instituciones = models.ManyToManyField(Institucion, related_name='red_academica_instituciones')
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
-    #proyectos = models.ManyToManyField(Proyecto, related_name='red_academica_proyectos', blank=True)
     usuarios = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
-    #tags = models.ManyToManyField(Tag, related_name='red_academica_tags', blank=True)
+
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_constitucion)
