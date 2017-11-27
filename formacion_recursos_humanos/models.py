@@ -4,7 +4,7 @@ from django.conf import settings
 from nucleo.models import User, Institucion, Dependencia, Beca, Reconocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
 from investigacion.models import ProyectoInvestigacion
 
-GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('OTRO', 'Otro'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
 
 # Create your models here.
 
@@ -12,7 +12,7 @@ class AsesorEstancia(models.Model):
     asesorado = models.ForeignKey(User, related_name='asesor_estancia_asesorado')
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=30, choices=(('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social'), ('OTRO', 'Otro')))
-    grado_academico = models.CharField(max_length=20, choices=GRADO_ACADEMICO)
+    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True)
@@ -34,7 +34,7 @@ class AsesorEstancia(models.Model):
         ordering = ['-fecha_inicio', '-fecha_fin']
         verbose_name = 'Asesor en residencias / prácticas / estancias / servicio social'
         verbose_name_plural = 'Asesores en residencias / prácticas / estancias / servicio social'
-        unique_together = ['usuario', 'asesorado', 'grado_academico']
+        unique_together = ['usuario', 'asesorado', 'nivel_academico']
 
 
 class DireccionTesis(models.Model):
@@ -42,7 +42,7 @@ class DireccionTesis(models.Model):
     #slug = AutoSlugField(populate_from='titulo')
     asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado')
     descripcion = models.TextField(blank=True)
-    grado_academico = models.CharField(max_length=20, choices=GRADO_ACADEMICO)
+    grado_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     documento_tesis = models.FileField(null=True, blank=True)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)

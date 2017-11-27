@@ -18,7 +18,7 @@ class AsesorEstanciaForm(forms.ModelForm):
     )
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social'), ('OTRO', 'Otro')), required=True)
-    grado_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
+    nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'NIVEL_ACADEMICO', ), required=True)
     programa_licenciatura = forms.ModelChoiceField(
         required=False,
         queryset=ProgramaLicenciatura.objects.all(),
@@ -108,7 +108,7 @@ class DireccionTesisForm(forms.ModelForm):
         )
     )
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    grado_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
+    nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'NIVEL_ACADEMICO', ), required=True)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",

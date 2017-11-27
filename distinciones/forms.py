@@ -56,7 +56,7 @@ class DistincionAlumnoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    grado_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'GRADO_ACADEMICO', ), required=True)
+    nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'NIVEL_ACADEMICO', ), required=True)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
