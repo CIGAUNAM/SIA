@@ -1023,44 +1023,44 @@ Instituciones = (
      [('Sistemas de Información Geográfica, S.A. de C.V.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
     ('Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)',
-     Pais.objects.get(nombre='México').id, [(
+     Pais.objects.get(nombre='México').id,  Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
+     [(
         'Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)',
         Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-    ('Sociedad Mexicana de Geografía y Estadística, A.C.', Pais.objects.get(nombre='México').id,
+    ('Sociedad Mexicana de Geografía y Estadística, A.C.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [('Sociedad Mexicana de Geografía y Estadística, A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-    ('Dirección General de Geografía y Medio Ambiente', Pais.objects.get(nombre='México').id,
+    ('Dirección General de Geografía y Medio Ambiente', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [('Dirección General de Geografía y Medio Ambiente', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-    ('Universidad Autónoma de Nayarit', Pais.objects.get(nombre='México').id,
+    ('Universidad Autónoma de Nayarit', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Tepic').estado_id, Ciudad.objects.get(nombre='Tepic').id,
      [('Universidad Autónoma de Nayarit', Ciudad.objects.get(nombre='Tepic').id)]),
 
-    ('El Colegio de Jalisco A.C.', Pais.objects.get(nombre='México').id,
+    ('El Colegio de Jalisco A.C.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Guadalajara').estado_id, Ciudad.objects.get(nombre='Guadalajara').id,
      [('El Colegio de Jalisco A.C.', Ciudad.objects.get(nombre='Guadalajara').id)]),
 
-    ('Fundación Premio Nacional de Tecnología A.C.', Pais.objects.get(nombre='México').id,
+    ('Fundación Premio Nacional de Tecnología A.C.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [('Fundación Premio Nacional de Tecnología A.C.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-    ('Universidad de Harvard', Pais.objects.get(nombre='Estados Unidos de América').id,
+    ('Universidad de Harvard', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Boston').estado_id, Ciudad.objects.get(nombre='Boston').id,
      [
          ('Harvard Business Publishing', Ciudad.objects.get(nombre='Boston').id)
      ]
      ),
 
-    ('Instituto Mexicano de la Propiedad Industrial (IMPI)', Pais.objects.get(nombre='México').id, [(
-        'Instituto Mexicano de la Propiedad Industrial (IMPI)',
-        Ciudad.objects.get(
-            nombre='Ciudad de México, CDMX').id)]),
+    ('Instituto Mexicano de la Propiedad Industrial (IMPI)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
+     [('Instituto Mexicano de la Propiedad Industrial (IMPI)',
+        Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-    ('Universidad Tecmilenio', Pais.objects.get(nombre='México').id,
+    ('Universidad Tecmilenio', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      (
          ('Universidad Tecmilenio', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
          ('Buzan Latin America', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
      )
      ),
 
-    ('La Universidad de Indiana Bloomington', Pais.objects.get(nombre='Estados Unidos de América').id,
+    ('La Universidad de Indiana Bloomington', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Bloomington').estado_id, Ciudad.objects.get(nombre='Bloomington').id,
      (
          ('Department of Political Science and Workshop in Political Theory and Policy Analysis',
           Ciudad.objects.get(nombre='Bloomington').id),
@@ -1070,7 +1070,7 @@ Instituciones = (
      )
      ),
 
-    ('Universidad Mayor se San Simón', Pais.objects.get(nombre='Bolivia').id,
+    ('Universidad Mayor se San Simón', Pais.objects.get(nombre='Bolivia').id, Ciudad.objects.get(nombre='Cochabamba').estado_id, Ciudad.objects.get(nombre='Cochabamba').id,
      (
          ('Universidad Mayor se San Simón', Ciudad.objects.get(nombre='Cochabamba').id),
          (
@@ -1079,39 +1079,40 @@ Instituciones = (
      )
      ),
 
-    ('Escuela Politécnica Federal de Zúrich (ETHZ)', Pais.objects.get(nombre='Suiza').id,
+    ('Escuela Politécnica Federal de Zúrich (ETHZ)', Pais.objects.get(nombre='Suiza').id, Ciudad.objects.get(nombre='Zúrich').estado_id, Ciudad.objects.get(nombre='Zúrich').id,
      [('Institute of Hydromechanics and Water Management', Ciudad.objects.get(nombre='Zúrich').id)]),
 
-    ('Universidad de Míchigan', Pais.objects.get(nombre='Estados Unidos de América').id,
+    ('Universidad de Míchigan', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Ann Arbor').estado_id, Ciudad.objects.get(nombre='Ann Arbor').id,
      [('Universidad de Míchigan', Ciudad.objects.get(nombre='Ann Arbor').id)]),
 
-    ('ASPEL', Pais.objects.get(nombre='México').id, [('ASPEL', Ciudad.objects.get(nombre='Guadalajara').id)]),
+    ('ASPEL', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Guadalajara').estado_id, Ciudad.objects.get(nombre='Guadalajara').id,
+     [('ASPEL', Ciudad.objects.get(nombre='Guadalajara').id)]),
 
-    ('Técnica Aplicada Internacional S.A. de C.V.', Pais.objects.get(nombre='México').id,
+    ('Técnica Aplicada Internacional S.A. de C.V.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Naucalpan de Juárez').estado_id, Ciudad.objects.get(nombre='Naucalpan de Juárez').id,
      [('Técnica Aplicada Internacional S.A. de C.V.', Ciudad.objects.get(nombre='Naucalpan de Juárez').id)]),
 
-    ('Universidad de Wurzburgo', Pais.objects.get(nombre='Alemania').id,
+    ('Universidad de Wurzburgo', Pais.objects.get(nombre='Alemania').id, Ciudad.objects.get(nombre='Wurzburgo').estado_id, Ciudad.objects.get(nombre='Wurzburgo').id,
      [('Universidad de Wurzburgo', Ciudad.objects.get(nombre='Wurzburgo').id)]),
 
-    ('The Big Van Theory: científicos sobre ruedas', Pais.objects.get(nombre='España').id,
+    ('The Big Van Theory: científicos sobre ruedas', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Madrid').estado_id, Ciudad.objects.get(nombre='Madrid').id,
      [('The Big Van Theory: científicos sobre ruedas', Ciudad.objects.get(nombre='Madrid').id)]),
 
-    ('Universidad Complutense Madrid', Pais.objects.get(nombre='España').id,
+    ('Universidad Complutense Madrid', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Madrid').estado_id, Ciudad.objects.get(nombre='Madrid').id,
      [('Universidad Complutense Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-    ('Escuela de Organización Industrial', Pais.objects.get(nombre='España').id,
+    ('Escuela de Organización Industrial', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Madrid').estado_id, Ciudad.objects.get(nombre='Madrid').id,
      [('Escuela de Organización Industrial', Ciudad.objects.get(nombre='Madrid').id)]),
 
-    ('Gobierno de España', Pais.objects.get(nombre='España').id,
+    ('Gobierno de España', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Madrid').estado_id, Ciudad.objects.get(nombre='Madrid').id,
      [('Gobierno de España', Ciudad.objects.get(nombre='Madrid').id)]),
 
-    ('Universidad de Alicante', Pais.objects.get(nombre='España').id,
+    ('Universidad de Alicante', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='San Vicente del Raspeig').estado_id, Ciudad.objects.get(nombre='San Vicente del Raspeig').id,
      [('Instituto de Economía Internacional', Ciudad.objects.get(nombre='San Vicente del Raspeig').id)]),
 
-    ('Interactive Advertising Bureau (IAB)', Pais.objects.get(nombre='Estados Unidos de América').id,
+    ('Interactive Advertising Bureau (IAB)', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Nueva York').estado_id, Ciudad.objects.get(nombre='Nueva York').id,
      [('Interactive Advertising Bureau (IAB)', Ciudad.objects.get(nombre='Nueva York').id)]),
 
-    ('Universidad Don Vasco', Pais.objects.get(nombre='México').id,
+    ('Universidad Don Vasco', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Uruapan').estado_id, Ciudad.objects.get(nombre='Uruapan').id,
      [('Universidad Don Vasco', Ciudad.objects.get(nombre='Uruapan').id)]),
 
     ('Arkinet, S.A. De C.V.', Pais.objects.get(nombre='México').id,
