@@ -1019,7 +1019,7 @@ Instituciones = (
     ('Hexagon Geospatial', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Norcross').estado_id, Ciudad.objects.get(nombre='Norcross').id,
      [('ERDAS Imagine', Ciudad.objects.get(nombre='Norcross').id)]),
 
-    ('Sistemas de Información Geográfica, S.A. de C.V.', Pais.objects.get(nombre='México').id,
+    ('Sistemas de Información Geográfica, S.A. de C.V.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [('Sistemas de Información Geográfica, S.A. de C.V.', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
     ('Centro de Información y Comunicación Ambiental de Norte América, A.C. (CICEANA)',
