@@ -753,16 +753,15 @@ Instituciones = (
     ('Universidad Complutense de Madrid', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Madrid').estado_id, Ciudad.objects.get(nombre='Madrid').id,
      [('Universidad Complutense de Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-    ('Consejo Nacional de Ciencia y Tecnología (CONACYT)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id
+    ('Consejo Nacional de Ciencia y Tecnología (CONACYT)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [
          ('Consejo Nacional de Ciencia y Tecnología (CONACYT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
-         ('Fomento Regional para el Desarrollo Científico, Tecnológico y de Innovación (FORDECYT)',
-          Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
+         ('Fomento Regional para el Desarrollo Científico, Tecnológico y de Innovación (FORDECYT)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
          ('Innovate UK - CONACYT', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)
      ]
      ),
 
-    ('Gobierno de la República Mexicana', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id
+    ('Gobierno de la República Mexicana', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [
          ('Secretaría de Desarrollo Social (SEDESOL)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id),
          ('Comisión Nacional Para el Conocimiento y Uso de la Biodiversidad (CONABIO)',
@@ -786,7 +785,7 @@ Instituciones = (
      ]
      ),
 
-    ('Gobierno del Estado de Michoacán de Ocampo', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id
+    ('Gobierno del Estado de Michoacán de Ocampo', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [
          ('Gobierno del Estado de Michoacán de Ocampo', Ciudad.objects.get(nombre='Morelia').id),
          ('Secretaría de Innovación, Ciencia y Desarrollo Tecnológico (SICDET)',
@@ -948,7 +947,7 @@ Instituciones = (
     ('Instituto Nacional de Estadística y Geografía (INEGI)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Aguascalientes').estado_id, Ciudad.objects.get(nombre='Aguascalientes').id,
      [('Instituto Nacional de Estadística y Geografía (INEGI)', Ciudad.objects.get(nombre='Aguascalientes').id)]),
 
-    ('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id
+    ('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)',
         Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
@@ -1210,7 +1209,7 @@ Instituciones = (
      ]
      ),
 
-    ('Universidad Autónoma de Querétaro', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Santiago de Querétaro').estado_id, Ciudad.objects.get(nombre='Santiago de Querétaro').id
+    ('Universidad Autónoma de Querétaro', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Santiago de Querétaro').estado_id, Ciudad.objects.get(nombre='Santiago de Querétaro').id,
      [('Universidad Autónoma de Querétaro', Ciudad.objects.get(nombre='Santiago de Querétaro').id)]),
 
     ('Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Monterrey').estado_id, Ciudad.objects.get(nombre='Monterrey').id,
@@ -1567,7 +1566,7 @@ Instituciones = (
     ('Universidad Tecnológica de Madrid', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Madrid').estado_id, Ciudad.objects.get(nombre='Madrid').id,
      [('Universidad Tecnológica de Madrid', Ciudad.objects.get(nombre='Madrid').id)]),
 
-    ('Universidad Internacional Jefferson', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id
+    ('Universidad Internacional Jefferson', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [('Universidad Internacional Jefferson', Ciudad.objects.get(nombre='Morelia').id)]),
 
     ('Universidad Federal de Espírito Santo (UFES)', Pais.objects.get(nombre='Brasil').id, Ciudad.objects.get(nombre='Vitória').estado_id, Ciudad.objects.get(nombre='Vitória').id,
@@ -1623,7 +1622,7 @@ Instituciones = (
      [('Instituto para el Desarrollo Sustentable en Mesoamérica, A.C.',
         Ciudad.objects.get(nombre='San Cristóbal de las Casas').id)]),
 
-    ('Signos Diseño & Publicidad', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id
+    ('Signos Diseño & Publicidad', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [('Signos Diseño & Publicidad', Ciudad.objects.get(nombre='Morelia').id)]),
 
     ('Tecnologías y Servicios Agrarios, S.A (Tragsatec)', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Lérida').estado_id, Ciudad.objects.get(nombre='Lérida').id,
@@ -1632,76 +1631,77 @@ Instituciones = (
     ('Meneu Distribución, S.A.', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Albuixech').estado_id, Ciudad.objects.get(nombre='Albuixech').id,
      [('Meneu Distribución, S.A.', Ciudad.objects.get(nombre='Albuixech').id)]),
 
-    ('Instituto Cartográfico y Geológico de Cataluña (ICGC)', Pais.objects.get(nombre='España').id,
+    ('Instituto Cartográfico y Geológico de Cataluña (ICGC)', Pais.objects.get(nombre='España').id, Ciudad.objects.get(nombre='Barcelona').estado_id, Ciudad.objects.get(nombre='Barcelona').id,
      [('Instituto Cartográfico y Geológico de Cataluña', Ciudad.objects.get(nombre='Barcelona').id)]),
 
-    ('Universidad de Dar es-Salam', Pais.objects.get(nombre='Tanzania').id,
+    ('Universidad de Dar es-Salam', Pais.objects.get(nombre='Tanzania').id, Ciudad.objects.get(nombre='Dar es-Salam').estado_id, Ciudad.objects.get(nombre='Dar es-Salam').id,
      [('Universidad de Dar es-Salam', Ciudad.objects.get(nombre='Dar es-Salam').id)]),
 
-    ('Universidad Autónoma de Tlaxcala', Pais.objects.get(nombre='México').id,
+    ('Universidad Autónoma de Tlaxcala', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Tlaxcala de Xicohténcatl').estado_id, Ciudad.objects.get(nombre='Tlaxcala de Xicohténcatl').id,
      [('Universidad Autónoma de Tlaxcala', Ciudad.objects.get(nombre='Tlaxcala de Xicohténcatl').id)]),
 
-    ('Harlen Administrativo SA de CV', Pais.objects.get(nombre='México').id,
+    ('Harlen Administrativo SA de CV', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [('Harlen Administrativo SA de CV', Ciudad.objects.get(nombre='Morelia').id)]),
 
-    ('CodiNet S.A. DE C.V.', Pais.objects.get(nombre='México').id,
+    ('CodiNet S.A. DE C.V.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id,  Ciudad.objects.get(nombre='Morelia').id,
      [('CodiNet S.A. DE C.V.', Ciudad.objects.get(nombre='Morelia').id)]),
 
     ('International Society for the Study of Religion, Nature and Culture (ISSRNC)',
-     Pais.objects.get(nombre='Estados Unidos de América').id, [(
-        'International Society for the Study of Religion, Nature and Culture (ISSRNC)',
+     Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Gainesville').estado_id, Ciudad.objects.get(nombre='Gainesville').id,
+     [('International Society for the Study of Religion, Nature and Culture (ISSRNC)',
         Ciudad.objects.get(nombre='Gainesville').id)]),
 
-    ('Conference of Latin Americanist Geographers (CLAG)', Pais.objects.get(nombre='Estados Unidos de América').id,
+    ('Conference of Latin Americanist Geographers (CLAG)', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Gainesville').estado_id, Ciudad.objects.get(nombre='Gainesville').id,
      [('Conference of Latin Americanist Geographers (CLAG)', Ciudad.objects.get(nombre='Gainesville').id)]),
 
-    ('Ayuntamiento de Cuernavaca', Pais.objects.get(nombre='México').id,
+    ('Ayuntamiento de Cuernavaca', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Cuernavaca').estado_id, Ciudad.objects.get(nombre='Cuernavaca').id,
      [('Ayuntamiento de Cuernavaca', Ciudad.objects.get(nombre='Cuernavaca').id)]),
 
-    ('Gobierno del Estado de Morelos', Pais.objects.get(nombre='México').id,
+    ('Gobierno del Estado de Morelos', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Cuernavaca').estado_id, Ciudad.objects.get(nombre='Cuernavaca').id,
      [('Gobierno del Estado de Morelos', Ciudad.objects.get(nombre='Cuernavaca').id)]),
 
-    ('TECIF', Pais.objects.get(nombre='México').id, [('TECIF', Ciudad.objects.get(nombre='Morelia').id)]),
+    ('TECIF', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
+     [('TECIF', Ciudad.objects.get(nombre='Morelia').id)]),
 
-    ('Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)', Pais.objects.get(nombre='México').id,
+    ('Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [('Fideicomisos Instituidos en Relación con la Agrícultura (FIRA)', Ciudad.objects.get(nombre='Morelia').id)]),
 
-    ('Commission for Environmental Cooperation', Pais.objects.get(nombre='México').id,
+    ('Commission for Environmental Cooperation', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [('Commission for Environmental Cooperation', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-    ('Universidad Vasco de Quiroga (UVAQ)', Pais.objects.get(nombre='México').id,
+    ('Universidad Vasco de Quiroga (UVAQ)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id,
      [('Universidad Vasco de Quiroga (UVAQ)', Ciudad.objects.get(nombre='Morelia').id)]),
 
-    ('Ministerio de Infraestructura, Provincia de Buenos Aires', Pais.objects.get(nombre='Argentina').id,
+    ('Ministerio de Infraestructura, Provincia de Buenos Aires', Pais.objects.get(nombre='Argentina').id, Ciudad.objects.get(nombre='Buenos Aires').estado_id, Ciudad.objects.get(nombre='Buenos Aires').id,
      [('Ministerio de Infraestructura', Ciudad.objects.get(nombre='Buenos Aires').id)]),
 
-    ('Fondo Monarca, A.C.', Pais.objects.get(nombre='México').id,
+    ('Fondo Monarca, A.C.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [('Fondo Monarca, A.C.', Ciudad.objects.get(nombre='Morelia').id)]),
 
-    ('Universidad de California en Berkeley', Pais.objects.get(nombre='Estados Unidos de América').id,
+    ('Universidad de California en Berkeley', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Berkeley').estado_id, Ciudad.objects.get(nombre='Berkeley').id,
      (
          ('Universidad de California en Berkeley', Ciudad.objects.get(nombre='Berkeley').id),
          ('Center for Latin American Studies (CLAS)', Ciudad.objects.get(nombre='Berkeley').id)
      )
      ),
 
-    ('EcoLogic Development Fund', Pais.objects.get(nombre='Estados Unidos de América').id,
+    ('EcoLogic Development Fund', Pais.objects.get(nombre='Estados Unidos de América').id, Ciudad.objects.get(nombre='Cambridge').estado_id, Ciudad.objects.get(nombre='Cambridge').id,
      [('EcoLogic Development Fund', Ciudad.objects.get(nombre='Cambridge').id)]),
 
-    ('Ecotecnologías, A.C.', Pais.objects.get(nombre='México').id,
+    ('Ecotecnologías, A.C.', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [('Ecotecnologías, A.C.', Ciudad.objects.get(nombre='Morelia').id)]),
 
-    ('Universidad Nacional Agraria La Molina (UNALM)', Pais.objects.get(nombre='Perú').id,
+    ('Universidad Nacional Agraria La Molina (UNALM)', Pais.objects.get(nombre='Perú').id, Ciudad.objects.get(nombre='Lima').estado_id, Ciudad.objects.get(nombre='Lima').id,
      [('Universidad Nacional Agraria La Molina (UNALM)', Ciudad.objects.get(nombre='Lima').id)]),
 )
 
 for i in Instituciones:
-    e = Institucion(nombre=i[0], pais=Pais(pk=i[1]))
+    e = Institucion(nombre=i[0], pais=Pais(pk=i[1]), estado=Estado(pk=i[2]), ciudad=Ciudad(pk=i[3]))
     e.save()
     print("Agregada la Institución " + i[0].upper() + " para el país " + str(Pais.objects.get(pk=i[1]).nombre))
 
-    for j in i[2]:
-        f = Dependencia(nombre=j[0], ciudad=Ciudad(pk=j[1]), institucion=Institucion(pk=e.pk))
+    for j in i[4][0]:
+        f = Dependencia(nombre=j[0], ciudad=Ciudad(pk=j[1]), estado=Ciudad.objects.get(pk=j[1]).estado, pais=Ciudad.objects.get(pk=j[1]).estado.pais, institucion=Institucion(pk=e.pk))
         f.save()
         print(" --- Agregada la Dependencia " + j[0].upper() + " para la institución " + str(
             Institucion.objects.get(pk=e.pk).nombre))
