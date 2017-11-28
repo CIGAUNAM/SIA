@@ -947,9 +947,8 @@ Instituciones = (
     ('Instituto Nacional de Estadística y Geografía (INEGI)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Aguascalientes').estado_id, Ciudad.objects.get(nombre='Aguascalientes').id,
      [('Instituto Nacional de Estadística y Geografía (INEGI)', Ciudad.objects.get(nombre='Aguascalientes').id)]),
 
-    ('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
-     [('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)',
-        Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
+    ('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
+     [('Sociedad Latinoamericana de Percepción Remota y Sistemas de Información Espacial (SELPER México)', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
     ('Universidad Autónoma del Estado de México (UAEMex)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Toluca').estado_id, Ciudad.objects.get(nombre='Toluca').id,
      (
@@ -1669,7 +1668,7 @@ Instituciones = (
     ('Commission for Environmental Cooperation', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').estado_id, Ciudad.objects.get(nombre='Ciudad de México, CDMX').id,
      [('Commission for Environmental Cooperation', Ciudad.objects.get(nombre='Ciudad de México, CDMX').id)]),
 
-    ('Universidad Vasco de Quiroga (UVAQ)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id,
+    ('Universidad Vasco de Quiroga (UVAQ)', Pais.objects.get(nombre='México').id, Ciudad.objects.get(nombre='Morelia').estado_id, Ciudad.objects.get(nombre='Morelia').id,
      [('Universidad Vasco de Quiroga (UVAQ)', Ciudad.objects.get(nombre='Morelia').id)]),
 
     ('Ministerio de Infraestructura, Provincia de Buenos Aires', Pais.objects.get(nombre='Argentina').id, Ciudad.objects.get(nombre='Buenos Aires').estado_id, Ciudad.objects.get(nombre='Buenos Aires').id,
@@ -1700,8 +1699,8 @@ for i in Instituciones:
     e.save()
     print("Agregada la Institución " + i[0].upper() + " para el país " + str(Pais.objects.get(pk=i[1]).nombre))
 
-    for j in i[4][0]:
-        f = Dependencia(nombre=j[0], ciudad=Ciudad(pk=j[1]), estado=Ciudad.objects.get(pk=j[1]).estado, pais=Ciudad.objects.get(pk=j[1]).estado.pais, institucion=Institucion(pk=e.pk))
+    for j in i[4]:
+        f = Dependencia(nombre=j[0], ciudad=Ciudad.objects.get(pk=j[1]), estado=Ciudad.objects.get(pk=j[1]).estado, pais=Ciudad.objects.get(pk=j[1]).estado.pais, institucion=Institucion(pk=e.pk))
         f.save()
         print(" --- Agregada la Dependencia " + j[0].upper() + " para la institución " + str(
             Institucion.objects.get(pk=e.pk).nombre))
