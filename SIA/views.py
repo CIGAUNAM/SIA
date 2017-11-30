@@ -13,7 +13,7 @@ from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoI
 from docencia.models import CursoDocencia, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
-from vinculacion.models import ConvenioEntidadExterna
+from vinculacion.models import ConvenioEntidadExterna, RedAcademica
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
@@ -7522,6 +7522,7 @@ class CVInvestigadorPDF(View):
         estancias_academicas = MovilidadAcademica.objects.filter(usuario=pk, tipo='ESTANCIA').order_by('-fecha_inicio')
         profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio')
         sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
+        participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_inicio')
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7589,6 +7590,7 @@ class CVInvestigadorPDF(View):
         context['estancias_academicas'] = estancias_academicas
         context['profesores_visitantes'] = profesores_visitantes
         context['sabaticos'] = sabaticos
+        context['participacion_redes_academicas'] = participacion_redes_academicas
 
 
 

@@ -674,7 +674,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{enumerate}
                     {% endif %}
 
-                    {% if estancias_academicas or profesores_visitantes or sabaticos %}
+                    {% if estancias_academicas or profesores_visitantes or sabaticos or participacion_redes_academicas %}
                         \item[7.6.] Convenios académicos nacionales e internacionales
                             \begin{enumerate}
                                 {% if estancias_academicas %}
@@ -685,7 +685,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
-                                {% if True %}
+                                {% if profesores_visitantes %}
                                     \item[7.6.2.] Profesores visitantes
                                         \begin{itemize}
                                             {% for i in profesores_visitantes %}
@@ -693,7 +693,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
-                                {% if True %}
+                                {% if sabaticos %}
                                     \item[7.6.3.] Años o Semestres sabáticos
                                         \begin{itemize}
                                             {% for i in sabaticos %}
@@ -701,8 +701,11 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
-                                {% if True %}
+                                {% if participacion_redes_academicas %}
                                     \item Participación en redes académicas
+                                        {% for i in participacion_redes_academicas %}
+                                            \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Instituciones: {% for j in i.instituciones.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_inicio}} - {{ i.fecha_fin }} } }
+                                        {% endfor %}
                                 {% endif %}
                             \end{enumerate}
                     {% endif %}
@@ -714,7 +717,8 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         \item Organización de eventos de divulgación (no dirigidos a pares)
                         \item Conferencias de divulgación (no dirigidas a pares) \\
                         \end{enumerate}
-                    \item Otros \\
+
+                    \item[7.8.] Otros \\
                     \textbf{En el caso de los técnicos} incluir además:
                     \begin{small}
                     \begin{itemize}
