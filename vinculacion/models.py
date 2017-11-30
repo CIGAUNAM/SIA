@@ -151,7 +151,6 @@ class ClasificacionServicio(models.Model):
 
 class ServicioExternoEntidadNoAcademica(models.Model):
     nombre_servicio = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
     clasificacion_servicio = models.ForeignKey(ClasificacionServicio)
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion)
