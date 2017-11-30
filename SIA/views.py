@@ -7523,6 +7523,7 @@ class CVInvestigadorPDF(View):
         profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio')
         sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
         participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_inicio')
+        convenios_entidades_externas = ConvenioEntidadExterna.objects.filter(usuarios=pk).order_by('-fecha_inicio')
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7591,13 +7592,14 @@ class CVInvestigadorPDF(View):
         context['profesores_visitantes'] = profesores_visitantes
         context['sabaticos'] = sabaticos
         context['participacion_redes_academicas'] = participacion_redes_academicas
+        context['convenios_entidades_externas'] = convenios_entidades_externas
 
 
 
 
 
         template = get_template('cv.tex')
-        
+
         rendered_tpl = template.render(context).replace('&', '\&').encode('utf-8')
 
         print(template.render(context).replace('&', '\&'))

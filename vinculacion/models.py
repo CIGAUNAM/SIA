@@ -2,12 +2,12 @@ from django.db import models
 
 from django.conf import settings
 from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Revista, Indice, Libro, Editorial, Coleccion
+from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Cargo, Revista, Indice, Libro, Editorial, Coleccion, Financiamiento
 from investigacion.models import CapituloLibroInvestigacion, ProyectoInvestigacion, ArticuloCientifico
 from django.core.urlresolvers import reverse
 
 RED_ACADEMICA__CLASIFICACION = getattr (settings, 'RED_ACADEMICA__CLASIFICACION', (('', '-------'), ('LOCAL', 'Local'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
-CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = getattr (settings, 'CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION', (('', '-------'), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'), ('PRIVADA', 'Sector privado'), ('ACADEMICA', 'Académica'), ('NO_LUCRATIVA', 'Sector privado no lucrativo'), ('EXTRANJERA', 'Extranjero')))
+CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = getattr (settings, 'CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION', (('', '-------'), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'), ('PRIVADA', 'Sector privado'), ('NO_LUCRATIVA', 'Sector privado no lucrativo'), ('EXTRANJERA', 'Extranjero')))
 ARBITRAJE_ACADEMICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO', (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro')))
 
 # Create your models here.
@@ -114,7 +114,8 @@ class ConvenioEntidadExterna(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     es_renovacion = models.BooleanField(default=False)
-    incluye_financiamiento = models.BooleanField(default=False)
+    #incluye_financiamiento = models.BooleanField(default=False)
+    financiamientos = models.ManyToManyField(Financiamiento, blank=True, null=True)
     usuarios = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios', verbose_name='Académicos participantes')
 
     def __str__(self):

@@ -24,11 +24,11 @@ urlpatterns = [
     url(r'^redes-academicas/(?P<pk>[\w\-]+)/eliminar$', RedAcademicaEliminar.as_view(), name='red_academica_eliminar'),
     url(r'^redes-academicas/(?P<pk>[\w\-]+)/$', RedAcademicaDetalle.as_view(), name='red_academica_detalle'),
 
-    url(r'^convenios-entidades-externas/json/', ConvenioEntidadExternaJSON.as_view(), name='convenio_entidad_no_academica_lista__json'),
-    url(r'^convenios-entidades-externas/json-otros/', ConvenioEntidadExternaJSON.as_view(otros=True), name='convenio_entidad_no_academica_lista_otros__json'),
-    url(r'^convenios-entidades-externas/$', ConvenioEntidadExternaLista.as_view(), name='convenio_entidad_no_academica_lista'),
-    url(r'^convenios-entidades-externas/(?P<pk>[\w\-]+)/eliminar$', ConvenioEntidadExternaEliminar.as_view(), name='convenio_entidad_no_academica_eliminar'),
-    url(r'^convenios-entidades-externas/(?P<pk>[\w\-]+)/$', ConvenioEntidadExternaDetalle.as_view(), name='convenio_entidad_no_academica_detalle'),
+    url(r'^convenios-entidades-no-academicas/json/', ConvenioEntidadExternaJSON.as_view(), name='convenio_entidad_no_academica_lista__json'),
+    url(r'^convenios-entidades-no-academicas/json-otros/', ConvenioEntidadExternaJSON.as_view(otros=True), name='convenio_entidad_no_academica_lista_otros__json'),
+    url(r'^convenios-entidades-no-academicas/$', ConvenioEntidadExternaLista.as_view(), name='convenio_entidad_no_academica_lista'),
+    url(r'^convenios-entidades-no-academicas/(?P<pk>[\w\-]+)/eliminar$', ConvenioEntidadExternaEliminar.as_view(), name='convenio_entidad_no_academica_eliminar'),
+    url(r'^convenios-entidades-no-academicas/(?P<pk>[\w\-]+)/$', ConvenioEntidadExternaDetalle.as_view(), name='convenio_entidad_no_academica_detalle'),
 
     url(r'^servicios-externos-no-academicos/json/', ServicioExternoEntidadNoAcademicaJSON.as_view(), name='servicio_externo_entidad_no_academica_lista__json'),
     url(r'^servicios-externos-no-academicos/$', ServicioExternoEntidadNoAcademicaLista.as_view(), name='servicio_externo_entidad_no_academica_lista'),
