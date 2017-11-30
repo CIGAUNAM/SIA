@@ -119,10 +119,29 @@
            title="¿Se trata de una renovación?"><i class="fa fa-question-circle"></i></a>
         {{ form.es_renovacion }}
     </p>
-    <p><strong>Incluye financiamiento: </strong>
+    <p><strong>Financiamientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿El convenio incluye financiamiento?"><i class="fa fa-question-circle"></i></a>
-        {{ form.incluye_financiamiento }}
+           title="Financiamientos participantes en el convenio, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-money"></i></div>
+            {{ form.financiamientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los financiamientos.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/financiamientos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un financiamiento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
     </p>
     <p><strong>Académicos participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -269,10 +288,29 @@
            title="¿Se trata de una renovación?"><i class="fa fa-question-circle"></i></a>
         {{ form.es_renovacion }}
     </p>
-    <p><strong>Incluye financiamiento: </strong>
+    <p><strong>Financiamientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿El convenio incluye financiamiento?"><i class="fa fa-question-circle"></i></a>
-        {{ form.incluye_financiamiento }}
+           title="Financiamientos participantes en el convenio, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-money"></i></div>
+            {{ form.financiamientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los financiamientos.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/financiamientos" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un financiamiento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
     </p>
     <p><strong>Académicos participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"

@@ -703,20 +703,37 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
                                 {% if participacion_redes_academicas %}
                                     \item Participación en redes académicas
-                                        {% for i in participacion_redes_academicas %}
-                                            \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Instituciones: {% for j in i.instituciones.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_inicio}} - {{ i.fecha_fin }} } }
-                                        {% endfor %}
+                                        \begin{itemize}
+                                            {% for i in participacion_redes_academicas %}
+                                                \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Instituciones: {% for j in i.instituciones.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_inicio}} - {{ i.fecha_fin }} } }
+                                            {% endfor %}
+                                        \end{itemize}
                                 {% endif %}
                             \end{enumerate}
                     {% endif %}
 
-                    \item[7.7.] Vinculación con la sociedad
-                        \begin{enumerate}
-                        \item Promoción de convenios de colaboración con entidades no académicas
-                        \item Servicios y asesorías externas
-                        \item Organización de eventos de divulgación (no dirigidos a pares)
-                        \item Conferencias de divulgación (no dirigidas a pares) \\
-                        \end{enumerate}
+                    {% if True %}
+                        \item[7.7.] Vinculación con la sociedad
+                            \begin{enumerate}
+                                {% if convenios_entidades_externas %}
+                                    \item Promoción de convenios de colaboración con entidades no académicas
+                                    \begin{itemize}
+                                        {% for i in convenios_entidades_externas %}
+                                            \item{ {{ i.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                        {% endfor %}
+                                    \end{itemize}
+                                {% endif %}
+                                {% if True %}
+                                    \item Servicios y asesorías externas
+                                {% endif %}
+                                {% if True %}
+                                    \item Organización de eventos de divulgación (no dirigidos a pares)
+                                {% endif %}
+                                {% if True %}
+                                    \item Conferencias de divulgación (no dirigidas a pares)
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
 
                     \item[7.8.] Otros \\
                     \textbf{En el caso de los técnicos} incluir además:

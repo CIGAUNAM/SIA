@@ -40,7 +40,6 @@ class ArbitrajePublicacionAcademicaContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class ArbitrajeProyectoInvestigacionContext:
     obj = 'Arbitraje de Proyecto'
     objs = 'Arbitrajes de Proyectos'
@@ -77,7 +76,6 @@ class ArbitrajeProyectoInvestigacionContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
 
 
 class ArbitrajeOtraActividadContext:
@@ -117,7 +115,6 @@ class ArbitrajeOtraActividadContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
 
 
 class RedAcademicaContext:
@@ -184,7 +181,6 @@ class RedAcademicaContext:
                   '</script>'
 
     contexto['tabla_otros'] = tabla_otros
-
 
 
 class ConvenioEntidadNoAcademicaContext:
