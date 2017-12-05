@@ -13,7 +13,7 @@ from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoI
 from docencia.models import CursoDocencia, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
-from vinculacion.models import ConvenioEntidadExterna, RedAcademica
+from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
@@ -7524,6 +7524,10 @@ class CVInvestigadorPDF(View):
         sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
         participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_inicio')
         convenios_entidades_externas = ConvenioEntidadExterna.objects.filter(usuarios=pk).order_by('-fecha_inicio')
+        servicios_asesorias_externas = ServicioExternoEntidadNoAcademica.objects.filter(usuario=pk).order_by('-fecha_inicio')
+        organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
+        participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
+
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7593,6 +7597,9 @@ class CVInvestigadorPDF(View):
         context['sabaticos'] = sabaticos
         context['participacion_redes_academicas'] = participacion_redes_academicas
         context['convenios_entidades_externas'] = convenios_entidades_externas
+        context['servicios_asesorias_externas'] = servicios_asesorias_externas
+        context['organizacion_eventos_divulgacion'] = organizacion_eventos_divulgacion
+        context['participacion_eventos_divulgacion'] = participacion_eventos_divulgacion
 
 
 

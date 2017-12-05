@@ -3,7 +3,7 @@ from django.db import models
 from django.conf import settings
 # from django.contrib.auth.models import User
 from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Ciudad, TipoEvento, Evento, Libro, Revista, Indice, MedioDivulgacion
+from nucleo.models import User, Pais, Ciudad, TipoEvento, Evento, Libro, Revista, Indice, MedioDivulgacion, Financiamiento
 from investigacion.models import ProyectoInvestigacion
 from django.core.urlresolvers import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -57,10 +57,10 @@ class ArticuloDivulgacion(models.Model):
 
 class CapituloLibroDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='titulo', unique=True)
+
     descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro)
-    # status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
+
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
@@ -89,6 +89,7 @@ class OrganizacionEventoDivulgacion(models.Model):
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
+    financiamiento = models.ForeignKey(Financiamiento, blank=True, null=True)
     usuario = models.ForeignKey(User)
 
     # tags = models.ManyToManyField(Tag, related_name='organizacion_evento_tags', blank=True)
@@ -106,11 +107,9 @@ class OrganizacionEventoDivulgacion(models.Model):
 
 class ParticipacionEventoDivulgacion(models.Model):
     titulo = models.CharField(max_length=255)
-    # slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento)
     resumen_publicado = models.BooleanField(default=False)
-    # usuarios = models.ManyToManyField(User, related_name='participacion_evento_autores', verbose_name='Autores')
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)

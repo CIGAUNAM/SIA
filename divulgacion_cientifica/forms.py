@@ -125,6 +125,15 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
     ambito = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+    financiamiento = forms.ModelChoiceField(
+        queryset=Financiamiento.objects.all(),
+        label="Financiamiento",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Financiamiento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     class Meta:
         model = OrganizacionEventoDivulgacion

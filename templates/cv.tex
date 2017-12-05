@@ -507,7 +507,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
         {% endif %}
 
-        {% if True %}
+        {% if participacion_proyectos_responsable or participacion_proyectos_participante or ponente_eventos_academicos_nal_invitacion or ponente_eventos_academicos_nal_participacion or ponente_eventos_academicos_intl_invitacion or ponente_eventos_academicos_intl_participacion or organizacion_eventos_academicos_nacionales or organizacion_eventos_academicos_internacionales or participacion_comisiones_dictaminadoras_nacionales or participacion_comisiones_dictaminadoras_internacionales or dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras or estancias_academicas or profesores_visitantes or sabaticos or participacion_redes_academicas or convenios_entidades_externas or servicios_asesorias_externas or organizacion_eventos_divulgacion or participacion_eventos_divulgacion %}
             \item[7.] \textbf{OTRAS ACTIVIDADES ACADÉMICAS}
                 \begin{enumerate}
                     {% if participacion_proyectos_responsable or participacion_proyectos_participante %}
@@ -705,116 +705,124 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item Participación en redes académicas
                                         \begin{itemize}
                                             {% for i in participacion_redes_academicas %}
-                                                \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Instituciones: {% for j in i.instituciones.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_inicio}} - {{ i.fecha_fin }} } }
+                                                \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_inicio}} - {{ i.fecha_fin }} } }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
                             \end{enumerate}
                     {% endif %}
 
-                    {% if True %}
+                    {% if convenios_entidades_externas or servicios_asesorias_externas or organizacion_eventos_divulgacion or participacion_eventos_divulgacion %}
                         \item[7.7.] Vinculación con la sociedad
                             \begin{enumerate}
                                 {% if convenios_entidades_externas %}
-                                    \item Promoción de convenios de colaboración con entidades no académicas
-                                    \begin{itemize}
-                                        {% for i in convenios_entidades_externas %}
-                                            \item{ {{ i.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
-                                        {% endfor %}
-                                    \end{itemize}
+                                    \item[7.7.1.] Promoción de convenios de colaboración con entidades no académicas
+                                        \begin{itemize}
+                                            {% for i in convenios_entidades_externas %}
+                                                \item{ {{ i.nombre }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
                                 {% endif %}
-                                {% if True %}
-                                    \item Servicios y asesorías externas
+                                {% if servicios_asesorias_externas %}
+                                    \item[7.7.2.] Servicios y asesorías externas
+                                        \begin{itemize}
+                                            {% for i in servicios_asesorias_externas %}
+                                                \item{ {{ i.nombre_servicio }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
                                 {% endif %}
-                                {% if True %}
-                                    \item Organización de eventos de divulgación (no dirigidos a pares)
+                                {% if organizacion_eventos_divulgacion %}
+                                    \item[7.7.3.] Organización de eventos de divulgación
+                                        \begin{itemize}
+                                            {% for i in organizacion_eventos_divulgacion %}
+                                                \item{ {{ i.evento.nombre }}, {{ i.evento.tipo.nombre }}, {{ i.tipo_publico }}. \\{% if i.financiamiento %}Financiamiento: {{ i.financiamiento.nombre }}. {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
                                 {% endif %}
-                                {% if True %}
-                                    \item Conferencias de divulgación (no dirigidas a pares)
+                                {% if participacion_eventos_divulgacion %}
+                                    \item[7.7.4.] Conferencias de divulgación (no dirigidas a pares)
+                                        \begin{itemize}
+                                            {% for i in participacion_eventos_divulgacion %}
+                                                \item{ {{ i.titulo }}, {{ i.evento.tipo.nombre }}, {{ i.evento.nombre }}. \\{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}, {{ i.tipo_publico }} }
+                                            {% endfor %}
+                                        \end{itemize}
                                 {% endif %}
                             \end{enumerate}
                     {% endif %}
 
-                    \item[7.8.] Otros \\
-                    \textbf{En el caso de los técnicos} incluir además:
-                    \begin{small}
-                    \begin{itemize}
-                    \item[-] Contribución al desarrollo de infraestructura para la investigación
-                    \item[-] Desarrollo y adaptación de tecnología y servicios técnicos (importancia, grado participación, impacto).
-                    \item[-] Actividades técnicas de servicio en bibliotecas, talleres, unidades de apoyo, etc.
-                    \end{itemize}
-                    \end{small}
                 \end{enumerate}
         {% endif %}
 
-        \textbf{\item {\small FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}}
-        	\begin{enumerate}
-        	\item Cursos impartidos
-        		\begin{enumerate}
-        		\item Cursos extracurriculares
-        			\begin{itemize}
-        			\item[8.1.1.1] En la UNAM
-        			\item[8.1.1.2] En otras instituciones
-        			\begin{itemize}
-        			\item[a)] Nacionales
-        			\item[b)] Internacionales
-        			\end{itemize}
-        			\end{itemize}
-        		\item Cursos escolarizados
-        			\begin{enumerate}
-        			\item[8.1.2.1] Licenciatura
-        				\begin{itemize}
-        				\item[a)] Profesor titular o coordinador
-        				\item[b)] Colaborador o invitado
-        				\end{itemize}
+        {% if True %}
+            \item[8.] \textbf{FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}
+                \begin{enumerate}
+                    {% if True %}
+                        \item Cursos impartidos
+                            \begin{enumerate}
+                                \item Cursos extracurriculares
+                                    \begin{itemize}
+                                    \item[8.1.1.1] En la UNAM
+                                    \item[8.1.1.2] En otras instituciones
+                                    \begin{itemize}
+                                    \item[a)] Nacionales
+                                    \item[b)] Internacionales
+                                    \end{itemize}
+                                    \end{itemize}
+                                \item Cursos escolarizados
+                                    \begin{enumerate}
+                                    \item[8.1.2.1] Licenciatura
+                                        \begin{itemize}
+                                        \item[a)] Profesor titular o coordinador
+                                        \item[b)] Colaborador o invitado
+                                        \end{itemize}
 
-        			\item [8.1.2.2]Posgrado
-        				\begin{itemize}
-        				\item[a)] Profesor titular o coordinador
-        				\item[b)] Colaborador o invitado
-        				\end{itemize}
-        			\end{enumerate}
-        	    \item Apoyo a la docencia
+                                    \item [8.1.2.2]Posgrado
+                                        \begin{itemize}
+                                        \item[a)] Profesor titular o coordinador
+                                        \item[b)] Colaborador o invitado
+                                        \end{itemize}
+                                    \end{enumerate}
+                                \item Apoyo a la docencia
+                            \end{enumerate}
+                    {% endif %}
 
-        		\end{enumerate}
+                    \item Personal formado
+                        \begin{enumerate}
+                        \item Tesis dirigidas
+                            \begin{itemize}
+                            \item[a)] Licenciatura
+                            \item[b)] Maestría
+                            \item[c)] Doctorado
+                            \end{itemize}
+                        \item Tesis en proceso
+                            \begin{itemize}
+                            \item[a)] Licenciatura
+                            \item[b)] Maestría
+                            \item[c)] Doctorado
+                            \end{itemize}
 
-        	\item Personal formado
-        		\begin{enumerate}
-        		\item Tesis dirigidas
-        			\begin{itemize}
-        			\item[a)] Licenciatura
-        			\item[b)] Maestría
-        			\item[c)] Doctorado
-        			\end{itemize}
-                \item Tesis en proceso
-                	\begin{itemize}
-        			\item[a)] Licenciatura
-        			\item[b)] Maestría
-        			\item[c)] Doctorado
-        			\end{itemize}
-
-        		\item Tutorías o asesorías a estudiantes
-        		\item Becario de proyecto
-        		\item Servicios sociales
-        		\item Supervisión de investigadores posdoctorales
-        		\end{enumerate}
-        	\item Desarrollo de áreas o grupos de investigación internos
-        	\item Miembro de comités tutorales o sinodales
-        		\begin{enumerate}
-        		\item Sinodal de tesis de licenciatura
-        		\item Maestría
-        			\begin{itemize}
-        			\item[a)] Comité tutoral
-        			\item[b)] Sinodal de tesis
-        			\end{itemize}
-        		\item Doctorado
-        			\begin{itemize}
-        			\item[a)] Comité tutoral
-        			\item[b)] Sinodal de tesis
-        			\end{itemize}
-        		\end{enumerate}
-        	\item Participación en candidaturas al grado de doctor
-        	\end{enumerate}
+                        \item Tutorías o asesorías a estudiantes
+                        \item Becario de proyecto
+                        \item Servicios sociales
+                        \item Supervisión de investigadores posdoctorales
+                        \end{enumerate}
+                    \item Desarrollo de áreas o grupos de investigación internos
+                    \item Miembro de comités tutorales o sinodales
+                        \begin{enumerate}
+                        \item Sinodal de tesis de licenciatura
+                        \item Maestría
+                            \begin{itemize}
+                            \item[a)] Comité tutoral
+                            \item[b)] Sinodal de tesis
+                            \end{itemize}
+                        \item Doctorado
+                            \begin{itemize}
+                            \item[a)] Comité tutoral
+                            \item[b)] Sinodal de tesis
+                            \end{itemize}
+                        \end{enumerate}
+                    \item Participación en candidaturas al grado de doctor
+                \end{enumerate}
 
         \textbf{\item DISTINCIONES}
         	\begin{enumerate}
