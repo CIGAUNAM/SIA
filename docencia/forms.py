@@ -71,19 +71,17 @@ class CursoDocenciaForm(forms.ModelForm):
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     total_horas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
+    periodo_academico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Semestre/Año académico')
 
     class Meta:
         model = CursoDocencia
         exclude = ['usuario', 'tipo', ]
         widgets = {
-            'academicos_participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'otras_dependencias_participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
 class ArticuloDocenciaForm(forms.ModelForm):
-    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                             label='Título de artículo')
+    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de artículo')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False, label='Descripción')
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
