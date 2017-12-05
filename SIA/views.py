@@ -7527,6 +7527,9 @@ class CVInvestigadorPDF(View):
         servicios_asesorias_externas = ServicioExternoEntidadNoAcademica.objects.filter(usuario=pk).order_by('-fecha_inicio')
         organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
         participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
+        cursos_extracurriculares_unam = CursoDocencia.objects.filter().order_by('-fecha_inicio')
+        cursos_extracurriculares_nacionales = None
+        cursos_extracurriculares_internacionales = None
 
 
         context['usuario'] = usuario

@@ -17,7 +17,7 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Pub
 # Create your models here.
 
 class CursoDocencia(models.Model):
-    nivel = models.CharField(max_length=30, choices=(('OTRO', 'Otro'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+    nivel = models.CharField(max_length=30, choices=(('', '------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')))
     tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
     licenciatura = models.ForeignKey(ProgramaLicenciatura, blank=True, null=True)
     maestria = models.ForeignKey(ProgramaMaestria, blank=True, null=True)
@@ -29,9 +29,8 @@ class CursoDocencia(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
+    periodo_academico = models.CharField(max_length=20)
     usuario = models.ForeignKey(User, related_name='cursodocencia_usuario')
-    academicos_participantes = models.ManyToManyField(User, related_name='cursodocencia_academicos_participantes', blank=True, verbose_name='Académicos participantes')
-    otras_dependencias_participantes = models.ManyToManyField(Dependencia, related_name='curso_escolarizado_otras_dependencias_participantes', blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)

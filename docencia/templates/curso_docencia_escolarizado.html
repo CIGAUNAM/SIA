@@ -1,0 +1,555 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Nivel:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nivel académico del curso impartido."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nivel }}
+        </div>
+    </div>
+    </p>
+    <div id="d_licenciatura">
+        <p><strong>Licenciatura:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Programa de licenciatura en la que se impartió el curso. Seleccionar una licenciatura sólo si corresponde con el nivel seleccionado arriba.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.licenciatura }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la licenciatura.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/programas-licenciatura" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una licenciatura nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_maestria">
+        <p><strong>Maestria:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Programa de maestria en la que se impartió el curso. Seleccionar una maestria sólo si corresponde con el nivel seleccionado arriba.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.maestria }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la maestria.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/programas-maestria" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una maestria nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_doctorado">
+        <p><strong>Doctorado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Programa de doctorado en la que se impartió el curso. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.doctorado }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre del doctorado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un doctorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <p><strong>Asignatura o curso:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asignatura o curso impartido.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.asignatura }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la asignatura o curso.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/asignaturas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una asignatura o cuerso nuevos. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Modalidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Modalidad del curso."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.modalidad }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el curso, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el curso, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del curso."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin del curso."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_fin }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Total de horas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número total de horas del curso.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.total_horas }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Semestre/Año académico:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Semestre/Año académico.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.periodo_academico }}
+        </div>
+    </div>
+    </p>
+
+
+    <script>
+        $('#d_licenciatura').hide();
+        $('#d_maestria').hide();
+        $('#d_doctorado').hide();
+
+
+        $("#id_nivel").on('change', function () {
+                if ($("#id_nivel").val() == 'OTRO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'LICENCIATURA') {
+                    $('#d_licenciatura').show();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'MAESTRIA') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#d_maestria').show();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'DOCTORADO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#d_doctorado').show();
+                } else {
+                    $('#d_licenciatura').show();
+                    $('#d_maestria').show();
+                    $('#d_doctorado').show();
+                }
+            }
+        );
+    </script>
+
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Nivel:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nivel académico del curso impartido."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.nivel }}
+        </div>
+    </div>
+    </p>
+    <div id="d_licenciatura">
+        <p><strong>Licenciatura:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Programa de licenciatura en la que se impartió el curso. Seleccionar una licenciatura sólo si corresponde con el nivel seleccionado arriba.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.licenciatura }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la licenciatura.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/programas-licenciatura" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una licenciatura nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_maestria">
+        <p><strong>Maestria:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Programa de maestria en la que se impartió el curso. Seleccionar una maestria sólo si corresponde con el nivel seleccionado arriba.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.maestria }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la maestria.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/programas-maestria" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una maestria nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_doctorado">
+        <p><strong>Doctorado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Programa de doctorado en la que se impartió el curso. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.doctorado }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre del doctorado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un doctorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <p><strong>Asignatura:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Asignatura impartida.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.asignatura }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la asignatura.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/asignaturas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una asignatura nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Modalidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Modalidad del curso."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.modalidad }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución donde se llevó a cabo el curso, la selección de
+                                              institución filtra las dependencias que pertenecen a la institución
+                                              seleccionada de tal manera que se haga una selección más detallada.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia donde se llevó a cabo el curso, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio del curso."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin del curso."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_fin }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Total de horas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número total de horas del curso.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.total_horas }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Semestre/Año académico:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Semestre/Año académico.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.periodo_academico }}
+        </div>
+    </div>
+    </p>
+
+    <script>
+        $('#d_licenciatura').hide();
+        $('#d_maestria').hide();
+        $('#d_doctorado').hide();
+
+        if ($("#id_nivel").val() == 'LICENCIATURA') {
+            $('#d_licenciatura').show();
+        } else if ($("#id_nivel").val() == 'MAESTRIA') {
+            $('#d_maestria').show();
+        } else if ($("#id_nivel").val() == 'DOCTORADO') {
+            $('#d_doctorado').show();
+        } else {
+            $('#d_licenciatura').hide();
+            $('#d_maestria').hide();
+            $('#d_doctorado').hide();
+        }
+
+        $("#id_nivel").on('change', function () {
+                if ($("#id_nivel").val() == 'OTRO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'LICENCIATURA') {
+                    $('#d_licenciatura').show();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'MAESTRIA') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#d_maestria').show();
+                    $('#id_doctorado').val(null).trigger("change");
+                    $('#d_doctorado').hide();
+                } else if ($("#id_nivel").val() == 'DOCTORADO') {
+                    $('#id_licenciatura').val(null).trigger("change");
+                    $('#d_licenciatura').hide();
+                    $('#id_maestria').val(null).trigger("change");
+                    $('#d_maestria').hide();
+                    $('#d_doctorado').show();
+                } else {
+                    $('#d_licenciatura').show();
+                    $('#d_maestria').show();
+                    $('#d_doctorado').show();
+                }
+            }
+        );
+    </script>
+
+{% endblock %}
