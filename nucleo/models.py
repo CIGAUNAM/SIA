@@ -16,8 +16,9 @@ FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_EXTERNO', (('ESTATAL'
 FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO)))
 CARGO__TIPO_CARGO  = getattr(settings, 'CARGO__TIPO_CARGO', (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo')))
 NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
-
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
+ENTIDAD_CLASIFICACION = getattr (settings, 'ENTIDAD_CLASIFICACION', (('', '-------'), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'), ('PRIVADA', 'Sector privado'), ('NO_LUCRATIVA', 'Sector privado no lucrativo')))
+
 
 # Create your models here.
 
@@ -195,8 +196,8 @@ class InvestigadorInvitado(models.Model):
 
 class Institucion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='institucion', max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
+    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
     pais = models.ForeignKey(Pais)
     estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
@@ -220,10 +221,11 @@ class Dependencia(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion)
+    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
     pais = models.ForeignKey(Pais)
     estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
-    subsistema_unam = models.CharField(max_length=50, choices=(('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+    subsistema_unam = models.CharField(max_length=50, choices=(('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
                                                           ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
                                                           ('HUMANIDADES', 'Subsistema de Humanidades'),
                                                           ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
@@ -530,9 +532,10 @@ class Evento(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     tipo = models.ForeignKey(TipoEvento)
+    tipo_publico = models.CharField(max_length=255)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    dependencias = models.ManyToManyField(Dependencia, related_name='evento_dependencias')
+    entidades = models.ManyToManyField(Dependencia, related_name='evento_entidades')
     pais = models.ForeignKey(Pais)
     estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)

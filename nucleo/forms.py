@@ -81,6 +81,29 @@ class InstitucionForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect2Widget(
+            dependent_fields={'pais': 'pais'},
+            search_fields=['nombre__icontains'],
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect2Widget(
+            dependent_fields={'estado': 'estado'},
+            search_fields=['nombre__icontains'],
+            queryset=Ciudad.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    clasificacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'ENTIDAD_CLASIFICACION', ), required=True)
 
     class Meta:
         model = Institucion
@@ -101,17 +124,41 @@ class DependenciaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect2Widget(
+            dependent_fields={'pais': 'pais'},
+            search_fields=['nombre__icontains'],
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
         widget=ModelSelect2Widget(
+            dependent_fields={'estado': 'estado'},
             search_fields=['nombre__icontains'],
             queryset=Ciudad.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    clasificacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'ENTIDAD_CLASIFICACION', ), required=True)
+
     subsistema_unam = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                                        choices=(('', 'Seleccionar Subsistema UNAM, si aplica '), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+                                        choices=(('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
                                                  ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
                                                  ('HUMANIDADES', 'Subsistema de Humanidades'),
                                                  ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
@@ -354,6 +401,7 @@ class EventoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    tipo_publico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de fin')
     pais = forms.ModelChoiceField(
@@ -392,7 +440,7 @@ class EventoForm(forms.ModelForm):
         widgets = {
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-            'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'entidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'ubicacion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 

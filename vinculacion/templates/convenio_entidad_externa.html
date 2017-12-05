@@ -24,60 +24,24 @@
            title="¿El convenio se trata de un agradecimiento?"><i class="fa fa-question-circle"></i></a>
         {{ form.es_agradecimiento }}
     </p>
-    <p><strong>Clasificacion de la entidad:</strong>
+    <p><strong>Entidades participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Clasificacion de la entidad."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.clasificacion_entidad }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Institución:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución con quien se tiene el convenio.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia con quien se tiene el convenio, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+           title="Entidades participantes en el convenio, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.entidades }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                   title="Mostrar los detalles adicionales de las entidades participantes.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                <a href="/nucleo/dependencias/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una entidad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -193,60 +157,24 @@
            title="¿El convenio se trata de un agradecimiento?"><i class="fa fa-question-circle"></i></a>
         {{ form.es_agradecimiento }}
     </p>
-    <p><strong>Clasificacion de la entidad:</strong>
+    <p><strong>Entidades participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Clasificacion de la entidad."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.clasificacion_entidad }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Institución:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución con quien se tiene el convenio.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia con quien se tiene el convenio, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+           title="Entidades participantes en el convenio, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.entidades }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                   title="Mostrar los detalles adicionales de las entidades participantes.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                <a href="/nucleo/dependencias/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una entidad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>

@@ -190,14 +190,14 @@ class ConvenioEntidadExternaLista(ObjectCreateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadExterna
     aux = ConvenioEntidadNoAcademicaContext.contexto
-    template_name = 'convenio.html'
+    template_name = 'convenio_entidad_externa.html'
 
 
 class ConvenioEntidadExternaDetalle(ObjectUpdateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadExterna
     aux = ConvenioEntidadNoAcademicaContext.contexto
-    template_name = 'convenio.html'
+    template_name = 'convenio_entidad_externa.html'
 
 
 class ConvenioEntidadExternaEliminar(View):
