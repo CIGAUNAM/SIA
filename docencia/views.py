@@ -17,16 +17,15 @@ class CursoDocenciaEscolarizadoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = CursoDocencia.objects.filter(tipo='ESCOLARIZADO').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
+                items = CursoDocenciaEscolarizado.objects.filter(tipo='ESCOLARIZADO').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
             else:
-                items = CursoDocencia.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='ESCOLARIZADO') | Q(usuario=usuarioid, tipo='ESCOLARIZADO'))
+                items = CursoDocenciaEscolarizado.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='ESCOLARIZADO') | Q(usuario=usuarioid, tipo='ESCOLARIZADO'))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
-            json = json.replace('OTRO', 'Otro')
 
             return HttpResponse(json, content_type='application/json')
         except:
@@ -34,8 +33,8 @@ class CursoDocenciaEscolarizadoJSON(View):
 
 
 class CursoDocenciaEscolarizadoLista(ObjectCreateMixin, View):
-    form_class = CursoDocenciaForm
-    model = CursoDocencia
+    form_class = CursoDocenciaEscolarizadoForm
+    model = CursoDocenciaEscolarizado
     aux = CursoDocenciaEscolarizadoContext.contexto
     template_name = 'curso_docencia_escolarizado.html'
 
@@ -52,8 +51,8 @@ class CursoDocenciaEscolarizadoLista(ObjectCreateMixin, View):
 
 
 class CursoDocenciaEscolarizadoDetalle(ObjectUpdateMixin, View):
-    form_class = CursoDocenciaForm
-    model = CursoDocencia
+    form_class = CursoDocenciaEscolarizadoForm
+    model = CursoDocenciaEscolarizado
     aux = CursoDocenciaEscolarizadoContext.contexto
     template_name = 'curso_docencia_escolarizado.html'
 
@@ -74,9 +73,9 @@ class CursoDocenciaExtracurricularJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = CursoDocencia.objects.filter(tipo='EXTRACURRICULAR').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
+                items = CursoDocenciaEscolarizado.objects.filter(tipo='EXTRACURRICULAR').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
             else:
-                items = CursoDocencia.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='EXTRACURRICULAR') | Q(usuario=usuarioid, tipo='EXTRACURRICULAR'))
+                items = CursoDocenciaEscolarizado.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='EXTRACURRICULAR') | Q(usuario=usuarioid, tipo='EXTRACURRICULAR'))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
 
@@ -91,10 +90,10 @@ class CursoDocenciaExtracurricularJSON(View):
 
 
 class CursoDocenciaExtracurricularLista(ObjectCreateMixin, View):
-    form_class = CursoDocenciaForm
-    model = CursoDocencia
+    form_class = CursoDocenciaEscolarizadoForm
+    model = CursoDocenciaEscolarizado
     aux = CursoDocenciaExtracurricularContext.contexto
-    template_name = 'curso_docencia_escolarizado.html'
+    template_name = 'curso_docencia_extracurricular.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -109,10 +108,10 @@ class CursoDocenciaExtracurricularLista(ObjectCreateMixin, View):
 
 
 class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
-    form_class = CursoDocenciaForm
-    model = CursoDocencia
+    form_class = CursoDocenciaEscolarizadoForm
+    model = CursoDocenciaEscolarizado
     aux = CursoDocenciaExtracurricularContext.contexto
-    template_name = 'curso_docencia_escolarizado.html'
+    template_name = 'curso_docencia_extracurricular.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
@@ -127,7 +126,7 @@ class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
 class CursoDocenciaEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(CursoDocencia, Q(pk=pk, academicos_participantes=request.user) | Q(pk=pk, usuario=request.user))
+            item = get_object_or_404(CursoDocenciaEscolarizado, Q(pk=pk, academicos_participantes=request.user) | Q(pk=pk, usuario=request.user))
             item.delete()
             return redirect('../')
         except:

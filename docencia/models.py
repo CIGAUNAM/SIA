@@ -16,14 +16,14 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Pub
 
 # Create your models here.
 
-class CursoDocencia(models.Model):
-    nivel = models.CharField(max_length=30, choices=(('', '------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')))
-    tipo = models.CharField(max_length=20, choices=(('ESCOLARIZADO', 'Escolarizado'), ('EXTRACURRICULAR', 'Extracurricular')))
+class CursoDocenciaEscolarizado(models.Model):
+    nivel = models.CharField(max_length=30, choices=(('', '------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
     licenciatura = models.ForeignKey(ProgramaLicenciatura, blank=True, null=True)
     maestria = models.ForeignKey(ProgramaMaestria, blank=True, null=True)
     doctorado = models.ForeignKey(ProgramaDoctorado, blank=True, null=True)
     asignatura = models.ForeignKey(Asignatura)
-    modalidad = models.CharField(max_length=30, choices=(('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea')))
+    modalidad = models.CharField(max_length=30, choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')))
+    nombramiento = models.CharField(max_length=30, choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'), ('COLABORADOR', 'Colaborador o Invitado')))
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     fecha_inicio = models.DateField()
@@ -35,10 +35,36 @@ class CursoDocencia(models.Model):
     def __str__(self):
         return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
 
+    def get_absolute_url(self):
+        return reverse('curso_docencia_escolarizado_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = 'Curso'
-        verbose_name_plural = 'Cursos'
+        verbose_name = 'Curso Escolarizado'
+        verbose_name_plural = 'Cursos Escolarizados'
+
+
+class CursoDocenciaExtracurricular(models.Model):
+    asignatura = models.ForeignKey(Asignatura)
+    modalidad = models.CharField(max_length=30, choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')))
+    institucion = models.ForeignKey(Institucion)
+    dependencia = models.ForeignKey(Dependencia)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    total_horas = models.PositiveIntegerField()
+    periodo_academico = models.CharField(max_length=20)
+    usuario = models.ForeignKey(User, related_name='cursodocencia_usuario')
+
+    def __str__(self):
+        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
+
+    def get_absolute_url(self):
+        return reverse('curso_docencia_extracurricular_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'Curso Extracurricular'
+        verbose_name_plural = 'Cursos Extracurriculares'
 
 
 class ArticuloDocencia(models.Model):

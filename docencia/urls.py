@@ -9,11 +9,11 @@ urlpatterns = [
     url(r'^cursos-escolarizados/(?P<pk>[\w\-]+)/eliminar$', CursoDocenciaEliminar.as_view(), name='curso_docencia_escolarizado_eliminar'),
     url(r'^cursos-escolarizados/(?P<pk>[\w\-]+)/$', CursoDocenciaEscolarizadoDetalle.as_view(), name='curso_docencia_escolarizado_detalle'),
 
-    url(r'^cursos-extracurriculares/json/', CursoDocenciaExtracurricularJSON.as_view(), name='curso_docencia_extracurriculares_lista__json'),
-    url(r'^cursos-extracurriculares/json-otros/', CursoDocenciaExtracurricularJSON.as_view(otros=True), name='curso_docencia_extracurriculares_lista__json_otros'),
-    url(r'^cursos-extracurriculares/$', CursoDocenciaExtracurricularLista.as_view(), name='curso_docencia_extracurriculares_lista'),
-    url(r'^cursos-extracurriculares/(?P<pk>[\w\-]+)/eliminar$', CursoDocenciaEliminar.as_view(), name='curso_docencia_extracurriculares_eliminar'),
-    url(r'^cursos-extracurriculares/(?P<pk>[\w\-]+)/$', CursoDocenciaExtracurricularDetalle.as_view(), name='curso_docencia_extracurriculares_detalle'),
+    url(r'^cursos-extracurriculares/json/', CursoDocenciaExtracurricularJSON.as_view(), name='curso_docencia_extracurricular_lista__json'),
+    url(r'^cursos-extracurriculares/json-otros/', CursoDocenciaExtracurricularJSON.as_view(otros=True), name='curso_docencia_extracurricular_lista__json_otros'),
+    url(r'^cursos-extracurriculares/$', CursoDocenciaExtracurricularLista.as_view(), name='curso_docencia_extracurricular_lista'),
+    url(r'^cursos-extracurriculares/(?P<pk>[\w\-]+)/eliminar$', CursoDocenciaEliminar.as_view(), name='curso_docencia_extracurricular_eliminar'),
+    url(r'^cursos-extracurriculares/(?P<pk>[\w\-]+)/$', CursoDocenciaExtracurricularDetalle.as_view(), name='curso_docencia_extracurricular_detalle'),
 
     url(r'^articulos-docencia/json/', ArticuloDocenciaJSON.as_view(), name='articulo_docencia_lista__json'),
     url(r'^articulos-docencia/json-otros/', ArticuloDocenciaJSON.as_view(otros=True), name='articulo_docencia_lista__json_otros'),
