@@ -70,9 +70,11 @@ while estado != estado_objetivo:
         # duplicamos los vectores internos
         posibleEstado = [estado[lado_izquierdo].copy(), estado[lado_derecho].copy(), estado[balsa]]
         print(posibleEstado)
+        print("aqui")
         canoa(posibleEstado, viaje)
 
         # salimos si es válido y no se ha repetido
+        print(anterior.index(posibleEstado))
         if es_estado_valido(posibleEstado) and anterior.index(posibleEstado) == None:
             break
 
