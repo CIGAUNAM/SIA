@@ -7,8 +7,8 @@ from django_select2.forms import Select2MultipleWidget, Select2Widget, ModelSele
 
 #
 
-class CursoDocenciaForm(forms.ModelForm):
-    nivel = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar nivel de curso'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')), required=True)
+class CursoDocenciaEscolarizadoForm(forms.ModelForm):
+    nivel = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar nivel de curso'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
     licenciatura = forms.ModelChoiceField(
         required=False,
         queryset=ProgramaLicenciatura.objects.all(),
@@ -49,6 +49,8 @@ class CursoDocenciaForm(forms.ModelForm):
         )
     )
     modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')), required=True)
+    nombramiento = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                              choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'), ('COLABORADOR', 'Colaborador o Invitado')), required=True)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
@@ -74,10 +76,52 @@ class CursoDocenciaForm(forms.ModelForm):
     periodo_academico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Semestre/Año académico')
 
     class Meta:
-        model = CursoDocencia
-        exclude = ['usuario', 'tipo', ]
+        model = CursoDocenciaEscolarizado
+        exclude = ['usuario', ]
+
+
+class CursoDocenciaExtracurricularForm(forms.ModelForm):
+
+    asignatura = forms.ModelChoiceField(
+        queryset=Asignatura.objects.all(),
+        label="Asignatura",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Asignatura.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')), required=True)
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    total_horas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
+    periodo_academico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Semestre/Año académico')
+
+    class Meta:
+        model = CursoDocenciaExtracurricular
+        exclude = ['usuario', ]
         widgets = {
         }
+
 
 
 class ArticuloDocenciaForm(forms.ModelForm):

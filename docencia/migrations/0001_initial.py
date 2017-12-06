@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='CursoDocencia',
+            name='CursoDocenciaEscolarizado',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nivel', models.CharField(choices=[('OTRO', 'Otro'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')], max_length=30)),

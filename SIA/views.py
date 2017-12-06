@@ -10,7 +10,7 @@ from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, T
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
     ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
-from docencia.models import CursoDocencia, ArticuloDocencia, ProgramaEstudio
+from docencia.models import CursoDocenciaEscolarizado, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
@@ -2174,7 +2174,7 @@ class Dashboard(View):
                     users_with_items_year_count = 0
 
                 total_hours_year_sum = \
-                    CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='ESCOLARIZADO').filter((
+                    CursoDocenciaEscolarizado.objects.filter(fecha_inicio__year=year, tipo='ESCOLARIZADO').filter((
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
@@ -2237,7 +2237,7 @@ class Dashboard(View):
                     users_with_items_year_count = 0
 
                 total_hours_year_sum = \
-                    CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='EXTRACURRICULAR').filter((
+                    CursoDocenciaEscolarizado.objects.filter(fecha_inicio__year=year, tipo='EXTRACURRICULAR').filter((
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
@@ -4595,7 +4595,7 @@ class ReporteHistorico(View):
                     users_with_items_year_count = 0
 
                 total_hours_year_sum = \
-                    CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='ESCOLARIZADO').filter((
+                    CursoDocenciaEscolarizado.objects.filter(fecha_inicio__year=year, tipo='ESCOLARIZADO').filter((
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
@@ -4661,7 +4661,7 @@ class ReporteHistorico(View):
                     users_with_items_year_count = 0
 
                 total_hours_year_sum = \
-                    CursoDocencia.objects.filter(fecha_inicio__year=year, tipo='EXTRACURRICULAR').filter((
+                    CursoDocenciaEscolarizado.objects.filter(fecha_inicio__year=year, tipo='EXTRACURRICULAR').filter((
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
                         (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
@@ -7527,7 +7527,7 @@ class CVInvestigadorPDF(View):
         servicios_asesorias_externas = ServicioExternoEntidadNoAcademica.objects.filter(usuario=pk).order_by('-fecha_inicio')
         organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
         participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
-        cursos_extracurriculares_unam = CursoDocencia.objects.filter().order_by('-fecha_inicio')
+        cursos_extracurriculares_unam = CursoDocenciaEscolarizado.objects.filter().order_by('-fecha_inicio')
         cursos_extracurriculares_nacionales = None
         cursos_extracurriculares_internacionales = None
 

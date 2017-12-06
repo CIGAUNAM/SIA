@@ -160,7 +160,7 @@ class InstitucionJSON(View):
     def get(self, request):
         try:
             #usuarioid = User.objects.get(username=request.user.username).id
-            items = Institucion.objects.all()
+            items = Institucion.objects.all().exclude(nombre='Universidad Nacional Autónoma de México (UNAM)')
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'pais'))
             return HttpResponse(json, content_type='application/json')
