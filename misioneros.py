@@ -58,17 +58,16 @@ posibles = viajes.copy()
 
 
 while estado != estado_objetivo:
-    if posibles == nil:
-		STDOUT.puts "NO he encontrado solucion!"
+    if posibles == None:
+		print("NO he encontrado solucion!")
 		exit
-	end
 
 	# probamos viajes hasta que se nos acaben o uno sea válido
-	while ! posibles.empty?
-		viaje = posibles.shift
+	while len(posibles) > 0:
+		viaje = posibles.pop()
 
 		# duplicamos los vectores internos
-		posibleEstado =  [ estado[Izq].dup, estado[Der].dup,
+		posibleEstado =  [ estado[lado_izquierdo].dup, estado[Der].dup,
 			estado[Canoa] ]
 		canoa(posibleEstado, viaje)
 
