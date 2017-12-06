@@ -48,7 +48,7 @@ def imprimir_estado(estado):
     print("Misioneros:{}, Canibales:{} {} Misioneros:{}, Canibales:{}").format(estado[lado_izquierdo][misioneros], estado[lado_izquierdo][canibales], espacio, estado[lado_derecho][misioneros], estado[lado_derecho][canibales])
 
 
-viajes = []
+viajes_aux = []
 anterior = []
 
 
@@ -58,42 +58,40 @@ posibles = viajes.copy()
 
 
 while estado != estado_objetivo:
-    if posibles == None:
-		print("NO he encontrado solucion!")
-		exit
+    posibleEstado = None
+    if posibles is None:
+        print("NO he encontrado solucion!")
+        break
 
-	# probamos viajes hasta que se nos acaben o uno sea válido
-	while len(posibles) > 0:
-		viaje = posibles.pop()
+    # probamos viajes hasta que se nos acaben o uno sea válido
+    while len(posibles) > 0:
+        viaje = posibles.pop(0)
 
-		# duplicamos los vectores internos
-		posibleEstado =  [ estado[lado_izquierdo].dup, estado[Der].dup,
-			estado[Canoa] ]
-		canoa(posibleEstado, viaje)
+        # duplicamos los vectores internos
+        posibleEstado = [estado[lado_izquierdo].copy(), estado[lado_derecho].copy(), estado[balsa]]
+        print(posibleEstado)
+        canoa(posibleEstado, viaje)
 
-		# salimos si es válido y no se ha repetido
-		break if valido?(posibleEstado) &&
-			anterior.index(posibleEstado) == nil
+        # salimos si es válido y no se ha repetido
+        if es_estado_valido(posibleEstado) and anterior.index(posibleEstado) == None:
+            break
 
-		# no es válido
-		posibleEstado = nil
-	end
+        # no es válido
+        posibleEstado = None
 
-	# tenemos uno válido?
-	if posibleEstado != nil
-		# nos acordamos del estado actual
-		anterior.push estado
-		viajes.push posibles
 
-		# aceptamos el viaje como bueno (por ahora)
-		estado = posibleEstado
-		posibles = Viajes.dup
-	else
-		# el viaje no nos ha llevado a un resultado
-		# asi que recuperamos el estado anterior
-		estado = anterior.pop
-		posibles = viajes.pop
+    # tenemos uno válido?
+    if posibleEstado:
+        # nos acordamos del estado actual
+        anterior.append(estado)
+        viajes.append(posibles)
 
-		posibleEstado = nil
-	end
-end
+        # aceptamos el viaje como bueno (por ahora)
+        estado = posibleEstado
+        posibles = viajes.copy()
+    else:
+        # el viaje no nos ha llevado a un resultado
+        # asi que recuperamos el estado anterior
+        estado = anterior.pop()
+        posibles = viajes.pop()
+        posibleEstado = None
