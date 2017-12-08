@@ -10,7 +10,7 @@ from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, T
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
     ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
-from docencia.models import CursoDocenciaEscolarizado, ArticuloDocencia, ProgramaEstudio
+from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
@@ -7527,9 +7527,12 @@ class CVInvestigadorPDF(View):
         servicios_asesorias_externas = ServicioExternoEntidadNoAcademica.objects.filter(usuario=pk).order_by('-fecha_inicio')
         organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
         participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
-        cursos_extracurriculares_unam = CursoDocenciaEscolarizado.objects.filter().order_by('-fecha_inicio')
-        cursos_extracurriculares_nacionales = None
-        cursos_extracurriculares_internacionales = None
+
+        cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+
+        cursos_escolarizados_licenciatura = CursoDocenciaEscolarizado.objects.filter
 
 
         context['usuario'] = usuario
@@ -7603,6 +7606,9 @@ class CVInvestigadorPDF(View):
         context['servicios_asesorias_externas'] = servicios_asesorias_externas
         context['organizacion_eventos_divulgacion'] = organizacion_eventos_divulgacion
         context['participacion_eventos_divulgacion'] = participacion_eventos_divulgacion
+        context['cursos_extracurriculares_unam'] = cursos_extracurriculares_unam
+        context['cursos_extracurriculares_nacionales'] = cursos_extracurriculares_nacionales
+        context['cursos_extracurriculares_internacionales'] = cursos_extracurriculares_internacionales
 
 
 

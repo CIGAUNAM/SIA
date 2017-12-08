@@ -48,7 +48,7 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')), required=True)
+    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
     nombramiento = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                               choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'), ('COLABORADOR', 'Colaborador o Invitado')), required=True)
     institucion = forms.ModelChoiceField(
@@ -81,7 +81,6 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
 
 
 class CursoDocenciaExtracurricularForm(forms.ModelForm):
-
     asignatura = forms.ModelChoiceField(
         queryset=Asignatura.objects.all(),
         label="Asignatura",
@@ -91,7 +90,8 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto'), ('OTRO', 'Otro')), required=True)
+    tipo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Tipo de curso')
+    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
