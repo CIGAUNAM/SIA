@@ -797,7 +797,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                     {% if cursos_escolarizados_licenciatura_titular %}
                                                         \item[a)] Profesor titular o coordinador
                                                         {% for i in cursos_escolarizados_licenciatura_titular %}
-                                                            \item{  }
+                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
                                                         {% endfor %}
                                                     {% endif %}
                                                     {% if %}
