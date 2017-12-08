@@ -30,7 +30,7 @@ class CursoDocenciaEscolarizado(models.Model):
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
     periodo_academico = models.CharField(max_length=20)
-    usuario = models.ForeignKey(User, related_name='cursodocencia_usuario')
+    usuario = models.ForeignKey(User, related_name='curso_docencia_escolarizado_usuario')
 
     def __str__(self):
         return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
@@ -54,7 +54,7 @@ class CursoDocenciaExtracurricular(models.Model):
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
     periodo_academico = models.CharField(max_length=20)
-    usuario = models.ForeignKey(User, related_name='cursodocencia_usuario')
+    usuario = models.ForeignKey(User, related_name='curso_docencia_extracurricular_usuario')
 
     def __str__(self):
         return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
