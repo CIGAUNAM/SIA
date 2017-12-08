@@ -757,31 +757,55 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             \item[8.] \textbf{FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}
                 \begin{enumerate}
                     {% if True %}
-                        \item Cursos impartidos
+                        \item[8.1.] Cursos impartidos
                             \begin{enumerate}
-                                \item Cursos extracurriculares
-                                    \begin{itemize}
-                                    \item[8.1.1.1] En la UNAM
-                                    \item[8.1.1.2] En otras instituciones
-                                    \begin{itemize}
-                                    \item[a)] Nacionales
-                                    \item[b)] Internacionales
-                                    \end{itemize}
-                                    \end{itemize}
-                                \item Cursos escolarizados
-                                    \begin{enumerate}
-                                    \item[8.1.2.1] Licenciatura
+                                {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales %}
+                                    \item[8.1.1.] Cursos extracurriculares
                                         \begin{itemize}
-                                        \item[a)] Profesor titular o coordinador
-                                        \item[b)] Colaborador o invitado
+                                            {% if cursos_extracurriculares_unam %}
+                                                \item[8.1.1.1.] En la UNAM
+                                                    {% for i in cursos_extracurriculares_unam %}
+                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                    {% endfor %}
+                                            {% endif %}
+                                            {% if cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales %}
+                                                \item[8.1.1.2.] En otras instituciones
+                                                    \begin{itemize}
+                                                        {% if cursos_extracurriculares_nacionales %}
+                                                            \item[a)] Nacionales
+                                                                {% for i in cursos_extracurriculares_nacionales %}
+                                                                    \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                {% endfor %}
+                                                        {% endif %}
+                                                        {% if cursos_extracurriculares_internacionales %}
+                                                            \item[b)] Internacionales
+                                                                {% for i in cursos_extracurriculares_internacionales %}
+                                                                    \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                {% endfor %}
+                                                        {% endif %}
+                                                    \end{itemize}
+                                            {% endif %}
                                         \end{itemize}
+                                {% endif %}
 
-                                    \item [8.1.2.2]Posgrado
-                                        \begin{itemize}
-                                        \item[a)] Profesor titular o coordinador
-                                        \item[b)] Colaborador o invitado
-                                        \end{itemize}
-                                    \end{enumerate}
+                                {% if True %}
+                                    \item[8.1.2.] Cursos escolarizados
+                                        \begin{enumerate}
+                                        {% if True %}
+                                            \item[8.1.2.1.] Licenciatura
+                                                \begin{itemize}
+                                                \item[a)] Profesor titular o coordinador
+                                                \item[b)] Colaborador o invitado
+                                                \end{itemize}
+
+                                        \item [8.1.2.2.]Posgrado
+                                            \begin{itemize}
+                                            \item[a)] Profesor titular o coordinador
+                                            \item[b)] Colaborador o invitado
+                                            \end{itemize}
+                                        \end{enumerate}
+                                {% endif %}
+
                                 \item Apoyo a la docencia
                             \end{enumerate}
                     {% endif %}
