@@ -7528,18 +7528,21 @@ class CVInvestigadorPDF(View):
         organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
         participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
 
-        cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
-        cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
-        cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
 
-        cursos_escolarizados_licenciatura = CursoDocenciaEscolarizado.objects.filter
+        cursos_escolarizados_licenciatura_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
+        cursos_escolarizados_licenciatura_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
+
+        cursos_escolarizados_posgrado_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
+        cursos_escolarizados_posgrado_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
 
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
         context['num_libros'] = num_libros_investigacion
         context['num_proyectos_investigacion'] = num_proyectos_investigacion
-
         context['licenciaturas'] = licenciaturas
         context['maestrias'] = maestrias
         context['doctorados'] = doctorados
@@ -7562,14 +7565,12 @@ class CVInvestigadorPDF(View):
         context['capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
         context['memoriainextenso_extranjeras'] = memoriainextenso_extranjeras
         context['memoriainextenso_mexicanas'] = memoriainextenso_mexicanas
-
         context['mapas_publicaciones_extranjeras'] = mapas_publicaciones_extranjeras
         context['mapas_publicaciones_mexicanas'] = mapas_publicaciones_mexicanas
         context['informes_tecnicos_mex'] = informes_tecnicos_mex
         context['informes_tecnicos_intl'] = informes_tecnicos_intl
         context['articulos_divulgacion_mex'] = articulos_divulgacion_mex
         context['articulos_divulgacion_intl'] = articulos_divulgacion_intl
-
         context['libros_divulgacion_editoriales_extranjeras'] = libros_divulgacion_editoriales_extranjeras
         context['libros_divulgacion_editoriales_mexicanas'] = libros_divulgacion_editoriales_mexicanas
         context['capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
@@ -7577,12 +7578,10 @@ class CVInvestigadorPDF(View):
         context['resenas'] = resenas
         context['traducciones'] = traducciones
         context['material_medios_produccion'] = material_medios_produccion
-
         context['articulos_docencia'] = articulos_docencia
         context['libros_docencia'] = libros_docencia
         context['programas_estudio_docencia'] = programas_estudio_docencia
         context['produccion_tecnologica'] = produccion_tecnologica
-
         context['participacion_proyectos_responsable'] = participacion_proyectos_responsable
         context['participacion_proyectos_participante'] = participacion_proyectos_participante
         context['ponente_eventos_academicos_nal_invitacion'] = ponente_eventos_academicos_nal_invitacion
@@ -7597,7 +7596,6 @@ class CVInvestigadorPDF(View):
         context['dictamenes_articulos_revistas_extranjeras'] = dictamenes_articulos_revistas_extranjeras
         context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros_editoriales_mexicanas
         context['dictamenes_libros_editoriales_extranjeras'] = dictamenes_libros_editoriales_extranjeras
-
         context['estancias_academicas'] = estancias_academicas
         context['profesores_visitantes'] = profesores_visitantes
         context['sabaticos'] = sabaticos
@@ -7609,6 +7607,11 @@ class CVInvestigadorPDF(View):
         context['cursos_extracurriculares_unam'] = cursos_extracurriculares_unam
         context['cursos_extracurriculares_nacionales'] = cursos_extracurriculares_nacionales
         context['cursos_extracurriculares_internacionales'] = cursos_extracurriculares_internacionales
+
+        context['cursos_escolarizados_licenciatura_titular'] = cursos_escolarizados_licenciatura_titular
+        context['cursos_escolarizados_licenciatura_colaborador'] = cursos_escolarizados_licenciatura_colaborador
+        context['cursos_escolarizados_posgrado_titular'] = cursos_escolarizados_posgrado_titular
+        context['cursos_escolarizados_posgrado_colaborador'] = cursos_escolarizados_posgrado_colaborador
 
 
 

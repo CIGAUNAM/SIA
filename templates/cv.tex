@@ -517,7 +517,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[a)] Responsable
                                         \begin{itemize}
                                             {% for i in participacion_proyectos_responsable %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{´´{{ i.nombre }}''}. {% if i.financiamiento_conacyt %}Financiamiento CONACYT, clave {{ i.financiamiento_conacyt }}{% endif %}{% if i.financiamiento_papiit %}Financiamiento PAPIIT, clave {{ i.financiamiento_papiit }}{% endif %}{% if i.financiamientos %}Financiamientos: {% for f in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ i.tipo_financiamiento.get_choices_display }}, {{ f.nombre }}, {{ f.institucion.nombre }};{% endfor %}{% endif %}. {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %}. }
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{´´{{ i.nombre }}''}. {% if i.financiamiento_conacyt %}Financiamiento CONACYT, clave {{ i.financiamiento_conacyt }}{% endif %}{% if i.financiamiento_papiit %}Financiamiento PAPIIT, clave {{ i.financiamiento_papiit }}{% endif %}{% if i.financiamientos %}Financiamientos: {% for f in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ i.tipo_financiamiento.get_tipo_financiamiento_display }}, {{ f.nombre }}, {{ f.institucion.nombre }};{% endfor %}{% endif %}. {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %}. }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -794,8 +794,15 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         {% if True %}
                                             \item[8.1.2.1.] Licenciatura
                                                 \begin{itemize}
-                                                \item[a)] Profesor titular o coordinador
-                                                \item[b)] Colaborador o invitado
+                                                    {% if cursos_escolarizados_licenciatura_titular %}
+                                                        \item[a)] Profesor titular o coordinador
+                                                        {% for i in cursos_escolarizados_licenciatura_titular %}
+                                                            \item{  }
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                    {% if %}
+                                                        \item[b)] Colaborador o invitado
+                                                    {% endif %}
                                                 \end{itemize}
 
                                         \item [8.1.2.2.]Posgrado
