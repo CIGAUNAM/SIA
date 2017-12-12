@@ -14,6 +14,19 @@
         </div>
     </div>
     </p>
+    <p><strong>Especialidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Especialidad."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.especialidad }}
+        </div>
+    </div>
+    </p>
     <p><strong>Asesorado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Asesorado.">
@@ -155,14 +168,37 @@
     </p>
     <p><strong>Fecha de examen recepcional:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de examen recepcional."><i
-                class="fa fa-question-circle"></i></a>
+           title="Fecha de examen recepcional. Solo escribir si ya se llevó a cabo o está confirmada la fecha. En caso contrario dejar en blanco. Este campo es útil para discriminar si un registro se toma como concluido o en proceso a partir de la existencia de la fecha de examen.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_examen }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Tutores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tutores o directores de la tesis. En caso de haber más de uno, el primero seleccionado es el director pricipal, el segudo, co-director, etc. Es decir, el orden de selección representa el orden de dirección.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.usuarios }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los tutores.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un tutor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>
@@ -182,6 +218,19 @@
         </div>
     </div>
     </p>
+    <p><strong>Especialidad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Especialidad."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.especialidad }}
+        </div>
+    </div>
+    </p>
     <p><strong>Asesorado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Asesorado.">
@@ -323,14 +372,37 @@
     </p>
     <p><strong>Fecha de examen recepcional:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de examen recepcional."><i
-                class="fa fa-question-circle"></i></a>
+           title="Fecha de examen recepcional. Solo escribir si ya se llevó a cabo o está confirmada la fecha. En caso contrario dejar en blanco. Este campo es útil para discriminar si un registro se toma como concluido o en proceso a partir de la existencia de la fecha de examen.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_examen }}
+        </div>
+    </div>
+    </p>
+        <p><strong>Tutores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tutores o directores de la tesis. En caso de haber más de uno, el primero seleccionado es el director pricipal, el segudo, co-director, etc. Es decir, el orden de selección representa el orden de dirección.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.usuarios }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los tutores.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un tutor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>

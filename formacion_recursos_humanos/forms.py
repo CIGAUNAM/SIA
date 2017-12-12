@@ -17,7 +17,7 @@ class AsesorEstanciaForm(forms.ModelForm):
         )
     )
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social'), ('OTRO', 'Otro')), required=True)
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social')), required=True)
     nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'NIVEL_ACADEMICO', ), required=True)
     programa_licenciatura = forms.ModelChoiceField(
         required=False,
@@ -98,6 +98,7 @@ class AsesorEstanciaForm(forms.ModelForm):
 
 class DireccionTesisForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    especialidad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     asesorado = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",
@@ -138,6 +139,7 @@ class DireccionTesisForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    """
     reconocimiento = forms.ModelChoiceField(
         required=False,
         queryset=Reconocimiento.objects.all(),
@@ -148,11 +150,15 @@ class DireccionTesisForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    """
     fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = DireccionTesis
-        exclude = ['usuario',]
+        exclude = []
+        widgets = {
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class ComiteTutoralForm(forms.ModelForm):

@@ -1,8 +1,11 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Beca, Reconocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
+from nucleo.models import User, Institucion, Dependencia, Beca, Reconocimiento, ProgramaLicenciatura, ProgramaMaestria, \
+    ProgramaDoctorado, Pais, Estado, Ciudad
 from investigacion.models import ProyectoInvestigacion
+from sortedm2m.fields import SortedManyToManyField
+
 
 NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
 
@@ -11,7 +14,7 @@ NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICEN
 class AsesorEstancia(models.Model):
     asesorado = models.ForeignKey(User, related_name='asesor_estancia_asesorado')
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=30, choices=(('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social'), ('OTRO', 'Otro')))
+    tipo = models.CharField(max_length=30, choices=(('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social')))
     nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True)
@@ -39,7 +42,7 @@ class AsesorEstancia(models.Model):
 
 class DireccionTesis(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='titulo')
+    especialidad = models.CharField(max_length=255)
     asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado')
     descripcion = models.TextField(blank=True)
     grado_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
@@ -47,9 +50,9 @@ class DireccionTesis(models.Model):
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     beca = models.ForeignKey(Beca, null=True, blank=True)
-    reconocimiento = models.ForeignKey(Reconocimiento, blank=True, null=True)
+    #reconocimiento = models.ForeignKey(Reconocimiento, blank=True, null=True)
     fecha_examen = models.DateField(null=True, blank=True)
-    usuario = models.ForeignKey(User, related_name='direccion_tesis_usuario')
+    usuarios = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.asesorado, self.grado_academico)
@@ -64,6 +67,7 @@ class DireccionTesis(models.Model):
         ordering = ['-fecha_examen']
         verbose_name = 'Tesis'
         verbose_name_plural = 'Tesis'
+
 
 class ComiteTutoral(models.Model):
     grado_academico = models.CharField(max_length=20, choices=(('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))

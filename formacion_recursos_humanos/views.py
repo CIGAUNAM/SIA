@@ -81,14 +81,14 @@ class DireccionTesisJSON(View):
             raise Http404
 
 
-class DireccionTesisLista(ObjectCreateMixin, View):
+class DireccionTesisLista(ObjectCreateVarMixin, View):
     form_class = DireccionTesisForm
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
     template_name = 'direccion_tesis.html'
 
 
-class DireccionTesisDetalle(ObjectUpdateMixin, View):
+class DireccionTesisDetalle(ObjectUpdateVarMixin, View):
     form_class = DireccionTesisForm
     model = DireccionTesis
     aux = DireccionTesisContext.contexto
