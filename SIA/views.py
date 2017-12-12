@@ -3,12 +3,9 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import View
 
 from formacion_academica.models import CursoEspecializacion
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, \
-    ProyectoInvestigacion
-from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, Traduccion, OrganizacionEventoAcademico, \
-    ParticipacionEventoAcademico
-from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
-    ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, ProyectoInvestigacion
+from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, Traduccion, OrganizacionEventoAcademico, ParticipacionEventoAcademico
+from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
@@ -19,6 +16,7 @@ from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, C
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
 from apoyo_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
+from formacion_recursos_humanos.models import DireccionTesis
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -7531,13 +7529,18 @@ class CVInvestigadorPDF(View):
         cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
         cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
         cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
-
         cursos_escolarizados_licenciatura_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
         cursos_escolarizados_licenciatura_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
-
         cursos_escolarizados_posgrado_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
         cursos_escolarizados_posgrado_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
 
+        tesis_dirigidas_licenciatura = DireccionTesis.objects.filter(usuarios=pk, grado_academico='LICENCIATURA', fecha_examen__isnull=False)
+        tesis_dirigidas_maestria = DireccionTesis.objects.filter(usuarios=pk, grado_academico='MAESTRIA', fecha_examen__isnull=False)
+        tesis_dirigidas_doctorado = DireccionTesis.objects.filter(usuarios=pk, grado_academico='DOCTORADO', fecha_examen__isnull=False)
+
+        tesis_proceso_licenciatura = DireccionTesis.objects.filter(usuarios=pk, grado_academico='LICENCIATURA', fecha_examen__isnull=True)
+        tesis_proceso_maestria = DireccionTesis.objects.filter(usuarios=pk, grado_academico='MAESTRIA', fecha_examen__isnull=True)
+        tesis_proceso_doctorado = DireccionTesis.objects.filter(usuarios=pk, grado_academico='DOCTORADO', fecha_examen__isnull=True)
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7612,6 +7615,16 @@ class CVInvestigadorPDF(View):
         context['cursos_escolarizados_licenciatura_colaborador'] = cursos_escolarizados_licenciatura_colaborador
         context['cursos_escolarizados_posgrado_titular'] = cursos_escolarizados_posgrado_titular
         context['cursos_escolarizados_posgrado_colaborador'] = cursos_escolarizados_posgrado_colaborador
+
+        context['tesis_dirigidas_licenciatura'] = tesis_dirigidas_licenciatura
+        context['tesis_dirigidas_maestria'] = tesis_dirigidas_maestria
+        context['tesis_dirigidas_doctorado'] = tesis_dirigidas_doctorado
+
+        context['tesis_proceso_licenciatura'] = tesis_proceso_licenciatura
+        context['tesis_proceso_maestria'] = tesis_proceso_maestria
+        context['tesis_proceso_doctorado'] = tesis_proceso_doctorado
+
+
 
 
 
