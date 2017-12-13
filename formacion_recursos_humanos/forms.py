@@ -98,6 +98,77 @@ class AsesoriaEstudianteForm(forms.ModelForm):
         exclude = ['usuario',]
 
 
+class SupervisionInvestigadorPostDoctoralForm(forms.ModelForm):
+    investigador = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Investigador",
+        widget=ModelSelect2Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    disciplina = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Disciplina')
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'institucion': 'institucion'},
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ProyectoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    beca = forms.ModelChoiceField(
+        required=False,
+        queryset=Beca.objects.all(),
+        label="Beca",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Beca.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+
+    class Meta:
+        model = SupervisionInvestigadorPostDoctoral
+        exclude = ['usuario', ]
+        widgets = {
+            'articulos': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'libros': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'capitulos_libros': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
+
+
+
+
+
+
 class DireccionTesisForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     especialidad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)

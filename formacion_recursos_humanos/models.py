@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from nucleo.models import User, Institucion, Dependencia, Beca, Reconocimiento, ProgramaLicenciatura, ProgramaMaestria, \
     ProgramaDoctorado, Pais, Estado, Ciudad
-from investigacion.models import ProyectoInvestigacion
+from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, Libro, CapituloLibroInvestigacion
 from sortedm2m.fields import SortedManyToManyField
 
 
@@ -23,7 +23,7 @@ class AsesoriaEstudiante(models.Model):
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
-    periodo_academico = models.CharField(max_length=20)
+    periodo_academico = models.CharField(max_length=200)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     usuario = models.ForeignKey(User, related_name='asesoria_estudiante_usuario')
@@ -39,6 +39,32 @@ class AsesoriaEstudiante(models.Model):
         verbose_name = 'Asesoría en residencias / prácticas / estancias / servicio social'
         verbose_name_plural = 'Asesorías en residencias / prácticas / estancias / servicio social'
         unique_together = ['usuario', 'asesorado', 'nivel_academico']
+
+
+class SupervisionInvestigadorPostDoctoral(models.Model):
+    investigador = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_investigador')
+    disciplina = models.CharField(max_length=200)
+    institucion = models.ForeignKey(Institucion)
+    dependencia = models.ForeignKey(Dependencia)
+    proyecto = models.ForeignKey(ProyectoInvestigacion)
+    beca = models.ForeignKey(Beca)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    articulos = models.ManyToManyField(ArticuloCientifico, blank=True)
+    libros = models.ManyToManyField(Libro, blank=True)
+    capitulos_libros = models.ManyToManyField(CapituloLibroInvestigacion, blank=True)
+    usuario = models.ForeignKey(User, related_name='asesoria_estudiante_usuario')
+
+    def __str__(self):
+        return "{} : {} : {}".format(self.investigador, self.usuario, self.fecha_inicio)
+
+    def get_absolute_url(self):
+        return reverse('supervision_investigador_postdoctoral_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['-fecha_inicio', '-fecha_fin']
+        verbose_name = 'Supervisión de investigador postdoctoral'
+        verbose_name_plural = 'Supervisiones de investigadores postdoctorales'
 
 
 class DireccionTesis(models.Model):
