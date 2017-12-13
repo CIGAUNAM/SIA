@@ -764,24 +764,30 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \begin{itemize}
                                             {% if cursos_extracurriculares_unam %}
                                                 \item[8.1.1.1.] En la UNAM
-                                                    {% for i in cursos_extracurriculares_unam %}
-                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
-                                                    {% endfor %}
+                                                    \begin{itemize}
+                                                        {% for i in cursos_extracurriculares_unam %}
+                                                            \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
                                             {% endif %}
                                             {% if cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales %}
                                                 \item[8.1.1.2.] En otras instituciones
                                                     \begin{itemize}
                                                         {% if cursos_extracurriculares_nacionales %}
                                                             \item[a)] Nacionales
-                                                                {% for i in cursos_extracurriculares_nacionales %}
-                                                                    \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
-                                                                {% endfor %}
+                                                                \begin{itemize}
+                                                                    {% for i in cursos_extracurriculares_nacionales %}
+                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                    {% endfor %}
+                                                                \end{itemize}
                                                         {% endif %}
                                                         {% if cursos_extracurriculares_internacionales %}
                                                             \item[b)] Internacionales
-                                                                {% for i in cursos_extracurriculares_internacionales %}
-                                                                    \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
-                                                                {% endfor %}
+                                                                \begin{itemize}
+                                                                    {% for i in cursos_extracurriculares_internacionales %}
+                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                    {% endfor %}
+                                                                \end{itemize}
                                                         {% endif %}
                                                     \end{itemize}
                                             {% endif %}
@@ -797,15 +803,19 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                     \begin{itemize}
                                                         {% if cursos_escolarizados_licenciatura_titular %}
                                                             \item[a)] Profesor titular o coordinador
-                                                                {% for i in cursos_escolarizados_licenciatura_titular %}
-                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
-                                                                {% endfor %}
+                                                                \begin{itemize}
+                                                                    {% for i in cursos_escolarizados_licenciatura_titular %}
+                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                    {% endfor %}
+                                                                \end{itemize}
                                                         {% endif %}
                                                         {% if cursos_escolarizados_licenciatura_colaborador %}
                                                             \item[b)] Colaborador o invitado
-                                                                {% for i in cursos_escolarizados_licenciatura_colaborador %}
-                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
-                                                                {% endfor %}
+                                                                \begin{itemize}
+                                                                    {% for i in cursos_escolarizados_licenciatura_colaborador %}
+                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                    {% endfor %}
+                                                                \end{itemize}
                                                         {% endif %}
                                                     \end{itemize}
 
@@ -814,15 +824,19 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \begin{itemize}
                                                     {% if cursos_escolarizados_posgrado_titular %}
                                                         \item[a)] Profesor titular o coordinador
-                                                            {% for i in cursos_escolarizados_posgrado_titular %}
-                                                                \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                            {% endfor %}
+                                                            \begin{itemize}
+                                                                {% for i in cursos_escolarizados_posgrado_titular %}
+                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                {% endfor %}
+                                                            \end{itemize}
                                                     {% endif %}
                                                     {% if cursos_escolarizados_posgrado_colaborador %}
                                                         \item[b)] Colaborador o invitado
-                                                            {% for i in cursos_escolarizados_posgrado_colaborador %}
-                                                                \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                            {% endfor %}
+                                                            \begin{itemize}
+                                                                {% for i in cursos_escolarizados_posgrado_colaborador %}
+                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                {% endfor %}
+                                                            \end{itemize}
                                                     {% endif %}
                                                 \end{itemize}
                                             \end{enumerate}
@@ -840,15 +854,19 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                         \begin{itemize}
                                                             {% if cursos_escolarizados_licenciatura_titular %}
                                                                 \item[a)] Profesor titular o coordinador
-                                                                    {% for i in cursos_escolarizados_licenciatura_titular %}
-                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
-                                                                    {% endfor %}
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_licenciatura_titular %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
                                                             {% endif %}
                                                             {% if cursos_escolarizados_licenciatura_colaborador %}
                                                                 \item[b)] Colaborador o invitado
-                                                                    {% for i in cursos_escolarizados_licenciatura_colaborador %}
-                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
-                                                                    {% endfor %}
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_licenciatura_colaborador %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
                                                             {% endif %}
                                                         \end{itemize}
 
@@ -857,15 +875,19 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                     \begin{itemize}
                                                         {% if cursos_escolarizados_posgrado_titular %}
                                                             \item[a)] Profesor titular o coordinador
-                                                                {% for i in cursos_escolarizados_posgrado_titular %}
-                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                                {% endfor %}
+                                                                \begin{itemize}
+                                                                    {% for i in cursos_escolarizados_posgrado_titular %}
+                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                    {% endfor %}
+                                                                \end{itemize}
                                                         {% endif %}
                                                         {% if cursos_escolarizados_posgrado_colaborador %}
                                                             \item[b)] Colaborador o invitado
-                                                                {% for i in cursos_escolarizados_posgrado_colaborador %}
-                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                                {% endfor %}
+                                                                \begin{itemize}
+                                                                    {% for i in cursos_escolarizados_posgrado_colaborador %}
+                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                    {% endfor %}
+                                                                \end{itemize}
                                                         {% endif %}
                                                     \end{itemize}
                                                 \end{enumerate}
@@ -875,7 +897,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{enumerate}
                     {% endif %}
 
-                    {% if True %}
+                    {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado %}
                         \item[8.2.] Personal formado
                             \begin{enumerate}
                                 {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado %}
@@ -883,21 +905,27 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \begin{itemize}
                                             {% if tesis_dirigidas_licenciatura %}
                                                 \item[a)] Licenciatura
-                                                    {% for i in tesis_dirigidas_licenciatura %}
-                                                        \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
-                                                    {% endfor %}
+                                                    \begin{itemize}
+                                                        {% for i in tesis_dirigidas_licenciatura %}
+                                                            \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
                                             {% endif %}
                                             {% if tesis_dirigidas_maestria %}
                                                 \item[b)] Maestría
-                                                    {% for i in tesis_dirigidas_maestria %}
-                                                        \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
-                                                    {% endfor %}
+                                                    \begin{itemize}
+                                                        {% for i in tesis_dirigidas_maestria %}
+                                                            \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
                                             {% endif %}
                                             {% if tesis_dirigidas_doctorado %}
                                                 \item[c)] Doctorado
-                                                    {% for i in tesis_dirigidas_doctorado %}
-                                                        \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
-                                                    {% endfor %}
+                                                    \begin{itemize}
+                                                        {% for i in tesis_dirigidas_doctorado %}
+                                                            \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
                                             {% endif %}
                                         \end{itemize}
                                 {% endif %}
@@ -907,29 +935,59 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \begin{itemize}
                                             {% if tesis_proceso_licenciatura %}
                                                 \item[a)] Licenciatura
-                                                    {% for i in tesis_proceso_licenciatura %}
-                                                        \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
-                                                    {% endfor %}
+                                                    \begin{itemize}
+                                                        {% for i in tesis_proceso_licenciatura %}
+                                                            \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
                                             {% endif %}
                                             {% if tesis_proceso_maestria %}
                                                 \item[b)] Maestría
-                                                    {% for i in tesis_proceso_maestria %}
-                                                        \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
-                                                    {% endfor %}
+                                                    \begin{itemize}
+                                                        {% for i in tesis_proceso_maestria %}
+                                                            \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
                                             {% endif %}
                                             {% if tesis_proceso_doctorado %}
                                                 \item[c)] Doctorado
-                                                    {% for i in tesis_proceso_doctorado %}
-                                                        \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
-                                                    {% endfor %}
+                                                    \begin{itemize}
+                                                        {% for i in tesis_proceso_doctorado %}
+                                                            \item{ {{ i.asesorado }}, \textit{´´{{ i.titulo }}''}, {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }}{% endfor %}, {{ i.especialidad }}, {{ i.institucion }}, {{ i.dependencia }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}. Fecha de examen: {{ i.fecha_examen }}. País de origen del asesorado: {{ i.asesorado.pais_origen.nombre }}. {% if beca %}Beca: {{ i.beca.nombre }}{% endif %} }
+                                                        {% endfor %}
+                                                    \end{itemize}
                                             {% endif %}
                                         \end{itemize}
                                 {% endif %}
 
-                                \item Tutorías o asesorías a estudiantes
-                                \item Becario de proyecto
-                                \item Servicios sociales
-                                \item Supervisión de investigadores posdoctorales
+                                {& if True %}
+                                    {% if asesorias_estudiantes %}
+                                        \item[8.2.3.] Tutorías o asesorías a estudiantes
+                                            \begin{itemize}
+                                                {% for i in asesorias_estudiantes %}
+                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {{ i.programa_licenciatura }}{{ i.programa_maestria }}{{ i.programa_doctorado }}, {{ i.tipo.get_tipo_display }}, {{ i.periodo_academico }}, \textit{´´{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
+                                    {% if becarios_estudiantes %}
+                                        \item[8.2.4.] Becario de proyecto
+                                            \begin{itemize}
+                                                {% for i in becarios_estudiantes %}
+                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {{ i.programa_licenciatura }}{{ i.programa_maestria }}{{ i.programa_doctorado }}, {{ i.tipo.get_tipo_display }}, {{ i.periodo_academico }}, \textit{´´{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
+                                    {% if servicio_social_estudiantes %}
+                                        \item[8.2.5.] Servicios sociales
+                                            \begin{itemize}
+                                                {% for i in servicio_social_estudiantes %}
+                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {{ i.programa_licenciatura }}{{ i.programa_maestria }}{{ i.programa_doctorado }}, {{ i.tipo.get_tipo_display }}, {{ i.periodo_academico }}, \textit{´´{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                {% endfor %}
+                                            \end{itemize}
+                                    {% endif %}
+                                    {% if %}
+                                        \item Supervisión de investigadores posdoctorales
+                                    {% endif %}
                             \end{enumerate}
                     {% endif %}
 
