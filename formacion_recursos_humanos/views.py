@@ -13,11 +13,11 @@ from django.db.models import Q
 # Create your views here.
 
 
-class AsesorEstanciaJSON(View):
+class AsesoriaEstudianteJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = AsesorEstancia.objects.filter(usuario=usuarioid)
+            items = AsesoriaEstudiante.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
                                          fields=(
                                              'asesorado', 'grado_academico', 'programa_licenciatura',
@@ -39,24 +39,24 @@ class AsesorEstanciaJSON(View):
             raise Http404
 
 
-class AsesorEstanciaLista(ObjectCreateMixin, View):
-    form_class = AsesorEstanciaForm
-    model = AsesorEstancia
-    aux = AsesorEstanciaContext.contexto
-    template_name = 'asesor_estancia.html'
+class AsesoriaEstudianteLista(ObjectCreateMixin, View):
+    form_class = AsesoriaEstudianteForm
+    model = AsesoriaEstudiante
+    aux = AsesoriaEstudianteContext.contexto
+    template_name = 'asesoria_estudiante.html'
 
 
-class AsesorEstanciaDetalle(ObjectUpdateMixin, View):
-    form_class = AsesorEstanciaForm
-    model = AsesorEstancia
-    aux = AsesorEstanciaContext.contexto
-    template_name = 'asesor_estancia.html'
+class AsesoriaEstudianteDetalle(ObjectUpdateMixin, View):
+    form_class = AsesoriaEstudianteForm
+    model = AsesoriaEstudiante
+    aux = AsesoriaEstudianteContext.contexto
+    template_name = 'asesoria_estudiante.html'
 
 
-class AsesorEstanciaEliminar(View):
+class AsesoriaEstudianteEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(AsesorEstancia, pk=pk, usuario=request.user)
+            item = get_object_or_404(AsesoriaEstudiante, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:

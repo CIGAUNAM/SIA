@@ -2,7 +2,7 @@ url_categoria = 'formacion-recursos-humanos'
 bc_seccion = 'Formación de Recursos Humanos'
 
 
-class AsesorEstanciaContext:
+class AsesoriaEstudianteContext:
     obj = 'Asesoría'
     objs = 'Asesorías'
     url_seccion = 'asesorias'

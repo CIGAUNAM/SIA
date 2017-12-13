@@ -11,10 +11,10 @@ NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICEN
 
 # Create your models here.
 
-class AsesorEstancia(models.Model):
-    asesorado = models.ForeignKey(User, related_name='asesor_estancia_asesorado')
+class AsesoriaEstudiante(models.Model):
+    asesorado = models.ForeignKey(User, related_name='asesoria_estudiante_asesorado')
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=30, choices=(('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Práctica'), ('ESTANCIA', 'Estancia'), ('SERVICIO_SOCIAL', 'Servicio Social')))
+    tipo = models.CharField(max_length=30, choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Prácticas profesionales'), ('ESTANCIA', 'Estancia de investigación'), ('BECARIO', 'Becario de proyecto de investigación'), ('SERVICIO_SOCIAL', 'Servicio Social')))
     nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True)
@@ -23,20 +23,21 @@ class AsesorEstancia(models.Model):
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
+    periodo_academico = models.CharField(max_length=20)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    usuario = models.ForeignKey(User, related_name='asesor_estancia_usuario')
+    usuario = models.ForeignKey(User, related_name='asesoria_estudiante_usuario')
 
     def __str__(self):
         return "{} : {}".format(str(self.asesorado), self.fecha_inicio)
 
     def get_absolute_url(self):
-        return reverse('asesor_estancia_detalle', kwargs={'pk': self.pk})
+        return reverse('asesoria_estudiante_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio', '-fecha_fin']
-        verbose_name = 'Asesor en residencias / prácticas / estancias / servicio social'
-        verbose_name_plural = 'Asesores en residencias / prácticas / estancias / servicio social'
+        verbose_name = 'Asesoría en residencias / prácticas / estancias / servicio social'
+        verbose_name_plural = 'Asesorías en residencias / prácticas / estancias / servicio social'
         unique_together = ['usuario', 'asesorado', 'nivel_academico']
 
 
@@ -50,7 +51,6 @@ class DireccionTesis(models.Model):
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
     beca = models.ForeignKey(Beca, null=True, blank=True)
-    #reconocimiento = models.ForeignKey(Reconocimiento, blank=True, null=True)
     fecha_examen = models.DateField(null=True, blank=True)
     usuarios = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 

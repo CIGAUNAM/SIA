@@ -16,7 +16,7 @@ from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, C
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
 from apoyo_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
-from formacion_recursos_humanos.models import DireccionTesis
+from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -7534,13 +7534,17 @@ class CVInvestigadorPDF(View):
         cursos_escolarizados_posgrado_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
         cursos_escolarizados_posgrado_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
 
-        tesis_dirigidas_licenciatura = DireccionTesis.objects.filter(usuarios=pk, grado_academico='LICENCIATURA', fecha_examen__isnull=False)
-        tesis_dirigidas_maestria = DireccionTesis.objects.filter(usuarios=pk, grado_academico='MAESTRIA', fecha_examen__isnull=False)
-        tesis_dirigidas_doctorado = DireccionTesis.objects.filter(usuarios=pk, grado_academico='DOCTORADO', fecha_examen__isnull=False)
+        tesis_dirigidas_licenciatura = DireccionTesis.objects.filter(usuarios=pk, grado_academico='LICENCIATURA', fecha_examen__isnull=False).order_by('-fecha_inicio')
+        tesis_dirigidas_maestria = DireccionTesis.objects.filter(usuarios=pk, grado_academico='MAESTRIA', fecha_examen__isnull=False).order_by('-fecha_inicio')
+        tesis_dirigidas_doctorado = DireccionTesis.objects.filter(usuarios=pk, grado_academico='DOCTORADO', fecha_examen__isnull=False).order_by('-fecha_inicio')
 
-        tesis_proceso_licenciatura = DireccionTesis.objects.filter(usuarios=pk, grado_academico='LICENCIATURA', fecha_examen__isnull=True)
-        tesis_proceso_maestria = DireccionTesis.objects.filter(usuarios=pk, grado_academico='MAESTRIA', fecha_examen__isnull=True)
-        tesis_proceso_doctorado = DireccionTesis.objects.filter(usuarios=pk, grado_academico='DOCTORADO', fecha_examen__isnull=True)
+        tesis_proceso_licenciatura = DireccionTesis.objects.filter(usuarios=pk, grado_academico='LICENCIATURA', fecha_examen__isnull=True).order_by('-fecha_inicio')
+        tesis_proceso_maestria = DireccionTesis.objects.filter(usuarios=pk, grado_academico='MAESTRIA', fecha_examen__isnull=True).order_by('-fecha_inicio')
+        tesis_proceso_doctorado = DireccionTesis.objects.filter(usuarios=pk, grado_academico='DOCTORADO', fecha_examen__isnull=True).order_by('-fecha_inicio')
+
+        asesorias_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk).filter(Q(tipo='ESTANCIA') | Q(tipo='PRACTICA')).order_by('-fecha_inicio')
+        becarios_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='BECARIO').order_by('-fecha_inicio')
+        servicio_social_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='SERVICIO_SOCIAL').order_by('-fecha_inicio')
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7610,19 +7614,20 @@ class CVInvestigadorPDF(View):
         context['cursos_extracurriculares_unam'] = cursos_extracurriculares_unam
         context['cursos_extracurriculares_nacionales'] = cursos_extracurriculares_nacionales
         context['cursos_extracurriculares_internacionales'] = cursos_extracurriculares_internacionales
-
         context['cursos_escolarizados_licenciatura_titular'] = cursos_escolarizados_licenciatura_titular
         context['cursos_escolarizados_licenciatura_colaborador'] = cursos_escolarizados_licenciatura_colaborador
         context['cursos_escolarizados_posgrado_titular'] = cursos_escolarizados_posgrado_titular
         context['cursos_escolarizados_posgrado_colaborador'] = cursos_escolarizados_posgrado_colaborador
-
         context['tesis_dirigidas_licenciatura'] = tesis_dirigidas_licenciatura
         context['tesis_dirigidas_maestria'] = tesis_dirigidas_maestria
         context['tesis_dirigidas_doctorado'] = tesis_dirigidas_doctorado
-
         context['tesis_proceso_licenciatura'] = tesis_proceso_licenciatura
         context['tesis_proceso_maestria'] = tesis_proceso_maestria
         context['tesis_proceso_doctorado'] = tesis_proceso_doctorado
+
+        context['asesorias_estudiantes'] = asesorias_estudiantes
+        context['becarios_estudiantes'] = becarios_estudiantes
+        context['servicio_social_estudiantes'] = servicio_social_estudiantes
 
 
 

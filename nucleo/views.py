@@ -461,14 +461,14 @@ class BecaLista(ObjectCreateMixinNucleo, View):
     form_class = BecaForm
     model = Beca
     aux = BecaContext.contexto
-    template_name = 'simple.html'
+    template_name = 'beca.html'
 
 
 class BecaDetalle(ObjectUpdateMixinNucleo, View):
     form_class = BecaForm
     model = Beca
     aux = BecaContext.contexto
-    template_name = 'simple.html'
+    template_name = 'beca.html'
 
 
 class BecaEliminar(View):

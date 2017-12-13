@@ -112,7 +112,7 @@ class ConvenioEntidadExterna(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     es_renovacion = models.BooleanField(default=False)
-    financiamientos = models.ManyToManyField(Financiamiento, blank=True, null=True)
+    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     usuarios = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios', verbose_name='Académicos participantes')
 
     def __str__(self):
@@ -153,7 +153,7 @@ class ServicioExternoEntidadNoAcademica(models.Model):
     entidades = models.ManyToManyField(Dependencia)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
-    financiamientos = models.ManyToManyField(Financiamiento, blank=True, null=True)
+    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     usuario = models.ForeignKey(User)
     #tags = models.ManyToManyField(Tag, related_name='servicio_externo_entidad_academica_tags', blank=True)
 
