@@ -63,6 +63,62 @@ class AsesoriaEstudianteEliminar(View):
             raise Http404
 
 
+
+
+
+
+class SupervisionInvestigadorPostDoctoralJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items,
+                                         fields=(
+                                             'Investigador', 'Disciplina', 'programa_licenciatura',
+                                             'programa_maestria', 'programa_doctorado', 'dependencia', 'fecha_fin'),
+                                         use_natural_foreign_keys=True)
+            json = json.replace('"programa_licenciatura": null,', '')
+            json = json.replace('"programa_maestria": null,', '')
+            json = json.replace('"programa_doctorado": null,', '')
+            json = json.replace('programa_licenciatura', 'programa')
+            json = json.replace('programa_maestria', 'programa')
+            json = json.replace('programa_doctorado', 'programa')
+            json = json.replace('LICENCIATURA', 'Licenciatura')
+            json = json.replace('MAESTRIA', 'Maestría')
+            json = json.replace('DOCTORADO', 'Doctorado')
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class SupervisionInvestigadorPostDoctoralLista(ObjectCreateMixin, View):
+    form_class = SupervisionInvestigadorPostDoctoralForm
+    model = SupervisionInvestigadorPostDoctoral
+    aux = SupervisionInvestigadorPostDoctoralContext.contexto
+    template_name = 'asesoria_estudiante.html'
+
+
+class SupervisionInvestigadorPostDoctoralDetalle(ObjectUpdateMixin, View):
+    form_class = SupervisionInvestigadorPostDoctoralForm
+    model = SupervisionInvestigadorPostDoctoral
+    aux = SupervisionInvestigadorPostDoctoralContext.contexto
+    template_name = 'asesoria_estudiante.html'
+
+
+class SupervisionInvestigadorPostDoctoralEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(SupervisionInvestigadorPostDoctoral, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+
+
 class DireccionTesisJSON(View):
     def get(self, request):
         try:
