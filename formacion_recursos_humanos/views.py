@@ -74,19 +74,8 @@ class SupervisionInvestigadorPostDoctoralJSON(View):
             items = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
                                          fields=(
-                                             'Investigador', 'Disciplina', 'programa_licenciatura',
-                                             'programa_maestria', 'programa_doctorado', 'dependencia', 'fecha_fin'),
+                                             'Investigador', 'Dependencia', 'Fecha de inicio', 'Proyecto'),
                                          use_natural_foreign_keys=True)
-            json = json.replace('"programa_licenciatura": null,', '')
-            json = json.replace('"programa_maestria": null,', '')
-            json = json.replace('"programa_doctorado": null,', '')
-            json = json.replace('programa_licenciatura', 'programa')
-            json = json.replace('programa_maestria', 'programa')
-            json = json.replace('programa_doctorado', 'programa')
-            json = json.replace('LICENCIATURA', 'Licenciatura')
-            json = json.replace('MAESTRIA', 'Maestría')
-            json = json.replace('DOCTORADO', 'Doctorado')
-
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -96,14 +85,14 @@ class SupervisionInvestigadorPostDoctoralLista(ObjectCreateMixin, View):
     form_class = SupervisionInvestigadorPostDoctoralForm
     model = SupervisionInvestigadorPostDoctoral
     aux = SupervisionInvestigadorPostDoctoralContext.contexto
-    template_name = 'asesoria_estudiante.html'
+    template_name = 'supervision_investigador.html'
 
 
 class SupervisionInvestigadorPostDoctoralDetalle(ObjectUpdateMixin, View):
     form_class = SupervisionInvestigadorPostDoctoralForm
     model = SupervisionInvestigadorPostDoctoral
     aux = SupervisionInvestigadorPostDoctoralContext.contexto
-    template_name = 'asesoria_estudiante.html'
+    template_name = 'supervision_investigador.html'
 
 
 class SupervisionInvestigadorPostDoctoralEliminar(View):

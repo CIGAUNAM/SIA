@@ -753,7 +753,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                 \end{enumerate}
         {% endif %}
 
-        {% if True %}
+        {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador or tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
             \item[8.] \textbf{FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}
                 \begin{enumerate}
                     {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
@@ -960,7 +960,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
 
-                                {& if True %}
+                                {& if asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
                                     {% if asesorias_estudiantes %}
                                         \item[8.2.3.] Tutorías o asesorías a estudiantes
                                             \begin{itemize}
@@ -985,13 +985,19 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 {% endfor %}
                                             \end{itemize}
                                     {% endif %}
-                                    {% if %}
-                                        \item Supervisión de investigadores posdoctorales
+                                    {% if supervision_investigadores %}
+                                        \item[8.2.6.] Supervisión de investigadores posdoctorales
+                                            \begin{itemize}
+                                                {% for i in supervision_investigadores %}
+                                                    \item{ {{ i.investigador.last_name }}, {{ i.asesorado.first_name }}. {{ i.disciplina }},  {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, \textit{´´{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                {% endfor %}
+                                            \end{itemize}
                                     {% endif %}
                             \end{enumerate}
                     {% endif %}
 
                     \item Desarrollo de áreas o grupos de investigación internos
+
                     \item Miembro de comités tutorales o sinodales
                         \begin{enumerate}
                         \item Sinodal de tesis de licenciatura
