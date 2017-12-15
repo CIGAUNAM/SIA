@@ -148,6 +148,7 @@ class SupervisionInvestigadorPostDoctoralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+
     fecha_inicio = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
@@ -164,6 +165,32 @@ class SupervisionInvestigadorPostDoctoralForm(forms.ModelForm):
             'capitulos_libros': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
+
+class DesarrolloGrupoInvestigacionInternoForm(forms.ModelForm):
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    pais = forms.ModelChoiceField(
+        required=False,
+        queryset=Pais.objects.all(),
+        label="Pais",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+
+    class Meta:
+        model = DesarrolloGrupoInvestigacionInterno
+        exclude = []
+        widgets = {
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 

@@ -67,6 +67,35 @@ class SupervisionInvestigadorPostDoctoral(models.Model):
         verbose_name_plural = 'Supervisiones de investigadores postdoctorales'
 
 
+class AreaGrupoInvestigacion(models.Model):
+
+    descripcion = models.TextField(blank=True)
+
+
+
+class DesarrolloGrupoInvestigacionInterno(models.Model):
+    nombre = models.CharField(max_length=255)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    pais = models.ForeignKey(Pais)
+    usuarios = models.ManyToManyField(User)
+
+    def __str__(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('desarrollo_grupo_investigacion_detalle', kwargs={'pk': self.pk})
+
+    def natural_key(self):
+        return self.nombre
+
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = 'Área o grupo de investigación interno'
+        verbose_name_plural = 'Áreas o grupos de investigación internos'
+
+
+
 class DireccionTesis(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     especialidad = models.CharField(max_length=255)
@@ -87,12 +116,12 @@ class DireccionTesis(models.Model):
         return reverse('direccion_tesis_detalle', kwargs={'pk': self.pk})
 
     def natural_key(self):
-        return (self.titulo)
+        return self.titulo
 
     class Meta:
         ordering = ['-fecha_examen']
-        verbose_name = 'Tesis'
-        verbose_name_plural = 'Tesis'
+        verbose_name = 'Dirección de tesis'
+        verbose_name_plural = 'Direcciones de tesis'
 
 
 class ComiteTutoral(models.Model):
