@@ -107,12 +107,77 @@ class SupervisionInvestigadorPostDoctoralEliminar(View):
 
 
 
+class DesarrolloGrupoInvestigacionInternoJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                articulos = ArticuloCientifico.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
+
+            json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
+                                         fields=('titulo', 'tipo', 'revista', 'status', 'fecha'))
+
+            json = json.replace('ARTICULO', 'Artículo')
+            json = json.replace('ACTA', 'Acta')
+            json = json.replace('CARTA', 'Carta')
+            json = json.replace('RESENA', 'Reseña')
+            json = json.replace('OTRO', 'Otro')
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('ENVIADO', 'Enviado')
+            json = json.replace('ENVIADO', 'Enviado')
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class DesarrolloGrupoInvestigacionInternoLista(ObjectCreateVarMixin, View):
+    form_class = DesarrolloGrupoInvestigacionInternoForm
+    model = DesarrolloGrupoInvestigacionInterno
+    aux = DesarrolloGrupoInvestigacionInternoContext.contexto
+    template_name = 'grupo_investigacion.html'
+
+
+class DesarrolloGrupoInvestigacionInternoDetalle(ObjectUpdateVarMixin, View):
+    form_class = DesarrolloGrupoInvestigacionInternoForm
+    model = DesarrolloGrupoInvestigacionInterno
+    aux = DesarrolloGrupoInvestigacionInternoContext.contexto
+    template_name = 'grupo_investigacion.html'
+
+
+class DesarrolloGrupoInvestigacionInternoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(DesarrolloGrupoInvestigacionInterno, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+
+
+
+
 
 class DireccionTesisJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = DireccionTesis.objects.filter(usuario=usuarioid)
+
+            if self.otros:
+                items = DireccionTesis.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                items = DireccionTesis.objects.filter(usuarios__id__exact=usuarioid)
+
             json = serializers.serialize('json', items,
                                          fields=(
                                              'titulo', 'asesorado', 'grado_academico', 'dependencia', 'fecha_examen'),
@@ -157,8 +222,7 @@ class ComiteTutoralJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ComiteTutoral.objects.all().exclude(asesor_principal=usuarioid).exclude(
-                    otros_asesores=usuarioid).exclude(sinodales=usuarioid)
+                items = ComiteTutoral.objects.all().exclude(asesor_principal=usuarioid).exclude(otros_asesores=usuarioid).exclude(sinodales=usuarioid)
             else:
                 items = ComiteTutoral.objects.filter(Q(asesor_principal=usuarioid) | Q(otros_asesores=usuarioid) | Q(sinodales=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
