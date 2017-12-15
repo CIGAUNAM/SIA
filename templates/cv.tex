@@ -897,7 +897,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{enumerate}
                     {% endif %}
 
-                    {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado %}
+                    {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
                         \item[8.2.] Personal formado
                             \begin{enumerate}
                                 {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado %}
@@ -996,8 +996,14 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{enumerate}
                     {% endif %}
 
-                    \item Desarrollo de áreas o grupos de investigación internos
-
+                    {% if %}
+                        \item[8.3.] Desarrollo de áreas o grupos de investigación internos
+                            \begin{itemize}
+                                {% for i in supervision_investigadores %}
+                                    \item{ {{ i.investigador.last_name }}, {{ i.asesorado.first_name }}. {{ i.disciplina }},  {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, \textit{´´{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
                     \item Miembro de comités tutorales o sinodales
                         \begin{enumerate}
                         \item Sinodal de tesis de licenciatura
