@@ -113,7 +113,7 @@ class SupervisionInvestigadorPostDoctoralContext:
 class DesarrolloGrupoInvestigacionInternoContext:
     obj = 'Grupo de investigación'
     objs = 'Grupos de investigación'
-    url_seccion = 'grupos-investigacion'
+    url_seccion = 'grupos-investigacion-internos'
     usuarios = True
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
@@ -121,7 +121,7 @@ class DesarrolloGrupoInvestigacionInternoContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Título', 'Tipo', 'Revista', 'Status', 'Fecha']}
+                'titulos_tabla': ['Nombre', 'Fecha de inicio', 'País']}
 
 
     tabla_mios =  '<script>\n' \
@@ -135,14 +135,13 @@ class DesarrolloGrupoInvestigacionInternoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.investigador",\n' \
+                                        '"data": "fields.nombre",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.investigador + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
-                                    '{"data": "fields.proyecto"},\n' \
+                                    '{"data": "fields.pais"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -161,14 +160,13 @@ class DesarrolloGrupoInvestigacionInternoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.investigador",\n' \
+                                        '"data": "fields.nombre",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.investigador + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
-                                    '{"data": "fields.proyecto"},\n' \
+                                    '{"data": "fields.pais"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

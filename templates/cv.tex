@@ -1000,7 +1000,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         \item[8.3.] Desarrollo de áreas o grupos de investigación internos
                             \begin{itemize}
                                 {% for i in supervision_investigadores %}
-                                    \item{ {{ i.investigador.last_name }}, {{ i.asesorado.first_name }}. {{ i.disciplina }},  {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, \textit{´´{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                    \item{ {{ i.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.grado_consolidacion }}. {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }} {{ u.tipo.get_tipo_display }}, {% endfor %}.   {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, \textit{´´{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                 {% endfor %}
                             \end{itemize}
                     {% endif %}

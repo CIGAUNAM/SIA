@@ -1,33 +1,9 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Investigador:</strong>
+    <p><strong>Nombre:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Investigador postdoctoral supervisado.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-user"></i></div>
-            {{ form.investigador }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del investigador seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un investigador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Disciplina:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Disciplina a la que pertenece el investigador.">
+           title="Nombre del área o grupo de investigación.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -35,112 +11,13 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.disciplina }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Institución:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución donde se llevó a cabo la asesoría, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia donde se llevó a cabo la asesoría, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Proyecto:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto que desarrolla el investigador.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.proyecto }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del proyecto seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Beca:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Beca recibida por el asesorado. Seleccionar una beca sólo si corresponde el caso.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.beca }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la beca.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/becas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una beca nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.nombre }}
         </div>
     </div>
     </p>
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de inicio de la supervisión."><i
+           title="Fecha de inicio de la formación del grupo o área."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
@@ -153,7 +30,7 @@
     </p>
     <p><strong>Fecha de fin:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de fin de la supervisión."><i
+           title="Fecha de fin de la formación del grupo o área."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
@@ -164,81 +41,171 @@
         </div>
     </div>
     </p>
-    <p><strong>Articulos:</strong>
+    <p><strong>Grado de consolidación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Artículos que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+           title="Grado de consolidació.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.grado_consolidacion }}
+        </div>
+    </div>
+    </p>
+    <p><strong>País:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="País.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.articulos }}
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los artículos.">
+                   title="Mostrar los detalles adicionales del país seleccionado.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Libros:</strong>
+    <p><strong>Participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Libros que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
+           title="Participantes en el área o grupo de investigación, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.libros }}
+            {{ form.usuarios }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los libros.">
+                   title="Mostrar los detalles adicionales de los autores.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Capítulos en libros de investigación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Capítulos en libros de investigación, que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.capitulos_libros }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los capítulos en libros de investigación.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un capítulo en libro de investigación nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-
 {% endblock %}
 
 {% block form_detalle %}
-
+    <p><strong>Nombre:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del área o grupo de investigación.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio de la formación del grupo o área."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin de la formación del grupo o área."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_fin }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Grado de consolidación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Grado de consolidació.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.grado_consolidacion }}
+        </div>
+    </div>
+    </p>
+    <p><strong>País:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="País.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del país seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Participantes en el área o grupo de investigación, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.usuarios }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los autores.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
 {% endblock %}
