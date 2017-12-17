@@ -74,7 +74,7 @@ class SupervisionInvestigadorPostDoctoralJSON(View):
             items = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
                                          fields=(
-                                             'Investigador', 'Dependencia', 'Fecha de inicio', 'Proyecto'),
+                                             'investigador', 'dependencia', 'fecha_inicio', 'proyecto'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -114,24 +114,12 @@ class DesarrolloGrupoInvestigacionInternoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                articulos = ArticuloCientifico.objects.all().exclude(usuarios__id__exact=usuarioid)
+                articulos = DesarrolloGrupoInvestigacionInterno.objects.all().exclude(usuarios__id__exact=usuarioid)
             else:
-                articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
+                articulos = DesarrolloGrupoInvestigacionInterno.objects.filter(usuarios__id__exact=usuarioid)
 
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'tipo', 'revista', 'status', 'fecha'))
-
-            json = json.replace('ARTICULO', 'Artículo')
-            json = json.replace('ACTA', 'Acta')
-            json = json.replace('CARTA', 'Carta')
-            json = json.replace('RESENA', 'Reseña')
-            json = json.replace('OTRO', 'Otro')
-
-            json = json.replace('PUBLICADO', 'Publicado')
-            json = json.replace('EN_PRENSA', 'En prensa')
-            json = json.replace('ACEPTADO', 'Aceptado')
-            json = json.replace('ENVIADO', 'Enviado')
-            json = json.replace('ENVIADO', 'Enviado')
+                                         fields=('nombre', 'fecha_inicio', 'pais'))
 
             return HttpResponse(json, content_type='application/json')
         except:

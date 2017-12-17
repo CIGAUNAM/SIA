@@ -174,6 +174,7 @@ class DesarrolloGrupoInvestigacionInternoForm(forms.ModelForm):
     fecha_fin = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
+    grado_consolidacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     pais = forms.ModelChoiceField(
         required=False,
         queryset=Pais.objects.all(),

@@ -67,16 +67,13 @@ class SupervisionInvestigadorPostDoctoral(models.Model):
         verbose_name_plural = 'Supervisiones de investigadores postdoctorales'
 
 
-class AreaGrupoInvestigacion(models.Model):
-
-    descripcion = models.TextField(blank=True)
-
 
 
 class DesarrolloGrupoInvestigacionInterno(models.Model):
     nombre = models.CharField(max_length=255)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
+    grado_consolidacion = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais)
     usuarios = models.ManyToManyField(User)
 
