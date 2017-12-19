@@ -273,6 +273,16 @@ class ComiteTutoralForm(forms.ModelForm):
         )
     )
     grado_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar grado académico'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
+    programa_licenciatura = forms.ModelChoiceField(
+        required=False,
+        queryset=ProgramaLicenciatura.objects.all(),
+        label="Programa de maestria",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ProgramaLicenciatura.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     programa_maestria = forms.ModelChoiceField(
         required=False,
         queryset=ProgramaMaestria.objects.all(),
@@ -290,20 +300,6 @@ class ComiteTutoralForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=ProgramaDoctorado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar status'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído')), required=True)
-    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-
-    proyecto = forms.ModelChoiceField(
-        required=False,
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -326,12 +322,25 @@ class ComiteTutoralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    proyecto = forms.ModelChoiceField(
+        required=False,
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ProyectoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     class Meta:
         model = ComiteTutoral
         exclude = []
         widgets = {
-            'otros_asesores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'asesores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'sinodales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
