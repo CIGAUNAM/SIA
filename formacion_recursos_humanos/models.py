@@ -122,22 +122,22 @@ class DireccionTesis(models.Model):
 
 
 class ComiteTutoral(models.Model):
-    grado_academico = models.CharField(max_length=20, choices=(('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+    asesorado = models.ForeignKey(User, related_name='comite_tutoral_asesorado')
+    grado_academico = models.CharField(max_length=20, choices=(('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+    programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True)
-    status = models.CharField(max_length=20, choices=(('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído')))
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField(null=True, blank=True)
-    asesorado = models.ForeignKey(User, related_name='comite_tutoral_asesorado')
-    asesor_principal = models.ForeignKey(User, related_name='comite_tutoral_asesor_principal')
-    otros_asesores = models.ManyToManyField(User, related_name='comite_tutoral_otros_asesores', blank=True)
-    sinodales = models.ManyToManyField(User, related_name='comite_tutoral_sinodales', blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
     institucion = models.ForeignKey(Institucion)
     dependencia = models.ForeignKey(Dependencia)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField(null=True, blank=True)
+    fecha_examen = models.DateField(null=True, blank=True)
+    asesores = SortedManyToManyField(User, related_name='comite_tutoral_asesores', verbose_name='Asesores')
+    sinodales = SortedManyToManyField(User, related_name='comite_tutoral_sinodales', verbose_name='Sinodales')
+    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(str(self.asesorado), self.fecha_inicio, str(self.asesor_principal))
+        return "{} : {}".format(str(self.asesorado), self.fecha_inicio)
 
     def get_absolute_url(self):
         return reverse('comite_tutoral_detalle', kwargs={'pk': self.pk})

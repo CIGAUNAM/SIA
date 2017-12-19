@@ -263,6 +263,15 @@ class DireccionTesisForm(forms.ModelForm):
 
 
 class ComiteTutoralForm(forms.ModelForm):
+    asesorado = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Asesorado",
+        widget=ModelSelect2Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     grado_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar grado académico'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
     programa_maestria = forms.ModelChoiceField(
         required=False,
@@ -287,24 +296,7 @@ class ComiteTutoralForm(forms.ModelForm):
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar status'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído')), required=True)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-    asesorado = forms.ModelChoiceField(
-        queryset=User.objects.all(),
-        label="Asesorado",
-        widget=ModelSelect2Widget(
-            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
-            queryset=User.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    asesor_principal = forms.ModelChoiceField(
-        queryset=User.objects.all(),
-        label="Asesor principal",
-        widget=ModelSelect2Widget(
-            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
-            queryset=User.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-        )
-    )
+
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
