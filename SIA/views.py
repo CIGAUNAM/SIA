@@ -7547,6 +7547,8 @@ class CVInvestigadorPDF(View):
         servicio_social_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='SERVICIO_SOCIAL').order_by('-fecha_inicio')
         supervision_investigadores = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=pk).order_by('-fecha_inicio')
 
+        
+
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
