@@ -15,4 +15,20 @@ urlpatterns = [
     url(r'^alumnos/(?P<pk>[\w\-]+)/eliminar$', DistincionAlumnoEliminar.as_view(), name='distincion_alumno_eliminar'),
     url(r'^alumnos/(?P<pk>[\w\-]+)/$', DistincionAlumnoDetalle.as_view(), name='distincion_alumno_detalle'),
 
+    url(r'^comisiones-expertos/json/', ParticipacionComisionExpertosJSON.as_view(), name='comision_expertos_lista__json'),
+    url(r'^comisiones-expertos/$', ParticipacionComisionExpertosLista.as_view(), name='comision_expertos_lista'),
+    url(r'^comisiones-expertos/(?P<pk>[\w\-]+)/eliminar$', ParticipacionComisionExpertosEliminar.as_view(), name='comision_expertos_eliminar'),
+    url(r'^comisiones-expertos/(?P<pk>[\w\-]+)/$', ParticipacionComisionExpertosDetalle.as_view(), name='comision_expertos_detalle'),
+
+    url(r'^sociedades-cientificas/json/', ParticipacionSociedadCientificaJSON.as_view(), name='sociedad_cientifica_lista__json'),
+    url(r'^sociedades-cientificas/$', ParticipacionSociedadCientificaLista.as_view(), name='sociedad_cientifica_lista'),
+    url(r'^sociedades-cientificas/(?P<pk>[\w\-]+)/eliminar$', ParticipacionSociedadCientificaEliminar.as_view(), name='sociedad_cientifica_eliminar'),
+    url(r'^sociedades-cientificas/(?P<pk>[\w\-]+)/$', ParticipacionSociedadCientificaDetalle.as_view(), name='sociedad_cientifica_detalle'),
+
+    url(r'^citas-publicaciones/json/', CitaPublicacionJSON.as_view(), name='distincion_alumno_lista__json'),
+    url(r'^citas-publicaciones/json-otros/', DistincionAlumnoJSON.as_view(otros=True), name='distincion_alumno_lista__json_otros'),
+    url(r'^citas-publicaciones/$', DistincionAlumnoLista.as_view(), name='distincion_alumno_lista'),
+    url(r'^citas-publicaciones/(?P<pk>[\w\-]+)/eliminar$', DistincionAlumnoEliminar.as_view(), name='distincion_alumno_eliminar'),
+    url(r'^citas-publicaciones/(?P<pk>[\w\-]+)/$', DistincionAlumnoDetalle.as_view(), name='distincion_alumno_detalle'),
+
 ]

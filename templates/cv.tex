@@ -1075,76 +1075,115 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                 \end{enumerate}
         {% endif %}
 
-        {% if %}
+        {% if premios_nacionales or premios_internacionales or reconocimientos_nacionales or reconocimientos_internacionales or comisiones_expertos_nacionales or comisiones_expertos_internacionales or participacion_sociedades_cientificas_nacionales or participacion_sociedades_cientificas_internacionales %}
             \item[9.] \textbf{ DISTINCIONES }
                 \begin{enumerate}
-                    \item[9.1.] Premios
-                        \begin{itemize}
-                            {% if premios_nacionales %}
-                                \item[a)] Nacionales
-                                    \begin{itemize}
-                                        {% for i in %}
-                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                            {% if premios_internacionales %}
-                                \item[b)] Internacionales
-                                    \begin{itemize}
-                                        {% for i in premios_internacionales %}
-                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                        \end{itemize}
-
-                    \item[9.2.] Reconocimientos de instituciones
-                        \begin{itemize}
-                            {% if reconocimientos_nacionales %}
-                                \item[a)] Nacionales
-                                    \begin{itemize}
-                                        {% for i in reconocimientos_nacionales %}
-                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                            {% if reconocimientos_internacionales %}
-                            \item[b)] Internacionales
-                                    \begin{itemize}
-                                        {% for i in reconocimientos_internacionales %}
-                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                        \end{itemize}
+                    {% if premios_nacionales or premios_internacionales %}
+                        \item[9.1.] Premios
+                            \begin{itemize}
+                                {% if premios_nacionales %}
+                                    \item[a)] Nacionales
+                                        \begin{itemize}
+                                            {% for i in %}
+                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if premios_internacionales %}
+                                    \item[b)] Internacionales
+                                        \begin{itemize}
+                                            {% for i in premios_internacionales %}
+                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{itemize}
+                    {% endif %}
 
 
-                    \item Participación en comisiones de expertos
+                    {% if reconocimientos_nacionales or reconocimientos_internacionales %}
+                        \item[9.2.] Reconocimientos de instituciones
+                            \begin{itemize}
+                                {% if reconocimientos_nacionales %}
+                                    \item[a)] Nacionales
+                                        \begin{itemize}
+                                            {% for i in reconocimientos_nacionales %}
+                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if reconocimientos_internacionales %}
+                                    \item[b)] Internacionales
+                                        \begin{itemize}
+                                            {% for i in reconocimientos_internacionales %}
+                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{itemize}
+                    {% endif %}
+
+                    {% if comisiones_expertos_nacionales or comisiones_expertos_internacionales %}
+                        \item[9.3.] Participación en comisiones de expertos
+                            \begin{itemize}
+                                {% if comisiones_expertos_nacionales %}
+                                    \item[a)] Nacionales
+                                        \begin{itemize}
+                                            {% for i in comisiones_expertos_nacionales %}
+                                                \item{ {{ i.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if comisiones_expertos_internacionales %}
+                                    \item[b)] Internacionales
+                                        \begin{itemize}
+                                            {% for i in comisiones_expertos_internacionales %}
+                                                \item{ {{ i.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{itemize}
+                    {% endif %}
+
+                    {% if participacion_sociedades_cientificas_nacionales or participacion_sociedades_cientificas_internacionales %}
+                    \item[9.4.] Participaciones en sociedades científicas
                         \begin{itemize}
-                            \item[a)] Nacionales
-                            \item[b)] Internacionales
+                            {% if participacion_sociedades_cientificas_nacionales %}
+                                    \item[a)] Nacionales
+                                        \begin{itemize}
+                                            {% for i in participacion_sociedades_cientificas_nacionales %}
+                                                \item{ {{ i.nombre }}, {{ i.tipo.get_tipo_display }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if participacion_sociedades_cientificas_internacionales %}
+                                    \item[b)] Internacionales
+                                        \begin{itemize}
+                                            {% for i in participacion_sociedades_cientificas_internacionales %}
+                                                \item{ {{ i.nombre }}, {{ i.tipo.get_tipo_display }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
                         \end{itemize}
-                    \item Participaciones en sociedades científicas
-                        \begin{itemize}
-                            \item[a)] Nacionales
-                            \item[b)] Internacionales
-                        \end{itemize}
+                    {% endif %}
                 \end{enumerate}
         {% endif %}
 
-        \textbf{\item RECONOCIMIENTO AL TRABAJO}
-        	\begin{enumerate}
-        	\item Citas en publicaciones
-        		\begin{itemize}
-        		\item[a)] De circulación internacional
-        		\item[b)] De circulación nacional
-        		\end{itemize}
-        	\item Presencia en medios
-        		\begin{itemize}
-        		\item[-] Lugar y fecha
-        		\item[-] Grado, nombre y firma
-        		\end{itemize}
-        	\end{enumerate}
+        {% if %}
+            \item[10.] \textbf{ RECONOCIMIENTO AL TRABAJO }
+                \begin{enumerate}
+                    \item[10.1.] Citas en publicaciones
+                        \begin{itemize}
+                            \item[a)] De circulación internacional
+                            \item[b)] De circulación nacional
+                        \end{itemize}
+                    \item Presencia en medios
+                        \begin{itemize}
+                            \item[-] Lugar y fecha
+                            \item[-] Grado, nombre y firma
+                        \end{itemize}
+                \end{enumerate}
+        {% endif %}
     \end{enumerate}
 
 
