@@ -16,7 +16,8 @@ from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, C
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
 from apoyo_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
-from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral
+from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, ComiteTutoral
+
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -7546,7 +7547,7 @@ class CVInvestigadorPDF(View):
         becarios_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='BECARIO').order_by('-fecha_inicio')
         servicio_social_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='SERVICIO_SOCIAL').order_by('-fecha_inicio')
         supervision_investigadores = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=pk).order_by('-fecha_inicio')
-
+        sinodales_tesis_licenciatura = ComiteTutoral.objects.filter(grado_academico='LICENCIATURA', sinodales=pk)
         
 
 
@@ -7633,6 +7634,7 @@ class CVInvestigadorPDF(View):
         context['becarios_estudiantes'] = becarios_estudiantes
         context['servicio_social_estudiantes'] = servicio_social_estudiantes
         context['supervision_investigadores'] = supervision_investigadores
+        context['sinodales_tesis_licenciatura'] = sinodales_tesis_licenciatura
 
 
 
