@@ -16,7 +16,8 @@ from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, C
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
 from apoyo_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
-from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, ComiteTutoral
+from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
+    DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
 
 
 from datetime import datetime
@@ -7547,8 +7548,17 @@ class CVInvestigadorPDF(View):
         becarios_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='BECARIO').order_by('-fecha_inicio')
         servicio_social_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='SERVICIO_SOCIAL').order_by('-fecha_inicio')
         supervision_investigadores = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        sinodales_tesis_licenciatura = ComiteTutoral.objects.filter(grado_academico='LICENCIATURA', sinodales=pk)
-        
+        desarrollo_grupos_investigacion = DesarrolloGrupoInvestigacionInterno.objects.filter(usuarios=pk).order_by('-fecha_inicio')
+        sinodales_tesis_licenciatura = ComiteTutoral.objects.filter(grado_academico='LICENCIATURA', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
+        comite_tutoral_maestria = ComiteTutoral.objects.filter(grado_academico='MAESTRIA', asesores=pk, fecha_fin__isnull=False).order_by('-fecha_inicio')
+        sinodales_tesis_maestria = ComiteTutoral.objects.filter(grado_academico='MAESTRIA', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
+        comite_tutoral_doctorado = ComiteTutoral.objects.filter(grado_academico='DOCTORADO', asesores=pk, fecha_fin__isnull=False).order_by('-fecha_inicio')
+        sinodales_tesis_doctorado = ComiteTutoral.objects.filter(grado_academico='DOCTORADO', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
+        participacion_candidaturas_doctorales = ComiteCandidaturaDoctoral.objects.filter(Q(asesores=pk) | Q(sinodales=pk)).order_by('-fecha_defensa')
+        premios_nacionales = DistincionAcademico.objects.filter(distincion__tipo='PREMIO').filter(institucion__nombre='México').order_by('-fecha')
+        premios_internacionales = DistincionAcademico.objects.filter(distincion__tipo='PREMIO').exclude(institucion__nombre='México').order_by('-fecha')
+        reconocimientos_nacionales = DistincionAcademico.objects.filter(distincion__tipo='RECONOCIMIENTO').filter(institucion__nombre='México').order_by('-fecha')
+        reconocimientos_internacionales = DistincionAcademico.objects.filter(distincion__tipo='RECONOCIMIENTO').exclude(institucion__nombre='México').order_by('-fecha')
 
 
         context['usuario'] = usuario
@@ -7634,7 +7644,15 @@ class CVInvestigadorPDF(View):
         context['becarios_estudiantes'] = becarios_estudiantes
         context['servicio_social_estudiantes'] = servicio_social_estudiantes
         context['supervision_investigadores'] = supervision_investigadores
+        context['desarrollo_grupos_investigacion'] = desarrollo_grupos_investigacion
         context['sinodales_tesis_licenciatura'] = sinodales_tesis_licenciatura
+        context['comite_tutoral_maestria '] = comite_tutoral_maestria
+        context['sinodales_tesis_maestria'] = sinodales_tesis_maestria
+        context['comite_tutoral_doctorado'] = comite_tutoral_doctorado
+        context['sinodales_tesis_doctorado'] = sinodales_tesis_doctorado
+        context['participacion_candidaturas_doctorales'] = participacion_candidaturas_doctorales
+        context['premios_nacionales'] = premios_nacionales
+        context['premios_internacionales'] = premios_internacionales
 
 
 

@@ -67,8 +67,6 @@ class SupervisionInvestigadorPostDoctoral(models.Model):
         verbose_name_plural = 'Supervisiones de investigadores postdoctorales'
 
 
-
-
 class DesarrolloGrupoInvestigacionInterno(models.Model):
     nombre = models.CharField(max_length=255)
     fecha_inicio = models.DateField()
@@ -90,7 +88,6 @@ class DesarrolloGrupoInvestigacionInterno(models.Model):
         ordering = ['nombre']
         verbose_name = 'Área o grupo de investigación interno'
         verbose_name_plural = 'Áreas o grupos de investigación internos'
-
 
 
 class DireccionTesis(models.Model):
@@ -122,7 +119,7 @@ class DireccionTesis(models.Model):
 
 
 class ComiteTutoral(models.Model):
-    asesorado = models.ForeignKey(User, related_name='comite_tutoral_asesorado')
+    estudiante = models.ForeignKey(User, related_name='comite_tutoral_estudiante')
     grado_academico = models.CharField(max_length=20, choices=(('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
     programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True)
@@ -132,12 +129,12 @@ class ComiteTutoral(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
     fecha_examen = models.DateField(null=True, blank=True)
-    asesores = SortedManyToManyField(User, related_name='comite_tutoral_asesores', verbose_name='Asesores')
-    sinodales = SortedManyToManyField(User, related_name='comite_tutoral_sinodales', verbose_name='Sinodales')
+    asesores = SortedManyToManyField(User, related_name='comite_tutoral_asesores', verbose_name='Asesores', blank=True)
+    sinodales = SortedManyToManyField(User, related_name='comite_tutoral_sinodales', verbose_name='Sinodales', blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
 
     def __str__(self):
-        return "{} : {}".format(str(self.asesorado), self.fecha_inicio)
+        return "{} : {}".format(str(self.estudiante), self.fecha_inicio)
 
     def get_absolute_url(self):
         return reverse('comite_tutoral_detalle', kwargs={'pk': self.pk})
@@ -150,9 +147,8 @@ class ComiteTutoral(models.Model):
 
 class ComiteCandidaturaDoctoral(models.Model):
     asesorado = models.ForeignKey(User, related_name='comite_candidatura_doctoral_asesorado')
-    asesor_principal = models.ForeignKey(User, related_name='comite_candidatura_doctoral_asesor_principal')
-    otros_asesores = models.ManyToManyField(User, related_name='comite_candidatura_doctoral_otros_asesores', blank=True)
-    sinodales = models.ManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
+    asesores = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_asesores', blank=True)
+    sinodales = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado)
     institucion = models.ForeignKey(Institucion)
@@ -160,7 +156,7 @@ class ComiteCandidaturaDoctoral(models.Model):
     fecha_defensa = models.DateField()
 
     def __str__(self):
-        return "{} : {} : {}".format(str(self.asesorado), self.fecha_defensa, str(self.asesor_principal))
+        return "{} : {}".format(str(self.asesorado), self.fecha_defensa)
 
     def get_absolute_url(self):
         return reverse('comite_candidatura_doctoral_detalle', kwargs={'pk': self.pk})

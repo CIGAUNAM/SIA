@@ -753,7 +753,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                 \end{enumerate}
         {% endif %}
 
-        {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador or tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
+        {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador or tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadoresor or desarrollo_grupos_investigacion or sinodales_tesis_licenciatura or comite_tutoral_maestria or sinodales_tesis_maestria or comite_tutoral_doctorado or sinodales_tesis_doctorado or participacion_candidaturas_doctorales %}
             \item[8.] \textbf{FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}
                 \begin{enumerate}
                     {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
@@ -897,6 +897,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{enumerate}
                     {% endif %}
 
+
                     {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
                         \item[8.2.] Personal formado
                             \begin{enumerate}
@@ -996,54 +997,140 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{enumerate}
                     {% endif %}
 
-                    {% if supervision_investigadores %}
+
+                    {% if desarrollo_grupos_investigacion %}
                         \item[8.3.] Desarrollo de áreas o grupos de investigación internos
                             \begin{itemize}
-                                {% for i in supervision_investigadores %}
-                                      \item{ {{ i.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.grado_consolidacion }}. {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }} {{ u.tipo.get_tipo_display }}, {% endfor %}. {{ i.pais }} }
-                             \end{itemize}
+                                {% for i in desarrollo_grupos_investigacion %}
+                                    \item{ {{ i.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.grado_consolidacion }}. {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u }} {{ u.tipo.get_tipo_display }}, {% endfor %}. {{ i.pais }} }
+                                {% endfor %}
+                            \end{itemize}
                     {% endif %}
-                    
-                    \item Miembro de comités tutorales o sinodales
-                        \begin{enumerate}
-                        \item Sinodal de tesis de licenciatura
-                        \item Maestría
-                            \begin{itemize}
-                            \item[a)] Comité tutoral
-                            \item[b)] Sinodal de tesis
-                            \end{itemize}
-                        \item Doctorado
-                            \begin{itemize}
-                            \item[a)] Comité tutoral
-                            \item[b)] Sinodal de tesis
-                            \end{itemize}
-                        \end{enumerate}
-                    \item Participación en candidaturas al grado de doctor
-                \end{enumerate}
 
-        \textbf{\item DISTINCIONES}
-        	\begin{enumerate}
-        	\item Premios
-        		\begin{itemize}
-        		\item[a)] Nacionales
-        		\item[b)] Internacionales
-        		\end{itemize}
-        	\item Reconocimientos de instituciones
-        		\begin{itemize}
-        		\item[a)] Nacionales
-        		\item[b)] Internacionales
-        		\end{itemize}
-        	\item Participación en comisiones de expertos
-        		\begin{itemize}
-        		\item[a)] Nacionales
-        		\item[b)] Internacionales
-        		\end{itemize}
-        	\item Participaciones en sociedades científicas
-        		\begin{itemize}
-        		\item[a)] Nacionales
-        		\item[b)] Internacionales
-        		\end{itemize}
-        	\end{enumerate}
+
+                    {% if sinodales_tesis_licenciatura or comite_tutoral_maestria or sinodales_tesis_maestria or comite_tutoral_doctorado or sinodales_tesis_doctorado %}
+                        \item[8.4.] Miembro de comités tutorales o sinodales
+                            \begin{enumerate}
+                                {% if sinodales_tesis_licenciatura %}
+                                    \item[8.4.1.] Sinodal de tesis de licenciatura
+                                        \begin{itemize}
+                                            {% for i in sinodales_tesis_licenciatura %}
+                                                \item{ Estudiante: {{ i.estudiante }}. Programa de licenciatura: {{ i.programa_licenciatura.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_examen }} }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if comite_tutoral_maestria or sinodales_tesis_maestria %}
+                                    \item[8.4.2.] Maestría
+                                        \begin{itemize}
+                                            {% if comite_tutoral_maestria %}
+                                                \item[a)] Comité tutoral
+                                                    \begin{itemize}
+                                                        {% for i in comite_tutoral_maestria %}
+                                                            \item{ Estudiante: {{ i.estudiante }}. Programa de maestría: {{ i.programa_maestria.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                            {% if sinodales_tesis_maestria %}
+                                                \item[b)] Sinodal de tesis
+                                                    \begin{itemize}
+                                                        {% for i in sinodales_tesis_maestria %}
+                                                            \item{ Estudiante: {{ i.estudiante }}. Programa de maestría: {{ i.programa_maestria.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_examen }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if comite_tutoral_doctorado or sinodales_tesis_doctorado %}
+                                    \item[8.4.3.] Doctorado
+                                        \begin{itemize}
+                                                {% if comite_tutoral_doctorado %}
+                                                    \item[a)] Comité tutoral
+                                                        \begin{itemize}
+                                                            {% for i in comite_tutoral_doctorado %}
+                                                                \item{ Estudiante: {{ i.estudiante }}. Programa de doctorado: {{ i.programa_doctorado.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                            {% endfor %}
+                                                        \end{itemize}
+                                                {% endif %}
+                                                {% if sinodales_tesis_doctorado %}
+                                                    \item[b)] Sinodal de tesis
+                                                        \begin{itemize}
+                                                            {% for i in sinodales_tesis_doctorado %}
+                                                                \item{ Estudiante: {{ i.estudiante }}. Programa de doctorado: {{ i.programa_doctorado.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_examen }} }
+                                                            {% endfor %}
+                                                        \end{itemize}
+                                                {% endif %}
+                                            \end{itemize}
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
+
+                    {% if participacion_candidaturas_doctorales %}
+                        \item[8.5.] Participación en candidaturas al grado de doctor
+                            \begin{itemize}
+                                {% for i in participacion_candidaturas_doctorales %}
+                                    \item{ Asesorado: {{ i.asesorado }}, Programa de doctorado: {{ i.programa_doctorado.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_defensa }} }
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
+                \end{enumerate}
+        {% endif %}
+
+        {% if %}
+            \item[9.] \textbf{ DISTINCIONES }
+                \begin{enumerate}
+                    \item[9.1.] Premios
+                        \begin{itemize}
+                            {% if premios_nacionales %}
+                                \item[a)] Nacionales
+                                    \begin{itemize}
+                                        {% for i in %}
+                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                        {% endfor %}
+                                    \end{itemize}
+                            {% endif %}
+                            {% if premios_internacionales %}
+                                \item[b)] Internacionales
+                                    \begin{itemize}
+                                        {% for i in premios_internacionales %}
+                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                        {% endfor %}
+                                    \end{itemize}
+                            {% endif %}
+                        \end{itemize}
+
+                    \item[9.2.] Reconocimientos de instituciones
+                        \begin{itemize}
+                            {% if reconocimientos_nacionales %}
+                                \item[a)] Nacionales
+                                    \begin{itemize}
+                                        {% for i in reconocimientos_nacionales %}
+                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                        {% endfor %}
+                                    \end{itemize}
+                            {% endif %}
+                            {% if reconocimientos_internacionales %}
+                            \item[b)] Internacionales
+                                    \begin{itemize}
+                                        {% for i in reconocimientos_internacionales %}
+                                            \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                        {% endfor %}
+                                    \end{itemize}
+                            {% endif %}
+                        \end{itemize}
+
+
+                    \item Participación en comisiones de expertos
+                        \begin{itemize}
+                            \item[a)] Nacionales
+                            \item[b)] Internacionales
+                        \end{itemize}
+                    \item Participaciones en sociedades científicas
+                        \begin{itemize}
+                            \item[a)] Nacionales
+                            \item[b)] Internacionales
+                        \end{itemize}
+                \end{enumerate}
+        {% endif %}
 
         \textbf{\item RECONOCIMIENTO AL TRABAJO}
         	\begin{enumerate}

@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>PAz.kmz</name>
+	<Style id="sn_parks">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_parks">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_parks">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_parks</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_parks</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>PAz</name>
+		<open>1</open>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608109</longitude>
+				<latitude>20.6401130173577</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763175194003e-005</heading>
+				<tilt>0</tilt>
+				<range>107.080731065739</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4307184900192,20.63989457784906,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608109</longitude>
+				<latitude>20.6401130173577</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763175194003e-005</heading>
+				<tilt>0</tilt>
+				<range>107.080731065739</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4307086165099,20.63992158848514,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<gx:ViewerOptions>
+					<gx:option enabled="0" name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-103.430724757741</longitude>
+				<latitude>20.63999567622172</latitude>
+				<altitude>0</altitude>
+				<heading>-64.3748632325001</heading>
+				<tilt>80.05915993995696</tilt>
+				<range>11.93917732964832</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4306889621455,20.63996657713357,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<gx:ViewerOptions>
+					<gx:option enabled="0" name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-103.430724757741</longitude>
+				<latitude>20.63999567622172</latitude>
+				<altitude>0</altitude>
+				<heading>-64.3748632325001</heading>
+				<tilt>80.05915993995696</tilt>
+				<range>11.93917732964832</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4306790886255,20.63999358776711,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608109</longitude>
+				<latitude>20.6401130173577</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763175194003e-005</heading>
+				<tilt>0</tilt>
+				<range>107.080731065739</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.430669029768,20.64003866364172,1635.077985759008</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608109</longitude>
+				<latitude>20.6401130173577</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763175194003e-005</heading>
+				<tilt>0</tilt>
+				<range>107.080731065739</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4306590635713,20.64007470689425,1635.022082133782</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608109</longitude>
+				<latitude>20.6401130173577</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763175194003e-005</heading>
+				<tilt>0</tilt>
+				<range>107.080731065739</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4306395018388,20.64011066291332,1635.022082133782</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<gx:ViewerOptions>
+					<gx:option enabled="0" name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-103.6314328023563</longitude>
+				<latitude>20.66427486138079</latitude>
+				<altitude>0</altitude>
+				<heading>-82.72734419237111</heading>
+				<tilt>85.65882460737173</tilt>
+				<range>21165.1292327713</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4306100665508,20.64017362955693,1634.882015086511</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.6314328023563</longitude>
+				<latitude>20.66427486138079</latitude>
+				<altitude>0</altitude>
+				<heading>-82.72734419237111</heading>
+				<tilt>85.65882460737173</tilt>
+				<range>21165.1292327713</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4306001930012,20.64020064018358,1634.87377067786</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608109</longitude>
+				<latitude>20.6401130173577</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763175194003e-005</heading>
+				<tilt>0</tilt>
+				<range>107.080731065739</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4305903194478,20.64022765080935,1634.296160470216</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608109</longitude>
+				<latitude>20.6401130173577</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763175194003e-005</heading>
+				<tilt>0</tilt>
+				<range>107.080731065739</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4305804458906,20.64025466143425,1634.296160470216</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608089</longitude>
+				<latitude>20.64011301734272</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763243496416e-005</heading>
+				<tilt>0</tilt>
+				<range>107.0806574566531</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4305705723297,20.64028167205828,1633.963515422342</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4305524608089</longitude>
+				<latitude>20.64011301734272</latitude>
+				<altitude>0</altitude>
+				<heading>2.271763243496416e-005</heading>
+				<tilt>0</tilt>
+				<range>107.0806574566531</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4305606987649,20.64030868268144,1633.953100702065</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4304201228213</longitude>
+				<latitude>20.64024950831532</latitude>
+				<altitude>0</altitude>
+				<heading>6.936654728234344e-005</heading>
+				<tilt>0</tilt>
+				<range>107.8978861157483</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_parks</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4305509178717,20.64032666068359,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Marca de posición sin título</name>
+			<description><![CDATA[<div id="datos">
+<div id="ident"><p>Identificador</p><p>
+
+</p></div>
+<div id="dap"><p>Diámetro de altura de pecho</p><p>
+
+</p></div>
+<div id="dbas"><p>Diámetro basal</p><p>
+
+</p></div>
+<div id="cob"><p>Cobertura</p><p>
+
+</p></div>
+<div id="alt"><p>Altura</p><p>
+
+</p></div>
+<div id="copa"><p>Forma de la copa</p><p>
+
+</p></div>
+<div id="ffuste"><p>Forma del fuste</p><p>
+
+</p></div>
+<div id="ifuste"><p>Inclinación del fuste</p><p>
+
+</p></div>
+<div id="esalud"><p>Estado de Salud</p><p>
+
+</p></div>
+<div id="ired"><p>Interferencia con redes</p><p>
+
+</p></div>
+<div id="dinf"><p>Daño en infraestructura</p><p>
+
+</p></div>
+</div>]]></description>
+			<LookAt>
+				<longitude>-103.4304201228213</longitude>
+				<latitude>20.64024950831532</latitude>
+				<altitude>0</altitude>
+				<heading>6.936654728234344e-005</heading>
+				<tilt>0</tilt>
+				<range>107.8978861157483</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_parks</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-103.4305410443001,20.64035367130508,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
