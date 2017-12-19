@@ -169,3 +169,4 @@ class ComiteCandidaturaDoctoral(models.Model):
         ordering = ['-fecha_defensa']
         verbose_name = 'Comité de examen de candidatura doctoral'
         verbose_name_plural = 'Comités de exámenes de candidatura doctoral'
+
