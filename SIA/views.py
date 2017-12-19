@@ -9,7 +9,7 @@ from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivu
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
-from distinciones.models import DistincionAcademico
+from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
@@ -18,6 +18,7 @@ from apoyo_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
 from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
     DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
+
 
 
 from datetime import datetime
@@ -7555,11 +7556,15 @@ class CVInvestigadorPDF(View):
         comite_tutoral_doctorado = ComiteTutoral.objects.filter(grado_academico='DOCTORADO', asesores=pk, fecha_fin__isnull=False).order_by('-fecha_inicio')
         sinodales_tesis_doctorado = ComiteTutoral.objects.filter(grado_academico='DOCTORADO', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
         participacion_candidaturas_doctorales = ComiteCandidaturaDoctoral.objects.filter(Q(asesores=pk) | Q(sinodales=pk)).order_by('-fecha_defensa')
-        premios_nacionales = DistincionAcademico.objects.filter(distincion__tipo='PREMIO').filter(institucion__nombre='México').order_by('-fecha')
-        premios_internacionales = DistincionAcademico.objects.filter(distincion__tipo='PREMIO').exclude(institucion__nombre='México').order_by('-fecha')
-        reconocimientos_nacionales = DistincionAcademico.objects.filter(distincion__tipo='RECONOCIMIENTO').filter(institucion__nombre='México').order_by('-fecha')
-        reconocimientos_internacionales = DistincionAcademico.objects.filter(distincion__tipo='RECONOCIMIENTO').exclude(institucion__nombre='México').order_by('-fecha')
+        premios_nacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='PREMIO').filter(institucion__nombre='México').order_by('-fecha')
+        premios_internacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='PREMIO').exclude(institucion__nombre='México').order_by('-fecha')
+        reconocimientos_nacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='RECONOCIMIENTO').filter(institucion__nombre='México').order_by('-fecha')
+        reconocimientos_internacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='RECONOCIMIENTO').exclude(institucion__nombre='México').order_by('-fecha')
+        comisiones_expertos_nacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).filter(institucion__nombre='México').order_by('-fecha_inicio')
+        comisiones_expertos_internacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).exclude(institucion__nombre='México').order_by('-fecha_inicio')
 
+        participacion_sociedades_cientificas_nacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).filter(institucion__nombre='México').order_by('-fecha_inicio')
+        participacion_sociedades_cientificas_internacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).exclude(institucion__nombre='México').order_by('-fecha_inicio')
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7653,6 +7658,12 @@ class CVInvestigadorPDF(View):
         context['participacion_candidaturas_doctorales'] = participacion_candidaturas_doctorales
         context['premios_nacionales'] = premios_nacionales
         context['premios_internacionales'] = premios_internacionales
+        context['reconocimientos_nacionales'] = reconocimientos_nacionales
+        context['reconocimientos_internacionales'] = reconocimientos_internacionales
+        context['comisiones_expertos_nacionales'] = comisiones_expertos_nacionales
+        context['comisiones_expertos_internacionales'] = comisiones_expertos_internacionales
+        context['participacion_sociedades_cientificas_nacionales'] = participacion_sociedades_cientificas_nacionales
+        context['participacion_sociedades_cientificas_internacionales'] = participacion_sociedades_cientificas_internacionales
 
 
 

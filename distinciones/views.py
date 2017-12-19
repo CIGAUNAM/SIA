@@ -48,7 +48,7 @@ class DistincionAcademicoDetalle(ObjectUpdateMixin, View):
 class DistincionAcademicoEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(DistincionAcademico, pk=pk, condecorados=request.user)
+            item = get_object_or_404(DistincionAcademico, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:
@@ -105,3 +105,85 @@ class DistincionAlumnoEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
+
+
+
+
+class ParticipacionComisionExpertosJSON(View):
+    otros = False
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ParticipacionComisionExpertos.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'institucion', 'fecha_inicio'))
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ParticipacionComisionExpertosLista(ObjectCreateMixin, View):
+    form_class = ParticipacionComisionExpertosForm
+    model = ParticipacionComisionExpertos
+    aux = ParticipacionComisionExpertosContext.contexto
+    template_name = 'comision_expertos.html'
+
+
+class ParticipacionComisionExpertosDetalle(ObjectUpdateMixin, View):
+    form_class = ParticipacionComisionExpertosForm
+    model = ParticipacionComisionExpertos
+    aux = ParticipacionComisionExpertosContext.contexto
+    template_name = 'comision_expertos.html'
+
+
+class ParticipacionComisionExpertosEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ParticipacionComisionExpertos, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+
+class ParticipacionSociedadCientificaJSON(View):
+    otros = False
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ParticipacionSociedadCientifica.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'fecha_inicio'))
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ParticipacionSociedadCientificaLista(ObjectCreateMixin, View):
+    form_class = ParticipacionSociedadCientificaForm
+    model = ParticipacionSociedadCientifica
+    aux = ParticipacionSociedadCientificaContext.contexto
+    template_name = 'sociedad_cientifica.html'
+
+
+class ParticipacionSociedadCientificaDetalle(ObjectUpdateMixin, View):
+    form_class = ParticipacionSociedadCientificaForm
+    model = ParticipacionSociedadCientifica
+    aux = ParticipacionSociedadCientificaContext.contexto
+    template_name = 'sociedad_cientifica.html'
+
+
+class ParticipacionSociedadCientificaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ParticipacionSociedadCientifica, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
