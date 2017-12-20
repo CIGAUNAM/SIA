@@ -95,7 +95,6 @@ class CitaPublicacion(models.Model):
     capitulo_libro_citado = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True)
     citado_en_articulos = models.ManyToManyField(ArticuloCientifico, blank=True)
     citado_en_libros = models.ManyToManyField(Libro, blank=True)
-    citado_en_capitulos_libros = models.ManyToManyField(CapituloLibroInvestigacion, blank=True)
     citado_en_tesis = models.TextField(blank=True)
     citado_en_otras_publicaciones = models.TextField(blank=True)
     usuarios = models.ManyToManyField(User, related_name='cita_publicacion_autores', verbose_name='Autores')

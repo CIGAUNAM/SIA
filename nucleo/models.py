@@ -741,6 +741,8 @@ class MedioDivulgacion(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     canal = models.CharField(max_length=255)
+    pais = models.ForeignKey(Pais)
+    estado = models.ForeignKey(Estado)
     ciudad = models.ForeignKey(Ciudad)
 
     def __str__(self):

@@ -618,10 +618,30 @@ class AsignaturaForm(forms.ModelForm):
 class MedioDivulgacionForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                              choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect2Widget(
+            dependent_fields={'pais': 'pais'},
+            search_fields=['nombre__icontains'],
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
         widget=ModelSelect2Widget(
+            dependent_fields={'estado': 'estado'},
             search_fields=['nombre__icontains'],
             queryset=Ciudad.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
