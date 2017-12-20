@@ -9,7 +9,7 @@ from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivu
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
-from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica
+from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
@@ -7494,26 +7494,16 @@ class CVInvestigadorPDF(View):
         ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
                                                                                                 por_invitacion=True).filter(
             evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
-                                                                                                   por_invitacion=False).filter(
-            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
-                                                                                                 por_invitacion=True).exclude(
-            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
-                                                                                                    por_invitacion=False).exclude(
-            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=True).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(
-            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(
-            usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        participacion_comisiones_dictaminadoras_nacionales = ComisionAcademica.objects.filter(usuario=pk).filter(
-            institucion__pais__nombre='México').order_by('-fecha_inicio')
+        participacion_comisiones_dictaminadoras_nacionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio')
 
-        participacion_comisiones_dictaminadoras_internacionales = ComisionAcademica.objects.filter(usuario=pk).exclude(
-            institucion__pais__nombre='México').order_by('-fecha_inicio')
+        participacion_comisiones_dictaminadoras_internacionales = ComisionAcademica.objects.filter(usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio')
 
         dictamenes_articulos_revistas_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').filter(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
         dictamenes_articulos_revistas_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').exclude(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
@@ -7565,6 +7555,9 @@ class CVInvestigadorPDF(View):
 
         participacion_sociedades_cientificas_nacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).filter(institucion__nombre='México').order_by('-fecha_inicio')
         participacion_sociedades_cientificas_internacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).exclude(institucion__nombre='México').order_by('-fecha_inicio')
+        citas_publicaciones = CitaPublicacion.objects.filter(usuarios=pk)
+        material_medios_presencia = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).exclude(actividad='PRODUCCION').order_by('-fecha')
+
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7664,6 +7657,8 @@ class CVInvestigadorPDF(View):
         context['comisiones_expertos_internacionales'] = comisiones_expertos_internacionales
         context['participacion_sociedades_cientificas_nacionales'] = participacion_sociedades_cientificas_nacionales
         context['participacion_sociedades_cientificas_internacionales'] = participacion_sociedades_cientificas_internacionales
+        context['citas_publicaciones'] = citas_publicaciones
+        context['material_medios_presencia'] = material_medios_presencia
 
 
 

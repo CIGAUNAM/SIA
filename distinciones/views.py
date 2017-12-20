@@ -13,10 +13,7 @@ class DistincionAcademicoJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            if self.otros:
-                items = DistincionAcademico.objects.all().exclude(condecorados=usuarioid)
-            else:
-                items = DistincionAcademico.objects.filter(usuario=usuarioid)
+            items = DistincionAcademico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'institucion', 'ambito', 'fecha'))
 
@@ -53,6 +50,7 @@ class DistincionAcademicoEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
 
 
 class DistincionAlumnoJSON(View):
@@ -187,3 +185,62 @@ class ParticipacionSociedadCientificaEliminar(View):
         except:
             raise Http404
 
+
+
+
+
+
+
+
+
+class CitaPublicacionJSON(View):
+    otros = False
+    def get(self, request):
+
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            if self.otros:
+                items = CitaPublicacion.objects.all().exclude(usuarios=usuarioid)
+            else:
+                items = CitaPublicacion.objects.filter(usuarios=usuarioid)
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('tipo_trabajo_citado', 'articulo_citado', 'libro_citado', 'capitulo_libro_citado'))
+
+            json = json.replace('ARTICULO', 'Artículo')
+            json = json.replace('LIBRO', 'Libro')
+            json = json.replace('CAPITULO_LIBRO', 'Capítulo de libro')
+
+            json = json.replace('"articulo_citado": null,', '')
+            json = json.replace('"libro_citado": null,', '')
+            json = json.replace('"capitulo_libro_citado": null,', '')
+            json = json.replace('articulo_citado', 'trabajo_citado')
+            json = json.replace('libro_citado', 'trabajo_citado')
+            json = json.replace('capitulo_libro_citado', 'trabajo_citado')
+
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class CitaPublicacionLista(ObjectCreateVarMixin, View):
+    form_class = CitaPublicacionForm
+    model = CitaPublicacion
+    aux = CitaPublicacionContext.contexto
+    template_name = 'cita_pubicacion.html'
+
+
+class CitaPublicacionDetalle(ObjectUpdateVarMixin, View):
+    form_class = CitaPublicacionForm
+    model = CitaPublicacion
+    aux = CitaPublicacionContext.contexto
+    template_name = 'cita_pubicacion.html'
+
+
+class CitaPublicacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(CitaPublicacion, pk=pk, usuarios=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
