@@ -139,7 +139,7 @@ class CitaPublicacionForm(forms.ModelForm):
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Descripción')
 
     class Meta:
-        model = DistincionAlumno
+        model = CitaPublicacion
         exclude = []
         widgets = {
             'citado_en_articulos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
