@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Street View side-by-side</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map, #pano {
+            float: left;
+            height: 100%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="pano"></div>
+<script>
+
+    function initialize() {
+        var fenway = {lat: 20.666111, lng: -103.351944};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: fenway,
+            zoom: 22,
+            mapTypeId: 'satellite'
+
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+                position: fenway,
+                pov: {
+                    heading: 34,
+                    pitch: 10
+                }
+            });
+        map.setStreetView(panorama);
+
+        /* map.addListener('click', function(e) {
+          placeMarkerAndPanTo(e.latLng, map);
+
+        });
+
+        function placeMarkerAndPanTo(latLng, map) {
+        var marker = new google.maps.Marker({
+          position: latLng,
+          map: map
+        });
+        map.panTo(latLng);
+        } */
+
+        map.addListener('click', function (e) {
+            map.panTo(latLng);
+        });
+
+
+        /*
+        var drawingManager = new google.maps.drawing.DrawingManager({
+            drawingMode: google.maps.drawing.OverlayType.CIRCLE,
+            drawingControl: true,
+            drawingControlOptions: {
+                position: google.maps.ControlPosition.TOP_CENTER,
+                //drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+                drawingModes: ['circle']
+            },
+            //markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
+            markerOptions: {editable: true, zIndex: 1},
+            circleOptions: {
+                fillColor: '#ffff00',
+                fillOpacity: 0.1,
+                strokeWeight: 2,
+                clickable: false,
+                editable: true,
+                zIndex: 1
+            }
+        }); */
+
+        var drawingManager = new google.maps.drawing.DrawingManager({
+            drawingMode: google.maps.drawing.OverlayType.MARKER,
+            drawingControl: true,
+            drawingControlOptions: {
+                position: google.maps.ControlPosition.TOP_CENTER,
+                drawingModes: ['marker']
+            },
+            //markerOptions: {icon: 'https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-128e4d/shapecolor-white/shadow-1/border-color/symbolstyle-color/symbolshadowstyle-no/gradient-no/tree.png'},
+            markerOptions: {draggable: true},
+            circleOptions: {
+                fillColor: '#ffff00',
+                fillOpacity: 1,
+                strokeWeight: 5,
+                clickable: false,
+                editable: true,
+                zIndex: 1
+            }
+        });
+        drawingManager.setMap(map);
+
+        /*
+        google.maps.event.addListener(drawingManager, 'circlecomplete', function (circle) {
+            var coordinates = (circle.getCenter());
+            //console.log(coordinates);
+            map.panTo(coordinates);
+            //panorama.position = coordinates;
+            panorama.setPosition(coordinates);
+        }); */
+
+        google.maps.event.addListener(drawingManager, 'markercomplete', function (marker) {
+            var coordinates = (marker.getPosition());
+            //console.log(coordinates);
+            map.panTo(coordinates);
+            //panorama.position = coordinates;
+            panorama.setPosition(coordinates);
+        });
+
+
+
+
+    }
+</script>
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQXudHfCjBfQY6yfXDsc-u5UuiT9yAM_E&callback=initialize&libraries=drawing">
+</script>
+</body>
+</html>
