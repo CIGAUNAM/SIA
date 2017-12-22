@@ -63,7 +63,7 @@ class ParticipacionComisionExpertos(models.Model):
         return reverse('comision_expertos_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['-fecha']
+        ordering = ['-fecha_inicio']
         verbose_name = 'Participación en comisión de expertos'
         verbose_name_plural = 'Participaciones en comisiones de expertos'
 
@@ -83,18 +83,18 @@ class ParticipacionSociedadCientifica(models.Model):
         return reverse('sociedad_cientifica_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['-fecha']
+        ordering = ['-fecha_inicio']
         verbose_name = 'Participación en sociedad científica'
         verbose_name_plural = 'Participaciones en sociedades científicas'
 
 
 class CitaPublicacion(models.Model):
     tipo_trabajo_citado = models.CharField(max_length=20, choices=(('', '-------'), ('ARTICULO', 'Artículo'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo de libro')))
-    articulo_citado = models.ForeignKey(ArticuloCientifico, blank=True, null=True)
-    libro_citado = models.ForeignKey(Libro, blank=True, null=True)
+    articulo_citado = models.ForeignKey(ArticuloCientifico, blank=True, null=True, related_name='cita_publicacion_articulo_citado')
+    libro_citado = models.ForeignKey(Libro, blank=True, null=True, related_name='cita_publicacion_libro_citado')
     capitulo_libro_citado = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True)
-    citado_en_articulos = models.ManyToManyField(ArticuloCientifico, blank=True)
-    citado_en_libros = models.ManyToManyField(Libro, blank=True)
+    citado_en_articulos = models.ManyToManyField(ArticuloCientifico, blank=True, related_name='cita_publicacion_citado_en_articulos')
+    citado_en_libros = models.ManyToManyField(Libro, blank=True, related_name='cita_publicacion_citado_en_libros')
     citado_en_tesis = models.TextField(blank=True)
     citado_en_otras_publicaciones = models.TextField(blank=True)
     usuarios = models.ManyToManyField(User, related_name='cita_publicacion_autores', verbose_name='Autores')

@@ -53,8 +53,7 @@ class SupervisionInvestigadorPostDoctoral(models.Model):
     articulos = models.ManyToManyField(ArticuloCientifico, blank=True)
     libros = models.ManyToManyField(Libro, blank=True)
     capitulos_libros = models.ManyToManyField(CapituloLibroInvestigacion, blank=True)
-    usuario = models.ForeignKey(User, related_name='asesoria_estudiante_usuario')
-
+    usuario = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_usuario')
     def __str__(self):
         return "{} : {} : {}".format(self.investigador, self.usuario, self.fecha_inicio)
 
