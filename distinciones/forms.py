@@ -92,7 +92,6 @@ class ParticipacionComisionExpertosForm(forms.ModelForm):
         exclude = ['usuario', ]
 
 
-
 class ParticipacionSociedadCientificaForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Descripción')
@@ -103,7 +102,6 @@ class ParticipacionSociedadCientificaForm(forms.ModelForm):
     class Meta:
         model = ParticipacionSociedadCientifica
         exclude = ['usuario', ]
-
 
 
 class CitaPublicacionForm(forms.ModelForm):
