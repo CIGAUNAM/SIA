@@ -7476,7 +7476,7 @@ class CVInvestigadorPDF(View):
         traducciones = Traduccion.objects.filter(usuario=pk).order_by('-fecha')
         material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk, actividad='PRODUCCION').order_by('-fecha')
 
-        articulos_docencia = ArticuloDocencia.objects.filter(usuario=pk).order_by('-fecha')
+        articulos_docencia = ArticuloDocencia.objects.filter(usuarios=pk).order_by('-fecha')
         libros_docencia = Libro.objects.filter(usuarios=pk, tipo='DOCENCIA', es_libro_completo=True).exclude(
             Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         programas_estudio_docencia = ProgramaEstudio.objects.filter(usuario=pk).order_by('-fecha')
