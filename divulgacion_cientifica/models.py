@@ -1,11 +1,8 @@
 from django.db import models
-
 from django.conf import settings
-# from django.contrib.auth.models import User
-from autoslug import AutoSlugField
-from nucleo.models import User, Pais, Ciudad, TipoEvento, Evento, Libro, Revista, Indice, MedioDivulgacion, Financiamiento
+from nucleo.models import User, Evento, Libro, Revista, Indice, MedioDivulgacion, Financiamiento
 from investigacion.models import ProyectoInvestigacion
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (
@@ -24,7 +21,8 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=16, choices=(('', '-------'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
+    tipo = models.CharField(max_length=16, choices=(('', '-------'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'),
+                                                    ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     indizado = models.BooleanField(default=False)
     usuarios = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
@@ -32,7 +30,7 @@ class ArticuloDivulgacion(models.Model):
     indices = models.ManyToManyField(Indice, related_name='articulo_divulgacion_indices', blank=True)
     url = models.URLField(blank=True)
     solo_electronico = models.BooleanField(default=False)
-    revista = models.ForeignKey(Revista)
+    revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
     volumen = models.CharField(max_length=100, blank=True)
     numero = models.CharField(max_length=100, blank=True)
@@ -40,7 +38,7 @@ class ArticuloDivulgacion(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     id_doi = models.CharField(max_length=100, blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
@@ -54,19 +52,15 @@ class ArticuloDivulgacion(models.Model):
         ordering = ['fecha', 'titulo']
 
 
-
 class CapituloLibroDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-
     descripcion = models.TextField(blank=True)
-    libro = models.ForeignKey(Libro)
-
+    libro = models.ForeignKey(Libro, on_delete=models.DO_NOTHING)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     # proyectos = models.ManyToManyField(Proyecto, related_name='capitulo_libro_divulgracion_proyectos', blank=True)
-    usuario = models.ForeignKey(User)
-
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     # tags = models.ManyToManyField(Tag, related_name='capitulo_libro_divulgacion_tags', blank=True)
 
     def __str__(self):
@@ -83,14 +77,14 @@ class CapituloLibroDivulgacion(models.Model):
 
 
 class OrganizacionEventoDivulgacion(models.Model):
-    evento = models.ForeignKey(Evento)
+    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
     responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    financiamiento = models.ForeignKey(Financiamiento, blank=True, null=True)
-    usuario = models.ForeignKey(User)
+    financiamiento = models.ForeignKey(Financiamiento, blank=True, null=True, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     # tags = models.ManyToManyField(Tag, related_name='organizacion_evento_tags', blank=True)
 
@@ -108,12 +102,12 @@ class OrganizacionEventoDivulgacion(models.Model):
 class ParticipacionEventoDivulgacion(models.Model):
     titulo = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    evento = models.ForeignKey(Evento)
+    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     resumen_publicado = models.BooleanField(default=False)
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     # tags = models.ManyToManyField(Tag, related_name='participacion_evento_tags', blank=True)
 
@@ -135,11 +129,11 @@ class ProgramaRadioTelevisionInternet(models.Model):
     actividad = models.CharField(max_length=20, choices=(
         ('PRODUCCION', 'Producciòn'), ('PARTICIPACION', 'Participaciòn'), ('ENTREVISTA', 'Entrevista'),
         ('OTRA', 'Otra')))
-    medio_divulgacion = models.ForeignKey(MedioDivulgacion)
-    usuario = models.ForeignKey(User)
+    medio_divulgacion = models.ForeignKey(MedioDivulgacion, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.nombre_medio, self.tema, self.fecha)
+        return "{} : {} : {}".format(self.medio_divulgacion.nombre_medio, self.tema, self.fecha)
 
     def get_absolute_url(self):
         return reverse('programa_radio_television_internet_detalle', kwargs={'pk': self.pk})
@@ -148,5 +142,3 @@ class ProgramaRadioTelevisionInternet(models.Model):
         ordering = ['fecha', 'tema']
         verbose_name = 'Programa de radio, televisión o internet'
         verbose_name_plural = 'Programas de radio, televisión o internet'
-
-

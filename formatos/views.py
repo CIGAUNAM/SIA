@@ -1,20 +1,13 @@
-from django.shortcuts import render
-
-from django.http.response import (Http404, HttpResponse)
-from django.views.generic import View, DeleteView
-from django.core.urlresolvers import reverse_lazy
-
+from django.views.generic import View
 from django.core import serializers
 from SIA.utils import *
 from .forms import *
 from .utils import *
-
 from formatos.forms import *
-from django.template import Context
 from django.template.loader import get_template
 from subprocess import Popen, PIPE
 import tempfile
-import os, sys
+import os
 
 # Create your views here.
 

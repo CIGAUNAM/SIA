@@ -1,11 +1,11 @@
 from django.db import models
-
-#from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
-from nucleo.models import User, Dependencia, ImpactoSocial, Indice
+from django.urls import reverse
+from nucleo.models import User
 from investigacion.models import ProyectoInvestigacion
 
+
 # Create your models here.
+
 
 class TipoDesarrollo(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
@@ -46,12 +46,12 @@ class Licencia(models.Model):
 
 class DesarrolloTecnologico(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True)
+    # tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
     version = models.CharField(max_length=100)
     patente = models.CharField(max_length=255, blank=True)
-    licencia = models.ForeignKey(Licencia)
+    licencia = models.ForeignKey(Licencia, on_delete=models.DO_NOTHING)
     url = models.URLField(blank=True)
     autores = models.ManyToManyField(User, related_name='desarrollo_tecnologico_autores')
     fecha = models.DateField()

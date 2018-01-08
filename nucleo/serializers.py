@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from nucleo.models import *
 from formacion_academica.models import *
-from autoslug import AutoSlugField
 
 
 class ZonaPaisSerializer(serializers.ModelSerializer):
