@@ -1,51 +1,66 @@
 from django.db import models
-
 from django.contrib.auth.models import AbstractUser
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.conf import settings
-from autoslug import AutoSlugField
 from sortedm2m.fields import SortedManyToManyField
 
 
-STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
-CLASIFICACION_PROYECTO = getattr(settings, 'CLASIFICACION_PROYECTO', (('BASICO', 'Ciencia Básica'), ('APLICADO', 'Investigaciòn Aplicada'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'), ('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'), ('OTRO', 'Otro')))
-ORGANIZACION_PROYECTO = getattr(settings, 'ORGANIZACION_PROYECTO', (('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo')))
-MODALIDAD_PROYECTO = getattr(settings, 'MODALIDAD_PROYECTO', (('DISCIPLINARIO', 'Disciplinario'), ('MULTIDISCIPLINARIO', 'Multidisciplinario'), ('INTERDISCIPLINARIO', 'Interisciplinario'), ('TRANSDISCIPLINARIO', 'Transdisciplinario'), ('OTRA', 'Otra')))
-FINANCIAMIENTO_UNAM = getattr(settings, 'FINANCIAMIENTO_UNAM', (('ASIGNADO', 'Presupuesto asignado a la entidad'), ('CONCURSADO', 'Presupuesto concursado por la entidad'), ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'), ('OTRO', 'Otro')))
-FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_EXTERNO', (('ESTATAL', 'Gubernamental Estatal'), ('FEDERAL', 'Gubernamental Federal'), ('LUCRATIVO', 'Privado lucrativo'), ('NO_LUCRATIVO', 'Privado no lucrativo'), ('EXTRANJERO', 'Recursos del extranjero'), ('OTRO', 'Otro')))
-FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCIAMIENTO_UNAM), ('Externo', FINANCIAMIENTO_EXTERNO)))
-CARGO__TIPO_CARGO  = getattr(settings, 'CARGO__TIPO_CARGO', (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo')))
-NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
-STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
-ENTIDAD_CLASIFICACION = getattr (settings, 'ENTIDAD_CLASIFICACION', (('', '-------'), ('FEDERAL', 'Gubernamental federal'), ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'), ('PRIVADA', 'Sector privado'), ('NO_LUCRATIVA', 'Sector privado no lucrativo')))
+STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'),
+                                                        ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
+CLASIFICACION_PROYECTO = getattr(settings,
+                                 'CLASIFICACION_PROYECTO', (('BASICO', 'Ciencia Básica'),
+                                                            ('APLICADO', 'Investigaciòn Aplicada'),
+                                                            ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'),
+                                                            ('INNOVACION', 'Innovación'),
+                                                            ('INVESTIGACION_FRONTERA', 'Investigación de frontera'),
+                                                            ('OTRO', 'Otro')))
+ORGANIZACION_PROYECTO = getattr(settings,
+                                'ORGANIZACION_PROYECTO', (('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo')))
+MODALIDAD_PROYECTO = getattr(settings, 'MODALIDAD_PROYECTO', (('DISCIPLINARIO', 'Disciplinario'),
+                                                              ('MULTIDISCIPLINARIO', 'Multidisciplinario'),
+                                                              ('INTERDISCIPLINARIO', 'Interisciplinario'),
+                                                              ('TRANSDISCIPLINARIO', 'Transdisciplinario'),
+                                                              ('OTRA', 'Otra')))
+FINANCIAMIENTO_UNAM = getattr(settings,
+                              'FINANCIAMIENTO_UNAM', (('ASIGNADO', 'Presupuesto asignado a la entidad'),
+                                                      ('CONCURSADO', 'Presupuesto concursado por la entidad'),
+                                                      ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'),
+                                                      ('OTRO', 'Otro')))
+FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_EXTERNO', (('ESTATAL', 'Gubernamental Estatal'),
+                                                                      ('FEDERAL', 'Gubernamental Federal'),
+                                                                      ('LUCRATIVO', 'Privado lucrativo'),
+                                                                      ('NO_LUCRATIVO', 'Privado no lucrativo'),
+                                                                      ('EXTRANJERO', 'Recursos del extranjero'),
+                                                                      ('OTRO', 'Otro')))
+FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCIAMIENTO_UNAM),
+                                                                ('Externo', FINANCIAMIENTO_EXTERNO)))
+CARGO__TIPO_CARGO = getattr(settings, 'CARGO__TIPO_CARGO',
+                            (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo')))
+NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO',
+                          (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
+                                                              ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
+                                                              ('OTRO', 'Otro')))
+ENTIDAD_CLASIFICACION = getattr(settings, 'ENTIDAD_CLASIFICACION', (('', '-------'),
+                                                                    ('FEDERAL', 'Gubernamental federal'),
+                                                                    ('ESTATAL', 'Gubernamental estatal'),
+                                                                    ('MUNICIPAL', 'Gubernamental municipal'),
+                                                                    ('PRIVADA', 'Sector privado'),
+                                                                    ('NO_LUCRATIVA', 'Sector privado no lucrativo')))
 
 
 # Create your models here.
 
-"""
-class Tag(models.Model):
-    tag = models.CharField(max_length=50, unique=True, help_text='Etiqueta para categorizar objetos.')
-    #slug = AutoSlugField(populate_from='tag')
-
-    def __str__(self):
-        return self.tag
-
-    def natural_key(self):
-        return (self.tag)
-
-    class Meta:
-        ordering = ['tag']
-"""
 
 class ZonaPais(models.Model):
     nombre = models.CharField(max_length=60, unique=True)
-    #slug = AutoSlugField(populate_from='zona')
+    # slug = AutoSlugField(populate_from='zona')
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     class Meta:
         ordering = ['nombre']
@@ -55,16 +70,16 @@ class ZonaPais(models.Model):
 
 class Pais(models.Model):
     nombre = models.CharField(max_length=60, unique=True)
-    #slug = AutoSlugField(populate_from='pais', unique=True)
+    # slug = AutoSlugField(populate_from='pais', unique=True)
     nombre_extendido = models.CharField(max_length=200, unique=True)
     codigo = models.SlugField(max_length=2, unique=True)
-    zona = models.ForeignKey(ZonaPais)
+    zona = models.ForeignKey(ZonaPais, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('pais_detalle', kwargs={'pk': self.pk})
@@ -77,8 +92,8 @@ class Pais(models.Model):
 
 class Estado(models.Model):
     nombre = models.CharField(max_length=200)
-    #slug = AutoSlugField(populate_from='estado')
-    pais = models.ForeignKey(Pais)
+    # slug = AutoSlugField(populate_from='estado')
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
@@ -96,8 +111,8 @@ class Estado(models.Model):
 
 class Ciudad(models.Model):
     nombre = models.CharField(max_length=255)
-    #slug = AutoSlugField(populate_from='ciudad')
-    estado = models.ForeignKey(Estado)
+    # slug = AutoSlugField(populate_from='ciudad')
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
@@ -115,9 +130,8 @@ class Ciudad(models.Model):
 
 
 class GradoAcademico(models.Model):
-
-    grado_abreviación = models.CharField(max_length=254, unique=True)
-    grado= models.CharField(max_length=254, unique=True)
+    grado_abreviacion = models.CharField(max_length=254, unique=True)
+    grado = models.CharField(max_length=254, unique=True)
 
     def __str__(self):
         return self.grado
@@ -135,24 +149,29 @@ class GradoAcademico(models.Model):
 
 
 class User(AbstractUser):
-    grado = models.ForeignKey(GradoAcademico, blank=True, null=True)
+    grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
-    tipo = models.CharField(max_length=30, choices=(('', 'Seleccionar tipo de usuario'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
+    tipo = models.CharField(max_length=30, choices=(
+        ('', 'Seleccionar tipo de usuario'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), 
+        ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
-    genero = models.CharField(max_length=10, choices=(('', 'Seleccionar género'), ('M', 'Masculino'), ('F', 'Femenino')))
-    pais_origen = models.ForeignKey(Pais, default=1, verbose_name='País de origen', related_name='user_pais_origen')
+    genero = models.CharField(max_length=10, choices=(
+        ('', 'Seleccionar género'), ('M', 'Masculino'), ('F', 'Femenino')))
+    pais_origen = models.ForeignKey(Pais, default=1, verbose_name='País de origen', related_name='user_pais_origen', 
+                                    on_delete=models.DO_NOTHING)
     rfc = models.SlugField(max_length=20, blank=True)
     curp = models.SlugField(max_length=20, blank=True)
     direccion = models.CharField(max_length=255, blank=True)
     direccion_continuacion = models.CharField(max_length=255, blank=True)
-    ciudad = models.ForeignKey(Ciudad)
-    estado = models.ForeignKey(Estado)
-    pais = models.ForeignKey(Pais, related_name='user_pais')
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, related_name='user_pais', on_delete=models.DO_NOTHING)
     telefono = models.SlugField(max_length=20, blank=True)
     celular = models.SlugField(max_length=20, blank=True)
     url = models.URLField(blank=True, null=True)
     sni = models.PositiveSmallIntegerField(default=0)
-    pride = models.CharField(max_length=2, choices=(('-', '-'), ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')), default='-')
+    pride = models.CharField(max_length=2, choices=(
+        ('-', '-'), ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')), default='-')
     ingreso_unam = models.DateField(null=True, blank=True)
     ingreso_entidad = models.DateField(null=True, blank=True)
     egreso_entidad = models.DateField(null=True, blank=True)
@@ -178,7 +197,7 @@ class User(AbstractUser):
         return "{} {}".format(self.first_name, self.last_name)
 
     def get_absolute_url(self):
-        return reverse('perfil_usuario')
+        return reverse('perfil_usuario', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['first_name', 'last_name']
@@ -186,27 +205,30 @@ class User(AbstractUser):
 
 
 class InvestigadorConacyt(models.Model):
-    investigador = models.ForeignKey(User)
+    investigador = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
 
 class InvestigadorUnam(models.Model):
-    investigador = models.ForeignKey(User)
+    investigador = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
 
 class InvestigadorInvitado(models.Model):
-    investigador = models.ForeignKey(User)
+    investigador = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
 
 class Institucion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais)
-    estado = models.ForeignKey(Estado)
-    ciudad = models.ForeignKey(Ciudad)
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('institucion_detalle', kwargs={'pk': self.pk})
@@ -220,24 +242,26 @@ class Institucion(models.Model):
 class Dependencia(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais)
-    estado = models.ForeignKey(Estado)
-    ciudad = models.ForeignKey(Ciudad)
-    subsistema_unam = models.CharField(max_length=50, choices=(('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
-                                                          ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
-                                                          ('HUMANIDADES', 'Subsistema de Humanidades'),
-                                                          ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
-                                                          ('ESCUELAS', 'Facultades y Escuelas'),
-                                                          ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
-                                                          ('NO', 'No')), default='NO', verbose_name='Subsistema UNAM')
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    subsistema_unam = models.CharField(max_length=50, choices=(
+        ('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'),
+        ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+        ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
+        ('HUMANIDADES', 'Subsistema de Humanidades'),
+        ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
+        ('ESCUELAS', 'Facultades y Escuelas'),
+        ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
+        ('NO', 'No')), default='NO', verbose_name='Subsistema UNAM')
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('dependencia_detalle', kwargs={'pk': self.pk})
@@ -249,10 +273,9 @@ class Dependencia(models.Model):
 
 class Departamento(models.Model):
     nombre = models.CharField(max_length=255)
-    #slug = AutoSlugField(populate_from='dependencia', unique=True)
+    # slug = AutoSlugField(populate_from='dependencia', unique=True)
     descripcion = models.TextField(blank=True)
-    dependencia = models.ForeignKey(Dependencia)
-
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
@@ -270,15 +293,16 @@ class Departamento(models.Model):
 
 class Cargo(models.Model):
     nombre = models.CharField(max_length=255)
-    #slug = AutoSlugField(populate_from='nombre', unique=True)
+    # slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
-    tipo_cargo = models.CharField(max_length=20, choices=(('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('DIRECTIVO', 'Directivo'), ('OTRO', 'Otro')))
+    tipo_cargo = models.CharField(max_length=20, choices=(
+        ('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('DIRECTIVO', 'Directivo'), ('OTRO', 'Otro')))
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('cargo_detalle', kwargs={'pk': self.pk})
@@ -288,18 +312,17 @@ class Cargo(models.Model):
         ordering = ['nombre']
 
 
-
 class Nombramiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     clave = models.CharField(max_length=20, unique=True)
-    #slug = AutoSlugField(populate_from='nombramiento', unique=True)
+    # slug = AutoSlugField(populate_from='nombramiento', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('nombramiento_detalle', kwargs={'pk': self.pk})
@@ -313,15 +336,14 @@ class AreaConocimiento(models.Model):
     categoria = models.CharField(max_length=20, choices=(
             ('LSBM', 'Life Sciences and Biomedicine'), ('PHYS', 'Physical Sciences'), ('TECH', 'Technology'),
             ('ARTH', 'Arts and Humanities'), ('SS', 'Social Sciences'), ('ZTRA', 'Otra')))
-    #slug = AutoSlugField(populate_from='area_conocimiento', unique=True)
+    # slug = AutoSlugField(populate_from='area_conocimiento', unique=True)
     descripcion = models.TextField(blank=True)
-
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('area_conocimiento_detalle', kwargs={'pk': self.pk})
@@ -334,15 +356,15 @@ class AreaConocimiento(models.Model):
 
 class AreaEspecialidad(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='especialidad', unique=True)
+    # slug = AutoSlugField(populate_from='especialidad', unique=True)
     descripcion = models.TextField(blank=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('area_especialidad_detalle', kwargs={'pk': self.pk})
@@ -355,14 +377,14 @@ class AreaEspecialidad(models.Model):
 
 class ImpactoSocial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='impacto_social', unique=True)
+    # slug = AutoSlugField(populate_from='impacto_social', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('impacto_social_detalle', kwargs={'pk': self.pk})
@@ -377,14 +399,14 @@ class Financiamiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     tipo_financiamiento = models.CharField(max_length=80, choices=FINANCIAMIENTO_TIPO)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.tipo_financiamiento)
+        return self.tipo_financiamiento
 
     def get_absolute_url(self):
         return reverse('financiamiento_detalle', kwargs={'pk': self.pk})
@@ -396,14 +418,14 @@ class Financiamiento(models.Model):
 
 class Metodologia(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='metodologia', unique=True)
+    # slug = AutoSlugField(populate_from='metodologia', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('metodologia_detalle', kwargs={'pk': self.pk})
@@ -415,14 +437,14 @@ class Metodologia(models.Model):
 class Beca(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('beca_detalle', kwargs={'pk': self.pk})
@@ -430,14 +452,14 @@ class Beca(models.Model):
 
 class Reconocimiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='reconocimiento', unique=True)
+    # slug = AutoSlugField(populate_from='reconocimiento', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('reconocimiento_detalle', kwargs={'pk': self.pk})
@@ -449,14 +471,15 @@ class Reconocimiento(models.Model):
 class ProgramaLicenciatura(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    #slug = AutoSlugField(populate_from='programa', unique=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento')
+    # slug = AutoSlugField(populate_from='programa', unique=True)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
+                                          on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('programa_licenciatura_detalle', kwargs={'pk': self.pk})
@@ -470,14 +493,15 @@ class ProgramaLicenciatura(models.Model):
 class ProgramaMaestria(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    #slug = AutoSlugField(populate_from='programa', unique=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento')
+    # slug = AutoSlugField(populate_from='programa', unique=True)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
+                                          on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('programa_maestria_detalle', kwargs={'pk': self.pk})
@@ -491,14 +515,15 @@ class ProgramaMaestria(models.Model):
 class ProgramaDoctorado(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    #slug = AutoSlugField(populate_from='programa', unique=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento')
+    # slug = AutoSlugField(populate_from='programa', unique=True)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
+                                          on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('programa_doctorado_detalle', kwargs={'pk': self.pk})
@@ -511,14 +536,14 @@ class ProgramaDoctorado(models.Model):
 
 class TipoEvento(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
-    #slug = AutoSlugField(populate_from='tipo_evento')
+    # slug = AutoSlugField(populate_from='tipo_evento')
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('tipo_evento_detalle', kwargs={'pk': self.pk})
@@ -531,21 +556,21 @@ class TipoEvento(models.Model):
 class Evento(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    tipo = models.ForeignKey(TipoEvento)
+    tipo = models.ForeignKey(TipoEvento, on_delete=models.DO_NOTHING)
     tipo_publico = models.CharField(max_length=255)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     entidades = models.ManyToManyField(Dependencia, related_name='evento_entidades')
-    pais = models.ForeignKey(Pais)
-    estado = models.ForeignKey(Estado)
-    ciudad = models.ForeignKey(Ciudad)
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
     ubicacion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('evento_detalle', kwargs={'pk': self.pk})
@@ -557,16 +582,17 @@ class Evento(models.Model):
 
 class Distincion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    tipo = models.CharField(max_length=30, choices=(
-    ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'), ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
-    ('GUGGENHEIM', 'Beca Guggenheim'), ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
+    tipo = models.CharField(max_length=30, choices=(('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
+                                                    ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
+                                                    ('GUGGENHEIM', 'Beca Guggenheim'),
+                                                    ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('distincion_detalle', kwargs={'pk': self.pk})
@@ -579,14 +605,14 @@ class Distincion(models.Model):
 
 class ProblemaNacionalConacyt(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
-    #slug = AutoSlugField(populate_from='nombre', unique=True)
+    # slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('problema_nacional_conacyt_detalle', kwargs={'pk': self.pk})
@@ -596,43 +622,37 @@ class ProblemaNacionalConacyt(models.Model):
         verbose_name_plural = ['Problemáticas Nacionales CONACYT']
 
 
-
-
-
 ###################
 
 
 class Indice(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='indice', unique=True)
+    # slug = AutoSlugField(populate_from='indice', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('indice_detalle', kwargs={'pk': self.pk})
 
-    def get_absolute_url(self):
-        return reverse('/', kwargs={'pk': self.pk})
-
 
 class Editorial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='editorial', unique=True)
+    # slug = AutoSlugField(populate_from='editorial', unique=True)
     descripcion = models.TextField(blank=True)
-    pais = models.ForeignKey(Pais)
-    estado = models.ForeignKey(Estado)
-    ciudad = models.ForeignKey(Ciudad)
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('editorial_detalle', kwargs={'pk': self.pk})
@@ -644,14 +664,14 @@ class Editorial(models.Model):
 
 class Coleccion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='coleccion', unique=True)
+    # slug = AutoSlugField(populate_from='coleccion', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('coleccion_detalle', kwargs={'pk': self.pk})
@@ -664,33 +684,33 @@ class Coleccion(models.Model):
 
 class Libro(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre_libro', unique=True)
+    # slug = AutoSlugField(populate_from='nombre_libro', unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'), ('DOCENCIA', 'Docencia')))
+    tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
+                                                    ('DOCENCIA', 'Docencia')))
     usuarios = SortedManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='libro_coordinadores', blank=True)
-    pais = models.ForeignKey(Pais)
-    estado = models.ForeignKey(Estado)
-    ciudad = models.ForeignKey(Ciudad)
-    editorial = models.ForeignKey(Editorial)
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     fecha = models.DateField(blank=True, null=True)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=0)
-    coleccion = models.ForeignKey(Coleccion, blank=True, null=True)
+    coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.DO_NOTHING)
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
     es_libro_completo = models.BooleanField(default=False)
     tiene_participacion_prologo = models.BooleanField(default=False)
 
-
     def __str__(self):
         return "{} : {} : {}".format(self.nombre, self.editorial, self.isbn)
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('libro_detalle', kwargs={'pk': self.pk})
@@ -704,7 +724,7 @@ class Revista(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     nombre_abreviado_wos = models.CharField(max_length=255, null=True, blank=True)
     descripcion = models.TextField(blank=True)
-    pais = models.ForeignKey(Pais)
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     factor_impacto = models.DecimalField(max_digits=6, decimal_places=3, blank=True, null=True)
     url = models.URLField(blank=True)
 
@@ -712,7 +732,7 @@ class Revista(models.Model):
         return "{} : {}".format(self.nombre, self.pais)
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('revista_detalle', kwargs={'pk': self.pk})
@@ -730,7 +750,7 @@ class Asignatura(models.Model):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     def get_absolute_url(self):
         return reverse('asignatura_detalle', kwargs={'pk': self.pk})
@@ -739,20 +759,18 @@ class Asignatura(models.Model):
 class MedioDivulgacion(models.Model):
     nombre_medio = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
+    tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'),
+                                                    ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     canal = models.CharField(max_length=255)
-    pais = models.ForeignKey(Pais)
-    estado = models.ForeignKey(Estado)
-    ciudad = models.ForeignKey(Ciudad)
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre_medio
 
-    def get_absolute_url(self):
-        return reverse('medio_divulgacion_detalle', kwargs={'pk': self.pk})
-
     def natural_key(self):
-        return (self.nombre_medio)
+        return self.nombre_medio
 
     def get_absolute_url(self):
         return reverse('medio_divulgacion_detalle', kwargs={'pk': self.pk})

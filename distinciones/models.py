@@ -1,19 +1,21 @@
 from django.db import models
-
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from nucleo.models import User, Institucion, Distincion
 from investigacion.models import ArticuloCientifico, Libro, CapituloLibroInvestigacion
 
-GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'),
+                                                        ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+
 
 # Create your models here.
 
+
 class DistincionAcademico(models.Model):
-    distincion = models.ForeignKey(Distincion)
-    institucion = models.ForeignKey(Institucion)
+    distincion = models.ForeignKey(Distincion, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
-    usuario = models.ForeignKey(User, related_name='distincion_academico_usuario')
+    usuario = models.ForeignKey(User, related_name='distincion_academico_usuario', on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {}".format(self.distincion, self.fecha)
@@ -27,13 +29,12 @@ class DistincionAcademico(models.Model):
         verbose_name_plural = 'Distinciones recibidas por académicos'
 
 
-
 class DistincionAlumno(models.Model):
-    distincion = models.ForeignKey(Distincion)
-    alumno = models.ForeignKey(User, related_name='distincion_alumno_alumno')
+    distincion = models.ForeignKey(Distincion, on_delete=models.DO_NOTHING)
+    alumno = models.ForeignKey(User, related_name='distincion_alumno_alumno', on_delete=models.DO_NOTHING)
     grado_academico = models.CharField(max_length=20, choices=GRADO_ACADEMICO)
     tutores = models.ManyToManyField(User, related_name='distincion_alumno_tutores')
-    institucion = models.ForeignKey(Institucion)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
 
     def __str__(self):
@@ -51,10 +52,10 @@ class DistincionAlumno(models.Model):
 class ParticipacionComisionExpertos(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
@@ -71,10 +72,11 @@ class ParticipacionComisionExpertos(models.Model):
 class ParticipacionSociedadCientifica(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=20, choices=(('', '-------'), ('INVITACION', 'Por invitación'), ('ELECCION', 'Por elección')))
+    tipo = models.CharField(max_length=20, choices=(('', '-------'), ('INVITACION', 'Por invitación'),
+                                                    ('ELECCION', 'Por elección')))
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
@@ -89,11 +91,17 @@ class ParticipacionSociedadCientifica(models.Model):
 
 
 class CitaPublicacion(models.Model):
-    tipo_trabajo_citado = models.CharField(max_length=20, choices=(('', '-------'), ('ARTICULO', 'Artículo'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo de libro')))
-    articulo_citado = models.ForeignKey(ArticuloCientifico, blank=True, null=True, related_name='cita_publicacion_articulo_citado')
-    libro_citado = models.ForeignKey(Libro, blank=True, null=True, related_name='cita_publicacion_libro_citado')
-    capitulo_libro_citado = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True)
-    citado_en_articulos = models.ManyToManyField(ArticuloCientifico, blank=True, related_name='cita_publicacion_citado_en_articulos')
+    tipo_trabajo_citado = models.CharField(max_length=20, choices=(('', '-------'), ('ARTICULO', 'Artículo'),
+                                                                   ('LIBRO', 'Libro'),
+                                                                   ('CAPITULO_LIBRO', 'Capítulo de libro')))
+    articulo_citado = models.ForeignKey(ArticuloCientifico, blank=True, null=True,
+                                        related_name='cita_publicacion_articulo_citado', on_delete=models.DO_NOTHING)
+    libro_citado = models.ForeignKey(Libro, blank=True, null=True, related_name='cita_publicacion_libro_citado',
+                                     on_delete=models.DO_NOTHING)
+    capitulo_libro_citado = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True,
+                                              on_delete=models.DO_NOTHING)
+    citado_en_articulos = models.ManyToManyField(ArticuloCientifico, blank=True,
+                                                 related_name='cita_publicacion_citado_en_articulos')
     citado_en_libros = models.ManyToManyField(Libro, blank=True, related_name='cita_publicacion_citado_en_libros')
     citado_en_tesis = models.TextField(blank=True)
     citado_en_otras_publicaciones = models.TextField(blank=True)
@@ -108,6 +116,3 @@ class CitaPublicacion(models.Model):
     class Meta:
         verbose_name = 'Cita de publicación'
         verbose_name_plural = 'Citas de publicaciones'
-
-
-

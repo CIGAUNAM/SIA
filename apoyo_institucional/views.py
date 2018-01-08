@@ -1,4 +1,3 @@
-from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
 from SIA.utils import *

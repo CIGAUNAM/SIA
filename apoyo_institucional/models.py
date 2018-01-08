@@ -1,22 +1,21 @@
 from django.db import models
-from autoslug import AutoSlugField
-#from numba.ir import Inst
+from nucleo.models import User, Institucion, Dependencia, Cargo
+from django.urls import reverse
 
-from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, Departamento, Cargo
-from django.core.urlresolvers import reverse
 
 # Create your models here.
 
+
 class Comision(models.Model):
     comision = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='comision', unique=True)
+    # slug = AutoSlugField(populate_from='comision', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.comision
 
     def natural_key(self):
-        return (self.comision)
+        return self.comision
 
     class Meta:
         verbose_name_plural = 'Comisiones'
@@ -24,14 +23,14 @@ class Comision(models.Model):
 
 class ActividadApoyo(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='actividad', unique=True)
+    # slug = AutoSlugField(populate_from='actividad', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     class Meta:
         verbose_name = 'Actividad de apoyo'
@@ -40,44 +39,35 @@ class ActividadApoyo(models.Model):
 
 class Representacion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='nombre', unique=True)
+    # slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
     def natural_key(self):
-        return (self.nombre)
+        return self.nombre
 
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Representación'
         verbose_name_plural = 'Representaciones'
 
-"""
-class OrganoColegiado(models.Model):
-    organo_colegiado = models.CharField(max_length=255, unique=True)
-    #slug = AutoSlugField(populate_from='organo_colegiado', unique=True)
-
-    def __str__(self):
-        return self.organo_colegiado
-    class Meta:
-        verbose_name_plural = 'Organos Colegiados'
-"""
 
 class CargoAcademicoAdministrativo(models.Model):
-    cargo = models.ForeignKey(Cargo)
+    cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    ##slug = AutoSlugField(populate_from='nombre', unique=True)
-    usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='cargo_academico_administrativo_tags', blank=True)
+    # slug = AutoSlugField(populate_from='nombre', unique=True)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    # tags = models.ManyToManyField(Tag, related_name='cargo_academico_administrativo_tags', blank=True)
 
     def __str__(self):
-        return "[ {} : {} ] : {} : {} : {} : {}".format(self.user, self.cargo, self.dependencia.nombre, self.dependencia.institucion, self.fecha_inicio, self.cargo_fin)
+        return "[ {} : {} ] : {} : {} : {} : {}".format(self.usuario, self.cargo, self.dependencia.nombre,
+                                                        self.dependencia.institucion, self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})
@@ -90,14 +80,14 @@ class CargoAcademicoAdministrativo(models.Model):
 
 
 class RepresentacionOrganoColegiado(models.Model):
-    representacion = models.ForeignKey(Representacion)
+    representacion = models.ForeignKey(Representacion, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='representante_ante_organo_colegiado_tags', blank=True)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    # tags = models.ManyToManyField(Tag, related_name='representante_ante_organo_colegiado_tags', blank=True)
 
     def __str__(self):
         return "{} : {} : {} ".format(self.representacion, self.dependencia, self.fecha_fin)
@@ -112,17 +102,17 @@ class RepresentacionOrganoColegiado(models.Model):
 
 
 class ComisionAcademica(models.Model):
-    comision_academica = models.ForeignKey(Comision)
+    comision_academica = models.ForeignKey(Comision, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
     es_evaluacion = models.BooleanField(default=False)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "[{}] : {} : {} : {}".format(self.user, self.comision_academica, self.fecha_inicio, self.fecha_fin)
+        return "[{}] : {} : {} : {}".format(self.usuario, self.comision_academica, self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('comision_academica_detalle', kwargs={'pk': self.pk})
@@ -134,18 +124,17 @@ class ComisionAcademica(models.Model):
         get_latest_by = ['user', 'comision_academica']
 
 
-
 class ApoyoTecnico(models.Model):
-    actividad_apoyo = models.ForeignKey(ActividadApoyo)
+    actividad_apoyo = models.ForeignKey(ActividadApoyo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
-    #ubicacion = models.ForeignKey(Ubicacion)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    # ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    ##slug = AutoSlugField(populate_from='nombre', unique=True)
-    usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='apoyo_tecnico_tags', blank=True)
+    # slug = AutoSlugField(populate_from='nombre', unique=True)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    # tags = models.ManyToManyField(Tag, related_name='apoyo_tecnico_tags', blank=True)
 
     def __str__(self):
         return "[{}] : {} : {}".format(self.usuario, self.actividad_apoyo, self.fecha_fin)
@@ -161,19 +150,19 @@ class ApoyoTecnico(models.Model):
 
 
 class ApoyoOtraActividad(models.Model):
-    actividad_apoyo = models.ForeignKey(ActividadApoyo)
+    actividad_apoyo = models.ForeignKey(ActividadApoyo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
-    #ubicacion = models.ForeignKey(Ubicacion)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    # ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    ##slug = AutoSlugField(populate_from='apoyo_otra_actividad_tags', unique=True)
-    usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='apoyo_otra_actividad_tags', blank=True)
+    # slug = AutoSlugField(populate_from='apoyo_otra_actividad_tags', unique=True)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    # tags = models.ManyToManyField(Tag, related_name='apoyo_otra_actividad_tags', blank=True)
 
     def __str__(self):
-        return "[{}] : {} : {}".format(self.user, self.actividad_apoyo, self.fecha_fin)
+        return "[{}] : {} : {}".format(self.usuario, self.actividad_apoyo, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('apoyo_otra_actividad_detalle', kwargs={'pk': self.pk})

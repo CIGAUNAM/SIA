@@ -1,23 +1,15 @@
 from .permissions import IsOwnerOrReadOnly
-
 from rest_framework import permissions
 from formacion_academica.serializers import *
 from rest_framework import generics
-
-from django.http.response import (Http404, HttpResponse)
-from django.views.generic import View, DeleteView
-from django.core.urlresolvers import reverse_lazy
-
+from django.views.generic import View
 from django.core import serializers
 from SIA.utils import *
 from .forms import *
 from .utils import *
-
 from nucleo.forms import *
 
 # Create your views here.
-
-
 
 
 class CursoEspecializacionJSON(View):

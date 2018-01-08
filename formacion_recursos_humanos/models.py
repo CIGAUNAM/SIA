@@ -1,32 +1,38 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Beca, Reconocimiento, ProgramaLicenciatura, ProgramaMaestria, \
-    ProgramaDoctorado, Pais, Estado, Ciudad
+from nucleo.models import User, Institucion, Dependencia, Beca, ProgramaLicenciatura, ProgramaMaestria, \
+    ProgramaDoctorado, Pais
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, Libro, CapituloLibroInvestigacion
 from sortedm2m.fields import SortedManyToManyField
 
+NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'),
+                                                        ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
 
-NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
 
 # Create your models here.
 
+
 class AsesoriaEstudiante(models.Model):
-    asesorado = models.ForeignKey(User, related_name='asesoria_estudiante_asesorado')
+    asesorado = models.ForeignKey(User, related_name='asesoria_estudiante_asesorado', on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=30, choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Prácticas profesionales'), ('ESTANCIA', 'Estancia de investigación'), ('BECARIO', 'Becario de proyecto de investigación'), ('SERVICIO_SOCIAL', 'Servicio Social')))
+    tipo = models.CharField(max_length=30, choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'),
+                                                    ('PRACTICA', 'Prácticas profesionales'),
+                                                    ('ESTANCIA', 'Estancia de investigación'),
+                                                    ('BECARIO', 'Becario de proyecto de investigación'),
+                                                    ('SERVICIO_SOCIAL', 'Servicio Social')))
     nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
-    programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True)
-    programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True)
-    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True)
-    beca = models.ForeignKey(Beca, null=True, blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True, on_delete=models.DO_NOTHING)
+    programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
+    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
+    beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     periodo_academico = models.CharField(max_length=200)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    usuario = models.ForeignKey(User, related_name='asesoria_estudiante_usuario')
+    usuario = models.ForeignKey(User, related_name='asesoria_estudiante_usuario', on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {}".format(str(self.asesorado), self.fecha_inicio)
@@ -42,18 +48,21 @@ class AsesoriaEstudiante(models.Model):
 
 
 class SupervisionInvestigadorPostDoctoral(models.Model):
-    investigador = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_investigador')
+    investigador = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_investigador',
+                                     on_delete=models.DO_NOTHING)
     disciplina = models.CharField(max_length=200)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
-    proyecto = models.ForeignKey(ProyectoInvestigacion)
-    beca = models.ForeignKey(Beca)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
+    beca = models.ForeignKey(Beca, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     articulos = models.ManyToManyField(ArticuloCientifico, blank=True)
     libros = models.ManyToManyField(Libro, blank=True)
     capitulos_libros = models.ManyToManyField(CapituloLibroInvestigacion, blank=True)
-    usuario = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_usuario')
+    usuario = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_usuario',
+                                on_delete=models.DO_NOTHING)
+
     def __str__(self):
         return "{} : {} : {}".format(self.investigador, self.usuario, self.fecha_inicio)
 
@@ -71,7 +80,7 @@ class DesarrolloGrupoInvestigacionInterno(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     grado_consolidacion = models.CharField(max_length=255)
-    pais = models.ForeignKey(Pais)
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     usuarios = models.ManyToManyField(User)
 
     def __str__(self):
@@ -92,13 +101,13 @@ class DesarrolloGrupoInvestigacionInterno(models.Model):
 class DireccionTesis(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     especialidad = models.CharField(max_length=255)
-    asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado')
+    asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado', on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
     grado_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     documento_tesis = models.FileField(null=True, blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
-    beca = models.ForeignKey(Beca, null=True, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
     fecha_examen = models.DateField(null=True, blank=True)
     usuarios = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 
@@ -118,19 +127,21 @@ class DireccionTesis(models.Model):
 
 
 class ComiteTutoral(models.Model):
-    estudiante = models.ForeignKey(User, related_name='comite_tutoral_estudiante')
-    grado_academico = models.CharField(max_length=20, choices=(('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
-    programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True)
-    programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True)
-    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    estudiante = models.ForeignKey(User, related_name='comite_tutoral_estudiante', on_delete=models.DO_NOTHING)
+    grado_academico = models.CharField(max_length=20, choices=(('', '-------'), ('LICENCIATURA', 'Licenciatura'),
+                                                               ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+    programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True, on_delete=models.DO_NOTHING)
+    programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
+    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
     fecha_examen = models.DateField(null=True, blank=True)
     asesores = SortedManyToManyField(User, related_name='comite_tutoral_asesores', verbose_name='Asesores', blank=True)
-    sinodales = SortedManyToManyField(User, related_name='comite_tutoral_sinodales', verbose_name='Sinodales', blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
+    sinodales = SortedManyToManyField(User, related_name='comite_tutoral_sinodales', verbose_name='Sinodales',
+                                      blank=True)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {}".format(str(self.estudiante), self.fecha_inicio)
@@ -145,13 +156,14 @@ class ComiteTutoral(models.Model):
 
 
 class ComiteCandidaturaDoctoral(models.Model):
-    asesorado = models.ForeignKey(User, related_name='comite_candidatura_doctoral_asesorado')
+    asesorado = models.ForeignKey(User, related_name='comite_candidatura_doctoral_asesorado',
+                                  on_delete=models.DO_NOTHING)
     asesores = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_asesores', blank=True)
     sinodales = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True)
-    programa_doctorado = models.ForeignKey(ProgramaDoctorado)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
+    programa_doctorado = models.ForeignKey(ProgramaDoctorado, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_defensa = models.DateField()
 
     def __str__(self):
@@ -164,4 +176,3 @@ class ComiteCandidaturaDoctoral(models.Model):
         ordering = ['-fecha_defensa']
         verbose_name = 'Comité de examen de candidatura doctoral'
         verbose_name_plural = 'Comités de exámenes de candidatura doctoral'
-

@@ -1,20 +1,21 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion
+
 
 # Create your models here.
 
 
 class ExperienciaLaboral(models.Model):
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
-    nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True, on_delete=models.DO_NOTHING)
     es_nombramiento_definitivo = models.BooleanField(default=False)
-    cargo = models.ForeignKey(Cargo)
+    cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {} : {}".format(self.usuario, self.dependencia, self.cargo)
@@ -32,12 +33,12 @@ class ExperienciaLaboral(models.Model):
 class LineaInvestigacion(models.Model):
     linea_investigacion = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion)
-    dependencia = models.ForeignKey(Dependencia)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
-    usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='linea_investigacion_tags', blank=True)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    # tags = models.ManyToManyField(Tag, related_name='linea_investigacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.usuario, self.linea_investigacion)
@@ -57,8 +58,8 @@ class CapacidadPotencialidad(models.Model):
     descripcion = models.TextField(blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
-    usuario = models.ForeignKey(User)
-    #tags = models.ManyToManyField(Tag, related_name='capacidad_potencialidad_tags', blank=True)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    # tags = models.ManyToManyField(Tag, related_name='capacidad_potencialidad_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.usuario, self.nombre)
