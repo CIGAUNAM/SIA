@@ -7547,8 +7547,8 @@ class CVInvestigadorPDF(View):
         comisiones_expertos_nacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).filter(institucion__nombre='México').order_by('-fecha_inicio')
         comisiones_expertos_internacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).exclude(institucion__nombre='México').order_by('-fecha_inicio')
 
-        participacion_sociedades_cientificas_nacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).filter(institucion__nombre='México').order_by('-fecha_inicio')
-        participacion_sociedades_cientificas_internacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).exclude(institucion__nombre='México').order_by('-fecha_inicio')
+        participacion_sociedades_cientificas_nacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).filter(ambito='NACIONAL').order_by('-fecha_inicio')
+        participacion_sociedades_cientificas_internacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).filter(ambito='INTERNACIONAL').order_by('-fecha_inicio')
         citas_publicaciones = CitaPublicacion.objects.filter(usuarios=pk)
         material_medios_presencia = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).exclude(actividad='PRODUCCION').order_by('-fecha')
 

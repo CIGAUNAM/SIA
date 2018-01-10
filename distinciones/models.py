@@ -74,6 +74,9 @@ class ParticipacionSociedadCientifica(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=20, choices=(('', '-------'), ('INVITACION', 'Por invitación'),
                                                     ('ELECCION', 'Por elección')))
+    ambito = models.CharField(max_length=20, choices=(('', '-------'), ('NACIONAL', 'Nacional'),
+                                                    ('INTERNACIONAL', 'Internacional')))
+
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
