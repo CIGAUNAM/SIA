@@ -163,7 +163,7 @@ class ParticipacionSociedadCientificaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Nombre', 'fecha de inicio']}
+                'titulos_tabla': ['Nombre', 'fecha de inicio', 'tipo', 'ambito']}
 
 
     tabla_mios =  '<script>\n' \
@@ -183,6 +183,8 @@ class ParticipacionSociedadCientificaContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.tipo"},\n' \
+                                    '{"data": "fields.ambito"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

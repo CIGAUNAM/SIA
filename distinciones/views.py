@@ -157,7 +157,7 @@ class ParticipacionSociedadCientificaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ParticipacionSociedadCientifica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'fecha_inicio'))
+                                         fields=('nombre', 'fecha_inicio', 'tipo', 'ambito'))
 
             return HttpResponse(json, content_type='application/json')
         except:
