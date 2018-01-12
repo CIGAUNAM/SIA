@@ -39,45 +39,9 @@
                 }
             });
         map.setStreetView(panorama);
-
-        /* map.addListener('click', function(e) {
-          placeMarkerAndPanTo(e.latLng, map);
-
-        });
-
-        function placeMarkerAndPanTo(latLng, map) {
-        var marker = new google.maps.Marker({
-          position: latLng,
-          map: map
-        });
-        map.panTo(latLng);
-        } */
-
         map.addListener('click', function (e) {
             map.panTo(latLng);
         });
-
-
-        /*
-        var drawingManager = new google.maps.drawing.DrawingManager({
-            drawingMode: google.maps.drawing.OverlayType.CIRCLE,
-            drawingControl: true,
-            drawingControlOptions: {
-                position: google.maps.ControlPosition.TOP_CENTER,
-                //drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-                drawingModes: ['circle']
-            },
-            //markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
-            markerOptions: {editable: true, zIndex: 1},
-            circleOptions: {
-                fillColor: '#ffff00',
-                fillOpacity: 0.1,
-                strokeWeight: 2,
-                clickable: false,
-                editable: true,
-                zIndex: 1
-            }
-        }); */
 
         var drawingManager = new google.maps.drawing.DrawingManager({
             drawingMode: google.maps.drawing.OverlayType.MARKER,
@@ -86,7 +50,6 @@
                 position: google.maps.ControlPosition.TOP_CENTER,
                 drawingModes: ['marker']
             },
-            //markerOptions: {icon: 'https://mapicons.mapsmarker.com/wp-content/uploads/mapicons/shape-default/color-128e4d/shapecolor-white/shadow-1/border-color/symbolstyle-color/symbolshadowstyle-no/gradient-no/tree.png'},
             markerOptions: {draggable: true},
             circleOptions: {
                 fillColor: '#ffff00',
@@ -99,66 +62,13 @@
         });
         drawingManager.setMap(map);
 
-        /*
-        google.maps.event.addListener(drawingManager, 'circlecomplete', function (circle) {
-            var coordinates = (circle.getCenter());
-            //console.log(coordinates);
-            map.panTo(coordinates);
-            //panorama.position = coordinates;
-            panorama.setPosition(coordinates);
-        }); */
-
         google.maps.event.addListener(drawingManager, 'markercomplete', function (marker) {
             var coordinates = (marker.getPosition());
-            //console.log(coordinates);
             map.panTo(coordinates);
-            //panorama.position = coordinates;
             panorama.setPosition(coordinates);
+
+
         });
-
-        map.data.add({geometry: new google.maps.Data.Point(fenway)});
-        map.data.add({geometry: new google.maps.Data.Point({lat: 20.676111, lng: -103.351944})});
-        map.data.add({geometry: new google.maps.Data.Point({lat: 20.6716222, lng: -103.352944})});
-        map.data.add({geometry: new google.maps.Data.Point({lat: 20.6726333, lng: -103.353944})});
-        map.data.add({geometry: new google.maps.Data.Point({lat: 20.6736444, lng: -103.354944})});
-
-
-        
-
-
-        // Define the LatLng coordinates for the outer path.
-        var outerCoords = [
-            {lat: -32.364, lng: 153.207}, // north west
-            {lat: -35.364, lng: 153.207}, // south west
-            {lat: -35.364, lng: 158.207}, // south east
-            {lat: -32.364, lng: 158.207}  // north east
-        ];
-
-        // Define the LatLng coordinates for an inner path.
-        var innerCoords1 = [
-            {lat: -33.364, lng: 154.207},
-            {lat: -34.364, lng: 154.207},
-            {lat: -34.364, lng: 155.207},
-            {lat: -33.364, lng: 155.207}
-        ];
-
-        // Define the LatLng coordinates for another inner path.
-        var innerCoords2 = [
-            {lat: -33.364, lng: 156.207},
-            {lat: -34.364, lng: 156.207},
-            {lat: -34.364, lng: 157.207},
-            {lat: -33.364, lng: 157.207}
-        ];
-
-        map.data.add({
-            geometry: new google.maps.Data.Polygon([outerCoords,
-                innerCoords1,
-                innerCoords2])
-        })
-
-
-
-
 
     }
 </script>
@@ -169,3 +79,6 @@
 </script>
 </body>
 </html>
+
+
+
