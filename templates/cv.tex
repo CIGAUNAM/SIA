@@ -45,7 +45,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             Correo electrónico: {{ usuario.email }} \\
         }
 
-        \item[2.]{ \textbf{ FORMACIÓN PROFESIONAL }
+        \item[2.]{ \textbf{FORMACIÓN PROFESIONAL }
             \begin{enumerate}
                 {% if licenciaturas %}
                     \item[2.1.]{ \textbf{Estudios profesionales}
@@ -144,7 +144,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
         {% if servicios_acad_admn_drvos or comisiones_institucionales %}
             \vspace{.5cm}
-            \item[4] \textbf{LABOR ACADÉMICO-ADMINISTRATIVA EN LA UNAM}
+            \item[4.] \textbf{LABOR ACADÉMICO-ADMINISTRATIVA EN LA UNAM}
                 \begin{enumerate}
                     {% if servicios_acad_admn_drvos %}
                         \item[4.1] Servicios directivos y académicos-administrativos
@@ -745,10 +745,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
         {% endif %}
 
         {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador or tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadoresor or desarrollo_grupos_investigacion or sinodales_tesis_licenciatura or comite_tutoral_maestria or sinodales_tesis_maestria or comite_tutoral_doctorado or sinodales_tesis_doctorado or participacion_candidaturas_doctorales %}
-            \item[8.] \textbf{FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}
+            \item[8.]{ \textbf{FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}
                 \begin{enumerate}
                     {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                        \item[8.1.] Cursos impartidos
+                        \item[8.1.]{ Cursos impartidos
                             \begin{enumerate}
                                 {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales %}
                                     \item[8.1.1.] Cursos extracurriculares
@@ -840,7 +840,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% if usuario.tipo == 'TECNICO' %}
                                     \item[8.1.3.] Apoyo a la docencia
                                         {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                                            \item[8.1.3.1.] Cursos escolarizados
+                                            \item[8.1.3.1.]{ Cursos escolarizados
                                                 \begin{enumerate}
                                                 {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador %}
                                                     \item[8.1.2.1.] Licenciatura
@@ -862,34 +862,36 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                                     \end{itemize}
                                                             {% endif %}
                                                         \end{itemize}
+                                                {% endif %}
 
-                                            {% if cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                                                \item [8.1.3.2.] Posgrado
-                                                    \begin{itemize}
-                                                        {% if cursos_escolarizados_posgrado_titular %}
-                                                            \item[a)] Profesor titular o coordinador
-                                                                \begin{itemize}
-                                                                    {% for i in cursos_escolarizados_posgrado_titular %}
-                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                                    {% endfor %}
-                                                                \end{itemize}
-                                                        {% endif %}
-                                                        {% if cursos_escolarizados_posgrado_colaborador %}
-                                                            \item[b)] Colaborador o invitado
-                                                                \begin{itemize}
-                                                                    {% for i in cursos_escolarizados_posgrado_colaborador %}
-                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                                    {% endfor %}
-                                                                \end{itemize}
-                                                        {% endif %}
-                                                    \end{itemize}
-                                                \end{enumerate}
-                                            {% endif %}
+                                                {% if cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
+                                                    \item [8.1.3.2.] Posgrado
+                                                        \begin{itemize}
+                                                            {% if cursos_escolarizados_posgrado_titular %}
+                                                                \item[a)] Profesor titular o coordinador
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_posgrado_titular %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
+                                                            {% endif %}
+                                                            {% if cursos_escolarizados_posgrado_colaborador %}
+                                                                \item[b)] Colaborador o invitado
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_posgrado_colaborador %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
+                                                            {% endif %}
+                                                        \end{itemize}
+                                                    \end{enumerate}
+                                                {% endif %}
+                                            }
                                         {% endif %}
                                 {% endif %}
                             \end{enumerate}
+                        }
                     {% endif %}
-
 
                     {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
                         \item[8.2.] Personal formado
@@ -1066,6 +1068,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{itemize}
                     {% endif %}
                 \end{enumerate}
+            }
         {% endif %}
 
         {% if premios_nacionales or premios_internacionales or reconocimientos_nacionales or reconocimientos_internacionales or comisiones_expertos_nacionales or comisiones_expertos_internacionales or participacion_sociedades_cientificas_nacionales or participacion_sociedades_cientificas_internacionales %}
@@ -1202,7 +1205,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
 \begin{center}
 Morelia, Michoacán, a \today \\
-\vspace{5cm} \\
+\vspace{15cm} \\
 ________________________________________________________
 {{ usuario.grado }} {{ usuario }}
 \end{center}
