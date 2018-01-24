@@ -51,9 +51,9 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     \item[2.1.]{ \textbf{Estudios profesionales}
                         \begin{itemize}
                             {% for i in licenciaturas %}
-                                \item {{ i.fecha_grado }},\textbf{ {{ i.carrera }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                \item {{ i.fecha_grado }}, \textbf{ {{ i.carrera }} }, {{ i.institucion }}, {{ i.dependencia }}
                                     \begin{itemize}
-                                        \item[]{ \textit{ {{ i.titulo_tesis }} }}
+                                        \item[]{ \textit{ {{ i.titulo_tesis }} } }
                                     \end{itemize}
                             {% endfor %}
                         \end{itemize}
@@ -787,53 +787,52 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
                                 {% if usuario.tipo == 'INVESTIGADOR' %}
                                     {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                                        \item[8.1.2.] Cursos escolarizados
+                                        \item[8.1.2.]{ Cursos escolarizados
                                             \begin{enumerate}
-                                            {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador %}
-                                                \item[8.1.2.1.] Licenciatura
-                                                    \begin{itemize}
-                                                        {% if cursos_escolarizados_licenciatura_titular %}
-                                                            \item[a)] Profesor titular o coordinador
-                                                                \begin{itemize}
-                                                                    {% for i in cursos_escolarizados_licenciatura_titular %}
-                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
-                                                                    {% endfor %}
-                                                                \end{itemize}
-                                                        {% endif %}
-                                                        {% if cursos_escolarizados_licenciatura_colaborador %}
-                                                            \item[b)] Colaborador o invitado
-                                                                \begin{itemize}
-                                                                    {% for i in cursos_escolarizados_licenciatura_colaborador %}
-                                                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
-                                                                    {% endfor %}
-                                                                \end{itemize}
-                                                        {% endif %}
-                                                    \end{itemize}
-                                            {% endif %}
-
-
-                                        {% if cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                                            \item [8.1.2.2.] Posgrado
-                                                \begin{itemize}
-                                                    {% if cursos_escolarizados_posgrado_titular %}
-                                                        \item[a)] Profesor titular o coordinador
-                                                            \begin{itemize}
-                                                                {% for i in cursos_escolarizados_posgrado_titular %}
-                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                                {% endfor %}
-                                                            \end{itemize}
-                                                    {% endif %}
-                                                    {% if cursos_escolarizados_posgrado_colaborador %}
-                                                        \item[b)] Colaborador o invitado
-                                                            \begin{itemize}
-                                                                {% for i in cursos_escolarizados_posgrado_colaborador %}
-                                                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
-                                                                {% endfor %}
-                                                            \end{itemize}
-                                                    {% endif %}
-                                                \end{itemize}
+                                                {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador %}
+                                                    \item[8.1.2.1.] Licenciatura
+                                                        \begin{itemize}
+                                                            {% if cursos_escolarizados_licenciatura_titular %}
+                                                                \item[a)] Profesor titular o coordinador
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_licenciatura_titular %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
+                                                            {% endif %}
+                                                            {% if cursos_escolarizados_licenciatura_colaborador %}
+                                                                \item[b)] Colaborador o invitado
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_licenciatura_colaborador %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
+                                                            {% endif %}
+                                                        \end{itemize}
+                                                {% endif %}
+                                                {% if cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
+                                                    \item [8.1.2.2.] Posgrado
+                                                        \begin{itemize}
+                                                            {% if cursos_escolarizados_posgrado_titular %}
+                                                                \item[a)] Profesor titular o coordinador
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_posgrado_titular %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
+                                                            {% endif %}
+                                                            {% if cursos_escolarizados_posgrado_colaborador %}
+                                                                \item[b)] Colaborador o invitado
+                                                                    \begin{itemize}
+                                                                        {% for i in cursos_escolarizados_posgrado_colaborador %}
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                        {% endfor %}
+                                                                    \end{itemize}
+                                                            {% endif %}
+                                                        \end{itemize}
+                                                {% endif %}
                                             \end{enumerate}
-                                        {% endif %}
+                                        }
                                     {% endif %}
                                 {% endif %}
 
