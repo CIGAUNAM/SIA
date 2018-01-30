@@ -44,70 +44,69 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             CURP: {{ usuario.curp }} \\
             Correo electrónico: {{ usuario.email }} \\
         }
-
-        \item[2.]{ \textbf{FORMACIÓN PROFESIONAL }
-            \begin{enumerate}
-                {% if licenciaturas %}
-                    \item[2.1.]{ \textbf{Estudios profesionales}
-                        \begin{itemize}
-                            {% for i in licenciaturas %}
-                                \item {{ i.fecha_grado }}, \textbf{ {{ i.carrera }} }, {{ i.institucion }}, {{ i.dependencia }}
-                                    \begin{itemize}
-                                        \item[]{ \textit{ {{ i.titulo_tesis }} } }
-                                    \end{itemize}
-                            {% endfor %}
-                        \end{itemize}
-                    }
-                {% endif %}
-                {% if maestrias or doctorados or postdoctorados %}
-                    \item[2.2.]{ \textbf{Estudios de posgrado}
-                        \begin{itemize}[label=\FilledSmallSquare]
-                            {% if maestrias %}
-                                \item[a)] Maestría
-                                    \begin{itemize}
-                                        {% for i in maestrias %}
-                                            \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
-                                                \begin{itemize}
-                                                    \item[]{\textit{ {{ i.titulo_tesis }} }}
-                                                \end{itemize}
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                            {% if doctorados %}
-                                \item[b)] Doctorado
-                                    \begin{itemize}
-                                        {% for i in doctorados %}
-                                            \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
-                                                \begin{itemize}
-                                                    \item[]{\textit{ {{ i.titulo_tesis }} }}
-                                                \end{itemize}
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                            {% if postdoctorados %}
-                                \item[c)] Postdoctorados
-                                    \begin{itemize}
-                                        {% for i in postdoctorados %}
-                                            \item {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}, {{ i.dependencia }}
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                        \end{itemize}
-                    }
-        	    {% endif %}
-                {% if usuario.tipo == 'TECNICO'%}
-                    \item[2.3.] \textbf{Cursos de especialización o capacitación}
-                        \begin{itemize}
-                            {% for i in cursos_especializacion %}
-                                \item{ {{ i.fecha_inicio }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
-                            {% endfor %}
-                        \end{itemize}
-                {% endif %}
-            \end{enumerate}
-        }
+        {% if licenciaturas or maestrias or doctorados or postdoctorados %}
+            \item[2.] \textbf{FORMACIÓN PROFESIONAL }
+                \begin{enumerate}
+                    {% if licenciaturas %}
+                        \item[2.1.] \textbf{Estudios profesionales}
+                            \begin{itemize}
+                                {% for i in licenciaturas %}
+                                    \item {{ i.fecha_grado }}, \textbf{ {{ i.carrera }} }, {{ i.institucion }}{% if i.institucion.nombre != i.dependencia.nombre %}, {{ i.dependencia }}{% endif %}
+                                        \begin{itemize}
+                                            \item[]{ \textit{ {{ i.titulo_tesis }} }
+                                        \end{itemize}
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
+                    {% if maestrias or doctorados or postdoctorados %}
+                        \item[2.2.]{ \textbf{Estudios de posgrado}
+                            \begin{itemize}[label=\FilledSmallSquare]
+                                {% if maestrias %}
+                                    \item[a)] Maestría
+                                        \begin{itemize}
+                                            {% for i in maestrias %}
+                                                \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                                    \begin{itemize}
+                                                        \item[]{\textit{ {{ i.titulo_tesis }} }}
+                                                    \end{itemize}
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if doctorados %}
+                                    \item[b)] Doctorado
+                                        \begin{itemize}
+                                            {% for i in doctorados %}
+                                                \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                                    \begin{itemize}
+                                                        \item[]{\textit{ {{ i.titulo_tesis }} }}
+                                                    \end{itemize}
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                                {% if postdoctorados %}
+                                    \item[c)] Postdoctorados
+                                        \begin{itemize}
+                                            {% for i in postdoctorados %}
+                                                \item {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{itemize}
+                        }
+                    {% endif %}
+                    {% if usuario.tipo == 'TECNICO'%}
+                        \item[2.3.] \textbf{Cursos de especialización o capacitación}
+                            \begin{itemize}
+                                {% for i in cursos_especializacion %}
+                                    \item{ {{ i.fecha_inicio }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
+                                {% endfor %}
+                            \end{itemize}
+                    {% endif %}
+                \end{enumerate}
+        {% endif %}
         {% if exp_prof_unam or exp_prof_unam_prom or exp_prof_ext %}
             \vspace{0.5cm}
-            \item[3.]{ \textbf{EXPERIENCIA PROFESIONAL}
+            \item[3.] \textbf{EXPERIENCIA PROFESIONAL}
                 \begin{enumerate}
                     {% if exp_prof_unam or exp_prof_unam_prom %}
                         {% if exp_prof_unam %}
@@ -129,7 +128,6 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{itemize}
                         {% endif %}
                     {% endif %}
-
                     {% if exp_prof_ext %}
                         \item[3.2.] Fuera de la UNAM
                             \begin{itemize}
@@ -139,22 +137,19 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{itemize}
                     {% endif %}
                 \end{enumerate}
-            }
         {% endif %}
-
-        {% if servicios_acad_admn_drvos or comisiones_institucionales %}
+        {% if servicios_acad_admnvos or comisiones_institucionales %}
             \vspace{.5cm}
             \item[4.] \textbf{LABOR ACADÉMICO-ADMINISTRATIVA EN LA UNAM}
                 \begin{enumerate}
-                    {% if servicios_acad_admn_drvos %}
+                    {% if servicios_acad_admnvos %}
                         \item[4.1] Servicios directivos y académicos-administrativos
                             \begin{itemize}
-                                {% for i in servicios_acad_admn_drvos %}
+                                {% for i in servicios_acad_admnvos %}
                                     \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.tipo_cargo.capitalize }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }} }
                                 {% endfor %}
                             \end{itemize}
                     {% endif %}
-
                     {% if comisiones_institucionales %}
                         \item[4.2] Comisiones institucionales
                             \begin{itemize}
@@ -165,337 +160,330 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
                 \end{enumerate}
         {% endif %}
-
         {% if usuario.tipo == 'INVESTIGADOR' %}
             {% if lineas_investigacion %}
                 \vspace{0.5cm}
                 \item[5.] \textbf{PRINCIPALES LÍNEAS DE INVESTIGACIÓN}
-                    {% for i in lineas_investigacion %}
-                        {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.linea_investigacion }}}
-                    {% endfor %}
+                    \begin{itemize}
+                        {% for i in lineas_investigacion %}
+                            \item{ {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.linea_investigacion }} } }
+                        {% endfor %}
+                    \end{itemize}
             {% endif %}
         {% endif %}
-
         {% if usuario.tipo == 'TECNICO' %}
             {% if capacidades_potencialidades %}
                 \vspace{0.5cm}
                 \item[5.] \textbf{CAPACIDADES Y POTENCIALIDADES}
-                    {% for i in capacidades_potencialidades %}
-                        {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.nombre }}}
-                    {% endfor %}
+                    \begin{itemize}
+                        {% for i in capacidades_potencialidades %}
+                            \item{ {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %},\textbf{ {{ i.nombre }} } }
+                        {% endfor %}
+                    \end{itemize}
             {% endif %}
         {% endif %}
 
 
 
+
         {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl or articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras or resenas or traducciones or material_medios_produccion or articulos_docencia or libros_docencia or programas_estudio_docencia or produccion_tecnologica %}
-        \vspace{0.5cm}
-        \item[6.] \textbf{PUBLICACIONES}
-        	\begin{enumerate}
+            \vspace{0.5cm}
+            \item[6.] \textbf{PUBLICACIONES}
+                \begin{enumerate}
+                    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl %}
+                        \item[6.1.] Producción científica
+                            \begin{enumerate}
+                                {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
+                                    \item[6.1.1.] Artículos en revistas arbitradas
+                                        \begin{enumerate}
+                                            {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas %}
+                                                \item[6.1.1.1.] En revistas indexadas
+                                                    \begin{itemize}
+                                                        {% if articulos_indexadas_extranjeras %}
+                                                            \item[a)] En revistas extranjeras
+                                                                \begin{itemize}
+                                                                    {% for i in articulos_indexadas_extranjeras %}
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
+                                                                    {% endfor %}
+                                                                \end{itemize}
+                                                        {% endif %}
+                                                        {% if articulos_indexadas_mexicanas %}
+                                                            \item[b)] En revistas mexicanas
+                                                                \begin{itemize}
+                                                                    {% for i in articulos_indexadas_mexicanas %}
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
+                                                                    {% endfor %}
+                                                                \end{itemize}
+                                                        {% endif %}
+                                                    \end{itemize}
+                                            {% endif %}
 
-                {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl %}
-        		\item[6.1.]{ Producción científica
-        			\begin{enumerate}
-        			    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
-        				\item[6.1.1.] Artículos en revistas arbitradas
-        					\begin{enumerate}
-        					    {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas %}
-        						\item[6.1.1.1.] En revistas indexadas
-        							\begin{itemize}
-        							    {% if articulos_indexadas_extranjeras %}
-        								    \item[a)] En revistas extranjeras
-        								        \begin{itemize}
-        								            {% for i in articulos_indexadas_extranjeras %}
-        								                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
-        								            {% endfor %}
-        								        \end{itemize}
-        								{% endif %}
-        								{% if articulos_indexadas_mexicanas %}
-        								    \item[b)] En revistas mexicanas
-        								        \begin{itemize}
-        								            {% for i in articulos_indexadas_mexicanas %}
-        								                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
-        								            {% endfor %}
-        								        \end{itemize}
-        								{% endif %}
-        							\end{itemize}
-        						{% endif %}
+                                            {% if articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
+                                                \item[6.1.1.2.] En revistas no indexadas
+                                                    \begin{itemize}
+                                                        {% if articulos_no_indexadas_extranjeras %}
+                                                            \item[a)] En revistas extranjeras
+                                                                \begin{itemize}
+                                                                    {% for i in articulos_no_indexadas_extranjeras %}
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} }
+                                                                    {% endfor %}
+                                                                \end{itemize}
+                                                        {% endif %}
+                                                        {% if articulos_no_indexadas_mexicanas %}
+                                                            \item[a)] En revistas extranjeras
+                                                                \begin{itemize}
+                                                                    {% for i in articulos_no_indexadas_mexicanas %}
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} }
+                                                                    {% endfor %}
+                                                                \end{itemize}
+                                                        {% endif %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{enumerate}
+                                {% endif %}
 
-        						{% if articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
-        						\item[6.1.1.2.] En revistas no indexadas
-        							\begin{itemize}
-        							    {% if articulos_no_indexadas_extranjeras %}
-                                            \item[a)] En revistas extranjeras
-                                                \begin{itemize}
-                                                    {% for i in articulos_no_indexadas_extranjeras %}
-                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} }
-                                                    {% endfor %}
-                                                \end{itemize}
-                                        {% endif %}
-                                        {% if articulos_no_indexadas_mexicanas %}
-                                            \item[a)] En revistas extranjeras
-                                                \begin{itemize}
-                                                    {% for i in articulos_no_indexadas_mexicanas %}
-                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} }
-                                                    {% endfor %}
-                                                \end{itemize}
-                                        {% endif %}
-        							\end{itemize}
-        						{% endif %}
-
-        					\end{enumerate}
-        				{% endif %}
-
-                        {% if libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas %}
-                            \item[6.1.2.]{ Libros
-                                \begin{itemize}
-                                    {% if libros_investigacion_editoriales_mexicanas %}
-                                        \item[a)] De editoriales mexicanas
-                                            \begin{itemize}
-                                                {% for i in libros_investigacion_editoriales_mexicanas %}
-                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
-                                                {% endfor %}
-                                            \end{itemize}
-                                    {% endif %}
-
-                                    {% if libros_investigacion_editoriales_extranjeras %}
-                                        \item[b)] De editoriales extranjeras
-                                            \begin{itemize}
-                                                {% for i in libros_investigacion_editoriales_extranjeras %}
-                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
-                                                {% endfor %}
-                                            \end{itemize}
-                                    {% endif %}
-                                \end{itemize}
-                                }
-        				{% endif %}
-
-                        {% if capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
-                            \item[6.1.3.] Capítulos de libros
-                                \begin{itemize}
-                                    {% if capitulos_libros_investigacion_editoriales_mexicanas %}
-                                        \item[a)] En libros de editoriales mexicanas
-                                            \begin{itemize}
-                                                {% for i in capitulos_libros_investigacion_editoriales_mexicanas %}
-                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
-                                                {% endfor %}
-                                            \end{itemize}
-                                    {% endif %}
-
-                                    {% if capitulos_libros_investigacion_editoriales_extranjeras %}
-                                        \item[b)] En libros de editoriales extranjeras
-                                            \begin{itemize}
-                                                {% for i in capitulos_libros_investigacion_editoriales_extranjeras %}
-                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
-                                                {% endfor %}
-                                            \end{itemize}
-                                    {% endif %}
-                                \end{itemize}
-        				{% endif %}
-
-                        {% if memoriainextenso_extranjeras or memoriainextenso_mexicanas %}
-                            \item[6.1.4.]{ Artículos ``in extenso'' en Memorias de Congresos
-                                \begin{itemize}
-                                {% if memoriainextenso_mexicanas %}
-                                    \item[a)] En publicaciones mexicanas
+                                {% if libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas %}
+                                    \item[6.1.2.] Libros
                                         \begin{itemize}
-                                            {% for i in memoriainextenso_mexicanas %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
+                                            {% if libros_investigacion_editoriales_mexicanas %}
+                                                \item[a)] De editoriales mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in libros_investigacion_editoriales_mexicanas %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+
+                                            {% if libros_investigacion_editoriales_extranjeras %}
+                                                \item[b)] De editoriales extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in libros_investigacion_editoriales_extranjeras %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
+                                    \item[6.1.3.] Capítulos de libros
+                                        \begin{itemize}
+                                            {% if capitulos_libros_investigacion_editoriales_mexicanas %}
+                                                \item[a)] En libros de editoriales mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in capitulos_libros_investigacion_editoriales_mexicanas %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+
+                                            {% if capitulos_libros_investigacion_editoriales_extranjeras %}
+                                                \item[b)] En libros de editoriales extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in capitulos_libros_investigacion_editoriales_extranjeras %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if memoriainextenso_extranjeras or memoriainextenso_mexicanas %}
+                                    \item[6.1.4.] Artículos ``in extenso'' en Memorias de Congresos
+                                        \begin{itemize}
+                                            {% if memoriainextenso_mexicanas %}
+                                                \item[a)] En publicaciones mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in memoriainextenso_mexicanas %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+
+                                            {% if memoriainextenso_extranjeras %}
+                                                \item[b)] En publicaciones extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in memoriainextenso_extranjeras %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras %}
+                                    \item[6.1.5.] Mapas
+                                        \begin{itemize}
+                                            {% if mapas_publicaciones_mexicanas %}
+                                                \item[a)] En publicaciones mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in mapas_publicaciones_mexicanas %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+
+                                            {% if mapas_publicaciones_extranjeras %}
+                                                \item[b)] En publicaciones extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in mapas_publicaciones_extranjeras %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if informes_tecnicos_mex or informes_tecnicos_intl %}
+                                    \item[6.1.6.] Informes técnicos
+                                        \begin{itemize}
+                                            {% if informes_tecnicos_mex %}
+                                                \item[a)] De proyectos en México
+                                                    \begin{itemize}
+                                                        {% for i in informes_tecnicos_mex %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+
+                                            {% if informes_tecnicos_intl %}
+                                                \item[b)] De proyectos en el extranjero
+                                                    \begin{itemize}
+                                                        {% for i in informes_tecnicos_intl %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
+
+                    {% if articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras or resenas or traducciones or material_medios_produccion %}
+                        \item[6.2.] Producción de divulgación científica
+                            \begin{enumerate}
+                                {% if articulos_divulgacion_mex or articulos_divulgacion_intl %}
+                                    \item[6.2.1.] Artículos impresos o electrónicos
+                                        \begin{itemize}
+                                            {% if articulos_divulgacion_mex %}
+                                                \item[a)] En publicaciones mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in articulos_divulgacion_mex %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+
+                                            {% if articulos_divulgacion_intl %}
+                                                \item[b)] En publicaciones extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in articulos_divulgacion_intl %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras %}
+                                    \item[6.2.2.] Libros de divulgación
+                                        \begin{itemize}
+                                            {% if libros_divulgacion_editoriales_mexicanas %}
+                                                \item[a)] En editoriales mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in libros_divulgacion_editoriales_mexicanas %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }} p. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+
+                                            {% if libros_divulgacion_editoriales_extranjeras %}
+                                                \item[b)] En editoriales extranjeras
+                                                    \begin{itemize}
+                                                        {% for i in libros_divulgacion_editoriales_extranjeras %}
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }} p. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
+                                        \end{itemize}
+                                {% endif %}
+
+                                {% if resenas or traducciones or material_medios_produccion %}
+                                    \item[6.2.3.] Otros productos publicados
+                                            \begin{itemize}
+                                                {% if resenas %}
+                                                    \item[6.2.3.1.] Reseñas
+                                                        \begin{itemize}
+                                                            {% for i in resenas %}
+                                                                \item{ \textit{´´{{ i.titulo }}''}, {{ i.fecha.year }}. {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }} {% endif %}{% if i.tipo == 'REVISTA' %}Revista: {{ i.revista_resenada.nombre }} {% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}\\{{ i.url }} }
+                                                            {% endfor %}
+                                                        \end{itemize}
+                                                {% endif %}
+
+                                                {% if traducciones %}
+                                                    \item[6.2.3.2.] Traducciones
+                                                        \begin{itemize}
+                                                            {% for i in resenas %}
+                                                                \item{ \textit{´´{{ i.titulo }}''}, {{ i.fecha.year }}. {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }} {% endif %}{% if i.tipo == 'REVISTA' %}Revista: {{ i.revista_resenada.nombre }} {% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}\\{{ i.url }} }
+                                                            {% endfor %}
+                                                        \end{itemize}
+                                                {% endif %}
+
+                                                {% if material_medios_produccion %}
+                                                    \item[6.2.3.3.] Material para medios
+                                                        \begin{ itemize}
+                                                            {% for i in material_medios_produccion %}
+                                                                \item{ \textit{``{{ i.tema }}''}, {{ i.fecha }}, {{ i.medio_divulgacion.ciudad.nombre }}. {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.canal }}, {{ i.medio_divulgacion.tipo }}) }
+                                                            {% endfor %}
+                                                        \end{itemize}
+                                                {% endif %}
+                                            \end{itemize}
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
+
+                    {% if articulos_docencia or libros_docencia or programas_estudio_docencia %}
+                        \item[6.3.] { Producción para la docencia
+                            \begin{enumerate}
+                                {% if articulos_docencia %}
+                                    \item[6.3.1.] Artículos
+                                        \begin{itemize}
+                                            {% for i in articulos_docencia %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
 
-                                {% if memoriainextenso_extranjeras %}
-                                    \item[b)] En publicaciones extranjeras
+                                {% if libros_docencia %}
+                                    \item[6.3.2.] Libros
                                         \begin{itemize}
-                                            {% for i in memoriainextenso_extranjeras %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}. {{ i.url }} }
-                                            {% endfor %}
-                                        \end{itemize}
-                                {% endif %}
-                                \end{itemize}
-                                }
-        				{% endif %}
-
-        				{% if mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras %}
-                            \item[6.1.5.]{ Mapas
-                                \begin{itemize}
-                                {% if mapas_publicaciones_mexicanas %}
-                                    \item[a)] En publicaciones mexicanas
-                                        \begin{itemize}
-                                            {% for i in mapas_publicaciones_mexicanas %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                            {% for i in libros_docencia %}
+                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }} p. \\{{ i.url }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
 
-                                {% if mapas_publicaciones_extranjeras %}
-                                    \item[b)] En publicaciones extranjeras
+                                {% if programas_estudio_docencia %}
+                                    \item[6.3.3.] Programas de estudio
                                         \begin{itemize}
-                                            {% for i in mapas_publicaciones_extranjeras %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                            {% for i in programas_estudio_docencia %}
+                                                \item{ \textit{ {{ i.nombre }} }, {{ i.nivel }}. {{ i.fecha.year }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
-                                \end{itemize}
-                                }
-        				{% endif %}
+                            \end{enumerate}
+                        }
+                    {% endif %}
 
-        				{% if informes_tecnicos_mex or informes_tecnicos_intl %}
-                            \item[6.1.6.]{ Informes técnicos
-                                \begin{itemize}
-                                {% if informes_tecnicos_mex %}
-                                    \item[a)] De proyectos en México
-                                        \begin{itemize}
-                                            {% for i in informes_tecnicos_mex %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
-                                            {% endfor %}
-                                        \end{itemize}
-                                {% endif %}
-
-                                {% if informes_tecnicos_intl %}
-                                    \item[b)] De proyectos en el extranjero
-                                        \begin{itemize}
-                                            {% for i in informes_tecnicos_intl %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
-                                            {% endfor %}
-                                        \end{itemize}
-                                {% endif %}
-                                \end{itemize}
-                                }
-        				{% endif %}
-
-        			\end{enumerate}
-        		}
-                {% endif %}
-
-                {% if articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras or resenas or traducciones or material_medios_produccion %}
-                \item[6.2.]{ Producción de divulgación científica
-                    \begin{enumerate}
-                        {% if articulos_divulgacion_mex or articulos_divulgacion_intl %}
-                            \item[6.2.1.] Artículos impresos o electrónicos
-                                \begin{itemize}
-                                    {% if articulos_divulgacion_mex %}
-                                        \item[a)] En publicaciones mexicanas
-                                            \begin{itemize}
-                                                {% for i in articulos_divulgacion_mex %}
-                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
-                                                {% endfor %}
-                                            \end{itemize}
-                                    {% endif %}
-
-                                    {% if articulos_divulgacion_intl %}
-                                        \item[b)] En publicaciones extranjeras
-                                            \begin{itemize}
-                                                {% for i in articulos_divulgacion_intl %}
-                                                    \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
-                                                {% endfor %}
-                                            \end{itemize}
-                                    {% endif %}
-                                \end{itemize}
-                        {% endif %}
-
-                        {% if libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras %}
-                        \item[6.2.2.] Libros de divulgación
+                    {% if produccion_tecnologica %}
+                        \item[6.4.] Producción tecnológica
                             \begin{itemize}
-                                {% if libros_divulgacion_editoriales_mexicanas %}
-                                    \item[a)] En editoriales mexicanas
-                                        \begin{itemize}
-                                            {% for i in libros_divulgacion_editoriales_mexicanas %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }} p. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
-                                            {% endfor %}
-                                        \end{itemize}
-                                {% endif %}
-
-                                {% if libros_divulgacion_editoriales_extranjeras %}
-                                    \item[b)] En editoriales extranjeras
-                                        \begin{itemize}
-                                            {% for i in libros_divulgacion_editoriales_extranjeras %}
-                                                \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }} p. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
-                                            {% endfor %}
-                                        \end{itemize}
-                                {% endif %}
+                                {% for i in produccion_tecnologica %}
+                                    \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{ {{ i.nombre }} }, {{ i.fecha.year }}. {% if i.version %}Versión: {{ i.version }}{% endif %}, {% if i.patente %}Patente: {{ i.patente }}{% endif %}, {% if i.licencia %}Licencia: {{ i.licencia.nombre }}{% endif %}, {% if i.proyecto %}Proyecto: {{ i.proyecto.nombre }}{% endif %}{% if i.url %}\\{{ i.url }}{% endif %} }
+                                {% endfor %}
                             \end{itemize}
-                        {% endif %}
-
-                        {% if resenas or traducciones or material_medios_produccion %}
-                            \item[6.2.3.] Otros productos publicados
-                                    \begin{itemize}
-                                        {% if resenas %}
-                                            \item[6.2.3.1.] Reseñas
-                                                \begin{itemize}
-                                                    {% for i in resenas %}
-                                                        \item{ \textit{´´{{ i.titulo }}''}, {{ i.fecha.year }}. {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }} {% endif %}{% if i.tipo == 'REVISTA' %}Revista: {{ i.revista_resenada.nombre }} {% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}\\{{ i.url }} }
-                                                    {% endfor %}
-                                                \end{itemize}
-                                        {% endif %}
-
-                                        {% if traducciones %}
-                                            \item[6.2.3.2.] Traducciones
-                                                \begin{itemize}
-                                                    {% for i in resenas %}
-                                                        \item{ \textit{´´{{ i.titulo }}''}, {{ i.fecha.year }}. {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }} {% endif %}{% if i.tipo == 'REVISTA' %}Revista: {{ i.revista_resenada.nombre }} {% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}\\{{ i.url }} }
-                                                    {% endfor %}
-                                                \end{itemize}
-                                        {% endif %}
-
-                                        {% if material_medios_produccion %}
-                                            \item[6.2.3.3.] Material para medios
-                                                \begin{ itemize}
-                                                    {% for i in material_medios_produccion %}
-                                                        \item{ \textit{``{{ i.tema }}''}, {{ i.fecha }}, {{ i.medio_divulgacion.ciudad.nombre }}. {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.canal }}, {{ i.medio_divulgacion.tipo }}) }
-                                                    {% endfor %}
-                                                \end{itemize}
-                                        {% endif %}
-                                    \end{itemize}
-                        {% endif %}
-                    \end{enumerate}
-                    }
-                {% endif %}
-
-                {% if articulos_docencia or libros_docencia or programas_estudio_docencia %}
-                    \item[6.3.] { Producción para la docencia
-                        \begin{enumerate}
-                            {% if articulos_docencia %}
-                                \item[6.3.1.] Artículos
-                                    \begin{itemize}
-                                        {% for i in articulos_docencia %}
-                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-
-                            {% if libros_docencia %}
-                                \item[6.3.2.] Libros
-                                    \begin{itemize}
-                                        {% for i in libros_docencia %}
-                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{´´{{ i.titulo }}''}, {{ i.numero_paginas }} p. \\{{ i.url }} }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-
-                            {% if programas_estudio_docencia %}
-                                \item[6.3.3.] Programas de estudio
-                                    \begin{itemize}
-                                        {% for i in programas_estudio_docencia %}
-                                            \item{ \textit{ {{ i.nombre }} }, {{ i.nivel }}. {{ i.fecha.year }} }
-                                        {% endfor %}
-                                    \end{itemize}
-                            {% endif %}
-                        \end{enumerate}
-                    }
-                {% endif %}
-
-                {% if produccion_tecnologica %}
-                    \item[6.4.] Producción tecnológica
-                        \begin{itemize}
-                            {% for i in produccion_tecnologica %}
-                                \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{ {{ i.nombre }} }, {{ i.fecha.year }}. {% if i.version %}Versión: {{ i.version }}{% endif %}, {% if i.patente %}Patente: {{ i.patente }}{% endif %}, {% if i.licencia %}Licencia: {{ i.licencia.nombre }}{% endif %}, {% if i.proyecto %}Proyecto: {{ i.proyecto.nombre }}{% endif %}{% if i.url %}\\{{ i.url }}{% endif %} }
-                            {% endfor %}
-                        \end{itemize}
-                {% endif %}
-            \end{enumerate}
-
+                    {% endif %}
+                \end{enumerate}
         {% endif %}
 
         {% if participacion_proyectos_responsable or participacion_proyectos_participante or ponente_eventos_academicos_nal_invitacion or ponente_eventos_academicos_nal_participacion or ponente_eventos_academicos_intl_invitacion or ponente_eventos_academicos_intl_participacion or organizacion_eventos_academicos_nacionales or organizacion_eventos_academicos_internacionales or participacion_comisiones_dictaminadoras_nacionales or participacion_comisiones_dictaminadoras_internacionales or dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras or estancias_academicas or profesores_visitantes or sabaticos or participacion_redes_academicas or convenios_entidades_externas or servicios_asesorias_externas or organizacion_eventos_divulgacion or participacion_eventos_divulgacion %}
@@ -696,7 +684,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item Participación en redes académicas
                                         \begin{itemize}
                                             {% for i in participacion_redes_academicas %}
-                                                \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_inicio}} - {{ i.fecha_fin }} } }
+                                                \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_constitucion}} } }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
