@@ -7390,10 +7390,10 @@ class CVInvestigadorPDF(View):
             Q(fecha__year=this_year)).count()
         num_proyectos_investigacion = ProyectoInvestigacion.objects.filter(usuarios__pk=pk).filter(
             Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
-        licenciaturas = Licenciatura.objects.filter(usuario=pk)
-        maestrias = Maestria.objects.filter(usuario=pk)
-        doctorados = Doctorado.objects.filter(usuario=pk)
-        postdoctorados = PostDoctorado.objects.filter(usuario=pk)
+        licenciaturas = Licenciatura.objects.filter(usuario=pk).order_by('-fecha_grado')
+        maestrias = Maestria.objects.filter(usuario=pk).order_by('-fecha_grado')
+        doctorados = Doctorado.objects.filter(usuario=pk).order_by('-fecha_grado')
+        postdoctorados = PostDoctorado.objects.filter(usuario=pk).order_by('-fecha_fin')
         cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by(
@@ -7405,7 +7405,7 @@ class CVInvestigadorPDF(View):
         exp_prof_ext = ExperienciaLaboral.objects.filter(usuario=pk).exclude(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
 
-        servicios_acad_admn_drvos = ExperienciaLaboral.objects.filter(usuario=pk).filter(
+        servicios_acad_admnvos = ExperienciaLaboral.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').exclude(cargo__tipo_cargo='OTRO').order_by(
             '-fecha_inicio')
         comisiones_institucionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')
@@ -7507,7 +7507,7 @@ class CVInvestigadorPDF(View):
         estancias_academicas = MovilidadAcademica.objects.filter(usuario=pk, tipo='ESTANCIA').order_by('-fecha_inicio')
         profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio')
         sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
-        participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_inicio')
+        participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_constitucion')
         convenios_entidades_externas = ConvenioEntidadExterna.objects.filter(usuarios=pk).order_by('-fecha_inicio')
         servicios_asesorias_externas = ServicioExternoEntidadNoAcademica.objects.filter(usuario=pk).order_by('-fecha_inicio')
         organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
@@ -7565,7 +7565,7 @@ class CVInvestigadorPDF(View):
         context['exp_prof_unam'] = exp_prof_unam
         context['exp_prof_unam_prom'] = exp_prof_unam_prom
         context['exp_prof_ext'] = exp_prof_ext
-        context['servicios_acad_admn_drvos'] = servicios_acad_admn_drvos
+        context['servicios_acad_admnvos'] = servicios_acad_admnvos
         context['comisiones_institucionales'] = comisiones_institucionales
         context['lineas_investigacion'] = lineas_investigacion
         context['capacidades_potencialidades'] = capacidades_potencialidades
