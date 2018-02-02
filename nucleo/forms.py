@@ -591,7 +591,7 @@ class RevistaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    factor_impacto = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+    factor_impacto = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.01'}),
                                      label='Factor de impácto')
 
     class Meta:
