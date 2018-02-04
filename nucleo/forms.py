@@ -530,14 +530,34 @@ class ColeccionForm(forms.ModelForm):
         }
 
 
-class LibroForm(forms.ModelForm):
+class Libro1Form(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                              choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación')))
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="Pais",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            dependent_fields={'pais': 'pais'},
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
+            dependent_fields={'estado': 'estado'},
             queryset=Ciudad.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -556,8 +576,9 @@ class LibroForm(forms.ModelForm):
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Número de edición')
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(
+        required=False,
         queryset=Coleccion.objects.all(),
-        label="Colección",
+        label="Coleccion",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=Coleccion.objects.all(),
@@ -565,6 +586,7 @@ class LibroForm(forms.ModelForm):
         )
     )
     es_libro_completo = forms.BooleanField(required=False)
+    tiene_participacion_prologo = forms.BooleanField(required=False)
 
     class Meta:
         model = Libro
@@ -572,7 +594,7 @@ class LibroForm(forms.ModelForm):
         widgets = {
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'editores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'coordinadores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'volumen': TextInput(attrs={'class': 'form-control pull-right'}),
@@ -676,7 +698,7 @@ class UserForm(forms.ModelForm):
         """
 
 
-class LibroForm(forms.ModelForm):
+class LibroForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     pais = forms.ModelChoiceField(
