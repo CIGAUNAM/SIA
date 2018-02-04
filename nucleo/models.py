@@ -725,7 +725,7 @@ class Revista(models.Model):
     nombre_abreviado_wos = models.CharField(max_length=255, null=True, blank=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    factor_impacto = models.DecimalField(max_digits=6, decimal_places=3, blank=True, null=True)
+    factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     url = models.URLField(blank=True)
 
     def __str__(self):
