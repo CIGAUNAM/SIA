@@ -341,13 +341,14 @@
     <script>
         $('#d_isbn').hide();
 
-
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO') {
-                        $('#d_isbn').show();
+                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                        $('#d_isbn').show('slow');
+                        $('#id_isbn').attr("required", "true");
                     } else {
                         $("#id_isbn").val("");
-                        $('#d_isbn').hide();
+                        $('#d_isbn').hide('slow');
+                        $('#id_isbn').attr("required", null);
                     }
                 }
         );
@@ -708,16 +709,18 @@
     <script>
         $('#d_isbn').hide();
 
-        if ($("#id_status").val() == 'PUBLICADO') {
+        if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
             $('#d_isbn').show();
         }
 
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO') {
-                        $('#d_isbn').show();
+                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                        $('#d_isbn').show('slow');
+                        $('#id_isbn').attr("required", "true");
                     } else {
                         $("#id_isbn").val("");
-                        $('#d_isbn').hide();
+                        $('#d_isbn').hide('slow');
+                        $('#id_isbn').attr("required", null);
                     }
                 }
         );

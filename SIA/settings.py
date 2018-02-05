@@ -150,14 +150,14 @@ WSGI_APPLICATION = 'SIA.wsgi.application'
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
-        #'ENGINE': 'django.db.backends.mysql',
-        #'HOST': 'localhost',
-        #'NAME': 'sia',
-        #'PASSWORD': '',
-        #'PORT': '3306',
-        #'USER': 'root'
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'SIA.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'localhost',
+        'NAME': 'sia',
+        'PASSWORD': '',
+        'PORT': '3306',
+        'USER': 'root'
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': 'SIA.sqlite3',
     }
 }
 

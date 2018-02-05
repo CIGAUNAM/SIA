@@ -112,7 +112,7 @@ class MapaArbitradoForm(forms.ModelForm):
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     pais = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect2Widget(
@@ -122,7 +122,7 @@ class MapaArbitradoForm(forms.ModelForm):
         )
     )
     estado = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect2Widget(
@@ -204,7 +204,7 @@ class InformeTecnicoForm(forms.ModelForm):
                                      required=True)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto de investigación",
         widget=ModelSelect2Widget(
@@ -213,6 +213,7 @@ class InformeTecnicoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    es_publico = forms.BooleanField(required=False)
 
     class Meta:
         model = InformeTecnico
