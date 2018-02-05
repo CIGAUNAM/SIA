@@ -249,7 +249,8 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[a)] De editoriales mexicanas
                                                     \begin{itemize}
                                                         {% for i in libros_investigacion_editoriales_mexicanas %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.nombre }}}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.nombre }}}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} \\
+                                                                    Tipo de participación: {% for u in i.usuarios.all %}{% if u.pk == usuario.pk %}autor, {% endif %}{% endfor %}{% for u in i.editores.all %}{% if u.pk == usuario.pk %}editor, {% endif %}{% endfor %}{% for u in i.coordinadores.all %}{% if u.pk == usuario.pk %}coordinador{% endif %}{% endfor %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -258,7 +259,8 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[b)] De editoriales extranjeras
                                                     \begin{itemize}
                                                         {% for i in libros_investigacion_editoriales_extranjeras %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.nombre }}}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.nombre }}}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion %}Colección: {{ i.coleccion }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }} \\
+                                                                Tipo de participación: {% for u in i.usuarios.all %}{% if u.pk == usuario.pk %}autor, {% endif %}{% endfor %}{% for u in i.editores.all %}{% if u.pk == usuario.pk %}editor, {% endif %}{% endfor %}{% for u in i.coordinadores.all %}{% if u.pk == usuario.pk %}coordinador{% endif %}{% endfor %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -272,7 +274,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[a)] En libros de editoriales mexicanas
                                                     \begin{itemize}
                                                         {% for i in capitulos_libros_investigacion_editoriales_mexicanas %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}). {{ i.nombre }}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.libro.fecha.year }}).\textbf{ {{ i.titulo }}}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -281,7 +283,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[b)] En libros de editoriales extranjeras
                                                     \begin{itemize}
                                                         {% for i in capitulos_libros_investigacion_editoriales_extranjeras %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}). {{ i.titulo }}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.libro.fecha.year }}).\textbf{ {{ i.titulo }}}. En\textit{ {{ i.libro.nombre }}}, {{ i.libro.editorial.nombre }}, {{ i.libro.ciudad }}, {{ i.libro.pais }}, {% if i.libro.coleccion %}Colección: {{ i.libro.coleccion }},{% endif %} {% if i.libro.volumen %}{{ i.libro.volumen }},{% endif %} pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}. ISBN: {{ i.libro.isbn }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -318,7 +320,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[a)] En publicaciones mexicanas
                                                     \begin{itemize}
                                                         {% for i in mapas_publicaciones_mexicanas %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}} ({{ i.escala }}). {% if i.coleccion %}{{ i.coleccion }}, {% endif %}{% if i.volumen %}Volumen {{ i.volumen }},{% endif %} {{ i.editorial }}, ISBN: {{ i.isbn }} \\{{ i.url }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -327,7 +329,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[b)] En publicaciones extranjeras
                                                     \begin{itemize}
                                                         {% for i in mapas_publicaciones_extranjeras %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.titulo }}, ({{ i.escala }}). {{ i.coleccion }}, {% if i.volumen %}Volumen {{ i.volumen }}{% endif %}. {{ i.editorial }}, {{ i.isbn }}.\\{{ i.url }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}} ({{ i.escala }}). {% if i.coleccion %}{{ i.coleccion }}, {% endif %}{% if i.volumen %}Volumen {{ i.volumen }},{% endif %} {{ i.editorial }}, ISBN: {{ i.isbn }} \\{{ i.url }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -341,7 +343,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[a)] De proyectos en México
                                                     \begin{itemize}
                                                         {% for i in informes_tecnicos_mex %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }},\textbf{ {{ i.titulo }}}, {{ i.numero_paginas }}p. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -350,7 +352,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[b)] De proyectos en el extranjero
                                                     \begin{itemize}
                                                         {% for i in informes_tecnicos_intl %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }},\textbf{ {{ i.titulo }}}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }} \\{{ i.url }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}

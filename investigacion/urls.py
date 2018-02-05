@@ -22,11 +22,11 @@ urlpatterns = [
     url(r'^mapas-arbitrados/(?P<pk>[\w\-]+)/eliminar$', MapaArbitradoEliminar.as_view(), name='mapa_arbitrado_eliminar'),
     url(r'^mapas-arbitrados/(?P<pk>[\w\-]+)/$', MapaArbitradoDetalle.as_view(), name='mapa_arbitrado_detalle'),
 
-    url(r'^informes-tecnicos-publicos/json/', InformeTecnicoJSON.as_view(), name='informe_tecnico_publico_lista__json'),
-    url(r'^informes-tecnicos-publicos/json-otros/', InformeTecnicoJSON.as_view(otros=True), name='informe_tecnico_publico_lista_otros__json'),
-    url(r'^informes-tecnicos-publicos/$', InformeTecnicoLista.as_view(), name='informe_tecnico_publico_lista'),
-    url(r'^informes-tecnicos-publicos/(?P<pk>[\w\-]+)/eliminar$', InformeTecnicoEliminar.as_view(), name='informe_tecnico_publico_eliminar'),
-    url(r'^informes-tecnicos-publicos/(?P<pk>[\w\-]+)/$', InformeTecnicoDetalle.as_view(), name='informe_tecnico_publico_detalle'),
+    url(r'^informes-tecnicos/json/', InformeTecnicoJSON.as_view(), name='informe_tecnico_lista__json'),
+    url(r'^informes-tecnicos/json-otros/', InformeTecnicoJSON.as_view(otros=True), name='informe_tecnico_lista_otros__json'),
+    url(r'^informes-tecnicos/$', InformeTecnicoLista.as_view(), name='informe_tecnico_lista'),
+    url(r'^informes-tecnicos/(?P<pk>[\w\-]+)/eliminar$', InformeTecnicoEliminar.as_view(), name='informe_tecnico_eliminar'),
+    url(r'^informes-tecnicos/(?P<pk>[\w\-]+)/$', InformeTecnicoDetalle.as_view(), name='informe_tecnico_detalle'),
 
     url(r'^libros-investigacion/json/', LibroInvestigacionJSON.as_view(), name='libro_investigacion_lista__json'),
     url(r'^libros-investigacion/json-otros/', LibroInvestigacionJSON.as_view(otros=True), name='libro_investigacion_lista_otros__json'),

@@ -79,13 +79,13 @@
             {{ form.proyecto }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
+                   title="Mostrar los detalles adicionales del proyecto.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -94,7 +94,7 @@
     </p>
     <p><strong>URL de link al informe:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="URL de link al infoem, en caso de estar publicado en algún lugar en internet."><i
+           title="URL de link al informe, en caso de estar publicado en algún lugar en internet."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
@@ -105,6 +105,10 @@
         </div>
     </div>
     </p>
+    <p><strong>Es público: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿El informe es de acceso público?."><i class="fa fa-question-circle"></i></a>
+        {{ form.es_publico }}</p>
 
     <script>
         //$("#id_usuarios").select2();
@@ -204,8 +208,8 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/proyectos" data-toggle="tooltip" data-placement="left"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -214,7 +218,7 @@
     </p>
     <p><strong>URL de link al informe:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="URL de link al infoem, en caso de estar publicado en algún lugar en internet."><i
+           title="URL de link al informe, en caso de estar publicado en algún lugar en internet."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
@@ -225,6 +229,10 @@
         </div>
     </div>
     </p>
+    <p><strong>Es público: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿El informe es de acceso público?."><i class="fa fa-question-circle"></i></a>
+        {{ form.es_publico }}</p>
 
     <script>
         //$("#id_usuarios").select2();

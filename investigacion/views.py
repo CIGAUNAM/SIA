@@ -178,14 +178,14 @@ class InformeTecnicoLista(ObjectCreateVarMixin, View):
     form_class = InformeTecnicoForm
     model = InformeTecnico
     aux = InformeTecnicoContext.contexto
-    template_name = 'informe_tecnico_publico.html'
+    template_name = 'informe_tecnico.html'
 
 
 class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
     form_class = InformeTecnicoForm
     model = InformeTecnico
     aux = InformeTecnicoContext.contexto
-    template_name = 'informe_tecnico_publico.html'
+    template_name = 'informe_tecnico.html'
 
 
 class InformeTecnicoEliminar(View):

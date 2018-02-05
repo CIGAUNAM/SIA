@@ -202,9 +202,9 @@ class MapaArbitradoContext:
 
 
 class InformeTecnicoContext:
-    obj = 'Informe Técnico Público'
-    objs = 'Informes Técnicos Públicos'
-    url_seccion = 'informes-tecnicos-publicos'
+    obj = 'Informe Técnico'
+    objs = 'Informes Técnicos'
+    url_seccion = 'informes-tecnicos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

@@ -194,14 +194,15 @@ class InformeTecnico(models.Model):
     usuarios = SortedManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
     fecha = models.DateField(auto_now=False)
     numero_paginas = models.PositiveIntegerField(default=1)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
+    es_publico = models.BooleanField(default=False)
     url = models.URLField(blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.fecha)
 
     def get_absolute_url(self):
-        return reverse('informe_tecnico_publico_detalle', kwargs={'pk': self.pk})
+        return reverse('informe_tecnico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = "Informe técnico de acceso público"
