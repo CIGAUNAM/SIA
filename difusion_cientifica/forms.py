@@ -134,7 +134,7 @@ class ResenaForm(forms.ModelForm):
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     revista_publica = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=Revista.objects.all(),
         label="Revista que publica",
         widget=ModelSelect2Widget(

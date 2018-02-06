@@ -47,7 +47,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/libros-investigacion/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -57,7 +58,7 @@
         </p>
     </div>
     <div id="d_articulo_resenado">
-        <p><strong>Artículo reseñada:</strong>
+        <p><strong>Artículo reseñado:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Artículo sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
@@ -73,7 +74,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -117,30 +119,6 @@
         </div>
     </div>
     </p>
-    <!-- <p><strong>Libro donde se publica la reseña:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Libro donde se publica la reseña de este registro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            { - { form.libro_publica } - }
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del libro seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p> -->
     <p><strong>Revista donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Revista donde se publica la reseña de este registro.">
@@ -181,23 +159,31 @@
 
     <script>
         $('#d_articulo_resenado').hide();
-        $('#id_libro_resenado').attr("required", "true");
+        $('#d_libro_resenado').hide();
 
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'ARTICULO') {
-                        $('#d_articulo_resenado').show();
-                        $('#id_articulo_resenado').attr("required", "true");
-                        $('#d_libro_resenado').hide();
-                        $('#id_libro_resenado').attr("required", null);
-                        $('#id_libro_resenado').val(null).trigger("change");
-                    } else {
-                        $('#d_libro_resenado').show();
-                        $('#id_libro_resenado').attr("required", "true");
-                        $('#d_articulo_resenado').hide();
-                        $('#id_articulo_resenado').attr("required", null);
-                        $('#id_articulo_resenado').val(null).trigger("change");
-                    }
+                if ($("#id_tipo").val() == 'ARTICULO') {
+                    $('#d_articulo_resenado').show('slow');
+                    $('#id_articulo_resenado').attr("required", "true");
+                    $('#d_libro_resenado').hide('slow');
+                    $('#id_libro_resenado').attr("required", null);
+                    $('#id_libro_resenado').val(null).trigger("change");
+                } else if ($("#id_tipo").val() == 'LIBRO') {
+                    $('#d_libro_resenado').show('slow');
+                    $('#id_libro_resenado').attr("required", "true");
+                    $('#d_articulo_resenado').hide('slow');
+                    $('#id_articulo_resenado').attr("required", null);
+                    $('#id_articulo_resenado').val(null).trigger("change");
+                } else {
+                    $('#id_libro_resenado').attr("required", null);
+                    $('#id_articulo_resenado').attr("required", null);
+                    $('#id_libro_resenado').val(null).trigger("change");
+                    $('#id_articulo_resenado').val(null).trigger("change");
+                    $('#d_articulo_resenado').hide('slow');
+                    $('#d_libro_resenado').hide('slow');
+
                 }
+            }
         );
     </script>
 
@@ -250,7 +236,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/libros-investigacion/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -260,7 +247,7 @@
         </p>
     </div>
     <div id="d_articulo_resenado">
-        <p><strong>Artículo reseñada:</strong>
+        <p><strong>Artículo reseñado:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Artículo sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
@@ -276,7 +263,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -320,30 +308,6 @@
         </div>
     </div>
     </p>
-    <!-- <p><strong>Libro donde se publica la reseña:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Libro donde se publica la reseña de este registro.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-book"></i></div>
-            { - { form.libro_publica } - }
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del libro seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p> -->
     <p><strong>Revista donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Revista donde se publica la reseña de este registro.">
@@ -386,28 +350,40 @@
         $('#d_articulo_resenado').hide();
         $('#d_libro_resenado').hide();
 
-        if ($("#id_tipo").val() == 'REVISTA') {
+        if ($("#id_tipo").val() == 'ARTICULO') {
             $('#d_articulo_resenado').show();
             $('#id_articulo_resenado').attr("required", "true");
-        } else {
+        } else if ($("#id_tipo").val() == 'LIBRO') {
             $('#d_libro_resenado').show();
             $('#id_libro_resenado').attr("required", "true");
+        } else {
+            $('#d_libro_resenado').show();
+            $('#d_articulo_resenado').show();
         }
+
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'ARTICULO') {
-                        $('#d_articulo_resenado').show();
-                        $('#id_articulo_resenado').attr("required", "true");
-                        $('#d_libro_resenado').hide();
-                        $('#id_libro_resenado').attr("required", null);
-                        $('#id_libro_resenado').val(null).trigger("change");
-                    } else {
-                        $('#d_libro_resenado').show();
-                        $('#id_libro_resenado').attr("required", "true");
-                        $('#d_articulo_resenado').hide();
-                        $('#id_articulo_resenado').attr("required", null);
-                        $('#id_articulo_resenado').val(null).trigger("change");
-                    }
+                if ($("#id_tipo").val() == 'ARTICULO') {
+                    $('#d_articulo_resenado').show('slow');
+                    $('#id_articulo_resenado').attr("required", "true");
+                    $('#d_libro_resenado').hide('slow');
+                    $('#id_libro_resenado').attr("required", null);
+                    $('#id_libro_resenado').val(null).trigger("change");
+                } else if ($("#id_tipo").val() == 'LIBRO') {
+                    $('#d_libro_resenado').show('slow');
+                    $('#id_libro_resenado').attr("required", "true");
+                    $('#d_articulo_resenado').hide('slow');
+                    $('#id_articulo_resenado').attr("required", null);
+                    $('#id_articulo_resenado').val(null).trigger("change");
+                } else {
+                    $('#id_libro_resenado').attr("required", null);
+                    $('#id_articulo_resenado').attr("required", null);
+                    $('#id_libro_resenado').val(null).trigger("change");
+                    $('#id_articulo_resenado').val(null).trigger("change");
+                    $('#d_articulo_resenado').hide('slow');
+                    $('#d_libro_resenado').hide('slow');
+
                 }
+            }
         );
     </script>
 
