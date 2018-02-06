@@ -127,6 +127,9 @@ class ArticuloCientifico(models.Model):
     def get_absolute_url(self):
         return reverse('articulo_cientifico_detalle', kwargs={'pk': self.pk})
 
+    def natural_key(self):
+        return self.titulo
+
     class Meta:
         verbose_name = "Artículo científico"
         verbose_name_plural = "Artículos científicos"
