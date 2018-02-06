@@ -284,10 +284,14 @@
         if ($("#id_tipo").val() == 'REVISTA') {
             $('#d_articulo').show();
             $('#id_articulo').attr("required", "true");
-        } else {
+        } else if ($("#id_tipo").val() == 'LIBRO') {
             $('#d_libro').show();
             $('#id_libro').attr("required", "true");
+        } else {
+            $('#d_articulo').show();
+            $('#d_libro').show();
         }
+
         $("#id_tipo").on('change', function () {
                     if ($("#id_tipo").val() == 'ARTICULO') {
                         $('#d_articulo').show();
@@ -295,12 +299,19 @@
                         $('#d_libro').hide();
                         $('#id_libro').attr("required", null);
                         $('#id_libro').val(null).trigger("change");
-                    } else {
+                    } else if ($("#id_tipo").val() == 'LIBRO') {
                         $('#d_libro').show();
                         $('#id_libro').attr("required", "true");
                         $('#d_articulo').hide();
                         $('#id_articulo').attr("required", null);
                         $('#id_articulo').val(null).trigger("change");
+                    } else {
+                        $('#d_libro').hide();
+                        $('#d_articulo').hide();
+                        $('#id_articulo').attr("required", null);
+                        $('#id_articulo').val(null).trigger("change");
+                        $('#id_libro').attr("required", null);
+                        $('#id_libro').val(null).trigger("change");
                     }
                 }
         );
