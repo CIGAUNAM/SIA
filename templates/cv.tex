@@ -51,9 +51,9 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         \item[2.1.] \textbf{Estudios profesionales}
                             \begin{itemize}
                                 {% for i in licenciaturas %}
-                                    \item {{ i.fecha_grado }}, \textbf{ {{ i.carrera }} }, {{ i.institucion }}{% if i.institucion.nombre != i.dependencia.nombre %}, {{ i.dependencia }}{% endif %}
+                                    \item {{ i.fecha_grado }},\textbf{ {{ i.carrera }}}, {{ i.institucion }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}
                                         \begin{itemize}
-                                            \item[]{ \textit{ {{ i.titulo_tesis }} }
+                                            \item[]{\textit{ {{ i.titulo_tesis }} }}
                                         \end{itemize}
                                 {% endfor %}
                             \end{itemize}
@@ -65,7 +65,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[a)] Maestría
                                         \begin{itemize}
                                             {% for i in maestrias %}
-                                                \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                                \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}
                                                     \begin{itemize}
                                                         \item[]{\textit{ {{ i.titulo_tesis }} }}
                                                     \end{itemize}
@@ -76,7 +76,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[b)] Doctorado
                                         \begin{itemize}
                                             {% for i in doctorados %}
-                                                \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                                \item {{ i.fecha_grado }},\textbf{ {{ i.programa }}}, {{ i.institucion }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}
                                                     \begin{itemize}
                                                         \item[]{\textit{ {{ i.titulo_tesis }} }}
                                                     \end{itemize}
@@ -87,7 +87,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[c)] Postdoctorados
                                         \begin{itemize}
                                             {% for i in postdoctorados %}
-                                                \item {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}, {{ i.dependencia }}
+                                                \item {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}, {% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %}
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -95,12 +95,14 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         }
                     {% endif %}
                     {% if usuario.tipo == 'TECNICO'%}
-                        \item[2.3.] \textbf{Cursos de especialización o capacitación}
-                            \begin{itemize}
-                                {% for i in cursos_especializacion %}
-                                    \item{ {{ i.fecha_inicio }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
-                                {% endfor %}
-                            \end{itemize}
+                        {% if cursos_especializacion %}
+                            \item[2.3.] \textbf{Cursos de especialización o capacitación}
+                                \begin{itemize}
+                                    {% for i in cursos_especializacion %}
+                                        \item{ {{ i.fecha_inicio }},\textbf{ {{ i.nombre }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
+                                    {% endfor %}
+                                \end{itemize}
+                        {% endif %}
                     {% endif %}
                 \end{enumerate}
         {% endif %}
@@ -109,30 +111,30 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             \item[3.] \textbf{EXPERIENCIA PROFESIONAL}
                 \begin{enumerate}
                     {% if exp_prof_unam or exp_prof_unam_prom %}
-                        {% if exp_prof_unam %}
-                            \item[3.1.] En la UNAM
+                        \item[3.1.] \textbf{En la UNAM}
+                            {% if exp_prof_unam %}
                                 \begin{itemize}
                                     {% for i in exp_prof_unam %}
                                         \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }}}
                                     {% endfor %}
                                 \end{itemize}
-                        {% endif %}
+                            {% endif %}
                         {% if exp_prof_unam_prom %}
                             \begin{itemize}
-                                \item[3.1.1.] Promociones
+                                \item[3.1.1.] \textbf{Promociones}
                                     \begin{itemize}
                                         {% for i in exp_prof_unam_prom %}
-                                            \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}, {{ i.nombramiento }}}, {{ i.dependencia }}}
+                                            \item{ {{ i.fecha_inicio }},\textbf{ {{ i.cargo }}, {{ i.nombramiento }}}, {{ i.dependencia }} }
                                         {% endfor %}
                                     \end{itemize}
                             \end{itemize}
                         {% endif %}
                     {% endif %}
                     {% if exp_prof_ext %}
-                        \item[3.2.] Fuera de la UNAM
+                        \item[3.2.] \textbf{Fuera de la UNAM}
                             \begin{itemize}
                                 {% for i in exp_prof_ext %}
-                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.cargo }}}, {{ i.institucion }}{% if i.institucion|safe != i.dependencia|safe %}, {{ i.dependencia }}{% endif %} }
+                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.cargo }}}, {{ i.institucion }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %} }
                                 {% endfor %}
                             \end{itemize}
                     {% endif %}
@@ -143,7 +145,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             \item[4.] \textbf{LABOR ACADÉMICO-ADMINISTRATIVA EN LA UNAM}
                 \begin{enumerate}
                     {% if servicios_acad_admnvos %}
-                        \item[4.1] Servicios directivos y académicos-administrativos
+                        \item[4.1] \textbf{Servicios directivos y académicos-administrativos}
                             \begin{itemize}
                                 {% for i in servicios_acad_admnvos %}
                                     \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.tipo_cargo.capitalize }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }} }
@@ -151,7 +153,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                             \end{itemize}
                     {% endif %}
                     {% if comisiones_institucionales %}
-                        \item[4.2] Comisiones institucionales
+                        \item[4.2] \textbf{Comisiones institucionales}
                             \begin{itemize}
                                 {% for i in comisiones_institucionales %}
                                     \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.comision_academica }}}, {{ i.dependencia }} }
@@ -191,13 +193,13 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             \item[6.] \textbf{PUBLICACIONES}
                 \begin{enumerate}
                     {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas or capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas or memoriainextenso_extranjeras or memoriainextenso_mexicanas or mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras or informes_tecnicos_mex or informes_tecnicos_intl %}
-                        \item[6.1.] Producción científica
+                        \item[6.1.] \textbf{Producción científica}
                             \begin{enumerate}
                                 {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas or articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
-                                    \item[6.1.1.] Artículos en revistas arbitradas
+                                    \item[6.1.1.] \textbf{Artículos en revistas arbitradas}
                                         \begin{enumerate}
                                             {% if articulos_indexadas_extranjeras or articulos_indexadas_mexicanas %}
-                                                \item[6.1.1.1.] En revistas indexadas
+                                                \item[6.1.1.1.] \textbf{En revistas indexadas}
                                                     \begin{itemize}
                                                         {% if articulos_indexadas_extranjeras %}
                                                             \item[a)] En revistas extranjeras
@@ -219,7 +221,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                             {% endif %}
 
                                             {% if articulos_no_indexadas_extranjeras or articulos_no_indexadas_mexicanas %}
-                                                \item[6.1.1.2.] En revistas no indexadas
+                                                \item[6.1.1.2.] \textbf{En revistas no indexadas}
                                                     \begin{itemize}
                                                         {% if articulos_no_indexadas_extranjeras %}
                                                             \item[a)] En revistas extranjeras
@@ -243,7 +245,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if libros_investigacion_editoriales_extranjeras or libros_investigacion_editoriales_mexicanas %}
-                                    \item[6.1.2.] Libros
+                                    \item[6.1.2.] \textbf{Libros}
                                         \begin{itemize}
                                             {% if libros_investigacion_editoriales_mexicanas %}
                                                 \item[a)] De editoriales mexicanas
@@ -268,7 +270,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if capitulos_libros_investigacion_editoriales_extranjeras or capitulos_libros_investigacion_editoriales_mexicanas %}
-                                    \item[6.1.3.] Capítulos de libros
+                                    \item[6.1.3.] \textbf{Capítulos de libros}
                                         \begin{itemize}
                                             {% if capitulos_libros_investigacion_editoriales_mexicanas %}
                                                 \item[a)] En libros de editoriales mexicanas
@@ -291,7 +293,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if memoriainextenso_extranjeras or memoriainextenso_mexicanas %}
-                                    \item[6.1.4.] Artículos ``in extenso'' en Memorias de Congresos
+                                    \item[6.1.4.] \textbf{Artículos ``in extenso'' en Memorias de Congresos}
                                         \begin{itemize}
                                             {% if memoriainextenso_mexicanas %}
                                                 \item[a)] En publicaciones mexicanas
@@ -314,7 +316,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras %}
-                                    \item[6.1.5.] Mapas
+                                    \item[6.1.5.] \textbf{Mapas}
                                         \begin{itemize}
                                             {% if mapas_publicaciones_mexicanas %}
                                                 \item[a)] En publicaciones mexicanas
@@ -337,7 +339,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if informes_tecnicos_mex or informes_tecnicos_intl %}
-                                    \item[6.1.6.] Informes técnicos
+                                    \item[6.1.6.] \textbf{Informes técnicos}
                                         \begin{itemize}
                                             {% if informes_tecnicos_mex %}
                                                 \item[a)] De proyectos en México
@@ -362,10 +364,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if articulos_divulgacion_mex or articulos_divulgacion_intl or libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras or resenas or traducciones or material_medios_produccion %}
-                        \item[6.2.] Producción de divulgación científica
+                        \item[6.2.] \textbf{Producción de divulgación científica}
                             \begin{enumerate}
                                 {% if articulos_divulgacion_mex or articulos_divulgacion_intl %}
-                                    \item[6.2.1.] Artículos impresos o electrónicos
+                                    \item[6.2.1.] \textbf{Artículos impresos o electrónicos}
                                         \begin{itemize}
                                             {% if articulos_divulgacion_mex %}
                                                 \item[a)] En publicaciones mexicanas
@@ -388,7 +390,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if libros_divulgacion_editoriales_mexicanas or libros_divulgacion_editoriales_extranjeras %}
-                                    \item[6.2.2.] Libros de divulgación
+                                    \item[6.2.2.] \textbf{Libros de divulgación}
                                         \begin{itemize}
                                             {% if libros_divulgacion_editoriales_mexicanas %}
                                                 \item[a)] En editoriales mexicanas
@@ -411,10 +413,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if resenas or traducciones or material_medios_produccion %}
-                                    \item[6.2.3.] Otros productos publicados
+                                    \item[6.2.3.] \textbf{Otros productos publicados}
                                             \begin{itemize}
                                                 {% if resenas %}
-                                                    \item[6.2.3.1.] Reseñas
+                                                    \item[6.2.3.1.] \textbf{Reseñas}
                                                         \begin{itemize}
                                                             {% for i in resenas %}
                                                                 \item{\textbf{ {{ i.titulo }}} ({{ i.fecha.year }}). {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }}{% endif %}{% if i.tipo == 'ARTICULO' %}Artículo: {{ i.articulo_resenado.titulo }}{% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}{% if i.url %}\\{{ i.url }}{% endif%} }
@@ -423,7 +425,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 {% endif %}
 
                                                 {% if traducciones %}
-                                                    \item[6.2.3.2.] Traducciones
+                                                    \item[6.2.3.2.] \textbf{Traducciones}
                                                         \begin{itemize}
                                                             {% for i in traducciones %}
                                                                 \item{ \textit{``{{ i.titulo }}''}, {{ i.fecha.year }}. {% if i.tipo == 'LIBRO' %}Libro: {{ i.libro_resenado.nombre }} {% endif %}{% if i.tipo == 'REVISTA' %}Revista: {{ i.revista_resenada.nombre }} {% endif %}. Publicado en: {{ i.revista_publica.nombre }}, pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}{% if i.url %}\\{{ i.url }}{% endif%} }
@@ -432,7 +434,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 {% endif %}
 
                                                 {% if material_medios_produccion %}
-                                                    \item[6.2.3.3.] Material para medios
+                                                    \item[6.2.3.3.] \textbf{Material para medios}
                                                         \begin{ itemize}
                                                             {% for i in material_medios_produccion %}
                                                                 \item{ \textit{``{{ i.tema }}''}, {{ i.fecha }}, {{ i.medio_divulgacion.ciudad.nombre }}. {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.canal }}, {{ i.medio_divulgacion.tipo }}) }
@@ -445,10 +447,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if articulos_docencia or libros_docencia or programas_estudio_docencia %}
-                        \item[6.3.] { Producción para la docencia
+                        \item[6.3.] \textbf{Producción para la docencia}
                             \begin{enumerate}
                                 {% if articulos_docencia %}
-                                    \item[6.3.1.] Artículos
+                                    \item[6.3.1.] \textbf{Artículos}
                                         \begin{itemize}
                                             {% for i in articulos_docencia %}
                                                 \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}) }
@@ -457,7 +459,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if libros_docencia %}
-                                    \item[6.3.2.] Libros
+                                    \item[6.3.2.] \textbf{Libros}
                                         \begin{itemize}
                                             {% for i in libros_docencia %}
                                                 \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, {{ i.fecha.year }}, \textit{``{{ i.titulo }}''}, {{ i.numero_paginas }} p.{% if i.url %}\\{{ i.url }}{% endif%} }
@@ -466,7 +468,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if programas_estudio_docencia %}
-                                    \item[6.3.3.] Programas de estudio
+                                    \item[6.3.3.] \textbf{Programas de estudio}
                                         \begin{itemize}
                                             {% for i in programas_estudio_docencia %}
                                                 \item{ \textit{ {{ i.nombre }} }, {{ i.nivel }}. {{ i.fecha.year }} }
@@ -474,11 +476,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                             \end{enumerate}
-                        }
                     {% endif %}
 
                     {% if produccion_tecnologica %}
-                        \item[6.4.] Producción tecnológica
+                        \item[6.4.] \textbf{Producción tecnológica}
                             \begin{itemize}
                                 {% for i in produccion_tecnologica %}
                                     \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{ {{ i.nombre }} }, {{ i.fecha.year }}. {% if i.version %}Versión: {{ i.version }}{% endif %}, {% if i.patente %}Patente: {{ i.patente }}{% endif %}, {% if i.licencia %}Licencia: {{ i.licencia.nombre }}{% endif %}, {% if i.proyecto %}Proyecto: {{ i.proyecto.nombre }}{% endif %}{% if i.url %}\\{{ i.url }}{% endif %} }
@@ -493,7 +494,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             \item[7.] \textbf{OTRAS ACTIVIDADES ACADÉMICAS}
                 \begin{enumerate}
                     {% if participacion_proyectos_responsable or participacion_proyectos_participante %}
-                        \item[7.1.] Participación en proyectos
+                        \item[7.1.] \textbf{Participación en proyectos}
                             \begin{itemize}
                                 {% if participacion_proyectos_responsable %}
                                     \item[a)] Responsable
@@ -515,10 +516,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if ponente_eventos_academicos_nal_invitacion or ponente_eventos_academicos_nal_participacion or ponente_eventos_academicos_intl_invitacion or ponente_eventos_academicos_intl_participacion %}
-                        \item[7.2.] Participación como ponente en eventos académicos
+                        \item[7.2.] \textbf{Participación como ponente en eventos académicos}
                             \begin{enumerate}
                                 {% if ponente_eventos_academicos_nal_invitacion or ponente_eventos_academicos_nal_participacion %}
-                                    \item[7.2.1.] Nacionales
+                                    \item[7.2.1.] \textbf{Nacionales}
                                         \begin{itemize}
                                             {% if ponente_eventos_academicos_nal_invitacion %}
                                                 \item[a)] Por invitación
@@ -540,7 +541,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if ponente_eventos_academicos_intl_invitacion or ponente_eventos_academicos_intl_participacion %}
-                                    \item[7.2.2.] Internacionales
+                                    \item[7.2.2.] \textbf{Internacionales}
                                         \begin{itemize}
                                             {% if ponente_eventos_academicos_intl_invitacion %}
                                                 \item[a)] Por invitación
@@ -564,7 +565,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if organizacion_eventos_academicos_nacionales or organizacion_eventos_academicos_internacionales %}
-                        \item[7.3.] Organización de eventos académicos
+                        \item[7.3.] \textbf{Organización de eventos académicos}
                             \begin{itemize}
                                 {% if organizacion_eventos_academicos_nacionales %}
                                     \item[a)] Nacionales
@@ -586,13 +587,13 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if participacion_comisiones_dictaminadoras_nacionales or participacion_comisiones_dictaminadoras_internacionales %}
-                        \item[7.4.] Participación en Comisiones Dictaminadoras
+                        \item[7.4.] \textbf{Participación en Comisiones Dictaminadoras}
                             \begin{itemize}
                                 {% if participacion_comisiones_dictaminadoras_nacionales %}
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_nacionales %}
-                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}, {{ i.dependencia }}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -600,7 +601,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_internacionales %}
-                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}, {{ i.dependencia }}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -608,10 +609,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
-                        \item[7.5.] Participación en Actividades Editoriales
+                        \item[7.5.] \textbf{Participación en Actividades Editoriales}
                             \begin{enumerate}
                                 {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras %}
-                                    \item[7.5.1.] Dictámenes de artículos en revistas
+                                    \item[7.5.1.] \textbf{Dictámenes de artículos en revistas}
                                         \begin{itemize}
                                             {% if dictamenes_articulos_revistas_mexicanas %}
                                                 \item[a)] Mexicanas
@@ -633,7 +634,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                 {% endif %}
 
                                 {% if dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
-                                    \item[7.5.2.] Dictámenes de libros
+                                    \item[7.5.2.] \textbf{Dictámenes de libros}
                                         \begin{itemize}
                                             {% if dictamenes_libros_editoriales_mexicanas %}
                                                 \item[a)] De editoriales mexicanas
@@ -657,10 +658,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if estancias_academicas or profesores_visitantes or sabaticos or participacion_redes_academicas %}
-                        \item[7.6.] Convenios académicos nacionales e internacionales
+                        \item[7.6.] \textbf{Convenios académicos nacionales e internacionales}
                             \begin{enumerate}
                                 {% if estancias_academicas %}
-                                    \item[7.6.1.] Estancias académicas
+                                    \item[7.6.1.] \textbf{Estancias académicas}
                                         \begin{itemize}
                                             {% for i in estancias_academicas %}
                                                 \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {% if i.academico.grado %}{{ i.academico.grado.grado_abreviado }}.{% endif %} {{ i.academico.first_name }} {{ i.academico.last_name }} ({{ i.institucion.nombre }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.ciudad.estado.pais.nombre }}). {% if i.proyecto_investigacion %} \\Proyecto: \textit{``{{ i.proyecto_investigacion.nombre }}''}. {% endif %} {% if i.financiamiento %}{{ i.financiamiento.nombre }}. {% endif %} {% if i.descripcion %}Objetivo: {{ i.descripcion }}{% endif %} }
@@ -668,7 +669,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if profesores_visitantes %}
-                                    \item[7.6.2.] Profesores visitantes
+                                    \item[7.6.2.] \textbf{Profesores visitantes}
                                         \begin{itemize}
                                             {% for i in profesores_visitantes %}
                                                 \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {% if i.academico.grado %}{{ i.academico.grado.grado_abreviado }}.{% endif %} {{ i.academico.first_name }} {{ i.academico.last_name }} ({{ i.institucion.nombre }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.ciudad.estado.pais.nombre }}). {% if i.proyecto_investigacion %} \\Proyecto: \textit{``{{ i.proyecto_investigacion.nombre }}''}. {% endif %} {% if i.financiamiento %}{{ i.financiamiento.nombre }}. {% endif %} {% if i.descripcion %}Objetivo: {{ i.descripcion }}{% endif %} }
@@ -676,7 +677,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if sabaticos %}
-                                    \item[7.6.3.] Años o Semestres sabáticos
+                                    \item[7.6.3.] \textbf{Años o Semestres sabáticos}
                                         \begin{itemize}
                                             {% for i in sabaticos %}
                                                 \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {% if i.academico.grado %}{{ i.academico.grado.grado_abreviado }}.{% endif %} {{ i.academico.first_name }} {{ i.academico.last_name }} ({{ i.institucion.nombre }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.ciudad.estado.pais.nombre }}). {% if i.proyecto_investigacion %} \\Proyecto: \textit{``{{ i.proyecto_investigacion.nombre }}''}. {% endif %} {% if i.financiamiento %}{{ i.financiamiento.nombre }}. {% endif %} {% if i.descripcion %}Objetivo: {{ i.descripcion }}{% endif %} }
@@ -684,7 +685,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if participacion_redes_academicas %}
-                                    \item Participación en redes académicas
+                                    \item[7.6.4.] \textbf{Participación en redes académicas}
                                         \begin{itemize}
                                             {% for i in participacion_redes_academicas %}
                                                 \item{ {{ i.nombre }}, Ámbito {{ i.ambito.get_choices_display }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {{ i.fecha_constitucion}} } }
@@ -695,10 +696,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                     {% endif %}
 
                     {% if convenios_entidades_externas or servicios_asesorias_externas or organizacion_eventos_divulgacion or participacion_eventos_divulgacion %}
-                        \item[7.7.] Vinculación con la sociedad
+                        \item[7.7.] \textbf{Vinculación con la sociedad}
                             \begin{enumerate}
                                 {% if convenios_entidades_externas %}
-                                    \item[7.7.1.] Promoción de convenios de colaboración con entidades no académicas
+                                    \item[7.7.1.] \textbf{Promoción de convenios de colaboración con entidades no académicas}
                                         \begin{itemize}
                                             {% for i in convenios_entidades_externas %}
                                                 \item{ {{ i.nombre }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
@@ -706,7 +707,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if servicios_asesorias_externas %}
-                                    \item[7.7.2.] Servicios y asesorías externas
+                                    \item[7.7.2.] \textbf{Servicios y asesorías externas}
                                         \begin{itemize}
                                             {% for i in servicios_asesorias_externas %}
                                                 \item{ {{ i.nombre_servicio }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
@@ -714,7 +715,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if organizacion_eventos_divulgacion %}
-                                    \item[7.7.3.] Organización de eventos de divulgación
+                                    \item[7.7.3.] \textbf{Organización de eventos de divulgación}
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_divulgacion %}
                                                 \item{ {{ i.evento.nombre }}, {{ i.evento.tipo.nombre }}, {{ i.tipo_publico }}. \\{% if i.financiamiento %}Financiamiento: {{ i.financiamiento.nombre }}. {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
@@ -722,7 +723,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                         \end{itemize}
                                 {% endif %}
                                 {% if participacion_eventos_divulgacion %}
-                                    \item[7.7.4.] Conferencias de divulgación (no dirigidas a pares)
+                                    \item[7.7.4.] \textbf{Conferencias de divulgación (no dirigidas a pares)}
                                         \begin{itemize}
                                             {% for i in participacion_eventos_divulgacion %}
                                                 \item{ {{ i.titulo }}, {{ i.evento.tipo.nombre }}, {{ i.evento.nombre }}. \\{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}, {{ i.tipo_publico }} }
@@ -740,13 +741,13 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
             \item[8.]{ \textbf{FORMACIÓN DE RECURSOS HUMANOS Y DE GRUPOS DE TRABAJO}
                 \begin{enumerate}
                     {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales or cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                        \item[8.1.]{ Cursos impartidos
+                        \item[8.1.] \textbf{Cursos impartidos}
                             \begin{enumerate}
                                 {% if cursos_extracurriculares_unam or cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales %}
-                                    \item[8.1.1.] Cursos extracurriculares
+                                    \item[8.1.1.] \textbf{Cursos extracurriculares}
                                         \begin{itemize}
                                             {% if cursos_extracurriculares_unam %}
-                                                \item[8.1.1.1.] En la UNAM
+                                                \item[8.1.1.1.] \textbf{En la UNAM}
                                                     \begin{itemize}
                                                         {% for i in cursos_extracurriculares_unam %}
                                                             \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
@@ -754,7 +755,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                     \end{itemize}
                                             {% endif %}
                                             {% if cursos_extracurriculares_nacionales or cursos_extracurriculares_internacionales %}
-                                                \item[8.1.1.2.] En otras instituciones
+                                                \item[8.1.1.2.] \textbf{En otras instituciones}
                                                     \begin{itemize}
                                                         {% if cursos_extracurriculares_nacionales %}
                                                             \item[a)] Nacionales
@@ -779,10 +780,10 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
 
                                 {% if usuario.tipo == 'INVESTIGADOR' %}
                                     {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                                        \item[8.1.2.]{ Cursos escolarizados
+                                        \item[8.1.2.] \textbf{Cursos escolarizados}
                                             \begin{enumerate}
                                                 {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador %}
-                                                    \item[8.1.2.1.] Licenciatura
+                                                    \item[8.1.2.1.] \textbf{Licenciatura}
                                                         \begin{itemize}
                                                             {% if cursos_escolarizados_licenciatura_titular %}
                                                                 \item[a)] Profesor titular o coordinador
@@ -803,7 +804,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                         \end{itemize}
                                                 {% endif %}
                                                 {% if cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                                                    \item [8.1.2.2.] Posgrado
+                                                    \item [8.1.2.2.] \textbf{Posgrado}
                                                         \begin{itemize}
                                                             {% if cursos_escolarizados_posgrado_titular %}
                                                                 \item[a)] Profesor titular o coordinador
@@ -824,17 +825,16 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                         \end{itemize}
                                                 {% endif %}
                                             \end{enumerate}
-                                        }
                                     {% endif %}
                                 {% endif %}
 
                                 {% if usuario.tipo == 'TECNICO' %}
-                                    \item[8.1.3.] Apoyo a la docencia
+                                    \item[8.1.3.] \textbf{Apoyo a la docencia}
                                         {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador or cursos_escolarizados_posgrado_titular or cursos_escolarizados_posgrado_colaborador %}
-                                            \item[8.1.3.1.]{ Cursos escolarizados
+                                            \item[8.1.3.1.] \textbf{Cursos escolarizados}
                                                 \begin{enumerate}
                                                 {% if cursos_escolarizados_licenciatura_titular or cursos_escolarizados_licenciatura_colaborador %}
-                                                    \item[8.1.2.1.] Licenciatura
+                                                    \item[8.1.2.1.] \textbf{Licenciatura}
                                                         \begin{itemize}
                                                             {% if cursos_escolarizados_licenciatura_titular %}
                                                                 \item[a)] Profesor titular o coordinador
@@ -877,11 +877,9 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                         \end{itemize}
                                                     \end{enumerate}
                                                 {% endif %}
-                                            }
                                         {% endif %}
                                 {% endif %}
                             \end{enumerate}
-                        }
                     {% endif %}
 
                     {% if tesis_dirigidas_licenciatura or tesis_dirigidas_maestria or tesis_dirigidas_doctorado or tesis_proceso_licenciatura or tesis_proceso_maestria or tesis_proceso_doctorado or asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
