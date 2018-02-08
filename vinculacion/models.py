@@ -68,14 +68,12 @@ class ArbitrajeProyectoInvestigacion(models.Model):
 
 
 class ArbitrajeOtraActividad(models.Model):
-    actividad = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='actividad', unique=True)
+    actividad = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='arbitraje_otras_actividades_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.actividad, self.dependencia)
@@ -157,7 +155,7 @@ class ClasificacionServicio(models.Model):
 
 
 class ServicioExternoEntidadNoAcademica(models.Model):
-    nombre_servicio = models.CharField(max_length=255, unique=True)
+    nombre_servicio = models.CharField(max_length=255)
     clasificacion_servicio = models.ForeignKey(ClasificacionServicio, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
     entidades = models.ManyToManyField(Dependencia)
@@ -180,8 +178,7 @@ class ServicioExternoEntidadNoAcademica(models.Model):
 
 
 class OtroProgramaVinculacion(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='nombre_servicio', unique=True)
+    nombre = models.CharField(max_length=255)
     fecha = models.DateField()
     tipo = models.CharField(max_length=20, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'),
                                                     ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
@@ -190,7 +187,6 @@ class OtroProgramaVinculacion(models.Model):
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='otro_programa_vinculacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha)

@@ -53,7 +53,7 @@ class ArticuloDivulgacion(models.Model):
 
 
 class CapituloLibroDivulgacion(models.Model):
-    titulo = models.CharField(max_length=255, unique=True)
+    titulo = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro, on_delete=models.DO_NOTHING)
     pagina_inicio = models.PositiveIntegerField()

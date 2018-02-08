@@ -8,7 +8,6 @@ from django.urls import reverse
 
 class Comision(models.Model):
     comision = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='comision', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -23,7 +22,6 @@ class Comision(models.Model):
 
 class ActividadApoyo(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='actividad', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -39,7 +37,6 @@ class ActividadApoyo(models.Model):
 
 class Representacion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -61,9 +58,7 @@ class CargoAcademicoAdministrativo(models.Model):
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    # slug = AutoSlugField(populate_from='nombre', unique=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='cargo_academico_administrativo_tags', blank=True)
 
     def __str__(self):
         return "[ {} : {} ] : {} : {} : {} : {}".format(self.usuario, self.cargo, self.dependencia.nombre,
@@ -129,12 +124,9 @@ class ApoyoTecnico(models.Model):
     descripcion = models.TextField()
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    # ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    # slug = AutoSlugField(populate_from='nombre', unique=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='apoyo_tecnico_tags', blank=True)
 
     def __str__(self):
         return "[{}] : {} : {}".format(self.usuario, self.actividad_apoyo, self.fecha_fin)
@@ -154,12 +146,9 @@ class ApoyoOtraActividad(models.Model):
     descripcion = models.TextField()
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    # ubicacion = models.ForeignKey(Ubicacion)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
-    # slug = AutoSlugField(populate_from='apoyo_otra_actividad_tags', unique=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='apoyo_otra_actividad_tags', blank=True)
 
     def __str__(self):
         return "[{}] : {} : {}".format(self.usuario, self.actividad_apoyo, self.fecha_fin)

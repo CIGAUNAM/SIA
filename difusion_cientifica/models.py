@@ -20,7 +20,6 @@ RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO
 
 class MemoriaInExtenso(models.Model):
     nombre = models.CharField(max_length=255, unique=True, verbose_name='Título de memoria in extenso')
-    # slug = AutoSlugField(populate_from='titulo', unique=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
@@ -71,7 +70,7 @@ class PrologoLibro(models.Model):
 
 
 class Resena(models.Model):
-    titulo = models.CharField(max_length=255, unique=True)
+    titulo = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
     libro_resenado = models.ForeignKey(Libro, blank=True, null=True, related_name='resena_libro_resenado',
@@ -92,13 +91,13 @@ class Resena(models.Model):
         return reverse('resena_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        verbose_name = 'Reseña de libro'
-        verbose_name_plural = 'Reseñas de libros'
+        verbose_name = 'Reseña de publicación'
+        verbose_name_plural = 'Reseñas de publicaciones'
 
 
 class Traduccion(models.Model):
-    titulo = models.CharField(max_length=255, unique=True)
-    titulo_original = models.CharField(max_length=255, unique=True)
+    titulo = models.CharField(max_length=255)
+    titulo_original = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
     libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)

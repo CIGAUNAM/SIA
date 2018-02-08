@@ -50,7 +50,7 @@ class DistincionAlumno(models.Model):
 
 
 class ParticipacionComisionExpertos(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
@@ -70,7 +70,7 @@ class ParticipacionComisionExpertos(models.Model):
 
 
 class ParticipacionSociedadCientifica(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=20, choices=(('', '-------'), ('INVITACION', 'Por invitación'),
                                                     ('ELECCION', 'Por elección')))
