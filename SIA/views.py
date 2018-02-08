@@ -7450,7 +7450,7 @@ class CVInvestigadorPDF(View):
             proyecto__institucion__pais__nombre='México').order_by('-fecha')
         articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(
             revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(
+        articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).exclude(
             revista__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
 
         libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION',

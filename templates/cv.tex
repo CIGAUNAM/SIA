@@ -148,7 +148,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         \item[4.1] \textbf{Servicios directivos y académicos-administrativos}
                             \begin{itemize}
                                 {% for i in servicios_acad_admnvos %}
-                                    \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.tipo_cargo.capitalize }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }} }
+                                    \item{ {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %}, {{ i.cargo.get_tipo_cargo_display }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }} }
                                 {% endfor %}
                             \end{itemize}
                     {% endif %}
@@ -205,7 +205,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                             \item[a)] En revistas extranjeras
                                                                 \begin{itemize}
                                                                     {% for i in articulos_indexadas_extranjeras %}
-                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endfor %}) }
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -213,7 +213,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                             \item[b)] En revistas mexicanas
                                                                 \begin{itemize}
                                                                     {% for i in articulos_indexadas_mexicanas %}
-                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endfor %}) }
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -227,15 +227,15 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                             \item[a)] En revistas extranjeras
                                                                 \begin{itemize}
                                                                     {% for i in articulos_no_indexadas_extranjeras %}
-                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} }
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
                                                         {% if articulos_no_indexadas_mexicanas %}
-                                                            \item[a)] En revistas extranjeras
+                                                            \item[b)] En revistas mexicanas
                                                                 \begin{itemize}
                                                                     {% for i in articulos_no_indexadas_mexicanas %}
-                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }}, ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} }
+                                                                        \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -373,7 +373,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[a)] En publicaciones mexicanas
                                                     \begin{itemize}
                                                         {% for i in articulos_divulgacion_mex %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -382,7 +382,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[b)] En publicaciones extranjeras
                                                     \begin{itemize}
                                                         {% for i in articulos_divulgacion_intl %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }}, {{ i.titulo }}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}

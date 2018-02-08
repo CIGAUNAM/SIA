@@ -19,22 +19,14 @@ RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO
 
 
 class MemoriaInExtenso(models.Model):
-    nombre = models.CharField(max_length=255, unique=True, verbose_name='Título de memoria in extenso')
+    nombre = models.CharField(max_length=255, unique=True, verbose_name='Nombre de memoria in extenso')
     descripcion = models.TextField(blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
-    fecha = models.DateField()
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    usuarios = SortedManyToManyField(User, related_name='memoria_in_extenso_autores', verbose_name='Autores')
-    editores = models.ManyToManyField(User, related_name='memoria_in_extenso_editores', blank=True)
+    usuarios = models.ManyToManyField(User, related_name='memoria_in_extenso_autores', verbose_name='Autores')
+    articulos = models.ManyToManyField(ArticuloCientifico, related_name='memoria_in_extenso_articulos', blank=True)
+    proyectos = models.ManyToManyField(ProyectoInvestigacion, related_name='memoria_in_extenso_proyectos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
-    agradecimientos = models.ManyToManyField(User, related_name='memoria_in_extenso_agradecimientos', blank=True)
-    pagina_inicio = models.PositiveIntegerField()
-    pagina_fin = models.PositiveIntegerField()
-    revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
     issn = models.SlugField(max_length=20, blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     url = models.URLField(blank=True)
 
     def __str__(self):

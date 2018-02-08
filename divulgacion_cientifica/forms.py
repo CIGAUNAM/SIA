@@ -21,7 +21,6 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    indizado = forms.BooleanField(required=False)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     solo_electronico = forms.BooleanField(required=False)
     revista = forms.ModelChoiceField(
@@ -63,7 +62,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
         model = ArticuloDivulgacion
         exclude = []
         widgets = {
-            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
