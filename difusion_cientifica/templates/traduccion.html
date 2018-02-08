@@ -15,20 +15,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Título original:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título original.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.titulo_original }}
-        </div>
-    </div>
-    </p>
     <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
                                title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
         <i class="fa fa-question-circle"></i></a></strong>
@@ -61,7 +47,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/libros-investigacion" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/libros-investigacion" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -87,7 +74,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -128,34 +116,34 @@
         $('#d_articulo').hide();
 
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'ARTICULO') {
-                        $('#d_articulo').show();
-                        $('#id_articulo').attr("required", "true");
-                        $('#d_libro').hide();
-                        $('#id_libro').attr("required", null);
-                        $('#id_libro').val(null).trigger("change");
-                    } else if ($("#id_tipo").val() == 'LIBRO') {
-                        $('#d_libro').show();
-                        $('#id_libro').attr("required", "true");
-                        $('#d_articulo').hide();
-                        $('#id_articulo').attr("required", null);
-                        $('#id_articulo').val(null).trigger("change");
-                    } else {
-                        $('#d_libro').hide();
-                        $('#d_articulo').hide();
-                        $('#id_articulo').attr("required", null);
-                        $('#id_articulo').val(null).trigger("change");
-                        $('#id_libro').attr("required", null);
-                        $('#id_libro').val(null).trigger("change");
-                    }
+                if ($("#id_tipo").val() == 'ARTICULO') {
+                    $('#d_articulo').show();
+                    $('#id_articulo').attr("required", "true");
+                    $('#d_libro').hide();
+                    $('#id_libro').attr("required", null);
+                    $('#id_libro').val(null).trigger("change");
+                } else if ($("#id_tipo").val() == 'LIBRO') {
+                    $('#d_libro').show();
+                    $('#id_libro').attr("required", "true");
+                    $('#d_articulo').hide();
+                    $('#id_articulo').attr("required", null);
+                    $('#id_articulo').val(null).trigger("change");
+                } else {
+                    $('#d_libro').hide();
+                    $('#d_articulo').hide();
+                    $('#id_articulo').attr("required", null);
+                    $('#id_articulo').val(null).trigger("change");
+                    $('#id_libro').attr("required", null);
+                    $('#id_libro').val(null).trigger("change");
                 }
+            }
         );
     </script>
 
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Título de la traducción:</strong>
+    <p><strong>Título de la traducción:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de la traducción.">
             <i class="fa fa-question-circle"></i>
@@ -166,20 +154,6 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.titulo }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Título original:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título original.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.titulo_original }}
         </div>
     </div>
     </p>
@@ -215,7 +189,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/libros-investigacion" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/libros-investigacion" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -241,7 +216,8 @@
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                    <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left"
+                       target="_blank"
                        title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -293,27 +269,27 @@
         }
 
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'ARTICULO') {
-                        $('#d_articulo').show();
-                        $('#id_articulo').attr("required", "true");
-                        $('#d_libro').hide();
-                        $('#id_libro').attr("required", null);
-                        $('#id_libro').val(null).trigger("change");
-                    } else if ($("#id_tipo").val() == 'LIBRO') {
-                        $('#d_libro').show();
-                        $('#id_libro').attr("required", "true");
-                        $('#d_articulo').hide();
-                        $('#id_articulo').attr("required", null);
-                        $('#id_articulo').val(null).trigger("change");
-                    } else {
-                        $('#d_libro').hide();
-                        $('#d_articulo').hide();
-                        $('#id_articulo').attr("required", null);
-                        $('#id_articulo').val(null).trigger("change");
-                        $('#id_libro').attr("required", null);
-                        $('#id_libro').val(null).trigger("change");
-                    }
+                if ($("#id_tipo").val() == 'ARTICULO') {
+                    $('#d_articulo').show();
+                    $('#id_articulo').attr("required", "true");
+                    $('#d_libro').hide();
+                    $('#id_libro').attr("required", null);
+                    $('#id_libro').val(null).trigger("change");
+                } else if ($("#id_tipo").val() == 'LIBRO') {
+                    $('#d_libro').show();
+                    $('#id_libro').attr("required", "true");
+                    $('#d_articulo').hide();
+                    $('#id_articulo').attr("required", null);
+                    $('#id_articulo').val(null).trigger("change");
+                } else {
+                    $('#d_libro').hide();
+                    $('#d_articulo').hide();
+                    $('#id_articulo').attr("required", null);
+                    $('#id_articulo').val(null).trigger("change");
+                    $('#id_libro').attr("required", null);
+                    $('#id_libro').val(null).trigger("change");
                 }
+            }
         );
     </script>
 

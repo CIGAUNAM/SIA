@@ -97,7 +97,7 @@ class Resena(models.Model):
 
 class Traduccion(models.Model):
     titulo = models.CharField(max_length=255)
-    titulo_original = models.CharField(max_length=255)
+    # titulo_original = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
     libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)

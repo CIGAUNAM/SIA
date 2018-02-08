@@ -137,7 +137,14 @@ class TraduccionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = Traduccion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo_original', 'tipo', 'fecha'))
+                                         fields=('titulo', 'tipo', 'libro', 'articulo', 'fecha'))
+            json = json.replace('"libro": null, ', '')
+            json = json.replace('"articulo": null, ', '')
+            json = json.replace('LIBRO', 'Libro')
+            json = json.replace('ARTICULO', 'Artículo')
+            json = json.replace('articulo', 'publicacion')
+            json = json.replace('libro', 'publicacion')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
