@@ -70,7 +70,6 @@ class ZonaPais(models.Model):
 
 class Pais(models.Model):
     nombre = models.CharField(max_length=60, unique=True)
-    # slug = AutoSlugField(populate_from='pais', unique=True)
     nombre_extendido = models.CharField(max_length=200, unique=True)
     codigo = models.SlugField(max_length=2, unique=True)
     zona = models.ForeignKey(ZonaPais, on_delete=models.DO_NOTHING)
@@ -273,7 +272,6 @@ class Dependencia(models.Model):
 
 class Departamento(models.Model):
     nombre = models.CharField(max_length=255)
-    # slug = AutoSlugField(populate_from='dependencia', unique=True)
     descripcion = models.TextField(blank=True)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 
@@ -293,7 +291,6 @@ class Departamento(models.Model):
 
 class Cargo(models.Model):
     nombre = models.CharField(max_length=255)
-    # slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
     tipo_cargo = models.CharField(max_length=20, choices=(('', '-------'),
         ('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo'), ('DIRECTIVO', 'Directivo'), ('OTRO', 'Otro')))
@@ -315,7 +312,6 @@ class Cargo(models.Model):
 class Nombramiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     clave = models.CharField(max_length=20, unique=True)
-    # slug = AutoSlugField(populate_from='nombramiento', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -336,7 +332,6 @@ class AreaConocimiento(models.Model):
     categoria = models.CharField(max_length=20, choices=(
             ('LSBM', 'Life Sciences and Biomedicine'), ('PHYS', 'Physical Sciences'), ('TECH', 'Technology'),
             ('ARTH', 'Arts and Humanities'), ('SS', 'Social Sciences'), ('ZTRA', 'Otra')))
-    # slug = AutoSlugField(populate_from='area_conocimiento', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -356,7 +351,6 @@ class AreaConocimiento(models.Model):
 
 class AreaEspecialidad(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='especialidad', unique=True)
     descripcion = models.TextField(blank=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, on_delete=models.DO_NOTHING)
 
@@ -377,7 +371,6 @@ class AreaEspecialidad(models.Model):
 
 class ImpactoSocial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='impacto_social', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -418,7 +411,6 @@ class Financiamiento(models.Model):
 
 class Metodologia(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='metodologia', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -452,7 +444,6 @@ class Beca(models.Model):
 
 class Reconocimiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='reconocimiento', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -471,7 +462,6 @@ class Reconocimiento(models.Model):
 class ProgramaLicenciatura(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    # slug = AutoSlugField(populate_from='programa', unique=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
                                           on_delete=models.DO_NOTHING)
 
@@ -493,7 +483,6 @@ class ProgramaLicenciatura(models.Model):
 class ProgramaMaestria(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    # slug = AutoSlugField(populate_from='programa', unique=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
                                           on_delete=models.DO_NOTHING)
 
@@ -515,7 +504,6 @@ class ProgramaMaestria(models.Model):
 class ProgramaDoctorado(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    # slug = AutoSlugField(populate_from='programa', unique=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
                                           on_delete=models.DO_NOTHING)
 
@@ -536,7 +524,6 @@ class ProgramaDoctorado(models.Model):
 
 class TipoEvento(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
-    # slug = AutoSlugField(populate_from='tipo_evento')
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -605,7 +592,6 @@ class Distincion(models.Model):
 
 class ProblemaNacionalConacyt(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
-    # slug = AutoSlugField(populate_from='nombre', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -627,7 +613,6 @@ class ProblemaNacionalConacyt(models.Model):
 
 class Indice(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='indice', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -642,7 +627,6 @@ class Indice(models.Model):
 
 class Editorial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='editorial', unique=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
@@ -664,7 +648,6 @@ class Editorial(models.Model):
 
 class Coleccion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='coleccion', unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
@@ -684,7 +667,6 @@ class Coleccion(models.Model):
 
 class Libro(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # slug = AutoSlugField(populate_from='nombre_libro', unique=True)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
                                                     ('DOCENCIA', 'Docencia')))

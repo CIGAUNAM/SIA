@@ -1,6 +1,10 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {% for field in f %}
+        <p>{{ field.label_tag }}: {{ field }}</p>
+        {{ field.errors }}
+    {% endfor %}
     <p><strong>Título de la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de la reseña, no del libro o revista.">
