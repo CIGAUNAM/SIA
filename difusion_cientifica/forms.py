@@ -154,7 +154,7 @@ class ResenaForm(forms.ModelForm):
 
 class TraduccionForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título')
-    titulo_original = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título original')
+    # titulo_original = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título original')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False)
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RESENA__TIPO', ), required=True)
