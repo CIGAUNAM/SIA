@@ -10,36 +10,6 @@ from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Sele
 class MemoriaInExtensoForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de memoria in extenso')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    pais = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="Pais",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Pais.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'pais': 'pais'}
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'estado': 'estado'}
-        )
-    )
-    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     evento = forms.ModelChoiceField(
         queryset=Evento.objects.all(),
         label="Evento",
@@ -49,39 +19,17 @@ class MemoriaInExtensoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
         )
     )
-    pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    revista = forms.ModelChoiceField(
-        required=False,
-        queryset=Revista.objects.all(),
-        label="Revista",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Revista.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     issn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
-    proyecto = forms.ModelChoiceField(
-        required=False,
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Pais",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-        )
-    )
 
     class Meta:
         model = MemoriaInExtenso
-        exclude = ['tags', ]
+        exclude = []
         widgets = {
             'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'editores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'articulos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'proyectos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -186,7 +134,6 @@ class TraduccionForm(forms.ModelForm):
     class Meta:
         model = Traduccion
         exclude = ['usuario', ]
-
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):

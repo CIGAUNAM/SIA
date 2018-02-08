@@ -24,7 +24,6 @@ class ArticuloDivulgacion(models.Model):
     tipo = models.CharField(max_length=16, choices=(('', '-------'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'),
                                                     ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
-    indizado = models.BooleanField(default=False)
     usuarios = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_divulgacion_alumnos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='articulo_divulgacion_indices', blank=True)

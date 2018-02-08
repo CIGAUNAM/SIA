@@ -11,7 +11,7 @@ class MemoriaInExtensoContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Título', 'Ciudad', 'Fecha', 'Evento']}
+                'titulos_tabla': ['Título', 'Evento']}
 
     tabla_mios =  '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
@@ -29,8 +29,6 @@ class MemoriaInExtensoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.ciudad"},\n' \
-                                    '{"data": "fields.fecha"},\n' \
                                     '{"data": "fields.evento"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -55,8 +53,6 @@ class MemoriaInExtensoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.ciudad"},\n' \
-                                    '{"data": "fields.fecha"},\n' \
                                     '{"data": "fields.evento"},\n' \
                                 ']\n' \
                             '});\n' \

@@ -19,7 +19,7 @@ class MemoriaInExtensoJSON(View):
             else:
                 items = MemoriaInExtenso.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'ciudad', 'fecha', 'evento'))
+                                         fields=('nombre', 'evento'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -30,6 +30,7 @@ class MemoriaInExtensoLista(ObjectCreateVarMixin, View):
     model = MemoriaInExtenso
     aux = MemoriaInExtensoContext.contexto
     template_name = 'memoria_in_extenso.html'
+    # template_name = 'main.html'
 
 
 class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
@@ -37,6 +38,7 @@ class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
     model = MemoriaInExtenso
     aux = MemoriaInExtensoContext.contexto
     template_name = 'memoria_in_extenso.html'
+    # template_name = 'main.html'
 
 
 class MemoriaInExtensoEliminar(View):
