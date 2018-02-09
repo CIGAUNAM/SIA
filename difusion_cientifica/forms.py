@@ -19,7 +19,16 @@ class MemoriaInExtensoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
         )
     )
-    issn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    editorial = forms.ModelChoiceField(
+        queryset=Editorial.objects.all(),
+        label="Editorial",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Editorial.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
 
     class Meta:

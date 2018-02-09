@@ -299,22 +299,20 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                 \item[a)] En publicaciones mexicanas
                                                     \begin{itemize}
                                                         {% for i in memoriainextenso_mexicanas %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}.{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.evento.fecha_inicio.year }}).\textbf{ {{ i.nombre }}}, {{ i.editorial }}{% if i.isbn %}{{ i.isbn }}, {% endif %}{% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% endfor %}){% endif %}, {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
-
                                             {% if memoriainextenso_extranjeras %}
                                                 \item[b)] En publicaciones extranjeras
                                                     \begin{itemize}
                                                         {% for i in memoriainextenso_extranjeras %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. ({{ i.fecha.year }}). {{ i.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}-{{ i.evento.fecha_fin }}.{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.evento.fecha_inicio.year }}).\textbf{ {{ i.nombre }}}, {{ i.editorial }}{% if i.isbn %}{{ i.isbn }}, {% endif %}{% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% endfor %}){% endif %}, {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
                                         \end{itemize}
                                 {% endif %}
-
                                 {% if mapas_publicaciones_mexicanas or mapas_publicaciones_extranjeras %}
                                     \item[6.1.5.] \textbf{Mapas}
                                         \begin{itemize}

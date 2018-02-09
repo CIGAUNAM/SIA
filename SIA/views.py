@@ -1000,17 +1000,17 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = MemoriaInExtenso.objects.filter(fecha__year=year).filter(
+                total_items_year_sum = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=year).filter(
                     (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
                     | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-                request_user_items_year_sum = MemoriaInExtenso.objects.filter(fecha__year=year,
+                request_user_items_year_sum = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=year,
                                                                               usuarios=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(memoria_in_extenso_autores__fecha__year=year).filter(
+                users_with_items_year_count = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -1023,7 +1023,7 @@ class Dashboard(View):
                 else:
                     items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(memoria_in_extenso_autores__fecha__year=year).filter(
+                max_items_year_user = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('memoria_in_extenso_autores')).aggregate(
@@ -1032,7 +1032,7 @@ class Dashboard(View):
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
-                min_items_year_user = User.objects.filter(memoria_in_extenso_autores__fecha__year=year).filter(
+                min_items_year_user = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('memoria_in_extenso_autores')).aggregate(Min('memoria_in_extenso_autores__count'))[
@@ -3395,17 +3395,17 @@ class ReporteHistorico(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = MemoriaInExtenso.objects.filter(fecha__year=year).filter(
+                total_items_year_sum = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=year).filter(
                     (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year))
                     | (Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None))).count()
 
-                request_user_items_year_sum = MemoriaInExtenso.objects.filter(fecha__year=year,
+                request_user_items_year_sum = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=year,
                                                                               usuarios=request.user).count()
                 if not total_items_year_sum:
                     total_items_year_sum = 0
                 items_data[i + 1].append(total_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(memoria_in_extenso_autores__fecha__year=year).filter(
+                users_with_items_year_count = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -3418,7 +3418,7 @@ class ReporteHistorico(View):
                 else:
                     items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(memoria_in_extenso_autores__fecha__year=year).filter(
+                max_items_year_user = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('memoria_in_extenso_autores')).aggregate(
@@ -3427,7 +3427,7 @@ class ReporteHistorico(View):
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
-                min_items_year_user = User.objects.filter(memoria_in_extenso_autores__fecha__year=year).filter(
+                min_items_year_user = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('memoria_in_extenso_autores')).aggregate(Min('memoria_in_extenso_autores__count'))[
@@ -7300,10 +7300,6 @@ class CVInvestigadorDetalle(View):
         capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION').filter(
             libro__pais__nombre='México').exclude(Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).order_by('-libro__fecha')
 
-        #memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
-        #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
-        #memoriainextenso_mexicanas = MemoriaInExtenso.objects.filter(usuarios=pk).filter(
-        #    pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(usuarios=pk).exclude(
             editorial__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
@@ -7437,9 +7433,9 @@ class CVInvestigadorPDF(View):
             '-libro__fecha')
 
         memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
-            evento__pais__nombre='México').order_by('-fecha')
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
         memoriainextenso_mexicanas = MemoriaInExtenso.objects.filter(usuarios=pk).filter(
-            evento__pais__nombre='México').order_by('-fecha')
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
         mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(usuarios=pk).exclude(
             editorial__pais__nombre='México').exclude(Q(status='ENVIADO') & Q(status='OTRO')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
