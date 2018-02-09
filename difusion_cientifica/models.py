@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Pais, Estado, Ciudad, Evento, Libro, Revista, Indice
+from nucleo.models import User, Editorial, Evento, Libro, Revista, Indice
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -26,7 +26,8 @@ class MemoriaInExtenso(models.Model):
     articulos = models.ManyToManyField(ArticuloCientifico, related_name='memoria_in_extenso_articulos', blank=True)
     proyectos = models.ManyToManyField(ProyectoInvestigacion, related_name='memoria_in_extenso_proyectos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
-    issn = models.SlugField(max_length=20, blank=True)
+    editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
+    isbn = models.SlugField(max_length=20, blank=True)
     url = models.URLField(blank=True)
 
     def __str__(self):
