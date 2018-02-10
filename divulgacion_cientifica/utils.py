@@ -67,7 +67,6 @@ class ArticuloDivulgacionContext:
     contexto['tabla_otros'] = tabla_otros
 
 
-
 class CapituloLibroDivulgacionContext:
     obj = 'Capitulo de Libro de Divulgación'
     objs = 'Capitulos de Libros de Divulgación'
@@ -104,7 +103,6 @@ class CapituloLibroDivulgacionContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
 
 
 class OrganizacionEventoDivulgacionContext:
@@ -146,7 +144,6 @@ class OrganizacionEventoDivulgacionContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class ParticipacionEventoDivulgacionContext:
     obj = 'Evento (participación)'
     objs = 'Eventos (participación)'
@@ -184,7 +181,6 @@ class ParticipacionEventoDivulgacionContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
 
 
 class ProgramaRadioTelevisionInternetContext:
@@ -225,7 +221,6 @@ class ProgramaRadioTelevisionInternetContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
 
 
 class LibroDivulgacionContext:
