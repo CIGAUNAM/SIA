@@ -19,12 +19,11 @@ RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO
 
 
 class MemoriaInExtenso(models.Model):
-    nombre = models.CharField(max_length=255, unique=True, verbose_name='Nombre de memoria in extenso')
+    nombre = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     usuarios = models.ManyToManyField(User, related_name='memoria_in_extenso_autores', verbose_name='Autores')
     articulos = models.ManyToManyField(ArticuloCientifico, related_name='memoria_in_extenso_articulos', blank=True)
-    proyectos = models.ManyToManyField(ProyectoInvestigacion, related_name='memoria_in_extenso_proyectos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
     isbn = models.SlugField(max_length=20, blank=True)
