@@ -437,7 +437,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                                     \item[6.2.3.3.] \textbf{Material para medios}
                                                         \begin{ itemize}
                                                             {% for i in material_medios_produccion %}
-                                                                \item{ \textit{``{{ i.tema }}''}, {{ i.fecha }}, {{ i.medio_divulgacion.ciudad.nombre }}. {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.canal }}, {{ i.medio_divulgacion.tipo }}) }
+                                                                \item{ \textbf{ {{ i.tema }}}, {{ i.fecha }}, {{ i.medio_divulgacion.ciudad.nombre }}, {{ i.medio_divulgacion.pais.nombre }}. {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.canal }}, {{ i.medio_divulgacion.get_tipo_display }}) }
                                                             {% endfor %}
                                                         \end{itemize}
                                                 {% endif %}
@@ -718,7 +718,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[7.7.3.] \textbf{Organización de eventos de divulgación}
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_divulgacion %}
-                                                \item{ {{ i.evento.nombre }}, {{ i.evento.tipo.nombre }}, {{ i.tipo_publico }}. \\{% if i.financiamiento %}Financiamiento: {{ i.financiamiento.nombre }}. {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}} ({{ i.get_responsabilidad_display }}), {{ i.evento.tipo }}, {% if i.evento.tipo_publico %}dirigido a {{ i.evento.tipo_publico }}, {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {% if i.financiamiento %}Financiamiento: {{ i.financiamiento.nombre }}, {{ i.financiamiento.institucion.nombre }}, {% endif %}}{{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -726,7 +726,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[7.7.4.] \textbf{Conferencias de divulgación (no dirigidas a pares)}
                                         \begin{itemize}
                                             {% for i in participacion_eventos_divulgacion %}
-                                                \item{ {{ i.titulo }}, {{ i.evento.tipo.nombre }}, {{ i.evento.nombre }}. \\{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}, {{ i.tipo_publico }} }
+                                                \item{\textbf{ {{ i.titulo }}}, en {{ i.evento.nombre }} ({{ i.evento.tipo }}), {% if i.evento.tipo_publico %}dirigido a {{ i.evento.tipo_publico }}, {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}

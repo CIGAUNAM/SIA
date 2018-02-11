@@ -1,5 +1,4 @@
 
-
 def es_valido(grafo):
     for nodo, adiacentes in grafo.items():
         assert(nodo not in adiacentes)
