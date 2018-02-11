@@ -6901,40 +6901,40 @@ class InformeActividades(View):
             p_articulos_cientificos_int_indwos = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') | Q(indices__nombre='Scopus')).count()
 
             p_articulos_cientificos_int_indotros = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).exclude(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).exclude(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') & Q(indices__nombre='Scopus') & Q(
                     indices__isnull=True)).count()
 
             p_articulos_cientificos_int_indno = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 indices__isnull=True).count()
 
             #
             p_articulos_cientificos_nal_indwos = ArticuloCientifico.objects.filter(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') | Q(indices__nombre='Scopus')).count()
 
             p_articulos_cientificos_nal_indotros = ArticuloCientifico.objects.filter(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).exclude(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).exclude(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') & Q(indices__nombre='Scopus') & Q(
                     indices__isnull=True)).count()
 
             p_articulos_cientificos_nal_indno = ArticuloCientifico.objects.filter(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year - 1).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 indices__isnull=True).count()
 
             #
@@ -6942,40 +6942,40 @@ class InformeActividades(View):
             articulos_cientificos_int_indwos = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') | Q(indices__nombre='Scopus')).count()
 
             articulos_cientificos_int_indotros = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).exclude(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).exclude(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') & Q(indices__nombre='Scopus') & Q(
                     indices__isnull=True)).count()
 
             articulos_cientificos_int_indno = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 indices__isnull=True).count()
 
             #
             articulos_cientificos_nal_indwos = ArticuloCientifico.objects.filter(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') | Q(indices__nombre='Scopus')).count()
 
             articulos_cientificos_nal_indotros = ArticuloCientifico.objects.filter(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).exclude(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).exclude(
                 Q(indices__nombre='Web of Science: SCI/SSCI/SCI-EX') & Q(indices__nombre='Scopus') & Q(
                     indices__isnull=True)).count()
 
             articulos_cientificos_nal_indno = ArticuloCientifico.objects.filter(
                 revista__pais__nombre='México').filter(
                 fecha__year=this_year).filter(
-                Q(status='PUBLICADO') | Q(status='EN_PRENSA') | Q(status='ACEPTADO')).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).filter(
                 indices__isnull=True).count()
 
             articulos_cientificos_data = [['Etiqueta', 'Ind. WOS / Scopus', 'Otros indices', 'No indexadas'],
@@ -6992,9 +6992,7 @@ class InformeActividades(View):
             p_avg_articulos_usuario = User.objects.filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
-                articulo_cientifico_autores__fecha__year=this_year - 1).exclude(
-                Q(articulo_cientifico_autores__status='ENVIADO') & Q(
-                    articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
+                articulo_cientifico_autores__fecha__year=this_year - 1).filter(Q(articulo_cientifico_autores__status='PUBLICADO') & Q(articulo_cientifico_autores__status='EN_PRENSA')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
                                                 'pk__count__avg']
             if p_avg_articulos_usuario:
                 p_avg_articulos_usuario = round(p_avg_articulos_usuario, 2)
@@ -7005,9 +7003,7 @@ class InformeActividades(View):
             avg_articulos_usuario = User.objects.filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
                 Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
-                articulo_cientifico_autores__fecha__year=this_year).exclude(
-                Q(articulo_cientifico_autores__status='ENVIADO') & Q(
-                    articulo_cientifico_autores__status='OTRO')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
+                articulo_cientifico_autores__fecha__year=this_year).filter(Q(articulo_cientifico_autores__status='PUBLICADO') | Q(articulo_cientifico_autores__status='EN_PRENSA')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
                                               'pk__count__avg']
             if avg_articulos_usuario:
                 avg_articulos_usuario = round(avg_articulos_usuario, 2)
