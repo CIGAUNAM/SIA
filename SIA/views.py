@@ -7044,45 +7044,35 @@ class InformeActividades(View):
 
 
             p_capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México', libro__fecha__year__gte=this_year - 2,
-                                                                               libro__fecha__year__lte=this_year - 1).exclude(
-                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+                                                                               libro__fecha__year__lte=this_year - 1).filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
             capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México', libro__fecha__year__gte=this_year - 1,
-                                                                             libro__fecha__year__lte=this_year).exclude(
-                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+                                                                             libro__fecha__year__lte=this_year).filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
             p_capitulos_libros_intl = CapituloLibroInvestigacion.objects.filter(libro__fecha__year__gte=this_year - 2,
-                                                                                libro__fecha__year__lte=this_year - 1).exclude(libro__pais__nombre='México').exclude(
-                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+                                                                                libro__fecha__year__lte=this_year - 1).exclude(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
             capitulos_libros_intl = CapituloLibroInvestigacion.objects.filter(libro__fecha__year__gte=this_year - 1,
-                                                                              libro__fecha__year__lte=this_year).exclude(libro__pais__nombre='México').exclude(
-                Q(libro__status='ENVIADO') & Q(libro__status='OTRO')).count()
+                                                                              libro__fecha__year__lte=this_year).exclude(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
 
             #
 
             p_articulos_nal = ArticuloCientifico.objects.filter(revista__pais__nombre='México',
                                                                 fecha__year__gte=this_year - 2,
-                                                                fecha__year__lte=this_year - 1).exclude(
-                Q(status='ENVIADO') & Q(status='OTRO')).count()
+                                                                fecha__year__lte=this_year - 1).filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
 
             articulos_nal = ArticuloCientifico.objects.filter(revista__pais__nombre='México',
                                                                              fecha__year__gte=this_year - 1,
-                                                                             fecha__year__lte=this_year).exclude(
-                Q(status='ENVIADO') & Q(status='OTRO')).count()
+                                                                             fecha__year__lte=this_year).filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
 
             p_articulos_intl = ArticuloCientifico.objects.filter(fecha__year__gte=this_year - 2,
                                                                                 fecha__year__lte=this_year - 1).exclude(
-                revista__pais__nombre='México').exclude(
-                Q(status='ENVIADO') & Q(status='OTRO')).count()
+                revista__pais__nombre='México').filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
 
             articulos_intl = ArticuloCientifico.objects.filter(fecha__year__gte=this_year - 1,
                                                                               fecha__year__lte=this_year).exclude(
-                revista__pais__nombre='México').exclude(
-                Q(status='ENVIADO') & Q(status='OTRO')).count()
-
-
+                revista__pais__nombre='México').filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
 
 
             produccion_data = [['Etiqueta', 'Libros', 'Capitulos de libros', 'Artìculos'],

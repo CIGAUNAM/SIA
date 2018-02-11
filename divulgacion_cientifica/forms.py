@@ -87,6 +87,7 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                  required=True, label='Número de página final')
     proyecto = forms.ModelChoiceField(
+        required=False,
         queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto",
         widget=ModelSelect2Widget(
@@ -124,6 +125,7 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
     financiamiento = forms.ModelChoiceField(
+        required=False,
         queryset=Financiamiento.objects.all(),
         label="Financiamiento",
         widget=ModelSelect2Widget(
