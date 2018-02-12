@@ -49,12 +49,12 @@ class DesarrolloTecnologico(models.Model):
     # tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
-    version = models.CharField(max_length=100)
-    patente = models.CharField(max_length=255, blank=True)
-    licencia = models.ForeignKey(Licencia, on_delete=models.DO_NOTHING)
+    version = models.CharField(max_length=100, blank=True, null=True)
+    patente = models.CharField(max_length=255, blank=True, null=True)
+    licencia = models.ForeignKey(Licencia, on_delete=models.DO_NOTHING, blank=True, null=True)
     url = models.URLField(blank=True)
     autores = models.ManyToManyField(User, related_name='desarrollo_tecnologico_autores')
-    fecha = models.DateField()
+    fecha = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return self.nombre
