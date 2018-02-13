@@ -46,7 +46,6 @@ class Licencia(models.Model):
 
 class DesarrolloTecnologico(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    # tipo_desarrollo_tecnologico = models.ForeignKey(TipoDesarrollo)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
     version = models.CharField(max_length=100, blank=True, null=True)
