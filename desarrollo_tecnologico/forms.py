@@ -9,10 +9,11 @@ from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget
 
 class DesarrolloTecnologicoForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
     version = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     patente = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     licencia = forms.ModelChoiceField(
+        required=True,
         queryset=Licencia.objects.all(),
         label="Licencia",
         widget=ModelSelect2Widget(
