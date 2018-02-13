@@ -37,7 +37,7 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         model = ArbitrajePublicacionAcademica
         exclude = ['usuario', 'tags', ]
         widgets = {
-            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            # 'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

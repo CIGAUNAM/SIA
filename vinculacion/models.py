@@ -24,14 +24,12 @@ ARBITRAJE_ACADEMICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO',
 
 class ArbitrajePublicacionAcademica(models.Model):
     descripcion = models.TextField(blank=True)
-    indices = models.ManyToManyField(Indice, related_name='arbitraje_publicacion_indices', blank=True)
+    # indices = models.ManyToManyField(Indice, related_name='arbitraje_publicacion_indices', blank=True)
     tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICA__TIPO)
-    # revista = models.ForeignKey(Revista, blank=True, null=True, on_delete=models.DO_NOTHING)
     articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
     libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_dictamen = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='arbitraje_publicacion_academica_tags', blank=True)
 
     def __str__(self):
         lista_titulos = [self.articulo, self.libro]
