@@ -10,10 +10,10 @@ from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget
 class DesarrolloTecnologicoForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
-    version = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    patente = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    version = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    patente = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     licencia = forms.ModelChoiceField(
-        required=True,
+        required=False,
         queryset=Licencia.objects.all(),
         label="Licencia",
         widget=ModelSelect2Widget(
@@ -23,7 +23,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
         )
     )
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
-    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
