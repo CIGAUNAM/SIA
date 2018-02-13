@@ -15,14 +15,9 @@ class CursoDocenciaEscolarizadoJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-
-            if self.otros:
-                items = CursoDocenciaEscolarizado.objects.filter(tipo='ESCOLARIZADO').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
-            else:
-                items = CursoDocenciaEscolarizado.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='ESCOLARIZADO') | Q(usuario=usuarioid, tipo='ESCOLARIZADO'))
+            items = CursoDocenciaEscolarizado.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
-
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
@@ -38,17 +33,6 @@ class CursoDocenciaEscolarizadoLista(ObjectCreateMixin, View):
     aux = CursoDocenciaEscolarizadoContext.contexto
     template_name = 'curso_docencia_escolarizado.html'
 
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save(commit=False)
-            new_obj.tipo = 'ESCOLARIZADO'
-            new_obj.usuario = request.user
-            new_obj = bound_form.save()
-            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
-        else:
-            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
-
 
 class CursoDocenciaEscolarizadoDetalle(ObjectUpdateMixin, View):
     form_class = CursoDocenciaEscolarizadoForm
@@ -56,28 +40,15 @@ class CursoDocenciaEscolarizadoDetalle(ObjectUpdateMixin, View):
     aux = CursoDocenciaEscolarizadoContext.contexto
     template_name = 'curso_docencia_escolarizado.html'
 
-    def post(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk)
-        bound_form = self.form_class(request.POST, instance=obj)
-        if bound_form.is_valid():
-            det_obj = bound_form.save()
-            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk)) #corregir el redirect
-        else:
-            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
-
 
 class CursoDocenciaExtracurricularJSON(View):
     otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-
-            if self.otros:
-                items = CursoDocenciaEscolarizado.objects.filter(tipo='EXTRACURRICULAR').exclude(academicos_participantes__id__exact=usuarioid).exclude(usuario=usuarioid)
-            else:
-                items = CursoDocenciaEscolarizado.objects.filter(Q(academicos_participantes__id__exact=usuarioid, tipo='EXTRACURRICULAR') | Q(usuario=usuarioid, tipo='EXTRACURRICULAR'))
+            items = CursoDocenciaExtracurricular.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
+                                         fields=('asignatura', 'dependencia', 'fecha_inicio', 'total_horas'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
@@ -90,37 +61,17 @@ class CursoDocenciaExtracurricularJSON(View):
 
 
 class CursoDocenciaExtracurricularLista(ObjectCreateMixin, View):
-    form_class = CursoDocenciaEscolarizadoForm
-    model = CursoDocenciaEscolarizado
+    form_class = CursoDocenciaExtracurricularForm
+    model = CursoDocenciaExtracurricular
     aux = CursoDocenciaExtracurricularContext.contexto
     template_name = 'curso_docencia_extracurricular.html'
-
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save(commit=False)
-            new_obj.tipo = 'EXTRACURRICULAR'
-            new_obj.usuario = request.user
-            new_obj = bound_form.save()
-            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
-        else:
-            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
 
 
 class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
-    form_class = CursoDocenciaEscolarizadoForm
-    model = CursoDocenciaEscolarizado
+    form_class = CursoDocenciaExtracurricularForm
+    model = CursoDocenciaExtracurricular
     aux = CursoDocenciaExtracurricularContext.contexto
     template_name = 'curso_docencia_extracurricular.html'
-
-    def post(self, request, pk):
-        obj = get_object_or_404(self.model, pk=pk)
-        bound_form = self.form_class(request.POST, instance=obj)
-        if bound_form.is_valid():
-            det_obj = bound_form.save()
-            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk)) #corregir el redirect
-        else:
-            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
 
 class CursoDocenciaEliminar(View):
@@ -131,7 +82,6 @@ class CursoDocenciaEliminar(View):
             return redirect('../')
         except:
             raise Http404
-
 
 
 class ArticuloDocenciaJSON(View):
