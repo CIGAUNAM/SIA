@@ -16,18 +16,16 @@ class ArbitrajePublicacionAcademicaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ArbitrajePublicacionAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('tipo', 'revista', 'libro', 'capitulo_libro', 'fecha_dictamen'))
-            json = json.replace('REVISTA', 'Revista')
+                                         fields=('tipo', 'articulo', 'libro', 'fecha_dictamen'))
+            json = json.replace('ARTICULO', 'Articulo')
             json = json.replace('CAPITULO_LIBRO', 'Capítulo de libro')
             json = json.replace('LIBRO', 'Libro')
 
-            json = json.replace('"revista": null,', '')
+            json = json.replace('"articulo": null,', '')
             json = json.replace('"libro": null,', '')
-            json = json.replace('"capitulo_libro": null,', '')
 
-            json = json.replace('"revista"', '"publicacion"')
+            json = json.replace('"articulo"', '"publicacion"')
             json = json.replace('"libro"', '"publicacion"')
-            json = json.replace('"capitulo_libro"', '"publicacion"')
 
             return HttpResponse(json, content_type='application/json')
         except:
@@ -140,7 +138,16 @@ class RedAcademicaJSON(View):
             else:
                 items = RedAcademica.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'clasificacion', 'fecha_constitucion', 'vigente'))
+                                         fields=('nombre', 'ambito', 'fecha_constitucion', 'vigente'))
+
+            json = json.replace('LOCAL', 'Local')
+            json = json.replace('REGIONAL', 'Regional')
+            json = json.replace('NACIONAL', 'Nacional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('OTRO', 'Otro')
+            json = json.replace('false', '"No"')
+            json = json.replace('true', '"Si"')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
