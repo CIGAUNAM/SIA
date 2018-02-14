@@ -112,12 +112,12 @@ class RedAcademica(models.Model):
 class ConvenioEntidadExterna(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    es_agradecimiento = models.BooleanField(blank=True)
+    es_agradecimiento = models.BooleanField(blank=True, default=False)
     entidades = models.ManyToManyField(Dependencia)
     objetivos = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
-    es_renovacion = models.BooleanField(default=False)
+    es_renovacion = models.BooleanField(blank=True, default=False)
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     usuarios = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios',
                                       verbose_name='Académicos participantes')

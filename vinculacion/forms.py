@@ -124,7 +124,6 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     es_renovacion = forms.BooleanField(required=False)
-    incluye_financiamiento = forms.BooleanField(required=False)
 
     class Meta:
         model = ConvenioEntidadExterna

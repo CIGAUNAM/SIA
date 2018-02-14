@@ -187,7 +187,8 @@ class ConvenioEntidadExternaJSON(View):
             else:
                 items = ConvenioEntidadExterna.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'es_agradecimiento', 'clasificacion_entidad', 'fecha_inicio', 'fecha_fin'))
+                                         fields=('nombre', 'fecha_inicio', 'fecha_fin'))
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -196,14 +197,14 @@ class ConvenioEntidadExternaJSON(View):
 class ConvenioEntidadExternaLista(ObjectCreateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadExterna
-    aux = ConvenioEntidadNoAcademicaContext.contexto
+    aux = ConvenioEntidadExternaContext.contexto
     template_name = 'convenio_entidad_externa.html'
 
 
 class ConvenioEntidadExternaDetalle(ObjectUpdateVarMixin, View):
     form_class = ConvenioEntidadNoAcademicaForm
     model = ConvenioEntidadExterna
-    aux = ConvenioEntidadNoAcademicaContext.contexto
+    aux = ConvenioEntidadExternaContext.contexto
     template_name = 'convenio_entidad_externa.html'
 
 
@@ -223,7 +224,7 @@ class ServicioExternoEntidadNoAcademicaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ServicioExternoEntidadNoAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre_servicio', 'clasificacion_servicio', 'dependencia', 'fecha_inicio', 'fecha_fin'))
+                                         fields=('nombre_servicio', 'clasificacion_servicio', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

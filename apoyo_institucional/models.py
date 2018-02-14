@@ -45,6 +45,9 @@ class Representacion(models.Model):
     def natural_key(self):
         return self.nombre
 
+    def get_absolute_url(self):
+        return reverse('representacion_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['nombre']
         verbose_name = 'Representación'
