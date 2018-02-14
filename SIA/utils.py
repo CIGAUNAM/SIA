@@ -40,7 +40,6 @@ class ObjectCreateMixinNucleo:
             return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
 
 
-
 class ObjectUpdateMixinNucleo:
     form_class = None
     template_name = ''

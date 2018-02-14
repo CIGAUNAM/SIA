@@ -482,7 +482,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                         \item[6.4.] \textbf{Producción tecnológica}
                             \begin{itemize}
                                 {% for i in produccion_tecnologica %}
-                                    \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textit{ {{ i.nombre }} }, {{ i.fecha.year }}. {% if i.version %}Versión: {{ i.version }}{% endif %}, {% if i.patente %}Patente: {{ i.patente }}{% endif %}, {% if i.licencia %}Licencia: {{ i.licencia.nombre }}{% endif %}, {% if i.proyecto %}Proyecto: {{ i.proyecto.nombre }}{% endif %}{% if i.url %}\\{{ i.url }}{% endif %} }
+                                    \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}, \textbf{ {{ i.nombre }}}{% if i.fecha %}, {{ i.fecha.year }}{% endif %}{% if i.version %}, Versión: {{ i.version }}{% endif %}{% if i.patente %}, Patente: {{ i.patente }}{% endif %}{% if i.licencia %}, Licencia: {{ i.licencia.nombre }}{% endif %}{% if i.proyecto %}, Proyecto: {{ i.proyecto.nombre }}{% endif %}{% if i.url %}\\{{ i.url }}{% endif %} }
                                 {% endfor %}
                             \end{itemize}
                     {% endif %}
@@ -702,7 +702,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[7.7.1.] \textbf{Promoción de convenios de colaboración con entidades no académicas}
                                         \begin{itemize}
                                             {% for i in convenios_entidades_externas %}
-                                                \item{ {{ i.nombre }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.nombre }}}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}{% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %} {% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -710,7 +710,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[7.7.2.] \textbf{Servicios y asesorías externas}
                                         \begin{itemize}
                                             {% for i in servicios_asesorias_externas %}
-                                                \item{ {{ i.nombre_servicio }}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}. {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.nombre_servicio }}}, Entidades participantes: {% for j in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}{% if i.financiamientos %}{% for j in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ j.nombre }}{% endfor %}{% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
