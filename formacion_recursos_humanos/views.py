@@ -63,10 +63,6 @@ class AsesoriaEstudianteEliminar(View):
             raise Http404
 
 
-
-
-
-
 class SupervisionInvestigadorPostDoctoralJSON(View):
     def get(self, request):
         try:
@@ -103,8 +99,6 @@ class SupervisionInvestigadorPostDoctoralEliminar(View):
             return redirect('../')
         except:
             raise Http404
-
-
 
 
 class DesarrolloGrupoInvestigacionInternoJSON(View):
@@ -150,13 +144,8 @@ class DesarrolloGrupoInvestigacionInternoEliminar(View):
             raise Http404
 
 
-
-
-
-
-
-
 class DireccionTesisJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
@@ -168,7 +157,7 @@ class DireccionTesisJSON(View):
 
             json = serializers.serialize('json', items,
                                          fields=(
-                                             'titulo', 'asesorado', 'grado_academico', 'dependencia', 'fecha_examen'),
+                                             'titulo', 'asesorado', 'nivel_academico', 'dependencia', 'fecha_examen'),
                                          use_natural_foreign_keys=True)
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
@@ -215,7 +204,7 @@ class ComiteTutoralJSON(View):
                 items = ComiteTutoral.objects.filter(Q(asesores=usuarioid) | Q(sinodales=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=(
-                                             'asesorado', 'grado_academico', 'programa_maestria', 'programa_doctorado',
+                                             'estudiante', 'nivel_academico', 'programa_licenciatura', 'programa_maestria', 'programa_doctorado',
                                              'dependencia', 'proyecto'))
             json = json.replace('"programa_licenciatura": null,', '')
             json = json.replace('"programa_maestria": null,', '')
@@ -223,6 +212,7 @@ class ComiteTutoralJSON(View):
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
+            json = json.replace('programa_licenciatura', 'programa')
             json = json.replace('programa_maestria', 'programa')
             json = json.replace('programa_doctorado', 'programa')
             return HttpResponse(json, content_type='application/json')

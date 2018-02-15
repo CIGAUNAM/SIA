@@ -259,16 +259,17 @@ class DireccionTesisForm(forms.ModelForm):
 
 
 class ComiteTutoralForm(forms.ModelForm):
-    asesorado = forms.ModelChoiceField(
+    estudiante = forms.ModelChoiceField(
         queryset=User.objects.all(),
-        label="Asesorado",
+        label="Estudiante",
         widget=ModelSelect2Widget(
             search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
             queryset=User.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    grado_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar grado académico'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
+    nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', '-------'), ('LICENCIATURA', 'Licenciatura'),
+                                                               ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
     programa_licenciatura = forms.ModelChoiceField(
         required=False,
         queryset=ProgramaLicenciatura.objects.all(),
