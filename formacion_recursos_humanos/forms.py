@@ -194,9 +194,6 @@ class DesarrolloGrupoInvestigacionInternoForm(forms.ModelForm):
         }
 
 
-
-
-
 class DireccionTesisForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     especialidad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
@@ -240,18 +237,17 @@ class DireccionTesisForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    """
     reconocimiento = forms.ModelChoiceField(
         required=False,
-        queryset=Reconocimiento.objects.all(),
+        queryset=Distincion.objects.all(),
         label="Reconocimiento",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Reconocimiento.objects.all(),
+            queryset=Distincion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    """
+
     fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:

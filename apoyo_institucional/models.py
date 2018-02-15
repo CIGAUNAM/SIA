@@ -33,6 +33,9 @@ class ActividadApoyo(models.Model):
     def natural_key(self):
         return self.nombre
 
+    def get_absolute_url(self):
+        return reverse('actividad_apoyo_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         verbose_name = 'Actividad de apoyo'
         verbose_name_plural = 'Actividades de apoyo'
