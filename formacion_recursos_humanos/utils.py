@@ -31,7 +31,7 @@ class AsesoriaEstudianteContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asesorado + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.grado_academico"},\n' \
+                                    '{"data": "fields.nivel_academico"},\n' \
                                     '{"data": "fields.programa"},\n' \
                                     '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.fecha_fin"},\n' \

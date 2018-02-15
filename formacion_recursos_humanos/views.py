@@ -20,7 +20,7 @@ class AsesoriaEstudianteJSON(View):
             items = AsesoriaEstudiante.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
                                          fields=(
-                                             'asesorado', 'grado_academico', 'programa_licenciatura',
+                                             'asesorado', 'nivel_academico', 'programa_licenciatura',
                                              'programa_maestria',
                                              'programa_doctorado', 'dependencia', 'fecha_fin'),
                                          use_natural_foreign_keys=True)

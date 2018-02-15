@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.conf import settings
 from nucleo.models import User, Institucion, Dependencia, Beca, ProgramaLicenciatura, ProgramaMaestria, \
-    ProgramaDoctorado, Pais
+    ProgramaDoctorado, Pais, Distincion
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, Libro, CapituloLibroInvestigacion
 from sortedm2m.fields import SortedManyToManyField
 
@@ -38,7 +38,7 @@ class AsesoriaEstudiante(models.Model):
         return "{} : {}".format(str(self.asesorado), self.fecha_inicio)
 
     def get_absolute_url(self):
-        return reverse('asesoria_estudiante_detalle', kwargs={'pk': self.pk})
+        return reverse('asesor_estancia_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio', '-fecha_fin']
@@ -108,6 +108,7 @@ class DireccionTesis(models.Model):
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
+    reconocimiento = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
     fecha_examen = models.DateField(null=True, blank=True)
     usuarios = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 
