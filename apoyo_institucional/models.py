@@ -7,14 +7,17 @@ from django.urls import reverse
 
 
 class Comision(models.Model):
-    comision = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
-        return self.comision
+        return self.nombre
 
     def natural_key(self):
-        return self.comision
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('comision_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Comisiones'

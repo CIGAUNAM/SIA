@@ -121,7 +121,6 @@ class ComisionAcademicaForm(forms.ModelForm):
         exclude = ['usuario', ]
 
 
-
 class ApoyoTecnicoForm(forms.ModelForm):
     actividad_apoyo = forms.ModelChoiceField(
         queryset=ActividadApoyo.objects.all(),

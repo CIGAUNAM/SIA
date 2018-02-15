@@ -593,7 +593,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_nacionales %}
-                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.comision_academica.nombre }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación), {% endif %}{{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -601,7 +601,7 @@ GUÍA PARA LA PRESENTACIÓN DEL CURRICULUM VITAE \\
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_internacionales %}
-                                                \item{ {{ i.comision_academica.comision }}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación){% endif %}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.comision_academica.nombre }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación), {% endif %}{{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
