@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^grupos-investigacion-internos/(?P<pk>[\w\-]+)/$', DesarrolloGrupoInvestigacionInternoDetalle.as_view(), name='grupo_investigacion_interno_detalle'),
 
     url(r'^direccion-tesis/json/', DireccionTesisJSON.as_view(), name='direccion_tesis_lista__json'),
+    url(r'^direccion-tesis/json-otros/', DireccionTesisJSON.as_view(otros=True), name='direccion_tesis_lista__json_otros'),
     url(r'^direccion-tesis/$', DireccionTesisLista.as_view(), name='direccion_tesis_lista'),
     url(r'^direccion-tesis/(?P<pk>[\w\-]+)/eliminar$', DireccionTesisEliminar.as_view(), name='direccion_tesis_eliminar'),
     url(r'^direccion-tesis/(?P<pk>[\w\-]+)/$', DireccionTesisDetalle.as_view(), name='direccion_tesis_detalle'),

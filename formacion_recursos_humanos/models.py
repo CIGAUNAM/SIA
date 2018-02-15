@@ -103,8 +103,7 @@ class DireccionTesis(models.Model):
     especialidad = models.CharField(max_length=255)
     asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado', on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    grado_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
-    documento_tesis = models.FileField(null=True, blank=True)
+    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
@@ -129,8 +128,7 @@ class DireccionTesis(models.Model):
 
 class ComiteTutoral(models.Model):
     estudiante = models.ForeignKey(User, related_name='comite_tutoral_estudiante', on_delete=models.DO_NOTHING)
-    grado_academico = models.CharField(max_length=20, choices=(('', '-------'), ('LICENCIATURA', 'Licenciatura'),
-                                                               ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
