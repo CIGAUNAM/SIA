@@ -260,21 +260,32 @@
                     $('#d_doctorado').hide('slow');
                 } else if ($("#id_nivel").val() == 'MAESTRIA') {
                     $('#d_maestria').show('slow');
+                    $('#id_maestria').attr("required", "true");
+                    $('#id_licenciatura').attr("required", null);
+                    $('#id_doctorado').attr("required", null);
 
                     $('#id_licenciatura').val(null).trigger("change");
                     $('#d_licenciatura').hide('slow');
                     $('#id_doctorado').val(null).trigger("change");
                     $('#d_doctorado').hide('slow');
                 } else if ($("#id_nivel").val() == 'DOCTORADO') {
+                    $('#d_doctorado').show('slow');
+                    $('#id_doctorado').attr("required", "true");
+                    $('#id_licenciatura').attr("required", null);
+                    $('#id_maestria').attr("required", null);
+
                     $('#id_licenciatura').val(null).trigger("change");
                     $('#d_licenciatura').hide('slow');
                     $('#id_maestria').val(null).trigger("change");
                     $('#d_maestria').hide('slow');
-                    $('#d_doctorado').show('slow');
                 } else {
                     $('#d_licenciatura').show('slow');
                     $('#d_maestria').show('slow');
                     $('#d_doctorado').show('slow');
+
+                    $('#id_licenciatura').attr("required", null);
+                    $('#id_maestria').attr("required", null);
+                    $('#id_doctorado').attr("required", null);
                 }
             }
         );
@@ -539,35 +550,44 @@
         }
 
         $("#id_nivel").on('change', function () {
-                if ($("#id_nivel").val() == 'OTRO') {
-                    $('#id_licenciatura').val(null).trigger("change");
-                    $('#d_licenciatura').hide('slow');
-                    $('#id_maestria').val(null).trigger("change");
-                    $('#d_maestria').hide('slow');
-                    $('#id_doctorado').val(null).trigger("change");
-                    $('#d_doctorado').hide('slow');
-                } else if ($("#id_nivel").val() == 'LICENCIATURA') {
+                if ($("#id_nivel").val() == 'LICENCIATURA') {
                     $('#d_licenciatura').show('slow');
+                    $('#id_licenciatura').attr("required", "true");
+                    $('#id_maestria').attr("required", null);
+                    $('#id_doctorado').attr("required", null);
+
                     $('#id_maestria').val(null).trigger("change");
                     $('#d_maestria').hide('slow');
                     $('#id_doctorado').val(null).trigger("change");
                     $('#d_doctorado').hide('slow');
                 } else if ($("#id_nivel").val() == 'MAESTRIA') {
+                    $('#d_maestria').show('slow');
+                    $('#id_maestria').attr("required", "true");
+                    $('#id_licenciatura').attr("required", null);
+                    $('#id_doctorado').attr("required", null);
+
                     $('#id_licenciatura').val(null).trigger("change");
                     $('#d_licenciatura').hide('slow');
-                    $('#d_maestria').show('slow');
                     $('#id_doctorado').val(null).trigger("change");
                     $('#d_doctorado').hide('slow');
                 } else if ($("#id_nivel").val() == 'DOCTORADO') {
+                    $('#d_doctorado').show('slow');
+                    $('#id_doctorado').attr("required", "true");
+                    $('#id_licenciatura').attr("required", null);
+                    $('#id_maestria').attr("required", null);
+
                     $('#id_licenciatura').val(null).trigger("change");
                     $('#d_licenciatura').hide('slow');
                     $('#id_maestria').val(null).trigger("change");
                     $('#d_maestria').hide('slow');
-                    $('#d_doctorado').show('slow');
                 } else {
                     $('#d_licenciatura').show('slow');
                     $('#d_maestria').show('slow');
                     $('#d_doctorado').show('slow');
+
+                    $('#id_licenciatura').attr("required", null);
+                    $('#id_maestria').attr("required", null);
+                    $('#id_doctorado').attr("required", null);
                 }
             }
         );
