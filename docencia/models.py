@@ -49,7 +49,7 @@ class CursoDocenciaEscolarizado(models.Model):
 
 class CursoDocenciaExtracurricular(models.Model):
     asignatura = models.ForeignKey(Asignatura, on_delete=models.DO_NOTHING)
-    tipo_curso = models.CharField(max_length=255)
+    # tipo_curso = models.CharField(max_length=255)
     modalidad = models.CharField(max_length=30, choices=(('', 'Seleccionar modalidad de curso'),
                                                          ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'),
                                                          ('MIXTO', 'Mixto')))
