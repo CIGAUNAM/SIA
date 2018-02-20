@@ -762,3 +762,23 @@ class MedioDivulgacion(models.Model):
         ordering = ['nombre_medio']
         verbose_name = "Medio de difusión para divulgación"
         verbose_name_plural = "Medios de difusión para divulgación"
+
+
+class TipoCurso(models.Model):
+    nombre = models.CharField(max_length=100, unique=True)
+    descripcion = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.nombre
+
+    def natural_key(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('tipo_curso_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = "Tipo de curso"
+        verbose_name_plural = "Tipos de curso"
+

@@ -134,7 +134,10 @@ urlpatterns = [
     # url(r'^usuarios/(?P<pk>[\w\-]+)/eliminar$', MedioDivulgacionEliminar.as_view(), name='user_eliminar'),
     url(r'^usuarios/(?P<pk>[\w\-]+)/$', UserDetalle.as_view(), name='usuario_detalle'),
 
-
+    url(r'^tipos-curso/json/', TipoCursoJSON.as_view(), name='tipo_curso_lista__json'),
+    url(r'^tipos-curso/$', TipoCursoLista.as_view(), name='tipo_curso_lista'),
+    # url(r'^tipos-curso/(?P<pk>[\w\-]+)/eliminar$', MedioDivulgacionEliminar.as_view(), name='tipo_curso_eliminar'),
+    url(r'^tipos-curso/(?P<pk>[\w\-]+)/$', TipoCursoDetalle.as_view(), name='tipo_curso_detalle'),
 
 
 
