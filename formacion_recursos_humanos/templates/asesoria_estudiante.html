@@ -270,20 +270,13 @@
     </p>
 
     <script>
-        //$('#d_programa_licenciatura').hide();
+        $('#d_programa_licenciatura').hide();
         $('#d_programa_maestria').hide();
         $('#d_programa_doctorado').hide();
 
 
         $("#id_nivel_academico").on('change', function () {
-                    if ($("#id_nivel_academico").val() == 'OTRO') {
-                        $('#id_programa_licenciatura').val(null).trigger("change");
-                        $('#d_programa_licenciatura').hide();
-                        $('#id_programa_maestria').val(null).trigger("change");
-                        $('#d_programa_maestria').hide();
-                        $('#id_programa_doctorado').val(null).trigger("change");
-                        $('#d_programa_doctorado').hide();
-                    } else if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
+                    if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
                         $('#d_programa_licenciatura').show();
                         $('#id_programa_maestria').val(null).trigger("change");
                         $('#d_programa_maestria').hide();
