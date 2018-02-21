@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from nucleo.models import User, Institucion, Dependencia, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, \
-    Asignatura, Revista, Indice
+    Asignatura, Revista, Indice, TipoCurso
 from investigacion.models import ProyectoInvestigacion
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -49,7 +49,7 @@ class CursoDocenciaEscolarizado(models.Model):
 
 class CursoDocenciaExtracurricular(models.Model):
     asignatura = models.ForeignKey(Asignatura, on_delete=models.DO_NOTHING)
-    # tipo_curso = models.CharField(max_length=255)
+    tipo = models.ForeignKey(TipoCurso, on_delete=models.DO_NOTHING)
     modalidad = models.CharField(max_length=30, choices=(('', 'Seleccionar modalidad de curso'),
                                                          ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'),
                                                          ('MIXTO', 'Mixto')))

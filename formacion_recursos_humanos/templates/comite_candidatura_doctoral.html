@@ -25,31 +25,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Asesor principal:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Asesor principal.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-user"></i></div>
-            {{ form.asesor_principal }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del asesor seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un asesor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Otros asesores:</strong>
+    <p><strong>Asesores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
@@ -57,7 +33,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.otros_asesores }}
+            {{ form.asesores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los otros asesores participantes.">
@@ -209,6 +185,17 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $("#id_usuarios").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -420,4 +407,15 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $("#id_usuarios").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+    </script>
+
 {% endblock %}
