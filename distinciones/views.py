@@ -18,13 +18,7 @@ class DistincionAcademicoJSON(View):
             else:
                 items = DistincionAcademico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('distincion', 'institucion', 'ambito', 'fecha'))
-
-            json = json.replace('INSTITUCIONAL', 'Institucional')
-            json = json.replace('REGIONAL', 'Regional')
-            json = json.replace('NACIONAL', 'Nacional')
-            json = json.replace('INTERNACIONAL', 'Internacional')
-            json = json.replace('OTRO', 'Otro')
+                                         fields=('distincion', 'institucion', 'fecha'))
 
             return HttpResponse(json, content_type='application/json')
         except:
@@ -66,13 +60,7 @@ class DistincionAlumnoJSON(View):
             else:
                 items = DistincionAlumno.objects.filter(tutores=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('distincion', 'alumno', 'grado_academico', 'dependencia', 'ambito', 'fecha'))
-
-            json = json.replace('INSTITUCIONAL', 'Institucional')
-            json = json.replace('REGIONAL', 'Regional')
-            json = json.replace('NACIONAL', 'Nacional')
-            json = json.replace('INTERNACIONAL', 'Internacional')
-            json = json.replace('OTRO', 'Otro')
+                                         fields=('distincion', 'alumno', 'nivel_academico', 'institucion', 'fecha'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')

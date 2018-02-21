@@ -12,7 +12,7 @@ class DistincionAcademicoContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Distinción', 'Institución', 'Ámbito', 'fecha']}
+                'titulos_tabla': ['Distinción', 'Institución', 'fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -32,7 +32,6 @@ class DistincionAcademicoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.institucion"},\n' \
-                                    '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -53,7 +52,7 @@ class DistincionAlumnoContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Distinción', 'alumno', 'Grado académico', 'Institución', 'Ámbito', 'fecha']}
+                'titulos_tabla': ['Distinción', 'alumno', 'Nivel académico', 'Institución', 'fecha']}
 
 
     tabla_mios = '<script>\n' \
@@ -73,9 +72,8 @@ class DistincionAlumnoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.alumno"},\n' \
-                                    '{"data": "fields.grado_academico"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.ambito"},\n' \
+                                    '{"data": "fields.nivel_academico"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -101,9 +99,8 @@ class DistincionAlumnoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.alumno"},\n' \
-                                    '{"data": "fields.grado_academico"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.ambito"},\n' \
+                                    '{"data": "fields.nivel_academico"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \

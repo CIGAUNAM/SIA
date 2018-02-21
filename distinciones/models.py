@@ -4,8 +4,7 @@ from django.urls import reverse
 from nucleo.models import User, Institucion, Distincion
 from investigacion.models import ArticuloCientifico, Libro, CapituloLibroInvestigacion
 
-GRADO_ACADEMICO = getattr(settings, 'GRADO_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'),
-                                                        ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 
 
 # Create your models here.
@@ -32,7 +31,7 @@ class DistincionAcademico(models.Model):
 class DistincionAlumno(models.Model):
     distincion = models.ForeignKey(Distincion, on_delete=models.DO_NOTHING)
     alumno = models.ForeignKey(User, related_name='distincion_alumno_alumno', on_delete=models.DO_NOTHING)
-    grado_academico = models.CharField(max_length=20, choices=GRADO_ACADEMICO)
+    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     tutores = models.ManyToManyField(User, related_name='distincion_alumno_tutores')
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
