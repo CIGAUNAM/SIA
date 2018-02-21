@@ -409,6 +409,15 @@ class TipoEventoForm(forms.ModelForm):
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
+class TipoCursoForm(forms.ModelForm):
+    class Meta:
+        model = TipoCurso
+        exclude = []
+        widgets = {
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+        }
+
 
 class EventoForm(forms.ModelForm):
     tipo = forms.ModelChoiceField(

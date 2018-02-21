@@ -316,8 +316,8 @@ class ComiteTutoralContext:
 
 
 class ComiteCandidaturaDoctoralContext:
-    obj = 'Comité C. Doctoral'
-    objs = 'Comités C. Doctoral'
+    obj = 'Comité de Candidatura Doctoral'
+    objs = 'Comités de Candidatura Doctoral'
     url_seccion = 'comites-candidatura-doctoral'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,

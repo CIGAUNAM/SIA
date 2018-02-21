@@ -90,7 +90,15 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    # tipo_curso = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), label='Tipo de curso')
+    tipo = forms.ModelChoiceField(
+        queryset=TipoCurso.objects.all(),
+        label="Tipo de curso",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=TipoCurso.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),

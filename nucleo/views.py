@@ -661,6 +661,41 @@ class TipoEventoEliminar(View):
             raise Http404
 
 
+class TipoCursoJSON(View):
+    def get(self, request):
+        try:
+            items = TipoCurso.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre',))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class TipoCursoLista(ObjectCreateMixinNucleo, View):
+    form_class = TipoCursoForm
+    model = TipoCurso
+    aux = TipoCursoContext.contexto
+    template_name = 'simple.html'
+
+
+class TipoCursoDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = TipoCursoForm
+    model = TipoCurso
+    aux = TipoCursoContext.contexto
+    template_name = 'simple.html'
+
+
+class TipoCursoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(TipoCurso, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
 class EventoJSON(View):
     def get(self, request):
         try:
@@ -1016,44 +1051,6 @@ class PerfilUsuario(View):
             return redirect('/perfil-usuario/')
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-class InstitucionCrear(View):
-    form_class = InstitucionForm
-    model = Institucion
-    #template_name = 'agregar_institucion.html'
-
-    def get(self, request):
-        return render(request, self.template_name, {'form_institucion': self.form_class})
-
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save()
-            print(str(new_obj) + 'guardado')
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-            #return HttpResponseRedirect("")
-            #return HttpResponse("<script>$('#agregar-institucion').modal('hide');</script>")
-        else:
-            return render(request, self.template_name, {'form_institucion': bound_form})
-"""
-
-
-
-
 
 
 

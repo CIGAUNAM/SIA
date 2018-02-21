@@ -352,15 +352,6 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    asesor_principal = forms.ModelChoiceField(
-        queryset=User.objects.all(),
-        label="Asesor principal",
-        widget=ModelSelect2Widget(
-            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
-            queryset=User.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
@@ -405,6 +396,6 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         model = ComiteCandidaturaDoctoral
         exclude = []
         widgets = {
-            'otros_asesores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'sinodales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'asesores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'sinodales': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
