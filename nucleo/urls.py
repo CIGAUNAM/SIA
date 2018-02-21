@@ -86,7 +86,7 @@ urlpatterns = [
 
     url(r'^tipos-evento/json/', TipoEventoJSON.as_view(), name='tipo_evento_lista__json'),
     url(r'^tipos-evento/$', TipoEventoLista.as_view(), name='tipo_evento_lista'),
-    # url(r'^tipos-evento/(?P<pk>[\w\-]+)/eliminar$', TipoEventoEliminar.as_view(), name='tipo_evento_eliminar'),
+    url(r'^tipos-evento/(?P<pk>[\w\-]+)/eliminar$', TipoEventoEliminar.as_view(), name='tipo_evento_eliminar'),
     url(r'^tipos-evento/(?P<pk>[\w\-]+)/$', TipoEventoDetalle.as_view(), name='tipo_evento_detalle'),
 
     url(r'^eventos/json/', EventoJSON.as_view(), name='evento_lista__json'),
