@@ -29,6 +29,8 @@
 
     {% block extra_foot %}{% endblock %}
 
+    {{ form_institucion.media.js }}
+
 {% else %}
     <script>
         window.location.href = '/login/';

@@ -157,14 +157,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="#institucion-modal-body">
-                    <script>
-                        $(function () {
-                            $().load('/nucleo/instituciones/agregar/')
-                            console.log( "ready!" );
-                        });
-                    </script>
+                <div class="modal-body">
+                    <div id="institucion-modal-body">
 
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -173,6 +169,13 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $("#agregar-institucion").on('shown.bs.modal', function () {
+            $('#institucion-modal-body').load('/nucleo/instituciones/agregar/')
+            console.log("ready!");
+        });
+    </script>
 
 {% endblock %}
 
