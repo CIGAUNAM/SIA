@@ -147,7 +147,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="agregar-institucion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="agregar-institucion" style="overflow:hidden;" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -173,8 +173,13 @@
     <script>
         $("#agregar-institucion").on('shown.bs.modal', function () {
             $('#institucion-modal-body').load('/nucleo/instituciones/agregar/')
-            console.log("ready!");
+            $().fn.modal.Constructor.prototype.enforceFocus = function () {
+            };
+            $("#id_pais").djangoSelect2({
+                dropdownParent: $("#agregar-institucion")
+            });
         });
+
     </script>
 
 {% endblock %}
