@@ -168,6 +168,24 @@ class InstitucionJSON(View):
             raise Http404
 
 
+class InstitucionAgregar(ObjectCreateMixinNucleo, View):
+    form_class = InstitucionForm
+    model = Institucion
+    aux = InstitucionContext.contexto
+    template_name = 'modal/agregar_institucion.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {'form_institucion': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'form_institucion': bound_form})
+
+
 class InstitucionLista(ObjectCreateMixinNucleo, View):
     form_class = InstitucionForm
     model = Institucion
