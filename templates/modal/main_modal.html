@@ -1,0 +1,52 @@
+{% block stylesheets %}
+    {% include 'adminlte/lib/_styles.html' %}
+{% endblock %}
+
+
+{% if user.is_authenticated %}
+
+    {% block messages %}
+        {% include 'adminlte/lib/_messages.html' %}
+    {% endblock %}
+
+    {% block body %}
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {% block form_agregar %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    {% endblock body %}
+
+    {% block javascript %}
+        {% include 'adminlte/lib/_scripts.html' %}
+    {% endblock %}
+
+    {{ form_institucion.media.js }}
+
+    {% block extra_foot %}{% endblock %}
+
+{% else %}
+    <script>
+        window.location.href = '/login/';
+    </script>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

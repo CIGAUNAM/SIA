@@ -21,8 +21,10 @@ urlpatterns = [
 
     url(r'^instituciones/json/', InstitucionJSON.as_view(), name='institucion_lista__json'),
     url(r'^instituciones/$', InstitucionLista.as_view(), name='institucion_lista'),
+    url(r'^instituciones/agregar/$', InstitucionAgregar.as_view(), name='institucion_agregar'),
     # url(r'^instituciones/(?P<pk>[\w\-]+)/eliminar$', InstitucionEliminar.as_view(), name='institucion_eliminar'),
     url(r'^instituciones/(?P<pk>[\w\-]+)/$', InstitucionDetalle.as_view(), name='institucion_detalle'),
+
 
     url(r'^dependencias/json/', DependenciaJSON.as_view(), name='dependencia_lista__json'),
     url(r'^dependencias/$', DependenciaLista.as_view(), name='dependencia_lista'),
