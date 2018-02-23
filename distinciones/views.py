@@ -9,14 +9,11 @@ from . models import *
 # Create your views here.
 
 class DistincionAcademicoJSON(View):
-    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            if self.otros:
-                items = DistincionAcademico.objects.all().exclude(condecorados=usuarioid)
-            else:
-                items = DistincionAcademico.objects.filter(usuario=usuarioid)
+
+            items = DistincionAcademico.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'institucion', 'fecha'))
 
@@ -174,13 +171,6 @@ class ParticipacionSociedadCientificaEliminar(View):
             return redirect('../')
         except:
             raise Http404
-
-
-
-
-
-
-
 
 
 class CitaPublicacionJSON(View):
