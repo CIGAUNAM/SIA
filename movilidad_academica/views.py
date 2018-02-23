@@ -26,9 +26,6 @@ class MovilidadJSON(View):
                                                                                                 'dependencia__nombre',
                                                                                                 'dependencia__ciudad__estado__pais__nombre',
                                                                                                 'fecha_inicio')
-            # for i in items:
-            #    i['fecha_inicio'] = str(i['fecha_inicio'])
-
             json = '['
             for i in items:
                 json += '{"model": "movilidad_academica.movilidadacademica", "pk": '
