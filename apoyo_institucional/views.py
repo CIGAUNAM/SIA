@@ -227,7 +227,6 @@ class RepresentacionEliminar(View):
 class ComisionJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = Comision.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre',))
@@ -263,7 +262,6 @@ class ComisionEliminar(View):
 class ActividadApoyoJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = ActividadApoyo.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre',))

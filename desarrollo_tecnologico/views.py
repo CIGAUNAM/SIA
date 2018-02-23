@@ -6,7 +6,6 @@ from .forms import DesarrolloTecnologicoForm, LicenciaForm
 from .models import DesarrolloTecnologico, Licencia
 from .utils import DesarrolloTecnologicoContext, LicenciaContext
 from nucleo.models import User
-from django.db.models import Q
 
 
 # Create your views here.
@@ -74,7 +73,6 @@ class DesarrolloTecnologicoEliminar(View):
 class LicenciaJSON(View):
     def get(self, request):
         try:
-            # usuarioid = User.objects.get(username=request.user.username).id
             items = Licencia.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', ))
