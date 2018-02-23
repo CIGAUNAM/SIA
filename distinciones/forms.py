@@ -18,7 +18,6 @@ class DistincionAcademicoForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
-        required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
