@@ -670,9 +670,10 @@ class Libro(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
                                                     ('DOCENCIA', 'Docencia')))
-    usuarios = SortedManyToManyField(User, related_name='libro_autores', verbose_name='Autores')
-    editores = models.ManyToManyField(User, related_name='libro_editores', blank=True)
-    coordinadores = models.ManyToManyField(User, related_name='libro_coordinadores', blank=True)
+    usuarios = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
+    editores = SortedManyToManyField(User, related_name='libro_editores', blank=True)
+    coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
+    prologo = SortedManyToManyField(User, related_name='libro_prologo', blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
@@ -685,8 +686,6 @@ class Libro(models.Model):
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
-    es_libro_completo = models.BooleanField(default=False)
-    tiene_participacion_prologo = models.BooleanField(default=False)
 
     def __str__(self):
         return "{} : {} : {}".format(self.nombre, self.editorial, self.isbn)
