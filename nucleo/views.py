@@ -15,6 +15,8 @@ from . forms import *
 from . utils import *
 from . models import *
 
+from django.http import JsonResponse
+
 
 def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
@@ -181,7 +183,8 @@ class InstitucionAgregar(ObjectCreateMixinNucleo, View):
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
             new_obj = bound_form.save()
-            return redirect(new_obj)
+            #return redirect(new_obj)
+            return JsonResponse(new_obj)
         else:
             return render(request, self.template_name, {'form_institucion': bound_form})
 
@@ -782,18 +785,6 @@ class DistincionEliminar(View):
             item = get_object_or_404(Distincion, pk=pk)
             item.delete()
             return redirect('../')
-        except:
-            raise Http404
-
-
-class MemoriaJSON(View):
-    def get(self, request):
-        try:
-            #usuarioid = User.objects.get(username=request.user.username).id
-            items = Memoria.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
-            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
