@@ -152,26 +152,25 @@ class GradoAcademico(models.Model):
 class User(AbstractUser):
     grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
-    tipo = models.CharField(max_length=30, choices=(
+    tipo = models.CharField(max_length=30, blank=True, null=True, choices=(
         ('', 'Seleccionar tipo de usuario'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), 
         ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
-    genero = models.CharField(max_length=10, choices=(
+    genero = models.CharField(max_length=10, blank=True, null=True, choices=(
         ('', 'Seleccionar género'), ('M', 'Masculino'), ('F', 'Femenino')))
-    pais_origen = models.ForeignKey(Pais, default=1, verbose_name='País de origen', related_name='user_pais_origen', 
-                                    on_delete=models.DO_NOTHING)
+    pais_origen = models.ForeignKey(Pais, default=1, blank=True, null=True, verbose_name='País de origen', related_name='user_pais_origen', on_delete=models.DO_NOTHING)
     rfc = models.SlugField(max_length=20, blank=True)
     curp = models.SlugField(max_length=20, blank=True)
     direccion = models.CharField(max_length=255, blank=True)
     direccion_continuacion = models.CharField(max_length=255, blank=True)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING, default=1)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING, default=1)
-    pais = models.ForeignKey(Pais, related_name='user_pais', on_delete=models.DO_NOTHING, default=1)
+    pais = models.ForeignKey(Pais, blank=True, null=True, related_name='user_pais', on_delete=models.DO_NOTHING, default=1)
+    estado = models.ForeignKey(Estado, blank=True, null=True, on_delete=models.DO_NOTHING, default=1)
+    ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.DO_NOTHING, default=1)
     telefono = models.SlugField(max_length=20, blank=True)
     celular = models.SlugField(max_length=20, blank=True)
     url = models.URLField(blank=True, null=True)
-    sni = models.PositiveSmallIntegerField(default=0)
-    pride = models.CharField(max_length=2, choices=(
+    sni = models.PositiveSmallIntegerField(default=0, blank=True, null=True)
+    pride = models.CharField(max_length=2, blank=True, null=True, choices=(
         ('-', '-'), ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')), default='-')
     ingreso_unam = models.DateField(null=True, blank=True)
     ingreso_entidad = models.DateField(null=True, blank=True)
