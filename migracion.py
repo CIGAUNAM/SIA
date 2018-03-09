@@ -4628,7 +4628,6 @@ for i in libros_inv:
               numero_paginas=i[6],
               isbn=i[7],
               url=i[8],
-              es_libro_completo=True
               )
     l.save()
     print(l)
