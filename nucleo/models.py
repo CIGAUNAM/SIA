@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.conf import settings
 from sortedm2m.fields import SortedManyToManyField
 
+from django.utils.translation import gettext_lazy
+
 
 STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'),
                                                         ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
@@ -162,9 +164,9 @@ class User(AbstractUser):
     curp = models.SlugField(max_length=20, blank=True)
     direccion = models.CharField(max_length=255, blank=True)
     direccion_continuacion = models.CharField(max_length=255, blank=True)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    pais = models.ForeignKey(Pais, related_name='user_pais', on_delete=models.DO_NOTHING)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING, default=1)
+    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING, default=1)
+    pais = models.ForeignKey(Pais, related_name='user_pais', on_delete=models.DO_NOTHING, default=1)
     telefono = models.SlugField(max_length=20, blank=True)
     celular = models.SlugField(max_length=20, blank=True)
     url = models.URLField(blank=True, null=True)
@@ -176,6 +178,7 @@ class User(AbstractUser):
     egreso_entidad = models.DateField(null=True, blank=True)
     ultimo_contrato = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
+
 
     def author_name(self):
         names = self.first_name.split()

@@ -1012,14 +1012,14 @@ class UserLista(ObjectCreateMixinNucleo, View):
     form_class = UserForm
     model = User
     aux = UserContext.contexto
-    template_name = 'main.html'
+    template_name = 'user.html'
 
 
 class UserDetalle(ObjectUpdateMixinNucleo, View):
     form_class = UserForm
     model = User
     aux = UserContext.contexto
-    template_name = 'main.html'
+    template_name = 'user.html'
 
 
 class UserEliminar(View):

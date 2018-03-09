@@ -1,0 +1,86 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    {{ form.errors }}
+    <p><strong>Nombre de usuario:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del país."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.username }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombre(s):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre propio."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.first_name }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Apellido(s):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Apellido(s)."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.last_name }}
+        </div>
+    </div>
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Nombre de usuario:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del país."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.username }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombre(s):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre propio."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.first_name }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Apellido(s):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Apellido(s)."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.last_name }}
+        </div>
+    </div>
+    </p>
+{% endblock %}
