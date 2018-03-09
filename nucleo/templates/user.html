@@ -14,6 +14,18 @@
             {{ form.username }}
         </div>
     </div>
+    </p><p><strong>Password:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del país."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.password }}
+        </div>
+    </div>
     </p>
     <p><strong>Nombre(s):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -41,6 +53,7 @@
         </div>
     </div>
     </p>
+    <input id="id_date_joined" type="hidden" value="1900-01-01">
 {% endblock %}
 
 {% block form_detalle %}

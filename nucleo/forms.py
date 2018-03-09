@@ -688,8 +688,10 @@ class MedioDivulgacionForm(forms.ModelForm):
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
+from datetime import datetime
 
 class UserForm(forms.ModelForm):
+    date_joined = forms.DateField(widget=wDateInput, initial=datetime.now())
 
     class Meta:
         model = User
