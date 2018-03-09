@@ -177,6 +177,7 @@ class User(AbstractUser):
     egreso_entidad = models.DateField(null=True, blank=True)
     ultimo_contrato = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
+    date_joined = models.DateField(auto_now_add=True)
 
 
     def author_name(self):
