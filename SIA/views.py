@@ -7429,9 +7429,9 @@ class CVInvestigadorPDF(View):
         tesis_dirigidas_maestria = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='MAESTRIA', fecha_examen__isnull=False).order_by('-fecha_examen')
         tesis_dirigidas_doctorado = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='DOCTORADO', fecha_examen__isnull=False).order_by('-fecha_examen')
 
-        tesis_proceso_licenciatura = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='LICENCIATURA', fecha_examen__isnull=True).order_by('-fecha_inicio')
-        tesis_proceso_maestria = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='MAESTRIA', fecha_examen__isnull=True).order_by('-fecha_inicio')
-        tesis_proceso_doctorado = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='DOCTORADO', fecha_examen__isnull=True).order_by('-fecha_inicio')
+        tesis_proceso_licenciatura = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='LICENCIATURA', fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_maestria = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='MAESTRIA', fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_doctorado = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='DOCTORADO', fecha_examen__isnull=True).order_by('-fecha_examen')
 
         asesorias_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk).filter(Q(tipo='ESTANCIA') | Q(tipo='PRACTICA')).order_by('-fecha_inicio')
         becarios_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='BECARIO').order_by('-fecha_inicio')
