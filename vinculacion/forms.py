@@ -115,7 +115,6 @@ class RedAcademicaForm(forms.ModelForm):
         }
 
 
-
 class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
@@ -124,6 +123,12 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     es_renovacion = forms.BooleanField(required=False)
+    entidades = forms.ModelMultipleChoiceField(
+        queryset=Dependencia.objects.exclude(clasificacion='ACADEMICA'),
+        required=True,
+        widget=Select2MultipleWidget(
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'})
+        )
 
     class Meta:
         model = ConvenioEntidadExterna
@@ -131,7 +136,7 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
         widgets = {
             'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            "entidades": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            # "entidades": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

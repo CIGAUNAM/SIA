@@ -36,14 +36,14 @@ class ArbitrajePublicacionAcademicaLista(ObjectCreateMixin, View):
     form_class = ArbitrajePublicacionAcademicaForm
     model = ArbitrajePublicacionAcademica
     aux = ArbitrajePublicacionAcademicaContext.contexto
-    template_name = 'arbitraje_publicacion.html'
+    template_name = 'arbitraje_publicacion_academica.html'
 
 
 class ArbitrajePublicacionAcademicaDetalle(ObjectUpdateMixin, View):
     form_class = ArbitrajePublicacionAcademicaForm
     model = ArbitrajePublicacionAcademica
     aux = ArbitrajePublicacionAcademicaContext.contexto
-    template_name = 'arbitraje_publicacion.html'
+    template_name = 'arbitraje_publicacion_academica.html'
 
 
 class ArbitrajePublicacionAcademicaEliminar(View):
