@@ -161,7 +161,6 @@ class ServicioExternoEntidadNoAcademica(models.Model):
     fecha_fin = models.DateField(blank=True, null=True)
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='servicio_externo_entidad_academica_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre_servicio, self.fecha_inicio)

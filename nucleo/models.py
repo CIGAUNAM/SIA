@@ -44,6 +44,7 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Pub
                                                               ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
                                                               ('OTRO', 'Otro')))
 ENTIDAD_CLASIFICACION = getattr(settings, 'ENTIDAD_CLASIFICACION', (('', '-------'),
+                                                                    ('ACADEMICA', 'Académica'),
                                                                     ('FEDERAL', 'Gubernamental federal'),
                                                                     ('ESTATAL', 'Gubernamental estatal'),
                                                                     ('MUNICIPAL', 'Gubernamental municipal'),

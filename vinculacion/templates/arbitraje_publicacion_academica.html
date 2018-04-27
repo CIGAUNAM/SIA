@@ -85,25 +85,25 @@
         $('#d_articulo').hide();
 
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'LIBRO') {
-                        $('#d_libro').show('slow');
-                        $('#id_libro').attr("required", "true");
-                        $('#id_articulo').attr("required", null);
-                        $('#id_articulo').val(null).trigger("change");
-                        $('#d_articulo').hide('slow');
-                    } else if ($("#id_tipo").val() == 'ARTICULO') {
-                        $('#d_articulo').show('slow');
-                        $('#id_libro').attr("required", null);
-                        $('#id_articulo').attr("required", "true");
-                        $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide('slow');
-                    } else {
-                        $('#d_articulo').show();
-                        $('#d_libro').show();
-                        $('#id_libro').attr("required", null);
-                        $('#id_articulo').attr("required", null);
-                    }
-                });
+            if ($("#id_tipo").val() == 'LIBRO') {
+                $('#d_libro').show('slow');
+                $('#id_libro').attr("required", "true");
+                $('#id_articulo').attr("required", null);
+                $('#id_articulo').val(null).trigger("change");
+                $('#d_articulo').hide('slow');
+            } else if ($("#id_tipo").val() == 'ARTICULO') {
+                $('#d_articulo').show('slow');
+                $('#id_libro').attr("required", null);
+                $('#id_articulo').attr("required", "true");
+                $('#id_libro').val(null).trigger("change");
+                $('#d_libro').hide('slow');
+            } else {
+                $('#d_articulo').hide('slow');
+                $('#d_libro').hide('slow');
+                $('#id_libro').attr("required", null);
+                $('#id_articulo').attr("required", null);
+            }
+        });
     </script>
 
 
@@ -190,7 +190,7 @@
     </p>
 
     <script>
-        $('#d_revista').hide();
+        $('#d_articulo').hide();
         $('#d_libro').hide();
 
         if ($("#id_tipo").val() == 'ARTICULO') {
@@ -200,32 +200,32 @@
             $('#d_libro').show();
             $('#id_libro').attr("required", "true");
         } else {
-            $('#d_articulo').show();
-            $('#d_libro').show();
+            $('#d_articulo').hide('slow');
+            $('#d_libro').hide('slow');
             $('#id_libro').attr("required", null);
             $('#id_articulo').attr("required", null);
         }
 
         $("#id_tipo").on('change', function () {
-                    if ($("#id_tipo").val() == 'LIBRO') {
-                        $('#d_libro').show('slow');
-                        $('#id_libro').attr("required", "true");
-                        $('#id_articulo').attr("required", null);
-                        $('#id_articulo').val(null).trigger("change");
-                        $('#d_articulo').hide('slow');
-                    } else if ($("#id_tipo").val() == 'ARTICULO') {
-                        $('#d_articulo').show('slow');
-                        $('#id_libro').attr("required", null);
-                        $('#id_articulo').attr("required", "true");
-                        $('#id_libro').val(null).trigger("change");
-                        $('#d_libro').hide('slow');
-                    } else {
-                        $('#d_articulo').show();
-                        $('#d_libro').show();
-                        $('#id_libro').attr("required", null);
-                        $('#id_articulo').attr("required", null);
-                    }
-                });
+            if ($("#id_tipo").val() == 'LIBRO') {
+                $('#d_libro').show('slow');
+                $('#id_libro').attr("required", "true");
+                $('#id_articulo').attr("required", null);
+                $('#id_articulo').val(null).trigger("change");
+                $('#d_articulo').hide('slow');
+            } else if ($("#id_tipo").val() == 'ARTICULO') {
+                $('#d_articulo').show('slow');
+                $('#id_libro').attr("required", null);
+                $('#id_articulo').attr("required", "true");
+                $('#id_libro').val(null).trigger("change");
+                $('#d_libro').hide('slow');
+            } else {
+                $('#d_articulo').hide('slow');
+                $('#d_libro').hide('slow');
+                $('#id_libro').attr("required", null);
+                $('#id_articulo').attr("required", null);
+            }
+        });
     </script>
 
 {% endblock %}
