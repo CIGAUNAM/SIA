@@ -55,6 +55,9 @@ class ArticuloCientificoForm(forms.ModelForm):
                              label='ID DOI')
     id_wos = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                              label='ID WOS')
+    factor_impacto = forms.CharField(
+        widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.01'}),
+        label='Factor de impácto')
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),

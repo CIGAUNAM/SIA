@@ -594,8 +594,7 @@ class Libro1Form(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    es_libro_completo = forms.BooleanField(required=False)
-    tiene_participacion_prologo = forms.BooleanField(required=False)
+    arbitrado_pares = forms.BooleanField(required=False)
 
     class Meta:
         model = Libro
@@ -622,7 +621,6 @@ class RevistaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-
 
     class Meta:
         model = Revista
