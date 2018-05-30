@@ -59,6 +59,8 @@ class CapituloLibroDivulgacion(models.Model):
     pagina_fin = models.PositiveIntegerField()
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    usuarios = SortedManyToManyField(User, related_name='capitulo_libro_divulgacion_autores', verbose_name='Autores')
+
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)

@@ -99,7 +99,10 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = CapituloLibroDivulgacion
-        exclude = ['usuario', ]
+        exclude = []
+        widgets = {
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class OrganizacionEventoDivulgacionForm(forms.ModelForm):
