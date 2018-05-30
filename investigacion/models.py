@@ -100,8 +100,7 @@ class ProyectoInvestigacion(models.Model):
 class ArticuloCientifico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=16, choices=(('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'),
-                                                    ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
+    # tipo = models.CharField(max_length=16, choices=(('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'),  ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
     volumen = models.CharField(max_length=100, null=True, blank=True)
     numero = models.CharField(max_length=100, null=True, blank=True)
@@ -112,7 +111,8 @@ class ArticuloCientifico(models.Model):
     solo_electronico = models.BooleanField(default=False)
     usuarios = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
-    indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
+    # indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
+    factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     url = models.URLField(blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
@@ -121,7 +121,7 @@ class ArticuloCientifico(models.Model):
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
+        return "{} : {}".format(self.titulo, self.revista)
 
     def get_absolute_url(self):
         return reverse('articulo_cientifico_detalle', kwargs={'pk': self.pk})

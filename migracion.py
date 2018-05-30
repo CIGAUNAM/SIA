@@ -29,7 +29,7 @@ ArticuloCientifico.objects.all().delete()
 print("Borrando libros")
 Libro.objects.all().delete()
 
-ps.morarint("Borrando revistas")
+print("Borrando revistas")
 Revista.objects.all().delete()
 
 print("Borrando editoriales")
