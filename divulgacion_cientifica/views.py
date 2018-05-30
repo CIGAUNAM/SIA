@@ -51,25 +51,31 @@ class ArticuloDivulgacionEliminar(View):
 
 
 class CapituloLibroDivulgacionJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = CapituloLibroDivulgacion.objects.filter(usuario=usuarioid)
+
+            if self.otros:
+                items = CapituloLibroDivulgacion.objects.all().exclude(usuarios__id__exact=usuarioid)
+            else:
+                items = CapituloLibroDivulgacion.objects.filter(usuarios__id__exact=usuarioid)
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'libro'))
+                                         fields=('titulo', 'libro', 'pagina_inicio', 'pagina_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class CapituloLibroDivulgacionLista(ObjectCreateMixin, View):
+class CapituloLibroDivulgacionLista(ObjectCreateVarMixin, View):
     form_class = CapituloLibroDivulgacionForm
     model = CapituloLibroDivulgacion
     aux = CapituloLibroDivulgacionContext.contexto
     template_name = 'capitulo_libro_divulgacion.html'
 
 
-class CapituloLibroDivulgacionDetalle(ObjectUpdateMixin, View):
+class CapituloLibroDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = CapituloLibroDivulgacionForm
     model = CapituloLibroDivulgacion
     aux = CapituloLibroDivulgacionContext.contexto
@@ -79,7 +85,7 @@ class CapituloLibroDivulgacionDetalle(ObjectUpdateMixin, View):
 class CapituloLibroDivulgacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(CapituloLibroDivulgacion, pk=pk, usuario=request.user)
+            item = get_object_or_404(CapituloLibroDivulgacion, pk=pk, usuarios=request.user)
             item.delete()
             return redirect('../')
         except:

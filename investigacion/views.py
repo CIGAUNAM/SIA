@@ -63,7 +63,6 @@ class ArticuloCientificoEliminar(View):
 class CapituloLibroInvestigacionJSON(View):
     otros = False
     def get(self, request):
-
         try:
             usuarioid = User.objects.get(username=request.user.username).id
 
@@ -96,7 +95,7 @@ class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
 class CapituloLibroInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(CapituloLibroInvestigacion, pk=pk, usuario=request.user)
+            item = get_object_or_404(CapituloLibroInvestigacion, pk=pk, usuarios=request.user)
             item.delete()
             return redirect('../')
         except:
