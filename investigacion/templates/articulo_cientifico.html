@@ -20,17 +20,6 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Tipo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="left" title="Tipo de artículo.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.tipo }}
-        </div>
-    </div>
-    </p>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
@@ -178,18 +167,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Índices que lo registran:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-        </div>
-    </div>
-    </p>
     <p><strong>URL de link al artículo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="URL de link al artículo, en caso de estan publicado en algún lugar en internet."><i
@@ -200,6 +177,19 @@
                 <i class="fa fa-link"></i>
             </div>
             {{ form.url }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Factor de impacto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Factor de impacto (también conocido como índice de impacto), más común en idioma inglés Impact Factor, es una medida de la importancia de una publicación científica."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.factor_impacto }}
         </div>
     </div>
     </p>
@@ -309,17 +299,6 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Tipo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="left" title="Tipo de artículo.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.tipo }}
-        </div>
-    </div>
-    </p>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
@@ -467,18 +446,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Índices que lo registran:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-        </div>
-    </div>
-    </p>
     <p><strong>URL de link al artículo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="URL de link al artículo, en caso de estan publicado en algún lugar en internet."><i
@@ -489,6 +456,19 @@
                 <i class="fa fa-link"></i>
             </div>
             {{ form.url }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Factor de impacto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Factor de impacto (también conocido como índice de impacto), más común en idioma inglés Impact Factor, es una medida de la importancia de una publicación científica."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.factor_impacto }}
         </div>
     </div>
     </p>

@@ -906,7 +906,7 @@ class RevistaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Revista', 'País', 'Factor impacto']}
+                'titulos_tabla': ['Revista', 'País']}
 
 
     tabla_mios =  '<script>\n' \
@@ -926,7 +926,6 @@ class RevistaContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.pais"},\n' \
-                                    '{"data": "fields.factor_impacto"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

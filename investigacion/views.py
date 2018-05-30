@@ -23,13 +23,7 @@ class ArticuloCientificoJSON(View):
             else:
                 articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'tipo', 'revista', 'status', 'fecha'))
-
-            json = json.replace('ARTICULO', 'Artículo')
-            json = json.replace('ACTA', 'Acta')
-            json = json.replace('CARTA', 'Carta')
-            json = json.replace('RESENA', 'Reseña')
-            json = json.replace('OTRO', 'Otro')
+                                         fields=('titulo', 'revista', 'status', 'fecha'))
 
             json = json.replace('PUBLICADO', 'Publicado')
             json = json.replace('EN_PRENSA', 'En prensa')

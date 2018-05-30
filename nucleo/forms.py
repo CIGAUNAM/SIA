@@ -164,7 +164,7 @@ class DependenciaForm(forms.ModelForm):
                                                  ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
                                                  ('ESCUELAS', 'Facultades y Escuelas'),
                                                  ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
-                                                 ('NO', 'No')), required=True)
+                                                 ('NO', 'No')), required=False)
 
     class Meta:
         model = Dependencia
@@ -622,8 +622,7 @@ class RevistaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    factor_impacto = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.01'}),
-                                     label='Factor de impácto')
+
 
     class Meta:
         model = Revista
@@ -633,6 +632,7 @@ class RevistaForm(forms.ModelForm):
             'nombre_abreviado_wos': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'url': TextInput(attrs={'class': 'form-control pull-right'}),
+            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

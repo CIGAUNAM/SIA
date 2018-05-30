@@ -179,6 +179,7 @@ class User(AbstractUser):
     ultimo_contrato = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
     date_joined = models.DateField(auto_now_add=True)
+    sic = models.BooleanField(default=False)
 
 
     def author_name(self):
@@ -258,7 +259,7 @@ class Dependencia(models.Model):
         ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
         ('ESCUELAS', 'Facultades y Escuelas'),
         ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
-        ('NO', 'No')), default='NO', verbose_name='Subsistema UNAM')
+        ('NO', 'No')), blank=True, null=True, verbose_name='Subsistema UNAM')
 
     def __str__(self):
         return self.nombre
@@ -710,7 +711,8 @@ class Revista(models.Model):
     nombre_abreviado_wos = models.CharField(max_length=255, null=True, blank=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+    indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
+    # factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     url = models.URLField(blank=True)
 
     def __str__(self):

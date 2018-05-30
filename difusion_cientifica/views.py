@@ -30,8 +30,6 @@ class MemoriaInExtensoLista(ObjectCreateVarMixin, View):
     model = MemoriaInExtenso
     aux = MemoriaInExtensoContext.contexto
     template_name = 'memoria_in_extenso.html'
-    # template_name = 'main.html'
-
 
 class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
     form_class = MemoriaInExtensoForm

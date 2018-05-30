@@ -35,7 +35,7 @@ class ExperienciaLaboralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    es_nombramiento_definitivo = forms.BooleanField(label='Es nombramiento definitivo', required=False)
+    # es_nombramiento_definitivo = forms.BooleanField(label='Es nombramiento definitivo', required=False)
     cargo = forms.ModelChoiceField(
         queryset=Cargo.objects.all(),
         label="Cargo",
