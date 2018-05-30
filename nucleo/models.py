@@ -691,6 +691,7 @@ class Libro(models.Model):
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
+    arbitrado_pares = models.BooleanField(default=False)
 
     def __str__(self):
         return "{} : {} : {}".format(self.nombre, self.editorial, self.isbn)
