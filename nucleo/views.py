@@ -8,7 +8,7 @@ from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrRead
 from rest_framework import permissions
 from django.core import serializers
 from django.views.generic import View
-from django.db.models import Q
+import uuid
 
 from SIA.utils import *
 from . forms import *
@@ -996,6 +996,80 @@ class MedioDivulgacionEliminar(View):
             raise Http404
 
 
+class PersonaJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = User.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('username', 'first_name', 'last_name'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class PersonaLista(View):
+    form_class = PersonaForm
+    model = User
+    aux = PersonaContext.contexto
+    template_name = 'user.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save(commit=False)
+            new_username = "".join(new_obj.first_name.split() + new_obj.last_name.split())
+            new_obj.username = ''.join(e for e in new_username if e.isalnum())
+            new_obj.username = new_obj.username.lower()
+            new_obj.password = "".join(str(uuid.uuid4()).split('-'))
+            new_obj = bound_form.save()
+            return redirect('./'+str(new_obj.pk))
+        else:
+            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
+
+
+class PersonaDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = PersonaForm
+    model = User
+    aux = PersonaContext.contexto
+    template_name = 'user.html'
+
+
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+
+    def post(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        bound_form = self.form_class(request.POST, instance=obj)
+        if bound_form.is_valid():
+
+            det_obj = bound_form.save(commit=False)
+            new_username = "".join(det_obj.first_name.split() + det_obj.last_name.split())
+            det_obj.username = ''.join(e for e in new_username if e.isalnum())
+            det_obj.username = det_obj.username.lower()
+            det_obj.password = obj.password
+            det_obj = bound_form.save()
+
+            return redirect('../'+str(pk))
+        else:
+            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
+
+
+class PersonaEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(User, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
 class UserJSON(View):
     def get(self, request):
         try:
@@ -1008,18 +1082,49 @@ class UserJSON(View):
             raise Http404
 
 
-class UserLista(ObjectCreateMixinNucleo, View):
+class UserLista(View):
     form_class = UserForm
     model = User
-    aux = UserContext.contexto
+    aux = PersonaContext.contexto
     template_name = 'user.html'
 
+    def get(self, request):
+        return render(request, self.template_name, {'form': self.form_class, 'aux': self.aux, 'active': 'lista'})
 
-class UserDetalle(ObjectUpdateMixinNucleo, View):
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save(commit=False)
+            new_username = "".join(new_obj.first_name.split() + new_obj.last_name.split())
+            new_obj.username = ''.join(e for e in new_username if e.isalnum())
+            new_obj.username = new_obj.username.lower()
+            new_obj.password = "".join(str(uuid.uuid4()).split('-'))
+            new_obj = bound_form.save()
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
+
+
+class UserDetalle(View):
     form_class = UserForm
     model = User
-    aux = UserContext.contexto
+    aux = PersonaContext.contexto
     template_name = 'user.html'
+
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+
+    def post(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        bound_form = self.form_class(request.POST, instance=obj)
+        if bound_form.is_valid():
+            #det_obj = bound_form.save(commit=False)
+            det_obj = bound_form.save()
+            return redirect(det_obj)
+        else:
+            return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
+
 
 
 class UserEliminar(View):

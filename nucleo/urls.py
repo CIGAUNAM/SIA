@@ -129,14 +129,19 @@ urlpatterns = [
     # url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/eliminar$', MedioDivulgacionEliminar.as_view(), name='medio_divulgacion_eliminar'),
     url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/$', MedioDivulgacionDetalle.as_view(), name='medio_divulgacion_detalle'),
 
+    url(r'^personas/json/', PersonaJSON.as_view(), name='usuario_lista__json'),
+    url(r'^personas/$', PersonaLista.as_view(), name='usuario_lista'),
+    # url(r'^personas/(?P<pk>[\w\-]+)/eliminar$', PersonaEliminar.as_view(), name='user_eliminar'),
+    url(r'^personas/(?P<pk>[\w\-]+)/$', PersonaDetalle.as_view(), name='usuario_detalle'),
+
+
     url(r'^usuarios/json/', UserJSON.as_view(), name='usuario_lista__json'),
     url(r'^usuarios/$', UserLista.as_view(), name='usuario_lista'),
-    # url(r'^usuarios/(?P<pk>[\w\-]+)/eliminar$', MedioDivulgacionEliminar.as_view(), name='user_eliminar'),
+    # url(r'^usuarios/(?P<pk>[\w\-]+)/eliminar$', PersonaEliminar.as_view(), name='user_eliminar'),
     url(r'^usuarios/(?P<pk>[\w\-]+)/$', UserDetalle.as_view(), name='usuario_detalle'),
 
     url(r'^tipos-curso/json/', TipoCursoJSON.as_view(), name='tipo_curso_lista__json'),
     url(r'^tipos-curso/$', TipoCursoLista.as_view(), name='tipo_curso_lista'),
-    # url(r'^tipos-curso/(?P<pk>[\w\-]+)/eliminar$', MedioDivulgacionEliminar.as_view(), name='tipo_curso_eliminar'),
     url(r'^tipos-curso/(?P<pk>[\w\-]+)/$', TipoCursoDetalle.as_view(), name='tipo_curso_detalle'),
 
 

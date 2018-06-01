@@ -686,9 +686,23 @@ class MedioDivulgacionForm(forms.ModelForm):
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
-from datetime import datetime
+
+class PersonaForm(forms.ModelForm):
+    username = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    password = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    first_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    last_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+
+    class Meta:
+        model = User
+        exclude = []
+
 
 class UserForm(forms.ModelForm):
+    username = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    password = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    first_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    last_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
 
 
     class Meta:
