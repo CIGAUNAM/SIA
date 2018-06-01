@@ -1,31 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Nombre de usuario:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del país."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.username }}
-        </div>
-    </div>
-    </p><p><strong>Password:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del país."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.password }}
-        </div>
-    </div>
-    </p>
+    {{ form.errors }}
     <p><strong>Nombre(s):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre propio."><i
@@ -55,31 +31,7 @@
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Nombre de usuario:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del país."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.username }}
-        </div>
-    </div>
-    </p><p><strong>Password:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre del país."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.password }}
-        </div>
-    </div>
-    </p>
+        {{ form.errors }}
     <p><strong>Nombre(s):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre propio."><i

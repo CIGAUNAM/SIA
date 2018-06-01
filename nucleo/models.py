@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.conf import settings
 from sortedm2m.fields import SortedManyToManyField
 
+from django.contrib.auth.models import UnicodeUsernameValidator
+
 from django.utils.translation import gettext_lazy
 
 
@@ -151,6 +153,9 @@ class GradoAcademico(models.Model):
 
 
 class User(AbstractUser):
+
+
+
     grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
     tipo = models.CharField(max_length=30, blank=True, null=True, choices=(
