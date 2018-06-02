@@ -143,12 +143,12 @@ class Dashboard(View):
 
                 total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                                   status='PUBLICADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                status='PUBLICADO',
-                                                                               usuarios=request.user).count()
+                                                                               autores=request.user).count()
                 if not request_user_item_year_sum:
                     request_user_item_year_sum = 0
                 items_data[i + 1].append(request_user_item_year_sum)
@@ -200,12 +200,12 @@ class Dashboard(View):
 
                 total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                                   status='EN_PRENSA').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                status='EN_PRENSA',
-                                                                               usuarios=request.user).count()
+                                                                               autores=request.user).count()
                 if not request_user_item_year_sum:
                     request_user_item_year_sum = 0
                 items_data[i + 1].append(request_user_item_year_sum)
@@ -256,11 +256,11 @@ class Dashboard(View):
 
                 total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                          status='ACEPTADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_articulo_cientifico_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                               status='ACEPTADO',
-                                                                                              usuarios=request.user).count()
+                                                                                              autores=request.user).count()
                 if not request_user_articulo_cientifico_year_sum:
                     request_user_articulo_cientifico_year_sum = 0
                 items_data[i + 1].append(request_user_articulo_cientifico_year_sum)

@@ -13,10 +13,6 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     descripcion = forms.CharField(
         widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         required=False, label='Descripción')
-    tipo = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', 'Seleccionar tipo de articulo'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'), ('CARTA', 'Carta'),
-                 ('RESENA', 'Reseña'), ('OTRO', 'Otro')), required=True)
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
@@ -63,7 +59,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
         widgets = {
             'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

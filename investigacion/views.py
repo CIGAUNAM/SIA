@@ -18,9 +18,9 @@ class ArticuloCientificoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                articulos = ArticuloCientifico.objects.all().exclude(usuarios__id__exact=usuarioid)
+                articulos = ArticuloCientifico.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                articulos = ArticuloCientifico.objects.filter(usuarios__id__exact=usuarioid)
+                articulos = ArticuloCientifico.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
                                          fields=('titulo', 'revista', 'status', 'fecha'))
 
@@ -52,7 +52,7 @@ class ArticuloCientificoDetalle(ObjectUpdateVarMixin, View):
 class ArticuloCientificoEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ArticuloCientifico, pk=pk, usuarios=request.user)
+            item = get_object_or_404(ArticuloCientifico, pk=pk, autores=request.user)
             item.delete()
             return redirect('../')
         except:

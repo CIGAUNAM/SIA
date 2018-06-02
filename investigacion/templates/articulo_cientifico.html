@@ -1,7 +1,6 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    {{ form.errors }}
     <p><strong>Título de artículo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de artículo como aparece publicado.">
@@ -20,6 +19,16 @@
                                title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
+    </p>
+    <p><strong>Status:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.status }}
+        </div>
+    </div>
     </p>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -106,16 +115,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Status:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.status }}
-        </div>
-    </div>
-    </p>
     <p><strong>Solo electronico: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
@@ -128,7 +127,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.autores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -293,7 +292,7 @@
     </p>
 
     <script>
-        $("#id_usuarios").on("select2:select", function (evt) {
+        $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -325,6 +324,16 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
+    <p><strong>Status:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.status }}
+        </div>
+    </div>
+    </p>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
@@ -410,16 +419,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Status:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.status }}
-        </div>
-    </div>
-    </p>
     <p><strong>Solo electronico: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
@@ -432,7 +431,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.autores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -597,7 +596,7 @@
     </p>
 
     <script>
-        $("#id_usuarios").on("select2:select", function (evt) {
+        $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
