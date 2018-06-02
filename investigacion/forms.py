@@ -1,7 +1,7 @@
 from SIA.widgets import *
 
 from .models import *
-from nucleo.models import Libro
+from nucleo.models import Libro as LibroInvestigacion
 from nucleo.models import ProblemaNacionalConacyt
 
 
@@ -20,10 +20,6 @@ class ArticuloCientificoForm(forms.ModelForm):
                              label='Título de artículo')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False, label='Descripción')
-    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                             choices=(
-                             ('', 'Seleccionar un tipo de artículo'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'),
-                             ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')), required=True)
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     solo_electronico = forms.BooleanField(required=False)
@@ -56,6 +52,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     id_wos = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                              label='ID WOS')
     factor_impacto = forms.CharField(
+        required=False,
         widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.01'}),
         label='Factor de impácto')
     proyecto = forms.ModelChoiceField(
@@ -86,11 +83,11 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False)
     libro = forms.ModelChoiceField(
-        queryset=Libro.objects.filter(tipo='INVESTIGACION'),
+        queryset=LibroInvestigacion.objects.filter(tipo='INVESTIGACION'),
         label="Libro",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Libro.objects.filter(tipo='INVESTIGACION'),
+            queryset=LibroInvestigacion.objects.filter(tipo='INVESTIGACION'),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -301,3 +298,75 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         }
 
 
+class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="Pais",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    estado = forms.ModelChoiceField(
+        queryset=Estado.objects.all(),
+        label="Estado",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Estado.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
+            dependent_fields={'pais': 'pais'},
+        )
+    )
+    ciudad = forms.ModelChoiceField(
+        queryset=Ciudad.objects.all(),
+        label="Ciudad",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Ciudad.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
+            dependent_fields={'estado': 'estado'},
+        )
+    )
+    editorial = forms.ModelChoiceField(
+        queryset=Editorial.objects.all(),
+        label="Editorial",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Editorial.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    status = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    fecha = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
+    numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
+    numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
+    coleccion = forms.ModelChoiceField(
+        required=False,
+        queryset=Coleccion.objects.all(),
+        label="Coleccion",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Coleccion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+
+    class Meta:
+        model = LibroInvestigacion
+        exclude = ['tipo', ]
+        widgets = {
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'editores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'coordinadores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }

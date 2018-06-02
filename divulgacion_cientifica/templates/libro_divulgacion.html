@@ -12,8 +12,6 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-            </div>
         </div>
     </div>
     </p>
@@ -122,7 +120,8 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -146,7 +145,8 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Editores del libro, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -190,6 +190,53 @@
         </div>
     </div>
     </p>
+    <p><strong>Prólogo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.prologo }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los coordinadores.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Agradecimiento a:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
@@ -201,15 +248,17 @@
     </div>
     </p>
     <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del libro."><i
-                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de publicación del libro."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
         </div>
     </div>
     </p>
@@ -245,7 +294,7 @@
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.coleccion }}
             <div class="input-group-addon">
-                <a href="/nucleo/colecciones" data-toggle="tooltip" data-placement="left"
+                <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de la colección seleccionada.">
                     <i class="fa fa-eye"></i>
                 </a>
@@ -323,7 +372,27 @@
         $("#id_usuarios").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_editores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_coordinadores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_prologo").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
@@ -344,8 +413,6 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.nombre }}
-            <div class="input-group-addon">
-            </div>
         </div>
     </div>
     </p>
@@ -454,7 +521,8 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -478,7 +546,8 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Editores del libro, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -522,6 +591,53 @@
         </div>
     </div>
     </p>
+    <p><strong>Prólogo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.prologo }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los coordinadores.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Agradecimiento a:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
@@ -533,15 +649,17 @@
     </div>
     </p>
     <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del libro."><i
-                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Fecha de publicación del libro."><i
+                        class="fa fa-question-circle"></i></a>
+            </div>
         </div>
     </div>
     </p>
@@ -577,7 +695,7 @@
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.coleccion }}
             <div class="input-group-addon">
-                <a href="/nucleo/colecciones" data-toggle="tooltip" data-placement="left"
+                <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de la colección seleccionada.">
                     <i class="fa fa-eye"></i>
                 </a>
@@ -633,6 +751,11 @@
         </div>
     </div>
     </p>
+    <p><strong>Libro arbitrado por pares: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
+        {{ form.arbitrado_pares }}</p>
+
 
     <script>
         $('#d_isbn').hide();
@@ -659,7 +782,27 @@
         $("#id_usuarios").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_editores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_coordinadores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_prologo").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");

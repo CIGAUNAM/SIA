@@ -6,7 +6,6 @@ from django.core import serializers
 from SIA.utils import *
 from . forms import *
 from . utils import *
-from nucleo.forms import LibroForm
 
 
 # Create your views here.
@@ -215,8 +214,8 @@ class LibroInvestigacionJSON(View):
 
 
 class LibroInvestigacionLista(ObjectCreateVarMixin, View):
-    form_class = LibroForm
-    model = Libro
+    form_class = LibroInvestigacionForm
+    model = LibroInvestigacion
     aux = LibroInvestigacionContext.contexto
     template_name = 'libro_investigacion.html'
 
@@ -234,8 +233,8 @@ class LibroInvestigacionLista(ObjectCreateVarMixin, View):
 
 
 class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
-    form_class = LibroForm
-    model = Libro
+    form_class = LibroInvestigacionForm
+    model = LibroInvestigacion
     aux = LibroInvestigacionContext.contexto
     template_name = 'libro_investigacion.html'
 

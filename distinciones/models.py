@@ -1,8 +1,8 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
-from nucleo.models import User, Institucion, Distincion
-from investigacion.models import ArticuloCientifico, Libro, CapituloLibroInvestigacion
+from nucleo.models import User, Institucion, Distincion, Libro
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion
 
 NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 
