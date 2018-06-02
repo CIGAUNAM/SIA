@@ -503,7 +503,7 @@ class EditorialForm(forms.ModelForm):
         queryset=Estado.objects.all(),
         label="Estado",
         widget=ModelSelect2Widget(
-            dependent_fields={'pais_origen': 'pais'},
+            dependent_fields={'pais': 'pais'},
             search_fields=['nombre__icontains'],
             queryset=Estado.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}

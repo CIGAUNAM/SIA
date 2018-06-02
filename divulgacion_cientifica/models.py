@@ -58,7 +58,7 @@ class CapituloLibroDivulgacion(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
     usuarios = SortedManyToManyField(User, related_name='capitulo_libro_divulgacion_autores', verbose_name='Autores')
 
 

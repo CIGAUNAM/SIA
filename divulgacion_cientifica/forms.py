@@ -3,7 +3,6 @@ from . models import *
 from nucleo.models import Libro as LibroDivulgacion, Editorial, Coleccion
 from django import forms
 from django_select2.forms import Select2MultipleWidget, Select2Widget, ModelSelect2Widget
-# from nucleo.models import Libro as LibroDivulgacion
 from nucleo.models import Pais, Estado, Ciudad
 
 #
