@@ -683,6 +683,7 @@ class Libro(models.Model):
     usuarios = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
     editores = SortedManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
+    agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)
     prologo = SortedManyToManyField(User, related_name='libro_prologo', blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)

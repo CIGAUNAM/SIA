@@ -62,7 +62,7 @@ class CapituloLibroDivulgacionJSON(View):
                 items = CapituloLibroDivulgacion.objects.filter(usuarios__id__exact=usuarioid)
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'libro', 'pagina_inicio', 'pagina_fin'))
+                                         fields=('titulo', 'libro'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

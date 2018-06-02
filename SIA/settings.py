@@ -103,6 +103,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'SIA.urls'
 
+"""
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
@@ -114,7 +115,7 @@ CACHES = {
 SELECT2_CACHE_BACKEND = 'default'
 
 CACHE_BACKEND = 'default'
-
+"""
 
 TEMPLATES = [
     {
