@@ -21,12 +21,10 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=16, choices=(('', '-------'), ('ARTICULO', 'Artículo'), ('ACTA', 'Acta'),
-                                                    ('CARTA', 'Carta'), ('RESENA', 'Reseña'), ('OTRO', 'Otro')))
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     usuarios = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_divulgacion_alumnos', blank=True)
-    indices = models.ManyToManyField(Indice, related_name='articulo_divulgacion_indices', blank=True)
+    agradecimientos = models.ManyToManyField(User, related_name='articulo_divulgacion_agradecimientos', blank=True)
     url = models.URLField(blank=True)
     solo_electronico = models.BooleanField(default=False)
     revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
