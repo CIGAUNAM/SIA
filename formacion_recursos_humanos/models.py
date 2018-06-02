@@ -2,8 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.conf import settings
 from nucleo.models import User, Institucion, Dependencia, Beca, ProgramaLicenciatura, ProgramaMaestria, \
-    ProgramaDoctorado, Pais, Distincion
-from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, Libro, CapituloLibroInvestigacion
+    ProgramaDoctorado, Pais, Distincion, Libro as LibroInvestigacion
+from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, CapituloLibroInvestigacion
 from sortedm2m.fields import SortedManyToManyField
 
 NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'),
@@ -58,7 +58,7 @@ class SupervisionInvestigadorPostDoctoral(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     articulos = models.ManyToManyField(ArticuloCientifico, blank=True)
-    libros = models.ManyToManyField(Libro, blank=True)
+    libros = models.ManyToManyField(LibroInvestigacion, blank=True)
     capitulos_libros = models.ManyToManyField(CapituloLibroInvestigacion, blank=True)
     usuario = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_usuario',
                                 on_delete=models.DO_NOTHING)

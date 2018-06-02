@@ -720,7 +720,7 @@ class UserForm(forms.ModelForm):
         }
         """
 
-
+""" 
 class LibroForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
@@ -738,9 +738,9 @@ class LibroForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba dupli
         label="Estado",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            dependent_fields={'pais': 'pais'},
             queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
+            dependent_fields={'pais': 'pais'},
         )
     )
     ciudad = forms.ModelChoiceField(
@@ -748,9 +748,9 @@ class LibroForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba dupli
         label="Ciudad",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            dependent_fields={'estado': 'estado'},
             queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
+            dependent_fields={'estado': 'estado'},
         )
     )
     editorial = forms.ModelChoiceField(
@@ -758,13 +758,13 @@ class LibroForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba dupli
         label="Editorial",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            dependent_fields={'pais': 'pais'},
             queryset=Editorial.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                               choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    status = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
@@ -791,4 +791,6 @@ class LibroForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba dupli
             'editores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'coordinadores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
+"""

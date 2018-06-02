@@ -852,42 +852,6 @@ class ColeccionEliminar(View):
             raise Http404
 
 
-class LibroJSON(View):
-    def get(self, request):
-        try:
-            #usuarioid = User.objects.get(username=request.user.username).id
-            items = Libro.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class LibroLista(ObjectCreateMixinNucleo, View):
-    form_class = LibroForm
-    model = Libro
-    aux = LibroContext.contexto
-    template_name = 'main.html'
-
-
-class LibroDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = LibroForm
-    model = Libro
-    aux = LibroContext.contexto
-    template_name = 'main.html'
-
-
-class LibroEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(Libro, pk=pk)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
 class RevistaJSON(View):
     def get(self, request):
         try:

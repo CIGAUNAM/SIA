@@ -195,8 +195,7 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
 
 class LibroDivulgacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(
-        widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="Pais",
@@ -233,7 +232,6 @@ class LibroDivulgacionForm(forms.ModelForm):
             search_fields=['nombre__icontains'],
             queryset=Editorial.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'pais': 'pais'},
         )
     )
     status = forms.ChoiceField(
@@ -261,7 +259,9 @@ class LibroDivulgacionForm(forms.ModelForm):
         model = LibroDivulgacion
         exclude = ['tipo', ]
         widgets = {
-            'usuarios': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'editores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'coordinadores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'editores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'coordinadores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }

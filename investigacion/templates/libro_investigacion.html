@@ -213,6 +213,30 @@
         </div>
     </div>
     </p>
+    <p><strong>Agradecimiento a:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
@@ -331,15 +355,15 @@
         $('#d_isbn').hide();
 
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                        $('#d_isbn').show('slow');
-                        $('#id_isbn').attr("required", "true");
-                    } else {
-                        $("#id_isbn").val("");
-                        $('#d_isbn').hide('slow');
-                        $('#id_isbn').attr("required", null);
-                    }
+                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                    $('#d_isbn').show('slow');
+                    $('#id_isbn').attr("required", "true");
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide('slow');
+                    $('#id_isbn').attr("required", null);
                 }
+            }
         );
     </script>
 
@@ -590,6 +614,30 @@
         </div>
     </div>
     </p>
+    <p><strong>Agradecimiento a:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
@@ -717,15 +765,15 @@
         }
 
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                        $('#d_isbn').show('slow');
-                        $('#id_isbn').attr("required", "true");
-                    } else {
-                        $("#id_isbn").val("");
-                        $('#d_isbn').hide('slow');
-                        $('#id_isbn').attr("required", null);
-                    }
+                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                    $('#d_isbn').show('slow');
+                    $('#id_isbn').attr("required", "true");
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide('slow');
+                    $('#id_isbn').attr("required", null);
                 }
+            }
         );
     </script>
 

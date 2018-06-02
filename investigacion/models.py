@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.urls import reverse
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, \
-    Revista, Indice, Libro, Editorial, Coleccion, ProblemaNacionalConacyt, Financiamiento, Metodologia, \
+    Revista, Indice, Libro as LibroInvestigacion, Editorial, Coleccion, ProblemaNacionalConacyt, Financiamiento, Metodologia, \
     AreaEspecialidad, ImpactoSocial 
 from sortedm2m.fields import SortedManyToManyField
 
@@ -138,7 +138,7 @@ class ArticuloCientifico(models.Model):
 class CapituloLibroInvestigacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    libro = models.ForeignKey(Libro, on_delete=models.DO_NOTHING)
+    libro = models.ForeignKey(LibroInvestigacion, on_delete=models.DO_NOTHING)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     usuarios = SortedManyToManyField(User, related_name='capitulo_libro_investigacion_autores', verbose_name='Autores')

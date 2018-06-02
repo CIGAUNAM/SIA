@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Título de artículo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de artículo como aparece publicado.">
@@ -175,7 +176,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.alumnos }}
+            {{ form.agradecimientos }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de las personas participantes.">
@@ -304,6 +305,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Título de artículo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de artículo como aparece publicado.">
@@ -478,7 +480,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.alumnos }}
+            {{ form.agradecimientos }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de las personas participantes.">

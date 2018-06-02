@@ -3,7 +3,7 @@
 {% block form_agregar %}
     <p><strong>Título del libro:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título del libro paraa docencia.">
+           title="Título del libro de investigación publicado.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -22,7 +22,7 @@
     </p>
     <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Pais donde se publicó el libro.">
+           title="Pais donde se publicó el libro de investigación.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -46,7 +46,7 @@
     </p>
     <p><strong>Estado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Estado donde se publicó el libro. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
+           title="Estado donde se publicó el libro de investigación. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -70,7 +70,7 @@
     </p>
     <p><strong>Ciudad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ciudad donde se publicó el libro. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+           title="Ciudad donde se publicó el libro de investigación. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -94,7 +94,7 @@
     </p>
     <p><strong>Editorial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publicó el libro.">
+           title="Editorial que publicó el libro de investigación.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -184,6 +184,53 @@
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Prólogo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.prologo }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los coordinadores.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Agradecimiento a:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -303,25 +350,20 @@
         </div>
     </div>
     </p>
-    <p><strong>Es Libro completo: </strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Marcar la casilla si se trata de un libro completo, en caso de tratarse de un libro referenciado desde un capitulo de libro, no marcar esta casilla."><i class="fa fa-question-circle"></i></a>
-        {{ form.es_libro_completo }}</p>
-
 
     <script>
         $('#d_isbn').hide();
 
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                        $('#d_isbn').show('slow');
-                        $('#id_isbn').attr("required", "true");
-                    } else {
-                        $("#id_isbn").val("");
-                        $('#d_isbn').hide('slow');
-                        $('#id_isbn').attr("required", null);
-                    }
+                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                    $('#d_isbn').show('slow');
+                    $('#id_isbn').attr("required", "true");
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide('slow');
+                    $('#id_isbn').attr("required", null);
                 }
+            }
         );
     </script>
 
@@ -330,7 +372,27 @@
         $("#id_usuarios").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_editores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_coordinadores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_prologo").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
@@ -342,7 +404,7 @@
 {% block form_detalle %}
     <p><strong>Título del libro:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título del libro paraa docencia.">
+           title="Título del libro de investigación publicado.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -361,7 +423,7 @@
     </p>
     <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Pais donde se publicó el libro.">
+           title="Pais donde se publicó el libro de investigación.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -385,7 +447,7 @@
     </p>
     <p><strong>Estado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Estado donde se publicó el libro. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
+           title="Estado donde se publicó el libro de investigación. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -409,7 +471,7 @@
     </p>
     <p><strong>Ciudad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ciudad donde se publicó el libro. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+           title="Ciudad donde se publicó el libro de investigación. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -433,7 +495,7 @@
     </p>
     <p><strong>Editorial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publicó el libro.">
+           title="Editorial que publicó el libro de investigación.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -523,6 +585,53 @@
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Prólogo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.prologo }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los coordinadores.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Agradecimiento a:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -642,10 +751,11 @@
         </div>
     </div>
     </p>
-    <p><strong>Es Libro completo: </strong>
+    <p><strong>Libro arbitrado por pares: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Marcar la casilla si se trata de un libro completo, en caso de tratarse de un libro referenciado desde un capitulo de libro, no marcar esta casilla."><i class="fa fa-question-circle"></i></a>
-        {{ form.es_libro_completo }}</p>
+           title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
+        {{ form.arbitrado_pares }}</p>
+
 
     <script>
         $('#d_isbn').hide();
@@ -655,15 +765,15 @@
         }
 
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                        $('#d_isbn').show('slow');
-                        $('#id_isbn').attr("required", "true");
-                    } else {
-                        $("#id_isbn").val("");
-                        $('#d_isbn').hide('slow');
-                        $('#id_isbn').attr("required", null);
-                    }
+                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                    $('#d_isbn').show('slow');
+                    $('#id_isbn').attr("required", "true");
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide('slow');
+                    $('#id_isbn').attr("required", null);
                 }
+            }
         );
     </script>
 
@@ -672,7 +782,27 @@
         $("#id_usuarios").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_editores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_coordinadores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_prologo").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");

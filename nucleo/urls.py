@@ -109,11 +109,6 @@ urlpatterns = [
     # url(r'^colecciones/(?P<pk>[\w\-]+)/eliminar$', ColeccionEliminar.as_view(), name='coleccion_eliminar'),
     url(r'^colecciones/(?P<pk>[\w\-]+)/$', ColeccionDetalle.as_view(), name='coleccion_detalle'),
 
-    url(r'^libros/json/', LibroJSON.as_view(), name='libro_lista__json'),
-    url(r'^libros/$', LibroLista.as_view(), name='libro_lista'),
-    # url(r'^libros/(?P<pk>[\w\-]+)/eliminar$', LibroEliminar.as_view(), name='libro_eliminar'),
-    url(r'^libros/(?P<pk>[\w\-]+)/$', LibroDetalle.as_view(), name='libro_detalle'),
-
     url(r'^revistas/json/', RevistaJSON.as_view(), name='revista_lista__json'),
     url(r'^revistas/$', RevistaLista.as_view(), name='revista_lista'),
     # url(r'^revistas/(?P<pk>[\w\-]+)/eliminar$', RevistaEliminar.as_view(), name='revista_eliminar'),

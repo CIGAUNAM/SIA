@@ -5,6 +5,7 @@ from SIA.utils import *
 from . forms import *
 from . utils import *
 from . models import *
+from nucleo.models import Libro as LibroLibroDocencia
 from django.db.models import Q
 
 # Create your views here.
@@ -162,8 +163,8 @@ class LibroDocenciaJSON(View):
 
 
 class LibroDocenciaLista(ObjectCreateVarMixin, View):
-    form_class = LibroForm
-    model = Libro
+    form_class = LibroDocenciaForm
+    model = LibroLibroDocencia
     aux = LibroDocenciaContext.contexto
     template_name = 'libro_docencia.html'
 
@@ -181,8 +182,8 @@ class LibroDocenciaLista(ObjectCreateVarMixin, View):
 
 
 class LibroDocenciaDetalle(ObjectUpdateVarMixin, View):
-    form_class = LibroForm
-    model = Libro
+    form_class = LibroDocenciaForm
+    model = LibroLibroDocencia
     aux = LibroDocenciaContext.contexto
     template_name = 'libro_docencia.html'
 
