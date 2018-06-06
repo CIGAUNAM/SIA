@@ -690,8 +690,8 @@ class MedioDivulgacionForm(forms.ModelForm):
 class PersonaForm(forms.ModelForm):
     username = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     password = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    first_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    last_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    first_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    last_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
 
     class Meta:
         model = User
@@ -701,96 +701,45 @@ class PersonaForm(forms.ModelForm):
 class UserForm(forms.ModelForm):
     username = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     password = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    first_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    last_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    first_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    last_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
 
 
     class Meta:
         model = User
         exclude = []
-        """
-        widgets = {
-            'first_name': TextInput(attrs={'class': 'form-control pull-right'}),
-            'last_name': TextInput(attrs={'class': 'form-control pull-right'}),
-            'username': TextInput(attrs={'class': 'form-control pull-right'}),
-            'email': wEmailField,
-            'rfc': TextInput(attrs={'class': 'form-control pull-right'}),
-            'telefono': TextInput(attrs={'class': 'form-control pull-right'}),
-            'celular': TextInput(attrs={'class': 'form-control pull-right'}),
-        }
-        """
 
-""" 
-class LibroForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
-    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    pais = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="Pais",
+
+class ProyectoArbitradoForm(models.ModelForm):
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de fin')
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Pais.objects.all(),
+            queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
+    dependencia = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'pais': 'pais'},
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'estado': 'estado'},
-        )
-    )
-    editorial = forms.ModelChoiceField(
-        queryset=Editorial.objects.all(),
-        label="Editorial",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Editorial.objects.all(),
+            dependent_fields={'institucion': 'institucion'},
+            queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    status = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
-    numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
-    numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
-    coleccion = forms.ModelChoiceField(
-        required=False,
-        queryset=Coleccion.objects.all(),
-        label="Coleccion",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Coleccion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                               choices=getattr(settings, 'STATUS_PROYECTO'), required=True)
 
     class Meta:
-        model = Libro
-        exclude = ['tipo', ]
+        model = ProyectoArbitrado
+        exclude = []
         widgets = {
-            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'editores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'coordinadores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'responsables': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
-"""

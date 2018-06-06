@@ -1123,6 +1123,44 @@ class PerfilUsuario(View):
 
 
 
+class ProyectoArbitradoJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = Ciudad.objects.all()
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre', 'estado'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ProyectoArbitradoLista(ObjectCreateMixinNucleo, View):
+    form_class = ProyectoArbitradoForm
+    model = ProyectoArbitrado
+    aux = ProyectoArbitradoContext.contexto
+    template_name = 'proyecto_arbitrado.html'
+
+
+class ProyectoArbitradoDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = ProyectoArbitradoForm
+    model = ProyectoArbitrado
+    aux = ProyectoArbitradoContext.contexto
+    template_name = 'ciudad.html'
+
+
+class ProyectoArbitradoEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ProyectoArbitrado, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+
 
 
 
