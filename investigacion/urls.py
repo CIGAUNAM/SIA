@@ -41,3 +41,4 @@ urlpatterns = [
     url(r'^proyectos/(?P<pk>[\w\-]+)/$', ProyectoInvestigacionDetalle.as_view(), name='proyecto_investigacion_detalle'),
 
 ]
+
