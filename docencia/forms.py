@@ -155,16 +155,12 @@ class ArticuloDocenciaForm(forms.ModelForm):
                              label='Número')
     issn_impreso = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                                    label='ISSN Impreso')
-    issn_online = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
-                                  label='ISSN Impreso')
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                     required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                  required=True, label='Número de página final')
     id_doi = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                              label='ID DOI')
-    id_wos = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
-                             label='ID WOS')
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
@@ -182,7 +178,7 @@ class ArticuloDocenciaForm(forms.ModelForm):
         widgets = {
             'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

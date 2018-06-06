@@ -3,6 +3,7 @@ from django.conf import settings
 from nucleo.models import User, Institucion, Dependencia, Indice, Libro, Financiamiento
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico
 from django.urls import reverse
+from sortedm2m.fields import SortedManyToManyField
 
 
 RED_ACADEMICA__CLASIFICACION = getattr(settings, 'RED_ACADEMICA__CLASIFICACION',
@@ -18,6 +19,8 @@ CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = getattr(settings, 'CONVENIO_ENTIDAD_EX
 ARBITRAJE_ACADEMICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO',
                                     (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro')))
 
+STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'),
+                                                        ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
 
 # Create your models here.
 
@@ -112,7 +115,6 @@ class RedAcademica(models.Model):
 class ConvenioEntidadExterna(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    es_agradecimiento = models.BooleanField(blank=True, default=False)
     entidades = models.ManyToManyField(Dependencia)
     objetivos = models.TextField()
     fecha_inicio = models.DateField()
@@ -195,3 +197,5 @@ class OtroProgramaVinculacion(models.Model):
         ordering = ['-fecha', 'nombre']
         verbose_name = 'Otro programa o acción de vinculación, colaboración y/o cooperación'
         verbose_name_plural = 'Otros programas o acciones de vinculación, colaboración y/o cooperación'
+
+

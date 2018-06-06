@@ -20,6 +20,16 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
+    <p><strong>Status:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.status }}
+        </div>
+    </div>
+    </p>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
@@ -92,29 +102,6 @@
         </div>
     </div>
     </p>
-    <p><strong>ISSN en revista digital o en línea:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISSN asignado a la revista en línea donde está publicado el articulo. En caso de estar publicado en línea."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.issn_online }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Status:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.status }}
-        </div>
-    </div>
-    </p>
     <p><strong>Solo electronico: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
@@ -167,15 +154,28 @@
         </div>
     </div>
     </p>
-    <p><strong>Índices que lo registran:</strong>
+
+    <p><strong>Agradecimiento a:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>
@@ -285,6 +285,16 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
+    <p><strong>Status:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.status }}
+        </div>
+    </div>
+    </p>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
@@ -357,29 +367,6 @@
         </div>
     </div>
     </p>
-    <p><strong>ISSN en revista digital o en línea:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISSN asignado a la revista en línea donde está publicado el articulo. En caso de estar publicado en línea."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.issn_online }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Status:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.status }}
-        </div>
-    </div>
-    </p>
     <p><strong>Solo electronico: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
@@ -432,15 +419,27 @@
         </div>
     </div>
     </p>
-    <p><strong>Índices que lo registran:</strong>
+    <p><strong>Agradecimiento a:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
+           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.agradecimientos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las personas participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una persona nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>
