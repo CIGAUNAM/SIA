@@ -27,7 +27,6 @@ STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN
 
 class ArbitrajePublicacionAcademica(models.Model):
     descripcion = models.TextField(blank=True)
-    # indices = models.ManyToManyField(Indice, related_name='arbitraje_publicacion_indices', blank=True)
     tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICA__TIPO)
     articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
     libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)
@@ -54,7 +53,6 @@ class ArbitrajeProyectoInvestigacion(models.Model):
     descripcion = models.TextField(blank=True)
     proyecto = models.ForeignKey(ProyectoInsvestigacionArbitrado, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='arbitraje_proyecto_investigacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(str(self.proyecto), self.fecha)

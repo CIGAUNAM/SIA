@@ -77,7 +77,7 @@ class Pais(models.Model):
     nombre = models.CharField(max_length=60, unique=True)
     nombre_extendido = models.CharField(max_length=200, unique=True)
     codigo = models.SlugField(max_length=2, unique=True)
-    zona = models.ForeignKey(ZonaPais, on_delete=models.DO_NOTHING)
+    zona = models.ForeignKey(ZonaPais, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -97,7 +97,7 @@ class Pais(models.Model):
 class Estado(models.Model):
     nombre = models.CharField(max_length=200)
     # slug = AutoSlugField(populate_from='estado')
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -116,7 +116,7 @@ class Estado(models.Model):
 class Ciudad(models.Model):
     nombre = models.CharField(max_length=255)
     # slug = AutoSlugField(populate_from='ciudad')
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -156,7 +156,7 @@ class User(AbstractUser):
 
 
 
-    grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.DO_NOTHING)
+    grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.PROTECT)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
     tipo = models.CharField(max_length=30, blank=True, null=True, choices=(
         ('', 'Seleccionar tipo de usuario'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), 
@@ -164,14 +164,14 @@ class User(AbstractUser):
     fecha_nacimiento = models.DateField(null=True, blank=True)
     genero = models.CharField(max_length=10, blank=True, null=True, choices=(
         ('', 'Seleccionar género'), ('M', 'Masculino'), ('F', 'Femenino')))
-    pais_origen = models.ForeignKey(Pais, default=1, blank=True, null=True, verbose_name='País de origen', related_name='user_pais_origen', on_delete=models.DO_NOTHING)
+    pais_origen = models.ForeignKey(Pais, default=1, blank=True, null=True, verbose_name='País de origen', related_name='user_pais_origen', on_delete=models.PROTECT)
     rfc = models.SlugField(max_length=20, blank=True)
     curp = models.SlugField(max_length=20, blank=True)
     direccion = models.CharField(max_length=255, blank=True)
     direccion_continuacion = models.CharField(max_length=255, blank=True)
-    pais = models.ForeignKey(Pais, blank=True, null=True, related_name='user_pais', on_delete=models.DO_NOTHING, default=1)
-    estado = models.ForeignKey(Estado, blank=True, null=True, on_delete=models.DO_NOTHING, default=1)
-    ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.DO_NOTHING, default=1)
+    pais = models.ForeignKey(Pais, blank=True, null=True, related_name='user_pais', on_delete=models.PROTECT, default=1)
+    estado = models.ForeignKey(Estado, blank=True, null=True, on_delete=models.PROTECT, default=1)
+    ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.PROTECT, default=1)
     telefono = models.SlugField(max_length=20, blank=True)
     celular = models.SlugField(max_length=20, blank=True)
     url = models.URLField(blank=True, null=True)
@@ -214,24 +214,24 @@ class User(AbstractUser):
 
 
 class InvestigadorConacyt(models.Model):
-    investigador = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    investigador = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
 class InvestigadorUnam(models.Model):
-    investigador = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    investigador = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
 class InvestigadorInvitado(models.Model):
-    investigador = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    investigador = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
 class Institucion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -251,11 +251,11 @@ class Institucion(models.Model):
 class Dependencia(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
     clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
     subsistema_unam = models.CharField(max_length=50, choices=(
         ('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'),
         ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
@@ -283,7 +283,7 @@ class Dependencia(models.Model):
 class Departamento(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -362,7 +362,7 @@ class AreaConocimiento(models.Model):
 class AreaEspecialidad(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, on_delete=models.DO_NOTHING)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -402,8 +402,8 @@ class Financiamiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     tipo_financiamiento = models.CharField(max_length=80, choices=FINANCIAMIENTO_TIPO)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -439,8 +439,8 @@ class Metodologia(models.Model):
 class Beca(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -473,7 +473,7 @@ class ProgramaLicenciatura(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
-                                          on_delete=models.DO_NOTHING)
+                                          on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -494,7 +494,7 @@ class ProgramaMaestria(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
-                                          on_delete=models.DO_NOTHING)
+                                          on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -515,7 +515,7 @@ class ProgramaDoctorado(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
-                                          on_delete=models.DO_NOTHING)
+                                          on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -553,14 +553,14 @@ class TipoEvento(models.Model):
 class Evento(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    tipo = models.ForeignKey(TipoEvento, on_delete=models.DO_NOTHING)
+    tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
     tipo_publico = models.CharField(max_length=255)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     entidades = models.ManyToManyField(Dependencia, related_name='evento_entidades')
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
     ubicacion = models.TextField(blank=True)
 
     def __str__(self):
@@ -638,9 +638,9 @@ class Indice(models.Model):
 class Editorial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -685,15 +685,15 @@ class Libro(models.Model):
     coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)
     prologo = SortedManyToManyField(User, related_name='libro_prologo', blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
-    editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     fecha = models.DateField(blank=True, null=True)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=0)
-    coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.PROTECT)
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
@@ -717,7 +717,7 @@ class Revista(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     nombre_abreviado_wos = models.CharField(max_length=255, null=True, blank=True)
     descripcion = models.TextField(blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
     # factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     url = models.URLField(blank=True)
@@ -756,9 +756,9 @@ class MedioDivulgacion(models.Model):
     tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'),
                                                     ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     canal = models.CharField(max_length=255)
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre_medio
@@ -800,8 +800,8 @@ class ProyectoInsvestigacionArbitrado(models.Model):
     descripcion = models.TextField(blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.PROTECT)
     responsables = SortedManyToManyField(User, related_name='proyecto_arbitrado_responsables', verbose_name='Responsables')
     status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
 
