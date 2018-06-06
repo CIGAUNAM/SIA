@@ -794,3 +794,25 @@ class TipoCurso(models.Model):
         verbose_name = "Tipo de curso"
         verbose_name_plural = "Tipos de curso"
 
+
+class ProyectoArbitrado(models.Model):
+    nombre = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField(blank=True)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField(null=True, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    responsables = SortedManyToManyField(User, related_name='proyecto_arbitrado_responsables', verbose_name='Responsables')
+    status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
+
+    def __str__(self):
+        return "{} : {}".format(self.nombre, self.fecha_inicio)
+
+    def natural_key(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('proyecto_arbitrado_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['nombre']

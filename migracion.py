@@ -3879,13 +3879,13 @@ for i in experiencias:
     if int(i[8]) == 0 and int(i[9]) == 0:
         e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[5]).institucion,
                                dependencia=Dependencia.objects.get(nombre=i[5]),
-                               nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1],
+                               nombramiento=Nombramiento.objects.get(nombre=i[0]),
                                cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 1),
                                usuario=User.objects.get(rfc=i[10]))
     else:
         e = ExperienciaLaboral(institucion=Dependencia.objects.get(nombre=i[5]).institucion,
                                dependencia=Dependencia.objects.get(nombre=i[5]),
-                               nombramiento=Nombramiento.objects.get(nombre=i[0]), es_nombramiento_definitivo=i[1],
+                               nombramiento=Nombramiento.objects.get(nombre=i[0]),
                                cargo=Cargo.objects.get(nombre=c), fecha_inicio=date(int(i[6]), int(i[7]), 28),
                                fecha_fin=date(int(i[8]), int(i[9]), 1), usuario=User.objects.get(rfc=i[10]))
     e.save()
