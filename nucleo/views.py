@@ -1129,30 +1129,30 @@ class ProyectoArbitradoJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Ciudad.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
+                                         fields=('nombre', 'fecha_inicio', 'institucion', 'dependencia', 'status'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
 class ProyectoArbitradoLista(ObjectCreateMixinNucleo, View):
-    form_class = ProyectoArbitradoForm
-    model = ProyectoArbitrado
-    aux = ProyectoArbitradoContext.contexto
+    form_class = ProyectoInvestigacionArbitradoForm
+    model = ProyectoInsvestigacionArbitrado
+    aux = ProyectoInvestigacionArbitradoContext.contexto
     template_name = 'proyecto_arbitrado.html'
 
 
 class ProyectoArbitradoDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ProyectoArbitradoForm
-    model = ProyectoArbitrado
-    aux = ProyectoArbitradoContext.contexto
-    template_name = 'ciudad.html'
+    form_class = ProyectoInvestigacionArbitradoForm
+    model = ProyectoInsvestigacionArbitrado
+    aux = ProyectoInvestigacionArbitradoContext.contexto
+    template_name = 'proyecto_arbitrado.html'
 
 
 class ProyectoArbitradoEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ProyectoArbitrado, pk=pk)
+            item = get_object_or_404(ProyectoInsvestigacionArbitrado, pk=pk)
             item.delete()
             return redirect('../')
         except:
