@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Indice, Libro, Financiamiento
+from nucleo.models import User, Institucion, Dependencia, Indice, Libro, Financiamiento, ProyectoInsvestigacionArbitrado
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -52,7 +52,7 @@ class ArbitrajePublicacionAcademica(models.Model):
 class ArbitrajeProyectoInvestigacion(models.Model):
     fecha = models.DateField()
     descripcion = models.TextField(blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
+    proyecto = models.ForeignKey(ProyectoInsvestigacionArbitrado, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     # tags = models.ManyToManyField(Tag, related_name='arbitraje_proyecto_investigacion_tags', blank=True)
 

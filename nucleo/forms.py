@@ -710,7 +710,7 @@ class UserForm(forms.ModelForm):
         exclude = []
 
 
-class ProyectoArbitradoForm(models.ModelForm):
+class ProyectoInvestigacionArbitradoForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de fin')
@@ -737,7 +737,7 @@ class ProyectoArbitradoForm(models.ModelForm):
                                choices=getattr(settings, 'STATUS_PROYECTO'), required=True)
 
     class Meta:
-        model = ProyectoArbitrado
+        model = ProyectoInsvestigacionArbitrado
         exclude = []
         widgets = {
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),

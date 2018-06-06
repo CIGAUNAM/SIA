@@ -139,10 +139,10 @@ urlpatterns = [
     url(r'^tipos-curso/$', TipoCursoLista.as_view(), name='tipo_curso_lista'),
     url(r'^tipos-curso/(?P<pk>[\w\-]+)/$', TipoCursoDetalle.as_view(), name='tipo_curso_detalle'),
 
-    url(r'^proyectos-arbitrados/json/', CiudadJSON.as_view(), name='ciudad_lista__json'),
-    url(r'^proyectos-arbitrados/$', CiudadLista.as_view(), name='ciudad_lista'),
-    # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', CiudadEliminar.as_view(), name='ciudad_eliminar'),
-    url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/$', CiudadDetalle.as_view(), name='ciudad_detalle'),
+    url(r'^proyectos-arbitrados/json/', ProyectoArbitradoJSON.as_view(), name='proyecto_arbitrado_lista__json'),
+    url(r'^proyectos-arbitrados/$', ProyectoArbitradoLista.as_view(), name='proyecto_arbitrado_lista'),
+    # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', ProyectoArbitradoEliminar.as_view(), name='proyecto_arbitrado_eliminar'),
+    url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/$', ProyectoArbitradoDetalle.as_view(), name='proyecto_arbitrado_detalle'),
 
 
 

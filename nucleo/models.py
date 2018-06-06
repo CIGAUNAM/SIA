@@ -795,7 +795,7 @@ class TipoCurso(models.Model):
         verbose_name_plural = "Tipos de curso"
 
 
-class ProyectoArbitrado(models.Model):
+class ProyectoInsvestigacionArbitrado(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     fecha_inicio = models.DateField()
