@@ -802,7 +802,6 @@ class ProyectoInsvestigacionArbitrado(models.Model):
     fecha_fin = models.DateField(null=True, blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.PROTECT)
-    responsables = SortedManyToManyField(User, related_name='proyecto_arbitrado_responsables', verbose_name='Responsables')
     status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
 
     def __str__(self):
@@ -815,4 +814,4 @@ class ProyectoInsvestigacionArbitrado(models.Model):
         return reverse('proyecto_arbitrado_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['nombre', 'fecha_inicio']

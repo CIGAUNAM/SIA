@@ -741,5 +741,4 @@ class ProyectoInvestigacionArbitradoForm(forms.ModelForm):
         exclude = []
         widgets = {
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-            'responsables': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
