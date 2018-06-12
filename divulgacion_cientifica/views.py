@@ -235,9 +235,13 @@ class LibroDivulgacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = LibroDivulgacion.objects.filter(tipo='DIVULGACION').exclude(usuarios__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='DIVULGACION').exclude(Q(usuarios__id__exact=usuarioid) & Q(editores__id__exact=usuarioid)
+                                                                           & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)
+                                                                           & Q(prologo__id__exact=usuarioid))
             else:
-                items = LibroDivulgacion.objects.filter(usuarios__id__exact=usuarioid, tipo='DIVULGACION')
+                items = Libro.objects.filter(tipo='DIVULGACION').filter(Q(usuarios__id__exact=usuarioid) | Q(editores__id__exact=usuarioid)
+                                                                           | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
+                                                                           | Q(prologo__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial', 'ciudad', 'status', 'fecha'))
             return HttpResponse(json, content_type='application/json')

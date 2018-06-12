@@ -10,7 +10,6 @@ class ExperienciaLaboral(models.Model):
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True, on_delete=models.DO_NOTHING)
-    # es_nombramiento_definitivo = models.BooleanField(default=False)
     cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
     fecha_inicio = models.DateField()
