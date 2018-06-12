@@ -311,11 +311,11 @@ class Dashboard(View):
 
                 total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                          status='PUBLICADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='PUBLICADO',
-                                                                                 usuarios=request.user).count()
+                                                                                 autores=request.user).count()
                 if not request_user_libro_investigacion_year_sum:
                     request_user_libro_investigacion_year_sum = 0
                 libros_investigacion_publicado_data[i + 1].append(request_user_libro_investigacion_year_sum)
@@ -369,11 +369,11 @@ class Dashboard(View):
 
                 total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                          status='EN_PRENSA').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='EN_PRENSA',
-                                                                                 usuarios=request.user).count()
+                                                                                 autores=request.user).count()
                 if not request_user_libro_investigacion_year_sum:
                     request_user_libro_investigacion_year_sum = 0
                 libros_investigacion_enprensa_data[i + 1].append(request_user_libro_investigacion_year_sum)
@@ -427,11 +427,11 @@ class Dashboard(View):
 
                 total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                          status='ACEPTADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='ACEPTADO',
-                                                                                 usuarios=request.user).count()
+                                                                                 autores=request.user).count()
                 if not request_user_libro_investigacion_year_sum:
                     request_user_libro_investigacion_year_sum = 0
                 libros_investigacion_aceptado_data[i + 1].append(request_user_libro_investigacion_year_sum)
@@ -486,13 +486,13 @@ class Dashboard(View):
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='PUBLICADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='PUBLICADO',
-                    libro__usuarios=request.user).count()
+                    libro__autores=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
                     request_user_capitulos_libros_investigacion_year_sum = 0
                 capitulos_libros_investigacion_publicado_data[i + 1].append(
@@ -555,13 +555,13 @@ class Dashboard(View):
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='EN_PRENSA').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='EN_PRENSA',
-                    libro__usuarios=request.user).count()
+                    libro__autores=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
                     request_user_capitulos_libros_investigacion_year_sum = 0
                 capitulos_libros_investigacion_enprensa_data[i + 1].append(
@@ -624,13 +624,13 @@ class Dashboard(View):
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='ACEPTADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='ACEPTADO',
-                    libro__usuarios=request.user).count()
+                    libro__autores=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
                     request_user_capitulos_libros_investigacion_year_sum = 0
                 capitulos_libros_investigacion_aceptado_data[i + 1].append(
@@ -1457,11 +1457,11 @@ class Dashboard(View):
 
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='PUBLICADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='PUBLICADO',
-                                                                   usuarios=request.user).count()
+                                                                   autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
@@ -1515,11 +1515,11 @@ class Dashboard(View):
 
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='EN_PRENSA').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='EN_PRENSA',
-                                                                   usuarios=request.user).count()
+                                                                   autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
@@ -1573,11 +1573,11 @@ class Dashboard(View):
 
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='ACEPTADO').filter(
-                    ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
+                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='ACEPTADO',
-                                                                   usuarios=request.user).count()
+                                                                   autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 libros_investigacion_aceptado_data[i + 1].append(request_user_items_year_sum)
@@ -1639,7 +1639,7 @@ class Dashboard(View):
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='PUBLICADO',
-                    libro__usuarios=request.user).count()
+                    libro__autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -1709,7 +1709,7 @@ class Dashboard(View):
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='EN_PRENSA',
-                    libro__usuarios=request.user).count()
+                    libro__autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 capitulos_libros_investigacion_enprensa_data[i + 1].append(
@@ -1779,7 +1779,7 @@ class Dashboard(View):
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='ACEPTADO',
-                    libro__usuarios=request.user).count()
+                    libro__autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
