@@ -172,7 +172,7 @@ class RedAcademicaContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.clasificacion"},\n' \
+                                    '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha_constitucion"},\n' \
                                     '{"data": "fields.vigente"},\n' \
                                 ']\n' \

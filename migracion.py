@@ -4634,7 +4634,7 @@ for i in libros_inv:
 
     for j in i[9].split('^'):
         print("       ", j)
-        l.usuarios.add(User.objects.get(username=j))
+        l.autores.add(User.objects.get(username=j))
 
 
 libros_cap = (
@@ -4706,7 +4706,7 @@ for i in libros_cap:
 
     for j in i[9].split('^'):
         print("       ", j)
-        l.usuarios.add(User.objects.get(username=j))
+        l.autores.add(User.objects.get(username=j))
 
 
 investigadores_unam = [

@@ -190,7 +190,7 @@ class DesarrolloGrupoInvestigacionInternoForm(forms.ModelForm):
         model = DesarrolloGrupoInvestigacionInterno
         exclude = []
         widgets = {
-            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -248,13 +248,13 @@ class DireccionTesisForm(forms.ModelForm):
         )
     )
 
-    fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
 
     class Meta:
         model = DireccionTesis
         exclude = []
         widgets = {
-            'usuarios': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

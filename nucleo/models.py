@@ -680,7 +680,7 @@ class Libro(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
                                                     ('DOCENCIA', 'Docencia')))
-    usuarios = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
+    autores = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
     editores = SortedManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)

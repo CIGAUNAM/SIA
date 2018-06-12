@@ -264,8 +264,8 @@ class InformeTecnicoContext:
 
 
 class LibroInvestigacionContext:
-    obj = 'Libro'
-    objs = 'Libros'
+    obj = 'Libro de investigación'
+    objs = 'Libros de investigación'
     url_categoria = 'investigacion'
     url_seccion = 'libros-investigacion'
 

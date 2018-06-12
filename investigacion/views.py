@@ -66,9 +66,9 @@ class CapituloLibroInvestigacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = CapituloLibroInvestigacion.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = CapituloLibroInvestigacion.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                items = CapituloLibroInvestigacion.objects.filter(usuarios__id__exact=usuarioid)
+                items = CapituloLibroInvestigacion.objects.filter(autores__id__exact=usuarioid)
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro', 'pagina_inicio', 'pagina_fin'))
@@ -94,7 +94,7 @@ class CapituloLibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
 class CapituloLibroInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(CapituloLibroInvestigacion, pk=pk, usuarios=request.user)
+            item = get_object_or_404(CapituloLibroInvestigacion, pk=pk, autores=request.user)
             item.delete()
             return redirect('../')
         except:
@@ -197,9 +197,13 @@ class LibroInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = Libro.objects.filter(tipo='INVESTIGACION').exclude(usuarios__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='INVESTIGACION').exclude(Q(autores__id__exact=usuarioid) & Q(editores__id__exact=usuarioid)
+                                                                           & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)
+                                                                           & Q(prologo__id__exact=usuarioid))
             else:
-                items = Libro.objects.filter(usuarios__id__exact=usuarioid, tipo='INVESTIGACION')
+                items = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores__id__exact=usuarioid) | Q(editores__id__exact=usuarioid)
+                                                                           | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
+                                                                           | Q(prologo__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial', 'ciudad', 'status', 'fecha'))
 
@@ -256,7 +260,7 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
 class LibroInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(Libro, pk=pk, tipo='INVESTIGACION', usuarios=request.user)
+            item = get_object_or_404(Libro, pk=pk, tipo='INVESTIGACION')
             item.delete()
             return redirect('/investigacion/libros-investigacion/')
         except:
@@ -270,9 +274,9 @@ class ProyectoInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ProyectoInvestigacion.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = ProyectoInvestigacion.objects.all().exclude(Q(usuarios__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid) & Q(tecnicos__id__exact=usuarioid))
             else:
-                items = ProyectoInvestigacion.objects.filter(usuarios__id__exact=usuarioid)
+                items = ProyectoInvestigacion.objects.filter(Q(usuarios__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid) | Q(tecnicos__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'status', 'clasificacion', 'modalidad'))
 
@@ -329,7 +333,7 @@ class ProyectoInvestigacionDetalle(ObjectUpdateVarMixin, View):
 class ProyectoInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ProyectoInvestigacion, pk=pk, usuarios=request.user)
+            item = get_object_or_404(ProyectoInvestigacion, pk=pk)
             item.delete()
             return redirect('../')
         except:
