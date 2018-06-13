@@ -479,6 +479,9 @@ class DistincionForm(forms.ModelForm):
         choices=(('', 'Seleccionar tipo de distinción'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
                  ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'), ('GUGGENHEIM', 'Beca Guggenheim'), 
                  ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
+    ambito = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
 
     class Meta:
         model = Distincion
