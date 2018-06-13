@@ -147,7 +147,7 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
         model = ConvenioEntidadExterna
         exclude = ['tags', ]
         widgets = {
-            "autores": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "participantes": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             # "entidades": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }

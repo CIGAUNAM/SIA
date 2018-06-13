@@ -92,17 +92,11 @@ class ArticuloDocenciaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                articulos = ArticuloDocencia.objects.all().exclude(usuarios__id__exact=usuarioid)
+                articulos = ArticuloDocencia.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                articulos = ArticuloDocencia.objects.filter(usuarios__id__exact=usuarioid)
+                articulos = ArticuloDocencia.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'tipo', 'revista', 'status', 'fecha'))
-
-            json = json.replace('ARTICULO', 'Artículo')
-            json = json.replace('ACTA', 'Acta')
-            json = json.replace('CARTA', 'Carta')
-            json = json.replace('RESENA', 'Reseña')
-            json = json.replace('OTRO', 'Otro')
+                                         fields=('titulo', 'revista', 'status', 'fecha'))
 
             json = json.replace('PUBLICADO', 'Publicado')
             json = json.replace('EN_PRENSA', 'En prensa')
@@ -146,11 +140,11 @@ class LibroDocenciaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = Libro.objects.filter(tipo='DOCENCIA').exclude(Q(usuarios__id__exact=usuarioid) & Q(editores__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='DOCENCIA').exclude(Q(autores__id__exact=usuarioid) & Q(editores__id__exact=usuarioid)
                                                                            & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)
                                                                            & Q(prologo__id__exact=usuarioid))
             else:
-                items = Libro.objects.filter(tipo='DOCENCIA').filter(Q(usuarios__id__exact=usuarioid) | Q(editores__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='DOCENCIA').filter(Q(autores__id__exact=usuarioid) | Q(editores__id__exact=usuarioid)
                                                                            | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
                                                                            | Q(prologo__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
