@@ -22,7 +22,7 @@ class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
-    usuarios = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
+    autores = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_divulgacion_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_divulgacion_agradecimientos', blank=True)
     url = models.URLField(blank=True)
@@ -57,7 +57,7 @@ class CapituloLibroDivulgacion(models.Model):
     pagina_fin = models.PositiveIntegerField()
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
-    usuarios = SortedManyToManyField(User, related_name='capitulo_libro_divulgacion_autores', verbose_name='Autores')
+    autores = SortedManyToManyField(User, related_name='capitulo_libro_divulgacion_autores', verbose_name='Autores')
 
 
     def __str__(self):

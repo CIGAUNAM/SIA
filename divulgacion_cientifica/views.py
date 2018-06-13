@@ -5,6 +5,7 @@ from SIA.utils import *
 from . forms import *
 from . utils import *
 from . models import *
+from django.db.models import Q
 
 #
 
@@ -16,9 +17,9 @@ class ArticuloDivulgacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ArticuloDivulgacion.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = ArticuloDivulgacion.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                items = ArticuloDivulgacion.objects.filter(usuarios__id__exact=usuarioid)
+                items = ArticuloDivulgacion.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'tipo', 'status', 'revista'))
             return HttpResponse(json, content_type='application/json')
@@ -57,9 +58,9 @@ class CapituloLibroDivulgacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = CapituloLibroDivulgacion.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = CapituloLibroDivulgacion.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                items = CapituloLibroDivulgacion.objects.filter(usuarios__id__exact=usuarioid)
+                items = CapituloLibroDivulgacion.objects.filter(autores__id__exact=usuarioid)
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro'))
@@ -235,11 +236,11 @@ class LibroDivulgacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = Libro.objects.filter(tipo='DIVULGACION').exclude(Q(usuarios__id__exact=usuarioid) & Q(editores__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='DIVULGACION').exclude(Q(autores__id__exact=usuarioid) & Q(autores__id__exact=usuarioid)
                                                                            & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)
                                                                            & Q(prologo__id__exact=usuarioid))
             else:
-                items = Libro.objects.filter(tipo='DIVULGACION').filter(Q(usuarios__id__exact=usuarioid) | Q(editores__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='DIVULGACION').filter(Q(autores__id__exact=usuarioid) | Q(autores__id__exact=usuarioid)
                                                                            | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
                                                                            | Q(prologo__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,

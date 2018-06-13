@@ -52,6 +52,9 @@ class ArbitrajeProyectoInvestigacion(models.Model):
     fecha = models.DateField()
     descripcion = models.TextField(blank=True)
     proyecto = models.ForeignKey(ProyectoInsvestigacionArbitrado, on_delete=models.DO_NOTHING)
+    convocatoria = models.CharField(max_length=200)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
@@ -95,7 +98,7 @@ class RedAcademica(models.Model):
     vigente = models.BooleanField(default=False)
     entidades = models.ManyToManyField(Dependencia, related_name='red_academica_entidades')
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
-    usuarios = models.ManyToManyField(User, related_name='red_academica_usuarios',
+    participantes = models.ManyToManyField(User, related_name='red_academica_usuarios',
                                       verbose_name='Académicos participantes')
 
     def __str__(self):

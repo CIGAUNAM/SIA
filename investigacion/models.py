@@ -51,8 +51,8 @@ class ProyectoInvestigacion(models.Model):
     fecha_fin = models.DateField(null=True, blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    usuarios = SortedManyToManyField(User, related_name='proyecto_investigacion_responsables',
-                                     verbose_name='Responsables')
+    responsables = SortedManyToManyField(User, related_name='proyecto_investigacion_responsables',
+                                         verbose_name='Responsables')
     participantes = models.ManyToManyField(User, related_name='proyecto_investigacion_participantes', blank=True)
     status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
     clasificacion = models.CharField(max_length=30, choices=CLASIFICACION_PROYECTO)
@@ -158,7 +158,7 @@ class MapaArbitrado(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     escala = models.CharField(max_length=30)
-    usuarios = SortedManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores')
+    autores = SortedManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='mapa_arbitrado_coordinadores', blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
@@ -190,7 +190,7 @@ class MapaArbitrado(models.Model):
 class InformeTecnico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    usuarios = SortedManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
+    autores = SortedManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
     fecha = models.DateField(auto_now=False)
     numero_paginas = models.PositiveIntegerField(default=1)
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)

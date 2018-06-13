@@ -108,9 +108,9 @@ class MapaArbitradoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = MapaArbitrado.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = MapaArbitrado.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                items = MapaArbitrado.objects.filter(usuarios__id__exact=usuarioid)
+                items = MapaArbitrado.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'status', 'editorial', 'fecha'))
 
@@ -156,9 +156,9 @@ class InformeTecnicoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = InformeTecnico.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = InformeTecnico.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                items = InformeTecnico.objects.filter(usuarios__id__exact=usuarioid)
+                items = InformeTecnico.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'fecha', 'numero_paginas'))
             return HttpResponse(json, content_type='application/json')
@@ -274,9 +274,9 @@ class ProyectoInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ProyectoInvestigacion.objects.all().exclude(Q(usuarios__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid) & Q(tecnicos__id__exact=usuarioid))
+                items = ProyectoInvestigacion.objects.all().exclude(Q(responsables__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid) & Q(tecnicos__id__exact=usuarioid))
             else:
-                items = ProyectoInvestigacion.objects.filter(Q(usuarios__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid) | Q(tecnicos__id__exact=usuarioid))
+                items = ProyectoInvestigacion.objects.filter(Q(responsables__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid) | Q(tecnicos__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'status', 'clasificacion', 'modalidad'))
 
@@ -302,7 +302,7 @@ class ProyectoInvestigacionLista(ObjectCreateVarMixin, View):
     form_class = ProyectoInvestigacionForm
     model = ProyectoInvestigacion
     aux = ProyectoInvestigacionContext.contexto
-    template_name = 'proyecto_investigacion_arbitrado.html'
+    template_name = 'proyecto_investigacion.html'
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -318,7 +318,7 @@ class ProyectoInvestigacionDetalle(ObjectUpdateVarMixin, View):
     form_class = ProyectoInvestigacionForm
     model = ProyectoInvestigacion
     aux = ProyectoInvestigacionContext.contexto
-    template_name = 'proyecto_investigacion_arbitrado.html'
+    template_name = 'proyecto_investigacion.html'
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
