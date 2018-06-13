@@ -144,6 +144,11 @@ urlpatterns = [
     # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', ProyectoArbitradoEliminar.as_view(), name='proyecto_arbitrado_eliminar'),
     url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/$', ProyectoArbitradoDetalle.as_view(), name='proyecto_arbitrado_detalle'),
 
+    url(r'^convocatorias-arbitraje/json/', ConvocatoriaArbitrajeJSON.as_view(), name='convocatoria_arbitraje_lista__json'),
+    url(r'^convocatorias-arbitraje/$', ConvocatoriaArbitrajeLista.as_view(), name='convocatoria_arbitraje_lista'),
+    # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', ConvocatoriaArbitrajeEliminar.as_view(), name='convocatoria_arbitraje_eliminar'),
+    url(r'^convocatorias-arbitraje/(?P<pk>[\w\-]+)/$', ConvocatoriaArbitrajeDetalle.as_view(), name='convocatoria_arbitraje_detalle'),
+
 
 
 

@@ -35,7 +35,6 @@ class LineaInvestigacion(models.Model):
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
-    fecha_fin = models.DateField(blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     # tags = models.ManyToManyField(Tag, related_name='linea_investigacion_tags', blank=True)
 
@@ -56,9 +55,7 @@ class CapacidadPotencialidad(models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Capacidad o potencialidad')
     descripcion = models.TextField(blank=True)
     fecha_inicio = models.DateField()
-    fecha_fin = models.DateField(blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='capacidad_potencialidad_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.usuario, self.nombre)

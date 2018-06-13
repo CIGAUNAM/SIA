@@ -822,7 +822,7 @@ class ColeccionJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Coleccion.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
+                                         fields=('nombre'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -858,7 +858,7 @@ class RevistaJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Revista.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'pais', 'factor_impacto'))
+                                         fields=('nombre', 'pais'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -894,7 +894,7 @@ class AsignaturaJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Asignatura.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
+                                         fields=('nombre'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -1157,6 +1157,43 @@ class ProyectoArbitradoEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
+
+class ConvocatoriaArbitrajeJSON(View):
+    def get(self, request):
+        try:
+            #usuarioid = User.objects.get(username=request.user.username).id
+            items = ConvocatoriaArbitraje.objects.all()
+            json = ConvocatoriaArbitraje.serialize('json', items, use_natural_foreign_keys=True,
+                                         fields=('nombre'))
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ConvocatoriaArbitrajeLista(ObjectCreateMixinNucleo, View):
+    form_class = ConvocatoriaArbitrajeForm
+    model = ConvocatoriaArbitraje
+    aux = ConvocatoriaArbitrajeContext.contexto
+    template_name = 'simple.html'
+
+
+class ConvocatoriaArbitrajeDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = ConvocatoriaArbitrajeForm
+    model = ConvocatoriaArbitraje
+    aux = ConvocatoriaArbitrajeContext.contexto
+    template_name = 'simple.html'
+
+
+class ConvocatoriaArbitrajeEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(Asignatura, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
 
 
 

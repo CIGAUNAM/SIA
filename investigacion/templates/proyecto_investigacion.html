@@ -111,7 +111,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.responsables }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -477,7 +477,7 @@
 
         <script>
         //$("#id_usuarios").select2();
-        $("#id_usuarios").on("select2:select", function (evt) {
+        $("#id_responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
 
@@ -600,7 +600,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.responsables }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -973,8 +973,7 @@
     </script>
 
         <script>
-        //$("#id_usuarios").select2();
-        $("#id_usuarios").on("select2:select", function (evt) {
+        $("#id_responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
 

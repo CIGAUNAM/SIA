@@ -25,7 +25,8 @@
                 <li {% if active == 'lista' %}class="active"{% endif %}><a href="#lista" data-toggle="tab"
                                                                            aria-expanded="true">{{ aux.tab_lista }}</a>
                 </li>
-                <li><a href="#agregar" data-toggle="tab" aria-expanded="true">{{ aux.tab_agregar }}</a></li>
+                <li><a id="aagregar" href="#agregar" data-toggle="tab" aria-expanded="true">{{ aux.tab_agregar }}</a>
+                </li>
                 {% if aux.tab_otros %}
                     <li><a href="#lista-otros" data-toggle="tab" aria-expanded="true">{{ aux.tab_otros }}</a></li>
                 {% endif %}
@@ -128,6 +129,38 @@
 
                 <div id="agregar" class="tab-pane{% if active == 'agregar' %} active{% endif %}">
 
+
+                    <script>
+                        var avisos = ["<h3>Tiempo máximo de captura por registro</h3> A partir de iniciar el registro de un nuevo elemento, cuenta con 30 minutos para finalizar el llenado de los datos para esa entrada, de lo contrario, si se excede el tiempo, el sistema se desconecta de los catalogos adicionales (como instituciones, revistas, proyectos, etc); en cuyo caso las listas ya no se mostrarán. Si eso pasa es necesario iniciar el registro de nuevo.",
+                            "<h3>Fechas de fin y elementos en curso o permanentes</h3>En los casos donde hay un campo de fecha de término pero se trata de una situación que está en curso, no tiene fecha de fin, o es permanente, dejar el campo de fecha de fin en blanco, se asume en los reportes extraidos de la información que los datos de fecha de fin que están en blanco son casos en curso o permanente según sea el caso. ",
+                            "<h3>Orden de autores</h3>En los campos de autores, el orden en que se registraron es el orden en que se almacenan, Por ejemplo, en un artículo, el primer autor va primero, el segundo autor en segundo lugar, y así sucesivamente; al ingresar personas en un campo donde pueden ir más de una, el orden en que se seleccionan, será el orden en el que se almacenene, y se considera tal orden como el orden de participación. Por ejemplo en el caso de autores, editores, cooordinadores, agradecimientos, etc.",
+                            "En los libros, el campo prologo, se utiliza para agregar a los autores del prólogo de dicho libro, en el caso de que sea algún miembro de esta entidad.",
+                            "Existe una jerarquia establecida de instituciones y dependencias. En el caso particular de la UNAM, Solo la UNAM es considerada como la institución. el CIGA, la ENES, el IIES, etc, son todas ellas dependencias de la UNAM, no deberían estar en instituciones. Actualmente hay quienes han registrado estas dependencias como instituciones, favor de no registrarlas como institución cuando no lo son.",
+                            "En todos los campos de tipo fecha, es perfectamente entendible que no se tiene la fecha exacta de varios de los casos, por ejemplo en el caso de la publicación de articulos, sin embargo es necesario que esos campos sean almacenados como un campo de tipo fecha para cuestiones de reportes, por tal motivo, debe escribise una fecha en el formato aaaa-mm-dd. Para los casos donde no se cuenta con la fecha exacta, favor de poner un aproximado, en la mayoria de los casos el dato importante es el año, pero el registro debe almacenarse como fecha completa.",
+                            "<h3>Coautorías y cooperación con terceros</h3>Existen secciones donde puede haber cooperación con otras personas, por ejemplo en la autoría de un artículo o un libro, para evitar duplicidad en los registros, con que uno de los dos autores llené el registro, y habiendo agregado a los autores, ya no es necesario que los demás lo hagan. En cuyo caso aparecerá en la pestaña 'Miz [elementos]', es por esta razón que en los casos como éste puede verse la pestaña '[elementos de otros], pues puede darse el caso de que al haber coautoria o cooepración en un trabajo con mas personas, quien haya registrado pudiera haber olvidado agregarle, en cuyo caso usted puede editar el registro y agregarse en el lugar correspondiente, es importante recordar que el orden importa, por lo que no es cuestión de solo agregar al final. <br><br> En cambio, en los casos donde no hay cooperación de más de una persona (por ejemplo un curso tomado, o una maestría cursada), en esos casos no hay campo para especificar de quipen se trata, no es necesario pues ya va implicito en cada registro individual",
+                        ];
+
+                        (function ($) {
+                            $.rand = function (arg) {
+                                if ($.isArray(arg)) {
+                                    return arg[$.rand(arg.length)];
+                                } else if (typeof arg === "number") {
+                                    return Math.floor(Math.random() * arg);
+                                } else {
+                                    return 4;  // chosen by fair dice roll
+                                }
+                            };
+                        })(jQuery);
+
+
+                        $("#aagregar").on('click', function () {
+                            $("#texto-modal").html(jQuery.rand(avisos));
+                            $('#aviso').modal('show');
+
+                        });
+
+                    </script>
+
                     <div class="bg-light-blue-active box-header with-border">
                         <h3 class="box-title">{{ aux.titulo_agregar }}</h3>
                         <div class="box-tools pull-right">
@@ -139,6 +172,13 @@
                     <div class="box-body">
                         <div>
                             <div>
+                                <div class="panel">
+
+                                    <div class="float-right">
+                                        <span class="tiempo">Tiempo restante</span>
+                                    </div>
+
+                                </div>
                                 <form action="/{{ aux.url_categoria }}/{{ aux.url_seccion }}/" method="post">
                                     {% csrf_token %}
                                     {% block form_agregar %}
@@ -236,6 +276,27 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div id="aviso" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">¡Aviso importante!</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="texto-modal"><p>dsakdjl</p></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 {% endblock %}
 
 <script type="text/javascript"
@@ -244,5 +305,26 @@
         {% if adminform and add %}
         data-model-name="{{ opts.model_name }}"
         {% endif %}>
+
+    var minutes = 20, seconds = 0;
+    jQuery(function () {
+        jQuery("span.tiempo").html(minutes + ":" + seconds);
+        var count = setInterval(function () {
+            if (parseInt(minutes) < 0) {
+                clearInterval(count);
+            } else {
+                jQuery("span.tiempo").html(minutes + ":" + seconds);
+                if (seconds == 0) {
+                    minutes--;
+                    if (minutes < 10) minutes = "0" + minutes;
+                    seconds = 59;
+                }
+                seconds--;
+                if (seconds < 10) minutes = "0" + seconds;
+            }
+        }, 1000);
+    })
+
 </script>
+
 

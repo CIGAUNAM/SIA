@@ -42,7 +42,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.autores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -342,21 +342,20 @@
         $('#d_isbn').hide();
 
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                        $('#d_isbn').show('slow');
-                        $('#id_isbn').attr("required", "true");
-                    } else {
-                        $("#id_isbn").val("");
-                        $('#d_isbn').hide('slow');
-                        $('#id_isbn').attr("required", null);
-                    }
+                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                    $('#d_isbn').show('slow');
+                    $('#id_isbn').attr("required", "true");
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide('slow');
+                    $('#id_isbn').attr("required", null);
                 }
+            }
         );
     </script>
 
     <script>
-        //$("#id_usuarios").select2();
-        $("#id_usuarios").on("select2:select", function (evt) {
+        $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
 
@@ -410,7 +409,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.usuarios }}
+            {{ form.autores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -714,21 +713,20 @@
         }
 
         $("#id_status").on('change', function () {
-                    if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                        $('#d_isbn').show('slow');
-                        $('#id_isbn').attr("required", "true");
-                    } else {
-                        $("#id_isbn").val("");
-                        $('#d_isbn').hide('slow');
-                        $('#id_isbn').attr("required", null);
-                    }
+                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
+                    $('#d_isbn').show('slow');
+                    $('#id_isbn').attr("required", "true");
+                } else {
+                    $("#id_isbn").val("");
+                    $('#d_isbn').hide('slow');
+                    $('#id_isbn').attr("required", null);
                 }
+            }
         );
     </script>
 
     <script>
-        //$("#id_usuarios").select2();
-        $("#id_usuarios").on("select2:select", function (evt) {
+        $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
 

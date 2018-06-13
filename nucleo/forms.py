@@ -742,3 +742,14 @@ class ProyectoInvestigacionArbitradoForm(forms.ModelForm):
         widgets = {
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
+
+
+class ConvocatoriaArbitrajeForm(forms.ModelForm):
+    class Meta:
+        model = ConvocatoriaArbitraje
+        exclude = []
+        widgets = {
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+        }
+

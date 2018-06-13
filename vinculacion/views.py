@@ -62,7 +62,7 @@ class ArbitrajeProyectoInvestigacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ArbitrajeProyectoInvestigacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('proyecto', 'fecha',))
+                                         fields=('fecha', 'dependencia'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -134,9 +134,9 @@ class RedAcademicaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = RedAcademica.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = RedAcademica.objects.all().exclude(participantes__id__exact=usuarioid)
             else:
-                items = RedAcademica.objects.filter(usuarios__id__exact=usuarioid)
+                items = RedAcademica.objects.filter(participantes__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'ambito', 'fecha_constitucion', 'vigente'))
 

@@ -74,7 +74,6 @@ class LineaInvestigacionForm(forms.ModelForm):
         )
     )
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de finalización')
 
     class Meta:
         model = LineaInvestigacion
@@ -85,7 +84,6 @@ class CapacidadPotencialidadForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Capacidad o Potencialidad')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Descripción')
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de finalización')
 
     class Meta:
         model = CapacidadPotencialidad

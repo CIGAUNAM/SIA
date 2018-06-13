@@ -815,3 +815,22 @@ class ProyectoInsvestigacionArbitrado(models.Model):
 
     class Meta:
         ordering = ['nombre', 'fecha_inicio']
+
+
+class ConvocatoriaArbitraje(models.Model):
+    nombre = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.nombre
+
+    def natural_key(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('convocatoria_atrbitraje_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = 'Convocatoria'
+        verbose_name_plural = 'Convocatorias'

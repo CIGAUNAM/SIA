@@ -1,10 +1,10 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Fecha de dictamen:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha del dictamen."><i
+    <p><strong>Fecha de dictamen: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Fecha del dictamen."><i
                 class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -19,48 +19,79 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Proyecto de Investigación (externo):</strong>
+    <p><strong>Convocatoria:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto de investigación."><i class="fa fa-question-circle"></i></a>
+           title="Convocatoria de arbitraje, y clave de proyecto si aplica.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.convocatoria }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyecto }}
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del proyecto seleccionada.">
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Fecha de dictamen:</strong>
+    <p><strong>Dependencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de dictamen del arbitraje."><i
-                class="fa fa-question-circle"></i></a>
+           title="Dependencia, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
             <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
             </div>
-            {{ form.fecha }}
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Fecha de dictamen:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha del dictamen."><i
+    <p><strong>Fecha de dictamen: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Fecha del dictamen."><i
                 class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -75,38 +106,69 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Proyecto de Investigación (externo):</strong>
+    <p><strong>Convocatoria:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto de investigación."><i class="fa fa-question-circle"></i></a>
+           title="Convocatoria de arbitraje, y clave de proyecto si aplica.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.convocatoria }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyecto }}
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del proyecto seleccionada.">
+                   title="Mostrar los detalles adicionales al nombre de la institución.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Fecha de dictamen:</strong>
+    <p><strong>Dependencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de dictamen del arbitraje."><i
-                class="fa fa-question-circle"></i></a>
+           title="Dependencia, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
             <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
             </div>
-            {{ form.fecha }}
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
         </div>
     </div>
     </p>

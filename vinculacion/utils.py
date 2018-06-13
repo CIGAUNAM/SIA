@@ -50,7 +50,7 @@ class ArbitrajeProyectoInvestigacionContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Fecha', 'Proyecto']}
+                'titulos_tabla': ['Fecha', 'Dependencia']}
 
 
     tabla_mios =  '<script>\n' \
@@ -69,7 +69,7 @@ class ArbitrajeProyectoInvestigacionContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.fecha + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.proyecto"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
