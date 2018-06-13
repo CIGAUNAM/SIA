@@ -114,6 +114,8 @@ class ProgramaEstudio(models.Model):
                                                      ('OTRO', 'Otro')))
     fecha = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.nivel.title())

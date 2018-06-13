@@ -583,6 +583,7 @@ class Distincion(models.Model):
                                                     ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
                                                     ('GUGGENHEIM', 'Beca Guggenheim'),
                                                     ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
+    ambito = models.CharField(max_length=50, choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
