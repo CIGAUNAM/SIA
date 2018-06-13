@@ -254,7 +254,7 @@ class DireccionTesisForm(forms.ModelForm):
         model = DireccionTesis
         exclude = []
         widgets = {
-            "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "tutores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

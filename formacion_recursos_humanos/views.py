@@ -151,9 +151,9 @@ class DireccionTesisJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = DireccionTesis.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = DireccionTesis.objects.all().exclude(tutores__id__exact=usuarioid)
             else:
-                items = DireccionTesis.objects.filter(usuarios__id__exact=usuarioid)
+                items = DireccionTesis.objects.filter(tutores__id__exact=usuarioid)
 
             json = serializers.serialize('json', items,
                                          fields=(
