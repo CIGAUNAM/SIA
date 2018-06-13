@@ -109,7 +109,7 @@ class DireccionTesis(models.Model):
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
     reconocimiento = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
     fecha_examen = models.DateField(null=True, blank=True)
-    usuarios = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
+    tutores = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.asesorado, self.grado_academico)
