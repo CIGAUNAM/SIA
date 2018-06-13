@@ -84,7 +84,7 @@ class ArticuloDocencia(models.Model):
     issn_impreso = models.CharField(max_length=40, blank=True, verbose_name='ISSN Impreso')
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     solo_electronico = models.BooleanField(default=False)
-    usuarios = SortedManyToManyField(User, related_name='articulo_docencia_autores', verbose_name='Autores')
+    autores = SortedManyToManyField(User, related_name='articulo_docencia_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_docencia_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_docencia_agradecimientos', blank=True)
     url = models.URLField(blank=True)

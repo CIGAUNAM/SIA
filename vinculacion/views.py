@@ -183,9 +183,9 @@ class ConvenioEntidadExternaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ConvenioEntidadExterna.objects.all().exclude(usuarios__id__exact=usuarioid)
+                items = ConvenioEntidadExterna.objects.all().exclude(participantes__id__exact=usuarioid)
             else:
-                items = ConvenioEntidadExterna.objects.filter(usuarios__id__exact=usuarioid)
+                items = ConvenioEntidadExterna.objects.filter(participantes__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'fecha_fin'))
 

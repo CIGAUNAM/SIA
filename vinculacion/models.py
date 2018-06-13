@@ -122,8 +122,8 @@ class ConvenioEntidadExterna(models.Model):
     fecha_fin = models.DateField(blank=True, null=True)
     es_renovacion = models.BooleanField(blank=True, default=False)
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
-    usuarios = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios',
-                                      verbose_name='Académicos participantes')
+    participantes = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios',
+                                           verbose_name='Académicos participantes')
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_inicio)
