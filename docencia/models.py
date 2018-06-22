@@ -7,9 +7,9 @@ from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 
-STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
-                                                              ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-                                                              ('OTRO', 'Otro')))
+STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO',
+                                      (('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
+                                       ('OTRO', 'Otro')))
 
 
 # Create your models here.
@@ -82,7 +82,7 @@ class ArticuloDocencia(models.Model):
     numero = models.CharField(max_length=100, null=True, blank=True)
     fecha = models.DateField(auto_now=False)
     issn_impreso = models.CharField(max_length=40, blank=True, verbose_name='ISSN Impreso')
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     solo_electronico = models.BooleanField(default=False)
     autores = SortedManyToManyField(User, related_name='articulo_docencia_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_docencia_alumnos', blank=True)

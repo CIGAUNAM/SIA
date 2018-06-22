@@ -11,7 +11,10 @@ EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (
     ('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'),
     ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
-STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (
+STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO', (
+    ('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
+    ('OTRO', 'Otro')))
+STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (
     ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
     ('OTRO', 'Otro')))
 
@@ -21,7 +24,7 @@ STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     autores = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_divulgacion_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_divulgacion_agradecimientos', blank=True)

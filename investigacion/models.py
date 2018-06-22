@@ -7,9 +7,14 @@ from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, 
 from sortedm2m.fields import SortedManyToManyField
 
 
-STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
-                                                              ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-                                                              ('OTRO', 'Otro')))
+STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO',
+                                      (('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'),
+                                       ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
+
+STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
+                                                                    ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
+                                                                    ('OTRO', 'Otro')))
+
 STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'),
                                                         ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
 CLASIFICACION_PROYECTO = getattr(settings,
@@ -106,15 +111,15 @@ class ArticuloCientifico(models.Model):
     fecha = models.DateField(auto_now=False)
     issn_impreso = models.CharField(max_length=40, blank=True, verbose_name='ISSN Impreso')
     issn_online = models.CharField(max_length=40, blank=True, verbose_name='ISSN Online')
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     solo_electronico = models.BooleanField(default=False)
     autores = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_cientifico_agradecimientos', blank=True)
     factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     url = models.URLField(blank=True)
-    pagina_inicio = models.PositiveIntegerField()
-    pagina_fin = models.PositiveIntegerField()
+    pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
+    pagina_fin = models.PositiveIntegerField(null=True, blank=True)
     id_doi = models.CharField(max_length=100, null=True, blank=True)
     id_wos = models.CharField(max_length=100, null=True, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
@@ -161,7 +166,7 @@ class MapaArbitrado(models.Model):
     autores = SortedManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores')
     editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
     coordinadores = models.ManyToManyField(User, related_name='mapa_arbitrado_coordinadores', blank=True)
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_LIBRO)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
