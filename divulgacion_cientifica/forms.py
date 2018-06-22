@@ -15,7 +15,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
         required=False, label='Descripción')
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+        choices=getattr(settings, 'STATUS_PUBLICACION_ARTICULO', ), required=True)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     solo_electronico = forms.BooleanField(required=False)
     revista = forms.ModelChoiceField(
@@ -232,7 +232,7 @@ class LibroDivulgacionForm(forms.ModelForm):
     )
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'STATUS_PUBLICACION', ))
+        choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO', ))
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))

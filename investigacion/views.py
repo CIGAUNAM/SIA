@@ -18,9 +18,9 @@ class ArticuloCientificoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                articulos = ArticuloCientifico.objects.all().exclude(autores__id__exact=usuarioid)
+                articulos = ArticuloCientifico.objects.all().exclude(Q(autores__id__exact=usuarioid) & Q(alumnos__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid))
             else:
-                articulos = ArticuloCientifico.objects.filter(autores__id__exact=usuarioid)
+                articulos = ArticuloCientifico.objects.filter(Q(autores__id__exact=usuarioid) | Q(alumnos__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid))
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
                                          fields=('titulo', 'revista', 'status', 'fecha'))
 

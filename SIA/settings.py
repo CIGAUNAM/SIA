@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.203', '10.1.11.2', '201.144.41.229']
 
-STATUS_PUBLICACION = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'), ('OTRO', 'Otro'))
+STATUS_PUBLICACION_ARTICULO = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('PUBLICADO', 'Publicado'), ('OTRO', 'Otro'))
+STATUS_PUBLICACION_LIBRO = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'), ('OTRO', 'Otro'))
 STATUS_PROYECTO = (('', '-------'), ('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro'))
 CLASIFICACION_PROYECTO = (('', '-------'), ('BASICO', 'Básico'), ('APLICADO', 'Aplicado'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'),('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'), ('OTRA', 'Otra'))
 ORGANIZACION_PROYECTO = (('', '-------'), ('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo'))
