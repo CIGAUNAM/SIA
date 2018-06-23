@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Línea de investigación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de línea de investigación sobre la que se trabaja o tiene experiencia."><i
@@ -87,6 +88,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
         <p><strong>Línea de investigación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de línea de investigación sobre la que se trabaja o tiene experiencia."><i

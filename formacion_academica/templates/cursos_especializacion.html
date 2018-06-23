@@ -2,6 +2,7 @@
 
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Nombre del curso:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del curso."><i
@@ -156,6 +157,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Nombre del curso:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del curso."><i

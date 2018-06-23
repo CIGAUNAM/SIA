@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Capacidad o Potencialidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Capacidad técnica, habilidad o potencialidad para realizar alguna actividad o tarea en particular."><i
@@ -35,6 +36,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Capacidad o Potencialidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Capacidad técnica, habilidad o potencialidad para realizar alguna actividad o tarea en particular."><i

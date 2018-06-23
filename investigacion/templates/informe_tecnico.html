@@ -1,11 +1,12 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Título de informe:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título del informe tècnico de acceso público.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -24,7 +25,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores del informe, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -47,7 +48,7 @@
     <p><strong>Fecha:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de publicación de informe."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -60,7 +61,7 @@
     <p><strong>Número de páginas:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de páginas del informe.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
@@ -72,7 +73,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto relacionado con el informe, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
@@ -125,11 +126,12 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Título de informe:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título del informe tècnico de acceso público.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -148,7 +150,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores del informe, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -171,7 +173,7 @@
     <p><strong>Fecha:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de publicación de informe."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -184,7 +186,7 @@
     <p><strong>Número de páginas:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de páginas del informe.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
@@ -196,14 +198,14 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto relacionado con el informe, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
             {{ form.proyecto }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
+                   title="Mostrar los detalles adicionales del proyecto.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
