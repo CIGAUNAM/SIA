@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Cargo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Cargo relativo a la experiencia laboral que se está dando de alta, por ejemplo, Director general, Relaciones públicas, Almacenista, etc.">
@@ -119,6 +120,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Cargo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Cargo relativo a la experiencia laboral que se está dando de alta, por ejemplo, Director general, Relaciones públicas, Almacenista, etc.">

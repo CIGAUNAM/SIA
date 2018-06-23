@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Título de Post Doctorado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="left"
            title="Título de la tesis con que finalizó la licenciatura."><i
@@ -136,6 +137,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
         <p><strong>Título de Post Doctorado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="left"
            title="Título de la tesis con que finalizó la licenciatura."><i

@@ -1,11 +1,12 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Nombre del proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del proyecto de investigación.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -30,7 +31,7 @@
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio del proyecto."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -42,8 +43,9 @@
     </p>
     <p><strong>Fecha fin:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de finalización del proyecto."><i
-                class="fa fa-question-circle"></i></a>
+           title="Fecha de finalización del proyecto. Este campo puede ir vacío si el proyecto es permanente, o si no
+           hay una fecha definida, en cuyo caso se asume que el proyecto es de tiempo indefinido o permanente, en caso
+           contrario especificar la fecha de fin."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -57,7 +59,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución que involucrada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -83,7 +85,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -107,7 +109,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Responsables del proyecto, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -153,7 +155,7 @@
     </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status del proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Status del proyecto."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -163,7 +165,7 @@
     </p>
     <p><strong>Clasificación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Clasificación del proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Clasificación del proyecto."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -174,7 +176,7 @@
     <p><strong>Organización:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Organización del proyecto."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -184,7 +186,7 @@
     </p>
     <p><strong>Modalidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Modalidad del proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Modalidad del proyecto."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -490,11 +492,12 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Nombre del proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del proyecto de investigación.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -519,7 +522,7 @@
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio del proyecto."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -531,8 +534,9 @@
     </p>
     <p><strong>Fecha fin:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de finalización del proyecto."><i
-                class="fa fa-question-circle"></i></a>
+           title="Fecha de finalización del proyecto. Este campo puede ir vacío si el proyecto es permanente, o si no
+           hay una fecha definida, en cuyo caso se asume que el proyecto es de tiempo indefinido o permanente, en caso
+           contrario especificar la fecha de fin."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -546,7 +550,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución que involucrada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -572,7 +576,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -596,7 +600,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Responsables del proyecto, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -642,7 +646,7 @@
     </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status del proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Status del proyecto."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -652,7 +656,7 @@
     </p>
     <p><strong>Clasificación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Clasificación del proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Clasificación del proyecto."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -663,7 +667,7 @@
     <p><strong>Organización:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Organización del proyecto."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -673,7 +677,7 @@
     </p>
     <p><strong>Modalidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Modalidad del proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Modalidad del proyecto."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
