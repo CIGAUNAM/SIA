@@ -44,7 +44,7 @@ class AsesoriaEstudiante(models.Model):
         ordering = ['-fecha_inicio', '-fecha_fin']
         verbose_name = 'Asesoría en residencias / prácticas / estancias / servicio social'
         verbose_name_plural = 'Asesorías en residencias / prácticas / estancias / servicio social'
-        unique_together = ['usuario', 'asesorado', 'nivel_academico']
+        unique_together = ['usuario', 'asesorado', 'nivel_academico', 'periodo_academico']
 
 
 class SupervisionInvestigadorPostDoctoral(models.Model):
