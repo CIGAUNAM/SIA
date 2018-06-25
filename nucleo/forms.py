@@ -649,7 +649,7 @@ class AsignaturaForm(forms.ModelForm):
 
 class MedioDivulgacionForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                             choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
+                             choices=(('', '-------'), ('PERIODICO', 'Periódico'), ('RADIO', 'Radio'), ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
