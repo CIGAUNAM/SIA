@@ -1,10 +1,11 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Nombre de {{ aux.objeto }}:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de {{ aux.objeto }}."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -17,7 +18,7 @@
     <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de distinción."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -30,7 +31,7 @@
     <p><strong>Ámbito:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Ámbito de la distinción."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -48,10 +49,11 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Nombre de {{ aux.objeto }}:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de {{ aux.objeto }}."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -64,7 +66,7 @@
     <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de distinción."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -77,7 +79,7 @@
     <p><strong>Ámbito:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Ámbito de la distinción."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">

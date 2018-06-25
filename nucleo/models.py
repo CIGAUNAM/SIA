@@ -754,7 +754,7 @@ class Asignatura(models.Model):
 class MedioDivulgacion(models.Model):
     nombre_medio = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=20, choices=(('PERIODICO', 'Periódico'), ('RADIO', 'Radio'),
+    tipo = models.CharField(max_length=20, choices=(('', '-------'), ('PERIODICO', 'Periódico'), ('RADIO', 'Radio'),
                                                     ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     canal = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
