@@ -51,7 +51,6 @@ class ArbitrajePublicacionAcademica(models.Model):
 class ArbitrajeProyectoInvestigacion(models.Model):
     fecha = models.DateField()
     descripcion = models.TextField(blank=True)
-    proyecto = models.ForeignKey(ProyectoInsvestigacionArbitrado, on_delete=models.DO_NOTHING)
     convocatoria = models.CharField(max_length=200)
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)

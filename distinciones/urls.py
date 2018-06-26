@@ -24,10 +24,10 @@ urlpatterns = [
     url(r'^sociedades-cientificas/(?P<pk>[\w\-]+)/eliminar$', ParticipacionSociedadCientificaEliminar.as_view(), name='sociedad_cientifica_eliminar'),
     url(r'^sociedades-cientificas/(?P<pk>[\w\-]+)/$', ParticipacionSociedadCientificaDetalle.as_view(), name='sociedad_cientifica_detalle'),
 
-    url(r'^citas-publicaciones/json/', CitaPublicacionJSON.as_view(), name='distincion_alumno_lista__json'),
-    url(r'^citas-publicaciones/json-otros/', CitaPublicacionJSON.as_view(otros=True), name='distincion_alumno_lista__json_otros'),
-    url(r'^citas-publicaciones/$', CitaPublicacionLista.as_view(), name='distincion_alumno_lista'),
-    url(r'^citas-publicaciones/(?P<pk>[\w\-]+)/eliminar$', CitaPublicacionEliminar.as_view(), name='distincion_alumno_eliminar'),
-    url(r'^citas-publicaciones/(?P<pk>[\w\-]+)/$', CitaPublicacionDetalle.as_view(), name='distincion_alumno_detalle'),
+    url(r'^citas-publicaciones/json/', CitaPublicacionJSON.as_view(), name='cita_publicacion_lista__json'),
+    url(r'^citas-publicaciones/json-otros/', CitaPublicacionJSON.as_view(otros=True), name='cita_publicacion_lista__json_otros'),
+    url(r'^citas-publicaciones/$', CitaPublicacionLista.as_view(), name='cita_publicacion_lista'),
+    url(r'^citas-publicaciones/(?P<pk>[\w\-]+)/eliminar$', CitaPublicacionEliminar.as_view(), name='cita_publicacion_eliminar'),
+    url(r'^citas-publicaciones/(?P<pk>[\w\-]+)/$', CitaPublicacionDetalle.as_view(), name='cita_publicacion_detalle'),
 
 ]

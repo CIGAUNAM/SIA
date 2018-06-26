@@ -12,7 +12,6 @@ NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA
 
 class DistincionAcademico(models.Model):
     distincion = models.ForeignKey(Distincion, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
     usuario = models.ForeignKey(User, related_name='distincion_academico_usuario', on_delete=models.DO_NOTHING)
 
@@ -33,7 +32,6 @@ class DistincionAlumno(models.Model):
     alumno = models.ForeignKey(User, related_name='distincion_alumno_alumno', on_delete=models.DO_NOTHING)
     nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     tutores = models.ManyToManyField(User, related_name='distincion_alumno_tutores')
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
 
     def __str__(self):

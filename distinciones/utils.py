@@ -31,7 +31,6 @@ class DistincionAcademicoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.distincion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -73,7 +72,6 @@ class DistincionAlumnoContext:
                                     '},\n' \
                                     '{"data": "fields.alumno"},\n' \
                                     '{"data": "fields.nivel_academico"},\n' \
-                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -100,7 +98,6 @@ class DistincionAlumnoContext:
                                     '},\n' \
                                     '{"data": "fields.alumno"},\n' \
                                     '{"data": "fields.nivel_academico"},\n' \
-                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \

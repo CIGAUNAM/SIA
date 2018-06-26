@@ -67,7 +67,7 @@ urlpatterns = [
 
     url(r'^web/proyectos-actuales', PerfilUsuario.as_view(), name='perfil_usuario'),
 
-    url(r'^perfil-usuario/$', PerfilUsuario.as_view(), name='perfil_usuario'),
+    url(r'^perfil-usuario/(?P<pk>[\w\-]+)/$', PerfilUsuario.as_view(), name='perfil_usuario'),
 
     url(r'^reportes/historico$', ReporteHistorico.as_view(), name='reporte_historico'),
     url(r'^reportes/informe-actividades$', InformeActividades.as_view(), name='informe_actividades'),

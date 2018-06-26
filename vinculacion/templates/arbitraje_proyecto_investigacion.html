@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Fecha de dictamen: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right" title="Fecha del dictamen."><i
                 class="fa fa-question-circle"></i></a>
@@ -88,6 +89,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Fecha de dictamen: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right" title="Fecha del dictamen."><i
                 class="fa fa-question-circle"></i></a>
