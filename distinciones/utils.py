@@ -12,7 +12,7 @@ class DistincionAcademicoContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Distinción', 'Institución', 'fecha']}
+                'titulos_tabla': ['Distinción', 'fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -51,7 +51,7 @@ class DistincionAlumnoContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Distinción', 'alumno', 'Nivel académico', 'Institución', 'fecha']}
+                'titulos_tabla': ['Distinción', 'alumno', 'Nivel académico', 'fecha']}
 
 
     tabla_mios = '<script>\n' \
