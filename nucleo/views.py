@@ -1111,7 +1111,10 @@ class PerfilUsuario(View):
         obj = get_object_or_404(self.model, pk=pk)
         print(pk)
         print(request.user.pk)
-        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+        if int(pk) == int(request.user.pk):
+            return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+        else:
+            return redirect('/perfil-usuario/' + str(request.user.pk))
 
 
     def post(self, request, pk):
@@ -1119,8 +1122,10 @@ class PerfilUsuario(View):
         bound_form = self.form_class(request.POST, request.FILES or None, instance=obj)
         if bound_form.is_valid() and pk==request.user.pk:
             print(bound_form)
+            det_obj = bound_form.save(commit=False)
+            det_obj.username = request.user
             det_obj = bound_form.save()
-            return redirect('/perfil-usuario/')
+            return redirect('/perfil-usuario/' + str(pk))
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
