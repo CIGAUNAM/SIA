@@ -1107,15 +1107,18 @@ class PerfilUsuario(View):
     aux = UserContext.contexto
     template_name = 'perfil_usuario.html'
 
-    def get(self, request):
-        obj = get_object_or_404(self.model, pk=request.user.pk)
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        print(pk)
+        print(request.user.pk)
         return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
 
-    def post(self, request):
-        obj = get_object_or_404(self.model, pk=request.user.pk)
+
+    def post(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
         bound_form = self.form_class(request.POST, request.FILES or None, instance=obj)
-        if bound_form.is_valid():
-            #det_obj = bound_form.save(commit=False)
+        if bound_form.is_valid() and pk==request.user.pk:
+            print(bound_form)
             det_obj = bound_form.save()
             return redirect('/perfil-usuario/')
         else:
@@ -1135,18 +1138,20 @@ class ProyectoArbitradoJSON(View):
             raise Http404
 
 
+"""
+
 class ProyectoArbitradoLista(ObjectCreateMixinNucleo, View):
     form_class = ProyectoInvestigacionArbitradoForm
     model = ProyectoInsvestigacionArbitrado
     aux = ProyectoInvestigacionArbitradoContext.contexto
-    template_name = 'proyecto_arbitrado.html'
+    template_name = 'proyecto_investigacion_arbitrado.html'
 
 
 class ProyectoArbitradoDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ProyectoInvestigacionArbitradoForm
     model = ProyectoInsvestigacionArbitrado
     aux = ProyectoInvestigacionArbitradoContext.contexto
-    template_name = 'proyecto_arbitrado.html'
+    template_name = 'proyecto_investigacion_arbitrado.html'
 
 
 class ProyectoArbitradoEliminar(View):
@@ -1194,7 +1199,7 @@ class ConvocatoriaArbitrajeEliminar(View):
         except:
             raise Http404
 
-
+"""
 
 
 

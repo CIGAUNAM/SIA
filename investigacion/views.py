@@ -25,7 +25,6 @@ class ArticuloCientificoJSON(View):
                                          fields=('titulo', 'revista', 'status', 'fecha'))
 
             json = json.replace('PUBLICADO', 'Publicado')
-            json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ACEPTADO', 'Aceptado')
             json = json.replace('ENVIADO', 'Enviado')
             json = json.replace('ENVIADO', 'Enviado')
@@ -229,7 +228,7 @@ class LibroInvestigacionLista(ObjectCreateVarMixin, View):
             new_obj = bound_form.save(commit=False)
             new_obj.tipo = 'INVESTIGACION'
             new_obj = bound_form.save()
-
+            messages.success(request, "Registro creado con éxito")
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
 
         else:
@@ -252,6 +251,7 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
         if bound_form.is_valid():
             det_obj = bound_form.save()
             print(det_obj)
+            messages.success(request, "Registro actualizado con éxito")
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk))  # corregir el redirect
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})

@@ -17,15 +17,6 @@ class DistincionAcademicoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
@@ -53,15 +44,6 @@ class DistincionAlumnoForm(forms.ModelForm):
         )
     )
     nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'NIVEL_ACADEMICO', ), required=True)
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:

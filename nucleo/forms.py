@@ -482,6 +482,15 @@ class DistincionForm(forms.ModelForm):
     ambito = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
+    institucion = forms.ModelChoiceField(
+        queryset=Institucion.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Institucion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     class Meta:
         model = Distincion
@@ -702,7 +711,7 @@ class PersonaForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
-    username = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    # username = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     password = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     first_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     last_name = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)

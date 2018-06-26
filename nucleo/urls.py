@@ -139,15 +139,15 @@ urlpatterns = [
     url(r'^tipos-curso/$', TipoCursoLista.as_view(), name='tipo_curso_lista'),
     url(r'^tipos-curso/(?P<pk>[\w\-]+)/$', TipoCursoDetalle.as_view(), name='tipo_curso_detalle'),
 
-    url(r'^proyectos-arbitrados/json/', ProyectoArbitradoJSON.as_view(), name='proyecto_arbitrado_lista__json'),
-    url(r'^proyectos-arbitrados/$', ProyectoArbitradoLista.as_view(), name='proyecto_arbitrado_lista'),
-    # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', ProyectoArbitradoEliminar.as_view(), name='proyecto_arbitrado_eliminar'),
-    url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/$', ProyectoArbitradoDetalle.as_view(), name='proyecto_arbitrado_detalle'),
+    # url(r'^proyectos-arbitrados/json/', ProyectoArbitradoJSON.as_view(), name='proyecto_arbitrado_lista__json'),
+    # url(r'^proyectos-arbitrados/$', ProyectoArbitradoLista.as_view(), name='proyecto_arbitrado_lista'),
+    # # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', ProyectoArbitradoEliminar.as_view(), name='proyecto_arbitrado_eliminar'),
+    # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/$', ProyectoArbitradoDetalle.as_view(), name='proyecto_arbitrado_detalle'),
 
-    url(r'^convocatorias-arbitraje/json/', ConvocatoriaArbitrajeJSON.as_view(), name='convocatoria_arbitraje_lista__json'),
-    url(r'^convocatorias-arbitraje/$', ConvocatoriaArbitrajeLista.as_view(), name='convocatoria_arbitraje_lista'),
-    # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', ConvocatoriaArbitrajeEliminar.as_view(), name='convocatoria_arbitraje_eliminar'),
-    url(r'^convocatorias-arbitraje/(?P<pk>[\w\-]+)/$', ConvocatoriaArbitrajeDetalle.as_view(), name='convocatoria_arbitraje_detalle'),
+    # url(r'^convocatorias-arbitraje/json/', ConvocatoriaArbitrajeJSON.as_view(), name='convocatoria_arbitraje_lista__json'),
+    # url(r'^convocatorias-arbitraje/$', ConvocatoriaArbitrajeLista.as_view(), name='convocatoria_arbitraje_lista'),
+    # # url(r'^proyectos-arbitrados/(?P<pk>[\w\-]+)/eliminar$', ConvocatoriaArbitrajeEliminar.as_view(), name='convocatoria_arbitraje_eliminar'),
+    # url(r'^convocatorias-arbitraje/(?P<pk>[\w\-]+)/$', ConvocatoriaArbitrajeDetalle.as_view(), name='convocatoria_arbitraje_detalle'),
 
 
 

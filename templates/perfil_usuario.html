@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Nombre de usuario:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de usuario para acceder al sistema (este campo no se puede cambiar).">
@@ -15,7 +16,6 @@
         </div>
     </div>
     </p>
-
     <p><strong>Nombre(s):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre o nombres como constan en el acta de nacimiento, no debe tener espacios al principio ni al final.">
