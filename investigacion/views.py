@@ -7,6 +7,7 @@ from SIA.utils import *
 from . forms import *
 from . utils import *
 from django.db.models import Q
+from django.contrib import messages
 
 # Create your views here.
 
@@ -250,7 +251,6 @@ class LibroInvestigacionDetalle(ObjectUpdateVarMixin, View):
         bound_form = self.form_class(request.POST, instance=obj)
         if bound_form.is_valid():
             det_obj = bound_form.save()
-            print(det_obj)
             messages.success(request, "Registro actualizado con éxito")
             return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk))  # corregir el redirect
         else:

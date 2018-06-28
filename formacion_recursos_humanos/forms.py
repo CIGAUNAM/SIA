@@ -343,7 +343,7 @@ class ComiteTutoralForm(forms.ModelForm):
 
 
 class ComiteCandidaturaDoctoralForm(forms.ModelForm):
-    asesorado = forms.ModelChoiceField(
+    candidato = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",
         widget=ModelSelect2Widget(

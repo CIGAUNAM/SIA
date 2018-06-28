@@ -1,15 +1,16 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Asesorado:</strong>
+    {{ form.errors }}
+    <p><strong>Candidato:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Asesorado.">
+           title="Candidato a doctor.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-            {{ form.asesorado }}
+            {{ form.candidato }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales del asesorado seleccionado.">
@@ -100,7 +101,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Programa de doctorado cursado por el alumno asesorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -126,7 +127,7 @@
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -152,7 +153,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -174,8 +175,7 @@
     </p>
     <p><strong>Fecha de defensa:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de defensa."><i
-                class="fa fa-question-circle"></i></a>
+           title="Fecha de defensa."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -209,15 +209,15 @@
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Asesorado:</strong>
+        <p><strong>Candidato:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Asesorado.">
+           title="Candidato a doctor.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-            {{ form.asesorado }}
+            {{ form.candidato }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales del asesorado seleccionado.">
@@ -308,7 +308,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Programa de doctorado cursado por el alumno asesorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -334,7 +334,7 @@
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -360,7 +360,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -382,8 +382,7 @@
     </p>
     <p><strong>Fecha de defensa:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de defensa."><i
-                class="fa fa-question-circle"></i></a>
+           title="Fecha de defensa."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
