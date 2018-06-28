@@ -22,7 +22,7 @@ class DesarrolloTecnologicoForm(forms.ModelForm):
         )
     )
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
-    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),

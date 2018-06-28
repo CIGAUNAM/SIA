@@ -155,7 +155,7 @@ class ComiteTutoral(models.Model):
 
 
 class ComiteCandidaturaDoctoral(models.Model):
-    asesorado = models.ForeignKey(User, related_name='comite_candidatura_doctoral_asesorado',
+    candidato = models.ForeignKey(User, related_name='comite_candidatura_doctoral_candidato',
                                   on_delete=models.DO_NOTHING)
     asesores = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_asesores', blank=True)
     sinodales = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
@@ -166,7 +166,7 @@ class ComiteCandidaturaDoctoral(models.Model):
     fecha_defensa = models.DateField()
 
     def __str__(self):
-        return "{} : {}".format(str(self.asesorado), self.fecha_defensa)
+        return "{} : {}".format(str(self.candidato), self.fecha_defensa)
 
     def get_absolute_url(self):
         return reverse('comite_candidatura_doctoral_detalle', kwargs={'pk': self.pk})

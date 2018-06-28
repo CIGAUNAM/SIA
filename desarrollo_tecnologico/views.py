@@ -6,7 +6,7 @@ from .forms import DesarrolloTecnologicoForm, LicenciaForm
 from .models import DesarrolloTecnologico, Licencia
 from .utils import DesarrolloTecnologicoContext, LicenciaContext
 from nucleo.models import User
-
+from django.contrib import messages
 
 # Create your views here.
 
@@ -50,11 +50,7 @@ class DesarrolloTecnologicoDetalle(ObjectUpdateVarMixin, View):
         bound_form = self.form_class(request.POST, instance=obj)
         if bound_form.is_valid():
             det_obj = bound_form.save()
-            if det_obj:
-                self.aux['success'] = True
-                print('Success')
-            print(det_obj)
-            print(dir(det_obj))
+            messages.success(request, "Registro actualizado con éxito")
             return redirect('./')
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})

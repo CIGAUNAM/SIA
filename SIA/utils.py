@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http.response import (Http404, HttpResponse)
 from nucleo.models import User
-
 from nucleo.forms import *
+
 from django.contrib import messages
 
 #
