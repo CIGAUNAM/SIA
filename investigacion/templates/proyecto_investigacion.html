@@ -277,6 +277,22 @@
         </div>
         </p>
     </div>
+    <div id="d_financiamiento_papime">
+        <p><strong>Clave de financiamiento PAPIME:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Clave de proyecto de financiamiento PAPIME, llenar el campo únicamente si se cuenta con dicho financiamiento.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.financiamiento_papime }}
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Metodologias:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Metodologias utilizadas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
@@ -447,17 +463,18 @@
     </p>
 
     <script>
-        //$('#d_financiamiento_conacyt').hide();
-        //$('#d_financiamiento_papiit').hide();
 
         $("#id_financiamiento_conacyt").on('change', function () {
             if ($("#id_financiamiento_conacyt").val() != '') {
                 $("#id_financiamiento_papiit").prop("value", '');
                 $("#id_financiamiento_papiit").prop("disabled", true);
+                $("#id_financiamiento_papime").prop("value", '');
+                $("#id_financiamiento_papime").prop("disabled", true);
                 $("#id_financiamientos").val(null).trigger('change');
                 $("#id_financiamientos").prop("disabled", true);
             } else if ($("#id_financiamiento_conacyt").val() == '') {
                 $("#id_financiamiento_papiit").prop("disabled", false);
+                $("#id_financiamiento_papime").prop("disabled", false);
                 $("#id_financiamientos").prop("disabled", false);
 
             }
@@ -467,22 +484,26 @@
             if ($("#id_financiamiento_papiit").val() != '') {
                 $("#id_financiamiento_conacyt").prop("value", '');
                 $("#id_financiamiento_conacyt").prop("disabled", true);
+                $("#id_financiamiento_papime").prop("value", '');
+                $("#id_financiamiento_papime").prop("disabled", true);
                 $("#id_financiamientos").val(null).trigger('change');
                 $("#id_financiamientos").prop("disabled", true);
             } else if ($("#id_financiamiento_papiit").val() == '') {
                 $("#id_financiamiento_conacyt").prop("disabled", false);
+                $("#id_financiamiento_papime").prop("disabled", false);
                 $("#id_financiamientos").prop("disabled", false);
-
+            } else if ($("#id_financiamiento_papime").val() == '') {
+                $("#id_financiamiento_conacyt").prop("disabled", false);
+                $("#id_financiamiento_papiit").prop("disabled", false);
+                $("#id_financiamientos").prop("disabled", false);
             }
         });
     </script>
 
         <script>
-        //$("#id_usuarios").select2();
         $("#id_responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
@@ -764,6 +785,22 @@
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
                 {{ form.financiamiento_papiit }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_financiamiento_papime">
+        <p><strong>Clave de financiamiento PAPIME:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Clave de proyecto de financiamiento PAPIME, llenar el campo únicamente si se cuenta con dicho financiamiento.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.financiamiento_papime }}
             </div>
         </div>
         </p>

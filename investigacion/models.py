@@ -71,6 +71,7 @@ class ProyectoInvestigacion(models.Model):
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     financiamiento_conacyt = models.CharField(max_length=20, unique=True, null=True, blank=True)
     financiamiento_papiit = models.CharField(max_length=20, unique=True, null=True, blank=True)
+    financiamiento_papime = models.CharField(max_length=20, unique=True, null=True, blank=True)
 
     metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
     especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades',

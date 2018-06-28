@@ -287,6 +287,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
             "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'financiamiento_conacyt': TextInput(attrs={'class': 'form-control pull-right'}),
             'financiamiento_papiit': TextInput(attrs={'class': 'form-control pull-right'}),
+            'financiamiento_papime': TextInput(attrs={'class': 'form-control pull-right'}),
             'metodologias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'especialidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'impactos_sociales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
