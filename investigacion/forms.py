@@ -225,10 +225,10 @@ class InformeTecnicoForm(forms.ModelForm):
 
 class ProyectoInvestigacionForm(forms.ModelForm):
     es_permanente = forms.BooleanField(required=False)
-    fecha_inicio = forms.CharField(
+    fecha_inicio = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True, label='Fecha de inicio')
-    fecha_fin = forms.CharField(
+    fecha_fin = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=False, label='Fecha de fin')
     institucion = forms.ModelChoiceField(

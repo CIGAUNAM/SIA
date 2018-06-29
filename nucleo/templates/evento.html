@@ -23,7 +23,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -47,7 +47,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de público a quien va dirigído el evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -60,7 +60,8 @@
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio del evento."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -71,15 +72,16 @@
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de terminación del evento."><i
-                class="fa fa-question-circle"></i></a>
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Fecha de terminación del evento.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha_fin }}
+            <div>
+                {{ form.fecha_fin }}
+            </div>
         </div>
     </div>
     </p>
@@ -87,7 +89,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="País donde se lleva a cabo el evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -111,7 +113,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Estado (o provincia, o departamento; según sea el caso) donde se lleva a cabo el evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -135,7 +137,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Ciudad donde se lleva a cabo el evento. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -155,17 +157,16 @@
         </div>
     </div>
     </p>
-
     <p><strong>Ubicación: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Ubicación (domicilio, o referencias del lugar) donde se realiza el evento.">
+                             title="Ubicación (domicilio, o referencias del lugar) donde se realiza el evento.">
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.ubicacion }}
     </p>
     </p><p><strong>Entidades:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Entidades participantes en el evento, al escribir el inicio del nombre se filtran
+    <a href="#" data-toggle="tooltip" data-placement="right"
+       title="Entidades participantes en el evento, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la búsqueda.">
-            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -191,7 +192,7 @@
     <p><strong>Nombre de {{ aux.objeto }}:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de {{ aux.objeto }}."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -210,7 +211,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -234,7 +235,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de público a quien va dirigído el evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -247,7 +248,8 @@
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio del evento."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -258,15 +260,16 @@
     </div>
     </p>
     <p><strong>Fecha de fin:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de terminación del evento."><i
-                class="fa fa-question-circle"></i></a>
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Fecha de terminación del evento.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha_fin }}
+            <div>
+                {{ form.fecha_fin }}
+            </div>
         </div>
     </div>
     </p>
@@ -274,7 +277,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="País donde se lleva a cabo el evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -298,7 +301,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Estado (o provincia, o departamento; según sea el caso) donde se lleva a cabo el evento.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -322,7 +325,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Ciudad donde se lleva a cabo el evento. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -342,24 +345,16 @@
         </div>
     </div>
     </p>
-    <p><strong>Ubicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ubicación (domicilio, o referencias del lugar) donde se realizó el evento."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.ubicacion }}
-        </div>
-    </div>
+    <p><strong>Ubicación: <a href="#" data-toggle="tooltip" data-placement="right"
+                             title="Ubicación (domicilio, o referencias del lugar) donde se realiza el evento.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.ubicacion }}
     </p>
     </p><p><strong>Entidades:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Entidades participantes en el evento, al escribir el inicio del nombre se filtran
+    <a href="#" data-toggle="tooltip" data-placement="right"
+       title="Entidades participantes en el evento, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la búsqueda.">
-            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>

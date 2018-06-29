@@ -45,7 +45,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de finalización del proyecto. Este campo puede ir vacío si el proyecto es permanente, o si no
            hay una fecha definida, en cuyo caso se asume que el proyecto es de tiempo indefinido o permanente, en caso
-           contrario especificar la fecha de fin."><i class="fa fa-question-circle"></i></a>
+           contrario especificar la fecha de fin. Si la fecha de finalización es en el futuro pero se tiene establecida, especificarla."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -224,7 +224,7 @@
     <p><strong>Financiamientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Financiamientos participantes en el desarrollo del proyecto, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
+                            los resultados que coincidan con la busqueda. Los financiamientos aqui enlistados pueden ser cualquiera que no sean CONACYT, PAPIIT o PAPIME. Para estos casos se deben emplear los campos siguientes, escribiendo en el caso correspondiente la clave del proyecto. Se entiende que si una clave está ingresada, el proyecto tiene ese finaciamiento con esa clave. No hay necesidad de ser explicito a que tiene un financiamiento y su clave, al tener la clave de uno se asume que cuenta con ese financiamiento del cual tiene la clave.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -466,18 +466,22 @@
 
         $("#id_financiamientos").on('change', function () {
 
-            if ($("#id_financiamientos").val() != '') {
-                //console.log($("#id_financiamientos").val().length)
+            if ($("#id_financiamientos").val()) {
+                console.log($("#id_financiamientos").val())
                 $("#id_financiamiento_papiit").prop("value", '');
                 $("#id_financiamiento_papiit").prop("disabled", true);
                 $("#id_financiamiento_papime").prop("value", '');
                 $("#id_financiamiento_papime").prop("disabled", true);
                 $("#id_financiamiento_conacyt").prop("value", '');
                 $("#id_financiamiento_conacyt").prop("disabled", true);
-            } else if (!($("#id_financiamientos").val())) {
-                $("#id_financiamiento_papiit").prop("disabled", false);
-                $("#id_financiamiento_papime").prop("disabled", false);
-                $("#id_financiamiento_conacyt").prop("disabled", false);
+            } else {
+                $("#id_financiamientos").on('change', function () {
+                    if (!($("#id_financiamientos").val())) {
+                        $("#id_financiamiento_papiit").prop("disabled", false);
+                        $("#id_financiamiento_papime").prop("disabled", false);
+                        $("#id_financiamiento_conacyt").prop("disabled", false);
+                    }
+                })
             }
         });
 
@@ -512,10 +516,10 @@
         });
 
         $("#id_financiamiento_papime").on('change', function () {
-            if ($("#id_financiamiento_papime").val() != '') {
-                $("#id_financiamiento_conacyt").prop("value", '');
+            if ($("#id_financiamiento_papime").val()) {
+                $("#id_financiamiento_conacyt").prop("value", null);
                 $("#id_financiamiento_conacyt").prop("disabled", true);
-                $("#id_financiamiento_papiit").prop("value", '');
+                $("#id_financiamiento_papiit").prop("value", null);
                 $("#id_financiamiento_papiit").prop("disabled", true);
                 $("#id_financiamientos").val(null).trigger('change');
                 $("#id_financiamientos").prop("disabled", true);
@@ -528,7 +532,7 @@
         });
     </script>
 
-        <script>
+    <script>
         $("#id_responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
@@ -585,7 +589,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de finalización del proyecto. Este campo puede ir vacío si el proyecto es permanente, o si no
            hay una fecha definida, en cuyo caso se asume que el proyecto es de tiempo indefinido o permanente, en caso
-           contrario especificar la fecha de fin."><i class="fa fa-question-circle"></i></a>
+           contrario especificar la fecha de fin. Si la fecha de finalización es en el futuro pero se tiene establecida, especificarla."><i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -764,7 +768,7 @@
     <p><strong>Financiamientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Financiamientos participantes en el desarrollo del proyecto, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
+                            los resultados que coincidan con la busqueda. Los financiamientos aqui enlistados pueden ser cualquiera que no sean CONACYT, PAPIIT o PAPIME. Para estos casos se deben emplear los campos siguientes, escribiendo en el caso correspondiente la clave del proyecto. Se entiende que si una clave está ingresada, el proyecto tiene ese finaciamiento con esa clave. No hay necesidad de ser explicito a que tiene un financiamiento y su clave, al tener la clave de uno se asume que cuenta con ese financiamiento del cual tiene la clave.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -1006,24 +1010,75 @@
         if ($("#id_financiamiento_conacyt").val() != '') {
             $("#id_financiamiento_papiit").prop("value", '');
             $("#id_financiamiento_papiit").prop("disabled", true);
+            $("#id_financiamiento_papime").prop("value", '');
+            $("#id_financiamiento_papime").prop("disabled", true);
+            $("#id_financiamientos").prop("value", '');
+            $("#id_financiamientos").prop("disabled", true);
             $("#id_financiamientos").prop("disabled", true);
         }
+
         if ($("#id_financiamiento_papiit").val() != '') {
             $("#id_financiamiento_conacyt").prop("value", '');
             $("#id_financiamiento_conacyt").prop("disabled", true);
+            $("#id_financiamiento_papime").prop("value", '');
+            $("#id_financiamiento_papime").prop("disabled", true);
+            $("#id_financiamientos").prop("value", '');
+            $("#id_financiamientos").prop("disabled", true);
             $("#id_financiamientos").prop("disabled", true);
         }
+
+        if ($("#id_financiamiento_papime").val() != '') {
+            $("#id_financiamiento_conacyt").prop("value", '');
+            $("#id_financiamiento_conacyt").prop("disabled", true);
+            $("#id_financiamiento_papiit").prop("value", '');
+            $("#id_financiamiento_papiit").prop("disabled", true);
+            $("#id_financiamientos").prop("value", '');
+            $("#id_financiamientos").prop("disabled", true);
+            $("#id_financiamientos").prop("disabled", true);
+        }
+
+        if ($("#id_financiamientos").val()) {
+            $("#id_financiamiento_conacyt").prop("value", '');
+            $("#id_financiamiento_conacyt").prop("disabled", true);
+            $("#id_financiamiento_papiit").prop("value", '');
+            $("#id_financiamiento_papiit").prop("disabled", true);
+            $("#id_financiamiento_papime").prop("value", '');
+            $("#id_financiamiento_papime").prop("disabled", true);
+        }
+
+        $("#id_financiamientos").on('change', function () {
+
+            if ($("#id_financiamientos").val()) {
+                console.log($("#id_financiamientos").val())
+                $("#id_financiamiento_papiit").prop("value", '');
+                $("#id_financiamiento_papiit").prop("disabled", true);
+                $("#id_financiamiento_papime").prop("value", '');
+                $("#id_financiamiento_papime").prop("disabled", true);
+                $("#id_financiamiento_conacyt").prop("value", '');
+                $("#id_financiamiento_conacyt").prop("disabled", true);
+            } else {
+                $("#id_financiamientos").on('change', function () {
+                    if (!($("#id_financiamientos").val())) {
+                        $("#id_financiamiento_papiit").prop("disabled", false);
+                        $("#id_financiamiento_papime").prop("disabled", false);
+                        $("#id_financiamiento_conacyt").prop("disabled", false);
+                    }
+                })
+            }
+        });
 
         $("#id_financiamiento_conacyt").on('change', function () {
             if ($("#id_financiamiento_conacyt").val() != '') {
                 $("#id_financiamiento_papiit").prop("value", '');
                 $("#id_financiamiento_papiit").prop("disabled", true);
+                $("#id_financiamiento_papime").prop("value", '');
+                $("#id_financiamiento_papime").prop("disabled", true);
                 $("#id_financiamientos").val(null).trigger('change');
                 $("#id_financiamientos").prop("disabled", true);
             } else if ($("#id_financiamiento_conacyt").val() == '') {
                 $("#id_financiamiento_papiit").prop("disabled", false);
+                $("#id_financiamiento_papime").prop("disabled", false);
                 $("#id_financiamientos").prop("disabled", false);
-
             }
         });
 
@@ -1031,17 +1086,37 @@
             if ($("#id_financiamiento_papiit").val() != '') {
                 $("#id_financiamiento_conacyt").prop("value", '');
                 $("#id_financiamiento_conacyt").prop("disabled", true);
+                $("#id_financiamiento_papime").prop("value", '');
+                $("#id_financiamiento_papime").prop("disabled", true);
                 $("#id_financiamientos").val(null).trigger('change');
                 $("#id_financiamientos").prop("disabled", true);
             } else if ($("#id_financiamiento_papiit").val() == '') {
                 $("#id_financiamiento_conacyt").prop("disabled", false);
+                $("#id_financiamiento_papime").prop("disabled", false);
                 $("#id_financiamientos").prop("disabled", false);
-
             }
         });
+
+        $("#id_financiamiento_papime").on('change', function () {
+            if ($("#id_financiamiento_papime").val()) {
+                $("#id_financiamiento_conacyt").prop("value", null);
+                $("#id_financiamiento_conacyt").prop("disabled", true);
+                $("#id_financiamiento_papiit").prop("value", null);
+                $("#id_financiamiento_papiit").prop("disabled", true);
+                $("#id_financiamientos").val(null).trigger('change');
+                $("#id_financiamientos").prop("disabled", true);
+            } else if ($("#id_financiamiento_papime").val() == '') {
+                $("#id_financiamiento_conacyt").prop("disabled", false);
+                $("#id_financiamiento_papime").prop("disabled", false);
+                $("#id_financiamiento_papiit").prop("disabled", false);
+                $("#id_financiamientos").prop("disabled", false);
+            }
+        });
+
+
     </script>
 
-        <script>
+    <script>
         $("#id_responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
