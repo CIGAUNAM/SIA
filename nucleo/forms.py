@@ -431,7 +431,7 @@ class EventoForm(forms.ModelForm):
     )
     tipo_publico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de fin')
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de fin')
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
