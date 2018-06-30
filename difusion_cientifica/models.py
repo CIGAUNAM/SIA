@@ -22,7 +22,6 @@ class MemoriaInExtenso(models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    autores = models.ManyToManyField(User, related_name='memoria_in_extenso_autores', verbose_name='Autores')
     articulos = models.ManyToManyField(ArticuloCientifico, related_name='memoria_in_extenso_articulos', blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)

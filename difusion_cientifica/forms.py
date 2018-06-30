@@ -35,7 +35,6 @@ class MemoriaInExtensoForm(forms.ModelForm):
         model = MemoriaInExtenso
         exclude = []
         widgets = {
-            "autores": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'articulos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }

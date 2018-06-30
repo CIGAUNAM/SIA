@@ -9,7 +9,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de la reseña, no del libro o revista.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -26,7 +26,8 @@
     </p>
     <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de publicación reseñada, puede ser un libro o una revista."><i class="fa fa-question-circle"></i></a>
+           title="Tipo de publicación reseñada, puede ser un libro o una revista.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -39,7 +40,7 @@
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Libro sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
-            </a>
+            </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -66,7 +67,7 @@
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Artículo sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
-            </a>
+            </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -91,7 +92,7 @@
     <p><strong>Fecha:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -101,33 +102,11 @@
         </div>
     </div>
     </p>
-    <p><strong>Página inicial:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de página donde inicia la reseña.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_inicio }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Página final:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de página donde finaliza la reseña.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_fin }}
-        </div>
-    </div>
-    </p>
     <p><strong>Revista donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Revista donde se publica la reseña de este registro.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -144,6 +123,28 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Página inicial:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde inicia la reseña.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Página final:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde finaliza la reseña.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_fin }}
         </div>
     </div>
     </p>
@@ -194,11 +195,15 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {% for field in f %}
+        <p>{{ field.label_tag }}: {{ field }}</p>
+        {{ field.errors }}
+    {% endfor %}
     <p><strong>Título de la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de la reseña, no del libro o revista.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -215,7 +220,8 @@
     </p>
     <p><strong>Tipo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de publicación reseñada, puede ser un libro o una revista."><i class="fa fa-question-circle"></i></a>
+           title="Tipo de publicación reseñada, puede ser un libro o una revista.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -228,7 +234,7 @@
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Libro sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
-            </a>
+            </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -255,7 +261,7 @@
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Artículo sobre el que se hizo la reseña de este registro.">
                 <i class="fa fa-question-circle"></i>
-            </a>
+            </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -280,7 +286,7 @@
     <p><strong>Fecha:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -290,33 +296,11 @@
         </div>
     </div>
     </p>
-    <p><strong>Página inicial:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de página donde inicia la reseña.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_inicio }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Página final:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de página donde finaliza la reseña.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_fin }}
-        </div>
-    </div>
-    </p>
     <p><strong>Revista donde se publica la reseña:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Revista donde se publica la reseña de este registro.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-book"></i></div>
@@ -333,6 +317,28 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Página inicial:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde inicia la reseña.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Página final:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Número de página donde finaliza la reseña.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_fin }}
         </div>
     </div>
     </p>
