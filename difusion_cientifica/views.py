@@ -15,9 +15,9 @@ class MemoriaInExtensoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = MemoriaInExtenso.objects.all().exclude(autores__id__exact=usuarioid)
+                items = MemoriaInExtenso.objects.all().exclude(articulos__autores__id__exact=usuarioid)
             else:
-                items = MemoriaInExtenso.objects.filter(autores__id__exact=usuarioid)
+                items = MemoriaInExtenso.objects.filter(articulos__autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'evento'))
             return HttpResponse(json, content_type='application/json')
