@@ -21,7 +21,7 @@ class ArticuloDivulgacionJSON(View):
             else:
                 items = ArticuloDivulgacion.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'tipo', 'status', 'revista'))
+                                         fields=('titulo', 'status', 'revista'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
