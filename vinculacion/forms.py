@@ -110,6 +110,7 @@ class RedAcademicaForm(forms.ModelForm):
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
     fecha_constitucion = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     vigente = forms.BooleanField(required=False)
     proyecto = forms.ModelChoiceField(
         queryset=ProyectoInvestigacion.objects.all(),
@@ -123,7 +124,7 @@ class RedAcademicaForm(forms.ModelForm):
 
     class Meta:
         model = RedAcademica
-        exclude = ['tags', ]
+        exclude = []
         widgets = {
             'paises': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             "participantes": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),

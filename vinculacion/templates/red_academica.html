@@ -5,7 +5,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de red académica.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -22,7 +22,7 @@
     </p>
     <p><strong>Ámbito:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ámbito."><i class="fa fa-question-circle"></i></a>
+           title="Ámbito."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -34,7 +34,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Entidades participantes en la red académica, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -55,14 +55,14 @@
     </div>
     </p>
     <p><strong>Objetivos: <a href="#" data-toggle="tooltip" data-placement="right"
-                             title="Descripción detallada de los objetivos.">
+                             title="Descripción detallada de los objetivos."> <i class="fa fa-edit"></i>
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.objetivos }}
     </p>
-    <p><strong>Fecha:</strong>
+    <p><strong>Fecha de constitución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de constitución de la red académica."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -72,28 +72,36 @@
         </div>
     </div>
     </p>
-    <p><strong>Vigente: </strong>
+    <p><strong>Fecha de finalización:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿Está vigente en la actualidad?"><i class="fa fa-question-circle"></i></a>
-        {{ form.vigente }}
+           title="Fecha de finalización de la red académica. Se considera como red académica vigente cuando la fecha de fín es posterior a la fecha de hoy, o si el campo está vacío. Si hay fecha de finalización definida, especificarla."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_fin }}
+        </div>
+    </div>
     </p>
     <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto relacionado en la red académica, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
             {{ form.proyecto }}
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
+                <a href="#" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Mostrar los detalles adicionales de los proyectos relacionados.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="right" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -105,7 +113,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Académicos participantes en la red académica, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -128,11 +136,11 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Nombre de red académica:</strong>
+        <p><strong>Nombre de red académica:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de red académica.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -149,7 +157,7 @@
     </p>
     <p><strong>Ámbito:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ámbito."><i class="fa fa-question-circle"></i></a>
+           title="Ámbito."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -161,7 +169,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Entidades participantes en la red académica, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -182,14 +190,14 @@
     </div>
     </p>
     <p><strong>Objetivos: <a href="#" data-toggle="tooltip" data-placement="right"
-                             title="Descripción detallada de los objetivos.">
+                             title="Descripción detallada de los objetivos."> <i class="fa fa-edit"></i>
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.objetivos }}
     </p>
-    <p><strong>Fecha:</strong>
+    <p><strong>Fecha de constitución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de constitución de la red académica."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -199,28 +207,36 @@
         </div>
     </div>
     </p>
-    <p><strong>Vigente: </strong>
+    <p><strong>Fecha de finalización:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿Está vigente en la actualidad?"><i class="fa fa-question-circle"></i></a>
-        {{ form.vigente }}
+           title="Fecha de finalización de la red académica. Se considera como red académica vigente cuando la fecha de fín es posterior a la fecha de hoy, o si el campo está vacío. Si hay fecha de finalización definida, especificarla."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_fin }}
+        </div>
+    </div>
     </p>
     <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto relacionado en la red académica, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
             {{ form.proyecto }}
             <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
+                <a href="#" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Mostrar los detalles adicionales de los proyectos relacionados.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="right" target="_blank"
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="right" target="_blank"
                    title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -232,7 +248,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Académicos participantes en la red académica, al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>

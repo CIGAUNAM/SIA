@@ -91,7 +91,7 @@ class RedAcademica(models.Model):
     ambito = models.CharField(max_length=20, choices=RED_ACADEMICA__CLASIFICACION)
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
-    vigente = models.BooleanField(default=False)
+    fecha_fin = models.DateField(null=True, blank=True)
     entidades = models.ManyToManyField(Dependencia, related_name='red_academica_entidades')
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(User, related_name='red_academica_usuarios',
