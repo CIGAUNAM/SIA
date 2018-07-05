@@ -27,17 +27,14 @@ STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN
 
 class ArbitrajePublicacionAcademica(models.Model):
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICA__TIPO)
-    articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
-    libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)
+    #tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICA__TIPO)
+    #articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
+    #libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_dictamen = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        lista_titulos = [self.articulo, self.libro]
-        titulo = [x for x in lista_titulos if x != 'n/a']
-        titulo = titulo[0]
-        return "{} : {}".format(self.tipo.title(), titulo, self.fecha_dictamen)
+        return self.fecha_dictamen
 
     def get_absolute_url(self):
         return reverse('arbitraje_publicacion_academica_detalle', kwargs={'pk': self.pk})

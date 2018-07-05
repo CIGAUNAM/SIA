@@ -6,70 +6,10 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Tipo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de publicación arbitrada, puede ser un libro, una revista, o un capitulo de libro."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.tipo }}
-        </div>
-    </div>
-    </p>
-    <div id="d_articulo">
-        <p><strong>Artículo:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Artículo sobre el que se realizó el dictamen."><i class="fa fa-question-circle"></i></a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.articulo }}
-                <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del artículo seleccionado.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/investigacion/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
-    </div>
-    <div id="d_libro">
-        <p><strong>Libro:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre del libro del arbitraje."><i class="fa fa-question-circle"></i></a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.libro }}
-                <div class="input-group-addon">
-                    <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del libro seleccionado.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left"
-                       target="_blank"
-                       title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
-    </div>
     <p><strong>Fecha de dictamen:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de dictamen del arbitraje."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -79,34 +19,6 @@
         </div>
     </div>
     </p>
-
-    <script>
-        $('#d_libro').hide();
-        $('#d_articulo').hide();
-
-        $("#id_tipo").on('change', function () {
-            if ($("#id_tipo").val() == 'LIBRO') {
-                $('#d_libro').show('slow');
-                $('#id_libro').attr("required", "true");
-                $('#id_articulo').attr("required", null);
-                $('#id_articulo').val(null).trigger("change");
-                $('#d_articulo').hide('slow');
-            } else if ($("#id_tipo").val() == 'ARTICULO') {
-                $('#d_articulo').show('slow');
-                $('#id_libro').attr("required", null);
-                $('#id_articulo').attr("required", "true");
-                $('#id_libro').val(null).trigger("change");
-                $('#d_libro').hide('slow');
-            } else {
-                $('#d_articulo').hide('slow');
-                $('#d_libro').hide('slow');
-                $('#id_libro').attr("required", null);
-                $('#id_articulo').attr("required", null);
-            }
-        });
-    </script>
-
-
 {% endblock %}
 
 {% block form_detalle %}
@@ -115,70 +27,10 @@
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.descripcion }}
     </p>
-    <p><strong>Tipo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de publicación arbitrada, puede ser un libro, una revista, o un capitulo de libro."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.tipo }}
-        </div>
-    </div>
-    </p>
-    <div id="d_articulo">
-        <p><strong>Artículo:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Artículo sobre el que se realizó el dictamen."><i class="fa fa-question-circle"></i></a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.articulo }}
-                <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del artículo seleccionado.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/investigacion/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
-    </div>
-    <div id="d_libro">
-        <p><strong>Libro:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre del libro del arbitraje."><i class="fa fa-question-circle"></i></a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form.libro }}
-                <div class="input-group-addon">
-                    <a href="/nucleo/libros" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del libro seleccionado.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/investigacion/libros-publicados" data-toggle="tooltip" data-placement="left"
-                       target="_blank"
-                       title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
-    </div>
     <p><strong>Fecha de dictamen:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de dictamen del arbitraje."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -188,44 +40,4 @@
         </div>
     </div>
     </p>
-
-    <script>
-        $('#d_articulo').hide();
-        $('#d_libro').hide();
-
-        if ($("#id_tipo").val() == 'ARTICULO') {
-            $('#d_articulo').show();
-            $('#id_articulo').attr("required", "true");
-        } else if ($("#id_tipo").val() == 'LIBRO') {
-            $('#d_libro').show();
-            $('#id_libro').attr("required", "true");
-        } else {
-            $('#d_articulo').hide('slow');
-            $('#d_libro').hide('slow');
-            $('#id_libro').attr("required", null);
-            $('#id_articulo').attr("required", null);
-        }
-
-        $("#id_tipo").on('change', function () {
-            if ($("#id_tipo").val() == 'LIBRO') {
-                $('#d_libro').show('slow');
-                $('#id_libro').attr("required", "true");
-                $('#id_articulo').attr("required", null);
-                $('#id_articulo').val(null).trigger("change");
-                $('#d_articulo').hide('slow');
-            } else if ($("#id_tipo").val() == 'ARTICULO') {
-                $('#d_articulo').show('slow');
-                $('#id_libro').attr("required", null);
-                $('#id_articulo').attr("required", "true");
-                $('#id_libro').val(null).trigger("change");
-                $('#d_libro').hide('slow');
-            } else {
-                $('#d_articulo').hide('slow');
-                $('#d_libro').hide('slow');
-                $('#id_libro').attr("required", null);
-                $('#id_articulo').attr("required", null);
-            }
-        });
-    </script>
-
 {% endblock %}
