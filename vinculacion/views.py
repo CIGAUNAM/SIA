@@ -129,7 +129,7 @@ class RedAcademicaJSON(View):
             else:
                 items = RedAcademica.objects.filter(participantes__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'ambito', 'fecha_constitucion', 'vigente'))
+                                         fields=('nombre', 'ambito', 'fecha_constitucion'))
 
             json = json.replace('LOCAL', 'Local')
             json = json.replace('REGIONAL', 'Regional')

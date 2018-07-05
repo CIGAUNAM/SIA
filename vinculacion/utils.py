@@ -125,7 +125,7 @@ class RedAcademicaContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Nombre', 'Ámbito', 'Fecha', 'Vigente?']}
+                'titulos_tabla': ['Nombre', 'Ámbito', 'Fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -146,7 +146,6 @@ class RedAcademicaContext:
                                     '},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha_constitucion"},\n' \
-                                    '{"data": "fields.vigente"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -172,7 +171,6 @@ class RedAcademicaContext:
                                     '},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                     '{"data": "fields.fecha_constitucion"},\n' \
-                                    '{"data": "fields.vigente"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
