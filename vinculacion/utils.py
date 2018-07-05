@@ -11,7 +11,7 @@ class ArbitrajePublicacionAcademicaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Fecha de dictamen', 'Tipo de publicación', 'Publicación']}
+                'titulos_tabla': ['Fecha de dictamen']}
 
 
     tabla_mios =  '<script>\n' \
@@ -30,8 +30,6 @@ class ArbitrajePublicacionAcademicaContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.fecha_dictamen + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.tipo"},\n' \
-                                    '{"data": "fields.publicacion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
