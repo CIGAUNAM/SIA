@@ -3,9 +3,9 @@
 {% block form_agregar %}
     <p><strong>Académico (anfitrión o invitado):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="En caso de una estancia o sabático, seleccionar el anfitrión. Cuando se trata de un invitado, seleccionar el profesor invitado.">
+           title="En caso de una estancia o sabático, este campo señala al anfitrión. Cuando se trata de un invitado, este campo señala al académico invitado.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -36,7 +36,7 @@
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -62,7 +62,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -82,15 +82,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Actividades: <a href="#" data-toggle="tooltip" data-placement="right"
+    <p><strong>Actividades: </strong><a href="#" data-toggle="tooltip" data-placement="right"
                                title="Detalles de las actividades realizadas durante el periodo de movilidad.">
-        <i class="fa fa-question-circle"></i></a></strong>
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         {{ form.actividades }}
     </p>
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -103,7 +103,7 @@
     <p><strong>Fecha fin:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de fin."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -123,7 +123,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Financiamiento relacionado con la movilidad.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -171,7 +171,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto de investigación relacionado con la movilidad académica.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -194,11 +194,11 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Académico (anfitrión o invitado):</strong>
+        <p><strong>Académico (anfitrión o invitado):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="En caso de una estancia o sabático, seleccionar el anfitrión. Cuando se trata de un invitado, seleccionar el profesor invitado.">
+           title="En caso de una estancia o sabático, este campo señala al anfitrión. Cuando se trata de un invitado, este campo señala al académico invitado.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -229,7 +229,7 @@
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -255,7 +255,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -275,15 +275,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Actividades: <a href="#" data-toggle="tooltip" data-placement="right"
+    <p><strong>Actividades: </strong><a href="#" data-toggle="tooltip" data-placement="right"
                                title="Detalles de las actividades realizadas durante el periodo de movilidad.">
-        <i class="fa fa-question-circle"></i></a></strong>
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         {{ form.actividades }}
     </p>
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -296,7 +296,7 @@
     <p><strong>Fecha fin:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de fin."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -316,7 +316,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Financiamiento relacionado con la movilidad.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -364,7 +364,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto de investigación relacionado con la movilidad académica.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
