@@ -227,7 +227,7 @@ class LibroDocenciaForm(forms.ModelForm): # Posiblemente MANTENER, creo que esta
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO', ), required=True)
     fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     coleccion = forms.ModelChoiceField(
