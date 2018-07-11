@@ -33,8 +33,6 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     numero = forms.CharField(
         widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Número')
-    issn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}),
-                           required=False, label='ISSN Impreso')
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                     required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(

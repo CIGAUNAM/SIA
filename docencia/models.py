@@ -81,7 +81,6 @@ class ArticuloDocencia(models.Model):
     volumen = models.CharField(max_length=100, null=True, blank=True)
     numero = models.CharField(max_length=100, null=True, blank=True)
     fecha = models.DateField(auto_now=False)
-    issn_impreso = models.CharField(max_length=40, blank=True, verbose_name='ISSN Impreso')
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     solo_electronico = models.BooleanField(default=False)
     autores = SortedManyToManyField(User, related_name='articulo_docencia_autores', verbose_name='Autores')
