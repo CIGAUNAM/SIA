@@ -721,7 +721,8 @@ class Revista(models.Model):
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
-    # factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+    issn_impreso = models.CharField(max_length=40, blank=True, verbose_name='ISSN Impreso')
+    issn_online = models.CharField(max_length=40, blank=True, verbose_name='ISSN Online')
     url = models.URLField(blank=True)
 
     def __str__(self):

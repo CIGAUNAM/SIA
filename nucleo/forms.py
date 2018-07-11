@@ -633,6 +633,10 @@ class RevistaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    issn_impreso = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                   label='ISSN impreso')
+    issn_online = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                  label='ISSN online')
 
     class Meta:
         model = Revista

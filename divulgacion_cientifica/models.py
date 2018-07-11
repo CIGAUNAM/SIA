@@ -34,7 +34,6 @@ class ArticuloDivulgacion(models.Model):
     fecha = models.DateField()
     volumen = models.CharField(max_length=100, blank=True)
     numero = models.CharField(max_length=100, blank=True)
-    issn = models.CharField(max_length=30, blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     id_doi = models.CharField(max_length=100, blank=True)
