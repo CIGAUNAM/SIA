@@ -325,7 +325,7 @@ class ComiteCandidaturaDoctoralContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Asesorado', 'Programa', 'Proyecto', 'Defensa']}
+                'titulos_tabla': ['Candidato', 'Programa', 'Proyecto', 'Defensa']}
 
 
     tabla_mios =  '<script>\n' \
@@ -339,9 +339,9 @@ class ComiteCandidaturaDoctoralContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.asesorado",\n' \
+                                        '"data": "fields.candidato",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asesorado + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.candidato + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.programa_doctorado"},\n' \
@@ -365,9 +365,9 @@ class ComiteCandidaturaDoctoralContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.asesorado",\n' \
+                                        '"data": "fields.candidato",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asesorado + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.candidato + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.programa_doctorado"},\n' \

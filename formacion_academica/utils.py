@@ -12,7 +12,7 @@ class CursoEspecializacionContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Curso', 'Horas', 'Dependencia', 'Fin']}
+                'titulos_tabla': ['Curso', 'Tipo', 'Horas', 'Dependencia', 'Fin']}
 
 
     tabla_mios =  '<script>\n' \
@@ -31,6 +31,7 @@ class CursoEspecializacionContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
+                                    '{"data": "fields.tipo"},\n' \
                                     '{"data": "fields.horas"},\n' \
                                     '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.fecha_fin"},\n' \

@@ -28,13 +28,13 @@ class CursoEspecializacion(models.Model):
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
                                           on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    # institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
     # tags = models.ManyToManyField(Tag, related_name='curso_especializacion_tags', blank=True)
 
     def __str__(self):
-        return self.nombre
+        return "{} de {}".format(self.tipo, self.nombre)
 
     def get_absolute_url(self):
         return reverse('curso_especializacion_detalle', kwargs={'pk': self.pk})

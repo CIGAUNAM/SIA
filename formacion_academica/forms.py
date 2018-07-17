@@ -26,6 +26,7 @@ class CursoEspecializacionForm(forms.ModelForm):
     )
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    """
     institucion = forms.ModelChoiceField(
         required=True,
         queryset=Institucion.objects.all(),
@@ -36,6 +37,7 @@ class CursoEspecializacionForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    """
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
