@@ -855,7 +855,6 @@ class ColeccionEliminar(View):
 class RevistaJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = Revista.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'pais'))
