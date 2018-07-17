@@ -254,7 +254,7 @@ class ComiteCandidaturaDoctoralJSON(View):
                 items = ComiteCandidaturaDoctoral.objects.all().exclude(asesores=usuarioid).exclude(sinodales=usuarioid)
             else:
                 items = ComiteCandidaturaDoctoral.objects.filter(Q(asesores=usuarioid) | Q(sinodales=usuarioid))
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('asesorado', 'programa_doctorado', 'proyecto', 'fecha_defensa'))
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('candidato', 'programa_doctorado', 'proyecto', 'fecha_defensa'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
