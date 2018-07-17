@@ -198,11 +198,11 @@ class DireccionTesisContext:
                  '},\n' \
                  '"columns": [\n' \
                  '{\n' \
-                 '"data": "fields.asesorado",\n' \
+                 '"data": "fields.titulo",\n' \
                  '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
                  '$(nTd).html("<a href=\'/' + str(
         contexto['url_categoria']) + '/' + str(
-        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asesorado + "</a>");\n' \
+        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
                    '}\n' \
                    '},\n' \
                    '{"data": "fields.asesorado"},\n' \
@@ -227,11 +227,11 @@ class DireccionTesisContext:
                   '},\n' \
                   '"columns": [\n' \
                   '{\n' \
-                  '"data": "fields.asesorado",\n' \
+                  '"data": "fields.titulo",\n' \
                   '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
                   '$(nTd).html("<a href=\'/' + str(
         contexto['url_categoria']) + '/' + str(
-        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.asesorado + "</a>");\n' \
+        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
                    '}\n' \
                    '},\n' \
                    '{"data": "fields.asesorado"},\n' \

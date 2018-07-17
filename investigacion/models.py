@@ -115,7 +115,7 @@ class ArticuloCientifico(models.Model):
     autores = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_cientifico_agradecimientos', blank=True)
-    factor_impacto = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+    factor_impacto = models.DecimalField(max_digits=6, decimal_places=3, blank=True, null=True)
     url = models.URLField(blank=True)
     pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
     pagina_fin = models.PositiveIntegerField(null=True, blank=True)
