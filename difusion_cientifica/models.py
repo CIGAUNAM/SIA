@@ -88,7 +88,6 @@ class Resena(models.Model):
 
 class Traduccion(models.Model):
     titulo = models.CharField(max_length=255)
-    # titulo_original = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
     libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)
@@ -139,7 +138,8 @@ class ParticipacionEventoAcademico(models.Model):
     resumen_publicado = models.BooleanField(default=False)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, related_name='participacion_evento_academico_usuario', on_delete=models.DO_NOTHING, null=True, blank=True)
+    participantes = models.ManyToManyField(User, related_name='participacion_evento_academico_participantes')
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)
