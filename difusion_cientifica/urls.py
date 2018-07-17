@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^organizacion-eventos-academicos/(?P<pk>[\w\-]+)/$', OrganizacionEventoAcademicoDetalle.as_view(), name='organizacion_evento_academico_detalle'),
 
     url(r'^participacion-eventos-academicos/json/', ParticipacionEventoAcademicoJSON.as_view(), name='participacion_evento_academico_lista__json'),
+    url(r'^participacion-eventos-academicos/json-otros/', ParticipacionEventoAcademicoJSON.as_view(otros=True), name='participacion_evento_academico_lista_otros__json'),
     url(r'^participacion-eventos-academicos/$', ParticipacionEventoAcademicoLista.as_view(), name='participacion_evento_academico_lista'),
     url(r'^participacion-eventos-academicos/(?P<pk>[\w\-]+)/eliminar$', ParticipacionEventoAcademicoEliminar.as_view(), name='participacion_evento_academico_eliminar'),
     url(r'^participacion-eventos-academicos/(?P<pk>[\w\-]+)/$', ParticipacionEventoAcademicoDetalle.as_view(), name='participacion_evento_academico_detalle'),

@@ -221,11 +221,16 @@ class OrganizacionEventoAcademicoEliminar(View):
             raise Http404
 
 
+
 class ParticipacionEventoAcademicoJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = ParticipacionEventoAcademico.objects.filter(usuario=usuarioid)
+            if self.otros:
+                items = ParticipacionEventoAcademico.objects.exclude(participantes=usuarioid)
+            else:
+                items = ParticipacionEventoAcademico.objects.filter(participantes=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'evento', 'ambito'))
 
@@ -236,22 +241,23 @@ class ParticipacionEventoAcademicoJSON(View):
             json = json.replace('OTRO', 'Otro')
             json = json.replace('INSTITUCIONAL', 'Institucional')
             json = json.replace('REGIONAL', 'Regional')
-            json = json.replace('NACIONAL', 'Nacional')
             json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('NACIONAL', 'Nacional')
+
 
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class ParticipacionEventoAcademicoLista(ObjectCreateMixin, View):
+class ParticipacionEventoAcademicoLista(ObjectCreateVarMixin, View):
     form_class = ParticipacionEventoAcademicoForm
     model = ParticipacionEventoAcademico
     aux = ParticipacionEventoAcademicoContext.contexto
     template_name = 'participacion_evento_academico.html'
 
 
-class ParticipacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
+class ParticipacionEventoAcademicoDetalle(ObjectUpdateVarMixin, View):
     form_class = ParticipacionEventoAcademicoForm
     model = ParticipacionEventoAcademico
     aux = ParticipacionEventoAcademicoContext.contexto
