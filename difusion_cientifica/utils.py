@@ -258,26 +258,26 @@ class ParticipacionEventoAcademicoContext:
 
     contexto['tabla_mios'] = tabla_mios
 
-    tabla_otros = '<script>\n' \
-                 '       jQuery(document).ready(function ($jquery) {\n' \
-                 '       $jquery("#tabla_json_otros").dataTable({\n' \
-                            '"iDisplayLength": 15,\n' \
-                            '"ajax": {\n' \
-                            '"processing": true,\n' \
-                            '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
-                            '"dataSrc": ""\n' \
-                         '},\n' \
-                         '"columns": [\n' \
-                            '{\n' \
-                                '"data": "fields.titulo",\n' \
-                                '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
-                                   '}\n' \
-                                   '},\n' \
-                                   '{"data": "fields.evento"},\n' \
-                                   '{"data": "fields.ambito"},\n' \
-                               ']\n' \
-                           '});\n' \
+    tabla_otros =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json_otros").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.titulo",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.evento"},\n' \
+                                    '{"data": "fields.ambito"},\n' \
+                                ']\n' \
+                            '});\n' \
                         '});\n' \
                   '</script>'
 
