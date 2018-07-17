@@ -1117,7 +1117,7 @@ class Dashboard(View):
                     request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(participacioneventoacademico__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_academico_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -1130,11 +1130,11 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(participacioneventoacademico__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_academico_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacioneventoacademico')).aggregate(Max('participacioneventoacademico__count'))[
-                    'participacioneventoacademico__count__max']
+                    Count('participacion_evento_academico_participantes')).aggregate(Max('participacion_evento_academico_participantes__count'))[
+                    'participacion_evento_academico_participantes__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
@@ -1144,8 +1144,8 @@ class Dashboard(View):
                     Q(organizacioneventoacademico__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacioneventoacademico')).aggregate(Min('participacioneventoacademico__count'))[
-                    'participacioneventoacademico__count__min']
+                    Count('participacion_evento_academico_participantes')).aggregate(Min('participacion_evento_academico_participantes__count'))[
+                    'participacion_evento_academico_participantes__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
@@ -3485,7 +3485,7 @@ class ReporteHistorico(View):
                     total_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(participacioneventoacademico__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_academico_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -3498,11 +3498,11 @@ class ReporteHistorico(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(participacioneventoacademico__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_academico_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacioneventoacademico')).aggregate(Max('participacioneventoacademico__count'))[
-                    'participacioneventoacademico__count__max']
+                    Count('participacion_evento_academico_participantes')).aggregate(Max('participacion_evento_academico_participantes__count'))[
+                    'participacion_evento_academico_participantes__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
@@ -3512,8 +3512,8 @@ class ReporteHistorico(View):
                     Q(organizacioneventoacademico__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacioneventoacademico')).aggregate(Min('participacioneventoacademico__count'))[
-                    'participacioneventoacademico__count__min']
+                    Count('participacion_evento_academico_participantes')).aggregate(Min('participacion_evento_academico_participantes__count'))[
+                    'participacion_evento_academico_participantes__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
