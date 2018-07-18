@@ -1,0 +1,5027 @@
+[
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 95,
+  "fields": {
+    "titulo": "Yo amo al suelo",
+    "descripcion": "",
+    "status": "OTRO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 260,
+    "fecha": "1900-01-01",
+    "volumen": "4",
+    "numero": "14",
+    "pagina_inicio": 10,
+    "pagina_fin": 12,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 96,
+  "fields": {
+    "titulo": "MESMIS: Marco para Evaluar la Sustentabilidad de Sistemas de Manejo de Recursos Naturales",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 238,
+    "fecha": "1999-01-01",
+    "volumen": "7",
+    "numero": "",
+    "pagina_inicio": 22,
+    "pagina_fin": 31,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      274,
+      32,
+      1258
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 97,
+  "fields": {
+    "titulo": "Sustentabilidad y evaluaci\u00f3n de sistemas de manejo de recursos naturales: El Marco de evaluaci\u00f3n MESMIS",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 239,
+    "fecha": "1999-01-01",
+    "volumen": "5",
+    "numero": "59",
+    "pagina_inicio": 7,
+    "pagina_fin": 16,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      274,
+      32,
+      1258
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 98,
+  "fields": {
+    "titulo": "Los que resisten. Ind\u00edgenas y campesinos organizados en la defensa del ma\u00edz nativo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 240,
+    "fecha": "2009-12-01",
+    "volumen": "1",
+    "numero": "34",
+    "pagina_inicio": 6,
+    "pagina_fin": 7,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      954,
+      32,
+      7,
+      1079
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 99,
+  "fields": {
+    "titulo": "Fundamentos etnoecol\u00f3gicos de la agroecolog\u00eda Purh\u00e9pecha: El concepto tierra y el ma\u00edz en San Francisco Pich\u00e1taro, Michoac\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 241,
+    "fecha": "2009-11-01",
+    "volumen": "96",
+    "numero": "",
+    "pagina_inicio": 29,
+    "pagina_fin": 37,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      954,
+      32,
+      7
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 100,
+  "fields": {
+    "titulo": "El concepto de tierra y la diversidad de ma\u00edz en una comunidad puh\u00e9pecha",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 242,
+    "fecha": "2009-01-01",
+    "volumen": "",
+    "numero": "96",
+    "pagina_inicio": 28,
+    "pagina_fin": 37,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      1524,
+      32,
+      7
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 101,
+  "fields": {
+    "titulo": "El oro verde de Michoac\u00e1n y su impacto ecol\u00f3gico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 211,
+    "fecha": "2011-08-01",
+    "volumen": "",
+    "numero": "33",
+    "pagina_inicio": 1,
+    "pagina_fin": 3,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      171,
+      32,
+      14,
+      1523,
+      466
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 102,
+  "fields": {
+    "titulo": "\u00bfEs cierto que muchos de los cereales y legumbres que comemos tienen su origen en la agricultura familiar campesina?",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 211,
+    "fecha": "2011-11-01",
+    "volumen": "",
+    "numero": "35",
+    "pagina_inicio": 1,
+    "pagina_fin": 3,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      32
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 103,
+  "fields": {
+    "titulo": "\u00c9chate un taco de Tarheta la milpa Purh\u00e9pecha",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 243,
+    "fecha": "2016-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      32
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 104,
+  "fields": {
+    "titulo": "Saberes locales y defensa de la agrodiversidad: ma\u00edces nativos vs. ma\u00edces transg\u00e9nicos en M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 244,
+    "fecha": "2009-01-01",
+    "volumen": "",
+    "numero": "107",
+    "pagina_inicio": 77,
+    "pagina_fin": 79,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      1524,
+      32,
+      7,
+      1079
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 105,
+  "fields": {
+    "titulo": "Experiencias de cultivo de Ma\u00edz nativo sin transg\u00e9nicos en M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 136,
+    "fecha": "2011-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      32,
+      1524,
+      60
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 106,
+  "fields": {
+    "titulo": "Plantas silvestres asociadas al cultivo de aguacate",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "http://fm2.fieldmuseum.org/plantguides/guideimages.asp?ID=617",
+    "solo_electronico": false,
+    "revista": 245,
+    "fecha": "2013-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      325,
+      346,
+      1282,
+      32,
+      171
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 1,
+  "fields": {
+    "titulo": "Premisas geogr\u00e1ficas de la organizaci\u00f3n ec\u00f3logo-productiva del territorio nacional",
+    "descripcion": "",
+    "libro": 81,
+    "pagina_inicio": 278,
+    "pagina_fin": 293,
+    "proyecto": null,
+    "usuario": 17,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 2,
+  "fields": {
+    "titulo": "La tipolog\u00eda de los paisajes antropo-naturales como base para el ordenamiento ecol\u00f3gico territorial a diferentes escalas",
+    "descripcion": "",
+    "libro": 82,
+    "pagina_inicio": 155,
+    "pagina_fin": 193,
+    "proyecto": null,
+    "usuario": 17,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 3,
+  "fields": {
+    "titulo": "Programa de Ordenamiento Ecol\u00f3gico General del Territorio (POEGT) de M\u00e9xico: una primera aproximaci\u00f3n en el sexenio 2006-2012",
+    "descripcion": "",
+    "libro": 83,
+    "pagina_inicio": 343,
+    "pagina_fin": 380,
+    "proyecto": null,
+    "usuario": 17,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 4,
+  "fields": {
+    "titulo": "La Geoecolog\u00eda en el ordenamiento ecol\u00f3gico territorial",
+    "descripcion": "",
+    "libro": 84,
+    "pagina_inicio": 203,
+    "pagina_fin": 240,
+    "proyecto": null,
+    "usuario": 17,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 5,
+  "fields": {
+    "titulo": "El relieve, los paisajes f\u00edsico-geogr\u00e1ficos y la aptitud natural de las unidades de gesti\u00f3n en el ordenamiento ecol\u00f3gico territorial",
+    "descripcion": "",
+    "libro": 84,
+    "pagina_inicio": 87,
+    "pagina_fin": 115,
+    "proyecto": null,
+    "usuario": 17,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 6,
+  "fields": {
+    "titulo": "Algunos indicadores biof\u00edsicos, sociales y econ\u00f3micos de M\u00e9xico: plataforma para su evaluaci\u00f3n medioambiental actual",
+    "descripcion": "",
+    "libro": 85,
+    "pagina_inicio": 25,
+    "pagina_fin": 58,
+    "proyecto": null,
+    "usuario": 17,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 7,
+  "fields": {
+    "titulo": "Procesos de cambio de cobertura vegetal y uso del suelo en un municipio periurbano: El caso de Tar\u00edmbaro, Michoac\u00e1n de Ocampo",
+    "descripcion": "",
+    "libro": 125,
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "proyecto": null,
+    "usuario": 23,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 8,
+  "fields": {
+    "titulo": "Crecimiento urbano y sus consecuencias a nivel regional en la cuenca del lago de Cuitzeo, M\u00e9xico",
+    "descripcion": "",
+    "libro": 129,
+    "pagina_inicio": 113,
+    "pagina_fin": 135,
+    "proyecto": null,
+    "usuario": 23,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 9,
+  "fields": {
+    "titulo": "Urban growth and its consequences at the regional level in the Cuitzo Lake Basin, Mexico",
+    "descripcion": "",
+    "libro": 130,
+    "pagina_inicio": 105,
+    "pagina_fin": 126,
+    "proyecto": null,
+    "usuario": 23,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 10,
+  "fields": {
+    "titulo": "Land suitability modelling to support environmental planning. Application of multicriteria analysis techniques in the municipality of Morelia, Michoacan, Mexico",
+    "descripcion": "",
+    "libro": 131,
+    "pagina_inicio": 152,
+    "pagina_fin": 172,
+    "proyecto": null,
+    "usuario": 23,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 12,
+  "fields": {
+    "titulo": "Priorization of areas for the application of conservation and sustaibable use policies for regional land use planning",
+    "descripcion": "",
+    "libro": 131,
+    "pagina_inicio": 202,
+    "pagina_fin": 228,
+    "proyecto": null,
+    "usuario": 23,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 13,
+  "fields": {
+    "titulo": "El Marco MESMIS",
+    "descripcion": "",
+    "libro": 169,
+    "pagina_inicio": 325,
+    "pagina_fin": 347,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 14,
+  "fields": {
+    "titulo": "El dise\u00f1o de sistemas sustentables de ma\u00edz en la Regi\u00f3n Purh\u00e9pecha",
+    "descripcion": "",
+    "libro": 169,
+    "pagina_inicio": 271,
+    "pagina_fin": 324,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 15,
+  "fields": {
+    "titulo": "El marco de evaluaci\u00f3n MESMIS y su aplicaci\u00f3n en un sistema agr\u00edcola campesino en la regi\u00f3n Purhepecha, M\u00e9xico",
+    "descripcion": "",
+    "libro": 170,
+    "pagina_inicio": 415,
+    "pagina_fin": 430,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 16,
+  "fields": {
+    "titulo": "Conclusiones",
+    "descripcion": "",
+    "libro": 171,
+    "pagina_inicio": 200,
+    "pagina_fin": 205,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 17,
+  "fields": {
+    "titulo": "Sustentabilidad de sistemas campesinos de ma\u00edz despu\u00e9s de cuatro a\u00f1os: el segundo ciclo de evaluaci\u00f3n MESMIS",
+    "descripcion": "",
+    "libro": 171,
+    "pagina_inicio": 20,
+    "pagina_fin": 30,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 18,
+  "fields": {
+    "titulo": "Introducci\u00f3n: la importancia de evaluar sustentabilidad en sistemas agr\u00edcolas",
+    "descripcion": "",
+    "libro": 163,
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 19,
+  "fields": {
+    "titulo": "Sustainability Evaluation. Applying ecological principles and tools to natural resource management systems",
+    "descripcion": "",
+    "libro": 172,
+    "pagina_inicio": 139,
+    "pagina_fin": 167,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 20,
+  "fields": {
+    "titulo": "Paso a paso con el MESMIS",
+    "descripcion": "",
+    "libro": 164,
+    "pagina_inicio": 100,
+    "pagina_fin": 110,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 21,
+  "fields": {
+    "titulo": "Retos para los an\u00e1lisis de sustentabilidad de los SMRN",
+    "descripcion": "",
+    "libro": 164,
+    "pagina_inicio": 130,
+    "pagina_fin": 140,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 22,
+  "fields": {
+    "titulo": "Formulaci\u00f3n de indicadores socio-ambientales para evaluaciones de sistemas de manejo complejos",
+    "descripcion": "",
+    "libro": 164,
+    "pagina_inicio": 150,
+    "pagina_fin": 160,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 23,
+  "fields": {
+    "titulo": "Sistematizaci\u00f3n y an\u00e1lisis de  las experiencias de evaluaci\u00f3n con el marco MESMIS: lecciones para el futuro",
+    "descripcion": "",
+    "libro": 164,
+    "pagina_inicio": 160,
+    "pagina_fin": 170,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 24,
+  "fields": {
+    "titulo": "El proyecto de evaluaci\u00f3n de sustentabilidad  MESMIS",
+    "descripcion": "",
+    "libro": 164,
+    "pagina_inicio": 180,
+    "pagina_fin": 190,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 25,
+  "fields": {
+    "titulo": "Saberes locales y defensa de la agrobiodiversidad",
+    "descripcion": "",
+    "libro": 173,
+    "pagina_inicio": 100,
+    "pagina_fin": 120,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 26,
+  "fields": {
+    "titulo": "Previni\u00e9ndose para el cambio clim\u00e1tico una metodolog\u00eda participativa",
+    "descripcion": "",
+    "libro": 174,
+    "pagina_inicio": 124,
+    "pagina_fin": 148,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 27,
+  "fields": {
+    "titulo": "Analysis of the GM Crop Debate in Mexico",
+    "descripcion": "",
+    "libro": 175,
+    "pagina_inicio": 52,
+    "pagina_fin": 105,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 28,
+  "fields": {
+    "titulo": "At Crop Scale: olives grove, avocado and coffee: sychronic analysis",
+    "descripcion": "",
+    "libro": 176,
+    "pagina_inicio": 200,
+    "pagina_fin": 220,
+    "proyecto": null,
+    "usuario": 32,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 29,
+  "fields": {
+    "titulo": "Hacia una agricultura ecol\u00f3gica en M\u00e9xico: El problema de la transici\u00f3n para el productor campesino",
+    "descripcion": "",
+    "libro": 177,
+    "pagina_inicio": 203,
+    "pagina_fin": 223,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 30,
+  "fields": {
+    "titulo": "Energ\u00eda y Sistema Alimentario: Aportaciones de la Agricultura Alternativa",
+    "descripcion": "",
+    "libro": 178,
+    "pagina_inicio": 17,
+    "pagina_fin": 34,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 31,
+  "fields": {
+    "titulo": "Metodolog\u00eda para la evaluaci\u00f3n de sistemas de manejo  incorporando indicadores de sustentabilidad",
+    "descripcion": "",
+    "libro": 179,
+    "pagina_inicio": 91,
+    "pagina_fin": 134,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 32,
+  "fields": {
+    "titulo": "Hacia un Programa Nacional de Manejo Sustentable de Ecosistemas en M\u00e9xico",
+    "descripcion": "",
+    "libro": 180,
+    "pagina_inicio": 89,
+    "pagina_fin": 99,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 33,
+  "fields": {
+    "titulo": "El marco MESMIS, estudios de caso en Iberoam\u00e9rica y Norteam\u00e9rica",
+    "descripcion": "",
+    "libro": 181,
+    "pagina_inicio": 100,
+    "pagina_fin": 150,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 34,
+  "fields": {
+    "titulo": "Estado de conocimiento y tendencias de cambio de los servicios ecosist\u00e9micos",
+    "descripcion": "",
+    "libro": 182,
+    "pagina_inicio": 607,
+    "pagina_fin": 760,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 35,
+  "fields": {
+    "titulo": "El sistema ma\u00edz-tortilla en el estado de Michoac\u00e1n",
+    "descripcion": "",
+    "libro": 183,
+    "pagina_inicio": 119,
+    "pagina_fin": 136,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 36,
+  "fields": {
+    "titulo": "Estrategias de conservaci\u00f3n in situ del ma\u00edz criollo del Lago de P\u00e1tzcuaro",
+    "descripcion": "",
+    "libro": 184,
+    "pagina_inicio": 55,
+    "pagina_fin": 57,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 37,
+  "fields": {
+    "titulo": "Sistemas agr\u00edcolas, conocimiento tradicional y agrobiodiversidad en la Regi\u00f3n Cuenca del Lago de de P\u00e1tzcuaro",
+    "descripcion": "",
+    "libro": 186,
+    "pagina_inicio": 146,
+    "pagina_fin": 172,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 38,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n de actividades de formaci\u00f3n acad\u00e9mica interdisciplinaria: el caso de la pr\u00e1ctica de integraci\u00f3n en la LCA",
+    "descripcion": "",
+    "libro": 185,
+    "pagina_inicio": 40,
+    "pagina_fin": 50,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 39,
+  "fields": {
+    "titulo": "Alternativas tecnol\u00f3gicas no transg\u00e9nicas para el mejoramiento y la producci\u00f3n sustentables de ma\u00edz en M\u00e9xico",
+    "descripcion": "",
+    "libro": 188,
+    "pagina_inicio": 455,
+    "pagina_fin": 492,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 40,
+  "fields": {
+    "titulo": "La producci\u00f3n de ma\u00edz en M\u00e9xico y la introducci\u00f3n de OGM: \u00bfm\u00e1s inseguridades o soberan\u00eda alimentaria?",
+    "descripcion": "",
+    "libro": 188,
+    "pagina_inicio": 333,
+    "pagina_fin": 376,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 41,
+  "fields": {
+    "titulo": "Agrodiversidad, conocimiento tradicional e investigaci\u00f3n?participativa (\u201cetica\u201d)",
+    "descripcion": "",
+    "libro": 189,
+    "pagina_inicio": 978,
+    "pagina_fin": 607,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 42,
+  "fields": {
+    "titulo": "Sinergias y antagonismos entre el manejo agron\u00f3mico y el mantenimiento de la diversidad de plantas y polinizadores en huertas de aguacate en Michoac\u00e1n",
+    "descripcion": "",
+    "libro": 190,
+    "pagina_inicio": 10,
+    "pagina_fin": 30,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 43,
+  "fields": {
+    "titulo": "Geograf\u00eda General y de M\u00e9xico",
+    "descripcion": "",
+    "libro": 210,
+    "pagina_inicio": 241,
+    "pagina_fin": 265,
+    "proyecto": null,
+    "usuario": 11,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 44,
+  "fields": {
+    "titulo": "Historia de M\u00e9xico",
+    "descripcion": "",
+    "libro": 210,
+    "pagina_inicio": 307,
+    "pagina_fin": 332,
+    "proyecto": null,
+    "usuario": 11,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 45,
+  "fields": {
+    "titulo": "Historia Universal",
+    "descripcion": "",
+    "libro": 210,
+    "pagina_inicio": 267,
+    "pagina_fin": 306,
+    "proyecto": null,
+    "usuario": 11,
+    "autores": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 46,
+  "fields": {
+    "titulo": "La dimensi\u00f3n socio-cultural y los valores entorno a los Servicios Ecosist\u00e9micos en humedales",
+    "descripcion": "",
+    "libro": 234,
+    "pagina_inicio": 27,
+    "pagina_fin": 40,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      53,
+      1507
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 47,
+  "fields": {
+    "titulo": "Organic Farming. Between the relocation of energy flows and input replacement",
+    "descripcion": "",
+    "libro": 176,
+    "pagina_inicio": 173,
+    "pagina_fin": 192,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 1,
+  "fields": {
+    "evento": 68,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 20,
+    "numero_asistentes": 150,
+    "ambito": "INTERNACIONAL",
+    "financiamiento": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 2,
+  "fields": {
+    "evento": 69,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 80,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 3,
+  "fields": {
+    "evento": 70,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 20,
+    "numero_asistentes": 75,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 4,
+  "fields": {
+    "evento": 233,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "REGIONAL",
+    "financiamiento": 26,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 5,
+  "fields": {
+    "evento": 232,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "REGIONAL",
+    "financiamiento": null,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 7,
+  "fields": {
+    "evento": 254,
+    "descripcion": "",
+    "responsabilidad": "COORDINADOR",
+    "numero_ponentes": 45,
+    "numero_asistentes": 50,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 8,
+  "fields": {
+    "evento": 285,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 9,
+  "fields": {
+    "evento": 72,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 150,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 10,
+  "fields": {
+    "evento": 72,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 150,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 11,
+  "fields": {
+    "evento": 298,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 10,
+    "numero_asistentes": 70,
+    "ambito": "REGIONAL",
+    "financiamiento": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 12,
+  "fields": {
+    "evento": 69,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 79,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 13,
+  "fields": {
+    "evento": 68,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 25,
+    "numero_asistentes": 180,
+    "ambito": "INTERNACIONAL",
+    "financiamiento": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 14,
+  "fields": {
+    "evento": 124,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 7,
+    "numero_asistentes": 50,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 15,
+  "fields": {
+    "evento": 54,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 7,
+    "numero_asistentes": 70,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 16,
+  "fields": {
+    "evento": 429,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 7,
+    "numero_asistentes": 60,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 17,
+  "fields": {
+    "evento": 76,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 18,
+  "fields": {
+    "evento": 345,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 110,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 19,
+  "fields": {
+    "evento": 379,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 7,
+    "numero_asistentes": 70,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 20,
+  "fields": {
+    "evento": 380,
+    "descripcion": "Panel: Geograf\u00eda y Educaci\u00f3n Superior en M\u00e9xico",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 150,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 21,
+  "fields": {
+    "evento": 380,
+    "descripcion": "Panel: Geograf\u00eda y Educaci\u00f3n Superior en M\u00e9xico",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 15,
+    "numero_asistentes": 150,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 22,
+  "fields": {
+    "evento": 380,
+    "descripcion": "Moderador de la sesi\u00f3n 24: \u201cGeograf\u00eda Urbana",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 24,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 23,
+  "fields": {
+    "evento": 380,
+    "descripcion": "Moderador de la sesi\u00f3n 24: \u201cGeograf\u00eda Urbana",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 24,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 24,
+  "fields": {
+    "evento": 430,
+    "descripcion": "",
+    "responsabilidad": "OTRO",
+    "numero_ponentes": 10,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 25,
+  "fields": {
+    "evento": 431,
+    "descripcion": "",
+    "responsabilidad": "OTRO",
+    "numero_ponentes": 3,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 26,
+  "fields": {
+    "evento": 143,
+    "descripcion": "Moderador de la sesi\u00f3n 25: Geograf\u00eda Urbana",
+    "responsabilidad": "OTRO",
+    "numero_ponentes": 7,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 27,
+  "fields": {
+    "evento": 80,
+    "descripcion": "",
+    "responsabilidad": "OTRO",
+    "numero_ponentes": 7,
+    "numero_asistentes": 70,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 28,
+  "fields": {
+    "evento": 161,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 20,
+    "numero_asistentes": 200,
+    "ambito": "INTERNACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 29,
+  "fields": {
+    "evento": 432,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 10,
+    "numero_asistentes": 70,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 30,
+  "fields": {
+    "evento": 359,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 31,
+  "fields": {
+    "evento": 145,
+    "descripcion": "Comentarista del Panel 27",
+    "responsabilidad": "OTRO",
+    "numero_ponentes": 10,
+    "numero_asistentes": 90,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 32,
+  "fields": {
+    "evento": 360,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 7,
+    "numero_asistentes": 90,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 33,
+  "fields": {
+    "evento": 433,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 90,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 34,
+  "fields": {
+    "evento": 435,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 80,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 35,
+  "fields": {
+    "evento": 435,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 90,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 36,
+  "fields": {
+    "evento": 392,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 8,
+    "numero_asistentes": 70,
+    "ambito": "REGIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 37,
+  "fields": {
+    "evento": 424,
+    "descripcion": "",
+    "responsabilidad": "OTRO",
+    "numero_ponentes": 5,
+    "numero_asistentes": 100,
+    "ambito": "INTERNACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 38,
+  "fields": {
+    "evento": 391,
+    "descripcion": "",
+    "responsabilidad": "COORDINADOR",
+    "numero_ponentes": 5,
+    "numero_asistentes": 100,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 39,
+  "fields": {
+    "evento": 539,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 400,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 41,
+  "fields": {
+    "evento": 540,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 10,
+    "numero_asistentes": 900,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 42,
+  "fields": {
+    "evento": 543,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 70,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 43,
+  "fields": {
+    "evento": 541,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 20,
+    "numero_asistentes": 150,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 44,
+  "fields": {
+    "evento": 542,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 100,
+    "ambito": "REGIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 45,
+  "fields": {
+    "evento": 545,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 70,
+    "ambito": "NACIONAL",
+    "financiamiento": 10,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 46,
+  "fields": {
+    "evento": 546,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 90,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 47,
+  "fields": {
+    "evento": 547,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 70,
+    "ambito": "REGIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 49,
+  "fields": {
+    "evento": 547,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 60,
+    "ambito": "REGIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 50,
+  "fields": {
+    "evento": 548,
+    "descripcion": "",
+    "responsabilidad": "COORDINADOR",
+    "numero_ponentes": 5,
+    "numero_asistentes": 60,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 51,
+  "fields": {
+    "evento": 549,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 70,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 52,
+  "fields": {
+    "evento": 550,
+    "descripcion": "",
+    "responsabilidad": "COORDINADOR",
+    "numero_ponentes": 1,
+    "numero_asistentes": 70,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 53,
+  "fields": {
+    "evento": 551,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 90,
+    "ambito": "NACIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 63,
+  "fields": {
+    "evento": 635,
+    "descripcion": "Taller realizado en las instalaciones del CIGA- UNAM",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 3,
+    "numero_asistentes": 20,
+    "ambito": "REGIONAL",
+    "financiamiento": 4,
+    "usuario": 53
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 68,
+  "fields": {
+    "evento": 780,
+    "descripcion": "Actividad por 10 a\u00f1os del CIGA",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 8,
+    "numero_asistentes": 500,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 69,
+  "fields": {
+    "evento": 781,
+    "descripcion": "Actividad dirigida a alumnos de bachillerato interesados en geograf\u00eda e historia",
+    "responsabilidad": "COORDINADOR",
+    "numero_ponentes": 10,
+    "numero_asistentes": 100,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 71,
+  "fields": {
+    "evento": 783,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 3,
+    "numero_asistentes": 100,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 72,
+  "fields": {
+    "evento": 784,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 6,
+    "numero_asistentes": 200,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 73,
+  "fields": {
+    "evento": 785,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 30,
+    "numero_asistentes": 500,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 74,
+  "fields": {
+    "evento": 44,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 6,
+    "numero_asistentes": 300,
+    "ambito": "NACIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 76,
+  "fields": {
+    "evento": 544,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 2,
+    "numero_asistentes": 100,
+    "ambito": "REGIONAL",
+    "financiamiento": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 1,
+  "fields": {
+    "titulo": "Conferencia: Drones: \u00bfqu\u00e9 son, para que sirven y c\u00f3mo vuelan?",
+    "descripcion": "",
+    "evento": 47,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 2,
+  "fields": {
+    "titulo": "Potencial de la tecnolog\u00eda UAV para la adquisici\u00f3n de informaci\u00f3n sobre riesgos y desastres",
+    "descripcion": "",
+    "evento": 6,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 3,
+  "fields": {
+    "titulo": "Modelado espacial de peligros ambientales en la regi\u00f3n de Infiernillo, Michoac\u00e1n. (En colaboraci\u00f3n con F. Bautista Z\u00fa\u00f1iga y M. E. Mendoza Cant\u00fa)",
+    "descripcion": "",
+    "evento": 7,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 4,
+  "fields": {
+    "titulo": "El modelo AGRILOCAL. Un ejemplo de modelamiento espacial expl\u00edcito de aptitud de las tierras",
+    "descripcion": "",
+    "evento": 5,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 5,
+  "fields": {
+    "titulo": "La tecnolog\u00eda de los drones en actividades de protecci\u00f3n civil",
+    "descripcion": "",
+    "evento": 8,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 6,
+  "fields": {
+    "titulo": "Tecnolog\u00eda de drones para la adquisici\u00f3n de informaci\u00f3n medioambiental",
+    "descripcion": "",
+    "evento": 2,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 7,
+  "fields": {
+    "titulo": "Estad\u00edstica Espacial y Estrategia Electoral",
+    "descripcion": "",
+    "evento": 10,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 8,
+  "fields": {
+    "titulo": "El an\u00e1lisis espacial en la evaluaci\u00f3n de la vulnerabilidad",
+    "descripcion": "",
+    "evento": 11,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 9,
+  "fields": {
+    "titulo": "Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota",
+    "descripcion": "",
+    "evento": 14,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 10,
+  "fields": {
+    "titulo": "Desarrollo de una aplicaci\u00f3n Web para la exploraci\u00f3n de acervos de im\u00e1genes satelitales y cartograf\u00eda",
+    "descripcion": "",
+    "evento": 15,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 11,
+  "fields": {
+    "titulo": "Perspectivas de la Geograf\u00eda Electoral en M\u00e9xico",
+    "descripcion": "",
+    "evento": 13,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 12,
+  "fields": {
+    "titulo": "Aplicaciones Urbanas de los SIG y la Teledetecci\u00f3n",
+    "descripcion": "",
+    "evento": 12,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 13,
+  "fields": {
+    "titulo": "Utilidad de los Sistemas de Informaci\u00f3n Geogr\u00e1fica",
+    "descripcion": "",
+    "evento": 16,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 14,
+  "fields": {
+    "titulo": "Hablemos de Vulnerabilidad",
+    "descripcion": "",
+    "evento": 9,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 15,
+  "fields": {
+    "titulo": "Los Sistemas de Informaci\u00f3n Geogr\u00e1fica: Utilidad y Aplicaciones",
+    "descripcion": "",
+    "evento": 18,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 16,
+  "fields": {
+    "titulo": "El acceso a bancos de informaci\u00f3n geogr\u00e1fica a trav\u00e9s de Internet",
+    "descripcion": "",
+    "evento": 19,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 17,
+  "fields": {
+    "titulo": "Applications of GIS and Remote Sensing: the cases of Chiapas and Colima, Mexico",
+    "descripcion": "",
+    "evento": 20,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 18,
+  "fields": {
+    "titulo": "Introducci\u00f3n a los SIG y El uso de los SIG en la evaluaci\u00f3n y monitoreo de riesgos naturales",
+    "descripcion": "",
+    "evento": 21,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 20,
+  "fields": {
+    "titulo": "El ordenamiento de lo cotidiano: aplicaci\u00f3n de SIG al manejo del territorio",
+    "descripcion": "",
+    "evento": 23,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 21,
+  "fields": {
+    "titulo": "La importancia de los datos e informaci\u00f3n en el proceso de toma de decisiones",
+    "descripcion": "",
+    "evento": 24,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 22,
+  "fields": {
+    "titulo": "Problem\u00e1tica de los Sistemas de Informaci\u00f3n Geogr\u00e1fica en las Instituciones Geogr\u00e1fico Universitarias",
+    "descripcion": "",
+    "evento": 25,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 23,
+  "fields": {
+    "titulo": "Geoinform\u00e1tica para la Gesti\u00f3n del Desarrollo",
+    "descripcion": "",
+    "evento": 27,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 24,
+  "fields": {
+    "titulo": "El papel de las relaciones espaciales en el an\u00e1lisis espacial",
+    "descripcion": "",
+    "evento": 35,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 25,
+  "fields": {
+    "titulo": "Desarrollo y manejo de una base nacional de datos del recurso suelo",
+    "descripcion": "",
+    "evento": 36,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 26,
+  "fields": {
+    "titulo": "Modelo espacial para diferenciar el pago por servicios ambientales (PSA) a partir de la predicci\u00f3n de la deforestaci\u00f3n",
+    "descripcion": "",
+    "evento": 66,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 27,
+  "fields": {
+    "titulo": "El enfoque paisaj\u00edstico en el an\u00e1lisis territorial",
+    "descripcion": "",
+    "evento": 114,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 28,
+  "fields": {
+    "titulo": "Taller de reflexi\u00f3n y discusi\u00f3n sobre el Ordenamiento Ecol\u00f3gico",
+    "descripcion": "",
+    "evento": 115,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 29,
+  "fields": {
+    "titulo": "Los enfoques, f\u00edsico-geogr\u00e1fico y geoecol\u00f3gico, en la geograf\u00eda contempor\u00e1nea",
+    "descripcion": "",
+    "evento": 116,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 30,
+  "fields": {
+    "titulo": "El campo de conocimiento en Manejo Integrado del Paisaje del Posgrado en Geograf\u00eda de la UNAM",
+    "descripcion": "",
+    "evento": 117,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 31,
+  "fields": {
+    "titulo": "Metodolog\u00edas empleadas en los programas de Ordenamiento Ecol\u00f3gico General del Territorio",
+    "descripcion": "",
+    "evento": 118,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 32,
+  "fields": {
+    "titulo": "Presentaci\u00f3n del libro: Diccionario geomorfol\u00f3gico",
+    "descripcion": "",
+    "evento": 119,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 33,
+  "fields": {
+    "titulo": "Taller Evaluaci\u00f3n t\u00e9cnico \u2013Metodol\u00f3gica y de Gesti\u00f3n del proceso de ordenamiento ecol\u00f3gico territorial en sus diferentes niveles de aplicaci\u00f3n",
+    "descripcion": "",
+    "evento": 120,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 34,
+  "fields": {
+    "titulo": "El enfoque paisaj\u00edstico en el ordenamiento ecol\u00f3gico. Eje Rector Medio Ambiente",
+    "descripcion": "",
+    "evento": 121,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 35,
+  "fields": {
+    "titulo": "Primer Taller Nacional para el Desarrollo Metodol\u00f3gico del Ordenamiento Ecol\u00f3gico Territorial en M\u00e9xico",
+    "descripcion": "",
+    "evento": 122,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 36,
+  "fields": {
+    "titulo": "Algunas experiencias en el  Campo de Conocimiento en Manejo Integrado del Paisaje en el Posgrado en Geograf\u00eda de la UNAM",
+    "descripcion": "",
+    "evento": 123,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 37,
+  "fields": {
+    "titulo": "Criterios Geomorfol\u00f3gicos para la determinaci\u00f3n de las unidades de s\u00edntesis natural en el ordenamiento ecol\u00f3gico territorial , Paisajes F\u00edsico Geogr\u00e1ficos de M\u00e9xico a escala 1:500 000",
+    "descripcion": "",
+    "evento": 119,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 38,
+  "fields": {
+    "titulo": "Diagn\u00f3stico Geoecol\u00f3gico de la Zona Metropolitana de Morelia. Proyecto PAPIIT IA 301316",
+    "descripcion": "",
+    "evento": 124,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 39,
+  "fields": {
+    "titulo": "La Geoecolog\u00eda de Paisaje en el Ordenamiento Ecol\u00f3gico y Territorial",
+    "descripcion": "",
+    "evento": 125,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 40,
+  "fields": {
+    "titulo": "El diagn\u00f3stico integrado en la planeaci\u00f3n ambiental. La situaci\u00f3n ambiental en la Cuenca del r\u00edo Santiago -Guadalajara. Ponencia 2. Diagn\u00f3stico Geoecol\u00f3gico de la Zona Metropolitana de Morelia",
+    "descripcion": "",
+    "evento": 126,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 41,
+  "fields": {
+    "titulo": "La Regionalizaci\u00f3n f\u00edsico -Geogr\u00e1fica de M\u00e9xico. La Regionalizaci\u00f3n f\u00edsico-geogr\u00e1fica de Michoac\u00e1n de Ocampo. M\u00e9xico\". \"Evaluaci\u00f3n de la Degradaci\u00f3n del Recurso agua con base en las regiones f\u00edsico-geogr\u00e1ficas del estado de Guerrero. M\u00e9xico",
+    "descripcion": "",
+    "evento": 127,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 42,
+  "fields": {
+    "titulo": "Poster: La Regionalizaci\u00f3n F\u00edsico-Geogr\u00e1fica del estado de Guerrero, M\u00e9xico",
+    "descripcion": "",
+    "evento": 129,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 43,
+  "fields": {
+    "titulo": "Premisas Geogr\u00e1ficas de la organizaci\u00f3n ec\u00f3logo-productiva del territorio nacional",
+    "descripcion": "",
+    "evento": 130,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 44,
+  "fields": {
+    "titulo": "Ponencia 1: La Regionalizaci\u00f3n F\u00edsico Geogr\u00e1fica de Michoac\u00e1n M\u00e9xico. Ponencia 2: La propuesta de Regionalizaci\u00f3n F\u00edsico Geogr\u00e1fica para el territorio de M\u00e9xico",
+    "descripcion": "",
+    "evento": 131,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 45,
+  "fields": {
+    "titulo": "Poster: La Regionalizaci\u00f3n F\u00edsico-Geogr\u00e1fica del estado de Guerrero, M\u00e9xico",
+    "descripcion": "",
+    "evento": 133,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 46,
+  "fields": {
+    "titulo": "Ponencia 1: La Regionalizaci\u00f3n F\u00edsico Geogr\u00e1fica de Michoac\u00e1n M\u00e9xico. Ponencia 2: La propuesta de Regionalizaci\u00f3n F\u00edsico Geogr\u00e1fica para el territorio de M\u00e9xico",
+    "descripcion": "",
+    "evento": 131,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 47,
+  "fields": {
+    "titulo": "La Regionalizaci\u00f3n f\u00edsico-geogr\u00e1fica y la degradaci\u00f3n de los paisajes del estado de Guerrero. M\u00e9xico",
+    "descripcion": "",
+    "evento": 134,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 48,
+  "fields": {
+    "titulo": "Espacio geogr\u00e1fico y futuros alternos. Posgrado en Geograf\u00eda",
+    "descripcion": "",
+    "evento": 135,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 49,
+  "fields": {
+    "titulo": "Los posgrados en Geograf\u00eda en M\u00e9xico. Balances y perspectiva",
+    "descripcion": "",
+    "evento": 136,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 50,
+  "fields": {
+    "titulo": "La integraci\u00f3n geogr\u00e1fica en el campo de conocimientos Manejo Integrado del Paisaje del Posgrado en Geograf\u00eda de la UNAM",
+    "descripcion": "",
+    "evento": 137,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 51,
+  "fields": {
+    "titulo": "El Campo de conocimientos en Manejo Integrado del Paisaje de la Maestr\u00eda en Geograf\u00eda de la UNAM, resultados y retos",
+    "descripcion": "",
+    "evento": 138,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 52,
+  "fields": {
+    "titulo": "Reuni\u00f3n Geograf\u00eda de los suelos de M\u00e9xico. 2011",
+    "descripcion": "",
+    "evento": 139,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 53,
+  "fields": {
+    "titulo": "Poster: La Regionalizaci\u00f3n f\u00edsico geogr\u00e1fica y la degradaci\u00f3n de los paisajes del estado de Guerrero",
+    "descripcion": "",
+    "evento": 140,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 54,
+  "fields": {
+    "titulo": "\u00c1reas de atenci\u00f3n prioritaria en M\u00e9xico: una \u00f3ptica medioambiental",
+    "descripcion": "",
+    "evento": 141,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 55,
+  "fields": {
+    "titulo": "Poster: Tipolog\u00eda y regionalizaci\u00f3n f\u00edsico geogr\u00e1fica de la Pen\u00ednsula de Baja California. M\u00e9xico",
+    "descripcion": "",
+    "evento": 142,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 56,
+  "fields": {
+    "titulo": "Tipolog\u00eda y Regionalizaci\u00f3n F\u00edsico Geogr\u00e1fica de la pen\u00ednsula de Baja California. M\u00e9xico",
+    "descripcion": "",
+    "evento": 143,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 57,
+  "fields": {
+    "titulo": "Ense\u00f1anza de la Geograf\u00eda en M\u00e9xico: Nuevo Campo de Conocimiento en Manejo Integrado del Paisaje en el Posgrado en Geograf\u00eda",
+    "descripcion": "",
+    "evento": 144,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 58,
+  "fields": {
+    "titulo": "Moderador: Panel 27: Geograf\u00eda Ambiental I. b. Comentarista: Panel 27: Geograf\u00eda Ambiental",
+    "descripcion": "",
+    "evento": 145,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 59,
+  "fields": {
+    "titulo": "Moderador Panel 13",
+    "descripcion": "",
+    "evento": 146,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 60,
+  "fields": {
+    "titulo": "Moderador Panel 16: La tercera frontera mexicana: Geograf\u00eda de la Pesca. Moderador Panel 22: Efectos sociales del tr\u00e1nsito urbano. Comentarista Panel 10: Nuevos enfoques en la gesti\u00f3n ambiental y de los recursos naturales",
+    "descripcion": "",
+    "evento": 147,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 61,
+  "fields": {
+    "titulo": "V Simposio de  Ense\u00f1anza de la Geograf\u00eda en M\u00e9xico",
+    "descripcion": "",
+    "evento": 148,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 62,
+  "fields": {
+    "titulo": "XVI F\u00f3rum de Ciencia y T\u00e9cnica. Instituto de Materiales y Reactivos",
+    "descripcion": "",
+    "evento": 149,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 63,
+  "fields": {
+    "titulo": "C\u00e1tedra de Medio Ambiente. Instituto de Ciencias y Tecnolog\u00eda Nucleares",
+    "descripcion": "",
+    "evento": 150,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 64,
+  "fields": {
+    "titulo": "II Taller provincial del Grupo LUCEA, Medio Ambiente y Urbanismo",
+    "descripcion": "",
+    "evento": 151,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 65,
+  "fields": {
+    "titulo": "Taller Geograf\u00eda a Debate. Sociedad Cubana de Geograf\u00eda",
+    "descripcion": "",
+    "evento": 152,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 66,
+  "fields": {
+    "titulo": "IV Taller de Medio Ambiente. Escuela de Hoteler\u00eda y Turismo",
+    "descripcion": "",
+    "evento": 152,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 67,
+  "fields": {
+    "titulo": "IV Taller de Medio Ambiente",
+    "descripcion": "",
+    "evento": 153,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 68,
+  "fields": {
+    "titulo": "Primer Taller para la Presentaci\u00f3n, Revisi\u00f3n y An\u00e1lisis del  Inventario Nacional de Emisiones y Absorciones de Gases de Efecto Invernadero Instituto de Meteorolog\u00eda",
+    "descripcion": "",
+    "evento": 155,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 69,
+  "fields": {
+    "titulo": "Taller para la Presentaci\u00f3n, Revisi\u00f3n y An\u00e1lisis del  Inventario Nacional de Emisiones y Absorciones de Gases de Efecto Invernadero Instituto de Meteorolog\u00eda. CITMA. CC: TRAIN",
+    "descripcion": "",
+    "evento": 156,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 70,
+  "fields": {
+    "titulo": "II Congreso Nacional de Geograf\u00eda, San Antonio de los Ba\u00f1os",
+    "descripcion": "",
+    "evento": 157,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 71,
+  "fields": {
+    "titulo": "VII F\u00f3rum municipal de Piezas de repuesto, equipos y tecnolog\u00eda de avanzada",
+    "descripcion": "",
+    "evento": 158,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 72,
+  "fields": {
+    "titulo": "Ponencia: Geo-ecological regionalization in Michoac\u00e1n, Mexico",
+    "descripcion": "",
+    "evento": 159,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 73,
+  "fields": {
+    "titulo": "El enfoque paisaj\u00edstico en el Ordenamiento territorial",
+    "descripcion": "",
+    "evento": 160,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 74,
+  "fields": {
+    "titulo": "La geograf\u00eda cubana y su aporte a Am\u00e9rica Latina",
+    "descripcion": "",
+    "evento": 161,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 75,
+  "fields": {
+    "titulo": "Integrative environmental science and research for sustainability. Theoretical and methodological bases of investigations to dynamics and management of human-environmental-systems",
+    "descripcion": "",
+    "evento": 162,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 76,
+  "fields": {
+    "titulo": "La contaminaci\u00f3n de los suelos en Ciudad de la Habana",
+    "descripcion": "",
+    "evento": 163,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 77,
+  "fields": {
+    "titulo": "Seminario Internacional de Planeaci\u00f3n Chiapas: Retos y perspectivas de la Planeaci\u00f3n en Chiapas",
+    "descripcion": "",
+    "evento": 164,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 78,
+  "fields": {
+    "titulo": "Taller internacional M\u00e9xico \u2013 Cuba sobre Metodolog\u00eda del Ordenamiento Territorial",
+    "descripcion": "",
+    "evento": 165,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 79,
+  "fields": {
+    "titulo": "Encuentro Internacional Sostenibilidad del Desarrollo Territorial. Cuba",
+    "descripcion": "",
+    "evento": 166,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 80,
+  "fields": {
+    "titulo": "Heterogeneidad geoecol\u00f3gica en humedales costeros del Golfo de M\u00e9xico. Paisajes f\u00edsico-geogr\u00e1ficos de ecosistemas tropicales costeros continentales en dos \u00e1reas naturales protegidas del Golfo de M\u00e9xico",
+    "descripcion": "",
+    "evento": 167,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 81,
+  "fields": {
+    "titulo": "Ordenamiento ecol\u00f3gico general del territorio mexicano: una visi\u00f3n estrat\u00e9gica para el desarrollo sustentable nacional",
+    "descripcion": "",
+    "evento": 168,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 82,
+  "fields": {
+    "titulo": "La situaci\u00f3n ambiental del estado de Michoac\u00e1n de Ocampo M\u00e9xico",
+    "descripcion": "",
+    "evento": 169,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 83,
+  "fields": {
+    "titulo": "La tipolog\u00eda de los paisajes antropo-naturales como base para el ordenamiento ecol\u00f3gico territorial a diferentes escalas",
+    "descripcion": "",
+    "evento": 170,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 84,
+  "fields": {
+    "titulo": "\u00c1reas de atenci\u00f3n prioritaria medioambiental en M\u00e9xico",
+    "descripcion": "",
+    "evento": 171,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 85,
+  "fields": {
+    "titulo": "Algunos indicadores biof\u00edsicos, sociales y econ\u00f3micos de M\u00e9xico: plataforma para su evaluaci\u00f3n medioambiental actual",
+    "descripcion": "",
+    "evento": 172,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 86,
+  "fields": {
+    "titulo": "Miembro del Comit\u00e9 Organizador. Ponencias: a. Etapa de Pron\u00f3stico del Programa de Ordenamiento Ecol\u00f3gico General del Territorio (POEGT), M\u00e9xico: escenarios: contextual, tendenciales y estrat\u00e9gico",
+    "descripcion": "Etapa de formulaci\u00f3n de la propuesta del Programa de Ordenamiento Ecol\u00f3gico General del Territorio (POEGT), M\u00e9xico.\r\nModerador: Sesi\u00f3n 10: \u201cOrdenamientos Ecol\u00f3gicos y Territoriales a distintas Escalas. Estudio de casos II.\r\nModerador Sesi\u00f3n 26: Informaci\u00f3n Geogr\u00e1fica y Herramientas para el Ordenamiento Ecol\u00f3gico y Territorial",
+    "evento": 84,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 87,
+  "fields": {
+    "titulo": "Ponencia: An\u00e1lisis del Relieve en el Ordenamiento Ecol\u00f3gico territorial. b. Ponencia: La Geoecolog\u00eda y el ordenamiento ecol\u00f3gico territorial. Estudio de caso  c. Cartel. Evaluaci\u00f3n de las potencialidades naturales en el ordenamiento ecol\u00f3gico territorial",
+    "descripcion": "",
+    "evento": 174,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 88,
+  "fields": {
+    "titulo": "Congreso Cient\u00edfico Internacional. Centro Nacional de Investigaciones Cient\u00edficas",
+    "descripcion": "",
+    "evento": 175,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 89,
+  "fields": {
+    "titulo": "Convenci\u00f3n Tr\u00f3pico 2004",
+    "descripcion": "",
+    "evento": 176,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 90,
+  "fields": {
+    "titulo": "IV Convenci\u00f3n Internacional sobre Medio Ambiente y Desarrollo",
+    "descripcion": "",
+    "evento": 177,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 91,
+  "fields": {
+    "titulo": "III Seminario Latinoamericano de Geograf\u00eda F\u00edsica",
+    "descripcion": "",
+    "evento": 106,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 92,
+  "fields": {
+    "titulo": "Taller Cient\u00edfico GEOCUENCAS III",
+    "descripcion": "",
+    "evento": 179,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 93,
+  "fields": {
+    "titulo": "Noveno Encuentro de Ge\u00f3grafos de Am\u00e9rica Latina",
+    "descripcion": "",
+    "evento": 180,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 94,
+  "fields": {
+    "titulo": "La ciencia de los Paisajes como fundamento para el Ordenamiento y la Gesti\u00f3n Territorial III",
+    "descripcion": "",
+    "evento": 88,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 95,
+  "fields": {
+    "titulo": "La ciencia de los Paisajes como fundamento para el ordenamiento y la gesti\u00f3n territorial III",
+    "descripcion": "",
+    "evento": 182,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 96,
+  "fields": {
+    "titulo": "Taller cient\u00edfico Geocuencas II",
+    "descripcion": "",
+    "evento": 183,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 97,
+  "fields": {
+    "titulo": "I Seminario Latinoamericano de Geograf\u00eda F\u00edsica",
+    "descripcion": "",
+    "evento": 89,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 98,
+  "fields": {
+    "titulo": "II Convenci\u00f3n Internacional Sobre Medio Ambiente y Desarrollo",
+    "descripcion": "",
+    "evento": 184,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 99,
+  "fields": {
+    "titulo": "II Convenci\u00f3n Internacional Sobre Medio Ambiente y Desarrollo",
+    "descripcion": "",
+    "evento": 184,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 100,
+  "fields": {
+    "titulo": "Convenci\u00f3n Internacional Tr\u00f3pico 99",
+    "descripcion": "",
+    "evento": 90,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 101,
+  "fields": {
+    "titulo": "IV Junta Consultiva del Postgrado en Iberoam\u00e9rica",
+    "descripcion": "",
+    "evento": 186,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 102,
+  "fields": {
+    "titulo": "International Workshop on management capacity building for coasts and oceans in the wider Carribean",
+    "descripcion": "",
+    "evento": 187,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 103,
+  "fields": {
+    "titulo": "Symposium: Estructuras ec\u00f3logo - paisaj\u00edsticas, el problema de Cuba",
+    "descripcion": "",
+    "evento": 188,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 104,
+  "fields": {
+    "titulo": "Taller Internacional GEOCUENCA I",
+    "descripcion": "",
+    "evento": 189,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 105,
+  "fields": {
+    "titulo": "II Taller Internacional sobre Ordenamiento Geoecol\u00f3gico de los Paisajes",
+    "descripcion": "",
+    "evento": 190,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 106,
+  "fields": {
+    "titulo": "III Junta Consultiva sobre el Postgrado  en Iberoam\u00e9rica",
+    "descripcion": "",
+    "evento": 191,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 107,
+  "fields": {
+    "titulo": "Taller internacional M\u00e9xico - Cuba en la perspectiva ambiental, problemas y alternativas",
+    "descripcion": "",
+    "evento": 192,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 108,
+  "fields": {
+    "titulo": "Primer encuentro T\u00e9cnico del Centro Latinoamericano de Estudios Educacionales y Ambientales",
+    "descripcion": "",
+    "evento": 193,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 109,
+  "fields": {
+    "titulo": "V Encuentro de Ge\u00f3grafos de Am\u00e9rica Latina",
+    "descripcion": "",
+    "evento": 194,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 110,
+  "fields": {
+    "titulo": "Regional conference of Latin - American and Caribbean countries",
+    "descripcion": "",
+    "evento": 195,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 111,
+  "fields": {
+    "titulo": "I er Taller Internacional Medio Ambiente y Desarrollo Sostenible",
+    "descripcion": "",
+    "evento": 196,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 112,
+  "fields": {
+    "titulo": "Ier Taller Internacional sobre Ordenamiento Geoecol\u00f3gico de los Paisajes",
+    "descripcion": "",
+    "evento": 197,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 113,
+  "fields": {
+    "titulo": "III Conferencia Internacional sobre Manejo Ecol\u00f3gico de los Paisajes",
+    "descripcion": "",
+    "evento": 198,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 114,
+  "fields": {
+    "titulo": "Primer Taller Internacional sobre la transformaci\u00f3n del medio geogr\u00e1fico en Cuba",
+    "descripcion": "",
+    "evento": 199,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 115,
+  "fields": {
+    "titulo": "V Conferencia Cient\u00edfica de Ciencias Naturales de  la Universidad de la Habana",
+    "descripcion": "",
+    "evento": 200,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 116,
+  "fields": {
+    "titulo": "IV. Conferencia Cient\u00edfica de Ciencias Naturales",
+    "descripcion": "",
+    "evento": 202,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 117,
+  "fields": {
+    "titulo": "IV. Conferencia Cient\u00edfica de Ciencias Naturales",
+    "descripcion": "",
+    "evento": 202,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 118,
+  "fields": {
+    "titulo": "II Jornada Cient\u00edfica del Instituto de Suelos de la Academia de Ciencias de Cuba",
+    "descripcion": "",
+    "evento": 203,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 119,
+  "fields": {
+    "titulo": "Foro Cient\u00edfico XIV Aniversario del Instituto de Suelos de la Academia de Ciencias de Cuba",
+    "descripcion": "",
+    "evento": 204,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 120,
+  "fields": {
+    "titulo": "Evento 250 aniversario de la Universidad de la Habana",
+    "descripcion": "",
+    "evento": 205,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 121,
+  "fields": {
+    "titulo": "Presentaci\u00f3n de la Conferencia:La cuenca hidrogr\u00e1fica",
+    "descripcion": "Organizaci\u00f3n de recorrido por el campus UNAM -Morelia, a estudiantes del tercer grado de la Escuela primaria Centro Educativo de Morelia (CEM)",
+    "evento": 206,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 122,
+  "fields": {
+    "titulo": "Presentaci\u00f3n del programa de Posgrado en Geograf\u00eda Manejo Integrado del Paisaje",
+    "descripcion": "Estudiantes de la Licenciatura en Geograf\u00eda de la Universidad de M\u00fanich",
+    "evento": 207,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 123,
+  "fields": {
+    "titulo": "Presentaci\u00f3n del programa del Posgrado en Geograf\u00eda a estudiantes de a\u00f1os terminales del Instituto Tecnol\u00f3gico Superior de Puru\u00e1ndiro",
+    "descripcion": "",
+    "evento": 209,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 124,
+  "fields": {
+    "titulo": "Presentaci\u00f3n de campos de conocimiento de la Maestr\u00eda en Geograf\u00eda",
+    "descripcion": "Dirigida a estudiantes de Licenciatura en Biolog\u00eda del Instituto Tecnol\u00f3gico de Ciudad Altamirano",
+    "evento": 209,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 125,
+  "fields": {
+    "titulo": "Presentaci\u00f3n del Libro: Diccionario Geomorfol\u00f3gico. Del Dr. Jos\u00e9 Lugo Hubp",
+    "descripcion": "",
+    "evento": 210,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 126,
+  "fields": {
+    "titulo": "Charla: Nuevo Campo de Conocimiento en Manejo Integrado del Paisaje en el Posgrado en Geograf\u00eda UNAM",
+    "descripcion": "Organizado por la Universidad Aut\u00f3noma de Guerrero y el CEPE-UNAM",
+    "evento": 211,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 127,
+  "fields": {
+    "titulo": "La integraci\u00f3n en la Geograf\u00eda: El posgrado en la UNAM",
+    "descripcion": "Dirigida a estudiantes de la Licenciatura en Geograf\u00eda de la Universidad de Munich. Alemania",
+    "evento": 212,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 128,
+  "fields": {
+    "titulo": "Presentaci\u00f3n de campos de conocimiento de la Maestr\u00eda en Geograf\u00eda y \u00c1reas tem\u00e1ticas del Doctorado en Geograf\u00eda",
+    "descripcion": "Dirigida a aspirantes a ingresar al Posgrado en la convocatoria 2014-1",
+    "evento": 212,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 129,
+  "fields": {
+    "titulo": "Presentaci\u00f3n de campos de conocimiento de la Maestr\u00eda en Geograf\u00eda y \u00c1reas tem\u00e1ticas del Doctorado en Geograf\u00eda",
+    "descripcion": "Dirigida a aspirantes a ingresar al Posgrado en la convocatoria 2013-1",
+    "evento": 214,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 130,
+  "fields": {
+    "titulo": "Campo de Conocimiento en Manejo Integrado del Paisaje en el Posgrado en Geograf\u00eda",
+    "descripcion": "Dirigida a estudiantes de ingenier\u00eda de la Universidad Aut\u00f3noma Agraria Antonio Narro",
+    "evento": 217,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 131,
+  "fields": {
+    "titulo": "Campo de Conocimiento en Manejo Integrado del Paisaje en el Posgrado en Geograf\u00eda",
+    "descripcion": "Dirigida a estudiantes de ingenier\u00eda de la Universidad Aut\u00f3noma Agraria Antonio Narro",
+    "evento": 215,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 132,
+  "fields": {
+    "titulo": "El posgrado en Geograf\u00eda de la UNAN, retos para la integraci\u00f3n en la Geograf\u00eda",
+    "descripcion": "Dirigida a estudiantes de la Licenciatura en Geograf\u00eda de la Universidad de Munich Alemania",
+    "evento": 216,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 133,
+  "fields": {
+    "titulo": "Campo de Conocimiento en Manejo Integrado del Paisaje en el Posgrado en Geograf\u00eda UNAM",
+    "descripcion": "Dirigida a estudiantes de Licenciatura. Convocatoria 2012 -1 para el ingreso a la Maestr\u00eda en Geograf\u00eda",
+    "evento": 217,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 134,
+  "fields": {
+    "titulo": "El Posgrado en Geograf\u00eda, una opci\u00f3n para estudiantes de la Licenciatura en Arquitectura del Paisaje de la UNAM",
+    "descripcion": "",
+    "evento": 219,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 135,
+  "fields": {
+    "titulo": "El posgrado en Geograf\u00eda en UNAM - Campus Morelia",
+    "descripcion": "",
+    "evento": 218,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 136,
+  "fields": {
+    "titulo": "Conferencia: Sistemas de Informaci\u00f3n Geogr\u00e1fica, Herramienta Esencial para la Planificaci\u00f3n",
+    "descripcion": "",
+    "evento": 220,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 137,
+  "fields": {
+    "titulo": "Pl\u00e1tica:Los Sistemas de Informaci\u00f3n Geogr\u00e1fica, Utilidades y Aplicaciones",
+    "descripcion": "",
+    "evento": 22,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 138,
+  "fields": {
+    "titulo": "Estudio ambiental del tiradero de desechos municipales de la Cd. de Oaxaca",
+    "descripcion": "",
+    "evento": 27,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 139,
+  "fields": {
+    "titulo": "La tecnolog\u00eda y la prevenci\u00f3n de los desastres naturales",
+    "descripcion": "",
+    "evento": 29,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 140,
+  "fields": {
+    "titulo": "La tecnolog\u00eda de manejo de informaci\u00f3n geogr\u00e1fica para estudios de contaminaci\u00f3n ambiental",
+    "descripcion": "",
+    "evento": 30,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 141,
+  "fields": {
+    "titulo": "Los SIG en el manejo de las cuencas hidrogr\u00e1ficas",
+    "descripcion": "",
+    "evento": 31,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 142,
+  "fields": {
+    "titulo": "Los Sistemas de Informaci\u00f3n Geogr\u00e1fica en la Planeaci\u00f3n Territorial",
+    "descripcion": "",
+    "evento": 51,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 143,
+  "fields": {
+    "titulo": "Mesa redonda: Foro para el an\u00e1lisis sobre percepci\u00f3n remota en la detecci\u00f3n de incendios forestales",
+    "descripcion": "",
+    "evento": 33,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 144,
+  "fields": {
+    "titulo": "Aplicaciones de los Sistemas de Informaci\u00f3n Geogr\u00e1fica",
+    "descripcion": "",
+    "evento": 34,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 145,
+  "fields": {
+    "titulo": "Conferencia:The CEC\u2019s Geographical Information System",
+    "descripcion": "",
+    "evento": 37,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 146,
+  "fields": {
+    "titulo": "Geographic Tools for Environmental Management",
+    "descripcion": "",
+    "evento": 38,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 147,
+  "fields": {
+    "titulo": "Sistemas de Informaci\u00f3n Geogr\u00e1fica Aplicados a Bosques",
+    "descripcion": "",
+    "evento": 39,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 148,
+  "fields": {
+    "titulo": "Diversidad de mam\u00edferos en M\u00e9xico",
+    "descripcion": "",
+    "evento": 40,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 149,
+  "fields": {
+    "titulo": "El apoyo de las computadoras en la preparaci\u00f3n de atlas nacionales",
+    "descripcion": "",
+    "evento": 41,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 150,
+  "fields": {
+    "titulo": "Las computadoras en la cartograf\u00eda y sus aplicaciones en la ingenier\u00eda",
+    "descripcion": "",
+    "evento": 42,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 151,
+  "fields": {
+    "titulo": "Taller realizado en las actividades del Proyecto CIENCIA EN ACCI\u00d3N",
+    "descripcion": "Direcci\u00f3n de Proyectos de Investigaci\u00f3n e Innovaci\u00f3n, en Santa Clara del Cobre, Mic",
+    "evento": 43,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 152,
+  "fields": {
+    "titulo": "Conferencia los drones en la ciencia",
+    "descripcion": "",
+    "evento": 44,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 153,
+  "fields": {
+    "titulo": "Taller los drones en la ciencia",
+    "descripcion": "",
+    "evento": 46,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 154,
+  "fields": {
+    "titulo": "Conferencia Los drones",
+    "descripcion": "",
+    "evento": 45,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 155,
+  "fields": {
+    "titulo": "Aplicaciones de los drones en Ciencia",
+    "descripcion": "",
+    "evento": 48,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 156,
+  "fields": {
+    "titulo": "El espacio en que vivimos",
+    "descripcion": "",
+    "evento": 49,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 157,
+  "fields": {
+    "titulo": "Taller de vuelo de drones",
+    "descripcion": "",
+    "evento": 50,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 158,
+  "fields": {
+    "titulo": "Conferencia los drones en la ciencia",
+    "descripcion": "",
+    "evento": 46,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 14
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 159,
+  "fields": {
+    "titulo": "Historia del descubrimiento de la cultura chupicuaro",
+    "descripcion": "",
+    "evento": 223,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 160,
+  "fields": {
+    "titulo": "La ocupaci\u00f3n territorial de la regi\u00f3n de Ac\u00e1mbaro en los siglos XVI y XVII",
+    "descripcion": "",
+    "evento": 224,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 161,
+  "fields": {
+    "titulo": "La cartograf\u00eda colonial, origen y aportaci\u00f3n: el ejemplo de la regi\u00f3n de Ac\u00e1mbaro",
+    "descripcion": "",
+    "evento": 225,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 162,
+  "fields": {
+    "titulo": "Trabajos arqueol\u00f3gicos recientes: La Cultura Chup\u00edcuaro y la ocupaci\u00f3n Tarasca en la regi\u00f3n de Ac\u00e1mbaro",
+    "descripcion": "",
+    "evento": 226,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 163,
+  "fields": {
+    "titulo": "La ocupaci\u00f3n Tarasca de la regi\u00f3n de Ac\u00e1mbaro antes de la Conquista",
+    "descripcion": "",
+    "evento": 227,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 164,
+  "fields": {
+    "titulo": "Les Tarasques",
+    "descripcion": "",
+    "evento": 229,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 165,
+  "fields": {
+    "titulo": "Les Tarasques, un peuple oubli\u00e9 du Mexique pr\u00e9hispanique (XIVe \u2013 XVIe si\u00e8cle)",
+    "descripcion": "",
+    "evento": 231,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 166,
+  "fields": {
+    "titulo": "Tarasque - Azt\u00e8ques: deux puissances militaires \u00e0 la veille de la Conqu\u00eate espagnole",
+    "descripcion": "",
+    "evento": 231,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 167,
+  "fields": {
+    "titulo": "Conferencia organizada en el marco del 20e cumplea\u00f1os del museo Fray Bernardo Padilla Gonz\u00e1lez",
+    "descripcion": "",
+    "evento": 226,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 168,
+  "fields": {
+    "titulo": "Ac\u00e1mbaro y la frontera del reino tarasco",
+    "descripcion": "",
+    "evento": 228,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 169,
+  "fields": {
+    "titulo": "Arqueogeograf\u00eda de los pueblos viejos y pueblos nuevos en el Occidente novohispano. El caso de Cuarum, Michoac\u00e1n, siglo XVI",
+    "descripcion": "",
+    "evento": 235,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 170,
+  "fields": {
+    "titulo": "Colonialismo y paisaje: \u00bfC\u00f3mo explotar los datos hist\u00f3ricos para reconstituir el territorio colonial?",
+    "descripcion": "",
+    "evento": 236,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 171,
+  "fields": {
+    "titulo": "La toponimia frente a la arqueolog\u00eda, aportes sobre la ocupaci\u00f3n de la regi\u00f3n de Ac\u00e1mbaro al momento de la Conquista\u201d, \u201cMesa 10: Toponimia e interrelaciones pluriling\u00fces",
+    "descripcion": "",
+    "evento": 237,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 9
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 172,
+  "fields": {
+    "titulo": "Ponencia: Crecimiento urbano en una ciudad media del centro de M\u00e9xico: El caso de la Ciudad  \t\t\tde Morelia, Michoac\u00e1n",
+    "descripcion": "Ponencia, con Nah\u00fam Efr\u00e9n, G\u00fazman, Erna L\u00f3pez y Margarita Onchi",
+    "evento": 268,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 173,
+  "fields": {
+    "titulo": "Inter-Institutional Program for Participative Conservation of Indigenous Maize in Michoac\u00e1n",
+    "descripcion": "",
+    "evento": 510,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 174,
+  "fields": {
+    "titulo": "La participaci\u00f3n de las mujeres en la conservaci\u00f3n de la diversidad biol\u00f3gica de las razas de ma\u00edces nativos en la Regi\u00f3n de E-Zirahu\u00e9n",
+    "descripcion": "",
+    "evento": 511,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 175,
+  "fields": {
+    "titulo": "Taller Adaptaci\u00f3n Agroecol\u00f3gica a la Variabilidad Clim\u00e1tica",
+    "descripcion": "",
+    "evento": 512,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 176,
+  "fields": {
+    "titulo": "Sustentabilidad, Campesinidad y Modernidad Alternativa",
+    "descripcion": "",
+    "evento": 514,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 177,
+  "fields": {
+    "titulo": "Programa para desarrollo y fortalecimiento de la cultura en la Cuenca del Lago P\u00e1tzcuaro-Zirahu\u00e9n",
+    "descripcion": "",
+    "evento": 513,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 178,
+  "fields": {
+    "titulo": "Conferencia: Del ma\u00edz a la tortilla, la conservaci\u00f3n de los ma\u00edces nativos",
+    "descripcion": "",
+    "evento": 515,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 180,
+  "fields": {
+    "titulo": "Alimentos transg\u00e9nicos y la defensa del ma\u00edz criollo",
+    "descripcion": "",
+    "evento": 516,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 181,
+  "fields": {
+    "titulo": "Ma\u00edz transg\u00e9nico en M\u00e9xico: hacia unaciudadan\u00eda informada",
+    "descripcion": "",
+    "evento": 517,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 182,
+  "fields": {
+    "titulo": "Conferencia: Medici\u00f3n de agrobiodiversidad funcional en sistemas productivos",
+    "descripcion": "",
+    "evento": 518,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 183,
+  "fields": {
+    "titulo": "Conferencia: Conservaci\u00f3n de ma\u00edces nativos a trav\u00e9s de sistemas locales alimentarios sustentables",
+    "descripcion": "",
+    "evento": 522,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 184,
+  "fields": {
+    "titulo": "Conferencia: Fundamentos e historia de la red Tsiri: mujer y agro-biodiversidad. G\u00e9nero, Biodiversidad y conocimiento tradicional",
+    "descripcion": "",
+    "evento": 519,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 185,
+  "fields": {
+    "titulo": "On the Ground Advances on Agroecology in Latin America",
+    "descripcion": "Hilgard Hall, College of Natural Resources, Universidad de California, Berkeley http://events.berkeley.edu/index.php/calendar/sn/CNR.html?event_ID=80504&date=2014-09-03",
+    "evento": 520,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 186,
+  "fields": {
+    "titulo": "Ma\u00edz identidad cultural e imagen del territorio mexicano",
+    "descripcion": "",
+    "evento": 521,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 205,
+  "fields": {
+    "titulo": "Imaginarios de la segregaci\u00f3n en el periurbano",
+    "descripcion": "",
+    "evento": 633,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 44
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 206,
+  "fields": {
+    "titulo": "Segregaci\u00f3n en el periurbano de Tar\u00edmbaro",
+    "descripcion": "",
+    "evento": 470,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 44
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 208,
+  "fields": {
+    "titulo": "Festival de las Ciencias y las Humanidades",
+    "descripcion": "Organizaci\u00f3n de actividades de divulgaci\u00f3n de las ciencias. Juego: \"no se orille a la orilla\". Macroman\u00eda.",
+    "evento": 610,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 53
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 209,
+  "fields": {
+    "titulo": "Ponencia",
+    "descripcion": "Ponencia en la Universidad de Tangamanga y el Instituto Tecnol\u00f3gico de San Luis Potos\u00ed.",
+    "evento": 789,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 53
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 210,
+  "fields": {
+    "titulo": "Explaining the Mexican sink",
+    "descripcion": "Margaret Skutsch, Armonia Borrego and Miguel Salinas (2018) Explaining the Mexican sink.  Paper presented at the IX International Symposium of the Programa Mexicana de Carbono. \u00c1lamos, Sonora.",
+    "evento": 800,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "usuario": 20
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 211,
+  "fields": {
+    "titulo": "Suelos de Morelia",
+    "descripcion": "",
+    "evento": 785,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "usuario": 12
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 212,
+  "fields": {
+    "titulo": "Conferencia: Agricultura y Desarrollo Rural Sustentable",
+    "descripcion": "",
+    "evento": 497,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 213,
+  "fields": {
+    "titulo": "Manejo sostenible de sistemas campesinos en Am\u00e9rica Latina",
+    "descripcion": "",
+    "evento": 484,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 214,
+  "fields": {
+    "titulo": "Conservaci\u00f3n de ma\u00edces nativos a nivel regional: resultados y desaf\u00edos",
+    "descripcion": "",
+    "evento": 501,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 1,
+  "fields": {
+    "tema": "I Seminario Latinoamericano de Geograf\u00eda F\u00edsica",
+    "fecha": "2000-08-01",
+    "descripcion": "Programa televisivo \u201cRevista de la Ma\u00f1ana\u201d",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 1,
+    "usuario": 17
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 2,
+  "fields": {
+    "tema": "Morelia el Crecimiento Urbano en los \u00faltimos 40 a\u00f1os. Cambio de Michoac\u00e1n",
+    "fecha": "2001-04-17",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 3,
+  "fields": {
+    "tema": "La cuenca del Lago de Cuitzeo: Planeaci\u00f3n del recurso h\u00eddrico. La Jornada Michoac\u00e1n, Suplemento 100ciencia",
+    "fecha": "2006-06-07",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 4,
+  "fields": {
+    "tema": "Sitios potenciales para rellenos sanitarios. La Jornada Michoac\u00e1n, Suplemento 100ciencia",
+    "fecha": "2006-07-19",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 23
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 5,
+  "fields": {
+    "tema": "Pobreza urbana, reto de megaciudades: UNAM",
+    "fecha": "2009-02-24",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 4,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 6,
+  "fields": {
+    "tema": "Lluvias afectan a clase media. Zonas inundables de Morelia: colonias cercanas  a los r\u00edos grande y chiquito",
+    "fecha": "2011-08-12",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 5,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 7,
+  "fields": {
+    "tema": "Creci\u00f3 poblaci\u00f3n de Morelia 58% en los \u00faltimos cinco a\u00f1os",
+    "fecha": "2013-02-26",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 6,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 8,
+  "fields": {
+    "tema": "Crecimiento urbano pone en riesgo a productores agropecuarios de Morelia: Investigadores de la UNAM",
+    "fecha": "2013-12-28",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 6,
+    "usuario": 33
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 10,
+  "fields": {
+    "tema": "Qu\u00e9 son los ma\u00edces criollos",
+    "fecha": "2005-05-18",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 7,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 11,
+  "fields": {
+    "tema": "La conservaci\u00f3n de la diversidad en la agricultura",
+    "fecha": "2007-05-16",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 8,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 12,
+  "fields": {
+    "tema": "La importancia de conservar la agricultura y semillas nativas",
+    "fecha": "2007-04-04",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 9,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 13,
+  "fields": {
+    "tema": "La importancia de Conservar el ma\u00edz criollo",
+    "fecha": "2007-04-21",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 11,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 15,
+  "fields": {
+    "tema": "La importancia de Conservar el ma\u00edz criollo",
+    "fecha": "2007-04-28",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 11,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 16,
+  "fields": {
+    "tema": "La importancia de Conservar el ma\u00edz criollo",
+    "fecha": "2007-05-05",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 11,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 17,
+  "fields": {
+    "tema": "La importancia de Conservar el ma\u00edz criollo",
+    "fecha": "2007-05-12",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 11,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 18,
+  "fields": {
+    "tema": "La importancia de Conservar el ma\u00edz criollo",
+    "fecha": "2008-05-07",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 12,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 19,
+  "fields": {
+    "tema": "Tema Ma\u00edz y transg\u00e9nicos",
+    "fecha": "2007-05-15",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 13,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 20,
+  "fields": {
+    "tema": "Tema Ma\u00edz y transg\u00e9nicos",
+    "fecha": "2009-07-22",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 14,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 21,
+  "fields": {
+    "tema": "Contra la Degradaci\u00f3n de los Suelos y Cultivos Org\u00e1nicos Realizados en E.U. por Mexicanos",
+    "fecha": "1993-05-20",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 16,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 23,
+  "fields": {
+    "tema": "Notas de prensa (ma\u00edz)",
+    "fecha": "2006-05-18",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 5,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 24,
+  "fields": {
+    "tema": "Nota de Prensa",
+    "fecha": "2006-05-16",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 6,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 26,
+  "fields": {
+    "tema": "2 Notas de Prensa",
+    "fecha": "2006-05-16",
+    "descripcion": "",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 16,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 27,
+  "fields": {
+    "tema": "Nota de Prensa",
+    "fecha": "2008-05-13",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 16,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 28,
+  "fields": {
+    "tema": "Proponen estrategias para preservar el ma\u00edz criollo",
+    "fecha": "2008-04-24",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 6,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 29,
+  "fields": {
+    "tema": "Preocupante, la erosi\u00f3n gen\u00e9tica del ma\u00edz, alerta Martha Astier",
+    "fecha": "2009-02-19",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 16,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 30,
+  "fields": {
+    "tema": "Los que resisten. Ind\u00edgenas y campesinos organizados en defensa del ma\u00edz nativo",
+    "fecha": "2009-12-07",
+    "descripcion": "",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 16,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 31,
+  "fields": {
+    "tema": "\u00bfC\u00f3mo cunde la contaminaci\u00f3n por ma\u00edces trang\u00e9nicos? El caso de Pich\u00e1taro",
+    "fecha": "2009-12-05",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 16,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 33,
+  "fields": {
+    "tema": "Tortilla artesanal en Michoac\u00e1n",
+    "fecha": "2010-07-17",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 16,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 34,
+  "fields": {
+    "tema": "Presentan evaluaci\u00f3n de impacto ecol\u00f3gico de aguacate en parcela",
+    "fecha": "2011-11-16",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 18,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 35,
+  "fields": {
+    "tema": "Presentan estudio sobre impacto ambiental por cultivo de aguacate a cargo de la Universidad Aut\u00f3noma de M\u00e9xico",
+    "fecha": "2011-11-15",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 19,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 36,
+  "fields": {
+    "tema": "Proyectan huertos de aguacate, erosi\u00f3n, exceso de fertilizaci\u00f3n y contaminaci\u00f3n",
+    "fecha": "2011-11-15",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 6,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 37,
+  "fields": {
+    "tema": "Transg\u00e9nicos, un c\u00e1ncer para los ecosistemas",
+    "fecha": "2012-03-27",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 20,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 38,
+  "fields": {
+    "tema": "Alimentation Generale / mars-avril-mai",
+    "fecha": "2012-04-12",
+    "descripcion": "",
+    "actividad": "OTRA",
+    "medio_divulgacion": 21,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 40,
+  "fields": {
+    "tema": "Nuevos debates sobre el ma\u00edz transg\u00e9nico y la soberan\u00eda alimentaria",
+    "fecha": "2013-10-19",
+    "descripcion": "",
+    "actividad": "OTRA",
+    "medio_divulgacion": 22,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 41,
+  "fields": {
+    "tema": "Una experiencia de sistemas alimentarios locales sustentables",
+    "fecha": "2017-05-02",
+    "descripcion": "",
+    "actividad": "OTRA",
+    "medio_divulgacion": 24,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 42,
+  "fields": {
+    "tema": "Valora los ma\u00edces nativos michoac\u00e1nos",
+    "fecha": "2017-05-02",
+    "descripcion": "",
+    "actividad": "OTRA",
+    "medio_divulgacion": 23,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 44,
+  "fields": {
+    "tema": "Una historia de Ma\u00edz",
+    "fecha": "2014-02-04",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 25,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 45,
+  "fields": {
+    "tema": "La milpa purh\u00e9pecha",
+    "fecha": "2016-01-01",
+    "descripcion": "Direcci\u00f3n Daniela L\u00f3pez. Producci\u00f3n y Gui\u00f3n Marta Astier, Sandra di Luca, Daniela L\u00f3pez. CIGA, GIRA AC. DGPA-PAPIIT. CONABIO",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 26,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 46,
+  "fields": {
+    "tema": "Los pasos de Humboldt: el volc\u00e1n Jorullo",
+    "fecha": "2005-11-10",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 27,
+    "usuario": 11
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 47,
+  "fields": {
+    "tema": "Opportunities for REDD+ in the tropical dry forests of Mexico",
+    "fecha": "2014-01-21",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 28,
+    "usuario": 20
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 48,
+  "fields": {
+    "tema": "La importancia de conservar la agricultura y semillas nativas",
+    "fecha": "2007-05-14",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 10,
+    "usuario": 32
+  }
+}
+]

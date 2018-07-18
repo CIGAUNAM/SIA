@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^organizacion-eventos-divulgacion/(?P<pk>[\w\-]+)/$', OrganizacionEventoDivulgacionDetalle.as_view(), name='organizacion_evento_divulgacion_detalle'),
 
     url(r'^participacion-eventos-divulgacion/json/', ParticipacionEventoDivulgacionJSON.as_view(), name='participacion_evento_divulgacion_lista__json'),
+    url(r'^participacion-eventos-divulgacion/json-otros/', ParticipacionEventoDivulgacionJSON.as_view(otros=True), name='participacion_evento_divulgacion_lista_otros__json'),
     url(r'^participacion-eventos-divulgacion/$', ParticipacionEventoDivulgacionLista.as_view(), name='participacion_evento_divulgacion_lista'),
     url(r'^participacion-eventos-divulgacion/(?P<pk>[\w\-]+)/eliminar$', ParticipacionEventoDivulgacionEliminar.as_view(), name='participacion_evento_divulgacion_eliminar'),
     url(r'^participacion-eventos-divulgacion/(?P<pk>[\w\-]+)/$', ParticipacionEventoDivulgacionDetalle.as_view(), name='participacion_evento_divulgacion_detalle'),
