@@ -146,6 +146,11 @@ class ParticipacionSociedadCientificaJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'tipo', 'ambito'))
 
+            json = json.replace('INVITACION', 'Por invitación')
+            json = json.replace('ELECCION', 'Por elección')
+            json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('NACIONAL', 'Nacional')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

@@ -1,11 +1,12 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Investigador:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Investigador postdoctoral supervisado.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -29,7 +30,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Disciplina a la que pertenece el investigador.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -45,7 +46,7 @@
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -71,7 +72,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -94,7 +95,7 @@
     <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto que desarrolla el investigador.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -116,7 +117,7 @@
     </p>
     <p><strong>Beca:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Beca recibida por el asesorado. Seleccionar una beca sólo si corresponde el caso.">
+           title="Beca recibida por el investigador. Seleccionar una beca sólo si corresponde el caso.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -141,7 +142,7 @@
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio de la supervisión."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -154,7 +155,7 @@
     <p><strong>Fecha de fin:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de fin de la supervisión."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -239,11 +240,12 @@
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Investigador:</strong>
+    {{ form.errors }}
+    <p><strong>Investigador:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Investigador postdoctoral supervisado.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -267,7 +269,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Disciplina a la que pertenece el investigador.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -283,7 +285,7 @@
                                               institución filtra las dependencias que pertenecen a la institución
                                               seleccionada de tal manera que se haga una selección más detallada.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -309,7 +311,7 @@
                                               disponibles están en función de la institución seleccionada en el campo
                                               anterior. Si no se selecciona una institución, se enlistan todas las
                                               dependencias pero no se puede saber a cual institución pertenecen.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -332,7 +334,7 @@
     <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Proyecto que desarrolla el investigador.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -354,7 +356,7 @@
     </p>
     <p><strong>Beca:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Beca recibida por el asesorado. Seleccionar una beca sólo si corresponde el caso.">
+           title="Beca recibida por el investigador. Seleccionar una beca sólo si corresponde el caso.">
             <i class="fa fa-question-circle"></i>
         </a>
     <div class="form-group" style="margin-top: -10px;">
@@ -379,7 +381,7 @@
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio de la supervisión."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -392,7 +394,7 @@
     <p><strong>Fecha de fin:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de fin de la supervisión."><i
-                class="fa fa-question-circle"></i></a>
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">

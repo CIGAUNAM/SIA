@@ -129,7 +129,7 @@ class SupervisionInvestigadorPostDoctoralForm(forms.ModelForm):
         )
     )
     proyecto = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto",
         widget=ModelSelect2Widget(
@@ -160,9 +160,9 @@ class SupervisionInvestigadorPostDoctoralForm(forms.ModelForm):
         model = SupervisionInvestigadorPostDoctoral
         exclude = ['usuario', ]
         widgets = {
-            'articulos': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'libros': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'capitulos_libros': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'articulos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'libros': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'capitulos_libros': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -176,7 +176,7 @@ class DesarrolloGrupoInvestigacionInternoForm(forms.ModelForm):
         required=True)
     grado_consolidacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     pais = forms.ModelChoiceField(
-        required=False,
+        required=True,
         queryset=Pais.objects.all(),
         label="Pais",
         widget=ModelSelect2Widget(
@@ -190,7 +190,7 @@ class DesarrolloGrupoInvestigacionInternoForm(forms.ModelForm):
         model = DesarrolloGrupoInvestigacionInterno
         exclude = []
         widgets = {
-            "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "usuarios": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

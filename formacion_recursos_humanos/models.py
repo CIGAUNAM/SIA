@@ -87,7 +87,7 @@ class DesarrolloGrupoInvestigacionInterno(models.Model):
         return self.nombre
 
     def get_absolute_url(self):
-        return reverse('desarrollo_grupo_investigacion_detalle', kwargs={'pk': self.pk})
+        return reverse('grupo_investigacion_interno_detalle', kwargs={'pk': self.pk})
 
     def natural_key(self):
         return self.nombre
