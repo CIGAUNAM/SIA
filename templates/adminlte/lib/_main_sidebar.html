@@ -175,23 +175,25 @@
             <li{% if aux.url_seccion == 'capitulos-libros-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/capitulos-libros-divulgacion">
                     <i class="fa fa-circle-o"></i> Capítulos en libros de<br/>
-                    <i class="fa fa-none"></i>divulgación
+                    <i class="fa fa-none"></i> divulgación
                 </a>
             </li>
             <li{% if aux.url_seccion == 'organizacion-eventos-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/organizacion-eventos-divulgacion">
-                    <i class="fa fa-circle-o"></i> Organización de eventos
+                    <i class="fa fa-circle-o"></i> Organización de eventos <br/>
+                    <i class="fa fa-none"></i> de divulgación
                 </a>
             </li>
             <li{% if aux.url_seccion == 'participacion-eventos-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/participacion-eventos-divulgacion">
-                    <i class="fa fa-circle-o"></i> Participación en eventos
+                    <i class="fa fa-circle-o"></i> Participación en eventos <br/>
+                    <i class="fa fa-none"></i> de divulgación
                 </a>
             </li>
             <li{% if aux.url_seccion == 'medios-divulgacion' %} class="active"{% endif %}>
                 <a href="/divulgacion-cientifica/medios-divulgacion">
                     <i class="fa fa-circle-o"></i> Programas de radio,<br>
-                    <i class="fa fa-none"></i>televisión e internet
+                    <i class="fa fa-none"></i> televisión e internet
                 </a>
             </li>
         </ul>
@@ -377,9 +379,22 @@
             <li{% if aux.url_seccion == 'comites-candidatura-doctoral' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-candidatura-doctoral">
                     <i class="fa fa-circle-o"></i> Comité de examen de<br/>
-                    <i class="fa fa-none"></i>candidatura doctoral
+                    <i class="fa fa-none"></i> candidatura doctoral
                 </a>
             </li>
+            <li{% if aux.url_seccion == 'supervision-investigadores-postdoctorales' %} class="active"{% endif %}>
+                <a href="/formacion-recursos-humanos/supervision-investigadores-postdoctorales/">
+                    <i class="fa fa-circle-o"></i> Supervisión de <br/>
+                    <i class="fa fa-none"></i> Investigadores Postdoc.
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'grupos-investigacion-internos' %} class="active"{% endif %}>
+                <a href="/formacion-recursos-humanos/grupos-investigacion-internos/">
+                    <i class="fa fa-circle-o"></i> Desarrollo de grupos <br/>
+                    <i class="fa fa-none"></i> de investigación internos
+                </a>
+            </li>
+
         </ul>
     </li>
 
@@ -415,6 +430,12 @@
             <li{% if aux.url_seccion == 'alumnos' %} class="active"{% endif %}>
                 <a href="/distinciones/alumnos">
                     <i class="fa fa-circle-o"></i> Recibidos por alumnos
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'sociedades-cientificas' %} class="active"{% endif %}>
+                <a href="/distinciones/sociedades-cientificas/">
+                    <i class="fa fa-circle-o"></i> Participación en <br/>
+                    <i class="fa fa-none"></i> sociedad cientificas
                 </a>
             </li>
         </ul>

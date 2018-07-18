@@ -124,14 +124,14 @@ class DesarrolloGrupoInvestigacionInternoLista(ObjectCreateVarMixin, View):
     form_class = DesarrolloGrupoInvestigacionInternoForm
     model = DesarrolloGrupoInvestigacionInterno
     aux = DesarrolloGrupoInvestigacionInternoContext.contexto
-    template_name = 'grupo_investigacion.html'
+    template_name = 'grupo_investigacion_interno.html'
 
 
 class DesarrolloGrupoInvestigacionInternoDetalle(ObjectUpdateVarMixin, View):
     form_class = DesarrolloGrupoInvestigacionInternoForm
     model = DesarrolloGrupoInvestigacionInterno
     aux = DesarrolloGrupoInvestigacionInternoContext.contexto
-    template_name = 'grupo_investigacion.html'
+    template_name = 'grupo_investigacion_interno.html'
 
 
 class DesarrolloGrupoInvestigacionInternoEliminar(View):

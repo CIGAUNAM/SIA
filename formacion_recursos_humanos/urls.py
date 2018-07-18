@@ -11,10 +11,10 @@ urlpatterns = [
     url(r'^asesorias/(?P<pk>[\w\-]+)/eliminar$', AsesoriaEstudianteEliminar.as_view(), name='asesor_estancia_eliminar'),
     url(r'^asesorias/(?P<pk>[\w\-]+)/$', AsesoriaEstudianteDetalle.as_view(), name='asesor_estancia_detalle'),
 
-    url(r'^supervision-investigadores-postdoctorales/json/', SupervisionInvestigadorPostDoctoralJSON.as_view(), name='supervision_investigador_posdoctoral_lista__json'),
-    url(r'^supervision-investigadores-postdoctorales/$', SupervisionInvestigadorPostDoctoralLista.as_view(), name='supervision_investigador_posdoctoral_lista'),
-    url(r'^supervision-investigadores-postdoctorales/(?P<pk>[\w\-]+)/eliminar$', SupervisionInvestigadorPostDoctoralEliminar.as_view(), name='supervision_investigador_posdoctoral_eliminar'),
-    url(r'^supervision-investigadores-postdoctorales/(?P<pk>[\w\-]+)/$', SupervisionInvestigadorPostDoctoralDetalle.as_view(), name='supervision_investigador_posdoctoral_detalle'),
+    url(r'^supervision-investigadores-postdoctorales/json/', SupervisionInvestigadorPostDoctoralJSON.as_view(), name='supervision_investigador_postdoctoral_lista__json'),
+    url(r'^supervision-investigadores-postdoctorales/$', SupervisionInvestigadorPostDoctoralLista.as_view(), name='supervision_investigador_postdoctoral_lista'),
+    url(r'^supervision-investigadores-postdoctorales/(?P<pk>[\w\-]+)/eliminar$', SupervisionInvestigadorPostDoctoralEliminar.as_view(), name='supervision_investigador_postdoctoral_eliminar'),
+    url(r'^supervision-investigadores-postdoctorales/(?P<pk>[\w\-]+)/$', SupervisionInvestigadorPostDoctoralDetalle.as_view(), name='supervision_investigador_postdoctoral_detalle'),
 
     url(r'^grupos-investigacion-internos/json/', DesarrolloGrupoInvestigacionInternoJSON.as_view(), name='grupo_investigacion_interno_lista__json'),
     url(r'^grupos-investigacion-internos/json-otros/', DesarrolloGrupoInvestigacionInternoJSON.as_view(otros=True), name='grupo_investigacion_interno_lista__json_otros'),
