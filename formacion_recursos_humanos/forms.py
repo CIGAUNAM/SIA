@@ -353,10 +353,11 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto",
+        label="Proyecto de investigación",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=ProyectoInvestigacion.objects.all(),

@@ -158,6 +158,7 @@ class ComiteTutoral(models.Model):
 class ComiteCandidaturaDoctoral(models.Model):
     candidato = models.ForeignKey(User, related_name='comite_candidatura_doctoral_candidato',
                                   on_delete=models.DO_NOTHING)
+    titulo_tesis = models.CharField(max_length=255, null=True, blank=True)
     asesores = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_asesores', blank=True)
     sinodales = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
