@@ -141,17 +141,21 @@ class OrganizacionEventoDivulgacionEliminar(View):
 
 
 class ParticipacionEventoDivulgacionJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = ParticipacionEventoDivulgacion.objects.filter(usuario=usuarioid)
+            if self.otros:
+                items = ParticipacionEventoDivulgacion.objects.exclude(participantes=usuarioid)
+            else:
+                items = ParticipacionEventoDivulgacion.objects.filter(participantes=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'evento', 'ambito'))
 
             json = json.replace('INSTITUCIONAL', 'Institucional')
             json = json.replace('REGIONAL', 'Regional')
-            json = json.replace('NACIONAL', 'Nacional')
             json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('NACIONAL', 'Nacional')
             json = json.replace('OTRO', 'Otro')
             json = json.replace('COORDINADOR', 'Coordinador general')
             json = json.replace('COMITE', 'Comité organizador')
@@ -163,14 +167,14 @@ class ParticipacionEventoDivulgacionJSON(View):
             raise Http404
 
 
-class ParticipacionEventoDivulgacionLista(ObjectCreateMixin, View):
+class ParticipacionEventoDivulgacionLista(ObjectCreateVarMixin, View):
     form_class = ParticipacionEventoDivulgacionForm
     model = ParticipacionEventoDivulgacion
     aux = ParticipacionEventoDivulgacionContext.contexto
     template_name = 'participacion_evento_divulgacion.html'
 
 
-class ParticipacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
+class ParticipacionEventoDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = ParticipacionEventoDivulgacionForm
     model = ParticipacionEventoDivulgacion
     template_name = 'participacion_evento_divulgacion.html'
