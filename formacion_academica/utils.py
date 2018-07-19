@@ -1,19 +1,18 @@
 url_categoria = 'formacion-academica'
-bc_seccion = 'Formación Académica'
+bc_seccion = 'Formación académica'
 
 
 class CursoEspecializacionContext:
-    obj = 'Curso de Especialización'
-    objs = 'Cursos de Especialización'
+    obj = 'curso de especialización'
+    objs = 'cursos de especialización'
     url_seccion = 'cursos-especializacion'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
                 'titulos_tabla': ['Curso', 'Tipo', 'Horas', 'Dependencia', 'Fin']}
-
 
     tabla_mios =  '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
@@ -44,15 +43,15 @@ class CursoEspecializacionContext:
 
 
 class LicenciaturaContext:
-    obj = 'Licenciatura'
-    objs = 'Licenciaturas'
+    obj = 'licenciatura'
+    objs = 'licenciaturas'
     url_seccion = 'licenciaturas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
                 'titulos_tabla': ['Carrera', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
 
 
@@ -87,9 +86,9 @@ class MaestriaContext:
     url_seccion = 'maestrias'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': 'maestrias',
-                'tab_lista': 'Mis Maestrías', 'tab_agregar': 'Agregar Maestría', 'tab_detalle': 'Editar Maestría',
-                'titulo_lista': 'Mis Maestrías', 'titulo_agregar': 'Agregar Maestría',
-                'titulo_detalle': 'Editar Maestría',
+                'tab_lista': 'Mis maestrías', 'tab_agregar': 'Agregar maestría', 'tab_detalle': 'Editar maestría',
+                'titulo_lista': 'Mis maestrías', 'titulo_agregar': 'Agregar Maestría',
+                'titulo_detalle': 'Editar maestría',
                 'objeto': 'maestría', 'breadcrumb_seccion': 'Formación académica', 'titulo_pagina': 'Maestrías',
                 'titulos_tabla': ['Programa', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
 
@@ -124,9 +123,9 @@ class DoctoradoContext:
     url_seccion = 'doctorados'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': 'doctorados',
-                'tab_lista': 'Mis Doctorados', 'tab_agregar': 'Agregar Doctorado', 'tab_detalle': 'Editar Doctorado',
-                'titulo_lista': 'Mis Doctorados', 'titulo_agregar': 'Agregar Doctorado',
-                'titulo_detalle': 'Editar Doctorado',
+                'tab_lista': 'Mis doctorados', 'tab_agregar': 'Agregar doctorado', 'tab_detalle': 'Editar doctorado',
+                'titulo_lista': 'Mis doctorados', 'titulo_agregar': 'Agregar doctorado',
+                'titulo_detalle': 'Editar doctorado',
                 'objeto': 'doctorado', 'breadcrumb_seccion': 'Formación académica', 'titulo_pagina': 'Doctorados',
                 'titulos_tabla': ['Programa', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
 
@@ -161,9 +160,9 @@ class PostDoctoradoContext:
     url_seccion = 'postdoctorados'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': 'postdoctorados',
-                'tab_lista': 'Mis Postdoctorados', 'tab_agregar': 'Agregar Postdoctorado', 'tab_detalle': 'Editar Postdoctorado',
-                'titulo_lista': 'Mis Postdoctorados', 'titulo_agregar': 'Agregar Postdoctorado',
-                'titulo_detalle': 'Editar Postdoctorado',
+                'tab_lista': 'Mis postdoctorados', 'tab_agregar': 'Agregar postdoctorado', 'tab_detalle': 'Editar postdoctorado',
+                'titulo_lista': 'Mis postdoctorados', 'titulo_agregar': 'Agregar postdoctorado',
+                'titulo_detalle': 'Editar postdoctorado',
                 'objeto': 'postdoctorado', 'breadcrumb_seccion': 'Formación académica', 'titulo_pagina': 'Postdoctorados',
                 'titulos_tabla': ['Tìtulo', 'Área de conocimiento', 'Fecha fin', 'Proyecto', 'Dependencia']}
 
