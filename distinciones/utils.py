@@ -48,7 +48,7 @@ class DistincionAlumnoContext:
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Distinción', 'alumno', 'Nivel académico', 'fecha']}
@@ -195,7 +195,7 @@ class CitaPublicacionContext:
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Trabajo citado', 'Tipo de trabajo']}

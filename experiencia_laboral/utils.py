@@ -1,17 +1,17 @@
 url_categoria = 'experiencia'
-bc_seccion = 'Experiencia Laboral'
+bc_seccion = 'Experiencia laboral'
 
 
 class ExperienciaLaboralContext:
-    obj = 'Experiencia Laboral'
-    objs = 'Experiencias Laborales'
+    obj = 'experiencia laboral'
+    objs = 'experiencias laborales'
     url_seccion = 'laborales'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
                 'titulos_tabla': ['Cargo', 'Nombramiento', 'Fecha de inicio', 'Dependencia']}
 
 
@@ -43,15 +43,15 @@ class ExperienciaLaboralContext:
 
 
 class LineaInvestigacionContext:
-    obj = 'Lìnea de Investigación'
-    objs = 'Lìneas de Investigación'
+    obj = 'línea de investigación'
+    objs = 'líneas de investigación'
     url_seccion = 'lineas-investigacion'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
                 'titulos_tabla': ['Lìnea de Investigación', 'Fecha de inicio', 'Dependencia']}
 
 
@@ -83,15 +83,15 @@ class LineaInvestigacionContext:
 
 
 class CapacidadPotencialidadContext:
-    obj = 'Capacidad o Potencialidad'
-    objs = 'Capacidades o Potencialidades'
+    obj = 'capacidad y potencialidad'
+    objs = 'capacidades y potencialidades'
     url_seccion = 'capacidades'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
                 'titulos_tabla': ['Competencia', 'Fecha de inicio']}
 
 

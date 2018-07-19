@@ -92,7 +92,7 @@ class DesarrolloGrupoInvestigacionInternoContext:
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Nombre', 'Fecha de inicio', 'País']}
@@ -156,7 +156,7 @@ class DireccionTesisContext:
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Título', 'Asesorado', 'Nivel', 'Dependencia', 'Examen']}
@@ -227,7 +227,7 @@ class ComiteTutoralContext:
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Asesorado', 'Grado', 'Programa', 'Dependencia', 'Proyecto']}
@@ -296,7 +296,7 @@ class ComiteCandidaturaDoctoralContext:
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros',
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Candidato', 'Programa', 'Proyecto', 'Defensa']}

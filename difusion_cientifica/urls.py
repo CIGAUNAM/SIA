@@ -9,11 +9,6 @@ urlpatterns = [
     url(r'^memorias-in-extenso/(?P<pk>[\w\-]+)/eliminar$', MemoriaInExtensoEliminar.as_view(), name='memoria_in_extenso_eliminar'),
     url(r'^memorias-in-extenso/(?P<pk>[\w\-]+)/$', MemoriaInExtensoDetalle.as_view(), name='memoria_in_extenso_detalle'),
 
-    url(r'^prologos-libros/json/', PrologoLibroJSON.as_view(), name='prologo_libro_lista__json'),
-    url(r'^prologos-libros/$', PrologoLibroLista.as_view(), name='prologo_libro_lista'),
-    url(r'^prologos-libros/(?P<pk>[\w\-]+)/eliminar$', PrologoLibroEliminar.as_view(), name='prologo_libro_eliminar'),
-    url(r'^prologos-libros/(?P<pk>[\w\-]+)/$', PrologoLibroDetalle.as_view(), name='prologo_libro_detalle'),
-
     url(r'^resenas/json/', ResenaJSON.as_view(), name='resena_lista__json'),
     url(r'^resenas/$', ResenaLista.as_view(), name='resena_lista'),
     url(r'^resenas/(?P<pk>[\w\-]+)/eliminar$', ResenaEliminar.as_view(), name='resena_eliminar'),

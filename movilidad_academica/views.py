@@ -20,12 +20,9 @@ class MovilidadJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = MovilidadAcademica.objects.filter(usuario=usuarioid, tipo=self.tipo).values('pk',
-                                                                                                'academico__first_name',
-                                                                                                'academico__last_name',
-                                                                                                'dependencia__nombre',
-                                                                                                'dependencia__ciudad__estado__pais__nombre',
-                                                                                                'fecha_inicio')
+            items = MovilidadAcademica.objects.filter(
+                usuario=usuarioid, tipo=self.tipo).values('pk', 'academico__first_name', 'academico__last_name',
+                                                          'dependencia__nombre', 'dependencia__ciudad__estado__pais__nombre', 'fecha_inicio')
             json = '['
             for i in items:
                 json += '{"model": "movilidad_academica.movilidadacademica", "pk": '
@@ -65,28 +62,28 @@ class MovilidadLista(ObjectCreateMixin, View):
                     'titulos_tabla': ['Académico', 'Procedencia', 'País', 'Inicio']}
 
         tabla_mios = '<script>\n' \
-                     '       jQuery(document).ready(function ($jquery) {\n' \
-                     '       $jquery("#tabla_json").dataTable({\n' \
+                     'jQuery(document).ready(function ($jquery) {\n' \
+                     '$jquery("#tabla_json").dataTable({\n' \
                      '"iDisplayLength": 15,\n' \
                      '"ajax": {\n' \
                      '"processing": true,\n' \
                      '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json/",\n' \
-                                '"dataSrc": ""\n' \
-                                '},\n' \
-                                '"columns": [\n' \
-                                '{\n' \
-                                '"data": "fields.academico",\n' \
-                                '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                '$(nTd).html("<a href=\'/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/" + oData.pk + "\'>" + oData.fields.academico + "</a>");\n' \
-                                '}\n' \
-                                '},\n' \
-                                '{"data": "fields.dependencia"},\n' \
-                                '{"data": "fields.pais"},\n' \
-                                '{"data": "fields.fecha_inicio"},\n' \
-                                ']\n' \
-                                '});\n' \
-                                '});\n' \
-                                '</script>'
+                      '"dataSrc": ""\n' \
+                      '},\n' \
+                      '"columns": [\n' \
+                      '{\n' \
+                      '"data": "fields.academico",\n' \
+                      '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                      '$(nTd).html("<a href=\'/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/" + oData.pk + "\'>" + oData.fields.academico + "</a>");\n' \
+                      '}\n' \
+                      '},\n' \
+                      '{"data": "fields.dependencia"},\n' \
+                      '{"data": "fields.pais"},\n' \
+                      '{"data": "fields.fecha_inicio"},\n' \
+                      ']\n' \
+                      '});\n' \
+                      '});\n' \
+                      '</script>'
 
         mi_contexto['tabla_mios'] = tabla_mios
         return mi_contexto
@@ -118,6 +115,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
     url_categoria = 'movilidad-academica'
 
     def contexto(self):
+
         mi_contexto = {'url_categoria': str(self.url_categoria), 'url_seccion': str(self.url_seccion),
                     'tab_lista': 'Mis ' + str(self.objs), 'tab_agregar': 'Agregar ' + str(self.obj),
                     'tab_detalle': 'Editar ' + str(self.obj),
@@ -126,9 +124,35 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
                     'breadcrumb_seccion': 'Movilidad Académica', 'titulo_pagina': str(self.objs),
                     'titulos_tabla': ['Académico', 'Procedencia', 'País', 'Inicio']}
 
+        tabla_mios = '<script>\n' \
+                     'jQuery(document).ready(function ($jquery) {\n' \
+                     '$jquery("#tabla_json").dataTable({\n' \
+                     '"iDisplayLength": 15,\n' \
+                     '"ajax": {\n' \
+                     '"processing": true,\n' \
+                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json/",\n' \
+                     '"dataSrc": ""\n' \
+                     '},\n' \
+                     '"columns": [\n' \
+                     '{\n' \
+                     '"data": "fields.academico",\n' \
+                     '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                     '$(nTd).html("<a href=\'/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/" + oData.pk + "\'>" + oData.fields.academico + "</a>");\n' \
+                     '}\n' \
+                     '},\n' \
+                     '{"data": "fields.dependencia"},\n' \
+                     '{"data": "fields.pais"},\n' \
+                     '{"data": "fields.fecha_inicio"},\n' \
+                     ']\n' \
+                     '});\n' \
+                     '});\n' \
+                     '</script>'
+
+        mi_contexto['tabla_mios'] = tabla_mios
         return mi_contexto
 
     aux = contexto
+
     template_name = 'movilidad_academica.html'
 
     def post(self, request, pk):

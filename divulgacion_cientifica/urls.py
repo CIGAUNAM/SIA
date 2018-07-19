@@ -9,6 +9,12 @@ urlpatterns = [
     url(r'^articulos-divulgacion/(?P<pk>[\w\-]+)/eliminar$', ArticuloDivulgacionEliminar.as_view(), name='articulo_divulgacion_eliminar'),
     url(r'^articulos-divulgacion/(?P<pk>[\w\-]+)/$', ArticuloDivulgacionDetalle.as_view(), name='articulo_divulgacion_detalle'),
 
+    url(r'^libros-divulgacion/json/', LibroDivulgacionJSON.as_view(), name='libro_investigacion_lista__json'),
+    url(r'^libros-divulgacion/json-otros/', LibroDivulgacionJSON.as_view(otros=True), name='libro_investigacion_lista_otros__json'),
+    url(r'^libros-divulgacion/$', LibroDivulgacionLista.as_view(), name='libro_investigacion_lista'),
+    url(r'^libros-divulgacion/(?P<pk>[\w\-]+)/eliminar$', LibroDivulgacionEliminar.as_view(), name='libro_investigacion_eliminar'),
+    url(r'^libros-divulgacion/(?P<pk>[\w\-]+)/$', LibroDivulgacionDetalle.as_view(), name='libro_investigacion_detalle'),
+
     url(r'^capitulos-libros-divulgacion/json/', CapituloLibroDivulgacionJSON.as_view(), name='capitulo_libro_divulgacion_lista__json'),
     url(r'^capitulos-libros-divulgacion/json-otros/', CapituloLibroDivulgacionJSON.as_view(otros=True), name='capitulo_libro_divulgacion_lista_otros__json'),
     url(r'^capitulos-libros-divulgacion/$', CapituloLibroDivulgacionLista.as_view(), name='capitulo_libro_divulgacion_lista'),
@@ -31,10 +37,5 @@ urlpatterns = [
     url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/eliminar$', ProgramaRadioTelevisionInternetEliminar.as_view(), name='programa_radio_television_internet_eliminar'),
     url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/$', ProgramaRadioTelevisionInternetDetalle.as_view(), name='programa_radio_television_internet_detalle'),
 
-    url(r'^libros-divulgacion/json/', LibroDivulgacionJSON.as_view(), name='libro_investigacion_lista__json'),
-    url(r'^libros-divulgacion/json-otros/', LibroDivulgacionJSON.as_view(otros=True), name='libro_investigacion_lista_otros__json'),
-    url(r'^libros-divulgacion/$', LibroDivulgacionLista.as_view(), name='libro_investigacion_lista'),
-    url(r'^libros-divulgacion/(?P<pk>[\w\-]+)/eliminar$', LibroDivulgacionEliminar.as_view(), name='libro_investigacion_eliminar'),
-    url(r'^libros-divulgacion/(?P<pk>[\w\-]+)/$', LibroDivulgacionDetalle.as_view(), name='libro_investigacion_detalle'),
 
 ]
