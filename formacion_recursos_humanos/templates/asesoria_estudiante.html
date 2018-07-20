@@ -590,10 +590,13 @@
 
         if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
             $('#d_programa_licenciatura').show();
+            $('#id_programa_licenciatura').attr("required", "true");
         } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
             $('#d_programa_maestria').show();
+            $('#id_programa_maestria').attr("required", "true");
         } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
             $('#d_programa_doctorado').show();
+            $('#id_programa_doctorado').attr("required", "true");
         } else {
             $('#d_licenciatura').hide();
             $('#d_maestria').hide();
