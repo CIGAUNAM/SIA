@@ -2,16 +2,18 @@ url_categoria = 'investigacion'
 bc_seccion = 'Investigación y resultados'
 
 class ArticuloCientificoContext:
-    obj = 'Artículo Cientifico'
-    objs = 'Artículos Cientificos'
+    obj = 'artículo cientifico'
+    objs = 'artículos cientificos'
+    Objs = 'Artículos cientificos'
+
     url_seccion = 'articulos-cientificos'
     usuarios = True
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Título', 'Revista', 'Status', 'Fecha']}
 
 
@@ -69,15 +71,15 @@ class ArticuloCientificoContext:
 
 
 class CapituloLibroInvestigacionContext:
-    obj = 'Capítulo de Libro de Investigación'
-    objs = 'Capítulos de Libros de Investigación'
+    obj = 'capítulo de libro de investigación'
+    objs = 'capítulos de libros de investigación'
     url_seccion = 'capitulos-libros-investigacion'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Título', 'Libro', 'Página inicio', 'Página fin']}
 
     tabla_mios =  '<script>\n' \
@@ -264,8 +266,8 @@ class InformeTecnicoContext:
 
 
 class LibroInvestigacionContext:
-    obj = 'Libro de investigación'
-    objs = 'Libros de investigación'
+    obj = 'libro de investigación'
+    objs = 'libros de investigación'
     url_categoria = 'investigacion'
     url_seccion = 'libros-investigacion'
 
@@ -273,7 +275,7 @@ class LibroInvestigacionContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
                 'titulos_tabla': ['Título', 'Editorial', 'Ciudad', 'Status', 'Fecha']}
 
 
