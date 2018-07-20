@@ -2,8 +2,8 @@ url_categoria = 'difusion-cientifica'
 bc_seccion = 'Difusión Científica'
 
 class MemoriaInExtensoContext:
-    obj = 'Memoria In Extenso'
-    objs = 'Memorias In Extenso'
+    obj = 'memoria in extenso'
+    objs = 'memorias in extenso'
     url_seccion = 'memorias-in-extenso'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
