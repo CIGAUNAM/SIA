@@ -3,7 +3,7 @@ bc_seccion = 'Investigación y resultados'
 
 class ArticuloCientificoContext:
     obj = 'artículo cientifico'
-    objs = 'artículos cientificos'
+    objs = 'artículo cientificos'
     Objs = 'Artículos cientificos'
 
     url_seccion = 'articulos-cientificos'
