@@ -1,16 +1,17 @@
 url_categoria = 'difusion-cientifica'
-bc_seccion = 'Difusión Científica'
+bc_seccion = 'Difusión científica'
 
 class MemoriaInExtensoContext:
     obj = 'memoria in extenso'
     objs = 'memorias in extenso'
+    Objs = 'Memorias in extenso'
     url_seccion = 'memorias-in-extenso'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Título', 'Evento']}
 
     tabla_mios =  '<script>\n' \
@@ -62,53 +63,17 @@ class MemoriaInExtensoContext:
     contexto['tabla_otros'] = tabla_otros
 
 
-class PrologoLibroContext:
-    obj = 'Prologo de Libro'
-    objs = 'Prologos de Libros'
-    url_seccion = 'prologos-libros'
-
-    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
-                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj,
-                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
-                'titulos_tabla': ['Libro']}
-
-
-    tabla_mios =  '<script>\n' \
-                    '       jQuery(document).ready(function ($jquery) {\n' \
-                    '       $jquery("#tabla_json").dataTable({\n' \
-                                '"iDisplayLength": 15,\n' \
-                                '"ajax": {\n' \
-                                    '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
-                                    '"dataSrc": ""\n' \
-                                '},\n' \
-                                '"columns": [\n' \
-                                    '{\n' \
-                                        '"data": "fields.libro",\n' \
-                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.libro + "</a>");\n' \
-                                        '}\n' \
-                                    '},\n' \
-                                ']\n' \
-                            '});\n' \
-                        '});\n' \
-                  '</script>'
-
-    contexto['tabla_mios'] = tabla_mios
-
-
 class ResenaContext:
-    obj = 'Reseña'
-    objs = 'Reseñas'
+    obj = 'reseña'
+    objs = 'reseñas'
+    Objs = 'Reseñas'
     url_seccion = 'resenas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Título', 'Tipo', 'Título de libro o artículo', 'Revista que publica', 'fecha']}
 
 
@@ -141,15 +106,16 @@ class ResenaContext:
 
 
 class TraduccionContext:
-    obj = 'Traduccion'
-    objs = 'Traducciones'
+    obj = 'traducción'
+    objs = 'traducciones'
+    Objs = 'Traducciones'
     url_seccion = 'traducciones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Título', 'Tipo', 'Publicación', 'fecha']}
 
     tabla_mios =  '<script>\n' \
@@ -179,17 +145,17 @@ class TraduccionContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class OrganizacionEventoAcademicoContext:
-    obj = 'Evento Académico (organización)'
-    objs = 'Eventos Académicos (organización)'
+    obj = 'organización de evento académico)'
+    objs = 'organizaciones de eventos académicos'
+    Objs = 'Organización de eventos académicos'
     url_seccion = 'organizacion-eventos-academicos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Evento', 'Responsabilidad', 'Ámbito']}
 
 
@@ -221,15 +187,18 @@ class OrganizacionEventoAcademicoContext:
 
 
 class ParticipacionEventoAcademicoContext:
-    obj = 'Evento Académico (participación)'
-    objs = 'Eventos Académicos (participación)'
+    obj = 'participación en evento académico'
+    obj = 'participación en evento académico'
+    objs = 'participaciones en eventos académicos'
+    Objs = 'Participaciones en eventos académicos'
+    TObjs = 'Participación en eventos académicos'
     url_seccion = 'participacion-eventos-academicos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': TObjs,
                 'titulos_tabla': ['Título', 'Evento', 'Ámbito']}
 
 

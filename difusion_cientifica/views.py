@@ -49,45 +49,6 @@ class MemoriaInExtensoEliminar(View):
             raise Http404
 
 
-class PrologoLibroJSON(View):
-    def get(self, request):
-
-        try:
-            usuarioid = User.objects.get(username=request.user.username).id
-
-            items = PrologoLibro.objects.filter(usuario=usuarioid)
-
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('libro',))
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class PrologoLibroLista(ObjectCreateMixin, View):
-    form_class = PrologoLibroForm
-    model = PrologoLibro
-    aux = PrologoLibroContext.contexto
-    template_name = 'prologo_libro.html'
-
-
-class PrologoLibroDetalle(ObjectUpdateMixin, View):
-    form_class = PrologoLibroForm
-    model = PrologoLibro
-    aux = PrologoLibroContext.contexto
-    template_name = 'prologo_libro.html'
-
-
-class PrologoLibroEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(PrologoLibro, pk=pk, usuario=request.user)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
 class ResenaJSON(View):
     def get(self, request):
         try:
