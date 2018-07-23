@@ -82,7 +82,7 @@ class ArbitrajeProyectoInvestigacionContext:
 class ArbitrajeOtraActividadContext:
     obj = 'otra actividad de arbitraje'
     objs = 'otras actividad de arbitraje'
-    objs = 'Otras actividad de arbitraje'
+    Objs = 'Otras actividad de arbitraje'
     url_seccion = 'otros-arbitrajes'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
