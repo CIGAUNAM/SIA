@@ -212,3 +212,42 @@ class InformeTecnico(models.Model):
         verbose_name = "Informe técnico de acceso público"
         verbose_name_plural = "Informes técnicos de acceso público"
         ordering = ['fecha', 'titulo']
+
+
+
+import os
+for i in os.listdir():
+    print("------------")
+    print(i)
+    f = i.split(".")[0]
+    ext = i.split(".")[-1]
+    print(f)
+    if ext == "jpg":
+        cmdec = "erect2cubic --erect=" + i + " --ptofile=" + f + ".pto"
+        print(cmdec)
+        os.system(cmdec)
+        cmdnona = "nona -o " + f + "- " + f + ".pto"
+        print(cmdnona)
+        os.system(cmdnona)
+        os.mkdir(f)
+        front = "convert -resize 3600x3600\! " + f + "-0000.tif " + f + "/front.jpg"
+        print(front)
+        os.system(front)
+        right = "convert -resize 3600x3600\! " + f + "-0001.tif " + f + "/right.jpg"
+        print(right)
+        os.system(right)
+        back = "convert -resize 3600x3600\! " + f + "-0002.tif " + f + "/back.jpg"
+        print(back)
+        os.system(back)
+        left = "convert -resize 3600x3600\! " + f + "-0003.tif " + f + "/left.jpg"
+        print(left)
+        os.system(left)
+        top = "convert -resize 3600x3600\! " + f + "-0004.tif " + f + "/top.jpg"
+        print(top)
+        os.system(top)
+        bottom = "convert -resize 3600x3600\! " + f + "-0005.tif " + f + "/bottom.jpg"
+        print(bottom)
+        os.system(bottom)
+        os.system("cp config.dat " + f)
+        os.system("rm *.tif")
+        os.system("rm *.pto")
