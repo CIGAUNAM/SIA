@@ -138,7 +138,7 @@ class ParticipacionEventoAcademico(models.Model):
     resumen_publicado = models.BooleanField(default=False)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    usuario = models.ForeignKey(User, related_name='participacion_evento_academico_usuario', on_delete=models.DO_NOTHING, null=True, blank=True)
+    # usuario = models.ForeignKey(User, related_name='participacion_evento_academico_usuario', on_delete=models.DO_NOTHING, null=True, blank=True)
     participantes = models.ManyToManyField(User, related_name='participacion_evento_academico_participantes')
 
     def __str__(self):
