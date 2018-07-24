@@ -1105,12 +1105,12 @@ class Dashboard(View):
 
                 total_items_year_sum = ParticipacionEventoAcademico.objects.filter(
                     evento__fecha_inicio__year=year).filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                    ((Q(participantes__ingreso_entidad__year__lte=year) & Q(participantes__egreso_entidad__year__gt=year)) |
+                     (Q(participantes__ingreso_entidad__year__lte=year) & Q(participantes__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = ParticipacionEventoAcademico.objects.filter(
                     evento__fecha_inicio__year=year,
-                    usuario=request.user).count()
+                    participantes=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
@@ -1781,19 +1781,19 @@ class Dashboard(View):
 
                 total_items_year_sum = ParticipacionEventoDivulgacion.objects.filter(
                     evento__fecha_inicio__year=year).filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                    ((Q(participantes__ingreso_entidad__year__lte=year) & Q(participantes__egreso_entidad__year__gt=year)) |
+                     (Q(participantes__ingreso_entidad__year__lte=year) & Q(participantes__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = ParticipacionEventoDivulgacion.objects.filter(
                     evento__fecha_inicio__year=year,
-                    usuario=request.user).count()
+                    participantes=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
                     request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(participacioneventodivulgacion__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_divulgacion_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -1806,22 +1806,22 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(participacioneventodivulgacion__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_divulgacion_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacioneventodivulgacion')).aggregate(Max('participacioneventodivulgacion__count'))[
-                    'participacioneventodivulgacion__count__max']
+                    Count('participacion_evento_divulgacion_participantes')).aggregate(Max('participacion_evento_divulgacion_participantes__count'))[
+                    'participacion_evento_divulgacion_participantes__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
                     max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(participacioneventodivulgacion__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_divulgacion_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacioneventodivulgacion')).aggregate(Min('participacioneventodivulgacion__count'))[
-                    'participacioneventodivulgacion__count__min']
+                    Count('participacion_evento_divulgacion_participantes')).aggregate(Min('participacion_evento_divulgacion_participantes__count'))[
+                    'participacion_evento_divulgacion_participantes__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
