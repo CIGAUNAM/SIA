@@ -2,15 +2,16 @@ url_categoria = 'vinculacion'
 bc_seccion = 'Vinculación, Colaboración y Servicios'
 
 class ArbitrajePublicacionAcademicaContext:
-    obj = 'Arbitraje de Publicación'
-    objs = 'Arbitrajes de Publicaciones'
+    obj = 'arbitraje de publicación académica'
+    objs = 'arbitrajes de publicaciones académicas'
+    Objs = 'Arbitrajes de publicaciones académicas'
     url_seccion = 'arbitrajes-publicaciones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Fecha de dictamen']}
 
 
@@ -39,15 +40,17 @@ class ArbitrajePublicacionAcademicaContext:
 
 
 class ArbitrajeProyectoInvestigacionContext:
-    obj = 'Arbitraje de Proyecto'
-    objs = 'Arbitrajes de Proyectos'
+    obj = 'arbitraje de proyecto de investigación'
+    objs = 'arbitrajes de proyectos de investigación'
+    Objs = 'Arbitrajes de proyectos de investigación'
+
     url_seccion = 'arbitrajes-proyectos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Fecha', 'Dependencia']}
 
 
@@ -77,15 +80,16 @@ class ArbitrajeProyectoInvestigacionContext:
 
 
 class ArbitrajeOtraActividadContext:
-    obj = 'Arbitraje (otro)'
-    objs = 'Arbitrajes de Otras Actividades'
+    obj = 'otra actividad de arbitraje'
+    objs = 'otras actividad de arbitraje'
+    Objs = 'Otras actividad de arbitraje'
     url_seccion = 'otros-arbitrajes'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Actividad', 'dependencia', 'Fecha']}
 
 
@@ -360,3 +364,6 @@ class ClasificacionServicioContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
+
+
+
