@@ -4,8 +4,9 @@ bc_seccion = 'Apoyo Institucional'
 
 
 class CargoAcademicoAdministrativoContext:
-    obj = 'Cargo Académico-Administrativo'
-    objs = 'Cargos Académico-Administrativos'
+    obj = 'cargo académico-administrativo'
+    objs = 'cargos académico-administrativos'
+    Objs = 'Cargos académico-administrativos'
     url_seccion = 'cargos-academico-administrativos'
 
 
@@ -13,7 +14,7 @@ class CargoAcademicoAdministrativoContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Cargo', 'Dependencia', 'Inicio', 'Fin']}
 
 
@@ -44,10 +45,10 @@ class CargoAcademicoAdministrativoContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class RepresentacionOrganoColegiadoContext:
-    obj = 'Representación'
-    objs = 'Representaciones'
+    obj = 'representación en organos colegiados'
+    objs = 'representaciones en organos colegiados'
+    Objs = 'Representaciones en organos colegiados'
     url_seccion = 'representaciones-organos-colegiados'
 
 
@@ -55,7 +56,7 @@ class RepresentacionOrganoColegiadoContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Representación', 'Ante dependencia', 'Inicio', 'Fin']}
 
 
@@ -86,18 +87,17 @@ class RepresentacionOrganoColegiadoContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class ComisionAcademicaContext:
-    obj = 'Comisión Académica'
-    objs = 'Comisiones Académicas'
+    obj = 'comisión académica'
+    objs = 'comisiones académicas'
+    Objs = 'Comisiones académicas'
     url_seccion = 'comisiones-academicas'
-
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Comisión', 'Inicio', 'Fin']}
 
 
@@ -127,10 +127,10 @@ class ComisionAcademicaContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class ApoyoTecnicoContext:
-    obj = 'Apoyo Técnico'
-    objs = 'Apoyos Técnicos'
+    obj = 'apoyo técnico'
+    objs = 'apoyos técnicos'
+    Objs = 'Apoyos técnicos'
     url_seccion = 'apoyos-tecnicos'
 
 
@@ -138,7 +138,7 @@ class ApoyoTecnicoContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Apoyo', 'dependencia', 'Inicio', 'Fin']}
 
 
@@ -169,10 +169,10 @@ class ApoyoTecnicoContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class ApoyoOtraActividadContext:
-    obj = 'Actividad'
-    objs = 'Actividades'
+    obj = 'actividad de apoyo'
+    objs = 'actividades de apoyo'
+    Objs = 'Otras actividades de apoyo'
     url_seccion = 'otras-actividades'
 
 
@@ -180,7 +180,7 @@ class ApoyoOtraActividadContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Apoyo', 'dependencia', 'Inicio', 'Fin']}
 
 
@@ -248,7 +248,7 @@ class RepresentacionContext:
 
 
 class ComisionContext:
-    obj = 'Comisiòn'
+    obj = 'Comisión'
     objs = 'Comisiones'
     url_seccion = 'comisiones'
 

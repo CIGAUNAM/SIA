@@ -89,7 +89,7 @@ class ArbitrajeOtraActividadContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Actividad', 'dependencia', 'Fecha']}
 
 
@@ -120,15 +120,16 @@ class ArbitrajeOtraActividadContext:
 
 
 class RedAcademicaContext:
-    obj = 'Red Académica'
-    objs = 'Redes Académicas'
+    obj = 'red académica'
+    objs = 'redes académicas'
+    Objs = 'Redes académicas'
     url_seccion = 'redes-academicas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Nombre', 'Ámbito', 'Fecha']}
 
 
@@ -184,15 +185,16 @@ class RedAcademicaContext:
 
 
 class ConvenioEntidadExternaContext:
-    obj = 'Convenio (no académico)'
-    objs = 'Convenios (no académicos)'
+    obj = 'convenio con entidades no académicas'
+    objs = 'convenios con entidades no académicas'
+    Objs = 'Convenios con entidades no académicas'
     url_seccion = 'convenios-entidades-no-academicas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Nombre', 'Inicio', 'Fin']}
 
 
@@ -247,17 +249,18 @@ class ConvenioEntidadExternaContext:
     contexto['tabla_otros'] = tabla_otros
 
 
-
 class ServicioExternoEntidadNoAcademicaContext:
-    obj = 'Servicio Externo (no académico)'
-    objs = 'Servicios Externos (no académicos)'
+    obj = 'servicio externo a entidades no académicas'
+    objs = 'servicios externos a entidades no académicas'
+    Objs = 'Servicios externos a entidades no académicas'
+
     url_seccion = 'servicios-externos-no-academicos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Nombre', 'Clasificación', 'Inicio', 'Fin']}
 
 
@@ -288,17 +291,17 @@ class ServicioExternoEntidadNoAcademicaContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class OtroProgramaVinculacionContext:
-    obj = 'Otro Programa Vinculación'
-    objs = 'Otros Programas Vinculación'
+    obj = 'otro programa de vinculación'
+    objs = 'otros programas de vinculación'
+    Objs = 'Otros programas de vinculación y colaboración'
     url_seccion = 'otros-programas-vinculacion'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Nombre', 'Fecha', 'Tipo']}
 
 

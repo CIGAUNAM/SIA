@@ -15,6 +15,7 @@ class MovilidadJSON(View):
     tipo = None
     obj = None
     objs = None
+    Objs = None
     url_seccion = None
 
     def get(self, request):
@@ -44,6 +45,8 @@ class MovilidadLista(ObjectCreateMixin, View):
     tipo = None
     obj = None
     objs = None
+    Objs = None
+
     url_seccion = None
     url_categoria = 'movilidad-academica'
 
@@ -58,7 +61,7 @@ class MovilidadLista(ObjectCreateMixin, View):
                     'tab_detalle': 'Editar ' + str(self.obj),
                     'titulo_lista': 'Mis ' + str(self.objs), 'titulo_agregar': 'Agregar ' + str(self.obj),
                     'titulo_detalle': 'Editar ' + str(self.obj), 'objeto': str(self.obj).lower(),
-                    'breadcrumb_seccion': 'Movilidad Académica', 'titulo_pagina': str(self.objs),
+                    'breadcrumb_seccion': 'Movilidad Académica', 'titulo_pagina': str(self.Objs),
                     'titulos_tabla': ['Académico', 'Procedencia', 'País', 'Inicio']}
 
         tabla_mios = '<script>\n' \
@@ -111,6 +114,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
     tipo = None
     obj = None
     objs = None
+    Objs = None
     url_seccion = None
     url_categoria = 'movilidad-academica'
 
@@ -121,7 +125,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
                     'tab_detalle': 'Editar ' + str(self.obj),
                     'titulo_lista': 'Mis ' + str(self.objs), 'titulo_agregar': 'Agregar ' + str(self.obj),
                     'titulo_detalle': 'Editar ' + str(self.obj), 'objeto': str(self.obj).lower(),
-                    'breadcrumb_seccion': 'Movilidad Académica', 'titulo_pagina': str(self.objs),
+                    'breadcrumb_seccion': 'Movilidad Académica', 'titulo_pagina': str(self.Objs),
                     'titulos_tabla': ['Académico', 'Procedencia', 'País', 'Inicio']}
 
         tabla_mios = '<script>\n' \

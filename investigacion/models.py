@@ -8,7 +8,7 @@ from sortedm2m.fields import SortedManyToManyField
 
 
 STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO',
-                                      (('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'),
+                                      (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'),
                                        ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
 
 STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
