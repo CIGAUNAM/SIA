@@ -10,9 +10,6 @@ from django import forms
 from django.conf import settings
 from django_select2.forms import Select2Widget, ModelSelect2Widget, ModelSelect2MultipleWidget, Select2MultipleWidget
 
-from sortedm2m.forms import SortedMultipleChoiceField
-
-
 #
 
 class ArticuloCientificoForm(forms.ModelForm):
