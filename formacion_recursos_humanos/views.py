@@ -203,9 +203,7 @@ class ComiteTutoralJSON(View):
             else:
                 items = ComiteTutoral.objects.filter(Q(asesores=usuarioid) | Q(sinodales=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=(
-                                             'estudiante', 'nivel_academico', 'programa_licenciatura', 'programa_maestria', 'programa_doctorado',
-                                             'dependencia', 'proyecto'))
+                                         fields=('estudiante', 'nivel_academico', 'fecha_inicio'))
             json = json.replace('"programa_licenciatura": null,', '')
             json = json.replace('"programa_maestria": null,', '')
             json = json.replace('"programa_doctorado": null,', '')

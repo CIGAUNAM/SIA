@@ -2,7 +2,6 @@ url_categoria = 'apoyo-institucional'
 bc_seccion = 'Apoyo Institucional'
 
 
-
 class CargoAcademicoAdministrativoContext:
     obj = 'cargo académico-administrativo'
     objs = 'cargos académico-administrativos'
@@ -56,7 +55,7 @@ class RepresentacionOrganoColegiadoContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Representación', 'Ante dependencia', 'Inicio', 'Fin']}
 
 
@@ -138,7 +137,7 @@ class ApoyoTecnicoContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Apoyo', 'dependencia', 'Inicio', 'Fin']}
 
 
@@ -180,7 +179,7 @@ class ApoyoOtraActividadContext:
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Apoyo', 'dependencia', 'Inicio', 'Fin']}
 
 
@@ -220,7 +219,7 @@ class RepresentacionContext:
                 'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
                 'titulos_tabla': ['Representación']}
 
     tabla_mios =  '<script>\n' \
@@ -248,8 +247,9 @@ class RepresentacionContext:
 
 
 class ComisionContext:
-    obj = 'Comisión'
-    objs = 'Comisiones'
+    obj = 'comisión'
+    objs = 'comisiones'
+    objs = 'comisiones'
     url_seccion = 'comisiones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,

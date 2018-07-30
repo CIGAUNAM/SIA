@@ -3,8 +3,9 @@ bc_seccion = 'Premios y distinciones'
 
 
 class DistincionAcademicoContext:
-    obj = 'Distinción (Académicos)'
-    objs = 'Distinciones (Académicos)'
+    obj = 'premio o distinción'
+    objs = 'premios o distinciones'
+    objs = 'Premios o distinciones recibidas por académicos'
     url_seccion = 'academicos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
@@ -40,17 +41,17 @@ class DistincionAcademicoContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
 class DistincionAlumnoContext:
-    obj = 'Distinción (Alumno)'
-    objs = 'Distinciones (Alumnos)'
+    obj = 'premio o distinciòn'
+    objs = 'premios o distinciones'
+    Objs = 'Premios o distinciones recibidos por alumnos'
     url_seccion = 'alumnos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
-                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj, 'tab_otros': objs + ' de otros miembros', 'titulo_lista_otros': objs + " de otros miembros",
-                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'tab_lista': Objs + ' míos', 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
+                'titulo_lista': Objs + ' míos', 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Distinción', 'alumno', 'Nivel académico', 'fecha']}
 
 
@@ -107,17 +108,17 @@ class DistincionAlumnoContext:
     contexto['tabla_otros'] = tabla_otros
 
 
-
 class ParticipacionComisionExpertosContext:
-    obj = 'Participación en comisión de expertos'
-    objs = 'Participaciones en comisiones de expertos'
+    obj = 'participación en comisión de expertos'
+    objs = 'participaciones en comisiones de expertos'
+    Objs = 'Participaciones en comisiones de expertos'
     url_seccion = 'comisiones-expertos'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Nombre', 'Institución', 'fecha de inicio']}
 
 
@@ -148,15 +149,16 @@ class ParticipacionComisionExpertosContext:
 
 
 class ParticipacionSociedadCientificaContext:
-    obj = 'Participación en sociedad científica'
-    objs = 'Participaciones en sociedades científicas'
+    obj = 'participación en sociedad científica'
+    objs = 'participaciones en sociedades científicas'
+    Objs = 'Participaciones en sociedades científicas'
     url_seccion = 'sociedades-cientificas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Nombre', 'fecha de inicio', 'tipo', 'ambito']}
 
 
@@ -185,7 +187,6 @@ class ParticipacionSociedadCientificaContext:
                   '</script>'
 
     contexto['tabla_mios'] = tabla_mios
-
 
 
 class CitaPublicacionContext:
