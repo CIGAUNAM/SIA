@@ -249,14 +249,14 @@ class RepresentacionContext:
 class ComisionContext:
     obj = 'comisión'
     objs = 'comisiones'
-    objs = 'comisiones'
+    Objs = 'Comisiones'
     url_seccion = 'comisiones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Lista de ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Lista de ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
                 'titulos_tabla': ['Comisión']}
 
     tabla_mios =  '<script>\n' \
