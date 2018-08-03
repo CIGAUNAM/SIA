@@ -2,28 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="correccion decimales factor de impacto en revista">
-      <change afterPath="$PROJECT_DIR$/difusion_cientifica/migrations/0004_remove_participacioneventoacademico_usuario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/divulgacion_cientifica/migrations/0003_remove_participacioneventodivulgacion_usuario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/formacion_recursos_humanos/migrations/0004_auto_20180729_2049.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SIA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SIA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apoyo_institucional/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/apoyo_institucional/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desarrollo_tecnologico/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/desarrollo_tecnologico/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/distinciones/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/distinciones/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_recursos_humanos/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_recursos_humanos/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_recursos_humanos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_recursos_humanos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apoyo_institucional/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apoyo_institucional/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/desarrollo_tecnologico/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/desarrollo_tecnologico/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/difusion_cientifica/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/difusion_cientifica/migrations/0002_traduccion_articulo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/difusion_cientifica/migrations/0003_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/distinciones/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/distinciones/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/divulgacion_cientifica/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/divulgacion_cientifica/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docencia/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docencia/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiencia_laboral/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiencia_laboral/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_academica/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_academica/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_recursos_humanos/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_recursos_humanos/migrations/0002_supervisioninvestigadorpostdoctoral_articulos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_recursos_humanos/migrations/0003_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatos/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatos/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/investigacion/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/investigacion/migrations/0002_auto_20180717_2330.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nucleo/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vinculacion/migrations/0001_initial.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SIA$migracion.coverage" NAME="migracion Coverage Results" MODIFIED="1527871308629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SIA$misioneros.coverage" NAME="misioneros Coverage Results" MODIFIED="1512580659820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SIA$migracion2.coverage" NAME="migracion2 Coverage Results" MODIFIED="1507518891980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SIA$migracion.coverage" NAME="migracion Coverage Results" MODIFIED="1527871308629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -66,19 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apoyo_institucional/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="251" column="4" selection-start-line="251" selection-start-column="4" selection-end-line="251" selection-end-column="4" />
-              <folding>
-                <element signature="e#123#2344#0" />
-                <element signature="e#2395#4677#0" />
-                <element signature="e#4716#6839#0" />
-                <element signature="e#6873#9054#0" />
-                <element signature="e#9094#11298#0" />
-                <element signature="e#11334#13235#0" />
-              </folding>
+            <state relative-caret-position="99">
+              <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -230,10 +241,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1913" />
-    <option name="width" value="1087" />
-    <option name="height" value="1087" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -263,6 +278,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -280,27 +306,6 @@
               <item name="SIA" type="cbb8eebc:String" user="SIA" />
               <item name="apoyo_institucional" type="cbb8eebc:String" user="apoyo_institucional" />
               <item name="migrations" type="cbb8eebc:String" user="migrations" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="apoyo_institucional" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="distinciones" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -338,9 +343,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Django server.SIA">
-    <configuration name="maps.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SIA/maps.html">
-      <method v="2" />
-    </configuration>
+    <configuration name="maps.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SIA/maps.html" />
     <configuration name="migracion" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SIA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -359,9 +362,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="SIA" type="Python.DjangoServer" factoryName="Django server">
       <module name="SIA" />
@@ -385,7 +385,6 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method v="2" />
     </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <module name="SIA" />
@@ -408,7 +407,6 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Django server.SIA" />
@@ -780,36 +778,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="0" width="1087" height="1087" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21518987" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49779493" visible="true" weight="0.26989248" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50479746" side_tool="true" weight="0.23463687" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49520257" weight="0.2204301" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.342918" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="bottom" id="manage.py@SIA" order="12" weight="0.32903227" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49779493" weight="0.26989248" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32800853" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49520257" weight="0.2204301" />
+      <window_info anchor="bottom" id="manage.py@SIA" order="12" visible="true" weight="0.34301677" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.342918" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.119936034" />
+      <window_info anchor="right" id="R Packages" order="7" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="15" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="15" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
       <window_info anchor="right" id="Data View" order="6" />
-      <window_info anchor="right" id="R Packages" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -931,9 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="93" column="55" selection-start-line="93" selection-start-column="55" selection-end-line="93" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -997,12 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="83" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#700#2675#0" />
-            <element signature="e#2732#4054#0" />
-            <element signature="e#5713#6757#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,9 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="636" column="48" selection-start-line="636" selection-start-column="48" selection-end-line="636" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,9 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1072,9 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,9 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
           <caret line="269" column="24" selection-start-line="269" selection-start-column="24" selection-end-line="269" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1179,13 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="169" column="113" selection-start-line="169" selection-start-column="113" selection-end-line="169" selection-end-column="113" />
-          <folding>
-            <element signature="e#129#2417#0" />
-            <element signature="e#2453#5808#0" />
-            <element signature="e#5865#8101#0" />
-            <element signature="e#11877#15609#0" />
-            <element signature="e#15657#19542#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1193,9 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="201" column="38" lean-forward="true" selection-start-line="201" selection-start-column="16" selection-end-line="201" selection-end-column="108" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1203,9 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="134" column="10" lean-forward="true" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1213,11 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="153" column="5" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
-          <folding>
-            <element signature="e#109#2105#0" />
-            <element signature="e#2144#5969#0" />
-            <element signature="e#6114#8287#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1230,16 +1188,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apoyo_institucional/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="251" column="4" selection-start-line="251" selection-start-column="4" selection-end-line="251" selection-end-column="4" />
-          <folding>
-            <element signature="e#123#2344#0" />
-            <element signature="e#2395#4677#0" />
-            <element signature="e#4716#6839#0" />
-            <element signature="e#6873#9054#0" />
-            <element signature="e#9094#11298#0" />
-            <element signature="e#11334#13235#0" />
-          </folding>
+        <state relative-caret-position="99">
+          <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
         </state>
       </provider>
     </entry>
