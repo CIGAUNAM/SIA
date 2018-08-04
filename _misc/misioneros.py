@@ -1,5 +1,3 @@
-
-
 lado_izquierdo = 0
 lado_derecho = 1
 balsa = 2

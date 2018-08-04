@@ -312,6 +312,3694 @@
   }
 },
 {
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 107,
+  "fields": {
+    "titulo": "Ma\u00efs au Mexique: la bourse ou la vie",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "http://alimentation-generale.fr/alim/wp-content/uploads/2014/09/AG_01_FINAL.pdf",
+    "solo_electronico": false,
+    "revista": 309,
+    "fecha": "2012-03-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      32
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 108,
+  "fields": {
+    "titulo": "La Regi\u00f3n Mariposa Monarca en el Centro de Investigaciones en Geograf\u00eda Ambiental.",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 211,
+    "fecha": "2007-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      15
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 109,
+  "fields": {
+    "titulo": "Urbanizaci\u00f3n, Deterioro Ambiental y Precariedad Urbana en Morelia, Michoac\u00e1n",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 211,
+    "fecha": "2010-01-01",
+    "volumen": "",
+    "numero": "27",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      33,
+      15
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 110,
+  "fields": {
+    "titulo": "Las investigaciones geogr\u00e1ficas en Cuba. \u201cNoticias y Comentarios\u201d",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 178,
+    "fecha": "1996-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 387,
+    "pagina_fin": 392,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      17
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 111,
+  "fields": {
+    "titulo": "La contaminaci\u00f3n ambiental por metales pesados en zonas urbanas: el caso de la Ciudad de M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 329,
+    "fecha": "2014-01-01",
+    "volumen": "4",
+    "numero": "17",
+    "pagina_inicio": 14,
+    "pagina_fin": 19,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      133,
+      199,
+      1046,
+      1627,
+      177,
+      234
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 112,
+  "fields": {
+    "titulo": "Los suelos y sus funciones ambientales",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 329,
+    "fecha": "2013-01-01",
+    "volumen": "3",
+    "numero": "10",
+    "pagina_inicio": 3,
+    "pagina_fin": 5,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      1043,
+      162,
+      483,
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 113,
+  "fields": {
+    "titulo": "Bolet\u00edn divulgativo de la red Iberoamericana y del Caribe de restauraci\u00f3n ecol\u00f3gica",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 329,
+    "fecha": "2013-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 11,
+    "pagina_fin": 14,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      1668,
+      1669,
+      1670,
+      30,
+      1671,
+      1672
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 114,
+  "fields": {
+    "titulo": "La clasificaci\u00f3n maya de suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 243,
+    "fecha": "2012-08-31",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 64,
+    "pagina_fin": 70,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      727,
+      376
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 115,
+  "fields": {
+    "titulo": "Los suelos de Latinoam\u00e9rica: retos y oportunidades de uso y estudio",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 196,
+    "fecha": "2010-01-01",
+    "volumen": "",
+    "numero": "2",
+    "pagina_inicio": 93,
+    "pagina_fin": 142,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      376,
+      1527
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 116,
+  "fields": {
+    "titulo": "Consideraciones para el manejo y conservaci\u00f3n de recursos naturales en Yucat\u00e1n",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 330,
+    "fecha": "2001-01-01",
+    "volumen": "16",
+    "numero": "217",
+    "pagina_inicio": 40,
+    "pagina_fin": 46,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      1662
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 117,
+  "fields": {
+    "titulo": "Agroindustrial organic residues, handling options in cane sugar processing plants",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 331,
+    "fecha": "2000-01-01",
+    "volumen": "9",
+    "numero": "95",
+    "pagina_inicio": 32,
+    "pagina_fin": 38,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      1654,
+      1673,
+      1674
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 118,
+  "fields": {
+    "titulo": "Residuos org\u00e1nicos agroindustriales: opciones de manejo en los ingenios azucareros",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 331,
+    "fecha": "2000-01-01",
+    "volumen": "9",
+    "numero": "95",
+    "pagina_inicio": 41,
+    "pagina_fin": 45,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      1654,
+      1673,
+      1674
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 119,
+  "fields": {
+    "titulo": "Agroindustrial organic residues, handling options in cane sugar processing plants. Part II",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 331,
+    "fecha": "2000-01-01",
+    "volumen": "10",
+    "numero": "95",
+    "pagina_inicio": 23,
+    "pagina_fin": 30,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      1654,
+      1673,
+      1674
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 120,
+  "fields": {
+    "titulo": "Residuos org\u00e1nicos agroindustriales: opciones de manejo en los ingenios azucareros. Segunda parte",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 331,
+    "fecha": "2000-01-01",
+    "volumen": "10",
+    "numero": "95",
+    "pagina_inicio": 31,
+    "pagina_fin": 37,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      1654,
+      1673,
+      1674
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 121,
+  "fields": {
+    "titulo": "Las lombrices de tierra: oportunidades de estudio y manejo en la pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 330,
+    "fecha": "2000-01-01",
+    "volumen": "15",
+    "numero": "215",
+    "pagina_inicio": 22,
+    "pagina_fin": 27,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      315,
+      1675
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 122,
+  "fields": {
+    "titulo": "C\u00f3mo ganar un premio nacional con una tesis de posgrado?: o al menos terminar a tiempo.",
+    "descripcion": "http://www.actswithscience.com/como-ganar-un-premio-nacional-con-una-tesis-de-posgrado-o-al-menos-terminar-a-tiempo/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2017-10-04",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 123,
+  "fields": {
+    "titulo": "Plan de acci\u00f3n para encontrar trabajo despu\u00e9s de un doctorado",
+    "descripcion": "http://www.actswithscience.com/plan-de-accion-para-encontrar-trabajo-despues-de-un-doctorado/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2017-08-29",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 124,
+  "fields": {
+    "titulo": "Suelos, ambiente y algo m\u00e1s: el libro de un blogero",
+    "descripcion": "http://www.actswithscience.com/suelos-ambiente-algo-mas-libro-blogero/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2017-06-15",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 125,
+  "fields": {
+    "titulo": "Las inundaciones en Morelia: \"Si tu colonia se encuentra en la lista, ya estas avisado\"",
+    "descripcion": "http://www.actswithscience.com/las-inundaciones-morelia-colonia-se-encuentre-la-lista-ya-estas-avisado/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2018-05-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 126,
+  "fields": {
+    "titulo": "Para cuidar los cultivos, los suelos y el agua se cre\u00f3 AGRIWATER",
+    "descripcion": "http://www.actswithscience.com/cuidar-los-cultivos-los-suelos-agua-se-creo-agriwater/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 332,
+    "fecha": "2018-05-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 127,
+  "fields": {
+    "titulo": "La sequ\u00eda del sur de Yucat\u00e1n en im\u00e1genes",
+    "descripcion": "http://www.actswithscience.com/la-sequia-del-sur-yucatan-imagenes/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 332,
+    "fecha": "2018-04-27",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 128,
+  "fields": {
+    "titulo": "\u00a1La clasificaci\u00f3n del suelo no sirve para nada!",
+    "descripcion": "http://www.actswithscience.com/la-clasificacion-del-suelo-no-sirve-nada/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2017-04-11",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 129,
+  "fields": {
+    "titulo": "App para el muestreo de suelos urbanos",
+    "descripcion": "http://www.actswithscience.com/app-muestreo-suelos-urbanos/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2017-02-04",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 130,
+  "fields": {
+    "titulo": "Los costos ambientales de la p\u00e9rdida de suelo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2017-01-28",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 131,
+  "fields": {
+    "titulo": "El cambio clim\u00e1tico analizado con datos mensuales y el software Clic-MD",
+    "descripcion": "http://www.actswithscience.com/cambio-climatico-analizado-datos-mensuales-software-clic-md/",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2018-01-11",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 132,
+  "fields": {
+    "titulo": "Sobre Etnopedolog\u00eda: Algunas Precisiones (Etnoedafolog\u00eda)",
+    "descripcion": "http://weblogs.madrimasd.org/universo/archive/2009/01/05.aspx",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 333,
+    "fecha": "2009-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 133,
+  "fields": {
+    "titulo": "Reflexiones sobre los programas de ordenamiento ecol\u00f3gico del territorio",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 334,
+    "fecha": "2008-01-01",
+    "volumen": "",
+    "numero": "2",
+    "pagina_inicio": 21,
+    "pagina_fin": 27,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30,
+      16,
+      35
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 134,
+  "fields": {
+    "titulo": "El Conocimiento Agr\u00edcola de los Mayas en las Zonas de Karst",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 333,
+    "fecha": "2008-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 135,
+  "fields": {
+    "titulo": "El Departamento de manejo y conservaci\u00f3n de recursos naturales tropicales: Una respuesta acad\u00e9mica al deterioro ambiental y al desarrollo rural en la pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 335,
+    "fecha": "2000-01-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      1662,
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 136,
+  "fields": {
+    "titulo": "Capacitaci\u00f3n campesina en la Pen\u00ednsula de Yucat\u00e1n: Ense\u00f1anza y aprendizaje en la Escuela de Agricultura Ecol\u00f3gica U yits Ka\u2019an",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 336,
+    "fecha": "1999-01-01",
+    "volumen": "",
+    "numero": "17",
+    "pagina_inicio": 37,
+    "pagina_fin": 43,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 137,
+  "fields": {
+    "titulo": "La capacitaci\u00f3n agroecol\u00f3gica campesina en Yucat\u00e1n: una estrategia contra la pobreza extrema.",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 336,
+    "fecha": "1996-01-01",
+    "volumen": "",
+    "numero": "5",
+    "pagina_inicio": 4,
+    "pagina_fin": 12,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 138,
+  "fields": {
+    "titulo": "Actividades del laboratorio de an\u00e1lisis f\u00edsico y qu\u00edmico del ambiente del Instituto de Geograf\u00eda",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 337,
+    "fecha": "1994-01-01",
+    "volumen": "",
+    "numero": "2",
+    "pagina_inicio": 35,
+    "pagina_fin": 40,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      507,
+      30,
+      1664,
+      1666
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 139,
+  "fields": {
+    "titulo": "\u00bfQu\u00e9 es ser un buen tesista?",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2016-03-14",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 140,
+  "fields": {
+    "titulo": "II Curso internacional de verano en edafolog\u00eda aplicada en el tr\u00f3pico mexicano",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2016-02-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 141,
+  "fields": {
+    "titulo": "Consejos a los j\u00f3venes con vocaci\u00f3n cient\u00edfica, un libro que te ayudar\u00e1 a tomar buenas decisiones",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2016-01-28",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 142,
+  "fields": {
+    "titulo": "El magnetismo en polvos urbanos una t\u00e9cnica proxy de diagn\u00f3stico de la contaminacion por metales pesados",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 338,
+    "fecha": "2016-01-25",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 143,
+  "fields": {
+    "titulo": "Los suelos del DF, M\u00e9rida y Guadalajara est\u00e1n contaminados con plomo: estudio",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-12-23",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 144,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n de las funciones ambientales de los suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-02-11",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 145,
+  "fields": {
+    "titulo": "El cambio clim\u00e1tico una ciencia nueva",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-10-18",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 146,
+  "fields": {
+    "titulo": "La noche europea de los investigadores: suelos y m\u00e1s suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-10-16",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 147,
+  "fields": {
+    "titulo": "8o Congreso SUITMA Suelos de zonas urbanas, industriales, v\u00edas de tr\u00e1fico, minas y militares",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-10-04",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 148,
+  "fields": {
+    "titulo": "Manejo del agua por los Mayas",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-09-16",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 149,
+  "fields": {
+    "titulo": "Captaci\u00f3n, conducci\u00f3n y cosecha de agua: el manejo prehisp\u00e1nico de cuencas",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-08-30",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 150,
+  "fields": {
+    "titulo": "Reflexiones sobre el curso internacional de edafolog\u00eda apliciada sobre los suelos tropicales de M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-08-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 151,
+  "fields": {
+    "titulo": "La agricultura en el estado de Yucat\u00e1n: no m\u00e1s errores, no m\u00e1s planes fallidos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-07-10",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 152,
+  "fields": {
+    "titulo": "Indicadores de cambio clim\u00e1tico un software para analizar millones de datos en segundos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-07-07",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 153,
+  "fields": {
+    "titulo": "Soil and Environment (S&E) un software para evaluar las funciones ambientales de los suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-06-22",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 154,
+  "fields": {
+    "titulo": "Modelos aqu\u00ed, all\u00e1 y acull\u00e1",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 338,
+    "fecha": "2015-06-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 155,
+  "fields": {
+    "titulo": "Tesis de posgrado con objetivos ambiciosos: las ventajas de trabajar en equipo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-06-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 156,
+  "fields": {
+    "titulo": "The App SOC + a tool to estimate or/and calculate soil organic carbon",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-05-28",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 157,
+  "fields": {
+    "titulo": "El curso internacional en edafolog\u00eda aplicada sobre suelos del tr\u00f3pico mexicano",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-04-23",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 158,
+  "fields": {
+    "titulo": "El canal de v\u00eddeos: Suelos, ambiente y algo m\u00e1s superando las 20 mil reproducciones",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-04-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 159,
+  "fields": {
+    "titulo": "Tips para no morir en el intento de hacer una tesis de posgrado",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-03-14",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 160,
+  "fields": {
+    "titulo": "Reflexiones sobre el desarrollo social desde la investigaci\u00f3n",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-03-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 161,
+  "fields": {
+    "titulo": "El cambio clim\u00e1tico un asunto de cient\u00edficos y de adivinos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-03-05",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 162,
+  "fields": {
+    "titulo": "Nuevo software para la identificaci\u00f3n de tendencias del cambio clim\u00e1tico local (Clic-MD)",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-02-12",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 163,
+  "fields": {
+    "titulo": "Y, sin embargo, se mueve la pen\u00ednsula de Yucat\u00e1n: el sismo de playa del Carmen",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2015-01-14",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 164,
+  "fields": {
+    "titulo": "Diversas formas de destruir una colaboraci\u00f3n acad\u00e9mica",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-12-26",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 165,
+  "fields": {
+    "titulo": "Material de divulgaci\u00f3n en suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-12-11",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 166,
+  "fields": {
+    "titulo": "La importancia de la geoestad\u00edstica en estudios geogr\u00e1ficos (ambientales, sociales, ecol\u00f3gicos, etc)",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-11-28",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 167,
+  "fields": {
+    "titulo": "Las cavernas volc\u00e1nicas, maravillas de la naturaleza",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-11-18",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 168,
+  "fields": {
+    "titulo": "La geodiversidad en zonas de karst tropical en Quintana Roo, M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-10-31",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 169,
+  "fields": {
+    "titulo": "Protestas estudiantiles actuales: razones y sin razones",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-10-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 170,
+  "fields": {
+    "titulo": "Potenciales de uso del magnetismo en la g\u00e9nesis y clasificiaci\u00f3n de suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-10-05",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 171,
+  "fields": {
+    "titulo": "Los esquemas de clasificaci\u00f3n de suelos, WRB y la Soil Taxonomy",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-10-05",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 172,
+  "fields": {
+    "titulo": "Aviones, aeropuerto y contaminaci\u00f3n del ambiente en la Ciudad de M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-09-20",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 173,
+  "fields": {
+    "titulo": "Software para evaluar las funciones ambientales de los suelos: Assofu (Assessmment Soil Functions)",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-08-29",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 174,
+  "fields": {
+    "titulo": "La contaminaci\u00f3n por metales pesados en zonas urbanas",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-08-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 175,
+  "fields": {
+    "titulo": "Selecci\u00f3n de especies de plantas con potencial de uso para la restauraci\u00f3n ecol\u00f3gica en zonas costeras",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-07-20",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 176,
+  "fields": {
+    "titulo": "Educaci\u00f3n para la vida: producci\u00f3n de refrescos y n\u00e9ctar en zonas rurales",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-07-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 177,
+  "fields": {
+    "titulo": "El primer lugar del premio agua sustentable 2014: Una ge\u00f3grafa premiada por ingenieros y la historia personal detr\u00e1s del premio",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 338,
+    "fecha": "2014-07-03",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 178,
+  "fields": {
+    "titulo": "Destacada participaci\u00f3n del equipo mexicano en el Congreso Mundial de Suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-06-21",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 179,
+  "fields": {
+    "titulo": "Las iniciativas internacionales para la protecci\u00f3n y buen manejo del suelo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-06-10",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 180,
+  "fields": {
+    "titulo": "Atlas de suelos de Am\u00e9rica Latina y el Caribe",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-06-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 181,
+  "fields": {
+    "titulo": "Propuesta del IVAKY: \u00edndice de vulnerabilidad del acu\u00edfero k\u00e1rstico yucateco a la contaminaci\u00f3n",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-05-30",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 182,
+  "fields": {
+    "titulo": "Las depresiones k\u00e1rsticas (Cenotes, uvalas y poljes) en Quintana Roo: tipos, usos y manejo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-05-18",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 183,
+  "fields": {
+    "titulo": "\u00bfQu\u00e9 hacer con las aguas residuales porcinas? o el conocimiento ed\u00e1fico en la planeaci\u00f3n de la porcicultura",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-04-22",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 184,
+  "fields": {
+    "titulo": "La radiaci\u00f3n ultravioleta y sus efectos en la poblaci\u00f3n humana",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-04-11",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 185,
+  "fields": {
+    "titulo": "Los suelos como reactores en la limpieza del agua residual porcina",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-04-04",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 186,
+  "fields": {
+    "titulo": "Los diez principios que deber\u00eda seguir un asesor cient\u00edfico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-03-27",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 187,
+  "fields": {
+    "titulo": "Yo amo al suelo: suelo y agua saludables",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-03-23",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 188,
+  "fields": {
+    "titulo": "Escuela de Agricultura Ecol\u00f3gica U Yits Ka'an. El Accidente Nuclear y la Agricultura Org\u00e1nica: consideraciones para el futuro de Jap\u00f3n\u201d",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-03-07",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 189,
+  "fields": {
+    "titulo": "Michoac\u00e1n, la producci\u00f3n pecuaria en las zonas de conflicto",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-02-10",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 190,
+  "fields": {
+    "titulo": "La ganader\u00eda en la Reserva de la Biosfera Zicuir\u00e1n Infiernillo: La visi\u00f3....",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-02-03",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 191,
+  "fields": {
+    "titulo": "Geomorfolog\u00eda y geodesastres en el estado de Yucat\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-01-27",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 192,
+  "fields": {
+    "titulo": "El mapa geomorfopedol\u00f3gico de Tabasco",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-01-20",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 193,
+  "fields": {
+    "titulo": "La aventura de vivir una estancia de investigaci\u00f3n en Rusia",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2014-01-14",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 194,
+  "fields": {
+    "titulo": "El software Moclic sigue dando de que hablar",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-11-12",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 195,
+  "fields": {
+    "titulo": "Ecolog\u00eda, edafolog\u00eda y geograf\u00eda urbanas..",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-10-16",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 196,
+  "fields": {
+    "titulo": "Tsunamis, tormentas y desastres naturales identificados por magnetismo ed\u00e1fico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-10-02",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 197,
+  "fields": {
+    "titulo": "Desastres de todo tipo: administrativos, sociales y gobernanza ante fen\u00f3menos naturales",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 338,
+    "fecha": "2013-09-25",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 198,
+  "fields": {
+    "titulo": "El carbono org\u00e1nico del suelo a lo largo del perfil",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-09-23",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 199,
+  "fields": {
+    "titulo": "Vulnerabilidad y riesgos de contaminaci\u00f3n de acuiferos k\u00e1rsticos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-09-12",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 200,
+  "fields": {
+    "titulo": "El software Moclic (Monitoring Climate Change)",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 338,
+    "fecha": "2013-09-06",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 201,
+  "fields": {
+    "titulo": "Museo de suelos Dokuchaev",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-09-05",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 202,
+  "fields": {
+    "titulo": "Contaminaci\u00f3n por metales pesados de suelos urbanos de Morelia",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-08-28",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 203,
+  "fields": {
+    "titulo": "Identificando tendencias de cambio clim\u00e1tico usando el software Moclic",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 338,
+    "fecha": "2013-08-26",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 204,
+  "fields": {
+    "titulo": "La selecci\u00f3n del suelo para las huertas de aguacate: menor degradaci\u00f3n ambiental y mejores rendimientos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-04-02",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 205,
+  "fields": {
+    "titulo": "Metales pesados causales de c\u00e1ncer en el ambiente de la Ciudad de M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-03-17",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 206,
+  "fields": {
+    "titulo": "\u00bfPara qu\u00e9 sirve la app \u201cClasificaci\u00f3n maya de suelos\u201d?",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-03-03",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 207,
+  "fields": {
+    "titulo": "Sabidur\u00eda, conocimiento y tecnolog\u00eda: La App clasificaci\u00f3n maya de suelos en sistema Android",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-02-23",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 208,
+  "fields": {
+    "titulo": "El cambio clim\u00e1tico en Abal\u00e1 Yucat\u00e1n: un extra\u00f1o caso de bajas temperaturas",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-02-14",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 209,
+  "fields": {
+    "titulo": "El polvo urbano un contaminante letal poco reconocido",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-01-21",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 210,
+  "fields": {
+    "titulo": "Pensamiento cient\u00edfico vs pensamiento religioso",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-02-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 211,
+  "fields": {
+    "titulo": "Captura de datos biol\u00f3gicos y ambientales con dispositivos m\u00f3viles: la App plagas forestales",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-01-18",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 212,
+  "fields": {
+    "titulo": "La modernizaci\u00f3n de la educaci\u00f3n en un mundo cambiante",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-01-15",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 213,
+  "fields": {
+    "titulo": "Producci\u00f3n de forraje en un sistema silvopastoril a partir de la selva mediana",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-01-12",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 214,
+  "fields": {
+    "titulo": "Quality of groundwater for irrigation in Yucat\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2016-01-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 215,
+  "fields": {
+    "titulo": "Los buenos deseos de navidad y su relaci\u00f3n con el ambiente",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-12-25",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 216,
+  "fields": {
+    "titulo": "Development of soils in topical karst, the case of peninsula of Yucatan",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-12-18",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 217,
+  "fields": {
+    "titulo": "La claridad de las ideas en investigaci\u00f3n ambiental",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-12-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 218,
+  "fields": {
+    "titulo": "La clasificaci\u00f3n y geograf\u00eda de suelos en las celebraciones del a\u00f1o y d\u00eda del suelo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-12-04",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 219,
+  "fields": {
+    "titulo": "Los nueve consejos para hacer buenos mapas",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-11-23",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 220,
+  "fields": {
+    "titulo": "The magnetic increase in urban dust as an indicator of environmental pollution",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 332,
+    "fecha": "2015-11-30",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 221,
+  "fields": {
+    "titulo": "Conocer el karst para vivir mejor",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-11-20",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 222,
+  "fields": {
+    "titulo": "Los padres son malos consejeros, debes creer en ti",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-11-17",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 223,
+  "fields": {
+    "titulo": "Magnetic monitoring of heavy metals in top soils in M\u00e9rida, Yucat\u00e1n, Mexico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-11-13",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 224,
+  "fields": {
+    "titulo": "\u00bfQu\u00e9 es el karst? y \u00bfpor qu\u00e9 es importante?",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-11-10",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 225,
+  "fields": {
+    "titulo": "La calculadora ed\u00e1fica la tecnolog\u00eda al servicio del manejo sustentable del suelo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2018-10-20",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 226,
+  "fields": {
+    "titulo": "\u201cLos Suelos y la Biodiversidad Forestal\u201d, la celebraci\u00f3n del a\u00f1o internacional del suelo en el CEBAS-CSIC",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-10-29",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 227,
+  "fields": {
+    "titulo": "El fraude ambiental de la VW y su repercusi\u00f3n en la salud",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-10-09",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 228,
+  "fields": {
+    "titulo": "The color of urban dust as indicators of contamination by heavy metals",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 332,
+    "fecha": "2015-10-05",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 229,
+  "fields": {
+    "titulo": "Y me volv\u00ed editor: el intrincado camino para la producci\u00f3n de libros cient\u00edficos en Latinoamerica",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-10-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 230,
+  "fields": {
+    "titulo": "Edafodiversidad, pedodiversidad y diversidad de suelos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-09-29",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 231,
+  "fields": {
+    "titulo": "Healthy soils results in clean water: soil as a natural reactor",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-09-24",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 232,
+  "fields": {
+    "titulo": "The update soil maps in the world: the case of the state of Yucatan Mexico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-09-18",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 233,
+  "fields": {
+    "titulo": "Los suelos de mi naci\u00f3n, la divulgaci\u00f3n en todo su esplendor",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-09-15",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 234,
+  "fields": {
+    "titulo": "Tips para la escritura de tu primer art\u00edculo cient\u00edfico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2018-09-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 235,
+  "fields": {
+    "titulo": "Indicators of Climate change (ICC); a software that can analyze millions of data in seconds",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 332,
+    "fecha": "2015-09-07",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 236,
+  "fields": {
+    "titulo": "Tips para hacer res\u00famenes de art\u00edculos cient\u00edficos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-08-31",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 237,
+  "fields": {
+    "titulo": "Extracto del pr\u00f3logo del libro \u201cConsejos a los j\u00f3venes con vocaci\u00f3n cient\u00edfica\u201d",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-08-19",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 238,
+  "fields": {
+    "titulo": "Golpes de calor y cambio clim\u00e1tico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-07-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 239,
+  "fields": {
+    "titulo": "An\u00e1lisis agroclim\u00e1tico actual y local, conocer para prevenir",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-07-03",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 240,
+  "fields": {
+    "titulo": "ndicadores de cambio clim\u00e1tico un software para analizar millones de datos en segundos",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-06-24",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 241,
+  "fields": {
+    "titulo": "Mar\u00eda Curie, Mar\u00eda de toda mi admiraci\u00f3n",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-06-20",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 242,
+  "fields": {
+    "titulo": "Degradaci\u00f3n del ambiente y trabajo esclavo, el caso de la ropa barata en Europa",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-06-08",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 243,
+  "fields": {
+    "titulo": "Bicicletas, vialidades y salud humana",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-06-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 244,
+  "fields": {
+    "titulo": "Calculando el carbono org\u00e1nico en el perfil de un Gleysol",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 332,
+    "fecha": "2018-05-19",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 245,
+  "fields": {
+    "titulo": "Extreme temperatures in M\u00e9rida City, Yucat\u00e1n State, M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-05-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 246,
+  "fields": {
+    "titulo": "Las temperaturas extremas en la ciudad de M\u00e9rida Yucat\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-04-26",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 247,
+  "fields": {
+    "titulo": "Correlation between heavy metals and magnetic properties in soils of Mexico City",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-04-21",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 248,
+  "fields": {
+    "titulo": "El chocolate contiene una substancia que contribuye a la prevenci\u00f3n de la diabetes mellitus tipo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-04-16",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 249,
+  "fields": {
+    "titulo": "Vulnerability and Risck of Contamination of Karstic Aquifers",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-04-14",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 250,
+  "fields": {
+    "titulo": "Trend analysis of climate change using the software Clic-MD",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-04-10",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 251,
+  "fields": {
+    "titulo": "App \u201cSOC plus\u201d a tool for the calculation and estimation of soil organic carbon",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-04-01",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 252,
+  "fields": {
+    "titulo": "Los servicios ambientales de los \u00e1rboles en las zonas urbanas: confort t\u00e9rmico, absorci\u00f3n y adsorci\u00f3n de metales pesados",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-03-28",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 253,
+  "fields": {
+    "titulo": "Characterization of karstic depressions (shape, size and density) in the state of Quintana Roo, Mexico",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-03-19",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 254,
+  "fields": {
+    "titulo": "App para el c\u00e1lculo del carbono org\u00e1nico del suelo",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-02-15",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 255,
+  "fields": {
+    "titulo": "Maps of Heavy Metals in Mexico City",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-02-02",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 256,
+  "fields": {
+    "titulo": "And yet, the Yucatan peninsula shifted in Playa del Carmen",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2015-01-15",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 257,
+  "fields": {
+    "titulo": "Potential use of magnetism in soil genesis and classifying them",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2014-12-25",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 258,
+  "fields": {
+    "titulo": "Nuestro sue\u00f1o",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": true,
+    "revista": 332,
+    "fecha": "2014-09-10",
+    "volumen": "",
+    "numero": "",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "id_doi": "",
+    "proyecto": null,
+    "autores": [
+      30
+    ],
+    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
   "model": "divulgacion_cientifica.capitulolibrodivulgacion",
   "pk": 1,
   "fields": {
@@ -1015,6 +4703,115 @@
     "usuario": null,
     "autores": [
       32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 48,
+  "fields": {
+    "titulo": "El relieve",
+    "descripcion": "",
+    "libro": 279,
+    "pagina_inicio": 8,
+    "pagina_fin": 14,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      1640,
+      563,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 49,
+  "fields": {
+    "titulo": "Suelos",
+    "descripcion": "",
+    "libro": 279,
+    "pagina_inicio": 20,
+    "pagina_fin": 27,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      30,
+      1640,
+      1676,
+      1677,
+      1678,
+      1679
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 50,
+  "fields": {
+    "titulo": "Conservaci\u00f3n de Suelos",
+    "descripcion": "",
+    "libro": 279,
+    "pagina_inicio": 608,
+    "pagina_fin": 615,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      1676,
+      1677,
+      1678,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 51,
+  "fields": {
+    "titulo": "El Suelo",
+    "descripcion": "",
+    "libro": 280,
+    "pagina_inicio": 14,
+    "pagina_fin": 16,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 52,
+  "fields": {
+    "titulo": "El Relieve",
+    "descripcion": "",
+    "libro": 280,
+    "pagina_inicio": 7,
+    "pagina_fin": 9,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      30,
+      158,
+      199,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 53,
+  "fields": {
+    "titulo": "Se hace camino al andar\u2026. y al tropezar tambi\u00e9n",
+    "descripcion": "",
+    "libro": 281,
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      30
     ]
   }
 },
@@ -1831,6 +5628,90 @@
   }
 },
 {
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 77,
+  "fields": {
+    "evento": 819,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "OTRO",
+    "financiamiento": null,
+    "usuario": 24
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 78,
+  "fields": {
+    "evento": 813,
+    "descripcion": "Elaboraci\u00f3n de materiales de capacitaci\u00f3n y difusi\u00f3n para la promoci\u00f3n de actividades en la metodolog\u00eda y las herramientas de SIGP y Mapeo Participativo",
+    "responsabilidad": "COORDINADOR",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "OTRO",
+    "financiamiento": null,
+    "usuario": 24
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 79,
+  "fields": {
+    "evento": 836,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 3,
+    "numero_asistentes": 10,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 50
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 80,
+  "fields": {
+    "evento": 835,
+    "descripcion": "Visitas escolares al Campus de la UNAM",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 6,
+    "numero_asistentes": 300,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 81,
+  "fields": {
+    "evento": 837,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 300,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 82,
+  "fields": {
+    "evento": 839,
+    "descripcion": "",
+    "responsabilidad": "COMITE",
+    "numero_ponentes": 5,
+    "numero_asistentes": 100,
+    "ambito": "INSTITUCIONAL",
+    "financiamiento": 4,
+    "usuario": 16
+  }
+},
+{
   "model": "divulgacion_cientifica.participacioneventodivulgacion",
   "pk": 1,
   "fields": {
@@ -1841,7 +5722,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1855,7 +5738,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1869,7 +5754,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1883,7 +5770,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1897,7 +5786,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1911,7 +5802,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1925,7 +5818,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1939,7 +5834,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1953,7 +5850,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1967,7 +5866,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1981,7 +5882,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -1995,7 +5898,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2009,7 +5914,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2023,7 +5930,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2037,7 +5946,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2051,7 +5962,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2065,7 +5978,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2079,7 +5994,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2093,7 +6010,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2107,7 +6026,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2121,7 +6042,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2135,7 +6058,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2149,7 +6074,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2163,7 +6090,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2177,7 +6106,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -2191,7 +6122,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2205,7 +6138,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2219,7 +6154,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2233,7 +6170,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2247,7 +6186,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2261,7 +6202,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2275,7 +6218,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2289,7 +6234,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2303,7 +6250,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2317,7 +6266,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2331,7 +6282,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2345,7 +6298,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2359,7 +6314,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2373,7 +6330,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2387,7 +6346,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2401,7 +6362,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2415,7 +6378,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2429,7 +6394,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2443,7 +6410,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2457,7 +6426,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2471,7 +6442,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2485,7 +6458,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2499,7 +6474,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2513,7 +6490,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2527,7 +6506,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2541,7 +6522,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2555,7 +6538,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2569,7 +6554,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2583,7 +6570,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2597,7 +6586,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2611,7 +6602,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2625,7 +6618,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2639,7 +6634,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2653,7 +6650,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2667,7 +6666,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2681,7 +6682,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2695,7 +6698,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2709,7 +6714,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2723,7 +6730,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2737,7 +6746,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2751,7 +6762,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2765,7 +6778,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2779,7 +6794,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2793,7 +6810,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2807,7 +6826,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2821,7 +6842,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2835,7 +6858,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2849,7 +6874,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2863,7 +6890,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2877,7 +6906,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2891,7 +6922,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2905,7 +6938,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2919,7 +6954,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2933,7 +6970,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2947,7 +6986,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2961,7 +7002,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2975,7 +7018,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -2989,7 +7034,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3003,7 +7050,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3017,7 +7066,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3031,7 +7082,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3045,7 +7098,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3059,7 +7114,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3073,7 +7130,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3087,7 +7146,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3101,7 +7162,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3115,7 +7178,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3129,7 +7194,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3143,7 +7210,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3157,7 +7226,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3171,7 +7242,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3185,7 +7258,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3199,7 +7274,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3213,7 +7290,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3227,7 +7306,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3241,7 +7322,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3255,7 +7338,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3269,7 +7354,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3283,7 +7370,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3297,7 +7386,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3311,7 +7402,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3325,7 +7418,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3339,7 +7434,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3353,7 +7450,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3367,7 +7466,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3381,7 +7482,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3395,7 +7498,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3409,7 +7514,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3423,7 +7530,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3437,7 +7546,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3451,7 +7562,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3465,7 +7578,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3479,7 +7594,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3493,7 +7610,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3507,7 +7626,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3521,7 +7642,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3535,7 +7658,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3549,7 +7674,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3563,7 +7690,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3577,7 +7706,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3591,7 +7722,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3605,7 +7738,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3619,7 +7754,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3633,7 +7770,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3647,21 +7786,25 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
   "model": "divulgacion_cientifica.participacioneventodivulgacion",
   "pk": 132,
   "fields": {
-    "titulo": "El posgrado en Geograf\u00eda de la UNAN, retos para la integraci\u00f3n en la Geograf\u00eda",
+    "titulo": "El posgrado en Geograf\u00eda de la UNAM, retos para la integraci\u00f3n en la Geograf\u00eda",
     "descripcion": "Dirigida a estudiantes de la Licenciatura en Geograf\u00eda de la Universidad de Munich Alemania",
     "evento": 216,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3675,7 +7818,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3689,7 +7834,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3703,7 +7850,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 17
+    "participantes": [
+      17
+    ]
   }
 },
 {
@@ -3717,7 +7866,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3731,7 +7882,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3745,7 +7898,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3759,7 +7914,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3773,7 +7930,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3787,7 +7946,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3801,7 +7962,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3815,7 +7978,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3829,7 +7994,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3843,7 +8010,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3857,7 +8026,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3871,7 +8042,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3885,7 +8058,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3899,7 +8074,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3913,7 +8090,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3927,7 +8106,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3941,7 +8122,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3955,7 +8138,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3969,7 +8154,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3983,7 +8170,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -3997,7 +8186,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -4011,7 +8202,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -4025,7 +8218,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 14
+    "participantes": [
+      14
+    ]
   }
 },
 {
@@ -4039,7 +8234,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4053,7 +8250,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4067,7 +8266,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4081,7 +8282,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4095,7 +8298,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4109,7 +8314,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4123,7 +8330,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4137,7 +8346,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4151,7 +8362,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4165,7 +8378,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4179,7 +8394,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4193,7 +8410,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4207,7 +8426,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 9
+    "participantes": [
+      9
+    ]
   }
 },
 {
@@ -4221,7 +8442,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 23
+    "participantes": [
+      23
+    ]
   }
 },
 {
@@ -4235,7 +8458,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4249,7 +8474,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4263,7 +8490,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4277,7 +8506,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4291,7 +8522,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4305,7 +8538,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4319,7 +8554,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4333,7 +8570,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4347,7 +8586,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4361,7 +8602,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4375,7 +8618,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4389,7 +8634,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4403,7 +8650,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4417,7 +8666,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 44
+    "participantes": [
+      44
+    ]
   }
 },
 {
@@ -4431,7 +8682,9 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 44
+    "participantes": [
+      44
+    ]
   }
 },
 {
@@ -4445,7 +8698,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 53
+    "participantes": [
+      53
+    ]
   }
 },
 {
@@ -4459,7 +8714,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 53
+    "participantes": [
+      53
+    ]
   }
 },
 {
@@ -4473,7 +8730,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "usuario": 20
+    "participantes": [
+      20
+    ]
   }
 },
 {
@@ -4487,7 +8746,9 @@
     "ambito": "REGIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "usuario": 12
+    "participantes": [
+      12
+    ]
   }
 },
 {
@@ -4501,7 +8762,9 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4515,7 +8778,9 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
   }
 },
 {
@@ -4529,7 +8794,1267 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "usuario": 32
+    "participantes": [
+      32
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 215,
+  "fields": {
+    "titulo": "Talleres sobre temas de geograf\u00eda",
+    "descripcion": "Participaci\u00f3n en 17 talleres con temas sobre geograf\u00eda",
+    "evento": 835,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "participantes": [
+      483,
+      14,
+      1109,
+      486,
+      892
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 216,
+  "fields": {
+    "titulo": "Escalas en los modelos tridimensionales",
+    "descripcion": "",
+    "evento": 838,
+    "resumen_publicado": false,
+    "ambito": "OTRO",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "participantes": [
+      1468,
+      1462,
+      483,
+      1464,
+      1469,
+      1461,
+      1465,
+      1460
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 217,
+  "fields": {
+    "titulo": "Escalas en los modelos tridimensionales",
+    "descripcion": "",
+    "evento": 838,
+    "resumen_publicado": false,
+    "ambito": "OTRO",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "participantes": [
+      1468,
+      1462,
+      483,
+      1464,
+      1469,
+      1461,
+      1465,
+      1460
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 218,
+  "fields": {
+    "titulo": "Environmental functions of the farmer\u2019s land clases into the zone of influence in two natural protected areas of Michoacan, Mexico.",
+    "descripcion": "Cartel.",
+    "evento": 843,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      483,
+      162,
+      1043,
+      310,
+      30,
+      659
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 219,
+  "fields": {
+    "titulo": "Magnetic susceptibility and saturation isothermal remanent magnetization and their relationship with heavy metals in urban soils in Mexico City",
+    "descripcion": "Conferencia",
+    "evento": 843,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      315,
+      30,
+      231,
+      1046,
+      133,
+      199
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 220,
+  "fields": {
+    "titulo": "Magnetic properties of dusts and urban topsoils from the Mexicali (Mexico) \u2013 Calexico (US Binational Conurbation",
+    "descripcion": "",
+    "evento": 843,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      334,
+      177,
+      1625,
+      30,
+      1686,
+      231,
+      300,
+      133
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 221,
+  "fields": {
+    "titulo": "Diagnosis of heavy metal pollution in urban soils: the case of Mexico City",
+    "descripcion": "",
+    "evento": 843,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      315,
+      30,
+      231,
+      1046,
+      1048,
+      1627
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 222,
+  "fields": {
+    "titulo": "State and regional soil maps using Maya Soil Classification",
+    "descripcion": "",
+    "evento": 843,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 223,
+  "fields": {
+    "titulo": "Software for the assessment of climate (Moclic), soil functions (Assofu), and agricultural water quality (Agriaqua) for land evaluation",
+    "descripcion": "",
+    "evento": 272,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1049,
+      162,
+      315,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 224,
+  "fields": {
+    "titulo": "Toma de decisiones en la expansi\u00f3n del cultivo del aguacate: uso y funciones ambientales de los suelos analizados con los modelos Agrilocal y Assofu",
+    "descripcion": "",
+    "evento": 844,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      483,
+      162,
+      30,
+      14
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 225,
+  "fields": {
+    "titulo": "Preservar la recarga de acu\u00edferos en la regi\u00f3n centro occidente de M\u00e9xico, mediante la delimitaci\u00f3n de las zonas de infiltraci\u00f3n del agua pluvial",
+    "descripcion": "",
+    "evento": 845,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 226,
+  "fields": {
+    "titulo": "La contaminaci\u00f3n por metales pesados en suelos urbanos de M\u00e9xico",
+    "descripcion": "",
+    "evento": 846,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 227,
+  "fields": {
+    "titulo": "Las propiedades magn\u00e9ticas de los suelos y sus aplicaciones: contaminaci\u00f3n, clasificaci\u00f3n, cartograf\u00eda y uso del fuego en la agricultura",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      30,
+      231
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 228,
+  "fields": {
+    "titulo": "Propiedades magn\u00e9ticas y pedog\u00e9nesis en un perfil de suelo con horizontes contrastantes",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 229,
+  "fields": {
+    "titulo": "Software para la evaluaci\u00f3n del agua subterr\u00e1nea",
+    "descripcion": "",
+    "evento": 847,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1049,
+      315,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 230,
+  "fields": {
+    "titulo": "Metales pesados en polvos urbanos y plantas en la Cd. De M\u00e9xico",
+    "descripcion": "",
+    "evento": 848,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 231,
+  "fields": {
+    "titulo": "An\u00e1lisis de la variabilidad clim\u00e1tica en Belice, periodo 1960-2010",
+    "descripcion": "",
+    "evento": 849,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1688,
+      30,
+      1689,
+      158
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 232,
+  "fields": {
+    "titulo": "Software carb\u00f3n-stock para la estimaci\u00f3n de carbono org\u00e1nico del suelo",
+    "descripcion": "Simposio \u201cS\u00edntesis Nacional y Regional de la din\u00e1mica del carbono en el suelo.",
+    "evento": 850,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1690,
+      30,
+      1691
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 233,
+  "fields": {
+    "titulo": "Software para la evaluaci\u00f3n de las funciones ambientales y ecol\u00f3gicas de los suelos (ASSOFU)",
+    "descripcion": "",
+    "evento": 850,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1690,
+      30,
+      1691
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 234,
+  "fields": {
+    "titulo": "Estimaci\u00f3n del carbono org\u00e1nico en leptosoles en zonas de karst",
+    "descripcion": "Simposio \u201cS\u00edntesis Nacional y Regional de la din\u00e1mica del carbono en el suelo",
+    "evento": 850,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      315,
+      30,
+      221,
+      1632,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 235,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n de suelos en escenarios de cambio clim\u00e1tico haciendo uso de MicroLEIS DSS",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1694,
+      30,
+      750,
+      1692,
+      1693
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 236,
+  "fields": {
+    "titulo": "Estudio preliminar sobre el an\u00e1lisis elemental de suelos como indicadores en el proceso diagen\u00e9tico en restos \u00f3seos de entierros prehisp\u00e1nicos",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1695,
+      796,
+      1047,
+      30,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 237,
+  "fields": {
+    "titulo": "Abrupt magnetic transformations in laboratory heated agricultural soils",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      1696,
+      231,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 238,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n de las funciones del suelo en zonas volc\u00e1nicas del estado de Michoac\u00e1n",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      483,
+      162,
+      1043,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 239,
+  "fields": {
+    "titulo": "Caracterizaci\u00f3n de las clases de tierra campesina en La Huacana, Michoac\u00e1n",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      483,
+      30,
+      1697
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 240,
+  "fields": {
+    "titulo": "Software para analizar datos de perfiles de suelo (Assofu)",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      162,
+      30,
+      1691
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 241,
+  "fields": {
+    "titulo": "Identificaci\u00f3n de zonas con mayor afectaci\u00f3n de emisiones vehiculares contaminantes en la ciudad de Bogot\u00e1, Colombia.",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      30,
+      1700,
+      1699,
+      231,
+      1698
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 242,
+  "fields": {
+    "titulo": "Diagnostic of heavy metal pollution using rock-magnetica, scanning electron microscopy and chemical analysis on soils, road dusts and tee leaves from two Uruguayan coastal cities",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      1701,
+      30,
+      1631,
+      1629
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 243,
+  "fields": {
+    "titulo": "Assessment of heavy metal pollution using land uses and indexes in urban soils in Morelia Michoac\u00e1n M\u00e9xico",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      1047,
+      30,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 244,
+  "fields": {
+    "titulo": "Assessment of urban soil pollution in Mexico City using Indicator Kriging",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      315,
+      1047,
+      30,
+      1046,
+      133,
+      199
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 245,
+  "fields": {
+    "titulo": "Soil color indexes as indicators of heavy metals pollution in Mexico City",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      1047,
+      30,
+      1265,
+      1045,
+      1046,
+      133
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 246,
+  "fields": {
+    "titulo": "Environmental magnetism as proxy method for the heavy metal detection in urban dusts in Mexico City",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      1047,
+      30,
+      1265,
+      231,
+      1045,
+      1046,
+      133
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 247,
+  "fields": {
+    "titulo": "Saturation isothermal remanent magnetization and associated magnetic parameters of urban soils and their relationships with heavy metals based on multiple regressions",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      1047,
+      30,
+      231,
+      1046,
+      133
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 248,
+  "fields": {
+    "titulo": "L\u00edquenes como biomonitores de contaminaci\u00f3n atmosf\u00e9rica empleando m\u00e9todos magn\u00e9ticos",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      30,
+      231,
+      1629
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 249,
+  "fields": {
+    "titulo": "Diagn\u00f3stico y homogeneizaci\u00f3n de bases de datos georeferenciadas para el monitoreo de riesgo y desastres asociados a fen\u00f3mienos hidrometeorol\u00f3gicos y clim\u00e1ticos en la pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1702,
+      30,
+      1640,
+      158,
+      199
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 250,
+  "fields": {
+    "titulo": "Estudio magn\u00e9tico y qu\u00edmico de muestras ambientales de la ciudad de Guadalajara para evaluaci\u00f3n de los niveles de contaminaci\u00f3n",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      30,
+      231,
+      1703,
+      1046,
+      133
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 251,
+  "fields": {
+    "titulo": "The magnetic properties and their relation to diagnostic horizons, properties and materials in a Luvic Kastanozems",
+    "descripcion": "",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      334,
+      177,
+      1625,
+      1635,
+      30,
+      1706,
+      1704,
+      1705,
+      133
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 252,
+  "fields": {
+    "titulo": "Identificaci\u00f3n de las depresiones c\u00e1rsticas y su r\u00e9gimen de inundaci\u00f3n en Quintana Roo, M\u00e9xico",
+    "descripcion": "",
+    "evento": 119,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1657,
+      30,
+      158,
+      826
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 253,
+  "fields": {
+    "titulo": "Paisajes geomorfol\u00f3gicos de la pen\u00ednsula de Baja California",
+    "descripcion": "",
+    "evento": 119,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      659,
+      199
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 254,
+  "fields": {
+    "titulo": "Geodiversidad y biodiversidad en Quintana Roo M\u00e9xico",
+    "descripcion": "",
+    "evento": 851,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1657,
+      30,
+      158,
+      826
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 255,
+  "fields": {
+    "titulo": "Identificaci\u00f3n de tendencias de cambio clim\u00e1tico a nivel local: Moclic versi\u00f3n 1.2",
+    "descripcion": "",
+    "evento": 852,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 256,
+  "fields": {
+    "titulo": "Zonificaci\u00f3n geomorfol\u00f3gica en zonas de \u00e1reas de karst: el caso de Quintana Roo, M\u00e9xico",
+    "descripcion": "",
+    "evento": 160,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1657,
+      30,
+      659,
+      158,
+      826
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 257,
+  "fields": {
+    "titulo": "Cartograf\u00eda geomorfopedol\u00f3gica de la isla de Cozumel usando como base el modelo de elevaci\u00f3n topogr\u00e1fica de alta resoluci\u00f3n Airborne - LiDAR",
+    "descripcion": "",
+    "evento": 160,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      158,
+      199
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 258,
+  "fields": {
+    "titulo": "Identificaci\u00f3n de \u00e1reas degradadas en la reserva de bi\u00f3sfera de Zicuir\u00e1n-Infiernillo",
+    "descripcion": "",
+    "evento": 160,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      659,
+      199
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 259,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n agroclim\u00e1tica e identificaci\u00f3n de tendencias de cambio clim\u00e1tico: Moclic Versi\u00f3n 1.2",
+    "descripcion": "",
+    "evento": 160,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      1691
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 260,
+  "fields": {
+    "titulo": "Actualizaci\u00f3n del mapa de suelos de Yucat\u00e1n utilizando un enfoque geomorfopedol\u00f3gico",
+    "descripcion": "",
+    "evento": 814,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      158,
+      199,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 261,
+  "fields": {
+    "titulo": "Las depresiones c\u00e1rsticas de Quintana Roo como base para el estudio de la distribuci\u00f3n de suelos: an\u00e1lisis morfom\u00e9trico",
+    "descripcion": "",
+    "evento": 814,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1657,
+      30,
+      659,
+      158,
+      826
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 262,
+  "fields": {
+    "titulo": "Zonificaci\u00f3n agroecol\u00f3gica como base para el ordenamiento territorial en zonas tropicales: el caso de infiernillo Michoac\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "evento": 268,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      659
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 263,
+  "fields": {
+    "titulo": "Las plantas forrajeras utilizadas por los mayas y pur\u00e9pechas",
+    "descripcion": "",
+    "evento": 62,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      1707,
+      50,
+      1643
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 264,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n de las funciones del suelo a escala regional en ambientes volc\u00e1nicos y sedimentarios en el estado de Michoac\u00e1n",
+    "descripcion": "",
+    "evento": 140,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1043,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 265,
+  "fields": {
+    "titulo": "Diagn\u00f3stico de la contaminaci\u00f3n por metales pesados en suelos urbanos en Morelia Michoac\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "evento": 853,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      315,
+      30,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 266,
+  "fields": {
+    "titulo": "Niveles biodisponibles de metales pesados en los suelos urbanos de M\u00e9rida, Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 854,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      1708
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 267,
+  "fields": {
+    "titulo": "Sistema de an\u00e1lisis de datos para el monitoreo del cambio clim\u00e1tico a nivel local con \u00edndices agroclim\u00e1ticos. Climatolog\u00eda, cambios clim\u00e1ticos y atm\u00f3sfera.",
+    "descripcion": "2010",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      483,
+      1694,
+      1709,
+      30,
+      1691
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 268,
+  "fields": {
+    "titulo": "La sobrestimaci\u00f3n del carbono org\u00e1nico en Leptosoles del estado de Yucat\u00e1n. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      1632
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 269,
+  "fields": {
+    "titulo": "Relaci\u00f3n entre suelo y el or\u00e9gano silvestre en \u00e1reas de karst reciente en Yucat\u00e1n, M\u00e9xico. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      315,
+      30,
+      1632,
+      1346,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 270,
+  "fields": {
+    "titulo": "Los efectos del manejo forestal en el contenido de carbono en los suelos de la Reserva de la bi\u00f3sfera Mariposa monarca. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      196,
+      1012
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 271,
+  "fields": {
+    "titulo": "M\u00e9todos magn\u00e9ticos para el monitoreo de la contaminaci\u00f3n de suelos urbanos por Metales Pesados. Geomagnetismo y paleomagnetismo",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1710,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 272,
+  "fields": {
+    "titulo": "Spatial distribution of karstic depressions in tropical karst plains. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      659,
+      17,
+      158,
+      199,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 273,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n espacial de la aptitud de los suelos como receptores de aguas residuales con alta carga org\u00e1nica en zonas de karst. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 274,
+  "fields": {
+    "titulo": "Cambios qu\u00edmicos, mineral\u00f3gicos y magn\u00e9ticos en los suelos por efecto del fuego en condiciones de laboratorio",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      177,
+      1625,
+      1626,
+      30,
+      12,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 275,
+  "fields": {
+    "titulo": "Nicho ecol\u00f3gico de  diez especies de plantas del Cord\u00f3n Litoral de la Pen\u00ednsula de Yucat\u00e1n. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      30,
+      1053,
+      1711
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 276,
+  "fields": {
+    "titulo": "Distribuci\u00f3n espacial de la salinidad del suelo y sus efectos en la vegetaci\u00f3n en una isla de barrera en R\u00eda Lagartos, Yucat\u00e1n, M\u00e9xico. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      315,
+      30,
+      1053
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 277,
+  "fields": {
+    "titulo": "Reconocimiento a la trayectoria acad\u00e9mica del Dr. Heriberto Cuanalo de la Cerda. Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos",
+    "descripcion": "",
+    "evento": 264,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1712,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 278,
+  "fields": {
+    "titulo": "Earthworm communities in deciduous forest and productive systems in Yucatan, Mexico. Changes, disturbance responses and indicator species",
+    "descripcion": "",
+    "evento": 855,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1713,
+      30,
+      1714
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 279,
+  "fields": {
+    "titulo": "Evaluation of the effect of fodder trees and earthworms on the growth of sorghum",
+    "descripcion": "",
+    "evento": 855,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "participantes": [
+      1637,
+      30,
+      1715,
+      1638
+    ]
   }
 },
 {
@@ -5022,6 +10547,558 @@
     "actividad": "ENTREVISTA",
     "medio_divulgacion": 10,
     "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 49,
+  "fields": {
+    "tema": "Producci\u00f3n de materia seca h\u00famica en \u00e1reas deforestadas para uso agr\u00edcola en rotaci\u00f3n de cultivos en Nap\u00edzaro, Erongar\u00edcuaro, Michoac\u00e1n.",
+    "fecha": "2012-07-01",
+    "descripcion": "",
+    "actividad": "OTRA",
+    "medio_divulgacion": 2,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 50,
+  "fields": {
+    "tema": "Red tsiri: Una historia de Ma\u00edz.",
+    "fecha": "2014-01-01",
+    "descripcion": "Producci\u00f3n y Gui\u00f3n\r\nhttps://www.youtube.com/watch?v=300DcmypTyM",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 28,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 51,
+  "fields": {
+    "tema": "Tarheta: la milpa purh\u00e9pecha",
+    "fecha": "2016-01-01",
+    "descripcion": "Producci\u00f3n y Gui\u00f3n\r\nhttps://www.youtube.com/watch?v=U8jR-sHmLv0&feature=youtu.be",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 28,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 52,
+  "fields": {
+    "tema": "Juego La milpa la dieta que no calienta el planeta",
+    "fecha": "2018-07-18",
+    "descripcion": "Juego para ni\u00f1os de primaria con el objetivo pedag\u00f3gico de educaci\u00f3n en la alimentaci\u00f3n saludable y con bajo impacto en el cambio clim\u00e1tico. (en proceso)",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 29,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 53,
+  "fields": {
+    "tema": "\u00bfCu\u00e1les son los misterios que encierran las mariposas monarca? #ExpertaUNAMexplica algunos de ellos",
+    "fecha": "2018-02-11",
+    "descripcion": "UNAM.MX.Oficial",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 30,
+    "usuario": 42
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 54,
+  "fields": {
+    "tema": "Perspectiva Rural",
+    "fecha": "2012-06-01",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 32
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 55,
+  "fields": {
+    "tema": "La divulgaci\u00f3n de la ciencia",
+    "fecha": "2017-04-06",
+    "descripcion": "en \"Suelos, ambiente y algo m\u00e1s\": Canal de youtube y Blog.\r\n\r\nhttp://geoyambiente.blogspot.mx/2017/04/la-divulgacion-de-la-ciencia-en-suelos.html",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 28,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 56,
+  "fields": {
+    "tema": "Ganader\u00eda a la usanza maya",
+    "fecha": "2012-07-12",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 57,
+  "fields": {
+    "tema": "Ofrece UNAM Campus Morelia software para el an\u00e1lisis de los cambios en el clima",
+    "fecha": "2012-05-07",
+    "descripcion": "La jornada",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 58,
+  "fields": {
+    "tema": "The software is able to identify trends of climate change",
+    "fecha": "2012-01-01",
+    "descripcion": "http://www.climateshowcase.com/category/environment-news",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 59,
+  "fields": {
+    "tema": "Llevan el clima a software: UNAM y Tec de Tacambaro, cradores.",
+    "fecha": "2012-04-18",
+    "descripcion": "Ciencia cierta, La voz de Michoac\u00e1n",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 60,
+  "fields": {
+    "tema": "\u00bfHay variaciones en el cambio clim\u00e1tico global?",
+    "fecha": "2011-10-12",
+    "descripcion": "El Financiero",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 61,
+  "fields": {
+    "tema": "Crea el CIGA un software para identificar cambios clim\u00e1ticos",
+    "fecha": "2011-09-19",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 62,
+  "fields": {
+    "tema": "Software para prevenir estragos del calentamiento global",
+    "fecha": "2011-12-28",
+    "descripcion": "Investigaci\u00f3n y desarrollo\r\n\r\nhttp://www.invdes.com.mx/medio-ambiente/1715-software-para-prevenir-estragos-del-calentamiento-global",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 63,
+  "fields": {
+    "tema": "UNAM cria software para analisar mudan\u00e7a clim\u00e1tica",
+    "fecha": "2011-09-19",
+    "descripcion": "http://noticias.universia.net.mx/translate/es-pt/ciencia-nn-tt/noticia/2011/09/19/868674/unam-crea-software-analizar-cambio-climatico.html",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 64,
+  "fields": {
+    "tema": "Crea UNAM software para analizar el clima",
+    "fecha": "2011-09-18",
+    "descripcion": "La voz de Michoac\u00e1n",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 65,
+  "fields": {
+    "tema": "Crean software para analizar el cambio clim\u00e1tico (DUPLICADO)",
+    "fecha": "2011-09-01",
+    "descripcion": "El Universal",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 66,
+  "fields": {
+    "tema": "Crean software para analizar el cambio clim\u00e1tico",
+    "fecha": "2011-09-01",
+    "descripcion": "El Siglo de Torre\u00f3n\r\nhttp://www.elsiglodetorreon.com.mx/noticia/656659.crean-software-para-analizar-el-cambio-climat.html;",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 67,
+  "fields": {
+    "tema": "Crean software para analizar el cambio clim\u00e1tico",
+    "fecha": "2011-09-01",
+    "descripcion": "El universal\r\nhttp://www.eluniversal.com.mx/cultura/66256.html",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 68,
+  "fields": {
+    "tema": "Crean software para identificar cambios del clima",
+    "fecha": "2011-09-02",
+    "descripcion": "Teorema ambiental\r\nhttp://www.teorema.com.mx/cienciaytecnologia/crean-software-para-identificar-cambios-del-clima/",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 69,
+  "fields": {
+    "tema": "Crean Software para analizar el cambio clim\u00e1tico",
+    "fecha": "2011-09-01",
+    "descripcion": "http://educandoparaelcambio.blogspot.com/2011/09/crean-software-para-analizar-el-cambio.html",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 70,
+  "fields": {
+    "tema": "Software para analizar el cambio clim\u00e1tico: UNAM",
+    "fecha": "2011-09-17",
+    "descripcion": "Alianza Tex\r\n\r\nhttp://www.alianzatex.com/nota.php?nota=N0014526",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 71,
+  "fields": {
+    "tema": "UNAM crea software para analizar cambio clim\u00e1tico",
+    "fecha": "2011-09-19",
+    "descripcion": "El Comercio\r\n\r\nhttp://www.elcomercio.com/tecnologia/ciencia/UNAM-software-analisis-cambio_climatico_0_557344359.html (Ecuador)",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 72,
+  "fields": {
+    "tema": "Generan en la UNAM Mapas de suelos, planicies, monta\u00f1as y valles del pa\u00eds.",
+    "fecha": "2011-07-10",
+    "descripcion": "http://www.dgcs.unam.mx/boletin/bdboletin/2011_407.html\r\nhttp://estoes.sabersinfin.com/?tag=centro-de-investigaciones\r\nhttp://www.alianzatex.com/nota.php?nota=N0013620; http://redesdepoder.com.mx/portal/index.php?option=com_k2&view=item&id=7343:generan-en-la-unam-mapa-de-planicies-monta%C3%B1as-y-valles-del-pa%C3%ADs&Itemid=29; http://sdpnoticias.com/nota/118836/Breves_Informativas\r\nhttp://www.teorema.com.mx/cienciaytecnologia/unam-genera-mapas-de-suelos-planicies-montanas-y-valles-del-pais/",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 73,
+  "fields": {
+    "tema": "A trav\u00e9s del software MOCLIC investigadores se preparan para medir el cambio clim\u00e1tico",
+    "fecha": "2011-05-30",
+    "descripcion": "Departamento de difusi\u00f3n del centro universitario de los Valles. Universidad de Guadalajara.",
+    "actividad": "OTRA",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 74,
+  "fields": {
+    "tema": "Inaugura la UNAM el Laboratorio Universitario de Geof\u00edsica Ambiental.",
+    "fecha": "2018-05-21",
+    "descripcion": "La Jornada Michoac\u00e1n",
+    "actividad": "OTRA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 75,
+  "fields": {
+    "tema": "Inaugura la UNAM el Laboratorio Universitario de Geof\u00edsica Ambiental",
+    "fecha": "2011-05-21",
+    "descripcion": "La Jornada Michoac\u00e1n",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 76,
+  "fields": {
+    "tema": "La Chapultepec muy contaminada",
+    "fecha": "2011-04-01",
+    "descripcion": "La Voz de Michoac\u00e1n",
+    "actividad": "OTRA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 77,
+  "fields": {
+    "tema": "Diagn\u00f3stico de la contaminaci\u00f3n de los suelos de la ciudad de Morelia",
+    "fecha": "2011-03-01",
+    "descripcion": "TV Azteca-Michoac\u00e1n entrevist\u00f3 a F. Bautista y B. Aguilar.\r\nNo hay documento porque fue un video.",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 1,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 78,
+  "fields": {
+    "tema": "Tecnolog\u00eda contra desastres naturales",
+    "fecha": "2010-01-01",
+    "descripcion": "Pilar E. Mart\u00ednez entrevista a Bautista F. 2010. Ciencia y desarrollo, CONACYT, secci\u00f3n Ciencia en M\u00e9xico.",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 1,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 79,
+  "fields": {
+    "tema": "Prevenci\u00f3n de desastres",
+    "fecha": "2010-01-01",
+    "descripcion": "C\u00e1psula radiof\u00f3nica RADIOSFERA y en diversas estaciones de radio.\r\nNo hay documento porque fue grabaci\u00f3n de voz.",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 31,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 80,
+  "fields": {
+    "tema": "Ego\u00edstas ambientales",
+    "fecha": "2009-12-11",
+    "descripcion": "El diario de Yucat\u00e1n.\r\nNota sobre el seminario \u201cAn\u00e1lisis de la vulnerabilidad y riesgos de contaminaci\u00f3n de las aguas subterr\u00e1neas en la  Pen\u00ednsula de Yucat\u00e1n\u201d",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 81,
+  "fields": {
+    "tema": "Protegen de huracanes a la pen\u00ednsula de Yucat\u00e1n.PROYECTO UNAM",
+    "fecha": "2009-09-10",
+    "descripcion": "Peri\u00f3dico El Universal\r\nRafael L\u00f3pez entrevista a Bautista F. \r\nBolet\u00edn UNAM y 20 p\u00e1ginas web m\u00e1s.",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 82,
+  "fields": {
+    "tema": "Mayas, expertos en suelos. Usan esta clasificaci\u00f3n milenaria para mejorar sistemas internacionales.",
+    "fecha": "1900-01-01",
+    "descripcion": "El Universal",
+    "actividad": "OTRA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 83,
+  "fields": {
+    "tema": "Utilizar\u00e1n conocimientos mayas en estudios geogr\u00e1ficos",
+    "fecha": "2012-08-29",
+    "descripcion": "La Frontera.info.\r\nCiencia y Tecnologia.",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 84,
+  "fields": {
+    "tema": "Mejorar\u00eda nomenclatura maya clasificaciones internacionales del suelo.",
+    "fecha": "2008-12-16",
+    "descripcion": "El porvenir, Cultural / Cultural",
+    "actividad": "OTRA",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 85,
+  "fields": {
+    "tema": "La nomenclatura maya del suelo, podr\u00eda mejorar clasificaciones internacionales",
+    "fecha": "2008-11-20",
+    "descripcion": "Gaceta, UNAM.",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 86,
+  "fields": {
+    "tema": "randes da\u00f1os causar\u00edan las inundaciones en el Sur: Proponen conocer los riesgos, a fin de tomar precauciones.",
+    "fecha": "2008-10-06",
+    "descripcion": "El diario de Yucat\u00e1n",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 87,
+  "fields": {
+    "tema": "Plantean tratar aguas residuales porcinas utilizando el suelo",
+    "fecha": "2007-01-01",
+    "descripcion": "Entrevistado por M\u00f3nica Nava P\u00e9rez\r\nP\u00e1gina electr\u00f3nica del CONACYT. http://www.conacyt.mx/Comunicacion/Agencia/notas/MedioAmbiente\r\n/arp-uady.htm\r\n\r\nhttp://www.ciudadtijuana.info/zona01/2007/mayo/31conacytporcinos.html",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 88,
+  "fields": {
+    "tema": "Utilizaci\u00f3n del suelo contra aguas residuales porcinas",
+    "fecha": "2007-01-01",
+    "descripcion": "Entrevistado por M\u00f3nica Nava P\u00e9rez\r\nEl Cambio de Michoac\u00e1n. http://www.cambiodemichoacan.com.mx/vernota.php?id=63357",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 89,
+  "fields": {
+    "tema": "Se integra al CIGA el Dr. Francisco Bautista Z\u00fa\u00f1iga",
+    "fecha": "2018-10-07",
+    "descripcion": "Entrevistado por M\u00f3nica Garc\u00eda Ibarra del Bolet\u00edn de la UNAM campus Morelia No. 8",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 90,
+  "fields": {
+    "tema": "El hoyo de Chenko: el nacimiento de un cenote",
+    "fecha": "2010-07-24",
+    "descripcion": "Diario de Yucat\u00e1n",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 91,
+  "fields": {
+    "tema": "Advierten cr\u00e1teres en el sureste",
+    "fecha": "2018-07-01",
+    "descripcion": "Excelsior",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 92,
+  "fields": {
+    "tema": "Aguas residuales porcinas problema ecol\u00f3gico y de salud",
+    "fecha": "2007-06-04",
+    "descripcion": "Kiosco mayor, Sonora.",
+    "actividad": "OTRA",
+    "medio_divulgacion": 29,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 93,
+  "fields": {
+    "tema": "Acu\u00edferos, con alta contaminaci\u00f3n plantea especialista en seminario sobre suelos",
+    "fecha": "2007-12-04",
+    "descripcion": "Entrevistado por Eduardo Vald\u00e9s\r\nPeri\u00f3dico Milenio",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 3,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 94,
+  "fields": {
+    "tema": "La erosi\u00f3n de la tierra, entre el suelo y el infierno",
+    "fecha": "1994-06-20",
+    "descripcion": "La Jornada Ecol\u00f3gica",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 3,
+    "usuario": 30
   }
 }
 ]
