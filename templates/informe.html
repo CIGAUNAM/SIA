@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Informe CIGA</h1>
+
+<h2>Investigación y sus resultados</h2>
+
+<h3>Artículos Científicos</h3>
+
+    <h4>Publicado - Nacional</h4>
+    {% for autor in articulos_publicados_nacional.autores %}{{ autor }}{% endfor %}. {{ articulos_publicados_nacional.fecha.year }}. articulos_publicados_nacional.titulo. articulos_publicados_nacional.revista.nombre. articulos_publicados_nacional.volumen(
+
+    <h4>En prensa - Nacional</h4>
+
+    <h4>Aceptado – Nacional</h4>
+
+    <h4>Enviado – Nacional</h4>
+
+    <h4>Publicado - Internacional</h4>
+
+    <h4>En prensa - Internacional</h4>
+
+    <h4>Aceptado - Internacional</h4>
+
+    <h4>Enviado - Internacional</h4>
+
+<h3>Libros de investigación</h3>
+
+    <h4>Libros publicados</h4>
+
+    <h4>Libros en prensa</h4>
+
+    <h4>Libros aceptados</h4>
+
+<h3>Capítulos en libros</h3>
+
+
+
+
+</body>
+</html>
