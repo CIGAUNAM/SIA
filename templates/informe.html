@@ -12,34 +12,121 @@
 
 <h3>Artículos Científicos</h3>
 
-    <h4>Publicado - Nacional</h4>
-    {% for autor in articulos_publicados_nacional.autores %}{{ autor }}{% endfor %}. {{ articulos_publicados_nacional.fecha.year }}. articulos_publicados_nacional.titulo. articulos_publicados_nacional.revista.nombre. articulos_publicados_nacional.volumen(
+<h4>Publicado - Nacional</h4>
+{% if articulos_cientificos_nacionales_publicados %}
+    <ol>
+        {% for i in articulos_cientificos_nacionales_publicados %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
-    <h4>En prensa - Nacional</h4>
+<h4>En prensa - Nacional</h4>
+{% if articulos_cientificos_nacionales_enprensa %}
+    <ol>
+        {% for i in articulos_cientificos_nacionales_enprensa %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
-    <h4>Aceptado – Nacional</h4>
+<h4>Aceptado – Nacional</h4>
+{% if articulos_cientificos_nacionales_aceptado %}
+    <ol>
+        {% for i in articulos_cientificos_nacionales_aceptado %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
-    <h4>Enviado – Nacional</h4>
+<h4>Enviado – Nacional</h4>
+{% if articulos_cientificos_nacionales_enviado %}
+    <ol>
+        {% for i in articulos_cientificos_nacionales_enviado %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
-    <h4>Publicado - Internacional</h4>
+<h4>Publicado - Internacional</h4>
+{% if articulos_cientificos_internacionales_publicados %}
+    <ol>
+        {% for i in articulos_cientificos_internacionales_publicados %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
-    <h4>En prensa - Internacional</h4>
+<h4>En prensa - Internacional</h4>
 
-    <h4>Aceptado - Internacional</h4>
+<h4>Aceptado - Internacional</h4>
 
-    <h4>Enviado - Internacional</h4>
+<h4>Enviado - Internacional</h4>
 
 <h3>Libros de investigación</h3>
 
-    <h4>Libros publicados</h4>
+<h4>Libros publicados</h4>
 
-    <h4>Libros en prensa</h4>
+<h4>Libros en prensa</h4>
 
-    <h4>Libros aceptados</h4>
+<h4>Libros aceptados</h4>
 
 <h3>Capítulos en libros</h3>
-
-
 
 
 </body>

@@ -20,9 +20,11 @@ from django.contrib.auth import views as auth_views
 
 #from nucleo.views import inicio
 from nucleo.views import *
+
 from django.conf.urls.static import static
 from django.conf.urls import url
 from SIA.views import *
+from SIA.views_reportes import *
 
 
 
@@ -51,6 +53,8 @@ urlpatterns = [
     url(r'^nucleo/', include('nucleo.urls')),
 
     url(r'^web/cv-investigadores/$', CVInvestigadorLista.as_view(), name='cv_investigador_lista'),
+    url(r'^informe/$', Informe.as_view(), name='cv_investigador_lista'),
+
     url(r'^web/cv-investigadores/(?P<pk>[\w\-]+)/$', CVInvestigadorDetalle.as_view(), name='cv_investigador_detalle'),
     url(r'^web/cv-investigadores/(?P<pk>[\w\-]+)/pdf/$', CVInvestigadorPDF.as_view(), name='cv_investigador_detalle'),
 
