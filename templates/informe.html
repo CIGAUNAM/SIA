@@ -12,10 +12,10 @@
 
 <h3>Artículos Científicos</h3>
 
-<h4>Publicado - Nacional</h4>
-{% if articulos_cientificos_nacionales_publicados %}
+<h4>Publicado - Nacional (Web of Science: SCI/SSCI/SCI-EX / Scopus)</h4>
+{% if articulos_cientificos_nacionales_publicados_isiscopus %}
     <ol>
-        {% for i in articulos_cientificos_nacionales_publicados %}
+        {% for i in articulos_cientificos_nacionales_publicados_isiscopus %}
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.fecha.year }}. {{ i.titulo }}.
@@ -23,10 +23,51 @@
                 {% if i.volumen %} {{ i.volumen }}{% endif %}
                 {% if i.numero %}({{ i.numero }}){% endif %}:
                 {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
                 {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
                 {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
                 {% endif %}{{ indice.nombre }}{% endfor %}.
-                {% endif %}
+                {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Publicado - Nacional (Otros índices)</h4>
+{% if articulos_cientificos_nacionales_publicados_otrosindices %}
+    <ol>
+        {% for i in articulos_cientificos_nacionales_publicados_otrosindices %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Publicado - Nacional (No índizado)</h4>
+{% if articulos_cientificos_nacionales_publicados_noindizado %}
+    <ol>
+        {% for i in articulos_cientificos_nacionales_publicados_noindizado %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -43,6 +84,7 @@
                 {% if i.volumen %} {{ i.volumen }}{% endif %}
                 {% if i.numero %}({{ i.numero }}){% endif %}:
                 {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
                 {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
                 {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
                 {% endif %}{{ indice.nombre }}{% endfor %}.
@@ -63,6 +105,7 @@
                 {% if i.volumen %} {{ i.volumen }}{% endif %}
                 {% if i.numero %}({{ i.numero }}){% endif %}:
                 {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
                 {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
                 {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
                 {% endif %}{{ indice.nombre }}{% endfor %}.
@@ -81,8 +124,9 @@
                 {{ i.fecha.year }}. {{ i.titulo }}.
                 {{ i.revista.nombre }}.
                 {% if i.volumen %} {{ i.volumen }}{% endif %}
-                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {% if i.numero %}({{ i.numero }}):{% endif %}:
                 {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
                 {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
                 {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
                 {% endif %}{{ indice.nombre }}{% endfor %}.
@@ -103,16 +147,57 @@
                 {% if i.volumen %} {{ i.volumen }}{% endif %}
                 {% if i.numero %}({{ i.numero }}){% endif %}:
                 {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
                 {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
                 {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
                 {% endif %}{{ indice.nombre }}{% endfor %}.
-                {% endif %}
+                {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Publicado - Internacional (Publicados por alumnos o ex alumnos con adscripción del CIGA)</h4>
+{% if articulos_cientificos_internacionales_publicados_alumnos %}
+    <ol>
+        {% for i in articulos_cientificos_internacionales_publicados_alumnos %}
+            <li>
+                {% for alumno in i.alumnos.all %}{% if not forloop.first %}, {% endif %}{{ alumno.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
             </li>
         {% endfor %}
     </ol>
 {% endif %}
 
 <h4>En prensa - Internacional</h4>
+{% if articulos_cientificos_internacionales_enprensa %}
+    <ol>
+        {% for i in articulos_cientificos_internacionales_enprensa %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
+                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
+                {% endif %}{{ indice.nombre }}{% endfor %}.
+                {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 <h4>Aceptado - Internacional</h4>
 

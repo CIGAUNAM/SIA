@@ -174,7 +174,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'es_MX'
 
 TIME_ZONE = 'America/Mexico_City'
 
@@ -215,4 +215,3 @@ THUMBNAIL_PROCESSORS = (
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
-
