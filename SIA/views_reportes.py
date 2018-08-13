@@ -37,9 +37,18 @@ class Informe(View):
     context['articulos_cientificos_nacionales_aceptado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__nombre='México', status='ACEPTADO').distinct()
     context['articulos_cientificos_nacionales_enviado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__nombre='México', status='ENVIADO').distinct()
 
-    context['articulos_cientificos_internacionales_publicados'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO').exclude(revista__pais__nombre='México').distinct()
+
+    context['articulos_cientificos_internacionales_publicados_isiscopus'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__indices__isnull=False).filter(revista__indices__in=indices).exclude(revista__pais__nombre='México').distinct()
     context['articulos_cientificos_internacionales_publicados_alumnos'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', alumnos__isnull=False).exclude(revista__pais__nombre='México').distinct()
+    context['articulos_cientificos_internacionales_publicados_otrosindices'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__indices__isnull=False).exclude(revista__indices__in=indices).exclude(revista__pais__nombre='México').distinct()
+    context['articulos_cientificos_internacionales_publicados_noindizado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__indices__isnull=True).exclude(revista__pais__nombre='México').distinct()
     context['articulos_cientificos_internacionales_enprensa'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='EN_PRENSA').exclude(revista__pais__nombre='México').distinct()
+    context['articulos_cientificos_internacionales_aceptado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='ACEPTADO').exclude(revista__pais__nombre='México').distinct()
+    context['articulos_cientificos_internacionales_enviado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='ENVIADO').exclude(revista__pais__nombre='México').distinct()
+
+    context['articulos_cientificos_agradecimientos'] = ArticuloCientifico.objects.filter(fecha__year=this_year, agradecimientos__isnull=False).distinct()
+
+    context['libros_investigacion_nacionales_publicados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='PUBLICADO').filter(editorial__pais__nombre='México').distinct()
 
     def get(self, request):
         return render(request, self.template_name, self.context)
