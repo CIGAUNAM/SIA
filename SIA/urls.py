@@ -83,4 +83,3 @@ urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
