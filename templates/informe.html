@@ -315,29 +315,113 @@
     <ol>
         {% for i in libros_investigacion_nacionales_publicados %}
             <li>
-                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
                 {{ i.editorial.nombre }}.
-                {% if i.volumen %} {{ i.volumen }}{% endif %}
-                {% if i.numero %}({{ i.numero }}){% endif %}:
-                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
-                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
-                {% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %}
-                {% if i.revista.indices.count > 1 %}{% for indice in i.revista.indices.all %}{% if not forloop.first %},
-                {% endif %}{{ indice.nombre }}{% endfor %}.
-                {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
+                {{ i.ciudad.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.numero_paginas }}.
+                {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Libros en prensa (Nacional)</h4>
+{% if libros_investigacion_nacionales_enprensa %}
+    <ol>
+        {% for i in libros_investigacion_nacionales_enprensa %}
+            <li>
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
+                {{ i.fecha.year }}. {{ i.nombre }}.
+                {{ i.editorial.nombre }}.
+                {{ i.ciudad.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.numero_paginas }}.
+                {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Libros aceptados (Nacional)</h4>
+{% if libros_investigacion_nacionales_aceptados %}
+    <ol>
+        {% for i in libros_investigacion_nacionales_aceptados %}
+            <li>
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
+                {{ i.fecha.year }}. {{ i.nombre }}.
+                {{ i.editorial.nombre }}.
+                {{ i.ciudad.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.numero_paginas }}.
+                {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Capítulos en libros</h3>
+
+<h4>Capítulos en libros nacionales (publicados)</h4>
+{% if capitulos_libros_investigacion_nacionales_publicados %}
+    <ol>
+        {% for i in capitulos_libros_investigacion_nacionales_publicados %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.libro.fecha.year }}. "{{ i.titulo }}".
+                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                {{ i.libro.editorial.nombre }}.
+                {{ i.libro.pais.nombre }}.
+                pp. {{ i.libro.numero_paginas }}.
+                {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Capítulos en libros nacionales (en prensa)</h4>
+{% if capitulos_libros_investigacion_nacionales_enprensa %}
+    <ol>
+        {% for i in capitulos_libros_investigacion_nacionales_enprensa %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.libro.fecha.year }}. "{{ i.titulo }}".
+                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                {{ i.libro.editorial.nombre }}.
+                {{ i.libro.pais.nombre }}.
+                pp. {{ i.libro.numero_paginas }}.
+                {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
             </li>
         {% endfor %}
     </ol>
 {% endif %}
 
 
-<h4>Libros en prensa (Nacional)</h4>
-
-<h4>Libros aceptados (Nacional)</h4>
-
-<h3>Capítulos en libros</h3>
-
+<h4>Capítulos en libros nacionales (enviados)</h4>
+{% if capitulos_libros_investigacion_nacionales_enviados %}
+    <ol>
+        {% for i in capitulos_libros_investigacion_nacionales_enviados %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.libro.fecha.year }}. "{{ i.titulo }}".
+                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                {{ i.libro.editorial.nombre }}.
+                {{ i.libro.pais.nombre }}.
+                pp. {{ i.libro.numero_paginas }}.
+                {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 </body>
 </html>
