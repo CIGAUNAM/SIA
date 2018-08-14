@@ -48,7 +48,7 @@ class Informe(View):
 
     context['articulos_cientificos_agradecimientos'] = ArticuloCientifico.objects.filter(fecha__year=this_year, agradecimientos__isnull=False).distinct()
 
-    context['libros_investigacion_nacionales_publicados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='PUBLICADO').filter(editorial__pais__nombre='México').distinct()
+    context['libros_investigacion_nacionales_publicados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='PUBLICADO').filter(Q(autores__isnull=False) | Q(editores__isnull=False) | Q(coordinadores__isnull=False)).filter(editorial__pais__nombre='México').distinct()
 
     def get(self, request):
         return render(request, self.template_name, self.context)
