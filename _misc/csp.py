@@ -296,3 +296,65 @@ def getNeighbors(trainingSet, testInstance, k):
 	return neighbors
 
 
+
+
+
+class ArbolSanidad(models.Model):
+    especie = models.ForeignKey(EspecieArbol, on_delete=models.PROTECT, null=True, blank=True)
+    esalud = models.CharField(max_length=10, choices=(('', 'Sin Especificar'), ('malo', 'Malo'), ('regular', 'Regular'), ('bueno', 'Bueno')), null=True, blank=True)
+    forma_vida = models.CharField(max_length=10, choices=(('', 'Sin Especificar'), ('B', 'Árbol'), ('A', 'Arbusto'), ('M', 'Mixto')), null=True, blank=True)
+    forma_copa = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('conica', 'Cónica'), ('columnar', 'Columnar'), ('esferica', 'Esférica'), ('fusiforme', 'Fusiforme'), ('irregular', 'Irregular'), ('paliforme', 'Paliforme'), ('parasol', 'Parasol'), ('piramidal', 'Piramidal'), ('poda', 'Podado')), null=True, blank=True)
+    angulo_fuste = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('recto', 'Recto (76º-90º)'), ('inclinado', 'Inclinado (66º-75º)'), ('muy_inclinado', 'Muy inclinado (0º-65º)')), null=True, blank=True)
+    tipo_fuste = models.CharField(max_length=10, choices=(('', 'Sin Especificar'), ('M', 'Monopódico (cuando poseen un tallo)'), ('S', 'Simpódico (De más de un tallo)')), null=True, blank=True)
+    conflicto_redes_aereas = models.CharField(max_length=20, null=True, blank=True, db_column='conredae')
+    conflicto_redes_superficiales = models.CharField(max_length=30, null=True, blank=True, db_column='conredsup')
+    condicion_cepa = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('adecuada', 'Cepa Adecuada (> 50% de la copa)'), ('reducida', 'Cepa Reducida (< 50% de la copa)')), null=True, blank=True)
+    infiltracion_cepa = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('adecuado', 'Espacio Adecuado de Infiltración (cepa > 50% de la copa)'), ('poca', 'Poca Infiltración (cepa <49% copa)'), ('sin', 'Sin Infiltración (Cepa cubierta con mampostería)')), null=True, blank=True)
+    radiacion = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('adecuada', 'Radiación Adecuada (sin interferencia importante de sombreado)'), ('intermedia', 'Radiación Intermedia'), ('poca_construcciones', 'Poca Radicación por Construcciones (sombreado de edificios)'), ('poca_plantas', 'Poca Radicación por Plantas (sombreado de otras plantas por sobrepoblación o cercanía)')), null=True, blank=True)
+    manejo_copa = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('adecuado', 'Manejo de Podas Adecuadas'), ('severo', 'Poda Severa (>50% del follaje)'), ('letal', 'Poda Letal (>80%)')), null=True, blank=True)
+    resultado_podas = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('ornamental', 'Poda Ornamental'), ('aclareo', 'Poda Aclareo Infraestructura'), ('desbalanceada', 'Poda Con Copa Desbalanceada')), null=True, blank=True)
+    municipio = models.CharField(max_length=200, null=True, blank=True)
+    c_esta_vivo = models.NullBooleanField(default=False)
+    c_forma_vida = models.CharField(max_length=10, choices=(('', 'Sin Especificar'), ('B', 'Árbol'), ('A', 'Arbusto'), ('M', 'Mixto')), null=True, blank=True)
+    c_angulo_fuste = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('recto', 'Recto (76º-90º)'), ('inclinado', 'Inclinado (66º-75º)'), ('muy_inclinado', 'Muy inclinado (0º-65º)')), null=True, blank=True)
+    c_altura = models.IntegerField(null=True, blank=True)
+    c_densidad_follaje = models.IntegerField(choices=(('', 'Sin Especificar'), (0, 'Nulo'), (1, 'Bajo'), (2, 'Medio'), (3, 'Denso')), null=True, blank=True)
+    c_cobertura_follaje = models.IntegerField(null=True, blank=True)
+    c_espesor_follaje = models.IntegerField(null=True, blank=True)
+    c_diametro_basal = models.IntegerField(null=True, blank=True)
+    c_diametro_altura_pecho = models.IntegerField(null=True, blank=True)
+    c_tipo_fuste = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Monopódico'), (2, 'Simpódico')), null=True, blank=True)
+    c_forma_copa = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('conica', 'Cónica'), ('columnar', 'Columnar'), ('esferica', 'Esférica'), ('fusiforme', 'Fusiforme'), ('irregular', 'Irregular'), ('palmiforme', 'Palmiforme'), ('parasol', 'Parasol'), ('piramidal', 'Piramidal'), ('poda', 'Podado')), null=True, blank=True)
+    c_conflicto_redes_aereas = models.CharField(max_length=20, choices=(('', 'Sin Especificar'), ('no', 'No'), ('cableado', 'Cableado'), ('senaleticas', 'Señaleticas'), ('alumbrado', 'Alumbrado'), ('potencial', 'Conflicto Potencial')), null=True, blank=True)
+    c_conflicto_redes_superficiales = models.CharField(max_length=30, choices=(('', 'Sin Especificar'), ('no', 'No'), ('banqueta', 'Banqueta'), ('cinta_asfaltica', 'Cinta Asfáltica'), ('visibilidad_peatonal', 'Visibilidad Peatonal'), ('visibilidad_automovilistas', 'Visibilidad Automovilistas'), ('cerca', 'Cerca'), ('muro', 'Muro de construcción'), ('potencial', 'Conflicto Potencial')), null=True, blank=True)
+    c_cepa_borde = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Nada'), (2, 'Mampostería'), (3, 'Ladrillo'), (4, 'Otro')), null=True, blank=True)
+    c_suelo_color = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Claro'), (2, 'Café'), (3, 'Negro')), null=True, blank=True)
+    c_suelo_textura = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Arcilla'), (2, 'Limo'), (3, 'Arena')), null=True, blank=True)
+    c_mh_radiacion = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Poca'), (2, 'Moderada'), (3, 'Optima')), null=True, blank=True)
+    c_mh_riego = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Sin Riego'), (2, 'Eventual'), (3, 'Con riego y anegamiento'), (4, 'Otro')), null=True, blank=True)
+    c_vigor = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Muerto'), (2, 'Muy Pobre'), (3, 'Pobre'), (4, 'Bueno'), (5, 'Máximo')), null=True, blank=True)
+    c_riesgo = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Copa Desbalanceada'), (2, 'Interferencia Ramas Bajas'), (3, 'Ramas por desgajarse'), (4, 'Riesgo de desplome'), (5, 'Fuste con inclinación de 45°'), (6, 'Pudrición o daño en estructura')), null=True, blank=True)
+    c_acciones_manejo = models.IntegerField(choices=(('', 'Sin Especificar'), (1, 'Poda'), (2, 'Aclareo'), (3, 'Derribo'), (4, 'Nada')), null=True, blank=True)
+
+    muest_fita = models.IntegerField(null=True, blank=True)
+    fit_enfermo = models.NullBooleanField(default=False)
+    fit_plagado = models.NullBooleanField(default=False)
+    fit_dano_mecanico = models.NullBooleanField(default=False)
+    fit_quemado = models.NullBooleanField(default=False)
+    fit_cinchado = models.NullBooleanField(default=False)
+    geom = models.PointField(srid=32613)
+
+    def __str__(self):
+        if self.especie:
+            return "{} : {}".format(str(self.id), self.especie)
+        else:
+            return str(self.id)
+
+    def get_absolute_url(self):
+        return reverse('arbol_sanidad_detalle', kwargs={'pk': self.pk})
+
+    def natural_key(self):
+        return self.nombre
+
+
+
