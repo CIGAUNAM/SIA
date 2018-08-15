@@ -428,9 +428,6 @@
     </ol>
 {% endif %}
 
-
-
-
 <h3>Capítulos en libros</h3>
 
 <h4>Capítulos en libros nacionales (publicados)</h4>
@@ -467,7 +464,6 @@
     </ol>
 {% endif %}
 
-
 <h4>Capítulos en libros nacionales (enviados)</h4>
 {% if capitulos_libros_investigacion_nacionales_enviados %}
     <ol>
@@ -484,9 +480,6 @@
         {% endfor %}
     </ol>
 {% endif %}
-
-
-
 
 <h4>Capítulos en libros internacionales (publicados)</h4>
 {% if capitulos_libros_investigacion_internacionales_publicados %}
@@ -522,7 +515,6 @@
     </ol>
 {% endif %}
 
-
 <h4>Capítulos en libros internacionales (enviados)</h4>
 {% if capitulos_libros_investigacion_internacionales_enviados %}
     <ol>
@@ -540,7 +532,26 @@
     </ol>
 {% endif %}
 
+<h3>Mapas arbitrados</h3>
+{% if mapas_arbitrados %}
+    <ol>
+        {% for i in mapas_arbitrados %}
+            <li>
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
+                {{ i.fecha.year }}. {{ i.titulo }} a escala {{ i.escala }}.
+                {{ i.editorial.nombre }}.
+                {% if i.numero_edicion %}Edición no. {{ i.numero_edicion }}.{% endif %}
+                {{ i.numero_paginas }}.
+                {% if i.isbn %}ISBN: {{ i.isbn }}. {% endif %}
+                {% if i.url %}{{ i.url }}{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
+<h3>Informes técnicos de acceso público</h3>
 
 </body>
 </html>

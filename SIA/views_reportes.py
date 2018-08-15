@@ -64,5 +64,12 @@ class Informe(View):
     context['capitulos_libros_investigacion_internacionales_enprensa'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='EN_PRENSA').exclude(libro__editorial__pais__nombre='México').distinct()
     context['capitulos_libros_investigacion_internacionales_enviados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='ENVIADO').exclude(libro__editorial__pais__nombre='México').distinct()
 
+    context['mapas_arbitrados'] = MapaArbitrado.objects.filter(fecha__year=this_year).distinct()
+
+    context['informes_tecnicos_accesso_publico_nacionales'] = InformeTecnico.objects.filter(fecha__year=this_year).filter(proyecto__institucion__pais__nombre='México').distinct()
+    context['informes_tecnicos_accesso_publico_internacionales'] = InformeTecnico.objects.filter(fecha__year=this_year).exclude(proyecto__institucion__pais__nombre='México').distinct()
+
+
+
     def get(self, request):
         return render(request, self.template_name, self.context)
