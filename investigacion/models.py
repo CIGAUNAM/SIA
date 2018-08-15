@@ -171,7 +171,7 @@ class MapaArbitrado(models.Model):
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
     editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
-    fecha = models.DateField(auto_now=False)
+    fecha = models.DateField()
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=1)
     coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.DO_NOTHING)
