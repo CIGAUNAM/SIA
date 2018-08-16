@@ -779,7 +779,7 @@
     <ol>
         {% for i in programas_radiotelevisioninternet %}
             <li>
-                {{ i.tema }}. En {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.get_tipo_display }}).
+                {{ i.tema }}. En. {{ i.medio_divulgacion.nombre_medio }}, {{ i.medio_divulgacion.canal }} ({{ i.medio_divulgacion.get_tipo_display }}).
                 {{ i.medio_divulgacion.canal }}. {{ i.fecha }}. {{ i.usuario }}
             </li>
         {% endfor %}
@@ -806,14 +806,28 @@
     <ol>
         {% for i in proyectos_investigacion_papiit %}
             <li>
-                {{ i.nombre }}. {{ i.fecha_inicio|date:"F Y" }} a {{ i.fecha_fin }}. Financiado por
-                En {% if i.articulo_resenado.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.articulo_resenado.nombre }}.
-                {{ i.medio_divulgacion.canal }}. {{ i.fecha }}. {{ i.usuario }}
+                {{ i.nombre }} ({{ i.financiamiento_papiit }}). {{ i.fecha_inicio|date:"F Y" }} {% if fecha_fin %}a {{ i.fecha_fin|date:"F Y" }}{% else %} al presente (Permanente). {% endif %}
+                {% if i.responsables.count > 0 %}Responsables: {% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}. {% endif %}
+                {% if i.impactos_sociales.count > 0 %}Impacto social: {% for impacto in i.impactos_sociales.all %}{% if not forloop.first %}, {% endif %}{{ impacto.nombre }}{% endfor %}. {% endif %}
+                {% if i.participantes.count > 0 %}Participantes: {% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
             </li>
         {% endfor %}
     </ol>
 {% endif %}
 
+<h4>PAPIME</h4>
+{% if proyectos_investigacion_papime %}
+    <ol>
+        {% for i in proyectos_investigacion_papime %}
+            <li>
+                {{ i.nombre }} ({{ i.financiamiento_papime }}). {{ i.fecha_inicio|date:"F Y" }} {% if fecha_fin %}a {{ i.fecha_fin|date:"F Y" }}{% else %} al presente (Permanente). {% endif %}
+                {% if i.responsables.count > 0 %}Responsables: {% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}. {% endif %}
+                {% if i.impactos_sociales.count > 0 %}Impacto social: {% for impacto in i.impactos_sociales.all %}{% if not forloop.first %}, {% endif %}{{ impacto.nombre }}{% endfor %}. {% endif %}
+                {% if i.participantes.count > 0 %}Participantes: {% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 </body>
 </html>
