@@ -88,6 +88,7 @@ class Informe(View):
     context['programas_radiotelevisioninternet'] = ProgramaRadioTelevisionInternet.objects.filter(fecha__year=this_year).distinct()
     context['resenas'] = Resena.objects.filter(fecha__year=this_year).distinct()
 
+    context['proyectos_investigacion_papiit'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamiento_papiit__isnull=False)
 
 
     def get(self, request):

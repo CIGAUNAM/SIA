@@ -786,6 +786,34 @@
     </ol>
 {% endif %}
 
+<H3>Reseñas</H3>
+{% if resenas %}
+    <ol>
+        {% for i in resenas %}
+            <li>
+                {{ i.usuario }}. {{ i.fecha.year }}. "{{ i.titulo }}".
+                En {% if i.articulo_resenado.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.articulo_resenado.nombre }}.
+                {{ i.medio_divulgacion.canal }}. {{ i.fecha }}. {{ i.usuario }}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Proyectos de investigación</h3>
+
+<h4>PAPIIT</h4>
+{% if proyectos_investigacion_papiit %}
+    <ol>
+        {% for i in proyectos_investigacion_papiit %}
+            <li>
+                {{ i.nombre }}. {{ i.fecha_inicio|date:"F Y" }} a {{ i.fecha_fin }}. Financiado por
+                En {% if i.articulo_resenado.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.articulo_resenado.nombre }}.
+                {{ i.medio_divulgacion.canal }}. {{ i.fecha }}. {{ i.usuario }}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
 
 </body>
 </html>
