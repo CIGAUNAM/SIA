@@ -553,5 +553,24 @@
 
 <h3>Informes técnicos de acceso público</h3>
 
+<h4>Informes técnicos de acceso público (nacionales)</h4>
+{% if informes_tecnicos_accesso_publico_nacionales %}
+    <ol>
+        {% for i in informes_tecnicos_accesso_publico_nacionales %}
+            <li>
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                {{ i.titulo }}. Proyecto {{ i.proyecto.nombre }}.
+                {{ i.editorial.nombre }}.
+                {% if i.numero_edicion %}Edición no. {{ i.numero_edicion }}.{% endif %}
+                {{ i.numero_paginas }}.
+                {% if i.isbn %}ISBN: {{ i.isbn }}. {% endif %}
+                {% if i.url %}{{ i.url }}{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Informes técnicos de acceso público (internacionales)</h4>
+
 </body>
 </html>

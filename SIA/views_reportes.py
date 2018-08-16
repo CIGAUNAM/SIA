@@ -67,6 +67,9 @@ class Informe(View):
     context['mapas_arbitrados'] = MapaArbitrado.objects.filter(fecha__year=this_year).distinct()
 
     context['informes_tecnicos_accesso_publico_nacionales'] = InformeTecnico.objects.filter(fecha__year=this_year).filter(proyecto__institucion__pais__nombre='México').distinct()
+
+
+
     context['informes_tecnicos_accesso_publico_internacionales'] = InformeTecnico.objects.filter(fecha__year=this_year).exclude(proyecto__institucion__pais__nombre='México').distinct()
 
 
