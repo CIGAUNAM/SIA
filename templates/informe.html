@@ -779,16 +779,8 @@
     <ol>
         {% for i in programas_radiotelevisioninternet %}
             <li>
-                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
-                {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
-                {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
-                {{ i.ciudad.nombre }}.
-                {{ i.pais.nombre }}.
-                {{ i.pais.nombre }}.
-                {{ i.numero_paginas }}.
-                {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {{ i.tema }}. En {{ i.medio_divulgacion.nombre_medio }} ({{ i.medio_divulgacion.get_tipo_display }}).
+                {{ i.medio_divulgacion.canal }}. {{ i.fecha }}. {{ i.usuario }}
             </li>
         {% endfor %}
     </ol>
