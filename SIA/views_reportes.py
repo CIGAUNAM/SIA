@@ -86,6 +86,7 @@ class Informe(View):
 
     context['libros_divulgacion'] = Libro.objects.filter(tipo='DIVULGACION', fecha__year=this_year).filter(Q(autores__isnull=False) | Q(editores__isnull=False) | Q(coordinadores__isnull=False)).distinct()
     context['programas_radiotelevisioninternet'] = ProgramaRadioTelevisionInternet.objects.filter(fecha__year=this_year).distinct()
+    context['resenas'] = Resena.objects.filter(fecha__year=this_year).distinct()
 
 
 
