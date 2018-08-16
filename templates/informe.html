@@ -559,10 +559,10 @@
         {% for i in informes_tecnicos_accesso_publico_nacionales %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {{ i.titulo }}. Proyecto {{ i.proyecto.nombre }}.
-                {{ i.editorial.nombre }}.
-                {% if i.numero_edicion %}Edición no. {{ i.numero_edicion }}.{% endif %}
-                {{ i.numero_paginas }}.
+                ({{ i.fecha.year }}). {{ i.titulo }}. Proyecto {{ i.proyecto.nombre }}.
+                {% if i.editorial.nombre %}{{ i.editorial.nombre }}. {% endif %}
+                {% if i.numero_edicion %}Edición no. {{ i.numero_edicion }}. {% endif %}
+                {% if i.numero_paginas %}{{ i.numero_paginas }}. {% endif %}
                 {% if i.isbn %}ISBN: {{ i.isbn }}. {% endif %}
                 {% if i.url %}{{ i.url }}{% endif %}
             </li>
@@ -571,6 +571,229 @@
 {% endif %}
 
 <h4>Informes técnicos de acceso público (internacionales)</h4>
+{% if informes_tecnicos_accesso_publico_internacionales %}
+    <ol>
+        {% for i in informes_tecnicos_accesso_publico_internacionales %}
+            <li>
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                ({{ i.fecha.year }}). {{ i.titulo }}. Proyecto {{ i.proyecto.nombre }}.
+                {% if i.editorial.nombre %}{{ i.editorial.nombre }}. {% endif %}
+                {% if i.numero_edicion %}Edición no. {{ i.numero_edicion }}. {% endif %}
+                {% if i.numero_paginas %}{{ i.numero_paginas }}. {% endif %}
+                {% if i.isbn %}ISBN: {{ i.isbn }}. {% endif %}
+                {% if i.url %}{{ i.url }}{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Artículos en extenso en memorias de congresos</h3>
+
+<h4>Artículos en extenso en memorias de congresos nacionales</h4>
+<p>falta</p>
+
+<h4>Artículos en extenso en memorias de congresos internacionales</h4>
+<p>falta</p>
+
+
+
+<h3>Artículos de divulgación (no dirigidos a pares)</h3>
+
+<h4>Publicado - Nacional</h4>
+{% if articulos_divulgacion_nacionales_publicados %}
+    <ol>
+        {% for i in articulos_divulgacion_nacionales_publicados %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>En prensa - Nacional</h4>
+{% if articulos_divulgacion_nacionales_enprensa %}
+    <ol>
+        {% for i in articulos_divulgacion_nacionales_enprensa %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Aceptado – Nacional</h4>
+{% if articulos_divulgacion_nacionales_aceptado %}
+    <ol>
+        {% for i in articulos_divulgacion_nacionales_aceptado %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Enviado – Nacional</h4>
+{% if articulos_divulgacion_nacionales_enviado %}
+    <ol>
+        {% for i in articulos_divulgacion_nacionales_enviado %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Publicado - Interacional</h4>
+{% if articulos_divulgacion_internacionales_publicados %}
+    <ol>
+        {% for i in articulos_divulgacion_internacionales_publicados %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>En prensa - Internacional</h4>
+{% if articulos_divulgacion_internacionales_enprensa %}
+    <ol>
+        {% for i in articulos_divulgacion_internacionales_enprensa %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Aceptado – Internacional</h4>
+{% if articulos_divulgacion_internacionales_aceptado %}
+    <ol>
+        {% for i in articulos_divulgacion_internacionales_aceptado %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Enviado – Internacional</h4>
+{% if articulos_divulgacion_internacionales_enviado %}
+    <ol>
+        {% for i in articulos_divulgacion_internacionales_enviado %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Agradecimientos</h4>
+{% if articulos_divulgacion_agradecimientos %}
+    <ol>
+        {% for i in articulos_divulgacion_agradecimientos %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {{ i.fecha.year }}. {{ i.titulo }}.
+                {{ i.revista.nombre }}.
+                {% if i.volumen %} {{ i.volumen }}{% endif %}
+                {% if i.numero %}({{ i.numero }}){% endif %}:
+                {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
+                {% if i.revista.issn_impreso %}ISSN {{ i.revista.issn_impreso }}.{% endif %}
+                (Agradecimiento {% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento.author_name }}{% endfor %}).
+                {{ i.get_status_display }}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Libros de divulgación</h3>
+{% if libros_divulgacion %}
+    <ol>
+        {% for i in libros_divulgacion %}
+            <li>
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
+                {{ i.fecha.year }}. {{ i.nombre }}.
+                {{ i.editorial.nombre }}.
+                {{ i.ciudad.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.numero_paginas }}.
+                {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<H3>Programas de radio, televisión e internet</H3>
+{% if programas_radiotelevisioninternet %}
+    <ol>
+        {% for i in programas_radiotelevisioninternet %}
+            <li>
+                {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
+                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
+                {{ i.fecha.year }}. {{ i.nombre }}.
+                {{ i.editorial.nombre }}.
+                {{ i.ciudad.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.pais.nombre }}.
+                {{ i.numero_paginas }}.
+                {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
 
 </body>
 </html>

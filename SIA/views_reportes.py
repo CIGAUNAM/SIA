@@ -67,10 +67,25 @@ class Informe(View):
     context['mapas_arbitrados'] = MapaArbitrado.objects.filter(fecha__year=this_year).distinct()
 
     context['informes_tecnicos_accesso_publico_nacionales'] = InformeTecnico.objects.filter(fecha__year=this_year).filter(proyecto__institucion__pais__nombre='México').distinct()
-
-
-
     context['informes_tecnicos_accesso_publico_internacionales'] = InformeTecnico.objects.filter(fecha__year=this_year).exclude(proyecto__institucion__pais__nombre='México').distinct()
+
+    context['articulos_inextenso_memorias_nacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).filter(evento__pais__nombre='México').distinct()
+    context['articulos_inextenso_memorias_internacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).exclude(evento__pais__nombre='México').distinct()
+
+    context['articulos_divulgacion_nacionales_publicados'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__nombre='México', status='PUBLICADO').distinct()
+    context['articulos_divulgacion_nacionales_enprensa'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__nombre='México', status='EN_PRENSA').distinct()
+    context['articulos_divulgacion_nacionales_aceptado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__nombre='México', status='ACEPTADO').distinct()
+    context['articulos_divulgacion_nacionales_enviado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__nombre='México', status='ENVIADO').distinct()
+
+    context['articulos_divulgacion_internacionales_publicados'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='PUBLICADO').exclude(revista__pais__nombre='México').distinct()
+    context['articulos_divulgacion_internacionales_enprensa'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='EN_PRENSA').exclude(revista__pais__nombre='México').distinct()
+    context['articulos_divulgacion_internacionales_aceptado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='ACEPTADO').exclude(revista__pais__nombre='México').distinct()
+    context['articulos_divulgacion_internacionales_enviado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='ENVIADO').exclude(revista__pais__nombre='México').distinct()
+
+    context['articulos_divulgacion_agradecimientos'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, agradecimientos__isnull=False).distinct()
+
+    context['libros_divulgacion'] = Libro.objects.filter(tipo='DIVULGACION', fecha__year=this_year).filter(Q(autores__isnull=False) | Q(editores__isnull=False) | Q(coordinadores__isnull=False)).distinct()
+    context['programas_radiotelevisioninternet'] = ProgramaRadioTelevisionInternet.objects.filter(fecha__year=this_year).distinct()
 
 
 
