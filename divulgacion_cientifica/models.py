@@ -127,7 +127,7 @@ class ProgramaRadioTelevisionInternet(models.Model):
     fecha = models.DateField()
     descripcion = models.TextField(blank=True)
     actividad = models.CharField(max_length=20, choices=(
-        ('PRODUCCION', 'Producciòn'), ('PARTICIPACION', 'Participaciòn'), ('ENTREVISTA', 'Entrevista'),
+        ('PRODUCCION', 'Producción'), ('PARTICIPACION', 'Participación'), ('ENTREVISTA', 'Entrevista'),
         ('OTRA', 'Otra')))
     medio_divulgacion = models.ForeignKey(MedioDivulgacion, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
