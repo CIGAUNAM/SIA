@@ -1280,9 +1280,9 @@
 <h3>Dirección de tesis terminadas</h3>
 
 <h4>Licenciatura</h4>
-{% if direccion_tesis_licenciatura %}
+{% if direccion_tesis_licenciatura_terminadas %}
     <ol>
-        {% for i in direccion_tesis_licenciatura %}
+        {% for i in direccion_tesis_licenciatura_terminadas %}
             <li>
                 {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
                 {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
@@ -1292,9 +1292,9 @@
 {% endif %}
 
 <h4>Maestría</h4>
-{% if direccion_tesis_maestria %}
+{% if direccion_tesis_maestria_terminadas %}
     <ol>
-        {% for i in direccion_tesis_maestria %}
+        {% for i in direccion_tesis_maestria_terminadas %}
             <li>
                 {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
                 {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
@@ -1304,9 +1304,9 @@
 {% endif %}
 
 <h4>Doctorado</h4>
-{% if direccion_tesis_doctorado %}
+{% if direccion_tesis_doctorado_terminadas %}
     <ol>
-        {% for i in direccion_tesis_doctorado %}
+        {% for i in direccion_tesis_doctorado_terminadas %}
             <li>
                 {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
                 {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
@@ -1314,6 +1314,45 @@
         {% endfor %}
     </ol>
 {% endif %}
+
+<h3>Dirección de tesis en proceso</h3>
+
+<h4>Licenciatura</h4>
+{% if direccion_tesis_licenciatura_enproceso %}
+    <ol>
+        {% for i in direccion_tesis_licenciatura_enproceso %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Maestría</h4>
+{% if direccion_tesis_maestria_enproceso %}
+    <ol>
+        {% for i in direccion_tesis_maestria_enproceso %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Doctorado</h4>
+{% if direccion_tesis_doctorado_enproceso %}
+    <ol>
+        {% for i in direccion_tesis_doctorado_enproceso %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
 
 925083
 25365031
