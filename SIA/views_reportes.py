@@ -100,9 +100,11 @@ class Informe(View):
 
     context['organizacion_eventos_academicos'] = OrganizacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year).distinct()
     context['organizacion_eventos_divulgacion'] = OrganizacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=this_year).distinct()
-    #context['organizacion_eventos_academicos_nacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).filter(evento__pais__nombre='México').distinct()
-    #context['organizacion_eventos_academicos_internacionales_invitacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=True).exclude(evento__pais__nombre='México').distinct()
-    #context['organizacion_eventos_academicos_internacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).exclude(evento__pais__nombre='México').distinct()
+    context['participacion_eventos_divulgacion'] = ParticipacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=this_year).distinct()
+    context['arbitrajes_publicaciones_academicas'] = ArbitrajePublicacionAcademica.objects.filter(fecha_dictamen__year=this_year).distinct()
+    context['arbitrajes_proyectos_investigacion'] = ArbitrajeProyectoInvestigacion.objects.filter(fecha__year=this_year).distinct()
+
+
 
 
     def get(self, request):
