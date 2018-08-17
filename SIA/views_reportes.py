@@ -131,7 +131,7 @@ class Informe(View):
     context['direccion_tesis_licenciatura_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='LICENCIATURA', fecha_examen__isnull=True).distinct()
     context['direccion_tesis_maestria_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='MAESTRIA', fecha_examen__isnull=True).distinct()
     context['direccion_tesis_doctorado_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='DOCTORADO', fecha_examen__isnull=True).distinct()
-    context['comites_tutorales'] = ComiteTutoral.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['comites_tutorales'] = ComiteTutoral.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).exclude(fecha_inicio__year__lte=1990).distinct()
     context['comites_candidaturas_doctorales'] = ComiteCandidaturaDoctoral.objects.filter(fecha_defensa__year=this_year).distinct()
     context['productos_tecnologicos'] = DesarrolloTecnologico.objects.filter(fecha__year=this_year).distinct()
 
