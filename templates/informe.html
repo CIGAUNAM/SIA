@@ -1353,6 +1353,54 @@
     </ol>
 {% endif %}
 
+<h3>Comités tutorales</h3>
+{% if comites_tutorales %}
+    <ol>
+        {% for i in comites_tutorales %}
+            <li>
+                {{ i.estudiante }}, "{{ i.titulo_tesis }}".
+                {% if i.nivel_academico == 'LICENCIATURA' %}Licenciatura, {{ programa_licenciatura }}, {% endif %}
+                {% if i.nivel_academico == 'MAESTRIA' %}Maestría, {{ programa_maestria }}, {% endif %}
+                {% if i.nivel_academico == 'DOCTORADO' %}Doctorado, {{ programa_doctorado }}, {% endif %}
+                {{ i.dependencia.nombre }}. {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin|date:"F Y" }}{% else %}presente{% endif %}.
+                {% if i.asesores.count > 0 %}Asesores: {% for asesor in i.asesores.all %}{% if not forloop.first %}, {% endif %}{{ asesor }}{% endfor %}. {% endif %}
+                {% if i.sinodales.count > 0 %}Sinodales: {% for sinodal in i.sinodales.all %}{% if not forloop.first %}, {% endif %}{{ sinodal }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Comité de examen de candidatura doctoral</h3>
+{% if comites_candidaturas_doctorales %}
+    <ol>
+        {% for i in comites_candidaturas_doctorales %}
+            <li>
+                {{ i.candidato }}, "{{ i.titulo_tesis }}". {{ programa_doctorado }},
+                {{ i.dependencia.nombre }}. {{ i.fecha_defensa|date:"d \d\e F Y"|lower }}
+                {% if i.asesores.count > 0 %}Asesores: {% for asesor in i.asesores.all %}{% if not forloop.first %}, {% endif %}{{ asesor }}{% endfor %}. {% endif %}
+                {% if i.sinodales.count > 0 %}Sinodales: {% for sinodal in i.sinodales.all %}{% if not forloop.first %}, {% endif %}{{ sinodal }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Productos tecnológicos</h3>
+{% if productos_tecnologicos %}
+    <ol>
+        {% for i in productos_tecnologicos %}
+            <li>
+                {% if i.autores.count > 0 %}Autores: {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
+                "{{ i.nombre }}". {{ i.fecha|date:"F Y" }}.
+                {% if i.patente %}{{ i.patente }}. {% endif %}
+                {% if i.licencia %}{{ i.licencia.nombre }}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+
+
+
 
 925083
 25365031
