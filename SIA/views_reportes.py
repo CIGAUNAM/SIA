@@ -125,9 +125,12 @@ class Informe(View):
     context['docencia_posgrado_otros'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel__in=['MAESTRIA', 'DOCTORADO']).exclude(dependencia__id=4).distinct()
     context['docencia_extracurriculares'] = CursoDocenciaExtracurricular.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
     context['asesoria_estudiantes'] = AsesoriaEstudiante.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
-    context['direccion_tesis_licenciatura'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='LICENCIATURA').distinct()
-    context['direccion_tesis_maestria'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='MAESTRIA').distinct()
-    context['direccion_tesis_doctorado'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='DOCTORADO').distinct()
+    context['direccion_tesis_licenciatura_terminadas'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='LICENCIATURA', fecha_examen__isnull=False).distinct()
+    context['direccion_tesis_maestria_terminadas'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='MAESTRIA', fecha_examen__isnull=False).distinct()
+    context['direccion_tesis_doctorado_terminadas'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='DOCTORADO', fecha_examen__isnull=False).distinct()
+    context['direccion_tesis_licenciatura_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='LICENCIATURA', fecha_examen__isnull=True).distinct()
+    context['direccion_tesis_maestria_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='MAESTRIA', fecha_examen__isnull=True).distinct()
+    context['direccion_tesis_doctorado_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='DOCTORADO', fecha_examen__isnull=True).distinct()
 
 
 
