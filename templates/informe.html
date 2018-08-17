@@ -1056,7 +1056,7 @@
 <h3>Cargos académico-administrativos</h3>
 {% if cargos_academicoadministrativos %}
     <ol>
-        {% for i in cargos_academico-administrativos %}
+        {% for i in cargos_academicoadministrativos %}
             <li>
                 {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
                 {{ i.cargo.nombre }}. {{ i.dependencia.nombre }}. {{ i.usuario }}.
