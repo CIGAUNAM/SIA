@@ -829,5 +829,51 @@
     </ol>
 {% endif %}
 
+<h4>CONACYT</h4>
+{% if proyectos_investigacion_conacyt %}
+    <ol>
+        {% for i in proyectos_investigacion_conacyt %}
+            <li>
+                {{ i.nombre }} ({{ i.financiamiento_conacyt }}). {{ i.fecha_inicio|date:"F Y" }} {% if fecha_fin %}a {{ i.fecha_fin|date:"F Y" }}{% else %} al presente (Permanente). {% endif %}
+                {% if i.responsables.count > 0 %}Responsables: {% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}. {% endif %}
+                {% if i.impactos_sociales.count > 0 %}Impacto social: {% for impacto in i.impactos_sociales.all %}{% if not forloop.first %}, {% endif %}{{ impacto.nombre }}{% endfor %}. {% endif %}
+                {% if i.participantes.count > 0 %}Participantes: {% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Otros financiamientos</h4>
+{% if proyectos_investigacion_otros %}
+    <ol>
+        {% for i in proyectos_investigacion_otros %}
+            <li>
+                {{ i.nombre }} ({% if i.financiamientos.count > 0 %}{% for financiamiento in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ financiamiento  }}{% endfor %}{% endif %}). {{ i.fecha_inicio|date:"F Y" }} {% if fecha_fin %}a {{ i.fecha_fin|date:"F Y" }}{% else %} al presente (Permanente). {% endif %}
+                {% if i.responsables.count > 0 %}Responsables: {% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}. {% endif %}
+                {% if i.impactos_sociales.count > 0 %}Impacto social: {% for impacto in i.impactos_sociales.all %}{% if not forloop.first %}, {% endif %}{{ impacto.nombre }}{% endfor %}. {% endif %}
+                {% if i.participantes.count > 0 %}Participantes: {% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Sin financiamiento</h4>
+{% if proyectos_investigacion_sinfinanciamiento %}
+    <ol>
+        {% for i in proyectos_investigacion_sinfinanciamiento %}
+            <li>
+                {{ i.nombre }}. {{ i.fecha_inicio|date:"F Y" }} {% if fecha_fin %}a {{ i.fecha_fin|date:"F Y" }}{% else %} al presente (Permanente). {% endif %}
+                {% if i.responsables.count > 0 %}Responsables: {% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}. {% endif %}
+                {% if i.impactos_sociales.count > 0 %}Impacto social: {% for impacto in i.impactos_sociales.all %}{% if not forloop.first %}, {% endif %}{{ impacto.nombre }}{% endfor %}. {% endif %}
+                {% if i.participantes.count > 0 %}Participantes: {% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+
+925083
+25365031
 </body>
 </html>
+

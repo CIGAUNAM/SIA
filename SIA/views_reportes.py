@@ -90,6 +90,10 @@ class Informe(View):
 
     context['proyectos_investigacion_papiit'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamiento_papiit__isnull=False)
     context['proyectos_investigacion_papime'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamiento_papime__isnull=False)
+    context['proyectos_investigacion_conacyt'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamiento_conacyt__isnull=False)
+    context['proyectos_investigacion_otros'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamientos__isnull=False)
+    context['proyectos_investigacion_sinfinanciamiento'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year).filter(Q(financiamientos__isnull=True) & Q(financiamiento_papiit__isnull=True) & Q(financiamiento_papime__isnull=False) & Q(financiamiento_conacyt__isnull=False))
+
 
 
     def get(self, request):
