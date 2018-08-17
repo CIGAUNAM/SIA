@@ -9,7 +9,7 @@ from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivu
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion, ArbitrajeOtraActividad, OtroProgramaVinculacion
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
-from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
+from distinciones.models import DistincionAcademico, ParticipacionSociedadCientifica, DistincionAlumno
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
@@ -134,6 +134,9 @@ class Informe(View):
     context['comites_tutorales'] = ComiteTutoral.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).exclude(fecha_inicio__year__lte=1990).distinct()
     context['comites_candidaturas_doctorales'] = ComiteCandidaturaDoctoral.objects.filter(fecha_defensa__year=this_year).distinct()
     context['productos_tecnologicos'] = DesarrolloTecnologico.objects.filter(fecha__year=this_year).distinct()
+    context['productos_tecnologicos'] = DistincionAcademico.objects.filter(fecha__year=this_year).distinct()
+    context['distincion_academicos'] = DistincionAcademico.objects.filter(fecha__year=this_year).distinct()
+    context['distincion_alumnos'] = DistincionAlumno.objects.filter(fecha__year=this_year).distinct()
 
 
 
