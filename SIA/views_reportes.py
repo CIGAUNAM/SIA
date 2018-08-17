@@ -124,7 +124,11 @@ class Informe(View):
     context['docencia_posgrado_ciga'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel__in=['MAESTRIA', 'DOCTORADO']).filter(dependencia__id=4).distinct()
     context['docencia_posgrado_otros'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel__in=['MAESTRIA', 'DOCTORADO']).exclude(dependencia__id=4).distinct()
     context['docencia_extracurriculares'] = CursoDocenciaExtracurricular.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
-    context['docencia_extracurriculares'] = AsesoriaEstudiante.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['asesoria_estudiantes'] = AsesoriaEstudiante.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['direccion_tesis_licenciatura'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='LICENCIATURA').distinct()
+    context['direccion_tesis_maestria'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='MAESTRIA').distinct()
+    context['direccion_tesis_doctorado'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='DOCTORADO').distinct()
+
 
 
 
