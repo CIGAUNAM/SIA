@@ -1398,8 +1398,33 @@
     </ol>
 {% endif %}
 
+<h2>Premios y disticiones</h2>
 
+<h3>Premios y distinciones recibidos por académicos de la entidad</h3>
+{% if distincion_academicos %}
+    <ol>
+        {% for i in distincion_academicos %}
+            <li>
+                {{ i.fecha|date:"F Y" }}. {{ i.distincion.get_tipo_display }}, {{ i.distincion.get_ambito_display }},
+                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.dependencia.nombre }}, {{ i.distincion.dependencia.pais.nombre }}.
+                Otorga a: {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
+<h3>Premios y distinciones recibidos por alumnos de la entidad</h3>
+{% if distincion_alumnos %}
+    <ol>
+        {% for i in distincion_alumnos %}
+            <li>
+                {{ i.fecha|date:"F Y" }}. {{ i.alumno }} {{ i.distincion.get_tipo_display }}, {{ i.distincion.get_ambito_display }},
+                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.dependencia.nombre }}, {{ i.distincion.dependencia.pais.nombre }}.
+                {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 
 925083
