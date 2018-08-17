@@ -98,10 +98,10 @@ class Informe(View):
     context['participacion_eventos_academicos_internacionales_invitacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=True).exclude(evento__pais__nombre='México').distinct()
     context['participacion_eventos_academicos_internacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).exclude(evento__pais__nombre='México').distinct()
 
-    context['organizacion_eventos_academicos'] = OrganizacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=True).filter(evento__pais__nombre='México').distinct()
-    context['organizacion_eventos_academicos_nacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).filter(evento__pais__nombre='México').distinct()
-    context['organizacion_eventos_academicos_internacionales_invitacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=True).exclude(evento__pais__nombre='México').distinct()
-    context['organizacion_eventos_academicos_internacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).exclude(evento__pais__nombre='México').distinct()
+    context['organizacion_eventos_academicos'] = OrganizacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year).filter(evento__pais__nombre='México').distinct()
+    #context['organizacion_eventos_academicos_nacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).filter(evento__pais__nombre='México').distinct()
+    #context['organizacion_eventos_academicos_internacionales_invitacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=True).exclude(evento__pais__nombre='México').distinct()
+    #context['organizacion_eventos_academicos_internacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).exclude(evento__pais__nombre='México').distinct()
 
 
     def get(self, request):
