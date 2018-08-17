@@ -929,6 +929,36 @@
     </ol>
 {% endif %}
 
+<h3>Organización de eventos académicos</h3>
+{% if organizacion_eventos_academicos %}
+    <ol>
+        {% for i in organizacion_eventos_academicos %}
+            <li>
+                {{ i.evento.tipo.nombre }}. {{ i.evento.nombre }}. <br>
+                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
+                Ámbito {{ i.get_ambito_display|lower }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Organización de eventos de divulgación</h3>
+{% if organizacion_eventos_divulgacion %}
+    <ol>
+        {% for i in organizacion_eventos_divulgacion %}
+            <li>
+                {{ i.evento.tipo.nombre }}. {{ i.evento.nombre }}. <br>
+                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
+                Ámbito {{ i.get_ambito_display|lower }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
 925083
 25365031
 </body>
