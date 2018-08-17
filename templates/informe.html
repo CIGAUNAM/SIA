@@ -986,11 +986,281 @@
     <ol>
         {% for i in arbitrajes_proyectos_investigacion %}
             <li>
-                {{ i.convocatoria }}. {{ i.dependencia.institucion.nombre }}, {{ i.dependencia.nombre }}. {{ i.pais.nombre }}.
+                {{ i.convocatoria }}. {{ i.dependencia.institucion.nombre }}, {{ i.dependencia.nombre }}. {{ i.dependencia.pais.nombre }}. {{ i.fecha }}.
             </li>
         {% endfor %}
     </ol>
 {% endif %}
+
+<h3>Otras actividades de arbitraje</h3>
+{% if arbitrajes_otras_actividades %}
+    <ol>
+        {% for i in arbitrajes_otras_actividades %}
+            <li>
+                {{ i.actividad }}. {{ i.dependencia.institucion.nombre }}, {{ i.dependencia.nombre }}. {{ i.dependencia.pais.nombre }}. {{ i.fecha }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Redes académicas</h3>
+{% if redes_academicas %}
+    <ol>
+        {% for i in redes_academicas %}
+            <li>
+                {{ i.get_ambito_display }}. {{ i.nombre }}. ({{ i.fecha.year }}).
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Servicios y asesorias externas a entidades no académicas</h3>
+{% if servicios_externos_entidadesnoacademicas %}
+    <ol>
+        {% for i in servicios_externos_entidadesnoacademicas %}
+            <li>
+                {{ i.nombre_servicio }}. Dirigido a:
+                {% if i.entidades.count > 0 %}{% for entidad in i.entidades.all %}{% if not forloop.first %}, {% endif %}{{ entidad }}{% endfor %}. {% endif %}
+                {{ i.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.fecha_fin %}a {{ i.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}.
+                Incluye financiamiento: {% if i.financiamientos.count > 0 %} Sí{% else %} No{% endif %}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Otros programas o acciones de vinculación, colaboración y/o cooperación</h3>
+{% if otros_programa_vinculacion %}
+    <ol>
+        {% for i in otros_programa_vinculacion %}
+            <li>
+                {{ i.fecha|date:"F Y" }}. Actividad realizada: {{ i.nombre }}. {{ i.usuario }}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Sociedades científicas</h3>
+{% if sociedades_cientificas %}
+    <ol>
+        {% for i in sociedades_cientificas %}
+            <li>
+                {{ i.nombre }}. Participación: {{ i.get_tipo_display }}.
+                ({{ i.fecha_inicio.year }}{% if i.fecha_fin %}, {{ i.fecha_fin.year }}{% endif %}). {{ i.usuario }}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h2>Apoyo institucional</h2>
+
+<h3>Cargos académico-administrativos</h3>
+{% if cargos_academico-administrativos %}
+    <ol>
+        {% for i in cargos_academico-administrativos %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.cargo.nombre }}. {{ i.dependencia.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Representación en órganos colegiados</h3>
+{% if representacion_organos_colegiados %}
+    <ol>
+        {% for i in representacion_organos_colegiados %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.representacion.nombre }}. {{ i.dependencia.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Comisiones académicas</h3>
+{% if comisiones_academicas %}
+    <ol>
+        {% for i in comisiones_academicas %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.comision_academica.nombre }}. {{ i.dependencia.nombre }}. {{ i.dependencia.pais.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Comisiones de evaluación</h3>
+{% if comisiones_academicas_evaluacion %}
+    <ol>
+        {% for i in comisiones_academicas_evaluacion %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.comision_academica.nombre }}. {{ i.dependencia.nombre }}. {{ i.dependencia.pais.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Apoyo técnico</h3>
+{% if apoyo_tecnico %}
+    <ol>
+        {% for i in apoyo_tecnico %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.actividad_apoyo.nombre }}. {{ i.dependencia.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Otras actividades de apoyo</h3>
+{% if otras_actividades_apoyo %}
+    <ol>
+        {% for i in otras_actividades_apoyo %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.actividad_apoyo.nombre }}. {{ i.dependencia.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h2>Movilidad académica</h2>
+
+<h3>Invitados nacionales</h3>
+{% if invitados_nacionales %}
+    <ol>
+        {% for i in invitados_nacionales %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.academico }} ({{ i.dependencia.nombre }}). Actividad: "{{ i.actividades }}".
+                Intercambio UNAM: {% if i.intercambio_unam %}Sí{% else %}No{% endif %}. Financiado por:
+                {{ i.financiamiento.nombre }}. {{ i.dependencia.pais.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Invitados internacionales</h3>
+{% if invitados_internacionales %}
+    <ol>
+        {% for i in invitados_internacionales %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.academico }} ({{ i.dependencia.nombre }}). Actividad: "{{ i.actividades }}".
+                Intercambio UNAM: {% if i.intercambio_unam %}Sí{% else %}No{% endif %}. Financiado por:
+                {{ i.financiamiento.nombre }}. {{ i.dependencia.pais.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Sabáticos</h3>
+{% if sabaticos %}
+    <ol>
+        {% for i in sabaticos %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                Institución receptora: {{ i.dependencia.nombre }}. Actividad: "{{ i.actividades }}".
+                Financiado por: {{ i.financiamiento.nombre }}. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h2>Docencia</h2>
+
+<h3>Cursos escolarizados</h3>
+
+<h4>Licenciaturas UNAM</h4>
+{% if docencia_licenciatura_unam %}
+    <ol>
+        {% for i in docencia_licenciatura_unam %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.asignatura.nombre }}. {{ i.licenciatura.nombre }}. {{ i.dependencia.nombre }}. {{ i.get_modalidad_display }},
+                {{ i.total_horas }} horas. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Otras licenciaturas</h4>
+{% if docencia_licenciatura_otras %}
+    <ol>
+        {% for i in docencia_licenciatura_otras %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.asignatura.nombre }}. {{ i.licenciatura.nombre }}. {{ i.dependencia.nombre }}. {{ i.get_modalidad_display }},
+                {{ i.total_horas }} horas. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Colaborador e invitado en cursos escolarizados de licenciatura</h4>
+{% if docencia_licenciatura_colaborador %}
+    <ol>
+        {% for i in docencia_licenciatura_colaborador %}
+            <li>
+                {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.asignatura.nombre }}. {{ i.licenciatura.nombre }}. {{ i.dependencia.nombre }}. {{ i.get_modalidad_display }},
+                {{ i.total_horas }} horas. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Posgrado CIGA</h4>
+{% if docencia_posgrado_ciga %}
+    <ol>
+        {% for i in docencia_posgrado_ciga %}
+            <li>
+                {{ i.get_nombramiento_display }}. {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.asignatura.nombre }}.
+                {% if nivel == 'MAESTRIA' %}Maestría: {{ i.maestria.nombre }}. {% endif %}
+                {% if nivel == 'DOCTORADO' %}Doctorado: {{ i.doctorado.nombre }}. {% endif %}
+                {{ i.dependencia.nombre }}. {{ i.get_modalidad_display }},
+                {{ i.total_horas }} horas. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Otros posgrados</h4>
+{% if docencia_posgrado_otros %}
+    <ol>
+        {% for i in docencia_posgrado_otros %}
+            <li>
+                {{ i.get_nombramiento_display }}. {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.asignatura.nombre }}.
+                {% if nivel == 'MAESTRIA' %}Maestría: {{ i.maestria.nombre }}. {% endif %}
+                {% if nivel == 'DOCTORADO' %}Doctorado: {{ i.doctorado.nombre }}. {% endif %}
+                {{ i.dependencia.nombre }}. {{ i.get_modalidad_display }},
+                {{ i.total_horas }} horas. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Cursos extracurriculares</h4>
+{% if docencia_extracurriculares %}
+    <ol>
+        {% for i in docencia_extracurriculares %}
+            <li>
+                {{ i.get_nombramiento_display }}. {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.asignatura.nombre }}.
+                {{ i.dependencia.nombre }}. {{ i.get_modalidad_display }},
+                {{ i.total_horas }} horas. {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h2>Formación de recursos humanos</h2>
+
+<h3>Asesor en residencias/practicas/estancias/servicio social</h3>
+
 
 
 

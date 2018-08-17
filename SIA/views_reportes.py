@@ -6,7 +6,7 @@ from formacion_academica.models import CursoEspecializacion
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, ProyectoInvestigacion
 from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, Traduccion, OrganizacionEventoAcademico, ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
-from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
+from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion, ArbitrajeOtraActividad, OtroProgramaVinculacion
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
@@ -18,6 +18,7 @@ from apoyo_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
 from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
     DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
+from apoyo_institucional.models import CargoAcademicoAdministrativo, RepresentacionOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -103,6 +104,27 @@ class Informe(View):
     context['participacion_eventos_divulgacion'] = ParticipacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=this_year).distinct()
     context['arbitrajes_publicaciones_academicas'] = ArbitrajePublicacionAcademica.objects.filter(fecha_dictamen__year=this_year).distinct()
     context['arbitrajes_proyectos_investigacion'] = ArbitrajeProyectoInvestigacion.objects.filter(fecha__year=this_year).distinct()
+    context['arbitrajes_otras_actividades'] = ArbitrajeOtraActividad.objects.filter(fecha__year=this_year).distinct()
+    context['redes_academicas'] = RedAcademica.objects.filter(fecha_constitucion__year=this_year).distinct()
+    context['servicios_externos_entidadesnoacademicas'] = ServicioExternoEntidadNoAcademica.objects.filter(fecha_inicio__year=this_year).distinct()
+    context['otros_programa_vinculacion'] = OtroProgramaVinculacion.objects.filter(fecha__year=this_year).distinct()
+    context['sociedades_cientificas'] = ParticipacionSociedadCientifica.objects.filter(fecha_inicio__year=this_year).distinct()
+    context['cargos_academico-administrativos'] = CargoAcademicoAdministrativo.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(dependencia__institucion__id=1).distinct()
+    context['representacion_organos_colegiados'] = RepresentacionOrganoColegiado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['comisiones_academicas'] = ComisionAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=False).distinct()
+    context['comisiones_academicas_evaluacion'] = ComisionAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=True).distinct()
+    context['apoyo_tecnico'] = ApoyoTecnico.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['otras_actividades_apoyo'] = ApoyoOtraActividad.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['invitados_nacionales'] = MovilidadAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(tipo='INVITACION').filter(dependencia__pais__nombre='México').distinct()
+    context['invitados_internacionales'] = MovilidadAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(tipo='INVITACION').exclude(dependencia__pais__nombre='México').distinct()
+    context['sabaticos'] = MovilidadAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(tipo='SABATICO').distinct()
+    context['docencia_licenciatura_unam'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel='LICENCIATURA', nombramiento='TITULAR').filter(institucion__id=1).distinct()
+    context['docencia_licenciatura_otras'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel='LICENCIATURA', nombramiento='TITULAR').exclude(institucion__id=1).distinct()
+    context['docencia_licenciatura_colaborador'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel='LICENCIATURA', nombramiento='COLABORADOR').distinct()
+    context['docencia_posgrado_ciga'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel__in=['MAESTRIA', 'DOCTORADO']).filter(dependencia__id=4).distinct()
+    context['docencia_posgrado_otros'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel__in=['MAESTRIA', 'DOCTORADO']).exclude(dependencia__id=4).distinct()
+    context['docencia_extracurriculares'] = CursoDocenciaExtracurricular.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['docencia_extracurriculares'] = AsesoriaEstudiante.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
 
 
 
