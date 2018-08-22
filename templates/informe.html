@@ -1260,9 +1260,171 @@
 <h2>Formación de recursos humanos</h2>
 
 <h3>Asesor en residencias/practicas/estancias/servicio social</h3>
+{% if asesoria_estudiantes %}
+    <ol>
+        {% for i in asesoria_estudiantes %}
+            <li>
+                Asesorado: {{ i.asesorado }}, {{ i.get_tipo_display }}, Beca: {{ i.beca.nombre }}, {% if i.proyecto %}"{{ i.proyecto.nombre }}"{% endif %}.
+                {% if i.nivel_academico == 'LICENCIATURA' %}Licenciatura: {{ programa_licenciatura }}, {% endif %}
+                {% if i.nivel_academico == 'MAESTRIA' %}Maestría: {{ programa_maestria }}, {% endif %}
+                {% if i.nivel_academico == 'DOCTORADO' %}Doctorado: {{ programa_doctorado }}, {% endif %}
+                {{ i.dependencia.nombre }}, {{ i.dependencia.institucion.nombre }},
+                {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin|date:"F Y" }}{% else %}presente{% endif %}.
+                {{ i.get_nombramiento_display }}. {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}presente{% endif %}.
+                {{ i.usuario }}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
+<h3>Dirección de tesis terminadas</h3>
 
+<h4>Licenciatura</h4>
+{% if direccion_tesis_licenciatura_terminadas %}
+    <ol>
+        {% for i in direccion_tesis_licenciatura_terminadas %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
+<h4>Maestría</h4>
+{% if direccion_tesis_maestria_terminadas %}
+    <ol>
+        {% for i in direccion_tesis_maestria_terminadas %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Doctorado</h4>
+{% if direccion_tesis_doctorado_terminadas %}
+    <ol>
+        {% for i in direccion_tesis_doctorado_terminadas %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Dirección de tesis en proceso</h3>
+
+<h4>Licenciatura</h4>
+{% if direccion_tesis_licenciatura_enproceso %}
+    <ol>
+        {% for i in direccion_tesis_licenciatura_enproceso %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Maestría</h4>
+{% if direccion_tesis_maestria_enproceso %}
+    <ol>
+        {% for i in direccion_tesis_maestria_enproceso %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h4>Doctorado</h4>
+{% if direccion_tesis_doctorado_enproceso %}
+    <ol>
+        {% for i in direccion_tesis_doctorado_enproceso %}
+            <li>
+                {{ i.asesorado }}, "{{ i.especialidad }}". {{ i.dependencia.nombre }}. Fecha de examen: {{ i.fecha_examen|date:"d \d\e F Y"|lower }}.
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Comités tutorales</h3>
+{% if comites_tutorales %}
+    <ol>
+        {% for i in comites_tutorales %}
+            <li>
+                {{ i.estudiante }}, "{{ i.titulo_tesis }}".
+                {% if i.nivel_academico == 'LICENCIATURA' %}Licenciatura, {{ programa_licenciatura }}, {% endif %}
+                {% if i.nivel_academico == 'MAESTRIA' %}Maestría, {{ programa_maestria }}, {% endif %}
+                {% if i.nivel_academico == 'DOCTORADO' %}Doctorado, {{ programa_doctorado }}, {% endif %}
+                {{ i.dependencia.nombre }}. {{ i.fecha_inicio|date:"F Y" }} a {% if i.fecha_fin %}{{ i.fecha_fin|date:"F Y" }}{% else %}presente{% endif %}.
+                {% if i.asesores.count > 0 %}Asesores: {% for asesor in i.asesores.all %}{% if not forloop.first %}, {% endif %}{{ asesor }}{% endfor %}. {% endif %}
+                {% if i.sinodales.count > 0 %}Sinodales: {% for sinodal in i.sinodales.all %}{% if not forloop.first %}, {% endif %}{{ sinodal }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Comité de examen de candidatura doctoral</h3>
+{% if comites_candidaturas_doctorales %}
+    <ol>
+        {% for i in comites_candidaturas_doctorales %}
+            <li>
+                {{ i.candidato }}, "{{ i.titulo_tesis }}". {{ programa_doctorado }},
+                {{ i.dependencia.nombre }}. {{ i.fecha_defensa|date:"d \d\e F Y"|lower }}
+                {% if i.asesores.count > 0 %}Asesores: {% for asesor in i.asesores.all %}{% if not forloop.first %}, {% endif %}{{ asesor }}{% endfor %}. {% endif %}
+                {% if i.sinodales.count > 0 %}Sinodales: {% for sinodal in i.sinodales.all %}{% if not forloop.first %}, {% endif %}{{ sinodal }}{% endfor %}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Productos tecnológicos</h3>
+{% if productos_tecnologicos %}
+    <ol>
+        {% for i in productos_tecnologicos %}
+            <li>
+                {% if i.autores.count > 0 %}Autores: {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
+                "{{ i.nombre }}". {{ i.fecha|date:"F Y" }}.
+                {% if i.patente %}{{ i.patente }}. {% endif %}
+                {% if i.licencia %}{{ i.licencia.nombre }}. {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h2>Premios y disticiones</h2>
+
+<h3>Premios y distinciones recibidos por académicos de la entidad</h3>
+{% if distincion_academicos %}
+    <ol>
+        {% for i in distincion_academicos %}
+            <li>
+                {{ i.fecha|date:"F Y" }}. {{ i.distincion.get_tipo_display }}, {{ i.distincion.get_ambito_display }},
+                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.dependencia.nombre }}, {{ i.distincion.dependencia.pais.nombre }}.
+                Otorga a: {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+<h3>Premios y distinciones recibidos por alumnos de la entidad</h3>
+{% if distincion_alumnos %}
+    <ol>
+        {% for i in distincion_alumnos %}
+            <li>
+                {{ i.fecha|date:"F Y" }}. {{ i.alumno }} {{ i.distincion.get_tipo_display }}, {{ i.distincion.get_ambito_display }},
+                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.dependencia.nombre }}, {{ i.distincion.dependencia.pais.nombre }}.
+                {{ i.usuario }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 
 925083
