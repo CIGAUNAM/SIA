@@ -437,7 +437,7 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.libro.numero_paginas }}.
@@ -454,7 +454,7 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.libro.numero_paginas }}.
@@ -471,7 +471,7 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.libro.numero_paginas }}.
@@ -488,7 +488,7 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.libro.numero_paginas }}.
@@ -505,7 +505,7 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.libro.numero_paginas }}.
@@ -522,7 +522,7 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.libro.numero_paginas }}.
