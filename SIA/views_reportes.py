@@ -9,7 +9,7 @@ from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivu
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion, ArbitrajeOtraActividad, OtroProgramaVinculacion
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
-from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
+from distinciones.models import DistincionAcademico, ParticipacionSociedadCientifica, DistincionAlumno
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
 from nucleo.models import User, Libro
 from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
@@ -124,7 +124,20 @@ class Informe(View):
     context['docencia_posgrado_ciga'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel__in=['MAESTRIA', 'DOCTORADO']).filter(dependencia__id=4).distinct()
     context['docencia_posgrado_otros'] = CursoDocenciaEscolarizado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(nivel__in=['MAESTRIA', 'DOCTORADO']).exclude(dependencia__id=4).distinct()
     context['docencia_extracurriculares'] = CursoDocenciaExtracurricular.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
-    context['docencia_extracurriculares'] = AsesoriaEstudiante.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['asesoria_estudiantes'] = AsesoriaEstudiante.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    context['direccion_tesis_licenciatura_terminadas'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='LICENCIATURA', fecha_examen__year=this_year).distinct()
+    context['direccion_tesis_maestria_terminadas'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='MAESTRIA', fecha_examen__year=this_year).distinct()
+    context['direccion_tesis_doctorado_terminadas'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='DOCTORADO', fecha_examen__year=this_year).distinct()
+    context['direccion_tesis_licenciatura_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='LICENCIATURA', fecha_examen__isnull=True).distinct()
+    context['direccion_tesis_maestria_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='MAESTRIA', fecha_examen__isnull=True).distinct()
+    context['direccion_tesis_doctorado_enproceso'] = DireccionTesis.objects.filter(fecha_examen__year__lte=this_year, nivel_academico='DOCTORADO', fecha_examen__isnull=True).distinct()
+    context['comites_tutorales'] = ComiteTutoral.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).exclude(fecha_inicio__year__lte=1990).distinct()
+    context['comites_candidaturas_doctorales'] = ComiteCandidaturaDoctoral.objects.filter(fecha_defensa__year=this_year).distinct()
+    context['productos_tecnologicos'] = DesarrolloTecnologico.objects.filter(fecha__year=this_year).distinct()
+    context['productos_tecnologicos'] = DistincionAcademico.objects.filter(fecha__year=this_year).distinct()
+    context['distincion_academicos'] = DistincionAcademico.objects.filter(fecha__year=this_year).distinct()
+    context['distincion_alumnos'] = DistincionAlumno.objects.filter(fecha__year=this_year).distinct()
+
 
 
 
