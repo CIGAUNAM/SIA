@@ -437,8 +437,9 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
-                {{ i.libro.editorial.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {% if i.libro.editores.count > 0 %}{% for editor in i.libro.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% endif %} {{ i.libro.nombre }}.                {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
@@ -473,8 +474,9 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
-                {{ i.libro.editorial.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {% if i.libro.editores.count > 0 %}{% for editor in i.libro.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% endif %} {{ i.libro.nombre }}.                {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
@@ -490,8 +492,9 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
-                {{ i.libro.editorial.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {% if i.libro.editores.count > 0 %}{% for editor in i.libro.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% endif %} {{ i.libro.nombre }}.                {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
@@ -507,8 +510,9 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
-                {{ i.libro.editorial.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {% if i.libro.editores.count > 0 %}{% for editor in i.libro.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% endif %} {{ i.libro.nombre }}.                {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
@@ -524,8 +528,9 @@
             <li>
                 {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
                 {{ i.libro.fecha.year }}. "{{ i.titulo }}".
-                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
-                {{ i.libro.editorial.nombre }}.
+                En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                {% if i.libro.editores.count > 0 %}{% for editor in i.libro.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
+                {% endif %} {{ i.libro.nombre }}.                {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
                 pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
