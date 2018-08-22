@@ -440,7 +440,7 @@
                 En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
-                pp. {{ i.libro.numero_paginas }}.
+                pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
             </li>
         {% endfor %}
@@ -457,7 +457,7 @@
                 En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
-                pp. {{ i.libro.numero_paginas }}.
+                pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
             </li>
         {% endfor %}
@@ -474,7 +474,7 @@
                 En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
-                pp. {{ i.libro.numero_paginas }}.
+                pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
             </li>
         {% endfor %}
@@ -491,7 +491,7 @@
                 En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
-                pp. {{ i.libro.numero_paginas }}.
+                pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
             </li>
         {% endfor %}
@@ -508,7 +508,7 @@
                 En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
-                pp. {{ i.libro.numero_paginas }}.
+                pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
             </li>
         {% endfor %}
@@ -525,7 +525,7 @@
                 En: {% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.libro.nombre }}.
                 {{ i.libro.editorial.nombre }}.
                 {{ i.libro.pais.nombre }}.
-                pp. {{ i.libro.numero_paginas }}.
+                pp. {{ i.pagina_inicio }}-{{ i.pagina_fin }}.
                 {% if i.libro.isbn %}ISBN: {{ i.libro.isbn }}.{% endif %}
             </li>
         {% endfor %}
