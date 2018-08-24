@@ -1,7 +1,12 @@
 especies = EspecieArbol.objects.all().annotate(num=Count('arbol'))
 esp_altura = 50
 
+{3: {}}
+
+data = {}
 for i in especies:
+    data[i.id] =
+
     countt = Arbol.objects.filter(especie__id=i.id).count()
 
     # altura
@@ -141,6 +146,11 @@ for i in especies:
                 q = Arbol.objects.filter(especie__id=i.id).filter(Q(c_altura__gte=j) & Q(c_altura__lte=j + esp_c_altura - 1))
                 c_alturas[j + esp_c_altura - 1] = q.count()
 
+        c_altura_avg = EspecieArbol.objects.filter(id=i.id, arbol__c_altura__gte=1).annotate(c_altura_avg=Avg('arbol__c_altura'))[0].c_altura_avg
+        c_altura_stdev = EspecieArbol.objects.filter(id=i.id, arbol__c_altura__gte=1).annotate(c_altura_stdev=StdDev('arbol__c_altura'))[0].c_altura_stdev
+        c_altura_var = EspecieArbol.objects.filter(id=i.id, arbol__c_altura__gte=1).annotate(c_altura_var=Var('arbol__c_altura'))[0].c_altura_var
+
+
         # dap
         esp_c_dap = 5
         c_daps = {}
@@ -159,6 +169,11 @@ for i in especies:
                 q = Arbol.objects.filter(especie__id=i.id).filter(
                     Q(c_diametro_altura_pecho__gte=j) & Q(c_diametro_altura_pecho__lte=j + esp_c_dap - 1))
                 c_daps[j + esp_c_dap - 1] = q.count()
+
+        c_dap_avg = EspecieArbol.objects.filter(id=i.id, arbol__c_diametro_altura_pecho__gte=1).annotate(c_dap_avg=Avg('arbol__c_diametro_altura_pecho'))[0].c_dap_avg
+        c_dap_stdev = EspecieArbol.objects.filter(id=i.id, arbol__c_diametro_altura_pecho__gte=1).annotate(c_dap_stdev=StdDev('arbol__c_diametro_altura_pecho'))[0].c_dap_stdev
+        c_dap_var = EspecieArbol.objects.filter(id=i.id, arbol__c_diametro_altura_pecho__gte=1).annotate(c_dap_var=Var('arbol__c_diametro_altura_pecho'))[0].c_dap_var
+
 
         # c_db
         esp_c_db = 5
@@ -179,9 +194,14 @@ for i in especies:
                     Q(c_diametro_basal__gte=j) & Q(c_diametro_basal__lte=j + esp_c_db - 1))
                 c_dbs[j + esp_c_db - 1] = q.count()
 
+        c_db_avg = EspecieArbol.objects.filter(id=i.id, arbol__c_diametro_basal__gte=1).annotate(c_db_avg=Avg('arbol__c_diametro_basal'))[0].c_db_avg
+        c_db_stdev = EspecieArbol.objects.filter(id=i.id, arbol__c_diametro_basal__gte=1).annotate(c_db_stdev=StdDev('arbol__c_diametro_basal'))[0].c_db_stdev
+        c_db_var = EspecieArbol.objects.filter(id=i.id, arbol__c_diametro_basal__gte=1).annotate(c_db_var=Var('arbol__c_diametro_basal'))[0].c_db_var
+
+
         # c_densidad_follaje
         esp_c_densidad_follaje = 1
-        c_densidad_follajees = {}
+        c_densidad_follajes = {}
         arboles = Arbol.objects.filter(especie__id=i.id, c_densidad_follaje__gte=1)
         min_c_densidad_follaje = None
         max_c_densidad_follaje = None
@@ -197,7 +217,12 @@ for i in especies:
                            esp_c_densidad_follaje):
                 q = Arbol.objects.filter(especie__id=i.id).filter(
                     Q(c_densidad_follaje__gte=j) & Q(c_densidad_follaje__lte=j + esp_c_densidad_follaje - 1))
-                c_densidad_follajees[j + esp_c_densidad_follaje - 1] = q.count()
+                c_densidad_follajes[j + esp_c_densidad_follaje - 1] = q.count()
+
+        c_densidad_follaje_avg = EspecieArbol.objects.filter(id=i.id, arbol__c_densidad_follaje__gte=1).annotate(c_densidad_follaje_avg=Avg('arbol__c_densidad_follaje'))[0].c_densidad_follaje_avg
+        c_densidad_follaje_stdev = EspecieArbol.objects.filter(id=i.id, arbol__c_densidad_follaje__gte=1).annotate(c_densidad_follaje_stdev=StdDev('arbol__c_densidad_follaje'))[0].c_densidad_follaje_stdev
+        c_densidad_follaje_var = EspecieArbol.objects.filter(id=i.id, arbol__c_densidad_follaje__gte=1).annotate(c_densidad_follaje_var=Var('arbol__c_densidad_follaje'))[0].c_densidad_follaje_var
+
 
         # c_cobertura_follaje
         esp_c_cobertura_follaje = 5
@@ -219,10 +244,15 @@ for i in especies:
                     Q(c_cobertura_follaje__gte=j) & Q(c_cobertura_follaje__lte=j + esp_c_cobertura_follaje - 1))
                 c_cobertura_follajes[j + esp_c_cobertura_follaje - 1] = q.count()
 
+        c_cobertura_follaje_avg = EspecieArbol.objects.filter(id=i.id, arbol__c_cobertura_follaje__gte=1).annotate(c_cobertura_follaje_avg=Avg('arbol__c_cobertura_follaje'))[0].c_cobertura_follaje_avg
+        c_cobertura_follaje_stdev = EspecieArbol.objects.filter(id=i.id, arbol__c_cobertura_follaje__gte=1).annotate(c_cobertura_follaje_stdev=StdDev('arbol__c_cobertura_follaje'))[0].c_cobertura_follaje_stdev
+        c_cobertura_follaje_var = EspecieArbol.objects.filter(id=i.id, arbol__c_cobertura_follaje__gte=1).annotate(c_cobertura_follaje_var=Var('arbol__c_cobertura_follaje'))[0].c_cobertura_follaje_var
 
 
 
 
+
+    """
     print("----------------------------------------------------")
     print("alturas", i, min_altura, max_altura)
     print(alturas)
@@ -254,4 +284,4 @@ for i in especies:
 
     print("c_cobertura_follajes", i, min_cobertura, max_cobertura)
     print(c_cobertura_follajes)
-    print("----------------------------------------------------")
+    print("----------------------------------------------------") """
