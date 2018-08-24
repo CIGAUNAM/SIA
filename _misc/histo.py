@@ -93,6 +93,10 @@ for i in especies:
                 Q(densidad__gte=j) & Q(densidad__lte=j + esp_densidad - 1))
             densidades[j + esp_densidad - 1] = q.count()
 
+    densidad_avg = EspecieArbol.objects.filter(id=i.id, arbol__densidad__gte=1).annotate(densidad_avg=Avg('arbol__densidad'))[0].densidad_avg
+    densidad_stdev = EspecieArbol.objects.filter(id=i.id, arbol__densidad__gte=1).annotate(densidad_stdev=StdDev('arbol__densidad'))[0].densidad_stdev
+    densidad_var = EspecieArbol.objects.filter(id=i.id, arbol__densidad__gte=1).annotate(densidad_var=Var('arbol__densidad'))[0].densidad_var
+
     # cobertura
     esp_cobertura = 5
     coberturas = {}
@@ -113,6 +117,9 @@ for i in especies:
                 Q(cobertura__gte=j) & Q(cobertura__lte=j + esp_cobertura - 1))
             coberturas[j + esp_cobertura - 1] = q.count()
 
+        cobertura_avg = EspecieArbol.objects.filter(id=i.id, arbol__cobertura__gte=1).annotate(cobertura_avg=Avg('arbol__cobertura'))[0].cobertura_avg
+        cobertura_stdev = EspecieArbol.objects.filter(id=i.id, arbol__cobertura__gte=1).annotate(cobertura_stdev=StdDev('arbol__cobertura'))[0].cobertura_stdev
+        cobertura_var = EspecieArbol.objects.filter(id=i.id, arbol__cobertura__gte=1).annotate(cobertura_var=Var('arbol__cobertura'))[0].cobertura_var
 
     # CAMPO
 
