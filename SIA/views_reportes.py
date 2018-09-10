@@ -89,11 +89,13 @@ class Informe(View):
     context['programas_radiotelevisioninternet'] = ProgramaRadioTelevisionInternet.objects.filter(fecha__year=this_year).distinct()
     context['resenas'] = Resena.objects.filter(fecha__year=this_year).distinct()
 
-    context['proyectos_investigacion_papiit'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamiento_papiit__isnull=False).distinct()
-    context['proyectos_investigacion_papime'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamiento_papime__isnull=False).distinct()
-    context['proyectos_investigacion_conacyt'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamiento_conacyt__isnull=False).distinct()
-    context['proyectos_investigacion_otros'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year, financiamientos__isnull=False).distinct()
-    context['proyectos_investigacion_sinfinanciamiento'] = ProyectoInvestigacion.objects.filter(fecha_inicio__year=this_year).filter(Q(financiamientos__isnull=True) & Q(financiamiento_papiit__isnull=True) & Q(financiamiento_papime__isnull=False) & Q(financiamiento_conacyt__isnull=False)).distinct()
+
+
+    context['proyectos_investigacion_papiit'] = ProyectoInvestigacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(financiamiento_papiit__isnull=False).distinct()
+    context['proyectos_investigacion_papime'] = ProyectoInvestigacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(financiamiento_papime__isnull=False).distinct()
+    context['proyectos_investigacion_conacyt'] = ProyectoInvestigacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(financiamiento_conacyt__isnull=False).distinct()
+    context['proyectos_investigacion_otros'] = ProyectoInvestigacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(financiamientos__isnull=False).distinct()
+    context['proyectos_investigacion_sinfinanciamiento'] = ProyectoInvestigacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(Q(financiamientos__isnull=True) & Q(financiamiento_papiit__isnull=True) & Q(financiamiento_papime__isnull=False) & Q(financiamiento_conacyt__isnull=False)).distinct()
     context['participacion_eventos_academicos_nacionales_invitacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=True).filter(evento__pais__nombre='México').distinct()
     context['participacion_eventos_academicos_nacionales_participacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=False).filter(evento__pais__nombre='México').distinct()
     context['participacion_eventos_academicos_internacionales_invitacion'] = ParticipacionEventoAcademico.objects.filter(evento__fecha_inicio__year=this_year, por_invitacion=True).exclude(evento__pais__nombre='México').distinct()
