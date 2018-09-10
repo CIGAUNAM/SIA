@@ -966,7 +966,7 @@
         {% for i in organizacion_eventos_divulgacion %}
             <li>
                 {{ i.evento.tipo.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}.
-                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.usuario }}.
                 Responsabilidad: {{ i.get_responsabilidad_display }}. Ámbito {{ i.get_ambito_display|lower }}.
             </li>
         {% endfor %}
@@ -980,7 +980,7 @@
             <li>
                 {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
-                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.usuario }}.
             </li>
         {% endfor %}
     </ol>
