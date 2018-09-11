@@ -1450,16 +1450,16 @@
 
 <h4>PAPIIT</h4>
 {% if proyectos_investigacion_papiit %}
-    <ol>
+    <p>Nombre^Es permanente^Fecha inicio^Fecha fin^Institución^Dependencia^Responsables^Participantes^Status^Clasificación^Organización^Modalidad^Temática género^Problema nacional CONACYT^Financiamientos^Cve CONACYT^Cve PAPIIT^Cve PAPIME^Metodologìas^Àreas de especialidad^Impactos sociales^Técnicos^Alumnos doctorado^Alumnos maestría^Alumnos licenciatura</p>
+
         {% for i in proyectos_investigacion_papiit %}
-            <li>
-                {{ i.nombre }} ({{ i.financiamiento_papiit }}). {{ i.fecha_inicio|date:"F Y" }} {% if fecha_fin %}a {{ i.fecha_fin|date:"F Y" }}{% else %} al presente (Permanente). {% endif %}
-                {% if i.responsables.count > 0 %}Responsables: {% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}. {% endif %}
-                {% if i.impactos_sociales.count > 0 %}Impacto social: {% for impacto in i.impactos_sociales.all %}{% if not forloop.first %}, {% endif %}{{ impacto.nombre }}{% endfor %}. {% endif %}
-                {% if i.participantes.count > 0 %}Participantes: {% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
-            </li>
+            <p>
+                {{ i.nombre }}^{{ i.es_permanente }}^{{ i.fecha_inicio|date:"F Y" }}^{% if i.fecha_fin %}{{ i.fecha_fin|date:"F Y" }}{% else %}al presente (Permanente){% endif %}^
+                {{ i.institucion.nombre }}^{{ i.dependencia.nombre }}
+
+            </p>
         {% endfor %}
-    </ol>
+
 {% endif %}
 
 <h4>PAPIME</h4>
