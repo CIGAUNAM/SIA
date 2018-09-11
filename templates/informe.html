@@ -1450,13 +1450,20 @@
 
 <h4>PAPIIT</h4>
 {% if proyectos_investigacion_papiit %}
-    <p>Nombre^Es permanente^Fecha inicio^Fecha fin^Institución^Dependencia^Responsables^Participantes^Status^Clasificación^Organización^Modalidad^Temática género^Problema nacional CONACYT^Financiamientos^Cve CONACYT^Cve PAPIIT^Cve PAPIME^Metodologìas^Àreas de especialidad^Impactos sociales^Técnicos^Alumnos doctorado^Alumnos maestría^Alumnos licenciatura</p>
+    <p>Nombre^Es permanente^Fecha inicio^Fecha fin^Institución^Dependencia^Responsables^Participantes^Status^Clasificación^Organización^Modalidad^Temática género^Problema nacional CONACYT^Financiamientos^Cve CONACYT^Cve PAPIIT^Cve PAPIME^Metodologìas^Áreas de especialidad^Impactos sociales^Técnicos^Alumnos doctorado^Alumnos maestría^Alumnos licenciatura</p>
 
         {% for i in proyectos_investigacion_papiit %}
             <p>
                 {{ i.nombre }}^{{ i.es_permanente }}^{{ i.fecha_inicio|date:"F Y" }}^{% if i.fecha_fin %}{{ i.fecha_fin|date:"F Y" }}{% else %}al presente (Permanente){% endif %}^
 {{ i.institucion.nombre }}^{{ i.dependencia.nombre }}^{% if i.responsables.count > 0 %}{% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}{% endif %}^
-
+{% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}{% endif %}^{{ i.get_status_display }}^
+{{ i.get_clasificacion_display }}^{{ i.get_organizacion_display }}^{{ i.get_modalidad_display }}^{{ i.tematica_genero }}^{{ i.problema_nacional_conacyt }}^
+{% if i.financiamientos.count > 0 %}{% for financiamiento in i.financiamientos.all %}{% if not forloop.first %}, {% endif %}{{ financiamiento }}{% endfor %}{% endif %}^
+{{ i.financiamiento_conacyt }}^{{ i.financiamiento_papiit }}^{{ i.financiamiento_papime }}^
+{% if i.metodologias.count > 0 %}{% for metodologia in i.metodologias.all %}{% if not forloop.first %}, {% endif %}{{ metodologia }}{% endfor %}{% endif %}^
+{% if i.especialidades.count > 0 %}{% for especialidad in i.especialidades.all %}{% if not forloop.first %}, {% endif %}{{ especialidad }}{% endfor %}{% endif %}^
+{% if i.impactos_sociales.count > 0 %}{% for impacto_social in i.impactos_sociales.all %}{% if not forloop.first %}, {% endif %}{{ impacto_social }}{% endfor %}{% endif %}^
+{{ i.tecnicos.count }}^{{ i.alumnos_doctorado.count }}^{{ i.alumnos_maestria.count }}^{{ i.alumnos_licenciatura.count }}
 
             </p>
         {% endfor %}
