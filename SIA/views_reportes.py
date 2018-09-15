@@ -146,3 +146,4 @@ class Informe(View):
 
     def get(self, request):
         return render(request, self.template_name, self.context)
+
