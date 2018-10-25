@@ -43,8 +43,7 @@ CARGO__TIPO_CARGO = getattr(settings, 'CARGO__TIPO_CARGO',
 NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO',
                           (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
-                                                              ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-                                                              ('OTRO', 'Otro')))
+                                                              ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
 ENTIDAD_CLASIFICACION = getattr(settings, 'ENTIDAD_CLASIFICACION', (('', '-------'),
                                                                     ('ACADEMICA', 'Académica'),
                                                                     ('FEDERAL', 'Gubernamental federal'),
@@ -641,8 +640,9 @@ class Editorial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    ciudad = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return self.nombre
@@ -682,15 +682,17 @@ class Libro(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
                                                     ('DOCENCIA', 'Docencia')))
+    tipo_participacion = models.CharField(max_length=50, choices=(('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')))
     autores = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
-    editores = SortedManyToManyField(User, related_name='libro_editores', blank=True)
     coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)
     prologo = SortedManyToManyField(User, related_name='libro_prologo', blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+
+    # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
     editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    ciudad = models.CharField(max_length=255, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     fecha = models.DateField(blank=True, null=True)
     numero_edicion = models.PositiveIntegerField(default=1)

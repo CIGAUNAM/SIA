@@ -303,26 +303,7 @@ class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'pais': 'pais'},
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'estado': 'estado'},
-        )
-    )
+    ciudad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     editorial = forms.ModelChoiceField(
         queryset=Editorial.objects.all(),
         label="Editorial",
@@ -358,7 +339,6 @@ class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que
         exclude = ['tipo', ]
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'editores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'coordinadores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
