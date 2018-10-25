@@ -44,9 +44,9 @@ class ArticuloCientificoForm(forms.ModelForm):
                              label='ID DOI')
     id_wos = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                              label='ID WOS')
-    factor_impacto = forms.DecimalField(max_digits=6, decimal_places=3,
+    factor_impacto = forms.DecimalField(max_digits=5, decimal_places=3,
         required=False,
-        widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.01'}),
+        widget=TextInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.001'}),
         label='Factor de impácto')
     proyecto = forms.ModelChoiceField(
         required=False,
