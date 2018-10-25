@@ -690,6 +690,7 @@ class Libro(models.Model):
 
     # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+
     editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     ciudad = models.CharField(max_length=255, blank=True)
