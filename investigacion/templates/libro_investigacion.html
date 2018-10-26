@@ -45,30 +45,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Estado:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Estado donde se publicó el libro de investigación. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.estado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del estado seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Ciudad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Ciudad donde se publicó el libro de investigación. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
@@ -135,31 +111,6 @@
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Editores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editores del libro, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.editores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los editores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un editor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -379,13 +330,6 @@
             $(this).append($element);
             $(this).trigger("change");
         });
-        $("#id_editores").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
         $("#id_coordinadores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
@@ -443,30 +387,6 @@
             <div class="input-group-addon">
                 <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Estado:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Estado donde se publicó el libro de investigación. La selección del estado depende del país, la lista de estados depende del país seleccionado. Si no se selecciona previamente un pais se enlistan todos los estados registrados de todos los paises existentes.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.estado }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del estado seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -539,31 +459,6 @@
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Editores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editores del libro, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.editores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los editores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un editor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -782,13 +677,6 @@
 
     <script>
         $("#id_autores").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
-        $("#id_editores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
