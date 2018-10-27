@@ -1,9 +1,10 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Título del libro:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título del libro de investigación publicado.">
+           title="Título del libro de divulgación publicado.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -22,7 +23,7 @@
     </p>
     <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Pais donde se publicó el libro de investigación.">
+           title="Pais donde se publicó el libro de divulgación.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -46,101 +47,94 @@
     </p>
     <p><strong>Ciudad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ciudad donde se publicó el libro de investigación. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+           title="Ciudad donde se publicó el libro de divulgación.">
             <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ciudad }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.ciudad_text }}
         </div>
     </div>
     </p>
     <p><strong>Editorial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publicó el libro de investigación.">
+           title="Editorial que publicó el libro de divulgación.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.editorial_text }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Autoría o compilación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Seleccionar según sea el caso: Autoría cuando el o los autores pertenecen al CIGA; Compilado cuando es una compilación, y los compiladores son del CIGA pero los autores pueden ser externos."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.editorial }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la editorial seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/editoriales" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una editorial nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo_participacion }}
         </div>
     </div>
     </p>
-    <p><strong>Autores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.autores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Coordinadores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.coordinadores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los coordinadores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+    <div id="d_autores">
+        <p><strong>Autores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Autores del libro, no confundir con autores de capítulo, si usted está agregando este libro para asociarlo a un capitulo en cuyo capítulo es autor, debe agrear su nombre en el campo autores en el capitulo, no en el libro.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.autores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los autores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
             </div>
         </div>
+        </p>
     </div>
-    </p>
+    <div id="d_coordinadores">
+        <p><strong>Coordinadores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
+                                los resultados que coincidan con la busqueda.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.coordinadores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los coordinadores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Prólogo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
@@ -198,7 +192,26 @@
         </div>
     </div>
     </p>
+    <div id="d_isbn">
+        <p><strong>ISBN:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="ISBN, también conocido como Número estándar internacional de libro. Debe estar en la forma estandar de ISBN, solo puede contener letras y guiones, cualquier otro caracter es inválido. No debe tener espacios.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.isbn }}
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Fecha de publicación:</strong>
+    <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de publicación del libro.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -208,14 +221,14 @@
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Fecha de publicación del libro."><i
-                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+                        class="fa fa-question-circle"></i></a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Número de edición:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de edición.">
+           title="Número de edición. Así sea la primera, indicar el número.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
@@ -237,25 +250,15 @@
     </p>
     <p><strong>Colección:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publicó la colección.">
+           title="Si el libro pertenece a una colección, escribir el nombre de dicha colección.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.coleccion }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la colección seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/colecciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una colección nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.coleccion_text }}
         </div>
     </div>
     </p>
@@ -272,22 +275,6 @@
         </div>
     </div>
     </p>
-    <div id="d_isbn">
-        <p><strong>ISBN:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="ISBN, también conocido como Número estándar internacional de libro.">
-                <i class="fa fa-question-circle"></i>
-            </a> <i class="fa fa-edit"></i>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group date">
-                <div class="input-group-addon">
-                    <i class="fa fa-pencil-square-o"></i>
-                </div>
-                {{ form.isbn }}
-            </div>
-        </div>
-        </p>
-    </div>
     <p><strong>URL de link al libro:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="URL de link al libro, en caso de estan publicado en algún lugar en internet."><i
@@ -308,6 +295,32 @@
 
     <script>
         $('#d_isbn').hide();
+        $('#d_autores').hide();
+        $('#d_coordinadores').hide();
+
+        $("#id_tipo_participacion").on('change', function () {
+            if ($("#id_tipo_participacion").val() == 'AUTORIA') {
+                $('#d_autores').show('slow');
+                $('#id_autores').attr("required", "true");
+                $('#id_coordinadores').val(null).trigger('change');
+                $('#d_coordinadores').hide('slow');
+                $('#id_coordinadores').attr("required", null);
+                } else if ($("#id_tipo_participacion").val() == 'COMPILACION') {
+                $('#d_coordinadores').show('slow');
+                $('#id_coordinadores').attr("required", "true");
+                $('#id_autores').val(null).trigger('change');
+                $('#d_autores').hide('slow');
+                $('#id_autores').attr("required", null);
+            } else {
+                $('#d_autores').hide('slow');
+                $('#d_coordinadores').hide('slow');
+                $('#id_autores').attr("required", null);
+                $('#id_coordinadores').attr("required", null);
+                $('#id_autores').val(null).trigger('change');
+                $('#id_coordinadores').val(null).trigger('change');
+            }
+            }
+        );
 
         $("#id_status").on('change', function () {
                 if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
@@ -323,7 +336,6 @@
     </script>
 
     <script>
-        //$("#id_usuarios").select2();
         $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
@@ -350,9 +362,10 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Título del libro:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título del libro de investigación publicado.">
+           title="Título del libro de divulgación publicado.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -371,7 +384,7 @@
     </p>
     <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Pais donde se publicó el libro de investigación.">
+           title="Pais donde se publicó el libro de divulgación.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -395,101 +408,94 @@
     </p>
     <p><strong>Ciudad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ciudad donde se publicó el libro de investigación. La selección de la ciudad depende del estado, la lista de ciudades depende del estado seleccionado. Si no se selecciona previamente un estado se enlistan todas las ciudades registradas de todos los paises existentes.">
+           title="Ciudad donde se publicó el libro de divulgación.">
             <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ciudad }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la ciudad seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.ciudad_text }}
         </div>
     </div>
     </p>
     <p><strong>Editorial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publicó el libro de investigación.">
+           title="Editorial que publicó el libro de divulgación.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.editorial_text }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Autoría o compilación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Seleccionar según sea el caso: Autoría cuando el o los autores pertenecen al CIGA; Compilado cuando es una compilación, y los compiladores son del CIGA pero los autores pueden ser externos."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.editorial }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la editorial seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/editoriales" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una editorial nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo_participacion }}
         </div>
     </div>
     </p>
-    <p><strong>Autores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.autores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Coordinadores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.coordinadores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los coordinadores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+    <div id="d_autores">
+        <p><strong>Autores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Autores del libro, no confundir con autores de capítulo, si usted está agregando este libro para asociarlo a un capitulo en cuyo capítulo es autor, debe agrear su nombre en el campo autores en el capitulo, no en el libro.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.autores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los autores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
             </div>
         </div>
+        </p>
     </div>
-    </p>
+    <div id="d_coordinadores">
+        <p><strong>Coordinadores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
+                                los resultados que coincidan con la busqueda.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.coordinadores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los coordinadores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Prólogo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
@@ -547,7 +553,26 @@
         </div>
     </div>
     </p>
+    <div id="d_isbn">
+        <p><strong>ISBN:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="ISBN, también conocido como Número estándar internacional de libro. Debe estar en la forma estandar de ISBN, solo puede contener letras y guiones, cualquier otro caracter es inválido. No debe tener espacios.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.isbn }}
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Fecha de publicación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de publicación del libro.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -557,14 +582,14 @@
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Fecha de publicación del libro."><i
-                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+                        class="fa fa-question-circle"></i></a>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Número de edición:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de edición.">
+           title="Número de edición. Así sea la primera, indicar el número.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
@@ -586,25 +611,15 @@
     </p>
     <p><strong>Colección:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publicó la colección.">
+           title="Si el libro pertenece a una colección, escribir el nombre de dicha colección.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.coleccion }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la colección seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/colecciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una colección nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.coleccion_text }}
         </div>
     </div>
     </p>
@@ -621,22 +636,6 @@
         </div>
     </div>
     </p>
-    <div id="d_isbn">
-        <p><strong>ISBN:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="ISBN, también conocido como Número estándar internacional de libro.">
-                <i class="fa fa-question-circle"></i>
-            </a> <i class="fa fa-edit"></i>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group date">
-                <div class="input-group-addon">
-                    <i class="fa fa-pencil-square-o"></i>
-                </div>
-                {{ form.isbn }}
-            </div>
-        </div>
-        </p>
-    </div>
     <p><strong>URL de link al libro:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="URL de link al libro, en caso de estan publicado en algún lugar en internet."><i
@@ -658,6 +657,39 @@
 
     <script>
         $('#d_isbn').hide();
+        $('#d_autores').hide();
+        $('#d_coordinadores').hide();
+
+        if ($("#id_tipo_participacion").val() == 'AUTORIA') {
+            $('#d_autores').show();
+        }
+        if ($("#id_tipo_participacion").val() == 'COMPILACION') {
+            $('#d_coordinadores').show();
+        }
+
+        $("#id_tipo_participacion").on('change', function () {
+            if ($("#id_tipo_participacion").val() == 'AUTORIA') {
+                $('#d_autores').show('slow');
+                $('#id_autores').attr("required", "true");
+                $('#id_coordinadores').val(null).trigger('change');
+                $('#d_coordinadores').hide('slow');
+                $('#id_coordinadores').attr("required", null);
+                } else if ($("#id_tipo_participacion").val() == 'COMPILACION') {
+                $('#d_coordinadores').show('slow');
+                $('#id_coordinadores').attr("required", "true");
+                $('#id_autores').val(null).trigger('change');
+                $('#d_autores').hide('slow');
+                $('#id_autores').attr("required", null);
+            } else {
+                $('#d_autores').hide('slow');
+                $('#d_coordinadores').hide('slow');
+                $('#id_autores').attr("required", null);
+                $('#id_coordinadores').attr("required", null);
+                $('#id_autores').val(null).trigger('change');
+                $('#id_coordinadores').val(null).trigger('change');
+            }
+            }
+        );
 
         if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
             $('#d_isbn').show();
@@ -677,7 +709,6 @@
     </script>
 
     <script>
-        //$("#id_usuarios").select2();
         $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);

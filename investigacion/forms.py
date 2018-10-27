@@ -288,6 +288,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
             'alumnos_doctorado': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos_maestria': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos_licenciatura': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'problemas_nacionales_conacyt': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -306,11 +307,14 @@ class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que
 
     ciudad_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
     editorial_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
-    coleccion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
+    coleccion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
 
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO', ), required=True)
+    tipo_participacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
