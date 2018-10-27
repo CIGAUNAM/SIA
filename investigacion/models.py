@@ -9,21 +9,19 @@ from sortedm2m.fields import SortedManyToManyField
 
 STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO',
                                       (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'),
-                                       ('ENVIADO', 'Enviado'), ('OTRO', 'Otro')))
+                                       ('ENVIADO', 'Enviado')))
 
 STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
-                                                                    ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-                                                                    ('OTRO', 'Otro')))
+                                                                    ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
 
 STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'),
-                                                        ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
+                                                        ('CONCLUIDO', 'Concluído')))
 CLASIFICACION_PROYECTO = getattr(settings,
                                  'CLASIFICACION_PROYECTO', (('BASICO', 'Ciencia Básica'),
                                                             ('APLICADO', 'Investigaciòn Aplicada'),
                                                             ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'),
                                                             ('INNOVACION', 'Innovación'),
-                                                            ('INVESTIGACION_FRONTERA', 'Investigación de frontera'),
-                                                            ('OTRO', 'Otro')))
+                                                            ('INVESTIGACION_FRONTERA', 'Investigación de frontera')))
 ORGANIZACION_PROYECTO = getattr(settings, 'ORGANIZACION_PROYECTO', (('INDIVIDUAL', 'Individual'),
                                                                     ('COLECTIVO', 'Colectivo')))
 MODALIDAD_PROYECTO = getattr(settings, 'MODALIDAD_PROYECTO', (('DISCIPLINARIO', 'Disciplinario'),
@@ -66,6 +64,7 @@ class ProyectoInvestigacion(models.Model):
     tematica_genero = models.BooleanField(default=False)
     problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True,
                                                   on_delete=models.DO_NOTHING)
+    problemas_nacionales_conacyt = models.ManyToManyField(ProblemaNacionalConacyt, related_name='proyecto_investigacion_problemas_nacionales_conacyt', blank=True)
     descripcion_problema_nacional_conacyt = models.TextField(blank=True)
 
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)

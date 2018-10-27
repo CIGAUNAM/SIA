@@ -682,16 +682,16 @@ class Libro(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
                                                     ('DOCENCIA', 'Docencia')))
-    tipo_participacion = models.CharField(max_length=50, choices=(('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')))
+    tipo_participacion = models.CharField(max_length=50, choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')))
     autores = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
     coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)
     prologo = SortedManyToManyField(User, related_name='libro_prologo', blank=True)
 
     # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT, blank=True, null=True)
 
-    editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT)
+    editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, blank=True, null=True)
     editorial_text = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     ciudad_text = models.CharField(max_length=255, blank=True, null=True)
