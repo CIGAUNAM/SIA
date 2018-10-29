@@ -22,11 +22,12 @@ class MemoriaInExtenso(models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    articulos = models.ManyToManyField(ArticuloCientifico, related_name='memoria_in_extenso_articulos', blank=True)
+    autores = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
+    pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
+    pagina_fin = models.PositiveIntegerField(null=True, blank=True)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
-    isbn = models.SlugField(max_length=20, blank=True)
-    url = models.URLField(blank=True)
+    issn = models.SlugField(max_length=20, blank=True)
 
     def __str__(self):
         return self.nombre
