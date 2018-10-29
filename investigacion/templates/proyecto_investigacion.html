@@ -199,27 +199,40 @@
            title="¿El proyecto tiene temática de género?"><i class="fa fa-question-circle"></i></a>
         {{ form.tematica_genero }}
     </p>
-    <p><strong>Problema Nacional CONACYT:</strong>
+    <p><strong>Problemas nacionales CONACYT:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Problema Nacional Conacyt al que atiende este proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Problemas Nacionales CONACYT que atiende este proyecto.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.problema_nacional_conacyt }}
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.problemas_nacionales_conacyt }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles del Problema Nacional Conacyt seleccionado.">
+                   title="Mostrar los detalles adicionales de Problemas Nacionales CONACYT.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Detalles de problema nacional CONACYT:</strong>
+    <div id="d_otro_problema_nacional_conacyt">
+        <p><strong>Otro problema nacional CONACYT:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Detalles de como este proyecto resuelve otro problema nacional conacyt.">
+                <i class="fa fa-question-circle"></i></a>
+            {{ form.otro_problema_nacional_conacyt }}
+        </p>
+    </div>
+    <p><strong>Tipo de fincanciamiento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Detalles de como este proyecto resuelve el problema nacional conacyt seleccionado.">
-            <i class="fa fa-question-circle"></i></a>
-        {{ form.descripcion_problema_nacional_conacyt }}
+           title="Tipo de financiamento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo_financiamiento }}
+        </div>
+    </div>
     </p>
     <p><strong>Financiamientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -289,6 +302,56 @@
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
                 {{ form.financiamiento_papime }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_financiamiento_extraordinario">
+        <p><strong>Dependencia que proporciona financiamiento extraordinario:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Dependencia que proporciona financiamiento extraordinario.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.dependencia }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_financiamiento_sin_recurso_ciga">
+        <p><strong>Dependencia que proporciona financiamiento:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Dependencia que proporciona financiamiento.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.dependencia }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
             </div>
         </div>
         </p>
@@ -464,6 +527,30 @@
 
     <script>
 
+        $("#d_otro_problema_nacional_conacyt").hide();
+
+        $("#id_problemas_nacionales_conacyt").on('change', function () {
+            console.log($("#id_problemas_nacionales_conacyt").val());
+            if ($("#id_problemas_nacionales_conacyt").val()) {
+                if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
+                    $("#d_otro_problema_nacional_conacyt").show("slow");
+                } else {
+                    $("#d_otro_problema_nacional_conacyt").hide("slow");
+                    $("#id_otro_problema_nacional_conacyt").val("");
+                }
+            } else {
+                $("#d_otro_problema_nacional_conacyt").hide("slow");
+                $("#id_otro_problema_nacional_conacyt").val("");
+            }
+        });
+        
+        $("#id_tipo_financiamiento").on('change', function () {
+            if ($("#id_tipo_financiamiento")) {
+
+            }
+        });
+        
+        /*
         $("#id_financiamientos").on('change', function () {
 
             if ($("#id_financiamientos").val()) {
@@ -483,7 +570,7 @@
                     }
                 })
             }
-        });
+        }); */
 
         $("#id_financiamiento_conacyt").on('change', function () {
             if ($("#id_financiamiento_conacyt").val() != '') {
@@ -743,27 +830,40 @@
            title="¿El proyecto tiene temática de género?"><i class="fa fa-question-circle"></i></a>
         {{ form.tematica_genero }}
     </p>
-    <p><strong>Problema Nacional CONACYT:</strong>
+    <p><strong>Problemas nacionales CONACYT:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Problema Nacional Conacyt al que atiende este proyecto."><i class="fa fa-question-circle"></i></a>
+           title="Problemas Nacionales CONACYT que atiende este proyecto.">
+            <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.problema_nacional_conacyt }}
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.problemas_nacionales_conacyt }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles del Problema Nacional Conacyt seleccionado.">
+                   title="Mostrar los detalles adicionales de Problemas Nacionales CONACYT.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Detalles de problema nacional CONACYT:</strong>
+    <div id="d_otro_problema_nacional_conacyt">
+        <p><strong>Otro problema nacional CONACYT:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Detalles de como este proyecto resuelve otro problema nacional conacyt.">
+                <i class="fa fa-question-circle"></i></a>
+            {{ form.otro_problema_nacional_conacyt }}
+        </p>
+    </div>
+    <p><strong>Tipo de fincanciamiento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Detalles de como este proyecto resuelve el problema nacional conacyt seleccionado.">
-            <i class="fa fa-question-circle"></i></a>
-        {{ form.descripcion_problema_nacional_conacyt }}
+           title="Tipo de financiamento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo_financiamiento }}
+        </div>
+    </div>
     </p>
     <p><strong>Financiamientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -833,6 +933,56 @@
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
                 {{ form.financiamiento_papime }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_financiamiento_extraordinario">
+        <p><strong>Dependencia que proporciona financiamiento extraordinario:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Dependencia que proporciona financiamiento extraordinario.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.dependencia }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_financiamiento_sin_recurso_ciga">
+        <p><strong>Dependencia que proporciona financiamiento:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Dependencia que proporciona financiamiento.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.dependencia }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
             </div>
         </div>
         </p>
@@ -1007,6 +1157,30 @@
     </p>
 
     <script>
+
+        $("#d_otro_problema_nacional_conacyt").hide();
+
+        if ($("#id_problemas_nacionales_conacyt").val()) {
+                if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
+                    $("#d_otro_problema_nacional_conacyt").show();
+                }
+            }
+
+        $("#id_problemas_nacionales_conacyt").on('change', function () {
+            console.log($("#id_problemas_nacionales_conacyt").val());
+            if ($("#id_problemas_nacionales_conacyt").val()) {
+                if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
+                    $("#d_otro_problema_nacional_conacyt").show("slow");
+                } else {
+                    $("#d_otro_problema_nacional_conacyt").hide("slow");
+                    $("#id_otro_problema_nacional_conacyt").val("");
+                }
+            } else {
+                $("#d_otro_problema_nacional_conacyt").hide("slow");
+                $("#id_otro_problema_nacional_conacyt").val("");
+            }
+        });
+
         if ($("#id_financiamiento_conacyt").val() != '') {
             $("#id_financiamiento_papiit").prop("value", '');
             $("#id_financiamiento_papiit").prop("disabled", true);

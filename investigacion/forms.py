@@ -255,6 +255,27 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     modalidad = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'MODALIDAD_PROYECTO'), required=True)
+    tipo_financiamiento = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')), required=True)
+    financiamiento_extraordinario = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    financiamiento_sin_recurso_ciga = forms.ModelChoiceField(
+        queryset=Dependencia.objects.all(),
+        label="Dependencia",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     tematica_genero = forms.BooleanField(required=False)
     problema_nacional_conacyt = forms.ModelChoiceField(
         queryset=ProblemaNacionalConacyt.objects.all(),
