@@ -45,15 +45,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Artículos :</strong>
+    <p><strong>Autores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Artículos o incluidos en la memoria, al escribir el inicio del nombre o apellido se filtran
+           title="Autores, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.articulos }}
+            {{ form.autores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -61,12 +61,33 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Número de página inicial:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En la revista donde está publicado, en cuál número de pàgina inicia el artìculo.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número de página final:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En la revista donde está publicado, en cuál número de pàgina termina el artìculo.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_fin }}
         </div>
     </div>
     </p>
@@ -106,7 +127,7 @@
         </div>
     </div>
     </p>
-    <p><strong>ISBN:</strong>
+    <p><strong>ISSN:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="ISBN asignado a la memoria in extenso."><i
                 class="fa fa-question-circle"></i></a>
@@ -115,20 +136,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.isbn }}
-        </div>
-    </div>
-    </p>
-    <p><strong>URL de link a la memoria:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="URL de link a la memoria, en caso de estan publicado en algún lugar en internet."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-link"></i>
-            </div>
-            {{ form.url }}
+            {{ form.issn }}
         </div>
     </div>
     </p>
@@ -179,15 +187,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Artículos :</strong>
+    <p><strong>Autores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Artículos o incluidos en la memoria, al escribir el inicio del nombre o apellido se filtran
+           title="Autores, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.articulos }}
+            {{ form.autores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los autores.">
@@ -195,12 +203,33 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Número de página inicial:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En la revista donde está publicado, en cuál número de pàgina inicia el artìculo.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número de página final:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="En la revista donde está publicado, en cuál número de pàgina termina el artìculo.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.pagina_fin }}
         </div>
     </div>
     </p>
@@ -240,7 +269,7 @@
         </div>
     </div>
     </p>
-    <p><strong>ISBN:</strong>
+    <p><strong>ISSN:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="ISBN asignado a la memoria in extenso."><i
                 class="fa fa-question-circle"></i></a>
@@ -249,20 +278,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.isbn }}
-        </div>
-    </div>
-    </p>
-    <p><strong>URL de link a la memoria:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="URL de link a la memoria, en caso de estan publicado en algún lugar en internet."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-link"></i>
-            </div>
-            {{ form.url }}
+            {{ form.issn }}
         </div>
     </div>
     </p>
