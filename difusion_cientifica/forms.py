@@ -28,15 +28,18 @@ class MemoriaInExtensoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                    required=True, label='Número de página inicial')
+    pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                 required=True, label='Número de página final')
+    issn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
 
     class Meta:
         model = MemoriaInExtenso
         exclude = []
         widgets = {
             'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'articulos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
