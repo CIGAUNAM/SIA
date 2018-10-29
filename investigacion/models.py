@@ -66,12 +66,16 @@ class ProyectoInvestigacion(models.Model):
                                                   on_delete=models.DO_NOTHING)
     problemas_nacionales_conacyt = models.ManyToManyField(ProblemaNacionalConacyt, related_name='proyecto_investigacion_problemas_nacionales_conacyt', blank=True)
 
-    otro_problema_nacional_conacyt = models.TextField(blank=True)
+    otro_problema_nacional_conacyt = models.TextField(null=True, blank=True)
+
+    tipo_financiamiento = models.CharField(max_length=30, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')))
 
     financiamientos = models.ManyToManyField(Financiamiento, blank=True)
-    financiamiento_conacyt = models.CharField(max_length=20, unique=True, null=True, blank=True)
-    financiamiento_papiit = models.CharField(max_length=20, unique=True, null=True, blank=True)
-    financiamiento_papime = models.CharField(max_length=20, unique=True, null=True, blank=True)
+    financiamiento_conacyt = models.CharField(max_length=30, unique=True, null=True, blank=True)
+    financiamiento_papiit = models.CharField(max_length=30, unique=True, null=True, blank=True)
+    financiamiento_papime = models.CharField(max_length=30, unique=True, null=True, blank=True)
+    financiamiento_extraordinario = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_extraordinario')
+    financiamiento_sin_recurso_ciga = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_sin_recurso_ciga')
 
     metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
     especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades',
@@ -213,41 +217,3 @@ class InformeTecnico(models.Model):
         verbose_name_plural = "Informes técnicos de acceso público"
         ordering = ['fecha', 'titulo']
 
-
-
-import os
-for i in os.listdir():
-    print("------------")
-    print(i)
-    f = i.split(".")[0]
-    ext = i.split(".")[-1]
-    print(f)
-    if ext == "jpg":
-        cmdec = "erect2cubic --erect=" + i + " --ptofile=" + f + ".pto"
-        print(cmdec)
-        os.system(cmdec)
-        cmdnona = "nona -o " + f + "- " + f + ".pto"
-        print(cmdnona)
-        os.system(cmdnona)
-        os.mkdir(f)
-        front = "convert -resize 3600x3600\! " + f + "-0000.tif " + f + "/front.jpg"
-        print(front)
-        os.system(front)
-        right = "convert -resize 3600x3600\! " + f + "-0001.tif " + f + "/right.jpg"
-        print(right)
-        os.system(right)
-        back = "convert -resize 3600x3600\! " + f + "-0002.tif " + f + "/back.jpg"
-        print(back)
-        os.system(back)
-        left = "convert -resize 3600x3600\! " + f + "-0003.tif " + f + "/left.jpg"
-        print(left)
-        os.system(left)
-        top = "convert -resize 3600x3600\! " + f + "-0004.tif " + f + "/top.jpg"
-        print(top)
-        os.system(top)
-        bottom = "convert -resize 3600x3600\! " + f + "-0005.tif " + f + "/bottom.jpg"
-        print(bottom)
-        os.system(bottom)
-        os.system("cp config.dat " + f)
-        os.system("rm *.tif")
-        os.system("rm *.pto")
