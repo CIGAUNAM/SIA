@@ -260,6 +260,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')), required=True)
     financiamiento_extraordinario = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
+        required=False,
         label="Dependencia",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
@@ -269,6 +270,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     )
     financiamiento_sin_recurso_ciga = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
+        required=False,
         label="Dependencia",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
@@ -287,6 +289,11 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         ),
         required=False
     )
+    metodologias_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Metodologías')
+    impacto_social_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Impacto social')
+    num_alumnos_doctorado = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True, label='Número de alumnos de doctorado', initial='0')
+    num_alumnos_maestria = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True, label='Número de alumnos de maestría', initial='0')
+    num_alumnos_licenciatura = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True, label='Número de alumnos de doctorado', initial='0')
 
     class Meta:
         model = ProyectoInvestigacion
@@ -304,12 +311,14 @@ class ProyectoInvestigacionForm(forms.ModelForm):
             'financiamiento_papime': TextInput(attrs={'class': 'form-control pull-right'}),
             'metodologias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'especialidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'areas_especialidad_wos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'impactos_sociales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'tecnicos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos_doctorado': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos_maestria': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos_licenciatura': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'problemas_nacionales_conacyt': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'dependencias_colaboracion': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

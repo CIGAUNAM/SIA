@@ -356,6 +356,43 @@
         </div>
         </p>
     </div>
+    <p><strong>En colaboración con:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencias que colaboran en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencias_colaboracion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Metodologias:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Metodologias utilizadas en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.metodologias_text }}
+        </div>
+    </div>
+    </p>
     <p><strong>Metodologias:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Metodologias utilizadas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
@@ -375,6 +412,24 @@
                 <a href="/nucleo/metodologias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una metodología nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Áreas de especialidad (WOS):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Especialidades involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda. Este catalogo corresponde con las áreas de conocimiento de WOS.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-flask"></i></div>
+            {{ form.areas_especialidad_wos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las especialidades.">
+                    <i class="fa fa-eye"></i>
                 </a>
             </div>
         </div>
@@ -401,6 +456,20 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Impacto social:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Impacto social del proyecto.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.impacto_social_text }}
         </div>
     </div>
     </p>
@@ -521,6 +590,39 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Número alumnos de doctorado participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Númuero de alumnos de licenciatura participantes en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_alumnos_doctorado }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número alumnos de maestría participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Númuero de alumnos de licenciatura participantes en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_alumnos_maestria }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número alumnos de licenciatura participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Númuero de alumnos de licenciatura participantes en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_alumnos_licenciatura }}
         </div>
     </div>
     </p>
@@ -1024,6 +1126,43 @@
         </div>
         </p>
     </div>
+    <p><strong>En colaboración con:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencias que colaboran en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencias_colaboracion }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Metodologias:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Metodologias utilizadas en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.metodologias_text }}
+        </div>
+    </div>
+    </p>
     <p><strong>Metodologias:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Metodologias utilizadas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
@@ -1043,6 +1182,24 @@
                 <a href="/nucleo/metodologias" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una metodología nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Áreas de especialidad (WOS):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Especialidades involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda. Este catalogo corresponde con las áreas de conocimiento de WOS.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-flask"></i></div>
+            {{ form.areas_especialidad_wos }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las especialidades.">
+                    <i class="fa fa-eye"></i>
                 </a>
             </div>
         </div>
@@ -1069,6 +1226,20 @@
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Impacto social:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Impacto social del proyecto.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.impacto_social_text }}
         </div>
     </div>
     </p>
@@ -1192,13 +1363,45 @@
         </div>
     </div>
     </p>
+    <p><strong>Número alumnos de doctorado participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Númuero de alumnos de licenciatura participantes en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_alumnos_doctorado }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número alumnos de maestría participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Númuero de alumnos de licenciatura participantes en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_alumnos_maestria }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Número alumnos de licenciatura participantes:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Númuero de alumnos de licenciatura participantes en el desarrollo del proyecto.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+            {{ form.num_alumnos_licenciatura }}
+        </div>
+    </div>
+    </p>
 
     <script>
 
         $("#id_responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
@@ -1218,8 +1421,22 @@
             }
 
         if ($("#id_tipo_financiamiento").val()) {
-            if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
-                $("#d_otro_problema_nacional_conacyt").show();
+            console.log($("#id_tipo_financiamiento").val());
+
+            if ($("#id_tipo_financiamiento").val() == 'CONACYT') {
+                $("#d_financiamiento_conacyt").show();
+            }
+            if ($("#id_tipo_financiamiento").val() == 'PAPIIT') {
+                $("#d_financiamiento_papiit").show();
+            }
+            if ($("#id_tipo_financiamiento").val() == 'PAPIME') {
+                $("#d_financiamiento_papime").show();
+            }
+            if ($("#id_tipo_financiamiento").val() == 'EXTRAORDINARIOS') {
+                $("#d_financiamiento_extraordinario").show();
+            }
+            if ($("#id_tipo_financiamiento").val() == 'SIN_RECURSOS') {
+                $("#d_financiamiento_sin_recurso_ciga").show();
             }
         }
 
