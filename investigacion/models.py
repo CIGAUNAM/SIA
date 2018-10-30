@@ -3,7 +3,7 @@ from django.conf import settings
 from django.urls import reverse
 from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, \
     Revista, Indice, Libro as LibroInvestigacion, Editorial, Coleccion, ProblemaNacionalConacyt, Financiamiento, Metodologia, \
-    AreaEspecialidad, ImpactoSocial 
+    AreaEspecialidad, ImpactoSocial, AreaConocimiento
 from sortedm2m.fields import SortedManyToManyField
 
 
@@ -76,12 +76,15 @@ class ProyectoInvestigacion(models.Model):
     financiamiento_papime = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_extraordinario = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_extraordinario')
     financiamiento_sin_recurso_ciga = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_sin_recurso_ciga')
-
+    dependencias_colaboracion = models.ManyToManyField(Dependencia, related_name='proyecto_investigacion_dependencias_colaboracion', blank=True)
     metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
-    especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades',
-                                            blank=True)
+    metodologias_text = models.CharField(max_length=255, null=True, blank=True)
+
+    especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades', blank=True)
+    areas_especialidad_wos = models.ManyToManyField(AreaConocimiento, related_name='proyecto_investigacion_areas_especialidad_wos', blank=True)
     impactos_sociales = models.ManyToManyField(ImpactoSocial, related_name='proyecto_investigacion_impactos_sociales',
                                                blank=True)
+    impacto_social_text = models.CharField(max_length=255, null=True, blank=True)
     tecnicos = models.ManyToManyField(User, related_name='proyecto_investigacion_impactos_tecnicos', blank=True)
     alumnos_doctorado = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_doctorado',
                                                blank=True)
@@ -89,6 +92,10 @@ class ProyectoInvestigacion(models.Model):
                                               blank=True)
     alumnos_licenciatura = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_licenciatura',
                                                   blank=True)
+    num_alumnos_doctorado = models.PositiveIntegerField(null=True, blank=True)
+    num_alumnos_maestria = models.PositiveIntegerField(null=True, blank=True)
+    num_alumnos_licenciatura = models.PositiveIntegerField(null=True, blank=True)
+
 
     def __str__(self):
         if self.nombre == 'Ninguno':
