@@ -68,6 +68,30 @@
         </div>
     </div>
     </p>
+    <p><strong>Autores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Autores participantes en el evento, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.autores }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un participante nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>Ámbito:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -92,30 +116,6 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿La participación fue ponencia magistral?"><i class="fa fa-question-circle"></i></a>
         {{ form.ponencia_magistral }}
-    </p>
-    <p><strong>Autores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.autores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
     </p>
     <script>
         $("#id_autores").on("select2:select", function (evt) {
@@ -196,6 +196,30 @@
         </div>
     </div>
     </p>
+    <p><strong>Autores:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Autores participantes en el evento, al escribir el inicio del nombre o apellido se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.autores }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de los participantes.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un participante nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>Ámbito:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -220,30 +244,6 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿La participación fue ponencia magistral?"><i class="fa fa-question-circle"></i></a>
         {{ form.ponencia_magistral }}
-    </p>
-    <p><strong>Autores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.autores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
     </p>
     <script>
         $("#id_autores").on("select2:select", function (evt) {

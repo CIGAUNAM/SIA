@@ -94,36 +94,37 @@ class CapituloLibroDivulgacionEliminar(View):
 
 
 class OrganizacionEventoDivulgacionJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = OrganizacionEventoDivulgacion.objects.filter(usuario=usuarioid)
+
+            if self.otros:
+                items = OrganizacionEventoDivulgacion.objects.all().exclude(Q(usuario__id__exact=usuarioid) & Q(coordinador_general__id__exact=usuarioid) & Q(comite_organizador__id__exact=usuarioid) & Q(ayudantes__id__exact=usuarioid) & Q(apoyo_tecnico__id__exact=usuarioid))
+            else:
+                items = OrganizacionEventoDivulgacion.objects.filter(Q(usuario__id__exact=usuarioid) | Q(coordinador_general__id__exact=usuarioid) | Q(comite_organizador__id__exact=usuarioid) | Q(ayudantes__id__exact=usuarioid) | Q(apoyo_tecnico__id__exact=usuarioid))
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'responsabilidad', 'ambito'))
 
             json = json.replace('INSTITUCIONAL', 'Institucional')
+            json = json.replace('INTERNACIONAL', 'Internacional')
             json = json.replace('REGIONAL', 'Regional')
             json = json.replace('NACIONAL', 'Nacional')
-            json = json.replace('INTERNACIONAL', 'Internacional')
-            json = json.replace('OTRO', 'Otro')
-            json = json.replace('COORDINADOR', 'Coordinador general')
-            json = json.replace('COMITE', 'Comité organizador')
-            json = json.replace('AYUDANTE', 'Ayudante')
-            json = json.replace('TECNICO', 'Apoyo técnico')
 
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class OrganizacionEventoDivulgacionLista(ObjectCreateMixin, View):
+class OrganizacionEventoDivulgacionLista(ObjectCreateVarMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
     template_name = 'organizacion_evento_divulgacion.html'
 
 
-class OrganizacionEventoDivulgacionDetalle(ObjectUpdateMixin, View):
+class OrganizacionEventoDivulgacionDetalle(ObjectCreateVarMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto

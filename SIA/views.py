@@ -1037,64 +1037,7 @@ class Dashboard(View):
             chart_resena = LineChart(data_source)
             context['chart_resena'] = chart_resena
 
-            items_data = [['Año', 'Mis Organizaciones de eventos académicos', 'Promedio por persona', 'Max por persona',
-                           'Min por persona']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                items_data.append([str(year)])
 
-                total_items_year_sum = OrganizacionEventoAcademico.objects.filter(
-                    evento__fecha_inicio__year=year).filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
-
-                request_user_items_year_sum = OrganizacionEventoAcademico.objects.filter(
-                    evento__fecha_inicio__year=year,
-                    usuario=request.user).count()
-                if not request_user_items_year_sum:
-                    request_user_items_year_sum = 0
-                items_data[i + 1].append(
-                    request_user_items_year_sum)
-
-                users_with_items_year_count = User.objects.filter(
-                    Q(organizacioneventoacademico__evento__fecha_inicio__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    items_data[i + 1].append(
-                        round(total_items_year_sum / users_with_items_year_count, 2))
-                else:
-                    items_data[i + 1].append(0)
-
-                max_items_year_user = User.objects.filter(
-                    Q(organizacioneventoacademico__evento__fecha_inicio__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('organizacioneventoacademico')).aggregate(Max('organizacioneventoacademico__count'))[
-                    'organizacioneventoacademico__count__max']
-                if max_items_year_user == None:
-                    max_items_year_user = 0
-                items_data[i + 1].append(
-                    max_items_year_user)
-
-                min_items_year_user = User.objects.filter(
-                    Q(organizacioneventoacademico__evento__fecha_inicio__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('organizacioneventoacademico')).aggregate(Min('organizacioneventoacademico__count'))[
-                    'organizacioneventoacademico__count__min']
-                if min_items_year_user == None:
-                    min_items_year_user = 0
-                items_data[i + 1].append(
-                    min_items_year_user)
-
-            # print(items_data)
-            data_source = SimpleDataSource(data=items_data)
-            chart_organizacioneventoacademico = LineChart(data_source)
-            context['chart_organizacioneventoacademico'] = chart_organizacioneventoacademico
 
             items_data = [
                 ['Año', 'Mis Participaciones en eventos académicos', 'Promedio por persona', 'Max por persona',
@@ -1141,7 +1084,7 @@ class Dashboard(View):
                     max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(organizacioneventoacademico__evento__fecha_inicio__year=year) &
+                    Q(participacion_evento_academico_participantes__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('participacion_evento_academico_participantes')).aggregate(Min('participacion_evento_academico_participantes__count'))[
@@ -1712,60 +1655,6 @@ class Dashboard(View):
             chart_capitulos_libros_divulgacion_aceptados = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_aceptados'] = chart_capitulos_libros_divulgacion_aceptados
 
-            items_data = [
-                ['Año', 'Mis Organizaciones de eventos de divulgación', 'Promedio por persona', 'Max por persona',
-                 'Min por persona']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                items_data.append([str(year)])
-
-                total_items_year_sum = OrganizacionEventoDivulgacion.objects.filter(
-                    evento__fecha_inicio__year=year).filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
-
-                request_user_items_year_sum = OrganizacionEventoDivulgacion.objects.filter(
-                    evento__fecha_inicio__year=year,
-                    usuario=request.user).count()
-                if not request_user_items_year_sum:
-                    request_user_items_year_sum = 0
-                items_data[i + 1].append(
-                    request_user_items_year_sum)
-
-                users_with_items_year_count = User.objects.filter(
-                    Q(organizacioneventodivulgacion__evento__fecha_inicio__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    items_data[i + 1].append(
-                        round(total_items_year_sum / users_with_items_year_count, 2))
-                else:
-                    items_data[i + 1].append(0)
-
-                max_items_year_user = User.objects.filter(
-                    Q(organizacioneventodivulgacion__evento__fecha_inicio__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('organizacioneventodivulgacion')).aggregate(Max('organizacioneventodivulgacion__count'))[
-                    'organizacioneventodivulgacion__count__max']
-                if max_items_year_user == None:
-                    max_items_year_user = 0
-                items_data[i + 1].append(
-                    max_items_year_user)
-
-                min_items_year_user = User.objects.filter(
-                    Q(organizacioneventodivulgacion__evento__fecha_inicio__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('organizacioneventodivulgacion')).aggregate(Min('organizacioneventodivulgacion__count'))[
-                    'organizacioneventodivulgacion__count__min']
-                if min_items_year_user == None:
-                    min_items_year_user = 0
-                items_data[i + 1].append(
-                    min_items_year_user)
 
             # print(items_data)
             data_source = SimpleDataSource(data=items_data)

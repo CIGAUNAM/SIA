@@ -207,7 +207,7 @@ class OrganizacionEventoAcademicoContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Evento', 'Responsabilidad', 'Ámbito']}
+                'titulos_tabla': ['Evento', 'Ámbito']}
 
 
     tabla_mios =  '<script>\n' \
@@ -226,7 +226,6 @@ class OrganizacionEventoAcademicoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.evento + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.responsabilidad"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -251,7 +250,6 @@ class OrganizacionEventoAcademicoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.evento + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.responsabilidad"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -259,9 +257,6 @@ class OrganizacionEventoAcademicoContext:
                   '</script>'
 
     contexto['tabla_otros'] = tabla_otros
-
-
-
 
 
 class ParticipacionEventoAcademicoContext:

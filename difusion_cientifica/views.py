@@ -161,15 +161,10 @@ class OrganizacionEventoAcademicoJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'responsabilidad', 'ambito'))
 
-            json = json.replace('COORDINADOR', 'Coordinador general')
-            json = json.replace('COMITE', 'Comité organizador')
-            json = json.replace('AYUDANTE', 'Ayudante')
-            json = json.replace('TECNICO', 'Apoyo técnico')
-            json = json.replace('OTRO', 'Otro')
             json = json.replace('INSTITUCIONAL', 'Institucional')
             json = json.replace('REGIONAL', 'Regional')
-            json = json.replace('NACIONAL', 'Nacional')
             json = json.replace('INTERNACIONAL', 'Internacional')
+            json = json.replace('NACIONAL', 'Nacional')
 
             return HttpResponse(json, content_type='application/json')
         except:

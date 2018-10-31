@@ -120,30 +120,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Alumnos participantes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Alumnos particimantes en el artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.alumnos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los alumnos participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un alumno nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Agradecimiento a:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
@@ -203,51 +179,11 @@
         </div>
     </div>
     </p>
-    <p><strong>ID DOI:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ID DOI.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.id_doi }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Proyecto:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto relacionado al artìculo, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyecto }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los proyectos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
 
     <script>
-        //$("#id_usuarios").select2();
         $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
@@ -375,30 +311,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Alumnos participantes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Alumnos particimantes en el artículo, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.alumnos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los alumnos participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un alumno nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Agradecimiento a:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
@@ -458,51 +370,11 @@
         </div>
     </div>
     </p>
-    <p><strong>ID DOI:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ID DOI.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.id_doi }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Proyecto:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto relacionado al artìculo, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
-            {{ form.proyecto }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los proyectos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
 
     <script>
-        //$("#id_usuarios").select2();
         $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
-
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
