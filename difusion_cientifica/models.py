@@ -118,17 +118,15 @@ class OrganizacionEventoAcademico(models.Model):
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    usuario = models.ForeignKey(User, related_name='organizacion_evento_academico_autor', on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, related_name='organizacion_evento_academico_usuario', on_delete=models.DO_NOTHING)
     coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_academico_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
     comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
     ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_academico_ayudantes', verbose_name='Ayudantes')
     apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
 
-
     def __str__(self):
         return "{}, {}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
-                                               self.evento.ciudad.nombre, self.evento.estado.nombre,
-                                               self.evento.pais.nombre)
+                                               self.evento.ciudad, self.evento.pais.nombre)
 
     def get_absolute_url(self):
         return reverse('organizacion_evento_academico_detalle', kwargs={'pk': self.pk})

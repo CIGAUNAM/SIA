@@ -26,7 +26,6 @@ class ArticuloDivulgacion(models.Model):
     descripcion = models.TextField(blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     autores = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
-    alumnos = models.ManyToManyField(User, related_name='articulo_divulgacion_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_divulgacion_agradecimientos', blank=True)
     url = models.URLField(blank=True)
     solo_electronico = models.BooleanField(default=False)
@@ -36,8 +35,6 @@ class ArticuloDivulgacion(models.Model):
     numero = models.CharField(max_length=100, blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    id_doi = models.CharField(max_length=100, blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
@@ -82,16 +79,15 @@ class OrganizacionEventoDivulgacion(models.Model):
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    financiamiento = models.ForeignKey(Financiamiento, blank=True, null=True, on_delete=models.DO_NOTHING)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, related_name='organizacion_evento_divulgacion_usuario', on_delete=models.DO_NOTHING)
     coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_divulgacion_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
     comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_comite_organizador', verbose_name='Comite organizador')
     ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_ayudantes', verbose_name='Ayudantes')
     apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_apoyo_tecnico', verbose_name='Apoyo técnico')
 
-
     def __str__(self):
-        return str(self.evento)
+        return "{}, {}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
+                                               self.evento.ciudad, self.evento.pais.nombre)
 
     def get_absolute_url(self):
         return reverse('organizacion_evento_divulgacion_detalle', kwargs={'pk': self.pk})
