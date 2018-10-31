@@ -76,7 +76,7 @@ class Resena(models.Model):
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
     usuario = models.ForeignKey(User, related_name='resena_autor', on_delete=models.DO_NOTHING)
-    autores = SortedManyToManyField(User, verbose_name='xamp')
+    autores = SortedManyToManyField(User, verbose_name='Autores')
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.titulo)
@@ -97,7 +97,8 @@ class Traduccion(models.Model):
     articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
     url = models.URLField(blank=True)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, related_name='traduccion_autor', on_delete=models.DO_NOTHING)
+    autores = SortedManyToManyField(User, verbose_name='Autores')
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.titulo)
@@ -117,8 +118,12 @@ class OrganizacionEventoAcademico(models.Model):
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='organizacion_evento_academico_tags', blank=True)
+    usuario = models.ForeignKey(User, related_name='organizacion_evento_academico_autor', on_delete=models.DO_NOTHING)
+    coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_academico_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
+    comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
+    ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_academico_ayudantes', verbose_name='Ayudantes')
+    apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
+
 
     def __str__(self):
         return "{}, {}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
@@ -141,8 +146,8 @@ class ParticipacionEventoAcademico(models.Model):
     resumen_publicado = models.BooleanField(default=False)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    # usuario = models.ForeignKey(User, related_name='participacion_evento_academico_usuario', on_delete=models.DO_NOTHING, null=True, blank=True)
     participantes = models.ManyToManyField(User, related_name='participacion_evento_academico_participantes')
+    autores = SortedManyToManyField(User, related_name='participacion_evento_academico_autores', verbose_name='Autores')
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)

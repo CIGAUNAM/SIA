@@ -148,7 +148,10 @@ class TraduccionForm(forms.ModelForm):
 
     class Meta:
         model = Traduccion
-        exclude = ['usuario', ]
+        exclude = []
+        widgets = {
+            'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
@@ -166,10 +169,24 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
     numero_ponentes = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
     numero_asistentes = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+    coordinador_general = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Coordinador general",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     class Meta:
         model = OrganizacionEventoAcademico
-        exclude = ['usuario', ]
+        exclude = []
+        widgets = {
+            'comite_organizador': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'ayudantes': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'apoyo_tecnico': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
@@ -191,7 +208,8 @@ class ParticipacionEventoAcademicoForm(forms.ModelForm):
 
     class Meta:
         model = ParticipacionEventoAcademico
-        exclude = ['usuario', ]
+        exclude = []
         widgets = {
             'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
