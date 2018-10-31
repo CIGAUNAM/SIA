@@ -25,10 +25,10 @@ class MemoriaInExtenso(models.Model):
     autores = SortedManyToManyField(User, verbose_name='xamp')
     pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
     pagina_fin = models.PositiveIntegerField(null=True, blank=True)
-    indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
+    editorial_text = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
     editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
+    indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     issn = models.SlugField(max_length=20, blank=True)
-    revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre
@@ -40,7 +40,7 @@ class MemoriaInExtenso(models.Model):
         verbose_name = 'Memoria in extenso'
         verbose_name_plural = 'Memorias in extenso'
 
-
+"""
 class PrologoLibro(models.Model):
     descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro, related_name='prologo_libro_libro', on_delete=models.DO_NOTHING)
@@ -60,7 +60,7 @@ class PrologoLibro(models.Model):
         verbose_name = 'Prólogo de libro'
         verbose_name_plural = 'Prólogos de libros'
         unique_together = ['usuario', 'libro']
-
+"""
 
 class Resena(models.Model):
     titulo = models.CharField(max_length=255)
@@ -76,6 +76,7 @@ class Resena(models.Model):
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
     usuario = models.ForeignKey(User, related_name='resena_autor', on_delete=models.DO_NOTHING)
+    autores = SortedManyToManyField(User, verbose_name='xamp')
 
     def __str__(self):
         return '{} : {}'.format(self.usuario, self.titulo)

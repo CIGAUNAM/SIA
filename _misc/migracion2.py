@@ -15,7 +15,7 @@ from nucleo.models import *
 from apoyo_institucional.models import Comision, Representacion, CargoAcademicoAdministrativo, \
     RepresentacionOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
 from desarrollo_tecnologico.models import TipoDesarrollo, Licencia, DesarrolloTecnologico
-from difusion_cientifica.models import MemoriaInExtenso, PrologoLibro, Resena, OrganizacionEventoAcademico, \
+from difusion_cientifica.models import MemoriaInExtenso, Resena, OrganizacionEventoAcademico, \
     ParticipacionEventoAcademico
 
 from formacion_academica.models import CursoEspecializacion, Licenciatura, Maestria, Doctorado, PostDoctorado
