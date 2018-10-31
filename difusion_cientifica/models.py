@@ -28,6 +28,7 @@ class MemoriaInExtenso(models.Model):
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
     issn = models.SlugField(max_length=20, blank=True)
+    revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.nombre

@@ -140,6 +140,42 @@
         </div>
     </div>
     </p>
+    <p><strong>Revista:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Revista que publicó la memoria.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.editorial }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la revista seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+
+    <script>
+        $("#id_autores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_sta")
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -282,4 +318,40 @@
         </div>
     </div>
     </p>
+    <p><strong>Revista:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Revista que publicó la memoria.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.editorial }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de la revista seleccionada.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+
+    <script>
+        $("#id_autores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_sta")
+    </script>
+
 {% endblock %}
