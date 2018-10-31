@@ -26,7 +26,7 @@ SECRET_KEY = 'ELIMINADA-DEL-HISTORIAL'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.203', '10.1.11.2', '201.144.41.229']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.203', '10.1.11.2', '201.144.41.229', '10.10.4.182', 'sia.ciga.unam.mx']
 
 STATUS_PUBLICACION_ARTICULO = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('PUBLICADO', 'Publicado'))
 STATUS_PUBLICACION_LIBRO = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'))
