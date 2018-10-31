@@ -1,6 +1,7 @@
 from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
+from django.db.models import Q
 from SIA.utils import *
 from . forms import *
 from . utils import *
@@ -31,6 +32,7 @@ class MemoriaInExtensoLista(ObjectCreateVarMixin, View):
     aux = MemoriaInExtensoContext.contexto
     template_name = 'memoria_in_extenso.html'
 
+
 class MemoriaInExtensoDetalle(ObjectUpdateVarMixin, View):
     form_class = MemoriaInExtensoForm
     model = MemoriaInExtenso
@@ -50,10 +52,15 @@ class MemoriaInExtensoEliminar(View):
 
 
 class ResenaJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = Resena.objects.filter(usuario=usuarioid)
+            if self.otros:
+                items = Resena.objects.all().exclude(autores__id__exact=usuarioid)
+            else:
+                items = Resena.objects.filter(autores__id__exact=usuarioid)
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'tipo', 'libro_resenado', 'articulo_resenado', 'revista_publica', 'fecha'))
             json = json.replace('"libro_resenado": null, ', '')
@@ -93,10 +100,15 @@ class ResenaEliminar(View):
 
 
 class TraduccionJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = Traduccion.objects.filter(usuario=usuarioid)
+            if self.otros:
+                items = Traduccion.objects.all().exclude(autores__id__exact=usuarioid)
+            else:
+                items = Traduccion.objects.filter(autores__id__exact=usuarioid)
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'tipo', 'libro', 'articulo', 'fecha'))
             json = json.replace('"libro": null, ', '')
@@ -136,10 +148,16 @@ class TraduccionEliminar(View):
 
 
 class OrganizacionEventoAcademicoJSON(View):
+    otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = OrganizacionEventoAcademico.objects.filter(usuario=usuarioid)
+
+            if self.otros:
+                items = OrganizacionEventoAcademico.objects.all().exclude(Q(usuario__id__exact=usuarioid) & Q(coordinador_general__id__exact=usuarioid) & Q(comite_organizador__id__exact=usuarioid) & Q(ayudantes__id__exact=usuarioid) & Q(apoyo_tecnico__id__exact=usuarioid))
+            else:
+                items = OrganizacionEventoAcademico.objects.filter(Q(usuario__id__exact=usuarioid) | Q(coordinador_general__id__exact=usuarioid) | Q(comite_organizador__id__exact=usuarioid) | Q(ayudantes__id__exact=usuarioid) | Q(apoyo_tecnico__id__exact=usuarioid))
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'responsabilidad', 'ambito'))
 
@@ -189,9 +207,10 @@ class ParticipacionEventoAcademicoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ParticipacionEventoAcademico.objects.exclude(participantes=usuarioid)
+                items = ParticipacionEventoAcademico.objects.exclude(autores__id__exact=usuarioid)
             else:
-                items = ParticipacionEventoAcademico.objects.filter(participantes=usuarioid)
+                items = ParticipacionEventoAcademico.objects.filter(autores__id__exact=usuarioid)
+
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'evento', 'ambito'))
 

@@ -133,7 +133,7 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = OrganizacionEventoDivulgacion
-        exclude = ['usuario', ]
+        exclude = []
 
 
 class ParticipacionEventoDivulgacionForm(forms.ModelForm):

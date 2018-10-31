@@ -84,8 +84,11 @@ class OrganizacionEventoDivulgacion(models.Model):
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     financiamiento = models.ForeignKey(Financiamiento, blank=True, null=True, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_divulgacion_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
+    comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_comite_organizador', verbose_name='Comite organizador')
+    ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_ayudantes', verbose_name='Ayudantes')
+    apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_apoyo_tecnico', verbose_name='Apoyo técnico')
 
-    # tags = models.ManyToManyField(Tag, related_name='organizacion_evento_tags', blank=True)
 
     def __str__(self):
         return str(self.evento)
