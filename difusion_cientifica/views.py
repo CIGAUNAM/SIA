@@ -15,9 +15,9 @@ class MemoriaInExtensoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = MemoriaInExtenso.objects.all().exclude(articulos__autores__id__exact=usuarioid)
+                items = MemoriaInExtenso.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                items = MemoriaInExtenso.objects.filter(articulos__autores__id__exact=usuarioid)
+                items = MemoriaInExtenso.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'evento'))
             return HttpResponse(json, content_type='application/json')
@@ -68,14 +68,14 @@ class ResenaJSON(View):
             raise Http404
 
 
-class ResenaLista(ObjectCreateMixin, View):
+class ResenaLista(ObjectCreateVarMixin, View):
     form_class = ResenaForm
     model = Resena
     aux = ResenaContext.contexto
     template_name = 'resena.html'
 
 
-class ResenaDetalle(ObjectUpdateMixin, View):
+class ResenaDetalle(ObjectUpdateVarMixin, View):
     form_class = ResenaForm
     model = Resena
     aux = ResenaContext.contexto
@@ -111,14 +111,14 @@ class TraduccionJSON(View):
             raise Http404
 
 
-class TraduccionLista(ObjectCreateMixin, View):
+class TraduccionLista(ObjectCreateVarMixin, View):
     form_class = TraduccionForm
     model = Traduccion
     aux = TraduccionContext.contexto
     template_name = 'traduccion.html'
 
 
-class TraduccionDetalle(ObjectUpdateMixin, View):
+class TraduccionDetalle(ObjectUpdateVarMixin, View):
     form_class = TraduccionForm
     model = Traduccion
     aux = TraduccionContext.contexto
@@ -158,14 +158,14 @@ class OrganizacionEventoAcademicoJSON(View):
             raise Http404
 
 
-class OrganizacionEventoAcademicoLista(ObjectCreateMixin, View):
+class OrganizacionEventoAcademicoLista(ObjectCreateVarMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto
     template_name = 'organizacion_evento_academico.html'
 
 
-class OrganizacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
+class OrganizacionEventoAcademicoDetalle(ObjectUpdateVarMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto

@@ -28,15 +28,8 @@ class MemoriaInExtensoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    revista = forms.ModelChoiceField(
-        queryset=Revista.objects.all(),
-        label="Revista",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Revista.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    editorial_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                             label='Editorial')
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                     required=True, label='Número de página inicial')
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
@@ -51,7 +44,7 @@ class MemoriaInExtensoForm(forms.ModelForm):
             'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
-
+"""
 class PrologoLibroForm(forms.ModelForm):
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
     libro = forms.ModelChoiceField(
@@ -70,7 +63,7 @@ class PrologoLibroForm(forms.ModelForm):
     class Meta:
         model = PrologoLibro
         exclude = ['usuario', 'tags', ]
-
+"""
 
 class ResenaForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right', 'unique': True}), required=True, label='Título de reseña')
@@ -116,7 +109,10 @@ class ResenaForm(forms.ModelForm):
 
     class Meta:
         model = Resena
-        exclude = ['usuario', ]
+        exclude = []
+        widgets = {
+            'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class TraduccionForm(forms.ModelForm):
