@@ -33,6 +33,7 @@ class MovilidadAcademica(models.Model):
         verbose_name = 'Actividad de vinculación'
         verbose_name_plural = 'Actividades de vinculación'
 
+
 class InvitadoMovilidad(models.Model):
     invitado = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
