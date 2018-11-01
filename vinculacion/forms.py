@@ -2,45 +2,34 @@ from SIA.widgets import *
 from . models import *
 from django import forms
 from django_select2.forms import Select2MultipleWidget,Select2Widget, ModelSelect2Widget
+from investigacion.models import ProyectoInvestigacion, LibroInvestigacion, CapituloLibroInvestigacion
 
+ARBITRAJE_ACADEMICO__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO',
+                                    (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo de libro')))
 #
 
 class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
-    descripcion = forms.CharField(
-        widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    """ 
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     tipo = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
-        choices=getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO', ), required=True)
-    articulo = forms.ModelChoiceField(
+        choices=ARBITRAJE_ACADEMICO__TIPO, required=True)
+    revista = forms.ModelChoiceField(
         required=False,
-        queryset=ArticuloCientifico.objects.all(),
-        label="Artículo Científico",
+        queryset=Revista.objects.all(),
+        label="Revista",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=ArticuloCientifico.objects.all(),
+            queryset=Revista.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    libro = forms.ModelChoiceField(
-        required=False,
-        queryset=Libro.objects.all(),
-        label="Libro",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Libro.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    ) 
-    """
+    libro = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Libro')
+    capitulo_libro = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Capítulo de libro')
     fecha_dictamen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = ArbitrajePublicacionAcademica
-        exclude = ['usuario', 'tags', ]
-        widgets = {
-            # 'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        }
+        exclude = ['usuario', ]
 
 
 class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):

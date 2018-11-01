@@ -654,7 +654,6 @@
         $("#d_financiamiento_sin_recurso_ciga").hide();
 
         $("#id_problemas_nacionales_conacyt").on('change', function () {
-            console.log($("#id_problemas_nacionales_conacyt").val());
             if ($("#id_problemas_nacionales_conacyt").val()) {
                 if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
                     $("#d_otro_problema_nacional_conacyt").show("slow");
@@ -1593,11 +1592,7 @@
                 $("#id_financiamiento_extraordinario").attr("required", null);
                 $("#id_financiamiento_sin_recurso_ciga").attr("required", null);
             }
-
         });
-
-
-
     </script>
 
 
