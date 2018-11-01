@@ -1,6 +1,73 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    <p><strong>Tipo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tipo de publicación arbitrada."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo }}
+        </div>
+    </div>
+    </p>
+    <div id="d_revista">
+        <p><strong>Revista:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre de la revista donde se publicó el artículo arbitrado."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.revista }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_libro">
+        <p><strong>Libro:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del libro arbitrado.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.libro }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_capitulo_libro">
+        <p><strong>Capítulo de libro:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del capítulo de libro arbitrado.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.capitulo_libro }}
+            </div>
+        </div>
+        </p>
+    </div>
+
     <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
                                title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
         <i class="fa fa-question-circle"></i></a></strong>
@@ -19,9 +86,137 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $('#d_revista').hide();
+        $('#d_libro').hide();
+        $('#d_capitulo_libro').hide();
+
+        $("#id_tipo").on('change', function () {
+            if ($('#id_tipo').val() == 'ARTICULO') {
+                $("#id_libro").val(null);
+                $("#id_capitulo_libro").val(null);
+                //$("#id_financiamiento_extraordinario").val(null).trigger('change');
+
+                $("#d_revista").show('slow');
+                $("#d_libro").hide('slow');
+                $("#d_capitulo_libro").hide('slow');
+
+                $("#id_revista").attr("required", "true");
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", null);
+            }
+
+            if ($('#id_tipo').val() == 'LIBRO') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_capitulo_libro").val(null);
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").show('slow');
+                $("#d_capitulo_libro").hide('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_libro").attr("required", "true");
+                $("#id_capitulo_libro").attr("required", null);
+            }
+
+            if ($('#id_tipo').val() == 'CAPITULO_LIBRO') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_libro").val(null);
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").hide('slow');
+                $("#d_capitulo_libro").show('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", "true");
+            }
+
+            if ($('#id_tipo').val() == '') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_libro").val(null);
+                $("#id_capitulo_libro").val(null);
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").hide('slow');
+                $("#d_capitulo_libro").hide('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", null);
+            }
+        });
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
+    <p><strong>Tipo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Tipo de publicación arbitrada."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo }}
+        </div>
+    </div>
+    </p>
+    <div id="d_libro">
+        <p><strong>Revista:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre de la revista donde se publicó el artículo arbitrado."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.revista }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de la revista seleccionada.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_libro">
+        <p><strong>Libro:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del libro arbitrado.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.libro }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_capitulo_libro">
+        <p><strong>Capítulo de libro:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre del capítulo de libro arbitrado.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.capitulo_libro }}
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
                                title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
         <i class="fa fa-question-circle"></i></a></strong>
@@ -40,4 +235,78 @@
         </div>
     </div>
     </p>
-{% endblock %}
+
+    <script>
+        $('#d_revista').hide();
+        $('#d_libro').hide();
+        $('#d_capitulo_libro').hide();
+
+        if ($("#id_tipo").val()) {
+            if ($("#id_tipo_financiamiento").val() == 'ARTICULO') {
+                $("#d_revista").show();
+            }
+            if ($("#id_tipo_financiamiento").val() == 'LIBRO') {
+                $("#d_libro").show();
+            }
+            if ($("#id_tipo_financiamiento").val() == 'CAPITULO_LIBRO') {
+                $("#d_capitulo_libro").show();
+            }
+        }
+
+        $("#id_tipo").on('change', function () {
+            if ($('#id_tipo').val() == 'ARTICULO') {
+                $("#id_libro").val(null);
+                $("#id_capitulo_libro").val(null);
+                //$("#id_financiamiento_extraordinario").val(null).trigger('change');
+
+                $("#d_revista").show('slow');
+                $("#d_libro").hide('slow');
+                $("#d_capitulo_libro").hide('slow');
+
+                $("#id_revista").attr("required", "true");
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", null);
+            }
+
+            if ($('#id_tipo').val() == 'LIBRO') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_capitulo_libro").val(null);
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").show('slow');
+                $("#d_capitulo_libro").hide('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_libro").attr("required", "true");
+                $("#id_capitulo_libro").attr("required", null);
+            }
+
+            if ($('#id_tipo').val() == 'CAPITULO_LIBRO') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_libro").val(null);
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").hide('slow');
+                $("#d_capitulo_libro").show('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", "true");
+            }
+
+            if ($('#id_tipo').val() == '') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_libro").val(null);
+                $("#id_capitulo_libro").val(null);
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").hide('slow');
+                $("#d_capitulo_libro").hide('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", null);
+            }
+        });
+    </script>
+{% endblock %}|

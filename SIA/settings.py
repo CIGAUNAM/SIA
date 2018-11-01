@@ -48,7 +48,7 @@ ENTIDAD_CLASIFICACION = (('', '-------'), ('ACADEMICA', 'Académica'), ('FEDERAL
 DISTINCION__AMBITO = (('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro'))
 NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
 RESENA__TIPO = (('', '-------'), ('LIBRO', 'Libro'), ('ARTICULO', 'Artículo'))
-ARBITRAJE_ACADEMICA__TIPO = (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro'))
+ARBITRAJE_ACADEMICO__TIPO = (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo de libro'))
 
 # Application definition
 

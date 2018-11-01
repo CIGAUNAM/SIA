@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Indice, Libro, Financiamiento, ProyectoInsvestigacionArbitrado
-from investigacion.models import ProyectoInvestigacion, ArticuloCientifico
+from nucleo.models import User, Institucion, Dependencia, Revista, Indice, Financiamiento, ProyectoInsvestigacionArbitrado
+from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, LibroInvestigacion, CapituloLibroInvestigacion
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
@@ -16,8 +16,8 @@ CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = getattr(settings, 'CONVENIO_ENTIDAD_EX
                                                    ('PRIVADA', 'Sector privado'),
                                                    ('NO_LUCRATIVA', 'Sector privado no lucrativo'),
                                                    ('EXTRANJERA', 'Extranjero')))
-ARBITRAJE_ACADEMICA__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO',
-                                    (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro')))
+ARBITRAJE_ACADEMICO__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO',
+                                    (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo de libro')))
 
 STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'),
                                                         ('CONCLUIDO', 'Concluído'), ('OTRO', 'Otro')))
@@ -27,9 +27,10 @@ STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN
 
 class ArbitrajePublicacionAcademica(models.Model):
     descripcion = models.TextField(blank=True)
-    #tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICA__TIPO)
-    #articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
-    #libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)
+    tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICO__TIPO)
+    revista = models.ForeignKey(Revista, blank=True, null=True, on_delete=models.DO_NOTHING)
+    libro = models.CharField(max_length=255, blank=True, null=True, )
+    capitulo_libro = models.CharField(max_length=255, blank=True, null=True, )
     fecha_dictamen = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
