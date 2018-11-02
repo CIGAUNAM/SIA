@@ -117,16 +117,7 @@ class EstanciaMovilidadForm(forms.ModelForm):
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'),
                  ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
-
-    proyecto = forms.ModelChoiceField(
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto de investigación",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    proyecto = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), label='Proyecto')
 
     class Meta:
         model = MovilidadAcademica
@@ -158,15 +149,7 @@ class SabaticoMovilidadForm(forms.ModelForm):
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'),
                  ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
-    proyecto = forms.ModelChoiceField(
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto de investigación",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    proyecto = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), label='Proyecto')
 
     class Meta:
         model = MovilidadAcademica
