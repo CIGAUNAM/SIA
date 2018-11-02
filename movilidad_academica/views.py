@@ -5,6 +5,7 @@ from django.core import serializers
 from SIA.utils import *
 from .forms import *
 from .models import *
+from .utils import *
 from django.db.models import Q
 
 
@@ -173,6 +174,123 @@ class MovilidadAcademicaEliminar(View):
     def get(self, request, pk):
         try:
             item = get_object_or_404(MovilidadAcademica, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+##
+
+
+class InvitadoMovilidadJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = InvitadoMovilidad.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items,
+                                         fields=('invitado', 'dependencia', 'pais', 'fecha_inicio'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+
+class InvitadoMovilidadLista(ObjectCreateMixin, View):
+    form_class = InvitadoMovilidadForm
+    model = InvitadoMovilidad
+    aux = InvitadoMovilidadContext.contexto
+    template_name = 'invitado_movilidad.html'
+
+
+class InvitadoMovilidadDetalle(ObjectUpdateMixin, View):
+    form_class = InvitadoMovilidadForm
+    model = InvitadoMovilidad
+    aux = InvitadoMovilidadContext.contexto
+    template_name = 'invitado_movilidad.html'
+
+
+class InvitadoMovilidadEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(InvitadoMovilidad, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+class EstanciaMovilidadJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = EstanciaMovilidad.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items,
+                                         fields=('anfitrion', 'dependencia', 'pais', 'fecha_inicio'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class EstanciaMovilidadLista(ObjectCreateMixin, View):
+    form_class = EstanciaMovilidadForm
+    model = EstanciaMovilidad
+    aux = EstanciaMovilidadContext.contexto
+    template_name = 'estancia_movilidad.html'
+
+
+class EstanciaMovilidadDetalle(ObjectUpdateMixin, View):
+    form_class = EstanciaMovilidadForm
+    model = EstanciaMovilidad
+    aux = EstanciaMovilidadContext.contexto
+    template_name = 'estancia_movilidad.html'
+
+
+class EstanciaMovilidadEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(EstanciaMovilidad, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+class SabaticoMovilidadJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = SabaticoMovilidad.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items,
+                                         fields=('anfitrion', 'dependencia', 'pais', 'fecha_inicio'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class SabaticoMovilidadLista(ObjectCreateMixin, View):
+    form_class = SabaticoMovilidadForm
+    model = SabaticoMovilidad
+    aux = SabaticoMovilidadContext.contexto
+    template_name = 'sabatico_movilidad.html'
+
+
+class SabaticoMovilidadDetalle(ObjectUpdateMixin, View):
+    form_class = SabaticoMovilidadForm
+    model = SabaticoMovilidad
+    aux = SabaticoMovilidadContext.contexto
+    template_name = 'sabatico_movilidad.html'
+
+
+class SabaticoMovilidadEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(SabaticoMovilidad, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:
