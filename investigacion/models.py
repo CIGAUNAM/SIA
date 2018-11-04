@@ -70,7 +70,7 @@ class ProyectoInvestigacion(models.Model):
 
     tipo_financiamiento = models.CharField(max_length=30, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')))
 
-    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
+    # financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     financiamiento_conacyt = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_papiit = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_papime = models.CharField(max_length=30, unique=True, null=True, blank=True)
@@ -86,12 +86,9 @@ class ProyectoInvestigacion(models.Model):
                                                blank=True)
     impacto_social_text = models.CharField(max_length=255, null=True, blank=True)
     tecnicos = models.ManyToManyField(User, related_name='proyecto_investigacion_impactos_tecnicos', blank=True)
-    alumnos_doctorado = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_doctorado',
-                                               blank=True)
-    alumnos_maestria = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_maestria',
-                                              blank=True)
-    alumnos_licenciatura = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_licenciatura',
-                                                  blank=True)
+    # alumnos_doctorado = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_doctorado',                                                blank=True)
+    # alumnos_maestria = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_maestria',                                              blank=True)
+    # alumnos_licenciatura = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_licenciatura',                                                  blank=True)
     num_alumnos_doctorado = models.PositiveIntegerField(null=True, blank=True)
     num_alumnos_maestria = models.PositiveIntegerField(null=True, blank=True)
     num_alumnos_licenciatura = models.PositiveIntegerField(null=True, blank=True)
