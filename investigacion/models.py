@@ -62,8 +62,7 @@ class ProyectoInvestigacion(models.Model):
     organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
     modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
     tematica_genero = models.BooleanField(default=False)
-    problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True,
-                                                  on_delete=models.DO_NOTHING)
+    # problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True,                                                  on_delete=models.DO_NOTHING)
     problemas_nacionales_conacyt = models.ManyToManyField(ProblemaNacionalConacyt, related_name='proyecto_investigacion_problemas_nacionales_conacyt', blank=True)
 
     otro_problema_nacional_conacyt = models.TextField(null=True, blank=True)
@@ -77,13 +76,12 @@ class ProyectoInvestigacion(models.Model):
     financiamiento_extraordinario = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_extraordinario')
     financiamiento_sin_recurso_ciga = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_sin_recurso_ciga')
     dependencias_colaboracion = models.ManyToManyField(Dependencia, related_name='proyecto_investigacion_dependencias_colaboracion', blank=True)
-    metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
+    # metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
     metodologias_text = models.CharField(max_length=255, null=True, blank=True)
 
-    especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades', blank=True)
+    # especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades', blank=True)
     areas_especialidad_wos = models.ManyToManyField(AreaConocimiento, related_name='proyecto_investigacion_areas_especialidad_wos', blank=True)
-    impactos_sociales = models.ManyToManyField(ImpactoSocial, related_name='proyecto_investigacion_impactos_sociales',
-                                               blank=True)
+    # impactos_sociales = models.ManyToManyField(ImpactoSocial, related_name='proyecto_investigacion_impactos_sociales',                                                blank=True)
     impacto_social_text = models.CharField(max_length=255, null=True, blank=True)
     tecnicos = models.ManyToManyField(User, related_name='proyecto_investigacion_impactos_tecnicos', blank=True)
     # alumnos_doctorado = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_doctorado',                                                blank=True)
