@@ -691,7 +691,7 @@ class Libro(models.Model):
     # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT, blank=True, null=True)
 
-    editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, blank=True, null=True)
+    # editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, blank=True, null=True)
     editorial_text = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     ciudad_text = models.CharField(max_length=255, blank=True, null=True)
@@ -699,7 +699,7 @@ class Libro(models.Model):
     fecha = models.DateField(blank=True, null=True)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=0)
-    coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.PROTECT)
+    # coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.PROTECT)
     coleccion_text = models.CharField(max_length=255, blank=True, null=True)
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, null=True, blank=True)
@@ -707,7 +707,7 @@ class Libro(models.Model):
     arbitrado_pares = models.BooleanField(default=False)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.nombre, self.editorial, self.isbn)
+        return "{} : {} : {}".format(self.nombre, self.editorial_text, self.isbn)
 
     def natural_key(self):
         return self.nombre
