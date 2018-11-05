@@ -114,11 +114,11 @@ class Traduccion(models.Model):
 class OrganizacionEventoAcademico(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
+    # responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    usuario = models.ForeignKey(User, related_name='organizacion_evento_academico_usuario', on_delete=models.DO_NOTHING)
+    # usuario = models.ForeignKey(User, related_name='organizacion_evento_academico_usuario', on_delete=models.DO_NOTHING)
     coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_academico_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
     comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
     ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_academico_ayudantes', verbose_name='Ayudantes')
