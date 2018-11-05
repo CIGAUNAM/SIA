@@ -107,6 +107,7 @@ class ParticipacionEventoDivulgacion(models.Model):
     ponencia_magistral = models.BooleanField(default=False)
     # usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(User, related_name='participacion_evento_divulgacion_participantes')
+    autores = models.ManyToManyField(User, related_name='participacion_evento_divulgacion_autores')
 
     # tags = models.ManyToManyField(Tag, related_name='participacion_evento_tags', blank=True)
 
