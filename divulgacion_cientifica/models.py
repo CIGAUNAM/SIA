@@ -86,7 +86,7 @@ class OrganizacionEventoDivulgacion(models.Model):
     apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_apoyo_tecnico', verbose_name='Apoyo técnico')
 
     def __str__(self):
-        return "{}, {}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
+        return "{}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
                                                self.evento.ciudad, self.evento.pais.nombre)
 
     def get_absolute_url(self):
