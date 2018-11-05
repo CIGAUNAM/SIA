@@ -49,21 +49,21 @@ class Informe(View):
 
     context['articulos_cientificos_agradecimientos'] = ArticuloCientifico.objects.filter(fecha__year=this_year, agradecimientos__isnull=False).distinct()
 
-    context['libros_investigacion_nacionales_publicados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='PUBLICADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).filter(editorial__pais__nombre='México').distinct()
-    context['libros_investigacion_nacionales_enprensa'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='EN_PRENSA').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).filter(editorial__pais__nombre='México').distinct()
-    context['libros_investigacion_nacionales_aceptados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='ACEPTADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).filter(editorial__pais__nombre='México').distinct()
+    context['libros_investigacion_nacionales_publicados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='PUBLICADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).filter(pais__nombre='México').distinct()
+    context['libros_investigacion_nacionales_enprensa'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='EN_PRENSA').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).filter(pais__nombre='México').distinct()
+    context['libros_investigacion_nacionales_aceptados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='ACEPTADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).filter(pais__nombre='México').distinct()
 
-    context['libros_investigacion_internacionales_publicados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='PUBLICADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).exclude(editorial__pais__nombre='México').distinct()
-    context['libros_investigacion_internacionales_enprensa'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='EN_PRENSA').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).exclude(editorial__pais__nombre='México').distinct()
-    context['libros_investigacion_internacionales_aceptados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='ACEPTADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).exclude(editorial__pais__nombre='México').distinct()
+    context['libros_investigacion_internacionales_publicados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='PUBLICADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).exclude(pais__nombre='México').distinct()
+    context['libros_investigacion_internacionales_enprensa'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='EN_PRENSA').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).exclude(pais__nombre='México').distinct()
+    context['libros_investigacion_internacionales_aceptados'] = Libro.objects.filter(tipo='INVESTIGACION', fecha__year=this_year, status='ACEPTADO').filter(Q(autores__isnull=False) | Q(coordinadores__isnull=False)).exclude(pais__nombre='México').distinct()
 
-    context['capitulos_libros_investigacion_nacionales_publicados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='PUBLICADO').filter(libro__editorial__pais__nombre='México').distinct()
-    context['capitulos_libros_investigacion_nacionales_enprensa'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='EN_PRENSA').filter(libro__editorial__pais__nombre='México').distinct()
-    context['capitulos_libros_investigacion_nacionales_enviados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='ENVIADO').filter(libro__editorial__pais__nombre='México').distinct()
+    context['capitulos_libros_investigacion_nacionales_publicados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='PUBLICADO').filter(libro__pais__nombre='México').distinct()
+    context['capitulos_libros_investigacion_nacionales_enprensa'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='EN_PRENSA').filter(libro__pais__nombre='México').distinct()
+    context['capitulos_libros_investigacion_nacionales_enviados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='ENVIADO').filter(libro__pais__nombre='México').distinct()
 
-    context['capitulos_libros_investigacion_internacionales_publicados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='PUBLICADO').exclude(libro__editorial__pais__nombre='México').distinct()
-    context['capitulos_libros_investigacion_internacionales_enprensa'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='EN_PRENSA').exclude(libro__editorial__pais__nombre='México').distinct()
-    context['capitulos_libros_investigacion_internacionales_enviados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='ENVIADO').exclude(libro__editorial__pais__nombre='México').distinct()
+    context['capitulos_libros_investigacion_internacionales_publicados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='PUBLICADO').exclude(libro__pais__nombre='México').distinct()
+    context['capitulos_libros_investigacion_internacionales_enprensa'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='EN_PRENSA').exclude(libro__pais__nombre='México').distinct()
+    context['capitulos_libros_investigacion_internacionales_enviados'] = CapituloLibroInvestigacion.objects.filter(libro__fecha__year=this_year, libro__status='ENVIADO').exclude(libro__pais__nombre='México').distinct()
 
     context['mapas_arbitrados'] = MapaArbitrado.objects.filter(fecha__year=this_year).distinct()
 
