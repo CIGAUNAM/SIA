@@ -1,0 +1,245 @@
+{% extends 'main.html' %}
+
+{% block form_agregar %}
+    <p><strong>Académico invitado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del acádemico invitado.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.invitado }}
+        </div>
+    </div>
+    </p>
+
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia relacionada con la movilidad, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Actividades: </strong><a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Detalles de las actividades realizadas durante el periodo de movilidad.">
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        {{ form.actividades }}
+    </p>
+    <p><strong>Fecha inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_fin }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Es intercambio UNAM: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="¿Se trata de un intercambio entre centros de la UNAM?"><i
+                class="fa fa-question-circle"></i></a>
+        {{ form.intercambio_unam }}
+    </p>
+    <p><strong>Financiamiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Financiamiento relacionado con la movilidad.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.financiamiento }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Redes academicas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Redes academicas relacionadas con las actividades de movilidad, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.redes_academicas }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las redes académicas.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/vinculacion/redes-academicas/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una red académica nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+{% endblock %}
+
+{% block form_detalle %}
+    <p><strong>Académico invitado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del acádemico invitado.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.invitado }}
+        </div>
+    </div>
+    </p>
+
+    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.descripcion }}
+    </p>
+    <p><strong>Dependencia:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Dependencia relacionada con la movilidad, las opciones
+                                              disponibles están en función de la institución seleccionada en el campo
+                                              anterior. Si no se selecciona una institución, se enlistan todas las
+                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.dependencia }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una dependencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Actividades: </strong><a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Detalles de las actividades realizadas durante el periodo de movilidad.">
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        {{ form.actividades }}
+    </p>
+    <p><strong>Fecha inicio:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de inicio."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_inicio }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_fin }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Es intercambio UNAM: </strong>
+        <a href="#" data-toggle="tooltip" data-placement="left"
+           title="¿Se trata de un intercambio entre centros de la UNAM?"><i
+                class="fa fa-question-circle"></i></a>
+        {{ form.intercambio_unam }}
+    </p>
+    <p><strong>Financiamiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Financiamiento relacionado con la movilidad.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.financiamiento }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Redes academicas:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Redes academicas relacionadas con las actividades de movilidad, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-users"></i></div>
+            {{ form.redes_academicas }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales de las redes académicas.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/vinculacion/redes-academicas/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una red académica nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+{% endblock %}
