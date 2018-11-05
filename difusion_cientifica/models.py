@@ -22,11 +22,11 @@ class MemoriaInExtenso(models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
     descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    autores = SortedManyToManyField(User, verbose_name='xamp')
+    autores = SortedManyToManyField(User)
     pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
     pagina_fin = models.PositiveIntegerField(null=True, blank=True)
     editorial_text = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
-    editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
+    # editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     issn = models.SlugField(max_length=20, blank=True)
 
@@ -75,7 +75,7 @@ class Resena(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
-    usuario = models.ForeignKey(User, related_name='resena_autor', on_delete=models.DO_NOTHING)
+    # usuario = models.ForeignKey(User, related_name='resena_autor', on_delete=models.DO_NOTHING)
     autores = SortedManyToManyField(User, verbose_name='Autores')
 
     def __str__(self):
@@ -97,7 +97,7 @@ class Traduccion(models.Model):
     articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
     url = models.URLField(blank=True)
-    usuario = models.ForeignKey(User, related_name='traduccion_autor', on_delete=models.DO_NOTHING)
+    # usuario = models.ForeignKey(User, related_name='traduccion_autor', on_delete=models.DO_NOTHING)
     autores = SortedManyToManyField(User, verbose_name='Autores')
 
     def __str__(self):
@@ -125,7 +125,7 @@ class OrganizacionEventoAcademico(models.Model):
     apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
 
     def __str__(self):
-        return "{}, {}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
+        return "{}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
                                                self.evento.ciudad, self.evento.pais.nombre)
 
     def get_absolute_url(self):
