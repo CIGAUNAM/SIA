@@ -76,7 +76,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.autores }}
+            {{ form.participantes }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los participantes.">
@@ -118,7 +118,7 @@
         {{ form.ponencia_magistral }}
     </p>
     <script>
-        $("#id_autores").on("select2:select", function (evt) {
+        $("#id_participantes").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -204,7 +204,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.autores }}
+            {{ form.participantes }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los participantes.">
@@ -246,7 +246,7 @@
         {{ form.ponencia_magistral }}
     </p>
     <script>
-        $("#id_autores").on("select2:select", function (evt) {
+        $("#id_participantes").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
