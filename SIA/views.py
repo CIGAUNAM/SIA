@@ -986,17 +986,17 @@ class Dashboard(View):
                 items_data.append([str(year)])
 
                 total_items_year_sum = Resena.objects.filter(fecha__year=year).filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) |
+                     (Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = Resena.objects.filter(fecha__year=year, usuario=request.user).count()
+                request_user_items_year_sum = Resena.objects.filter(fecha__year=year, autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(
                     request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(resena_autor__fecha__year=year) &
+                    Q(resena_autores__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -1011,22 +1011,22 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(resena_autor__fecha__year=year) &
+                    Q(resena_autores__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autor')).aggregate(Max('resena_autor__count'))[
-                    'resena_autor__count__max']
+                    Count('resena_autores')).aggregate(Max('resena_autores__count'))[
+                    'resena_autores__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
                     max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(resena_autor__fecha__year=year) &
+                    Q(resena_autores__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autor')).aggregate(Min('resena_autor__count'))[
-                    'resena_autor__count__min']
+                    Count('resena_autores')).aggregate(Min('resena_autores__count'))[
+                    'resena_autores__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
@@ -3183,7 +3183,7 @@ class ReporteHistorico(View):
                     total_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(resena_autor__fecha__year=year) &
+                    Q(resena_autores__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -3198,22 +3198,22 @@ class ReporteHistorico(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(resena_autor__fecha__year=year) &
+                    Q(resena_autores__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autor')).aggregate(Max('resena_autor__count'))[
-                    'resena_autor__count__max']
+                    Count('resena_autores')).aggregate(Max('resena_autores__count'))[
+                    'resena_autores__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
                     max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(resena_autor__fecha__year=year) &
+                    Q(resena_autores__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autor')).aggregate(Min('resena_autor__count'))[
-                    'resena_autor__count__min']
+                    Count('resena_autores')).aggregate(Min('resena_autores__count'))[
+                    'resena_autores__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(min_items_year_user)
