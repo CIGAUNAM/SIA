@@ -1,0 +1,172 @@
+{% extends 'modal/main_modal.html' %}
+
+{% block form_modal %}
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+    <script src="/static/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/icheck/skins/square/blue.css">
+    <link rel="stylesheet" type="text/css" href="/static/datepicker/css/bootstrap-datepicker.standalone.css">
+    <link rel="stylesheet" type="text/css" href="/static/select2/css/select2.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/admin-lte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin-lte/dist/css/skins/_all-skins.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/conflicts/conflicts.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+
+    <script src="/static/js/jquery-ui.min.js "></script>
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>    $.widget.bridge('uibutton', $.ui.button); </script>
+    <script src="/static/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="/static/admin-lte/dist/js/app.min.js"></script>
+    <script src="/static/datepicker/js/bootstrap-datepicker.js"></script>
+
+    <script src="/static/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="/static/django_select2/django_select2.js"></script>
+
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1960:2020",
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                // You can put more options here.
+            });
+        });
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
+
+
+    <form id="form_dependencia" action="" method="post">
+        {% csrf_token %}
+        <p><strong>Nombre de la institución:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Nombre de la institución. Agregar después del nombre (si aplica) las siglas de éste, entre paréntesis."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form_dependencia.nombre }}
+            </div>
+        </div>
+        </p>
+        <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                                   title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+            <i class="fa fa-question-circle"></i></a></strong>
+            {{ form_dependencia.descripcion }}
+        </p>
+        <p><strong>País:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="País donde se encuentra la institución.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form_dependencia.pais }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del país.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+        <p><strong>Estado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Estado (o provincia, o departamento; según sea el caso) donde se encuentra la institución.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form_dependencia.estado }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales del estado.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+        <p><strong>Ciudad:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Ciudad donde se encuentra la institución.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form_dependencia.ciudad }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de la ciudad seleccionada.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+        <p><strong>Clasificacion:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="clasificacion de la institución.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form_dependencia.clasificacion }}
+            </div>
+        </div>
+        </p>
+
+        <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+    </form>
+
+    {{ form_dependencia.media.js }}
+
+    <script>
+        $("#form_dependencia2").submit(function (event) {
+            alert("Handler for .submit() called.");
+
+            //event.preventDefault();
+        });
+        /*$("#agregar-dependencia-submit").click(function () {
+            $("#form_dependencia2").submit();
+            alert("Submit");
+        }); */
+    </script>
+
+{% endblock %}
+

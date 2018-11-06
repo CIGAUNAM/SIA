@@ -9,12 +9,13 @@ from rest_framework import permissions
 from django.core import serializers
 from django.views.generic import View
 import uuid
+import json
 
 from SIA.utils import *
 from . forms import *
 from . utils import *
 from . models import *
-
+from django.http import JsonResponse
 
 def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
@@ -228,10 +229,32 @@ class DependenciaEliminar(View):
             raise Http404
 
 
+class DependenciaAgregar(ObjectCreateMixinNucleo, View):
+    form_class = InstitucionForm
+    model = Institucion
+    aux = InstitucionContext.contexto
+    template_name = 'modal/mod_dependencia.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {'form_dependencia': self.form_class})
+
+    def post(self, request):
+        if request.is_ajax():
+            message = "Yes, AJAX!"
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            print(new_obj)
+            print(JsonResponse(new_obj, safe=False))
+            return JsonResponse(new_obj, safe=False)
+            # return HttpResponse(json.dumps({'key': 'value'}), mimetype="application/json")
+        else:
+            return render(request, self.template_name, {'form_dependencia': bound_form})
+
+
 class DepartamentoJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = Departamento.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'dependencia'))
