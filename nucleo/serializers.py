@@ -53,7 +53,7 @@ class InstitucionSerializer(serializers.ModelSerializer):
 class DependenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dependencia
-        fields = ('id', 'dependencia', 'institucion', 'ciudad', 'subsistema_unam')
+        fields = ('id', 'nombre', 'institucion', 'ciudad', 'subsistema_unam')
 
 
 class CargoSerializer(serializers.ModelSerializer):

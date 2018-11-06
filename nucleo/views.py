@@ -1165,72 +1165,6 @@ class ProyectoArbitradoJSON(View):
             raise Http404
 
 
-"""
-
-class ProyectoArbitradoLista(ObjectCreateMixinNucleo, View):
-    form_class = ProyectoInvestigacionArbitradoForm
-    model = ProyectoInsvestigacionArbitrado
-    aux = ProyectoInvestigacionArbitradoContext.contexto
-    template_name = 'proyecto_investigacion_arbitrado.html'
-
-
-class ProyectoArbitradoDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ProyectoInvestigacionArbitradoForm
-    model = ProyectoInsvestigacionArbitrado
-    aux = ProyectoInvestigacionArbitradoContext.contexto
-    template_name = 'proyecto_investigacion_arbitrado.html'
-
-
-class ProyectoArbitradoEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(ProyectoInsvestigacionArbitrado, pk=pk)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
-class ConvocatoriaArbitrajeJSON(View):
-    def get(self, request):
-        try:
-            #usuarioid = User.objects.get(username=request.user.username).id
-            items = ConvocatoriaArbitraje.objects.all()
-            json = ConvocatoriaArbitraje.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre'))
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class ConvocatoriaArbitrajeLista(ObjectCreateMixinNucleo, View):
-    form_class = ConvocatoriaArbitrajeForm
-    model = ConvocatoriaArbitraje
-    aux = ConvocatoriaArbitrajeContext.contexto
-    template_name = 'simple.html'
-
-
-class ConvocatoriaArbitrajeDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ConvocatoriaArbitrajeForm
-    model = ConvocatoriaArbitraje
-    aux = ConvocatoriaArbitrajeContext.contexto
-    template_name = 'simple.html'
-
-
-class ConvocatoriaArbitrajeEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(Asignatura, pk=pk)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-"""
-
-
-
-
 
 
 
@@ -1290,21 +1224,21 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
 
 
-class InstitucionList(generics.ListCreateAPIView):
+class RESTInstitucionLista(generics.ListCreateAPIView):
     queryset = Institucion.objects.all()
     serializer_class = InstitucionSerializer
 
-class InstitucionDetail(generics.RetrieveUpdateDestroyAPIView):
+class RESTInstitucionDetalle(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Institucion.objects.all()
     serializer_class = InstitucionSerializer
 
 
-class DependenciaList(generics.ListCreateAPIView):
+class RESTDependenciaLista(generics.ListCreateAPIView):
     queryset = Dependencia.objects.all()
     serializer_class = DependenciaSerializer
 
-class DependenciaDetail(generics.RetrieveUpdateDestroyAPIView):
+class RESTDependenciaDetalle(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Dependencia.objects.all()
     serializer_class = DependenciaSerializer

@@ -171,6 +171,7 @@ class DependenciaForm(forms.ModelForm):
         exclude = []
         widgets = {
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'ciudad_text': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
