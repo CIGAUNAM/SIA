@@ -171,7 +171,7 @@ urlpatterns = [
     # url(r'^rest/instituciones/$', views.InstitucionList.as_view()),
     # url(r'^rest/institucion/(?P<pk>[0-9]+)/$', views.InstitucionDetail.as_view()),
     url(r'^rest/dependencias/$', RESTDependenciaLista.as_view()),
-    url(r'^rest/dependencia/(?P<pk>[0-9]+)/$', RESTDependenciaDetalle.as_view()),
+    url(r'^rest/dependencias/(?P<pk>[0-9]+)/$', RESTDependenciaDetalle.as_view()),
     # url(r'^rest/cargos/$', views.CargoList.as_view()),
     # url(r'^rest/nombre/(?P<pk>[0-9]+)/$', views.CargoDetail.as_view()),
     # url(r'^rest/nombramientos/$', views.NombramientoList.as_view()),
