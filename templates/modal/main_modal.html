@@ -1,0 +1,53 @@
+{% comment %}
+{% block stylesheets %}
+    {% include 'adminlte/lib/_styles.html' %}
+{% endblock %}
+{% endcomment %}
+
+
+{% if user.is_authenticated %}
+
+    {% block messages %}
+        {% include 'adminlte/lib/_messages.html' %}
+    {% endblock %}
+
+    {% block body %}
+
+
+        <div class="col">
+            {% block form_modal %}{% endblock %}
+        </div>
+
+    {% endblock body %}
+
+    {% comment %}
+    {% block javascript %}
+        {% include 'adminlte/lib/_scripts.html' %}
+    {% endblock %}
+    {% endcomment %}
+
+
+    {% block extra_foot %}{% endblock %}
+
+
+{% else %}
+    <script>
+        window.location.href = '/login/';
+    </script>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

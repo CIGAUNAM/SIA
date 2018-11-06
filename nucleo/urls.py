@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^dependencias/json/', DependenciaJSON.as_view(), name='dependencia_lista__json'),
     url(r'^dependencias/$', DependenciaLista.as_view(), name='dependencia_lista'),
     # url(r'^dependencias/(?P<pk>[\w\-]+)/eliminar$', DependenciaEliminar.as_view(), name='dependencia_eliminar'),
+    url(r'^dependencias/agregar/$', DependenciaAgregar.as_view(), name='dependencia_agregar'),
     url(r'^dependencias/(?P<pk>[\w\-]+)/$', DependenciaDetalle.as_view(), name='dependencia_detalle'),
 
     url(r'^departamentos/json/', DepartamentoJSON.as_view(), name='departamento_lista__json'),
