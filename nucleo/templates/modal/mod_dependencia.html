@@ -157,10 +157,20 @@
     {{ form_dependencia.media.js }}
 
     <script>
-        $("#form_dependencia2").submit(function (event) {
-            alert("Handler for .submit() called.");
-
-            //event.preventDefault();
+        $("#form_dependencia").submit(function (event) {
+            console.log("Handler for .submit() called.");
+            event.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "/nucleo/rest/dependencias/"
+                data: {
+                    nombre: $("#id_nombre").val(),
+                    institucion: $("#id_institucion").val(),
+                    ciudad: $("#id_ciudad").val(),
+                    ciudad_text: $("#id_ciudad_text").val(),
+                    subsistema_unam: $("#id_subsistema_unam").val(),
+                }
+            })
         });
         /*$("#agregar-dependencia-submit").click(function () {
             $("#form_dependencia2").submit();
