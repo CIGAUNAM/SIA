@@ -53,7 +53,6 @@ class InstitucionSerializer(serializers.ModelSerializer):
 class DependenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dependencia
-        # fields = ('id', 'nombre', 'descripcion', 'institucion', 'clasificacion', 'ciudad', 'ciudad_text', 'subsistema_unam')
         fields = '__all__'
 
 
