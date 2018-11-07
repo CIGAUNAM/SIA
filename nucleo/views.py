@@ -1238,11 +1238,12 @@ class RESTInstitucionDetalle(generics.RetrieveUpdateDestroyAPIView):
 
 
 class RESTDependenciaLista(generics.ListCreateAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Dependencia.objects.all()
     serializer_class = DependenciaSerializer
 
 class RESTDependenciaDetalle(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Dependencia.objects.all()
     serializer_class = DependenciaSerializer
 
