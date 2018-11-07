@@ -126,39 +126,27 @@
 
 
     <script>
-
         $('#d_subsunam').hide();
-        $('#id_subsistema_unam').val("NINGUNO");
-
         $("#id_institucion").on('change', function () {
             if ($("#id_institucion").val() == 1) {
                 $('#d_subsunam').show('slow');
-                $('#id_subsistema_unam').attr("required", "true");
             } else {
                 $('#d_subsunam').hide('slow');
-                $('#id_subsistema_unam').attr("required", null);
-                $('#id_subsistema_unam').val("NINGUNO");
+                $('#id_subsistema_unam').val(null).trigger('change');
             }
         });
-
         $("#form_dependencia").submit(function (event) {
             console.log("Handler for .submit() called.");
-
             var datos = {
                 nombre: $("#id_nombre").val(),
                 institucion: parseInt($("#id_institucion").val()),
                 ciudad_text: $("#id_ciudad_text").val(),
-
             };
-
             if ($("#id_subsistema_unam").val() != "") {
-                console.log($("#id_subsistema_unam").val());
                 datos.subsistema_unam = $("#id_subsistema_unam").val();
             }
-
             console.log(datos);
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-
             $.ajax({
                 type: "POST",
                 url: "/nucleo/rest/dependencias/",
