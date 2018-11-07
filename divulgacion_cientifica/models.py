@@ -7,16 +7,14 @@ from sortedm2m.fields import SortedManyToManyField
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (
     ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'),
-    ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
+    ('INTERNACIONAL', 'Internacional')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (
     ('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'),
-    ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
+    ('TECNICO', 'Apoyo técnico')))
 STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO', (
-    ('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-    ('OTRO', 'Otro')))
+    ('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
 STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (
-    ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-    ('OTRO', 'Otro')))
+    ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
 
 
 # Create your models here.
