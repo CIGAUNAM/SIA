@@ -1,21 +1,21 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
 
-from nucleo.models import *
-from nucleo.serializers import *
 from rest_framework import generics
-from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrReadOnly
+from . permissions import UserListReadOnly, IsAdminUserOrReadOnly
 from rest_framework import permissions
 from django.core import serializers
 from django.views.generic import View
 import uuid
-import json
 
 from SIA.utils import *
 from . forms import *
 from . utils import *
 from . models import *
-from django.http import JsonResponse
+from . serializers import *
+
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
 
 def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
@@ -1163,6 +1163,9 @@ class ProyectoArbitradoJSON(View):
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
+
+
+
 
 
 
