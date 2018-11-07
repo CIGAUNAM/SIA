@@ -124,25 +124,15 @@ class DependenciaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
 
-    subsistema_unam = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                                        choices=(('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+    subsistema_unam = forms.TypedChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right', 'data-placeholder': 'Seleccione el subsistema de la UNAM al que pertenece, si no pertenece a ninguno de los listados, seleccionar "Ninguno"'}),
+                                        choices=(('', 'Seleccionar Subsistema UNAM'),
+                                                 ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
                                                  ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
                                                  ('HUMANIDADES', 'Subsistema de Humanidades'),
                                                  ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
                                                  ('ESCUELAS', 'Facultades y Escuelas'),
-                                                 ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
-                                                 ('NO', 'No')), required=False)
+                                                 ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'), ('NINGUNO', 'Ninguno')), required=False)
 
     class Meta:
         model = Dependencia

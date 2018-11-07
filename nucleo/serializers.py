@@ -53,7 +53,8 @@ class InstitucionSerializer(serializers.ModelSerializer):
 class DependenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dependencia
-        fields = '__all__'
+        # fields = '__all__'
+        exclude = ['id']
 
 
 class CargoSerializer(serializers.ModelSerializer):
