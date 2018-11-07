@@ -124,25 +124,6 @@ class DependenciaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    pais = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="País",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Pais.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais': 'pais'},
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
@@ -153,9 +134,6 @@ class DependenciaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    clasificacion = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'ENTIDAD_CLASIFICACION', ), required=True)
 
     subsistema_unam = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                         choices=(('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),

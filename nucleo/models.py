@@ -152,9 +152,6 @@ class GradoAcademico(models.Model):
 
 
 class User(AbstractUser):
-
-
-
     grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.PROTECT)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
     tipo = models.CharField(max_length=30, blank=True, null=True, choices=(
@@ -229,8 +226,8 @@ class Institucion(models.Model):
     descripcion = models.TextField(blank=True)
     clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
@@ -251,9 +248,9 @@ class Dependencia(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
-    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    # clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
+    # pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
     ciudad_text = models.CharField(max_length=255)
     subsistema_unam = models.CharField(max_length=50, choices=(
