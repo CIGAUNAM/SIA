@@ -47,9 +47,9 @@
 
     <form id="form_dependencia" action="" method="post">
         {% csrf_token %}
-        <p><strong>Nombre de la institución:</strong>
+        <p><strong>Nombre de la dependencia:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre de la institución. Agregar después del nombre (si aplica) las siglas de éste, entre paréntesis."><i
+               title="Nombre de la dependencia. Agregar después del nombre sus siglas entre paréntesis (si tiene siglas)."><i
                     class="fa fa-question-circle"></i></a>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
@@ -65,90 +65,57 @@
             <i class="fa fa-question-circle"></i></a></strong>
             {{ form_dependencia.descripcion }}
         </p>
-        <p><strong>País:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="País donde se encuentra la institución.">
-                <i class="fa fa-question-circle"></i>
-            </a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form_dependencia.pais }}
-                <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del país.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
-        <p><strong>Estado:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Estado (o provincia, o departamento; según sea el caso) donde se encuentra la institución.">
-                <i class="fa fa-question-circle"></i>
-            </a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form_dependencia.estado }}
-                <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales del estado.">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </div>
-                <div class="input-group-addon">
-                    <a href="/nucleo/estados" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar un estado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </p>
         <p><strong>Ciudad:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Ciudad donde se encuentra la institución.">
+               title="Ciudad donde se encuentra la dependencia."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form_dependencia.ciudad_text }}
+            </div>
+        </div>
+        </p>
+        <p><strong>Institución a la que pertenece:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Institución a la que pertenene la dependencia.">
                 <i class="fa fa-question-circle"></i>
-            </a>
+            </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form_dependencia.ciudad }}
+                {{ form_dependencia.institucion }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de la ciudad seleccionada.">
+                       title="Mostrar los detalles adicionales de la institución.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
                 <div class="input-group-addon">
-                    <a href="/nucleo/ciudades" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar una ciudad nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
             </div>
         </div>
         </p>
-        <p><strong>Clasificacion:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="clasificacion de la institución.">
-                <i class="fa fa-question-circle"></i>
-            </a>
-        <div class="form-group" style="margin-top: -10px;">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form_dependencia.clasificacion }}
+        <div id="d_subsunam">
+            <p><strong>Subsistema UNAM:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, en caso contrario seleccionar 'No'.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ form_dependencia.subsistema_unam }}
+                </div>
             </div>
+            </p>
         </div>
-        </p>
 
         <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
@@ -156,21 +123,56 @@
 
     {{ form_dependencia.media.js }}
 
+
+
     <script>
+
+        $('#d_subsunam').hide();
+        $('#id_subsistema_unam').val("NINGUNO");
+
+        $("#id_institucion").on('change', function () {
+            if ($("#id_institucion").val() == 1) {
+                $('#d_subsunam').show('slow');
+                $('#id_subsistema_unam').attr("required", "true");
+            } else {
+                $('#d_subsunam').hide('slow');
+                $('#id_subsistema_unam').attr("required", null);
+                $('#id_subsistema_unam').val("NINGUNO");
+            }
+        });
+
         $("#form_dependencia").submit(function (event) {
             console.log("Handler for .submit() called.");
-            event.preventDefault();
+
+            var datos = {
+                nombre: $("#id_nombre").val(),
+                institucion: parseInt($("#id_institucion").val()),
+                ciudad_text: $("#id_ciudad_text").val(),
+
+            };
+
+            if ($("#id_subsistema_unam").val() != "") {
+                console.log($("#id_subsistema_unam").val());
+                datos.subsistema_unam = $("#id_subsistema_unam").val();
+            }
+
+            console.log(datos);
+            $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+
             $.ajax({
                 type: "POST",
-                url: "/nucleo/rest/dependencias/"
-                data: {
-                    nombre: $("#id_nombre").val(),
-                    institucion: $("#id_institucion").val(),
-                    ciudad: $("#id_ciudad").val(),
-                    ciudad_text: $("#id_ciudad_text").val(),
-                    subsistema_unam: $("#id_subsistema_unam").val(),
+                url: "/nucleo/rest/dependencias/",
+                dataType: 'json',
+                data: datos,
+                headers:{"X-CSRFToken": $crf_token},
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(xhr);
+                    console.log(thrownError);
                 }
-            })
+            });
+            event.preventDefault();
+            console.log("event.preventDefault(); prevenido");
         });
         /*$("#agregar-dependencia-submit").click(function () {
             $("#form_dependencia2").submit();

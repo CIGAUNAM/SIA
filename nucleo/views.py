@@ -230,9 +230,9 @@ class DependenciaEliminar(View):
 
 
 class DependenciaAgregar(ObjectCreateMixinNucleo, View):
-    form_class = InstitucionForm
-    model = Institucion
-    aux = InstitucionContext.contexto
+    form_class = DependenciaForm
+    model = Dependencia
+    aux = DependenciaContext.contexto
     template_name = 'modal/mod_dependencia.html'
 
     def get(self, request):

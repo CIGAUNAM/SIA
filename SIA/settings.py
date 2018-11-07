@@ -86,6 +86,14 @@ INSTALLED_APPS = [
 
 ]
 
+"""
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+"""
+
 #MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 #MESSAGE_LEVEL = 'DEBUG'
 

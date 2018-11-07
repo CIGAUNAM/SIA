@@ -251,7 +251,7 @@ class Dependencia(models.Model):
     # clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
     # pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT, blank=True, null=True)
     ciudad_text = models.CharField(max_length=255)
     subsistema_unam = models.CharField(max_length=50, choices=(
         ('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'),
@@ -261,6 +261,7 @@ class Dependencia(models.Model):
         ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
         ('ESCUELAS', 'Facultades y Escuelas'),
         ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
+        ('NINGUNO', 'Ninguno')
         ), blank=True, null=True, verbose_name='Subsistema UNAM')
 
     def __str__(self):
