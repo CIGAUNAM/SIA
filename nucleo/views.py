@@ -1232,7 +1232,6 @@ class RESTInstitucionLista(generics.ListCreateAPIView):
     serializer_class = InstitucionSerializer
 
 class RESTInstitucionDetalle(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Institucion.objects.all()
     serializer_class = InstitucionSerializer
 
