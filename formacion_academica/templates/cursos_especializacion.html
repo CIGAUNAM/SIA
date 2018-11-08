@@ -169,7 +169,11 @@
                 console.log(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
                 $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
             } else {
-                $('#detalle-dependencia').modal('toggle');
+                $('#detalle-dependencia-modal-body').html('<div class="alert alert-danger" role="alert">\n' + ' No se seleccionó ningún elemento de la lista de dependencias.\n' + '</div>')
+                setTimeout(function () {
+                    $('#detalle-dependencia').modal('hide');
+                    $('#detalle-dependencia-modal-body').html('')
+                }, 2000);
             }
         });
     </script>

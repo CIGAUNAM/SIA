@@ -99,7 +99,7 @@ class DependenciaForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -213,7 +213,7 @@ class FinanciamientoForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -253,7 +253,7 @@ class BecaForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -435,7 +435,7 @@ class DistincionForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -682,7 +682,7 @@ class ProyectoInvestigacionArbitradoForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
