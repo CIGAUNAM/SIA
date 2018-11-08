@@ -27,7 +27,7 @@ class PaisForm(forms.ModelForm):
         model = Pais
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'nombre_extendido': TextInput(attrs={'class': 'form-control pull-right'}),
             'codigo': TextInput(attrs={'class': 'form-control pull-right'}),
         }
@@ -48,7 +48,7 @@ class EstadoForm(forms.ModelForm):
         model = Estado
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -67,12 +67,12 @@ class CiudadForm(forms.ModelForm):
         model = Ciudad
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
 class InstitucionForm(forms.ModelForm):
-    pais = forms.ModelChoiceField(
+    pais_institucion = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
         widget=ModelSelect2Widget(
@@ -81,27 +81,7 @@ class InstitucionForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais': 'pais'},
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    clasificacion = forms.ChoiceField(
+    clasificacion_institucion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'ENTIDAD_CLASIFICACION', ), required=True)
 
@@ -109,8 +89,8 @@ class InstitucionForm(forms.ModelForm):
         model = Institucion
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre_institucion': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion_institucion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -159,8 +139,8 @@ class DepartamentoForm(forms.ModelForm):
         model = Departamento
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -174,8 +154,8 @@ class CargoForm(forms.ModelForm):
         model = Cargo
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -206,8 +186,8 @@ class AreaEspecialidadForm(forms.ModelForm):
         model = AreaEspecialidad
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -216,8 +196,8 @@ class ImpactoSocialForm(forms.ModelForm):
         model = ImpactoSocial
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -253,8 +233,8 @@ class FinanciamientoForm(forms.ModelForm):
         model = Financiamiento
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -263,8 +243,8 @@ class MetodologiaForm(forms.ModelForm):
         model = Metodologia
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -292,8 +272,8 @@ class BecaForm(forms.ModelForm):
         model = Beca
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -302,8 +282,8 @@ class ReconocimientoForm(forms.ModelForm):
         model = Reconocimiento
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -324,8 +304,8 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
         model = ProgramaLicenciatura
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -344,8 +324,8 @@ class ProgramaMaestriaForm(forms.ModelForm):
         model = ProgramaMaestria
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -364,8 +344,8 @@ class ProgramaDoctoradoForm(forms.ModelForm):
         model = ProgramaDoctorado
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -374,8 +354,8 @@ class TipoEventoForm(forms.ModelForm):
         model = TipoEvento
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 class TipoCursoForm(forms.ModelForm):
@@ -383,8 +363,8 @@ class TipoCursoForm(forms.ModelForm):
         model = TipoCurso
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -435,8 +415,8 @@ class EventoForm(forms.ModelForm):
         model = Evento
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'entidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'ubicacion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
@@ -465,8 +445,8 @@ class DistincionForm(forms.ModelForm):
         model = Distincion
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -505,8 +485,8 @@ class EditorialForm(forms.ModelForm):
         model = Editorial
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -515,8 +495,8 @@ class ColeccionForm(forms.ModelForm):
         model = Coleccion
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -581,8 +561,8 @@ class Libro1Form(forms.ModelForm):
         model = Libro
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'coordinadores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'volumen': TextInput(attrs={'class': 'form-control pull-right'}),
@@ -610,9 +590,9 @@ class RevistaForm(forms.ModelForm):
         model = Revista
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'nombre_abreviado_wos': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'url': TextInput(attrs={'class': 'form-control pull-right'}),
             'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
@@ -623,8 +603,8 @@ class AsignaturaForm(forms.ModelForm):
         model = Asignatura
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -667,7 +647,7 @@ class MedioDivulgacionForm(forms.ModelForm):
         widgets = {
             'nombre_medio': TextInput(attrs={'class': 'form-control pull-right'}),
             'canal': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -724,7 +704,7 @@ class ProyectoInvestigacionArbitradoForm(forms.ModelForm):
         model = ProyectoInsvestigacionArbitrado
         exclude = []
         widgets = {
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -733,7 +713,7 @@ class ConvocatoriaArbitrajeForm(forms.ModelForm):
         model = ConvocatoriaArbitraje
         exclude = []
         widgets = {
-            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 

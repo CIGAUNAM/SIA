@@ -222,24 +222,22 @@ class InvestigadorInvitado(models.Model):
 
 
 class Institucion(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    nombre_institucion = models.CharField(max_length=255, unique=True)
+    descripcion_institucion = models.TextField(blank=True)
+    clasificacion_institucion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
+    pais_institucion = models.ForeignKey(Pais, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre_institucion
 
     def natural_key(self):
-        return self.nombre
+        return self.nombre_institucion
 
     def get_absolute_url(self):
         return reverse('institucion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['nombre_institucion']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
 
@@ -263,7 +261,7 @@ class Dependencia(models.Model):
         ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), blank=True, null=True, verbose_name='Subsistema UNAM')
 
     def __str__(self):
-        return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre, )
+        return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre_institucion, )
 
     def natural_key(self):
         return self.nombre_dependencia
