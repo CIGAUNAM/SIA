@@ -106,18 +106,16 @@
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.dependencia }}
+
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                <span data-toggle="modal" data-target="#detalle-dependencia">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la dependencia seleccionada.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+
             <div class="input-group-addon">
                 <span data-toggle="modal" data-target="#agregar-dependencia">
                     <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
@@ -129,36 +127,50 @@
         </div>
     </div>
 
-    <!-- Modal -->
-
     <div class="modal fade" id="agregar-dependencia" style="overflow:hidden;" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Dependencias</h4>
+                    <h4 class="modal-title">Agregar dependencia</h4>
                 </div>
-
                 <div class="modal-body">
-
-                    <div id="dependencia-modal-body">
-                    </div>
-
+                    <div id="dependencia-modal-body"></div>
                 </div>
-
             </div>
         </div>
-
     </div>
 
-
-
+    <div class="modal fade" id="detalle-dependencia" style="overflow:hidden;" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Detalle dependencia</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="detalle-dependencia-modal-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         $("#agregar-dependencia").on('shown.bs.modal', function () {
             $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
+        });
+
+        $("#detalle-dependencia").on('shown.bs.modal', function () {
+            console.log("prueba");
+            if ($("#id_dependencia").val()) {
+                console.log($("#id_dependencia").val());
+                console.log(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
+                $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
+            } else {
+                console.log("no hay")
+            }
         });
     </script>
 
@@ -269,18 +281,16 @@
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.dependencia }}
+
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+                <span data-toggle="modal" data-target="#detalle-dependencia">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la dependencia seleccionada.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+
             <div class="input-group-addon">
                 <span data-toggle="modal" data-target="#agregar-dependencia">
                     <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
@@ -291,4 +301,48 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="agregar-dependencia" style="overflow:hidden;" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Agregar dependencia</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="dependencia-modal-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detalle-dependencia" style="overflow:hidden;" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Detalle dependencia</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="detalle-dependencia-modal-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#agregar-dependencia").on('shown.bs.modal', function () {
+            $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
+        });
+
+        $("#detalle-dependencia").on('shown.bs.modal', function () {
+            console.log("prueba");
+            console.log($("#id_dependencia").val());
+            $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
+        });
+    </script>
+
+
 {% endblock %}
