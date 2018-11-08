@@ -212,7 +212,7 @@ class DependenciaLista(ObjectCreateMixinNucleo, View):
     template_name = 'dependencia.html'
 
 
-class DependenciaDetalle(ObjectUpdateMixinNucleo, View):
+class DependenciaDetalle1(ObjectUpdateMixinNucleo, View):
     form_class = DependenciaForm
     model = Dependencia
     aux = DependenciaContext.contexto
@@ -235,21 +235,36 @@ class DependenciaAgregar(ObjectCreateMixinNucleo, View):
     aux = DependenciaContext.contexto
     template_name = 'modal/mod_dependencia.html'
 
+
     def get(self, request):
         return render(request, self.template_name, {'form_dependencia': self.form_class})
 
     def post(self, request):
-        if request.is_ajax():
-            message = "Yes, AJAX!"
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
             new_obj = bound_form.save()
-            print(new_obj)
-            print(JsonResponse(new_obj, safe=False))
             return JsonResponse(new_obj, safe=False)
-            # return HttpResponse(json.dumps({'key': 'value'}), mimetype="application/json")
         else:
             return render(request, self.template_name, {'form_dependencia': bound_form})
+
+class DependenciaDetalle(ObjectUpdateMixinNucleo, View):
+    form_class = DependenciaForm
+    model = Dependencia
+    aux = DependenciaContext.contexto
+    template_name = 'modal/mod_dependencia_detalle.html'
+
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'form_dependencia': self.form_class(instance=obj), 'aux': self.aux, 'active': 'lista'})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro creado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
 
 
 class DepartamentoJSON(View):
