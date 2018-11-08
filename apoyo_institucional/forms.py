@@ -202,8 +202,8 @@ class RepresentacionForm(forms.ModelForm):
         model = Representacion
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -212,8 +212,8 @@ class ComisionForm(forms.ModelForm):
         model = Comision
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -222,6 +222,6 @@ class ActividadApoyoForm(forms.ModelForm):
         model = ActividadApoyo
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }

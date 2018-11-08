@@ -1,12 +1,8 @@
 from SIA.widgets import *
 from . models import *
 from django import forms
-from django_select2.forms import Select2MultipleWidget,Select2Widget, ModelSelect2Widget
-from investigacion.models import ProyectoInvestigacion, LibroInvestigacion, CapituloLibroInvestigacion
-
-ARBITRAJE_ACADEMICO__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO',
-                                    (('', '-------'), ('ARTICULO', 'Artículo en revista'), ('LIBRO', 'Libro'), ('CAPITULO_LIBRO', 'Capítulo de libro')))
-#
+from django_select2.forms import Select2MultipleWidget, Select2Widget, ModelSelect2Widget
+from investigacion.models import ProyectoInvestigacion
 
 class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
@@ -129,7 +125,7 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     es_renovacion = forms.BooleanField(required=False)
     entidades = forms.ModelMultipleChoiceField(
-        queryset=Dependencia.objects.exclude(institucion__clasificacion='ACADEMICA'),
+        queryset=Dependencia.objects.exclude(institucion_dependencia__clasificacion='ACADEMICA'),
         required=True,
         widget=Select2MultipleWidget(
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'})
@@ -207,6 +203,6 @@ class ClasificacionServicioForm(forms.ModelForm):
         model = ClasificacionServicio
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }

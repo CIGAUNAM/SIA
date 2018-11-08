@@ -199,7 +199,7 @@ class DependenciaJSON(View):
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Dependencia.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'institucion'))
+                                         fields=('nombre_dependencia', 'institucion_dependencia'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

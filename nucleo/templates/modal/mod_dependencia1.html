@@ -1,7 +1,50 @@
 {% extends 'modal/main_modal.html' %}
 
 {% block form_modal %}
-    {{ form_dependencia.media.js }}
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+    <script src="/static/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/icheck/skins/square/blue.css">
+    <link rel="stylesheet" type="text/css" href="/static/datepicker/css/bootstrap-datepicker.standalone.css">
+    <link rel="stylesheet" type="text/css" href="/static/select2/css/select2.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/admin-lte/dist/css/AdminLTE.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin-lte/dist/css/skins/_all-skins.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/conflicts/conflicts.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+
+    <script src="/static/js/jquery-ui.min.js "></script>
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>    $.widget.bridge('uibutton', $.ui.button); </script>
+    <script src="/static/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="/static/admin-lte/dist/js/app.min.js"></script>
+    <script src="/static/datepicker/js/bootstrap-datepicker.js"></script>
+
+    <script src="/static/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="/static/django_select2/django_select2.js"></script>
+
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1960:2020",
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                // You can put more options here.
+            });
+        });
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
+
+
     <form id="form_dependencia" action="" method="post">
         {% csrf_token %}
         <p><strong>Nombre de la dependencia:</strong>
@@ -79,28 +122,27 @@
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
     </form>
 
-
-
+    {{ form_dependencia.media.js }}
 
     <script>
         $('#d_subsunam').hide();
-        $("#id_institucion_dependencia").on('change', function () {
-            if ($("#id_institucion_dependencia").val() == 1) {
+        $("#id_institucion").on('change', function () {
+            if ($("#id_institucion").val() == 1) {
                 $('#d_subsunam').show('slow');
             } else {
                 $('#d_subsunam').hide('slow');
-                $('#id_subsistema_unam_dependencia').val(null).trigger('change');
+                $('#id_subsistema_unam').val(null).trigger('change');
             }
         });
         $("#form_dependencia").submit(function (event) {
             console.log("Handler for .submit() called.");
             var datos = {
-                nombre_dependencia: $("#id_nombre_dependencia").val(),
-                institucion_dependencia: parseInt($("#id_institucion_dependencia").val()),
-                ciudad_text_dependencia: $("#id_ciudad_text_dependencia").val(),
+                nombre_dependencia: $("#id_nombre").val(),
+                institucion_dependencia: parseInt($("#id_institucion").val()),
+                ciudad_text_dependencia: $("#id_ciudad_text").val(),
             };
-            if ($("#id_subsistema_unam_dependencia").val() != "") {
-                datos.subsistema_unam_dependencia = $("#id_subsistema_unam_dependencia").val();
+            if ($("#id_subsistema_unam").val() != "") {
+                datos.subsistema_unam_dependencia = $("#id_subsistema_unam").val();
             }
             console.log(datos);
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
@@ -112,24 +154,23 @@
                 headers: {"X-CSRFToken": $crf_token},
                 error: function (xhr, ajaxOptions, thrownError) {
                     console.log(xhr.status);
-                    console.log(xhr);
+                    console.log(xhr.responseJSON.non_field_errors[0]);
+                    alert(xhr.responseJSON.non_field_errors[0]);
                     console.log(thrownError);
-                    if (xhr.responseJSON.non_field_errors) {
-                        alert(xhr.responseJSON.non_field_errors[0]);
-                    }
-                    $('#id_subsistema_unam_dependencia').val(null).trigger('change');
-                    $('#id_institucion_dependencia').val(null).trigger('change');
-                    $('#id_institucion_dependencia').children('option').remove();
+                    $('#id_subsistema_unam').val(null).trigger('change');
+                    $('#id_institucion').val(null).trigger('change');
+                    $('#id_institucion').children('option').remove();
                     $('#d_subsunam').hide('slow');
                     $('#form_dependencia').trigger('reset');
-                },
-                success: function () {
-                    console.log("success!!!")
                 }
             });
             event.preventDefault();
             console.log("event.preventDefault(); prevenido");
         });
+        /*$("#agregar-dependencia-submit").click(function () {
+            $("#form_dependencia2").submit();
+            alert("Submit");
+        }); */
     </script>
 
 {% endblock %}

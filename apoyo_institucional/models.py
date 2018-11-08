@@ -70,8 +70,8 @@ class CargoAcademicoAdministrativo(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "[ {} : {} ] : {} : {} : {} : {}".format(self.usuario, self.cargo, self.dependencia.nombre,
-                                                        self.dependencia.institucion, self.fecha_inicio, self.fecha_fin)
+        return "[ {} : {} ] : {} : {} : {} : {}".format(self.usuario, self.cargo, self.dependencia.nombre_dependencia,
+                                                        self.dependencia.institucion_dependencia, self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})
