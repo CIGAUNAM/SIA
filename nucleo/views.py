@@ -237,7 +237,14 @@ class DependenciaAgregar(ObjectCreateMixinNucleo, View):
 
 
     def get(self, request):
-        return render(request, self.template_name, {'form_dependencia': self.form_class})
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'form_dependencia': self.form_class})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -254,6 +261,7 @@ class DependenciaDetalle(ObjectUpdateMixinNucleo, View):
     template_name = 'modal/mod_dependencia_detalle.html'
 
     def get(self, request, pk):
+
         obj = get_object_or_404(self.model, pk=pk)
         return render(request, self.template_name, {'form_dependencia': self.form_class(instance=obj), 'aux': self.aux, 'active': 'lista'})
 
