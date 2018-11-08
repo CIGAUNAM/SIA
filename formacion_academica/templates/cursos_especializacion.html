@@ -169,7 +169,7 @@
                 console.log(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
                 $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
             } else {
-                console.log("no hay")
+                $('#detalle-dependencia').modal('toggle');
             }
         });
     </script>
