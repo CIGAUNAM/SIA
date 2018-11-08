@@ -125,7 +125,7 @@ class ConvenioEntidadNoAcademicaForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     es_renovacion = forms.BooleanField(required=False)
     entidades = forms.ModelMultipleChoiceField(
-        queryset=Dependencia.objects.exclude(institucion_dependencia__clasificacion='ACADEMICA'),
+        queryset=Dependencia.objects.exclude(institucion_dependencia__clasificacion_institucion='ACADEMICA'),
         required=True,
         widget=Select2MultipleWidget(
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'})
