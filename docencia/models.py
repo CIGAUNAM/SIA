@@ -36,7 +36,7 @@ class CursoDocenciaEscolarizado(models.Model):
     usuario = models.ForeignKey(User, related_name='curso_docencia_escolarizado_usuario', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
+        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre_dependencia), self.fecha_inicio)
 
     def get_absolute_url(self):
         return reverse('curso_docencia_escolarizado_detalle', kwargs={'pk': self.pk})
@@ -63,7 +63,7 @@ class CursoDocenciaExtracurricular(models.Model):
                                 on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
+        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre_dependencia), self.fecha_inicio)
 
     def get_absolute_url(self):
         return reverse('curso_docencia_extracurricular_detalle', kwargs={'pk': self.pk})

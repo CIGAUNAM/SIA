@@ -185,12 +185,12 @@ class DependenciaContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.nombre",\n' \
+                                        '"data": "fields.nombre_dependencia",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre_dependencia + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.institucion"},\n' \
+                                    '{"data": "fields.institucion_dependencia"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
