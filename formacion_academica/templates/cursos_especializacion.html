@@ -339,10 +339,14 @@
 
         $("#detalle-dependencia").on('shown.bs.modal', function () {
             console.log("prueba");
-            console.log($("#id_dependencia").val());
-            $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
+            if ($("#id_dependencia").val()) {
+                console.log($("#id_dependencia").val());
+                console.log(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
+                $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
+            } else {
+                $('#detalle-dependencia').modal('toggle');
+            }
         });
     </script>
-
 
 {% endblock %}
