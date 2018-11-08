@@ -263,7 +263,7 @@ class Dependencia(models.Model):
         ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), blank=True, null=True, verbose_name='Subsistema UNAM')
 
     def __str__(self):
-        return "{} :: {}".format(self.institucion_dependencia.nombre, self.nombre_dependencia)
+        return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre, )
 
     def natural_key(self):
         return self.nombre_dependencia
