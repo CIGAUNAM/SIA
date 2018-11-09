@@ -28,10 +28,8 @@ class CursoEspecializacion(models.Model):
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
                                           on_delete=models.DO_NOTHING)
-    # institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='curso_especializacion_tags', blank=True)
 
     def __str__(self):
         return "{} de {}".format(self.tipo, self.nombre)
@@ -49,7 +47,6 @@ class CursoEspecializacion(models.Model):
 class Licenciatura(models.Model):
     carrera = models.ForeignKey(ProgramaLicenciatura, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
     tesis_url = models.URLField(blank=True)
@@ -72,7 +69,6 @@ class Licenciatura(models.Model):
 class Maestria(models.Model):
     programa = models.ForeignKey(ProgramaMaestria, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
     tesis_doc = models.FileField(blank=True)
@@ -96,7 +92,6 @@ class Maestria(models.Model):
 class Doctorado(models.Model):
     programa = models.ForeignKey(ProgramaDoctorado, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
     tesis_doc = models.FileField(blank=True)
@@ -127,7 +122,6 @@ class PostDoctorado(models.Model):
     descripcion = models.TextField(verbose_name='Descripición', blank=True)
     area_conocimiento = models.ForeignKey(AreaConocimiento, related_name='postdoctorado_area_conocimiento',
                                           verbose_name='Área de conocimiento', on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField('Fecha de inicio de postdoctorado')
