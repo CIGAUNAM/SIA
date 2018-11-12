@@ -27,7 +27,6 @@ class CursoDocenciaEscolarizado(models.Model):
                                                          ('MIXTO', 'Mixto'), ('OTRO', 'Otro')))
     nombramiento = models.CharField(max_length=30, choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'),
                                                             ('COLABORADOR', 'Colaborador o Invitado')))
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -53,7 +52,6 @@ class CursoDocenciaExtracurricular(models.Model):
     modalidad = models.CharField(max_length=30, choices=(('', 'Seleccionar modalidad de curso'),
                                                          ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'),
                                                          ('MIXTO', 'Mixto')))
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -111,7 +109,6 @@ class ProgramaEstudio(models.Model):
                                                      ('OTRO', 'Otro')))
     fecha = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 
     def __str__(self):

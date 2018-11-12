@@ -1,5 +1,5 @@
 from django.db import models
-from nucleo.models import User, Institucion, Dependencia, Financiamiento
+from nucleo.models import User, Dependencia, Financiamiento
 from investigacion.models import ProyectoInvestigacion
 from vinculacion.models import RedAcademica
 
@@ -13,7 +13,6 @@ class MovilidadAcademica(models.Model):
                                                     ('SABATICO', 'Sabático')))
     academico = models.ForeignKey(User, related_name='movilidad_academica_academico', on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     actividades = models.TextField()
     fecha_inicio = models.DateField()

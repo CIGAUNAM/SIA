@@ -1,5 +1,5 @@
 from django.db import models
-from nucleo.models import User, Institucion, Dependencia, Cargo
+from nucleo.models import User, Dependencia, Cargo
 from django.urls import reverse
 
 
@@ -63,7 +63,6 @@ class Representacion(models.Model):
 class CargoAcademicoAdministrativo(models.Model):
     cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
@@ -86,7 +85,6 @@ class CargoAcademicoAdministrativo(models.Model):
 class RepresentacionOrganoColegiado(models.Model):
     representacion = models.ForeignKey(Representacion, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
@@ -109,7 +107,6 @@ class ComisionAcademica(models.Model):
     comision_academica = models.ForeignKey(Comision, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
     es_evaluacion = models.BooleanField(default=False)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
@@ -131,7 +128,6 @@ class ComisionAcademica(models.Model):
 class ApoyoTecnico(models.Model):
     actividad_apoyo = models.ForeignKey(ActividadApoyo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
@@ -153,7 +149,6 @@ class ApoyoTecnico(models.Model):
 class ApoyoOtraActividad(models.Model):
     actividad_apoyo = models.ForeignKey(ActividadApoyo, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)

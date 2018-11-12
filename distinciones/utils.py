@@ -138,7 +138,7 @@ class ParticipacionComisionExpertosContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.institucion"},\n' \
+                                    '{"data": "fields.dependencia"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
                                 ']\n' \
                             '});\n' \

@@ -104,7 +104,7 @@ class ParticipacionComisionExpertosJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ParticipacionComisionExpertos.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'institucion', 'fecha_inicio'))
+                                         fields=('nombre', 'dependencia', 'fecha_inicio'))
 
             return HttpResponse(json, content_type='application/json')
         except:

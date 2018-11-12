@@ -7,7 +7,6 @@ from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion
 
 
 class ExperienciaLaboral(models.Model):
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True, on_delete=models.DO_NOTHING)
     cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
@@ -32,11 +31,9 @@ class ExperienciaLaboral(models.Model):
 class LineaInvestigacion(models.Model):
     linea_investigacion = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='linea_investigacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.usuario, self.linea_investigacion)

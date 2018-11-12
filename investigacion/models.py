@@ -52,7 +52,6 @@ class ProyectoInvestigacion(models.Model):
     es_permanente = models.BooleanField(default=False)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     responsables = SortedManyToManyField(User, related_name='proyecto_investigacion_responsables',
                                          verbose_name='Responsables')
