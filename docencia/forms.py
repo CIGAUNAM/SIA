@@ -1,7 +1,7 @@
 from SIA.widgets import *
 from . models import *
 from django import forms
-from nucleo.models import Institucion, Pais, Estado, Ciudad, Editorial, Coleccion, Libro as LibroDocencia
+from nucleo.models import Pais, Estado, Ciudad, Editorial, Coleccion, Libro as LibroDocencia
 from django_select2.forms import Select2MultipleWidget, Select2Widget, ModelSelect2Widget
 
 #
@@ -50,21 +50,11 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
     modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
     nombramiento = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                               choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'), ('COLABORADOR', 'Colaborador o Invitado')), required=True)
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -99,21 +89,11 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
         )
     )
     modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -220,21 +200,11 @@ class ProgramaEstudioForm(forms.ModelForm):
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True, label='Fecha de publicación')
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )

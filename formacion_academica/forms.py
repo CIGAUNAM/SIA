@@ -56,8 +56,7 @@ class LicenciaturaForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -88,8 +87,7 @@ class MaestriaForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -120,8 +118,7 @@ class DoctoradoForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -153,8 +150,7 @@ class PostDoctoradoForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )

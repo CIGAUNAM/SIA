@@ -2,7 +2,6 @@ from SIA.widgets import *
 from . models import *
 
 from django import forms
-from nucleo.models import Institucion
 from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Select2Widget
 
 #
@@ -18,21 +17,11 @@ class MovilidadAcademicaForm(forms.ModelForm):
         )
     )
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -75,8 +64,7 @@ class InvitadoMovilidadForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -103,8 +91,7 @@ class EstanciaMovilidadForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -135,8 +122,7 @@ class SabaticoMovilidadForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )

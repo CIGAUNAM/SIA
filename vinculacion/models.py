@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Revista, Indice, Financiamiento, ProyectoInsvestigacionArbitrado
+from nucleo.models import User, Dependencia, Revista, Indice, Financiamiento, ProyectoInsvestigacionArbitrado
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, LibroInvestigacion, CapituloLibroInvestigacion
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -50,7 +50,6 @@ class ArbitrajeProyectoInvestigacion(models.Model):
     fecha = models.DateField()
     descripcion = models.TextField(blank=True)
     convocatoria = models.CharField(max_length=200)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
@@ -69,7 +68,6 @@ class ArbitrajeProyectoInvestigacion(models.Model):
 class ArbitrajeOtraActividad(models.Model):
     actividad = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
@@ -181,7 +179,6 @@ class OtroProgramaVinculacion(models.Model):
                                                     ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
     descripcion = models.TextField()
     resultados = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 

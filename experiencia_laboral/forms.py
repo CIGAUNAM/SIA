@@ -7,23 +7,12 @@ from django_select2.forms import ModelSelect2Widget
 #
 
 class ExperienciaLaboralForm(forms.ModelForm):
-    institucion = forms.ModelChoiceField(
-        required=True,
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-
-        )
-    )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], queryset=Dependencia.objects.all(),
+            search_fields=['nombre_dependencia__icontains'], queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'institucion': 'institucion'},
         )
     )
     nombramiento = forms.ModelChoiceField(
@@ -35,7 +24,6 @@ class ExperienciaLaboralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    # es_nombramiento_definitivo = forms.BooleanField(label='Es nombramiento definitivo', required=False)
     cargo = forms.ModelChoiceField(
         queryset=Cargo.objects.all(),
         label="Cargo",
@@ -56,21 +44,12 @@ class ExperienciaLaboralForm(forms.ModelForm):
 class LineaInvestigacionForm(forms.ModelForm):
     linea_investigacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Línea de investigación')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Descripción')
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], queryset=Dependencia.objects.all(),
+            search_fields=['nombre_dependencia__icontains'], queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'institucion': 'institucion'}
         )
     )
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')

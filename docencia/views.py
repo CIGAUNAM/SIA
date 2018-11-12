@@ -1,5 +1,5 @@
 from django.http.response import (Http404, HttpResponse)
-from django.views.generic import View
+from django.views.generic import View, DetailView
 from django.core import serializers
 from SIA.utils import *
 from . forms import *
