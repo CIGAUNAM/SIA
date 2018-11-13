@@ -127,56 +127,9 @@
         </div>
     </div>
 
-    <div class="modal fade" id="agregar-dependencia" style="overflow:hidden;" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Agregar dependencia</h4>
-                </div>
-                <div class="modal-body">
-                    <div id="dependencia-modal-body"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include 'modal/modal_dependencia.html' %}
+    {% include 'modal/form_agregar_dependencia.html' %}
 
-    <div class="modal fade" id="detalle-dependencia" style="overflow:hidden;" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Detalle dependencia</h4>
-                </div>
-                <div class="modal-body">
-                    <div id="detalle-dependencia-modal-body"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        $("#agregar-dependencia").on('shown.bs.modal', function () {
-            $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
-        });
-
-        $("#detalle-dependencia").on('shown.bs.modal', function () {
-            console.log("prueba");
-            if ($("#id_dependencia").val()) {
-                console.log($("#id_dependencia").val());
-                console.log(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
-                $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
-            } else {
-                $('#detalle-dependencia-modal-body').html('<div class="alert alert-danger" role="alert">\n' + ' No se seleccionó ningún elemento de la lista de dependencias.\n' + '</div>')
-                setTimeout(function () {
-                    $('#detalle-dependencia').modal('hide');
-                    $('#detalle-dependencia-modal-body').html('')
-                }, 2000);
-            }
-        });
-    </script>
 
 {% endblock %}
 
@@ -305,52 +258,5 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="agregar-dependencia" style="overflow:hidden;" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Agregar dependencia</h4>
-                </div>
-                <div class="modal-body">
-                    <div id="dependencia-modal-body"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="detalle-dependencia" style="overflow:hidden;" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Detalle dependencia</h4>
-                </div>
-                <div class="modal-body">
-                    <div id="detalle-dependencia-modal-body"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        $("#agregar-dependencia").on('shown.bs.modal', function () {
-            $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
-        });
-
-        $("#detalle-dependencia").on('shown.bs.modal', function () {
-            console.log("prueba");
-            if ($("#id_dependencia").val()) {
-                console.log($("#id_dependencia").val());
-                console.log(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
-                $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
-            } else {
-                $('#detalle-dependencia').modal('toggle');
-            }
-        });
-    </script>
 
 {% endblock %}
