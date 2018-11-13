@@ -15,7 +15,7 @@ EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDI
 RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO', 'Artículo')))
 
 
-# Create your models here.
+# Create your models here.   
 
 
 class MemoriaInExtenso(models.Model):

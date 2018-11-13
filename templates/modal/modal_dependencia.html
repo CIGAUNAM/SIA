@@ -1,0 +1,43 @@
+<div class="modal fade" id="agregar-dependencia" style="overflow:hidden;" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Agregar dependencia</h4>
+            </div>
+            <div class="modal-body">
+                <div id="dependencia-modal-body"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detalle-dependencia" style="overflow:hidden;" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Detalle dependencia</h4>
+            </div>
+            <div class="modal-body">
+                <div id="detalle-dependencia-modal-body"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#agregar-dependencia").on('shown.bs.modal', function () {
+        $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
+    });
+
+    $("#detalle-dependencia").on('shown.bs.modal', function () {
+        if ($("#id_dependencia").val()) {
+            $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
+        } else {
+            $('#detalle-dependencia').modal('toggle');
+        }
+    });
+</script>
