@@ -176,7 +176,7 @@ class InstitucionLista(ObjectCreateMixinNucleo, View):
     template_name = 'institucion.html'
 
 
-class InstitucionDetalle(ObjectUpdateMixinNucleo, View):
+class InstitucionDetalle1(ObjectUpdateMixinNucleo, View):
     form_class = InstitucionForm
     model = Institucion
     aux = InstitucionContext.contexto
@@ -191,6 +191,18 @@ class InstitucionEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
+
+class InstitucionAgregar(ObjectModalCreateMixin, View):
+    form_class = InstitucionForm
+    model = Institucion
+    template_name = 'modal/form_agregar_institucion.html'
+
+
+class InstitucionDetalle(ObjectModalUpdateMixin, View):
+    form_class = InstitucionForm
+    model = Institucion
+    template_name = 'modal/form_detalle_institucion.html'
 
 
 class DependenciaJSON(View):

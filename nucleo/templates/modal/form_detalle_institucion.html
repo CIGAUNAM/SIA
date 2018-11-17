@@ -1,9 +1,9 @@
 {% extends 'modal/main_modal.html' %}
 
 {% block form_modal %}
-    <form id="modal_form" action="" method="post">
+    <form id="modal_form_detalle" action="" method="post">
         {% csrf_token %}
-        <p><strong>Nombre de la dependencia:</strong>
+        <p><strong>Nombre de la dependencia detalle:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Nombre de la dependencia. Agregar después del nombre sus siglas entre paréntesis (si tiene siglas),
                por ejemplo: Centro de Investigaciones en Geografía Ambiental (CIGA).">
@@ -56,14 +56,6 @@
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
-                <div class="input-group-addon">
-                <span data-toggle="modal" data-target="#agregar-institucion">
-                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
-                       title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                    </a>
-                </span>
-                </div>
             </div>
         </div>
         </p>
@@ -82,11 +74,9 @@
             </p>
         </div>
 
-        <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
+        <button id="guardar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
     </form>
-
-    {% include 'modal/modal_institucion.html' %}
 
     <script>
         if ($("#id_institucion_dependencia").val() != 1) {
@@ -102,8 +92,11 @@
             }
         });
 
-        $("#modal_form").submit(function (event) {
-            console.log("Handler for .submit() called.");
+
+
+        $("#modal_form_detalle").submit(function (event) {
+            console.log("Handler for .submit() called editar.");
+
             var datos = {
                 nombre_dependencia: $("#id_nombre_dependencia").val(),
                 institucion_dependencia: parseInt($("#id_institucion_dependencia").val()),
@@ -113,12 +106,10 @@
                 datos.subsistema_unam_dependencia = $("#id_subsistema_unam_dependencia").val();
             }
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+            var patchurl = "/nucleo/rest/dependencias/" + $("#id_dependencia").val().toString() + "/";
+            console.log(patchurl);
             $.ajax({
-                type: "POST",
-                url: "/nucleo/rest/dependencias/",
-                dataType: 'json',
-                data: datos,
-                headers: {"X-CSRFToken": $crf_token},
+                type: "PATCH", url: patchurl, dataType: 'json', data: datos, headers: {"X-CSRFToken": $crf_token},
                 error: function (xhr, ajaxOptions, thrownError) {
                     $('#id_subsistema_unam_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').val(null).trigger('change');
@@ -131,11 +122,10 @@
                     $('#id_institucion_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').children('option').remove();
                     $('#d_subsunam').hide('slow');
-                    $('#modal_form').trigger('reset');
+                    $('#modal_form_detalle').trigger('reset');
 
-                    //$('#id_dependencia').focus('change');
                     var nueva_dependencia_institucion = ""
-                    console.log(nueva_dependencia_institucion)
+
                     var insturl = "/nucleo/rest/instituciones/" + data.institucion_dependencia.toString() + "/"
                     $.ajax({
                         url: insturl,
@@ -145,7 +135,8 @@
                             console.log(nueva_dependencia_institucion)
                             var nueva_dependencia = new Option(data.nombre_dependencia + " :: " + nueva_dependencia_institucion, data.id, true, true);
                             $('#id_dependencia').append(nueva_dependencia).trigger('change');
-                            $('#agregar-dependencia').modal('toggle');
+                            $('#detalle-dependencia').modal('toggle');
+                            $('#detalle-dependencia-modal-body').empty();
                             $('#dependencia-modal-body').empty();
                         }
                     });
@@ -156,4 +147,3 @@
     </script>
     {{ modal_form.media.js }}
 {% endblock %}
-
