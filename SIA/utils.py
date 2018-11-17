@@ -1,7 +1,9 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from django.http.response import (Http404, HttpResponse)
+from django.http.response import Http404
 from nucleo.models import User
 from nucleo.forms import *
+from django.http import JsonResponse, HttpResponse
+
 
 from django.contrib import messages
 
@@ -22,6 +24,49 @@ class NucleoObjectCreateMixin:
             return redirect(new_obj)
         else:
             return render(request, self.template_name, {'form': bound_form})
+
+class ObjectModalCreateMixin:
+    form_class = None
+    template_name = ''
+    aux = {}
+
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form': self.form_class})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form': bound_form})
+
+
+class ObjectModalUpdateMixin:
+    form_class = None
+    template_name = ''
+    aux = {}
+
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'modal_form': self.form_class(instance=obj)})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro creado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'modal_form': bound_form})
+
+
 
 
 class ObjectCreateMixinNucleo:
