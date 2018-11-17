@@ -1,7 +1,7 @@
 {% extends 'modal/main_modal.html' %}
 
 {% block form_modal %}
-    <form id="form_dependencia" action="" method="post">
+    <form id="modal_form" action="" method="post">
         {% csrf_token %}
         <p><strong>Nombre de la dependencia:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
@@ -13,14 +13,14 @@
                 <div class="input-group-addon">
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
-                {{ form_dependencia.nombre_dependencia }}
+                {{ modal_form.nombre_dependencia }}
             </div>
         </div>
         </p>
         <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
                                    title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
             <i class="fa fa-question-circle"></i></a></strong>
-            {{ form_dependencia.descripcion_dependencia }}
+            {{ modal_form.descripcion_dependencia }}
         </p>
         <p><strong>Ciudad:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
@@ -31,7 +31,7 @@
                 <div class="input-group-addon">
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
-                {{ form_dependencia.ciudad_text_dependencia }}
+                {{ modal_form.ciudad_text_dependencia }}
             </div>
         </div>
         </p>
@@ -43,7 +43,7 @@
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                {{ form_dependencia.institucion_dependencia }}
+                {{ modal_form.institucion_dependencia }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
                        title="Mostrar los detalles adicionales de la institución.">
@@ -68,7 +68,7 @@
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                    {{ form_dependencia.subsistema_unam_dependencia }}
+                    {{ modal_form.subsistema_unam_dependencia }}
                 </div>
             </div>
             </p>
@@ -79,8 +79,10 @@
     </form>
 
     <script>
+        if ($("#id_institucion_dependencia").val() != 1) {
+            $('#d_subsunam').hide();
+        }
 
-        $('#d_subsunam').hide();
         $("#id_institucion_dependencia").on('change', function () {
             if ($("#id_institucion_dependencia").val() == 1) {
                 $('#d_subsunam').show('slow');
@@ -90,7 +92,7 @@
             }
         });
 
-        $("#form_dependencia").submit(function (event) {
+        $("#modal_form").submit(function (event) {
             console.log("Handler for .submit() called.");
             var datos = {
                 nombre_dependencia: $("#id_nombre_dependencia").val(),
@@ -102,20 +104,24 @@
             }
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
             $.ajax({
-                type: "POST", url: "/nucleo/rest/dependencias/", dataType: 'json', data: datos, headers: {"X-CSRFToken": $crf_token},
+                type: "POST",
+                url: "/nucleo/rest/dependencias/",
+                dataType: 'json',
+                data: datos,
+                headers: {"X-CSRFToken": $crf_token},
                 error: function (xhr, ajaxOptions, thrownError) {
                     $('#id_subsistema_unam_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').children('option').remove();
                     $('#d_subsunam').hide('slow');
-                    $('#form_dependencia').trigger('reset');
+                    $('#modal_form').trigger('reset');
                 },
                 success: function (data) {
                     $('#id_subsistema_unam_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').children('option').remove();
                     $('#d_subsunam').hide('slow');
-                    $('#form_dependencia').trigger('reset');
+                    $('#modal_form').trigger('reset');
 
                     //$('#id_dependencia').focus('change');
                     var nueva_dependencia_institucion = ""
@@ -138,6 +144,6 @@
             event.preventDefault();
         });
     </script>
-    {{ form_dependencia.media.js }}
+    {{ modal_form.media.js }}
 {% endblock %}
 

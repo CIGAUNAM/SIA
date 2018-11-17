@@ -229,50 +229,16 @@ class DependenciaEliminar(View):
             raise Http404
 
 
-class DependenciaAgregar(ObjectCreateMixinNucleo, View):
+class DependenciaAgregar(ObjectModalCreateMixin, View):
     form_class = DependenciaForm
     model = Dependencia
-    aux = DependenciaContext.contexto
-    template_name = 'modal/mod_dependencia.html'
+    template_name = 'modal/form_agregar_dependencia.html'
 
 
-    def get(self, request):
-        try:
-            ref = request.META['HTTP_REFERER']
-            if ref:
-                return render(request, self.template_name, {'form_dependencia': self.form_class})
-        except Exception as e:
-            print(e)
-            return HttpResponse("")
-
-
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save()
-            return JsonResponse(new_obj, safe=False)
-        else:
-            return render(request, self.template_name, {'form_dependencia': bound_form})
-
-class DependenciaDetalle(ObjectUpdateMixinNucleo, View):
+class DependenciaDetalle(ObjectModalUpdateMixin, View):
     form_class = DependenciaForm
     model = Dependencia
-    aux = DependenciaContext.contexto
-    template_name = 'modal/mod_dependencia_detalle.html'
-
-    def get(self, request, pk):
-
-        obj = get_object_or_404(self.model, pk=pk)
-        return render(request, self.template_name, {'form_dependencia': self.form_class(instance=obj), 'aux': self.aux, 'active': 'lista'})
-
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save()
-            messages.success(request, "Registro creado con éxito")
-            return redirect(new_obj)
-        else:
-            return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
+    template_name = 'modal/form_detalle_dependencia.html'
 
 
 class DepartamentoJSON(View):
