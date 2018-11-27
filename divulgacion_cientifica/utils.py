@@ -271,7 +271,7 @@ class ParticipacionEventoDivulgacionContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.split()[0].lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': TObjs,
-                'titulos_tabla': ['Titulo', 'Evento', 'Ambito']}
+                'titulos_tabla': ['Evento', 'Ambito']}
 
 
     tabla_mios =  '<script>\n' \
@@ -285,12 +285,11 @@ class ParticipacionEventoDivulgacionContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.titulo",\n' \
+                                        '"data": "fields.evento",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.evento + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.evento"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -310,12 +309,11 @@ class ParticipacionEventoDivulgacionContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.titulo",\n' \
+                                        '"data": "fields.evento",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.evento + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.evento"},\n' \
                                     '{"data": "fields.ambito"},\n' \
                                 ']\n' \
                             '});\n' \

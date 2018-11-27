@@ -147,11 +147,11 @@ class ParticipacionEventoDivulgacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ParticipacionEventoDivulgacion.objects.exclude(participantes=usuarioid)
+                items = ParticipacionEventoDivulgacion.objects.exclude(autores=usuarioid)
             else:
-                items = ParticipacionEventoDivulgacion.objects.filter(participantes=usuarioid)
+                items = ParticipacionEventoDivulgacion.objects.filter(autores=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'evento', 'ambito'))
+                                         fields=('evento', 'ambito'))
 
             json = json.replace('INSTITUCIONAL', 'Institucional')
             json = json.replace('REGIONAL', 'Regional')

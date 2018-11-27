@@ -75,11 +75,9 @@ class CapituloLibroDivulgacion(models.Model):
 class OrganizacionEventoDivulgacion(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    # responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    # usuario = models.ForeignKey(User, related_name='organizacion_evento_divulgacion_usuario', on_delete=models.DO_NOTHING)
     coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_divulgacion_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
     comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_comite_organizador', verbose_name='Comite organizador')
     ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_ayudantes', verbose_name='Ayudantes')
