@@ -1048,8 +1048,8 @@ class Dashboard(View):
 
                 total_items_year_sum = ParticipacionEventoAcademico.objects.filter(
                     evento__fecha_inicio__year=year).filter(
-                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(participantes__egreso_entidad__year__gt=year)) |
-                     (Q(autores__ingreso_entidad__year__lte=year) & Q(participantes__egreso_entidad=None)))).count()
+                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) |
+                     (Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = ParticipacionEventoAcademico.objects.filter(
                     evento__fecha_inicio__year=year,
