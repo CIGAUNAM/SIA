@@ -144,7 +144,6 @@ class ParticipacionEventoAcademico(models.Model):
     resumen_publicado = models.BooleanField(default=False)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    participantes = models.ManyToManyField(User, related_name='participacion_evento_academico_participantes')
     autores = SortedManyToManyField(User, related_name='participacion_evento_academico_autores', verbose_name='Autores')
 
     def __str__(self):
