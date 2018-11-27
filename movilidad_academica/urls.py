@@ -27,8 +27,8 @@ urlpatterns = [
     url(r'^estancias/(?P<pk>[\w\-]+)/eliminar$', EstanciaMovilidadEliminar.as_view(), name='estancia_eliminar'),
     url(r'^estancias/(?P<pk>[\w\-]+)/$', EstanciaMovilidadDetalle.as_view(), name='estancia_detalle'),
 
-    url(r'^sabaticos/json/', EstanciaMovilidadJSON.as_view(), name='sabatico_lista__json'),
-    url(r'^sabaticos/$', EstanciaMovilidadLista.as_view(), name='sabatico_lista'),
-    url(r'^sabaticos/(?P<pk>[\w\-]+)/eliminar$', EstanciaMovilidadEliminar.as_view(), name='sabatico_eliminar'),
-    url(r'^sabaticos/(?P<pk>[\w\-]+)/$', EstanciaMovilidadDetalle.as_view(), name='sabatico_detalle'),
+    url(r'^sabaticos/json/', SabaticoMovilidadJSON.as_view(), name='sabatico_lista__json'),
+    url(r'^sabaticos/$', SabaticoMovilidadLista.as_view(), name='sabatico_lista'),
+    url(r'^sabaticos/(?P<pk>[\w\-]+)/eliminar$', SabaticoMovilidadEliminar.as_view(), name='sabatico_eliminar'),
+    url(r'^sabaticos/(?P<pk>[\w\-]+)/$', SabaticoMovilidadDetalle.as_view(), name='sabatico_detalle'),
 ]
