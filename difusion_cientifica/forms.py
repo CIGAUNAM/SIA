@@ -210,6 +210,5 @@ class ParticipacionEventoAcademicoForm(forms.ModelForm):
         model = ParticipacionEventoAcademico
         exclude = []
         widgets = {
-            'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
