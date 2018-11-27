@@ -112,7 +112,7 @@ class DireccionTesis(models.Model):
     tutores = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.asesorado, self.grado_academico)
+        return "{} : {}".format(self.titulo, self.asesorado, self.nivel_academico)
 
     def get_absolute_url(self):
         return reverse('direccion_tesis_detalle', kwargs={'pk': self.pk})

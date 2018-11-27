@@ -235,7 +235,7 @@ class ComiteTutoralContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Asesorado', 'Nivel académico', 'Fecha de inicio']}
+                'titulos_tabla': ['Estudiante', 'Nivel académico', 'Fecha de inicio']}
 
 
     tabla_mios =  '<script>\n' \
