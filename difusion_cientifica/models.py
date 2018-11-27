@@ -26,7 +26,6 @@ class MemoriaInExtenso(models.Model):
     pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
     pagina_fin = models.PositiveIntegerField(null=True, blank=True)
     editorial_text = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
-    # editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     issn = models.SlugField(max_length=20, blank=True)
 

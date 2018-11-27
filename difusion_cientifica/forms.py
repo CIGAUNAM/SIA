@@ -19,15 +19,6 @@ class MemoriaInExtensoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
         )
     )
-    editorial = forms.ModelChoiceField(
-        queryset=Editorial.objects.all(),
-        label="Editorial",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Editorial.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     editorial_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                              label='Editorial')
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
@@ -44,26 +35,7 @@ class MemoriaInExtensoForm(forms.ModelForm):
             'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
-"""
-class PrologoLibroForm(forms.ModelForm):
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
-    libro = forms.ModelChoiceField(
-        queryset=Libro.objects.all(),
-        label="Libro",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], 
-            queryset=Libro.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Páginal inicial')
-    pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Páginal final')
-    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
 
-    class Meta:
-        model = PrologoLibro
-        exclude = ['usuario', 'tags', ]
-"""
 
 class ResenaForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right', 'unique': True}), required=True, label='Título de reseña')
