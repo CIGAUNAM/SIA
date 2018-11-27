@@ -142,9 +142,8 @@ class ParticipacionEventoDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = ParticipacionEventoDivulgacion
-        exclude = ['usuario', ]
+        exclude = []
         widgets = {
-            'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'autores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
