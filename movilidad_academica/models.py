@@ -2,7 +2,7 @@ from django.db import models
 from nucleo.models import User, Institucion, Dependencia, Financiamiento
 from investigacion.models import ProyectoInvestigacion
 from vinculacion.models import RedAcademica
-
+from django.urls import reverse
 
 # Create your models here.
 
@@ -49,6 +49,9 @@ class InvitadoMovilidad(models.Model):
     def __str__(self):
         return "{} : {}".format(self.invitado, str(self.dependencia))
 
+    def get_absolute_url(self):
+        return reverse('invitado_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['-fecha_inicio']
         verbose_name = 'Invitado'
@@ -71,6 +74,9 @@ class EstanciaMovilidad(models.Model):
     def __str__(self):
         return "{} : {}".format(str(self.anfitrion), str(self.dependencia))
 
+    def get_absolute_url(self):
+        return reverse('estancia_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['-fecha_inicio']
         verbose_name = 'Estancia'
@@ -92,6 +98,9 @@ class SabaticoMovilidad(models.Model):
 
     def __str__(self):
         return "{} : {}".format(str(self.anfitrion), str(self.dependencia))
+
+    def get_absolute_url(self):
+        return reverse('sabatico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']
