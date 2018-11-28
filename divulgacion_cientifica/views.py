@@ -124,7 +124,7 @@ class OrganizacionEventoDivulgacionLista(ObjectCreateVarMixin, View):
     template_name = 'organizacion_evento_divulgacion.html'
 
 
-class OrganizacionEventoDivulgacionDetalle(ObjectCreateVarMixin, View):
+class OrganizacionEventoDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
