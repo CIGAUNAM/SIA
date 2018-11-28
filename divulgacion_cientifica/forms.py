@@ -100,6 +100,7 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
     numero_asistentes = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
     coordinador_general = forms.ModelChoiceField(
+        required=False,
         queryset=User.objects.all(),
         label="Coordinador general",
         widget=ModelSelect2Widget(
