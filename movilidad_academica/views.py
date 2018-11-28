@@ -190,7 +190,7 @@ class InvitadoMovilidadJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = InvitadoMovilidad.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
-                                         fields=('invitado', 'dependencia', 'pais', 'fecha_inicio'),
+                                         fields=('invitado', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -228,7 +228,7 @@ class EstanciaMovilidadJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = EstanciaMovilidad.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
-                                         fields=('anfitrion', 'dependencia', 'pais', 'fecha_inicio'),
+                                         fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:
@@ -266,7 +266,7 @@ class SabaticoMovilidadJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = SabaticoMovilidad.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
-                                         fields=('anfitrion', 'dependencia', 'pais', 'fecha_inicio'),
+                                         fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:

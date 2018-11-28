@@ -13,7 +13,7 @@ class InvitadoMovilidadContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Invitado', 'Dependencia de procedencia', 'País', 'Fecha de inicio']}
+                'titulos_tabla': ['Invitado', 'Dependencia de procedencia', 'Fecha de inicio']}
 
 
     tabla_mios =  '<script>\n' \
@@ -33,7 +33,6 @@ class InvitadoMovilidadContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.pais"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -55,7 +54,7 @@ class EstanciaMovilidadContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Anfitrión', 'Dependencia de procedencia', 'País', 'Fecha de inicio']}
+                'titulos_tabla': ['Anfitrión', 'Dependencia de procedencia', 'Fecha de inicio']}
 
 
     tabla_mios =  '<script>\n' \
@@ -75,7 +74,6 @@ class EstanciaMovilidadContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.pais"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -97,7 +95,7 @@ class SabaticoMovilidadContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Anfitrión', 'Dependencia de procedencia', 'País', 'Fecha de inicio']}
+                'titulos_tabla': ['Anfitrión', 'Dependencia de procedencia', 'Fecha de inicio']}
 
 
     tabla_mios =  '<script>\n' \
@@ -117,7 +115,6 @@ class SabaticoMovilidadContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \
-                                    '{"data": "fields.pais"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
                                 ']\n' \
                             '});\n' \

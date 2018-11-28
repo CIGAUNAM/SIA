@@ -47,7 +47,7 @@ class InvitadoMovilidad(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {}".format(str(self.invitado), str(self.dependencia))
+        return "{} : {}".format(self.invitado, str(self.dependencia))
 
     class Meta:
         ordering = ['-fecha_inicio']
