@@ -140,11 +140,11 @@ class LibroDocenciaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = Libro.objects.filter(tipo='DOCENCIA').exclude(Q(autores__id__exact=usuarioid) & Q(editores__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='DOCENCIA').exclude(Q(autores__id__exact=usuarioid)
                                                                            & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)
                                                                            & Q(prologo__id__exact=usuarioid))
             else:
-                items = Libro.objects.filter(tipo='DOCENCIA').filter(Q(autores__id__exact=usuarioid) | Q(editores__id__exact=usuarioid)
+                items = Libro.objects.filter(tipo='DOCENCIA').filter(Q(autores__id__exact=usuarioid)
                                                                            | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
                                                                            | Q(prologo__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
