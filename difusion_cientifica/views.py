@@ -154,9 +154,9 @@ class OrganizacionEventoAcademicoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = OrganizacionEventoAcademico.objects.all().exclude(Q(coordinador_general__id__exact=usuarioid) & Q(comite_organizador__id__exact=usuarioid) & Q(ayudantes__id__exact=usuarioid) & Q(apoyo_tecnico__id__exact=usuarioid))
+                items = OrganizacionEventoAcademico.objects.all().exclude(Q(coordinador_general__id__exact=usuarioid) & Q(comite_organizador__id__exact=usuarioid) & Q(ayudantes__id__exact=usuarioid) & Q(apoyo_tecnico__id__exact=usuarioid)).distinct()
             else:
-                items = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general__id__exact=usuarioid) | Q(comite_organizador__id__exact=usuarioid) | Q(ayudantes__id__exact=usuarioid) | Q(apoyo_tecnico__id__exact=usuarioid))
+                items = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general__id__exact=usuarioid) | Q(comite_organizador__id__exact=usuarioid) | Q(ayudantes__id__exact=usuarioid) | Q(apoyo_tecnico__id__exact=usuarioid)).distinct()
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'responsabilidad', 'ambito'))
