@@ -323,6 +323,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibrodivulgacion_set.all > 0 %}[Contiene los capitulos: {% for j in i.capitulolibrodivulgacion_set.all %} {{ j }} {% endfor %}{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -341,6 +342,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibrodivulgacion_set.all > 0 %}[Contiene los capitulos: {% for j in i.capitulolibrodivulgacion_set.all %} {{ j }} {% endfor %}{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -360,6 +362,7 @@
                 {{ i.pais.nombre }}.
                 {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibrodivulgacion_set.all > 0 %}[Contiene los capitulos: {% for j in i.capitulolibrodivulgacion_set.all %} {{ j }} {% endfor %}{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -378,6 +381,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibrodivulgacion_set.all > 0 %}[Contiene los capitulos: {% for j in i.capitulolibrodivulgacion_set.all %} {{ j }} {% endfor %}{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -396,6 +400,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibrodivulgacion_set.all > 0 %}[Contiene los capitulos: {% for j in i.capitulolibrodivulgacion_set.all %} {{ j }} {% endfor %}{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -414,6 +419,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibrodivulgacion_set.all > 0 %}[Contiene los capitulos: {% for j in i.capitulolibrodivulgacion_set.all %} {{ j }} {% endfor %}{% endif %}
             </li>
         {% endfor %}
     </ol>
