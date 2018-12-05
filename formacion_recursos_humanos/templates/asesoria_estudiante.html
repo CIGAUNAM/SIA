@@ -153,9 +153,23 @@
         </div>
     </div>
     </p>
+    <p><strong>Proyecto externo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del proyecto en el que colaboró el estudiante, llenar este campo solo si se trata de un proyecto externo no institucional.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.proyecto_externo }}
+        </div>
+    </div>
+    </p>
     <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto relacionado con la asesorìa en caso de aplicar alguno.">
+           title="Proyecto institucional en el colaboró el estudiante, si no se trata de colaboración en proyecto institucional, llenar el campo de proyecto externo.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -276,46 +290,64 @@
 
 
         $("#id_nivel_academico").on('change', function () {
-                    if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
-                        $('#d_programa_licenciatura').show("slow");
-                        $('#id_programa_licenciatura').attr("required", "true");
-                        $('#id_programa_maestria').val(null).trigger("change");
-                        $('#d_programa_maestria').hide("slow");
-                        $('#id_programa_maestria').attr("required", null);
-                        $('#id_programa_doctorado').val(null).trigger("change");
-                        $('#d_programa_doctorado').hide("slow");
-                        $('#id_programa_doctorado').attr("required", null);
-                    } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
-                        $('#id_programa_licenciatura').val(null).trigger("change");
-                        $('#d_programa_licenciatura').hide("slow");
-                        $('#id_programa_licenciatura').attr("required", null);
-                        $('#d_programa_maestria').show("slow");
-                        $('#id_programa_maestria').attr("required", "true");
-                        $('#id_programa_doctorado').val(null).trigger("change");
-                        $('#d_programa_doctorado').hide("slow");
-                        $('#id_programa_doctorado').attr("required", null);
-                    } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
-                        $('#id_programa_licenciatura').val(null).trigger("change");
-                        $('#d_programa_licenciatura').hide("slow");
-                        $('#id_programa_licenciatura').attr("required", null);
-                        $('#id_programa_maestria').val(null).trigger("change");
-                        $('#d_programa_maestria').hide("slow");
-                        $('#id_programa_maestria').attr("required", null);
-                        $('#d_programa_doctorado').show("slow");
-                        $('#id_programa_doctorado').attr("required", "true");
-                    } else {
-                        $('#d_programa_licenciatura').show("slow");
-                        $('#d_programa_maestria').show("slow");
-                        $('#d_programa_doctorado').show("slow");
-                    }
+                if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
+                    $('#d_programa_licenciatura').show("slow");
+                    $('#id_programa_licenciatura').attr("required", "true");
+                    $('#id_programa_maestria').val(null).trigger("change");
+                    $('#d_programa_maestria').hide("slow");
+                    $('#id_programa_maestria').attr("required", null);
+                    $('#id_programa_doctorado').val(null).trigger("change");
+                    $('#d_programa_doctorado').hide("slow");
+                    $('#id_programa_doctorado').attr("required", null);
+                } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
+                    $('#id_programa_licenciatura').val(null).trigger("change");
+                    $('#d_programa_licenciatura').hide("slow");
+                    $('#id_programa_licenciatura').attr("required", null);
+                    $('#d_programa_maestria').show("slow");
+                    $('#id_programa_maestria').attr("required", "true");
+                    $('#id_programa_doctorado').val(null).trigger("change");
+                    $('#d_programa_doctorado').hide("slow");
+                    $('#id_programa_doctorado').attr("required", null);
+                } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
+                    $('#id_programa_licenciatura').val(null).trigger("change");
+                    $('#d_programa_licenciatura').hide("slow");
+                    $('#id_programa_licenciatura').attr("required", null);
+                    $('#id_programa_maestria').val(null).trigger("change");
+                    $('#d_programa_maestria').hide("slow");
+                    $('#id_programa_maestria').attr("required", null);
+                    $('#d_programa_doctorado').show("slow");
+                    $('#id_programa_doctorado').attr("required", "true");
+                } else {
+                    $('#d_programa_licenciatura').show("slow");
+                    $('#d_programa_maestria').show("slow");
+                    $('#d_programa_doctorado').show("slow");
                 }
+            }
         );
+
+        $("#id_proyecto_externo").on('change', function () {
+            if ($("#id_proyecto_externo").val()) {
+                $("#id_proyecto").val(null).trigger('change');
+                $("#id_proyecto").prop('disabled', true);
+            } else {
+                $("#id_proyecto").prop('disabled', false);
+            }
+        });
+        $("#id_proyecto").on('change', function () {
+            if ($("#id_proyecto").val()) {
+                $("#id_proyecto_externo").val(null).trigger('change');
+                $("#id_proyecto_externo").prop('disabled', true);
+            } else {
+                $("#id_proyecto_externo").prop('disabled', false);
+            }
+        });
+
     </script>
 
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Asesorado:</strong>
+    <p><strong>Asesorado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Persona que recibe la asesoría.">
             <i class="fa fa-question-circle"></i>
@@ -467,9 +499,23 @@
         </div>
     </div>
     </p>
+    <p><strong>Proyecto externo:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre del proyecto en el que colaboró el estudiante, llenar este campo solo si se trata de un proyecto externo no institucional.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.proyecto_externo }}
+        </div>
+    </div>
+    </p>
     <p><strong>Proyecto:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto relacionado con la asesorìa en caso de aplicar alguno.">
+           title="Proyecto institucional en el colaboró el estudiante, si no se trata de colaboración en proyecto institucional, llenar el campo de proyecto externo.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -604,40 +650,66 @@
         }
 
         $("#id_nivel_academico").on('change', function () {
-                    if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
-                        $('#d_programa_licenciatura').show("slow");
-                        $('#id_programa_licenciatura').attr("required", "true");
-                        $('#id_programa_maestria').val(null).trigger("change");
-                        $('#d_programa_maestria').hide("slow");
-                        $('#id_programa_maestria').attr("required", null);
-                        $('#id_programa_doctorado').val(null).trigger("change");
-                        $('#d_programa_doctorado').hide("slow");
-                        $('#id_programa_doctorado').attr("required", null);
-                    } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
-                        $('#id_programa_licenciatura').val(null).trigger("change");
-                        $('#d_programa_licenciatura').hide("slow");
-                        $('#id_programa_licenciatura').attr("required", null);
-                        $('#d_programa_maestria').show("slow");
-                        $('#id_programa_maestria').attr("required", "true");
-                        $('#id_programa_doctorado').val(null).trigger("change");
-                        $('#d_programa_doctorado').hide("slow");
-                        $('#id_programa_doctorado').attr("required", null);
-                    } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
-                        $('#id_programa_licenciatura').val(null).trigger("change");
-                        $('#d_programa_licenciatura').hide("slow");
-                        $('#id_programa_licenciatura').attr("required", null);
-                        $('#id_programa_maestria').val(null).trigger("change");
-                        $('#d_programa_maestria').hide("slow");
-                        $('#id_programa_maestria').attr("required", null);
-                        $('#d_programa_doctorado').show("slow");
-                        $('#id_programa_doctorado').attr("required", "true");
-                    } else {
-                        $('#d_programa_licenciatura').show("slow");
-                        $('#d_programa_maestria').show("slow");
-                        $('#d_programa_doctorado').show("slow");
-                    }
+                if ($("#id_nivel_academico").val() == 'LICENCIATURA') {
+                    $('#d_programa_licenciatura').show("slow");
+                    $('#id_programa_licenciatura').attr("required", "true");
+                    $('#id_programa_maestria').val(null).trigger("change");
+                    $('#d_programa_maestria').hide("slow");
+                    $('#id_programa_maestria').attr("required", null);
+                    $('#id_programa_doctorado').val(null).trigger("change");
+                    $('#d_programa_doctorado').hide("slow");
+                    $('#id_programa_doctorado').attr("required", null);
+                } else if ($("#id_nivel_academico").val() == 'MAESTRIA') {
+                    $('#id_programa_licenciatura').val(null).trigger("change");
+                    $('#d_programa_licenciatura').hide("slow");
+                    $('#id_programa_licenciatura').attr("required", null);
+                    $('#d_programa_maestria').show("slow");
+                    $('#id_programa_maestria').attr("required", "true");
+                    $('#id_programa_doctorado').val(null).trigger("change");
+                    $('#d_programa_doctorado').hide("slow");
+                    $('#id_programa_doctorado').attr("required", null);
+                } else if ($("#id_nivel_academico").val() == 'DOCTORADO') {
+                    $('#id_programa_licenciatura').val(null).trigger("change");
+                    $('#d_programa_licenciatura').hide("slow");
+                    $('#id_programa_licenciatura').attr("required", null);
+                    $('#id_programa_maestria').val(null).trigger("change");
+                    $('#d_programa_maestria').hide("slow");
+                    $('#id_programa_maestria').attr("required", null);
+                    $('#d_programa_doctorado').show("slow");
+                    $('#id_programa_doctorado').attr("required", "true");
+                } else {
+                    $('#d_programa_licenciatura').show("slow");
+                    $('#d_programa_maestria').show("slow");
+                    $('#d_programa_doctorado').show("slow");
                 }
+            }
         );
+
+        if ($("#id_proyecto_externo").val()) {
+            $("#id_proyecto").prop('disabled', true);
+        }
+        if ($("#id_proyecto").val()) {
+            $("#id_proyecto_externo").prop('disabled', true);
+        }
+
+        $("#id_proyecto_externo").on('change', function () {
+            if ($("#id_proyecto_externo").val()) {
+                $("#id_proyecto").val(null).trigger('change');
+                $("#id_proyecto").prop('disabled', true);
+            } else {
+                $("#id_proyecto").prop('disabled', false);
+            }
+        });
+        $("#id_proyecto").on('change', function () {
+            if ($("#id_proyecto").val()) {
+                $("#id_proyecto_externo").val(null).trigger('change');
+                $("#id_proyecto_externo").prop('disabled', true);
+            } else {
+                $("#id_proyecto_externo").prop('disabled', false);
+            }
+        });
     </script>
+
+
 
 {% endblock %}

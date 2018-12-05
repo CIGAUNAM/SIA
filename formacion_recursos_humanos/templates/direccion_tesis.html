@@ -253,7 +253,7 @@
 
     <script>
         $(function () {
-            $("#id_director").val({{ request.user.id }}).trigger('change')
+            $("#id_director").val('{{ request.user.id }}').trigger('change')
             $("#id_tutores").val("{{ request.user.id }}")
         });
     </script>
