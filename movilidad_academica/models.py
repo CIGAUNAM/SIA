@@ -44,6 +44,7 @@ class InvitadoMovilidad(models.Model):
     intercambio_unam = models.BooleanField(default=False)
     financiamiento = models.CharField(max_length=50, choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'), ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
     redes_academicas = models.ManyToManyField(RedAcademica, blank=True)
+    proyecto = models.CharField(max_length=255, blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
