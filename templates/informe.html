@@ -316,12 +316,10 @@
         {% for i in libros_investigacion_nacionales_publicados %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
-                {{ i.pais.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
@@ -336,14 +334,12 @@
         {% for i in libros_investigacion_nacionales_enprensa %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
                 {{ i.pais.nombre }}.
-                {{ i.pais.nombre }}.
-                {{ i.numero_paginas }}.
+                p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
             </li>
         {% endfor %}
@@ -375,12 +371,10 @@
         {% for i in libros_investigacion_internacionales_publicados %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
-                {{ i.pais.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
@@ -395,12 +389,10 @@
         {% for i in libros_investigacion_internacionales_enprensa %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
-                {{ i.pais.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
@@ -415,10 +407,9 @@
         {% for i in libros_investigacion_internacionales_aceptados %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
