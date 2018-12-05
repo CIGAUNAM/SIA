@@ -179,6 +179,54 @@
         </div>
     </div>
     </p>
+    <p><strong>Director de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.director }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Co-director de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Co-director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.codirector }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
     <p><strong>Tutores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tutores o directores de la tesis. En caso de haber más de uno, el primero seleccionado es el director pricipal, el segudo, co-director, etc. Es decir, el orden de selección representa el orden de dirección.">
@@ -202,6 +250,13 @@
         </div>
     </div>
     </p>
+
+    <script>
+        $(function () {
+            $("#id_director").val({{ request.user.id }}).trigger('change')
+            $("#id_tutores").val("{{ request.user.id }}")
+        });
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
@@ -383,7 +438,55 @@
         </div>
     </div>
     </p>
-        <p><strong>Tutores:</strong>
+    <p><strong>Director de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.director }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Co-director de tesis:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Co-director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.codirector }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Tutores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tutores o directores de la tesis. En caso de haber más de uno, el primero seleccionado es el director pricipal, el segudo, co-director, etc. Es decir, el orden de selección representa el orden de dirección.">
             <i class="fa fa-question-circle"></i></a>
