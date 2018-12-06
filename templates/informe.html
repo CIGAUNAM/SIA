@@ -910,7 +910,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_nacionales_invitacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
@@ -924,7 +924,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_nacionales_participacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
@@ -938,7 +938,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_internacionales_invitacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
@@ -952,7 +952,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_internacionales_participacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
