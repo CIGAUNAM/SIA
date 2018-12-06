@@ -968,7 +968,7 @@
             <li>
                 {{ i.evento.tipo.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}.
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
-                Responsabilidad: {{ i.get_responsabilidad_display }}. Ámbito {{ i.get_ambito_display|lower }}.
+                {% if coordinador_general %} Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count > 0 %}{% for organizador in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ organizador }}{% endfor %}. {% endif %} Ámbito {{ i.get_ambito_display|lower }}.
             </li>
         {% endfor %}
     </ol>
