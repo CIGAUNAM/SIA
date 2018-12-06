@@ -272,9 +272,9 @@ class ProyectoInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ProyectoInvestigacion.objects.all().exclude(Q(responsables__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid) & Q(tecnicos__id__exact=usuarioid))
+                items = ProyectoInvestigacion.objects.all().exclude(Q(responsables__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid) & Q(tecnicos__id__exact=usuarioid)).distinct()
             else:
-                items = ProyectoInvestigacion.objects.filter(Q(responsables__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid) | Q(tecnicos__id__exact=usuarioid))
+                items = ProyectoInvestigacion.objects.filter(Q(responsables__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid) | Q(tecnicos__id__exact=usuarioid)).distinct()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'status', 'clasificacion', 'modalidad'))
 
