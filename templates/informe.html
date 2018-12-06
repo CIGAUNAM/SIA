@@ -299,13 +299,10 @@
                 {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
                 (Agradecimiento {% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento.author_name }}{% endfor %}).
                 {{ i.get_status_display }}
-
             </li>
         {% endfor %}
     </ol>
 {% endif %}
-
-
 
 
 <h3>Libros publicados</h3>
@@ -606,7 +603,17 @@
 <h3>Artículos en extenso en memorias de congresos</h3>
 
 <h4>Artículos en extenso en memorias de congresos nacionales</h4>
-<p>falta</p>
+{% if articulos_inextenso_memorias_nacionales %}
+    <ol>
+        {% for i in articulos_inextenso_memorias_nacionales %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                ({{ i.evento.fecha_inicio.year }}). {{ i.nombre }}. {{ i.evento.nombre }}.
+                {{ i.editorial_text }}. {{ i.evento.ciudad.nombre }}. {{ i.evento.pais.nombre }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 <h4>Artículos en extenso en memorias de congresos internacionales</h4>
 <p>falta</p>
