@@ -323,7 +323,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
-                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -344,7 +344,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
-                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -364,7 +364,7 @@
                 {{ i.pais.nombre }}.
                 {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
-                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -383,7 +383,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
-                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -402,7 +402,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
-                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}{% endif %}            </li>
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}            </li>
         {% endfor %}
     </ol>
 {% endif %}
@@ -420,7 +420,7 @@
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
-                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
