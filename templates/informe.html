@@ -616,8 +616,17 @@
 {% endif %}
 
 <h4>Artículos en extenso en memorias de congresos internacionales</h4>
-<p>falta</p>
-
+{% if articulos_inextenso_memorias_internacionales %}
+    <ol>
+        {% for i in articulos_inextenso_memorias_internacionales %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                ({{ i.evento.fecha_inicio.year }}). {{ i.nombre }}. {{ i.evento.nombre }}.
+                {{ i.editorial_text }}. {{ i.evento.ciudad.nombre }}. {{ i.evento.pais.nombre }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 
 <h3>Artículos de divulgación (no dirigidos a pares)</h3>
