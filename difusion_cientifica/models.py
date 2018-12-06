@@ -53,7 +53,6 @@ class Resena(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
-    # usuario = models.ForeignKey(User, related_name='resena_autor', on_delete=models.DO_NOTHING)
     autores = SortedManyToManyField(User, related_name='resena_autores', verbose_name='Autores')
 
     def __str__(self):

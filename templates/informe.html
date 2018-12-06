@@ -823,7 +823,7 @@
     <ol>
         {% for i in resenas %}
             <li>
-                {{ i.usuario }}. {{ i.fecha.year }}. "{{ i.titulo }}".
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.fecha.year }}. "{{ i.titulo }}".
                 En {% if i.articulo_resenado.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.articulo_resenado.nombre }}.
                 {{ i.medio_divulgacion.canal }}. {{ i.fecha }}. {{ i.usuario }}
             </li>
