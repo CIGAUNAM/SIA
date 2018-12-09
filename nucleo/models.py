@@ -152,9 +152,6 @@ class GradoAcademico(models.Model):
 
 
 class User(AbstractUser):
-
-
-
     grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.PROTECT)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
     tipo = models.CharField(max_length=30, blank=True, null=True, choices=(
@@ -225,58 +222,53 @@ class InvestigadorInvitado(models.Model):
 
 
 class Institucion(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
+    nombre_institucion = models.CharField(max_length=255, unique=True)
+    descripcion_institucion = models.TextField(blank=True)
+    clasificacion_institucion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
+    pais_institucion = models.ForeignKey(Pais, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre_institucion
 
     def natural_key(self):
-        return self.nombre
+        return self.nombre_institucion
 
     def get_absolute_url(self):
         return reverse('institucion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['nombre_institucion']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
 
 
 class Dependencia(models.Model):
-    nombre = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
-    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
-    subsistema_unam = models.CharField(max_length=50, choices=(
-        ('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'),
+    nombre_dependencia = models.CharField(max_length=255)
+    descripcion_dependencia = models.TextField(blank=True)
+    institucion_dependencia = models.ForeignKey(Institucion, on_delete=models.PROTECT)
+    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT, blank=True, null=True)
+    ciudad_text_dependencia = models.CharField(max_length=255)
+    subsistema_unam_dependencia = models.CharField(max_length=50, choices=(
+        ('', 'Seleccionar Subsistema UNAM'),
         ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
         ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
         ('HUMANIDADES', 'Subsistema de Humanidades'),
         ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
         ('ESCUELAS', 'Facultades y Escuelas'),
-        ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
-        ('NO', 'No')), blank=True, null=True, verbose_name='Subsistema UNAM')
+        ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), blank=True, null=True, verbose_name='Subsistema UNAM')
 
     def __str__(self):
-        return "{} :: {}".format(self.institucion.nombre, self.nombre)
+        return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre_institucion, )
 
     def natural_key(self):
-        return self.nombre
+        return self.nombre_dependencia
 
     def get_absolute_url(self):
         return reverse('dependencia_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        unique_together = ('nombre', 'institucion')
-        ordering = ['nombre']
+        unique_together = ('nombre_dependencia', 'institucion_dependencia')
+        ordering = ['nombre_dependencia']
 
 
 class Departamento(models.Model):

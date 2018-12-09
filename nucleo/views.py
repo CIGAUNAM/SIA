@@ -1,10 +1,6 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
 
-from nucleo.models import *
-from nucleo.serializers import *
 from rest_framework import generics
-from . permissions import IsOwnerOrReadOnly, UserListReadOnly, IsAdminUserOrReadOnly
+from . permissions import UserListReadOnly, IsAdminUserOrReadOnly
 from rest_framework import permissions
 from django.core import serializers
 from django.views.generic import View
@@ -14,7 +10,12 @@ from SIA.utils import *
 from . forms import *
 from . utils import *
 from . models import *
+from . serializers import *
 
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
 
 def inicio(request):
     return render(request=request, context=None, template_name='dashboard.html')
@@ -175,7 +176,7 @@ class InstitucionLista(ObjectCreateMixinNucleo, View):
     template_name = 'institucion.html'
 
 
-class InstitucionDetalle(ObjectUpdateMixinNucleo, View):
+class InstitucionDetalle1(ObjectUpdateMixinNucleo, View):
     form_class = InstitucionForm
     model = Institucion
     aux = InstitucionContext.contexto
@@ -192,13 +193,25 @@ class InstitucionEliminar(View):
             raise Http404
 
 
+class InstitucionAgregar(ObjectModalCreateMixin, View):
+    form_class = InstitucionForm
+    model = Institucion
+    template_name = 'modal/form_agregar_institucion.html'
+
+
+class InstitucionDetalle(ObjectModalUpdateMixin, View):
+    form_class = InstitucionForm
+    model = Institucion
+    template_name = 'modal/form_detalle_institucion.html'
+
+
 class DependenciaJSON(View):
     def get(self, request):
         try:
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Dependencia.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'institucion'))
+                                         fields=('nombre_dependencia', 'institucion_dependencia'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -211,7 +224,7 @@ class DependenciaLista(ObjectCreateMixinNucleo, View):
     template_name = 'dependencia.html'
 
 
-class DependenciaDetalle(ObjectUpdateMixinNucleo, View):
+class DependenciaDetalle1(ObjectUpdateMixinNucleo, View):
     form_class = DependenciaForm
     model = Dependencia
     aux = DependenciaContext.contexto
@@ -228,10 +241,21 @@ class DependenciaEliminar(View):
             raise Http404
 
 
+class DependenciaAgregar(ObjectModalCreateMixin, View):
+    form_class = DependenciaForm
+    model = Dependencia
+    template_name = 'modal/form_agregar_dependencia.html'
+
+
+class DependenciaDetalle(ObjectModalUpdateMixin, View):
+    form_class = DependenciaForm
+    model = Dependencia
+    template_name = 'modal/form_detalle_dependencia.html'
+
+
 class DepartamentoJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = Departamento.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'dependencia'))
@@ -1142,69 +1166,6 @@ class ProyectoArbitradoJSON(View):
             raise Http404
 
 
-"""
-
-class ProyectoArbitradoLista(ObjectCreateMixinNucleo, View):
-    form_class = ProyectoInvestigacionArbitradoForm
-    model = ProyectoInsvestigacionArbitrado
-    aux = ProyectoInvestigacionArbitradoContext.contexto
-    template_name = 'proyecto_investigacion_arbitrado.html'
-
-
-class ProyectoArbitradoDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ProyectoInvestigacionArbitradoForm
-    model = ProyectoInsvestigacionArbitrado
-    aux = ProyectoInvestigacionArbitradoContext.contexto
-    template_name = 'proyecto_investigacion_arbitrado.html'
-
-
-class ProyectoArbitradoEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(ProyectoInsvestigacionArbitrado, pk=pk)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
-class ConvocatoriaArbitrajeJSON(View):
-    def get(self, request):
-        try:
-            #usuarioid = User.objects.get(username=request.user.username).id
-            items = ConvocatoriaArbitraje.objects.all()
-            json = ConvocatoriaArbitraje.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre'))
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class ConvocatoriaArbitrajeLista(ObjectCreateMixinNucleo, View):
-    form_class = ConvocatoriaArbitrajeForm
-    model = ConvocatoriaArbitraje
-    aux = ConvocatoriaArbitrajeContext.contexto
-    template_name = 'simple.html'
-
-
-class ConvocatoriaArbitrajeDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ConvocatoriaArbitrajeForm
-    model = ConvocatoriaArbitraje
-    aux = ConvocatoriaArbitrajeContext.contexto
-    template_name = 'simple.html'
-
-
-class ConvocatoriaArbitrajeEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(Asignatura, pk=pk)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-"""
-
 
 
 
@@ -1267,22 +1228,22 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
 
 
-class InstitucionList(generics.ListCreateAPIView):
+class RESTInstitucionLista(generics.ListCreateAPIView):
     queryset = Institucion.objects.all()
     serializer_class = InstitucionSerializer
 
-class InstitucionDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+class RESTInstitucionDetalle(generics.RetrieveUpdateDestroyAPIView):
     queryset = Institucion.objects.all()
     serializer_class = InstitucionSerializer
 
 
-class DependenciaList(generics.ListCreateAPIView):
+class RESTDependenciaLista(generics.ListCreateAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Dependencia.objects.all()
     serializer_class = DependenciaSerializer
 
-class DependenciaDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+class RESTDependenciaDetalle(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Dependencia.objects.all()
     serializer_class = DependenciaSerializer
 

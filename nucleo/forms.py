@@ -72,7 +72,7 @@ class CiudadForm(forms.ModelForm):
 
 
 class InstitucionForm(forms.ModelForm):
-    pais = forms.ModelChoiceField(
+    pais_institucion = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
         widget=ModelSelect2Widget(
@@ -81,27 +81,7 @@ class InstitucionForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais': 'pais'},
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    clasificacion = forms.ChoiceField(
+    clasificacion_institucion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'ENTIDAD_CLASIFICACION', ), required=True)
 
@@ -109,69 +89,38 @@ class InstitucionForm(forms.ModelForm):
         model = Institucion
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre_institucion': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion_institucion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
 class DependenciaForm(forms.ModelForm):
-    institucion = forms.ModelChoiceField(
+    institucion_dependencia = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    pais = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="País",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Pais.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais': 'pais'},
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    clasificacion = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'ENTIDAD_CLASIFICACION', ), required=True)
 
-    subsistema_unam = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                                        choices=(('', 'Seleccionar Subsistema UNAM (sólo si se trata de una dependencia perteneciente a la UNAM)'), ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+    subsistema_unam_dependencia = forms.TypedChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right', 'data-placeholder': 'Seleccione el subsistema de la UNAM al que pertenece, si no pertenece a ninguno de los listados no seleccionar ninguno'}),
+                                        choices=(('', 'Seleccionar Subsistema UNAM'),
+                                                 ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
                                                  ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
                                                  ('HUMANIDADES', 'Subsistema de Humanidades'),
                                                  ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
                                                  ('ESCUELAS', 'Facultades y Escuelas'),
-                                                 ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional'),
-                                                 ('NO', 'No')), required=False)
+                                                 ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), required=False)
 
     class Meta:
         model = Dependencia
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre de la dependencia y sus siglas entre parentesis (si oficialmente las tiene)'}),
+            'ciudad_text_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
+            'descripcion_dependencia': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -264,7 +213,7 @@ class FinanciamientoForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -304,7 +253,7 @@ class BecaForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -486,7 +435,7 @@ class DistincionForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -733,7 +682,7 @@ class ProyectoInvestigacionArbitradoForm(forms.ModelForm):
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )

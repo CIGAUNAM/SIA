@@ -1,0 +1,44 @@
+<div class="modal fade" id="agregar-institucion" style="overflow:hidden;" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Agregar institucion</h4>
+            </div>
+            <div class="modal-body">
+                <div id="institucion-modal-body"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detalle-institucion" style="overflow:hidden;" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Detalle institucion</h4>
+            </div>
+            <div class="modal-body">
+                <div id="detalle-institucion-modal-body"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#agregar-institucion").on('shown.bs.modal', function () {
+        alert("institucion")
+        $('#institucion-modal-body').load('/nucleo/instituciones/agregar/');
+    });
+
+    $("#detalle-institucion").on('shown.bs.modal', function () {
+        if ($("#id_institucion").val()) {
+            $('#detalle-institucion-modal-body').load(('/nucleo/instituciones/' + $("#id_institucion").val().toString()) + "/");
+        } else {
+            $('#detalle-institucion').modal('toggle');
+        }
+    });
+</script>
