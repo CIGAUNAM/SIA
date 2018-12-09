@@ -1251,7 +1251,7 @@
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 1,
-    "dependencia": 2,
+    "dependencia": 4,
     "fecha_inicio": "2017-04-03",
     "fecha_fin": "2017-09-04",
     "total_horas": 32,
@@ -1271,7 +1271,7 @@
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 1,
-    "dependencia": 3,
+    "dependencia": 4,
     "fecha_inicio": "2016-03-01",
     "fecha_fin": "2016-04-04",
     "total_horas": 24,
@@ -1287,11 +1287,11 @@
     "licenciatura": null,
     "maestria": 30,
     "doctorado": null,
-    "asignatura": 23,
+    "asignatura": 93,
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 1,
-    "dependencia": 20,
+    "dependencia": 4,
     "fecha_inicio": "2016-04-04",
     "fecha_fin": "2016-05-04",
     "total_horas": 32,
@@ -2231,7 +2231,7 @@
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 269,
-    "dependencia": 2,
+    "dependencia": 739,
     "fecha_inicio": "2016-02-01",
     "fecha_fin": "2016-05-02",
     "total_horas": 64,
@@ -2251,7 +2251,7 @@
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 269,
-    "dependencia": 2,
+    "dependencia": 739,
     "fecha_inicio": "2017-02-01",
     "fecha_fin": "2017-05-02",
     "total_horas": 64,
@@ -2271,7 +2271,7 @@
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 269,
-    "dependencia": 1,
+    "dependencia": 739,
     "fecha_inicio": "2015-08-03",
     "fecha_fin": "2015-11-09",
     "total_horas": 64,
@@ -7972,7 +7972,7 @@
     "nombramiento": "TITULAR",
     "institucion": 269,
     "dependencia": 558,
-    "fecha_inicio": "2018-06-07",
+    "fecha_inicio": "2015-03-17",
     "fecha_fin": "2015-03-20",
     "total_horas": 16,
     "periodo_academico": "2015",
@@ -9532,10 +9532,10 @@
     "nombramiento": "TITULAR",
     "institucion": 355,
     "dependencia": 556,
-    "fecha_inicio": "1900-01-01",
-    "fecha_fin": "1900-01-01",
+    "fecha_inicio": "2017-08-01",
+    "fecha_fin": "2017-12-15",
     "total_horas": 64,
-    "periodo_academico": "1900",
+    "periodo_academico": "2018-1",
     "usuario": 43
   }
 },
@@ -10731,7 +10731,7 @@
     "modalidad": "PRESENCIAL",
     "nombramiento": "COLABORADOR",
     "institucion": 269,
-    "dependencia": 628,
+    "dependencia": 739,
     "fecha_inicio": "2018-01-29",
     "fecha_fin": "2018-05-25",
     "total_horas": 64,
@@ -11007,11 +11007,11 @@
     "licenciatura": 16,
     "maestria": null,
     "doctorado": null,
-    "asignatura": 130,
+    "asignatura": 511,
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 278,
-    "dependencia": 600,
+    "dependencia": 706,
     "fecha_inicio": "2018-01-29",
     "fecha_fin": "2018-06-15",
     "total_horas": 64,
@@ -11027,13 +11027,13 @@
     "licenciatura": 27,
     "maestria": null,
     "doctorado": null,
-    "asignatura": 21,
+    "asignatura": 511,
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 278,
-    "dependencia": 600,
-    "fecha_inicio": "2018-02-26",
-    "fecha_fin": "2018-06-15",
+    "dependencia": 706,
+    "fecha_inicio": "2017-01-30",
+    "fecha_fin": "2017-06-16",
     "total_horas": 64,
     "periodo_academico": "64",
     "usuario": 54
@@ -11047,16 +11047,4256 @@
     "licenciatura": null,
     "maestria": 67,
     "doctorado": null,
-    "asignatura": 29,
+    "asignatura": 394,
     "modalidad": "PRESENCIAL",
     "nombramiento": "TITULAR",
     "institucion": 278,
-    "dependencia": 600,
+    "dependencia": 706,
     "fecha_inicio": "2018-02-05",
     "fecha_fin": "2018-06-22",
     "total_horas": 64,
     "periodo_academico": "2018-2",
     "usuario": 54
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 555,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 52,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 462,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2007-02-01",
+    "fecha_fin": "2007-07-31",
+    "total_horas": 120,
+    "periodo_academico": "2007-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 556,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 52,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 463,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2006-09-01",
+    "fecha_fin": "2007-01-31",
+    "total_horas": 140,
+    "periodo_academico": "2006-2007",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 557,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 464,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2006-09-01",
+    "fecha_fin": "2006-12-31",
+    "total_horas": 90,
+    "periodo_academico": "2006-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 558,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 316,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2006-02-13",
+    "fecha_fin": "2006-03-17",
+    "total_horas": 140,
+    "periodo_academico": "2006-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 559,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 463,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2005-09-04",
+    "fecha_fin": "2006-01-23",
+    "total_horas": 140,
+    "periodo_academico": "2005-2006",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 560,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 316,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2005-02-14",
+    "fecha_fin": "2005-04-05",
+    "total_horas": 120,
+    "periodo_academico": "2005-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 561,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 316,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2004-02-16",
+    "fecha_fin": "2004-03-05",
+    "total_horas": 140,
+    "periodo_academico": "2004-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 562,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 316,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2003-02-24",
+    "fecha_fin": "2003-02-27",
+    "total_horas": 20,
+    "periodo_academico": "2003-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 563,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 465,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2002-09-01",
+    "fecha_fin": "2003-02-28",
+    "total_horas": 80,
+    "periodo_academico": "2002-2003",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 564,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 316,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2003-02-10",
+    "fecha_fin": "2003-06-24",
+    "total_horas": 110,
+    "periodo_academico": "2003-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 565,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 316,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2002-02-01",
+    "fecha_fin": "2002-07-31",
+    "total_horas": 120,
+    "periodo_academico": "2002-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 566,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 466,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2001-02-01",
+    "fecha_fin": "2001-07-31",
+    "total_horas": 120,
+    "periodo_academico": "2001-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 567,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 466,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2000-02-01",
+    "fecha_fin": "2000-07-31",
+    "total_horas": 120,
+    "periodo_academico": "2000-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 568,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 466,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "1999-02-01",
+    "fecha_fin": "1999-07-31",
+    "total_horas": 120,
+    "periodo_academico": "1999-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 569,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 466,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1998-02-01",
+    "fecha_fin": "1998-07-31",
+    "total_horas": 120,
+    "periodo_academico": "1998-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 570,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 22,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 466,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1996-02-01",
+    "fecha_fin": "1996-07-31",
+    "total_horas": 120,
+    "periodo_academico": "1996-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 571,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 467,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 528,
+    "fecha_inicio": "1994-01-01",
+    "fecha_fin": "1995-12-31",
+    "total_horas": 120,
+    "periodo_academico": "1994-1995",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 572,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 467,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 528,
+    "fecha_inicio": "1989-01-01",
+    "fecha_fin": "1990-12-31",
+    "total_horas": 120,
+    "periodo_academico": "1989-1990",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 573,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 30,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2012-05-02",
+    "fecha_fin": "2012-05-16",
+    "total_horas": 14,
+    "periodo_academico": "2012-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 574,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 30,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2012-04-01",
+    "fecha_fin": "2012-05-31",
+    "total_horas": 15,
+    "periodo_academico": "2012-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 575,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 30,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2011-01-01",
+    "fecha_fin": "2011-01-01",
+    "total_horas": 15,
+    "periodo_academico": "2011",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 576,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 30,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2010-01-01",
+    "fecha_fin": "2010-01-01",
+    "total_horas": 11,
+    "periodo_academico": "2010",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 577,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 412,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2008-12-02",
+    "fecha_fin": "2008-12-02",
+    "total_horas": 2,
+    "periodo_academico": "2008-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 578,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 412,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2007-10-26",
+    "fecha_fin": "2007-10-26",
+    "total_horas": 2,
+    "periodo_academico": "2007-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 579,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 468,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2007-02-12",
+    "fecha_fin": "2007-06-22",
+    "total_horas": 1,
+    "periodo_academico": "2007-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 580,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 469,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2006-02-02",
+    "fecha_fin": "2006-02-02",
+    "total_horas": 1,
+    "periodo_academico": "2006-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 581,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 470,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2003-11-14",
+    "fecha_fin": "2003-11-14",
+    "total_horas": 1,
+    "periodo_academico": "2003-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 582,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 316,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 449,
+    "dependencia": 524,
+    "fecha_inicio": "2000-05-19",
+    "fecha_fin": "2000-05-26",
+    "total_horas": 7,
+    "periodo_academico": "2000-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 583,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 22,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 471,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2000-01-04",
+    "fecha_fin": "2000-04-14",
+    "total_horas": 4,
+    "periodo_academico": "2000-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 584,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 22,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 472,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1997-07-15",
+    "fecha_fin": "1997-07-17",
+    "total_horas": 9,
+    "periodo_academico": "1997",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 585,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 22,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 472,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1996-02-01",
+    "fecha_fin": "1996-02-29",
+    "total_horas": 20,
+    "periodo_academico": "1996",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 586,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 46,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 473,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 540,
+    "fecha_inicio": "1994-01-01",
+    "fecha_fin": "1994-01-01",
+    "total_horas": 1,
+    "periodo_academico": "1994",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 587,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 46,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 474,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 540,
+    "fecha_inicio": "1994-01-01",
+    "fecha_fin": "1994-01-01",
+    "total_horas": 1,
+    "periodo_academico": "1994",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 588,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 46,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 475,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 540,
+    "fecha_inicio": "1993-01-01",
+    "fecha_fin": "1993-01-01",
+    "total_horas": 1,
+    "periodo_academico": "1993",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 589,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 46,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 476,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 540,
+    "fecha_inicio": "1993-01-01",
+    "fecha_fin": "1993-01-01",
+    "total_horas": 1,
+    "periodo_academico": "1993",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 590,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 46,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 477,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 540,
+    "fecha_inicio": "1993-01-01",
+    "fecha_fin": "1993-01-01",
+    "total_horas": 1,
+    "periodo_academico": "1993",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 591,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 48,
+    "doctorado": null,
+    "asignatura": 478,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2017-07-17",
+    "fecha_fin": "2017-07-27",
+    "total_horas": 80,
+    "periodo_academico": "2017",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 592,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 479,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2017-03-27",
+    "fecha_fin": "2017-03-31",
+    "total_horas": 24,
+    "periodo_academico": "2017-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 593,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 480,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2017-03-20",
+    "fecha_fin": "2017-03-20",
+    "total_horas": 24,
+    "periodo_academico": "2017-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 594,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 481,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2016-05-04",
+    "fecha_fin": "2016-05-04",
+    "total_horas": 8,
+    "periodo_academico": "2016",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 595,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2016-11-01",
+    "fecha_fin": "2016-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2016",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 596,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 478,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2016-08-01",
+    "fecha_fin": "2016-08-31",
+    "total_horas": 80,
+    "periodo_academico": "2016",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 597,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-11-01",
+    "fecha_fin": "2014-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2014",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 598,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 33,
+    "doctorado": null,
+    "asignatura": 483,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-02-01",
+    "fecha_fin": "2014-02-28",
+    "total_horas": 32,
+    "periodo_academico": "2014",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 599,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2013-11-01",
+    "fecha_fin": "2013-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2013",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 600,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2013-01-01",
+    "fecha_fin": "2013-06-30",
+    "total_horas": 32,
+    "periodo_academico": "2013-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 601,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2012-11-14",
+    "fecha_fin": "2012-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2012",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 602,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2011-10-19",
+    "fecha_fin": "2011-11-09",
+    "total_horas": 64,
+    "periodo_academico": "2011",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 603,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 484,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2011-06-06",
+    "fecha_fin": "2011-06-10",
+    "total_horas": 40,
+    "periodo_academico": "2011",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 604,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2010-10-28",
+    "fecha_fin": "2010-11-25",
+    "total_horas": 64,
+    "periodo_academico": "2010",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 605,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2009-10-17",
+    "fecha_fin": "2009-11-05",
+    "total_horas": 32,
+    "periodo_academico": "2009",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 606,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2008-10-17",
+    "fecha_fin": "2008-11-03",
+    "total_horas": 32,
+    "periodo_academico": "2008",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 607,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 485,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2007-10-22",
+    "fecha_fin": "2007-11-03",
+    "total_horas": 14,
+    "periodo_academico": "2007",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 608,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 81,
+    "doctorado": null,
+    "asignatura": 486,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 538,
+    "fecha_inicio": "2006-08-01",
+    "fecha_fin": "2006-12-31",
+    "total_horas": 120,
+    "periodo_academico": "2006-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 609,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 81,
+    "doctorado": null,
+    "asignatura": 486,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 679,
+    "fecha_inicio": "2005-08-01",
+    "fecha_fin": "2005-12-30",
+    "total_horas": 1,
+    "periodo_academico": "2005",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 610,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 81,
+    "doctorado": null,
+    "asignatura": 486,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 679,
+    "fecha_inicio": "2005-01-01",
+    "fecha_fin": "2005-05-31",
+    "total_horas": 1,
+    "periodo_academico": "2005-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 611,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2004-09-07",
+    "fecha_fin": "2004-11-25",
+    "total_horas": 16,
+    "periodo_academico": "2004",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 612,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2003-10-08",
+    "fecha_fin": "2003-11-18",
+    "total_horas": 15,
+    "periodo_academico": "2003-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 613,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2003-09-16",
+    "fecha_fin": "2003-10-30",
+    "total_horas": 10,
+    "periodo_academico": "2003",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 614,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2002-10-23",
+    "fecha_fin": "2002-10-25",
+    "total_horas": 6,
+    "periodo_academico": "2002",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 615,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2001-10-08",
+    "fecha_fin": "2001-10-22",
+    "total_horas": 12,
+    "periodo_academico": "2001",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 616,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 488,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2001-10-15",
+    "fecha_fin": "2001-10-26",
+    "total_horas": 60,
+    "periodo_academico": "2001",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 617,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2000-11-04",
+    "fecha_fin": "2000-11-24",
+    "total_horas": 14,
+    "periodo_academico": "2000",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 618,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 489,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2000-04-03",
+    "fecha_fin": "2000-04-07",
+    "total_horas": 40,
+    "periodo_academico": "2000",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 619,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 491,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1999-09-01",
+    "fecha_fin": "1999-12-31",
+    "total_horas": 14,
+    "periodo_academico": "1999-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 620,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1998-09-01",
+    "fecha_fin": "1998-12-31",
+    "total_horas": 14,
+    "periodo_academico": "1998-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 621,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1997-01-24",
+    "fecha_fin": "1997-01-27",
+    "total_horas": 10,
+    "periodo_academico": "1997",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 622,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1996-09-20",
+    "fecha_fin": "1996-10-04",
+    "total_horas": 6,
+    "periodo_academico": "1996",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 623,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 492,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1995-04-15",
+    "fecha_fin": "1995-04-26",
+    "total_horas": 40,
+    "periodo_academico": "1995",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 624,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 82,
+    "doctorado": null,
+    "asignatura": 487,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1995-09-25",
+    "fecha_fin": "1995-09-29",
+    "total_horas": 10,
+    "periodo_academico": "1995",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 625,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 83,
+    "doctorado": null,
+    "asignatura": 493,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 1,
+    "fecha_inicio": "1992-05-01",
+    "fecha_fin": "1992-05-31",
+    "total_horas": 40,
+    "periodo_academico": "1992",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 626,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 6,
+    "doctorado": null,
+    "asignatura": 494,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2007-01-01",
+    "fecha_fin": "2007-01-01",
+    "total_horas": 1,
+    "periodo_academico": "2007",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 627,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 498,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2008-01-01",
+    "fecha_fin": "2008-04-01",
+    "total_horas": 56,
+    "periodo_academico": "2008-1",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 628,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 499,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2008-05-01",
+    "fecha_fin": "2008-08-01",
+    "total_horas": 56,
+    "periodo_academico": "2008-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 629,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 500,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2008-09-01",
+    "fecha_fin": "2008-12-01",
+    "total_horas": 56,
+    "periodo_academico": "2008-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 630,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 501,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2008-09-01",
+    "fecha_fin": "2008-12-01",
+    "total_horas": 56,
+    "periodo_academico": "2008-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 631,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 500,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2009-01-01",
+    "fecha_fin": "2009-04-01",
+    "total_horas": 56,
+    "periodo_academico": "2009-1",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 632,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 502,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2009-01-01",
+    "fecha_fin": "2009-04-01",
+    "total_horas": 56,
+    "periodo_academico": "2009-1",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 633,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 503,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2009-05-01",
+    "fecha_fin": "2009-08-01",
+    "total_horas": 56,
+    "periodo_academico": "2009-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 634,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 502,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2010-01-01",
+    "fecha_fin": "2010-04-01",
+    "total_horas": 112,
+    "periodo_academico": "2010-1",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 635,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 53,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 504,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 111,
+    "dependencia": 216,
+    "fecha_inicio": "2010-05-01",
+    "fecha_fin": "2010-08-01",
+    "total_horas": 56,
+    "periodo_academico": "2010-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 636,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 49,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 505,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2014-01-01",
+    "fecha_fin": "2014-06-01",
+    "total_horas": 52,
+    "periodo_academico": "2014-1",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 637,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 49,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 505,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": "2015-06-01",
+    "total_horas": 64,
+    "periodo_academico": "2015-1",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 638,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 49,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 506,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2015-08-01",
+    "fecha_fin": "2015-11-01",
+    "total_horas": 48,
+    "periodo_academico": "2015-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 639,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 49,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 507,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2016-08-01",
+    "fecha_fin": "2016-11-01",
+    "total_horas": 64,
+    "periodo_academico": "2016-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 640,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2008-08-18",
+    "fecha_fin": "2008-09-23",
+    "total_horas": 16,
+    "periodo_academico": "2008-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 641,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2009-08-10",
+    "fecha_fin": "2009-09-11",
+    "total_horas": 12,
+    "periodo_academico": "2009-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 642,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2010-08-09",
+    "fecha_fin": "2010-09-14",
+    "total_horas": 20,
+    "periodo_academico": "2010-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 643,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 99,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2010-11-26",
+    "fecha_fin": "2010-12-10",
+    "total_horas": 5,
+    "periodo_academico": "2010-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 644,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2011-08-08",
+    "fecha_fin": "2011-09-09",
+    "total_horas": 18,
+    "periodo_academico": "2011-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 645,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2012-08-06",
+    "fecha_fin": "2012-09-07",
+    "total_horas": 19,
+    "periodo_academico": "2012-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 646,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2012-08-23",
+    "fecha_fin": "2012-09-10",
+    "total_horas": 19,
+    "periodo_academico": "2012-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 647,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2013-08-05",
+    "fecha_fin": "2013-09-05",
+    "total_horas": 20,
+    "periodo_academico": "2013-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 648,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 31,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2013-09-02",
+    "fecha_fin": "2013-09-13",
+    "total_horas": 20,
+    "periodo_academico": "2013-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 649,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 30,
+    "doctorado": null,
+    "asignatura": 33,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-08-04",
+    "fecha_fin": "2014-09-04",
+    "total_horas": 21,
+    "periodo_academico": "2014-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 650,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 32,
+    "doctorado": null,
+    "asignatura": 358,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-01-01",
+    "fecha_fin": "2014-05-01",
+    "total_horas": 6,
+    "periodo_academico": "2014-1",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 651,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 30,
+    "doctorado": null,
+    "asignatura": 33,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2015-08-01",
+    "fecha_fin": "2015-12-01",
+    "total_horas": 21,
+    "periodo_academico": "2015-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 652,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 30,
+    "doctorado": null,
+    "asignatura": 43,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2015-08-09",
+    "fecha_fin": "2015-09-08",
+    "total_horas": 15,
+    "periodo_academico": "2016-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 653,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 30,
+    "doctorado": null,
+    "asignatura": 43,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2017-08-09",
+    "fecha_fin": "2017-09-07",
+    "total_horas": 18,
+    "periodo_academico": "2017-2",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 654,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 43,
+    "doctorado": null,
+    "asignatura": 508,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2015-08-10",
+    "fecha_fin": "2015-08-28",
+    "total_horas": 40,
+    "periodo_academico": "2016-1",
+    "usuario": 29
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 655,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 29,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 128,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2018-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 9
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 656,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 512,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 278,
+    "dependencia": 706,
+    "fecha_inicio": "2018-01-29",
+    "fecha_fin": "2018-06-15",
+    "total_horas": 64,
+    "periodo_academico": "2018-2",
+    "usuario": 54
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 657,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 512,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 278,
+    "dependencia": 706,
+    "fecha_inicio": "2017-01-30",
+    "fecha_fin": "2017-06-16",
+    "total_horas": 64,
+    "periodo_academico": "2017-2",
+    "usuario": 54
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 658,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 128,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2018-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 11
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 659,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 283,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2018-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 11
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 660,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 64,
+    "doctorado": null,
+    "asignatura": 128,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 245,
+    "dependencia": 547,
+    "fecha_inicio": "2018-03-05",
+    "fecha_fin": "2018-04-06",
+    "total_horas": 32,
+    "periodo_academico": "2018-2",
+    "usuario": 11
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 661,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 281,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-01-29",
+    "fecha_fin": "2018-06-01",
+    "total_horas": 64,
+    "periodo_academico": "2018-2",
+    "usuario": 11
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 662,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 41,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 282,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-01-29",
+    "fecha_fin": "2018-06-01",
+    "total_horas": 64,
+    "periodo_academico": "2018-2",
+    "usuario": 11
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 663,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 390,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2018-02-20",
+    "fecha_fin": "2018-11-17",
+    "total_horas": 32,
+    "periodo_academico": "1/2018",
+    "usuario": 27
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 664,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 64,
+    "doctorado": null,
+    "asignatura": 390,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2017-01-16",
+    "fecha_fin": "2017-04-17",
+    "total_horas": 32,
+    "periodo_academico": "1/2017",
+    "usuario": 27
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 665,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 64,
+    "doctorado": null,
+    "asignatura": 540,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2017-08-24",
+    "fecha_fin": "2017-10-17",
+    "total_horas": 32,
+    "periodo_academico": "2/2017",
+    "usuario": 27
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 666,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 522,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2015-08-17",
+    "fecha_fin": "2015-12-18",
+    "total_horas": 60,
+    "periodo_academico": "2015-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 667,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 417,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2015-01-02",
+    "fecha_fin": "2015-06-26",
+    "total_horas": 64,
+    "periodo_academico": "2015-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 668,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 522,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2014-08-18",
+    "fecha_fin": "2014-12-26",
+    "total_horas": 60,
+    "periodo_academico": "2014-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 669,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 522,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2013-08-19",
+    "fecha_fin": "2013-12-27",
+    "total_horas": 60,
+    "periodo_academico": "2013-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 670,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 523,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2015-03-19",
+    "fecha_fin": "2015-03-24",
+    "total_horas": 6,
+    "periodo_academico": "2015-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 671,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 56,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 524,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 570,
+    "dependencia": 711,
+    "fecha_inicio": "2013-09-09",
+    "fecha_fin": "2013-09-09",
+    "total_horas": 2,
+    "periodo_academico": "2013-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 672,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2013-02-01",
+    "fecha_fin": "2013-05-31",
+    "total_horas": 6,
+    "periodo_academico": "2013-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 673,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 174,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2012-08-13",
+    "fecha_fin": "2012-11-30",
+    "total_horas": 8,
+    "periodo_academico": "2012-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 674,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2012-03-01",
+    "fecha_fin": "2012-06-30",
+    "total_horas": 16,
+    "periodo_academico": "2012-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 675,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 57,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 527,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 571,
+    "dependencia": 712,
+    "fecha_inicio": "2010-03-01",
+    "fecha_fin": "2010-04-30",
+    "total_horas": 2,
+    "periodo_academico": "2010-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 676,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 526,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2011-08-15",
+    "fecha_fin": "2011-11-30",
+    "total_horas": 12,
+    "periodo_academico": "2011-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 677,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2011-03-01",
+    "fecha_fin": "2011-06-30",
+    "total_horas": 16,
+    "periodo_academico": "2011-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 678,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 528,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2011-05-03",
+    "fecha_fin": "2011-05-03",
+    "total_horas": 4,
+    "periodo_academico": "2011-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 679,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 58,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 529,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 97,
+    "dependencia": 713,
+    "fecha_inicio": "2010-12-14",
+    "fecha_fin": "2010-12-14",
+    "total_horas": 2,
+    "periodo_academico": "2010-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 680,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 526,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2010-08-16",
+    "fecha_fin": "2010-11-30",
+    "total_horas": 16,
+    "periodo_academico": "2010-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 681,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2010-03-01",
+    "fecha_fin": "2010-06-30",
+    "total_horas": 16,
+    "periodo_academico": "2010-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 682,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2009-05-18",
+    "fecha_fin": "2009-05-18",
+    "total_horas": 4,
+    "periodo_academico": "2009-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 683,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2008-05-20",
+    "fecha_fin": "2008-05-20",
+    "total_horas": 4,
+    "periodo_academico": "2008-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 684,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2007-05-21",
+    "fecha_fin": "2007-05-21",
+    "total_horas": 4,
+    "periodo_academico": "2007-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 685,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 525,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2006-05-22",
+    "fecha_fin": "2006-05-22",
+    "total_horas": 4,
+    "periodo_academico": "2006-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 686,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 530,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2005-11-24",
+    "fecha_fin": "2005-11-24",
+    "total_horas": 4,
+    "periodo_academico": "2005-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 687,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 8,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 531,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 572,
+    "dependencia": 714,
+    "fecha_inicio": "1997-08-11",
+    "fecha_fin": "1997-12-19",
+    "total_horas": 20,
+    "periodo_academico": "1997-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 688,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 59,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 532,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 572,
+    "dependencia": 714,
+    "fecha_inicio": "1995-08-14",
+    "fecha_fin": "1995-12-22",
+    "total_horas": 20,
+    "periodo_academico": "1995-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 689,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 59,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 533,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 572,
+    "dependencia": 714,
+    "fecha_inicio": "1994-08-22",
+    "fecha_fin": "1994-12-16",
+    "total_horas": 20,
+    "periodo_academico": "1994-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 690,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 59,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 532,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 572,
+    "dependencia": 714,
+    "fecha_inicio": "1994-01-03",
+    "fecha_fin": "1994-06-30",
+    "total_horas": 20,
+    "periodo_academico": "1994-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 691,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 534,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2017-04-17",
+    "fecha_fin": "2017-05-05",
+    "total_horas": 64,
+    "periodo_academico": "2017-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 692,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 534,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2016-05-04",
+    "fecha_fin": "2016-05-18",
+    "total_horas": 64,
+    "periodo_academico": "2016-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 693,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 534,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2015-02-23",
+    "fecha_fin": "2015-03-03",
+    "total_horas": 24,
+    "periodo_academico": "2015-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 694,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 534,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-02-24",
+    "fecha_fin": "2014-03-04",
+    "total_horas": 24,
+    "periodo_academico": "2014-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 695,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 534,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2013-02-25",
+    "fecha_fin": "2013-03-08",
+    "total_horas": 38,
+    "periodo_academico": "2013-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 696,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 534,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2011-06-13",
+    "fecha_fin": "2011-06-24",
+    "total_horas": 19,
+    "periodo_academico": "2011-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 697,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 535,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2009-09-29",
+    "fecha_fin": "2009-10-16",
+    "total_horas": 64,
+    "periodo_academico": "2009-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 698,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 418,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2017-11-13",
+    "fecha_fin": "2017-11-15",
+    "total_horas": 12,
+    "periodo_academico": "2017-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 699,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 55,
+    "doctorado": null,
+    "asignatura": 419,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2017-03-24",
+    "fecha_fin": "2017-03-24",
+    "total_horas": 6,
+    "periodo_academico": "2017-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 700,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 535,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2010-08-10",
+    "fecha_fin": "2010-09-07",
+    "total_horas": 16,
+    "periodo_academico": "2010-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 701,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 536,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2009-12-04",
+    "fecha_fin": "2009-12-04",
+    "total_horas": 2,
+    "periodo_academico": "2009-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 702,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 62,
+    "doctorado": null,
+    "asignatura": 537,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 6,
+    "fecha_inicio": "2009-02-02",
+    "fecha_fin": "2009-06-30",
+    "total_horas": 4,
+    "periodo_academico": "2009-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 703,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 538,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2009-05-07",
+    "fecha_fin": "2009-05-14",
+    "total_horas": 2,
+    "periodo_academico": "2009-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 704,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 55,
+    "doctorado": null,
+    "asignatura": 539,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 269,
+    "dependencia": 628,
+    "fecha_inicio": "2018-10-09",
+    "fecha_fin": "2018-10-09",
+    "total_horas": 3,
+    "periodo_academico": "2019-1",
+    "usuario": 35
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 705,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 541,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 278,
+    "dependencia": 706,
+    "fecha_inicio": "2018-10-08",
+    "fecha_fin": "2018-12-10",
+    "total_horas": 30,
+    "periodo_academico": "1-2019",
+    "usuario": 91
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 706,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 374,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2018-03-13",
+    "fecha_fin": "2018-03-15",
+    "total_horas": 9,
+    "periodo_academico": "2-2018",
+    "usuario": 91
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 707,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 11,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 245,
+    "dependencia": 32,
+    "fecha_inicio": "2018-08-07",
+    "fecha_fin": "2018-09-06",
+    "total_horas": 16,
+    "periodo_academico": "2018",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 708,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 25,
+    "doctorado": null,
+    "asignatura": 203,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2018-10-08",
+    "fecha_fin": "2018-10-19",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 33
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 709,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 246,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2018-08-27",
+    "fecha_fin": "2018-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 32
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 710,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 543,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2018-12-07",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 40
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 711,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 43,
+    "doctorado": null,
+    "asignatura": 91,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 551,
+    "fecha_inicio": "2018-04-02",
+    "fecha_fin": "2018-04-23",
+    "total_horas": 32,
+    "periodo_academico": "2108",
+    "usuario": 17
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 712,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 43,
+    "doctorado": null,
+    "asignatura": 93,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 634,
+    "fecha_inicio": "2018-01-15",
+    "fecha_fin": "2018-02-09",
+    "total_horas": 32,
+    "periodo_academico": "2108",
+    "usuario": 17
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 713,
+  "fields": {
+    "nivel": "DOCTORADO",
+    "licenciatura": null,
+    "maestria": null,
+    "doctorado": 23,
+    "asignatura": 108,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 591,
+    "dependencia": 743,
+    "fecha_inicio": "2018-10-15",
+    "fecha_fin": "2018-10-20",
+    "total_horas": 20,
+    "periodo_academico": "2018",
+    "usuario": 17
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 714,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 49,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 544,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-02-05",
+    "fecha_fin": "2018-07-06",
+    "total_horas": 64,
+    "periodo_academico": "2018",
+    "usuario": 17
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 715,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 49,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 545,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-01-08",
+    "fecha_fin": "2018-07-06",
+    "total_horas": 64,
+    "periodo_academico": "2108",
+    "usuario": 17
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 716,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 110,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2018-11-23",
+    "total_horas": 64,
+    "periodo_academico": "2108",
+    "usuario": 17
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 717,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 60,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 551,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 16,
+    "dependencia": 100,
+    "fecha_inicio": "2018-10-01",
+    "fecha_fin": "2018-10-05",
+    "total_horas": 30,
+    "periodo_academico": "2018",
+    "usuario": 25
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 718,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 24,
+    "doctorado": null,
+    "asignatura": 418,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 551,
+    "fecha_inicio": "2018-11-10",
+    "fecha_fin": "2018-11-23",
+    "total_horas": 64,
+    "periodo_academico": "2018-2",
+    "usuario": 25
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 719,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 24,
+    "doctorado": null,
+    "asignatura": 411,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-04-09",
+    "fecha_fin": "2018-04-20",
+    "total_horas": 32,
+    "periodo_academico": "2018",
+    "usuario": 25
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 720,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 293,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-10-09",
+    "fecha_fin": "2018-10-09",
+    "total_horas": 2,
+    "periodo_academico": "I/2019",
+    "usuario": 1839
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 721,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 43,
+    "doctorado": null,
+    "asignatura": 91,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 245,
+    "dependencia": 547,
+    "fecha_inicio": "2018-05-28",
+    "fecha_fin": "2018-06-02",
+    "total_horas": 48,
+    "periodo_academico": "I/2019",
+    "usuario": 1839
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 722,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 193,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2016-08-10",
+    "fecha_fin": "2016-10-12",
+    "total_horas": 8,
+    "periodo_academico": "1/2016",
+    "usuario": 50
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 723,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 26,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 181,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-09-03",
+    "fecha_fin": "2018-12-14",
+    "total_horas": 60,
+    "periodo_academico": "S\u00e9ptimo",
+    "usuario": 23
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 724,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 193,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2017-08-09",
+    "fecha_fin": "2017-10-04",
+    "total_horas": 8,
+    "periodo_academico": "1/2017",
+    "usuario": 50
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 725,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 193,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 462,
+    "dependencia": 667,
+    "fecha_inicio": "2018-08-08",
+    "fecha_fin": "2018-10-03",
+    "total_horas": 8,
+    "periodo_academico": "1/2018",
+    "usuario": 50
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 726,
+  "fields": {
+    "nivel": "DOCTORADO",
+    "licenciatura": null,
+    "maestria": null,
+    "doctorado": 23,
+    "asignatura": 554,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 245,
+    "dependencia": 547,
+    "fecha_inicio": "2018-02-19",
+    "fecha_fin": "2018-06-18",
+    "total_horas": 60,
+    "periodo_academico": "2018-II",
+    "usuario": 22
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 727,
+  "fields": {
+    "nivel": "DOCTORADO",
+    "licenciatura": null,
+    "maestria": null,
+    "doctorado": 23,
+    "asignatura": 388,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 245,
+    "dependencia": 547,
+    "fecha_inicio": "2018-01-01",
+    "fecha_fin": "2018-04-13",
+    "total_horas": 20,
+    "periodo_academico": "2018-II",
+    "usuario": 22
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 728,
+  "fields": {
+    "nivel": "DOCTORADO",
+    "licenciatura": null,
+    "maestria": null,
+    "doctorado": 41,
+    "asignatura": 539,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 560,
+    "fecha_inicio": "2018-08-13",
+    "fecha_fin": "2018-10-22",
+    "total_horas": 64,
+    "periodo_academico": "2019 - II",
+    "usuario": 28
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 729,
+  "fields": {
+    "nivel": "DOCTORADO",
+    "licenciatura": null,
+    "maestria": null,
+    "doctorado": 17,
+    "asignatura": 555,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2018-02-08",
+    "fecha_fin": "2018-04-15",
+    "total_horas": 64,
+    "periodo_academico": "2019 - I",
+    "usuario": 28
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 730,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 26,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 556,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2018-11-23",
+    "total_horas": 40,
+    "periodo_academico": "2019-1",
+    "usuario": 5
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 731,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 287,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 2,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2019-01-20",
+    "total_horas": 64,
+    "periodo_academico": "2019_1",
+    "usuario": 31
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 732,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 64,
+    "doctorado": null,
+    "asignatura": 558,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2019-01-20",
+    "total_horas": 32,
+    "periodo_academico": "2019_1",
+    "usuario": 31
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 733,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 194,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-09-17",
+    "fecha_fin": "2018-09-17",
+    "total_horas": 3,
+    "periodo_academico": "2019-1",
+    "usuario": 35
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 734,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 5,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 559,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 5,
+    "dependencia": 60,
+    "fecha_inicio": "2018-11-06",
+    "fecha_fin": "2018-11-06",
+    "total_horas": 4,
+    "periodo_academico": "2019-1",
+    "usuario": 35
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 735,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 387,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 278,
+    "dependencia": 600,
+    "fecha_inicio": "2018-02-15",
+    "fecha_fin": "2018-02-15",
+    "total_horas": 2,
+    "periodo_academico": "2018-2",
+    "usuario": 43
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 736,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 55,
+    "doctorado": null,
+    "asignatura": 561,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 462,
+    "dependencia": 667,
+    "fecha_inicio": "2018-08-06",
+    "fecha_fin": "2018-08-30",
+    "total_horas": 32,
+    "periodo_academico": "2019-1",
+    "usuario": 43
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 737,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 202,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 269,
+    "dependencia": 634,
+    "fecha_inicio": "2018-02-08",
+    "fecha_fin": "2018-04-05",
+    "total_horas": 16,
+    "periodo_academico": "2018-2",
+    "usuario": 35
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 738,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 43,
+    "doctorado": null,
+    "asignatura": 433,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2018-11-26",
+    "fecha_fin": "2018-12-05",
+    "total_horas": 32,
+    "periodo_academico": "2019-1",
+    "usuario": 18
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 739,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 110,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 278,
+    "dependencia": 706,
+    "fecha_inicio": "2018-09-11",
+    "fecha_fin": "2018-10-10",
+    "total_horas": 20,
+    "periodo_academico": "2018-2",
+    "usuario": 18
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 740,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 206,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-04-09",
+    "fecha_fin": "2018-04-09",
+    "total_horas": 2,
+    "periodo_academico": "2018",
+    "usuario": 36
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 741,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 43,
+    "doctorado": null,
+    "asignatura": 174,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 462,
+    "dependencia": 667,
+    "fecha_inicio": "2018-08-07",
+    "fecha_fin": "2018-09-06",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 13
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 742,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 43,
+    "doctorado": null,
+    "asignatura": 418,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 462,
+    "dependencia": 667,
+    "fecha_inicio": "2018-11-16",
+    "fecha_fin": "2018-11-16",
+    "total_horas": 4,
+    "periodo_academico": "2019-1",
+    "usuario": 13
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 743,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 203,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-05-17",
+    "fecha_fin": "2018-05-22",
+    "total_horas": 3,
+    "periodo_academico": "II / 2018",
+    "usuario": 15
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 744,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 25,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 315,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-05-14",
+    "fecha_fin": "2018-06-23",
+    "total_horas": 11,
+    "periodo_academico": "II / 2018",
+    "usuario": 15
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 745,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 88,
+    "doctorado": null,
+    "asignatura": 331,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2018-04-09",
+    "fecha_fin": "2018-04-26",
+    "total_horas": 48,
+    "periodo_academico": "II / 2018",
+    "usuario": 15
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 746,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 78,
+    "doctorado": null,
+    "asignatura": 563,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 269,
+    "dependencia": 630,
+    "fecha_inicio": "2018-11-09",
+    "fecha_fin": "2018-11-16",
+    "total_horas": 14,
+    "periodo_academico": "I / 2019",
+    "usuario": 15
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 747,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 88,
+    "doctorado": null,
+    "asignatura": 299,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 494,
+    "dependencia": 723,
+    "fecha_inicio": "2018-04-19",
+    "fecha_fin": "2018-04-30",
+    "total_horas": 4,
+    "periodo_academico": "II /2018",
+    "usuario": 15
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 748,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 64,
+    "doctorado": null,
+    "asignatura": 482,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 462,
+    "dependencia": 667,
+    "fecha_inicio": "2018-10-22",
+    "fecha_fin": "2018-11-07",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 749,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 26,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 18,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-01-30",
+    "fecha_fin": "2018-05-31",
+    "total_horas": 64,
+    "periodo_academico": "2018-2",
+    "usuario": 14
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 750,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 1,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-01-31",
+    "fecha_fin": "2018-06-01",
+    "total_horas": 64,
+    "periodo_academico": "2018-2",
+    "usuario": 14
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 751,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 70,
+    "doctorado": null,
+    "asignatura": 33,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-08-23",
+    "fecha_fin": "2018-09-06",
+    "total_horas": 30,
+    "periodo_academico": "2019-1",
+    "usuario": 14
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 752,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 49,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 565,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-11-29",
+    "fecha_fin": "2018-08-08",
+    "total_horas": 48,
+    "periodo_academico": "2019-1",
+    "usuario": 14
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 753,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 26,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 1,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 269,
+    "dependencia": 739,
+    "fecha_inicio": "2018-08-10",
+    "fecha_fin": "2018-11-30",
+    "total_horas": 64,
+    "periodo_academico": "2019-1",
+    "usuario": 14
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 754,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 110,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 278,
+    "dependencia": 600,
+    "fecha_inicio": "2017-04-26",
+    "fecha_fin": "2017-05-26",
+    "total_horas": 20,
+    "periodo_academico": "2017-1",
+    "usuario": 18
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 755,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 110,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 278,
+    "dependencia": 600,
+    "fecha_inicio": "2016-04-27",
+    "fecha_fin": "2016-05-25",
+    "total_horas": 20,
+    "periodo_academico": "2016-1",
+    "usuario": 18
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 756,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 526,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 278,
+    "dependencia": 600,
+    "fecha_inicio": "2014-10-20",
+    "fecha_fin": "2014-10-28",
+    "total_horas": 12,
+    "periodo_academico": "2015-1",
+    "usuario": 18
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 757,
+  "fields": {
+    "nivel": "LICENCIATURA",
+    "licenciatura": 16,
+    "maestria": null,
+    "doctorado": null,
+    "asignatura": 526,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 278,
+    "dependencia": 706,
+    "fecha_inicio": "2012-10-09",
+    "fecha_fin": "2012-10-15",
+    "total_horas": 12,
+    "periodo_academico": "2012-2",
+    "usuario": 18
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 758,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 572,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-04-02",
+    "fecha_fin": "2018-04-27",
+    "total_horas": 64,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 759,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 573,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2016-04-04",
+    "fecha_fin": "2016-04-29",
+    "total_horas": 64,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 760,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 572,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2015-03-02",
+    "fecha_fin": "2015-03-27",
+    "total_horas": 64,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 761,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 574,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-03-03",
+    "fecha_fin": "2014-03-28",
+    "total_horas": 50,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 762,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 575,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-11-17",
+    "fecha_fin": "2014-11-17",
+    "total_horas": 2,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 763,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 577,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "TITULAR",
+    "institucion": 494,
+    "dependencia": 723,
+    "fecha_inicio": "2016-11-28",
+    "fecha_fin": "2016-12-09",
+    "total_horas": 20,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 764,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 578,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 39,
+    "dependencia": 129,
+    "fecha_inicio": "2015-06-08",
+    "fecha_fin": "2015-06-08",
+    "total_horas": 5,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 765,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 69,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-08-04",
+    "fecha_fin": "2014-12-05",
+    "total_horas": 4,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaescolarizado",
+  "pk": 766,
+  "fields": {
+    "nivel": "MAESTRIA",
+    "licenciatura": null,
+    "maestria": 17,
+    "doctorado": null,
+    "asignatura": 193,
+    "modalidad": "PRESENCIAL",
+    "nombramiento": "COLABORADOR",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-08-22",
+    "fecha_fin": "2014-08-22",
+    "total_horas": 2,
+    "periodo_academico": "NA",
+    "usuario": 24
   }
 },
 {
@@ -15460,6 +19700,1126 @@
   }
 },
 {
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 283,
+  "fields": {
+    "asignatura": 434,
+    "tipo": 4,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2013-07-17",
+    "fecha_fin": "2013-07-28",
+    "total_horas": 80,
+    "periodo_academico": "2013-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 284,
+  "fields": {
+    "asignatura": 435,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2013-04-13",
+    "fecha_fin": "2013-04-13",
+    "total_horas": 8,
+    "periodo_academico": "2013-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 285,
+  "fields": {
+    "asignatura": 436,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2012-12-07",
+    "fecha_fin": "2012-12-07",
+    "total_horas": 1,
+    "periodo_academico": "2012-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 286,
+  "fields": {
+    "asignatura": 437,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2012-03-22",
+    "fecha_fin": "2012-03-24",
+    "total_horas": 8,
+    "periodo_academico": "2012-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 287,
+  "fields": {
+    "asignatura": 438,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2012-03-22",
+    "fecha_fin": "2012-03-24",
+    "total_horas": 8,
+    "periodo_academico": "2012-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 288,
+  "fields": {
+    "asignatura": 439,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 97,
+    "dependencia": 201,
+    "fecha_inicio": "2011-05-01",
+    "fecha_fin": "2011-05-31",
+    "total_horas": 1,
+    "periodo_academico": "2011-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 289,
+  "fields": {
+    "asignatura": 163,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 46,
+    "dependencia": 139,
+    "fecha_inicio": "2009-09-21",
+    "fecha_fin": "2009-09-25",
+    "total_horas": 30,
+    "periodo_academico": "2009-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 290,
+  "fields": {
+    "asignatura": 440,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 531,
+    "fecha_inicio": "2008-12-15",
+    "fecha_fin": "2008-12-15",
+    "total_horas": 8,
+    "periodo_academico": "2008-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 291,
+  "fields": {
+    "asignatura": 320,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2006-01-01",
+    "fecha_fin": "2006-01-01",
+    "total_horas": 1,
+    "periodo_academico": "2006-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 292,
+  "fields": {
+    "asignatura": 441,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 19,
+    "dependencia": 104,
+    "fecha_inicio": "2006-10-01",
+    "fecha_fin": "2006-10-31",
+    "total_horas": 1,
+    "periodo_academico": "2006-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 293,
+  "fields": {
+    "asignatura": 442,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2006-01-01",
+    "fecha_fin": "2006-01-01",
+    "total_horas": 1,
+    "periodo_academico": "2006-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 294,
+  "fields": {
+    "asignatura": 443,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2005-11-04",
+    "fecha_fin": "2005-11-05",
+    "total_horas": 11,
+    "periodo_academico": "2005-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 295,
+  "fields": {
+    "asignatura": 444,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2005-10-14",
+    "fecha_fin": "2005-10-15",
+    "total_horas": 11,
+    "periodo_academico": "2005-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 296,
+  "fields": {
+    "asignatura": 445,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2005-01-15",
+    "fecha_fin": "2005-01-18",
+    "total_horas": 1,
+    "periodo_academico": "2005-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 297,
+  "fields": {
+    "asignatura": 446,
+    "tipo": 6,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2004-11-05",
+    "fecha_fin": "2004-11-06",
+    "total_horas": 10,
+    "periodo_academico": "2004-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 298,
+  "fields": {
+    "asignatura": 447,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 178,
+    "dependencia": 293,
+    "fecha_inicio": "2003-09-06",
+    "fecha_fin": "2004-06-19",
+    "total_horas": 1,
+    "periodo_academico": "2004-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 299,
+  "fields": {
+    "asignatura": 448,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "2003-09-22",
+    "fecha_fin": "2003-10-03",
+    "total_horas": 1,
+    "periodo_academico": "2003-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 300,
+  "fields": {
+    "asignatura": 449,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "2002-11-04",
+    "fecha_fin": "2002-11-07",
+    "total_horas": 30,
+    "periodo_academico": "2002-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 301,
+  "fields": {
+    "asignatura": 450,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "1999-10-25",
+    "fecha_fin": "1999-10-29",
+    "total_horas": 1,
+    "periodo_academico": "1999-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 302,
+  "fields": {
+    "asignatura": 451,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1999-02-01",
+    "fecha_fin": "1999-04-30",
+    "total_horas": 53,
+    "periodo_academico": "1999-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 303,
+  "fields": {
+    "asignatura": 452,
+    "tipo": 6,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "1998-08-27",
+    "fecha_fin": "1998-08-29",
+    "total_horas": 1,
+    "periodo_academico": "1998-2",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 304,
+  "fields": {
+    "asignatura": 453,
+    "tipo": 6,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "1998-04-23",
+    "fecha_fin": "1998-04-23",
+    "total_horas": 1,
+    "periodo_academico": "1998-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 305,
+  "fields": {
+    "asignatura": 454,
+    "tipo": 6,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "1998-04-23",
+    "fecha_fin": "1998-04-23",
+    "total_horas": 1,
+    "periodo_academico": "1998-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 306,
+  "fields": {
+    "asignatura": 455,
+    "tipo": 6,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 530,
+    "fecha_inicio": "1998-04-23",
+    "fecha_fin": "1998-04-23",
+    "total_horas": 1,
+    "periodo_academico": "1998-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 307,
+  "fields": {
+    "asignatura": 456,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1998-02-01",
+    "fecha_fin": "1998-02-27",
+    "total_horas": 45,
+    "periodo_academico": "1998-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 308,
+  "fields": {
+    "asignatura": 457,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1998-02-01",
+    "fecha_fin": "1998-02-27",
+    "total_horas": 15,
+    "periodo_academico": "1998-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 309,
+  "fields": {
+    "asignatura": 458,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1997-02-01",
+    "fecha_fin": "1997-02-28",
+    "total_horas": 15,
+    "periodo_academico": "1997-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 310,
+  "fields": {
+    "asignatura": 459,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1997-02-01",
+    "fecha_fin": "1997-02-28",
+    "total_horas": 15,
+    "periodo_academico": "1997-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 311,
+  "fields": {
+    "asignatura": 460,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 456,
+    "dependencia": 535,
+    "fecha_inicio": "1996-01-01",
+    "fecha_fin": "1996-02-29",
+    "total_horas": 144,
+    "periodo_academico": "1996-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 312,
+  "fields": {
+    "asignatura": 461,
+    "tipo": 6,
+    "modalidad": "PRESENCIAL",
+    "institucion": 550,
+    "dependencia": 678,
+    "fecha_inicio": "1993-01-01",
+    "fecha_fin": "1994-01-01",
+    "total_horas": 1,
+    "periodo_academico": "1994-1",
+    "usuario": 30
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 313,
+  "fields": {
+    "asignatura": 495,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 554,
+    "dependencia": 685,
+    "fecha_inicio": "2005-07-04",
+    "fecha_fin": "2005-07-15",
+    "total_horas": 80,
+    "periodo_academico": "otro",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 314,
+  "fields": {
+    "asignatura": 496,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 554,
+    "dependencia": 685,
+    "fecha_inicio": "2005-01-08",
+    "fecha_fin": "2005-01-30",
+    "total_horas": 40,
+    "periodo_academico": "otro",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 315,
+  "fields": {
+    "asignatura": 497,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 554,
+    "dependencia": 685,
+    "fecha_inicio": "2006-01-07",
+    "fecha_fin": "2006-01-29",
+    "total_horas": 40,
+    "periodo_academico": "otro",
+    "usuario": 34
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 316,
+  "fields": {
+    "asignatura": 509,
+    "tipo": 4,
+    "modalidad": "PRESENCIAL",
+    "institucion": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2017-02-06",
+    "fecha_fin": "2017-04-28",
+    "total_horas": 40,
+    "periodo_academico": "2017-2",
+    "usuario": 29
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 317,
+  "fields": {
+    "asignatura": 510,
+    "tipo": 4,
+    "modalidad": "PRESENCIAL",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2018-09-04",
+    "fecha_fin": "2018-10-25",
+    "total_horas": 48,
+    "periodo_academico": "2019-1",
+    "usuario": 29
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 318,
+  "fields": {
+    "asignatura": 428,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2016-04-21",
+    "fecha_fin": "2016-04-21",
+    "total_horas": 8,
+    "periodo_academico": "2016-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 319,
+  "fields": {
+    "asignatura": 513,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha_inicio": "2015-09-29",
+    "fecha_fin": "2015-09-29",
+    "total_horas": 8,
+    "periodo_academico": "2015-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 320,
+  "fields": {
+    "asignatura": 514,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2015-09-07",
+    "fecha_fin": "2015-09-11",
+    "total_horas": 40,
+    "periodo_academico": "2015-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 321,
+  "fields": {
+    "asignatura": 515,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-10-06",
+    "fecha_fin": "2014-10-09",
+    "total_horas": 32,
+    "periodo_academico": "2014-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 322,
+  "fields": {
+    "asignatura": 514,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2014-09-08",
+    "fecha_fin": "2014-09-11",
+    "total_horas": 14,
+    "periodo_academico": "2014-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 323,
+  "fields": {
+    "asignatura": 514,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2013-08-06",
+    "fecha_fin": "2013-08-09",
+    "total_horas": 32,
+    "periodo_academico": "2013-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 324,
+  "fields": {
+    "asignatura": 514,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2012-09-03",
+    "fecha_fin": "2012-09-07",
+    "total_horas": 40,
+    "periodo_academico": "2012-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 325,
+  "fields": {
+    "asignatura": 516,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2018-10-17",
+    "fecha_fin": "2018-10-18",
+    "total_horas": 8,
+    "periodo_academico": "2019-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 326,
+  "fields": {
+    "asignatura": 517,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2018-08-28",
+    "fecha_fin": "2018-08-29",
+    "total_horas": 8,
+    "periodo_academico": "2019-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 327,
+  "fields": {
+    "asignatura": 518,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2018-06-26",
+    "fecha_fin": "2018-06-27",
+    "total_horas": 8,
+    "periodo_academico": "2018-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 328,
+  "fields": {
+    "asignatura": 519,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2018-04-12",
+    "fecha_fin": "2018-04-13",
+    "total_horas": 8,
+    "periodo_academico": "2018-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 329,
+  "fields": {
+    "asignatura": 429,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2017-11-21",
+    "fecha_fin": "2017-11-23",
+    "total_horas": 8,
+    "periodo_academico": "2017-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 330,
+  "fields": {
+    "asignatura": 521,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 569,
+    "dependencia": 710,
+    "fecha_inicio": "2014-05-12",
+    "fecha_fin": "2014-05-16",
+    "total_horas": 40,
+    "periodo_academico": "2014-2",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 331,
+  "fields": {
+    "asignatura": 430,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2016-09-08",
+    "fecha_fin": "2016-09-09",
+    "total_horas": 16,
+    "periodo_academico": "2016-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 332,
+  "fields": {
+    "asignatura": 542,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2018-09-24",
+    "fecha_fin": "2018-09-27",
+    "total_horas": 12,
+    "periodo_academico": "2019-1",
+    "usuario": 1837
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 333,
+  "fields": {
+    "asignatura": 110,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-10-25",
+    "fecha_fin": "2018-10-25",
+    "total_horas": 2,
+    "periodo_academico": "2019-1",
+    "usuario": 1837
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 334,
+  "fields": {
+    "asignatura": 546,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2018-09-25",
+    "fecha_fin": "2018-09-26",
+    "total_horas": 8,
+    "periodo_academico": "2019-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 335,
+  "fields": {
+    "asignatura": 547,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 539,
+    "dependencia": 666,
+    "fecha_inicio": "2018-10-29",
+    "fecha_fin": "2018-10-30",
+    "total_horas": 8,
+    "periodo_academico": "2019-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 336,
+  "fields": {
+    "asignatura": 548,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 594,
+    "dependencia": 748,
+    "fecha_inicio": "2018-03-19",
+    "fecha_fin": "2018-03-23",
+    "total_horas": 16,
+    "periodo_academico": "2019-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 337,
+  "fields": {
+    "asignatura": 520,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 595,
+    "dependencia": 749,
+    "fecha_inicio": "2016-09-03",
+    "fecha_fin": "2016-09-04",
+    "total_horas": 8,
+    "periodo_academico": "2017-1",
+    "usuario": 26
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 338,
+  "fields": {
+    "asignatura": 550,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 47,
+    "dependencia": 140,
+    "fecha_inicio": "2018-11-05",
+    "fecha_fin": "2018-11-05",
+    "total_horas": 4,
+    "periodo_academico": "2018",
+    "usuario": 25
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 339,
+  "fields": {
+    "asignatura": 215,
+    "tipo": 8,
+    "modalidad": "PRESENCIAL",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2011-05-30",
+    "fecha_fin": "2011-09-27",
+    "total_horas": 17,
+    "periodo_academico": "2011",
+    "usuario": 50
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 340,
+  "fields": {
+    "asignatura": 553,
+    "tipo": 8,
+    "modalidad": "PRESENCIAL",
+    "institucion": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2015-03-02",
+    "fecha_fin": "2015-05-26",
+    "total_horas": 20,
+    "periodo_academico": "2015",
+    "usuario": 50
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 341,
+  "fields": {
+    "asignatura": 557,
+    "tipo": 4,
+    "modalidad": "PRESENCIAL",
+    "institucion": 19,
+    "dependencia": 104,
+    "fecha_inicio": "2018-02-15",
+    "fecha_fin": "2018-12-20",
+    "total_horas": 32,
+    "periodo_academico": "2018-2",
+    "usuario": 5
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 342,
+  "fields": {
+    "asignatura": 560,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 355,
+    "dependencia": 556,
+    "fecha_inicio": "2018-08-07",
+    "fecha_fin": "2018-08-31",
+    "total_horas": 40,
+    "periodo_academico": "2019-1",
+    "usuario": 43
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 343,
+  "fields": {
+    "asignatura": 562,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 462,
+    "dependencia": 667,
+    "fecha_inicio": "2018-04-11",
+    "fecha_fin": "2018-04-13",
+    "total_horas": 9,
+    "periodo_academico": "2019-1",
+    "usuario": 43
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 344,
+  "fields": {
+    "asignatura": 564,
+    "tipo": 8,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-02-28",
+    "fecha_fin": "2018-03-02",
+    "total_horas": 9,
+    "periodo_academico": "I / 2019",
+    "usuario": 15
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 345,
+  "fields": {
+    "asignatura": 12,
+    "tipo": 8,
+    "modalidad": "PRESENCIAL",
+    "institucion": 494,
+    "dependencia": 663,
+    "fecha_inicio": "2018-06-28",
+    "fecha_fin": "2018-07-01",
+    "total_horas": 25,
+    "periodo_academico": "2018",
+    "usuario": 14
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 346,
+  "fields": {
+    "asignatura": 566,
+    "tipo": 8,
+    "modalidad": "PRESENCIAL",
+    "institucion": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2018-11-05",
+    "fecha_fin": "2018-11-09",
+    "total_horas": 25,
+    "periodo_academico": "2018",
+    "usuario": 14
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 347,
+  "fields": {
+    "asignatura": 67,
+    "tipo": 1,
+    "modalidad": "PRESENCIAL",
+    "institucion": 245,
+    "dependencia": 547,
+    "fecha_inicio": "2016-11-07",
+    "fecha_fin": "2016-11-11",
+    "total_horas": 4,
+    "periodo_academico": "2017-1",
+    "usuario": 18
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 348,
+  "fields": {
+    "asignatura": 567,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 2,
+    "dependencia": 44,
+    "fecha_inicio": "2017-11-07",
+    "fecha_fin": "2017-11-09",
+    "total_horas": 8,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 349,
+  "fields": {
+    "asignatura": 568,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2016-04-11",
+    "fecha_fin": "2016-04-11",
+    "total_horas": 4,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 350,
+  "fields": {
+    "asignatura": 569,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-11-05",
+    "fecha_fin": "2018-11-05",
+    "total_horas": 4,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 351,
+  "fields": {
+    "asignatura": 570,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-10-25",
+    "fecha_fin": "2018-10-25",
+    "total_horas": 4,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
+  "model": "docencia.cursodocenciaextracurricular",
+  "pk": 352,
+  "fields": {
+    "asignatura": 571,
+    "tipo": 3,
+    "modalidad": "PRESENCIAL",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2017-07-02",
+    "fecha_fin": "2017-07-02",
+    "total_horas": 4,
+    "periodo_academico": "NA",
+    "usuario": 24
+  }
+},
+{
   "model": "docencia.articulodocencia",
   "pk": 1,
   "fields": {
@@ -15474,8 +20834,6 @@
     "url": "",
     "pagina_inicio": 7,
     "pagina_fin": 9,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1682,
@@ -15501,8 +20859,6 @@
     "url": "http://www.revistaciencias.unam.mx/index.php?option=com_content&view=article&id=915%3Aconservacion-y-manejo-de-los-suelos&catid=109&Itemid=48",
     "pagina_inicio": 50,
     "pagina_fin": 55,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1682
@@ -15526,8 +20882,6 @@
     "url": "",
     "pagina_inicio": 226,
     "pagina_fin": 230,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1684,
@@ -15552,8 +20906,6 @@
     "url": "",
     "pagina_inicio": 20,
     "pagina_fin": 23,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
@@ -15576,8 +20928,6 @@
     "url": "",
     "pagina_inicio": 26,
     "pagina_fin": 29,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
@@ -15600,8 +20950,6 @@
     "url": "",
     "pagina_inicio": 36,
     "pagina_fin": 39,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
@@ -16296,6 +21644,370 @@
     "usuario": 11,
     "institucion": 1,
     "dependencia": 1
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 54,
+  "fields": {
+    "nombre": "Planificaci\u00f3n Ambiental",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2012-01-01",
+    "usuario": 30,
+    "institucion": 1,
+    "dependencia": 10
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 55,
+  "fields": {
+    "nombre": "Plan de estudios de la Licenciatura en Biolog\u00eda (comit\u00e9 de evaluaci\u00f3n permanente)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2006-12-31",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 56,
+  "fields": {
+    "nombre": "Planes de estudio en la Licenciatura de Biolog\u00eda (comit\u00e9 revisor)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2006-12-31",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 57,
+  "fields": {
+    "nombre": "Plan de estudios de nueva creaci\u00f3n de la Licenciatura en Biolog\u00eda Marina",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2006-04-30",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 58,
+  "fields": {
+    "nombre": "Plan de estudios de nueva creaci\u00f3n de la Licenciatura en Agroecolog\u00eda",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2006-05-31",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 59,
+  "fields": {
+    "nombre": "Plan de estudios de la Licenciatura en Biolog\u00eda (comit\u00e9 de evaluaci\u00f3n)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2005-12-31",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 60,
+  "fields": {
+    "nombre": "Planes de estudio de la Licenciatura en Biolog\u00eda (comit\u00e9 revisor)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2005-12-31",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 61,
+  "fields": {
+    "nombre": "Propuesta de modificaci\u00f3n del plan de estudios de la Licenciatura en Biolog\u00eda (comit\u00e9 de revisi\u00f3n)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2005-08-31",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 535
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 62,
+  "fields": {
+    "nombre": "Planes de estudio de la Licenciatura en Biolog\u00eda (comit\u00e9 revisor)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2004-11-19",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 63,
+  "fields": {
+    "nombre": "Planes de estudio de la Licenciatura en Biolog\u00eda 8comit\u00e9 revisor)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2004-12-31",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 64,
+  "fields": {
+    "nombre": "Calidad del ambiente del plan de la Licenciatura en Geohistoria",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2012-01-01",
+    "usuario": 30,
+    "institucion": 1,
+    "dependencia": 10
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 65,
+  "fields": {
+    "nombre": "Edafolog\u00eda del plan de la Licenciatura en Geohistoria",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2012-01-01",
+    "usuario": 30,
+    "institucion": 1,
+    "dependencia": 10
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 66,
+  "fields": {
+    "nombre": "Indicadores de calidad de agua y suelos del plan de la Maestr\u00eda en Geograf\u00eda (manejo integrado del paisaje)",
+    "descripcion": "",
+    "nivel": "MAESTRIA",
+    "fecha": "2008-01-01",
+    "usuario": 30,
+    "institucion": 1,
+    "dependencia": 4
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 67,
+  "fields": {
+    "nombre": "Geopedolog\u00eda del plan de la Maestr\u00eda en Geograf\u00eda (manejo integrado del paisaje)",
+    "descripcion": "",
+    "nivel": "MAESTRIA",
+    "fecha": "2008-01-01",
+    "usuario": 30,
+    "institucion": 1,
+    "dependencia": 4
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 68,
+  "fields": {
+    "nombre": "Ciencias ambientales, que corresponde al nuevo plan de estudios de la licenciatura en Biolog\u00eda",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2005-07-28",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 530
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 69,
+  "fields": {
+    "nombre": "T\u00e9cnicas de muestreo (descripci\u00f3n sint\u00e9tica)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2004-11-30",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 680
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 70,
+  "fields": {
+    "nombre": "Impacto y manifestaci\u00f3n ambiental (descripci\u00f3n sint\u00e9tica)",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2004-11-16",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 680
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 71,
+  "fields": {
+    "nombre": "Importancia del muestreo de suelos y sus aplicaciones",
+    "descripcion": "Maestr\u00eda en Manejo y Conservaci\u00f3n de Recursos Naturales Tropicales",
+    "nivel": "MAESTRIA",
+    "fecha": "2001-01-01",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 535
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 72,
+  "fields": {
+    "nombre": "Clasificaci\u00f3n, conservaci\u00f3n y evaluaci\u00f3n de monolitos de suelo",
+    "descripcion": "Maestr\u00eda en ciencias en Manejo y conservaci\u00f3n de recursos naturales tropicales",
+    "nivel": "MAESTRIA",
+    "fecha": "2001-09-30",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 535
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 73,
+  "fields": {
+    "nombre": "Importancia del muestreo de suelos y sus aplicaciones",
+    "descripcion": "Maestr\u00eda en Manejo y Conservaci\u00f3n de Recursos Naturales Tropicales",
+    "nivel": "MAESTRIA",
+    "fecha": "2000-02-29",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 535
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 74,
+  "fields": {
+    "nombre": "Metodolog\u00eda de la investigaci\u00f3n del nuevo plan de la Licenciatura en Biolog\u00eda",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "1998-01-01",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 535
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 75,
+  "fields": {
+    "nombre": "T\u00e9cnicas de muestreo (modificaci\u00f3n)",
+    "descripcion": "Maestr\u00eda en Manejo y Conservaci\u00f3n de Recursos Naturales Tropicales",
+    "nivel": "MAESTRIA",
+    "fecha": "1996-08-01",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 535
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 76,
+  "fields": {
+    "nombre": "Manejo y conservaci\u00f3n del suelo",
+    "descripcion": "Maestr\u00eda en Manejo y Conservaci\u00f3n de Recursos Naturales Tropicales",
+    "nivel": "MAESTRIA",
+    "fecha": "1996-04-01",
+    "usuario": 30,
+    "institucion": 456,
+    "dependencia": 535
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 77,
+  "fields": {
+    "nombre": "Manejo de Informaci\u00f3n Geogr\u00e1fica",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2012-08-14",
+    "usuario": 26,
+    "institucion": 1,
+    "dependencia": 10
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 78,
+  "fields": {
+    "nombre": "An\u00e1lisis y Modelado Espacial",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2012-08-16",
+    "usuario": 26,
+    "institucion": 1,
+    "dependencia": 10
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 79,
+  "fields": {
+    "nombre": "Herramientas de An\u00e1lisis Espacial",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2012-08-17",
+    "usuario": 26,
+    "institucion": 1,
+    "dependencia": 10
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 80,
+  "fields": {
+    "nombre": "Gu\u00eda de Trabajos Pr\u00e1cticos de la Asignatura Qu\u00edmica General",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "1994-06-07",
+    "usuario": 26,
+    "institucion": 107,
+    "dependencia": 742
+  }
+},
+{
+  "model": "docencia.programaestudio",
+  "pk": 81,
+  "fields": {
+    "nombre": "Tecnolog\u00edas para la Informaci\u00f3n en Ciencias",
+    "descripcion": "",
+    "nivel": "LICENCIATURA",
+    "fecha": "2013-05-06",
+    "usuario": 14,
+    "institucion": 269,
+    "dependencia": 739
   }
 }
 ]
