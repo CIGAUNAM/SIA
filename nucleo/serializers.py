@@ -47,13 +47,14 @@ class UserSerializer(serializers.ModelSerializer):
 class InstitucionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Institucion
-        fields = ('id', 'institucion', 'pais')
+        fields = '__all__'
 
 
 class DependenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dependencia
-        fields = ('id', 'dependencia', 'institucion', 'ciudad', 'subsistema_unam')
+        fields = '__all__'
+
 
 
 class CargoSerializer(serializers.ModelSerializer):
