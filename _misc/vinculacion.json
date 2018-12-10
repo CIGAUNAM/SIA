@@ -1,0 +1,3263 @@
+[
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 1,
+  "fields": {
+    "descripcion": "Revista Water Resources Management",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-02-05",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 2,
+  "fields": {
+    "descripcion": "Revista Land Use Policy",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-10-16",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 3,
+  "fields": {
+    "descripcion": "Revista Society and Natural Resources",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-12-02",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 4,
+  "fields": {
+    "descripcion": "Revista Human Ecology",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-02-20",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 5,
+  "fields": {
+    "descripcion": "Revista Ecosystem Services",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-06-20",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 6,
+  "fields": {
+    "descripcion": "Art\u00edculo para la revista Americae, European Journal of Americanist Archaeology, CNRS \u2013 UMR 8096, Paris, Francia.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-04-04",
+    "usuario": 9
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 7,
+  "fields": {
+    "descripcion": "Revisi\u00f3n y arbitraje del art\u00edculo: \u201cCambio de uso del suelo en la subcuenca del R\u00edo San Marcos, Puebla\u201d. Dentro del libro AVANCES EN AGROECOLOG\u00cdA Y AMBIENTE VOL. I. L\u00f3pez-Olgu\u00edn J.F., A. Arag\u00f3n G. y A.M. Tapia R. (Eds.). Publicaci\u00f3n especial de la Benem\u00e9rita Universidad Aut\u00f3noma de Puebla",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2007-12-07",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 8,
+  "fields": {
+    "descripcion": "Arbitraje del manuscrito 2008 Productividad f\u00edsica de parcelas de ma\u00edz enviado al Comit\u00e9 Editorial de la nueva edici\u00f3n de \u201cT\u00e9cnicas de muestreo para manejadores de rs naturales\u201d. CIGA, UNAM.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 9,
+  "fields": {
+    "descripcion": "Arbitraje del manuscrito 2010 Avances de la Producci\u00f3n de Org\u00e1nicos en Chiapas. Volumen I del la colecci\u00f3n de  la Asociaci\u00f3n Mexicana de Estudios Rurales (AMER)",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 10,
+  "fields": {
+    "descripcion": "Arbitraje de un Cap\u00edtulo del Libro. Gesti\u00f3n y estrategias de manejo sustentable para el desarrollo regional en la cuenca hidrogr\u00e1fica transfronteriza Grijalva. Cuenca Grijalva, ECOSUR, M\u00e9xico",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 11,
+  "fields": {
+    "descripcion": "Art\u00edculo: Evaluaci\u00f3n de la sustentabilidad bajo el marco MESMIS del Ejido de Rancho Nuevo Nanacamila. Arbitraje Ciencia y Desarrollo.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 12,
+  "fields": {
+    "descripcion": "Arbitraje Libro \u201cLa agricultura sostenible en el Valle del Tulij\u00e1, Chiapas, M\u00e9xico\u201d UNACH",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-01-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 13,
+  "fields": {
+    "descripcion": "Art\u00edculo: Crecimiento, nutrici\u00f3n y rendimiento de calabacita con fertilizaci\u00f3n biol\u00f3gica y mineral. Revista Contaminaci\u00f3n Ambiental",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 14,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo: Agroecolog\u00eda, biodiversidad y ciclo de producci\u00f3n de pitahaya (Hylocereus spp.) en la Zona Maya de M\u00e9xico. Revista Agroecologia.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-01-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 15,
+  "fields": {
+    "descripcion": "Dictamen. Cap\u00edtulo \u201cEl modelo del sistema de gesti\u00f3n ambiental en PYMES como aporte a la sustentabilidad\u201d Libro del Centro de Estudios e Investigaci\u00f3n  en Desarrollo Sustentable, Universidad Aut\u00f3noma. Estado de M\u00e9xico",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 16,
+  "fields": {
+    "descripcion": "Dictamen del cap\u00edtulo. \u201cNuevas experiencias en la aplicaci\u00f3n del Marco MESMIS en la Universidad Aut\u00f3noma del Estado de M\u00e9xico. Un an\u00e1lisis conceptual y metodol\u00f3gico \u201cLibro del Centro de Estudios e Investigaci\u00f3n  en Desarrollo Sustentable, Universidad Aut\u00f3noma. Estado de M\u00e9xico",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 17,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo cient\u00edfico \"Preferencias y percepciones en el uso de semilla mejorada de ma\u00edz (Zea mays L.) por productores de grano en Veracruz, M\u00e9xico\" Revista Ciencia Universidad Aut\u00f3noma Tamaulipas",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-07-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 18,
+  "fields": {
+    "descripcion": "Dictamen libro. Protecci\u00f3n desarrollo e innovaci\u00f3n de conocimientos y recursos tradicionales, capitulo 3. Secretar\u00eda de Desarrollo Institucional. UNAM.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-07-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 19,
+  "fields": {
+    "descripcion": "Dictamen cap\u00edtulo en libro. Implicaciones del cambio clim\u00e1tico sobre los medios de vida rural: los recursos forestales no maderables como un nuevo potencial de adaptaci\u00f3n. CIGA \u2013 UNAM.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-11-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 20,
+  "fields": {
+    "descripcion": "Dictamen cap\u00edtulo en libro. Un acercamiento a los cambios ambientales a trav\u00e9s de las percepciones locales: el caso del ejido Nieves, Michoac\u00e1n. CIGA \u2013 UNAM.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-11-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 21,
+  "fields": {
+    "descripcion": "Editora invitada de la Revista Agroecolog\u00eda, Universidad de Zaragoza, Espa\u00f1a.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2007-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 22,
+  "fields": {
+    "descripcion": "Arbitraje del manuscrito Experiencias de agricultura org\u00e1nica en el Ejido de la Cienega, Costa Sur de Jalisco, enviado a la Revista de Agroecolog\u00eda, Murcia, Espa\u00f1a.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2007-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 23,
+  "fields": {
+    "descripcion": "Arbitraje del art\u00edculo SR08071: 2008 'Short term effects of indigenous legumes and maize on soil properties and yield of subsequent maize crop in an ultisol in southeastern Nigeria.' by Martin A.N Anikwe, and Desmond C D.C Eze. Enviado a la revista Australian Journal of Soil Research",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 24,
+  "fields": {
+    "descripcion": "Arbitraje del art\u00edculo SR08071. 2008 Environmental trajectories in Bordeaux-area vineyards Journal of environmental management JEMA",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 25,
+  "fields": {
+    "descripcion": "Arbitraje art\u00edculo \"An\u00e1lisis de la demanda de energ\u00eda en 3 cultivos oleaginosos de clima templado, seg\u00fan distintos procesos ecol\u00f3gicos\u201d. Revista Brasile\u00f1a de Agroecolog\u00eda.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 26,
+  "fields": {
+    "descripcion": "Arbitraje art\u00edculo \"An\u00e1lisis Del Conocimiento y Estrategias De Manejo Del Suelo En Horticultores Capitalizados\". Revista Brasile\u00f1a de Agroecolog\u00eda.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-06-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 27,
+  "fields": {
+    "descripcion": "Arbitraje art\u00edculo \"Una Evaluaci\u00f3n de la Sostenibilidad con Horticultores  Salte\u00f1os.\" Revista Brasile\u00f1a de Agroecolog\u00eda.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-06-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 28,
+  "fields": {
+    "descripcion": "Arbitraje del art\u00edculo SUM-2008-256 \"Evaluating chemical and physical indicators of quality in a structurally fragile tropical soil\" Journal of Soil Use and Management.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-06-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 29,
+  "fields": {
+    "descripcion": "Arbitraje del art\u00edculo \u201cDesarrollo y Validaci\u00f3n del Metodolog\u00eda para evaluar con indicadores la sustentabilidad de  los sistemas productivos campesinos de la Asociaci\u00f3n de Caficultores Org\u00e1nicos de Colombia-ACOC, II Fase\u201d para la Revista de Investigaci\u00f3n de UNISARC.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-05-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 30,
+  "fields": {
+    "descripcion": "Arbitraje MS3745 de la Revista Interciencia",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-09-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 31,
+  "fields": {
+    "descripcion": "Arbitraje Interciencia",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2012-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 32,
+  "fields": {
+    "descripcion": "Arbitraje Revista Journal of Sustainable Agriculture",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2012-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 33,
+  "fields": {
+    "descripcion": "Arbitraje revista REVIBEC",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2012-02-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 34,
+  "fields": {
+    "descripcion": "Arbitraje Revista Climatic Change 2013. Manuscript Number: CLIM-D-13-00106",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 35,
+  "fields": {
+    "descripcion": "Arbitraje de Ciencias Agrarias Revista de la Facultad de Cuyo 2014",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-06-10",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 36,
+  "fields": {
+    "descripcion": "Arbitraje de Ciencias Agrarias Revista de la Facultad de Cuyo",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 37,
+  "fields": {
+    "descripcion": "Arbitraje de Ciencias Agrarias Revista de la Facultad de Cuyo",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 38,
+  "fields": {
+    "descripcion": "Arbitraje. Agronomy and Sustainable Development, ASDE-D-14-00167",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-03-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 39,
+  "fields": {
+    "descripcion": "Arbitraje Revista Ecology & Society. Manuscript #: ES-2014-6919, Version 1 y 2",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-04-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 40,
+  "fields": {
+    "descripcion": "Arbitraje Revista Ecology & Society. Manuscript #: ES-2014-6627, Version 1",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-05-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 41,
+  "fields": {
+    "descripcion": "Arbitraje Revista Ecology & Society. Manuscript #: ES-2014-7040, Version 1 y 2",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-06-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 42,
+  "fields": {
+    "descripcion": "Arbitraje Revista Brasile\u00f1a de Agroecolog\u00eda ABA",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-07-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 43,
+  "fields": {
+    "descripcion": "Arbitraje Revista Investigaciones Geograf\u00edcas UNAM",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-07-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 44,
+  "fields": {
+    "descripcion": "Interciencia 5065 FERRAMENTAS DE AVALIA\u00c7\u00c3O DA SUSTENTABILIDADE: REVIS\u00c3O DE LITERATURA E AGENDA DE PESQUISAS FUTURAS. Octubre 2014.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-10-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 45,
+  "fields": {
+    "descripcion": "Journal of Sustainable Production and Consumption ELSEVIER",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-05-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 46,
+  "fields": {
+    "descripcion": "Arbitraje Agroecology and Sustainable Food Systems",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-06-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 47,
+  "fields": {
+    "descripcion": "Arbitraje de 10 trabajos y presentaciones orales en el V Congreso Sociedad Cient\u00edfica Latinoamericana de Agroecolog\u00eda, La Plata, Argentina.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-10-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 48,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo: Is saffron more energy and economic efficient than wheat in crop rotation systems in northeast Iran? Journal of Sustainable Production and Consumption, Elsevier.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-09-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 49,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo: Indicadores de sustentabilidad en producciones familiares ganaderas Revista Facultad de Agronom\u00eda. Facultad de Ciencias Agr\u00edcolas y Forestales.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 50,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo: \"Energy efficiency in agrarian systems from an agro-ecological perspective\" Agroecology and Sustainable Food Systems.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 51,
+  "fields": {
+    "descripcion": "Dictamen libro: Energy in Agroecosystems: A Tool for Assessing Sustainability (junto con Omar Masera): CRC Press, Florida, USA.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-03-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 52,
+  "fields": {
+    "descripcion": "Dictamen: Art\u00edculo Revista Energy Environmental Change Manuscript: \"SPANISH AGRICULTURE FROM 1900 TO 2008: A LONG\u00adTERM PERSPECTIVE ON AGROECOSYSTEM ENERGY FROM AN AGRO\u00adECOLOGICAL APPROACH\"?No: REEC\u00adD\u00ad16\u00ad00280. Regional Environmental Change.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 53,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo: Agroecology, public policies and labour \u2013 driven intensification alternative development trajectories in the Brazilian semi-arid regi\u00f3n. Sustainability Journal.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-02-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 54,
+  "fields": {
+    "descripcion": "Revisor de trabajos. X Congreso Brasileiro de Agroecolog\u00eda y VI Seminario de Agroecolog\u00eda del Distrito Federal y el Entorno. Agroecolog\u00eda 2017. Brasilia, Brasil. Mayo 2017. 1. Conservaci\u00f3n de semillas comerciales. 2. Recuperaci\u00f3n y selecci\u00f3n de cultivares de arroces. 3. Evaluaci\u00f3n de la Agrobiodiversidad. 4. Diversidad en solares. 5. Caracterizaci\u00f3n de los sistemas.  6. Patrimonios agroalimentarios. 7. Cultivos tradicionales. 8. Mejoramiento de sistemas. 9. A agroecolog\u00eda e diversificacao.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-05-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 55,
+  "fields": {
+    "descripcion": "Revisor de trabajos. VI Congreso Latino-Americano de Agroecolog\u00eda, X Congresso Brasileiro de Agroecolog\u00eda y VI Seminario de Agroecolog\u00eda do Distrito Federal e Entorno. Julio 2017. Las abejas nativas retos de su crianza y conservaci\u00f3n en Veracruz, M\u00e9xico. Caracterizaci\u00f3n de Bosques Nativos que presentaron resistencia al fuego en el megaincendio de la regi\u00f3n Bio-Bio de Chle.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-07-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 56,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo. \u201cSustainability assessment of traditional (Zea mays L.) agroecosystem in Sierra Norte of Puebla, Mexico\u201d. Journal of Sustainable Agriculture.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-09-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 57,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo. Sostenibilidad e impacto sociocultural de un sistema productivo familiar con granadilla (Passifloraligularis Juss) en la Provincia de Oxapampa, Pasco \u2013 Per\u00fa. Parte 1. Asp social Elisa. Revista Espa\u00f1a",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-07-09",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 58,
+  "fields": {
+    "descripcion": "Evaluadora de art\u00edculo para ser publicado en la \u201cRevista Relaciones de la Sociedad Argentina de Antropolog\u00eda\u201d, Tomo 43 (2018), editada por la SAA, Buenos Aires. ISSN: 0325-2221.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 59,
+  "fields": {
+    "descripcion": "Community participation and benefits in REDD+: A review of inicial outcomes and lessons. FOREST. SCIE - Science Citation Index Expanded (WoS).",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-05-11",
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 60,
+  "fields": {
+    "descripcion": "Potential for integrating community-based monitoring into REDD+. FORESTS. Science Citation Index Expanded (WoS).",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-04-09",
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 61,
+  "fields": {
+    "descripcion": "REDD+: a carb\u00f3n stock-flow analysis of the Brazilian Amazon municipalities. Carbon Management. SCI-SJR",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-02-16",
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 62,
+  "fields": {
+    "descripcion": "Revisa Terra Digitalis. UNAM, IGG.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-07-02",
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 63,
+  "fields": {
+    "descripcion": "Marine Policy. Elsevier",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-05-21",
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 64,
+  "fields": {
+    "descripcion": "Dictamen a art\u00edculo en revista.  Ecosur. Marzo 2018. Colegio de la Frontera Sur.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-03-06",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 65,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo. Ecology and Society.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-02-13",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 66,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo. Agroecology and Sustainable Food Systems. Taylor & Francis.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-04-17",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 67,
+  "fields": {
+    "descripcion": "Dictamen art\u00edculo. Revista de la Facultad de Ciencias Agrarias de Cuyo.",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-06-06",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 69,
+  "fields": {
+    "descripcion": "Revisora del libro: Jean Francois Mas. 2018. An\u00e1lisis espacial con R. Usa R como un sistema de informaci\u00f3n geogr\u00e1fico. European Scientific Institute.",
+    "tipo": "LIBRO",
+    "revista": null,
+    "libro": "An\u00e1lisis espacial con R. Usa R como un sistema de informaci\u00f3n geogr\u00e1fico",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-09",
+    "usuario": 19
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 70,
+  "fields": {
+    "descripcion": "\u201cComplementarity between EJ movement and degrowth on the European semiperiphery: empirical study among EJ movement members in Croatia\u201d, Ecological Economics (ECOLEC_2018_285). ISSN: 0921-8009. (SCI: IF 3.895)",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-05-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 71,
+  "fields": {
+    "descripcion": "\u201cThe role of social network analysis in understanding the dissemination and adoption of innovations: geospatial solutions for disaster management\u201d, Natural Hazards (NHAZ-D-17-01267). ISSN: 1573-0840. (SCI: IF 1.833)",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-12-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 72,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 73,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 74,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 75,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 76,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 77,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 78,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 79,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-04-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 80,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-06-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 81,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-05-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 82,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 83,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 84,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 85,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-04-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 86,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-05-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 87,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 88,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 89,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 90,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 91,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 92,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2005-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 93,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2005-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 94,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2005-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 95,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 96,
+  "fields": {
+    "descripcion": "Bit\u00e1cora Urbana Territorial. Revista Indexada: Scopus, Latindex, Scientific Electronic Library Online",
+    "tipo": "ARTICULO",
+    "revista": 351,
+    "libro": "Bit\u00e1cora Urbana Territorial.",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-10",
+    "usuario": 44
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 98,
+  "fields": {
+    "descripcion": "Dictaminador.",
+    "tipo": "ARTICULO",
+    "revista": 15,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-06-20",
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 99,
+  "fields": {
+    "descripcion": "Arbitrajes del manuscrito titulado: Disposal of oil-field sludge by pyrolysis: kinetic mechanism study",
+    "tipo": "ARTICULO",
+    "revista": 191,
+    "libro": "no aplica",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-21",
+    "usuario": 1838
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 101,
+  "fields": {
+    "descripcion": "Revista Agricultura, Sociedad y Desarrollo -  ISSN: 2594-0244",
+    "tipo": "ARTICULO",
+    "revista": 360,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-07-31",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 102,
+  "fields": {
+    "descripcion": "Revista Fronteiras: Journal of Social, Technological and Environmental Science - ISSN: 2238-8869",
+    "tipo": "ARTICULO",
+    "revista": 361,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-18",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 103,
+  "fields": {
+    "descripcion": "Revista HALAC - ISSN: 2237-2717",
+    "tipo": "ARTICULO",
+    "revista": 362,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-10-15",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 104,
+  "fields": {
+    "descripcion": "Revista HALAC - ISSN: 2237-2717",
+    "tipo": "ARTICULO",
+    "revista": 362,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-14",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 105,
+  "fields": {
+    "descripcion": "",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Biodiversidad, servicios ecosist\u00e9micos y los objetivos del desarrollo sostenible en M\u00e9xico",
+    "capitulo_libro": "Hacia el manejo forestal sostenible: una revisi\u00f3n r\u00e1pida de las pol\u00edticas forestales en M\u00e9xico",
+    "fecha_dictamen": "2018-09-27",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 106,
+  "fields": {
+    "descripcion": "",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Biodiversidad, servicios ecosist\u00e9micos y los objetivos del desarrollo sostenible en M\u00e9xico",
+    "capitulo_libro": "El papel de las OSC en la conservaci\u00f3n y el aprovechamiento sustentable de la biodiversidad y los SE en M\u00e9xico: Casos y experiencias",
+    "fecha_dictamen": "2018-10-01",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 107,
+  "fields": {
+    "descripcion": "Secretar\u00eda de Desarrollo Institucional. UNAM",
+    "tipo": "LIBRO",
+    "revista": null,
+    "libro": "Alimentaci\u00f3n, recursos tradicionales y ciencia: el prisma de los quelites. Un proyecto multidisciplinario.",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-14",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 108,
+  "fields": {
+    "descripcion": "Centro Peninsular en Humanidades y en Ciencias Sociales.\"Del milagro mexicano a la globalizaci\u00f3n neoliberal y su materializaci\u00f3n en la ciudad de M\u00e9rida.",
+    "tipo": "ARTICULO",
+    "revista": 363,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-14",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 109,
+  "fields": {
+    "descripcion": "Articulo ASD-17-015. CONACYT",
+    "tipo": "ARTICULO",
+    "revista": 360,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-24",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 110,
+  "fields": {
+    "descripcion": "Articulo 1772",
+    "tipo": "ARTICULO",
+    "revista": 364,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2017-09-12",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 111,
+  "fields": {
+    "descripcion": "Articulo 20161472",
+    "tipo": "ARTICULO",
+    "revista": 364,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2016-09-08",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 112,
+  "fields": {
+    "descripcion": "Departamento de Geograf\u00eda Universidad Nacional de Colombia",
+    "tipo": "ARTICULO",
+    "revista": 258,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2016-08-03",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 113,
+  "fields": {
+    "descripcion": "Dictamen de art\u00edculo Metodolog\u00eda para la evaluaci\u00f3n territorial de las unidades de gesti\u00f3n ambiental",
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2016-11-10",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 114,
+  "fields": {
+    "descripcion": "Dictamen de art\u00edculo \u201cGeomorfolog\u00eda y Paisaje, un binomio complementario e indisoluble\u201d. Exp. CES/11/15",
+    "tipo": "ARTICULO",
+    "revista": 365,
+    "libro": "Revista Ciencia ergo-sum",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2015-07-16",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 115,
+  "fields": {
+    "descripcion": "Dictamen de art\u00edculo Manuscript: \u201cLand Cover modification geoindicator, applied in a tropical coastal environment\u201d",
+    "tipo": "ARTICULO",
+    "revista": 366,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2013-11-25",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 116,
+  "fields": {
+    "descripcion": "Dictamen \u201cCaracterizaci\u00f3n geomorfol\u00f3gica como propuesta para la planificaci\u00f3n ambiental y territorial \u2013 un ejemplo de aplicaci\u00f3n en Brasil",
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2015-10-22",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 117,
+  "fields": {
+    "descripcion": "Dictamen de art\u00edculo \"An\u00e1lisis morfoestructural del relieve del municipio Managua, Nicaragua: una zonaci\u00f3n morfotect\u00f3nico\u2013volc\u00e1nica\u201d",
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2014-06-10",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 118,
+  "fields": {
+    "descripcion": "Dictamen de art\u00edculo Consideraciones te\u00f3ricas para la distinci\u00f3n y clasificaci\u00f3n de las unidades de gesti\u00f3n del paisaje en Cuba",
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2013-05-22",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 119,
+  "fields": {
+    "descripcion": "Dictamen para Ed. CIGA UNAM-INECC",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Dimensiones sociales en el Manejo de Cuencas en M\u00e9xico",
+    "capitulo_libro": "Dimensiones sociales en el Manejo de Cuencas en M\u00e9xico",
+    "fecha_dictamen": "2014-10-28",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 120,
+  "fields": {
+    "descripcion": "Ed. UASLP. Capitulo: Medio abi\u00f3tico.",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Ambiente, Sociedad y Econom\u00eda",
+    "capitulo_libro": "Ambiente, Sociedad y Econom\u00eda",
+    "fecha_dictamen": "2014-11-27",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 121,
+  "fields": {
+    "descripcion": "Dictamen de capitulo Estudio territorial e impacto ambiental en la Colonia Lices del Mar, Guerrero, M\u00e9xico",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades",
+    "capitulo_libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades\"",
+    "fecha_dictamen": "2009-06-16",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 122,
+  "fields": {
+    "descripcion": "La transformaci\u00f3n del ejido y la gesti\u00f3n del agua.",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades\".",
+    "capitulo_libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades",
+    "fecha_dictamen": "2009-11-19",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 123,
+  "fields": {
+    "descripcion": "La Ecolog\u00eda de Paisajes en el Espacio y en el Tiempo. Cap\u00edtulo 4 Editora ANAP (Asociaci\u00f3n de amigos de la Naturaleza del Alto Sao Pablo). Sao Pablo. Brasil",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "CARTOGRAFIA BIOGEOGRAFICA Y DE LOS PAISAJES",
+    "capitulo_libro": "CARTOGRAFIA BIOGEOGRAFICA Y DE LOS PAISAJES",
+    "fecha_dictamen": "2018-02-14",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 124,
+  "fields": {
+    "descripcion": "Facilities Location for Residual Biomass Production System using Geographic Information System under Uncertainty",
+    "tipo": "ARTICULO",
+    "revista": 369,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-01-23",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 125,
+  "fields": {
+    "descripcion": "Local Scale Accuracy Assessment of Vegetation Cover Change Maps derived from Global Forest Change Data, CLaslite and Supervised Classifications: Case Study in Part of Riau Province, Indonesia",
+    "tipo": "ARTICULO",
+    "revista": 370,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-11",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 126,
+  "fields": {
+    "descripcion": "Local Scale Accuracy Assessment of Vegetation Cover Change Maps derived from Global Forest Change Data, CLaslite and Supervised Classifications: Case Study in Part of Riau Province, Indonesia. Versi\u00f3n 2",
+    "tipo": "ARTICULO",
+    "revista": 370,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-14",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 127,
+  "fields": {
+    "descripcion": "Modeling land cover changes in the tropical dry forest surrounding the Chamela-Cuixmala Biosphere Reserve, Mexico",
+    "tipo": "ARTICULO",
+    "revista": 15,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-06-24",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 128,
+  "fields": {
+    "descripcion": "FUTURE LAND COVER CHANGE SCENARIOS IN SOUTH AFRICAN GRASSLANDS - IMPLICATIONS OF ALTERED BIOPHYSICAL DRIVERS ON LAND MANAGEMENT",
+    "tipo": "ARTICULO",
+    "revista": 371,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-07-29",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 129,
+  "fields": {
+    "descripcion": "Assessing Rangeland Degradation in Jordan after the Arab Spring Using a Remote Sensing Approach",
+    "tipo": "ARTICULO",
+    "revista": 372,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-11",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 130,
+  "fields": {
+    "descripcion": "Estimation of forest area and canopy cover based on visual interpretation of satellite images in Ethiopia",
+    "tipo": "ARTICULO",
+    "revista": 294,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-07-05",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 131,
+  "fields": {
+    "descripcion": "A two-branch Deep Learning architecture for land cover classification of PAN and MS imagery",
+    "tipo": "ARTICULO",
+    "revista": 128,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-10-14",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 132,
+  "fields": {
+    "descripcion": "Forest cover and disturbance changes and their driving forces: a case study of Western Ore Mts., Czechia, heavily affected by mining activities and acidic pollution in the second half of the 20th century",
+    "tipo": "ARTICULO",
+    "revista": 55,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-04-06",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 133,
+  "fields": {
+    "descripcion": "LAND COVER CHANGE PREDICTION IN SOUTH AFRICAN GRASSLANDS - IMPLICATIONS OF ALTERED BIOPHYSICAL DRIVERS ON LAND MANAGEMENT",
+    "tipo": "ARTICULO",
+    "revista": 371,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-22",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 134,
+  "fields": {
+    "descripcion": "Estimation of forest area and canopy cover based on visual interpretation of satellite images in Ethiopia (versi\u00f3n 2)",
+    "tipo": "ARTICULO",
+    "revista": 294,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-30",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 135,
+  "fields": {
+    "descripcion": "Landcover classification using grade-added rough set theory",
+    "tipo": "ARTICULO",
+    "revista": 128,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-09-12",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 136,
+  "fields": {
+    "descripcion": "LAND USE/ LAND COVER DYNAMICS USING LANDSAT DATA IN A GOLD MINING BASIN-THE ANKOBRA, GHANA",
+    "tipo": "ARTICULO",
+    "revista": 373,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-03-29",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 137,
+  "fields": {
+    "descripcion": "An\u00e1lisis y modelaci\u00f3n espacio-temporal de la probabilidad de deforestaci\u00f3n (2003-2016) en el \u00e1rea protegida Sierra de P\u00e9njamo, Guanajuato",
+    "tipo": "ARTICULO",
+    "revista": 134,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-12",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 138,
+  "fields": {
+    "descripcion": "Modeling spatially non-stationary land use/cover change in the lower Connecticut River Basin by combining geographically weighted logistic regression and the CA-Markov model",
+    "tipo": "ARTICULO",
+    "revista": 292,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-23",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 139,
+  "fields": {
+    "descripcion": "Manuscrito sobre deforestaci\u00f3n para plantaciones de cocoa en Ghana",
+    "tipo": "ARTICULO",
+    "revista": 15,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2017-09-09",
+    "usuario": 54
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 140,
+  "fields": {
+    "descripcion": "Estudio sobre valoraci\u00f3n econ\u00f3mica del manejo de residuos peligrosos",
+    "tipo": "ARTICULO",
+    "revista": 143,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2017-08-18",
+    "usuario": 54
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 141,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 377,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-28",
+    "usuario": 54
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 142,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 382,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-22",
+    "usuario": 5
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 143,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 383,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-06-12",
+    "usuario": 42
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 144,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 51,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-03-23",
+    "usuario": 93
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 145,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 167,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-10-15",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 146,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 94,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-05",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 147,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 143,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-12-02",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 148,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 386,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-03",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 149,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 192,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-15",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 150,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 39,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-23",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 151,
+  "fields": {
+    "descripcion": "",
+    "tipo": "LIBRO",
+    "revista": null,
+    "libro": "Paisaje y legislaci\u00f3n. Un debate abierto en M\u00e9xico",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-26",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 152,
+  "fields": {
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "revista": 389,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-17",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 153,
+  "fields": {
+    "descripcion": "",
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "",
+    "capitulo_libro": "Expansi\u00f3n periurbana y trasformaciones en el espacio geogr\u00e1fico: la recarga h\u00eddrica en el \u00c1rea Metropolitana de Guadalajara",
+    "fecha_dictamen": "2018-06-25",
+    "usuario": 36
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 2,
+  "fields": {
+    "fecha": "2018-02-20",
+    "descripcion": "tema: prevenci\u00f3n de riesgos naturales / resiliencia frente a desastres naturales y tecnol\u00f3gicos, proyecto",
+    "convocatoria": "Problemas Nacionales",
+    "institucion": 9,
+    "dependencia": 65,
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 3,
+  "fields": {
+    "fecha": "2018-01-30",
+    "descripcion": "3 Proyectos: juventudes con la tierra como sujetos de cambio y agroecolog\u00eda en Uruguay.\r\nFortalecimiento agroecol\u00f3gico para la conservaci\u00f3n in situ de la agrodiversidad en el occidente de M\u00e9xico\r\nComparaci\u00f3n del uso sustentable del agua entre sistemas familiares y empresariales de Argentina y Brasil",
+    "convocatoria": "Convocatoria para j\u00f3venes investigadores 2018",
+    "institucion": 174,
+    "dependencia": 288,
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 4,
+  "fields": {
+    "fecha": "2018-09-04",
+    "descripcion": "dictamen de proyecto PAPIIT",
+    "convocatoria": "PAPIIT DGAPA",
+    "institucion": 520,
+    "dependencia": 701,
+    "usuario": 9
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 5,
+  "fields": {
+    "fecha": "2018-10-19",
+    "descripcion": "Miembro del Comit\u00e9 Cient\u00edfico Evaluador de la \"Mesa 8.- Resilencia y Prosperidad Urbana; Desarrollo Humano, Educaci\u00f3n de Calidad y Acceso a la Salud.\" En el marco de las actividades acad\u00e9micas del 13\u00b0 Congreso Estatal de Ciencia, Tecnolog\u00eda e Innovaci\u00f3n y el S\u00e9ptimo Encuentro de J\u00f3venes Investigadores del Estado de Michoac\u00e1n.",
+    "convocatoria": "no aplica",
+    "institucion": 580,
+    "dependencia": 727,
+    "usuario": 1838
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 6,
+  "fields": {
+    "fecha": "2018-11-30",
+    "descripcion": "Evaluador de proyectos en la EXPOCIENCIAS NACIONAL 2018 que tendr\u00e1 verificativo en el Centro de Convenciones y Exposiciones CECONEXPO en Morelia, Michoac\u00e1n del 28 de noviembre al 1 de diciembre del presente a\u00f1o este evento se realizar\u00e1 en colaboraci\u00f3n con el Gobierno del Estado de Michoac\u00e1n, el Instituto de Ciencia y Tecnolog\u00eda e Innovaci\u00f3n de Michoac\u00e1n, ExpoCiencias Michoac\u00e1n, el Consejo Nacional de Ciencia y Tecnolog\u00eda, la Sociedad Mexicana para la Divulgaci\u00f3n de la Ciencia y la T\u00e9cnica, A.C. y la Universidad Popular Aut\u00f3noma del Estado de Puebla; a trav\u00e9s de la RED Nacional de Actividades Juveniles en ciencia y Tecnolog\u00eda con el aval del Movimiento Internacional para el Recreo Cient\u00edfico y T\u00e9cnico de Am\u00e9rica Latina MILSET AMLAT",
+    "convocatoria": "no aplica",
+    "institucion": 580,
+    "dependencia": 727,
+    "usuario": 1838
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 7,
+  "fields": {
+    "fecha": "2018-10-16",
+    "descripcion": "Convocatoria YUC-2016-05 (evaluaci\u00f3n de informe de avances).",
+    "convocatoria": "Fondo Mixto Conacyt, Gobierno del Estado de Yucat\u00e1n",
+    "institucion": 9,
+    "dependencia": 65,
+    "usuario": 33
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 8,
+  "fields": {
+    "fecha": "2018-07-24",
+    "descripcion": "Evaluaci\u00f3n de proyecto. \u201cMejora de la calidad del suelo y reducci\u00f3n del uso de agroqu\u00edmicos en sistemas hort\u00edcolas: el cultivo de cebolla como modelo",
+    "convocatoria": "Llamado a proyectos I+D \u2013 2018.",
+    "institucion": 589,
+    "dependencia": 736,
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 9,
+  "fields": {
+    "fecha": "2018-08-20",
+    "descripcion": "Evaluaci\u00f3n de Proyecto",
+    "convocatoria": "Ciencia B\u00e1sica. Investigador",
+    "institucion": 9,
+    "dependencia": 65,
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 10,
+  "fields": {
+    "fecha": "2018-11-14",
+    "descripcion": "Dictamen del protocolo de investigaci\u00f3n titulado: \"Transformaci\u00f3n de fronteras de \u00c1reas Protegidas: El caso de la Reserva de la Bi\u00f3sfera La Encrucijada, Estado de Chiapas\", de alumno de Maestr\u00eda.",
+    "convocatoria": "no aplica",
+    "institucion": 1,
+    "dependencia": 4,
+    "usuario": 1838
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 11,
+  "fields": {
+    "fecha": "2016-09-20",
+    "descripcion": "Evaluador proyecto PAPIIT IN302217. Direcci\u00f3n General de Asuntos del Personal Acad\u00e9mico. UNAM",
+    "convocatoria": "2017",
+    "institucion": 1,
+    "dependencia": 31,
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 12,
+  "fields": {
+    "fecha": "2017-08-31",
+    "descripcion": "Evaluador proyecto PAPIIT IG300118. Direcci\u00f3n General de Asuntos del Personal Acad\u00e9mico. UNAM",
+    "convocatoria": "2018",
+    "institucion": 1,
+    "dependencia": 31,
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 13,
+  "fields": {
+    "fecha": "2018-08-28",
+    "descripcion": "Evaluador proyecto PAPIIT IN303519. Direcci\u00f3n General de Asuntos del Personal Acad\u00e9mico. UNAM 28 agosto 2018",
+    "convocatoria": "2019",
+    "institucion": 1,
+    "dependencia": 31,
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 14,
+  "fields": {
+    "fecha": "2018-09-20",
+    "descripcion": "Evaluador proyecto PAPIIT IA301219. Direcci\u00f3n General de Asuntos del Personal Acad\u00e9mico. UNAM",
+    "convocatoria": "2019",
+    "institucion": 1,
+    "dependencia": 31,
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 15,
+  "fields": {
+    "fecha": "2017-09-14",
+    "descripcion": "An\u00e1lisis de la desertificaci\u00f3n en el Desierto Sonorense y mecanismos de adaptaci\u00f3n ante el cambio clim\u00e1tico",
+    "convocatoria": "Proyectos de Desarrollo Cient\u00edfico para Atender Problemas Nacionales",
+    "institucion": 9,
+    "dependencia": 65,
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 16,
+  "fields": {
+    "fecha": "2016-07-18",
+    "descripcion": "",
+    "convocatoria": "Apoyos para Estancias Sab\u00e1ticas Vinculadas a la Consolidaci\u00f3n de Grupos de Investigaci\u00f3n y/o el Fortalecimiento del Posgrado Nacional",
+    "institucion": 1,
+    "dependencia": 8,
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 17,
+  "fields": {
+    "fecha": "2016-02-10",
+    "descripcion": "",
+    "convocatoria": "Programa de Est\u00edmulos a la Innovaci\u00f3n",
+    "institucion": 9,
+    "dependencia": 746,
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 18,
+  "fields": {
+    "fecha": "2017-09-02",
+    "descripcion": "Control de tecnologias emergentes para sistemas espaciales",
+    "convocatoria": "Proyectos de Desarrollo Cient\u00edfico para Atender Problemas Nacionales",
+    "institucion": 9,
+    "dependencia": 65,
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajeproyectoinvestigacion",
+  "pk": 19,
+  "fields": {
+    "fecha": "2018-09-04",
+    "descripcion": "Proyecto PAPIIT",
+    "convocatoria": "2018",
+    "institucion": 1,
+    "dependencia": 31,
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 1,
+  "fields": {
+    "actividad": "Comisi\u00f3n de admisi\u00f3n e ingreso",
+    "descripcion": "",
+    "institucion": 245,
+    "dependencia": 32,
+    "fecha": "2018-06-04",
+    "usuario": 33
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 2,
+  "fields": {
+    "actividad": "Comisi\u00f3n de Admisi\u00f3n e Ingreso. 2019-1",
+    "descripcion": "",
+    "institucion": 245,
+    "dependencia": 32,
+    "fecha": "2018-06-04",
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 3,
+  "fields": {
+    "actividad": "Comisi\u00f3n de Admisi\u00f3n e Ingreso",
+    "descripcion": "lectora de protocolo doctorado",
+    "institucion": 245,
+    "dependencia": 32,
+    "fecha": "2018-06-04",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 5,
+  "fields": {
+    "actividad": "Evaluaci\u00f3n Global de la Biodiversidad y los Servicios Ecosist\u00e9micos de la Plataforma IPBES. 2017, 2018",
+    "descripcion": "",
+    "institucion": 407,
+    "dependencia": 631,
+    "fecha": "2018-02-12",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 6,
+  "fields": {
+    "actividad": "Arbitraje de res\u00famenes para el IV Congreso Mexicano de Cuencas Hidrogr\u00e1ficas",
+    "descripcion": "Mesa: Monitoreo de cuencas",
+    "institucion": 21,
+    "dependencia": 107,
+    "fecha": "2016-02-22",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 7,
+  "fields": {
+    "actividad": "Jurado del premio Fray Bernardino de Sahag\u00fan de Etnologia y Antropologia Social",
+    "descripcion": "Proceso de evaluaci\u00f3n de 22 trabajos de textos publicados de Etnolog\u00eda y Antropolog\u00eda Social publicados en 2017, para definir la mejor investigaci\u00f3n del a\u00f1o. Lo que significo  cuatro reuniones presenciales y evaluar a cada uno de los seis  jurados el 70% del total de los documentos y llegar a un dictamen final colectivo.",
+    "institucion": 10,
+    "dependencia": 380,
+    "fecha": "2018-08-18",
+    "usuario": 27
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 8,
+  "fields": {
+    "actividad": "Rese\u00f1a de capitulo de libro \"C\u00f3mo ve M\u00e9xico las relaciones funcionales entre la mitigaci\u00f3n y la adaptaci\u00f3n en el sector forestal: Un an\u00e1lisis textual de documentos de pol\u00edtica ambiental\"",
+    "descripcion": "",
+    "institucion": 462,
+    "dependencia": 667,
+    "fecha": "2017-10-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 10,
+  "fields": {
+    "actividad": "Evaluador del resumen: Aplicaci\u00f3n de la geom\u00e1tica para evaluar el potencial del uso de la energ\u00eda solar y e\u00f3lica como fuentes alternas de energ\u00eda para el estado de San Luis Potos\u00ed",
+    "descripcion": "",
+    "institucion": 132,
+    "dependencia": 242,
+    "fecha": "2015-09-03",
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 11,
+  "fields": {
+    "actividad": "Revisor en el concurso de Tesis del IV Congreso Mexicano de Ecolog\u00eda",
+    "descripcion": "",
+    "institucion": 1,
+    "dependencia": 10,
+    "fecha": "2013-03-22",
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 12,
+  "fields": {
+    "actividad": "Evaluador del proyecto: Modelado de los Cambios de Uso/Cubierta del Suelo y Biodiversidad en la S.G.G., priorizando las Especies Silvestres Multiprop\u00f3sito: Caso Xich\u00fa",
+    "descripcion": "",
+    "institucion": 132,
+    "dependencia": 241,
+    "fecha": "2011-10-07",
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 13,
+  "fields": {
+    "actividad": "Evaluador del proyecto: El Rol de la Innovaci\u00f3n Sustentable en el Desarrollo Socioecon\u00f3mico de Guanajuato",
+    "descripcion": "",
+    "institucion": 132,
+    "dependencia": 241,
+    "fecha": "2011-10-07",
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 14,
+  "fields": {
+    "actividad": "Miembro del Registro CONACYT de Evaluadores Acreditados (RCEA), en el \u00c1rea 1.-\u201cF\u00edsica, Matem\u00e1ticas y Ciencias de la Tierra.\u201d",
+    "descripcion": "",
+    "institucion": 9,
+    "dependencia": 65,
+    "fecha": "2011-03-21",
+    "usuario": 26
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 15,
+  "fields": {
+    "actividad": "Convocatoria 2018-de Renovaci\u00f3n del Programa Nacional de Posgrados de Calidad (PNPC)",
+    "descripcion": "Evaluaci\u00f3n para obtener el refrendo de su membres\u00eda al PNPC en el marco de la Convocatoria 2018-de Renovaci\u00f3n del Programa Nacional de Posgrados de Calidad (PNPC).",
+    "institucion": 9,
+    "dependencia": 65,
+    "fecha": "2018-08-31",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 16,
+  "fields": {
+    "actividad": "Premio a la mejor tesis de Maestr\u00eda en las \u00e1reas de Cartograf\u00eda, Geodesia o Informaci\u00f3n Geogr\u00e1fica",
+    "descripcion": "Miembro del jurado de evaluaci\u00f3n del premio a la mejor tesis de Maestr\u00eda en las \u00e1reas de Cartograf\u00eda, Geodesia o Informaci\u00f3n Geogr\u00e1fica otorgado por el Instituto Panamericano de Geograf\u00eda e Historia (IPGH) (edici\u00f3n 2018)",
+    "institucion": 385,
+    "dependencia": 468,
+    "fecha": "2018-07-04",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 17,
+  "fields": {
+    "actividad": "Arbitraje de Ponencias Orales Libres",
+    "descripcion": "",
+    "institucion": 176,
+    "dependencia": 290,
+    "fecha": "2018-06-04",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 18,
+  "fields": {
+    "actividad": "Comit\u00e9s de Evaluaci\u00f3n de Posgrado, Consejo Nacional de Ciencia y Tecnolog\u00eda (CONACYT)",
+    "descripcion": "",
+    "institucion": 9,
+    "dependencia": 65,
+    "fecha": "2018-08-29",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajeotraactividad",
+  "pk": 19,
+  "fields": {
+    "actividad": "Evaluaci\u00f3n de protocolo para la Comisi\u00f3n de Admisi\u00f3n e Ingreso del Posgrado en Geograf\u00eda",
+    "descripcion": "",
+    "institucion": 1,
+    "dependencia": 4,
+    "fecha": "2018-04-19",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 1,
+  "fields": {
+    "nombre": "Red de Pobreza y Desarrollo Urbano",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "Generar informaci\u00f3n relacionada con pobreza que impacte pol\u00edticas p\u00fablicas",
+    "fecha_constitucion": "2011-12-22",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      36
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 2,
+  "fields": {
+    "nombre": "Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoam\u00e9rica",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Su objetivo es ser una plataforma de discusi\u00f3n, difusi\u00f3n y capacitaci\u00f3n en temas de desarrollo urbano sustentable, mediante el intercambio de conocimiento y experiencias, para apoyar y acompa\u00f1ar la implementaci\u00f3n de la Nueva Agenda Urbana (NAU) en la regi\u00f3n producto de H\u00e1bitat III. Adem\u00e1s, busca proponer l\u00edneas de investigaci\u00f3n y apoyar l\u00edneas de acci\u00f3n relevantes y necesarias a nivel local, nacional y regional para el desarrollo urbano sustentable.",
+    "fecha_constitucion": "2016-05-02",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      577
+    ],
+    "participantes": [
+      892
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 3,
+  "fields": {
+    "nombre": "Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoam\u00e9rica (REDEUS-LAC)",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "La Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoam\u00e9rica y el Caribe (REDEUS_LAC) est\u00e1 dirigida y encabezada por el Centro de Desarrollo Urbano Sustentable (CEDEUS). Su objetivo es ser una plataforma de discusi\u00f3n, difusi\u00f3n y capacitaci\u00f3n en temas de desarrollo urbano sustentable, mediante el intercambio de conocimiento y experiencias, para apoyar y acompa\u00f1ar la implementaci\u00f3n de la Nueva Agenda Urbana (NAU) en la regi\u00f3n producto de H\u00e1bitat III. Adem\u00e1s, busca proponer l\u00edneas de investigaci\u00f3n y apoyar l\u00edneas de acci\u00f3n relevantes y necesarias a nivel local, nacional y regional para el desarrollo urbano sustentable.",
+    "fecha_constitucion": "2016-05-02",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      577
+    ],
+    "participantes": [
+      36
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 4,
+  "fields": {
+    "nombre": "Red de An\u00e1lisis de Procesos Socio-espaciales en Periferias Urbanas",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "Realizar trabajos de investigaci\u00f3n colaborativos sobre periferias urbanas",
+    "fecha_constitucion": "2018-02-28",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      4,
+      581,
+      580
+    ],
+    "participantes": [
+      1235,
+      1234,
+      36
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 5,
+  "fields": {
+    "nombre": "Red tem\u00e1tica de Socioecosistemas y Sustentabilidad",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "Red de an\u00e1lisis de socioecosistemas con actores sociales diversos",
+    "fecha_constitucion": "2015-07-01",
+    "fecha_fin": null,
+    "proyecto": 304,
+    "entidades": [
+      557,
+      137,
+      6,
+      305
+    ],
+    "participantes": [
+      53
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 6,
+  "fields": {
+    "nombre": "Convenio de Colaboraci\u00f3n Institucional",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "Colaboraci\u00f3n institucional",
+    "fecha_constitucion": "2009-01-01",
+    "fecha_fin": "2014-06-30",
+    "proyecto": 1,
+    "entidades": [
+      4,
+      297
+    ],
+    "participantes": [
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 7,
+  "fields": {
+    "nombre": "Convenio de Coedici\u00f3n de la obra: Evaluaci\u00f3n de sustentabilidad - un enfoque din\u00e1mico y multidimensional",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Convenio de coedici\u00f3n",
+    "fecha_constitucion": "1900-01-01",
+    "fecha_fin": "1900-01-01",
+    "proyecto": 1,
+    "entidades": [
+      4,
+      494
+    ],
+    "participantes": [
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 8,
+  "fields": {
+    "nombre": "Convenio Investigaci\u00f3n e Intercambio Acad\u00e9mico",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Convenio investigaci\u00f3n e intercambio acad\u00e9mico",
+    "fecha_constitucion": "2012-01-01",
+    "fecha_fin": "2012-12-31",
+    "proyecto": 1,
+    "entidades": [
+      4,
+      135
+    ],
+    "participantes": [
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 9,
+  "fields": {
+    "nombre": "Red Nacional de Investigadores en Resiliencia en sistemas Socio-Ecologicos",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "Pertenencia",
+    "fecha_constitucion": "2014-10-01",
+    "fecha_fin": "2016-10-01",
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      15
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 10,
+  "fields": {
+    "nombre": "Red Tem\u00e1tica Programa Mexicano del Carbono",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "Pertenencia",
+    "fecha_constitucion": "2015-01-01",
+    "fecha_fin": "2016-01-01",
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      15
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 11,
+  "fields": {
+    "nombre": "Red de Socioecosistemas y Sustentabilidad",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "Pertenencia",
+    "fecha_constitucion": "2014-10-01",
+    "fecha_fin": "2016-10-01",
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      15
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 12,
+  "fields": {
+    "nombre": "Convenio de colaboraci\u00f3n",
+    "descripcion": "",
+    "ambito": "REGIONAL",
+    "objetivos": "Realizar investigaci\u00f3n sobre las propiedades magn\u00e9ticas de los suelos relacionadas con la evaluaci\u00f3n de pr\u00e1cticas de manejo as\u00ed como en la clasificaci\u00f3n y geograf\u00eda de suelos.",
+    "fecha_constitucion": "1900-01-01",
+    "fecha_fin": "1900-01-01",
+    "proyecto": 1,
+    "entidades": [
+      667,
+      19
+    ],
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 13,
+  "fields": {
+    "nombre": "Estancia corta en el \u00c1rea de Geograf\u00eda Humana",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Se imparti\u00f3 un seminario a profesores y doctorandos del Dpto., se intercambiaron experiencias sobre los proyectos de investigaci\u00f3n que tenemos en marcha y se exploraron futuras colaboraciones en materia de investigaci\u00f3n (participaci\u00f3n conjunta en proyectos y publicaciones) y en docencia (intercambio de estudiantes de posgrado y colaboraci\u00f3n docente entre ambas instituciones).",
+    "fecha_constitucion": "2017-12-11",
+    "fecha_fin": "2017-12-15",
+    "proyecto": 338,
+    "entidades": [
+      277
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 14,
+  "fields": {
+    "nombre": "Estancia corta en el Internet Interdisciplinary Institute de la Universitat Oberta de Catalunya",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Avanzar en el dise\u00f1o de un art\u00edculo cient\u00edfico de car\u00e1cter te\u00f3rico-conceptual sobre el mapeo, la medici\u00f3n y el monitoreo comunitario como formas de innovaci\u00f3n social en comunidades.",
+    "fecha_constitucion": "2017-07-03",
+    "fecha_fin": "2017-07-07",
+    "proyecto": 338,
+    "entidades": [
+      694
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 15,
+  "fields": {
+    "nombre": "Estancia corta en el Institut de Ci\u00e8ncia y Tecnologia Ambientals de la Universitat Aut\u00f2noma de Barcelona",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Avanzar en el dise\u00f1o de un art\u00edculo cient\u00edfico de car\u00e1cter te\u00f3rico y conceptual sobre el mapeo, la medici\u00f3n y el monitoreo comunitario como formas de innovaci\u00f3n social en comunidades.",
+    "fecha_constitucion": "2017-06-26",
+    "fecha_fin": "2017-06-30",
+    "proyecto": 338,
+    "entidades": [
+      603
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 16,
+  "fields": {
+    "nombre": "Estancia corta a la Universidad Nacional de General Sarmiento",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Los objetivos de la estancia fueron avanzar en la redacci\u00f3n de un art\u00edculo cient\u00edfico de car\u00e1cter te\u00f3rico y conceptual, realizar visitas de campo para conocer la zona de estudio, y presentar parte de mi trabajo al cuerpo acad\u00e9mico y los estudiantes de la Lic. en Ecolog\u00eda Urbana.",
+    "fecha_constitucion": "2016-06-05",
+    "fecha_fin": "2016-06-15",
+    "proyecto": 380,
+    "entidades": [
+      283
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 17,
+  "fields": {
+    "nombre": "Estancia de investigaci\u00f3n en el Centro de Investigaciones en Geograf\u00eda Ambiental (CIGA)",
+    "descripcion": "",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Trabajo en diversas publicaciones en colaboraci\u00f3n con varios investigadores",
+    "fecha_constitucion": "2013-01-01",
+    "fecha_fin": "2013-05-01",
+    "proyecto": 1,
+    "entidades": [
+      4
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 18,
+  "fields": {
+    "nombre": "Red de Argentinos Investigadores y Cient\u00edficos en el Exterior",
+    "descripcion": "http://www.raices.mincyt.gob.ar/",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Difundir las actividades cient\u00edficas y tecnol\u00f3gicas del pa\u00eds en el exterior.\r\nIncrementar la vinculaci\u00f3n entre investigadores argentinos residentes en el pa\u00eds y en el extranjero.\r\n\r\nMejorar la calidad y disponibilidad de la informaci\u00f3n acerca de los investigadores y profesionales argentinos altamente capacitados que residen en el exterior.",
+    "fecha_constitucion": "2008-12-02",
+    "fecha_fin": null,
+    "proyecto": 396,
+    "entidades": [
+      750
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 19,
+  "fields": {
+    "nombre": "International Network of Research on Coupled Human and Natural Systems (CHANS)",
+    "descripcion": "http://chans-net.org/",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "La red CHANS-Net aprovecha las mejores mentes de todas las disciplinas que crear\u00e1n una revoluci\u00f3n en la sostenibilidad.",
+    "fecha_constitucion": "2013-01-07",
+    "fecha_fin": null,
+    "proyecto": 412,
+    "entidades": [
+      752
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 20,
+  "fields": {
+    "nombre": "Red Mexicana de Bioenerg\u00eda (REMBIO)",
+    "descripcion": "Nacional. Periodo: 2006 \u2013 2011. http://rembio.org.mx/",
+    "ambito": "NACIONAL",
+    "objetivos": "Difusi\u00f3n de informaci\u00f3n actualizada sobre Bioenerg\u00eda\r\nDesarrollo de estudios estrat\u00e9gicos en las \u00e1reas de inter\u00e9s de la REMBIO\r\nAsesor\u00eda especializada para gesti\u00f3n de proyectos y estudios de factibilidad.\r\nAn\u00e1lisis y evaluaci\u00f3n de Pol\u00edticas P\u00fablicas\r\nParticipaci\u00f3n de foros, congresos y seminarios\r\nOrganizaci\u00f3n de congresos y seminarios, incluyendo una reuni\u00f3n nacional\r\nEjecuci\u00f3n de proyectos",
+    "fecha_constitucion": "2006-01-02",
+    "fecha_fin": "2011-12-30",
+    "proyecto": 199,
+    "entidades": [
+      630
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 21,
+  "fields": {
+    "nombre": "Observatorio de Derecho a la Alimentaci\u00f3n",
+    "descripcion": "El Observatorio del Derecho a la Alimentaci\u00f3n en Am\u00e9rica Latina y el Caribe (ODA-ALC) es una red acad\u00e9mica que tiene como objetivo promocionar, educar e investigar sobre el derecho a la alimentaci\u00f3n a nivel subnacional, nacional y regional. Busca ser, adem\u00e1s, un observador sobre la situaci\u00f3n de este derecho en la regi\u00f3n, constituy\u00e9ndose como una plataforma acad\u00e9mica e investigativa de recolecci\u00f3n de informaci\u00f3n sobre el derecho a la alimentaci\u00f3n, la seguridad alimentaria y nutricional y los sistemas agroalimentarios.",
+    "ambito": "REGIONAL",
+    "objetivos": "Los proncipales objetivos de la Red son:\r\n1. Propiciar la discusi\u00f3n sobre los enfoques del Derecho, su efectividad en las legislaciones nacionales y el impacto de \u00e9stas en la protecci\u00f3n efectiva del derecho a la alimentaci\u00f3n.\r\n2. Incentivar la investigaci\u00f3n, la docencia y la extensi\u00f3n entre acad\u00e9micos de la regi\u00f3n, estudiantes de Derecho, profesores universitarios, abogados, jueces, empleados p\u00fablicos, y p\u00fablico en general.\r\n3. Ser un \u00f3rgano consultivo en la materia a nivel nacional y regional.",
+    "fecha_constitucion": "2018-11-15",
+    "fecha_fin": "2020-08-31",
+    "proyecto": 231,
+    "entidades": [
+      483,
+      105,
+      190
+    ],
+    "participantes": [
+      941,
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 22,
+  "fields": {
+    "nombre": "Red Tem\u00e1tica Programa Mexicano de Carbono",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "La red tem\u00e1tica del PMC se consolid\u00f3 en el a\u00f1o 2016 como Red Tem\u00e1tica del CONACYT y est\u00e1 integrada por 195 investigadores en la modalidad de Redes Tem\u00e1ticas Continuidad.\r\nContribuir en las medidas y propuestas para mitigaci\u00f3n y adaptaci\u00f3n al cambio clim\u00e1tico.",
+    "fecha_constitucion": "2016-06-01",
+    "fecha_fin": null,
+    "proyecto": 416,
+    "entidades": [
+      765
+    ],
+    "participantes": [
+      54,
+      20
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 23,
+  "fields": {
+    "nombre": "Red de Cient\u00edficos Espa\u00f1oles en M\u00e9xico- RECEMX",
+    "descripcion": "",
+    "ambito": "NACIONAL",
+    "objetivos": "I.\tOrganizar cursos, seminarios, pl\u00e1ticas o cualquier evento similar relacionado con su objeto social;\r\nII.\tIntercambiar y transferir conocimientos acad\u00e9micos, t\u00e9cnicos, administrativos y de apoyo para la adecuada integraci\u00f3n de los investigadores que coadyuven a la realizaci\u00f3n del objeto social de la Asociaci\u00f3n\r\nIII.\tCrear redes cient\u00edficas, tecnol\u00f3gicas y de vinculaci\u00f3n entre los generadores de ciencia, tecnolog\u00eda e innovaci\u00f3n, ya sean instituciones p\u00fablicas o privadas, tanto nacionales como extranjeras, que sean necesarias para la consecuci\u00f3n de su objeto social;\r\nIV.\tRealizar el acopio, procesamiento, sistematizaci\u00f3n, difusi\u00f3n y divulgaci\u00f3n de informaci\u00f3n acerca de las actividades de investigaci\u00f3n cient\u00edfica, desarrollo tecnol\u00f3gico e innovaci\u00f3n que se lleven a cabo de conformidad con su objeto social;\r\nV.\tPromover el desarrollo, la vinculaci\u00f3n y diseminaci\u00f3n de la investigaci\u00f3n cient\u00edfica que se derive de las actividades de investigaci\u00f3n b\u00e1sica y aplicada, el desarrollo tecnol\u00f3gico de calidad y la innovaci\u00f3n, asociados a la actualizaci\u00f3n y mejoramiento de la calidad de vida de la sociedad;\r\nVI.\tDesarrollar asesor\u00edas, an\u00e1lisis y estudios que sean requeridos por diversas instituciones con las que se haya establecido un v\u00ednculo, mismos que buscar\u00e1n transferir conocimientos derivados de la investigaci\u00f3n cient\u00edfica y tecnol\u00f3gica llevada a cabo de conformidad con el objeto social de la Asociaci\u00f3n;\r\nVII.\tPromover y participar con centros e instituciones de divulgaci\u00f3n y/o difusi\u00f3n de la ciencia, tecnolog\u00eda e innovaci\u00f3n para ni\u00f1os y j\u00f3venes que se identifiquen con los fines o actividades de la Asociaci\u00f3n;\r\nVIII.\tRealizar proyectos de investigaci\u00f3n cient\u00edfica y tecnol\u00f3gica a trav\u00e9s de recursos humanos y tecnol\u00f3gicos especializados;\r\nIX.\tLlevar a cabo la creaci\u00f3n, equipamiento y mantenimiento de instalaciones de investigaci\u00f3n cient\u00edfica y tecnol\u00f3gica y otras relacionadas con \u00e9sta, as\u00ed como suministrar los materiales necesarios para la misma;\r\nX.\tRecibir todo tipo de recursos econ\u00f3micos y materiales a nivel nacional e internacional, incluyendo, de manera enunciativa mas no limitativa, cualquier tipo de bien mueble o inmueble, o de cualquier otra naturaleza, de asociados, afiliados o de terceras personas con el prop\u00f3sito de cumplir con el objeto social y los fines de la Asociaci\u00f3n, as\u00ed como recibir donativos, en efectivo y en especie, y recaudar y procurar fondos, sujeto a las disposiciones, restricciones y limitantes que, en su caso, establezca la legislaci\u00f3n aplicable, provenientes de personas f\u00edsicas o morales o fideicomisos autorizados para recibir donativos deducibles, incluyendo todo tipo de entidades privadas y p\u00fablicas o gubernamentales, nacionales o internacionales, que resulten necesarios o convenientes para la consecuci\u00f3n de su objeto social;\r\nXI.\tColaborar, coordinar y coadyuvar con todo tipo de personas, asociaciones, sociedades e instituciones privadas y p\u00fablicas o gubernamentales, nacionales o extranjeras, que persigan fines similares o complementarios a los de la Asociaci\u00f3n;\r\nXII.\tPromover a la Asociaci\u00f3n por los medios que resulten necesarios o convenientes, ya sea para fines publicitarios o para la obtenci\u00f3n de fondos, incluyendo realizar actividades de promoci\u00f3n en medios de comunicaci\u00f3n masivos que permitan el posicionamiento y reconocimiento nacional e internacional de la Asociaci\u00f3n;\r\nXIII.\tApoyar econ\u00f3micamente las actividades de personas morales autorizadas para recibir donativos deducibles en los t\u00e9rminos de la Ley del Impuesto sobre la Renta, siempre que dichas actividades est\u00e9n relacionadas con el objeto social y fines de la Asociaci\u00f3n;\r\nXIV.\tCelebrar toda clase de convenios, contratos y documentos, incluyendo de manera enunciativa mas no limitativa, de donaci\u00f3n, compraventa, suministro, distribuci\u00f3n, fideicomiso, agencia, comisi\u00f3n, dep\u00f3sito, arrendamiento, subarrendamiento, administraci\u00f3n, servicios, trabajo, asistencia t\u00e9cnica, consultor\u00eda, dise\u00f1o, construcci\u00f3n, incluyendo aquellos con autoridades federales, estatales o locales, que sean necesarios o convenientes para la consecuci\u00f3n de su objeto;\r\nXV.\tObtener por cualquier t\u00edtulo legal, concesiones, permisos, autorizaciones o licencias de cualquier entidad gubernamental, ya sea federal, estatal o municipal;\r\nXVI.\tContratar al personal necesario para el cumplimiento del objeto social;\r\nXVII.\tRealizar toda clase de actos jur\u00eddicos, y materiales, as\u00ed como celebrar contratos y convenios, sean principales o auxiliares y/o civiles o de cualquier otra naturaleza, dentro de lo permitido por la legislaci\u00f3n aplicable, que sean necesarios o convenientes para la consecuci\u00f3n de su objeto social, y\r\nXVIII.\tConferir toda clase de mandatos que resulten necesarios para el cumplimiento del objeto social",
+    "fecha_constitucion": "2017-03-16",
+    "fecha_fin": "2019-04-01",
+    "proyecto": 430,
+    "entidades": [
+      557,
+      234,
+      722,
+      152,
+      10,
+      393,
+      581,
+      201
+    ],
+    "participantes": [
+      259,
+      157,
+      1840,
+      32,
+      31
+    ]
+  }
+},
+{
+  "model": "vinculacion.convenioentidadexterna",
+  "pk": 1,
+  "fields": {
+    "nombre": "Convenio de Coedici\u00f3n",
+    "descripcion": "",
+    "objetivos": "Coedici\u00f3n de la Obra. Sostenibilidad en sistemas de manejo de recursos naturales en pa\u00edses andinos",
+    "fecha_inicio": "2018-02-13",
+    "fecha_fin": "2018-03-22",
+    "es_renovacion": false,
+    "entidades": [
+      94
+    ],
+    "financiamientos": [],
+    "participantes": [
+      941,
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.convenioentidadexterna",
+  "pk": 2,
+  "fields": {
+    "nombre": "Convenio de colaboraci\u00f3n",
+    "descripcion": "",
+    "objetivos": "elaborar, mejorar y dise\u00f1ar software sobre modelos de evaluaci\u00f3n de tierras con base en el sistema microleis.",
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": "1900-01-01",
+    "es_renovacion": false,
+    "entidades": [
+      4,
+      670
+    ],
+    "financiamientos": [],
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "vinculacion.convenioentidadexterna",
+  "pk": 3,
+  "fields": {
+    "nombre": "Adelanto Conjunto de la Construcci\u00f3n de las Bases para la Propuesta de un Nivel Nacional de Referencia de las Emisiones Forestales y An\u00e1lisis de Pol\u00edticas P\u00fablic",
+    "descripcion": "",
+    "objetivos": "Adelanto Conjunto de la Construcci\u00f3n de las Bases para la Propuesta de un Nivel Nacional de Referencia de las Emisiones Forestales",
+    "fecha_inicio": "2013-01-01",
+    "fecha_fin": "2015-12-31",
+    "es_renovacion": false,
+    "entidades": [
+      72,
+      2
+    ],
+    "financiamientos": [
+      14
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.convenioentidadexterna",
+  "pk": 4,
+  "fields": {
+    "nombre": "Elaboraci\u00f3n del Estudio para Determinar el Estado de Degradaci\u00f3n y Potencial de Restauraci\u00f3n en Ecosistemas Forestales Bajo Manejo de la Cuenca Baja del R\u00edo Ayuquila \u2013 Parte I",
+    "descripcion": "",
+    "objetivos": "Intervenir en muchos sectores (energ\u00eda, salud, biodiversidad, agua, digital, capacitaci\u00f3n), apoyamos la transici\u00f3n hacia un mundo m\u00e1s seguro, m\u00e1s justo y m\u00e1s sostenible, un mundo en com\u00fan. Nuestra acci\u00f3n est\u00e1 totalmente en l\u00ednea con los Objetivos de Desarrollo Sostenible (ODS).",
+    "fecha_inicio": "2012-05-01",
+    "fecha_fin": "2012-12-31",
+    "es_renovacion": false,
+    "entidades": [
+      4,
+      756
+    ],
+    "financiamientos": [
+      54
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.convenioentidadexterna",
+  "pk": 5,
+  "fields": {
+    "nombre": "Elaboraci\u00f3n del An\u00e1lisis de cambio de cobertura y uso del suelo, escenario de referencia de carbono y dise\u00f1o preliminar del mecanismo MRV en la JIR",
+    "descripcion": "",
+    "objetivos": "Intervenir en muchos sectores (energ\u00eda, salud, biodiversidad, agua, digital, capacitaci\u00f3n), apoyamos la transici\u00f3n hacia un mundo m\u00e1s seguro, m\u00e1s justo y m\u00e1s sostenible, un mundo en com\u00fan. Nuestra acci\u00f3n est\u00e1 totalmente en l\u00ednea con los Objetivos de Desarrollo Sostenible (ODS).",
+    "fecha_inicio": "2011-09-01",
+    "fecha_fin": "2012-05-31",
+    "es_renovacion": false,
+    "entidades": [
+      4,
+      756
+    ],
+    "financiamientos": [
+      54
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.convenioentidadexterna",
+  "pk": 6,
+  "fields": {
+    "nombre": "Enlace verificador del programa Agenda de Desarrollo Municipal",
+    "descripcion": "",
+    "objetivos": "Colaborar en la coordinaci\u00f3n del proceso de verificaci\u00f3n de los indicadores de buen gobierno vinculados al programa.",
+    "fecha_inicio": "2018-05-16",
+    "fecha_fin": "2019-05-16",
+    "es_renovacion": false,
+    "entidades": [
+      4,
+      657
+    ],
+    "financiamientos": [],
+    "participantes": [
+      35,
+      31,
+      36
+    ]
+  }
+},
+{
+  "model": "vinculacion.clasificacionservicio",
+  "pk": 1,
+  "fields": {
+    "nombre": "Asesor\u00eda",
+    "descripcion": ""
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 1,
+  "fields": {
+    "nombre_servicio": "Appointed as member of advisory committee to SEMACCDET",
+    "clasificacion_servicio": 1,
+    "descripcion": "",
+    "fecha_inicio": "2018-01-29",
+    "fecha_fin": "2018-01-29",
+    "usuario": 20,
+    "entidades": [
+      649
+    ],
+    "financiamientos": [
+      4
+    ]
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 2,
+  "fields": {
+    "nombre_servicio": "Verificaci\u00f3n documental 2017",
+    "clasificacion_servicio": 1,
+    "descripcion": "Sesiones de trabajo con autoridades municipales en los Municipios de Apatzing\u00e1n, Sta Ana Maya, Uruapan y Zacapu.",
+    "fecha_inicio": "2017-07-01",
+    "fecha_fin": "2017-09-30",
+    "usuario": 15,
+    "entidades": [
+      374
+    ],
+    "financiamientos": []
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 3,
+  "fields": {
+    "nombre_servicio": "Verificaci\u00f3n documental 2009",
+    "clasificacion_servicio": 1,
+    "descripcion": "Programa federal \u201cAgenda Desde Lo Local\u201d en los Municipios de Morelia",
+    "fecha_inicio": "2009-08-26",
+    "fecha_fin": "2009-09-07",
+    "usuario": 15,
+    "entidades": [
+      86
+    ],
+    "financiamientos": [
+      4
+    ]
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 4,
+  "fields": {
+    "nombre_servicio": "Verificaci\u00f3n documental 2010",
+    "clasificacion_servicio": 1,
+    "descripcion": "Programa federal \u201cAgenda Desde Lo Local\u201d en los Municipios de \u00c1poro (13/08), Tepalcatepec (16/08), La Huacana (16 y 17/08), Apatzing\u00e1n (30/08), Aguililla (31/08 y 01/09) y Morelia (6 y 7 /09)",
+    "fecha_inicio": "2010-08-13",
+    "fecha_fin": "2010-09-01",
+    "usuario": 15,
+    "entidades": [
+      86
+    ],
+    "financiamientos": [
+      4
+    ]
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 5,
+  "fields": {
+    "nombre_servicio": "Verificaci\u00f3n documental 2012",
+    "clasificacion_servicio": 1,
+    "descripcion": "Programa federal \u201cAgenda Desde Lo Local\u201d en los Municipios de La Huacana, Cuitzeo, Par\u00e1cuaro, Santa Ana Maya, Apatzing\u00e1n y Morelia",
+    "fecha_inicio": "2012-06-15",
+    "fecha_fin": "2012-07-15",
+    "usuario": 15,
+    "entidades": [
+      86
+    ],
+    "financiamientos": []
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 6,
+  "fields": {
+    "nombre_servicio": "Verificaci\u00f3n documental 2013",
+    "clasificacion_servicio": 1,
+    "descripcion": "Programa federal \u201cAgenda Desde Lo Local\u201d. Sesiones de trabajo con autoridades municipales en los Municipios de Apatzing\u00e1n, La Huacana, Sta Ana Maya e Hidalgo",
+    "fecha_inicio": "2013-08-01",
+    "fecha_fin": "2013-08-31",
+    "usuario": 15,
+    "entidades": [
+      86
+    ],
+    "financiamientos": []
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 7,
+  "fields": {
+    "nombre_servicio": "Verificaci\u00f3n documental 2016",
+    "clasificacion_servicio": 1,
+    "descripcion": "Programa federal \u201cAgenda para el desarrollo municipal\u201d. Sesiones de trabajo con autoridades municipales en los Municipios de Apatzing\u00e1n, Sta. Ana Maya, Uruapan y Zacapu",
+    "fecha_inicio": "2016-07-01",
+    "fecha_fin": "2016-09-30",
+    "usuario": 15,
+    "entidades": [
+      86
+    ],
+    "financiamientos": []
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 8,
+  "fields": {
+    "nombre_servicio": "Elaboraci\u00f3n de expediente t\u00e9cnico sobre el caso de la Cuenca del Lago Atitl\u00e1n para el Tribunal Latinoamericano del Agua",
+    "clasificacion_servicio": 1,
+    "descripcion": "",
+    "fecha_inicio": "2018-08-01",
+    "fecha_fin": "2018-10-31",
+    "usuario": 28,
+    "entidades": [
+      4,
+      773
+    ],
+    "financiamientos": []
+  }
+},
+{
+  "model": "vinculacion.servicioexternoentidadnoacademica",
+  "pk": 9,
+  "fields": {
+    "nombre_servicio": "Verificaci\u00f3n documental 2018",
+    "clasificacion_servicio": 1,
+    "descripcion": "Verificaci\u00f3n de documentos probatorios asociados a los indicadores del programa federal \"Agenda para el desarrollo municipal\". Se verificaron 8 municipios en total",
+    "fecha_inicio": "2018-07-04",
+    "fecha_fin": "2018-08-20",
+    "usuario": 15,
+    "entidades": [
+      86,
+      145
+    ],
+    "financiamientos": []
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 1,
+  "fields": {
+    "nombre": "Red de Actores Sociales Interesados en la Plataforma Intergubernamental para la Biodiversidad y los Servicios Ecosist\u00e9micos",
+    "fecha": "2017-03-13",
+    "tipo": "VINCULACION",
+    "descripcion": "Red de actores asociados a la plataforma",
+    "resultados": "",
+    "institucion": 142,
+    "dependencia": 253,
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 2,
+  "fields": {
+    "nombre": "La Geograf\u00eda en 3D",
+    "fecha": "2013-10-04",
+    "tipo": "OTRO",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 1,
+    "dependencia": 2,
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 3,
+  "fields": {
+    "nombre": "Tianguis de la Ciencia: Interactuando con la Topograf\u00eda",
+    "fecha": "2015-04-24",
+    "tipo": "OTRO",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 2,
+    "dependencia": 42,
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 4,
+  "fields": {
+    "nombre": "Taller de Sistemas de Informaci\u00f3n Geogr\u00e1fica",
+    "fecha": "2015-09-09",
+    "tipo": "OTRO",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 1,
+    "dependencia": 4,
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 5,
+  "fields": {
+    "nombre": "Taller de planeaci\u00f3n institucional para la focalizaci\u00f3n de acciones de empleo temporal para la atenci\u00f3n de la sequ\u00eda extrema en el Bajo Balsas",
+    "fecha": "2015-12-03",
+    "tipo": "OTRO",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 1,
+    "dependencia": 634,
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 6,
+  "fields": {
+    "nombre": "Importancia del Relieve y las Herramientas Geogr\u00e1ficas",
+    "fecha": "2016-03-18",
+    "tipo": "OTRO",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 1,
+    "dependencia": 4,
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 7,
+  "fields": {
+    "nombre": "An\u00e1lisis de la pel\u00edcula \u201cLa princesa Mononoke\u201d - Ciclo de cine comentado",
+    "fecha": "2016-09-24",
+    "tipo": "OTRO",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 1,
+    "dependencia": 4,
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 8,
+  "fields": {
+    "nombre": "Construyendo lo com\u00fan desde las diferencias",
+    "fecha": "2016-11-20",
+    "tipo": "OTRO",
+    "descripcion": "I Encuentro Nacional de Colaboraci\u00f3n Transdisciplinaria para la Sustentabilidad. III Encuentro Internacional de Investigaci\u00f3n Acci\u00f3n Participativa. Tepic, Nayarit.",
+    "resultados": "",
+    "institucion": 1,
+    "dependencia": 4,
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 9,
+  "fields": {
+    "nombre": "Fiesta de la Ciencias y las Humanidades 2018",
+    "fecha": "2018-11-22",
+    "tipo": "VINCULACION",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 462,
+    "dependencia": 667,
+    "usuario": 44
+  }
+},
+{
+  "model": "vinculacion.otroprogramavinculacion",
+  "pk": 10,
+  "fields": {
+    "nombre": "Iniciativa Intersectorial ante Contingencias Clim\u00e1ticas en el Bajo Balsas (Michoac\u00e1n)",
+    "fecha": "2015-09-30",
+    "tipo": "VINCULACION",
+    "descripcion": "",
+    "resultados": "",
+    "institucion": 143,
+    "dependencia": 772,
+    "usuario": 28
+  }
+}
+]
