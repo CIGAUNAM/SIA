@@ -30,7 +30,7 @@
 
 <script>
     $("#agregar-institucion").on('shown.bs.modal', function () {
-        alert("institucion")
+        $(this).toggle();
         $('#institucion-modal-body').load('/nucleo/instituciones/agregar/');
     });
 
