@@ -1,16 +1,10 @@
-{% comment %}
-{% block stylesheets %}
-    {% include 'adminlte/lib/_styles.html' %}
-{% endblock %}
-{% endcomment %}
-
 {% if user.is_authenticated %}
     {% block messages %}
         {% include 'adminlte/lib/_messages.html' %}
     {% endblock %}
-    {% block body %}
 
         <div class="col">
+
             {% block form_modal_dependencia %}
                 <form id="modal_form_dependencia" action="" method="post">
                     {% csrf_token %}
@@ -69,12 +63,12 @@
                                 </a>
                             </div>
                             <div class="input-group-addon">
-                <span data-toggle="modal" data-target="#agregar-institucion">
-                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
-                       title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                    </a>
-                </span>
+                                <span data-toggle="modal" data-target="#agregar-institucion">
+                                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                                       title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                                    <i class="fa fa-plus"></i>
+                                    </a>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -169,16 +163,6 @@
                 {{ modal_form_dependencia.media.js }}
             {% endblock %}
         </div>
-
-    {% endblock body %}
-
-    {% comment %}
-    {% block javascript %}
-        {% include 'adminlte/lib/_scripts.html' %}
-    {% endblock %}
-    {% endcomment %}
-
-    {% block extra_foot %}{% endblock %}
 
 {% else %}
     <script>
