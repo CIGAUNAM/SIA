@@ -37,7 +37,8 @@ class ObjectModalCreateMixin:
                 return render(request, self.template_name, {'modal_form': self.form_class})
         except Exception as e:
             print(e)
-            return HttpResponse("")
+            #return HttpResponse("")
+            return render(request, self.template_name, {'modal_form': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)

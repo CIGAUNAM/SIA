@@ -198,6 +198,24 @@ class InstitucionAgregar(ObjectModalCreateMixin, View):
     model = Institucion
     template_name = 'modal/form_agregar_institucion.html'
 
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form_institucion': self.form_class})
+        except Exception as e:
+            print(e)
+            #return HttpResponse("")
+            return render(request, self.template_name, {'modal_form_institucion': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form_institucion': bound_form})
+
 
 class InstitucionDetalle(ObjectModalUpdateMixin, View):
     form_class = InstitucionForm
@@ -246,12 +264,42 @@ class DependenciaAgregar(ObjectModalCreateMixin, View):
     model = Dependencia
     template_name = 'modal/form_agregar_dependencia.html'
 
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form_dependencia': self.form_class})
+        except Exception as e:
+            print(e)
+            #return HttpResponse("")
+            return render(request, self.template_name, {'modal_form_dependencia': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form_dependencia': bound_form})
+
 
 class DependenciaDetalle(ObjectModalUpdateMixin, View):
     form_class = DependenciaForm
     model = Dependencia
     template_name = 'modal/form_detalle_dependencia.html'
 
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'modal_form_dependencia': self.form_class(instance=obj)})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro actualizado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'modal_form_dependencia': bound_form})
 
 class DepartamentoJSON(View):
     def get(self, request):

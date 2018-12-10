@@ -4,7 +4,6 @@
 {% endblock %}
 {% endcomment %}
 
-
 {% if user.is_authenticated %}
 
     {% block messages %}
@@ -26,28 +25,10 @@
     {% endblock %}
     {% endcomment %}
 
-
     {% block extra_foot %}{% endblock %}
-
 
 {% else %}
     <script>
         window.location.href = '/login/';
     </script>
 {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
