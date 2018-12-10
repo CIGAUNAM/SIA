@@ -1,15 +1,7 @@
-{% comment %}
-{% block stylesheets %}
-    {% include 'adminlte/lib/_styles.html' %}
-{% endblock %}
-{% endcomment %}
-
 {% if user.is_authenticated %}
     {% block messages %}
         {% include 'adminlte/lib/_messages.html' %}
     {% endblock %}
-    {% block body %}
-
 
         <div class="col">
 
@@ -63,74 +55,11 @@
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
                 </form>
 
-                <script>
-
-                    $("#modal_form_institucion").submit(function (event) {
-                        console.log("Handler for .submit() called.");
-                        var datos = {
-                            nombre_dependencia: $("#id_nombre_dependencia").val(),
-                            institucion_dependencia: parseInt($("#id_institucion_dependencia").val()),
-                            ciudad_text_dependencia: $("#id_ciudad_text_dependencia").val(),
-                        };
-                        if ($("#id_subsistema_unam_dependencia").val() != "") {
-                            datos.subsistema_unam_dependencia = $("#id_subsistema_unam_dependencia").val();
-                        }
-                        $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-                        $.ajax({
-                            type: "POST",
-                            url: "/nucleo/rest/dependencias/",
-                            dataType: 'json',
-                            data: datos,
-                            headers: {"X-CSRFToken": $crf_token},
-                            error: function (xhr, ajaxOptions, thrownError) {
-                                $('#id_subsistema_unam_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').children('option').remove();
-                                $('#d_subsunam').hide('slow');
-                                $('#modal_form_institucion').trigger('reset');
-                            },
-                            success: function (data) {
-                                $('#id_subsistema_unam_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').children('option').remove();
-                                $('#d_subsunam').hide('slow');
-                                $('#modal_form_institucion').trigger('reset');
-
-                                //$('#id_dependencia').focus('change');
-                                var nueva_dependencia_institucion = ""
-                                console.log(nueva_dependencia_institucion)
-                                var insturl = "/nucleo/rest/instituciones/" + data.institucion_dependencia.toString() + "/"
-                                $.ajax({
-                                    url: insturl,
-                                    success: function (dataf) {
-                                        console.log(dataf.nombre);
-                                        nueva_dependencia_institucion = dataf.nombre.toString();
-                                        console.log(nueva_dependencia_institucion)
-                                        var nueva_dependencia = new Option(data.nombre_dependencia + " :: " + nueva_dependencia_institucion, data.id, true, true);
-                                        $('#id_dependencia').append(nueva_dependencia).trigger('change');
-                                        $('#agregar-dependencia').modal('toggle');
-                                        $('#institucion-modal-body').empty();
-                                    }
-                                });
-                            }
-                        });
-                        event.preventDefault();
-                    });
-                </script>
+                <script></script>
                 {{ modal_form_institucion.media.js }}
             {% endblock %}
 
         </div>
-
-    {% endblock body %}
-
-    {% comment %}
-    {% block javascript %}
-        {% include 'adminlte/lib/_scripts.html' %}
-    {% endblock %}
-    {% endcomment %}
-
-    {% block extra_foot %}{% endblock %}
 
 {% else %}
     <script>

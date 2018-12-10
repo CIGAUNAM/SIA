@@ -1,5 +1,5 @@
-<div class="modal fade" id="agregar-institucion" style="overflow:hidden;" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="agregar-institucion">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -30,9 +30,10 @@
 
 <script>
     $("#agregar-institucion").on('shown.bs.modal', function () {
-        $(this).toggle();
-        $('#institucion-modal-body').load('/nucleo/instituciones/agregar/');
+        alert("sdfds")
+        $('#dependencia-modal-body').load('/nucleo/instituciones/agregar/');
     });
+
 
     $("#detalle-institucion").on('shown.bs.modal', function () {
         if ($("#id_institucion").val()) {

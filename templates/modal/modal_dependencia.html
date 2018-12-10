@@ -1,5 +1,9 @@
-<div class="modal fade" id="agregar-dependencia" style="overflow:hidden;" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+<div id="agregar-dependencia-dialog" title="Agregar dependencia">
+    <div id="dependencia-dialog-body"></div>
+</div>
+
+<div class="modal fade" id="agregar-dependencia">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -29,6 +33,10 @@
 </div>
 
 <script>
+    $(function () {
+        $("#agregar-dependencia-dialog").dialog();
+    });
+
     $("#agregar-dependencia").on('shown.bs.modal', function () {
         $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
     });
