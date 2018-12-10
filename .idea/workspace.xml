@@ -2,31 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="correccion decimales factor de impacto en revista|">
+      <change afterPath="$PROJECT_DIR$/_misc/apoyo_institucional.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_misc/desarrollo_tecnologico.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_misc/distinciones.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_misc/experiencia_laboral.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_misc/formacion_academica.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_misc/formacion_recursos_humanos.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_misc/movilidad_academica.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_misc/vinculacion.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/formacion_academica/migrations/0003_auto_20181208_2357.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/nucleo/migrations/0002_auto_20181208_2357.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nucleo/templates/modal/form_detalle_institucion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SIA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SIA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SIA/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/SIA/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SIA/views_reportes.py" beforeDir="false" afterPath="$PROJECT_DIR$/SIA/views_reportes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/templates/doctorados.html" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/templates/doctorados.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/templates/licenciaturas.html" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/templates/licenciaturas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/templates/maestrias.html" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/templates/maestrias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/templates/post_doctorados.html" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/templates/post_doctorados.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vinculacion/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/forms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,15 +116,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="92" />
-          <entry key="py@SIA" value="102" />
+          <entry key="html" value="109" />
+          <entry key="py" value="124" />
+          <entry key="py@SIA" value="109" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CommandLine" value="77" />
+          <entry key="CommandLine" value="84" />
+          <entry key="HTML" value="109" />
           <entry key="PLAIN_TEXT" value="25" />
-          <entry key="Python" value="92" />
+          <entry key="Python" value="124" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -151,14 +139,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="7" />
-          <entry key="py" value="23" />
+          <entry key="html" value="21" />
+          <entry key="py" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="7" />
-          <entry key="Python" value="23" />
+          <entry key="HTML" value="21" />
+          <entry key="Python" value="31" />
         </counts>
       </usages-collector>
     </session>
@@ -166,54 +154,58 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
+        <entry file="file://$PROJECT_DIR$/nucleo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="120" column="318" selection-start-line="120" selection-start-column="318" selection-end-line="120" selection-end-column="318" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vinculacion/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vinculacion/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vinculacion/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="131" column="95" selection-start-line="131" selection-start-column="95" selection-end-line="131" selection-end-column="95" />
+            <state relative-caret-position="239">
+              <caret line="282" column="79" selection-start-line="282" selection-start-column="79" selection-end-line="282" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/modal/main_modal.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1065">
+              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/models.py">
+        <entry file="file://$PROJECT_DIR$/templates/modal/modal_dependencia.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="226" column="29" selection-start-line="226" selection-start-column="4" selection-end-line="226" selection-end-column="29" />
+            <state relative-caret-position="30">
+              <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/modal/modal_institucion.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="56" lean-forward="true" selection-start-column="56" selection-end-column="56" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1635">
+              <caret line="109" column="47" selection-start-line="109" selection-start-column="47" selection-end-line="109" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="129" column="34" selection-start-line="129" selection-start-column="34" selection-end-line="129" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -230,16 +222,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Instit</find>
-      <find>institu</find>
-      <find>&lt;i class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt;</find>
-      <find>depende</find>
-      <find>doctor</find>
-      <find>d_programa_doctorado</find>
-      <find>DECI</find>
-      <find>Lib</find>
-      <find>rese</find>
-      <find>dis</find>
       <find>min_densidad</find>
       <find>data</find>
       <find>SimpleDataSource</find>
@@ -260,6 +242,16 @@
       <find>ORGANIZACION_PROYECTO</find>
       <find>ObjectModalCreateMixin</find>
       <find>dependen</find>
+      <find>modal_form</find>
+      <find>dataf.no</find>
+      <find>dataf</find>
+      <find>dataf.</find>
+      <find>modal_form_dependencia</find>
+      <find>dependencia-modal-body</find>
+      <find>rest</find>
+      <find>agregar-institucion</find>
+      <find>modal</find>
+      <find>dependencia</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -306,12 +298,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apoyo_institucional/templates/apoyo_otra_actividad.html" />
-        <option value="$PROJECT_DIR$/movilidad_academica/templates/movilidad_academica.html" />
-        <option value="$PROJECT_DIR$/docencia/templates/curso_docencia_escolarizado.html" />
-        <option value="$PROJECT_DIR$/docencia/templates/curso_docencia_extracurricular.html" />
-        <option value="$PROJECT_DIR$/docencia/templates/programa_estudio.html" />
-        <option value="$PROJECT_DIR$/investigacion/templates/articulo_cientifico.html" />
         <option value="$PROJECT_DIR$/nucleo/templates/revista.html" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/templates/articulo_divulgacion.html" />
         <option value="$PROJECT_DIR$/docencia/models.py" />
@@ -319,7 +305,6 @@
         <option value="$PROJECT_DIR$/formacion_recursos_humanos/templates/direccion_tesis.html" />
         <option value="$PROJECT_DIR$/formacion_recursos_humanos/templates/comite_tutoral.html" />
         <option value="$PROJECT_DIR$/formacion_recursos_humanos/templates/comite_candidatura_doctoral.html" />
-        <option value="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" />
         <option value="$PROJECT_DIR$/formacion_academica/forms.py" />
         <option value="$PROJECT_DIR$/formacion_academica/models.py" />
         <option value="$PROJECT_DIR$/formacion_academica/views.py" />
@@ -354,9 +339,16 @@
         <option value="$PROJECT_DIR$/nucleo/models.py" />
         <option value="$PROJECT_DIR$/investigacion/forms.py" />
         <option value="$PROJECT_DIR$/investigacion/models.py" />
-        <option value="$PROJECT_DIR$/nucleo/views.py" />
         <option value="$PROJECT_DIR$/SIA/views_reportes.py" />
         <option value="$PROJECT_DIR$/vinculacion/forms.py" />
+        <option value="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" />
+        <option value="$PROJECT_DIR$/SIA/utils.py" />
+        <option value="$PROJECT_DIR$/templates/modal/main_modal.html" />
+        <option value="$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html" />
+        <option value="$PROJECT_DIR$/nucleo/views.py" />
+        <option value="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html" />
+        <option value="$PROJECT_DIR$/templates/modal/modal_institucion.html" />
+        <option value="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html" />
       </list>
     </option>
   </component>
@@ -431,7 +423,34 @@
             <path>
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="_misc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="formacion_academica" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="formacion_academica" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="modal" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -569,27 +588,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505766858927</updated>
-    </task>
-    <task id="LOCAL-00119" summary="correccion decimales factor de impacto en revista">
-      <created>1530056520458</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1530056520459</updated>
-    </task>
-    <task id="LOCAL-00120" summary="correccion decimales factor de impacto en revista">
-      <created>1530217044874</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1530217044875</updated>
-    </task>
-    <task id="LOCAL-00121" summary="correccion decimales factor de impacto en revista">
-      <created>1530238982352</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1530238982352</updated>
     </task>
     <task id="LOCAL-00122" summary="correccion decimales factor de impacto en revista">
       <created>1530295848492</created>
@@ -913,18 +911,39 @@
       <option name="project" value="LOCAL" />
       <updated>1544327654335</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="correccion decimales factor de impacto en revista|">
+      <created>1544335781108</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1544335781110</updated>
+    </task>
+    <task id="LOCAL-00169" summary="correccion decimales factor de impacto en revista|">
+      <created>1544417493477</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1544417493477</updated>
+    </task>
+    <task id="LOCAL-00170" summary="correccion decimales factor de impacto en revista|">
+      <created>1544460844801</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1544460844801</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="698" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24622357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24622357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49779493" visible="true" weight="0.26758146" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49779493" visible="true" weight="0.2058319" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -980,10 +999,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_misc/histo.py" />
-    <entry file="file://C:/WinPython-365Qt5/python-3.6.5.amd64/Lib/site-packages/graphos/renderers/gchart.py" />
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/beca.html" />
-    <entry file="file://$PROJECT_DIR$/templates/main.html" />
     <entry file="file://$PROJECT_DIR$/apoyo_institucional/views.py" />
     <entry file="file://$PROJECT_DIR$/_misc/naivebayes.py" />
     <entry file="file://$PROJECT_DIR$/templates/cv.tex" />
@@ -1009,16 +1024,6 @@
     <entry file="file://$PROJECT_DIR$/nucleo/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-end-line="719" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1034,37 +1039,13 @@
     <entry file="file://$PROJECT_DIR$/nucleo/permissions.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/utils.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/formacion_academica/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/templates/widgets/DateField.html">
@@ -1076,20 +1057,6 @@
     <entry file="file://$PROJECT_DIR$/nucleo/templates/agregar_institucion.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="178" column="38" lean-forward="true" selection-start-line="178" selection-start-column="38" selection-end-line="178" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SIA/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
@@ -1100,10 +1067,10 @@
     <entry file="file://$PROJECT_DIR$/nucleo/templates/revista.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/vinculacion/urls.py">
+    <entry file="file://$PROJECT_DIR$/vinculacion/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="112">
+          <caret line="131" column="95" selection-start-line="131" selection-start-column="95" selection-end-line="131" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -1114,6 +1081,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -1121,25 +1095,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modal/main_modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="34" lean-forward="true" selection-start-line="17" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="96" column="6" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="226" column="29" selection-start-line="226" selection-start-column="4" selection-end-line="226" selection-end-column="29" />
+        <state relative-caret-position="133">
+          <caret line="223" column="6" selection-start-line="223" selection-start-column="6" selection-end-line="223" selection-end-column="6" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vinculacion/forms.py">
+    <entry file="file://$PROJECT_DIR$/nucleo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="131" column="95" selection-start-line="131" selection-start-column="95" selection-end-line="131" selection-end-column="95" />
+        <state relative-caret-position="135">
+          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modal/main_modal.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="56" selection-start-line="56" selection-end-line="67" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="282" column="79" selection-start-line="282" selection-start-column="79" selection-end-line="282" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="129" column="34" selection-start-line="129" selection-start-column="34" selection-end-line="129" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="109" column="47" selection-start-line="109" selection-start-column="47" selection-end-line="109" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modal/modal_institucion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="56" lean-forward="true" selection-start-column="56" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modal/modal_dependencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
