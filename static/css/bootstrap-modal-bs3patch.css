@@ -8,8 +8,8 @@
  * Boostrap 3 patch for for bootstrap-modal. Include BEFORE bootstrap-modal.css!
  */
 
-body.modal-open,
-.modal-open .navbar-fixed-top,
+body.modal-open, 
+.modal-open .navbar-fixed-top, 
 .modal-open .navbar-fixed-bottom {
   margin-right: 0;
 }
@@ -22,7 +22,7 @@ body.modal-open,
   padding: 0;
   width: 500px;
   margin-left: -250px;
-  background-color: #ffffff;
+  background-color: #000000;
   border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;

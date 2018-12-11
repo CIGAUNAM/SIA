@@ -3,166 +3,170 @@
         {% include 'adminlte/lib/_messages.html' %}
     {% endblock %}
 
-        <div class="col">
+    <div class="col">
 
-            {% block form_modal_dependencia %}
-                <form id="modal_form_dependencia" action="" method="post">
-                    {% csrf_token %}
-                    <p><strong>Nombre de la dependencia:</strong>
-                        <a href="#" data-toggle="tooltip" data-placement="right"
-                           title="Nombre de la dependencia. Agregar después del nombre sus siglas entre paréntesis (si tiene siglas),
+        {% block form_modal_dependencia %}
+            <form id="modal_form_dependencia" action="" method="post">
+            {{ modal_form_dependencia.errors }}
+                {% csrf_token %}
+                <p><strong>Nombre de la dependencia:</strong>
+                    <a href="#" data-toggle="tooltip" data-placement="right"
+                       title="Nombre de la dependencia. Agregar después del nombre sus siglas entre paréntesis (si tiene siglas),
                por ejemplo: Centro de Investigaciones en Geografía Ambiental (CIGA).">
-                            <i class="fa fa-question-circle"></i></a>
-                    <div class="form-group" style="margin-top: -10px;">
-                        <div class="input-group date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-pencil-square-o"></i>
-                            </div>
-                            {{ modal_form_dependencia.nombre_dependencia }}
+                        <i class="fa fa-question-circle"></i></a>
+                <div class="form-group" style="margin-top: -10px;">
+                    <div class="input-group date">
+                        <div class="input-group-addon">
+                            <i class="fa fa-pencil-square-o"></i>
                         </div>
+                        {{ modal_form_dependencia.nombre_dependencia }}
                     </div>
-                    </p>
-                    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-                        <i class="fa fa-question-circle"></i></a></strong>
-                        {{ modal_form_dependencia.descripcion_dependencia }}
-                    </p>
-                    <p><strong>Ciudad:</strong>
-                        <a href="#" data-toggle="tooltip" data-placement="right"
-                           title="Ciudad donde se encuentra la dependencia."><i
-                                class="fa fa-question-circle"></i></a>
-                    <div class="form-group" style="margin-top: -10px;">
-                        <div class="input-group date">
-                            <div class="input-group-addon">
-                                <i class="fa fa-pencil-square-o"></i>
-                            </div>
-                            {{ modal_form_dependencia.ciudad_text_dependencia }}
+                </div>
+                </p>
+                <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
+                                           title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
+                    <i class="fa fa-question-circle"></i></a></strong>
+                    {{ modal_form_dependencia.descripcion_dependencia }}
+                </p>
+                <p><strong>Ciudad:</strong>
+                    <a href="#" data-toggle="tooltip" data-placement="right"
+                       title="Ciudad donde se encuentra la dependencia."><i
+                            class="fa fa-question-circle"></i></a>
+                <div class="form-group" style="margin-top: -10px;">
+                    <div class="input-group date">
+                        <div class="input-group-addon">
+                            <i class="fa fa-pencil-square-o"></i>
                         </div>
+                        {{ modal_form_dependencia.ciudad_text_dependencia }}
                     </div>
-                    </p>
-                    <p><strong>Institución a la que pertenece:</strong>
-                        <a href="#" data-toggle="tooltip" data-placement="right"
-                           title="Institución a la que pertenene la dependencia.">
-                            <i class="fa fa-question-circle"></i>
-                        </a> <i class="fa fa-edit"></i>
-                    <div class="form-group" style="margin-top: -10px;">
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                            {{ modal_form_dependencia.institucion_dependencia }}
-                            <div class="input-group-addon">
-                                <a href="#" data-toggle="tooltip" data-placement="left"
-                                   title="Mostrar los detalles adicionales de la institución.">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                            </div>
-                            <div class="input-group-addon">
-                                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
-                                   target="_blank"
-                                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                                    <i class="fa fa-plus"></i>
-                                </a>
-                            </div>
-                            <div class="input-group-addon">
+                </div>
+                </p>
+                <p><strong>Institución a la que pertenece:</strong>
+                    <a href="#" data-toggle="tooltip" data-placement="right"
+                       title="Institución a la que pertenene la dependencia.">
+                        <i class="fa fa-question-circle"></i>
+                    </a> <i class="fa fa-edit"></i>
+                <div class="form-group" style="margin-top: -10px;">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                        {{ modal_form_dependencia.institucion_dependencia }}
+                        <div class="input-group-addon">
+                            <a href="#" data-toggle="tooltip" data-placement="left"
+                               title="Mostrar los detalles adicionales de la institución.">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                        <div class="input-group-addon">
+                            <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
+                               target="_blank"
+                               title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </div>
+                        <div class="input-group-addon">
                                 <span data-toggle="modal" data-target="#agregar-institucion">
                                     <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
                                        title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
                                     <i class="fa fa-plus"></i>
                                     </a>
                                 </span>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+                </p>
+                <div id="d_subsunam">
+                    <p><strong>Subsistema UNAM:</strong>
+                        <a href="#" data-toggle="tooltip" data-placement="right"
+                           title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, en caso contrario seleccionar 'No'.">
+                            <i class="fa fa-question-circle"></i>
+                        </a> <i class="fa fa-edit"></i>
+                    <div class="form-group" style="margin-top: -10px;">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                            {{ modal_form_dependencia.subsistema_unam_dependencia }}
                         </div>
                     </div>
                     </p>
-                    <div id="d_subsunam">
-                        <p><strong>Subsistema UNAM:</strong>
-                            <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, en caso contrario seleccionar 'No'.">
-                                <i class="fa fa-question-circle"></i>
-                            </a> <i class="fa fa-edit"></i>
-                        <div class="form-group" style="margin-top: -10px;">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                                {{ modal_form_dependencia.subsistema_unam_dependencia }}
-                            </div>
-                        </div>
-                        </p>
-                    </div>
+                </div>
 
-                    <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                </form>
+                <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+            </form>
 
-                {% include 'modal/modal_institucion.html' %}
+            {% include 'modal/modal_institucion.html' %}
 
-                <script>
-                    if ($("#id_institucion_dependencia").val() != 1) {
-                        $('#d_subsunam').hide();
+            <script>
+                if ($("#id_institucion_dependencia").val() != 1) {
+                    $('#d_subsunam').hide();
+                }
+
+                $("#id_institucion_dependencia").on('change', function () {
+                    if ($("#id_institucion_dependencia").val() == 1) {
+                        $('#d_subsunam').show('slow');
+                    } else {
+                        $('#d_subsunam').hide('slow');
+                        $('#id_subsistema_unam_dependencia').val(null).trigger('change');
                     }
+                });
 
-                    $("#id_institucion_dependencia").on('change', function () {
-                        if ($("#id_institucion_dependencia").val() == 1) {
-                            $('#d_subsunam').show('slow');
-                        } else {
-                            $('#d_subsunam').hide('slow');
+                $("#modal_form_dependencia").submit(function (event) {
+                    console.log("Handler for .submit() called.");
+                    var datos = {
+                        nombre_dependencia: $("#id_nombre_dependencia").val(),
+                        institucion_dependencia: parseInt($("#id_institucion_dependencia").val()),
+                        ciudad_text_dependencia: $("#id_ciudad_text_dependencia").val(),
+                    };
+                    if ($("#id_subsistema_unam_dependencia").val() != "") {
+                        datos.subsistema_unam_dependencia = $("#id_subsistema_unam_dependencia").val();
+                    }
+                    $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+                    $.ajax({
+                        type: "POST",
+                        url: "/nucleo/rest/dependencias/",
+                        dataType: 'json',
+                        data: datos,
+                        headers: {"X-CSRFToken": $crf_token},
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            //console.log(xhr.responseJSON.non_field_errors[0])
+                            alert(xhr.responseJSON.non_field_errors[0])
+
                             $('#id_subsistema_unam_dependencia').val(null).trigger('change');
+                            $('#id_institucion_dependencia').val(null).trigger('change');
+                            $('#id_institucion_dependencia').children('option').remove();
+                            $('#d_subsunam').hide('slow');
+                            $('#modal_form_dependencia').trigger('reset');
+                        },
+                        success: function (data) {
+                            $('#id_subsistema_unam_dependencia').val(null).trigger('change');
+                            $('#id_institucion_dependencia').val(null).trigger('change');
+                            $('#id_institucion_dependencia').children('option').remove();
+                            $('#d_subsunam').hide('slow');
+                            $('#modal_form_dependencia').trigger('reset');
+
+                            //$('#id_dependencia').focus('change');
+                            var nueva_dependencia_institucion = ""
+                            console.log(nueva_dependencia_institucion)
+                            var insturl = "/nucleo/rest/instituciones/" + data.institucion_dependencia.toString() + "/"
+                            $.ajax({
+                                url: insturl,
+                                success: function (dataf) {
+                                    console.log(dataf.nombre_institucion);
+                                    nueva_dependencia_institucion = dataf.nombre_institucion.toString();
+                                    console.log(nueva_dependencia_institucion)
+                                    var nueva_dependencia = new Option(data.nombre_dependencia + " :: " + nueva_dependencia_institucion, data.id, true, true);
+                                    $('#id_dependencia').append(nueva_dependencia).trigger('change');
+                                    $('#agregar-dependencia').modal('toggle');
+                                    $('#dependencia-modal-body').empty();
+                                }
+                            });
                         }
                     });
-
-                    $("#modal_form_dependencia").submit(function (event) {
-                        console.log("Handler for .submit() called.");
-                        var datos = {
-                            nombre_dependencia: $("#id_nombre_dependencia").val(),
-                            institucion_dependencia: parseInt($("#id_institucion_dependencia").val()),
-                            ciudad_text_dependencia: $("#id_ciudad_text_dependencia").val(),
-                        };
-                        if ($("#id_subsistema_unam_dependencia").val() != "") {
-                            datos.subsistema_unam_dependencia = $("#id_subsistema_unam_dependencia").val();
-                        }
-                        $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-                        $.ajax({
-                            type: "POST",
-                            url: "/nucleo/rest/dependencias/",
-                            dataType: 'json',
-                            data: datos,
-                            headers: {"X-CSRFToken": $crf_token},
-                            error: function (xhr, ajaxOptions, thrownError) {
-                                $('#id_subsistema_unam_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').children('option').remove();
-                                $('#d_subsunam').hide('slow');
-                                $('#modal_form_dependencia').trigger('reset');
-                            },
-                            success: function (data) {
-                                $('#id_subsistema_unam_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').val(null).trigger('change');
-                                $('#id_institucion_dependencia').children('option').remove();
-                                $('#d_subsunam').hide('slow');
-                                $('#modal_form_dependencia').trigger('reset');
-
-                                //$('#id_dependencia').focus('change');
-                                var nueva_dependencia_institucion = ""
-                                console.log(nueva_dependencia_institucion)
-                                var insturl = "/nucleo/rest/instituciones/" + data.institucion_dependencia.toString() + "/"
-                                $.ajax({
-                                    url: insturl,
-                                    success: function (dataf) {
-                                        console.log(dataf.nombre_institucion);
-                                        nueva_dependencia_institucion = dataf.nombre_institucion.toString();
-                                        console.log(nueva_dependencia_institucion)
-                                        var nueva_dependencia = new Option(data.nombre_dependencia + " :: " + nueva_dependencia_institucion, data.id, true, true);
-                                        $('#id_dependencia').append(nueva_dependencia).trigger('change');
-                                        $('#agregar-dependencia').modal('toggle');
-                                        $('#dependencia-modal-body').empty();
-                                    }
-                                });
-                            }
-                        });
-                        event.preventDefault();
-                    });
-                </script>
-                {{ modal_form_dependencia.media.js }}
-            {% endblock %}
-        </div>
+                    event.preventDefault();
+                });
+            </script>
+            {{ modal_form_dependencia.media.js }}
+        {% endblock %}
+    </div>
 
 {% else %}
     <script>

@@ -1,8 +1,4 @@
-<div id="agregar-dependencia-dialog" title="Agregar dependencia">
-    <div id="dependencia-dialog-body"></div>
-</div>
-
-<div class="modal fade" id="agregar-dependencia">
+<div class="modal fade" id="agregar-dependencia" style="overflow:hidden;">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -11,7 +7,7 @@
                 <h4 class="modal-title">Agregar dependencia</h4>
             </div>
             <div class="modal-body">
-                <div id="dependencia-modal-body"></div>
+                <div id="agregar-dependencia-modal-body"></div>
             </div>
         </div>
     </div>
@@ -33,19 +29,33 @@
 </div>
 
 <script>
-    $(function () {
-        $("#agregar-dependencia-dialog").dialog();
-    });
+
 
     $("#agregar-dependencia").on('shown.bs.modal', function () {
-        $('#dependencia-modal-body').load('/nucleo/dependencias/agregar/');
+        $('#agregar-dependencia-modal-body').load('/nucleo/dependencias/agregar/', function () {
+            $("#id_institucion_dependencia").djangoSelect2({dropdownParent: $("#agregar-dependencia")});
+        })
     });
 
+
     $("#detalle-dependencia").on('shown.bs.modal', function () {
-        if ($("#id_dependencia").val()) {
-            $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/");
-        } else {
-            $('#detalle-dependencia').modal('toggle');
-        }
+            console.log($("#id_dependencia").val())
+            $("#detalle-dependencia").removeData()
+            $('#detalle-dependencia-modal-body').html('');
+            $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/", function () {
+                $("#id_institucion_dependencia").djangoSelect2({dropdownParent: $("#detalle-dependencia")});
+            })
     });
+
+
+    $("#detalle-dependencia").on('hide.bs.modal', function () {
+
+        $("#detalle-dependencia").removeData()
+        $('#detalle-dependencia-modal-body').html('');
+        //$("#id_dependencia").val(null)
+        alert("aqui")
+    });
+
+
+
 </script>
