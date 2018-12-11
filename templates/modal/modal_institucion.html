@@ -7,7 +7,7 @@
                 <h4 class="modal-title">Agregar institucion</h4>
             </div>
             <div class="modal-body">
-                <div id="institucion-modal-body"></div>
+                <div id="agregar-institucion-modal-body"></div>
             </div>
         </div>
     </div>
@@ -30,9 +30,10 @@
 
 <script>
     $("#agregar-institucion").on('shown.bs.modal', function () {
-        alert("sdfds")
-        $('#dependencia-modal-body').load('/nucleo/instituciones/agregar/');
+        $('#agregar-institucion-modal-body').load('/nucleo/instituciones/agregar/');
     });
+
+
 
 
     $("#detalle-institucion").on('shown.bs.modal', function () {

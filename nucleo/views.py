@@ -280,7 +280,8 @@ class DependenciaAgregar(ObjectModalCreateMixin, View):
             new_obj = bound_form.save()
             return JsonResponse(new_obj, safe=False)
         else:
-            return render(request, self.template_name, {'modal_form_dependencia': bound_form})
+            return JsonResponse(bound_form, safe=False)
+
 
 
 class DependenciaDetalle(ObjectModalUpdateMixin, View):
