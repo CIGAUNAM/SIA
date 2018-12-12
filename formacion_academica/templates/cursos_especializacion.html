@@ -108,7 +108,7 @@
             {{ form.dependencia }}
 
             <div class="input-group-addon">
-                <span data-toggle="modal" id="boton-ver-dependencia" data-target="#detalle-dependencia">
+                <span id="boton-ver-dependencia">
                     <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
                        title="Mostrar o editar los detalles adicionales de la dependencia seleccionada.">
                     <i class="fa fa-eye"></i>
@@ -126,6 +126,7 @@
             </div>
         </div>
     </div>
+    <button class="demo btn btn-primary btn-lg" data-toggle="modal" href="#stack1">View Demo</button>
 
     {% include 'modal/modal_dependencia.html' %}
 
@@ -133,6 +134,14 @@
         $('#boton-ver-dependencia').on('click', function (e) {
             if ($("#id_dependencia").val() === null) {
                 e.stopPropagation();
+            } else {
+                console.log($("#id_dependencia").val())
+                $("#detalle-dependencia").modal()
+                $("#detalle-dependencia").removeData()
+                $('#detalle-dependencia-modal-body').html('');
+                $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/", function () {
+                    $("#id_institucion_dependencia").djangoSelect2({dropdownParent: $("#detalle-dependencia")});
+                })
             }
         })
     </script>

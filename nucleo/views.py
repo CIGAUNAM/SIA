@@ -268,11 +268,11 @@ class DependenciaAgregar(ObjectModalCreateMixin, View):
         try:
             ref = request.META['HTTP_REFERER']
             if ref:
-                return render(request, self.template_name, {'modal_form_dependencia': self.form_class})
+                return render(request, self.template_name, {'modal_form_dependencia_agregar': self.form_class})
         except Exception as e:
             print(e)
             #return HttpResponse("")
-            return render(request, self.template_name, {'modal_form_dependencia': self.form_class})
+            return render(request, self.template_name, {'modal_form_dependencia_agregar': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -291,7 +291,7 @@ class DependenciaDetalle(ObjectModalUpdateMixin, View):
 
     def get(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
-        return render(request, self.template_name, {'modal_form_dependencia': self.form_class(instance=obj)})
+        return render(request, self.template_name, {'modal_form_dependencia_detalle': self.form_class(instance=obj)})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -300,7 +300,7 @@ class DependenciaDetalle(ObjectModalUpdateMixin, View):
             messages.success(request, "Registro actualizado con éxito")
             return redirect(new_obj)
         else:
-            return render(request, self.template_name, {'modal_form_dependencia': bound_form})
+            return render(request, self.template_name, {'modal_form_dependencia_detalle': bound_form})
 
 class DepartamentoJSON(View):
     def get(self, request):

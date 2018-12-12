@@ -4,6 +4,8 @@
 {% endblock %}
 {% endcomment %}
 
+
+
 {% if user.is_authenticated %}
     {% block messages %}
         {% include 'adminlte/lib/_messages.html' %}
@@ -13,7 +15,7 @@
         <div class="col">
 
             {% block form_modal_dependencia %}
-                <form id="modal_form_dependencia" action="" method="post">
+                <form id="modal_form_dependencia_detalle" action="" method="post">
                     {% csrf_token %}
                     <p><strong>Nombre de la dependencia detalle:</strong>
                         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -25,7 +27,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-pencil-square-o"></i>
                             </div>
-                            {{ modal_form_dependencia.nombre_dependencia }}
+                            {{ modal_form_dependencia_detalle.nombre_dependencia }}
                         </div>
                     </div>
                     </p>
@@ -43,7 +45,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-pencil-square-o"></i>
                             </div>
-                            {{ modal_form_dependencia.ciudad_text_dependencia }}
+                            {{ modal_form_dependencia_detalle.ciudad_text_dependencia }}
                         </div>
                     </div>
                     </p>
@@ -55,7 +57,7 @@
                     <div class="form-group" style="margin-top: -10px;">
                         <div class="input-group">
                             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                            {{ modal_form_dependencia.institucion_dependencia }}
+                            {{ modal_form_dependencia_detalle.institucion_dependencia }}
                             <div class="input-group-addon">
                                 <a href="#" data-toggle="tooltip" data-placement="left"
                                    title="Mostrar los detalles adicionales de la institución.">
@@ -89,7 +91,7 @@
                         <div class="form-group" style="margin-top: -10px;">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                                {{ modal_form_dependencia.subsistema_unam_dependencia }}
+                                {{ modal_form_dependencia_detalle.subsistema_unam_dependencia }}
                             </div>
                         </div>
                         </p>
@@ -117,7 +119,7 @@
                     });
 
 
-                    $("#modal_form_dependencia").submit(function (event) {
+                    $("#modal_form_dependencia_detalle").submit(function (event) {
                         console.log("Handler for .submit() called editar.");
 
                         var datos = {
@@ -142,14 +144,15 @@
                                 $('#id_institucion_dependencia').val(null).trigger('change');
                                 $('#id_institucion_dependencia').children('option').remove();
                                 $('#d_subsunam').hide('slow');
-                                $('#modal_form_dependencia').trigger('reset');
+                                $('#modal_form_dependencia_detalle').trigger('reset');
                             },
                             success: function (data) {
+                                console.log("success")
                                 $('#id_subsistema_unam_dependencia').val(null).trigger('change');
                                 $('#id_institucion_dependencia').val(null).trigger('change');
                                 $('#id_institucion_dependencia').children('option').remove();
                                 $('#d_subsunam').hide('slow');
-                                $('#modal_form_dependencia').trigger('reset');
+                                $('#modal_form_dependencia_detalle').trigger('reset');
 
                                 var nueva_dependencia_institucion = ""
 
@@ -162,9 +165,12 @@
                                         console.log(nueva_dependencia_institucion)
                                         var nueva_dependencia = new Option(data.nombre_dependencia + " :: " + nueva_dependencia_institucion, data.id, true, true);
                                         $('#id_dependencia').append(nueva_dependencia).trigger('change');
-                                        $('#detalle-dependencia').modal('toggle');
                                         $('#detalle-dependencia-modal-body').empty();
-                                        $('#dependencia-modal-body').empty();
+                                        $("#detalle-dependencia").removeData()
+                                        $('#detalle-dependencia-modal-body').html('');
+                                        $('#detalle-dependencia').modal('hide');
+                                        alert("exito guardar")
+
                                     }
                                 });
                             }
@@ -172,7 +178,7 @@
                         event.preventDefault();
                     });
                 </script>
-                {{ modal_form_dependencia.media.js }}
+                {{ modal_form_dependencia_detalle.media.js }}
             {% endblock %}
 
         </div>
