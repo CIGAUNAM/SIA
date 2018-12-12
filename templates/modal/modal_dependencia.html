@@ -1,4 +1,4 @@
-<div class="modal fade" id="agregar-dependencia">
+<div class="modal fade" id="agregar-dependencia1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,7 +7,7 @@
                 <h4 class="modal-title">Agregar dependencia</h4>
             </div>
             <div class="modal-body">
-                <div id="agregar-dependencia-modal-body"></div>
+                <div id="agregar-dependencia-modal-body1"></div>
             </div>
         </div>
     </div>
@@ -26,6 +26,21 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div id="agregar-dependencia" class="modal fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Agregar dependencia</h4>
+        </div>
+        <div class="modal-body">
+            <div id="agregar-dependencia-modal-body"></div>
+        </div>
+    </div>
+
 </div>
 
 
@@ -89,6 +104,7 @@
     $("#agregar-dependencia").on('shown.bs.modal', function () {
         $('#agregar-dependencia-modal-body').load('/nucleo/dependencias/agregar/', function () {
             $("#id_institucion_dependencia").djangoSelect2({dropdownParent: $("#agregar-dependencia")});
+            $("#id_subsistema_unam_dependencia").djangoSelect2({dropdownParent: $("#agregar-dependencia")});
         })
     });
 
