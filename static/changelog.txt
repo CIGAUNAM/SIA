@@ -1,0 +1,20 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [0.2] - 2017-06-20
+### Added
+- Modelo docencia.ArticuloDocencia
+- Modelo docencia.CursoDocenciaEscolarizado
+- Modelo docencia.CursoDocenciaExtracurricular
+- Modelo docencia.ProgramaEstudio
+- Modelo docencia.ProgramaEstudio
+
+### Changed
+- Eliminado el modelo docencia.CursoDocencia, que tenía un campo "tipo" para determinar si era escolarizado o extracurricular, en su lugar se dividió en dos modelos separados docencia.CursoDocenciaEscolarizado y docencia.CursoDocenciaExtracurricular, dado que difieren en algunos campos
+
+
+### Removed
+- Modelo docencia.CursoDocencia
