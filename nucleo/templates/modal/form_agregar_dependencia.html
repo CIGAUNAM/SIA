@@ -6,7 +6,7 @@
     <div class="col">
         {% block form_modal_dependencia %}
             <form id="modal_form_dependencia" action="" method="post">
-            {{ modal_form_dependencia_agregar.errors }}
+                {{ modal_form_dependencia_agregar.errors }}
                 {% csrf_token %}
                 <p><strong>Nombre de la dependencia:</strong>
                     <a href="#" data-toggle="tooltip" data-placement="right"
@@ -88,8 +88,9 @@
                     </p>
                 </div>
 
-                <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                <!-- <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button> -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
             </form>
 
             {% include 'modal/modal_institucion.html' %}
