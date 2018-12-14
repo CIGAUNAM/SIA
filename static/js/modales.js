@@ -1,3 +1,4 @@
+agregar_dependencia_dialog = null
 $(function () {
 
     $("#boton-agregar-dependencia").on("click", function () {

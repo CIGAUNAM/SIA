@@ -43,7 +43,11 @@ class ObjectModalCreateMixin:
     def post(self, request):
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
+            new_obj = bound_form.save(commit=False)
+            new_obj.usuario_creador = request.user
             new_obj = bound_form.save()
+            messages.success(request, "Registro creado con éxito")
+
             return JsonResponse(new_obj, safe=False)
         else:
             return render(request, self.template_name, {'modal_form': bound_form})
@@ -61,6 +65,8 @@ class ObjectModalUpdateMixin:
     def post(self, request):
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
+            new_obj = bound_form.save(commit=False)
+            new_obj.usuario_creador = request.user
             new_obj = bound_form.save()
             messages.success(request, "Registro creado con éxito")
             return redirect(new_obj)

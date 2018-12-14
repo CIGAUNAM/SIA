@@ -72,6 +72,26 @@ class ZonaPais(models.Model):
         verbose_name_plural = 'Zonas de paises'
 
 
+
+class GradoAcademico(models.Model):
+    grado_abreviacion = models.CharField(max_length=254, unique=True)
+    grado = models.CharField(max_length=254, unique=True)
+
+    def __str__(self):
+        return self.grado
+
+    def natural_key(self):
+        return self.grado
+
+    def get_absolute_url(self):
+        return reverse('grado_academico_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['grado']
+        verbose_name = 'Grado académico'
+        verbose_name_plural = 'Grados académicos'
+
+
 class Pais(models.Model):
     nombre = models.CharField(max_length=60, unique=True)
     nombre_extendido = models.CharField(max_length=200, unique=True)
@@ -91,6 +111,7 @@ class Pais(models.Model):
         ordering = ['nombre']
         verbose_name_plural = 'Paises'
         verbose_name = 'País'
+
 
 
 class Estado(models.Model):
@@ -116,6 +137,9 @@ class Ciudad(models.Model):
     nombre = models.CharField(max_length=255)
     # slug = AutoSlugField(populate_from='ciudad')
     estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
+    validado = models.BooleanField(default=False)
+    fecha_creado = models.DateField(auto_now_add=True)
+
 
     def __str__(self):
         return self.nombre
@@ -132,30 +156,12 @@ class Ciudad(models.Model):
         verbose_name_plural = 'Ciudades'
 
 
-class GradoAcademico(models.Model):
-    grado_abreviacion = models.CharField(max_length=254, unique=True)
-    grado = models.CharField(max_length=254, unique=True)
-
-    def __str__(self):
-        return self.grado
-
-    def natural_key(self):
-        return self.grado
-
-    def get_absolute_url(self):
-        return reverse('grado_academico_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['grado']
-        verbose_name = 'Grado académico'
-        verbose_name_plural = 'Grados académicos'
-
 
 class User(AbstractUser):
     grado = models.ForeignKey(GradoAcademico, blank=True, null=True, on_delete=models.PROTECT)
     descripcion = models.TextField(blank=True, verbose_name='Semblanza')
     tipo = models.CharField(max_length=30, blank=True, null=True, choices=(
-        ('', 'Seleccionar tipo de usuario'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'), 
+        ('', 'Seleccionar tipo de usuario'), ('INVESTIGADOR', 'Investigador'), ('ADMINISTRATIVO', 'Administrativo'),
         ('TECNICO', 'Técnico'), ('POSTDOCTORADO', 'Postdoctorado'), ('OTRO', 'Otro')), default='OTRO')
     fecha_nacimiento = models.DateField(null=True, blank=True)
     genero = models.CharField(max_length=10, blank=True, null=True, choices=(
@@ -209,6 +215,9 @@ class User(AbstractUser):
         pass
 
 
+
+
+
 class InvestigadorConacyt(models.Model):
     investigador = models.ForeignKey(User, on_delete=models.PROTECT)
 
@@ -226,6 +235,10 @@ class Institucion(models.Model):
     descripcion_institucion = models.TextField(blank=True)
     clasificacion_institucion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
     pais_institucion = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    validado = models.BooleanField(default=False)
+    fecha_creado = models.DateField(auto_now_add=True)
+    fecha_actualizado = models.DateField(auto_now=True)
+    usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre_institucion
@@ -256,6 +269,10 @@ class Dependencia(models.Model):
         ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
         ('ESCUELAS', 'Facultades y Escuelas'),
         ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), blank=True, null=True, verbose_name='Subsistema UNAM')
+    validado = models.BooleanField(default=False)
+    fecha_creado = models.DateField(auto_now_add=True)
+    fecha_actualizado = models.DateField(auto_now=True)
+    usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT)
 
     def __str__(self):
         return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre_institucion, )
