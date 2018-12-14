@@ -131,19 +131,7 @@
     {% include 'modal/modal_dependencia.html' %}
 
     <script>
-        $('#boton-ver-dependencia').on('click', function (e) {
-            if ($("#id_dependencia").val() === null) {
-                e.stopPropagation();
-            } else {
-                console.log($("#id_dependencia").val())
-                $("#detalle-dependencia").modal()
-                $("#detalle-dependencia").removeData()
-                $('#detalle-dependencia-modal-body').html('');
-                $('#detalle-dependencia-modal-body').load(('/nucleo/dependencias/' + $("#id_dependencia").val().toString()) + "/", function () {
-                    $("#id_institucion_dependencia").djangoSelect2({dropdownParent: $("#detalle-dependencia")});
-                })
-            }
-        })
+
     </script>
 
 {% endblock %}

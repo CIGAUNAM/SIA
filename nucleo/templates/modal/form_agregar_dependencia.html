@@ -5,7 +5,7 @@
 
     <div class="col">
         {% block form_modal_dependencia %}
-            <form id="modal_form_dependencia" action="" method="post">
+            <form id="modal_form_dependencia_agregar" action="" method="post">
                 {{ modal_form_dependencia_agregar.errors }}
                 {% csrf_token %}
                 <p><strong>Nombre de la dependencia:</strong>
@@ -144,7 +144,6 @@
                             $('#d_subsunam').hide('slow');
                             $('#modal_form_dependencia_agregar').trigger('reset');
 
-                            //$('#id_dependencia').focus('change');
                             var nueva_dependencia_institucion = ""
                             console.log(nueva_dependencia_institucion)
                             var insturl = "/nucleo/rest/instituciones/" + data.institucion_dependencia.toString() + "/"
@@ -156,10 +155,8 @@
                                     console.log(nueva_dependencia_institucion)
                                     var nueva_dependencia = new Option(data.nombre_dependencia + " :: " + nueva_dependencia_institucion, data.id, true, true);
                                     $('#id_dependencia').append(nueva_dependencia).trigger('change');
-
-
-                                    $('#dependencia-modal-body').empty();
-
+                                    $('#agregar-dependencia-modal-body').empty();
+                                    agregar_dependencia_dialog.dialog("close")
                                 }
                             });
                         }
