@@ -14,12 +14,14 @@
     <script src="{% static "js/jquery.dataTables.min.js" %}"></script>
     <script src="//cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
 
+    <script src="{% static "js/modales.js" %}"></script>
 
     <script>
 
         $(function () {
 
-            $(".ui-dialog").css("z-index", 1000)
+            $(".ui-dialog").css("z-index", 900)
+            $(".ui-dialog-buttonset").css("float", "left")
 
 
             $(".datepicker").datepicker({

@@ -167,7 +167,7 @@
                                 <div class="panel">
 
                                     <div class="float-right">
-                                         <!--  <span class="tiempo">Tiempo restante</span> -->
+                                        <!--  <span class="tiempo">Tiempo restante</span> -->
                                     </div>
 
                                 </div>
@@ -241,33 +241,6 @@
         </div>
     </div><!-- /.box -->
 
-
-
-
-
-    <!-- Modal -->
-    <div id="eliminar" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">Eliminar {{ aux.objeto }}</h4>
-                </div>
-                <div class="modal-body">
-                    <p>¿Está seguro que desea eliminar este elemento?</p>
-                </div>
-                <div class="modal-footer">
-                    <a class="btn btn-danger" style="color: #fff" href="eliminar">Eliminar</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
     <!-- Modal -->
     <div id="aviso" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
@@ -288,6 +261,15 @@
 
         </div>
     </div>
+
+    <div id="agregar-dependencia" title="Agregar dependencia">
+        <div id="agregar-dependencia-modal-body"></div>
+    </div>
+
+    <div id="detalle-dependencia" title="Detalle dependencia">
+        <div id="detalle-dependencia-modal-body"></div>
+    </div>
+
 
 {% endblock %}
 
