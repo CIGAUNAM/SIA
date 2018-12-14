@@ -65,7 +65,7 @@ class CiudadForm(forms.ModelForm):
 
     class Meta:
         model = Ciudad
-        exclude = []
+        exclude = ['usuario_creador', 'validado', 'fecha_creado', 'fecha_actualizado']
         widgets = {
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
@@ -87,7 +87,7 @@ class InstitucionForm(forms.ModelForm):
 
     class Meta:
         model = Institucion
-        exclude = []
+        exclude = ['usuario_creador', 'validado', 'fecha_creado', 'fecha_actualizado']
         widgets = {
             'nombre_institucion': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion_institucion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
@@ -116,7 +116,7 @@ class DependenciaForm(forms.ModelForm):
 
     class Meta:
         model = Dependencia
-        exclude = []
+        exclude = ['usuario_creador', 'validado', 'fecha_creado', 'fecha_actualizado']
         widgets = {
             'nombre_dependencia': TextInput(attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre de la dependencia y sus siglas entre parentesis (si oficialmente las tiene)'}),
             'ciudad_text_dependencia': TextInput(attrs={'class': 'form-control pull-right'}),
