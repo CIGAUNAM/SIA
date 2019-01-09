@@ -1007,7 +1007,7 @@
     <ol>
         {% for i in arbitrajes_publicaciones_academicas %}
             <li>
-                {{ i.usuario }}. {{ i.fecha_dictamen__year }}. {% if i.tipo == 'ARTICULO' %}{{ i.revista }}{% endif %}{% if i.tipo == 'LIBRO' %}{{ i.libro }}{% endif %}{% if i.tipo == 'CAPITULO_LIBRO' %}{{ i.capitulo_libro }}{% endif %}. {{ i.descripcion }}
+                {{ i.usuario }}. {{ i.fecha_dictamen }}. {% if i.tipo == 'ARTICULO' %}Revista: {{ i.revista.nombre }}{% endif %}{% if i.tipo == 'LIBRO' %}Libro: {{ i.libro }}{% endif %}{% if i.tipo == 'CAPITULO_LIBRO' %}Capitulo de libro: {{ i.capitulo_libro }}{% endif %}. {{ i.descripcion }}
             </li>
         {% endfor %}
     </ol>
