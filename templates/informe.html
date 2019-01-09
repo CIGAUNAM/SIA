@@ -1438,7 +1438,7 @@
         {% for i in distincion_academicos %}
             <li>
                 {{ i.fecha|date:"F Y" }}. {{ i.distincion.get_tipo_display }}, {{ i.distincion.get_ambito_display }},
-                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.dependencia.nombre }}, {{ i.distincion.dependencia.pais.nombre }}.
+                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.institucion.nombre }}, {{ i.distincion.institucion.pais.nombre }}.
                 Otorga a: {{ i.usuario }}.
             </li>
         {% endfor %}
