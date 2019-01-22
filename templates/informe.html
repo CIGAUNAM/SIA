@@ -1527,6 +1527,59 @@
     </p>
 {% endif %}
 
+{% if libros_investigacion_nacionales_enprensa %}
+    <h4>libros de investigación nacionales en prensa</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares
+        {% for i in libros_investigacion_nacionales_enprensa %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}{{ editorial_text }}^{{ pais }}^{{ ciudad_text }}^{{ status }}^{{ fecha.year }}^{{ numero_edicion }}^{{ numero_paginas }}^{{ coleccion_text }}^{{ volumen }}^{{ isbn }}^{{ url }}^{{ arbitrado_pares }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if libros_investigacion_nacionales_aceptados %}
+    <h4>libros de investigación nacionales aceptados</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares
+        {% for i in libros_investigacion_nacionales_aceptados %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}{{ editorial_text }}^{{ pais }}^{{ ciudad_text }}^{{ status }}^{{ fecha.year }}^{{ numero_edicion }}^{{ numero_paginas }}^{{ coleccion_text }}^{{ volumen }}^{{ isbn }}^{{ url }}^{{ arbitrado_pares }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
+{% if libros_investigacion_internacionales_publicados %}
+    <h4>libros de investigación internacionales publicados</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares
+        {% for i in libros_investigacion_internacionales_publicados %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}{{ editorial_text }}^{{ pais }}^{{ ciudad_text }}^{{ status }}^{{ fecha.year }}^{{ numero_edicion }}^{{ numero_paginas }}^{{ coleccion_text }}^{{ volumen }}^{{ isbn }}^{{ url }}^{{ arbitrado_pares }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if libros_investigacion_internacionales_enprensa %}
+    <h4>libros de investigación internacionales en prensa</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares
+        {% for i in libros_investigacion_internacionales_enprensa %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}{{ editorial_text }}^{{ pais }}^{{ ciudad_text }}^{{ status }}^{{ fecha.year }}^{{ numero_edicion }}^{{ numero_paginas }}^{{ coleccion_text }}^{{ volumen }}^{{ isbn }}^{{ url }}^{{ arbitrado_pares }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if libros_investigacion_internacionales_aceptados %}
+    <h4>libros de investigación internacionales aceptados</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares
+        {% for i in libros_investigacion_internacionales_aceptados %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}{{ editorial_text }}^{{ pais }}^{{ ciudad_text }}^{{ status }}^{{ fecha.year }}^{{ numero_edicion }}^{{ numero_paginas }}^{{ coleccion_text }}^{{ volumen }}^{{ isbn }}^{{ url }}^{{ arbitrado_pares }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
+
 
 </body>
 </html>
