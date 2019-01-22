@@ -16,6 +16,7 @@
     <SUITE FILE_PATH="coverage/SIA$migracion.coverage" NAME="migracion Coverage Results" MODIFIED="1527871308629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SIA$migracion2.coverage" NAME="migracion2 Coverage Results" MODIFIED="1507518891980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SIA$misioneros.coverage" NAME="misioneros Coverage Results" MODIFIED="1512580659820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SIA$log.coverage" NAME="log Coverage Results" MODIFIED="1547860082455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_misc" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -58,49 +59,50 @@
     <session id="-1612063786">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="3" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="4" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Django Console" value="526" />
-          <entry key="html" value="1341" />
+          <entry key="Django Console" value="736" />
+          <entry key="html" value="1685" />
           <entry key="js" value="240" />
-          <entry key="py" value="572" />
+          <entry key="py" value="863" />
           <entry key="py@SIA" value="170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="156" />
-          <entry key="HTML" value="1341" />
+          <entry key="HTML" value="1685" />
           <entry key="JavaScript" value="240" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="1098" />
+          <entry key="Python" value="1599" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="17" />
+          <entry key="html" value="18" />
           <entry key="js" value="5" />
-          <entry key="py" value="34" />
+          <entry key="py" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="17" />
+          <entry key="HTML" value="18" />
           <entry key="JavaScript" value="5" />
-          <entry key="Python" value="34" />
+          <entry key="Python" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.checkout.local" value="1" />
+          <entry key="git.branch.checkout.local" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -166,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
+            <state relative-caret-position="272">
+              <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -178,17 +180,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nucleo/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/distinciones/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+            <state relative-caret-position="534">
+              <caret line="694" column="18" selection-start-line="694" selection-start-column="4" selection-end-line="694" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -196,8 +189,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/informe.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="1440" column="133" selection-start-line="1440" selection-start-column="133" selection-end-line="1440" selection-end-column="133" />
+            <state relative-caret-position="330">
+              <caret line="1534" column="655" selection-start-line="1534" selection-start-column="655" selection-end-line="1534" selection-end-column="655" />
               <folding>
                 <element signature="e#277#339#0#DjangoTemplate" />
                 <element signature="e#1382#1447#0#DjangoTemplate" />
@@ -223,19 +216,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ObjectModalCreateMixin</find>
-      <find>dependen</find>
-      <find>modal_form</find>
-      <find>dataf.no</find>
-      <find>dataf</find>
-      <find>dataf.</find>
       <find>modal_form_dependencia</find>
       <find>dependencia-modal-body</find>
       <find>rest</find>
@@ -258,8 +245,14 @@
       <find>arbo</find>
       <find>arbit</find>
       <find>arbitr</find>
-      <find>distinci</find>
       <find>Premios y distinciones recibidos por académicos de la entidad</find>
+      <find>Productos tecnológicos</find>
+      <find>distinci</find>
+      <find>lars</find>
+      <find>Proyectos</find>
+      <find>proyectos_investigacion_papiit</find>
+      <find>libros_investigacion_nacionales_publicados</find>
+      <find>editoria</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -306,7 +299,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/formacion_academica/views.py" />
         <option value="$PROJECT_DIR$/formacion_academica/utils.py" />
         <option value="$PROJECT_DIR$/formacion_recursos_humanos/templates/asesoria_estudiante.html" />
         <option value="$PROJECT_DIR$/formacion_recursos_humanos/views.py" />
@@ -335,7 +327,6 @@
         <option value="$PROJECT_DIR$/docencia/templates/libro_docencia.html" />
         <option value="$PROJECT_DIR$/investigacion/forms.py" />
         <option value="$PROJECT_DIR$/investigacion/models.py" />
-        <option value="$PROJECT_DIR$/SIA/views_reportes.py" />
         <option value="$PROJECT_DIR$/vinculacion/forms.py" />
         <option value="$PROJECT_DIR$/templates/modal/main_modal.html" />
         <option value="$PROJECT_DIR$/nucleo/views.py" />
@@ -356,6 +347,8 @@
         <option value="$PROJECT_DIR$/nucleo/forms.py" />
         <option value="$PROJECT_DIR$/SIA/utils.py" />
         <option value="$PROJECT_DIR$/nucleo/models.py" />
+        <option value="$PROJECT_DIR$/SIA/views_reportes.py" />
+        <option value="$PROJECT_DIR$/_misc/log.py" />
         <option value="$PROJECT_DIR$/templates/informe.html" />
       </list>
     </option>
@@ -455,6 +448,11 @@
             <path>
               <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="SIA" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="vinculacion" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
@@ -499,6 +497,28 @@
   </component>
   <component name="RunManager" selected="Django server.SIA">
     <configuration name="maps.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SIA/maps.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="log" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SIA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/_misc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/_misc/log.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="migracion" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -574,14 +594,15 @@
       <item itemvalue="Django server.SIA" />
       <item itemvalue="JavaScript Debug.maps.html" />
       <item itemvalue="Python.migracion" />
+      <item itemvalue="Python.log" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.migracion" />
         <item itemvalue="JavaScript Debug.maps.html" />
+        <item itemvalue="Python.log" />
         <item itemvalue="Python.migracion" />
         <item itemvalue="JavaScript Debug.maps.html" />
-        <item itemvalue="Python.migracion" />
       </list>
     </recent_temporary>
   </component>
@@ -595,55 +616,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505766858927</updated>
-    </task>
-    <task id="LOCAL-00135" summary="correccion decimales factor de impacto en revista">
-      <created>1533346348237</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1533346348237</updated>
-    </task>
-    <task id="LOCAL-00136" summary="correccion decimales factor de impacto en revista">
-      <created>1533847468993</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1533847468995</updated>
-    </task>
-    <task id="LOCAL-00137" summary="correccion decimales factor de impacto en revista">
-      <created>1534268632898</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1534268632898</updated>
-    </task>
-    <task id="LOCAL-00138" summary="correccion decimales factor de impacto en revista">
-      <created>1534268639485</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1534268639485</updated>
-    </task>
-    <task id="LOCAL-00139" summary="correccion decimales factor de impacto en revista">
-      <created>1534278012964</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1534278012964</updated>
-    </task>
-    <task id="LOCAL-00140" summary="correccion decimales factor de impacto en revista">
-      <created>1534353338700</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1534353338701</updated>
-    </task>
-    <task id="LOCAL-00141" summary="correccion decimales factor de impacto en revista">
-      <created>1534385725287</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1534385725287</updated>
     </task>
     <task id="LOCAL-00142" summary="correccion decimales factor de impacto en revista">
       <created>1534433596491</created>
@@ -939,26 +911,75 @@
       <option name="project" value="LOCAL" />
       <updated>1547066619162</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="correccion decimales factor de impacto en revista|">
+      <created>1547066900342</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1547066900342</updated>
+    </task>
+    <task id="LOCAL-00185" summary="correccion decimales factor de impacto en revista|">
+      <created>1547067131309</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1547067131309</updated>
+    </task>
+    <task id="LOCAL-00186" summary="correccion decimales factor de impacto en revista|">
+      <created>1547861394714</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1547861394714</updated>
+    </task>
+    <task id="LOCAL-00187" summary="correccion decimales factor de impacto en revista|">
+      <created>1548123700905</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1548123700905</updated>
+    </task>
+    <task id="LOCAL-00188" summary="correccion decimales factor de impacto en revista|">
+      <created>1548126767589</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1548126767589</updated>
+    </task>
+    <task id="LOCAL-00189" summary="correccion decimales factor de impacto en revista|">
+      <created>1548170830047</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1548170830048</updated>
+    </task>
+    <task id="LOCAL-00190" summary="correccion decimales factor de impacto en revista|">
+      <created>1548172088925</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1548172088925</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15511727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49779493" weight="0.2958843" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49779493" visible="true" weight="0.2958843" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50373137" side_tool="true" weight="0.34260288" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49413645" visible="true" weight="0.52614015" />
+      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49413645" weight="0.52614015" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3403782" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="manage.py@SIA" order="12" sideWeight="0.49626866" weight="0.39043382" />
@@ -968,7 +989,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.18869936" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Data View" order="6" />
@@ -1016,9 +1037,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/investigacion/forms.py" />
-    <entry file="file://$PROJECT_DIR$/investigacion/utils.py" />
-    <entry file="file://$PROJECT_DIR$/investigacion/templates/proyecto_investigacion.html" />
     <entry file="file://$PROJECT_DIR$/nucleo/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1063,13 +1081,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modal/main_modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="34" lean-forward="true" selection-start-line="17" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/modal/main_modal.html" />
     <entry file="file://$PROJECT_DIR$/nucleo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1084,34 +1096,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modal/modal_institucion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="49" selection-start-column="49" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html" />
+    <entry file="file://$PROJECT_DIR$/templates/modal/modal_institucion.html" />
     <entry file="file://$PROJECT_DIR$/_misc/nucleo.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/_misc/movilidad_academica.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_misc/movilidad_academica.json" />
     <entry file="file://$PROJECT_DIR$/static/css/bs3patch.css" />
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2445">
-          <caret line="163" column="76" selection-start-line="163" selection-start-column="76" selection-end-line="163" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html" />
     <entry file="file://$PROJECT_DIR$/static/jquery/dist/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1127,20 +1119,8 @@
     <entry file="file://$PROJECT_DIR$/nucleo/templates/area_especialidad.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/static_custom/css/jquery-ui.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="29048" selection-start-line="6" selection-start-column="29048" selection-end-line="6" selection-end-column="29048" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/jquery-ui.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="851" selection-start-line="6" selection-start-column="837" selection-end-line="6" selection-end-column="851" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static_custom/css/jquery-ui.min.css" />
+    <entry file="file://$PROJECT_DIR$/static/css/jquery-ui.min.css" />
     <entry file="file://$PROJECT_DIR$/static_custom/select2/js/select2.full.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2802">
@@ -1162,16 +1142,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/modales.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modal/modal_dependencia.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/modales.js" />
+    <entry file="file://$PROJECT_DIR$/templates/modal/modal_dependencia.html" />
     <entry file="file://$PROJECT_DIR$/nucleo/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4590">
@@ -1193,30 +1165,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static_custom/js/modales.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="111" column="52" selection-start-line="111" selection-start-column="52" selection-end-line="111" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static_custom/js/modales.js" />
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html" />
     <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="118" column="86" selection-start-line="118" selection-start-column="86" selection-end-line="118" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1224,36 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="117" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="n#block#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="74" column="25" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1278,17 +1202,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/WinPython-365Qt5/python-3.6.5.amd64/Lib/site-packages/sklearn/linear_model/least_angle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_misc/log.py" />
+    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
+        <state relative-caret-position="534">
+          <caret line="694" column="18" selection-start-line="694" selection-start-column="4" selection-end-line="694" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/informe.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="1440" column="133" selection-start-line="1440" selection-start-column="133" selection-end-line="1440" selection-end-column="133" />
+        <state relative-caret-position="330">
+          <caret line="1534" column="655" selection-start-line="1534" selection-start-column="655" selection-end-line="1534" selection-end-column="655" />
           <folding>
             <element signature="e#277#339#0#DjangoTemplate" />
             <element signature="e#1382#1447#0#DjangoTemplate" />
