@@ -1585,7 +1585,7 @@
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Pais^Página inicial^Pagina final^ISBN Libro
         {% for i in capitulos_libros_investigacion_nacionales_publicados %}
             <br />
-                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.libro.nombre }}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.pais.nombre }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.libro.nombre }}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.pais.nombre }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}{{ i.libro.isbn }}
         {% endfor %}
     </p>
 {% endif %}
