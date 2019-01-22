@@ -1583,7 +1583,7 @@
 {% if capitulos_libros_investigacion_nacionales_publicados %}
     <h4>capitulos en libros de investigación nacionales publicados</h4>
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Pais^Página inicial^Pagina final^ISBN Libro
-        {% for i in libros_investigacion_internacionales_aceptados %}
+        {% for i in capitulos_libros_investigacion_nacionales_publicados %}
             <br />
                 {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^
                 {{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^
