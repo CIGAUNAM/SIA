@@ -1644,6 +1644,29 @@
     </p>
 {% endif %}
 
+<h3>Informes técnicos</h3>
+
+{% if informes_tecnicos_accesso_publico_nacionales %}
+    <h4>informes técnicos de accesso público nacionales</h4>
+    <p>Título^Autores^fecha^Proyecto^Pais^Número de páginas^es publico
+        {% for i in informes_tecnicos_accesso_publico_nacionales %}
+            <br />
+                {{ i.titulo }}^{% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
+                ({{ i.fecha }})^{{ i.proyecto.nombre }}^{{ i.proyecto.pais.nombre }}^{{ i.numero_paginas }}^{{ i.es_publico }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if informes_tecnicos_accesso_publico_internacionales %}
+    <h4>informes técnicos de accesso público internacionales</h4>
+    <p>Título^Autores^fecha^Proyecto^Pais^Número de páginas^es publico
+        {% for i in informes_tecnicos_accesso_publico_internacionales %}
+            <br />
+                {{ i.titulo }}^{% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
+                ({{ i.fecha }})^{{ i.proyecto.nombre }}^{{ i.proyecto.pais.nombre }}^{{ i.numero_paginas }}^{{ i.es_publico }}
+        {% endfor %}
+    </p>
+{% endif %}
 
 
 </body>
