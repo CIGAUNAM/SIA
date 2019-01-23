@@ -1652,7 +1652,7 @@
         {% for i in informes_tecnicos_accesso_publico_nacionales %}
             <br />
                 {{ i.titulo }}^{% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
-                ({{ i.fecha }})^{{ i.proyecto.nombre }}^{{ i.proyecto.pais.nombre }}^{{ i.numero_paginas }}^{{ i.es_publico }}
+                ({{ i.fecha }})^{{ i.proyecto.nombre }}^{{ i.proyecto.dependencia.institucion.pais.nombre }}^{{ i.numero_paginas }}^{{ i.es_publico }}
         {% endfor %}
     </p>
 {% endif %}
@@ -1663,7 +1663,7 @@
         {% for i in informes_tecnicos_accesso_publico_internacionales %}
             <br />
                 {{ i.titulo }}^{% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
-                ({{ i.fecha }})^{{ i.proyecto.nombre }}^{{ i.proyecto.pais.nombre }}^{{ i.numero_paginas }}^{{ i.es_publico }}
+                ({{ i.fecha }})^{{ i.proyecto.nombre }}^{{ i.proyecto.dependencia.institucion.pais.nombre }}^{{ i.numero_paginas }}^{{ i.es_publico }}
         {% endfor %}
     </p>
 {% endif %}
