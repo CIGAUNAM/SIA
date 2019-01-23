@@ -1692,6 +1692,35 @@
     </p>
 {% endif %}
 
+<h3>Organización de eventos académicos</h3>
+
+{% if organizacion_eventos_academicos %}
+    <h4>Artículos in extenso en memorias internacionales</h4>
+    <p>Tipo evento^Evento^Ciudad^País^Fecha Inicio^Fecha Fin^Coordinador general^Comité organizador^Ámbito
+        {% for i in organizacion_eventos_academicos %}
+            <br />
+                {{ i.evento.tipo.nombre }}^{{ i.evento.nombre }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}^
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}^
+                {{ i.coordinador_general }}^{% if i.comite_organizador.count > 0 %}{% for organizador in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ organizador }}{% endfor %}{% endif %}^{{ i.get_ambito_display|lower }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Participación de eventos académicos</h3>
+
+{% if participacion_eventos_divulgacion %}
+    <h4>Artículos in extenso en memorias internacionales</h4>
+    <p>Participantes^Título participación^Evento^Ciudad^País^Fecha Inicio^Fecha Fin
+        {% for i in participacion_eventos_divulgacion %}
+            <br />
+                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}{% endif %}^
+                "{{ i.titulo }}"^{{ i.evento.nombre }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}^
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
 
 
 </body>
