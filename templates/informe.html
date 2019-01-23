@@ -1651,7 +1651,7 @@
     <p>Título^Autores^fecha^Proyecto^Pais^Número de páginas
         {% for i in informes_tecnicos_accesso_publico_nacionales %}
             <br />
-                {{ i.titulo }}^{% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
+                {{ i.titulo }}^{% if i.autores.count > 0 %}Autores: {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
                 {{ i.fecha }}^{{ i.proyecto.nombre }}^{{ i.proyecto.dependencia.institucion.pais.nombre }}^{{ i.numero_paginas }}
         {% endfor %}
     </p>
@@ -1662,11 +1662,36 @@
     <p>Título^Autores^fecha^Proyecto^Pais^Número de páginas
         {% for i in informes_tecnicos_accesso_publico_internacionales %}
             <br />
-                {{ i.titulo }}^{% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
+                {{ i.titulo }}^{% if i.autores.count > 0 %}Autores: {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
                 {{ i.fecha }}^{{ i.proyecto.nombre }}^{{ i.proyecto.dependencia.institucion.pais.nombre }}^{{ i.numero_paginas }}
         {% endfor %}
     </p>
 {% endif %}
+
+<h3>Artículos en memorias</h3>
+
+{% if articulos_inextenso_memorias_nacionales %}
+    <h4>Artículos in extenso en memorias nacionales</h4>
+    <p>Autores^Año^Nombre^Evento^Editorial^Ciudad^País
+        {% for i in articulos_inextenso_memorias_nacionales %}
+            <br />
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}^
+                {{ i.evento.fecha_inicio.year }}^{{ i.nombre }}^{{ i.evento.nombre }}^{{ i.editorial_text }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if articulos_inextenso_memorias_internacionales %}
+    <h4>Artículos in extenso en memorias internacionales</h4>
+    <p>Autores^Año^Nombre^Evento^Editorial^Ciudad^País
+        {% for i in articulos_inextenso_memorias_internacionales %}
+            <br />
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}^
+                {{ i.evento.fecha_inicio.year }}^{{ i.nombre }}^{{ i.evento.nombre }}^{{ i.editorial_text }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}
+        {% endfor %}
+    </p>
+{% endif %}
+
 
 
 </body>
