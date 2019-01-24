@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="correccion decimales factor de impacto en revista|">
-      <change afterPath="$PROJECT_DIR$/nucleo/migrations/0002_auto_20181213_2049.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/informe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/informe.html" afterDir="false" />
     </list>
@@ -64,14 +63,14 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Django Console" value="736" />
-          <entry key="html" value="1685" />
+          <entry key="html" value="2819" />
           <entry key="js" value="240" />
           <entry key="py" value="863" />
           <entry key="py@SIA" value="170" />
@@ -80,7 +79,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="156" />
-          <entry key="HTML" value="1685" />
+          <entry key="HTML" value="2819" />
           <entry key="JavaScript" value="240" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Python" value="1599" />
@@ -88,16 +87,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="18" />
+          <entry key="html" value="19" />
           <entry key="js" value="5" />
-          <entry key="py" value="44" />
+          <entry key="py" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="18" />
+          <entry key="HTML" value="19" />
           <entry key="JavaScript" value="5" />
-          <entry key="Python" value="44" />
+          <entry key="Python" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -168,8 +167,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+            <state relative-caret-position="306">
+              <caret line="105" column="54" lean-forward="true" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -178,10 +177,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/models.py">
+        <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="694" column="18" selection-start-line="694" selection-start-column="4" selection-end-line="694" selection-end-column="18" />
+            <state relative-caret-position="325">
+              <caret line="105" column="11" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -189,8 +188,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/informe.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="1534" column="655" selection-start-line="1534" selection-start-column="655" selection-end-line="1534" selection-end-column="655" />
+            <state relative-caret-position="364">
+              <caret line="1715" column="123" selection-start-line="1715" selection-start-column="123" selection-end-line="1715" selection-end-column="123" />
               <folding>
                 <element signature="e#277#339#0#DjangoTemplate" />
                 <element signature="e#1382#1447#0#DjangoTemplate" />
@@ -223,12 +222,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>modal_form_dependencia</find>
-      <find>dependencia-modal-body</find>
-      <find>rest</find>
-      <find>modal</find>
-      <find>dependencia</find>
-      <find>backd</find>
       <find>jquery</find>
       <find>jquer</find>
       <find>agregar-institucion</find>
@@ -251,8 +244,14 @@
       <find>lars</find>
       <find>Proyectos</find>
       <find>proyectos_investigacion_papiit</find>
-      <find>libros_investigacion_nacionales_publicados</find>
       <find>editoria</find>
+      <find>libros_investigacion_nacionales_publicados</find>
+      <find>capitulos</find>
+      <find>informe</find>
+      <find>informes</find>
+      <find>memoria</find>
+      <find>organizacion_eventos_academicos</find>
+      <find>participacion_eventos_divulgacion</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -448,6 +447,17 @@
             <path>
               <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="nucleo" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="nucleo" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="migrations" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="SIA" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -469,18 +479,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/css" />
-      <recent name="$PROJECT_DIR$/nucleo" />
-      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\_misc" />
-      <recent name="C:\Users\Nizhi\PycharmProjects\SIA\_misc" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\static_custom\js" />
       <recent name="$PROJECT_DIR$/static/css/images" />
       <recent name="$PROJECT_DIR$/static_custom/css/images" />
       <recent name="$PROJECT_DIR$/static_custom/css" />
       <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\nucleo\migrations" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/nucleo" />
+      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\_misc" />
+      <recent name="C:\Users\Nizhi\PycharmProjects\SIA\_misc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -616,139 +627,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505766858927</updated>
-    </task>
-    <task id="LOCAL-00142" summary="correccion decimales factor de impacto en revista">
-      <created>1534433596491</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1534433596492</updated>
-    </task>
-    <task id="LOCAL-00143" summary="correccion decimales factor de impacto en revista">
-      <created>1534435129322</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1534435129322</updated>
-    </task>
-    <task id="LOCAL-00144" summary="correccion decimales factor de impacto en revista">
-      <created>1534447566688</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1534447566688</updated>
-    </task>
-    <task id="LOCAL-00145" summary="correccion decimales factor de impacto en revista|">
-      <created>1534468648375</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1534468648376</updated>
-    </task>
-    <task id="LOCAL-00146" summary="correccion decimales factor de impacto en revista|">
-      <created>1534471168557</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1534471168558</updated>
-    </task>
-    <task id="LOCAL-00147" summary="correccion decimales factor de impacto en revista|">
-      <created>1534471229073</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1534471229073</updated>
-    </task>
-    <task id="LOCAL-00148" summary="correccion decimales factor de impacto en revista|">
-      <created>1534471631522</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1534471631523</updated>
-    </task>
-    <task id="LOCAL-00149" summary="correccion decimales factor de impacto en revista|">
-      <created>1534518671215</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1534518671216</updated>
-    </task>
-    <task id="LOCAL-00150" summary="correccion decimales factor de impacto en revista|">
-      <created>1534518849399</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1534518849399</updated>
-    </task>
-    <task id="LOCAL-00151" summary="correccion decimales factor de impacto en revista|">
-      <created>1534519020038</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1534519020038</updated>
-    </task>
-    <task id="LOCAL-00152" summary="correccion decimales factor de impacto en revista|">
-      <created>1534524329667</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1534524329667</updated>
-    </task>
-    <task id="LOCAL-00153" summary="correccion decimales factor de impacto en revista|">
-      <created>1534525607781</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1534525607781</updated>
-    </task>
-    <task id="LOCAL-00154" summary="correccion decimales factor de impacto en revista|">
-      <created>1534526246795</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1534526246795</updated>
-    </task>
-    <task id="LOCAL-00155" summary="correccion decimales factor de impacto en revista|">
-      <created>1535056833350</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1535056833350</updated>
-    </task>
-    <task id="LOCAL-00156" summary="correccion decimales factor de impacto en revista|">
-      <created>1535064706319</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1535064706319</updated>
-    </task>
-    <task id="LOCAL-00157" summary="correccion decimales factor de impacto en revista|">
-      <created>1535078047184</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1535078047184</updated>
-    </task>
-    <task id="LOCAL-00158" summary="correccion decimales factor de impacto en revista|">
-      <created>1535078703219</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1535078703219</updated>
-    </task>
-    <task id="LOCAL-00159" summary="correccion decimales factor de impacto en revista|">
-      <created>1536615793638</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1536615793639</updated>
-    </task>
-    <task id="LOCAL-00160" summary="correccion decimales factor de impacto en revista|">
-      <created>1536616113504</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1536616113504</updated>
     </task>
     <task id="LOCAL-00161" summary="correccion decimales factor de impacto en revista|">
       <created>1536629440465</created>
@@ -960,14 +838,147 @@
       <option name="project" value="LOCAL" />
       <updated>1548172088925</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="correccion decimales factor de impacto en revista|">
+      <created>1548172186270</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1548172186270</updated>
+    </task>
+    <task id="LOCAL-00192" summary="correccion decimales factor de impacto en revista|">
+      <created>1548172335971</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1548172335971</updated>
+    </task>
+    <task id="LOCAL-00193" summary="correccion decimales factor de impacto en revista|">
+      <created>1548172427992</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1548172427992</updated>
+    </task>
+    <task id="LOCAL-00194" summary="correccion decimales factor de impacto en revista|">
+      <created>1548172504063</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1548172504063</updated>
+    </task>
+    <task id="LOCAL-00195" summary="correccion decimales factor de impacto en revista|">
+      <created>1548172526807</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1548172526807</updated>
+    </task>
+    <task id="LOCAL-00196" summary="correccion decimales factor de impacto en revista|">
+      <created>1548172866871</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1548172866871</updated>
+    </task>
+    <task id="LOCAL-00197" summary="correccion decimales factor de impacto en revista|">
+      <created>1548197960795</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1548197960795</updated>
+    </task>
+    <task id="LOCAL-00198" summary="correccion decimales factor de impacto en revista|">
+      <created>1548198346027</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1548198346027</updated>
+    </task>
+    <task id="LOCAL-00199" summary="correccion decimales factor de impacto en revista|">
+      <created>1548198432718</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1548198432718</updated>
+    </task>
+    <task id="LOCAL-00200" summary="correccion decimales factor de impacto en revista|">
+      <created>1548198497738</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1548198497738</updated>
+    </task>
+    <task id="LOCAL-00201" summary="correccion decimales factor de impacto en revista|">
+      <created>1548198534549</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1548198534549</updated>
+    </task>
+    <task id="LOCAL-00202" summary="correccion decimales factor de impacto en revista|">
+      <created>1548198918783</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1548198918783</updated>
+    </task>
+    <task id="LOCAL-00203" summary="correccion decimales factor de impacto en revista|">
+      <created>1548200928670</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1548200928670</updated>
+    </task>
+    <task id="LOCAL-00204" summary="correccion decimales factor de impacto en revista|">
+      <created>1548203404587</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1548203404587</updated>
+    </task>
+    <task id="LOCAL-00205" summary="correccion decimales factor de impacto en revista|">
+      <created>1548204079200</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1548204079200</updated>
+    </task>
+    <task id="LOCAL-00206" summary="correccion decimales factor de impacto en revista|">
+      <created>1548204131780</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1548204131780</updated>
+    </task>
+    <task id="LOCAL-00207" summary="correccion decimales factor de impacto en revista|">
+      <created>1548204238280</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1548204238280</updated>
+    </task>
+    <task id="LOCAL-00208" summary="correccion decimales factor de impacto en revista|">
+      <created>1548286965646</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1548286965647</updated>
+    </task>
+    <task id="LOCAL-00209" summary="correccion decimales factor de impacto en revista|">
+      <created>1548287898864</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1548287898864</updated>
+    </task>
+    <option name="localTasksCounter" value="210" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15511727" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15671642" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -980,16 +991,16 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50373137" side_tool="true" weight="0.34260288" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49413645" weight="0.52614015" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3403782" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3403782" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="manage.py@SIA" order="12" sideWeight="0.49626866" weight="0.39043382" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32761577" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32703003" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.18869936" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.18869936" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Data View" order="6" />
@@ -998,6 +1009,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1037,15 +1058,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nucleo/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/permissions.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1210,13 +1222,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_misc/log.py" />
-    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SIA/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
@@ -1226,20 +1231,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0002_auto_20181213_2049.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1250,10 +1245,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="55" column="15" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="105" column="54" lean-forward="true" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/difusion_cientifica/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="11" />
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="16" />
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="11" />
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="12" />
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="18" />
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="15" />
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="19" />
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="12" />
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="105" column="11" selection-start-line="105" selection-start-column="4" selection-end-line="105" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/informe.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="1534" column="655" selection-start-line="1534" selection-start-column="655" selection-end-line="1534" selection-end-column="655" />
+        <state relative-caret-position="364">
+          <caret line="1715" column="123" selection-start-line="1715" selection-start-column="123" selection-end-line="1715" selection-end-column="123" />
           <folding>
             <element signature="e#277#339#0#DjangoTemplate" />
             <element signature="e#1382#1447#0#DjangoTemplate" />
