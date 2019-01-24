@@ -1714,7 +1714,7 @@
         {% for i in participacion_eventos_academicos_nacionales %}
             <br />
                 {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^
-                {{ i.evento.fecha_inicio.year }}^"{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
+                {{ i.evento.fecha_inicio.year }}^"{{ i.titulo }}"^{{ i.evento.nombre }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}^
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.tipo.nombre }}^
                 {{ i.get_ambito_display|lower }}^{{ i.por_invitacion }}
         {% endfor %}
@@ -1727,7 +1727,7 @@
         {% for i in participacion_eventos_academicos_internacionales %}
             <br />
                 {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^
-                {{ i.evento.fecha_inicio.year }}^"{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
+                {{ i.evento.fecha_inicio.year }}^"{{ i.titulo }}"^{{ i.evento.nombre }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}^
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.tipo.nombre }}^
                 {{ i.get_ambito_display|lower }}^{{ i.por_invitacion }}
         {% endfor %}
