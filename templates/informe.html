@@ -1734,5 +1734,76 @@
     </p>
 {% endif %}
 
+<h3>Dirección de tesis terminadas</h3>
+
+{% if direccion_tesis_licenciatura_terminadas %}
+    <h4>Dirección de tesis de licenciatura terminadas</h4>
+    <p>Asesorado^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_licenciatura_terminadas %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_maestria_terminadas %}
+    <h4>Dirección de tesis de maestría terminadas</h4>
+    <p>Asesorado^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_maestria_terminadas %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_doctorado_terminadas %}
+    <h4>Dirección de tesis de doctorado terminadas</h4>
+    <p>Asesorado^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_doctorado_terminadas %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Dirección de tesis en proceso</h3>
+
+{% if direccion_tesis_licenciatura_enproceso %}
+    <h4>Dirección de tesis de licenciatura terminadas</h4>
+    <p>Asesorado^Especialidad^Dependencia^Tutores
+        {% for i in direccion_tesis_licenciatura_enproceso %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_maestria_enproceso %}
+    <h4>Dirección de tesis de maestría terminadas</h4>
+    <p>Asesorado^Especialidad^Dependencia^Tutores
+        {% for i in direccion_tesis_maestria_enproceso %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_doctorado_enproceso %}
+    <h4>Dirección de tesis de doctorado terminadas</h4>
+    <p>Asesorado^Especialidad^Dependencia^Tutores
+        {% for i in direccion_tesis_doctorado_enproceso %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
 </body>
 </html>
