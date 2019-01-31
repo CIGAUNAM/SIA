@@ -1737,10 +1737,10 @@
 
 {% if direccion_tesis_licenciatura_terminadas %}
     <h4>Dirección de tesis de licenciatura terminadas</h4>
-    <p>Asesorado^Especialidad^Dependencia^Fecha de examen^Tutores
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
         {% for i in direccion_tesis_licenciatura_terminadas %}
             <br />
-                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {{ i.asesorado }}^{{ i.titulo }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
                 {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
         {% endfor %}
     </p>
@@ -1748,7 +1748,7 @@
 
 {% if direccion_tesis_maestria_terminadas %}
     <h4>Dirección de tesis de maestría terminadas</h4>
-    <p>Asesorado^Especialidad^Dependencia^Fecha de examen^Tutores
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
         {% for i in direccion_tesis_maestria_terminadas %}
             <br />
                 {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
@@ -1759,7 +1759,7 @@
 
 {% if direccion_tesis_doctorado_terminadas %}
     <h4>Dirección de tesis de doctorado terminadas</h4>
-    <p>Asesorado^Especialidad^Dependencia^Fecha de examen^Tutores
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
         {% for i in direccion_tesis_doctorado_terminadas %}
             <br />
                 {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
@@ -1772,10 +1772,10 @@
 
 {% if direccion_tesis_licenciatura_enproceso %}
     <h4>Dirección de tesis de licenciatura en proceso</h4>
-    <p>Asesorado^Especialidad^Dependencia^Tutores
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
         {% for i in direccion_tesis_licenciatura_enproceso %}
             <br />
-                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
                 {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
         {% endfor %}
     </p>
@@ -1783,10 +1783,10 @@
 
 {% if direccion_tesis_maestria_enproceso %}
     <h4>Dirección de tesis de maestría en proceso</h4>
-    <p>Asesorado^Especialidad^Dependencia^Tutores
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
         {% for i in direccion_tesis_maestria_enproceso %}
             <br />
-                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
                 {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
         {% endfor %}
     </p>
@@ -1794,10 +1794,10 @@
 
 {% if direccion_tesis_doctorado_enproceso %}
     <h4>Dirección de tesis de doctorado en proceso</h4>
-    <p>Asesorado^Especialidad^Dependencia^Tutores
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
         {% for i in direccion_tesis_doctorado_enproceso %}
             <br />
-                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
                 {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
         {% endfor %}
     </p>
