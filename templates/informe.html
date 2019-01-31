@@ -1585,7 +1585,7 @@
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
         {% for i in capitulos_libros_investigacion_nacionales_publicados %}
             <br />
-                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
         {% endfor %}
     </p>
 {% endif %}
@@ -1595,7 +1595,7 @@
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
         {% for i in capitulos_libros_investigacion_nacionales_enprensa %}
             <br />
-                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}        {% endfor %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}        {% endfor %}
     </p>
 {% endif %}
 
@@ -1605,7 +1605,7 @@
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
         {% for i in capitulos_libros_investigacion_nacionales_enviados %}
             <br />
-                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
         {% endfor %}
     </p>
 {% endif %}
@@ -1617,7 +1617,7 @@
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
         {% for i in capitulos_libros_investigacion_internacionales_publicados %}
             <br />
-                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
         {% endfor %}
     </p>
 {% endif %}
@@ -1627,7 +1627,7 @@
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
         {% for i in capitulos_libros_investigacion_internacionales_enprensa %}
             <br />
-                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
         {% endfor %}
     </p>
 {% endif %}
@@ -1638,7 +1638,7 @@
     <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
         {% for i in capitulos_libros_investigacion_internacionales_enviados %}
             <br />
-                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
         {% endfor %}
     </p>
 {% endif %}
