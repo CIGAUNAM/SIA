@@ -1803,6 +1803,25 @@
     </p>
 {% endif %}
 
+<h3>Proyectos de investigación</h3>
+
+{% if proyectos_investigacion_papiit %}
+    <h4>Proyectos de investigación PAPIIT</h4>
+    <p>Nombre de proyecto^Año inicio^Responsables^Participantes^Es permanente?^Status^Clasificación^Tipo de proyecto^Dependencia^Dependencias en colaboración^
+        Financiamiento CONACYT^Financiamiento PAPIIT^Financiamiento PAPIME^Financiamiento extraordinario^Financiamiento sin recursos^Impacto social^Problemas nacionales CONACYT^Otro problema nacional CONACYT^
+        Num tecnicos^Num alumnos doctorado^Num alumnos maestría^Num alumnos licenciatura
+        {% for i in proyectos_investigacion_papiit %}
+            <br />
+            {{ i.nombre }}^{{ i.fecha_inicio.year }}^{% if i.responsables.count > 0 %}{% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}{% endif %}^
+            {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}{% endif %}^
+            {{ i.es_permanente }}^{{ i.get_status_display }}^{{ i.get_clasificacion_display }}^{{ i.get_modalidad_display }}^{{ i.dependencia }}^
+            {% if i.dependencias_colaboracion.count > 0 %}{% for dependencia_colaboracion in i.dependencias_colaboracion.all %}{% if not forloop.first %}, {% endif %}{{ dependencia_colaboracion }}{% endfor %}{% endif %}^
+            {{ i.financiamiento_conacyt }}^{{ i.financiamiento_papiit }}^{{ i.financiamiento_papime }}^{{ i.financiamiento_extraordinario }}^{{ i.financiamiento_sin_recurso_ciga }}^
+            {{ i.impacto_social_text }}^{% if i.problemas_nacionales_conacyt.count > 0 %}{% for problema_nacional_conacyt in i.problemas_nacionales_conacyt.all %}{% if not forloop.first %}, {% endif %}{{ problema_nacional_conacyt }}{% endfor %}{% endif %}^
+            {{ i.otro_problema_nacional_conacyt }}^{{ i.tecnicos.count }}^{{ i.num_alumnos_doctorado }}^{{ i.num_alumnos_maestria }}^{{ i.num_alumnos_licenciatura }}
+        {% endfor %}
+    </p>
+{% endif %}
 
 </body>
 </html>
