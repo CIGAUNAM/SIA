@@ -1805,12 +1805,12 @@
 
 <h3>Proyectos de investigación</h3>
 
-{% if proyectos_investigacion_papiit %}
+{% if proyectos_investigacion %}
     <h4>Proyectos de investigación PAPIIT</h4>
     <p>Nombre de proyecto^Año inicio^Responsables^Participantes^Es permanente?^Status^Clasificación^Tipo de proyecto^Dependencia^Dependencias en colaboración^
         Financiamiento CONACYT^Financiamiento PAPIIT^Financiamiento PAPIME^Financiamiento extraordinario^Financiamiento sin recursos^Impacto social^Problemas nacionales CONACYT^Otro problema nacional CONACYT^
         Num tecnicos^Num alumnos doctorado^Num alumnos maestría^Num alumnos licenciatura
-        {% for i in proyectos_investigacion_papiit %}
+        {% for i in proyectos_investigacion %}
             <br />
             {{ i.nombre }}^{{ i.fecha_inicio.year }}^{% if i.responsables.count > 0 %}{% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}{% endif %}^
             {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}{% endif %}^
