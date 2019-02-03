@@ -62,14 +62,12 @@ class ProyectoInvestigacion(models.Model):
     organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
     modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
     tematica_genero = models.BooleanField(default=False)
-    # problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True,                                                  on_delete=models.DO_NOTHING)
     problemas_nacionales_conacyt = models.ManyToManyField(ProblemaNacionalConacyt, related_name='proyecto_investigacion_problemas_nacionales_conacyt', blank=True)
 
     otro_problema_nacional_conacyt = models.TextField(null=True, blank=True)
 
     tipo_financiamiento = models.CharField(max_length=30, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')))
 
-    # financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     financiamiento_conacyt = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_papiit = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_papime = models.CharField(max_length=30, unique=True, null=True, blank=True)

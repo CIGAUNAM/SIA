@@ -100,9 +100,9 @@ class OrganizacionEventoDivulgacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = OrganizacionEventoDivulgacion.objects.all().exclude(Q(coordinador_general__id__exact=usuarioid) & Q(comite_organizador__id__exact=usuarioid) & Q(ayudantes__id__exact=usuarioid) & Q(apoyo_tecnico__id__exact=usuarioid))
+                items = OrganizacionEventoDivulgacion.objects.all().exclude(Q(coordinador_general__id__exact=usuarioid) & Q(comite_organizador__id__exact=usuarioid) & Q(ayudantes__id__exact=usuarioid) & Q(apoyo_tecnico__id__exact=usuarioid)).distinct()
             else:
-                items = OrganizacionEventoDivulgacion.objects.filter(Q(coordinador_general__id__exact=usuarioid) | Q(comite_organizador__id__exact=usuarioid) | Q(ayudantes__id__exact=usuarioid) | Q(apoyo_tecnico__id__exact=usuarioid))
+                items = OrganizacionEventoDivulgacion.objects.filter(Q(coordinador_general__id__exact=usuarioid) | Q(comite_organizador__id__exact=usuarioid) | Q(ayudantes__id__exact=usuarioid) | Q(apoyo_tecnico__id__exact=usuarioid)).distinct()
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'responsabilidad', 'ambito'))
@@ -124,7 +124,7 @@ class OrganizacionEventoDivulgacionLista(ObjectCreateVarMixin, View):
     template_name = 'organizacion_evento_divulgacion.html'
 
 
-class OrganizacionEventoDivulgacionDetalle(ObjectCreateVarMixin, View):
+class OrganizacionEventoDivulgacionDetalle(ObjectUpdateVarMixin, View):
     form_class = OrganizacionEventoDivulgacionForm
     model = OrganizacionEventoDivulgacion
     aux = OrganizacionEventoDivulgacionContext.contexto
@@ -147,11 +147,11 @@ class ParticipacionEventoDivulgacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ParticipacionEventoDivulgacion.objects.exclude(participantes=usuarioid)
+                items = ParticipacionEventoDivulgacion.objects.exclude(autores=usuarioid)
             else:
-                items = ParticipacionEventoDivulgacion.objects.filter(participantes=usuarioid)
+                items = ParticipacionEventoDivulgacion.objects.filter(autores=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'evento', 'ambito'))
+                                         fields=('evento', 'ambito'))
 
             json = json.replace('INSTITUCIONAL', 'Institucional')
             json = json.replace('REGIONAL', 'Regional')

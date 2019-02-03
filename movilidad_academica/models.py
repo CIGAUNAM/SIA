@@ -2,7 +2,7 @@ from django.db import models
 from nucleo.models import User, Institucion, Dependencia, Financiamiento
 from investigacion.models import ProyectoInvestigacion
 from vinculacion.models import RedAcademica
-
+from django.urls import reverse
 
 # Create your models here.
 
@@ -44,10 +44,14 @@ class InvitadoMovilidad(models.Model):
     intercambio_unam = models.BooleanField(default=False)
     financiamiento = models.CharField(max_length=50, choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'), ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
     redes_academicas = models.ManyToManyField(RedAcademica, blank=True)
+    proyecto = models.CharField(max_length=255, blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {}".format(str(self.invitado), str(self.dependencia))
+        return "{} : {}".format(self.invitado, str(self.dependencia))
+
+    def get_absolute_url(self):
+        return reverse('invitado_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']
@@ -71,6 +75,9 @@ class EstanciaMovilidad(models.Model):
     def __str__(self):
         return "{} : {}".format(str(self.anfitrion), str(self.dependencia))
 
+    def get_absolute_url(self):
+        return reverse('estancia_detalle', kwargs={'pk': self.pk})
+
     class Meta:
         ordering = ['-fecha_inicio']
         verbose_name = 'Estancia'
@@ -92,6 +99,9 @@ class SabaticoMovilidad(models.Model):
 
     def __str__(self):
         return "{} : {}".format(str(self.anfitrion), str(self.dependencia))
+
+    def get_absolute_url(self):
+        return reverse('sabatico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']

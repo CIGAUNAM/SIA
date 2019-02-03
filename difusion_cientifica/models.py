@@ -26,7 +26,6 @@ class MemoriaInExtenso(models.Model):
     pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
     pagina_fin = models.PositiveIntegerField(null=True, blank=True)
     editorial_text = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
-    # editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
     indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
     issn = models.SlugField(max_length=20, blank=True)
 
@@ -40,27 +39,6 @@ class MemoriaInExtenso(models.Model):
         verbose_name = 'Memoria in extenso'
         verbose_name_plural = 'Memorias in extenso'
 
-"""
-class PrologoLibro(models.Model):
-    descripcion = models.TextField(blank=True)
-    libro = models.ForeignKey(Libro, related_name='prologo_libro_libro', on_delete=models.DO_NOTHING)
-    pagina_inicio = models.PositiveIntegerField()
-    pagina_fin = models.PositiveIntegerField()
-    url = models.URLField(blank=True)
-    usuario = models.ForeignKey(User, related_name='prologo_libro_autor', on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='prologo_libro_tags', blank=True)
-
-    def __str__(self):
-        return '{} : {}'.format(self.usuario, self.libro)
-
-    def get_absolute_url(self):
-        return reverse('prologo_libro_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        verbose_name = 'Prólogo de libro'
-        verbose_name_plural = 'Prólogos de libros'
-        unique_together = ['usuario', 'libro']
-"""
 
 class Resena(models.Model):
     titulo = models.CharField(max_length=255)
@@ -75,7 +53,6 @@ class Resena(models.Model):
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     url = models.URLField(blank=True)
-    # usuario = models.ForeignKey(User, related_name='resena_autor', on_delete=models.DO_NOTHING)
     autores = SortedManyToManyField(User, related_name='resena_autores', verbose_name='Autores')
 
     def __str__(self):
@@ -114,15 +91,13 @@ class Traduccion(models.Model):
 class OrganizacionEventoAcademico(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    # responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    # usuario = models.ForeignKey(User, related_name='organizacion_evento_academico_usuario', on_delete=models.DO_NOTHING)
     coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_academico_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
-    comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
-    ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_academico_ayudantes', verbose_name='Ayudantes')
-    apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
+    comite_organizador = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
+    ayudantes = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_ayudantes', verbose_name='Ayudantes')
+    apoyo_tecnico = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
 
     def __str__(self):
         return "{}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
@@ -144,7 +119,6 @@ class ParticipacionEventoAcademico(models.Model):
     resumen_publicado = models.BooleanField(default=False)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    participantes = models.ManyToManyField(User, related_name='participacion_evento_academico_participantes')
     autores = SortedManyToManyField(User, related_name='participacion_evento_academico_autores', verbose_name='Autores')
 
     def __str__(self):

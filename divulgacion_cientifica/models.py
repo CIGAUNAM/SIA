@@ -75,15 +75,13 @@ class CapituloLibroDivulgacion(models.Model):
 class OrganizacionEventoDivulgacion(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     descripcion = models.TextField(blank=True)
-    # responsabilidad = models.CharField(max_length=30, choices=EVENTO__RESPONSABILIDAD)
     numero_ponentes = models.PositiveIntegerField()
     numero_asistentes = models.PositiveIntegerField()
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    # usuario = models.ForeignKey(User, related_name='organizacion_evento_divulgacion_usuario', on_delete=models.DO_NOTHING)
     coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_divulgacion_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
-    comite_organizador = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_comite_organizador', verbose_name='Comite organizador')
-    ayudantes = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_ayudantes', verbose_name='Ayudantes')
-    apoyo_tecnico = SortedManyToManyField(User, related_name='organizacion_evento_divulgacion_apoyo_tecnico', verbose_name='Apoyo técnico')
+    comite_organizador = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_divulgacion_comite_organizador', verbose_name='Comite organizador')
+    ayudantes = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_divulgacion_ayudantes', verbose_name='Ayudantes')
+    apoyo_tecnico = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_divulgacion_apoyo_tecnico', verbose_name='Apoyo técnico')
 
     def __str__(self):
         return "{}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
@@ -105,8 +103,6 @@ class ParticipacionEventoDivulgacion(models.Model):
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    # usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    participantes = models.ManyToManyField(User, related_name='participacion_evento_divulgacion_participantes')
     autores = models.ManyToManyField(User, related_name='participacion_evento_divulgacion_autores')
 
     # tags = models.ManyToManyField(Tag, related_name='participacion_evento_tags', blank=True)

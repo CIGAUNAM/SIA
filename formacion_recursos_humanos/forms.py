@@ -59,6 +59,7 @@ class AsesoriaEstudianteForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    proyecto_externo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
@@ -200,6 +201,24 @@ class DireccionTesisForm(forms.ModelForm):
     asesorado = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",
+        widget=ModelSelect2Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    director = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Director",
+        widget=ModelSelect2Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    codirector = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Co-director",
         widget=ModelSelect2Widget(
             search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
             queryset=User.objects.all(),

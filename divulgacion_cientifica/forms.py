@@ -96,15 +96,15 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
         )
     )
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    responsabilidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__RESPONSABILIDAD', ), required=True)
     numero_ponentes = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
     numero_asistentes = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
     coordinador_general = forms.ModelChoiceField(
+        required=False,
         queryset=User.objects.all(),
         label="Coordinador general",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['first_name__icontains', 'last_name__icontains'],
             queryset=User.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -142,9 +142,8 @@ class ParticipacionEventoDivulgacionForm(forms.ModelForm):
 
     class Meta:
         model = ParticipacionEventoDivulgacion
-        exclude = ['usuario', ]
+        exclude = []
         widgets = {
-            'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'autores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
