@@ -7037,11 +7037,11 @@ class CVInvestigadorPDF(View):
 
         capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(autores=pk,
                                                                                                            libro__tipo='INVESTIGACION').exclude(
-            libro__editorial__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
             '-libro__fecha')
         capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(autores=pk,
                                                                                                          libro__tipo='INVESTIGACION').filter(
-            libro__editorial__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
             '-libro__fecha')
 
         memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(autores=pk).exclude(
