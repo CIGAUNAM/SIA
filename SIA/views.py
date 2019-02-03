@@ -7105,8 +7105,7 @@ class CVInvestigadorPDF(View):
 
         dictamenes_articulos_revistas_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').filter(revista__pais__nombre='México').order_by('-fecha_dictamen')
         dictamenes_articulos_revistas_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').exclude(revista__pais__nombre='México').order_by('-fecha_dictamen')
-        dictamenes_libros_editoriales_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').filter(libro__pais__nombre='México').order_by('-fecha_dictamen')
-        dictamenes_libros_editoriales_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').exclude(libro__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_libros = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').order_by('-fecha_dictamen')
 
         estancias_academicas = MovilidadAcademica.objects.filter(usuario=pk, tipo='ESTANCIA').order_by('-fecha_inicio')
         profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio')
@@ -7212,7 +7211,7 @@ class CVInvestigadorPDF(View):
         context['participacion_comisiones_dictaminadoras_internacionales'] = participacion_comisiones_dictaminadoras_internacionales
         context['dictamenes_articulos_revistas_mexicanas'] = dictamenes_articulos_revistas_mexicanas
         context['dictamenes_articulos_revistas_extranjeras'] = dictamenes_articulos_revistas_extranjeras
-        context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros_editoriales_mexicanas
+        context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros
         context['dictamenes_libros_editoriales_extranjeras'] = dictamenes_libros_editoriales_extranjeras
         context['estancias_academicas'] = estancias_academicas
         context['profesores_visitantes'] = profesores_visitantes
