@@ -7086,7 +7086,7 @@ class CVInvestigadorPDF(View):
         programas_estudio_docencia = ProgramaEstudio.objects.filter(usuario=pk).order_by('-fecha')
         produccion_tecnologica = DesarrolloTecnologico.objects.filter(autores=pk).order_by('-fecha')
 
-        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(autores=pk).order_by('-fecha_inicio')
+        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(responsables=pk).order_by('-fecha_inicio')
         participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by('-fecha_inicio')
 
         ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
