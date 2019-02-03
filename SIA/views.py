@@ -6887,9 +6887,9 @@ class CVInvestigadorDetalle(View):
         this_year = self.this_year
         usuario = User.objects.get(pk=pk)
 
-        num_articulos = ArticuloCientifico.objects.filter(usuarios__pk=pk).filter(Q(fecha__year=this_year)).count()
-        num_libros_investigacion = Libro.objects.filter(tipo='INVESTIGACION', usuarios__pk=pk).filter(Q(fecha__year=this_year)).count()
-        num_proyectos_investigacion = ProyectoInvestigacion.objects.filter(usuarios__pk=pk).filter(Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
+        num_articulos = ArticuloCientifico.objects.filter(autores__pk=pk).filter(Q(fecha__year=this_year)).count()
+        num_libros_investigacion = Libro.objects.filter(tipo='INVESTIGACION', autores__pk=pk).filter(Q(fecha__year=this_year)).count()
+        num_proyectos_investigacion = ProyectoInvestigacion.objects.filter(autores__pk=pk).filter(Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
         doctorados = Doctorado.objects.filter(usuario=pk)
         maestrias = Maestria.objects.filter(usuario=pk)
         licenciaturas = Licenciatura.objects.filter(usuario=pk)
