@@ -7077,8 +7077,8 @@ class CVInvestigadorPDF(View):
                                                                                                        libro__tipo='DIVULGACION').filter(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
             '-fecha')
-        resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
-        traducciones = Traduccion.objects.filter(usuario=pk).order_by('-fecha')
+        resenas = Resena.objects.filter(autores=pk).order_by('-fecha')
+        traducciones = Traduccion.objects.filter(autores=pk).order_by('-fecha')
         material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk, actividad='PRODUCCION').order_by('-fecha')
 
         articulos_docencia = ArticuloDocencia.objects.filter(autores=pk).order_by('-fecha')
