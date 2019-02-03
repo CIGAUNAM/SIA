@@ -6905,39 +6905,39 @@ class CVInvestigadorDetalle(View):
         articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(autores=pk, indices__isnull=False).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(autores=pk, indices__isnull=True).exclude(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(autores=pk, indices__isnull=True).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
-        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
+        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
+        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
 
 
-        capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION').exclude(
+        capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(autores=pk, libro__tipo='INVESTIGACION').exclude(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-libro__fecha')
-        capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION').filter(
+        capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(autores=pk, libro__tipo='INVESTIGACION').filter(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-libro__fecha')
 
-        mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(usuarios=pk).exclude(
+        mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(autores=pk).exclude(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
+        mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(autores=pk).filter(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        informes_tecnicos_mex = InformeTecnico.objects.filter(usuarios=pk).filter(proyecto__institucion__pais__nombre='México').order_by('-fecha')
-        informes_tecnicos_intl = InformeTecnico.objects.filter(usuarios=pk).exclude(proyecto__institucion__pais__nombre='México').order_by('-fecha')
-        articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        informes_tecnicos_mex = InformeTecnico.objects.filter(autores=pk).filter(proyecto__institucion__pais__nombre='México').order_by('-fecha')
+        informes_tecnicos_intl = InformeTecnico.objects.filter(autores=pk).exclude(proyecto__institucion__pais__nombre='México').order_by('-fecha')
+        articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(autores=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(autores=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
-        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        libros_divulgacion_editoriales_mexicanas = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').filter(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION').exclude(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-fecha')
-        capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION').filter(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-fecha')
-        resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
+        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(autores=pk, tipo='DIVULGACION').exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        libros_divulgacion_editoriales_mexicanas = Libro.objects.filter(autores=pk, tipo='DIVULGACION').filter(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(autores=pk, libro__tipo='DIVULGACION').exclude(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-fecha')
+        capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(autores=pk, libro__tipo='DIVULGACION').filter(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-fecha')
+        resenas = Resena.objects.filter(autores=pk).order_by('-fecha')
         material_medios = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).order_by('-fecha')
-        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by('-fecha_inicio')
+        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(responsables=pk).order_by('-fecha_inicio')
         participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by('-fecha_inicio')
-        ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=True).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=True).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=True).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=False).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=True).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=False).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
 
         context['usuario'] = usuario
