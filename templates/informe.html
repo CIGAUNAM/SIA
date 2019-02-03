@@ -299,13 +299,10 @@
                 {% endif %} {% if i.factor_impacto %}(IF: {{ i.factor_impacto }}){% endif %}
                 (Agradecimiento {% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento.author_name }}{% endfor %}).
                 {{ i.get_status_display }}
-
             </li>
         {% endfor %}
     </ol>
 {% endif %}
-
-
 
 
 <h3>Libros publicados</h3>
@@ -316,19 +313,20 @@
         {% for i in libros_investigacion_nacionales_publicados %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
-                {{ i.pais.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
 {% endif %}
+
+
 
 <h4>Libros en prensa (Nacional)</h4>
 {% if libros_investigacion_nacionales_enprensa %}
@@ -336,15 +334,14 @@
         {% for i in libros_investigacion_nacionales_enprensa %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
                 {{ i.pais.nombre }}.
-                {{ i.pais.nombre }}.
-                {{ i.numero_paginas }}.
+                p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -364,6 +361,7 @@
                 {{ i.pais.nombre }}.
                 {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -375,15 +373,14 @@
         {% for i in libros_investigacion_internacionales_publicados %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
-                {{ i.pais.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -395,16 +392,14 @@
         {% for i in libros_investigacion_internacionales_enprensa %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
-                {{ i.pais.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
-            </li>
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}            </li>
         {% endfor %}
     </ol>
 {% endif %}
@@ -415,14 +410,14 @@
         {% for i in libros_investigacion_internacionales_aceptados %}
             <li>
                 {% if i.autores.count > 0 %}<strong>Autores:</strong> {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %}
-                {% if i.editores.count > 0 %}<strong>Editores:</strong> {% for editor in i.editores.all %}{% if not forloop.first %}, {% endif %}{{ editor.author_name }}{% endfor %}. {% endif %}
                 {% if i.coordinadores.count > 0 %}<strong>Coordinadores:</strong> {% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador.author_name }}{% endfor %}. {% endif %}
                 {{ i.fecha.year }}. {{ i.nombre }}.
-                {{ i.editorial.nombre }}.
+                {{ i.editorial_text }}.
                 {{ i.ciudad.nombre }}.
                 {{ i.pais.nombre }}.
                 p. {{ i.numero_paginas }}.
                 {% if i.isbn %}ISBN: {{ i.isbn }}.{% endif %}
+                {% if i.capitulolibroinvestigacion_set.all.count > 0 %}[Contiene los capitulos: {% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} {% endfor %}]{% endif %}
             </li>
         {% endfor %}
     </ol>
@@ -608,11 +603,30 @@
 <h3>Artículos en extenso en memorias de congresos</h3>
 
 <h4>Artículos en extenso en memorias de congresos nacionales</h4>
-<p>falta</p>
+{% if articulos_inextenso_memorias_nacionales %}
+    <ol>
+        {% for i in articulos_inextenso_memorias_nacionales %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                ({{ i.evento.fecha_inicio.year }}). {{ i.nombre }}. {{ i.evento.nombre }}.
+                {{ i.editorial_text }}. {{ i.evento.ciudad.nombre }}. {{ i.evento.pais.nombre }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 <h4>Artículos en extenso en memorias de congresos internacionales</h4>
-<p>falta</p>
-
+{% if articulos_inextenso_memorias_internacionales %}
+    <ol>
+        {% for i in articulos_inextenso_memorias_internacionales %}
+            <li>
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}.
+                ({{ i.evento.fecha_inicio.year }}). {{ i.nombre }}. {{ i.evento.nombre }}.
+                {{ i.editorial_text }}. {{ i.evento.ciudad.nombre }}. {{ i.evento.pais.nombre }}.
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}
 
 
 <h3>Artículos de divulgación (no dirigidos a pares)</h3>
@@ -809,7 +823,7 @@
     <ol>
         {% for i in resenas %}
             <li>
-                {{ i.usuario }}. {{ i.fecha.year }}. "{{ i.titulo }}".
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.fecha.year }}. "{{ i.titulo }}".
                 En {% if i.articulo_resenado.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}. {% endif %} {{ i.articulo_resenado.nombre }}.
                 {{ i.medio_divulgacion.canal }}. {{ i.fecha }}. {{ i.usuario }}
             </li>
@@ -896,7 +910,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_nacionales_invitacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
@@ -910,7 +924,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_nacionales_participacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
@@ -924,7 +938,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_internacionales_invitacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
@@ -938,7 +952,7 @@
     <ol>
         {% for i in participacion_eventos_academicos_internacionales_participacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
                 Ámbito {{ i.get_ambito_display|lower }}.
@@ -953,8 +967,8 @@
         {% for i in organizacion_eventos_academicos %}
             <li>
                 {{ i.evento.tipo.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}.
-                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.evento.tipo.nombre }}.
-                Responsabilidad: {{ i.get_responsabilidad_display }}. Ámbito {{ i.get_ambito_display|lower }}.
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}.
+                {% if coordinador_general %} Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count > 0 %}Comité organizador: {% for organizador in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ organizador }}{% endfor %}. {% endif %} Ámbito {{ i.get_ambito_display|lower }}.
             </li>
         {% endfor %}
     </ol>
@@ -966,8 +980,8 @@
         {% for i in organizacion_eventos_divulgacion %}
             <li>
                 {{ i.evento.tipo.nombre }}. {{ i.evento.nombre }}. {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}.
-                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.usuario }}.
-                Responsabilidad: {{ i.get_responsabilidad_display }}. Ámbito {{ i.get_ambito_display|lower }}.
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}.
+                {% if coordinador_general %} Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count > 0 %}Comité organizador: {% for organizador in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ organizador }}{% endfor %}. {% endif %} Ámbito {{ i.get_ambito_display|lower }}.
             </li>
         {% endfor %}
     </ol>
@@ -993,7 +1007,7 @@
     <ol>
         {% for i in arbitrajes_publicaciones_academicas %}
             <li>
-                {{ i.usuario }}. {{ i.fecha_dictamen__year }}. {{ i.descripcion }}
+                {{ i.usuario }}. {{ i.fecha_dictamen.year }}. {% if i.tipo == 'ARTICULO' %}Revista: {{ i.revista.nombre }}{% endif %}{% if i.tipo == 'LIBRO' %}Libro: {{ i.libro }}{% endif %}{% if i.tipo == 'CAPITULO_LIBRO' %}Capitulo de libro: {{ i.capitulo_libro }}{% endif %}. {{ i.descripcion }}
             </li>
         {% endfor %}
     </ol>
@@ -1424,7 +1438,7 @@
         {% for i in distincion_academicos %}
             <li>
                 {{ i.fecha|date:"F Y" }}. {{ i.distincion.get_tipo_display }}, {{ i.distincion.get_ambito_display }},
-                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.dependencia.nombre }}, {{ i.distincion.dependencia.pais.nombre }}.
+                "{{ i.distincion.nombre }}". Institución y país que otorgan: {{ i.distincion.institucion.nombre }}, {{ i.distincion.institucion.pais.nombre }}.
                 Otorga a: {{ i.usuario }}.
             </li>
         {% endfor %}
@@ -1498,7 +1512,316 @@
     </p>
 {% endif %}
 
+<hr />
+<hr />
+
+<h3>Libros</h3>
+
+{% if libros_investigacion_nacionales_publicados %}
+    <h4>libros de investigación nacionales publicados</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares^capitulos
+        {% for i in libros_investigacion_nacionales_publicados %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}^{{ i.editorial_text }}^{{ i.pais }}^{{ i.ciudad_text }}^{{ i.status }}^{{ i.fecha.year }}^{{ i.numero_edicion }}^{{ i.numero_paginas }}^{{ i.coleccion_text }}^{{ i.volumen }}^{{ i.isbn }}^{{ i.url }}^{{ i.arbitrado_pares }}{% if i.capitulolibroinvestigacion_set.all.count > 0 %}{% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} |{% endfor %}]{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if libros_investigacion_nacionales_enprensa %}
+    <h4>libros de investigación nacionales en prensa</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares^capitulos
+        {% for i in libros_investigacion_nacionales_enprensa %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}^{{ i.editorial_text }}^{{ i.pais }}^{{ i.ciudad_text }}^{{ i.status }}^{{ i.fecha.year }}^{{ i.numero_edicion }}^{{ i.numero_paginas }}^{{ i.coleccion_text }}^{{ i.volumen }}^{{ i.isbn }}^{{ i.url }}^{{ i.arbitrado_pares }}{% if i.capitulolibroinvestigacion_set.all.count > 0 %}{% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} |{% endfor %}]{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if libros_investigacion_nacionales_aceptados %}
+    <h4>libros de investigación nacionales aceptados</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares^capitulos
+        {% for i in libros_investigacion_nacionales_aceptados %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}^{{ i.editorial_text }}^{{ i.pais }}^{{ i.ciudad_text }}^{{ i.status }}^{{ i.fecha.year }}^{{ i.numero_edicion }}^{{ i.numero_paginas }}^{{ i.coleccion_text }}^{{ i.volumen }}^{{ i.isbn }}^{{ i.url }}^{{ i.arbitrado_pares }}{% if i.capitulolibroinvestigacion_set.all.count > 0 %}{% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} |{% endfor %}]{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
+{% if libros_investigacion_internacionales_publicados %}
+    <h4>libros de investigación internacionales publicados</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares^capitulos
+        {% for i in libros_investigacion_internacionales_publicados %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}^{{ i.editorial_text }}^{{ i.pais }}^{{ i.ciudad_text }}^{{ i.status }}^{{ i.fecha.year }}^{{ i.numero_edicion }}^{{ i.numero_paginas }}^{{ i.coleccion_text }}^{{ i.volumen }}^{{ i.isbn }}^{{ i.url }}^{{ i.arbitrado_pares }}{% if i.capitulolibroinvestigacion_set.all.count > 0 %}{% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} |{% endfor %}]{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if libros_investigacion_internacionales_enprensa %}
+    <h4>libros de investigación internacionales en prensa</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares^capitulos
+        {% for i in libros_investigacion_internacionales_enprensa %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}^{{ i.editorial_text }}^{{ i.pais }}^{{ i.ciudad_text }}^{{ i.status }}^{{ i.fecha.year }}^{{ i.numero_edicion }}^{{ i.numero_paginas }}^{{ i.coleccion_text }}^{{ i.volumen }}^{{ i.isbn }}^{{ i.url }}^{{ i.arbitrado_pares }}{% if i.capitulolibroinvestigacion_set.all.count > 0 %}{% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} |{% endfor %}]{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if libros_investigacion_internacionales_aceptados %}
+    <h4>libros de investigación internacionales aceptados</h4>
+    <p>Nombre^Tipo de participacion^Autores^Coordinadores^Agradecimientos^Prologo^Editorial^País^Ciudad^Status^Fecha^Número de edicion^Núumero de páginas^Colección^Volumen^ISBN^URL^Arbitrado por pares^capitulos
+        {% for i in libros_investigacion_internacionales_aceptados %}
+            <br />
+                {{ i.nombre }}^{{ i.tipo_participacion }}^{% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.coordinadores.count > 0 %}{% for coordinador in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{% if i.agradecimientos.count > 0 %}{% for agradecimiento in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ agradecimiento }}{% endfor %}{% endif %}^{% if i.prologo.count > 0 %}{% for prolog in i.prologo.all %}{% if not forloop.first %}, {% endif %}{{ prolog }}{% endfor %}{% endif %}^{{ i.editorial_text }}^{{ i.pais }}^{{ i.ciudad_text }}^{{ i.status }}^{{ i.fecha.year }}^{{ i.numero_edicion }}^{{ i.numero_paginas }}^{{ i.coleccion_text }}^{{ i.volumen }}^{{ i.isbn }}^{{ i.url }}^{{ i.arbitrado_pares }}{% if i.capitulolibroinvestigacion_set.all.count > 0 %}{% for j in i.capitulolibroinvestigacion_set.all %} {{ j.titulo }} |{% endfor %}]{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Capitulos en libros</h3>
+
+{% if capitulos_libros_investigacion_nacionales_publicados %}
+    <h4>capitulos en libros de investigación nacionales publicados</h4>
+    <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
+        {% for i in capitulos_libros_investigacion_nacionales_publicados %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if capitulos_libros_investigacion_nacionales_enprensa %}
+    <h4>capitulos en libros de investigación nacionales en prensa</h4>
+    <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
+        {% for i in capitulos_libros_investigacion_nacionales_enprensa %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}        {% endfor %}
+    </p>
+{% endif %}
+
+
+{% if capitulos_libros_investigacion_nacionales_enviados %}
+    <h4>capitulos en libros de investigación nacionales en prensa</h4>
+    <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
+        {% for i in capitulos_libros_investigacion_nacionales_enviados %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
+
+{% if capitulos_libros_investigacion_internacionales_publicados %}
+    <h4>capitulos en libros de investigación internacionales publicados</h4>
+    <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
+        {% for i in capitulos_libros_investigacion_internacionales_publicados %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if capitulos_libros_investigacion_internacionales_enprensa %}
+    <h4>capitulos en libros de investigación internacionales en prensa</h4>
+    <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
+        {% for i in capitulos_libros_investigacion_internacionales_enprensa %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
+{% if capitulos_libros_investigacion_internacionales_enviados %}
+    <h4>capitulos en libros de investigación internacionales en prensa</h4>
+    <p>Autores^Título^Libro^Autores Libro^Coordinadores Libro^Ciudad^Pais^Editorial^Página inicial^Pagina final^ISBN Libro
+        {% for i in capitulos_libros_investigacion_internacionales_enviados %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{{ i.titulo }}^{{ i.libro.nombre }}^{% if i.libro.autores.count > 0 %}{% for autor in i.libro.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^{% if i.libro.coordinadores.count > 0 %}{% for coordinador in i.libro.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ coordinador }}{% endfor %}{% endif %}^{{ i.libro.ciudad_text }}^{{ i.libro.pais.nombre }}^{{ i.libro.editorial_text }}^{{ i.pagina_inicio }}^{{ i.pagina_fin }}^{{ i.libro.isbn }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Informes técnicos</h3>
+
+{% if informes_tecnicos_accesso_publico_nacionales %}
+    <h4>informes técnicos de accesso público nacionales</h4>
+    <p>Título^Autores^fecha^Proyecto^Pais^Número de páginas
+        {% for i in informes_tecnicos_accesso_publico_nacionales %}
+            <br />
+                {{ i.titulo }}^{% if i.autores.count > 0 %}Autores: {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
+                {{ i.fecha }}^{{ i.proyecto.nombre }}^{{ i.proyecto.dependencia.institucion.pais.nombre }}^{{ i.numero_paginas }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if informes_tecnicos_accesso_publico_internacionales %}
+    <h4>informes técnicos de accesso público internacionales</h4>
+    <p>Título^Autores^fecha^Proyecto^Pais^Número de páginas
+        {% for i in informes_tecnicos_accesso_publico_internacionales %}
+            <br />
+                {{ i.titulo }}^{% if i.autores.count > 0 %}Autores: {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}, {% endif %}^
+                {{ i.fecha }}^{{ i.proyecto.nombre }}^{{ i.proyecto.dependencia.institucion.pais.nombre }}^{{ i.numero_paginas }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Artículos en memorias</h3>
+
+{% if articulos_inextenso_memorias_nacionales %}
+    <h4>Artículos in extenso en memorias nacionales</h4>
+    <p>Autores^Año^Nombre^Evento^Editorial^Ciudad^País
+        {% for i in articulos_inextenso_memorias_nacionales %}
+            <br />
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}^
+                {{ i.evento.fecha_inicio.year }}^{{ i.nombre }}^{{ i.evento.nombre }}^{{ i.editorial_text }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if articulos_inextenso_memorias_internacionales %}
+    <h4>Artículos in extenso en memorias internacionales</h4>
+    <p>Autores^Año^Nombre^Evento^Editorial^Ciudad^País
+        {% for i in articulos_inextenso_memorias_internacionales %}
+            <br />
+                {% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor.author_name }}{% endfor %}^
+                {{ i.evento.fecha_inicio.year }}^{{ i.nombre }}^{{ i.evento.nombre }}^{{ i.editorial_text }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Organización de eventos académicos</h3>
+
+{% if organizacion_eventos_academicos %}
+    <h4>Organización de eventos académicos</h4>
+    <p>Tipo evento^Evento^Ciudad^País^Fecha Inicio^Fecha Fin^Coordinador general^Comité organizador^Ámbito
+        {% for i in organizacion_eventos_academicos %}
+            <br />
+                {{ i.evento.tipo.nombre }}^{{ i.evento.nombre }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}^
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}^
+                {{ i.coordinador_general }}^{% if i.comite_organizador.count > 0 %}{% for organizador in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ organizador }}{% endfor %}{% endif %}^{{ i.get_ambito_display|lower }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Participación de eventos académicos</h3>
+
+{% if participacion_eventos_academicos_nacionales %}
+    <h4>Participación en eventos académicos nacionales</h4>
+    <p>Autores^Año^Título^Evento^Ciudad^País^Fecha Inicio^Fecha Fin^Tipo evento^Ámbito^Por invitación
+        {% for i in participacion_eventos_academicos_nacionales %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^
+                {{ i.evento.fecha_inicio.year }}^"{{ i.titulo }}"^{{ i.evento.nombre }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}^
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.tipo.nombre }}^
+                {{ i.get_ambito_display|lower }}^{{ i.por_invitacion }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if participacion_eventos_academicos_internacionales %}
+    <h4>Participación en eventos académicos internacionales</h4>
+    <p>Autores^Año^Título^Evento^Ciudad^País^Fecha Inicio^Fecha Fin^Tipo evento^Ámbito^Por invitación
+        {% for i in participacion_eventos_academicos_internacionales %}
+            <br />
+                {% if i.autores.count > 0 %}{% for autor in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ autor }}{% endfor %}{% endif %}^
+                {{ i.evento.fecha_inicio.year }}^"{{ i.titulo }}"^{{ i.evento.nombre }}^{{ i.evento.ciudad.nombre }}^{{ i.evento.pais.nombre }}^
+                {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}^{{ i.evento.tipo.nombre }}^
+                {{ i.get_ambito_display|lower }}^{{ i.por_invitacion }}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Dirección de tesis terminadas</h3>
+
+{% if direccion_tesis_licenciatura_terminadas %}
+    <h4>Dirección de tesis de licenciatura terminadas</h4>
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_licenciatura_terminadas %}
+            <br />
+                {{ i.asesorado }}^{{ i.titulo }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_maestria_terminadas %}
+    <h4>Dirección de tesis de maestría terminadas</h4>
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_maestria_terminadas %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_doctorado_terminadas %}
+    <h4>Dirección de tesis de doctorado terminadas</h4>
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_doctorado_terminadas %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Dirección de tesis en proceso</h3>
+
+{% if direccion_tesis_licenciatura_enproceso %}
+    <h4>Dirección de tesis de licenciatura en proceso</h4>
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_licenciatura_enproceso %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_maestria_enproceso %}
+    <h4>Dirección de tesis de maestría en proceso</h4>
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_maestria_enproceso %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+{% if direccion_tesis_doctorado_enproceso %}
+    <h4>Dirección de tesis de doctorado en proceso</h4>
+    <p>Asesorado^Título de tesis^Especialidad^Dependencia^Fecha de examen^Tutores
+        {% for i in direccion_tesis_doctorado_enproceso %}
+            <br />
+                {{ i.asesorado }}^{{ i.especialidad }}^{{ i.dependencia.nombre }}^{{ i.fecha_examen|date:"d \d\e F Y"|lower }}^
+                {% if i.tutores.count > 0 %}{% for tutor in i.tutores.all %}{% if not forloop.first %}, {% endif %}{{ tutor }}{% endfor %}.{% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+<h3>Proyectos de investigación</h3>
+
+{% if proyectos_investigacion %}
+    <h4>Proyectos de investigación PAPIIT</h4>
+    <p>Nombre de proyecto^Año inicio^Responsables^Participantes^Es permanente?^Status^Clasificación^Tipo de proyecto^Dependencia^Dependencias en colaboración^
+        Financiamiento CONACYT^Financiamiento PAPIIT^Financiamiento PAPIME^Financiamiento extraordinario^Financiamiento sin recursos^Impacto social^Problemas nacionales CONACYT^Otro problema nacional CONACYT^
+        Num tecnicos^Num alumnos doctorado^Num alumnos maestría^Num alumnos licenciatura
+        {% for i in proyectos_investigacion %}
+            <br />
+            {{ i.nombre }}^{{ i.fecha_inicio.year }}^{% if i.responsables.count > 0 %}{% for responsable in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ responsable }}{% endfor %}{% endif %}^
+            {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}{% endif %}^
+            {{ i.es_permanente }}^{{ i.get_status_display }}^{{ i.get_clasificacion_display }}^{{ i.get_modalidad_display }}^{{ i.dependencia }}^
+            {% if i.dependencias_colaboracion.count > 0 %}{% for dependencia_colaboracion in i.dependencias_colaboracion.all %}{% if not forloop.first %}, {% endif %}{{ dependencia_colaboracion }}{% endfor %}{% endif %}^
+            {{ i.financiamiento_conacyt }}^{{ i.financiamiento_papiit }}^{{ i.financiamiento_papime }}^{{ i.financiamiento_extraordinario }}^{{ i.financiamiento_sin_recurso_ciga }}^
+            {{ i.impacto_social_text }}^{% if i.problemas_nacionales_conacyt.count > 0 %}{% for problema_nacional_conacyt in i.problemas_nacionales_conacyt.all %}{% if not forloop.first %}, {% endif %}{{ problema_nacional_conacyt }}{% endfor %}{% endif %}^
+            {{ i.otro_problema_nacional_conacyt }}^{{ i.tecnicos.count }}^{{ i.num_alumnos_doctorado }}^{{ i.num_alumnos_maestria }}^{{ i.num_alumnos_licenciatura }}
+        {% endfor %}
+    </p>
+{% endif %}
 
 </body>
 </html>
-

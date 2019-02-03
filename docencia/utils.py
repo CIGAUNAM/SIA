@@ -181,7 +181,7 @@ class LibroDocenciaContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.editorial"},\n' \
+                                    '{"data": "fields.editorial_text"},\n' \
                                     '{"data": "fields.ciudad"},\n' \
                                     '{"data": "fields.status"},\n' \
                                     '{"data": "fields.fecha"},\n' \
@@ -208,7 +208,7 @@ class LibroDocenciaContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.editorial"},\n' \
+                                    '{"data": "fields.editorial_text"},\n' \
                                     '{"data": "fields.ciudad"},\n' \
                                     '{"data": "fields.status"},\n' \
                                     '{"data": "fields.fecha"},\n' \

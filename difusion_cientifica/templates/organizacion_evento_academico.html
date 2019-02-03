@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Evento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Evento académico organizado.">
@@ -187,6 +188,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Evento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Evento académico organizado.">

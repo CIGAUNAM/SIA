@@ -156,8 +156,7 @@ class DireccionTesisJSON(View):
                 items = DireccionTesis.objects.filter(tutores__id__exact=usuarioid)
 
             json = serializers.serialize('json', items,
-                                         fields=(
-                                             'titulo', 'asesorado', 'nivel_academico', 'dependencia', 'fecha_examen'),
+                                         fields=('titulo', 'asesorado', 'nivel_academico', 'dependencia', 'fecha_examen'),
                                          use_natural_foreign_keys=True)
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')

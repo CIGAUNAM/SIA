@@ -89,7 +89,7 @@ class InvitadoMovilidadForm(forms.ModelForm):
                                choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'), ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
 
     class Meta:
-        model = MovilidadAcademica
+        model = InvitadoMovilidad
         exclude = ['usuario', ]
         widgets = {
             'redes_academicas': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
@@ -120,7 +120,7 @@ class EstanciaMovilidadForm(forms.ModelForm):
     proyecto = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), label='Proyecto')
 
     class Meta:
-        model = MovilidadAcademica
+        model = EstanciaMovilidad
         exclude = ['usuario', ]
         widgets = {
             'redes_academicas': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
@@ -152,9 +152,8 @@ class SabaticoMovilidadForm(forms.ModelForm):
     proyecto = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), label='Proyecto')
 
     class Meta:
-        model = MovilidadAcademica
+        model = SabaticoMovilidad
         exclude = ['usuario', ]
         widgets = {
             'redes_academicas': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
-

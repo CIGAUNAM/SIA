@@ -26,6 +26,7 @@ class AsesoriaEstudiante(models.Model):
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
+    proyecto_externo = models.CharField(max_length=254, null=True, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
@@ -109,10 +110,12 @@ class DireccionTesis(models.Model):
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
     reconocimiento = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
     fecha_examen = models.DateField(null=True, blank=True)
+    director = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_director', on_delete=models.DO_NOTHING)
+    codirector = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_codirector', on_delete=models.DO_NOTHING)
     tutores = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.asesorado, self.grado_academico)
+        return "{} : {}".format(self.titulo, self.asesorado, self.nivel_academico)
 
     def get_absolute_url(self):
         return reverse('direccion_tesis_detalle', kwargs={'pk': self.pk})

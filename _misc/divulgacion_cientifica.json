@@ -14,12 +14,9 @@
     "numero": "14",
     "pagina_inicio": 10,
     "pagina_fin": 12,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -38,14 +35,11 @@
     "numero": "",
     "pagina_inicio": 22,
     "pagina_fin": 31,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       274,
       32,
       1258
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -64,14 +58,11 @@
     "numero": "59",
     "pagina_inicio": 7,
     "pagina_fin": 16,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       274,
       32,
       1258
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -90,15 +81,12 @@
     "numero": "34",
     "pagina_inicio": 6,
     "pagina_fin": 7,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       954,
       32,
       7,
       1079
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -117,14 +105,11 @@
     "numero": "",
     "pagina_inicio": 29,
     "pagina_fin": 37,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       954,
       32,
       7
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -143,14 +128,11 @@
     "numero": "96",
     "pagina_inicio": 28,
     "pagina_fin": 37,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       1524,
       32,
       7
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -169,8 +151,6 @@
     "numero": "33",
     "pagina_inicio": 1,
     "pagina_fin": 3,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       171,
       32,
@@ -178,7 +158,6 @@
       1523,
       466
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -197,12 +176,9 @@
     "numero": "35",
     "pagina_inicio": 1,
     "pagina_fin": 3,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       32
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -221,12 +197,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       32
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -245,15 +218,12 @@
     "numero": "107",
     "pagina_inicio": 77,
     "pagina_fin": 79,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       1524,
       32,
       7,
       1079
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -272,14 +242,11 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       32,
       1524,
       60
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -298,8 +265,6 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       325,
       346,
@@ -307,7 +272,6 @@
       32,
       171
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -326,12 +290,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       32
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -350,12 +311,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       15
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -374,13 +332,10 @@
     "numero": "27",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       33,
       15
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -399,12 +354,9 @@
     "numero": "",
     "pagina_inicio": 387,
     "pagina_fin": 392,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       17
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -423,8 +375,6 @@
     "numero": "17",
     "pagina_inicio": 14,
     "pagina_fin": 19,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       133,
@@ -434,7 +384,6 @@
       177,
       234
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -453,15 +402,12 @@
     "numero": "10",
     "pagina_inicio": 3,
     "pagina_fin": 5,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       1043,
       162,
       483,
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -480,8 +426,6 @@
     "numero": "",
     "pagina_inicio": 11,
     "pagina_fin": 14,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       1668,
       1669,
@@ -490,7 +434,6 @@
       1671,
       1672
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -509,14 +452,11 @@
     "numero": "",
     "pagina_inicio": 64,
     "pagina_fin": 70,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       727,
       376
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -535,14 +475,11 @@
     "numero": "2",
     "pagina_inicio": 93,
     "pagina_fin": 142,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       376,
       1527
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -561,13 +498,10 @@
     "numero": "217",
     "pagina_inicio": 40,
     "pagina_fin": 46,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1662
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -586,15 +520,12 @@
     "numero": "95",
     "pagina_inicio": 32,
     "pagina_fin": 38,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1654,
       1673,
       1674
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -613,15 +544,12 @@
     "numero": "95",
     "pagina_inicio": 41,
     "pagina_fin": 45,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1654,
       1673,
       1674
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -640,15 +568,12 @@
     "numero": "95",
     "pagina_inicio": 23,
     "pagina_fin": 30,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1654,
       1673,
       1674
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -667,15 +592,12 @@
     "numero": "95",
     "pagina_inicio": 31,
     "pagina_fin": 37,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       1654,
       1673,
       1674
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -694,14 +616,11 @@
     "numero": "215",
     "pagina_inicio": 22,
     "pagina_fin": 27,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       315,
       1675
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -720,12 +639,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -744,12 +660,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -768,12 +681,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -792,12 +702,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -816,12 +723,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -840,12 +744,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -864,12 +765,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -888,12 +786,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -912,12 +807,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -936,12 +828,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -960,12 +849,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -984,14 +870,11 @@
     "numero": "2",
     "pagina_inicio": 21,
     "pagina_fin": 27,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30,
       16,
       35
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1010,12 +893,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1034,13 +914,10 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       1662,
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1059,12 +936,9 @@
     "numero": "17",
     "pagina_inicio": 37,
     "pagina_fin": 43,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1083,12 +957,9 @@
     "numero": "5",
     "pagina_inicio": 4,
     "pagina_fin": 12,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1107,15 +978,12 @@
     "numero": "2",
     "pagina_inicio": 35,
     "pagina_fin": 40,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       507,
       30,
       1664,
       1666
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1134,12 +1002,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1158,12 +1023,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1182,12 +1044,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1206,12 +1065,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1230,12 +1086,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1254,12 +1107,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1278,12 +1128,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1302,12 +1149,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1326,12 +1170,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1350,12 +1191,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1374,12 +1212,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1398,12 +1233,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1422,12 +1254,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1446,12 +1275,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1470,12 +1296,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1494,12 +1317,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1518,12 +1338,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1542,12 +1359,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1566,12 +1380,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1590,12 +1401,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1614,12 +1422,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1638,12 +1443,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1662,12 +1464,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1686,12 +1485,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1710,12 +1506,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1734,12 +1527,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1758,12 +1548,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1782,12 +1569,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1806,12 +1590,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1830,12 +1611,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1854,12 +1632,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1878,12 +1653,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1902,12 +1674,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1926,12 +1695,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1950,12 +1716,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1974,12 +1737,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -1998,12 +1758,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2022,12 +1779,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2046,12 +1800,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2070,12 +1821,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2094,12 +1842,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2118,12 +1863,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2142,12 +1884,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2166,12 +1905,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2190,12 +1926,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2214,12 +1947,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2238,12 +1968,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2262,12 +1989,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2286,12 +2010,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2310,12 +2031,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2334,12 +2052,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2358,12 +2073,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2382,12 +2094,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2406,12 +2115,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2430,12 +2136,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2454,12 +2157,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2478,12 +2178,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2502,12 +2199,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2526,12 +2220,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2550,12 +2241,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2574,12 +2262,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2598,12 +2283,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2622,12 +2304,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2646,12 +2325,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2670,12 +2346,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2694,12 +2367,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2718,12 +2388,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2742,12 +2409,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2766,12 +2430,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2790,12 +2451,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2814,12 +2472,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2838,12 +2493,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2862,12 +2514,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2886,12 +2535,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2910,12 +2556,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2934,12 +2577,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2958,12 +2598,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -2982,12 +2619,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3006,12 +2640,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3030,12 +2661,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3054,12 +2682,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3078,12 +2703,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3102,12 +2724,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3126,12 +2745,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3150,12 +2766,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3174,12 +2787,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3198,12 +2808,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3222,12 +2829,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3246,12 +2850,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3270,12 +2871,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3294,12 +2892,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3318,12 +2913,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3342,12 +2934,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3366,12 +2955,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3390,12 +2976,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3414,12 +2997,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3438,12 +3018,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3462,12 +3039,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3486,12 +3060,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3510,12 +3081,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3534,12 +3102,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3558,12 +3123,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3582,12 +3144,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3606,12 +3165,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3630,12 +3186,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3654,12 +3207,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3678,12 +3228,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3702,12 +3249,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3726,12 +3270,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3750,12 +3291,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3774,12 +3312,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3798,12 +3333,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3822,12 +3354,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3846,12 +3375,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3870,12 +3396,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3894,12 +3417,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3918,12 +3438,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3942,12 +3459,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3966,12 +3480,9 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
     "agradecimientos": []
   }
 },
@@ -3990,12 +3501,207 @@
     "numero": "",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "id_doi": "",
-    "proyecto": null,
     "autores": [
       30
     ],
-    "alumnos": [],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 259,
+  "fields": {
+    "titulo": "Descubriendo la regi\u00f3n del Hueyate, Chiapas",
+    "descripcion": "",
+    "status": "ACEPTADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 242,
+    "fecha": "2018-11-30",
+    "volumen": "",
+    "numero": "128",
+    "pagina_inicio": 1,
+    "pagina_fin": 18,
+    "autores": [
+      31,
+      46
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 260,
+  "fields": {
+    "titulo": "Ecological Marxism vs. environmental neo-Malthusianism: An old debate continues",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "https://climateandcapitalism.com/2018/04/30/ecological-marxism-vs-environmental-neo-malthusianism/",
+    "solo_electronico": true,
+    "revista": 376,
+    "fecha": "2018-04-30",
+    "volumen": "N/A",
+    "numero": "N/A",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "autores": [
+      22
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 261,
+  "fields": {
+    "titulo": "Half-Earth: A biodiversity `solution' that solves nothing",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "https://climateandcapitalism.com/2018/10/02/half-earth-a-biodiversity-solution-that-solves-nothing/",
+    "solo_electronico": true,
+    "revista": 376,
+    "fecha": "2018-10-02",
+    "volumen": "N/A",
+    "numero": "N/A",
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "autores": [
+      22
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 262,
+  "fields": {
+    "titulo": "Community-Based Monitoring, Reporting and Verification Know-How. Sharing Knowledge from Practice",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 392,
+    "fecha": "2015-01-01",
+    "volumen": "0",
+    "numero": "0",
+    "pagina_inicio": 17,
+    "pagina_fin": 18,
+    "autores": [
+      24
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 263,
+  "fields": {
+    "titulo": "Implementaci\u00f3n del \u00cdndice de Condici\u00f3n Forestal (ICF), Como un insumo para el dise\u00f1o de pol\u00edticas p\u00fablicas de corte forestal en M\u00e9xico.",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "http://dx.doi.org/10.14350/rig.53915",
+    "solo_electronico": false,
+    "revista": 196,
+    "fecha": "2017-03-01",
+    "volumen": "SI",
+    "numero": "92",
+    "pagina_inicio": 92,
+    "pagina_fin": 93,
+    "autores": [
+      331,
+      2203,
+      183,
+      29,
+      63
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 264,
+  "fields": {
+    "titulo": "Mudflow Hazards in the Georgian Caucasus-Using Participatory Methods to Investigate Disaster Risk",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "",
+    "solo_electronico": false,
+    "revista": 393,
+    "fecha": "2014-01-01",
+    "volumen": "16",
+    "numero": "1",
+    "pagina_inicio": 657,
+    "pagina_fin": 657,
+    "autores": [
+      24
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 265,
+  "fields": {
+    "titulo": "Sobre la relaci\u00f3n entre geoformas y usos del suelo en ambientes tropicales secos usando SIG y estad\u00edstica multivariada",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "http://dx.doi.org/10.14350/rig.56438",
+    "solo_electronico": false,
+    "revista": 196,
+    "fecha": "2017-08-18",
+    "volumen": "SI",
+    "numero": "93",
+    "pagina_inicio": 1,
+    "pagina_fin": 10,
+    "autores": [
+      2247,
+      29,
+      39
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 266,
+  "fields": {
+    "titulo": "Reconstruction of native vegetation based upon integrated landscape approaches",
+    "descripcion": "",
+    "status": "PUBLICADO",
+    "url": "https://doi.org/10.1007/s10531-018-1655-2",
+    "solo_electronico": true,
+    "revista": 266,
+    "fecha": "2018-10-01",
+    "volumen": "1572-9710",
+    "numero": "0960-3115",
+    "pagina_inicio": 1,
+    "pagina_fin": 13,
+    "autores": [
+      2248,
+      39
+    ],
+    "agradecimientos": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.articulodivulgacion",
+  "pk": 267,
+  "fields": {
+    "titulo": "Gu\u00eda de buenas pr\u00e1cticas para un M\u00e9xico sustentable.",
+    "descripcion": "",
+    "status": "ACEPTADO",
+    "url": "http://www.iifilologicas.unam.mx/uploads/carteles/guiabuenaspracticas.pdf.",
+    "solo_electronico": false,
+    "revista": 394,
+    "fecha": "2018-10-10",
+    "volumen": "",
+    "numero": "1",
+    "pagina_inicio": 1,
+    "pagina_fin": 2,
+    "autores": [
+      858,
+      39
+    ],
     "agradecimientos": []
   }
 },
@@ -4680,8 +4386,8 @@
     "titulo": "La dimensi\u00f3n socio-cultural y los valores entorno a los Servicios Ecosist\u00e9micos en humedales",
     "descripcion": "",
     "libro": 234,
-    "pagina_inicio": 27,
-    "pagina_fin": 40,
+    "pagina_inicio": 51,
+    "pagina_fin": 75,
     "proyecto": null,
     "usuario": null,
     "autores": [
@@ -4816,17 +4522,73 @@
   }
 },
 {
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 54,
+  "fields": {
+    "titulo": "Problem\u00e1tica y  Pol\u00edticas del Agua",
+    "descripcion": "",
+    "libro": 309,
+    "pagina_inicio": 13,
+    "pagina_fin": 23,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      471,
+      28,
+      2118
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 55,
+  "fields": {
+    "titulo": "El contexto geogr\u00e1fico de la sustentabilidad: el caso de la comunidad de Nuevo San Juan Parangaricutiro149",
+    "descripcion": "",
+    "libro": 319,
+    "pagina_inicio": 149,
+    "pagina_fin": 156,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      39,
+      29,
+      1063
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.capitulolibrodivulgacion",
+  "pk": 56,
+  "fields": {
+    "titulo": "Romerolagus diazi species account",
+    "descripcion": "",
+    "libro": 320,
+    "pagina_inicio": 25,
+    "pagina_fin": 38,
+    "proyecto": null,
+    "usuario": null,
+    "autores": [
+      39,
+      183
+    ]
+  }
+},
+{
   "model": "divulgacion_cientifica.organizacioneventodivulgacion",
   "pk": 1,
   "fields": {
     "evento": 68,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 20,
     "numero_asistentes": 150,
     "ambito": "INTERNACIONAL",
-    "financiamiento": null,
-    "usuario": 14
+    "coordinador_general": null,
+    "comite_organizador": [
+      14
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4835,12 +4597,15 @@
   "fields": {
     "evento": 69,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 80,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 14
+    "coordinador_general": null,
+    "comite_organizador": [
+      14
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4849,12 +4614,15 @@
   "fields": {
     "evento": 70,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 20,
     "numero_asistentes": 75,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 14
+    "coordinador_general": null,
+    "comite_organizador": [
+      14
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4863,12 +4631,15 @@
   "fields": {
     "evento": 233,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 1,
     "ambito": "REGIONAL",
-    "financiamiento": 26,
-    "usuario": 9
+    "coordinador_general": null,
+    "comite_organizador": [
+      9
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4877,12 +4648,15 @@
   "fields": {
     "evento": 232,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 1,
     "ambito": "REGIONAL",
-    "financiamiento": null,
-    "usuario": 9
+    "coordinador_general": null,
+    "comite_organizador": [
+      9
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4891,12 +4665,13 @@
   "fields": {
     "evento": 254,
     "descripcion": "",
-    "responsabilidad": "COORDINADOR",
     "numero_ponentes": 45,
     "numero_asistentes": 50,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 9
+    "coordinador_general": 9,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4905,12 +4680,15 @@
   "fields": {
     "evento": 285,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 23
+    "coordinador_general": null,
+    "comite_organizador": [
+      23
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4919,12 +4697,15 @@
   "fields": {
     "evento": 72,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 150,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 23
+    "coordinador_general": null,
+    "comite_organizador": [
+      23
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4933,12 +4714,15 @@
   "fields": {
     "evento": 72,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 150,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 23
+    "coordinador_general": null,
+    "comite_organizador": [
+      23
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4947,12 +4731,15 @@
   "fields": {
     "evento": 298,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 10,
     "numero_asistentes": 70,
     "ambito": "REGIONAL",
-    "financiamiento": null,
-    "usuario": 23
+    "coordinador_general": null,
+    "comite_organizador": [
+      23
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4961,12 +4748,15 @@
   "fields": {
     "evento": 69,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 79,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 23
+    "coordinador_general": null,
+    "comite_organizador": [
+      23
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4975,12 +4765,15 @@
   "fields": {
     "evento": 68,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 25,
     "numero_asistentes": 180,
     "ambito": "INTERNACIONAL",
-    "financiamiento": null,
-    "usuario": 23
+    "coordinador_general": null,
+    "comite_organizador": [
+      23
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -4989,12 +4782,15 @@
   "fields": {
     "evento": 124,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 7,
     "numero_asistentes": 50,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5003,12 +4799,15 @@
   "fields": {
     "evento": 54,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 7,
     "numero_asistentes": 70,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5017,12 +4816,15 @@
   "fields": {
     "evento": 429,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 7,
     "numero_asistentes": 60,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5031,12 +4833,15 @@
   "fields": {
     "evento": 76,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5045,12 +4850,15 @@
   "fields": {
     "evento": 345,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 110,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5059,12 +4867,15 @@
   "fields": {
     "evento": 379,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 7,
     "numero_asistentes": 70,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5073,12 +4884,15 @@
   "fields": {
     "evento": 380,
     "descripcion": "Panel: Geograf\u00eda y Educaci\u00f3n Superior en M\u00e9xico",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 150,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5087,12 +4901,15 @@
   "fields": {
     "evento": 380,
     "descripcion": "Panel: Geograf\u00eda y Educaci\u00f3n Superior en M\u00e9xico",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 15,
     "numero_asistentes": 150,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5101,12 +4918,15 @@
   "fields": {
     "evento": 380,
     "descripcion": "Moderador de la sesi\u00f3n 24: \u201cGeograf\u00eda Urbana",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 24,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5115,12 +4935,15 @@
   "fields": {
     "evento": 380,
     "descripcion": "Moderador de la sesi\u00f3n 24: \u201cGeograf\u00eda Urbana",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 24,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5129,12 +4952,13 @@
   "fields": {
     "evento": 430,
     "descripcion": "",
-    "responsabilidad": "OTRO",
     "numero_ponentes": 10,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5143,12 +4967,13 @@
   "fields": {
     "evento": 431,
     "descripcion": "",
-    "responsabilidad": "OTRO",
     "numero_ponentes": 3,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5157,12 +4982,13 @@
   "fields": {
     "evento": 143,
     "descripcion": "Moderador de la sesi\u00f3n 25: Geograf\u00eda Urbana",
-    "responsabilidad": "OTRO",
     "numero_ponentes": 7,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5171,12 +4997,13 @@
   "fields": {
     "evento": 80,
     "descripcion": "",
-    "responsabilidad": "OTRO",
     "numero_ponentes": 7,
     "numero_asistentes": 70,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5185,12 +5012,15 @@
   "fields": {
     "evento": 161,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 20,
     "numero_asistentes": 200,
     "ambito": "INTERNACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5199,12 +5029,15 @@
   "fields": {
     "evento": 432,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 10,
     "numero_asistentes": 70,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5213,12 +5046,15 @@
   "fields": {
     "evento": 359,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5227,12 +5063,13 @@
   "fields": {
     "evento": 145,
     "descripcion": "Comentarista del Panel 27",
-    "responsabilidad": "OTRO",
     "numero_ponentes": 10,
     "numero_asistentes": 90,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5241,12 +5078,15 @@
   "fields": {
     "evento": 360,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 7,
     "numero_asistentes": 90,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5255,12 +5095,15 @@
   "fields": {
     "evento": 433,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 90,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5269,12 +5112,15 @@
   "fields": {
     "evento": 435,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 80,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5283,12 +5129,15 @@
   "fields": {
     "evento": 435,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 90,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5297,12 +5146,15 @@
   "fields": {
     "evento": 392,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 8,
     "numero_asistentes": 70,
     "ambito": "REGIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [
+      33
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5311,12 +5163,13 @@
   "fields": {
     "evento": 424,
     "descripcion": "",
-    "responsabilidad": "OTRO",
     "numero_ponentes": 5,
     "numero_asistentes": 100,
     "ambito": "INTERNACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5325,12 +5178,13 @@
   "fields": {
     "evento": 391,
     "descripcion": "",
-    "responsabilidad": "COORDINADOR",
     "numero_ponentes": 5,
     "numero_asistentes": 100,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 33
+    "coordinador_general": 33,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5339,12 +5193,15 @@
   "fields": {
     "evento": 539,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 400,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5353,12 +5210,15 @@
   "fields": {
     "evento": 540,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 10,
     "numero_asistentes": 900,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5367,12 +5227,15 @@
   "fields": {
     "evento": 543,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 70,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5381,12 +5244,15 @@
   "fields": {
     "evento": 541,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 20,
     "numero_asistentes": 150,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5395,12 +5261,15 @@
   "fields": {
     "evento": 542,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 100,
     "ambito": "REGIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5409,12 +5278,15 @@
   "fields": {
     "evento": 545,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 70,
     "ambito": "NACIONAL",
-    "financiamiento": 10,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5423,12 +5295,15 @@
   "fields": {
     "evento": 546,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 90,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5437,12 +5312,15 @@
   "fields": {
     "evento": 547,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 70,
     "ambito": "REGIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5451,12 +5329,15 @@
   "fields": {
     "evento": 547,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 60,
     "ambito": "REGIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5465,12 +5346,13 @@
   "fields": {
     "evento": 548,
     "descripcion": "",
-    "responsabilidad": "COORDINADOR",
     "numero_ponentes": 5,
     "numero_asistentes": 60,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": 32,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5479,12 +5361,15 @@
   "fields": {
     "evento": 549,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 70,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5493,12 +5378,13 @@
   "fields": {
     "evento": 550,
     "descripcion": "",
-    "responsabilidad": "COORDINADOR",
     "numero_ponentes": 1,
     "numero_asistentes": 70,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": 32,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5507,12 +5393,15 @@
   "fields": {
     "evento": 551,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 90,
     "ambito": "NACIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5521,12 +5410,15 @@
   "fields": {
     "evento": 635,
     "descripcion": "Taller realizado en las instalaciones del CIGA- UNAM",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 3,
     "numero_asistentes": 20,
     "ambito": "REGIONAL",
-    "financiamiento": 4,
-    "usuario": 53
+    "coordinador_general": null,
+    "comite_organizador": [
+      53
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5535,12 +5427,15 @@
   "fields": {
     "evento": 780,
     "descripcion": "Actividad por 10 a\u00f1os del CIGA",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 8,
     "numero_asistentes": 500,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5549,12 +5444,13 @@
   "fields": {
     "evento": 781,
     "descripcion": "Actividad dirigida a alumnos de bachillerato interesados en geograf\u00eda e historia",
-    "responsabilidad": "COORDINADOR",
     "numero_ponentes": 10,
     "numero_asistentes": 100,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": 16,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5563,12 +5459,15 @@
   "fields": {
     "evento": 783,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 3,
     "numero_asistentes": 100,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5577,12 +5476,15 @@
   "fields": {
     "evento": 784,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 6,
     "numero_asistentes": 200,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5591,12 +5493,15 @@
   "fields": {
     "evento": 785,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 30,
     "numero_asistentes": 500,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5605,12 +5510,15 @@
   "fields": {
     "evento": 44,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 6,
     "numero_asistentes": 300,
     "ambito": "NACIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5619,12 +5527,15 @@
   "fields": {
     "evento": 544,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 2,
     "numero_asistentes": 100,
     "ambito": "REGIONAL",
-    "financiamiento": null,
-    "usuario": 32
+    "coordinador_general": null,
+    "comite_organizador": [
+      32
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5633,12 +5544,15 @@
   "fields": {
     "evento": 819,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 1,
     "numero_asistentes": 1,
     "ambito": "OTRO",
-    "financiamiento": null,
-    "usuario": 24
+    "coordinador_general": null,
+    "comite_organizador": [
+      24
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5647,12 +5561,13 @@
   "fields": {
     "evento": 813,
     "descripcion": "Elaboraci\u00f3n de materiales de capacitaci\u00f3n y difusi\u00f3n para la promoci\u00f3n de actividades en la metodolog\u00eda y las herramientas de SIGP y Mapeo Participativo",
-    "responsabilidad": "COORDINADOR",
     "numero_ponentes": 1,
     "numero_asistentes": 1,
     "ambito": "OTRO",
-    "financiamiento": null,
-    "usuario": 24
+    "coordinador_general": 24,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5661,12 +5576,15 @@
   "fields": {
     "evento": 836,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 3,
     "numero_asistentes": 10,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 50
+    "coordinador_general": null,
+    "comite_organizador": [
+      50
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5675,12 +5593,15 @@
   "fields": {
     "evento": 835,
     "descripcion": "Visitas escolares al Campus de la UNAM",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 6,
     "numero_asistentes": 300,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5689,12 +5610,15 @@
   "fields": {
     "evento": 837,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 300,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5703,12 +5627,535 @@
   "fields": {
     "evento": 839,
     "descripcion": "",
-    "responsabilidad": "COMITE",
     "numero_ponentes": 5,
     "numero_asistentes": 100,
     "ambito": "INSTITUCIONAL",
-    "financiamiento": 4,
-    "usuario": 16
+    "coordinador_general": null,
+    "comite_organizador": [
+      16
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 83,
+  "fields": {
+    "evento": 843,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 84,
+  "fields": {
+    "evento": 848,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 85,
+  "fields": {
+    "evento": 853,
+    "descripcion": "Canc\u00fan, Quintana Roo del 25 al 29 de abril del 2011. Organizado por COLPOS, IMTA. UNAM, UAEM, Senasica, CCADET Y Sociedad Iberoamericana de F\u00edsica y Qu\u00edmica Ambiental. Comit\u00e9 organizador: J. Etchevers, Claudia Hidalgo, Vinissa Saynes, Juliana Padilla, Juan Gallarda, Sergio Franco, Felipe Garc\u00eda, Laura Bertha, Arturo Aguirre, Waldo Ojeda, Elizabeth Hern\u00e1ndez, BautistaF., Alberto Benavides.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 86,
+  "fields": {
+    "evento": 855,
+    "descripcion": "Comit\u00e9 cient\u00edfico nacional",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 87,
+  "fields": {
+    "evento": 887,
+    "descripcion": "Participaci\u00f3n en la organizaci\u00f3n del Simposio: IIb Soil chemistry and environment.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 88,
+  "fields": {
+    "evento": 899,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 89,
+  "fields": {
+    "evento": 920,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 90,
+  "fields": {
+    "evento": 921,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 91,
+  "fields": {
+    "evento": 922,
+    "descripcion": "Comit\u00e9 coordinador: Patricia Quintana, Carmen Guti\u00e9rrez, Pavel Krasilnikov y Bautista F.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 92,
+  "fields": {
+    "evento": 160,
+    "descripcion": "Bautista F. y Manuel Mendoza, Coordinadores generales.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": 30,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 93,
+  "fields": {
+    "evento": 160,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 94,
+  "fields": {
+    "evento": 69,
+    "descripcion": "Organizado por la Sociedad Latinoamericana de Percepci\u00f3n Remota y Sistemas de Informaci\u00f3n Espacial. A celebrarse del 3 al 7 de octubre del 2011 en la ciudad de Morelia, Michoac\u00e1n, M\u00e9xico. Comit\u00e9 organizador: Jean Fran\u00e7ois Mas, Gabriela Cuevas, Michelle Farf\u00e1n, Alejandra Larraz\u00e1bal,  Manuel Mendoza, Luis Miguel Morales Manilla, Jos\u00e9 Antonio Navarrete Pacheco, Isabel Ram\u00edrez y BautistaF.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 95,
+  "fields": {
+    "evento": 139,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": 30,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 96,
+  "fields": {
+    "evento": 763,
+    "descripcion": "Noviembre 7 al 12 del  2010. Participaci\u00f3n en el Comit\u00e9 Organizador de la Sesi\u00f3n especial:BautistaF., Bertha Aquilar y Carmen Delgado.Nuevas metodolog\u00edas, enfoques y t\u00e9cnicas de estudio de los suelos.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 97,
+  "fields": {
+    "evento": 11,
+    "descripcion": "Comit\u00e9 organizador: BautistaF., P Quintana, J. Pacheco y D. Caba\u00f1as.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 98,
+  "fields": {
+    "evento": 923,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": 30,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 99,
+  "fields": {
+    "evento": 924,
+    "descripcion": "",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      30
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 100,
+  "fields": {
+    "evento": 885,
+    "descripcion": "Organizado en colaboraci\u00f3n entre UADY, CICY, CINVESTAV, ITA 2 y Sociedad Mexicana de la Ciencia del Suelo. M\u00e9rida Yucat\u00e1n del 4 al 7 de noviembre de 2002.",
+    "numero_ponentes": 1,
+    "numero_asistentes": 1,
+    "ambito": "NACIONAL",
+    "coordinador_general": 30,
+    "comite_organizador": [],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 101,
+  "fields": {
+    "evento": 1006,
+    "descripcion": "Co-organizaci\u00f3n",
+    "numero_ponentes": 12,
+    "numero_asistentes": 300,
+    "ambito": "INSTITUCIONAL",
+    "coordinador_general": 2049,
+    "comite_organizador": [
+      2015,
+      1981,
+      1982,
+      1307,
+      16
+    ],
+    "ayudantes": [
+      1461,
+      1460,
+      1465,
+      1469,
+      5,
+      19,
+      13,
+      14,
+      1996,
+      486,
+      1462,
+      901,
+      12,
+      1252
+    ],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 102,
+  "fields": {
+    "evento": 980,
+    "descripcion": "Co-organizaci\u00f3n",
+    "numero_ponentes": 7,
+    "numero_asistentes": 360,
+    "ambito": "REGIONAL",
+    "coordinador_general": null,
+    "comite_organizador": [
+      1981,
+      16,
+      2015,
+      2016,
+      1307
+    ],
+    "ayudantes": [
+      1461,
+      1460,
+      1465,
+      1469,
+      1462,
+      1457
+    ],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 103,
+  "fields": {
+    "evento": 1007,
+    "descripcion": "Co-organizaci\u00f3n",
+    "numero_ponentes": 4,
+    "numero_asistentes": 400,
+    "ambito": "INSTITUCIONAL",
+    "coordinador_general": 2049,
+    "comite_organizador": [
+      16,
+      2015,
+      1981,
+      1307,
+      1982
+    ],
+    "ayudantes": [
+      892,
+      1461,
+      14,
+      486,
+      13,
+      1109
+    ],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 104,
+  "fields": {
+    "evento": 1011,
+    "descripcion": "",
+    "numero_ponentes": 12,
+    "numero_asistentes": 58,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": 26,
+    "comite_organizador": [
+      26,
+      1129,
+      2053
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 105,
+  "fields": {
+    "evento": 1012,
+    "descripcion": "",
+    "numero_ponentes": 12,
+    "numero_asistentes": 58,
+    "ambito": "INTERNACIONAL",
+    "coordinador_general": 26,
+    "comite_organizador": [
+      1129,
+      2053
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 106,
+  "fields": {
+    "evento": 1013,
+    "descripcion": "Co-organizaci\u00f3n",
+    "numero_ponentes": 4,
+    "numero_asistentes": 40,
+    "ambito": "REGIONAL",
+    "coordinador_general": 1981,
+    "comite_organizador": [
+      16,
+      2015,
+      2016
+    ],
+    "ayudantes": [
+      1469,
+      1468,
+      1457
+    ],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 107,
+  "fields": {
+    "evento": 1014,
+    "descripcion": "Organizaci\u00f3n de actividades",
+    "numero_ponentes": 9,
+    "numero_asistentes": 20,
+    "ambito": "INSTITUCIONAL",
+    "coordinador_general": 2049,
+    "comite_organizador": [
+      16,
+      2015
+    ],
+    "ayudantes": [
+      1469,
+      1461,
+      1460,
+      1462,
+      1457,
+      1109,
+      486,
+      14
+    ],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 108,
+  "fields": {
+    "evento": 1034,
+    "descripcion": "",
+    "numero_ponentes": 5,
+    "numero_asistentes": 35,
+    "ambito": "REGIONAL",
+    "coordinador_general": 28,
+    "comite_organizador": [
+      2100
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 109,
+  "fields": {
+    "evento": 1036,
+    "descripcion": "",
+    "numero_ponentes": 20,
+    "numero_asistentes": 150,
+    "ambito": "REGIONAL",
+    "coordinador_general": 28,
+    "comite_organizador": [
+      35,
+      2101
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
+  }
+},
+{
+  "model": "divulgacion_cientifica.organizacioneventodivulgacion",
+  "pk": 110,
+  "fields": {
+    "evento": 971,
+    "descripcion": "",
+    "numero_ponentes": 4,
+    "numero_asistentes": 15,
+    "ambito": "REGIONAL",
+    "coordinador_general": 1954,
+    "comite_organizador": [
+      35,
+      2163
+    ],
+    "ayudantes": [],
+    "apoyo_tecnico": []
   }
 },
 {
@@ -5722,7 +6169,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5738,7 +6185,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5754,7 +6201,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5770,7 +6217,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5786,7 +6233,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5802,7 +6249,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5818,7 +6265,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5834,7 +6281,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5850,7 +6297,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5866,7 +6313,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5882,7 +6329,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5898,7 +6345,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5914,7 +6361,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5930,7 +6377,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5946,7 +6393,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5962,7 +6409,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5978,7 +6425,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -5994,7 +6441,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6010,7 +6457,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6026,7 +6473,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6042,7 +6489,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6058,7 +6505,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6074,7 +6521,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6090,7 +6537,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6106,7 +6553,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -6122,7 +6569,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6138,7 +6585,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6154,7 +6601,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6170,7 +6617,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6186,7 +6633,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6202,7 +6649,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6218,7 +6665,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6234,7 +6681,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6250,7 +6697,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6266,7 +6713,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6282,7 +6729,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6298,7 +6745,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6314,7 +6761,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6330,7 +6777,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6346,7 +6793,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6362,7 +6809,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6378,7 +6825,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6394,7 +6841,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6410,7 +6857,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6426,7 +6873,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6442,7 +6889,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6458,7 +6905,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6474,7 +6921,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6490,7 +6937,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6506,7 +6953,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6522,7 +6969,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6538,7 +6985,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6554,7 +7001,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6570,7 +7017,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6586,7 +7033,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6602,7 +7049,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6618,7 +7065,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6634,7 +7081,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6650,7 +7097,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6666,7 +7113,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6682,7 +7129,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6698,7 +7145,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6714,7 +7161,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6730,7 +7177,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6746,7 +7193,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6762,7 +7209,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6778,7 +7225,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6794,7 +7241,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6810,7 +7257,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6826,7 +7273,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6842,7 +7289,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6858,7 +7305,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6874,7 +7321,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6890,7 +7337,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6906,7 +7353,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6922,7 +7369,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6938,7 +7385,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6954,7 +7401,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6970,7 +7417,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -6986,7 +7433,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7002,7 +7449,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7018,7 +7465,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7034,7 +7481,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7050,7 +7497,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7066,7 +7513,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7082,7 +7529,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7098,7 +7545,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7114,7 +7561,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7130,7 +7577,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7146,7 +7593,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7162,7 +7609,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7178,7 +7625,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7194,7 +7641,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7210,7 +7657,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7226,7 +7673,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7242,7 +7689,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7258,7 +7705,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7274,7 +7721,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7290,7 +7737,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7306,7 +7753,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7322,7 +7769,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7338,7 +7785,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7354,7 +7801,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7370,7 +7817,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7386,7 +7833,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7402,7 +7849,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7418,7 +7865,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7434,7 +7881,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7450,7 +7897,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7466,7 +7913,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7482,7 +7929,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7498,7 +7945,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7514,7 +7961,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7530,7 +7977,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7546,7 +7993,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7562,7 +8009,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7578,7 +8025,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7594,7 +8041,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7610,7 +8057,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7626,7 +8073,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7642,7 +8089,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7658,7 +8105,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7674,7 +8121,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7690,7 +8137,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7706,7 +8153,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7722,7 +8169,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7738,7 +8185,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7754,7 +8201,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7770,7 +8217,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7786,7 +8233,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7802,7 +8249,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7818,7 +8265,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7834,7 +8281,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7850,7 +8297,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       17
     ]
   }
@@ -7866,7 +8313,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7882,7 +8329,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7898,7 +8345,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7914,7 +8361,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7930,7 +8377,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7946,7 +8393,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7962,7 +8409,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7978,7 +8425,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -7994,7 +8441,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8010,7 +8457,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8026,7 +8473,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8042,7 +8489,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8058,7 +8505,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8074,7 +8521,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8090,7 +8537,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8106,7 +8553,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8122,7 +8569,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8138,7 +8585,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8154,7 +8601,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8170,7 +8617,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8186,7 +8633,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8202,7 +8649,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8218,7 +8665,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       14
     ]
   }
@@ -8234,7 +8681,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8250,7 +8697,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8266,7 +8713,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8282,7 +8729,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8298,7 +8745,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8314,7 +8761,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8330,7 +8777,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8346,7 +8793,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8362,7 +8809,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8378,7 +8825,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8394,7 +8841,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8410,7 +8857,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8426,7 +8873,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       9
     ]
   }
@@ -8442,7 +8889,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       23
     ]
   }
@@ -8458,7 +8905,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8474,7 +8921,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8490,7 +8937,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8506,7 +8953,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": true,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8522,7 +8969,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8538,7 +8985,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8554,7 +9001,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8570,7 +9017,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8586,7 +9033,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8602,7 +9049,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8618,7 +9065,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8634,7 +9081,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8650,7 +9097,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8666,7 +9113,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       44
     ]
   }
@@ -8682,7 +9129,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       44
     ]
   }
@@ -8698,7 +9145,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       53
     ]
   }
@@ -8714,7 +9161,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       53
     ]
   }
@@ -8730,7 +9177,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       20
     ]
   }
@@ -8746,7 +9193,7 @@
     "ambito": "REGIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       12
     ]
   }
@@ -8762,7 +9209,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8778,7 +9225,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8794,7 +9241,7 @@
     "ambito": "INTERNACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       32
     ]
   }
@@ -8810,7 +9257,7 @@
     "ambito": "INSTITUCIONAL",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       483,
       14,
       1109,
@@ -8830,7 +9277,7 @@
     "ambito": "OTRO",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1468,
       1462,
       483,
@@ -8853,7 +9300,7 @@
     "ambito": "OTRO",
     "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1468,
       1462,
       483,
@@ -8874,9 +9321,9 @@
     "evento": 843,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       483,
       162,
       1043,
@@ -8895,9 +9342,9 @@
     "evento": 843,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       315,
@@ -8918,9 +9365,9 @@
     "evento": 843,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       334,
       177,
       1625,
@@ -8941,9 +9388,9 @@
     "evento": 843,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       315,
@@ -8964,9 +9411,9 @@
     "evento": 843,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30
     ]
   }
@@ -8980,9 +9427,9 @@
     "evento": 272,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1049,
       162,
       315,
@@ -8999,9 +9446,9 @@
     "evento": 844,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       483,
       162,
       30,
@@ -9018,9 +9465,9 @@
     "evento": 845,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30
     ]
   }
@@ -9034,9 +9481,9 @@
     "evento": 846,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30
     ]
   }
@@ -9050,9 +9497,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       30,
@@ -9069,9 +9516,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       30
     ]
@@ -9086,9 +9533,9 @@
     "evento": 847,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1049,
       315,
       30
@@ -9104,9 +9551,9 @@
     "evento": 848,
     "resumen_publicado": false,
     "ambito": "INTERNACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30
     ]
   }
@@ -9120,9 +9567,9 @@
     "evento": 849,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1688,
       30,
       1689,
@@ -9139,9 +9586,9 @@
     "evento": 850,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1690,
       30,
       1691
@@ -9157,9 +9604,9 @@
     "evento": 850,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1690,
       30,
       1691
@@ -9175,9 +9622,9 @@
     "evento": 850,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       315,
       30,
       221,
@@ -9195,9 +9642,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1694,
       30,
       750,
@@ -9215,9 +9662,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1695,
       796,
       1047,
@@ -9237,7 +9684,7 @@
     "ambito": "NACIONAL",
     "por_invitacion": true,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       1696,
@@ -9255,9 +9702,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       483,
       162,
       1043,
@@ -9274,9 +9721,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       483,
       30,
       1697
@@ -9292,9 +9739,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       162,
       30,
       1691
@@ -9310,9 +9757,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       30,
@@ -9332,9 +9779,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       1701,
@@ -9353,9 +9800,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       1047,
@@ -9373,9 +9820,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       315,
@@ -9396,9 +9843,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       1047,
@@ -9419,9 +9866,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       1047,
@@ -9443,9 +9890,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       1047,
@@ -9465,9 +9912,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       30,
@@ -9485,9 +9932,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1702,
       30,
       1640,
@@ -9505,9 +9952,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       30,
@@ -9527,9 +9974,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       334,
       177,
       1625,
@@ -9551,9 +9998,9 @@
     "evento": 119,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1657,
       30,
       158,
@@ -9570,9 +10017,9 @@
     "evento": 119,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       659,
       199
@@ -9588,9 +10035,9 @@
     "evento": 851,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1657,
       30,
       158,
@@ -9607,9 +10054,9 @@
     "evento": 852,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30
     ]
   }
@@ -9623,9 +10070,9 @@
     "evento": 160,
     "resumen_publicado": false,
     "ambito": "REGIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1657,
       30,
       659,
@@ -9643,9 +10090,9 @@
     "evento": 160,
     "resumen_publicado": false,
     "ambito": "REGIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       158,
       199
@@ -9661,9 +10108,9 @@
     "evento": 160,
     "resumen_publicado": false,
     "ambito": "REGIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       659,
       199
@@ -9679,9 +10126,9 @@
     "evento": 160,
     "resumen_publicado": false,
     "ambito": "REGIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       1691
     ]
@@ -9696,9 +10143,9 @@
     "evento": 814,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       158,
       199,
@@ -9715,9 +10162,9 @@
     "evento": 814,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1657,
       30,
       659,
@@ -9735,9 +10182,9 @@
     "evento": 268,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       659
     ]
@@ -9752,9 +10199,9 @@
     "evento": 62,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       1707,
       50,
@@ -9771,9 +10218,9 @@
     "evento": 140,
     "resumen_publicado": false,
     "ambito": "REGIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1043,
       30
     ]
@@ -9788,9 +10235,9 @@
     "evento": 853,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       315,
@@ -9808,9 +10255,9 @@
     "evento": 854,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       1708
     ]
@@ -9825,9 +10272,9 @@
     "evento": 763,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       483,
       1694,
       1709,
@@ -9845,9 +10292,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       1632
     ]
@@ -9862,9 +10309,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       315,
       30,
       1632,
@@ -9882,9 +10329,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       196,
       1012
@@ -9900,9 +10347,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1710,
       30
     ]
@@ -9917,9 +10364,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       659,
       17,
@@ -9938,9 +10385,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       493
     ]
@@ -9955,9 +10402,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       177,
       1625,
       1626,
@@ -9976,9 +10423,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       30,
       1053,
       1711
@@ -9994,9 +10441,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       315,
       30,
       1053
@@ -10012,9 +10459,9 @@
     "evento": 264,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1712,
       30
     ]
@@ -10029,9 +10476,9 @@
     "evento": 855,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1713,
       30,
       1714
@@ -10047,13 +10494,2390 @@
     "evento": 855,
     "resumen_publicado": false,
     "ambito": "NACIONAL",
-    "por_invitacion": true,
+    "por_invitacion": false,
     "ponencia_magistral": false,
-    "participantes": [
+    "autores": [
       1637,
       30,
       1715,
       1638
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 280,
+  "fields": {
+    "titulo": "Maya soil classification systems. Vulnerabilities and Exclusion in Globalization M\u00e9rida, M\u00e9xico",
+    "descripcion": "",
+    "evento": 856,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      376
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 281,
+  "fields": {
+    "titulo": "Maya Maize Field Selection, Burning and Fallowing in Pich, Campeche, MexicoVulnerabilities and Exclusion in Globalization M\u00e9rida, M\u00e9xico",
+    "descripcion": "",
+    "evento": 856,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1626,
+      30,
+      12,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 282,
+  "fields": {
+    "titulo": "Aplicaci\u00f3n de la metodolog\u00eda EPIK para determinar la vulnerabilidad del agua subterr\u00e1nea a la contaminaci\u00f3n en el estado de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 11,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1660,
+      1717,
+      30,
+      1659
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 283,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n espacial de la aptitud de los suelos como receptores de aguas residuales con alta carga org\u00e1nica",
+    "descripcion": "",
+    "evento": 11,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 284,
+  "fields": {
+    "titulo": "Riesgo de contaminaci\u00f3n de las aguas subterr\u00e1neas por residuos peligrosos en condiciones de karst tropical",
+    "descripcion": "",
+    "evento": 11,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1719,
+      1718,
+      30,
+      158,
+      199,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 285,
+  "fields": {
+    "titulo": "Calidad agr\u00edcola del acu\u00edfero del estado de Yucat\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "evento": 11,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1049,
+      315,
+      1652,
+      30,
+      1633,
+      587
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 286,
+  "fields": {
+    "titulo": "Spatial distribution and development of soils in tropical karst areas from Yucat\u00e1n Mexico...",
+    "descripcion": "",
+    "evento": 857,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1640,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 287,
+  "fields": {
+    "titulo": "Los efectos del manejo forestal en el contenido de carbono en los suelos en la reserva de la biosfera mariposa monarca",
+    "descripcion": "",
+    "evento": 858,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      42,
+      1012
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 288,
+  "fields": {
+    "titulo": "Atributos del relieve para el an\u00e1lisis de zonas vulnerables a la contaminaci\u00f3n de aguas subterr\u00e1neas en karst tropical",
+    "descripcion": "",
+    "evento": 858,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      659,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 289,
+  "fields": {
+    "titulo": "Consejos a los j\u00f3venes que quieren ser cient\u00edficos.Evento: Presentaci\u00f3n del libro",
+    "descripcion": "",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 290,
+  "fields": {
+    "titulo": "La etnopedolog\u00eda: una ciencia de saberes y conocimiento sobre el suelo, su manejo y la cosmovisi\u00f3n",
+    "descripcion": "",
+    "evento": 859,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 291,
+  "fields": {
+    "titulo": "Suelos y sus funciones",
+    "descripcion": "",
+    "evento": 860,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 292,
+  "fields": {
+    "titulo": "Los nuevos mapas geopedol\u00f3gicos de la pen\u00ednsula de Yucat\u00e1n: distribuci\u00f3n y desarrollo de suelos",
+    "descripcion": "",
+    "evento": 861,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1640
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 293,
+  "fields": {
+    "titulo": "Geopedolog\u00eda como base para el ordenamiento territorial",
+    "descripcion": "",
+    "evento": 862,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 294,
+  "fields": {
+    "titulo": "Primer taller regional: identificaci\u00f3n de instrumentos que contribuyen a la conservaci\u00f3n in situ de los sitios prioritarios para la biodiversidad en la regi\u00f3n sur-sureste de M\u00e9xico",
+    "descripcion": "",
+    "evento": 863,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 295,
+  "fields": {
+    "titulo": "Mayan soil classification system and their relationship with WRB",
+    "descripcion": "http://www.scc2008.uchile.cl/Session1/1%20Bautista%20&%20Zinck%202008.pdf",
+    "evento": 864,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      376
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 296,
+  "fields": {
+    "titulo": "Monitoreo magn\u00e9tico de contaminaci\u00f3n de suelos urbanos en la ciudad de M\u00e9rida, Yucat\u00e1n",
+    "descripcion": "2008",
+    "evento": 763,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      177,
+      1625,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 297,
+  "fields": {
+    "titulo": "Influencia de la salinidad y alcalinidad del suelo en la distribuci\u00f3n de la vegetaci\u00f3n costera de una isla de barrera en R\u00edo Lagartos, Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 810,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      315,
+      30,
+      1053
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 298,
+  "fields": {
+    "titulo": "Los suelos de las zonas de karst como reactores para el tratamiento del agua residual de alta carga org\u00e1nica",
+    "descripcion": "",
+    "evento": 865,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 299,
+  "fields": {
+    "titulo": "Lineamientos para una estrategia nacional de conservaci\u00f3n de suelos",
+    "descripcion": "",
+    "evento": 866,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 300,
+  "fields": {
+    "titulo": "An\u00e1lisis geopedol\u00f3gico para la identificaci\u00f3n de desastres en Yucat\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "evento": 72,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      29,
+      1720,
+      158,
+      1721,
+      1722
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 301,
+  "fields": {
+    "titulo": "Paisajes fisicogeogr\u00e1ficos de M\u00e9xico a escala 1:500 000",
+    "descripcion": "",
+    "evento": 72,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1724,
+      39,
+      520,
+      173,
+      1723,
+      30,
+      29,
+      863,
+      304,
+      563,
+      17
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 302,
+  "fields": {
+    "titulo": "Distribuci\u00f3n espacial y temporal de los paisajes ed\u00e1ficos de la pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 867,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1640,
+      1530,
+      16,
+      35,
+      1679
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 303,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n espacial del uso agr\u00edcola de aguas residuales con alta carga org\u00e1nica",
+    "descripcion": "",
+    "evento": 867,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      158,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 304,
+  "fields": {
+    "titulo": "Vulnerabilidad a la degradaci\u00f3n de las aguas subterr\u00e1neas de Yucat\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "evento": 867,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      315,
+      30,
+      1634,
+      1659,
+      158,
+      1633,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 305,
+  "fields": {
+    "titulo": "Macroinvertebrate communities as soil health indicators in livestok production Systems derived from low residues tropical forest",
+    "descripcion": "",
+    "evento": 868,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1713,
+      30,
+      1714
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 306,
+  "fields": {
+    "titulo": "Bases de datos digitales del medio f\u00edsico  para la creaci\u00f3n de las zonas agroecol\u00f3gicas del estado de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 869,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 307,
+  "fields": {
+    "titulo": "Aptitud agr\u00edcola de las tierras de Yucat\u00e1n con base en la calidad del agua subterr\u00e1nea y el clima",
+    "descripcion": "",
+    "evento": 870,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1660,
+      315,
+      1652,
+      30,
+      1659,
+      1633
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 308,
+  "fields": {
+    "titulo": "Evaluaci\u00f3n de la fijaci\u00f3n de carbono del suelo en ecosistemas costeros del estado de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 295,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1652,
+      30,
+      1725
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 309,
+  "fields": {
+    "titulo": "Zonificaci\u00f3n de la  calidad agr\u00edcola del agua subterr\u00e1nea en un acu\u00edfero c\u00e1rstico: el caso de Yucat\u00e1n, M\u00e9xico",
+    "descripcion": "",
+    "evento": 871,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1660,
+      1049,
+      315,
+      1652,
+      30,
+      1633
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 310,
+  "fields": {
+    "titulo": "Pedotransfer function for mineralization and retention of organic wastewaters on soils",
+    "descripcion": "",
+    "evento": 872,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      493
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 311,
+  "fields": {
+    "titulo": "Mayan soil clasification in the Yucat\u00e1nState, M\u00e9xico",
+    "descripcion": "",
+    "evento": 872,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1682,
+      376
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 312,
+  "fields": {
+    "titulo": "Acercamiento a la m\u00e9trica del relieve de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 873,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 313,
+  "fields": {
+    "titulo": "Caracterizaci\u00f3n de epicarst en el estado de Yucat\u00e1n para su uso en el c\u00e1lculo de la vulnerabilidad del acu\u00edfero, mediante el m\u00e9todo EPIK",
+    "descripcion": "",
+    "evento": 874,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1660,
+      1049,
+      1717,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 314,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 875,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 315,
+  "fields": {
+    "titulo": "Identification of clays and stony derived materials used to manufacture the modelied stucco friez of the estructure SUVII-c1 of Calakmul through X ray diffraction analysis",
+    "descripcion": "",
+    "evento": 876,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1111,
+      30,
+      1046
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 316,
+  "fields": {
+    "titulo": "T\u00e9cnicas de muestreo para manejadores de recursos naturales y la generaci\u00f3n y uso de  informaci\u00f3n ambiental  para la toma de decisiones",
+    "descripcion": "C\u00e1mara nacional de empresas de consultor\u00eda, Delegaci\u00f3n Quintana Roo",
+    "evento": 877,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 317,
+  "fields": {
+    "titulo": "An\u00e1lisis de la iniciativa de ley sobre conservaci\u00f3n de tierras",
+    "descripcion": "Gobierno del estado de Yucat\u00e1n y H. C\u00e1mara de Diputados. 14  de marzo de 2005. M\u00e9rida, Yucat\u00e1n.",
+    "evento": 879,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 318,
+  "fields": {
+    "titulo": "Estudios edafol\u00f3gicos",
+    "descripcion": "",
+    "evento": 880,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 319,
+  "fields": {
+    "titulo": "Caracterizaci\u00f3n de macroinvertebrados ed\u00e1ficos en sistemas pecuarios en la Selva Mediana Subcaducifolia, Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 881,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1649,
+      1650
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 320,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 875,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 321,
+  "fields": {
+    "titulo": "Soil classification. Petrozavodsk, Russia",
+    "descripcion": "",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      376
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 322,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 882,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 323,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 883,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 324,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 106,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 325,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 884,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 326,
+  "fields": {
+    "titulo": "Informaci\u00f3n edafol\u00f3gica en la toma de decisiones sobre el manejo de recursos naturales en la Pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "El Colegio de la Frontera Sur. Unidad Campeche 2003",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 327,
+  "fields": {
+    "titulo": "Caracterizaci\u00f3n y manejo de suelos en la pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 885,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1640,
+      1653
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 328,
+  "fields": {
+    "titulo": "Mapas parcelarios en Leptosoles en zonas de karst reciente",
+    "descripcion": "",
+    "evento": 885,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      315,
+      30,
+      1653,
+      1726
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 329,
+  "fields": {
+    "titulo": "Microrelieve y color del suelo como propiedades de diagn\u00f3stico en Leptosoles c\u00e1rsticos",
+    "descripcion": "",
+    "evento": 885,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 330,
+  "fields": {
+    "titulo": "Manejo Campesino de la selva baja",
+    "descripcion": "",
+    "evento": 885,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1642,
+      30,
+      1727
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 331,
+  "fields": {
+    "titulo": "Relaci\u00f3n suelo-planta en zonas de alta heterogeneidad espacial",
+    "descripcion": "",
+    "evento": 885,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1729,
+      30,
+      1730,
+      1731,
+      1728
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 332,
+  "fields": {
+    "titulo": "Relaci\u00f3n entre relieve y suelos en zonas c\u00e1rsticas",
+    "descripcion": "",
+    "evento": 885,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1682,
+      178,
+      1662
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 333,
+  "fields": {
+    "titulo": "El suelo como ecosistema y como recurso natural",
+    "descripcion": "",
+    "evento": 885,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1732,
+      30,
+      1733
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 334,
+  "fields": {
+    "titulo": "Conferencia: Geoformas, agua y suelo en la Pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 886,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 335,
+  "fields": {
+    "titulo": "Relaci\u00f3n suelo planta en zonas de alta heterogeneidad espacial",
+    "descripcion": "",
+    "evento": 887,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1729,
+      30,
+      1730,
+      1649,
+      1731,
+      1728
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 336,
+  "fields": {
+    "titulo": "Mapas parcelarios en Leptosoles de alta heterogeneidad espacial en zonas de karst",
+    "descripcion": "",
+    "evento": 887,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      315,
+      30,
+      1682,
+      1726
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 337,
+  "fields": {
+    "titulo": "Nuevo mapa de suelos de Yucat\u00e1n. Parte I y II",
+    "descripcion": "",
+    "evento": 888,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 338,
+  "fields": {
+    "titulo": "Manejo de la selva baja y selecci\u00f3n de \u00e1rboles para barbechos mejorados",
+    "descripcion": "",
+    "evento": 889,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 339,
+  "fields": {
+    "titulo": "Fortalezas y debilidades de la maestr\u00eda en ciencias en Manejo y conservaci\u00f3n de recursos naturales tropicales",
+    "descripcion": "",
+    "evento": 890,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 340,
+  "fields": {
+    "titulo": "La materia org\u00e1nica soluble en el mejoramiento de los suelos tropicales",
+    "descripcion": "",
+    "evento": 891,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1654,
+      30,
+      1655
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 341,
+  "fields": {
+    "titulo": "Base de datos digital y colecci\u00f3n de monolitos de suelos en la pen\u00ednsula de Yucat\u00e1",
+    "descripcion": "",
+    "evento": 891,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1734,
+      1653
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 342,
+  "fields": {
+    "titulo": "El Departamento de manejo y conservaci\u00f3n de recursos naturales tropicales: Una respuesta acad\u00e9mica al deterioro ambiental y al desarrollo rural en la pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 892,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 343,
+  "fields": {
+    "titulo": "Ponencia El m\u00e9todo UADY para el levantamiento de terrenos y suelos en zonas c\u00e1rsticas",
+    "descripcion": "",
+    "evento": 893,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 344,
+  "fields": {
+    "titulo": "Desechos industriales para el mejoramiento de los suelos agr\u00edcolas",
+    "descripcion": "FMVZ, Universidad Aut\u00f3noma de Yucat\u00e1n. Junio de 1999.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 345,
+  "fields": {
+    "titulo": "Clasificaci\u00f3n de tierras campesinas en Punta Laguna, Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 894,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      315,
+      30,
+      1662,
+      1735
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 346,
+  "fields": {
+    "titulo": "Fraccionamiento f\u00edsico de la Materia org\u00e1nica del suelo en sistemas productivos de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 894,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      315,
+      30,
+      1662,
+      1736
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 347,
+  "fields": {
+    "titulo": "Conferencia: La agricultura org\u00e1nica y su pr\u00e1ctica",
+    "descripcion": "",
+    "evento": 895,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 348,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "del 8 al 10 de Dic de 1997",
+    "evento": 892,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 349,
+  "fields": {
+    "titulo": "Intensificaci\u00f3n de la milpa utilizando coberteras en la Zona Henequenera de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1742,
+      1739,
+      556,
+      315,
+      30,
+      1682,
+      1740,
+      1645,
+      1662,
+      1737,
+      1741,
+      1738
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 350,
+  "fields": {
+    "titulo": "La pedregosidad y rocosidad  en la formaci\u00f3n y propiedades de los suelos someros en Yucat\u00e1n: elementos a considerar para su clasificaci\u00f3n y manejo",
+    "descripcion": "",
+    "evento": 850,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      315,
+      30,
+      1682,
+      1662
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 351,
+  "fields": {
+    "titulo": "Efecto de las vinazas en los suelos ca\u00f1eros de Veracr\u00faz parte I. Identificaci\u00f3n de las unidades de los suelos",
+    "descripcion": "",
+    "evento": 896,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1654,
+      30,
+      1743,
+      12
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 352,
+  "fields": {
+    "titulo": "Efecto de las vinazas en los suelos ca\u00f1eros de Veracr\u00faz parte II. An\u00e1lisis de las vinazas crudas y tratadas biol\u00f3gicamente",
+    "descripcion": "",
+    "evento": 896,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1654,
+      30,
+      576,
+      204
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 353,
+  "fields": {
+    "titulo": "Efecto de las vinazas en los suelos ca\u00f1eros de Veracr\u00faz parte III. Disposici\u00f3n en suelos",
+    "descripcion": "",
+    "evento": 896,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1654,
+      30,
+      1655,
+      1653
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 354,
+  "fields": {
+    "titulo": "Ponente",
+    "descripcion": "",
+    "evento": 897,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 355,
+  "fields": {
+    "titulo": "Chemical changes in soils treated with industrial waste waters",
+    "descripcion": "",
+    "evento": 898,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1744
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 356,
+  "fields": {
+    "titulo": "The soil of the Chinampas, a treatened resource",
+    "descripcion": "",
+    "evento": 898,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      507
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 357,
+  "fields": {
+    "titulo": "Cambios qu\u00edmicos en suelos s\u00f3dicos de Chinampa recuperados y sus efectos sobre el crecimiento de Latuca sativa",
+    "descripcion": "",
+    "evento": 899,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1745,
+      1653
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 358,
+  "fields": {
+    "titulo": "An\u00e1lisis sobre los sistemas de producci\u00f3n agr\u00edcola en la zona de Chinampas de Xochimilco",
+    "descripcion": "",
+    "evento": 900,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 359,
+  "fields": {
+    "titulo": "Remoci\u00f3n de contaminantes de aguas y suelos",
+    "descripcion": "",
+    "evento": 901,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 360,
+  "fields": {
+    "titulo": "Contaminaci\u00f3n por metales pesados",
+    "descripcion": "",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 361,
+  "fields": {
+    "titulo": "Utilizaci\u00f3n de basura industrial \u00e1cida para resolver dos problemas ambientales",
+    "descripcion": "",
+    "evento": 902,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 362,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 903,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 363,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 904,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1746,
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 364,
+  "fields": {
+    "titulo": "Participaci\u00f3n",
+    "descripcion": "",
+    "evento": 905,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 365,
+  "fields": {
+    "titulo": "Caracterizaci\u00f3n de algunos suelos de Chinampa en Xochimilco, D.F. y fertilizaci\u00f3n del Crisantemo con N,P,K.",
+    "descripcion": "",
+    "evento": 906,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1747
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 366,
+  "fields": {
+    "titulo": "Comparaci\u00f3n de los niveles de calcio en suelos cultivados con leguminosas",
+    "descripcion": "",
+    "evento": 907,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1682,
+      1748
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 367,
+  "fields": {
+    "titulo": "Conferencia magistral en la sesi\u00f3n plenaria",
+    "descripcion": "",
+    "evento": 851,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": true,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 368,
+  "fields": {
+    "titulo": "Conferencia: Generaci\u00f3n de software y Apps en los \u00e1mbitos agr\u00edcola y ambiental",
+    "descripcion": "Universidad Polit\u00e9cnica de Tapachula. Tapachula, Chiapas.  Octubre 28",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 369,
+  "fields": {
+    "titulo": "Conferencia: La tecnolog\u00eda al servicio de la agricultura",
+    "descripcion": "Colegio de postgraduados Campus C\u00e1rdenas Tabasco. Septiembre 21",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 370,
+  "fields": {
+    "titulo": "Conferencia: La clasificaci\u00f3n maya de los suelos m\u00e1s all\u00e1 de la parcela: los mapas del estado de la pen\u00ednsula de Yucat\u00e1n. La ciencia y lasa artes entre los mayas",
+    "descripcion": "",
+    "evento": 909,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30,
+      1640,
+      199
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 371,
+  "fields": {
+    "titulo": "Conferencia: La contaminaci\u00f3n por metales pesados en la ciudad de Morelia",
+    "descripcion": "",
+    "evento": 58,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 372,
+  "fields": {
+    "titulo": "Conferencia: El software Agriaqua: Una herramienta para el cuidado del agua, suelo y rendimiento agr\u00edcola",
+    "descripcion": "Centro de Investigaciones en Ecosistemas. UNAM. Morelia, Michoac\u00e1n. 28 de enero.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 373,
+  "fields": {
+    "titulo": "Conferencia: Evaluaci\u00f3n de la calidad del agua de riego utilizando el Software Agriaqua",
+    "descripcion": "Colegio de Postgraduados Campus Tabasco. Villahermosa, Tabasco. 17 de enero, 2014",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 374,
+  "fields": {
+    "titulo": "Conferencia: Diagn\u00f3stico de la contaminaci\u00f3n por polvos urbanos utilizando t\u00e9cnicas magn\u00e9ticas en Villlahermosa, Tabasco",
+    "descripcion": "Colegio de Postgraduados Campus Tabasco. Villahermosa, Tabasco. 17 de enero, 2014",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 375,
+  "fields": {
+    "titulo": "Conferencia: Procesos de investigaci\u00f3n en Geograf\u00eda Ambiental",
+    "descripcion": "",
+    "evento": 910,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 376,
+  "fields": {
+    "titulo": "Conferencia: Identificaci\u00f3n de tendencias de cambio clim\u00e1tico a nivel local usando MOCLIC: preguntas y respuestas",
+    "descripcion": "",
+    "evento": 310,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 377,
+  "fields": {
+    "titulo": "Conferencia: La aptitud de los suelos para el cultivo del aguacate",
+    "descripcion": "Instituto Tecnol\u00f3gico Superior de Tac\u00e1mbaro. 10 octubre, 2012",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 378,
+  "fields": {
+    "titulo": "Conferencia en el ciclo de seminarios conjuntos. ECOES",
+    "descripcion": "",
+    "evento": 911,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 379,
+  "fields": {
+    "titulo": "Conferencia: Manejo del software Assofu para la evaluaci\u00f3n de las funciones del suelo",
+    "descripcion": "Centro de investigaciones en gesti\u00f3n de riesgos y cambio clim\u00e1tico. Universidad de Ciencias y Artes de Chiapas. Tuxtla Guti\u00e9rrez, Chiapas. Abril 20.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 380,
+  "fields": {
+    "titulo": "Conferencia: Monitoreando el cambio clim\u00e1tico: el software MOCLIC",
+    "descripcion": "Fundaci\u00f3n Produce AC y Universidad Popular Aut\u00f3noma del Estado de Puebla. Puebla, 16 de marzo.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 381,
+  "fields": {
+    "titulo": "Conferencia: Los sistemas silvopastoriles como estrategia de respuesta en la ganader\u00eda ante el cambio clim\u00e1tico",
+    "descripcion": "Fundaci\u00f3n Produce AC y Universidad Popular Aut\u00f3noma del Estado de Puebla. Puebla, 16 de marzo del 2012.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 382,
+  "fields": {
+    "titulo": "Conferencia: Uso y aplicaciones del MOCLIC",
+    "descripcion": "",
+    "evento": 912,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 383,
+  "fields": {
+    "titulo": "Conferencia: Software Monitoring Climate Change (MOCLIC)",
+    "descripcion": "Servicio de Informaci\u00f3n Agroalimentaria y Pesquera. M\u00e9xico, D. F. 7 octubre, 2011.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 384,
+  "fields": {
+    "titulo": "Conferencia Magistral: Modelado espacial de peligros ambientales en la regi\u00f3n infiernillo",
+    "descripcion": "",
+    "evento": 339,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": true,
+    "autores": [
+      30,
+      14,
+      659
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 385,
+  "fields": {
+    "titulo": "Conferencia: El cambio clim\u00e1tico: la utilidad de la investigaci\u00f3n cient\u00edfica y como utilizarla para la toma de decisiones",
+    "descripcion": "",
+    "evento": 913,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 386,
+  "fields": {
+    "titulo": "Conferencia: Evaluaci\u00f3n del cambio clim\u00e1tico local con el software MOCLIC (Monitoring climate change) desarrollado en el CIGA-UNAM",
+    "descripcion": "Centro de Investigaci\u00f3n en Gesti\u00f3n de Riesgos y Cambio Clim\u00e1tico. UNICACH. Tuxtla Gutierr\u00e9z, Chiapas. 23 marzo.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 387,
+  "fields": {
+    "titulo": "Conferencia: El nuevo mapa de suelos de M\u00e9xico con un enfoque geomorfopedol\u00f3gico utilizando la WRB",
+    "descripcion": "Centro de Investigaci\u00f3n en Gesti\u00f3n de Riesgos y Cambio Clim\u00e1tico. UNICACH. Tuxtla Guti\u00e9rrez, Chiapas. 23 marzo.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 388,
+  "fields": {
+    "titulo": "Conferencia: El nuevo mapa de suelos de M\u00e9xico con un enfoque geomorfopedol\u00f3gico utilizando la WRB",
+    "descripcion": "",
+    "evento": 914,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 389,
+  "fields": {
+    "titulo": "Conferencia: Evaluaci\u00f3n del cambio clim\u00e1tico local con el software MOCLIC (Monitoring climate change) desarrollado en el CIGA-UNAM",
+    "descripcion": "",
+    "evento": 914,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 390,
+  "fields": {
+    "titulo": "Conferencia: Uso de las lombrices de tierra como bioindicadores de la calidad de los suelos yucatecos",
+    "descripcion": "",
+    "evento": 915,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 391,
+  "fields": {
+    "titulo": "Conferencia: Evaluaci\u00f3n de los metales pesados en suelos urbanos de la ciudad de Morelia",
+    "descripcion": "",
+    "evento": 916,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 392,
+  "fields": {
+    "titulo": "Conferencia: Contaminaci\u00f3n de suelos urbanos por metales pesados",
+    "descripcion": "Noviembre 2009. Universidad Michoacana de San Nicol\u00e1s de Hidalgo. Morelia, Michoac\u00e1n.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 393,
+  "fields": {
+    "titulo": "Conferencia: Suelos del estado de Yucat\u00e1n",
+    "descripcion": "",
+    "evento": 917,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 394,
+  "fields": {
+    "titulo": "Zonificaci\u00f3n Agroecol\u00f3gica de la Pen\u00ednsula de Yucat\u00e1n",
+    "descripcion": "Actividades del Cuerpo Acad\u00e9mico de Ciencias Sociales y Humanidades de La Universidad Aut\u00f3noma de S.L.P. 9 de octubre, 2006",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 395,
+  "fields": {
+    "titulo": "Conferencia: Mayan Soil Classification in the Yucatan State, Mexico will be presented in oral form",
+    "descripcion": "",
+    "evento": 918,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 396,
+  "fields": {
+    "titulo": "Conferencia: El suelo como reactor en el tratamiento de desechos org\u00e1nicos agropecuarios utilizando funciones de edafotransferencia",
+    "descripcion": "Facultad de Ciencias de la Universidad Aut\u00f3noma del Estado de M\u00e9xico. 22 junio.",
+    "evento": 698,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 397,
+  "fields": {
+    "titulo": "Conferencia: S\u00edn t\u00edtulo",
+    "descripcion": "",
+    "evento": 919,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 398,
+  "fields": {
+    "titulo": "Women of Jamapa: empowerment for conservation",
+    "descripcion": "Presentaci\u00f3n de proyecto productivo de un grupo de mujeres de Jamapa, Veracruz. Divulgaci\u00f3n de resultados e integraci\u00f3n del enfoque de g\u00e9nero.",
+    "evento": 987,
+    "resumen_publicado": false,
+    "ambito": "INTERNACIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      1837,
+      305
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 399,
+  "fields": {
+    "titulo": "Las geoformas y la lluvia",
+    "descripcion": "Todo el a\u00f1o",
+    "evento": 986,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      16,
+      892
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 400,
+  "fields": {
+    "titulo": "El agua y las geoformas",
+    "descripcion": "",
+    "evento": 834,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1464,
+      16,
+      1461,
+      1465,
+      1460
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 401,
+  "fields": {
+    "titulo": "Escalas en los modelos tridimensionales",
+    "descripcion": "",
+    "evento": 838,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      483,
+      16,
+      1461,
+      1460
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 402,
+  "fields": {
+    "titulo": "El uso de modelos tridimensionales en el quehacer del ge\u00f3grafo",
+    "descripcion": "Taller",
+    "evento": 990,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      16
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 403,
+  "fields": {
+    "titulo": "El suelo en el paisaje",
+    "descripcion": "Taller",
+    "evento": 992,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      1996,
+      16,
+      1461
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 404,
+  "fields": {
+    "titulo": "La importancia de analizar el impacto de la legislaci\u00f3n y pol\u00edticas ambientales en la degradaci\u00f3n forestal en el contexto del mecanismo REDD+",
+    "descripcion": "Informe inicial sobre los alcances de la investigaci\u00f3n realizada en el marco de la estancia posdoctoral.",
+    "evento": 994,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "autores": [
+      1838
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 405,
+  "fields": {
+    "titulo": "Ponente del trabajo \"Mapeo de \u00e1reas inundadas por la tormenta subtropical Alberto en la cuenca Zaza, utlizando im\u00e1genes de Sentinel-1",
+    "descripcion": "",
+    "evento": 967,
+    "resumen_publicado": true,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "autores": [
+      1569,
+      1335,
+      1579
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 406,
+  "fields": {
+    "titulo": "Mesa demostrativa sobre Cuencas y Calidad del Agua",
+    "descripcion": "",
+    "evento": 1032,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      28,
+      35
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 407,
+  "fields": {
+    "titulo": "Pl\u00e1tica sobre valor ambiental y cultural del Volc\u00e1n El Jorullo",
+    "descripcion": "",
+    "evento": 1033,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      28
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 408,
+  "fields": {
+    "titulo": "Curso sobre Sistemas Rurales de Abasto de Agua - Capacitaci\u00f3n a Comit\u00e9s comunitarios de Agua",
+    "descripcion": "",
+    "evento": 1035,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      28
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 409,
+  "fields": {
+    "titulo": "Nuestra Agua, plataforma digital de construcci\u00f3n colectiva para una visi\u00f3n sustentable del agua en Michoac\u00e1n",
+    "descripcion": "",
+    "evento": 1037,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      28
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 410,
+  "fields": {
+    "titulo": "Taller Inundaciones en Morelia",
+    "descripcion": "",
+    "evento": 46,
+    "resumen_publicado": false,
+    "ambito": "NACIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      5
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 411,
+  "fields": {
+    "titulo": "Modelos de visi\u00f3n estereosc\u00f3pica con anaglifos",
+    "descripcion": "",
+    "evento": 1006,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": false,
+    "autores": [
+      19,
+      1469,
+      1465
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 412,
+  "fields": {
+    "titulo": "\u00a1Quiero ser cient\u00edfica!",
+    "descripcion": "",
+    "evento": 1052,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      31
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 413,
+  "fields": {
+    "titulo": "Herramientas de la Geograf\u00eda e Historia",
+    "descripcion": "Participaci\u00f3n como ponente en charla",
+    "evento": 781,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      13
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 414,
+  "fields": {
+    "titulo": "Geoinformaci\u00f3n para la Evaluaci\u00f3n y Manejo del Riesgo a M\u00faltiples Amenazas",
+    "descripcion": "Ponencia impartida en el Centro de Bachillerato Tecnol\u00f3gico Agropecuario N. 7 (CBTA-7)",
+    "evento": 990,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      13
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 415,
+  "fields": {
+    "titulo": "La tercera dimensi\u00f3n en la geograf\u00eda",
+    "descripcion": "Demostrar c\u00f3mo los modelos tridimensionales ayudan a comprender los conceptos de la geograf\u00eda",
+    "evento": 1006,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      13
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 416,
+  "fields": {
+    "titulo": "Panelista: Comunidades sustentables",
+    "descripcion": "",
+    "evento": 1059,
+    "resumen_publicado": false,
+    "ambito": "REGIONAL",
+    "por_invitacion": true,
+    "ponencia_magistral": false,
+    "autores": [
+      15
+    ]
+  }
+},
+{
+  "model": "divulgacion_cientifica.participacioneventodivulgacion",
+  "pk": 417,
+  "fields": {
+    "titulo": "La vegetaci\u00f3n , su estudio, representaci\u00f3n corol\u00f3gica y bondades para fines de transitar hacia el paradigma de la sustentabilidad",
+    "descripcion": "",
+    "evento": 1081,
+    "resumen_publicado": false,
+    "ambito": "INSTITUCIONAL",
+    "por_invitacion": false,
+    "ponencia_magistral": true,
+    "autores": [
+      39
     ]
   }
 },
@@ -11099,6 +13923,78 @@
     "actividad": "PARTICIPACION",
     "medio_divulgacion": 3,
     "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 95,
+  "fields": {
+    "tema": "Suelos ambiente y algo m\u00e1s",
+    "fecha": "2000-01-01",
+    "descripcion": "Canal de v\u00eddeos en Youtube con 39 v\u00eddeos con m\u00e1s de 77 000 reproducciones, seleccionado entre los canales con contenido cient\u00edfico original y gratuito por el T CHANELS. http://www.tchannels.com/base&chid=suelos+ambiente+y+algo+mas",
+    "actividad": "PRODUCCION",
+    "medio_divulgacion": 28,
+    "usuario": 30
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 96,
+  "fields": {
+    "tema": "Finding balance: perceptions of REDD+ in Mexico",
+    "fecha": "2018-09-24",
+    "descripcion": "UICN Blog",
+    "actividad": "OTRA",
+    "medio_divulgacion": 29,
+    "usuario": 91
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 97,
+  "fields": {
+    "tema": "Degradaci\u00f3n forestal y sus implicaciones para el cambio clim\u00e1tico",
+    "fecha": "2016-10-04",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 5,
+    "usuario": 54
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 98,
+  "fields": {
+    "tema": "El tren que conectar\u00eda la capital con el Estado de M\u00e9xico, ocasionar\u00e1 afectaciones a cinco parques nacionales",
+    "fecha": "2018-04-02",
+    "descripcion": "",
+    "actividad": "OTRA",
+    "medio_divulgacion": 35,
+    "usuario": 36
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 99,
+  "fields": {
+    "tema": "Eye in the sky: Use drones for community forest monitoring, study urges.",
+    "fecha": "2014-12-01",
+    "descripcion": "",
+    "actividad": "ENTREVISTA",
+    "medio_divulgacion": 29,
+    "usuario": 24
+  }
+},
+{
+  "model": "divulgacion_cientifica.programaradiotelevisioninternet",
+  "pk": 100,
+  "fields": {
+    "tema": "Forest COMPASS - Community-Based Forest Monitoring BLOG16/05/2016 Drones: a risky distraction or exciting conservation opportunity?",
+    "fecha": "2016-05-16",
+    "descripcion": "",
+    "actividad": "PARTICIPACION",
+    "medio_divulgacion": 29,
+    "usuario": 24
   }
 }
 ]

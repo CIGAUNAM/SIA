@@ -328,12 +328,33 @@
                 }
             }
         );
+
+        $("#id_asesores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+            $(this).append("hola");
+        });
+
+        $("#id_sinodales").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+
+        $(function() {
+            $("#id_asesores").val("{{ request.user.id }}");
+        });
     </script>
 
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Estudiante:</strong>
+    <p><strong>Estudiante:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Asesorado.">
             <i class="fa fa-question-circle"></i>
@@ -678,6 +699,21 @@
                 }
             }
         );
+
+        $("#id_asesores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+        $("#id_sinodales").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
     </script>
 
 {% endblock %}
