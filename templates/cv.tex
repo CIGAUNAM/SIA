@@ -320,7 +320,7 @@
                                                 \item[a)] En publicaciones mexicanas
                                                     \begin{itemize}
                                                         {% for i in mapas_publicaciones_mexicanas %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}} ({{ i.escala }}). {% if i.coleccion %}{{ i.coleccion }}, {% endif %}{% if i.volumen %}Volumen {{ i.volumen }},{% endif %} {{ i.editorial }}, ISBN: {{ i.isbn }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}} ({{ i.escala }}). {% if i.coleccion %}{{ i.coleccion }}, {% endif %}{% if i.volumen %}Volumen {{ i.volumen }},{% endif %} {{ i.editorial }}, ISBN: {{ i.isbn }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -329,7 +329,7 @@
                                                 \item[b)] En publicaciones extranjeras
                                                     \begin{itemize}
                                                         {% for i in mapas_publicaciones_extranjeras %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}} ({{ i.escala }}). {% if i.coleccion %}{{ i.coleccion }}, {% endif %}{% if i.volumen %}Volumen {{ i.volumen }},{% endif %} {{ i.editorial }}, ISBN: {{ i.isbn }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}} ({{ i.escala }}). {% if i.coleccion %}{{ i.coleccion }}, {% endif %}{% if i.volumen %}Volumen {{ i.volumen }},{% endif %} {{ i.editorial }}, ISBN: {{ i.isbn }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -343,7 +343,7 @@
                                                 \item[a)] De proyectos en México
                                                     \begin{itemize}
                                                         {% for i in informes_tecnicos_mex %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}),\textbf{ {{ i.titulo }}}, {{ i.numero_paginas }}p. Proyecto: {{ i.proyecto.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}),\textbf{ {{ i.titulo }}}, {{ i.numero_paginas }}p. Proyecto: {{ i.proyecto.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -352,7 +352,7 @@
                                                 \item[b)] De proyectos en el extranjero
                                                     \begin{itemize}
                                                         {% for i in informes_tecnicos_intl %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }},\textbf{ {{ i.titulo }}}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.fecha.year }},\textbf{ {{ i.titulo }}}, {{ i.numero_paginas }}. Proyecto: {{ i.proyecto.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}

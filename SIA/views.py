@@ -7052,9 +7052,9 @@ class CVInvestigadorPDF(View):
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(autores=pk).filter(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        informes_tecnicos_mex = InformeTecnico.objects.filter(autores=pk, es_publico=True).filter(
+        informes_tecnicos_mex = InformeTecnico.objects.filter(autores=pk).filter(
             proyecto__institucion__pais__nombre='México').order_by('-fecha')
-        informes_tecnicos_intl = InformeTecnico.objects.filter(autores=pk, es_publico=True).exclude(
+        informes_tecnicos_intl = InformeTecnico.objects.filter(autores=pk).exclude(
             proyecto__institucion__pais__nombre='México').order_by('-fecha')
         articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(autores=pk).filter(
             revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
