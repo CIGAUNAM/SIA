@@ -7136,7 +7136,7 @@ class CVInvestigadorPDF(View):
         becarios_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='BECARIO').order_by('-fecha_inicio')
         servicio_social_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='SERVICIO_SOCIAL').order_by('-fecha_inicio')
         supervision_investigadores = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        desarrollo_grupos_investigacion = DesarrolloGrupoInvestigacionInterno.objects.filter(autores=pk).order_by('-fecha_inicio')
+        desarrollo_grupos_investigacion = DesarrolloGrupoInvestigacionInterno.objects.filter(usuarios=pk).order_by('-fecha_inicio')
         sinodales_tesis_licenciatura = ComiteTutoral.objects.filter(nivel_academico='LICENCIATURA', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
         comite_tutoral_maestria = ComiteTutoral.objects.filter(nivel_academico='MAESTRIA', asesores=pk, fecha_fin__isnull=False).order_by('-fecha_inicio')
         sinodales_tesis_maestria = ComiteTutoral.objects.filter(nivel_academico='MAESTRIA', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
