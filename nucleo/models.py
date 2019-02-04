@@ -688,10 +688,8 @@ class Libro(models.Model):
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)
     prologo = SortedManyToManyField(User, related_name='libro_prologo', blank=True)
 
-    # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT, blank=True, null=True)
 
-    # editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, blank=True, null=True)
     editorial_text = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     ciudad_text = models.CharField(max_length=255, blank=True, null=True)
@@ -699,7 +697,6 @@ class Libro(models.Model):
     fecha = models.DateField(blank=True, null=True)
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=0)
-    # coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.PROTECT)
     coleccion_text = models.CharField(max_length=255, blank=True, null=True)
     volumen = models.CharField(max_length=255, blank=True)
     isbn = models.SlugField(max_length=30, null=True, blank=True)
