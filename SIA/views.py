@@ -7124,13 +7124,13 @@ class CVInvestigadorPDF(View):
         cursos_escolarizados_posgrado_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
         cursos_escolarizados_posgrado_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
 
-        tesis_dirigidas_licenciatura = DireccionTesis.objects.filter(autores=pk, nivel_academico='LICENCIATURA', fecha_examen__isnull=False).order_by('-fecha_examen')
-        tesis_dirigidas_maestria = DireccionTesis.objects.filter(autores=pk, nivel_academico='MAESTRIA', fecha_examen__isnull=False).order_by('-fecha_examen')
-        tesis_dirigidas_doctorado = DireccionTesis.objects.filter(autores=pk, nivel_academico='DOCTORADO', fecha_examen__isnull=False).order_by('-fecha_examen')
+        tesis_dirigidas_licenciatura = DireccionTesis.objects.filter(Q(director=pk) | Q(codirector=pk)).filter(nivel_academico='LICENCIATURA', fecha_examen__isnull=False).order_by('-fecha_examen')
+        tesis_dirigidas_maestria = DireccionTesis.objects.filter(Q(director=pk) | Q(codirector=pk)).filter(nivel_academico='MAESTRIA', fecha_examen__isnull=False).order_by('-fecha_examen')
+        tesis_dirigidas_doctorado = DireccionTesis.objects.filter(Q(director=pk) | Q(codirector=pk)).filter(nivel_academico='DOCTORADO', fecha_examen__isnull=False).order_by('-fecha_examen')
 
-        tesis_proceso_licenciatura = DireccionTesis.objects.filter(autores=pk, nivel_academico='LICENCIATURA', fecha_examen__isnull=True).order_by('-fecha_examen')
-        tesis_proceso_maestria = DireccionTesis.objects.filter(autores=pk, nivel_academico='MAESTRIA', fecha_examen__isnull=True).order_by('-fecha_examen')
-        tesis_proceso_doctorado = DireccionTesis.objects.filter(autores=pk, nivel_academico='DOCTORADO', fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_licenciatura = DireccionTesis.objects.filter(Q(director=pk) | Q(codirector=pk)).filter(nivel_academico='LICENCIATURA', fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_maestria = DireccionTesis.objects.filter(Q(director=pk) | Q(codirector=pk)).filter(nivel_academico='MAESTRIA', fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_doctorado = DireccionTesis.objects.filter(Q(director=pk) | Q(codirector=pk)).filter(nivel_academico='DOCTORADO', fecha_examen__isnull=True).order_by('-fecha_examen')
 
         asesorias_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk).filter(Q(tipo='ESTANCIA') | Q(tipo='PRACTICA')).order_by('-fecha_inicio')
         becarios_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='BECARIO').order_by('-fecha_inicio')
