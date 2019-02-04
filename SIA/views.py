@@ -7212,7 +7212,6 @@ class CVInvestigadorPDF(View):
         context['dictamenes_articulos_revistas_mexicanas'] = dictamenes_articulos_revistas_mexicanas
         context['dictamenes_articulos_revistas_extranjeras'] = dictamenes_articulos_revistas_extranjeras
         context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros
-        context['dictamenes_libros_editoriales_extranjeras'] = dictamenes_libros_editoriales_extranjeras
         context['estancias_academicas'] = estancias_academicas
         context['profesores_visitantes'] = profesores_visitantes
         context['sabaticos'] = sabaticos
