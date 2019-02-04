@@ -115,7 +115,7 @@
                             {% if exp_prof_unam %}
                                 \begin{itemize}
                                     {% for i in exp_prof_unam %}
-                                        \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }},\textbf{ {{ i.cargo }}}, {{ i.dependencia }}}
+                                        \item{ {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}en curso{% endif %},\textbf{ {{ i.cargo }}}, {{ i.dependencia }}}
                                     {% endfor %}
                                 \end{itemize}
                             {% endif %}
