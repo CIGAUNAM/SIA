@@ -251,7 +251,7 @@
                                                 \item[a)] De editoriales mexicanas
                                                     \begin{itemize}
                                                         {% for i in libros_investigacion_editoriales_mexicanas %}
-                                                            \item{ {% if i.autores.count > 0 %}Autores: {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {% if i.coordinadores.count > 0 %}Coordinadores: {% for u in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} ({{ i.fecha.year }}).\textbf{ {{ i.nombre }}}. {{ i.editorial.nombre }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion_text %}Colección: {{ i.coleccion_text }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }}
+                                                            \item{ {% if i.autores.count > 0 %}Autores: {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {% if i.coordinadores.count > 0 %}Coordinadores: {% for u in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} ({{ i.fecha.year }}).\textbf{ {{ i.nombre }}}. {{ i.editorial_text }}, {{ i.ciudad }}, {{ i.pais }}, {% if i.coleccion_text %}Colección: {{ i.coleccion_text }},{% endif %} {% if i.volumen %}{{ i.volumen }},{% endif %} {{ i.numero_paginas }} p., ISBN: {{ i.isbn }}
                                                             }
                                                         {% endfor %}
                                                     \end{itemize}
