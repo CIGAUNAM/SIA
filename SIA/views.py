@@ -7113,8 +7113,8 @@ class CVInvestigadorPDF(View):
         participacion_redes_academicas = RedAcademica.objects.filter(participantes=pk).order_by('-fecha_constitucion')
         convenios_entidades_externas = ConvenioEntidadExterna.objects.filter(participantes=pk).order_by('-fecha_inicio')
         servicios_asesorias_externas = ServicioExternoEntidadNoAcademica.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
-        participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
+        organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).order_by('-evento__fecha_inicio')
+        participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(autores=pk).order_by('-evento__fecha_inicio')
 
         cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
         cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
