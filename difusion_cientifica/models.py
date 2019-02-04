@@ -74,7 +74,6 @@ class Traduccion(models.Model):
     articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
     url = models.URLField(blank=True)
-    # usuario = models.ForeignKey(User, related_name='traduccion_autor', on_delete=models.DO_NOTHING)
     autores = SortedManyToManyField(User, verbose_name='Autores')
 
     def __str__(self):
