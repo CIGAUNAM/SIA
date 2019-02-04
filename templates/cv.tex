@@ -293,13 +293,13 @@
                                 {% endif %}
 
                                 {% if memoriainextenso_extranjeras or memoriainextenso_mexicanas %}
-                                    \item[6.1.4.] \textbf{Artículos ``in extenso'' en Memorias de Congresos}
+                                    \item[6.1.4.] \textbf{Artículos \textit{in extenso} en Memorias de Congresos}
                                         \begin{itemize}
                                             {% if memoriainextenso_mexicanas %}
                                                 \item[a)] En publicaciones mexicanas
                                                     \begin{itemize}
                                                         {% for i in memoriainextenso_mexicanas %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textbf{ {{ i.nombre }} - {{ i.evento.nombre }}} ({{ i.evento.fecha_inicio.year }}), {{ i.editorial }}, {% if i.isbn %}{{ i.isbn }}, {% endif %}{% if i.indices.all %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% endfor %}){% endif %}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textbf{ {{ i.nombre }} - {{ i.evento.nombre }}} ({{ i.evento.fecha_inicio.year }}), {{ i.editorial_text }}, {% if i.isbn %}{{ i.isbn }}, {% endif %}{% if i.indices.count > 0 %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% endfor %}){% endif %}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -307,7 +307,7 @@
                                                 \item[b)] En publicaciones extranjeras
                                                     \begin{itemize}
                                                         {% for i in memoriainextenso_extranjeras %}
-                                                            \item{ {% for u in i.usuarios.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textbf{ {{ i.nombre }} - {{ i.evento.nombre }}} ({{ i.evento.fecha_inicio.year }}), {{ i.editorial }}, {% if i.isbn %}{{ i.isbn }}, {% endif %}{% if i.indices.all %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% endfor %}){% endif %}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textbf{ {{ i.nombre }}}, {{ i.evento.nombre }} ({{ i.evento.fecha_inicio.year }}), {{ i.editorial_text }}, {% if i.isbn %}{{ i.isbn }}, {% endif %}{% if i.indices.count > 0 %} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% endfor %}){% endif %}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}{% if i.url %}\\{{ i.url }}{% endif%} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
