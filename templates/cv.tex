@@ -750,7 +750,7 @@
                                                 \item[8.1.1.1.] \textbf{En la UNAM}
                                                     \begin{itemize}
                                                         {% for i in cursos_extracurriculares_unam %}
-                                                            \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                            \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}{{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -761,7 +761,7 @@
                                                             \item[a)] Nacionales
                                                                 \begin{itemize}
                                                                     {% for i in cursos_extracurriculares_nacionales %}
-                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}{{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -769,7 +769,7 @@
                                                             \item[b)] Internacionales
                                                                 \begin{itemize}
                                                                     {% for i in cursos_extracurriculares_internacionales %}
-                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}{{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -789,7 +789,7 @@
                                                                 \item[a)] Profesor titular o coordinador
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_licenciatura_titular %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -797,7 +797,7 @@
                                                                 \item[b)] Colaborador o invitado
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_licenciatura_colaborador %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -810,7 +810,7 @@
                                                                 \item[a)] Profesor titular o coordinador
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_posgrado_titular %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {% if i.maestria %}{{ i.maestria }},{% endif%}{% if i.doctorado %}{{ i.doctorado }},{% endif%} {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -818,7 +818,7 @@
                                                                 \item[b)] Colaborador o invitado
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_posgrado_colaborador %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {% if i.maestria %}{{ i.maestria }},{% endif%}{% if i.doctorado %}{{ i.doctorado }},{% endif%} {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -840,7 +840,7 @@
                                                                 \item[a)] Profesor titular o coordinador
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_licenciatura_titular %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -848,7 +848,7 @@
                                                                 \item[b)] Colaborador o invitado
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_licenciatura_colaborador %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -862,7 +862,7 @@
                                                                 \item[a)] Profesor titular o coordinador
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_posgrado_titular %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {% if i.maestria %}{{ i.maestria }},{% endif%}{% if i.doctorado %}{{ i.doctorado }},{% endif%} {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -870,7 +870,7 @@
                                                                 \item[b)] Colaborador o invitado
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_posgrado_colaborador %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.asignatura.nombre }}, {% if i.maestria %}{{ i.maestria }},{% endif%}{% if i.doctorado %}{{ i.doctorado }},{% endif%} {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
