@@ -6885,7 +6885,9 @@ class CVInvestigadorDetalle(View):
     def get(self, request, pk):
         context = {}
         this_year = self.this_year - 1
+        print(self.this_year )
         print(this_year)
+        print("2018 aqui")
         usuario = User.objects.get(pk=pk)
 
         num_articulos = ArticuloCientifico.objects.filter(autores__pk=pk).filter(Q(fecha__year=this_year)).count()
