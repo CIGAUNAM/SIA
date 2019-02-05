@@ -1053,7 +1053,7 @@
                         \item[8.5.] Participación en candidaturas al grado de doctor
                             \begin{itemize}
                                 {% for i in participacion_candidaturas_doctorales %}
-                                    \item{ Asesorado: {{ i.asesorado }}, Programa de doctorado: {{ i.programa_doctorado.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_defensa }} }
+                                    \item{ Asesorado: {{ i.candidato }}, Programa de doctorado: {{ i.programa_doctorado.nombre }}. {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_defensa }} }
                                 {% endfor %}
                             \end{itemize}
                     {% endif %}
