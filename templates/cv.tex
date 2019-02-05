@@ -38,11 +38,11 @@
 
         \item[1.]{ \textbf{DATOS PERSONALES} \\ \\
             Nombre: {{ usuario }} \\
-            fecha de nacimiento: {{ usuario.fecha_nacimiento }} \\
+            {# fecha de nacimiento: {{ usuario.fecha_nacimiento }} #}\\
             País de origen: {{ usuario.pais }} \\
             {# RFC: {{ usuario.rfc }} #}\\
-            CURP: {{ usuario.curp }} \\
-            Correo electrónico: {{ usuario.email }} \\
+            {# CURP: {{ usuario.curp }} #}\\
+            {# Correo electrónico: {{ usuario.email }} #}\\
         }
         {% if licenciaturas or maestrias or doctorados or postdoctorados %}
             \item[2.] \textbf{FORMACIÓN PROFESIONAL }
