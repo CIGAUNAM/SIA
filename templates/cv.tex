@@ -1080,7 +1080,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in premios_nacionales %}
-                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                                \item{ {{ i.distincion.nombre }}, {{ i.distincion.institucion.nombre }}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -1088,7 +1088,7 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in premios_internacionales %}
-                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                                \item{ {{ i.distincion.nombre }}, {{ i.distincion.institucion.nombre }}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -1103,7 +1103,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in reconocimientos_nacionales %}
-                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                                \item{ {{ i.distincion.nombre }}, {{ i.distincion.institucion.nombre }}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -1111,7 +1111,7 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in reconocimientos_internacionales %}
-                                                \item{ {{ i.distincion.nombre }}, {{ i.institucion.nombre }}, {{ i.fecha }} }
+                                                \item{ {{ i.distincion.nombre }}, {{ i.distincion.institucion.nombre }}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
