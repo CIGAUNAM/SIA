@@ -7118,7 +7118,7 @@ class CVInvestigadorPDF(View):
 
         cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
         cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
-        cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio')
         cursos_escolarizados_licenciatura_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
         cursos_escolarizados_licenciatura_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
         cursos_escolarizados_posgrado_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
