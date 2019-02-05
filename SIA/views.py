@@ -6893,9 +6893,9 @@ class CVInvestigadorDetalle(View):
         doctorados = Doctorado.objects.filter(usuario=pk)
         maestrias = Maestria.objects.filter(usuario=pk)
         licenciaturas = Licenciatura.objects.filter(usuario=pk)
-        cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by('-fecha_inicio')
-        exp_prof_unam_prom = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by('-fecha_inicio')
+        cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio').filter(fecha_inicio__year=self.this_year)
+        exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by('-fecha_inicio').filter(fecha_inicio__year=self.this_year)
+        exp_prof_unam_prom = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by('-fecha_inicio').filter(fecha_inicio__year=self.this_year)
 
         exp_prof_ext = ExperienciaLaboral.objects.filter(usuario=pk).exclude(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
