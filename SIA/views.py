@@ -6994,7 +6994,10 @@ class CVInvestigadorPDF(View):
 
     def get(self, request, pk):
         context = {}
-        this_year = self.this_year
+        this_year = self.this_year - 1
+        print(self.this_year )
+        print(this_year)
+        print("2018 aqui")
         usuario = User.objects.get(pk=pk)
 
         num_articulos = ArticuloCientifico.objects.filter(autores__pk=pk).filter(Q(fecha__year=this_year)).count()
@@ -7009,50 +7012,50 @@ class CVInvestigadorPDF(View):
         cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by(
-            '-fecha_inicio')
+            '-fecha_inicio').filter(fecha_inicio__year=this_year)
         exp_prof_unam_prom = ExperienciaLaboral.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by(
-            '-fecha_inicio')
+            '-fecha_inicio').filter(fecha_inicio__year=this_year).filter(fecha_inicio__year=this_year)
 
         exp_prof_ext = ExperienciaLaboral.objects.filter(usuario=pk).exclude(
-            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
 
         servicios_acad_admnvos = ExperienciaLaboral.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').exclude(cargo__tipo_cargo='OTRO').order_by(
-            '-fecha_inicio')
-        comisiones_institucionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')
+            '-fecha_inicio').filter(fecha_inicio__year=this_year)
+        comisiones_institucionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
 
-        lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
+        lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
+        capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
 
         articulos_indexadas_extranjeras = ArticuloCientifico.objects.filter(autores=pk, revista__indices__isnull=False).exclude(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha').filter(fecha__year=this_year)
         articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(autores=pk, revista__indices__isnull=False).filter(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha').filter(fecha__year=this_year)
         articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(autores=pk,
                                                                                revista__indices__isnull=True).exclude(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha').filter(fecha__year=this_year)
         articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(autores=pk, revista__indices__isnull=True).filter(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('autores__pk', distinct=True)).order_by('-fecha').filter(fecha__year=this_year)
 
-        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores=pk) | Q(coordinadores=pk)).exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
-        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores=pk) | Q(coordinadores=pk)).filter(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
+        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores=pk) | Q(coordinadores=pk)).exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha').filter(fecha__year=this_year)
+        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores=pk) | Q(coordinadores=pk)).filter(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha').filter(fecha__year=this_year)
 
         capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(autores=pk,
                                                                                                            libro__tipo='INVESTIGACION').exclude(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
-            '-libro__fecha')
+            '-libro__fecha').filter(libro__fecha__year=this_year)
         capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(autores=pk,
                                                                                                          libro__tipo='INVESTIGACION').filter(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
-            '-libro__fecha')
+            '-libro__fecha').filter(libro__fecha__year=this_year)
 
         memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(autores=pk).exclude(
-            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio').filter(evento__fecha__year=this_year)
         memoriainextenso_mexicanas = MemoriaInExtenso.objects.filter(autores=pk).filter(
-            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio').filter(evento__fecha__year=this_year)
         mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(autores=pk).exclude(
-            editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+            editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha').filter(fecha__year=this_year)
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(autores=pk).filter(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         informes_tecnicos_mex = InformeTecnico.objects.filter(autores=pk).filter(
