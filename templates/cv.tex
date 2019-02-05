@@ -950,7 +950,7 @@
                                         \item[8.2.3.] Tutorías o asesorías a estudiantes
                                             \begin{itemize}
                                                 {% for i in asesorias_estudiantes %}
-                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {{ i.programa_licenciatura }}{{ i.programa_maestria }}{{ i.programa_doctorado }}, {{ i.tipo.get_tipo_display }}, {{ i.periodo_academico }}, \textit{``{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {% if i.programa_licenciatura %}{{ i.programa_licenciatura }}{% endif %}{% if i.programa_maestria %}{{ i.programa_maestria }}{% endif %}{% if i.programa_doctorado %}{{ i.programa_doctorado }}{% endif %}, {{ i.get_tipo_display }}, {{ i.periodo_academico }}, {% if i.proyecto %}\textit{``{{ i.proyecto.nombre }}''},{% endif %} {% if beca %}Beca: {{ i.beca.nombre }},{% endif %} {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                                 {% endfor %}
                                             \end{itemize}
                                     {% endif %}
@@ -958,7 +958,7 @@
                                         \item[8.2.4.] Becario de proyecto
                                             \begin{itemize}
                                                 {% for i in becarios_estudiantes %}
-                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {{ i.programa_licenciatura }}{{ i.programa_maestria }}{{ i.programa_doctorado }}, {{ i.tipo.get_tipo_display }}, {{ i.periodo_academico }}, \textit{``{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {% if i.programa_licenciatura %}{{ i.programa_licenciatura }}{% endif %}{% if i.programa_maestria %}{{ i.programa_maestria }}{% endif %}{% if i.programa_doctorado %}{{ i.programa_doctorado }}{% endif %}, {{ i.get_tipo_display }}, {{ i.periodo_academico }}, {% if i.proyecto %}\textit{``{{ i.proyecto.nombre }}''},{% endif %} {% if beca %}Beca: {{ i.beca.nombre }},{% endif %} {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                                 {% endfor %}
                                             \end{itemize}
                                     {% endif %}
@@ -966,7 +966,7 @@
                                         \item[8.2.5.] Servicios sociales
                                             \begin{itemize}
                                                 {% for i in servicio_social_estudiantes %}
-                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {{ i.programa_licenciatura }}{{ i.programa_maestria }}{{ i.programa_doctorado }}, {{ i.tipo.get_tipo_display }}, {{ i.periodo_academico }}, \textit{``{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                    \item{ {{ i.asesorado.last_name }}, {{ i.asesorado.first_name }}. {{ i.nivel_academico.get_nivel_academico_display }} en {% if i.programa_licenciatura %}{{ i.programa_licenciatura }}{% endif %}{% if i.programa_maestria %}{{ i.programa_maestria }}{% endif %}{% if i.programa_doctorado %}{{ i.programa_doctorado }}{% endif %}, {{ i.get_tipo_display }}, {{ i.periodo_academico }}, {% if i.proyecto %}\textit{``{{ i.proyecto.nombre }}''},{% endif %} {% if beca %}Beca: {{ i.beca.nombre }},{% endif %} {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                                 {% endfor %}
                                             \end{itemize}
                                     {% endif %}
@@ -974,7 +974,7 @@
                                         \item[8.2.6.] Supervisión de investigadores posdoctorales
                                             \begin{itemize}
                                                 {% for i in supervision_investigadores %}
-                                                    \item{ {{ i.investigador.last_name }}, {{ i.asesorado.first_name }}. {{ i.disciplina }},  {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, \textit{``{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {{ i.beca.institucion.nombre }}, {{ i.dependencia.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                    \item{ {{ i.investigador.last_name }}, {{ i.asesorado.first_name }}. {{ i.disciplina }},  {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, \textit{``{{ i.proyecto.nombre }}''}, {% if beca %}Beca: {{ i.beca.nombre }}, {% endif %} {{ i.fecha_inicio }} - {{ i.fecha_fin }} }
                                                 {% endfor %}
                                             \end{itemize}
                                     {% endif %}
