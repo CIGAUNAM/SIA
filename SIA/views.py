@@ -7007,7 +7007,7 @@ class CVInvestigadorPDF(View):
         maestrias = Maestria.objects.filter(usuario=pk).order_by('-fecha_grado')
         doctorados = Doctorado.objects.filter(usuario=pk).order_by('-fecha_grado')
         postdoctorados = PostDoctorado.objects.filter(usuario=pk).order_by('-fecha_fin')
-        cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
+        cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
         exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
         exp_prof_unam_prom = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by('-fecha_inicio').filter(fecha_inicio__year=this_year).filter(fecha_inicio__year=this_year)
 
