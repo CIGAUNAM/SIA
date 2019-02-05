@@ -471,7 +471,7 @@
                                     \item[6.3.3.] \textbf{Programas de estudio}
                                         \begin{itemize}
                                             {% for i in programas_estudio_docencia %}
-                                                \item{ \textit{ {{ i.nombre }} }, {{ i.nivel }}. {{ i.fecha.year }} }
+                                                \item{ \textit{ {{ i.nombre }} }, {{ i.get_nivel_display }}. {{ i.fecha.year }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -525,7 +525,7 @@
                                                 \item[a)] Por invitación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_nal_invitacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -533,7 +533,7 @@
                                                 \item[b)] Participación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_nal_participacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -547,7 +547,7 @@
                                                 \item[a)] Por invitación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_intl_invitacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -555,7 +555,7 @@
                                                 \item[b)] Participación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_intl_participacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -571,7 +571,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_academicos_nacionales %}
-                                                \item{\textbf{ {{ i.evento.nombre }}} ({{ i.get_responsabilidad_display }}), {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}{% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -579,7 +579,7 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_academicos_internacionales %}
-                                                \item{\textbf{ {{ i.evento.nombre }}} ({{ i.get_responsabilidad_display }}), {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}{% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -718,7 +718,7 @@
                                     \item[7.7.3.] \textbf{Organización de eventos de divulgación}
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_divulgacion %}
-                                                \item{\textbf{ {{ i.evento.nombre }}} ({{ i.get_responsabilidad_display }}), {{ i.evento.tipo }}, {% if i.evento.tipo_publico %}dirigido a {{ i.evento.tipo_publico }}, {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {% if i.financiamiento %}Financiamiento: {{ i.financiamiento.nombre }}, {{ i.financiamiento.institucion.nombre }}, {% endif %}}{{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}{% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.tipo }}, {% if i.evento.tipo_publico %}dirigido a {{ i.evento.tipo_publico }}, {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {% if i.financiamiento %}Financiamiento: {{ i.financiamiento.nombre }}, {{ i.financiamiento.institucion.nombre }}, {% endif %}}{{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -726,7 +726,7 @@
                                     \item[7.7.4.] \textbf{Conferencias de divulgación (no dirigidas a pares)}
                                         \begin{itemize}
                                             {% for i in participacion_eventos_divulgacion %}
-                                                \item{\textbf{ {{ i.titulo }}}, en {{ i.evento.nombre }} ({{ i.evento.tipo }}), {% if i.evento.tipo_publico %}dirigido a {{ i.evento.tipo_publico }}, {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.titulo }}}. {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. en {{ i.evento.nombre }} ({{ i.evento.tipo }}), {% if i.evento.tipo_publico %}dirigido a {{ i.evento.tipo_publico }}, {% endif %}{{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -750,7 +750,7 @@
                                                 \item[8.1.1.1.] \textbf{En la UNAM}
                                                     \begin{itemize}
                                                         {% for i in cursos_extracurriculares_unam %}
-                                                            \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                            \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -761,7 +761,7 @@
                                                             \item[a)] Nacionales
                                                                 \begin{itemize}
                                                                     {% for i in cursos_extracurriculares_nacionales %}
-                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -769,7 +769,7 @@
                                                             \item[b)] Internacionales
                                                                 \begin{itemize}
                                                                     {% for i in cursos_extracurriculares_internacionales %}
-                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.estado.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
+                                                                        \item{ {{ i.fecha_inicio.year }}, {{ i.asignatura.nombre }}, {% if i.tipo %}{{ i.tipo }}, {% endif %}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.dependencia.ciudad.nombre }}, {{ i.dependencia.pais.nombre }}, {{ i.total_horas }} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -840,7 +840,7 @@
                                                                 \item[a)] Profesor titular o coordinador
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_licenciatura_titular %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -848,7 +848,7 @@
                                                                 \item[b)] Colaborador o invitado
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_licenciatura_colaborador %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -862,7 +862,7 @@
                                                                 \item[a)] Profesor titular o coordinador
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_posgrado_titular %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -870,7 +870,7 @@
                                                                 \item[b)] Colaborador o invitado
                                                                     \begin{itemize}
                                                                         {% for i in cursos_escolarizados_posgrado_colaborador %}
-                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.nombramiento.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }},  }
+                                                                            \item{ {{ i.fecha_inicio }} - {{ i.fecha_fin }}, {{ i.get_nombramiento_display }}, {{ i.asignatura.nombre }}, {{ i.licenciatura.nombre }}, {{ i.institucion.nombre }}, {{ i.dependencia.nombre }}, {{ i.periodo_academico }}, {{ i.total_horas }} }
                                                                         {% endfor %}
                                                                     \end{itemize}
                                                             {% endif %}
@@ -945,7 +945,7 @@
                                         \end{itemize}
                                 {% endif %}
 
-                                {& if asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
+                                {% if asesorias_estudiantes or becarios_estudiantes or servicio_social_estudiantes or supervision_investigadores %}
                                     {% if asesorias_estudiantes %}
                                         \item[8.2.3.] Tutorías o asesorías a estudiantes
                                             \begin{itemize}
