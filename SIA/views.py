@@ -7048,11 +7048,11 @@ class CVInvestigadorPDF(View):
             pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha').filter(fecha__year=this_year)
         
         capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(autores=pk, libro__tipo='DIVULGACION').exclude(
-            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-fecha').filter(fecha__year=this_year)
+            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-libro__fecha').filter(libro__fecha__year=this_year)
         capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(autores=pk,
                                                                                                        libro__tipo='DIVULGACION').filter(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
-            '-fecha').filter(fecha__year=this_year)
+            '-libro__fecha').filter(libro__fecha__year=this_year)
         resenas = Resena.objects.filter(autores=pk).order_by('-fecha').filter(fecha__year=this_year)
         traducciones = Traduccion.objects.filter(autores=pk).order_by('-fecha').filter(fecha__year=this_year)
         material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk, actividad='PRODUCCION').order_by('-fecha').filter(fecha__year=this_year)
