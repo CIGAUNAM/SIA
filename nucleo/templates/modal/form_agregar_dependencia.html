@@ -93,8 +93,6 @@
                 <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
             </form>
 
-            {% include 'modal/modal_institucion.html' %}
-
             <script>
                 if ($("#id_institucion_dependencia").val() != 1) {
                     $('#d_subsunam').hide();
@@ -115,6 +113,7 @@
                         nombre_dependencia: $("#id_nombre_dependencia").val(),
                         institucion_dependencia: parseInt($("#id_institucion_dependencia").val()),
                         ciudad_text_dependencia: $("#id_ciudad_text_dependencia").val(),
+                        usuario_creador: {{ user.pk }},
                     };
                     if ($("#id_subsistema_unam_dependencia").val() != "") {
                         datos.subsistema_unam_dependencia = $("#id_subsistema_unam_dependencia").val();
@@ -128,7 +127,12 @@
                         headers: {"X-CSRFToken": $crf_token},
                         error: function (xhr, ajaxOptions, thrownError) {
                             //console.log(xhr.responseJSON.non_field_errors[0])
-                            alert(xhr.responseJSON.non_field_errors[0])
+                            console.log(xhr.responseJSON)
+                            console.log("{{ user.get_username }}")
+                            console.log("{{ user.pk }}")
+                            console.log("{{ user }}")
+
+                            //alert(xhr.responseJSON.non_field_errors[0])
 
                             $('#id_subsistema_unam_dependencia').val(null).trigger('change');
                             $('#id_institucion_dependencia').val(null).trigger('change');
