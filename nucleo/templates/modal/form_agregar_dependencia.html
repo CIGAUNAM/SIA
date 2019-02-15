@@ -132,10 +132,39 @@
                             console.log("{{ user.get_username }}")
                             console.log("{{ user.pk }}")
                             console.log("{{ user }}")
-                            $("#dependencia_errors").text(JSON.stringify(xhr.responseJSON))
+
+                            errores_form = '<div class="alert alert-danger alert-dismissible fade1 show" role="alert">' +
+                                '  <strong>Se encontraron los siguientes errores:</strong>.<ul>';
 
 
 
+
+                            if (xhr.responseJSON.hasOwnProperty('nombre_dependencia')) {
+                                if (xhr.responseJSON.ciudad_text_dependencia == "Este campo no puede estar en blanco.") {
+                                    errores_form += "<li>El nombre de la dependencia no puede estar en blanco</li>"
+                                }
+                            }
+                            if (xhr.responseJSON.hasOwnProperty('ciudad_text_dependencia')) {
+                                if (xhr.responseJSON.ciudad_text_dependencia == "Este campo no puede estar en blanco.") {
+                                    errores_form += "<li>El campo de ciudad no puede estar en blanco</li>"
+                                }
+                            }
+                            if (xhr.responseJSON.hasOwnProperty('institucion_dependencia')) {
+                                if (xhr.responseJSON.institucion_dependencia == "Tipo incorrecto. Se esperaba valor de clave primaria y se recibió str.") {
+                                    errores_form += "<li>El campo de institución no puede estar en blanco</li>"
+                                }
+                            }
+                            if (xhr.responseJSON.hasOwnProperty('institucion_dependencia')) {
+                                if (xhr.responseJSON.institucion_dependencia == "Tipo incorrecto. Se esperaba valor de clave primaria y se recibió str.") {
+                                    errores_form += "<li>El campo de institución no puede estar en blanco</li>"
+                                }
+                            }
+
+                            errores_form += '</ul><button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                                '    <span aria-hidden="true">&times;</span>' +
+                                '  </button>' +
+                                '</div>'
+                            $("#dependencia_errors").html(errores_form);
 
 
                             /*$('#id_subsistema_unam_dependencia').val(null).trigger('change');
