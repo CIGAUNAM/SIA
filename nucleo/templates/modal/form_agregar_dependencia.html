@@ -6,6 +6,7 @@
     <div class="col">
         {% block form_modal_dependencia %}
             <form id="modal_form_dependencia_agregar" action="" method="post">
+                <div id="dependencia_errors"></div>
                 {{ modal_form_dependencia_agregar.errors }}
                 {% csrf_token %}
                 <p><strong>Nombre de la dependencia:</strong>
@@ -14,7 +15,7 @@
                por ejemplo: Centro de Investigaciones en Geografía Ambiental (CIGA).">
                         <i class="fa fa-question-circle"></i></a>
                 <div class="form-group" style="margin-top: -10px;">
-                    <div class="input-group date">
+                    <div class="input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-pencil-square-o"></i>
                         </div>
@@ -32,7 +33,7 @@
                        title="Ciudad donde se encuentra la dependencia."><i
                             class="fa fa-question-circle"></i></a>
                 <div class="form-group" style="margin-top: -10px;">
-                    <div class="input-group date">
+                    <div class="input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-pencil-square-o"></i>
                         </div>
@@ -88,9 +89,9 @@
                     </p>
                 </div>
 
-                <!-- <button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button> -->
-                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+                <!-- button id="agregar-dependencia-submit" type="submit" class="btn btn-success">Guardar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px"> -->
             </form>
 
             <script>
@@ -131,14 +132,18 @@
                             console.log("{{ user.get_username }}")
                             console.log("{{ user.pk }}")
                             console.log("{{ user }}")
+                            $("#dependencia_errors").text(JSON.stringify(xhr.responseJSON))
 
-                            //alert(xhr.responseJSON.non_field_errors[0])
 
-                            $('#id_subsistema_unam_dependencia').val(null).trigger('change');
+
+
+
+                            /*$('#id_subsistema_unam_dependencia').val(null).trigger('change');
                             $('#id_institucion_dependencia').val(null).trigger('change');
                             $('#id_institucion_dependencia').children('option').remove();
                             $('#d_subsunam').hide('slow');
                             $('#modal_form_dependencia_agregar').trigger('reset');
+                            */
                         },
                         success: function (data) {
                             console.log("success")
