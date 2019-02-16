@@ -10,7 +10,7 @@ $(function () {
 
     agregar_dependencia_dialog = $("#agregar-dependencia").dialog({
         autoOpen: false,
-        height: 730,
+        height: 700,
         width: 900,
         modal: true,
         buttons: {

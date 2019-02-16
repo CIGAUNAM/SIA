@@ -1,28 +1,27 @@
 agregar_dependencia_dialog = null
 $(function () {
-
     $("#boton-agregar-dependencia").on("click", function () {
         $("#agregar-dependencia").dialog("open");
     });
 
-    function addUser() {
-        alert("ygjgjhg")
-
-        return valid;
+    function agregar_dependencia() {
+        alert("Agregar dependencia")
     }
 
     agregar_dependencia_dialog = $("#agregar-dependencia").dialog({
         autoOpen: false,
-        height: 730,
+        height: 700,
         width: 900,
         modal: true,
         buttons: {
-            create: {
-                text: "createetrert",
-                click: addUser,
+            agregar: {
+                text: "Agregar dependencia",
+                click: function () {
+                    $("#modal_form_dependencia_agregar").submit()
+                },
                 class: 'btn btn-success ui-button-left'
             },
-            cancel: {
+            cancelar: {
                 text: "Cancelar",
                 click: function () {
                     $(this).dialog("close")
@@ -30,6 +29,7 @@ $(function () {
                 class: 'btn btn-primary ui-button-left'
             }
         },
+
         open: function (event, ui) {
             $('#agregar-dependencia-modal-body').load('/nucleo/dependencias/agregar/', function () {
                 $("#id_institucion_dependencia").djangoSelect2({dropdownParent: $("#agregar-dependencia")});
@@ -37,6 +37,7 @@ $(function () {
             });
         }
     });
+
 
     $('#boton-ver-dependencia').on('click', function (e) {
         if ($("#id_dependencia").val() === null) {
