@@ -194,19 +194,19 @@ class InstitucionEliminar(View):
 
 
 class InstitucionAgregar(ObjectModalCreateMixin, View):
-    form_class = InstitucionForm
-    model = Institucion
+    form_class = InstitucionSimpleForm
+    model = InstitucionSimple
     template_name = 'modal/form_agregar_institucion.html'
 
     def get(self, request):
         try:
             ref = request.META['HTTP_REFERER']
             if ref:
-                return render(request, self.template_name, {'modal_form_institucion': self.form_class})
+                return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
         except Exception as e:
             print(e)
             #return HttpResponse("")
-            return render(request, self.template_name, {'modal_form_institucion': self.form_class})
+            return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -271,8 +271,8 @@ class DependenciaAgregar(ObjectModalCreateMixin, View):
                 return render(request, self.template_name, {'modal_form_dependencia_agregar': self.form_class})
         except Exception as e:
             print(e)
-            #return HttpResponse("")
-            return render(request, self.template_name, {'modal_form_dependencia_agregar': self.form_class})
+            return HttpResponse("")
+            #return render(request, self.template_name, {'modal_form_dependencia_agregar': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)

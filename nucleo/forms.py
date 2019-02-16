@@ -72,15 +72,19 @@ class CiudadForm(forms.ModelForm):
 
 
 class InstitucionSimpleForm(forms.ModelForm):
+    institucion_nombre = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre de la institución y sus siglas entre parentesis (si oficialmente las tiene)'}),
+        required=True, label='Nombre de la institución')
     institucion_pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="País",
         widget=ModelSelect2Widget(
             search_fields=['pais_nombre__icontains'],
             queryset=Pais.objects.all(),
-            attrs={'class': 'form-control pull-right'}
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right', 'data-placeholder': 'Seleccione el país donde se encuentra la institución'}
         )
     )
+    institucion_ciudad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre de la institución')
     institucion_clasificacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('ACADEMICA', 'Académica'), ('FEDERAL', 'Gubernamental federal'),
@@ -102,8 +106,6 @@ class InstitucionSimpleForm(forms.ModelForm):
         model = Institucion
         exclude = ['institucion_regverificado', 'institucion_regfechacreado', 'institucion_regfechaactualizado', 'institucion_regusuario']
         widgets = {
-            'institucion_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'institucion_ciudad': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
