@@ -71,6 +71,42 @@ class CiudadForm(forms.ModelForm):
         }
 
 
+class InstitucionSimpleForm(forms.ModelForm):
+    institucion_pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['pais_nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'class': 'form-control pull-right'}
+        )
+    )
+    institucion_clasificacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('ACADEMICA', 'Académica'), ('FEDERAL', 'Gubernamental federal'),
+                 ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'),
+                 ('PRIVADA', 'Sector privado'), ('NO_LUCRATIVA', 'Sector privado no lucrativo')), required=True)
+    institucion_perteneceunam = forms.BooleanField(required=False)
+    institucion_subsistemaunam = forms.ChoiceField(
+        widget=Select2Widget(attrs={'class': 'form-control pull-right'}),
+        choices=(
+            ('', 'Seleccionar Subsistema UNAM'),
+            ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+            ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
+            ('HUMANIDADES', 'Subsistema de Humanidades'),
+            ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
+            ('ESCUELAS', 'Facultades y Escuelas'),
+            ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), required=False)
+
+    class Meta:
+        model = Institucion
+        exclude = ['institucion_regverificado', 'institucion_regfechacreado', 'institucion_regfechaactualizado', 'institucion_regusuario']
+        widgets = {
+            'institucion_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'institucion_ciudad': TextInput(attrs={'class': 'form-control pull-right'}),
+        }
+
+
 class InstitucionForm(forms.ModelForm):
     pais_institucion = forms.ModelChoiceField(
         queryset=Pais.objects.all(),

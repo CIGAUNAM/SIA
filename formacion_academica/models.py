@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
-from nucleo.models import User, Dependencia, Institucion, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
+from nucleo.models import User, Dependencia, Institucion, InstitucionSimple, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
 from investigacion.models import ProyectoInvestigacion
 
 CURSO_ESPECIALIZACION_TIPO = getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', (('', ''), ('', ''), ('CURSO', 'Curso'),
@@ -28,7 +28,8 @@ class CursoEspecializacion(models.Model):
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
     area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
                                           on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
 
     def __str__(self):
