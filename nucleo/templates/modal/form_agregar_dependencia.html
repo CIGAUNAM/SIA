@@ -11,7 +11,7 @@
                 {% csrf_token %}
 
                 <p><strong>Nombre de la dependencia:</strong>
-                    <a href="#" data-toggle="tooltip" data-placement="right"
+                    <a href="#" data-toggle="tooltip" data-placement="bottom"
                        title="Nombre de la dependencia. Agregar después del nombre sus siglas entre paréntesis (si tiene siglas),
                por ejemplo: Centro de Investigaciones en Geografía Ambiental (CIGA).">
                         <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -40,16 +40,9 @@
                             </a>
                         </div>
                         <div class="input-group-addon">
-                            <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
-                               target="_blank"
-                               title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                                <i class="fa fa-plus"></i>
-                            </a>
-                        </div>
-                        <div class="input-group-addon">
                                 <span data-toggle="modal" data-target="#agregar-institucion">
                                     <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
-                                       title="Agregar una institución nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                                       title="Agregar una institución nueva cuando no existe en los registros.">
                                     <i class="fa fa-plus"></i>
                                     </a>
                                 </span>
@@ -60,7 +53,7 @@
                 <div id="d_subsunam">
                     <p><strong>Subsistema UNAM:</strong>
                         <a href="#" data-toggle="tooltip" data-placement="right"
-                           title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, en caso contrario seleccionar 'No'.">
+                           title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, de lo contrario dejar en blanco.">
                             <i class="fa fa-question-circle"></i>
                         </a>
                     <div class="form-group" style="margin-top: -10px;">
