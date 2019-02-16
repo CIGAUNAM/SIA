@@ -14,7 +14,7 @@ class FormatoServicioTransporte(models.Model):
     num_pasajeros = models.PositiveIntegerField()
     tipo = models.CharField(max_length=10, choices=(('', '-------'), ('LOCAL', 'Local'), ('FORANEO', 'Foraneo')))
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
+    # ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
     km_aprox = models.PositiveIntegerField()
     gasto_casetas = models.DecimalField(max_digits=20, decimal_places=2, blank=True, null=True)
     fecha_inicio = models.DateField()
