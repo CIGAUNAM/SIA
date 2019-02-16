@@ -93,22 +93,22 @@ class GradoAcademico(models.Model):
 
 
 class Pais(models.Model):
-    nombre = models.CharField(max_length=60, unique=True)
-    nombre_extendido = models.CharField(max_length=200, unique=True)
-    codigo = models.SlugField(max_length=2, unique=True)
-    zona = models.ForeignKey(ZonaPais, on_delete=models.PROTECT)
+    pais_nombre = models.CharField(max_length=60, unique=True)
+    pais_nombre_extendido = models.CharField(max_length=200, unique=True)
+    pais_codigo = models.SlugField(max_length=2, unique=True)
+    pais_zona = models.ForeignKey(ZonaPais, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nombre
+        return self.pais_nombre
 
     def natural_key(self):
-        return self.nombre
+        return self.pais_nombre
 
     def get_absolute_url(self):
         return reverse('pais_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['pais_nombre']
         verbose_name_plural = 'Paises'
         verbose_name = 'País'
 
@@ -216,18 +216,45 @@ class User(AbstractUser):
 
 
 
+class InstitucionSimple(models.Model):
+    institucion_nombre = models.CharField(max_length=255, unique=True, verbose_name='Nombre de la institución')
+    institucion_pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='País donde se encuentra la institución')
+    institucion_ciudad = models.CharField(max_length=255, verbose_name='Ciudad donde se encuentra la institución')
+
+    institucion_clasificacion = models.CharField(
+        max_length=20, choices=(('', '-------'), ('ACADEMICA', 'Académica'), ('FEDERAL', 'Gubernamental federal'),
+                                ('ESTATAL', 'Gubernamental estatal'), ('MUNICIPAL', 'Gubernamental municipal'),
+                                ('PRIVADA', 'Sector privado'), ('NO_LUCRATIVA', 'Sector privado no lucrativo')),
+        verbose_name='Clasificación de la institución')
+    institucion_perteneceunam = models.BooleanField(default=False, verbose_name='Pertenece a la UNAM')
+    institucion_subsistemaunam = models.CharField(max_length=50, choices=(
+        ('', 'Seleccionar Subsistema UNAM'),
+        ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
+        ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
+        ('HUMANIDADES', 'Subsistema de Humanidades'),
+        ('INVESTIGACION_CIENTIFICA', 'Subsistema de Investigación Científica'),
+        ('ESCUELAS', 'Facultades y Escuelas'),
+        ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), blank=True, null=True, verbose_name='Subsistema UNAM (sólo si la institución pertenece a la UNAM)')
+    institucion_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
+    institucion_regfechacreado = models.DateField(auto_now_add=True)
+    institucion_regfechaactualizado = models.DateField(auto_now=True)
+    institucion_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
+
+    def __str__(self):
+        return self.institucion_nombre
+
+    def natural_key(self):
+        return self.institucion_nombre
+
+    def get_absolute_url(self):
+        return reverse('institucion_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['institucion_nombre']
+        verbose_name = 'Institución'
+        verbose_name_plural = 'Instituciones'
 
 
-class InvestigadorConacyt(models.Model):
-    investigador = models.ForeignKey(User, on_delete=models.PROTECT)
-
-
-class InvestigadorUnam(models.Model):
-    investigador = models.ForeignKey(User, on_delete=models.PROTECT)
-
-
-class InvestigadorInvitado(models.Model):
-    investigador = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
 class Institucion(models.Model):
@@ -247,7 +274,7 @@ class Institucion(models.Model):
         return self.nombre_institucion
 
     def get_absolute_url(self):
-        return reverse('institucion_detalle', kwargs={'pk': self.pk})
+        return reverse('institucion_detalle_mal', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre_institucion']
@@ -286,6 +313,15 @@ class Dependencia(models.Model):
     class Meta:
         unique_together = ('nombre_dependencia', 'institucion_dependencia')
         ordering = ['nombre_dependencia']
+
+
+
+
+
+
+
+
+
 
 
 class Departamento(models.Model):

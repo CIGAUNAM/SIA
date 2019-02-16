@@ -12,11 +12,11 @@ class FormatoServicioTransporteForm(forms.ModelForm):
                             choices=(('', '-------'), ('LOCAL', 'Local (dentro del área metropolitana)'), ('FORANEO', 'Foraneo (fuera del área metropolitana)')), label='Tipo de servicio')
     estado = forms.ModelChoiceField(
         required=False,
-        queryset=Estado.objects.filter(pais__nombre='México'),
+        queryset=Estado.objects.filter(pais__pais_nombre='México'),
         label="Estado",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            queryset=Estado.objects.filter(pais__nombre='México'),
+            queryset=Estado.objects.filter(pais__pais_nombre='México'),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
