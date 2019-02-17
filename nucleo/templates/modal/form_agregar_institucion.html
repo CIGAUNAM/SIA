@@ -5,7 +5,6 @@
 
     <p class="col">
 
-        {% block form_modal_dependencia %}
             <form id="modal_form_institucion_agregar" action="" method="post">
                 <div id="institucion_errors"></div>
                 {{ modal_form_institucion_agregar.errors }}
@@ -109,10 +108,12 @@
                     console.log($("#id_institucion_perteneceunam").is(':checked'));
                     if ($("#id_institucion_perteneceunam").is(':checked')) {
                         $('#d_subsunam').show('slow');
+                        $('#id_institucion_subsistemaunam').attr("required", "true");
                     } else {
                         console.log("esconder cambio")
                         $('#d_subsunam').hide('slow');
                         $('#id_institucion_subsistemaunam').val(null).trigger('change');
+                        $('#id_institucion_subsistemaunam').attr("required", null);
                     }
                 });
 
@@ -122,13 +123,19 @@
                         institucion_nombre: $("#id_institucion_nombre").val(),
                         institucion_pais: $("#id_institucion_pais").val(),
                         institucion_ciudad: $("#id_institucion_ciudad").val(),
-                        institucion_clasificacion: $("#id_institucion_clasificacion").val(),
                         institucion_regusuario: {{ user.pk }}
                     };
+                    if ($("#id_institucion_clasificacion").val() != '') {
+                        datos.institucion_clasificacion = $("#id_institucion_clasificacion").val();
+                    }
+                    if ($("#id_institucion_perteneceunam").is(':checked')) {
+                        datos.institucion_perteneceunam = true;
+                    }
                     if ($("#id_institucion_subsistemaunam").val() != "") {
                         datos.institucion_perteneceunam = true;
                         datos.institucion_subsistemaunam = $("#id_institucion_subsistemaunam").val();
                     }
+
                     $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
                     $.ajax({
                         type: "POST",
@@ -147,24 +154,30 @@
                                 '  <p><strong>Se encontraron los siguientes errores:</strong><br /></p><ul>';
 
 
-                            if (xhr.responseJSON.hasOwnProperty('nombre_dependencia')) {
-                                if (xhr.responseJSON.ciudad_text_dependencia == "Este campo no puede estar en blanco.") {
-                                    errores_form += "<li>El nombre de la dependencia no puede estar en blanco</li>"
+                            if (xhr.responseJSON.hasOwnProperty('institucion_nombre')) {
+                                if (xhr.responseJSON.institucion_nombre == "Este campo no puede estar en blanco.") {
+                                    errores_form += "<li>El nombre de la institucion no puede estar en blanco</li>"
                                 }
                             }
-                            if (xhr.responseJSON.hasOwnProperty('ciudad_text_dependencia')) {
-                                if (xhr.responseJSON.ciudad_text_dependencia == "Este campo no puede estar en blanco.") {
+                            if (xhr.responseJSON.hasOwnProperty('institucion_clasificacion')) {
+                                if (xhr.responseJSON.institucion_clasificacion == "Este campo es requerido.") {
+                                    errores_form += "<li>El campo de clasificación no puede estar en blanco</li>"
+                                }
+                            }
+                            if (xhr.responseJSON.hasOwnProperty('institucion_pais')) {
+                                if (xhr.responseJSON.institucion_pais == "Este campo no puede ser nulo.") {
+                                    errores_form += "<li>El campo de pais no puede estar en blanco</li>"
+                                }
+                            }
+                            if (xhr.responseJSON.hasOwnProperty('institucion_ciudad')) {
+                                if (xhr.responseJSON.institucion_ciudad == "Este campo no puede estar en blanco.") {
                                     errores_form += "<li>El campo de ciudad no puede estar en blanco</li>"
                                 }
                             }
-                            if (xhr.responseJSON.hasOwnProperty('institucion_dependencia')) {
-                                if (xhr.responseJSON.institucion_dependencia == "Tipo incorrecto. Se esperaba valor de clave primaria y se recibió str.") {
-                                    errores_form += "<li>El campo de institución no puede estar en blanco</li>"
-                                }
-                            }
+
                             if (xhr.responseJSON.hasOwnProperty('non_field_errors')) {
-                                if (xhr.responseJSON.non_field_errors == "Los campos nombre_dependencia, institucion_dependencia deben formar un conjunto único.") {
-                                    errores_form += "<li>Los campos <strong>Nombre de la dependencia</strong> e <strong>Institución a la que pertenece</strong> deben formar un conjunto único. Es decir, ya existe un registro con esta combinación de dependencia e institución.</li>"
+                                if (xhr.responseJSON.non_field_errors == "Los campos institucion_nombre, institucion_pais deben formar un conjunto único.") {
+                                    errores_form += "<li>Los campos <strong>Nombre</strong> y <strong>País</strong> deben formar un conjunto único. Es decir, ya existe un registro con esta combinación de institución y país.</li>"
                                 }
                             }
 
@@ -172,15 +185,7 @@
                                 '    <span aria-hidden="true">&times;</span>' +
                                 '  </button>' +
                                 '</div>'
-                            $("#dependencia_errors").html(errores_form);
-
-
-                            /*$('#id_subsistema_unam_dependencia').val(null).trigger('change');
-                            $('#id_institucion_dependencia').val(null).trigger('change');
-                            $('#id_institucion_dependencia').children('option').remove();
-                            $('#d_subsunam').hide('slow');
-                            $('#modal_form_dependencia_agregar').trigger('reset');
-                            */
+                            $("#institucion_errors").html(errores_form);
                         },
                         success: function (data) {
                             console.log("success")
@@ -211,7 +216,6 @@
                 });
             </script>
             {{ modal_form_dependencia_agregar.media.js }}
-        {% endblock %}
     </div>
 
 {% else %}
