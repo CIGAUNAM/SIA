@@ -1227,44 +1227,6 @@ class ProyectoArbitradoJSON(View):
 
 
 
-class ZonaPaisList(generics.ListCreateAPIView):
-    queryset = ZonaPais.objects.all()
-    serializer_class = ZonaPaisSerializer
-
-class ZonaPaisDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = ZonaPais.objects.all()
-    serializer_class = ZonaPaisSerializer
-
-
-class PaisList(generics.ListCreateAPIView):
-    queryset = Pais.objects.all()
-    serializer_class = PaisSerializer
-
-class PaisDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Pais.objects.all()
-    serializer_class = PaisSerializer
-
-
-class EstadoList(generics.ListCreateAPIView):
-    queryset = Estado.objects.all()
-    serializer_class = EstadoSerializer
-
-class EstadoDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Estado.objects.all()
-    serializer_class = EstadoSerializer
-
-class CiudadList(generics.ListCreateAPIView):
-    queryset = Ciudad.objects.all()
-    serializer_class = CiudadSerializer
-
-class CiudadDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Ciudad.objects.all()
-    serializer_class = CiudadSerializer
-
 
 class UserList(generics.ListCreateAPIView):
     permission_classes = (UserListReadOnly,)
@@ -1278,11 +1240,11 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class RESTInstitucionLista(generics.ListCreateAPIView):
-    queryset = Institucion.objects.all()
+    queryset = InstitucionSimple.objects.all()
     serializer_class = InstitucionSerializer
 
 class RESTInstitucionDetalle(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Institucion.objects.all()
+    queryset = InstitucionSimple.objects.all()
     serializer_class = InstitucionSerializer
 
 

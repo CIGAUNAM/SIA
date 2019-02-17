@@ -36,7 +36,7 @@ $(function () {
             $('#agregar-institucion-modal-body').load('/nucleo/instituciones/agregar/', function () {
                 $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                 $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion")});
-                $("#id_subsistema_unam_dependencia").djangoSelect2({dropdownParent: $("#agregar-institucion")});
+                $("#id_institucion_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-institucion")});
             });
         }
     });

@@ -3,115 +3,136 @@
         {% include 'adminlte/lib/_messages.html' %}
     {% endblock %}
 
-    <div class="col">
+    <p class="col">
 
         {% block form_modal_dependencia %}
-            <form id="modal_form_dependencia_agregar" action="" method="post">
+            <form id="modal_form_institucion_agregar" action="" method="post">
                 <div id="institucion_errors"></div>
                 {{ modal_form_institucion_agregar.errors }}
                 {% csrf_token %}
 
-                <p><strong>Nombre:</strong>
-                    <a href="#" data-toggle="tooltip" data-placement="bottom"
-                       title="Nombre de la institución. Agregar después del nombre sus siglas entre paréntesis (si tiene siglas),
+            <p><strong>Nombre:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="bottom"
+                   title="Nombre de la institución. Agregar después del nombre sus siglas entre paréntesis (si tiene siglas),
                        por ejemplo: Centro de Investigaciones en Geografía Ambiental (CIGA).">
-                        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-                <div class="form-group" style="margin-top: -10px;">
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-pencil-square-o"></i>
-                        </div>
-                        {{ modal_form_institucion_agregar.institucion_nombre }}
+                    <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
                     </div>
+                    {{ modal_form_institucion_agregar.institucion_nombre }}
                 </div>
-                </p>
-                <p><strong>País:</strong>
-                    <a href="#" data-toggle="tooltip" data-placement="right"
-                       title="País donde se encuentra la institución.">
-                        <i class="fa fa-question-circle"></i>
-                    </a> <i class="fa fa-edit"></i>
-                <div class="form-group" style="margin-top: -10px;">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                        {{ modal_form_institucion_agregar.institucion_pais }}
-                        <div class="input-group-addon">
-                            <a href="#" data-toggle="tooltip" data-placement="left"
-                               title="Mostrar los detalles adicionales del país.">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                        </div>
-                        <div class="input-group-addon">
+            </div>
+            </p>
+            <p><strong>Clasificacion:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="clasificacion de la institución.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_institucion_agregar.institucion_clasificacion }}
+                </div>
+            </div>
+            </p>
+            <p><strong>País:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="País donde se encuentra la institución.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_institucion_agregar.institucion_pais }}
+                    <div class="input-group-addon">
+                        <a href="#" data-toggle="tooltip" data-placement="left"
+                           title="Mostrar los detalles adicionales del país.">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                    </div>
+                    <div class="input-group-addon">
                             <span class="disabled" tabindex="-1" data-toggle="tooltip" data-placement="left"
                                   target="_blank"
                                   title="Agregar un país nuevo no está activo, si necesita un registro que no existe, debe solicitarlo a un administrador.">
                                 <i class="fa fa-plus "></i>
                             </span>
-                        </div>
                     </div>
                 </div>
-                </p>
-                <p><strong>Ciudad:</strong>
-                    <a href="#" data-toggle="tooltip" data-placement="right"
-                       title="Ciudad donde se encuentra la institución.">
-                        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-                <div class="form-group" style="margin-top: -10px;">
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-pencil-square-o"></i>
-                        </div>
-                        {{ modal_form_institucion_agregar.institucion_ciudad }}
+            </div>
+            </p>
+            <p><strong>Ciudad:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Ciudad donde se encuentra la institución.">
+                    <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
                     </div>
+                    {{ modal_form_institucion_agregar.institucion_ciudad }}
                 </div>
-                </p>
-                <p><strong>Clasificacion:</strong>
+            </div>
+            </p>
+            <p><strong>La institución pertenece a la UNAM: </strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="¿La institución pertenece a la UNAM? de ser así, marcar la casilla."><i
+                        class="fa fa-question-circle"></i></a>
+                {{ modal_form_institucion_agregar.institucion_perteneceunam }}
+            </p>
+            <div id="d_subsunam">
+                <p><strong>Subsistema UNAM:</strong>
                     <a href="#" data-toggle="tooltip" data-placement="right"
-                       title="clasificacion de la institución.">
+                       title="En caso de que la dependencia sea perteneciente a la UNAM y esté adscrita a algún subsistema de la UNAM seleccionarlo de la lista, de lo contrario dejar en blanco.">
                         <i class="fa fa-question-circle"></i>
-                    </a> <i class="fa fa-edit"></i>
+                    </a>
                 <div class="form-group" style="margin-top: -10px;">
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                        {{ modal_form_institucion_agregar.institucion_clasificacion }}
+                        {{ modal_form_institucion_agregar.institucion_subsistemaunam }}
                     </div>
                 </div>
                 </p>
+            </div>
+
+
+
 
             </form>
 
             <script>
-                if ($("#id_institucion_dependencia").val() != 1) {
-                    console.log("esconder inicio")
-                    $('#d_subsunam').hide();
-                } else {
-                    $('#d_subsunam').show();
-                }
+                $('#d_subsunam').hide();
 
 
-                $("#id_institucion_dependencia").on('change', function () {
-                    if ($("#id_institucion_dependencia").val() == 1) {
+                $("#id_institucion_perteneceunam").on('change', function () {
+                    console.log($("#id_institucion_perteneceunam").is(':checked'));
+                    if ($("#id_institucion_perteneceunam").is(':checked')) {
                         $('#d_subsunam').show('slow');
                     } else {
                         console.log("esconder cambio")
                         $('#d_subsunam').hide('slow');
-                        $('#id_subsistema_unam_dependencia').val(null).trigger('change');
+                        $('#id_institucion_subsistemaunam').val(null).trigger('change');
                     }
                 });
 
-                $("#modal_form_dependencia_agregar").submit(function (event) {
+                $("#modal_form_institucion_agregar").submit(function (event) {
                     console.log("Handler for .submit() called.");
                     var datos = {
-                        nombre_dependencia: $("#id_nombre_dependencia").val(),
-                        institucion_dependencia: parseInt($("#id_institucion_dependencia").val()),
-                        ciudad_text_dependencia: $("#id_ciudad_text_dependencia").val(),
-                        usuario_creador: {{ user.pk }},
+                        institucion_nombre: $("#id_institucion_nombre").val(),
+                        institucion_pais: $("#id_institucion_pais").val(),
+                        institucion_ciudad: $("#id_institucion_ciudad").val(),
+                        institucion_clasificacion: $("#id_institucion_clasificacion").val(),
+                        institucion_regusuario: {{ user.pk }}
                     };
-                    if ($("#id_subsistema_unam_dependencia").val() != "") {
-                        datos.subsistema_unam_dependencia = $("#id_subsistema_unam_dependencia").val();
+                    if ($("#id_institucion_subsistemaunam").val() != "") {
+                        datos.institucion_perteneceunam = true;
+                        datos.institucion_subsistemaunam = $("#id_institucion_subsistemaunam").val();
                     }
                     $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
                     $.ajax({
                         type: "POST",
-                        url: "/nucleo/rest/dependencias/",
+                        url: "/nucleo/rest/instituciones/",
                         dataType: 'json',
                         data: datos,
                         headers: {"X-CSRFToken": $crf_token},
