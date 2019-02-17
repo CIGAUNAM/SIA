@@ -217,7 +217,7 @@ class User(AbstractUser):
 
 
 class InstitucionSimple(models.Model):
-    institucion_nombre = models.CharField(max_length=255, unique=True, verbose_name='Nombre de la institución')
+    institucion_nombre = models.CharField(max_length=255, verbose_name='Nombre de la institución')
     institucion_pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='País donde se encuentra la institución')
     institucion_ciudad = models.CharField(max_length=255, verbose_name='Ciudad donde se encuentra la institución')
 
@@ -241,7 +241,7 @@ class InstitucionSimple(models.Model):
     institucion_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
-        return self.institucion_nombre
+        return "{} ({})".format(self.institucion_nombre, self.institucion_pais)
 
     def natural_key(self):
         return self.institucion_nombre
@@ -250,6 +250,7 @@ class InstitucionSimple(models.Model):
         return reverse('institucion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
+        unique_together = ('institucion_nombre', 'institucion_pais')
         ordering = ['institucion_nombre']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
