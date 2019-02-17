@@ -3,28 +3,8 @@ from nucleo.models import *
 from formacion_academica.models import *
 
 
-class ZonaPaisSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ZonaPais
-        fields = ('id', 'zona')
 
 
-class PaisSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Pais
-        fields = ('id', 'pais', 'nombre_extendido', 'zona', 'codigo')
-
-
-class EstadoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Estado
-        fields = ('id', 'estado', 'pais')
-
-
-class CiudadSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Ciudad
-        fields = ('id', 'ciudad', 'estado')
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -46,7 +26,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class InstitucionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Institucion
+        model = InstitucionSimple
         fields = '__all__'
 
 

@@ -92,9 +92,9 @@ class InstitucionSimpleForm(forms.ModelForm):
                  ('PRIVADA', 'Sector privado'), ('NO_LUCRATIVA', 'Sector privado no lucrativo')), required=True)
     institucion_perteneceunam = forms.BooleanField(required=False)
     institucion_subsistemaunam = forms.ChoiceField(
-        widget=Select2Widget(attrs={'class': 'form-control pull-right'}),
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(
-            ('', 'Seleccionar Subsistema UNAM'),
+            ('', '-------'),
             ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
             ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
             ('HUMANIDADES', 'Subsistema de Humanidades'),

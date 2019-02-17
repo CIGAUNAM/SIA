@@ -228,7 +228,7 @@ class InstitucionSimple(models.Model):
         verbose_name='Clasificación de la institución')
     institucion_perteneceunam = models.BooleanField(default=False, verbose_name='Pertenece a la UNAM')
     institucion_subsistemaunam = models.CharField(max_length=50, choices=(
-        ('', 'Seleccionar Subsistema UNAM'),
+        ('', '-------'),
         ('DIFUSION_CULTURAL', 'Subsistema de Difusión Cultural'),
         ('ESTUDIOS_POSGRADO', 'Subsistema de Estudios de Posgrado'),
         ('HUMANIDADES', 'Subsistema de Humanidades'),
