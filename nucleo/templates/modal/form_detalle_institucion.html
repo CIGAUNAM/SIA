@@ -5,7 +5,7 @@
 
     <p class="col">
         <form id="modal_form_institucion_detalle" action="" method="post">
-            <div id="institucion_errors"></div>
+            <div id="detalle_institucion_errors"></div>
             {{ modal_form_institucion_detalle.errors }}
             {% csrf_token %}
 
@@ -92,7 +92,6 @@
             </div>
         </div>
         </p>
-    {{ modal_form_institucion_detalle.as_p }}
     </div>
 
 
@@ -101,6 +100,7 @@
     </form>
 
     <script>
+
         $('#d_subsunam').hide();
 
 
@@ -137,9 +137,12 @@
             }
 
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+            var patchurl = "/nucleo/rest/dependencias/" + $("#id_dependencia").val().toString() + "/";
+            console.log(patchurl);
+
             $.ajax({
-                type: "POST",
-                url: "/nucleo/rest/instituciones/",
+                type: "PATCH",
+                url: patchurl,
                 dataType: 'json',
                 data: datos,
                 headers: {"X-CSRFToken": $crf_token},
@@ -185,11 +188,10 @@
                         '    <span aria-hidden="true">&times;</span>' +
                         '  </button>' +
                         '</div>'
-                    $("#institucion_errors").html(errores_form);
+                    $("#detalle_institucion_errors").html(errores_form);
                 },
                 success: function (data) {
                     console.log("success")
-                    $('#id_subsistema_unam_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').children('option').remove();
                     $('#d_subsunam').hide('slow');
