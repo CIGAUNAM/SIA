@@ -79,9 +79,6 @@ $(function () {
                 $('#id_institucion_subsistemaunam').attr("required", null);
             }
         });
-
-
-
         agregar_institucion_dialog.dialog("open");
     });
 
