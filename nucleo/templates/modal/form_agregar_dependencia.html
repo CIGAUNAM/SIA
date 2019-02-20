@@ -160,13 +160,6 @@
 
                             $("#dependencia_errors").html(errores_form);
 
-
-                            /*$('#id_subsistema_unam_dependencia').val(null).trigger('change');
-                            $('#id_institucion_dependencia').val(null).trigger('change');
-                            $('#id_institucion_dependencia').children('option').remove();
-                            $('#d_subsunam').hide('slow');
-                            $('#modal_form_dependencia_agregar').trigger('reset');
-                            */
                         },
                         success: function (data) {
                             console.log("success")
@@ -196,7 +189,6 @@
                     event.preventDefault();
                 });
             </script>
-            {{ modal_form_dependencia_agregar.media.js }}
         {% endblock %}
     </div>
 

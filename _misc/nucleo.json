@@ -73,2540 +73,2540 @@
   "model": "nucleo.pais",
   "pk": 1,
   "fields": {
-    "nombre": "M\u00e9xico",
-    "nombre_extendido": "Estados Unidos Mexicanos",
-    "codigo": "MX",
-    "zona": 1
+    "pais_nombre": "M\u00e9xico",
+    "pais_nombre_extendido": "Estados Unidos Mexicanos",
+    "pais_codigo": "MX",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 2,
   "fields": {
-    "nombre": "Abjasia",
-    "nombre_extendido": "Rep\u00fablica de Abjasia",
-    "codigo": "AB",
-    "zona": 6
+    "pais_nombre": "Abjasia",
+    "pais_nombre_extendido": "Rep\u00fablica de Abjasia",
+    "pais_codigo": "AB",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 3,
   "fields": {
-    "nombre": "Acrotiri y Dhekelia",
-    "nombre_extendido": "Bases Soberanas de Acrotiri y Dhekelia",
-    "codigo": "QM",
-    "zona": 5
+    "pais_nombre": "Acrotiri y Dhekelia",
+    "pais_nombre_extendido": "Bases Soberanas de Acrotiri y Dhekelia",
+    "pais_codigo": "QM",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 4,
   "fields": {
-    "nombre": "Afganist\u00e1n",
-    "nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Afganist\u00e1n",
-    "codigo": "AF",
-    "zona": 6
+    "pais_nombre": "Afganist\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Afganist\u00e1n",
+    "pais_codigo": "AF",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 5,
   "fields": {
-    "nombre": "Albania",
-    "nombre_extendido": "Rep\u00fablica de Albania",
-    "codigo": "AL",
-    "zona": 5
+    "pais_nombre": "Albania",
+    "pais_nombre_extendido": "Rep\u00fablica de Albania",
+    "pais_codigo": "AL",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 6,
   "fields": {
-    "nombre": "Alemania",
-    "nombre_extendido": "Rep\u00fablica Federal de Alemania",
-    "codigo": "DE",
-    "zona": 5
+    "pais_nombre": "Alemania",
+    "pais_nombre_extendido": "Rep\u00fablica Federal de Alemania",
+    "pais_codigo": "DE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 7,
   "fields": {
-    "nombre": "Andorra",
-    "nombre_extendido": "Principado de Andorra",
-    "codigo": "AD",
-    "zona": 5
+    "pais_nombre": "Andorra",
+    "pais_nombre_extendido": "Principado de Andorra",
+    "pais_codigo": "AD",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 8,
   "fields": {
-    "nombre": "Angola",
-    "nombre_extendido": "Rep\u00fablica de Angola",
-    "codigo": "AO",
-    "zona": 8
+    "pais_nombre": "Angola",
+    "pais_nombre_extendido": "Rep\u00fablica de Angola",
+    "pais_codigo": "AO",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 9,
   "fields": {
-    "nombre": "Anguila",
-    "nombre_extendido": "Anguila",
-    "codigo": "AI",
-    "zona": 2
+    "pais_nombre": "Anguila",
+    "pais_nombre_extendido": "Anguila",
+    "pais_codigo": "AI",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 10,
   "fields": {
-    "nombre": "Antigua y Barbuda",
-    "nombre_extendido": "Antigua y Barbuda",
-    "codigo": "AG",
-    "zona": 4
+    "pais_nombre": "Antigua y Barbuda",
+    "pais_nombre_extendido": "Antigua y Barbuda",
+    "pais_codigo": "AG",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 11,
   "fields": {
-    "nombre": "Arabia Saudita",
-    "nombre_extendido": "Reino de Arabia Saudita",
-    "codigo": "SA",
-    "zona": 6
+    "pais_nombre": "Arabia Saudita",
+    "pais_nombre_extendido": "Reino de Arabia Saudita",
+    "pais_codigo": "SA",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 12,
   "fields": {
-    "nombre": "Argelia",
-    "nombre_extendido": "Rep\u00fablica Argelina Democr\u00e1tica y Popular",
-    "codigo": "DZ",
-    "zona": 8
+    "pais_nombre": "Argelia",
+    "pais_nombre_extendido": "Rep\u00fablica Argelina Democr\u00e1tica y Popular",
+    "pais_codigo": "DZ",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 13,
   "fields": {
-    "nombre": "Argentina",
-    "nombre_extendido": "Rep\u00fablica Argentina",
-    "codigo": "AR",
-    "zona": 3
+    "pais_nombre": "Argentina",
+    "pais_nombre_extendido": "Rep\u00fablica Argentina",
+    "pais_codigo": "AR",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 14,
   "fields": {
-    "nombre": "Armenia",
-    "nombre_extendido": "Rep\u00fablica de Armenia",
-    "codigo": "AM",
-    "zona": 6
+    "pais_nombre": "Armenia",
+    "pais_nombre_extendido": "Rep\u00fablica de Armenia",
+    "pais_codigo": "AM",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 15,
   "fields": {
-    "nombre": "Aruba",
-    "nombre_extendido": "Aruba",
-    "codigo": "AW",
-    "zona": 2
+    "pais_nombre": "Aruba",
+    "pais_nombre_extendido": "Aruba",
+    "pais_codigo": "AW",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 16,
   "fields": {
-    "nombre": "Australia",
-    "nombre_extendido": "Mancomunidad de Australia",
-    "codigo": "AU",
-    "zona": 9
+    "pais_nombre": "Australia",
+    "pais_nombre_extendido": "Mancomunidad de Australia",
+    "pais_codigo": "AU",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 17,
   "fields": {
-    "nombre": "Austria",
-    "nombre_extendido": "Rep\u00fablica de Austria",
-    "codigo": "AT",
-    "zona": 5
+    "pais_nombre": "Austria",
+    "pais_nombre_extendido": "Rep\u00fablica de Austria",
+    "pais_codigo": "AT",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 18,
   "fields": {
-    "nombre": "Azawad",
-    "nombre_extendido": "Estado Independiente del Azawad",
-    "codigo": "00",
-    "zona": 8
+    "pais_nombre": "Azawad",
+    "pais_nombre_extendido": "Estado Independiente del Azawad",
+    "pais_codigo": "00",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 19,
   "fields": {
-    "nombre": "Azerbaiy\u00e1n",
-    "nombre_extendido": "Rep\u00fablica de Azerbaiy\u00e1n",
-    "codigo": "AZ",
-    "zona": 6
+    "pais_nombre": "Azerbaiy\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica de Azerbaiy\u00e1n",
+    "pais_codigo": "AZ",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 20,
   "fields": {
-    "nombre": "Bahamas",
-    "nombre_extendido": "Mancomunidad de las Bahamas",
-    "codigo": "BS",
-    "zona": 4
+    "pais_nombre": "Bahamas",
+    "pais_nombre_extendido": "Mancomunidad de las Bahamas",
+    "pais_codigo": "BS",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 21,
   "fields": {
-    "nombre": "Banglad\u00e9s",
-    "nombre_extendido": "Rep\u00fablica Popular de Bangladesh",
-    "codigo": "BD",
-    "zona": 6
+    "pais_nombre": "Banglad\u00e9s",
+    "pais_nombre_extendido": "Rep\u00fablica Popular de Bangladesh",
+    "pais_codigo": "BD",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 22,
   "fields": {
-    "nombre": "Barbados",
-    "nombre_extendido": "Barbados",
-    "codigo": "BB",
-    "zona": 2
+    "pais_nombre": "Barbados",
+    "pais_nombre_extendido": "Barbados",
+    "pais_codigo": "BB",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 23,
   "fields": {
-    "nombre": "Bar\u00e9in",
-    "nombre_extendido": "Reino de Bar\u00e9in",
-    "codigo": "BH",
-    "zona": 6
+    "pais_nombre": "Bar\u00e9in",
+    "pais_nombre_extendido": "Reino de Bar\u00e9in",
+    "pais_codigo": "BH",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 24,
   "fields": {
-    "nombre": "B\u00e9lgica",
-    "nombre_extendido": "Reino de B\u00e9lgica",
-    "codigo": "BE",
-    "zona": 5
+    "pais_nombre": "B\u00e9lgica",
+    "pais_nombre_extendido": "Reino de B\u00e9lgica",
+    "pais_codigo": "BE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 25,
   "fields": {
-    "nombre": "Belice",
-    "nombre_extendido": "Belice",
-    "codigo": "BZ",
-    "zona": 2
+    "pais_nombre": "Belice",
+    "pais_nombre_extendido": "Belice",
+    "pais_codigo": "BZ",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 26,
   "fields": {
-    "nombre": "Ben\u00edn",
-    "nombre_extendido": "Rep\u00fablica de Ben\u00edn",
-    "codigo": "BJ",
-    "zona": 8
+    "pais_nombre": "Ben\u00edn",
+    "pais_nombre_extendido": "Rep\u00fablica de Ben\u00edn",
+    "pais_codigo": "BJ",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 27,
   "fields": {
-    "nombre": "Bermudas",
-    "nombre_extendido": "Bermudas",
-    "codigo": "BM",
-    "zona": 1
+    "pais_nombre": "Bermudas",
+    "pais_nombre_extendido": "Bermudas",
+    "pais_codigo": "BM",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 28,
   "fields": {
-    "nombre": "Bielorrusia",
-    "nombre_extendido": "Rep\u00fablica de Bielorrusia",
-    "codigo": "BY",
-    "zona": 5
+    "pais_nombre": "Bielorrusia",
+    "pais_nombre_extendido": "Rep\u00fablica de Bielorrusia",
+    "pais_codigo": "BY",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 29,
   "fields": {
-    "nombre": "Birmania",
-    "nombre_extendido": "Uni\u00f3n de Myanmar (antes Birmania)",
-    "codigo": "MM",
-    "zona": 6
+    "pais_nombre": "Birmania",
+    "pais_nombre_extendido": "Uni\u00f3n de Myanmar (antes Birmania)",
+    "pais_codigo": "MM",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 30,
   "fields": {
-    "nombre": "Bolivia",
-    "nombre_extendido": "Estado Plurinacional de Bolivia",
-    "codigo": "BO",
-    "zona": 3
+    "pais_nombre": "Bolivia",
+    "pais_nombre_extendido": "Estado Plurinacional de Bolivia",
+    "pais_codigo": "BO",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 31,
   "fields": {
-    "nombre": "Bosnia y Herzegovina",
-    "nombre_extendido": "Bosnia y Herzegovina",
-    "codigo": "BA",
-    "zona": 5
+    "pais_nombre": "Bosnia y Herzegovina",
+    "pais_nombre_extendido": "Bosnia y Herzegovina",
+    "pais_codigo": "BA",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 32,
   "fields": {
-    "nombre": "Botsuana",
-    "nombre_extendido": "Rep\u00fablica de Botsuana",
-    "codigo": "BW",
-    "zona": 8
+    "pais_nombre": "Botsuana",
+    "pais_nombre_extendido": "Rep\u00fablica de Botsuana",
+    "pais_codigo": "BW",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 33,
   "fields": {
-    "nombre": "Brasil",
-    "nombre_extendido": "Rep\u00fablica Federativa del Brasil",
-    "codigo": "BR",
-    "zona": 3
+    "pais_nombre": "Brasil",
+    "pais_nombre_extendido": "Rep\u00fablica Federativa del Brasil",
+    "pais_codigo": "BR",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 34,
   "fields": {
-    "nombre": "Brun\u00e9i",
-    "nombre_extendido": "Estado de Brun\u00e9i, Morada de la Paz",
-    "codigo": "BN",
-    "zona": 6
+    "pais_nombre": "Brun\u00e9i",
+    "pais_nombre_extendido": "Estado de Brun\u00e9i, Morada de la Paz",
+    "pais_codigo": "BN",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 35,
   "fields": {
-    "nombre": "Bulgaria",
-    "nombre_extendido": "Rep\u00fablica de Bulgaria",
-    "codigo": "BG",
-    "zona": 5
+    "pais_nombre": "Bulgaria",
+    "pais_nombre_extendido": "Rep\u00fablica de Bulgaria",
+    "pais_codigo": "BG",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 36,
   "fields": {
-    "nombre": "Burkina Faso",
-    "nombre_extendido": "Burkina Faso (antes Republica del Alto Volta)",
-    "codigo": "BF",
-    "zona": 8
+    "pais_nombre": "Burkina Faso",
+    "pais_nombre_extendido": "Burkina Faso (antes Republica del Alto Volta)",
+    "pais_codigo": "BF",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 37,
   "fields": {
-    "nombre": "Burundi",
-    "nombre_extendido": "Rep\u00fablica de Burundi",
-    "codigo": "BI",
-    "zona": 8
+    "pais_nombre": "Burundi",
+    "pais_nombre_extendido": "Rep\u00fablica de Burundi",
+    "pais_codigo": "BI",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 38,
   "fields": {
-    "nombre": "But\u00e1n",
-    "nombre_extendido": "Reino de But\u00e1n",
-    "codigo": "BT",
-    "zona": 6
+    "pais_nombre": "But\u00e1n",
+    "pais_nombre_extendido": "Reino de But\u00e1n",
+    "pais_codigo": "BT",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 39,
   "fields": {
-    "nombre": "Cabo Verde",
-    "nombre_extendido": "Rep\u00fablica de Cabo Verde",
-    "codigo": "CV",
-    "zona": 8
+    "pais_nombre": "Cabo Verde",
+    "pais_nombre_extendido": "Rep\u00fablica de Cabo Verde",
+    "pais_codigo": "CV",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 40,
   "fields": {
-    "nombre": "Camboya",
-    "nombre_extendido": "Reino de Camboya",
-    "codigo": "KH",
-    "zona": 6
+    "pais_nombre": "Camboya",
+    "pais_nombre_extendido": "Reino de Camboya",
+    "pais_codigo": "KH",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 41,
   "fields": {
-    "nombre": "Camer\u00fan",
-    "nombre_extendido": "Rep\u00fablica de Camer\u00fan",
-    "codigo": "CM",
-    "zona": 8
+    "pais_nombre": "Camer\u00fan",
+    "pais_nombre_extendido": "Rep\u00fablica de Camer\u00fan",
+    "pais_codigo": "CM",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 42,
   "fields": {
-    "nombre": "Canad\u00e1",
-    "nombre_extendido": "Canad\u00e1",
-    "codigo": "CA",
-    "zona": 1
+    "pais_nombre": "Canad\u00e1",
+    "pais_nombre_extendido": "Canad\u00e1",
+    "pais_codigo": "CA",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 43,
   "fields": {
-    "nombre": "Catar",
-    "nombre_extendido": "Estado de Catar",
-    "codigo": "QA",
-    "zona": 6
+    "pais_nombre": "Catar",
+    "pais_nombre_extendido": "Estado de Catar",
+    "pais_codigo": "QA",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 44,
   "fields": {
-    "nombre": "Chad",
-    "nombre_extendido": "Rep\u00fablica del Chad",
-    "codigo": "TD",
-    "zona": 8
+    "pais_nombre": "Chad",
+    "pais_nombre_extendido": "Rep\u00fablica del Chad",
+    "pais_codigo": "TD",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 45,
   "fields": {
-    "nombre": "Chile",
-    "nombre_extendido": "Rep\u00fablica de Chile",
-    "codigo": "CL",
-    "zona": 3
+    "pais_nombre": "Chile",
+    "pais_nombre_extendido": "Rep\u00fablica de Chile",
+    "pais_codigo": "CL",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 46,
   "fields": {
-    "nombre": "China",
-    "nombre_extendido": "Rep\u00fablica Popular China",
-    "codigo": "CN",
-    "zona": 6
+    "pais_nombre": "China",
+    "pais_nombre_extendido": "Rep\u00fablica Popular China",
+    "pais_codigo": "CN",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 47,
   "fields": {
-    "nombre": "Chipre",
-    "nombre_extendido": "Rep\u00fablica de Chipre",
-    "codigo": "CY",
-    "zona": 7
+    "pais_nombre": "Chipre",
+    "pais_nombre_extendido": "Rep\u00fablica de Chipre",
+    "pais_codigo": "CY",
+    "pais_zona": 7
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 48,
   "fields": {
-    "nombre": "Ciudad del Vaticano",
-    "nombre_extendido": "Estado de la Ciudad del Vaticano",
-    "codigo": "VA",
-    "zona": 5
+    "pais_nombre": "Ciudad del Vaticano",
+    "pais_nombre_extendido": "Estado de la Ciudad del Vaticano",
+    "pais_codigo": "VA",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 49,
   "fields": {
-    "nombre": "Colombia",
-    "nombre_extendido": "Rep\u00fablica de Colombia",
-    "codigo": "CO",
-    "zona": 3
+    "pais_nombre": "Colombia",
+    "pais_nombre_extendido": "Rep\u00fablica de Colombia",
+    "pais_codigo": "CO",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 50,
   "fields": {
-    "nombre": "Comoras",
-    "nombre_extendido": "Uni\u00f3n de las Comoras",
-    "codigo": "KM",
-    "zona": 8
+    "pais_nombre": "Comoras",
+    "pais_nombre_extendido": "Uni\u00f3n de las Comoras",
+    "pais_codigo": "KM",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 51,
   "fields": {
-    "nombre": "Corea del Norte",
-    "nombre_extendido": "Rep\u00fablica Popular Democr\u00e1tica de Corea",
-    "codigo": "KP",
-    "zona": 6
+    "pais_nombre": "Corea del Norte",
+    "pais_nombre_extendido": "Rep\u00fablica Popular Democr\u00e1tica de Corea",
+    "pais_codigo": "KP",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 52,
   "fields": {
-    "nombre": "Corea del Sur",
-    "nombre_extendido": "Rep\u00fablica de Corea",
-    "codigo": "KR",
-    "zona": 6
+    "pais_nombre": "Corea del Sur",
+    "pais_nombre_extendido": "Rep\u00fablica de Corea",
+    "pais_codigo": "KR",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 53,
   "fields": {
-    "nombre": "Costa de Marfil",
-    "nombre_extendido": "Rep\u00fablica de Costa de Marfil",
-    "codigo": "CI",
-    "zona": 8
+    "pais_nombre": "Costa de Marfil",
+    "pais_nombre_extendido": "Rep\u00fablica de Costa de Marfil",
+    "pais_codigo": "CI",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 54,
   "fields": {
-    "nombre": "Costa Rica",
-    "nombre_extendido": "Rep\u00fablica de Costa Rica",
-    "codigo": "CR",
-    "zona": 2
+    "pais_nombre": "Costa Rica",
+    "pais_nombre_extendido": "Rep\u00fablica de Costa Rica",
+    "pais_codigo": "CR",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 55,
   "fields": {
-    "nombre": "Croacia",
-    "nombre_extendido": "Rep\u00fablica de Croacia",
-    "codigo": "HR",
-    "zona": 5
+    "pais_nombre": "Croacia",
+    "pais_nombre_extendido": "Rep\u00fablica de Croacia",
+    "pais_codigo": "HR",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 56,
   "fields": {
-    "nombre": "Cuba",
-    "nombre_extendido": "Rep\u00fablica de Cuba",
-    "codigo": "CU",
-    "zona": 4
+    "pais_nombre": "Cuba",
+    "pais_nombre_extendido": "Rep\u00fablica de Cuba",
+    "pais_codigo": "CU",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 57,
   "fields": {
-    "nombre": "Curazao",
-    "nombre_extendido": "Curazao",
-    "codigo": "CW",
-    "zona": 2
+    "pais_nombre": "Curazao",
+    "pais_nombre_extendido": "Curazao",
+    "pais_codigo": "CW",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 58,
   "fields": {
-    "nombre": "Dinamarca",
-    "nombre_extendido": "Reino de Dinamarca",
-    "codigo": "DK",
-    "zona": 5
+    "pais_nombre": "Dinamarca",
+    "pais_nombre_extendido": "Reino de Dinamarca",
+    "pais_codigo": "DK",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 59,
   "fields": {
-    "nombre": "Dominica",
-    "nombre_extendido": "Mancomunidad de Dominica",
-    "codigo": "DM",
-    "zona": 4
+    "pais_nombre": "Dominica",
+    "pais_nombre_extendido": "Mancomunidad de Dominica",
+    "pais_codigo": "DM",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 60,
   "fields": {
-    "nombre": "Ecuador",
-    "nombre_extendido": "Rep\u00fablica del Ecuador",
-    "codigo": "EC",
-    "zona": 3
+    "pais_nombre": "Ecuador",
+    "pais_nombre_extendido": "Rep\u00fablica del Ecuador",
+    "pais_codigo": "EC",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 61,
   "fields": {
-    "nombre": "Egipto",
-    "nombre_extendido": "Rep\u00fablica \u00c1rabe de Egipto",
-    "codigo": "EG",
-    "zona": 8
+    "pais_nombre": "Egipto",
+    "pais_nombre_extendido": "Rep\u00fablica \u00c1rabe de Egipto",
+    "pais_codigo": "EG",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 62,
   "fields": {
-    "nombre": "El Salvador",
-    "nombre_extendido": "Rep\u00fablica de El Salvador",
-    "codigo": "SV",
-    "zona": 2
+    "pais_nombre": "El Salvador",
+    "pais_nombre_extendido": "Rep\u00fablica de El Salvador",
+    "pais_codigo": "SV",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 63,
   "fields": {
-    "nombre": "Emiratos \u00c1rabes Unidos",
-    "nombre_extendido": "Emiratos \u00c1rabes Unidos",
-    "codigo": "AE",
-    "zona": 6
+    "pais_nombre": "Emiratos \u00c1rabes Unidos",
+    "pais_nombre_extendido": "Emiratos \u00c1rabes Unidos",
+    "pais_codigo": "AE",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 64,
   "fields": {
-    "nombre": "Eritrea",
-    "nombre_extendido": "Estado de Eritrea",
-    "codigo": "ER",
-    "zona": 8
+    "pais_nombre": "Eritrea",
+    "pais_nombre_extendido": "Estado de Eritrea",
+    "pais_codigo": "ER",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 65,
   "fields": {
-    "nombre": "Eslovaquia",
-    "nombre_extendido": "Rep\u00fablica de Eslovaquia",
-    "codigo": "SK",
-    "zona": 5
+    "pais_nombre": "Eslovaquia",
+    "pais_nombre_extendido": "Rep\u00fablica de Eslovaquia",
+    "pais_codigo": "SK",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 66,
   "fields": {
-    "nombre": "Eslovenia",
-    "nombre_extendido": "Rep\u00fablica de Eslovenia",
-    "codigo": "SI",
-    "zona": 5
+    "pais_nombre": "Eslovenia",
+    "pais_nombre_extendido": "Rep\u00fablica de Eslovenia",
+    "pais_codigo": "SI",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 67,
   "fields": {
-    "nombre": "Espa\u00f1a",
-    "nombre_extendido": "Reino de Espa\u00f1a",
-    "codigo": "ES",
-    "zona": 5
+    "pais_nombre": "Espa\u00f1a",
+    "pais_nombre_extendido": "Reino de Espa\u00f1a",
+    "pais_codigo": "ES",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 68,
   "fields": {
-    "nombre": "Estados Unidos de Am\u00e9rica",
-    "nombre_extendido": "Estados Unidos de Am\u00e9rica",
-    "codigo": "US",
-    "zona": 1
+    "pais_nombre": "Estados Unidos de Am\u00e9rica",
+    "pais_nombre_extendido": "Estados Unidos de Am\u00e9rica",
+    "pais_codigo": "US",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 69,
   "fields": {
-    "nombre": "Estonia",
-    "nombre_extendido": "Rep\u00fablica de Estonia",
-    "codigo": "EE",
-    "zona": 5
+    "pais_nombre": "Estonia",
+    "pais_nombre_extendido": "Rep\u00fablica de Estonia",
+    "pais_codigo": "EE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 70,
   "fields": {
-    "nombre": "Etiop\u00eda",
-    "nombre_extendido": "Rep\u00fablica Democr\u00e1tica Federal de Etiop\u00eda",
-    "codigo": "ET",
-    "zona": 8
+    "pais_nombre": "Etiop\u00eda",
+    "pais_nombre_extendido": "Rep\u00fablica Democr\u00e1tica Federal de Etiop\u00eda",
+    "pais_codigo": "ET",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 71,
   "fields": {
-    "nombre": "Filipinas",
-    "nombre_extendido": "Rep\u00fablica de las Filipinas",
-    "codigo": "PH",
-    "zona": 6
+    "pais_nombre": "Filipinas",
+    "pais_nombre_extendido": "Rep\u00fablica de las Filipinas",
+    "pais_codigo": "PH",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 72,
   "fields": {
-    "nombre": "Finlandia",
-    "nombre_extendido": "Rep\u00fablica de Finlandia",
-    "codigo": "FI",
-    "zona": 5
+    "pais_nombre": "Finlandia",
+    "pais_nombre_extendido": "Rep\u00fablica de Finlandia",
+    "pais_codigo": "FI",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 73,
   "fields": {
-    "nombre": "Fiyi",
-    "nombre_extendido": "Rep\u00fablica de las Islas Fiyi (Fiji)",
-    "codigo": "FJ",
-    "zona": 9
+    "pais_nombre": "Fiyi",
+    "pais_nombre_extendido": "Rep\u00fablica de las Islas Fiyi (Fiji)",
+    "pais_codigo": "FJ",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 74,
   "fields": {
-    "nombre": "Francia",
-    "nombre_extendido": "Rep\u00fablica Francesa",
-    "codigo": "FR",
-    "zona": 5
+    "pais_nombre": "Francia",
+    "pais_nombre_extendido": "Rep\u00fablica Francesa",
+    "pais_codigo": "FR",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 75,
   "fields": {
-    "nombre": "Gab\u00f3n",
-    "nombre_extendido": "Rep\u00fablica Gabonesa",
-    "codigo": "GA",
-    "zona": 8
+    "pais_nombre": "Gab\u00f3n",
+    "pais_nombre_extendido": "Rep\u00fablica Gabonesa",
+    "pais_codigo": "GA",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 76,
   "fields": {
-    "nombre": "Gambia",
-    "nombre_extendido": "Rep\u00fablica de la Gambia",
-    "codigo": "GM",
-    "zona": 8
+    "pais_nombre": "Gambia",
+    "pais_nombre_extendido": "Rep\u00fablica de la Gambia",
+    "pais_codigo": "GM",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 77,
   "fields": {
-    "nombre": "Georgia",
-    "nombre_extendido": "Georgia",
-    "codigo": "GE",
-    "zona": 6
+    "pais_nombre": "Georgia",
+    "pais_nombre_extendido": "Georgia",
+    "pais_codigo": "GE",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 78,
   "fields": {
-    "nombre": "Ghana",
-    "nombre_extendido": "Rep\u00fablica de Ghana",
-    "codigo": "GH",
-    "zona": 8
+    "pais_nombre": "Ghana",
+    "pais_nombre_extendido": "Rep\u00fablica de Ghana",
+    "pais_codigo": "GH",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 79,
   "fields": {
-    "nombre": "Gibraltar",
-    "nombre_extendido": "Gibraltar",
-    "codigo": "GI",
-    "zona": 5
+    "pais_nombre": "Gibraltar",
+    "pais_nombre_extendido": "Gibraltar",
+    "pais_codigo": "GI",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 80,
   "fields": {
-    "nombre": "Granada",
-    "nombre_extendido": "Granada",
-    "codigo": "GD",
-    "zona": 4
+    "pais_nombre": "Granada",
+    "pais_nombre_extendido": "Granada",
+    "pais_codigo": "GD",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 81,
   "fields": {
-    "nombre": "Grecia",
-    "nombre_extendido": "Rep\u00fablica Hel\u00e9nica",
-    "codigo": "GR",
-    "zona": 5
+    "pais_nombre": "Grecia",
+    "pais_nombre_extendido": "Rep\u00fablica Hel\u00e9nica",
+    "pais_codigo": "GR",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 82,
   "fields": {
-    "nombre": "Groenlandia",
-    "nombre_extendido": "Groenlandia",
-    "codigo": "GL",
-    "zona": 1
+    "pais_nombre": "Groenlandia",
+    "pais_nombre_extendido": "Groenlandia",
+    "pais_codigo": "GL",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 83,
   "fields": {
-    "nombre": "Guam",
-    "nombre_extendido": "Territorio de Guam",
-    "codigo": "GU",
-    "zona": 9
+    "pais_nombre": "Guam",
+    "pais_nombre_extendido": "Territorio de Guam",
+    "pais_codigo": "GU",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 84,
   "fields": {
-    "nombre": "Guatemala",
-    "nombre_extendido": "Rep\u00fablica de Guatemala",
-    "codigo": "GT",
-    "zona": 2
+    "pais_nombre": "Guatemala",
+    "pais_nombre_extendido": "Rep\u00fablica de Guatemala",
+    "pais_codigo": "GT",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 85,
   "fields": {
-    "nombre": "Guernsey",
-    "nombre_extendido": "Bailiazgo de Guernsey",
-    "codigo": "GF",
-    "zona": 5
+    "pais_nombre": "Guernsey",
+    "pais_nombre_extendido": "Bailiazgo de Guernsey",
+    "pais_codigo": "GF",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 86,
   "fields": {
-    "nombre": "Guinea",
-    "nombre_extendido": "Rep\u00fablica de Guinea",
-    "codigo": "GN",
-    "zona": 8
+    "pais_nombre": "Guinea",
+    "pais_nombre_extendido": "Rep\u00fablica de Guinea",
+    "pais_codigo": "GN",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 87,
   "fields": {
-    "nombre": "Guinea Ecuatorial",
-    "nombre_extendido": "Rep\u00fablica de Guinea Ecuatorial",
-    "codigo": "GQ",
-    "zona": 8
+    "pais_nombre": "Guinea Ecuatorial",
+    "pais_nombre_extendido": "Rep\u00fablica de Guinea Ecuatorial",
+    "pais_codigo": "GQ",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 88,
   "fields": {
-    "nombre": "Guinea-Bissau",
-    "nombre_extendido": "Rep\u00fablica de Guinea-Bissau",
-    "codigo": "GW",
-    "zona": 8
+    "pais_nombre": "Guinea-Bissau",
+    "pais_nombre_extendido": "Rep\u00fablica de Guinea-Bissau",
+    "pais_codigo": "GW",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 89,
   "fields": {
-    "nombre": "Guyana",
-    "nombre_extendido": "Rep\u00fablica Cooperativa de Guyana",
-    "codigo": "GY",
-    "zona": 3
+    "pais_nombre": "Guyana",
+    "pais_nombre_extendido": "Rep\u00fablica Cooperativa de Guyana",
+    "pais_codigo": "GY",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 90,
   "fields": {
-    "nombre": "Hait\u00ed",
-    "nombre_extendido": "Rep\u00fablica de Hait\u00ed",
-    "codigo": "HT",
-    "zona": 4
+    "pais_nombre": "Hait\u00ed",
+    "pais_nombre_extendido": "Rep\u00fablica de Hait\u00ed",
+    "pais_codigo": "HT",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 91,
   "fields": {
-    "nombre": "Honduras",
-    "nombre_extendido": "Rep\u00fablica de Honduras",
-    "codigo": "HN",
-    "zona": 2
+    "pais_nombre": "Honduras",
+    "pais_nombre_extendido": "Rep\u00fablica de Honduras",
+    "pais_codigo": "HN",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 92,
   "fields": {
-    "nombre": "Hong Kong",
-    "nombre_extendido": "Regi\u00f3n Administrativa Especial de Hong Kong",
-    "codigo": "HK",
-    "zona": 6
+    "pais_nombre": "Hong Kong",
+    "pais_nombre_extendido": "Regi\u00f3n Administrativa Especial de Hong Kong",
+    "pais_codigo": "HK",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 93,
   "fields": {
-    "nombre": "Hungr\u00eda",
-    "nombre_extendido": "Rep\u00fablica de Hungr\u00eda",
-    "codigo": "HU",
-    "zona": 5
+    "pais_nombre": "Hungr\u00eda",
+    "pais_nombre_extendido": "Rep\u00fablica de Hungr\u00eda",
+    "pais_codigo": "HU",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 94,
   "fields": {
-    "nombre": "India",
-    "nombre_extendido": "Rep\u00fablica de India",
-    "codigo": "IN",
-    "zona": 6
+    "pais_nombre": "India",
+    "pais_nombre_extendido": "Rep\u00fablica de India",
+    "pais_codigo": "IN",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 95,
   "fields": {
-    "nombre": "Indonesia",
-    "nombre_extendido": "Rep\u00fablica de Indonesia",
-    "codigo": "ID",
-    "zona": 6
+    "pais_nombre": "Indonesia",
+    "pais_nombre_extendido": "Rep\u00fablica de Indonesia",
+    "pais_codigo": "ID",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 96,
   "fields": {
-    "nombre": "Irak",
-    "nombre_extendido": "Rep\u00fablica de Irak",
-    "codigo": "IQ",
-    "zona": 6
+    "pais_nombre": "Irak",
+    "pais_nombre_extendido": "Rep\u00fablica de Irak",
+    "pais_codigo": "IQ",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 97,
   "fields": {
-    "nombre": "Ir\u00e1n",
-    "nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Ir\u00e1n",
-    "codigo": "IR",
-    "zona": 6
+    "pais_nombre": "Ir\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Ir\u00e1n",
+    "pais_codigo": "IR",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 98,
   "fields": {
-    "nombre": "Irlanda",
-    "nombre_extendido": "Rep\u00fablica de Irlanda",
-    "codigo": "IE",
-    "zona": 5
+    "pais_nombre": "Irlanda",
+    "pais_nombre_extendido": "Rep\u00fablica de Irlanda",
+    "pais_codigo": "IE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 99,
   "fields": {
-    "nombre": "Isla de Man",
-    "nombre_extendido": "Isla de Man",
-    "codigo": "IM",
-    "zona": 5
+    "pais_nombre": "Isla de Man",
+    "pais_nombre_extendido": "Isla de Man",
+    "pais_codigo": "IM",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 100,
   "fields": {
-    "nombre": "Isla de Navidad",
-    "nombre_extendido": "Territorio de la Isla de Navidad",
-    "codigo": "CX",
-    "zona": 6
+    "pais_nombre": "Isla de Navidad",
+    "pais_nombre_extendido": "Territorio de la Isla de Navidad",
+    "pais_codigo": "CX",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 101,
   "fields": {
-    "nombre": "Isla Norfolk",
-    "nombre_extendido": "Territorio de las Islas Norfolk",
-    "codigo": "NF",
-    "zona": 9
+    "pais_nombre": "Isla Norfolk",
+    "pais_nombre_extendido": "Territorio de las Islas Norfolk",
+    "pais_codigo": "NF",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 102,
   "fields": {
-    "nombre": "Islandia",
-    "nombre_extendido": "Rep\u00fablica de Islandia",
-    "codigo": "IS",
-    "zona": 5
+    "pais_nombre": "Islandia",
+    "pais_nombre_extendido": "Rep\u00fablica de Islandia",
+    "pais_codigo": "IS",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 103,
   "fields": {
-    "nombre": "Islas Caim\u00e1n",
-    "nombre_extendido": "Islas Caim\u00e1n",
-    "codigo": "KY",
-    "zona": 2
+    "pais_nombre": "Islas Caim\u00e1n",
+    "pais_nombre_extendido": "Islas Caim\u00e1n",
+    "pais_codigo": "KY",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 104,
   "fields": {
-    "nombre": "Islas Cocos",
-    "nombre_extendido": "Islas Cocos",
-    "codigo": "CC",
-    "zona": 6
+    "pais_nombre": "Islas Cocos",
+    "pais_nombre_extendido": "Islas Cocos",
+    "pais_codigo": "CC",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 105,
   "fields": {
-    "nombre": "Islas Cook",
-    "nombre_extendido": "Islas Cook",
-    "codigo": "CK",
-    "zona": 9
+    "pais_nombre": "Islas Cook",
+    "pais_nombre_extendido": "Islas Cook",
+    "pais_codigo": "CK",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 106,
   "fields": {
-    "nombre": "Islas Feroe",
-    "nombre_extendido": "Islas Feroe",
-    "codigo": "FO",
-    "zona": 5
+    "pais_nombre": "Islas Feroe",
+    "pais_nombre_extendido": "Islas Feroe",
+    "pais_codigo": "FO",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 107,
   "fields": {
-    "nombre": "Islas Malvinas",
-    "nombre_extendido": "Islas Malvinas",
-    "codigo": "FK",
-    "zona": 10
+    "pais_nombre": "Islas Malvinas",
+    "pais_nombre_extendido": "Islas Malvinas",
+    "pais_codigo": "FK",
+    "pais_zona": 10
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 108,
   "fields": {
-    "nombre": "Islas Marianas del Norte",
-    "nombre_extendido": "Estado Libre Asociado de las Islas Marianas del Norte",
-    "codigo": "MP",
-    "zona": 9
+    "pais_nombre": "Islas Marianas del Norte",
+    "pais_nombre_extendido": "Estado Libre Asociado de las Islas Marianas del Norte",
+    "pais_codigo": "MP",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 109,
   "fields": {
-    "nombre": "Islas Marshall",
-    "nombre_extendido": "Rep\u00fablica de las Islas Marshall",
-    "codigo": "MH",
-    "zona": 9
+    "pais_nombre": "Islas Marshall",
+    "pais_nombre_extendido": "Rep\u00fablica de las Islas Marshall",
+    "pais_codigo": "MH",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 110,
   "fields": {
-    "nombre": "Islas Pitcairn",
-    "nombre_extendido": "Islas Pitcairn",
-    "codigo": "PN",
-    "zona": 9
+    "pais_nombre": "Islas Pitcairn",
+    "pais_nombre_extendido": "Islas Pitcairn",
+    "pais_codigo": "PN",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 111,
   "fields": {
-    "nombre": "Islas Salom\u00f3n",
-    "nombre_extendido": "Islas Salom\u00f3n",
-    "codigo": "SB",
-    "zona": 9
+    "pais_nombre": "Islas Salom\u00f3n",
+    "pais_nombre_extendido": "Islas Salom\u00f3n",
+    "pais_codigo": "SB",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 112,
   "fields": {
-    "nombre": "Islas Turcas y Caicos",
-    "nombre_extendido": "Islas Turcas y Caicos",
-    "codigo": "TC",
-    "zona": 2
+    "pais_nombre": "Islas Turcas y Caicos",
+    "pais_nombre_extendido": "Islas Turcas y Caicos",
+    "pais_codigo": "TC",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 113,
   "fields": {
-    "nombre": "Islas V\u00edrgenes Brit\u00e1nicas",
-    "nombre_extendido": "Islas V\u00edrgenes Brit\u00e1nicas",
-    "codigo": "VG",
-    "zona": 2
+    "pais_nombre": "Islas V\u00edrgenes Brit\u00e1nicas",
+    "pais_nombre_extendido": "Islas V\u00edrgenes Brit\u00e1nicas",
+    "pais_codigo": "VG",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 114,
   "fields": {
-    "nombre": "Islas V\u00edrgenes de los Estados Unidos",
-    "nombre_extendido": "Islas V\u00edrgenes de los Estados Unidos",
-    "codigo": "VI",
-    "zona": 2
+    "pais_nombre": "Islas V\u00edrgenes de los Estados Unidos",
+    "pais_nombre_extendido": "Islas V\u00edrgenes de los Estados Unidos",
+    "pais_codigo": "VI",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 115,
   "fields": {
-    "nombre": "Israel",
-    "nombre_extendido": "Estado de Israel",
-    "codigo": "IL",
-    "zona": 6
+    "pais_nombre": "Israel",
+    "pais_nombre_extendido": "Estado de Israel",
+    "pais_codigo": "IL",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 116,
   "fields": {
-    "nombre": "Italia",
-    "nombre_extendido": "Rep\u00fablica Italiana",
-    "codigo": "IT",
-    "zona": 5
+    "pais_nombre": "Italia",
+    "pais_nombre_extendido": "Rep\u00fablica Italiana",
+    "pais_codigo": "IT",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 117,
   "fields": {
-    "nombre": "Jamaica",
-    "nombre_extendido": "Jamaica",
-    "codigo": "JM",
-    "zona": 4
+    "pais_nombre": "Jamaica",
+    "pais_nombre_extendido": "Jamaica",
+    "pais_codigo": "JM",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 118,
   "fields": {
-    "nombre": "Jap\u00f3n",
-    "nombre_extendido": "Jap\u00f3n",
-    "codigo": "JP",
-    "zona": 6
+    "pais_nombre": "Jap\u00f3n",
+    "pais_nombre_extendido": "Jap\u00f3n",
+    "pais_codigo": "JP",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 119,
   "fields": {
-    "nombre": "Jersey",
-    "nombre_extendido": "Bailiazgo de Jersey",
-    "codigo": "JE",
-    "zona": 5
+    "pais_nombre": "Jersey",
+    "pais_nombre_extendido": "Bailiazgo de Jersey",
+    "pais_codigo": "JE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 120,
   "fields": {
-    "nombre": "Jordania",
-    "nombre_extendido": "Reino Hachemita de Jordania",
-    "codigo": "JO",
-    "zona": 6
+    "pais_nombre": "Jordania",
+    "pais_nombre_extendido": "Reino Hachemita de Jordania",
+    "pais_codigo": "JO",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 121,
   "fields": {
-    "nombre": "Kazajist\u00e1n",
-    "nombre_extendido": "Rep\u00fablica de Kazajist\u00e1n",
-    "codigo": "KZ",
-    "zona": 6
+    "pais_nombre": "Kazajist\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica de Kazajist\u00e1n",
+    "pais_codigo": "KZ",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 122,
   "fields": {
-    "nombre": "Kenia",
-    "nombre_extendido": "Rep\u00fablica de Kenia",
-    "codigo": "KE",
-    "zona": 8
+    "pais_nombre": "Kenia",
+    "pais_nombre_extendido": "Rep\u00fablica de Kenia",
+    "pais_codigo": "KE",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 123,
   "fields": {
-    "nombre": "Kirguist\u00e1n",
-    "nombre_extendido": "Rep\u00fablica Kirguiza",
-    "codigo": "KG",
-    "zona": 6
+    "pais_nombre": "Kirguist\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica Kirguiza",
+    "pais_codigo": "KG",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 124,
   "fields": {
-    "nombre": "Kiribati",
-    "nombre_extendido": "Rep\u00fablica de Kiribati",
-    "codigo": "KI",
-    "zona": 9
+    "pais_nombre": "Kiribati",
+    "pais_nombre_extendido": "Rep\u00fablica de Kiribati",
+    "pais_codigo": "KI",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 125,
   "fields": {
-    "nombre": "Kosovo",
-    "nombre_extendido": "Rep\u00fablica de Kosovo",
-    "codigo": "XK",
-    "zona": 5
+    "pais_nombre": "Kosovo",
+    "pais_nombre_extendido": "Rep\u00fablica de Kosovo",
+    "pais_codigo": "XK",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 126,
   "fields": {
-    "nombre": "Kuwait",
-    "nombre_extendido": "Estado de Kuwait",
-    "codigo": "KW",
-    "zona": 6
+    "pais_nombre": "Kuwait",
+    "pais_nombre_extendido": "Estado de Kuwait",
+    "pais_codigo": "KW",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 127,
   "fields": {
-    "nombre": "Laos",
-    "nombre_extendido": "Rep\u00fablica Democr\u00e1tica Popular Lao",
-    "codigo": "LA",
-    "zona": 6
+    "pais_nombre": "Laos",
+    "pais_nombre_extendido": "Rep\u00fablica Democr\u00e1tica Popular Lao",
+    "pais_codigo": "LA",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 128,
   "fields": {
-    "nombre": "Lesoto",
-    "nombre_extendido": "Reino de Lesoto",
-    "codigo": "LS",
-    "zona": 8
+    "pais_nombre": "Lesoto",
+    "pais_nombre_extendido": "Reino de Lesoto",
+    "pais_codigo": "LS",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 129,
   "fields": {
-    "nombre": "Letonia",
-    "nombre_extendido": "Rep\u00fablica de Letonia",
-    "codigo": "LV",
-    "zona": 5
+    "pais_nombre": "Letonia",
+    "pais_nombre_extendido": "Rep\u00fablica de Letonia",
+    "pais_codigo": "LV",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 130,
   "fields": {
-    "nombre": "L\u00edbano",
-    "nombre_extendido": "Rep\u00fablica del L\u00edbano",
-    "codigo": "LB",
-    "zona": 6
+    "pais_nombre": "L\u00edbano",
+    "pais_nombre_extendido": "Rep\u00fablica del L\u00edbano",
+    "pais_codigo": "LB",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 131,
   "fields": {
-    "nombre": "Liberia",
-    "nombre_extendido": "Rep\u00fablica de Liberia",
-    "codigo": "LR",
-    "zona": 8
+    "pais_nombre": "Liberia",
+    "pais_nombre_extendido": "Rep\u00fablica de Liberia",
+    "pais_codigo": "LR",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 132,
   "fields": {
-    "nombre": "Libia",
-    "nombre_extendido": "Rep\u00fablica de Libia",
-    "codigo": "LY",
-    "zona": 8
+    "pais_nombre": "Libia",
+    "pais_nombre_extendido": "Rep\u00fablica de Libia",
+    "pais_codigo": "LY",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 133,
   "fields": {
-    "nombre": "Liechtenstein",
-    "nombre_extendido": "Principado de Liechtenstein",
-    "codigo": "LI",
-    "zona": 5
+    "pais_nombre": "Liechtenstein",
+    "pais_nombre_extendido": "Principado de Liechtenstein",
+    "pais_codigo": "LI",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 134,
   "fields": {
-    "nombre": "Lituania",
-    "nombre_extendido": "Rep\u00fablica de Lituania",
-    "codigo": "LT",
-    "zona": 5
+    "pais_nombre": "Lituania",
+    "pais_nombre_extendido": "Rep\u00fablica de Lituania",
+    "pais_codigo": "LT",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 135,
   "fields": {
-    "nombre": "Luxemburgo",
-    "nombre_extendido": "Gran Ducado de Luxemburgo",
-    "codigo": "LU",
-    "zona": 5
+    "pais_nombre": "Luxemburgo",
+    "pais_nombre_extendido": "Gran Ducado de Luxemburgo",
+    "pais_codigo": "LU",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 136,
   "fields": {
-    "nombre": "Macao",
-    "nombre_extendido": "Regi\u00f3n Administrativa Especial de Macao",
-    "codigo": "MO",
-    "zona": 6
+    "pais_nombre": "Macao",
+    "pais_nombre_extendido": "Regi\u00f3n Administrativa Especial de Macao",
+    "pais_codigo": "MO",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 137,
   "fields": {
-    "nombre": "Macedonia",
-    "nombre_extendido": "Rep\u00fablica de Macedonia3",
-    "codigo": "MK",
-    "zona": 5
+    "pais_nombre": "Macedonia",
+    "pais_nombre_extendido": "Rep\u00fablica de Macedonia3",
+    "pais_codigo": "MK",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 138,
   "fields": {
-    "nombre": "Madagascar",
-    "nombre_extendido": "Rep\u00fablica de Madagascar",
-    "codigo": "MG",
-    "zona": 8
+    "pais_nombre": "Madagascar",
+    "pais_nombre_extendido": "Rep\u00fablica de Madagascar",
+    "pais_codigo": "MG",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 139,
   "fields": {
-    "nombre": "Malasia",
-    "nombre_extendido": "Federaci\u00f3n de Malasia",
-    "codigo": "MY",
-    "zona": 6
+    "pais_nombre": "Malasia",
+    "pais_nombre_extendido": "Federaci\u00f3n de Malasia",
+    "pais_codigo": "MY",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 140,
   "fields": {
-    "nombre": "Malaui",
-    "nombre_extendido": "Rep\u00fablica de Malaui",
-    "codigo": "MW",
-    "zona": 8
+    "pais_nombre": "Malaui",
+    "pais_nombre_extendido": "Rep\u00fablica de Malaui",
+    "pais_codigo": "MW",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 141,
   "fields": {
-    "nombre": "Maldivas",
-    "nombre_extendido": "Rep\u00fablica de las Maldivas",
-    "codigo": "MV",
-    "zona": 6
+    "pais_nombre": "Maldivas",
+    "pais_nombre_extendido": "Rep\u00fablica de las Maldivas",
+    "pais_codigo": "MV",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 142,
   "fields": {
-    "nombre": "Mal\u00ed",
-    "nombre_extendido": "Rep\u00fablica de Mal\u00ed",
-    "codigo": "ML",
-    "zona": 8
+    "pais_nombre": "Mal\u00ed",
+    "pais_nombre_extendido": "Rep\u00fablica de Mal\u00ed",
+    "pais_codigo": "ML",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 143,
   "fields": {
-    "nombre": "Malta",
-    "nombre_extendido": "Rep\u00fablica de Malta",
-    "codigo": "MT",
-    "zona": 5
+    "pais_nombre": "Malta",
+    "pais_nombre_extendido": "Rep\u00fablica de Malta",
+    "pais_codigo": "MT",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 144,
   "fields": {
-    "nombre": "Marruecos",
-    "nombre_extendido": "Reino de Marruecos",
-    "codigo": "MA",
-    "zona": 8
+    "pais_nombre": "Marruecos",
+    "pais_nombre_extendido": "Reino de Marruecos",
+    "pais_codigo": "MA",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 145,
   "fields": {
-    "nombre": "Mauricio",
-    "nombre_extendido": "Rep\u00fablica de Mauricio",
-    "codigo": "MU",
-    "zona": 8
+    "pais_nombre": "Mauricio",
+    "pais_nombre_extendido": "Rep\u00fablica de Mauricio",
+    "pais_codigo": "MU",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 146,
   "fields": {
-    "nombre": "Mauritania",
-    "nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Mauritania",
-    "codigo": "MR",
-    "zona": 8
+    "pais_nombre": "Mauritania",
+    "pais_nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Mauritania",
+    "pais_codigo": "MR",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 147,
   "fields": {
-    "nombre": "Micronesia",
-    "nombre_extendido": "Estados Federados de Micronesia",
-    "codigo": "FM",
-    "zona": 9
+    "pais_nombre": "Micronesia",
+    "pais_nombre_extendido": "Estados Federados de Micronesia",
+    "pais_codigo": "FM",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 148,
   "fields": {
-    "nombre": "Moldavia",
-    "nombre_extendido": "Rep\u00fablica de Moldavia",
-    "codigo": "MD",
-    "zona": 5
+    "pais_nombre": "Moldavia",
+    "pais_nombre_extendido": "Rep\u00fablica de Moldavia",
+    "pais_codigo": "MD",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 149,
   "fields": {
-    "nombre": "M\u00f3naco",
-    "nombre_extendido": "Principado de M\u00f3naco",
-    "codigo": "MC",
-    "zona": 5
+    "pais_nombre": "M\u00f3naco",
+    "pais_nombre_extendido": "Principado de M\u00f3naco",
+    "pais_codigo": "MC",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 150,
   "fields": {
-    "nombre": "Mongolia",
-    "nombre_extendido": "Mongolia",
-    "codigo": "MN",
-    "zona": 6
+    "pais_nombre": "Mongolia",
+    "pais_nombre_extendido": "Mongolia",
+    "pais_codigo": "MN",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 151,
   "fields": {
-    "nombre": "Montenegro",
-    "nombre_extendido": "Rep\u00fablica de Montenegro",
-    "codigo": "ME",
-    "zona": 5
+    "pais_nombre": "Montenegro",
+    "pais_nombre_extendido": "Rep\u00fablica de Montenegro",
+    "pais_codigo": "ME",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 152,
   "fields": {
-    "nombre": "Montserrat",
-    "nombre_extendido": "Montserrat",
-    "codigo": "MS",
-    "zona": 2
+    "pais_nombre": "Montserrat",
+    "pais_nombre_extendido": "Montserrat",
+    "pais_codigo": "MS",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 153,
   "fields": {
-    "nombre": "Mozambique",
-    "nombre_extendido": "Rep\u00fablica de Mozambique",
-    "codigo": "MZ",
-    "zona": 8
+    "pais_nombre": "Mozambique",
+    "pais_nombre_extendido": "Rep\u00fablica de Mozambique",
+    "pais_codigo": "MZ",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 154,
   "fields": {
-    "nombre": "Nagorno Karabaj",
-    "nombre_extendido": "Rep\u00fablica de Nagorno Karabaj",
-    "codigo": "XA",
-    "zona": 7
+    "pais_nombre": "Nagorno Karabaj",
+    "pais_nombre_extendido": "Rep\u00fablica de Nagorno Karabaj",
+    "pais_codigo": "XA",
+    "pais_zona": 7
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 155,
   "fields": {
-    "nombre": "Namibia",
-    "nombre_extendido": "Rep\u00fablica de Namibia",
-    "codigo": "NA",
-    "zona": 8
+    "pais_nombre": "Namibia",
+    "pais_nombre_extendido": "Rep\u00fablica de Namibia",
+    "pais_codigo": "NA",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 156,
   "fields": {
-    "nombre": "Nauru",
-    "nombre_extendido": "Rep\u00fablica de Nauru",
-    "codigo": "NR",
-    "zona": 9
+    "pais_nombre": "Nauru",
+    "pais_nombre_extendido": "Rep\u00fablica de Nauru",
+    "pais_codigo": "NR",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 157,
   "fields": {
-    "nombre": "Nepal",
-    "nombre_extendido": "Rep\u00fablica Federal Democr\u00e1tica de Nepal",
-    "codigo": "NP",
-    "zona": 6
+    "pais_nombre": "Nepal",
+    "pais_nombre_extendido": "Rep\u00fablica Federal Democr\u00e1tica de Nepal",
+    "pais_codigo": "NP",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 158,
   "fields": {
-    "nombre": "Nicaragua",
-    "nombre_extendido": "Rep\u00fablica de Nicaragua",
-    "codigo": "NI",
-    "zona": 2
+    "pais_nombre": "Nicaragua",
+    "pais_nombre_extendido": "Rep\u00fablica de Nicaragua",
+    "pais_codigo": "NI",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 159,
   "fields": {
-    "nombre": "N\u00edger",
-    "nombre_extendido": "Rep\u00fablica del N\u00edger",
-    "codigo": "NE",
-    "zona": 8
+    "pais_nombre": "N\u00edger",
+    "pais_nombre_extendido": "Rep\u00fablica del N\u00edger",
+    "pais_codigo": "NE",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 160,
   "fields": {
-    "nombre": "Nigeria",
-    "nombre_extendido": "Rep\u00fablica Federal de Nigeria",
-    "codigo": "NG",
-    "zona": 8
+    "pais_nombre": "Nigeria",
+    "pais_nombre_extendido": "Rep\u00fablica Federal de Nigeria",
+    "pais_codigo": "NG",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 161,
   "fields": {
-    "nombre": "Niue",
-    "nombre_extendido": "Niue",
-    "codigo": "NU",
-    "zona": 9
+    "pais_nombre": "Niue",
+    "pais_nombre_extendido": "Niue",
+    "pais_codigo": "NU",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 162,
   "fields": {
-    "nombre": "Noruega",
-    "nombre_extendido": "Reino de Noruega",
-    "codigo": "NO",
-    "zona": 5
+    "pais_nombre": "Noruega",
+    "pais_nombre_extendido": "Reino de Noruega",
+    "pais_codigo": "NO",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 163,
   "fields": {
-    "nombre": "Nueva Caledonia",
-    "nombre_extendido": "Territorio de Nueva Caledonia y dependencias",
-    "codigo": "NC",
-    "zona": 9
+    "pais_nombre": "Nueva Caledonia",
+    "pais_nombre_extendido": "Territorio de Nueva Caledonia y dependencias",
+    "pais_codigo": "NC",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 164,
   "fields": {
-    "nombre": "Nueva Zelanda",
-    "nombre_extendido": "Nueva Zelanda",
-    "codigo": "NZ",
-    "zona": 9
+    "pais_nombre": "Nueva Zelanda",
+    "pais_nombre_extendido": "Nueva Zelanda",
+    "pais_codigo": "NZ",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 165,
   "fields": {
-    "nombre": "Om\u00e1n",
-    "nombre_extendido": "Sultanato de Om\u00e1n",
-    "codigo": "OM",
-    "zona": 6
+    "pais_nombre": "Om\u00e1n",
+    "pais_nombre_extendido": "Sultanato de Om\u00e1n",
+    "pais_codigo": "OM",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 166,
   "fields": {
-    "nombre": "Osetia del Sur",
-    "nombre_extendido": "Rep\u00fablica de Osetia del Sur",
-    "codigo": "XB",
-    "zona": 7
+    "pais_nombre": "Osetia del Sur",
+    "pais_nombre_extendido": "Rep\u00fablica de Osetia del Sur",
+    "pais_codigo": "XB",
+    "pais_zona": 7
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 167,
   "fields": {
-    "nombre": "Pa\u00edses Bajos / Holanda",
-    "nombre_extendido": "Reino de los Pa\u00edses Bajos",
-    "codigo": "NL",
-    "zona": 5
+    "pais_nombre": "Pa\u00edses Bajos / Holanda",
+    "pais_nombre_extendido": "Reino de los Pa\u00edses Bajos",
+    "pais_codigo": "NL",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 168,
   "fields": {
-    "nombre": "Pakist\u00e1n",
-    "nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Pakist\u00e1n",
-    "codigo": "PK",
-    "zona": 6
+    "pais_nombre": "Pakist\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica Isl\u00e1mica de Pakist\u00e1n",
+    "pais_codigo": "PK",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 169,
   "fields": {
-    "nombre": "Palaos",
-    "nombre_extendido": "Rep\u00fablica de Palaos",
-    "codigo": "PW",
-    "zona": 9
+    "pais_nombre": "Palaos",
+    "pais_nombre_extendido": "Rep\u00fablica de Palaos",
+    "pais_codigo": "PW",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 170,
   "fields": {
-    "nombre": "Palestina",
-    "nombre_extendido": "Autoridad Palestina de Cisjordania y la Franja de Gaza",
-    "codigo": "PS",
-    "zona": 6
+    "pais_nombre": "Palestina",
+    "pais_nombre_extendido": "Autoridad Palestina de Cisjordania y la Franja de Gaza",
+    "pais_codigo": "PS",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 171,
   "fields": {
-    "nombre": "Panam\u00e1",
-    "nombre_extendido": "Rep\u00fablica de Panam\u00e1",
-    "codigo": "PA",
-    "zona": 2
+    "pais_nombre": "Panam\u00e1",
+    "pais_nombre_extendido": "Rep\u00fablica de Panam\u00e1",
+    "pais_codigo": "PA",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 172,
   "fields": {
-    "nombre": "Pap\u00faa Nueva Guinea",
-    "nombre_extendido": "Estado Independiente de Pap\u00faa Nueva Guinea",
-    "codigo": "PG",
-    "zona": 9
+    "pais_nombre": "Pap\u00faa Nueva Guinea",
+    "pais_nombre_extendido": "Estado Independiente de Pap\u00faa Nueva Guinea",
+    "pais_codigo": "PG",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 173,
   "fields": {
-    "nombre": "Paraguay",
-    "nombre_extendido": "Rep\u00fablica del Paraguay",
-    "codigo": "PY",
-    "zona": 3
+    "pais_nombre": "Paraguay",
+    "pais_nombre_extendido": "Rep\u00fablica del Paraguay",
+    "pais_codigo": "PY",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 174,
   "fields": {
-    "nombre": "Per\u00fa",
-    "nombre_extendido": "Rep\u00fablica del Per\u00fa",
-    "codigo": "PE",
-    "zona": 3
+    "pais_nombre": "Per\u00fa",
+    "pais_nombre_extendido": "Rep\u00fablica del Per\u00fa",
+    "pais_codigo": "PE",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 175,
   "fields": {
-    "nombre": "Polinesia Francesa",
-    "nombre_extendido": "Polinesia Francesa",
-    "codigo": "PF",
-    "zona": 9
+    "pais_nombre": "Polinesia Francesa",
+    "pais_nombre_extendido": "Polinesia Francesa",
+    "pais_codigo": "PF",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 176,
   "fields": {
-    "nombre": "Polonia",
-    "nombre_extendido": "Rep\u00fablica de Polonia",
-    "codigo": "PL",
-    "zona": 5
+    "pais_nombre": "Polonia",
+    "pais_nombre_extendido": "Rep\u00fablica de Polonia",
+    "pais_codigo": "PL",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 177,
   "fields": {
-    "nombre": "Portugal",
-    "nombre_extendido": "Rep\u00fablica Portuguesa",
-    "codigo": "PT",
-    "zona": 5
+    "pais_nombre": "Portugal",
+    "pais_nombre_extendido": "Rep\u00fablica Portuguesa",
+    "pais_codigo": "PT",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 178,
   "fields": {
-    "nombre": "Puerto Rico",
-    "nombre_extendido": "Estado Libre Asociado de Puerto Rico",
-    "codigo": "PR",
-    "zona": 4
+    "pais_nombre": "Puerto Rico",
+    "pais_nombre_extendido": "Estado Libre Asociado de Puerto Rico",
+    "pais_codigo": "PR",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 179,
   "fields": {
-    "nombre": "Reino Unido",
-    "nombre_extendido": "Reino Unido de Gran Breta\u00f1a e Irlanda del Norte",
-    "codigo": "GB",
-    "zona": 5
+    "pais_nombre": "Reino Unido",
+    "pais_nombre_extendido": "Reino Unido de Gran Breta\u00f1a e Irlanda del Norte",
+    "pais_codigo": "GB",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 180,
   "fields": {
-    "nombre": "Republica Centroafricana",
-    "nombre_extendido": "Rep\u00fablica Centroafricana",
-    "codigo": "CF",
-    "zona": 8
+    "pais_nombre": "Republica Centroafricana",
+    "pais_nombre_extendido": "Rep\u00fablica Centroafricana",
+    "pais_codigo": "CF",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 181,
   "fields": {
-    "nombre": "Republica Checa",
-    "nombre_extendido": "Rep\u00fablica Checa",
-    "codigo": "CZ",
-    "zona": 5
+    "pais_nombre": "Republica Checa",
+    "pais_nombre_extendido": "Rep\u00fablica Checa",
+    "pais_codigo": "CZ",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 182,
   "fields": {
-    "nombre": "Republica del Congo",
-    "nombre_extendido": "Rep\u00fablica del Congo",
-    "codigo": "CG",
-    "zona": 8
+    "pais_nombre": "Republica del Congo",
+    "pais_nombre_extendido": "Rep\u00fablica del Congo",
+    "pais_codigo": "CG",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 183,
   "fields": {
-    "nombre": "Republica del Norte de Chipre",
-    "nombre_extendido": "Rep\u00fablica Turca del Norte de Chipre",
-    "codigo": "XC",
-    "zona": 5
+    "pais_nombre": "Republica del Norte de Chipre",
+    "pais_nombre_extendido": "Rep\u00fablica Turca del Norte de Chipre",
+    "pais_codigo": "XC",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 184,
   "fields": {
-    "nombre": "Republica Democratica del Congo",
-    "nombre_extendido": "Rep\u00fablica Democr\u00e1tica del Congo",
-    "codigo": "CD",
-    "zona": 8
+    "pais_nombre": "Republica Democratica del Congo",
+    "pais_nombre_extendido": "Rep\u00fablica Democr\u00e1tica del Congo",
+    "pais_codigo": "CD",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 185,
   "fields": {
-    "nombre": "Rep\u00fablica Dominicana",
-    "nombre_extendido": "Rep\u00fablica Dominicana",
-    "codigo": "DO",
-    "zona": 4
+    "pais_nombre": "Rep\u00fablica Dominicana",
+    "pais_nombre_extendido": "Rep\u00fablica Dominicana",
+    "pais_codigo": "DO",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 186,
   "fields": {
-    "nombre": "Ruanda",
-    "nombre_extendido": "Rep\u00fablica de Ruanda",
-    "codigo": "RW",
-    "zona": 8
+    "pais_nombre": "Ruanda",
+    "pais_nombre_extendido": "Rep\u00fablica de Ruanda",
+    "pais_codigo": "RW",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 187,
   "fields": {
-    "nombre": "Rumania",
-    "nombre_extendido": "Rumania",
-    "codigo": "RO",
-    "zona": 5
+    "pais_nombre": "Rumania",
+    "pais_nombre_extendido": "Rumania",
+    "pais_codigo": "RO",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 188,
   "fields": {
-    "nombre": "Rusia",
-    "nombre_extendido": "Federaci\u00f3n Rusa",
-    "codigo": "RU",
-    "zona": 7
+    "pais_nombre": "Rusia",
+    "pais_nombre_extendido": "Federaci\u00f3n Rusa",
+    "pais_codigo": "RU",
+    "pais_zona": 7
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 189,
   "fields": {
-    "nombre": "Sahara Occidental",
-    "nombre_extendido": "Rep\u00fablica \u00c1rabe Saharaui Democr\u00e1tica",
-    "codigo": "EH",
-    "zona": 8
+    "pais_nombre": "Sahara Occidental",
+    "pais_nombre_extendido": "Rep\u00fablica \u00c1rabe Saharaui Democr\u00e1tica",
+    "pais_codigo": "EH",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 190,
   "fields": {
-    "nombre": "Samoa",
-    "nombre_extendido": "Estado Independiente de Samoa",
-    "codigo": "WS",
-    "zona": 9
+    "pais_nombre": "Samoa",
+    "pais_nombre_extendido": "Estado Independiente de Samoa",
+    "pais_codigo": "WS",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 191,
   "fields": {
-    "nombre": "Samoa Americana",
-    "nombre_extendido": "Territorio de la Samoa Americana",
-    "codigo": "AS",
-    "zona": 9
+    "pais_nombre": "Samoa Americana",
+    "pais_nombre_extendido": "Territorio de la Samoa Americana",
+    "pais_codigo": "AS",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 192,
   "fields": {
-    "nombre": "San Bartolom\u00e9",
-    "nombre_extendido": "San Bartolom\u00e9",
-    "codigo": "BL",
-    "zona": 2
+    "pais_nombre": "San Bartolom\u00e9",
+    "pais_nombre_extendido": "San Bartolom\u00e9",
+    "pais_codigo": "BL",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 193,
   "fields": {
-    "nombre": "San Crist\u00f3bal y Nieves",
-    "nombre_extendido": "Federaci\u00f3n de San Crist\u00f3bal y Nieves",
-    "codigo": "KN",
-    "zona": 4
+    "pais_nombre": "San Crist\u00f3bal y Nieves",
+    "pais_nombre_extendido": "Federaci\u00f3n de San Crist\u00f3bal y Nieves",
+    "pais_codigo": "KN",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 194,
   "fields": {
-    "nombre": "San Marino",
-    "nombre_extendido": "Seren\u00edsima Rep\u00fablica de San Marino",
-    "codigo": "SM",
-    "zona": 5
+    "pais_nombre": "San Marino",
+    "pais_nombre_extendido": "Seren\u00edsima Rep\u00fablica de San Marino",
+    "pais_codigo": "SM",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 195,
   "fields": {
-    "nombre": "San Mart\u00edn (Francia)",
-    "nombre_extendido": "San Mart\u00edn",
-    "codigo": "MF",
-    "zona": 2
+    "pais_nombre": "San Mart\u00edn (Francia)",
+    "pais_nombre_extendido": "San Mart\u00edn",
+    "pais_codigo": "MF",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 196,
   "fields": {
-    "nombre": "San Mart\u00edn (Pa\u00edses Bajos)",
-    "nombre_extendido": "Sint Maarten",
-    "codigo": "SX",
-    "zona": 2
+    "pais_nombre": "San Mart\u00edn (Pa\u00edses Bajos)",
+    "pais_nombre_extendido": "Sint Maarten",
+    "pais_codigo": "SX",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 197,
   "fields": {
-    "nombre": "San Pedro y Miquel\u00f3n",
-    "nombre_extendido": "San Pedro y Miquel\u00f3n",
-    "codigo": "PM",
-    "zona": 1
+    "pais_nombre": "San Pedro y Miquel\u00f3n",
+    "pais_nombre_extendido": "San Pedro y Miquel\u00f3n",
+    "pais_codigo": "PM",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 198,
   "fields": {
-    "nombre": "San Vicente y las Granadinas",
-    "nombre_extendido": "San Vicente y las Granadinas",
-    "codigo": "VC",
-    "zona": 4
+    "pais_nombre": "San Vicente y las Granadinas",
+    "pais_nombre_extendido": "San Vicente y las Granadinas",
+    "pais_codigo": "VC",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 199,
   "fields": {
-    "nombre": "Santa Elena, Ascensi\u00f3n y Trist\u00e1n de Acu\u00f1a",
-    "nombre_extendido": "Santa Elena, Ascensi\u00f3n y Trist\u00e1n de Acu\u00f1a",
-    "codigo": "SH",
-    "zona": 10
+    "pais_nombre": "Santa Elena, Ascensi\u00f3n y Trist\u00e1n de Acu\u00f1a",
+    "pais_nombre_extendido": "Santa Elena, Ascensi\u00f3n y Trist\u00e1n de Acu\u00f1a",
+    "pais_codigo": "SH",
+    "pais_zona": 10
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 200,
   "fields": {
-    "nombre": "Santa Luc\u00eda",
-    "nombre_extendido": "Santa Luc\u00eda",
-    "codigo": "LC",
-    "zona": 4
+    "pais_nombre": "Santa Luc\u00eda",
+    "pais_nombre_extendido": "Santa Luc\u00eda",
+    "pais_codigo": "LC",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 201,
   "fields": {
-    "nombre": "Santo Tom\u00e9 y Pr\u00edncipe",
-    "nombre_extendido": "Rep\u00fablica Democr\u00e1tica de Santo Tom\u00e9 y Pr\u00edncipe",
-    "codigo": "ST",
-    "zona": 8
+    "pais_nombre": "Santo Tom\u00e9 y Pr\u00edncipe",
+    "pais_nombre_extendido": "Rep\u00fablica Democr\u00e1tica de Santo Tom\u00e9 y Pr\u00edncipe",
+    "pais_codigo": "ST",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 202,
   "fields": {
-    "nombre": "Senegal",
-    "nombre_extendido": "Rep\u00fablica de Senegal",
-    "codigo": "SN",
-    "zona": 8
+    "pais_nombre": "Senegal",
+    "pais_nombre_extendido": "Rep\u00fablica de Senegal",
+    "pais_codigo": "SN",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 203,
   "fields": {
-    "nombre": "Serbia",
-    "nombre_extendido": "Rep\u00fablica de Serbia",
-    "codigo": "RS",
-    "zona": 5
+    "pais_nombre": "Serbia",
+    "pais_nombre_extendido": "Rep\u00fablica de Serbia",
+    "pais_codigo": "RS",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 204,
   "fields": {
-    "nombre": "Seychelles",
-    "nombre_extendido": "Rep\u00fablica de Seychelles",
-    "codigo": "SC",
-    "zona": 8
+    "pais_nombre": "Seychelles",
+    "pais_nombre_extendido": "Rep\u00fablica de Seychelles",
+    "pais_codigo": "SC",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 205,
   "fields": {
-    "nombre": "Sierra Leona",
-    "nombre_extendido": "Rep\u00fablica de Sierra Leona",
-    "codigo": "SL",
-    "zona": 8
+    "pais_nombre": "Sierra Leona",
+    "pais_nombre_extendido": "Rep\u00fablica de Sierra Leona",
+    "pais_codigo": "SL",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 206,
   "fields": {
-    "nombre": "Singapur",
-    "nombre_extendido": "Rep\u00fablica de Singapur",
-    "codigo": "SG",
-    "zona": 6
+    "pais_nombre": "Singapur",
+    "pais_nombre_extendido": "Rep\u00fablica de Singapur",
+    "pais_codigo": "SG",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 207,
   "fields": {
-    "nombre": "Siria",
-    "nombre_extendido": "Rep\u00fablica \u00c1rabe Siria",
-    "codigo": "SY",
-    "zona": 6
+    "pais_nombre": "Siria",
+    "pais_nombre_extendido": "Rep\u00fablica \u00c1rabe Siria",
+    "pais_codigo": "SY",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 208,
   "fields": {
-    "nombre": "Somalia",
-    "nombre_extendido": "Somalia",
-    "codigo": "SO",
-    "zona": 8
+    "pais_nombre": "Somalia",
+    "pais_nombre_extendido": "Somalia",
+    "pais_codigo": "SO",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 209,
   "fields": {
-    "nombre": "Somalilandia",
-    "nombre_extendido": "Rep\u00fablica de Somalilandia",
-    "codigo": "XD",
-    "zona": 8
+    "pais_nombre": "Somalilandia",
+    "pais_nombre_extendido": "Rep\u00fablica de Somalilandia",
+    "pais_codigo": "XD",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 210,
   "fields": {
-    "nombre": "Sri Lanka",
-    "nombre_extendido": "Rep\u00fablica Democr\u00e1tica Socialista de Sri Lanka",
-    "codigo": "LK",
-    "zona": 6
+    "pais_nombre": "Sri Lanka",
+    "pais_nombre_extendido": "Rep\u00fablica Democr\u00e1tica Socialista de Sri Lanka",
+    "pais_codigo": "LK",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 211,
   "fields": {
-    "nombre": "Suazilandia",
-    "nombre_extendido": "Reino de Suazilandia",
-    "codigo": "SZ",
-    "zona": 8
+    "pais_nombre": "Suazilandia",
+    "pais_nombre_extendido": "Reino de Suazilandia",
+    "pais_codigo": "SZ",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 212,
   "fields": {
-    "nombre": "Sud\u00e1frica",
-    "nombre_extendido": "Rep\u00fablica de Sud\u00e1frica",
-    "codigo": "ZA",
-    "zona": 8
+    "pais_nombre": "Sud\u00e1frica",
+    "pais_nombre_extendido": "Rep\u00fablica de Sud\u00e1frica",
+    "pais_codigo": "ZA",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 213,
   "fields": {
-    "nombre": "Sud\u00e1n",
-    "nombre_extendido": "Rep\u00fablica del Sud\u00e1n",
-    "codigo": "SD",
-    "zona": 8
+    "pais_nombre": "Sud\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica del Sud\u00e1n",
+    "pais_codigo": "SD",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 214,
   "fields": {
-    "nombre": "Sud\u00e1n del Sur",
-    "nombre_extendido": "Rep\u00fablica de Sud\u00e1n del Sur",
-    "codigo": "SS",
-    "zona": 8
+    "pais_nombre": "Sud\u00e1n del Sur",
+    "pais_nombre_extendido": "Rep\u00fablica de Sud\u00e1n del Sur",
+    "pais_codigo": "SS",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 215,
   "fields": {
-    "nombre": "Suecia",
-    "nombre_extendido": "Reino de Suecia",
-    "codigo": "SE",
-    "zona": 5
+    "pais_nombre": "Suecia",
+    "pais_nombre_extendido": "Reino de Suecia",
+    "pais_codigo": "SE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 216,
   "fields": {
-    "nombre": "Suiza",
-    "nombre_extendido": "Confederaci\u00f3n Helv\u00e9tica",
-    "codigo": "CH",
-    "zona": 5
+    "pais_nombre": "Suiza",
+    "pais_nombre_extendido": "Confederaci\u00f3n Helv\u00e9tica",
+    "pais_codigo": "CH",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 217,
   "fields": {
-    "nombre": "Surinam",
-    "nombre_extendido": "Rep\u00fablica de Surinam",
-    "codigo": "SR",
-    "zona": 3
+    "pais_nombre": "Surinam",
+    "pais_nombre_extendido": "Rep\u00fablica de Surinam",
+    "pais_codigo": "SR",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 218,
   "fields": {
-    "nombre": "Svalbard",
-    "nombre_extendido": "Svalbard y Jan Mayen",
-    "codigo": "SJ",
-    "zona": 5
+    "pais_nombre": "Svalbard",
+    "pais_nombre_extendido": "Svalbard y Jan Mayen",
+    "pais_codigo": "SJ",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 219,
   "fields": {
-    "nombre": "Tailandia",
-    "nombre_extendido": "Reino de Tailandia",
-    "codigo": "TH",
-    "zona": 6
+    "pais_nombre": "Tailandia",
+    "pais_nombre_extendido": "Reino de Tailandia",
+    "pais_codigo": "TH",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 220,
   "fields": {
-    "nombre": "Taiw\u00e1n",
-    "nombre_extendido": "Rep\u00fablica de China",
-    "codigo": "TW",
-    "zona": 6
+    "pais_nombre": "Taiw\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica de China",
+    "pais_codigo": "TW",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 221,
   "fields": {
-    "nombre": "Tanzania",
-    "nombre_extendido": "Rep\u00fablica Unida de Tanzania",
-    "codigo": "TZ",
-    "zona": 8
+    "pais_nombre": "Tanzania",
+    "pais_nombre_extendido": "Rep\u00fablica Unida de Tanzania",
+    "pais_codigo": "TZ",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 222,
   "fields": {
-    "nombre": "Tayikist\u00e1n",
-    "nombre_extendido": "Rep\u00fablica de Tayikist\u00e1n",
-    "codigo": "TJ",
-    "zona": 6
+    "pais_nombre": "Tayikist\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica de Tayikist\u00e1n",
+    "pais_codigo": "TJ",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 223,
   "fields": {
-    "nombre": "Timor Oriental",
-    "nombre_extendido": "Rep\u00fablica Democr\u00e1tica de Timor Oriental",
-    "codigo": "TL",
-    "zona": 6
+    "pais_nombre": "Timor Oriental",
+    "pais_nombre_extendido": "Rep\u00fablica Democr\u00e1tica de Timor Oriental",
+    "pais_codigo": "TL",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 224,
   "fields": {
-    "nombre": "Togo",
-    "nombre_extendido": "Rep\u00fablica Togolesa",
-    "codigo": "TG",
-    "zona": 8
+    "pais_nombre": "Togo",
+    "pais_nombre_extendido": "Rep\u00fablica Togolesa",
+    "pais_codigo": "TG",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 225,
   "fields": {
-    "nombre": "Tokelau",
-    "nombre_extendido": "Tokelau",
-    "codigo": "TK",
-    "zona": 9
+    "pais_nombre": "Tokelau",
+    "pais_nombre_extendido": "Tokelau",
+    "pais_codigo": "TK",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 226,
   "fields": {
-    "nombre": "Tonga",
-    "nombre_extendido": "Reino de Tonga",
-    "codigo": "TO",
-    "zona": 9
+    "pais_nombre": "Tonga",
+    "pais_nombre_extendido": "Reino de Tonga",
+    "pais_codigo": "TO",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 227,
   "fields": {
-    "nombre": "Transnistria",
-    "nombre_extendido": "Rep\u00fablica Moldava Pridnestroviana",
-    "codigo": "XE",
-    "zona": 5
+    "pais_nombre": "Transnistria",
+    "pais_nombre_extendido": "Rep\u00fablica Moldava Pridnestroviana",
+    "pais_codigo": "XE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 228,
   "fields": {
-    "nombre": "Trinidad y Tobago",
-    "nombre_extendido": "Rep\u00fablica de Trinidad y Tobago",
-    "codigo": "TT",
-    "zona": 4
+    "pais_nombre": "Trinidad y Tobago",
+    "pais_nombre_extendido": "Rep\u00fablica de Trinidad y Tobago",
+    "pais_codigo": "TT",
+    "pais_zona": 4
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 229,
   "fields": {
-    "nombre": "T\u00fanez",
-    "nombre_extendido": "Rep\u00fablica Tunecina",
-    "codigo": "TN",
-    "zona": 8
+    "pais_nombre": "T\u00fanez",
+    "pais_nombre_extendido": "Rep\u00fablica Tunecina",
+    "pais_codigo": "TN",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 230,
   "fields": {
-    "nombre": "Turkmenist\u00e1n",
-    "nombre_extendido": "Rep\u00fablica de Turkmenist\u00e1n",
-    "codigo": "TM",
-    "zona": 6
+    "pais_nombre": "Turkmenist\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica de Turkmenist\u00e1n",
+    "pais_codigo": "TM",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 231,
   "fields": {
-    "nombre": "Turqu\u00eda",
-    "nombre_extendido": "Rep\u00fablica de Turqu\u00eda",
-    "codigo": "TR",
-    "zona": 7
+    "pais_nombre": "Turqu\u00eda",
+    "pais_nombre_extendido": "Rep\u00fablica de Turqu\u00eda",
+    "pais_codigo": "TR",
+    "pais_zona": 7
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 232,
   "fields": {
-    "nombre": "Tuvalu",
-    "nombre_extendido": "Tuvalu",
-    "codigo": "TV",
-    "zona": 9
+    "pais_nombre": "Tuvalu",
+    "pais_nombre_extendido": "Tuvalu",
+    "pais_codigo": "TV",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 233,
   "fields": {
-    "nombre": "Ucrania",
-    "nombre_extendido": "Ucrania",
-    "codigo": "UA",
-    "zona": 5
+    "pais_nombre": "Ucrania",
+    "pais_nombre_extendido": "Ucrania",
+    "pais_codigo": "UA",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 234,
   "fields": {
-    "nombre": "Uganda",
-    "nombre_extendido": "Rep\u00fablica de Uganda",
-    "codigo": "UG",
-    "zona": 8
+    "pais_nombre": "Uganda",
+    "pais_nombre_extendido": "Rep\u00fablica de Uganda",
+    "pais_codigo": "UG",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 235,
   "fields": {
-    "nombre": "Uruguay",
-    "nombre_extendido": "Rep\u00fablica Oriental del Uruguay",
-    "codigo": "UY",
-    "zona": 3
+    "pais_nombre": "Uruguay",
+    "pais_nombre_extendido": "Rep\u00fablica Oriental del Uruguay",
+    "pais_codigo": "UY",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 236,
   "fields": {
-    "nombre": "Uzbekist\u00e1n",
-    "nombre_extendido": "Rep\u00fablica de Uzbekist\u00e1n",
-    "codigo": "UZ",
-    "zona": 6
+    "pais_nombre": "Uzbekist\u00e1n",
+    "pais_nombre_extendido": "Rep\u00fablica de Uzbekist\u00e1n",
+    "pais_codigo": "UZ",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 237,
   "fields": {
-    "nombre": "Vanuatu",
-    "nombre_extendido": "Rep\u00fablica de Vanuatu",
-    "codigo": "VU",
-    "zona": 9
+    "pais_nombre": "Vanuatu",
+    "pais_nombre_extendido": "Rep\u00fablica de Vanuatu",
+    "pais_codigo": "VU",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 238,
   "fields": {
-    "nombre": "Venezuela",
-    "nombre_extendido": "Rep\u00fablica Bolivariana de Venezuela",
-    "codigo": "VE",
-    "zona": 3
+    "pais_nombre": "Venezuela",
+    "pais_nombre_extendido": "Rep\u00fablica Bolivariana de Venezuela",
+    "pais_codigo": "VE",
+    "pais_zona": 3
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 239,
   "fields": {
-    "nombre": "Vietnam",
-    "nombre_extendido": "Rep\u00fablica Socialista de Vietnam",
-    "codigo": "VN",
-    "zona": 6
+    "pais_nombre": "Vietnam",
+    "pais_nombre_extendido": "Rep\u00fablica Socialista de Vietnam",
+    "pais_codigo": "VN",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 240,
   "fields": {
-    "nombre": "Wallis y Futuna",
-    "nombre_extendido": "Islas Wallis y Futuna",
-    "codigo": "WF",
-    "zona": 9
+    "pais_nombre": "Wallis y Futuna",
+    "pais_nombre_extendido": "Islas Wallis y Futuna",
+    "pais_codigo": "WF",
+    "pais_zona": 9
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 241,
   "fields": {
-    "nombre": "Yemen",
-    "nombre_extendido": "Rep\u00fablica del Yemen",
-    "codigo": "YE",
-    "zona": 6
+    "pais_nombre": "Yemen",
+    "pais_nombre_extendido": "Rep\u00fablica del Yemen",
+    "pais_codigo": "YE",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 242,
   "fields": {
-    "nombre": "Yibuti",
-    "nombre_extendido": "Rep\u00fablica de Yibuti",
-    "codigo": "DJ",
-    "zona": 8
+    "pais_nombre": "Yibuti",
+    "pais_nombre_extendido": "Rep\u00fablica de Yibuti",
+    "pais_codigo": "DJ",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 243,
   "fields": {
-    "nombre": "Zambia",
-    "nombre_extendido": "Rep\u00fablica de Zambia",
-    "codigo": "ZM",
-    "zona": 8
+    "pais_nombre": "Zambia",
+    "pais_nombre_extendido": "Rep\u00fablica de Zambia",
+    "pais_codigo": "ZM",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 244,
   "fields": {
-    "nombre": "Zimbabue",
-    "nombre_extendido": "Rep\u00fablica de Zimbabue",
-    "codigo": "ZW",
-    "zona": 8
+    "pais_nombre": "Zimbabue",
+    "pais_nombre_extendido": "Rep\u00fablica de Zimbabue",
+    "pais_codigo": "ZW",
+    "pais_zona": 8
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 245,
   "fields": {
-    "nombre": "Europa",
-    "nombre_extendido": "Uni\u00f3n Europea",
-    "codigo": "UE",
-    "zona": 5
+    "pais_nombre": "Europa",
+    "pais_nombre_extendido": "Uni\u00f3n Europea",
+    "pais_codigo": "UE",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 246,
   "fields": {
-    "nombre": "Inglaterra",
-    "nombre_extendido": "Gran Breta\u00f1a",
-    "codigo": "23",
-    "zona": 5
+    "pais_nombre": "Inglaterra",
+    "pais_nombre_extendido": "Gran Breta\u00f1a",
+    "pais_codigo": "23",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 247,
   "fields": {
-    "nombre": "Korea",
-    "nombre_extendido": "Korea",
-    "codigo": "67",
-    "zona": 6
+    "pais_nombre": "Korea",
+    "pais_nombre_extendido": "Korea",
+    "pais_codigo": "67",
+    "pais_zona": 6
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 248,
   "fields": {
-    "nombre": "Pa\u00edses Bajos",
-    "nombre_extendido": "Netherlands",
-    "codigo": "1",
-    "zona": 5
+    "pais_nombre": "Pa\u00edses Bajos",
+    "pais_nombre_extendido": "Netherlands",
+    "pais_codigo": "1",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 249,
   "fields": {
-    "nombre": "Desconocido",
-    "nombre_extendido": "Desconocido",
-    "codigo": "99",
-    "zona": 1
+    "pais_nombre": "Desconocido",
+    "pais_nombre_extendido": "Desconocido",
+    "pais_codigo": "99",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 250,
   "fields": {
-    "nombre": "Gales",
-    "nombre_extendido": "Gales Wales Cymru",
-    "codigo": "44",
-    "zona": 5
+    "pais_nombre": "Gales",
+    "pais_nombre_extendido": "Gales Wales Cymru",
+    "pais_codigo": "44",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 251,
   "fields": {
-    "nombre": "Estados Unidos",
-    "nombre_extendido": "Estados Unidos de Norte Am\u00e9rica",
-    "codigo": "EU",
-    "zona": 1
+    "pais_nombre": "Estados Unidos",
+    "pais_nombre_extendido": "Estados Unidos de Norte Am\u00e9rica",
+    "pais_codigo": "EU",
+    "pais_zona": 1
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 252,
   "fields": {
-    "nombre": "Roma",
-    "nombre_extendido": "Roma",
-    "codigo": "06",
-    "zona": 5
+    "pais_nombre": "Roma",
+    "pais_nombre_extendido": "Roma",
+    "pais_codigo": "06",
+    "pais_zona": 5
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 253,
   "fields": {
-    "nombre": "Interamericano",
-    "nombre_extendido": "Varios pa\u00edses de Am\u00e9rica Latina",
-    "codigo": "04",
-    "zona": 2
+    "pais_nombre": "Interamericano",
+    "pais_nombre_extendido": "Varios pa\u00edses de Am\u00e9rica Latina",
+    "pais_codigo": "04",
+    "pais_zona": 2
   }
 },
 {
   "model": "nucleo.pais",
   "pk": 254,
   "fields": {
-    "nombre": "EAU",
-    "nombre_extendido": "Los Emiratos Arabes Unidos",
-    "codigo": "78",
-    "zona": 6
+    "pais_nombre": "EAU",
+    "pais_nombre_extendido": "Los Emiratos Arabes Unidos",
+    "pais_codigo": "78",
+    "pais_zona": 6
   }
 },
 {
