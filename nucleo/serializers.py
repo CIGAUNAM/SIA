@@ -23,6 +23,11 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ('username',)
 
 
+class PaisSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pais
+        fields = '__all__'
+
 
 class InstitucionSerializer(serializers.ModelSerializer):
     class Meta:

@@ -169,6 +169,8 @@ urlpatterns = [
     # url(r'^rest/ciudad/(?P<pk>[0-9]+)/$', views.CiudadDetail.as_view()),
     # url(r'^rest/users/$', views.UserList.as_view()),
     # url(r'^rest/user/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
+    url(r'^rest/paises/$', RESTPaisLista.as_view()),
+    url(r'^rest/paises/(?P<pk>[0-9]+)/$', RESTPaisDetalle.as_view()),
     url(r'^rest/instituciones/$', RESTInstitucionLista.as_view()),
     url(r'^rest/instituciones/(?P<pk>[0-9]+)/$', RESTInstitucionDetalle.as_view()),
     url(r'^rest/dependencias/$', RESTDependenciaLista.as_view()),
