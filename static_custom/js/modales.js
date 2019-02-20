@@ -34,7 +34,6 @@ $(function () {
     */
 
     $("#boton-agregar-institucion").on("click", function (e) {
-        $('#d_subsunam').hide();
 
         agregar_institucion_dialog = $("#agregar-institucion").dialog({
             autoOpen: false,
@@ -63,22 +62,25 @@ $(function () {
                     $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                     $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                     $("#id_institucion_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-institucion")});
+                    $('#d_subsunam').hide();
+
+                    $("#id_institucion_perteneceunam").on('change', function () {
+                        console.log($("#id_institucion_perteneceunam").is(':checked'));
+                        if ($("#id_institucion_perteneceunam").is(':checked')) {
+                            $('#d_subsunam').show('slow');
+                            $('#id_institucion_subsistemaunam').attr("required", "true");
+                        } else {
+                            console.log("esconder cambio")
+                            $('#d_subsunam').hide('slow');
+                            $('#id_institucion_subsistemaunam').val(null).trigger('change');
+                            $('#id_institucion_subsistemaunam').attr("required", null);
+                        }
+                    });
                 });
             }
         });
 
-        $("#id_institucion_perteneceunam").on('change', function () {
-            console.log($("#id_institucion_perteneceunam").is(':checked'));
-            if ($("#id_institucion_perteneceunam").is(':checked')) {
-                $('#d_subsunam').show('slow');
-                $('#id_institucion_subsistemaunam').attr("required", "true");
-            } else {
-                console.log("esconder cambio")
-                $('#d_subsunam').hide('slow');
-                $('#id_institucion_subsistemaunam').val(null).trigger('change');
-                $('#id_institucion_subsistemaunam').attr("required", null);
-            }
-        });
+
         agregar_institucion_dialog.dialog("open");
     });
 
@@ -120,6 +122,21 @@ $(function () {
                         $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                         $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                         $("#id_institucion_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-institucion")});
+
+                        $('#d_subsunam').hide();
+
+                        $("#id_institucion_perteneceunam").on('change', function () {
+                            console.log($("#id_institucion_perteneceunam").is(':checked'));
+                            if ($("#id_institucion_perteneceunam").is(':checked')) {
+                                $('#d_subsunam').show('slow');
+                                $('#id_institucion_subsistemaunam').attr("required", "true");
+                            } else {
+                                console.log("esconder cambio")
+                                $('#d_subsunam').hide('slow');
+                                $('#id_institucion_subsistemaunam').val(null).trigger('change');
+                                $('#id_institucion_subsistemaunam').attr("required", null);
+                            }
+                        });
 
                     });
                     e.stopPropagation();
