@@ -72,7 +72,6 @@ class ZonaPais(models.Model):
         verbose_name_plural = 'Zonas de paises'
 
 
-
 class GradoAcademico(models.Model):
     grado_abreviacion = models.CharField(max_length=254, unique=True)
     grado = models.CharField(max_length=254, unique=True)
@@ -244,7 +243,7 @@ class InstitucionSimple(models.Model):
         return "{} ({})".format(self.institucion_nombre, self.institucion_pais)
 
     def natural_key(self):
-        return self.institucion_nombre
+        return "{} ({})".format(self.institucion_nombre, self.institucion_pais)
 
     def get_absolute_url(self):
         return reverse('institucion_detalle', kwargs={'pk': self.pk})

@@ -126,7 +126,6 @@ $(function () {
 
                 }
             });
-            console.log("aqui")
             detalle_institucion_dialog.dialog("open");
         }
 

@@ -1277,6 +1277,13 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+class RESTPaisLista(generics.ListCreateAPIView):
+    queryset = Pais.objects.all()
+    serializer_class = PaisSerializer
+
+class RESTPaisDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Pais.objects.all()
+    serializer_class = PaisSerializer
 
 class RESTInstitucionLista(generics.ListCreateAPIView):
     queryset = InstitucionSimple.objects.all()
