@@ -25,6 +25,7 @@ STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN
 # Create your models here.
 
 
+
 class ArbitrajePublicacionAcademica(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICO__TIPO)
@@ -35,7 +36,7 @@ class ArbitrajePublicacionAcademica(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return self.fecha_dictamen
+        return self.fecha_dictamen.strftime("%Y-%m-%d")
 
     def get_absolute_url(self):
         return reverse('arbitraje_publicacion_academica_detalle', kwargs={'pk': self.pk})
