@@ -638,10 +638,9 @@
                                         \begin{itemize}
                                             {% if dictamenes_libros %}
                                             {{ dictamenes_libros }} \\
-                                            Dictamenes de librisjdjsklj\\
                                                     \begin{itemize}
                                                         {% for i in dictamenes_libros %}
-                                                            \item{ {{ i.fecha_dictamen }}, {{ i.libro }} }
+                                                            \item{ {{ i.fecha_dictamen }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
