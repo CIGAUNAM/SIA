@@ -7245,7 +7245,7 @@ class CVInvestigadorPDF(View):
 
         rendered_tpl = template.render(context).replace('&', '\&').encode('utf-8')
 
-        # print(template.render(context).replace('&', '\&'))
+        print(template.render(context).replace('&', '\&'))
 
         with tempfile.TemporaryDirectory() as tempdir:
             for i in range(2):
