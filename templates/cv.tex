@@ -608,7 +608,7 @@
                             \end{itemize}
                     {% endif %}
 
-                    {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
+                    {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
                         \item[7.5.] \textbf{Participación en Actividades Editoriales}
                             \begin{enumerate}
                                 {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras %}
@@ -633,11 +633,10 @@
                                         \end{itemize}
                                 {% endif %}
 
-                                {% if dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
+                                {% if dictamenes_libros or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
                                     \item[7.5.2.] \textbf{Dictámenes de libros}
                                         \begin{itemize}
                                             {% if dictamenes_libros %}
-                                                \item[a)] De editoriales mexicanas
                                                     \begin{itemize}
                                                         {% for i in dictamenes_libros %}
                                                             \item{ {{ i.fecha_dictamen }}, \textit{``{{ i.libro }}''} }
