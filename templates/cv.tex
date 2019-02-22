@@ -637,10 +637,9 @@
                                     \item[7.5.2.] \textbf{Dictámenes de libros}
                                         \begin{itemize}
                                             {% if dictamenes_libros %}
-                                                    dictamenes_libros
                                                     \begin{itemize}
                                                         {% for i in dictamenes_libros %}
-                                                            \item{ {{ i.fecha_dictamen }}, \textit{``{{ i.libro }}''} }
+                                                            \item{ {{ i.fecha_dictamen }}, {{ i.libro }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
