@@ -7186,7 +7186,7 @@ class CVInvestigadorPDF(View):
         context['participacion_comisiones_dictaminadoras_internacionales'] = participacion_comisiones_dictaminadoras_internacionales
         context['dictamenes_articulos_revistas_mexicanas'] = dictamenes_articulos_revistas_mexicanas
         context['dictamenes_articulos_revistas_extranjeras'] = dictamenes_articulos_revistas_extranjeras
-        context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros
+        context['dictamenes_libros'] = dictamenes_libros
         context['estancias_academicas'] = estancias_academicas
         context['profesores_visitantes'] = profesores_visitantes
         context['sabaticos'] = sabaticos

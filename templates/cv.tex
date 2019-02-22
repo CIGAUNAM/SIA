@@ -636,6 +636,14 @@
                                 {% if dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
                                     \item[7.5.2.] \textbf{Dictámenes de libros}
                                         \begin{itemize}
+                                            {% if dictamenes_libros %}
+                                                \item[a)] De editoriales mexicanas
+                                                    \begin{itemize}
+                                                        {% for i in dictamenes_libros %}
+                                                            \item{ {{ i.fecha_dictamen }}, \textit{``{{ i.libro }}''} }
+                                                        {% endfor %}
+                                                    \end{itemize}
+                                            {% endif %}
                                             {% if dictamenes_libros_editoriales_mexicanas %}
                                                 \item[a)] De editoriales mexicanas
                                                     \begin{itemize}
