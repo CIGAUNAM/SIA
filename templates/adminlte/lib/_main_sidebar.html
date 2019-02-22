@@ -6,6 +6,11 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
     </li>
+    <li>
+        <a href="/web/cv-investigadores/{{ request.user.pk }}/pdf/">
+            <i class="fa fa-dashboard"></i> <span>Informe PDF</span>
+        </a>
+    </li>
 
     <li class="treeview{% if aux.url_categoria == "formacion-academica" %} active{% endif %}">
         <a href="#">
