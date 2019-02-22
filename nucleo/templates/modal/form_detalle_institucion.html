@@ -101,8 +101,14 @@
 
     <script>
 
-        $('#d_subsunam').hide();
-
+        //$('#d_subsunam').hide('slow');
+        if ($("#id_institucion_perteneceunam").is(':checked')) {
+            console.log("checked")
+            console.log("checked2")
+                $('#d_subsunam').show();
+            } else {
+            $('#d_subsunam').hide();
+        }
 
         $("#id_institucion_perteneceunam").on('change', function () {
             console.log($("#id_institucion_perteneceunam").is(':checked'));
@@ -137,8 +143,9 @@
             }
 
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-            var patchurl = "/nucleo/rest/dependencias/" + $("#id_dependencia").val().toString() + "/";
-            console.log(patchurl);
+            var patchurl = "/nucleo/rest/instituciones/" + $("#id_institucion").val().toString() + "/";
+
+            console.log("patchurl:", patchurl);
 
             $.ajax({
                 type: "PATCH",
@@ -147,7 +154,6 @@
                 data: datos,
                 headers: {"X-CSRFToken": $crf_token},
                 error: function (xhr, ajaxOptions, thrownError) {
-                    //console.log(xhr.responseJSON.non_field_errors[0])
                     console.log(xhr.responseJSON)
                     console.log("{{ user.get_username }}")
                     console.log("{{ user.pk }}")
@@ -195,23 +201,27 @@
                     $('#id_institucion_dependencia').val(null).trigger('change');
                     $('#id_institucion_dependencia').children('option').remove();
                     $('#d_subsunam').hide('slow');
-                    $('#modal_form_dependencia_agregar').trigger('reset');
+                    $('#modal_form_institucion_detalle').trigger('reset');
 
-                    var nueva_dependencia_institucion = ""
-                    console.log(nueva_dependencia_institucion)
-                    var insturl = "/nucleo/rest/instituciones/" + data.institucion_dependencia.toString() + "/"
+
+                    console.log("data")
+                    console.log(data)
+                    var pais_url = "/nucleo/rest/paises/" + data.institucion_pais.toString() + "/"
+                    console.log(pais_url)
                     $.ajax({
-                        url: insturl,
+                        url: pais_url,
                         success: function (dataf) {
-                            console.log(dataf.nombre_institucion);
-                            nueva_dependencia_institucion = dataf.nombre_institucion.toString();
-                            console.log(nueva_dependencia_institucion)
-                            var nueva_dependencia = new Option(data.nombre_dependencia + " :: " + nueva_dependencia_institucion, data.id, true, true);
-                            $('#id_dependencia').append(nueva_dependencia).trigger('change');
-                            $('#agregar-dependencia-modal-body').empty();
-                            agregar_dependencia_dialog.dialog("close")
+                            console.log("nombre pais");
+                            institucion_pais_option = dataf.pais_nombre.toString();
+                            console.log(institucion_pais_option);
+                            var nueva_institucion_option = new Option(data.institucion_nombre + " (" + institucion_pais_option + ")", data.id, true, true);
+                            $('#id_institucion').append(nueva_institucion_option).trigger('change');
+                            $('#agregar-institucion-modal-body').empty();
+                            detalle_institucion_dialog.dialog("close")
                         }
                     });
+
+
                 }
             });
             event.preventDefault();
