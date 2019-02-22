@@ -205,8 +205,8 @@ class InstitucionAgregar(ObjectModalCreateMixin, View):
                 return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
         except Exception as e:
             print(e)
-            #return HttpResponse("")
-            return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+            return HttpResponse("")
+            #return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)

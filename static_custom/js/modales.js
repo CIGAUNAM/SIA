@@ -1,5 +1,6 @@
 agregar_dependencia_dialog = null
 $(function () {
+    $(".ui-dialog-buttonset").removeClass()
 
     /*
         agregar_dependencia_dialog = $("#agregar-dependencia").dialog({
@@ -34,6 +35,7 @@ $(function () {
     */
 
     $("#boton-agregar-institucion").on("click", function (e) {
+
 
         agregar_institucion_dialog = $("#agregar-institucion").dialog({
             autoOpen: false,
@@ -80,26 +82,21 @@ $(function () {
             }
         });
 
-
         agregar_institucion_dialog.dialog("open");
     });
 
     $("#boton-detalle-institucion").on("click", function (e) {
-        console.log("clic detalle")
-        console.log($("#id_institucion").val())
         if ($("#id_institucion").val() == '') {
             e.stopPropagation();
-            console.log("no item")
         } else {
-            console.log($("#id_dependencia").val())
             detalle_institucion_dialog = $("#detalle-institucion").dialog({
                 autoOpen: false,
                 height: 700,
                 width: 900,
                 modal: true,
                 buttons: {
-                    agregar: {
-                        text: "Agregar institución",
+                    actualizar: {
+                        text: "Actualizar institución",
                         click: function () {
                             $("#modal_form_institucion_detalle").submit()
                         },
@@ -115,15 +112,11 @@ $(function () {
                 },
 
                 open: function (event, ui) {
-                    //$('#agregar-institucion-modal-body').load('/nucleo/instituciones/agregar/', function () {
-
                     $('#detalle-institucion-modal-body').load(('/nucleo/instituciones/' + $("#id_institucion").val().toString()) + "/", function () {
                         console.log("detalle start")
                         $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                         $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                         $("#id_institucion_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-institucion")});
-
-                        $('#d_subsunam').hide();
 
                         $("#id_institucion_perteneceunam").on('change', function () {
                             console.log($("#id_institucion_perteneceunam").is(':checked'));
