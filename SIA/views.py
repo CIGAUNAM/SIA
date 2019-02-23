@@ -6939,8 +6939,8 @@ class CVInvestigadorDetalle(View):
         ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=True).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
         ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=False).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio').distinct()
+        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio').distinct()
 
 
         context['usuario'] = usuario
@@ -7071,8 +7071,8 @@ class CVInvestigadorPDF(View):
         ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=True).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
         ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(autores=pk, por_invitacion=False).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
 
-        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
-        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
+        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).filter(evento__pais__nombre='México').distinct().order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
+        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).exclude(evento__pais__nombre='México').distinct().order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
 
         participacion_comisiones_dictaminadoras_nacionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
 
@@ -7245,7 +7245,7 @@ class CVInvestigadorPDF(View):
 
         rendered_tpl = template.render(context).replace('&', '\&').encode('utf-8')
 
-        print(template.render(context).replace('&', '\&'))
+        # print(template.render(context).replace('&', '\&'))
 
         with tempfile.TemporaryDirectory() as tempdir:
             for i in range(2):
