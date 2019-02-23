@@ -806,20 +806,6 @@ class ProgramaLicenciaturaJSON(View):
             raise Http404
 
 
-class ProgramaLicenciaturaLista(ObjectCreateMixinNucleo, View):
-    form_class = ProgramaLicenciaturaForm
-    model = ProgramaLicenciatura
-    aux = ProgramaLicenciaturaContext.contexto
-    template_name = 'programa_academico.html'
-
-
-class ProgramaLicenciaturaDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ProgramaLicenciaturaForm
-    model = ProgramaLicenciatura
-    aux = ProgramaLicenciaturaContext.contexto
-    template_name = 'programa_academico.html'
-
-
 class ProgramaLicenciaturaEliminar(View):
     def get(self, request, pk):
         try:
@@ -833,27 +819,11 @@ class ProgramaLicenciaturaEliminar(View):
 class ProgramaMaestriaJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = ProgramaMaestria.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'area_conocimiento'))
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('nombre', 'area_conocimiento'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
-
-
-class ProgramaMaestriaLista(ObjectCreateMixinNucleo, View):
-    form_class = ProgramaMaestriaForm
-    model = ProgramaMaestria
-    aux = ProgramaMaestriaContext.contexto
-    template_name = 'programa_academico.html'
-
-
-class ProgramaMaestriaDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ProgramaMaestriaForm
-    model = ProgramaMaestria
-    aux = ProgramaMaestriaContext.contexto
-    template_name = 'programa_academico.html'
 
 
 class ProgramaMaestriaEliminar(View):
@@ -869,27 +839,12 @@ class ProgramaMaestriaEliminar(View):
 class ProgramaDoctoradoJSON(View):
     def get(self, request):
         try:
-            #usuarioid = User.objects.get(username=request.user.username).id
             items = ProgramaDoctorado.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'area_conocimiento'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
-
-
-class ProgramaDoctoradoLista(ObjectCreateMixinNucleo, View):
-    form_class = ProgramaDoctoradoForm
-    model = ProgramaDoctorado
-    aux = ProgramaDoctoradoContext.contexto
-    template_name = 'programa_academico.html'
-
-
-class ProgramaDoctoradoDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ProgramaDoctoradoForm
-    model = ProgramaDoctorado
-    aux = ProgramaDoctoradoContext.contexto
-    template_name = 'programa_academico.html'
 
 
 class ProgramaDoctoradoEliminar(View):
@@ -1044,17 +999,6 @@ class DistincionEliminar(View):
         except:
             raise Http404
 
-
-class MemoriaJSON(View):
-    def get(self, request):
-        try:
-            #usuarioid = User.objects.get(username=request.user.username).id
-            items = Memoria.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'estado'))
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
 
 
 class EditorialJSON(View):
