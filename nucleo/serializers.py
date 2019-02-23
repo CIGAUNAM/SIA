@@ -35,10 +35,23 @@ class InstitucionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class DependenciaSerializer(serializers.ModelSerializer):
+class ProgramaLicenciaturaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Dependencia
+        model = ProgramaLicenciatura
         fields = '__all__'
+
+class ProgramaMaestriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProgramaMaestria
+        fields = '__all__'
+
+class ProgramaDoctoradoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProgramaDoctorado
+        fields = '__all__'
+
+
+
 
 
 

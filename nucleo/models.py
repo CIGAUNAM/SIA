@@ -514,64 +514,70 @@ class Reconocimiento(models.Model):
 
 
 class ProgramaLicenciatura(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
-                                          on_delete=models.PROTECT)
+    programalicenciatura_nombre = models.CharField(max_length=255, unique=True)
+    programalicenciatura_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
+    programalicenciatura_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
+    programalicenciatura_regfechacreado = models.DateField(auto_now_add=True)
+    programalicenciatura_regfechaactualizado = models.DateField(auto_now=True)
+    programalicenciatura_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
-        return self.nombre
+        return self.programalicenciatura_nombre
 
     def natural_key(self):
-        return self.nombre
+        return self.programalicenciatura_nombre
 
     def get_absolute_url(self):
         return reverse('programa_licenciatura_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['programalicenciatura_nombre']
         verbose_name = 'Programa de licenciatura'
         verbose_name_plural = 'Programas de licenciatura'
 
 
 class ProgramaMaestria(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
-                                          on_delete=models.PROTECT)
+    programamaestria_nombre = models.CharField(max_length=255, unique=True)
+    programamaestria_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
+    programamaestria_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
+    programamaestria_regfechacreado = models.DateField(auto_now_add=True)
+    programamaestria_regfechaactualizado = models.DateField(auto_now=True)
+    programamaestria_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
-        return self.nombre
+        return self.programamaestria_nombre
 
     def natural_key(self):
-        return self.nombre
+        return self.programamaestria_nombre
 
     def get_absolute_url(self):
         return reverse('programa_maestria_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['programamaestria_nombre']
         verbose_name = 'Programa de maestria'
         verbose_name_plural = 'Programas de maestria'
 
 
 class ProgramaDoctorado(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
-                                          on_delete=models.PROTECT)
+    programadoctorado_nombre = models.CharField(max_length=255, unique=True)
+    programadoctorado_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
+    programadoctorado_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
+    programadoctorado_regfechacreado = models.DateField(auto_now_add=True)
+    programadoctorado_regfechaactualizado = models.DateField(auto_now=True)
+    programadoctorado_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
-        return self.nombre
+        return self.programadoctorado_nombre
 
     def natural_key(self):
-        return self.nombre
+        return self.programadoctorado_nombre
 
     def get_absolute_url(self):
         return reverse('programa_doctorado_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['programadoctorado_nombre']
         verbose_name = 'Programa de doctorado'
         verbose_name_plural = 'Programas de doctorado'
 
