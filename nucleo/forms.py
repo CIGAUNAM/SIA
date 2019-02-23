@@ -340,10 +340,9 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
 
     class Meta:
         model = ProgramaLicenciatura
-        exclude = []
+        exclude = ['programalicenciatura_regverificado', 'programalicenciatura_regfechacreado', 'programalicenciatura_regfechaactualizado', 'programalicenciatura_regusuario']
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'programalicenciatura_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -360,15 +359,14 @@ class ProgramaMaestriaForm(forms.ModelForm):
 
     class Meta:
         model = ProgramaMaestria
-        exclude = []
+        exclude = ['programamaestria_regverificado', 'programamaestria_regfechacreado', 'programamaestria_regfechaactualizado', 'programamaestria_regusuario']
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'programamaestria_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
 class ProgramaDoctoradoForm(forms.ModelForm):
-    area_conocimiento = forms.ModelChoiceField(
+    programadoctorado_areaconocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
         widget=ModelSelect2Widget(
@@ -380,10 +378,9 @@ class ProgramaDoctoradoForm(forms.ModelForm):
 
     class Meta:
         model = ProgramaDoctorado
-        exclude = []
+        exclude = ['programadoctorado_regverificado', 'programadoctorado_regfechacreado', 'programadoctorado_regfechaactualizado', 'programadoctorado_regusuario']
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'programadoctorado_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 

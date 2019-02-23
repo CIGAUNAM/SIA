@@ -217,38 +217,26 @@ class InstitucionAgregar(ObjectModalCreateMixin, View):
             return render(request, self.template_name, {'modal_form_institucion_agregar': bound_form})
 
 
-class InstitucionDetalle1(ObjectModalUpdateMixin, View):
-    form_class = InstitucionForm
-    model = Institucion
-    template_name = 'modal/form_detalle_institucion.html'
-
-    def get(self, request, pk):
-        try:
-            ref = request.META['HTTP_REFERER']
-            if ref:
-                return render(request, self.template_name, {'modal_form_institucion_detalle': self.form_class})
-        except Exception as e:
-            print(e)
-            #return HttpResponse("")
-            return render(request, self.template_name, {'modal_form_institucion_detalle': self.form_class})
-
-    def post(self, request):
-        bound_form = self.form_class(request.POST)
-        if bound_form.is_valid():
-            new_obj = bound_form.save()
-            return JsonResponse(new_obj, safe=False)
-        else:
-            return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
-
-
 class InstitucionDetalle(ObjectModalUpdateMixin, View):
     form_class = InstitucionSimpleForm
     model = InstitucionSimple
     template_name = 'modal/form_detalle_institucion.html'
 
+    """
     def get(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
         return render(request, self.template_name, {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+    """
+
+    def get(self, request, pk):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                obj = get_object_or_404(self.model, pk=pk)
+                return render(request, self.template_name, {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -258,6 +246,183 @@ class InstitucionDetalle(ObjectModalUpdateMixin, View):
             return redirect(new_obj)
         else:
             return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+class ProgramaLicenciaturaAgregar(ObjectModalCreateMixin, View):
+    form_class = ProgramaLicenciaturaForm
+    model = ProgramaLicenciatura
+    template_name = 'modal/form_agregar_programalicenciatura.html'
+
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+            #return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form_institucion_agregar': bound_form})
+
+
+class ProgramaLicenciaturaDetalle(ObjectModalUpdateMixin, View):
+    form_class = ProgramaLicenciaturaForm
+    model = ProgramaLicenciatura
+    template_name = 'modal/form_detalle_programalicenciatura.html'
+
+    def get(self, request, pk):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                obj = get_object_or_404(self.model, pk=pk)
+                return render(request, self.template_name, {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro actualizado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
+
+
+class ProgramaMaestriaAgregar(ObjectModalCreateMixin, View):
+    form_class = ProgramaMaestriaForm
+    model = ProgramaMaestria
+    template_name = 'modal/form_agregar_programamaestria.html'
+
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+            # return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form_institucion_agregar': bound_form})
+
+
+class ProgramaMaestriaDetalle(ObjectModalUpdateMixin, View):
+    form_class = ProgramaMaestriaForm
+    model = ProgramaMaestria
+    template_name = 'modal/form_detalle_programamaestria.html'
+
+    def get(self, request, pk):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                obj = get_object_or_404(self.model, pk=pk)
+                return render(request, self.template_name,
+                              {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro actualizado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
+
+
+class ProgramaDoctoradoAgregar(ObjectModalCreateMixin, View):
+    form_class = ProgramaDoctoradoForm
+    model = ProgramaDoctorado
+    template_name = 'modal/form_agregar_programamaestria.html'
+
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+            # return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form_institucion_agregar': bound_form})
+
+
+class ProgramaDoctoradoDetalle(ObjectModalUpdateMixin, View):
+    form_class = ProgramaDoctoradoForm
+    model = ProgramaDoctorado
+    template_name = 'modal/form_detalle_institucion.html'
+
+    def get(self, request, pk):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                obj = get_object_or_404(self.model, pk=pk)
+                return render(request, self.template_name,
+                              {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro actualizado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1294,15 +1459,33 @@ class RESTInstitucionDetalle(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = InstitucionSerializer
 
 
-class RESTDependenciaLista(generics.ListCreateAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
-    queryset = Dependencia.objects.all()
-    serializer_class = DependenciaSerializer
+class RESTProgramaLicenciaturaLista(generics.ListCreateAPIView):
+    queryset = ProgramaLicenciatura.objects.all()
+    serializer_class = ProgramaLicenciaturaSerializer
 
-class RESTDependenciaDetalle(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
-    queryset = Dependencia.objects.all()
-    serializer_class = DependenciaSerializer
+class RESTProgramaLicenciaturaDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ProgramaLicenciatura.objects.all()
+    serializer_class = ProgramaLicenciaturaSerializer
+
+
+class RESTProgramaMaestriaLista(generics.ListCreateAPIView):
+    queryset = ProgramaMaestria.objects.all()
+    serializer_class = ProgramaMaestriaSerializer
+
+class RESTProgramaMaestriaDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ProgramaMaestria.objects.all()
+    serializer_class = ProgramaMaestriaSerializer
+
+
+class RESTProgramaDoctoradoLista(generics.ListCreateAPIView):
+    queryset = ProgramaDoctorado.objects.all()
+    serializer_class = ProgramaDoctoradoSerializer
+
+class RESTProgramaDoctoradoDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ProgramaDoctorado.objects.all()
+    serializer_class = ProgramaDoctoradoSerializer
+
+
 
 
 class CargoList(generics.ListCreateAPIView):
