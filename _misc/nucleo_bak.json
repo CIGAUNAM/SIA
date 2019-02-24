@@ -118917,8 +118917,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 1,
   "fields": {
-    "nombre": "Licenciatura en Geograf\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Geograf\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -118926,8 +118926,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 2,
   "fields": {
-    "nombre": "Geograf\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geograf\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -118935,8 +118935,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 3,
   "fields": {
-    "nombre": "Ciencias del Mar",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ciencias del Mar",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -118944,8 +118944,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 4,
   "fields": {
-    "nombre": "Licenciatura en Biolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Biolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -118953,8 +118953,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 5,
   "fields": {
-    "nombre": "Desarrollo Sustentable",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Desarrollo Sustentable",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -118962,8 +118962,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 6,
   "fields": {
-    "nombre": "Agronom\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Agronom\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 2
   }
 },
@@ -118971,8 +118971,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 7,
   "fields": {
-    "nombre": "Ingenier\u00eda en Agroecolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda en Agroecolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -118980,8 +118980,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 8,
   "fields": {
-    "nombre": "Biolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Biolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 1
   }
 },
@@ -118989,8 +118989,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 9,
   "fields": {
-    "nombre": "Ciencias de la Comunicaci\u00f3n",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ciencias de la Comunicaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 133
   }
 },
@@ -118998,8 +118998,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 10,
   "fields": {
-    "nombre": "Arqueolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Arqueolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 129
   }
 },
@@ -119007,8 +119007,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 11,
   "fields": {
-    "nombre": "Ingenier\u00eda T\u00e9cnica Agr\u00edcola",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda T\u00e9cnica Agr\u00edcola",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 95
   }
 },
@@ -119016,8 +119016,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 12,
   "fields": {
-    "nombre": "Ingenier\u00eda Agr\u00f3noma",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda Agr\u00f3noma",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -119025,8 +119025,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 13,
   "fields": {
-    "nombre": "Historia",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Historia",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119034,8 +119034,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 14,
   "fields": {
-    "nombre": "Geography",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geography",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -119043,8 +119043,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 15,
   "fields": {
-    "nombre": "Econom\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Econom\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 132
   }
 },
@@ -119052,8 +119052,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 16,
   "fields": {
-    "nombre": "Ciencias Ambientales",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ciencias Ambientales",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -119061,8 +119061,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 17,
   "fields": {
-    "nombre": "Licenciatura en Ciencias Biol\u00f3gicas",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Ciencias Biol\u00f3gicas",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -119070,8 +119070,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 18,
   "fields": {
-    "nombre": "Geografia Economica",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geografia Economica",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119079,8 +119079,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 19,
   "fields": {
-    "nombre": "Sociolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Sociolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 150
   }
 },
@@ -119088,8 +119088,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 20,
   "fields": {
-    "nombre": "Ciencias Antropol\u00f3gicas (orientaci\u00f3n Arqueol\u00f3gica)",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ciencias Antropol\u00f3gicas (orientaci\u00f3n Arqueol\u00f3gica)",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 6
   }
 },
@@ -119097,8 +119097,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 21,
   "fields": {
-    "nombre": "Ingenier\u00eda en Sistemas Computacionales",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda en Sistemas Computacionales",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 95
   }
 },
@@ -119106,8 +119106,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 22,
   "fields": {
-    "nombre": "Medicina Veterinaria Zootecnista",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Medicina Veterinaria Zootecnista",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 76
   }
 },
@@ -119115,8 +119115,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 23,
   "fields": {
-    "nombre": "Licenciatura en Econom\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Econom\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 132
   }
 },
@@ -119124,8 +119124,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 24,
   "fields": {
-    "nombre": "Administraci\u00f3n de Empresas Agropecu\u00e1rias",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Administraci\u00f3n de Empresas Agropecu\u00e1rias",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 132
   }
 },
@@ -119133,8 +119133,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 25,
   "fields": {
-    "nombre": "Geohistoria",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geohistoria",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119142,8 +119142,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 26,
   "fields": {
-    "nombre": "Geociencias",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geociencias",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119151,8 +119151,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 27,
   "fields": {
-    "nombre": "Licenciatura en Ciencias Ambientales",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Ciencias Ambientales",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119160,8 +119160,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 28,
   "fields": {
-    "nombre": "Gesti\u00f3n y Econom\u00eda Ambiental Universidad de Guadalajara",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Gesti\u00f3n y Econom\u00eda Ambiental Universidad de Guadalajara",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119169,8 +119169,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 29,
   "fields": {
-    "nombre": "Geohistoria RT",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geohistoria RT",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119178,8 +119178,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 30,
   "fields": {
-    "nombre": "Historia e historiograf\u00eda ambiental",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Historia e historiograf\u00eda ambiental",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 122
   }
 },
@@ -119187,8 +119187,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 31,
   "fields": {
-    "nombre": "Arqueolog\u00eda del occidente de M\u00e9xico",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Arqueolog\u00eda del occidente de M\u00e9xico",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119196,8 +119196,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 32,
   "fields": {
-    "nombre": "T\u00e9cnicas de registro de patrimonio cultural",
-    "descripcion": "",
+    "programalicenciatura_nombre": "T\u00e9cnicas de registro de patrimonio cultural",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119205,8 +119205,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 33,
   "fields": {
-    "nombre": "Geohistoria, de Estudios Sociales y Desarrollo Local y de Ciencias ambientales",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geohistoria, de Estudios Sociales y Desarrollo Local y de Ciencias ambientales",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119214,8 +119214,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 34,
   "fields": {
-    "nombre": "Antropolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Antropolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 122
   }
 },
@@ -119223,8 +119223,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 35,
   "fields": {
-    "nombre": "Hidrobiolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Hidrobiolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 17
   }
 },
@@ -119232,8 +119232,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 36,
   "fields": {
-    "nombre": "Ingenier\u00eda en Geociencias",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda en Geociencias",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119241,8 +119241,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 37,
   "fields": {
-    "nombre": "Ingenier\u00eda Forestal",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda Forestal",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -119250,8 +119250,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 38,
   "fields": {
-    "nombre": "Ingenier\u00eda civil",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda civil",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -119259,8 +119259,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 39,
   "fields": {
-    "nombre": "Geograf\u00eda Rural y Urbana",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Geograf\u00eda Rural y Urbana",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 140
   }
 },
@@ -119268,8 +119268,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 40,
   "fields": {
-    "nombre": "Agroecolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Agroecolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -119277,8 +119277,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 41,
   "fields": {
-    "nombre": "Estudios Sociales y Gesti\u00f3n Local",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Estudios Sociales y Gesti\u00f3n Local",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 147
   }
 },
@@ -119286,8 +119286,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 42,
   "fields": {
-    "nombre": "Historia del Arte",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Historia del Arte",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 117
   }
 },
@@ -119295,8 +119295,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 43,
   "fields": {
-    "nombre": "Arquitectura",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Arquitectura",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 115
   }
 },
@@ -119304,8 +119304,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 44,
   "fields": {
-    "nombre": "Impactos de la agricultura animal industrial e innovaci\u00f3n social en sistemas de alimentaci\u00f3n",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Impactos de la agricultura animal industrial e innovaci\u00f3n social en sistemas de alimentaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -119313,8 +119313,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 45,
   "fields": {
-    "nombre": "Huertos verticales dom\u00e9sticos: innovaci\u00f3n comunitaria para la producci\u00f3n org\u00e1nica de alimentos en localidades ind\u00edgenas de Michoac\u00e1n",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Huertos verticales dom\u00e9sticos: innovaci\u00f3n comunitaria para la producci\u00f3n org\u00e1nica de alimentos en localidades ind\u00edgenas de Michoac\u00e1n",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -119322,8 +119322,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 46,
   "fields": {
-    "nombre": "Ingenier\u00eda Ambiental",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda Ambiental",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -119331,8 +119331,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 47,
   "fields": {
-    "nombre": "Ciencias Biol\u00f3gicas",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ciencias Biol\u00f3gicas",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 17
   }
 },
@@ -119340,8 +119340,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 48,
   "fields": {
-    "nombre": "Intervenci\u00f3n Educativa",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Intervenci\u00f3n Educativa",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 1
   }
 },
@@ -119349,8 +119349,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 49,
   "fields": {
-    "nombre": "Tecnolog\u00edas para la Informaci\u00f3n en Ciencias",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Tecnolog\u00edas para la Informaci\u00f3n en Ciencias",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 111
   }
 },
@@ -119358,8 +119358,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 50,
   "fields": {
-    "nombre": "Ingenier\u00eda Inform\u00e1tica",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda Inform\u00e1tica",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 96
   }
 },
@@ -119367,8 +119367,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 51,
   "fields": {
-    "nombre": "Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 38
   }
 },
@@ -119376,8 +119376,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 52,
   "fields": {
-    "nombre": "Biotecnolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Biotecnolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 9
   }
 },
@@ -119385,8 +119385,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 53,
   "fields": {
-    "nombre": "Sistemas de Informaci\u00f3n",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Sistemas de Informaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 96
   }
 },
@@ -119394,8 +119394,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 54,
   "fields": {
-    "nombre": "Ingenier\u00eda de Software II",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda de Software II",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 96
   }
 },
@@ -119403,8 +119403,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 55,
   "fields": {
-    "nombre": "Ingenier\u00eda en Tecnolog\u00edas de la Informaci\u00f3n",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda en Tecnolog\u00edas de la Informaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 96
   }
 },
@@ -119412,8 +119412,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 56,
   "fields": {
-    "nombre": "Earth and Atmospheric Sciences",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Earth and Atmospheric Sciences",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -119421,8 +119421,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 57,
   "fields": {
-    "nombre": "Instituto de Investigaciones Econ\u00f3micas y Empresariales ININEE",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Instituto de Investigaciones Econ\u00f3micas y Empresariales ININEE",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 132
   }
 },
@@ -119430,8 +119430,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 58,
   "fields": {
-    "nombre": "Ingenier\u00eda en Recursos Naturales y Agropecuarios",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda en Recursos Naturales y Agropecuarios",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 2
   }
 },
@@ -119439,8 +119439,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 59,
   "fields": {
-    "nombre": "Qu\u00edmica",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Qu\u00edmica",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 8
   }
 },
@@ -119448,7 +119448,7 @@
   "model": "nucleo.programalicenciatura",
   "pk": 60,
   "fields": {
-    "nombre": "Geoinform\u00e1tica",
+    "programalicenciatura_nombre": "Geoinform\u00e1tica",
     "descripcion": "Licenciatura en Geoinform\u00e1tica, Universidad Aut\u00f3noma de Ciudad Ju\u00e1rez",
     "area_conocimiento": 140
   }
@@ -119457,8 +119457,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 61,
   "fields": {
-    "nombre": "Programa de ecolog\u00eda",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Programa de ecolog\u00eda",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
@@ -119466,8 +119466,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 62,
   "fields": {
-    "nombre": "Ciencias de la Tierra",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ciencias de la Tierra",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 99
   }
 },
@@ -119475,8 +119475,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 63,
   "fields": {
-    "nombre": "Ingenier\u00eda en Energ\u00edas Renovables",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Ingenier\u00eda en Energ\u00edas Renovables",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 98
   }
 },
@@ -119484,8 +119484,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 64,
   "fields": {
-    "nombre": "Arte y Dise\u00f1io",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Arte y Dise\u00f1io",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 116
   }
 },
@@ -119493,8 +119493,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 65,
   "fields": {
-    "nombre": "Programa de fomento a las vocaciones cient\u00edficas y tecnol\u00f3gicas en ni\u00f1os y j\u00f3venes mexicanos del CONACYT",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Programa de fomento a las vocaciones cient\u00edficas y tecnol\u00f3gicas en ni\u00f1os y j\u00f3venes mexicanos del CONACYT",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 89
   }
 },
@@ -119502,8 +119502,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 66,
   "fields": {
-    "nombre": ". Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
-    "descripcion": "",
+    "programalicenciatura_nombre": ". Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 96
   }
 },
@@ -119511,8 +119511,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 67,
   "fields": {
-    "nombre": "Licenciatura en Ingenier\u00eda Ambiental",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Ingenier\u00eda Ambiental",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 96
   }
 },
@@ -119520,8 +119520,8 @@
   "model": "nucleo.programalicenciatura",
   "pk": 68,
   "fields": {
-    "nombre": "Licenciatura en Desarrollo Sustentable",
-    "descripcion": "",
+    "programalicenciatura_nombre": "Licenciatura en Desarrollo Sustentable",
+    "programalicenciatura_regusuario": 1,
     "area_conocimiento": 21
   }
 },
