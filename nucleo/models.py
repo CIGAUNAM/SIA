@@ -137,7 +137,7 @@ class Ciudad(models.Model):
     # slug = AutoSlugField(populate_from='ciudad')
     estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     validado = models.BooleanField(default=False)
-    fecha_creado = models.DateField(auto_now_add=True)
+    fecha_creado = models.DateField(auto_now_add=True, null=True, blank=True)
 
 
     def __str__(self):
@@ -236,8 +236,8 @@ class InstitucionSimple(models.Model):
         ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), blank=True, null=True, verbose_name='Subsistema UNAM (sólo si la institución pertenece a la UNAM)')
     institucion_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
     institucion_regfechacreado = models.DateField(auto_now_add=True)
-    institucion_regfechaactualizado = models.DateField(auto_now=True)
-    institucion_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
+    institucion_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
+    institucion_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada', default=1)
 
     def __str__(self):
         return "{} ({})".format(self.institucion_nombre, self.institucion_pais)
@@ -263,9 +263,9 @@ class Institucion(models.Model):
     clasificacion_institucion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION)
     pais_institucion = models.ForeignKey(Pais, on_delete=models.PROTECT)
     validado = models.BooleanField(default=False)
-    fecha_creado = models.DateField(auto_now_add=True)
-    fecha_actualizado = models.DateField(auto_now=True)
-    usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT)
+    fecha_creado = models.DateField(auto_now_add=True, blank=True, null=True)
+    fecha_actualizado = models.DateField(auto_now=True, blank=True, null=True)
+    usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT, default=1)
 
     def __str__(self):
         return self.nombre_institucion
@@ -297,9 +297,9 @@ class Dependencia(models.Model):
         ('ESCUELAS', 'Facultades y Escuelas'),
         ('DESARROLLO_INSTITUCIONAL', 'Desarrollo Institucional')), blank=True, null=True, verbose_name='Subsistema UNAM')
     validado = models.BooleanField(default=False)
-    fecha_creado = models.DateField(auto_now_add=True)
-    fecha_actualizado = models.DateField(auto_now=True)
-    usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT)
+    fecha_creado = models.DateField(auto_now_add=True, null=True, blank=True)
+    fecha_actualizado = models.DateField(auto_now=True, null=True, blank=True)
+    usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT, default=1)
 
     def __str__(self):
         return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre_institucion, )
@@ -518,7 +518,7 @@ class ProgramaLicenciatura(models.Model):
     programalicenciatura_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
     programalicenciatura_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
     programalicenciatura_regfechacreado = models.DateField(auto_now_add=True)
-    programalicenciatura_regfechaactualizado = models.DateField(auto_now=True)
+    programalicenciatura_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
     programalicenciatura_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
@@ -541,7 +541,7 @@ class ProgramaMaestria(models.Model):
     programamaestria_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
     programamaestria_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
     programamaestria_regfechacreado = models.DateField(auto_now_add=True)
-    programamaestria_regfechaactualizado = models.DateField(auto_now=True)
+    programamaestria_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
     programamaestria_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
@@ -564,7 +564,7 @@ class ProgramaDoctorado(models.Model):
     programadoctorado_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
     programadoctorado_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
     programadoctorado_regfechacreado = models.DateField(auto_now_add=True)
-    programadoctorado_regfechaactualizado = models.DateField(auto_now=True)
+    programadoctorado_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
     programadoctorado_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
