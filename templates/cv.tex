@@ -525,7 +525,7 @@
                                                 \item[a)] Por invitación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_nal_invitacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -533,7 +533,7 @@
                                                 \item[b)] Participación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_nal_participacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -547,7 +547,7 @@
                                                 \item[a)] Por invitación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_intl_invitacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -555,7 +555,7 @@
                                                 \item[b)] Participación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_intl_participacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -571,7 +571,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_academicos_nacionales %}
-                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}{% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}Comité organizador: {% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}. {% if i.descripcion %}{{ i.i.descripcion }}{% endif %} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -579,7 +579,7 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_academicos_internacionales %}
-                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}{% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}Comité organizador: {% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}. {% if i.descripcion %}{{ i.i.descripcion }}{% endif %} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
