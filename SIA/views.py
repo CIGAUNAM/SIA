@@ -7075,9 +7075,9 @@ class CVInvestigadorPDF(View):
         organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general=pk) | Q(comite_organizador=pk)).exclude(evento__pais__nombre='México').distinct().order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
 
         # participacion_comisiones_dictaminadoras_nacionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio').filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__isnull=True)))
-        participacion_comisiones_dictaminadoras_nacionales = ArbitrajeOtraActividad.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio').filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__isnull=True)))
+        participacion_comisiones_dictaminadoras_nacionales = ArbitrajeOtraActividad.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio').filter(fecha__year=this_year)
 
-        participacion_comisiones_dictaminadoras_internacionales = ArbitrajeOtraActividad.objects.filter(usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio').filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__isnull=True)))
+        participacion_comisiones_dictaminadoras_internacionales = ArbitrajeOtraActividad.objects.filter(usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio').filter(fecha__year=this_year)
 
         colaboracion_organizacion_eventos_divulgacion = OrganizacionEventoAcademico.objects.filter(ayudantes=pk).distinct().order_by('-evento__fecha_inicio').filter(evento__fecha_inicio__year=this_year)
 
