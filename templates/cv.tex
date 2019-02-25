@@ -593,7 +593,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_nacionales %}
-                                                \item{\textbf{ {{ i.comision_academica.nombre }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación), {% endif %}{{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.actividad }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -601,7 +601,7 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_internacionales %}
-                                                \item{\textbf{ {{ i.comision_academica.nombre }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación), {% endif %}{{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.actividad }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -721,6 +721,22 @@
                                 {% endif %}
                             \end{enumerate}
                     {% endif %}
+
+                    {% if colaboracion_organizacion_eventos_divulgacion %}
+                        \item[7.8.] \textbf{Otros}
+                            \begin{enumerate}
+                                {% if colaboracion_organizacion_eventos_divulgacion %}
+                                    \item[7.8.1.] \textbf{Colaboración en la organización de eventos de divulgación}
+                                        \begin{itemize}
+                                            {% for i in colaboracion_organizacion_eventos_divulgacion %}
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}. Ayudantes: {% for u in i.ayudantes.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
+
+
 
                 \end{enumerate}
         {% endif %}
