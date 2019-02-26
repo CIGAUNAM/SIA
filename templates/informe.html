@@ -992,7 +992,7 @@
     <ol>
         {% for i in participacion_eventos_divulgacion %}
             <li>
-                {% if i.participantes.count > 0 %}{% for participante in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
+                {% if i.autores.count > 0 %}{% for participante in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ participante }}{% endfor %}. {% endif %}
                 {{ i.evento.fecha_inicio.year }}. "{{ i.titulo }}", {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }},
                 {{ i.evento.fecha_inicio|date:"d \d\e F \d\e Y"|lower }} {% if i.evento.fecha_fin %}a {{ i.evento.fecha_fin|date:"d \d\e F \d\e Y"|lower }}{% endif %}. {{ i.usuario }}.
             </li>
@@ -1040,7 +1040,7 @@
     <ol>
         {% for i in redes_academicas %}
             <li>
-                {{ i.get_ambito_display }}. {{ i.nombre }}. ({{ i.fecha.year }}).
+                {{ i.get_ambito_display }}. {{ i.nombre }}. ({{ i.fecha_constitucion.year }}).
             </li>
         {% endfor %}
     </ol>
