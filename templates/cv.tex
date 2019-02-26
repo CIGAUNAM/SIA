@@ -205,7 +205,7 @@
                                                             \item[a)] En revistas extranjeras
                                                                 \begin{itemize}
                                                                     {% for i in articulos_indexadas_extranjeras %}
-                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %}. ({{ i.get_status_display }}) }
+                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %}. ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -213,7 +213,7 @@
                                                             \item[b)] En revistas mexicanas
                                                                 \begin{itemize}
                                                                     {% for i in articulos_indexadas_mexicanas %}
-                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} ({{ i.get_status_display }})}
+                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %}. ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -227,7 +227,7 @@
                                                             \item[a)] En revistas extranjeras
                                                                 \begin{itemize}
                                                                     {% for i in articulos_no_indexadas_extranjeras %}
-                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} ({{ i.get_status_display }}) }
+                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %}. ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -235,7 +235,7 @@
                                                             \item[b)] En revistas mexicanas
                                                                 \begin{itemize}
                                                                     {% for i in articulos_no_indexadas_mexicanas %}
-                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} ({{ i.get_status_display }}) }
+                                                                        \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.revista.issn %}ISSN {{ i.revista.issn }}. {% endif %}{% if i.id_doi %}DOI: {{ i.id_doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %}. ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                                                     {% endfor %}
                                                                 \end{itemize}
                                                         {% endif %}
@@ -371,7 +371,7 @@
                                                 \item[a)] En publicaciones mexicanas
                                                     \begin{itemize}
                                                         {% for i in articulos_divulgacion_mex %}
-                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} ({{ i.get_status_display }}) }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %}. ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -380,7 +380,7 @@
                                                 \item[b)] En publicaciones extranjeras
                                                     \begin{itemize}
                                                         {% for i in articulos_divulgacion_intl %}
-                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %} ({{ i.get_status_display }}) }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %} ({{ i.fecha.year }}).\textbf{ {{ i.titulo }}}. {{ i.revista.nombre }} ({{ i.revista.pais.nombre }}), {% if i.volumen %}({{ i.volumen }}), {% endif %}{% if i.numero %}{{ i.numero }}, {% endif %}{{ i.pagina_inicio }}-{{i.pagina_fin }}. {% if i.issn %}ISSN {{ i.issn }}. {% endif %}{% if i.doi %}DOI-: {{ i.doi }}. {% endif %} {% if i.indices.all %}({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %}{% if i.revista.factor_impacto %} [IF: {{ i.revista.factor_impacto|unlocalize }}]{% endif %}{% endif %}{% endfor %}){% endif %}. ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -453,7 +453,7 @@
                                     \item[6.3.1.] \textbf{Artículos}
                                         \begin{itemize}
                                             {% for i in articulos_docencia %}
-                                                \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}). ({{ i.get_status_display }}) }
+                                                \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textit{ {{ i.titulo }}}, {{ i.revista.nombre }} ({{ i.volumen }}) {{ i.numero }}: {{ i.pagina_inicio }}-{{i.pagina_fin }}. ISSN {{ i.issn }}. DOI-: {{ i.doi }} ({% for j in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ j }}{% if j.nombre == 'Web of Science: SCI/SSCI/SCI-EX' %} [IF: {{ i.revista.factor_impacto }}]{% endif %}{% endfor %}). ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -462,7 +462,7 @@
                                     \item[6.3.2.] \textbf{Libros}
                                         \begin{itemize}
                                             {% for i in libros_docencia %}
-                                                \item{ {% if i.autores.count > 0 %}Autores: {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {% if i.coordinadores.count > 0 %}Coordinadores: {% for u in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.fecha.year }}, \textit{``{{ i.titulo }}''}, {{ i.numero_paginas }} p.{% if i.url %}\\{{ i.url }}{% endif%}. ({{ i.get_status_display }}) }
+                                                \item{ {% if i.autores.count > 0 %}Autores: {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {% if i.coordinadores.count > 0 %}Coordinadores: {% for u in i.coordinadores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.fecha.year }}, \textit{``{{ i.titulo }}''}, {{ i.numero_paginas }} p.{% if i.url %}\\{{ i.url }}{% endif%}. ({{ i.get_status_display }}). {% if i.agradecimientos.count > 0 %}Agradecimientos: {% for u in i.agradecimientos.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -508,7 +508,7 @@
                                     \item[b)] Participante
                                         \begin{itemize}
                                             {% for i in participacion_proyectos_participante %}
-                                                \item{ {% for u in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textbf{ {{ i.nombre }}}. {% if i.financiamiento_conacyt %}Financiamiento CONACYT, clave {{ i.financiamiento_conacyt }}{% endif %}{% if i.financiamiento_papiit %}Financiamiento PAPIIT, clave {{ i.financiamiento_papiit }}{% endif %}{% if i.financiamiento_papime %}Financiamiento PAPIME, clave {{ i.financiamiento_papime }}{% endif %}{% if i.financiamiento_extraordinario %}Financiamiento extraordinario, dependencia {{ i.financiamiento_extraordinario }}{% endif %}{% if i.financiamiento_sin_recurso_ciga %}Financiamiento sin recursos en el CIGA, dependencia {{ i.financiamiento_sin_recurso_ciga }}{% endif %} {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %}. {{ i.dependencia }} }
+                                                \item{ Responsables: {% for u in i.responsables.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. Participantes: {% for u in i.participantes.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %},\textbf{ {{ i.nombre }}}. {% if i.financiamiento_conacyt %}Financiamiento CONACYT, clave {{ i.financiamiento_conacyt }}{% endif %}{% if i.financiamiento_papiit %}Financiamiento PAPIIT, clave {{ i.financiamiento_papiit }}{% endif %}{% if i.financiamiento_papime %}Financiamiento PAPIME, clave {{ i.financiamiento_papime }}{% endif %}{% if i.financiamiento_extraordinario %}Financiamiento extraordinario, dependencia {{ i.financiamiento_extraordinario }}{% endif %}{% if i.financiamiento_sin_recurso_ciga %}Financiamiento sin recursos en el CIGA, dependencia {{ i.financiamiento_sin_recurso_ciga }}{% endif %} {{ i.fecha_inicio }} - {% if i.fecha_fin %}{{ i.fecha_fin }}{% else %}Presente{% endif %}. {{ i.dependencia }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -525,7 +525,7 @@
                                                 \item[a)] Por invitación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_nal_invitacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -533,7 +533,7 @@
                                                 \item[b)] Participación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_nal_participacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -547,7 +547,7 @@
                                                 \item[a)] Por invitación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_intl_invitacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -555,7 +555,7 @@
                                                 \item[b)] Participación
                                                     \begin{itemize}
                                                         {% for i in ponente_eventos_academicos_intl_participacion %}
-                                                            \item{ \textbf{ {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
+                                                            \item{ \textbf{ {% for u in i.autores.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. {{ i.titulo }}} {% if i.ponencia_magistral %}(Ponencia magistral){% endif %}, {{ i.evento.nombre }}, {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -571,7 +571,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_academicos_nacionales %}
-                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}{% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}Comité organizador: {% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}. {% if i.descripcion %}{{ i.i.descripcion }}{% endif %} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -579,7 +579,7 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in organizacion_eventos_academicos_internacionales %}
-                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}{% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }} }
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %}{% if i.comite_organizador.count %}Comité organizador: {% for u in i.comite_organizador.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}.{% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.estado.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}. {% if i.descripcion %}{{ i.i.descripcion }}{% endif %} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -593,7 +593,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_nacionales %}
-                                                \item{\textbf{ {{ i.comision_academica.nombre }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación), {% endif %}{{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.actividad }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -601,14 +601,14 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_internacionales %}
-                                                \item{\textbf{ {{ i.comision_academica.nombre }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {% if i.es_evaluacion %}(Comisión de evaluación), {% endif %}{{ i.fecha_inicio }} - {{ i.fecha_fin }} }
+                                                \item{\textbf{ {{ i.actividad }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
                             \end{itemize}
                     {% endif %}
 
-                    {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
+                    {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras or dictamenes_libros or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
                         \item[7.5.] \textbf{Participación en Actividades Editoriales}
                             \begin{enumerate}
                                 {% if dictamenes_articulos_revistas_mexicanas or dictamenes_articulos_revistas_extranjeras %}
@@ -633,26 +633,15 @@
                                         \end{itemize}
                                 {% endif %}
 
-                                {% if dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
-                                    \item[7.5.2.] \textbf{Dictámenes de libros}
-                                        \begin{itemize}
-                                            {% if dictamenes_libros_editoriales_mexicanas %}
-                                                \item[a)] De editoriales mexicanas
-                                                    \begin{itemize}
-                                                        {% for i in dictamenes_libros_editoriales_mexicanas %}
-                                                            \item{ {{ i.fecha_dictamen }}, \textit{``{{ i.libro.nombre }}''}, {{ i.libro.editorial.nombre }} }
-                                                        {% endfor %}
-                                                    \end{itemize}
-                                            {% endif %}
-                                            {% if dictamenes_libros_editoriales_extranjeras %}
-                                            \item[b)] De editoriales extranjeras
-                                                    \begin{itemize}
-                                                        {% for i in dictamenes_libros_editoriales_extranjeras %}
-                                                            \item{ {{ i.fecha_dictamen }}, \textit{``{{ i.libro.nombre }}''}, {{ i.libro.editorial.nombre }} }
-                                                        {% endfor %}
-                                                    \end{itemize}
-                                            {% endif %}
-                                        \end{itemize}
+                                {% if dictamenes_libros or dictamenes_libros_editoriales_mexicanas or dictamenes_libros_editoriales_extranjeras %}
+                                    {% if dictamenes_libros %}
+                                            \item[7.5.2.] \textbf{Dictámenes de libros}
+                                                \begin{itemize}
+                                                    {% for i in dictamenes_libros %}
+                                                        \item{ {{ i.fecha_dictamen }} - {{ i.libro }} }
+                                                    {% endfor %}
+                                                \end{itemize}
+                                    {% endif %}
                                 {% endif %}
                             \end{enumerate}
                     {% endif %}
@@ -732,6 +721,22 @@
                                 {% endif %}
                             \end{enumerate}
                     {% endif %}
+
+                    {% if colaboracion_organizacion_eventos_divulgacion %}
+                        \item[7.8.] \textbf{Otros}
+                            \begin{enumerate}
+                                {% if colaboracion_organizacion_eventos_divulgacion %}
+                                    \item[7.8.1.] \textbf{Colaboración en la organización de eventos de divulgación}
+                                        \begin{itemize}
+                                            {% for i in colaboracion_organizacion_eventos_divulgacion %}
+                                                \item{\textbf{ {{ i.evento.nombre }}}. {% if i.coordinador_general %}Coordinador general: {{ i.coordinador_general }}. {% endif %} {{ i.evento.ciudad.nombre }}, {{ i.evento.pais.nombre }}, {{ i.evento.fecha_inicio }} - {{ i.evento.fecha_fin }}. Ayudantes: {% for u in i.ayudantes.all %}{% if not forloop.first %}, {% endif %}{{ u.author_name }}{% endfor %}. }
+                                            {% endfor %}
+                                        \end{itemize}
+                                {% endif %}
+                            \end{enumerate}
+                    {% endif %}
+
+
 
                 \end{enumerate}
         {% endif %}
