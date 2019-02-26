@@ -7084,9 +7084,6 @@ class CVInvestigadorPDF(View):
         dictamenes_articulos_revistas_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').filter(revista__pais__nombre='México').order_by('-fecha_dictamen').filter(fecha_dictamen__year=this_year)
         dictamenes_articulos_revistas_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').exclude(revista__pais__nombre='México').order_by('-fecha_dictamen').filter(fecha_dictamen__year=this_year)
         dictamenes_libros = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').order_by('-fecha_dictamen').filter(fecha_dictamen__year=this_year)
-        print(dictamenes_libros)
-        for i in dictamenes_libros:
-            print(i.fecha_dictamen, i.libro)
 
         estancias_academicas = MovilidadAcademica.objects.filter(usuario=pk, tipo='ESTANCIA').order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
         profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio').filter(fecha_inicio__year=this_year)
