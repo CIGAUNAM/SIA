@@ -96,7 +96,6 @@
             if ($('#id_tipo').val() == 'ARTICULO') {
                 $("#id_libro").val(null);
                 $("#id_capitulo_libro").val(null);
-                //$("#id_financiamiento_extraordinario").val(null).trigger('change');
 
                 $("#d_revista").show('slow');
                 $("#d_libro").hide('slow');
@@ -242,13 +241,13 @@
         $('#d_capitulo_libro').hide();
 
         if ($("#id_tipo").val()) {
-            if ($("#id_tipo_financiamiento").val() == 'ARTICULO') {
+            if ($("#id_tipo").val() == 'ARTICULO') {
                 $("#d_revista").show();
             }
-            if ($("#id_tipo_financiamiento").val() == 'LIBRO') {
+            if ($("#id_tipo").val() == 'LIBRO') {
                 $("#d_libro").show();
             }
-            if ($("#id_tipo_financiamiento").val() == 'CAPITULO_LIBRO') {
+            if ($("#id_tipo").val() == 'CAPITULO_LIBRO') {
                 $("#d_capitulo_libro").show();
             }
         }
@@ -257,7 +256,6 @@
             if ($('#id_tipo').val() == 'ARTICULO') {
                 $("#id_libro").val(null);
                 $("#id_capitulo_libro").val(null);
-                //$("#id_financiamiento_extraordinario").val(null).trigger('change');
 
                 $("#d_revista").show('slow');
                 $("#d_libro").hide('slow');
@@ -308,5 +306,7 @@
                 $("#id_capitulo_libro").attr("required", null);
             }
         });
+
+
     </script>
 {% endblock %}|
