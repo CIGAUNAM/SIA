@@ -208,6 +208,7 @@ class DireccionTesisForm(forms.ModelForm):
         )
     )
     director = forms.ModelChoiceField(
+        required=False,
         queryset=User.objects.all(),
         label="Director",
         widget=ModelSelect2Widget(
@@ -217,6 +218,7 @@ class DireccionTesisForm(forms.ModelForm):
         )
     )
     codirector = forms.ModelChoiceField(
+        required=False,
         queryset=User.objects.all(),
         label="Co-director",
         widget=ModelSelect2Widget(
