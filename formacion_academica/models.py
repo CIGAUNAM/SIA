@@ -117,11 +117,6 @@ class Doctorado(models.Model):
         unique_together = ['programa', 'usuario']
 
 
-proyectos = [
-    ('Ninguno', 1900, 1, 1, 2900, 1, 1, 'OTRO', 'OTRO', 'INDIVIDUAL', 'OTRO', )
-]
-
-
 class PostDoctorado(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(verbose_name='Descripición', blank=True)

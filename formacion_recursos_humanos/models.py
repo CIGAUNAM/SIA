@@ -112,7 +112,7 @@ class DireccionTesis(models.Model):
     fecha_examen = models.DateField(null=True, blank=True)
     director = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_director', on_delete=models.DO_NOTHING)
     codirector = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_codirector', on_delete=models.DO_NOTHING)
-    tutores = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
+    tutores = SortedManyToManyField(User, null=True, blank=True, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.asesorado, self.nivel_academico)
