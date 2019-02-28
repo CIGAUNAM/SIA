@@ -618,7 +618,7 @@
                                                 \item[a)] Mexicanas
                                                     \begin{itemize}
                                                         {% for i in dictamenes_articulos_revistas_mexicanas %}
-                                                            \item{ {{ i.fecha_dictamen }}, {{ i.revista.nombre }}, {% if i.articulo.indices %}{% for u in i.articulo.indices.all %}{% if not forloop.first %}, {% endif %}{{ u.nombre }}{% endfor %}{% endif %} }
+                                                            \item{ {{ i.fecha_dictamen }}, {{ i.revista.nombre }}{% if i.revista.indices %}{% for u in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ u.nombre }}{% endfor %}{% endif %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
@@ -626,7 +626,7 @@
                                                 \item[b)] Extranjeras
                                                     \begin{itemize}
                                                         {% for i in dictamenes_articulos_revistas_extranjeras %}
-                                                            \item{ {{ i.fecha_dictamen }}, {{ i.revista.nombre }}, {{ i.articulo.revista.nombre }}, {% if i.articulo.indices %}{% for u in i.articulo.indices.all %}{% if not forloop.first %}, {% endif %}{{ u.nombre }}{% endfor %}{% endif %} }
+                                                            \item{ {{ i.fecha_dictamen }}, {{ i.revista.nombre }}{% if i.revista.indices %}{% for u in i.indices.all %}{% if not forloop.first %}, {% endif %}{{ u.nombre }}{% endfor %}{% endif %} }
                                                         {% endfor %}
                                                     \end{itemize}
                                             {% endif %}
