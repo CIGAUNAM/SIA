@@ -593,7 +593,7 @@
                                     \item[a)] Nacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_nacionales %}
-                                                \item{\textbf{ {{ i.actividad }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
+                                                \item{\textbf{ {{ i.convocatoria }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
@@ -601,7 +601,7 @@
                                     \item[b)] Internacionales
                                         \begin{itemize}
                                             {% for i in participacion_comisiones_dictaminadoras_internacionales %}
-                                                \item{\textbf{ {{ i.actividad }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
+                                                \item{\textbf{ {{ i.convocatoria }}}, {{ i.institucion.nombre }}{% if i.institucion.nombre|safe != i.dependencia.nombre|safe %}, {{ i.dependencia }}{% endif %}, {{ i.fecha }} }
                                             {% endfor %}
                                         \end{itemize}
                                 {% endif %}
