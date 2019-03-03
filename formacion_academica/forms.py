@@ -72,6 +72,16 @@ class LicenciaturaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     tesis_url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
@@ -100,6 +110,16 @@ class MaestriaForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -134,6 +154,16 @@ class DoctoradoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     tesis_url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
@@ -163,6 +193,16 @@ class PostDoctoradoForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

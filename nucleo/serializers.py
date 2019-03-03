@@ -97,24 +97,6 @@ class MetodologiaSerializer(serializers.ModelSerializer):
         fields = ('id', 'metodologia', 'descripcion')
 
 
-class ProgramaLicenciaturaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProgramaLicenciatura
-        fields = ('id', 'programa', 'descripcion', 'area_conocimiento')
-
-
-class ProgramaMaestriaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProgramaMaestria
-        fields = ('id', 'programa', 'descripcion', 'area_conocimiento')
-
-
-class ProgramaDoctoradoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProgramaDoctorado
-        fields = ('id', 'programa', 'descripcion', 'area_conocimiento')
-
-
 class ProyectoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProyectoInvestigacion
