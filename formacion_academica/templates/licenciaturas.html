@@ -11,16 +11,20 @@
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.carrera }}
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la carrera.">
+                <span id="boton-detalle-programalicenciatura">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales del programa de licenciatura seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/programas-licenciatura" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una carrera nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                <span id="boton-agregar-programalicenciatura">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar un programa de licenciatura nuevo cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
