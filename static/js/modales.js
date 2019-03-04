@@ -167,11 +167,7 @@ $(function () {
 
             open: function (event, ui) {
                 $('#agregar-programalicenciatura-modal-body').load('/nucleo/programas-licenciatura/agregar/', function () {
-                    $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
-                    $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
-                    $("#id_institucion_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
-                    $('#d_subsunam').hide();
-
+                    $("#id_programalicenciatura_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
                 });
             }
         });

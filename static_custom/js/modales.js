@@ -2,38 +2,6 @@ agregar_dependencia_dialog = null
 $(function () {
     $(".ui-dialog-buttonset").removeClass()
 
-    /*
-        agregar_dependencia_dialog = $("#agregar-dependencia").dialog({
-            autoOpen: false,
-            height: 700,
-            width: 900,
-            modal: true,
-            buttons: {
-                agregar: {
-                    text: "Agregar dependencia",
-                    click: function () {
-                        $("#modal_form_dependencia_agregar").submit()
-                    },
-                    class: 'btn btn-success ui-button-left'
-                },
-                cancelar: {
-                    text: "Cancelar",
-                    click: function () {
-                        $(this).dialog("close")
-                    },
-                    class: 'btn btn-primary ui-button-left'
-                }
-            },
-
-            open: function (event, ui) {
-                $('#agregar-dependencia-modal-body').load('/nucleo/dependencias/agregar/', function () {
-                    $("#id_institucion_dependencia").djangoSelect2({dropdownParent: $("#agregar-dependencia")});
-                    $("#id_subsistema_unam_dependencia").djangoSelect2({dropdownParent: $("#agregar-dependencia")});
-                });
-            }
-        });
-    */
-
     $("#boton-agregar-institucion").on("click", function (e) {
         agregar_institucion_dialog = $("#agregar-institucion").dialog({
             autoOpen: false,
@@ -144,7 +112,7 @@ $(function () {
         console.log("boton agregar programa licenciatura")
         agregar_programalicenciatura_dialog = $("#agregar-programalicenciatura").dialog({
             autoOpen: false,
-            height: 700,
+            height: 500,
             width: 900,
             modal: true,
             class: 'ui-button-left',
@@ -167,18 +135,14 @@ $(function () {
 
             open: function (event, ui) {
                 $('#agregar-programalicenciatura-modal-body').load('/nucleo/programas-licenciatura/agregar/', function () {
-                    $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
-                    $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
-                    $("#id_institucion_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
-                    $('#d_subsunam').hide();
-
+                    $("#id_programalicenciatura_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
                 });
             }
         });
         agregar_programalicenciatura_dialog.dialog("open");
     });
 
-    $("#boton-detalle-institucion").on("click", function (e) {
+    $("#boton-detalle-programalicenciatura").on("click", function (e) {
         if ($("#id_institucion").val() == '') {
             e.stopPropagation();
         } else {
