@@ -208,7 +208,7 @@ class AreaEspecialidadForm(forms.ModelForm):
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['areaconocimiento_nombre__icontains'],
             queryset=AreaConocimiento.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -219,7 +219,6 @@ class AreaEspecialidadForm(forms.ModelForm):
         exclude = []
         widgets = {
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
 
@@ -316,7 +315,7 @@ class ReconocimientoForm(forms.ModelForm):
 
 
 class ProgramaLicenciaturaForm(forms.ModelForm):
-    area_conocimiento = forms.ModelChoiceField(
+    programalicenciatura_areaconocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
         widget=ModelSelect2Widget(
@@ -330,7 +329,7 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
         model = ProgramaLicenciatura
         exclude = ['programalicenciatura_regverificado', 'programalicenciatura_regfechacreado', 'programalicenciatura_regfechaactualizado', 'programalicenciatura_regusuario']
         widgets = {
-            'programalicenciatura_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'programalicenciatura_nombre': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
