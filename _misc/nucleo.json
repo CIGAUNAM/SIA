@@ -116704,1368 +116704,1216 @@
   "model": "nucleo.areaconocimiento",
   "pk": 1,
   "fields": {
-    "nombre": "Otra",
-    "categoria": "ZTRA",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Otra",
+    "areaconocimiento_categoria": "ZTRA"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 2,
   "fields": {
-    "nombre": "Agriculture",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Agriculture",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 3,
   "fields": {
-    "nombre": "Allergy",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Allergy",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 4,
   "fields": {
-    "nombre": "Anatomy & Morphology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Anatomy & Morphology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 5,
   "fields": {
-    "nombre": "Anesthesiology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Anesthesiology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 6,
   "fields": {
-    "nombre": "Anthropology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Anthropology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 7,
   "fields": {
-    "nombre": "Behavioral Sciences",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Behavioral Sciences",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 8,
   "fields": {
-    "nombre": "Biochemistry & Molecular Biology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Biochemistry & Molecular Biology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 9,
   "fields": {
-    "nombre": "Biodiversity & Conservation",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Biodiversity & Conservation",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 10,
   "fields": {
-    "nombre": "Biophysics",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Biophysics",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 11,
   "fields": {
-    "nombre": "Biotechnology & Applied Microbiology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Biotechnology & Applied Microbiology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 12,
   "fields": {
-    "nombre": "Cardiovascular System & Cardiology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Cardiovascular System & Cardiology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 13,
   "fields": {
-    "nombre": "Cell Biology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Cell Biology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 14,
   "fields": {
-    "nombre": "Critical Care Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Critical Care Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 15,
   "fields": {
-    "nombre": "Dentistry, Oral Surgery & Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Dentistry, Oral Surgery & Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 16,
   "fields": {
-    "nombre": "Dermatology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Dermatology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 17,
   "fields": {
-    "nombre": "Developmental Biology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Developmental Biology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 18,
   "fields": {
-    "nombre": "Emergency Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Emergency Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 19,
   "fields": {
-    "nombre": "Endocrinology & Metabolism",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Endocrinology & Metabolism",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 20,
   "fields": {
-    "nombre": "Entomology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Entomology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 21,
   "fields": {
-    "nombre": "Environmental Sciences & Ecology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Environmental Sciences & Ecology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 22,
   "fields": {
-    "nombre": "Evolutionary Biology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Evolutionary Biology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 23,
   "fields": {
-    "nombre": "Fisheries",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Fisheries",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 24,
   "fields": {
-    "nombre": "Food Science & Technology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Food Science & Technology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 25,
   "fields": {
-    "nombre": "Forestry",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Forestry",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 26,
   "fields": {
-    "nombre": "Gastroenterology & Hepatology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Gastroenterology & Hepatology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 27,
   "fields": {
-    "nombre": "General & Internal Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "General & Internal Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 28,
   "fields": {
-    "nombre": "Genetics & Heredity",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Genetics & Heredity",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 29,
   "fields": {
-    "nombre": "Geriatrics & Gerontology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Geriatrics & Gerontology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 30,
   "fields": {
-    "nombre": "Health Care Sciences & Services",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Health Care Sciences & Services",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 31,
   "fields": {
-    "nombre": "Hematology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Hematology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 32,
   "fields": {
-    "nombre": "Immunology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Immunology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 33,
   "fields": {
-    "nombre": "Infectious Diseases",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Infectious Diseases",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 34,
   "fields": {
-    "nombre": "Integrative & Complementary Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Integrative & Complementary Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 35,
   "fields": {
-    "nombre": "Legal Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Legal Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 36,
   "fields": {
-    "nombre": "Life Sciences Biomedicine Other Topics",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Life Sciences Biomedicine Other Topics",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 37,
   "fields": {
-    "nombre": "Marine & Freshwater Biology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Marine & Freshwater Biology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 38,
   "fields": {
-    "nombre": "Mathematical & Computational Biology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Mathematical & Computational Biology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 39,
   "fields": {
-    "nombre": "Medical Ethics",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Medical Ethics",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 40,
   "fields": {
-    "nombre": "Medical Informatics",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Medical Informatics",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 41,
   "fields": {
-    "nombre": "Medical Laboratory Technology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Medical Laboratory Technology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 42,
   "fields": {
-    "nombre": "Microbiology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Microbiology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 43,
   "fields": {
-    "nombre": "Mycology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Mycology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 44,
   "fields": {
-    "nombre": "Neurosciences & Neurology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Neurosciences & Neurology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 45,
   "fields": {
-    "nombre": "Nursing",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Nursing",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 46,
   "fields": {
-    "nombre": "Nutrition & Dietetics",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Nutrition & Dietetics",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 47,
   "fields": {
-    "nombre": "Obstetrics & Gynecology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Obstetrics & Gynecology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 48,
   "fields": {
-    "nombre": "Oncology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Oncology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 49,
   "fields": {
-    "nombre": "Ophthalmology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Ophthalmology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 50,
   "fields": {
-    "nombre": "Orthopedics",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Orthopedics",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 51,
   "fields": {
-    "nombre": "Otorhinolaryngology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Otorhinolaryngology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 52,
   "fields": {
-    "nombre": "Paleontology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Paleontology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 53,
   "fields": {
-    "nombre": "Parasitology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Parasitology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 54,
   "fields": {
-    "nombre": "Pathology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Pathology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 55,
   "fields": {
-    "nombre": "Pediatrics",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Pediatrics",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 56,
   "fields": {
-    "nombre": "Pharmacology & Pharmacy",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Pharmacology & Pharmacy",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 57,
   "fields": {
-    "nombre": "Physiology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Physiology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 58,
   "fields": {
-    "nombre": "Plant Sciences",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Plant Sciences",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 59,
   "fields": {
-    "nombre": "Psychiatry",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Psychiatry",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 60,
   "fields": {
-    "nombre": "Public, Environmental & Occupational Health",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Public, Environmental & Occupational Health",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 61,
   "fields": {
-    "nombre": "Radiology, Nuclear Medicine & Medical Imaging",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Radiology, Nuclear Medicine & Medical Imaging",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 62,
   "fields": {
-    "nombre": "Rehabilitation",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Rehabilitation",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 63,
   "fields": {
-    "nombre": "Reproductive Biology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Reproductive Biology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 64,
   "fields": {
-    "nombre": "Research & Experimental Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Research & Experimental Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 65,
   "fields": {
-    "nombre": "Respiratory System",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Respiratory System",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 66,
   "fields": {
-    "nombre": "Rheumatology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Rheumatology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 67,
   "fields": {
-    "nombre": "Sport Sciences",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Sport Sciences",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 68,
   "fields": {
-    "nombre": "Substance Abuse",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Substance Abuse",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 69,
   "fields": {
-    "nombre": "Surgery",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Surgery",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 70,
   "fields": {
-    "nombre": "Toxicology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Toxicology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 71,
   "fields": {
-    "nombre": "Transplantation",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Transplantation",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 72,
   "fields": {
-    "nombre": "Tropical Medicine",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Tropical Medicine",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 73,
   "fields": {
-    "nombre": "Urology & Nephrology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Urology & Nephrology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 74,
   "fields": {
-    "nombre": "Veterinary Sciences",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Veterinary Sciences",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 75,
   "fields": {
-    "nombre": "Virology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Virology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 76,
   "fields": {
-    "nombre": "Zoology",
-    "categoria": "LSBM",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Zoology",
+    "areaconocimiento_categoria": "LSBM"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 77,
   "fields": {
-    "nombre": "Astronomy & Astrophysics",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Astronomy & Astrophysics",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 78,
   "fields": {
-    "nombre": "Chemistry",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Chemistry",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 79,
   "fields": {
-    "nombre": "Crystallography",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Crystallography",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 80,
   "fields": {
-    "nombre": "Electrochemistry",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Electrochemistry",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 81,
   "fields": {
-    "nombre": "Geochemistry & Geophysics",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Geochemistry & Geophysics",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 82,
   "fields": {
-    "nombre": "Geology",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Geology",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 83,
   "fields": {
-    "nombre": "Mathematics",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Mathematics",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 84,
   "fields": {
-    "nombre": "Meteorology & Atmospheric Sciences",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Meteorology & Atmospheric Sciences",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 85,
   "fields": {
-    "nombre": "Mineralogy",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Mineralogy",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 86,
   "fields": {
-    "nombre": "Mining & Mineral Processing",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Mining & Mineral Processing",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 87,
   "fields": {
-    "nombre": "Oceanography",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Oceanography",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 88,
   "fields": {
-    "nombre": "Optics",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Optics",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 89,
   "fields": {
-    "nombre": "Physical Geography",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Physical Geography",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 90,
   "fields": {
-    "nombre": "Physics",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Physics",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 91,
   "fields": {
-    "nombre": "Polymer Science",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Polymer Science",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 92,
   "fields": {
-    "nombre": "Thermodynamics",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Thermodynamics",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 93,
   "fields": {
-    "nombre": "Water Resources",
-    "categoria": "PHYS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Water Resources",
+    "areaconocimiento_categoria": "PHYS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 94,
   "fields": {
-    "nombre": "Acoustics",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Acoustics",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 95,
   "fields": {
-    "nombre": "Automation & Control Systems",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Automation & Control Systems",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 96,
   "fields": {
-    "nombre": "Computer Science",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Computer Science",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 97,
   "fields": {
-    "nombre": "Construction & Building Technology",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Construction & Building Technology",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 98,
   "fields": {
-    "nombre": "Energy & Fuels",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Energy & Fuels",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 99,
   "fields": {
-    "nombre": "Engineering",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Engineering",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 100,
   "fields": {
-    "nombre": "Imaging Science & Photographic Technology",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Imaging Science & Photographic Technology",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 101,
   "fields": {
-    "nombre": "Information Science & Library Science",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Information Science & Library Science",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 102,
   "fields": {
-    "nombre": "Instruments & Instrumentation",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Instruments & Instrumentation",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 103,
   "fields": {
-    "nombre": "Materials Science",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Materials Science",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 104,
   "fields": {
-    "nombre": "Mechanics",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Mechanics",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 105,
   "fields": {
-    "nombre": "Metallurgy & Metallurgical Engineering",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Metallurgy & Metallurgical Engineering",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 106,
   "fields": {
-    "nombre": "Microscopy",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Microscopy",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 107,
   "fields": {
-    "nombre": "Nuclear Science & Technology",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Nuclear Science & Technology",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 108,
   "fields": {
-    "nombre": "Operations Research & Management Science",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Operations Research & Management Science",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 109,
   "fields": {
-    "nombre": "Remote Sensing",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Remote Sensing",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 110,
   "fields": {
-    "nombre": "Robotics",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Robotics",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 111,
   "fields": {
-    "nombre": "Science & Technology Other Topics",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Science & Technology Other Topics",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 112,
   "fields": {
-    "nombre": "Spectroscopy",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Spectroscopy",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 113,
   "fields": {
-    "nombre": "Telecommunications",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Telecommunications",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 114,
   "fields": {
-    "nombre": "Transportation",
-    "categoria": "TECH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Transportation",
+    "areaconocimiento_categoria": "TECH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 115,
   "fields": {
-    "nombre": "Architecture",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Architecture",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 116,
   "fields": {
-    "nombre": "Art",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Art",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 117,
   "fields": {
-    "nombre": "Arts & Humanities Other Topics",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Arts & Humanities Other Topics",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 118,
   "fields": {
-    "nombre": "Asian Studies",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Asian Studies",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 119,
   "fields": {
-    "nombre": "Classics",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Classics",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 120,
   "fields": {
-    "nombre": "Dance",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Dance",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 121,
   "fields": {
-    "nombre": "Film, Radio & Television",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Film, Radio & Television",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 122,
   "fields": {
-    "nombre": "History",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "History",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 123,
   "fields": {
-    "nombre": "History & Philosophy of Science",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "History & Philosophy of Science",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 124,
   "fields": {
-    "nombre": "Literature",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Literature",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 125,
   "fields": {
-    "nombre": "Music",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Music",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 126,
   "fields": {
-    "nombre": "Philosophy",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Philosophy",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 127,
   "fields": {
-    "nombre": "Religion",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Religion",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 128,
   "fields": {
-    "nombre": "Theater",
-    "categoria": "ARTH",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Theater",
+    "areaconocimiento_categoria": "ARTH"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 129,
   "fields": {
-    "nombre": "Archaeology",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Archaeology",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 130,
   "fields": {
-    "nombre": "Area Studies",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Area Studies",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 131,
   "fields": {
-    "nombre": "Biomedical Social Sciences",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Biomedical Social Sciences",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 132,
   "fields": {
-    "nombre": "Business & Economics",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Business & Economics",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 133,
   "fields": {
-    "nombre": "Communication",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Communication",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 134,
   "fields": {
-    "nombre": "Criminology & Penology",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Criminology & Penology",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 135,
   "fields": {
-    "nombre": "Cultural Studies",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Cultural Studies",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 136,
   "fields": {
-    "nombre": "Demography",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Demography",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 137,
   "fields": {
-    "nombre": "Education & Educational Research",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Education & Educational Research",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 138,
   "fields": {
-    "nombre": "Ethnic Studies",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Ethnic Studies",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 139,
   "fields": {
-    "nombre": "Family Studies",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Family Studies",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 140,
   "fields": {
-    "nombre": "Geography",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Geography",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 141,
   "fields": {
-    "nombre": "Government & Law",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Government & Law",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 142,
   "fields": {
-    "nombre": "International Relations",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "International Relations",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 143,
   "fields": {
-    "nombre": "Linguistics",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Linguistics",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 144,
   "fields": {
-    "nombre": "Mathematical Methods In Social Sciences",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Mathematical Methods In Social Sciences",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 145,
   "fields": {
-    "nombre": "Psychology",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Psychology",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 146,
   "fields": {
-    "nombre": "Public Administration",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Public Administration",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 147,
   "fields": {
-    "nombre": "Social Issues",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Social Issues",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 148,
   "fields": {
-    "nombre": "Social Sciences Other Topics",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Social Sciences Other Topics",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 149,
   "fields": {
-    "nombre": "Social Work",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Social Work",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 150,
   "fields": {
-    "nombre": "Sociology",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Sociology",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 151,
   "fields": {
-    "nombre": "Urban Studies",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Urban Studies",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
   "model": "nucleo.areaconocimiento",
   "pk": 152,
   "fields": {
-    "nombre": "Women's Studies",
-    "categoria": "SOCS",
-    "descripcion": ""
+    "areaconocimiento_nombre": "Women's Studies",
+    "areaconocimiento_categoria": "SOCS"
   }
 },
 {
@@ -118917,1818 +118765,1818 @@
   "model": "nucleo.programalicenciatura",
   "pk": 1,
   "fields": {
-    "nombre": "Licenciatura en Geograf\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Licenciatura en Geograf\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 2,
   "fields": {
-    "nombre": "Geograf\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Geograf\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 3,
   "fields": {
-    "nombre": "Ciencias del Mar",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Ciencias del Mar",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 4,
   "fields": {
-    "nombre": "Licenciatura en Biolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Licenciatura en Biolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 5,
   "fields": {
-    "nombre": "Desarrollo Sustentable",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Desarrollo Sustentable",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 6,
   "fields": {
-    "nombre": "Agronom\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programalicenciatura_nombre": "Agronom\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 7,
   "fields": {
-    "nombre": "Ingenier\u00eda en Agroecolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Ingenier\u00eda en Agroecolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 8,
   "fields": {
-    "nombre": "Biolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 1
+    "programalicenciatura_nombre": "Biolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 1
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 9,
   "fields": {
-    "nombre": "Ciencias de la Comunicaci\u00f3n",
-    "descripcion": "",
-    "area_conocimiento": 133
+    "programalicenciatura_nombre": "Ciencias de la Comunicaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 133
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 10,
   "fields": {
-    "nombre": "Arqueolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 129
+    "programalicenciatura_nombre": "Arqueolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 129
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 11,
   "fields": {
-    "nombre": "Ingenier\u00eda T\u00e9cnica Agr\u00edcola",
-    "descripcion": "",
-    "area_conocimiento": 95
+    "programalicenciatura_nombre": "Ingenier\u00eda T\u00e9cnica Agr\u00edcola",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 95
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 12,
   "fields": {
-    "nombre": "Ingenier\u00eda Agr\u00f3noma",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Ingenier\u00eda Agr\u00f3noma",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 13,
   "fields": {
-    "nombre": "Historia",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Historia",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 14,
   "fields": {
-    "nombre": "Geography",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Geography",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 15,
   "fields": {
-    "nombre": "Econom\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programalicenciatura_nombre": "Econom\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 16,
   "fields": {
-    "nombre": "Ciencias Ambientales",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Ciencias Ambientales",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 17,
   "fields": {
-    "nombre": "Licenciatura en Ciencias Biol\u00f3gicas",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Licenciatura en Ciencias Biol\u00f3gicas",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 18,
   "fields": {
-    "nombre": "Geografia Economica",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Geografia Economica",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 19,
   "fields": {
-    "nombre": "Sociolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 150
+    "programalicenciatura_nombre": "Sociolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 150
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 20,
   "fields": {
-    "nombre": "Ciencias Antropol\u00f3gicas (orientaci\u00f3n Arqueol\u00f3gica)",
-    "descripcion": "",
-    "area_conocimiento": 6
+    "programalicenciatura_nombre": "Ciencias Antropol\u00f3gicas (orientaci\u00f3n Arqueol\u00f3gica)",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 6
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 21,
   "fields": {
-    "nombre": "Ingenier\u00eda en Sistemas Computacionales",
-    "descripcion": "",
-    "area_conocimiento": 95
+    "programalicenciatura_nombre": "Ingenier\u00eda en Sistemas Computacionales",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 95
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 22,
   "fields": {
-    "nombre": "Medicina Veterinaria Zootecnista",
-    "descripcion": "",
-    "area_conocimiento": 76
+    "programalicenciatura_nombre": "Medicina Veterinaria Zootecnista",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 76
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 23,
   "fields": {
-    "nombre": "Licenciatura en Econom\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programalicenciatura_nombre": "Licenciatura en Econom\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 24,
   "fields": {
-    "nombre": "Administraci\u00f3n de Empresas Agropecu\u00e1rias",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programalicenciatura_nombre": "Administraci\u00f3n de Empresas Agropecu\u00e1rias",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 25,
   "fields": {
-    "nombre": "Geohistoria",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Geohistoria",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 26,
   "fields": {
-    "nombre": "Geociencias",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Geociencias",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 27,
   "fields": {
-    "nombre": "Licenciatura en Ciencias Ambientales",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Licenciatura en Ciencias Ambientales",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 28,
   "fields": {
-    "nombre": "Gesti\u00f3n y Econom\u00eda Ambiental Universidad de Guadalajara",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Gesti\u00f3n y Econom\u00eda Ambiental Universidad de Guadalajara",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 29,
   "fields": {
-    "nombre": "Geohistoria RT",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Geohistoria RT",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 30,
   "fields": {
-    "nombre": "Historia e historiograf\u00eda ambiental",
-    "descripcion": "",
-    "area_conocimiento": 122
+    "programalicenciatura_nombre": "Historia e historiograf\u00eda ambiental",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 122
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 31,
   "fields": {
-    "nombre": "Arqueolog\u00eda del occidente de M\u00e9xico",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Arqueolog\u00eda del occidente de M\u00e9xico",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 32,
   "fields": {
-    "nombre": "T\u00e9cnicas de registro de patrimonio cultural",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "T\u00e9cnicas de registro de patrimonio cultural",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 33,
   "fields": {
-    "nombre": "Geohistoria, de Estudios Sociales y Desarrollo Local y de Ciencias ambientales",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Geohistoria, de Estudios Sociales y Desarrollo Local y de Ciencias ambientales",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 34,
   "fields": {
-    "nombre": "Antropolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 122
+    "programalicenciatura_nombre": "Antropolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 122
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 35,
   "fields": {
-    "nombre": "Hidrobiolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 17
+    "programalicenciatura_nombre": "Hidrobiolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 17
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 36,
   "fields": {
-    "nombre": "Ingenier\u00eda en Geociencias",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Ingenier\u00eda en Geociencias",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 37,
   "fields": {
-    "nombre": "Ingenier\u00eda Forestal",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Ingenier\u00eda Forestal",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 38,
   "fields": {
-    "nombre": "Ingenier\u00eda civil",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Ingenier\u00eda civil",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 39,
   "fields": {
-    "nombre": "Geograf\u00eda Rural y Urbana",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Geograf\u00eda Rural y Urbana",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 40,
   "fields": {
-    "nombre": "Agroecolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Agroecolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 41,
   "fields": {
-    "nombre": "Estudios Sociales y Gesti\u00f3n Local",
-    "descripcion": "",
-    "area_conocimiento": 147
+    "programalicenciatura_nombre": "Estudios Sociales y Gesti\u00f3n Local",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 147
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 42,
   "fields": {
-    "nombre": "Historia del Arte",
-    "descripcion": "",
-    "area_conocimiento": 117
+    "programalicenciatura_nombre": "Historia del Arte",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 117
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 43,
   "fields": {
-    "nombre": "Arquitectura",
-    "descripcion": "",
-    "area_conocimiento": 115
+    "programalicenciatura_nombre": "Arquitectura",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 115
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 44,
   "fields": {
-    "nombre": "Impactos de la agricultura animal industrial e innovaci\u00f3n social en sistemas de alimentaci\u00f3n",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Impactos de la agricultura animal industrial e innovaci\u00f3n social en sistemas de alimentaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 45,
   "fields": {
-    "nombre": "Huertos verticales dom\u00e9sticos: innovaci\u00f3n comunitaria para la producci\u00f3n org\u00e1nica de alimentos en localidades ind\u00edgenas de Michoac\u00e1n",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Huertos verticales dom\u00e9sticos: innovaci\u00f3n comunitaria para la producci\u00f3n org\u00e1nica de alimentos en localidades ind\u00edgenas de Michoac\u00e1n",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 46,
   "fields": {
-    "nombre": "Ingenier\u00eda Ambiental",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Ingenier\u00eda Ambiental",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 47,
   "fields": {
-    "nombre": "Ciencias Biol\u00f3gicas",
-    "descripcion": "",
-    "area_conocimiento": 17
+    "programalicenciatura_nombre": "Ciencias Biol\u00f3gicas",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 17
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 48,
   "fields": {
-    "nombre": "Intervenci\u00f3n Educativa",
-    "descripcion": "",
-    "area_conocimiento": 1
+    "programalicenciatura_nombre": "Intervenci\u00f3n Educativa",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 1
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 49,
   "fields": {
-    "nombre": "Tecnolog\u00edas para la Informaci\u00f3n en Ciencias",
-    "descripcion": "",
-    "area_conocimiento": 111
+    "programalicenciatura_nombre": "Tecnolog\u00edas para la Informaci\u00f3n en Ciencias",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 111
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 50,
   "fields": {
-    "nombre": "Ingenier\u00eda Inform\u00e1tica",
-    "descripcion": "",
-    "area_conocimiento": 96
+    "programalicenciatura_nombre": "Ingenier\u00eda Inform\u00e1tica",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 96
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 51,
   "fields": {
-    "nombre": "Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
-    "descripcion": "",
-    "area_conocimiento": 38
+    "programalicenciatura_nombre": "Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 38
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 52,
   "fields": {
-    "nombre": "Biotecnolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 9
+    "programalicenciatura_nombre": "Biotecnolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 9
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 53,
   "fields": {
-    "nombre": "Sistemas de Informaci\u00f3n",
-    "descripcion": "",
-    "area_conocimiento": 96
+    "programalicenciatura_nombre": "Sistemas de Informaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 96
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 54,
   "fields": {
-    "nombre": "Ingenier\u00eda de Software II",
-    "descripcion": "",
-    "area_conocimiento": 96
+    "programalicenciatura_nombre": "Ingenier\u00eda de Software II",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 96
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 55,
   "fields": {
-    "nombre": "Ingenier\u00eda en Tecnolog\u00edas de la Informaci\u00f3n",
-    "descripcion": "",
-    "area_conocimiento": 96
+    "programalicenciatura_nombre": "Ingenier\u00eda en Tecnolog\u00edas de la Informaci\u00f3n",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 96
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 56,
   "fields": {
-    "nombre": "Earth and Atmospheric Sciences",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Earth and Atmospheric Sciences",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 57,
   "fields": {
-    "nombre": "Instituto de Investigaciones Econ\u00f3micas y Empresariales ININEE",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programalicenciatura_nombre": "Instituto de Investigaciones Econ\u00f3micas y Empresariales ININEE",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 58,
   "fields": {
-    "nombre": "Ingenier\u00eda en Recursos Naturales y Agropecuarios",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programalicenciatura_nombre": "Ingenier\u00eda en Recursos Naturales y Agropecuarios",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 59,
   "fields": {
-    "nombre": "Qu\u00edmica",
-    "descripcion": "",
-    "area_conocimiento": 8
+    "programalicenciatura_nombre": "Qu\u00edmica",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 8
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 60,
   "fields": {
-    "nombre": "Geoinform\u00e1tica",
-    "descripcion": "Licenciatura en Geoinform\u00e1tica, Universidad Aut\u00f3noma de Ciudad Ju\u00e1rez",
-    "area_conocimiento": 140
+    "programalicenciatura_nombre": "Geoinform\u00e1tica",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 61,
   "fields": {
-    "nombre": "Programa de ecolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Programa de ecolog\u00eda",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 62,
   "fields": {
-    "nombre": "Ciencias de la Tierra",
-    "descripcion": "",
-    "area_conocimiento": 99
+    "programalicenciatura_nombre": "Ciencias de la Tierra",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 99
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 63,
   "fields": {
-    "nombre": "Ingenier\u00eda en Energ\u00edas Renovables",
-    "descripcion": "",
-    "area_conocimiento": 98
+    "programalicenciatura_nombre": "Ingenier\u00eda en Energ\u00edas Renovables",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 98
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 64,
   "fields": {
-    "nombre": "Arte y Dise\u00f1io",
-    "descripcion": "",
-    "area_conocimiento": 116
+    "programalicenciatura_nombre": "Arte y Dise\u00f1io",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 116
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 65,
   "fields": {
-    "nombre": "Programa de fomento a las vocaciones cient\u00edficas y tecnol\u00f3gicas en ni\u00f1os y j\u00f3venes mexicanos del CONACYT",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programalicenciatura_nombre": "Programa de fomento a las vocaciones cient\u00edficas y tecnol\u00f3gicas en ni\u00f1os y j\u00f3venes mexicanos del CONACYT",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 66,
   "fields": {
-    "nombre": ". Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
-    "descripcion": "",
-    "area_conocimiento": 96
+    "programalicenciatura_nombre": ". Licenciatura en Ingenier\u00eda en Sistemas Computacionales",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 96
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 67,
   "fields": {
-    "nombre": "Licenciatura en Ingenier\u00eda Ambiental",
-    "descripcion": "",
-    "area_conocimiento": 96
+    "programalicenciatura_nombre": "Licenciatura en Ingenier\u00eda Ambiental",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 96
   }
 },
 {
   "model": "nucleo.programalicenciatura",
   "pk": 68,
   "fields": {
-    "nombre": "Licenciatura en Desarrollo Sustentable",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programalicenciatura_nombre": "Licenciatura en Desarrollo Sustentable",
+    "programalicenciatura_regusuario": 1,
+    "programalicenciatura_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 1,
   "fields": {
-    "nombre": "F\u00edsica, Matem\u00e1ticas y Ciencias de la Tierra",
-    "descripcion": "",
-    "area_conocimiento": 52
+    "programamaestria_nombre": "F\u00edsica, Matem\u00e1ticas y Ciencias de la Tierra",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 52
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 2,
   "fields": {
-    "nombre": "An\u00e1lisis y Manejo de Sistemas Ambientales",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "An\u00e1lisis y Manejo de Sistemas Ambientales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 3,
   "fields": {
-    "nombre": "Antropolog\u00eda Social",
-    "descripcion": "",
-    "area_conocimiento": 6
+    "programamaestria_nombre": "Antropolog\u00eda Social",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 6
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 4,
   "fields": {
-    "nombre": "Arqueologia",
-    "descripcion": "",
-    "area_conocimiento": 129
+    "programamaestria_nombre": "Arqueologia",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 129
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 5,
   "fields": {
-    "nombre": "Ciencias Agropecuarias y Recursos Naturales",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Ciencias Agropecuarias y Recursos Naturales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 6,
   "fields": {
-    "nombre": "Ciencias Biol\u00f3gicas",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Ciencias Biol\u00f3gicas",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 7,
   "fields": {
-    "nombre": "Ciencias de la Geo-informaci\u00f3n y observaci\u00f3n de la Tierra",
-    "descripcion": "",
-    "area_conocimiento": 38
+    "programamaestria_nombre": "Ciencias de la Geo-informaci\u00f3n y observaci\u00f3n de la Tierra",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 38
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 8,
   "fields": {
-    "nombre": "Ciencias de la Tierra",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Ciencias de la Tierra",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 9,
   "fields": {
-    "nombre": "Ciencias en Ingenier\u00eda El\u00e9ctrica con opci\u00f3n en Sistemas Computacionales",
-    "descripcion": "",
-    "area_conocimiento": 99
+    "programamaestria_nombre": "Ciencias en Ingenier\u00eda El\u00e9ctrica con opci\u00f3n en Sistemas Computacionales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 99
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 10,
   "fields": {
-    "nombre": "Comercio Exterior",
-    "descripcion": "",
-    "area_conocimiento": 142
+    "programamaestria_nombre": "Comercio Exterior",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 142
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 11,
   "fields": {
-    "nombre": "Conservaci\u00f3n, Ecolog\u00eda y Manejo de Recursos Naturales",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Conservaci\u00f3n, Ecolog\u00eda y Manejo de Recursos Naturales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 12,
   "fields": {
-    "nombre": "Desarrollo Rural Regional",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Desarrollo Rural Regional",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 13,
   "fields": {
-    "nombre": "Econom\u00eda Aplicada",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programamaestria_nombre": "Econom\u00eda Aplicada",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 14,
   "fields": {
-    "nombre": "Estudio de Peligros Naturales",
-    "descripcion": "",
-    "area_conocimiento": 100
+    "programamaestria_nombre": "Estudio de Peligros Naturales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 100
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 15,
   "fields": {
-    "nombre": "Filosof\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Filosof\u00eda",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 16,
   "fields": {
-    "nombre": "Geoecolog\u00eda del Paisaje",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Geoecolog\u00eda del Paisaje",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 17,
   "fields": {
-    "nombre": "Geograf\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Geograf\u00eda",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 18,
   "fields": {
-    "nombre": "Geom\u00e1tica",
-    "descripcion": "",
-    "area_conocimiento": 96
+    "programamaestria_nombre": "Geom\u00e1tica",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 96
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 19,
   "fields": {
-    "nombre": "Historia de M\u00e9xico",
-    "descripcion": "",
-    "area_conocimiento": 122
+    "programamaestria_nombre": "Historia de M\u00e9xico",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 122
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 20,
   "fields": {
-    "nombre": "Industrial Engineering and management Sciences",
-    "descripcion": "",
-    "area_conocimiento": 99
+    "programamaestria_nombre": "Industrial Engineering and management Sciences",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 99
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 21,
   "fields": {
-    "nombre": "Informaci\u00f3n de Suelos para el manejo de los Recursos Naturales",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Informaci\u00f3n de Suelos para el manejo de los Recursos Naturales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 22,
   "fields": {
-    "nombre": "Tecnolog\u00edas de Informaci\u00f3n",
-    "descripcion": "",
-    "area_conocimiento": 95
+    "programamaestria_nombre": "Tecnolog\u00edas de Informaci\u00f3n",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 95
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 23,
   "fields": {
-    "nombre": "Manejo de Ecosistemas de Zonas \u00c1ridas, Zonas Costeras y estudios sobre Biodiversidad.",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Manejo de Ecosistemas de Zonas \u00c1ridas, Zonas Costeras y estudios sobre Biodiversidad.",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 24,
   "fields": {
-    "nombre": "Manejo Integral del Paisaje",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Manejo Integral del Paisaje",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 25,
   "fields": {
-    "nombre": "Posgrado en Geograf\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Posgrado en Geograf\u00eda",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 26,
   "fields": {
-    "nombre": "Sociologia Pol\u00edtica",
-    "descripcion": "",
-    "area_conocimiento": 146
+    "programamaestria_nombre": "Sociologia Pol\u00edtica",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 146
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 27,
   "fields": {
-    "nombre": "Tecnolog\u00edas de la Informaci\u00f3n",
-    "descripcion": "",
-    "area_conocimiento": 95
+    "programamaestria_nombre": "Tecnolog\u00edas de la Informaci\u00f3n",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 95
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 28,
   "fields": {
-    "nombre": "Geoinformation Systems for Natural Resources Managemen",
-    "descripcion": "",
-    "area_conocimiento": 7
+    "programamaestria_nombre": "Geoinformation Systems for Natural Resources Managemen",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 7
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 29,
   "fields": {
-    "nombre": "Estudios y Gesti\u00f3n de la Ciudad",
-    "descripcion": "",
-    "area_conocimiento": 115
+    "programamaestria_nombre": "Estudios y Gesti\u00f3n de la Ciudad",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 115
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 30,
   "fields": {
-    "nombre": "Geograf\u00eda, Orientaci\u00f3n Manejo Integral del Paisaje",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda, Orientaci\u00f3n Manejo Integral del Paisaje",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 31,
   "fields": {
-    "nombre": "Maestr\u00eda en Estudios Regionales",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Maestr\u00eda en Estudios Regionales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 32,
   "fields": {
-    "nombre": "Geograf\u00eda. Orientaci\u00f3n Geograf\u00eda Ambiental",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda. Orientaci\u00f3n Geograf\u00eda Ambiental",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 33,
   "fields": {
-    "nombre": "Geograf\u00eda ambiental",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda ambiental",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 34,
   "fields": {
-    "nombre": "Geograf\u00eda Medio Ambiente y Ordenamiento Territorial",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda Medio Ambiente y Ordenamiento Territorial",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 35,
   "fields": {
-    "nombre": "Medio Ambiente y Desarrollo",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Medio Ambiente y Desarrollo",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 36,
   "fields": {
-    "nombre": "Medio Ambiente y Ordenamiento Territorial. Paisajes y Planificaci\u00f3n Ambiental",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Medio Ambiente y Ordenamiento Territorial. Paisajes y Planificaci\u00f3n Ambiental",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 37,
   "fields": {
-    "nombre": "Curso de postgrado",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Curso de postgrado",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 38,
   "fields": {
-    "nombre": "Arqueolog\u00eda de las Am\u00e9ricas",
-    "descripcion": "",
-    "area_conocimiento": 122
+    "programamaestria_nombre": "Arqueolog\u00eda de las Am\u00e9ricas",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 122
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 39,
   "fields": {
-    "nombre": "Conservaci\u00f3n y Manejo de Recursos Bi\u00f3ticos",
-    "descripcion": "",
-    "area_conocimiento": 13
+    "programamaestria_nombre": "Conservaci\u00f3n y Manejo de Recursos Bi\u00f3ticos",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 13
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 40,
   "fields": {
-    "nombre": "Conservaci\u00f3n y Manejo de Recursos",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Conservaci\u00f3n y Manejo de Recursos",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 41,
   "fields": {
-    "nombre": "Ciencias, Conservaci\u00f3n y Manejo de Recursos",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Ciencias, Conservaci\u00f3n y Manejo de Recursos",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 42,
   "fields": {
-    "nombre": "Geociencias y Planificaci\u00f3n del Territorio",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geociencias y Planificaci\u00f3n del Territorio",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 43,
   "fields": {
-    "nombre": "Geograf\u00eda (Manejo Integrado del Paisaje)",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda (Manejo Integrado del Paisaje)",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 44,
   "fields": {
-    "nombre": "Ciencias en Geoinformaci\u00f3n menci\u00f3n en Informaci\u00f3n de Tierras para la Planificaci\u00f3n del Territorio",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Ciencias en Geoinformaci\u00f3n menci\u00f3n en Informaci\u00f3n de Tierras para la Planificaci\u00f3n del Territorio",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 45,
   "fields": {
-    "nombre": "Ciencias en Gesti\u00f3n Ambiental Local",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Ciencias en Gesti\u00f3n Ambiental Local",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 46,
   "fields": {
-    "nombre": "Ciencias en Geoinformaci\u00f3n menciones en Informaci\u00f3n de Tierras para la Planificaci\u00f3n del Territorio y Evaluaci\u00f3n de los Recursos H\u00eddricos",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Ciencias en Geoinformaci\u00f3n menciones en Informaci\u00f3n de Tierras para la Planificaci\u00f3n del Territorio y Evaluaci\u00f3n de los Recursos H\u00eddricos",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 47,
   "fields": {
-    "nombre": "Cuencas en Manejo de Recursos Naturales",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Cuencas en Manejo de Recursos Naturales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 48,
   "fields": {
-    "nombre": "Ciencias",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Ciencias",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 49,
   "fields": {
-    "nombre": "Geograf\u00eda Humana",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda Humana",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 50,
   "fields": {
-    "nombre": "Soil Science",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Soil Science",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 51,
   "fields": {
-    "nombre": "Conservaci\u00f3n y Manejo de Recursos Naturales",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Conservaci\u00f3n y Manejo de Recursos Naturales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 52,
   "fields": {
-    "nombre": "Ciencias Biol\u00f3gicas, Biolog\u00eda Ambiental II",
-    "descripcion": "",
-    "area_conocimiento": 17
+    "programamaestria_nombre": "Ciencias Biol\u00f3gicas, Biolog\u00eda Ambiental II",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 17
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 53,
   "fields": {
-    "nombre": "Agroecolog\u00eda y Desarrollo Rural Sostenible en Am\u00e9rica Latina y  Espa\u00f1a",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Agroecolog\u00eda y Desarrollo Rural Sostenible en Am\u00e9rica Latina y  Espa\u00f1a",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 54,
   "fields": {
-    "nombre": "Environmental Sciences, Policy and Management",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Environmental Sciences, Policy and Management",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 55,
   "fields": {
-    "nombre": "Ciencias de la Sostenibilidad",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Ciencias de la Sostenibilidad",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 56,
   "fields": {
-    "nombre": "Agricultura ecologica",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Agricultura ecologica",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 57,
   "fields": {
-    "nombre": "Master en Agroecolog\u00eda y Desarrollo",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Master en Agroecolog\u00eda y Desarrollo",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 58,
   "fields": {
-    "nombre": "Ecolog\u00eda de los Sistemas Agr\u00edcolas",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Ecolog\u00eda de los Sistemas Agr\u00edcolas",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 59,
   "fields": {
-    "nombre": "Agroecolog\u00eda y Desarrollo",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Agroecolog\u00eda y Desarrollo",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 60,
   "fields": {
-    "nombre": "Urbanismo y Desarrollo",
-    "descripcion": "",
-    "area_conocimiento": 115
+    "programamaestria_nombre": "Urbanismo y Desarrollo",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 115
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 61,
   "fields": {
-    "nombre": "Estudios Territoriales, Paisaje y Patrimonio",
-    "descripcion": "",
-    "area_conocimiento": 151
+    "programamaestria_nombre": "Estudios Territoriales, Paisaje y Patrimonio",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 151
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 62,
   "fields": {
-    "nombre": "Posgrado en Ciencias Bi\u00f3logica",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Posgrado en Ciencias Bi\u00f3logica",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 63,
   "fields": {
-    "nombre": "Geograf\u00eda Campo de Conocimiento",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda Campo de Conocimiento",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 64,
   "fields": {
-    "nombre": "Geograf\u00eda (Con \u00e9nfasis en Manejo Integral del Paisaje)",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Geograf\u00eda (Con \u00e9nfasis en Manejo Integral del Paisaje)",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 65,
   "fields": {
-    "nombre": "Administraci\u00f3n de Tierras",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Administraci\u00f3n de Tierras",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 66,
   "fields": {
-    "nombre": "Seminario Monogr\u00e1fico de: Estad\u00edstica aplicada a estudios ambientales (Estad\u00edstica)",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Seminario Monogr\u00e1fico de: Estad\u00edstica aplicada a estudios ambientales (Estad\u00edstica)",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 67,
   "fields": {
-    "nombre": "Posgrado en ciencias de la Sostenibilidad",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Posgrado en ciencias de la Sostenibilidad",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 68,
   "fields": {
-    "nombre": "Herramientas anal\u00edticas en las ciencias de la sostenibilidad",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Herramientas anal\u00edticas en las ciencias de la sostenibilidad",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 69,
   "fields": {
-    "nombre": "Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 70,
   "fields": {
-    "nombre": "Maestr\u00eda en Geograf\u00eda, con campo del conocimiento en Manejo Integrado del Paisaje",
-    "descripcion": "Maestr\u00eda en Geograf\u00eda, campo del conocimiento en Manejo Integrado del Paisaje, CIGA - UNAM",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Maestr\u00eda en Geograf\u00eda, con campo del conocimiento en Manejo Integrado del Paisaje",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 71,
   "fields": {
-    "nombre": "Environment and Energy management",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Environment and Energy management",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 72,
   "fields": {
-    "nombre": "Desconocido",
-    "descripcion": "",
-    "area_conocimiento": 115
+    "programamaestria_nombre": "Desconocido",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 115
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 73,
   "fields": {
-    "nombre": "Ciencias Agriculturas",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programamaestria_nombre": "Ciencias Agriculturas",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 74,
   "fields": {
-    "nombre": "Manejo del Medio Ambiente y Energ\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Manejo del Medio Ambiente y Energ\u00eda",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 75,
   "fields": {
-    "nombre": "\u00a1DUPLICADO!",
-    "descripcion": "",
-    "area_conocimiento": 115
+    "programamaestria_nombre": "\u00a1DUPLICADO!",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 115
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 76,
   "fields": {
-    "nombre": "Monitoreo de agua",
-    "descripcion": "Curso del Posgrado en Geograf\u00eda, abierto a los interesados en el monitoreo de agua. Revisi\u00f3n y pr\u00e1ctica de t\u00e9cnicas fisicoqu\u00edmicas y bacteriol\u00f3gicas para el monitoreo de la calidad del agua",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Monitoreo de agua",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 77,
   "fields": {
-    "nombre": "Ciencias en Recursos Naturales y Desarrollo Rural",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Ciencias en Recursos Naturales y Desarrollo Rural",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 78,
   "fields": {
-    "nombre": "Maestr\u00eda en Ciencias de la Sostenibilidad",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Maestr\u00eda en Ciencias de la Sostenibilidad",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 79,
   "fields": {
-    "nombre": "Programa de fomento a las vocaciones cient\u00edficas y tecnol\u00f3gicas en ni\u00f1os y j\u00f3venes mexicanos del CONACYT",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Programa de fomento a las vocaciones cient\u00edficas y tecnol\u00f3gicas en ni\u00f1os y j\u00f3venes mexicanos del CONACYT",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 80,
   "fields": {
-    "nombre": "Joint European Master in Environmental Studies",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Joint European Master in Environmental Studies",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 81,
   "fields": {
-    "nombre": "Ingenier\u00eda Ambiental",
-    "descripcion": "",
-    "area_conocimiento": 25
+    "programamaestria_nombre": "Ingenier\u00eda Ambiental",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 25
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 82,
   "fields": {
-    "nombre": "Manejo y Conservaci\u00f3n de Recursos Naturales Tropicales",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Manejo y Conservaci\u00f3n de Recursos Naturales Tropicales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 83,
   "fields": {
-    "nombre": "Ecolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Ecolog\u00eda",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 84,
   "fields": {
-    "nombre": "Maestr\u00eda en Estudios Territoriales, Paisaje y Patrimonio",
-    "descripcion": "Universidad Aut\u00f3noma del Estado de Morelos",
-    "area_conocimiento": 151
+    "programamaestria_nombre": "Maestr\u00eda en Estudios Territoriales, Paisaje y Patrimonio",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 151
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 85,
   "fields": {
-    "nombre": "Comunidad y Comunalismo en Sociedades Locales",
-    "descripcion": "Conocer, analizar y discutir a traves de casos ejemplares las teorias y postulados generales en torno a las formas de organizaci\u00f3n simb\u00f3lica, ideol\u00f3gica, pol\u00edtica e institucional de las comunidades  locales a la luz de las transformaciones contempor\u00e1neas.",
-    "area_conocimiento": 148
+    "programamaestria_nombre": "Comunidad y Comunalismo en Sociedades Locales",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 148
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 86,
   "fields": {
-    "nombre": "International Master in Rural Development",
-    "descripcion": "Programa Erasmus Mundus dentro de consorcio de universidades europeas.",
-    "area_conocimiento": 148
+    "programamaestria_nombre": "International Master in Rural Development",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 148
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 87,
   "fields": {
-    "nombre": "Modelagem em Ci\u00eancias da Terra e do Ambiente",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programamaestria_nombre": "Modelagem em Ci\u00eancias da Terra e do Ambiente",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 88,
   "fields": {
-    "nombre": "Maestr\u00eda en Geograf\u00eda",
-    "descripcion": "Posgrado en Geograf\u00eda, UNAM",
-    "area_conocimiento": 140
+    "programamaestria_nombre": "Maestr\u00eda en Geograf\u00eda",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 89,
   "fields": {
-    "nombre": "Master in Science in Civil and Environmental Engineering",
-    "descripcion": "",
-    "area_conocimiento": 99
+    "programamaestria_nombre": "Master in Science in Civil and Environmental Engineering",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 99
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 90,
   "fields": {
-    "nombre": "Maestr\u00eda en Ciencias en Desarrollo Local",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programamaestria_nombre": "Maestr\u00eda en Ciencias en Desarrollo Local",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programamaestria",
   "pk": 91,
   "fields": {
-    "nombre": "Master of Environmental Management (MEM)",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programamaestria_nombre": "Master of Environmental Management (MEM)",
+    "programamaestria_regusuario": 1,
+    "programamaestria_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 1,
   "fields": {
-    "nombre": "F\u00edsica, Matem\u00e1ticas y Ciencias de la Tierra",
-    "descripcion": "",
-    "area_conocimiento": 38
+    "programadoctorado_nombre": "F\u00edsica, Matem\u00e1ticas y Ciencias de la Tierra",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 38
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 2,
   "fields": {
-    "nombre": "An\u00e1lisis Geogr\u00e1fico Regional y Geograf\u00eda F\u00edsica",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programadoctorado_nombre": "An\u00e1lisis Geogr\u00e1fico Regional y Geograf\u00eda F\u00edsica",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 3,
   "fields": {
-    "nombre": "Arqueolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 129
+    "programadoctorado_nombre": "Arqueolog\u00eda",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 129
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 4,
   "fields": {
-    "nombre": "Ciencias Ambientales / Sociolog\u00eda Ambiental",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ciencias Ambientales / Sociolog\u00eda Ambiental",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 5,
   "fields": {
-    "nombre": "Ciencias Biol\u00f3gicas",
-    "descripcion": "",
-    "area_conocimiento": 17
+    "programadoctorado_nombre": "Ciencias Biol\u00f3gicas",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 17
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 6,
   "fields": {
-    "nombre": "Ciencias de la Tierra",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programadoctorado_nombre": "Ciencias de la Tierra",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 7,
   "fields": {
-    "nombre": "Ciencias en Planificaci\u00f3n de Empresas y Desarrollo Regional",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programadoctorado_nombre": "Ciencias en Planificaci\u00f3n de Empresas y Desarrollo Regional",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 8,
   "fields": {
-    "nombre": "Desarrollo Regional",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programadoctorado_nombre": "Desarrollo Regional",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 9,
   "fields": {
-    "nombre": "Agroecolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programadoctorado_nombre": "Agroecolog\u00eda",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 10,
   "fields": {
-    "nombre": "Ciencias de la Tierra (Geolog\u00eda Ambiental)",
-    "descripcion": "",
-    "area_conocimiento": 82
+    "programadoctorado_nombre": "Ciencias de la Tierra (Geolog\u00eda Ambiental)",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 82
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 11,
   "fields": {
-    "nombre": "Ciencias Sociales, especialidad en Antropolog\u00eda Social",
-    "descripcion": "",
-    "area_conocimiento": 6
+    "programadoctorado_nombre": "Ciencias Sociales, especialidad en Antropolog\u00eda Social",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 6
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 12,
   "fields": {
-    "nombre": "Ecolog\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ecolog\u00eda",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 13,
   "fields": {
-    "nombre": "Ecolog\u00eda y Manejo de Recursos Naturales",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ecolog\u00eda y Manejo de Recursos Naturales",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 14,
   "fields": {
-    "nombre": "Ecolog\u00eda y Manejo de Recursos Natutales",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ecolog\u00eda y Manejo de Recursos Natutales",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 15,
   "fields": {
-    "nombre": "Ecolog\u00eda y Medio Ambiente",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ecolog\u00eda y Medio Ambiente",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 16,
   "fields": {
-    "nombre": "Econom\u00eda Aplicada",
-    "descripcion": "",
-    "area_conocimiento": 132
+    "programadoctorado_nombre": "Econom\u00eda Aplicada",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 132
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 17,
   "fields": {
-    "nombre": "Geograf\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programadoctorado_nombre": "Geograf\u00eda",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 18,
   "fields": {
-    "nombre": "Ingenier\u00eda Agr\u00edcola y yso integral del agua",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programadoctorado_nombre": "Ingenier\u00eda Agr\u00edcola y yso integral del agua",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 19,
   "fields": {
-    "nombre": "Medio Ambiente y Desarrollo",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Medio Ambiente y Desarrollo",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 20,
   "fields": {
-    "nombre": "Posgrado en Ciencias Biol\u00f3gicas",
-    "descripcion": "",
-    "area_conocimiento": 17
+    "programadoctorado_nombre": "Posgrado en Ciencias Biol\u00f3gicas",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 17
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 21,
   "fields": {
-    "nombre": "Fotograf\u00eda e Im\u00e1genes",
-    "descripcion": "",
-    "area_conocimiento": 100
+    "programadoctorado_nombre": "Fotograf\u00eda e Im\u00e1genes",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 100
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 22,
   "fields": {
-    "nombre": "Technology and Development",
-    "descripcion": "",
-    "area_conocimiento": 111
+    "programadoctorado_nombre": "Technology and Development",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 111
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 23,
   "fields": {
-    "nombre": "Doctorado en Geograf\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programadoctorado_nombre": "Doctorado en Geograf\u00eda",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 24,
   "fields": {
-    "nombre": "Ciencias Geogr\u00e1ficas",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programadoctorado_nombre": "Ciencias Geogr\u00e1ficas",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 25,
   "fields": {
-    "nombre": "Geograf\u00eda y Ordenaci\u00f3n Territorial",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programadoctorado_nombre": "Geograf\u00eda y Ordenaci\u00f3n Territorial",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 26,
   "fields": {
-    "nombre": "Programas multidisciplinarios de Posgrado en Ciencias Ambientales",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programadoctorado_nombre": "Programas multidisciplinarios de Posgrado en Ciencias Ambientales",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 27,
   "fields": {
-    "nombre": "Biosistem\u00e1tica, Ecolog\u00eda y Manejo de Recursos Naturales y Agr\u00edcolas",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Biosistem\u00e1tica, Ecolog\u00eda y Manejo de Recursos Naturales y Agr\u00edcolas",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 28,
   "fields": {
-    "nombre": "Doctorado en Ciencias",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programadoctorado_nombre": "Doctorado en Ciencias",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 29,
   "fields": {
-    "nombre": "Manejo de Recursos Naturales",
-    "descripcion": "",
-    "area_conocimiento": 89
+    "programadoctorado_nombre": "Manejo de Recursos Naturales",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 89
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 30,
   "fields": {
-    "nombre": "Ciencias en Desarrollo Sustentable",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programadoctorado_nombre": "Ciencias en Desarrollo Sustentable",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 31,
   "fields": {
-    "nombre": "Estudios Regionales",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programadoctorado_nombre": "Estudios Regionales",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 32,
   "fields": {
-    "nombre": "Implementing global environmental policy at local levels: community carbon forestry perspectives in Cameroon.",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Implementing global environmental policy at local levels: community carbon forestry perspectives in Cameroon.",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 33,
   "fields": {
-    "nombre": "The Small Gods of Participation (irrigation management in Mali and Madagascar).",
-    "descripcion": "",
-    "area_conocimiento": 2
+    "programadoctorado_nombre": "The Small Gods of Participation (irrigation management in Mali and Madagascar).",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 2
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 34,
   "fields": {
-    "nombre": "The Endurance of Mexican Amate Paper: Exploring Additional  Dimensions to the Sustainable Development Concept",
-    "descripcion": "",
-    "area_conocimiento": 140
+    "programadoctorado_nombre": "The Endurance of Mexican Amate Paper: Exploring Additional  Dimensions to the Sustainable Development Concept",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 140
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 35,
   "fields": {
-    "nombre": "Ciencias Ambientales",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ciencias Ambientales",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 36,
   "fields": {
-    "nombre": "Ecolog\u00eda del paisaje como herramienta para analizar servicios ecosist\u00e9micos",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ecolog\u00eda del paisaje como herramienta para analizar servicios ecosist\u00e9micos",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 37,
   "fields": {
-    "nombre": "La ecolog\u00eda pol\u00edtica de los conflictos forestales en Michoac\u00e1n",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "La ecolog\u00eda pol\u00edtica de los conflictos forestales en Michoac\u00e1n",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 38,
   "fields": {
-    "nombre": "Ciencia y Tecnolog\u00eda Ambientales",
-    "descripcion": "",
-    "area_conocimiento": 111
+    "programadoctorado_nombre": "Ciencia y Tecnolog\u00eda Ambientales",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 111
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 39,
   "fields": {
-    "nombre": "Historia",
-    "descripcion": "",
-    "area_conocimiento": 122
+    "programadoctorado_nombre": "Historia",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 122
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 40,
   "fields": {
-    "nombre": "Biodiversidad: Conservaci\u00f3n y Manejo de las Especies y sus H\u00e1bitat",
-    "descripcion": "",
-    "area_conocimiento": 9
+    "programadoctorado_nombre": "Biodiversidad: Conservaci\u00f3n y Manejo de las Especies y sus H\u00e1bitat",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 9
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 41,
   "fields": {
-    "nombre": "Ciencas de la Sostenibilidad",
-    "descripcion": "",
-    "area_conocimiento": 21
+    "programadoctorado_nombre": "Ciencas de la Sostenibilidad",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 21
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 42,
   "fields": {
-    "nombre": "Programa de Maestr\u00eda y Doctorado en Ingenier\u00eda",
-    "descripcion": "",
-    "area_conocimiento": 99
+    "programadoctorado_nombre": "Programa de Maestr\u00eda y Doctorado en Ingenier\u00eda",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 99
   }
 },
 {
   "model": "nucleo.programadoctorado",
   "pk": 43,
   "fields": {
-    "nombre": "Desarrollo Sostenible",
-    "descripcion": "",
-    "area_conocimiento": 148
+    "programadoctorado_nombre": "Desarrollo Sostenible",
+    "programadoctorado_regusuario": 1,
+    "programadoctorado_areaconocimiento": 148
   }
 },
 {

@@ -203,12 +203,6 @@ class NombramientoForm(forms.ModelForm):
         exclude = []
 
 
-class AreaConocimientoForm(forms.ModelForm):
-    class Meta:
-        model = AreaConocimiento
-        exclude = []
-
-
 class AreaEspecialidadForm(forms.ModelForm):
     area_conocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
@@ -237,12 +231,6 @@ class ImpactoSocialForm(forms.ModelForm):
             'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
-
-
-# class ProgramaFinanciamientoForm(forms.ModelForm):
-#    class Meta:
-#        model = ProgramaFinanciamiento
-#        exclude = []
 
 
 class FinanciamientoForm(forms.ModelForm):
@@ -332,7 +320,7 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['areaconocimiento_nombre__icontains'],
             queryset=AreaConocimiento.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -351,7 +339,7 @@ class ProgramaMaestriaForm(forms.ModelForm):
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['areaconocimiento_nombre__icontains'],
             queryset=AreaConocimiento.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -370,7 +358,7 @@ class ProgramaDoctoradoForm(forms.ModelForm):
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['areaconocimiento_nombre__icontains'],
             queryset=AreaConocimiento.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
