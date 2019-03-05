@@ -334,7 +334,7 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
 
 
 class ProgramaMaestriaForm(forms.ModelForm):
-    area_conocimiento = forms.ModelChoiceField(
+    programamaestria_areaconocimiento = forms.ModelChoiceField(
         queryset=AreaConocimiento.objects.all(),
         label="Area de conocimiento",
         widget=ModelSelect2Widget(
