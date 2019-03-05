@@ -86,6 +86,7 @@
                         '</div>'
                     $("#agregar_programalicenciatura_errors").html(errores_form);
                 },
+
                 success: function (data) {
                     console.log("success")
                     $('#id_programalicenciatura_nombre').val(null).trigger('change');
@@ -94,20 +95,10 @@
 
                     console.log("data")
                     console.log(data)
-                    var pais_url = "/nucleo/rest/paises/" + data.institucion_pais.toString() + "/"
-                    console.log(pais_url)
-                    $.ajax({
-                        url: pais_url,
-                        success: function (dataf) {
-                            console.log("nombre pais");
-                            institucion_pais_option = dataf.pais_nombre.toString();
-                            console.log(institucion_pais_option);
-                            var nuevo_programalicenciatura_option = new Option(data.programalicenciatura_nombre, data.id, true, true);
-                            $('#id_carrera').append(nuevo_programalicenciatura_option).trigger('change');
-                            $('#agregar-programalicenciatura-modal-body').empty();
-                            agregar_programalicenciatura_dialog.dialog("close")
-                        }
-                    });
+                    var nuevo_programalicenciatura_option = new Option(data.programalicenciatura_nombre, data.id, true, true);
+                    $('#id_carrera').append(nuevo_programalicenciatura_option).trigger('change');
+                    $('#agregar-programalicenciatura-modal-body').empty();
+                    agregar_programalicenciatura_dialog.dialog("close")
 
                 }
             });

@@ -144,7 +144,7 @@ $(function () {
         console.log("boton agregar programa licenciatura")
         agregar_programalicenciatura_dialog = $("#agregar-programalicenciatura").dialog({
             autoOpen: false,
-            height: 700,
+            height: 500,
             width: 900,
             modal: true,
             class: 'ui-button-left',
@@ -174,20 +174,21 @@ $(function () {
         agregar_programalicenciatura_dialog.dialog("open");
     });
 
-    $("#boton-detalle-institucion").on("click", function (e) {
-        if ($("#id_institucion").val() == '') {
+    $("#boton-detalle-programalicenciatura").on("click", function (e) {
+        if ($("#id_carrera").val() == null) {
             e.stopPropagation();
         } else {
-            detalle_institucion_dialog = $("#detalle-institucion").dialog({
+
+            detalle_programalicenciatura_dialog = $("#detalle-programalicenciatura").dialog({
                 autoOpen: false,
-                height: 700,
+                height: 500,
                 width: 900,
                 modal: true,
                 buttons: {
                     actualizar: {
-                        text: "Actualizar institución",
+                        text: "Actualizar programa de licenciatura",
                         click: function () {
-                            $("#modal_form_institucion_detalle").submit()
+                            $("#modal_form_programalicenciatura_detalle").submit()
                         },
                         class: 'btn btn-success ui-button-left'
                     },
@@ -201,7 +202,7 @@ $(function () {
                 },
 
                 open: function (event, ui) {
-                    $('#detalle-institucion-modal-body').load(('/nucleo/instituciones/' + $("#id_institucion").val().toString()) + "/", function () {
+                    $('#detalle-programalicenciatura-modal-body').load(('/nucleo/programas-licenciatura/' + $("#id_carrera").val().toString()) + "/", function () {
                         console.log("detalle start")
                         $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-institucion")});
                         $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion")});
@@ -225,7 +226,7 @@ $(function () {
 
                 }
             });
-            detalle_institucion_dialog.dialog("open");
+            detalle_programalicenciatura_dialog.dialog("open");
         }
     });
 

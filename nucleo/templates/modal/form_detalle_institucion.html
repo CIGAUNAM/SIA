@@ -129,7 +129,7 @@
                 institucion_nombre: $("#id_institucion_nombre").val(),
                 institucion_pais: $("#id_institucion_pais").val(),
                 institucion_ciudad: $("#id_institucion_ciudad").val(),
-                institucion_regusuario: {{ user.pk }}
+                //institucion_regusuario: {{ user.pk }}
             };
             if ($("#id_institucion_clasificacion").val() != '') {
                 datos.institucion_clasificacion = $("#id_institucion_clasificacion").val();
@@ -216,7 +216,7 @@
                             console.log(institucion_pais_option);
                             var nueva_institucion_option = new Option(data.institucion_nombre + " (" + institucion_pais_option + ")", data.id, true, true);
                             $('#id_institucion').append(nueva_institucion_option).trigger('change');
-                            $('#agregar-institucion-modal-body').empty();
+                            $('#detalle-institucion-modal-body').empty();
                             detalle_institucion_dialog.dialog("close")
                         }
                     });

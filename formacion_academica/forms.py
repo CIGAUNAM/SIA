@@ -57,7 +57,7 @@ class LicenciaturaForm(forms.ModelForm):
         queryset=ProgramaLicenciatura.objects.all(),
         label="Carrera",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['programalicenciatura_nombre__icontains'],
             queryset=ProgramaLicenciatura.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -98,7 +98,7 @@ class MaestriaForm(forms.ModelForm):
         queryset=ProgramaMaestria.objects.all(),
         label="ProgramaMaestria",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['programamaestria_nombre__icontains'],
             queryset=ProgramaMaestria.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -139,7 +139,7 @@ class DoctoradoForm(forms.ModelForm):
         queryset=ProgramaDoctorado.objects.all(),
         label="ProgramaDoctorado",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['programadoctorado_nombre__icontains'],
             queryset=ProgramaDoctorado.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -182,7 +182,7 @@ class PostDoctoradoForm(forms.ModelForm):
         queryset=AreaConocimiento.objects.all(),
         label="Área de conocimiento",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['areaconocimiento_nombre__icontains'],
             queryset=AreaConocimiento.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
