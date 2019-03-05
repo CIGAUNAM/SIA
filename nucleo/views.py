@@ -280,7 +280,7 @@ class ProgramaLicenciaturaAgregar(ObjectModalCreateMixin, View):
             new_obj = bound_form.save()
             return JsonResponse(new_obj, safe=False)
         else:
-            return render(request, self.template_name, {'modal_form_institucion_agregar': bound_form})
+            return render(request, self.template_name, {'modal_form_programalicenciatura_agregar': bound_form})
 
 
 class ProgramaLicenciaturaDetalle(ObjectModalUpdateMixin, View):
@@ -293,7 +293,7 @@ class ProgramaLicenciaturaDetalle(ObjectModalUpdateMixin, View):
             ref = request.META['HTTP_REFERER']
             if ref:
                 obj = get_object_or_404(self.model, pk=pk)
-                return render(request, self.template_name, {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+                return render(request, self.template_name, {'modal_form_programalicenciatura_detalle': self.form_class(instance=obj)})
         except Exception as e:
             print(e)
             return HttpResponse("")
@@ -305,7 +305,7 @@ class ProgramaLicenciaturaDetalle(ObjectModalUpdateMixin, View):
             messages.success(request, "Registro actualizado con éxito")
             return redirect(new_obj)
         else:
-            return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
+            return render(request, self.template_name, {'modal_form_programalicenciatura_detalle': bound_form})
 
 
 class ProgramaMaestriaAgregar(ObjectModalCreateMixin, View):
