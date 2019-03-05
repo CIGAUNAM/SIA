@@ -317,11 +317,11 @@ class ProgramaMaestriaAgregar(ObjectModalCreateMixin, View):
         try:
             ref = request.META['HTTP_REFERER']
             if ref:
-                return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+                return render(request, self.template_name, {'modal_form_programamaestria_agregar': self.form_class})
         except Exception as e:
             print(e)
             return HttpResponse("")
-            # return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+            # return render(request, self.template_name, {'modal_form_programamaestria_agregar': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -329,7 +329,7 @@ class ProgramaMaestriaAgregar(ObjectModalCreateMixin, View):
             new_obj = bound_form.save()
             return JsonResponse(new_obj, safe=False)
         else:
-            return render(request, self.template_name, {'modal_form_institucion_agregar': bound_form})
+            return render(request, self.template_name, {'modal_form_programamaestria_agregar': bound_form})
 
 
 class ProgramaMaestriaDetalle(ObjectModalUpdateMixin, View):
@@ -342,8 +342,7 @@ class ProgramaMaestriaDetalle(ObjectModalUpdateMixin, View):
             ref = request.META['HTTP_REFERER']
             if ref:
                 obj = get_object_or_404(self.model, pk=pk)
-                return render(request, self.template_name,
-                              {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+                return render(request, self.template_name, {'modal_form_programamaestria_detalle': self.form_class(instance=obj)})
         except Exception as e:
             print(e)
             return HttpResponse("")
@@ -355,23 +354,23 @@ class ProgramaMaestriaDetalle(ObjectModalUpdateMixin, View):
             messages.success(request, "Registro actualizado con éxito")
             return redirect(new_obj)
         else:
-            return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
+            return render(request, self.template_name, {'modal_form_programamaestria_detalle': bound_form})
 
 
 class ProgramaDoctoradoAgregar(ObjectModalCreateMixin, View):
     form_class = ProgramaDoctoradoForm
     model = ProgramaDoctorado
-    template_name = 'modal/form_agregar_programamaestria.html'
+    template_name = 'modal/form_agregar_programadoctorado.html'
 
     def get(self, request):
         try:
             ref = request.META['HTTP_REFERER']
             if ref:
-                return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+                return render(request, self.template_name, {'modal_form_programadoctorado_agregar': self.form_class})
         except Exception as e:
             print(e)
             return HttpResponse("")
-            # return render(request, self.template_name, {'modal_form_institucion_agregar': self.form_class})
+            # return render(request, self.template_name, {'modal_form_programadoctorado_agregar': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -379,13 +378,13 @@ class ProgramaDoctoradoAgregar(ObjectModalCreateMixin, View):
             new_obj = bound_form.save()
             return JsonResponse(new_obj, safe=False)
         else:
-            return render(request, self.template_name, {'modal_form_institucion_agregar': bound_form})
+            return render(request, self.template_name, {'modal_form_programadoctorado_agregar': bound_form})
 
 
 class ProgramaDoctoradoDetalle(ObjectModalUpdateMixin, View):
     form_class = ProgramaDoctoradoForm
     model = ProgramaDoctorado
-    template_name = 'modal/form_detalle_institucion.html'
+    template_name = 'modal/form_detalle_programadoctorado.html'
 
     def get(self, request, pk):
         try:
@@ -393,7 +392,7 @@ class ProgramaDoctoradoDetalle(ObjectModalUpdateMixin, View):
             if ref:
                 obj = get_object_or_404(self.model, pk=pk)
                 return render(request, self.template_name,
-                              {'modal_form_institucion_detalle': self.form_class(instance=obj)})
+                              {'modal_form_programadoctorado_detalle': self.form_class(instance=obj)})
         except Exception as e:
             print(e)
             return HttpResponse("")
@@ -405,7 +404,7 @@ class ProgramaDoctoradoDetalle(ObjectModalUpdateMixin, View):
             messages.success(request, "Registro actualizado con éxito")
             return redirect(new_obj)
         else:
-            return render(request, self.template_name, {'modal_form_institucion_detalle': bound_form})
+            return render(request, self.template_name, {'modal_form_programadoctorado_detalle': bound_form})
 
 
 

@@ -215,4 +215,156 @@ $(function () {
     });
 
 
+    /***** *****  *****/
+
+
+    $("#boton-agregar-programamaestria").on("click", function (e) {
+        console.log("boton agregar programa maestria")
+        agregar_programamaestria_dialog = $("#agregar-programamaestria").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 900,
+            modal: true,
+            class: 'ui-button-left',
+            buttons: {
+                agregar: {
+                    text: "Agregar programa de maestria",
+                    click: function () {
+                        $("#modal_form_programamaestria_agregar").submit()
+                    },
+                    class: 'btn btn-success ui-button-left'
+                },
+                cancelar: {
+                    text: "Cancelar",
+                    click: function () {
+                        $(this).dialog("close")
+                    },
+                    class: 'btn btn-primary ui-button-left'
+                }
+            },
+
+            open: function (event, ui) {
+                $('#agregar-programamaestria-modal-body').load('/nucleo/programas-maestria/agregar/', function () {
+                    $("#id_programamaestria_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-programamaestria")});
+                });
+            }
+        });
+        agregar_programamaestria_dialog.dialog("open");
+    });
+
+    $("#boton-detalle-programamaestria").on("click", function (e) {
+        if ($("#id_programa").val() == null) {
+            e.stopPropagation();
+        } else {
+
+            detalle_programamaestria_dialog = $("#detalle-programamaestria").dialog({
+                autoOpen: false,
+                height: 500,
+                width: 900,
+                modal: true,
+                buttons: {
+                    actualizar: {
+                        text: "Actualizar programa de maestria",
+                        click: function () {
+                            $("#modal_form_programamaestria_detalle").submit()
+                        },
+                        class: 'btn btn-success ui-button-left'
+                    },
+                    cancelar: {
+                        text: "Cancelar",
+                        click: function () {
+                            $(this).dialog("close")
+                        },
+                        class: 'btn btn-primary ui-button-left'
+                    }
+                },
+
+                open: function (event, ui) {
+                    $('#detalle-programamaestria-modal-body').load(('/nucleo/programas-maestria/' + $("#id_programa").val().toString()) + "/", function () {
+                        console.log("detalle start")
+                        $("#id_programamaestria_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-programamaestria")});
+
+                    });
+                    e.stopPropagation();
+                }
+            });
+            detalle_programamaestria_dialog.dialog("open");
+        }
+    });
+
+
+    $("#boton-agregar-programadoctorado").on("click", function (e) {
+        console.log("boton agregar programa doctorado")
+        agregar_programadoctorado_dialog = $("#agregar-programadoctorado").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 900,
+            modal: true,
+            class: 'ui-button-left',
+            buttons: {
+                agregar: {
+                    text: "Agregar programa de doctorado",
+                    click: function () {
+                        $("#modal_form_programadoctorado_agregar").submit()
+                    },
+                    class: 'btn btn-success ui-button-left'
+                },
+                cancelar: {
+                    text: "Cancelar",
+                    click: function () {
+                        $(this).dialog("close")
+                    },
+                    class: 'btn btn-primary ui-button-left'
+                }
+            },
+
+            open: function (event, ui) {
+                $('#agregar-programadoctorado-modal-body').load('/nucleo/programas-doctorado/agregar/', function () {
+                    $("#id_programadoctorado_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-programadoctorado")});
+                });
+            }
+        });
+        agregar_programadoctorado_dialog.dialog("open");
+    });
+
+    $("#boton-detalle-programadoctorado").on("click", function (e) {
+        if ($("#id_programa").val() == null) {
+            e.stopPropagation();
+        } else {
+
+            detalle_programadoctorado_dialog = $("#detalle-programadoctorado").dialog({
+                autoOpen: false,
+                height: 500,
+                width: 900,
+                modal: true,
+                buttons: {
+                    actualizar: {
+                        text: "Actualizar programa de doctorado",
+                        click: function () {
+                            $("#modal_form_programadoctorado_detalle").submit()
+                        },
+                        class: 'btn btn-success ui-button-left'
+                    },
+                    cancelar: {
+                        text: "Cancelar",
+                        click: function () {
+                            $(this).dialog("close")
+                        },
+                        class: 'btn btn-primary ui-button-left'
+                    }
+                },
+
+                open: function (event, ui) {
+                    $('#detalle-programadoctorado-modal-body').load(('/nucleo/programas-doctorado/' + $("#id_programa").val().toString()) + "/", function () {
+                        console.log("detalle start")
+                        $("#id_programadoctorado_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-programadoctorado")});
+
+                    });
+                    e.stopPropagation();
+                }
+            });
+            detalle_programadoctorado_dialog.dialog("open");
+        }
+    });
+
 })
