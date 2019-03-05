@@ -204,26 +204,10 @@ $(function () {
                 open: function (event, ui) {
                     $('#detalle-programalicenciatura-modal-body').load(('/nucleo/programas-licenciatura/' + $("#id_carrera").val().toString()) + "/", function () {
                         console.log("detalle start")
-                        $("#id_institucion_pais").djangoSelect2({dropdownParent: $("#agregar-institucion")});
-                        $("#id_institucion_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion")});
-                        $("#id_institucion_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-institucion")});
-
-                        $("#id_institucion_perteneceunam").on('change', function () {
-                            console.log($("#id_institucion_perteneceunam").is(':checked'));
-                            if ($("#id_institucion_perteneceunam").is(':checked')) {
-                                $('#d_subsunam').show('slow');
-                                $('#id_institucion_subsistemaunam').attr("required", "true");
-                            } else {
-                                console.log("esconder cambio")
-                                $('#d_subsunam').hide('slow');
-                                $('#id_institucion_subsistemaunam').val(null).trigger('change');
-                                $('#id_institucion_subsistemaunam').attr("required", null);
-                            }
-                        });
+                        $("#id_programalicenciatura_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-programalicenciatura")});
 
                     });
                     e.stopPropagation();
-
                 }
             });
             detalle_programalicenciatura_dialog.dialog("open");
