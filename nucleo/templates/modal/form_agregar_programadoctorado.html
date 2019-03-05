@@ -1,0 +1,116 @@
+{% if user.is_authenticated %}
+    {% block messages %}
+        {% include 'adminlte/lib/_messages.html' %}
+    {% endblock %}
+
+    <p class="col">
+
+        <form id="modal_form_programadoctorado_agregar" action="" method="post">
+            <div id="agregar_programadoctorado_errors"></div>
+            {{ modal_form_programadoctorado_agregar.errors }}
+            {% csrf_token %}
+
+    <p><strong>Nombre de el doctorado:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="bottom"
+           title="Nombre del programa de el doctorado.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ modal_form_programadoctorado_agregar.programadoctorado_nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Área de conocimiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Área de conocimiento a la que pertenece el doctorado. Las opciones corresponden con las áreas de WOS.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ modal_form_programadoctorado_agregar.programadoctorado_areaconocimiento }}
+        </div>
+    </div>
+    </p>
+
+    <script>
+
+        $("#modal_form_programadoctorado_agregar").submit(function (event) {
+            console.log("Handler for .submit() modal_form_programadoctorado_agregar.");
+            var datos = {
+                programadoctorado_nombre: $("#id_programadoctorado_nombre").val(),
+                programadoctorado_areaconocimiento: $("#id_programadoctorado_areaconocimiento").val(),
+                programadoctorado_regusuario: {{ user.pk }}
+            };
+
+
+            console.log("datos: ");
+            console.log(datos);
+
+            $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+            $.ajax({
+                type: "POST",
+                url: "/nucleo/rest/programas_doctorado/",
+                dataType: 'json',
+                data: datos,
+                headers: {"X-CSRFToken": $crf_token},
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //console.log(xhr.responseJSON.non_field_errors[0])
+                    console.log("error")
+                    console.log(xhr)
+                    console.log(xhr.responseJSON)
+                    console.log("{{ user.get_username }}")
+                    console.log("{{ user.pk }}")
+                    console.log("{{ user }}")
+
+                    errores_form = '<div class="alert alert-danger alert-dismissible fade1 show" role="alert">' +
+                        '  <p><strong>Se encontraron los siguientes errores:</strong><br /></p><ul>';
+
+
+                    if (xhr.responseJSON.hasOwnProperty('programadoctorado_nombre')) {
+                        if (xhr.responseJSON.programadoctorado_nombre == "Este campo no puede estar en blanco.") {
+                            errores_form += "<li>El nombre del programa de doctorado no puede estar en blanco</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('programadoctorado_areaconocimiento')) {
+                        if (xhr.responseJSON.programadoctorado_areaconocimiento == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El campo de área de conocimiento no puede estar en blanco</li>"
+                        }
+                    }
+                    errores_form += '</ul><button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '    <span aria-hidden="true">&times;</span>' +
+                        '  </button>' +
+                        '</div>'
+                    $("#agregar_programadoctorado_errors").html(errores_form);
+                },
+
+                success: function (data) {
+                    console.log("success")
+                    $('#id_programadoctorado_nombre').val(null).trigger('change');
+                    $('#id_programadoctorado_areaconocimiento').val(null).trigger('change');
+                    $('#modal_form_programadoctorado_agregar').trigger('reset');
+
+                    console.log("data")
+                    console.log(data)
+                    var nuevo_programadoctorado_option = new Option(data.programadoctorado_nombre, data.id, true, true);
+                    $('#id_programa').append(nuevo_programadoctorado_option).trigger('change');
+                    $('#agregar-programadoctorado-modal-body').empty();
+                    agregar_programadoctorado_dialog.dialog("close")
+
+                }
+            });
+            event.preventDefault();
+        });
+
+    </script>
+
+    </div>
+
+{% else %}
+    <script>
+        window.location.href = '/login/';
+    </script>
+{% endif %}

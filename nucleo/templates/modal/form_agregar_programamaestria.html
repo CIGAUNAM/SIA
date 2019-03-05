@@ -1,0 +1,116 @@
+{% if user.is_authenticated %}
+    {% block messages %}
+        {% include 'adminlte/lib/_messages.html' %}
+    {% endblock %}
+
+    <p class="col">
+
+        <form id="modal_form_programamaestria_agregar" action="" method="post">
+            <div id="agregar_programamaestria_errors"></div>
+            {{ modal_form_programamaestria_agregar.errors }}
+            {% csrf_token %}
+
+    <p><strong>Nombre de la maestría:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="bottom"
+           title="Nombre del programa de la maestría.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ modal_form_programamaestria_agregar.programamaestria_nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Área de conocimiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Área de conocimiento a la que pertenece la maestría. Las opciones corresponden con las áreas de WOS.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ modal_form_programamaestria_agregar.programamaestria_areaconocimiento }}
+        </div>
+    </div>
+    </p>
+
+    <script>
+
+        $("#modal_form_programamaestria_agregar").submit(function (event) {
+            console.log("Handler for .submit() modal_form_programalicenciatura_agregar.");
+            var datos = {
+                programamaestria_nombre: $("#id_programamaestria_nombre").val(),
+                programamaestria_areaconocimiento: $("#id_programamaestria_areaconocimiento").val(),
+                programamaestria_regusuario: {{ user.pk }}
+            };
+
+
+            console.log("datos: ");
+            console.log(datos);
+
+            $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+            $.ajax({
+                type: "POST",
+                url: "/nucleo/rest/programas_maestria/",
+                dataType: 'json',
+                data: datos,
+                headers: {"X-CSRFToken": $crf_token},
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //console.log(xhr.responseJSON.non_field_errors[0])
+                    console.log("error")
+                    console.log(xhr)
+                    console.log(xhr.responseJSON)
+                    console.log("{{ user.get_username }}")
+                    console.log("{{ user.pk }}")
+                    console.log("{{ user }}")
+
+                    errores_form = '<div class="alert alert-danger alert-dismissible fade1 show" role="alert">' +
+                        '  <p><strong>Se encontraron los siguientes errores:</strong><br /></p><ul>';
+
+
+                    if (xhr.responseJSON.hasOwnProperty('programamaestria_nombre')) {
+                        if (xhr.responseJSON.programamaestria_nombre == "Este campo no puede estar en blanco.") {
+                            errores_form += "<li>El nombre del programa de maestría no puede estar en blanco</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('programamaestria_areaconocimiento')) {
+                        if (xhr.responseJSON.programamaestria_areaconocimiento == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El campo de área de conocimiento no puede estar en blanco</li>"
+                        }
+                    }
+                    errores_form += '</ul><button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '    <span aria-hidden="true">&times;</span>' +
+                        '  </button>' +
+                        '</div>'
+                    $("#agregar_programamaestria_errors").html(errores_form);
+                },
+
+                success: function (data) {
+                    console.log("success")
+                    $('#id_programamaestria_nombre').val(null).trigger('change');
+                    $('#id_programamaestria_areaconocimiento').val(null).trigger('change');
+                    $('#modal_form_programamaestria_agregar').trigger('reset');
+
+                    console.log("data")
+                    console.log(data)
+                    var nuevo_programamaestria_option = new Option(data.programamaestria_nombre, data.id, true, true);
+                    $('#id_programa').append(nuevo_programamaestria_option).trigger('change');
+                    $('#agregar-programamaestria-modal-body').empty();
+                    agregar_programamaestria_dialog.dialog("close")
+
+                }
+            });
+            event.preventDefault();
+        });
+
+    </script>
+
+    </div>
+
+{% else %}
+    <script>
+        window.location.href = '/login/';
+    </script>
+{% endif %}
