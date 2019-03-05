@@ -367,4 +367,22 @@ $(function () {
         }
     });
 
+    $("#boton-detalle-proyectoinvestigacion").on("click", function (e) {
+        console.log($("#id_proyecto").val())
+        if ($("#id_proyecto").val() == null) {
+            e.stopPropagation();
+        } else {
+
+            var win = window.open('/investigacion/proyectos/' + $("#id_proyecto").val().toString() + '/', '_blank');
+            if (win) {
+                //Browser has allowed it to be opened
+                win.focus();
+            } else {
+                //Browser has blocked it
+                alert('Please allow popups for this website');
+            }
+
+        }
+    });
+
 })
