@@ -22,7 +22,7 @@ class ExperienciaLaboralJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = ExperienciaLaboral.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', experiencias,
-                                         fields=('cargo', 'nombramiento', 'fecha_inicio', 'dependencia'),
+                                         fields=('cargo2', 'nombramiento', 'fecha_inicio', 'institucion2'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json')
         except:

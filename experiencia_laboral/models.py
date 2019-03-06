@@ -1,17 +1,22 @@
 from django.db import models
 from django.urls import reverse
-from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion
+from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion, InstitucionSimple
 
 
 # Create your models here.
 
 
 class ExperienciaLaboral(models.Model):
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True, on_delete=models.DO_NOTHING)
+
     cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
+    cargo2 = models.CharField(max_length=254, blank=True, null=True)
+    tipo_cargo = models.CharField(max_length=30, blank=True, null=True,
+                                  choices=(('', '-------'), ('ACADEMICO', 'Académico'),
+                                           ('ADMINISTRATIVO', 'Administrativo'), ('DIRECTIVO', 'Directivo'),
+                                           ('OTRO', 'Otro')))
+    nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
@@ -23,10 +28,10 @@ class ExperienciaLaboral(models.Model):
         return reverse('experiencia_laboral_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['fecha_inicio', 'dependencia']
+        ordering = ['fecha_inicio', 'institucion2']
         verbose_name = "Experiencia Laboral"
         verbose_name_plural = "Experiencias Laborales"
-        unique_together = ['dependencia', 'cargo', 'fecha_fin', 'usuario']
+        unique_together = ['institucion2', 'cargo', 'usuario']
 
 
 class LineaInvestigacion(models.Model):
