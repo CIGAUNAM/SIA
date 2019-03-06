@@ -12,7 +12,7 @@ class ExperienciaLaboralContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
-                'titulos_tabla': ['Cargo', 'Nombramiento', 'Fecha de inicio', 'Dependencia']}
+                'titulos_tabla': ['Cargo', 'Nombramiento', 'Fecha de inicio', 'Institución']}
 
 
     tabla_mios =  '<script>\n' \
@@ -26,14 +26,14 @@ class ExperienciaLaboralContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.cargo",\n' \
+                                        '"data": "fields.cargo2",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.cargo + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.cargo2 + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.nombramiento"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion2"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

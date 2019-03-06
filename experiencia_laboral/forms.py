@@ -7,23 +7,27 @@ from django_select2.forms import ModelSelect2Widget
 #
 
 class ExperienciaLaboralForm(forms.ModelForm):
-    institucion = forms.ModelChoiceField(
+    cargo2 = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True,
+                             label='Cargo',
+                             help_text='Nombre del cargo')
+    institucion2 = forms.ModelChoiceField(
         required=True,
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], queryset=Institucion.objects.all(),
+            search_fields=['nombre_institucion__icontains'], queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
 
         )
     )
+
     dependencia = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], queryset=Dependencia.objects.all(),
+            search_fields=['nombre_dependencia__icontains'], queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'institucion': 'institucion'},
+            dependent_fields={'institucion': 'institucion2'},
         )
     )
     nombramiento = forms.ModelChoiceField(
@@ -35,7 +39,6 @@ class ExperienciaLaboralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    # es_nombramiento_definitivo = forms.BooleanField(label='Es nombramiento definitivo', required=False)
     cargo = forms.ModelChoiceField(
         queryset=Cargo.objects.all(),
         label="Cargo",

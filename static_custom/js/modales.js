@@ -138,6 +138,111 @@ $(function () {
         }
     });
 
+    $("#boton-agregar-institucion2").on("click", function (e) {
+        agregar_institucion2_dialog = $("#agregar-institucion2").dialog({
+            autoOpen: false,
+            height: 700,
+            width: 900,
+            modal: true,
+            class: 'ui-button-left',
+            buttons: {
+                agregar: {
+                    text: "Agregar institución",
+                    click: function () {
+                        $("#modal_form_institucion2_agregar").submit()
+                    },
+                    class: 'btn btn-success ui-button-left'
+                },
+                cancelar: {
+                    text: "Cancelar",
+                    click: function () {
+                        $(this).dialog("close")
+                    },
+                    class: 'btn btn-primary ui-button-left'
+                }
+            },
+
+            open: function (event, ui) {
+                $('#agregar-institucion2-modal-body').load('/nucleo/institucion2es/agregar/', function () {
+                    $("#id_institucion2_pais").djangoSelect2({dropdownParent: $("#agregar-institucion2")});
+                    $("#id_institucion2_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion2")});
+                    $("#id_institucion2_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-institucion2")});
+                    $('#d_subsunam').hide();
+
+                    $("#id_institucion2_perteneceunam").on('change', function () {
+                        console.log($("#id_institucion2_perteneceunam").is(':checked'));
+                        if ($("#id_institucion2_perteneceunam").is(':checked')) {
+                            $('#d_subsunam').show('slow');
+                            $('#id_institucion2_subsistemaunam').attr("required", "true");
+                        } else {
+                            console.log("esconder cambio")
+                            $('#d_subsunam').hide('slow');
+                            $('#id_institucion2_subsistemaunam').val(null).trigger('change');
+                            $('#id_institucion2_subsistemaunam').attr("required", null);
+                        }
+                    });
+                });
+            }
+        });
+        agregar_institucion2_dialog.dialog("open");
+    });
+
+    $("#boton-detalle-institucion2").on("click", function (e) {
+        if ($("#id_institucion2").val() == '') {
+            e.stopPropagation();
+        } else {
+            detalle_institucion2_dialog = $("#detalle-institucion2").dialog({
+                autoOpen: false,
+                height: 700,
+                width: 900,
+                modal: true,
+                buttons: {
+                    actualizar: {
+                        text: "Actualizar institución",
+                        click: function () {
+                            $("#modal_form_institucion2_detalle").submit()
+                        },
+                        class: 'btn btn-success ui-button-left'
+                    },
+                    cancelar: {
+                        text: "Cancelar",
+                        click: function () {
+                            $(this).dialog("close")
+                        },
+                        class: 'btn btn-primary ui-button-left'
+                    }
+                },
+
+                open: function (event, ui) {
+                    $('#detalle-institucion2-modal-body').load(('/nucleo/institucion2es/' + $("#id_institucion2").val().toString()) + "/", function () {
+                        console.log("detalle start")
+                        $("#id_institucion2_pais").djangoSelect2({dropdownParent: $("#agregar-institucion2")});
+                        $("#id_institucion2_clasificacion").djangoSelect2({dropdownParent: $("#agregar-institucion2")});
+                        $("#id_institucion2_subsistemaunam").djangoSelect2({dropdownParent: $("#agregar-institucion2")});
+
+                        $("#id_institucion2_perteneceunam").on('change', function () {
+                            console.log($("#id_institucion2_perteneceunam").is(':checked'));
+                            if ($("#id_institucion2_perteneceunam").is(':checked')) {
+                                $('#d_subsunam').show('slow');
+                                $('#id_institucion2_subsistemaunam').attr("required", "true");
+                            } else {
+                                console.log("esconder cambio")
+                                $('#d_subsunam').hide('slow');
+                                $('#id_institucion2_subsistemaunam').val(null).trigger('change');
+                                $('#id_institucion2_subsistemaunam').attr("required", null);
+                            }
+                        });
+
+                    });
+                    e.stopPropagation();
+
+                }
+            });
+            detalle_institucion2_dialog.dialog("open");
+        }
+    });
+
+
     /* ***** */
 
     $("#boton-agregar-programalicenciatura").on("click", function (e) {
