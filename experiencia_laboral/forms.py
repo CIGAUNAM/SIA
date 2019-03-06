@@ -91,3 +91,4 @@ class CapacidadPotencialidadForm(forms.ModelForm):
     class Meta:
         model = CapacidadPotencialidad
         exclude = ['usuario', ]
+
