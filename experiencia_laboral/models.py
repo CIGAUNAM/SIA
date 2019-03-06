@@ -37,7 +37,7 @@ class ExperienciaLaboral(models.Model):
 class LineaInvestigacion(models.Model):
     linea_investigacion = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
