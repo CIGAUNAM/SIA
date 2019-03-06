@@ -31,21 +31,21 @@ class Informe(View):
 
     indices = (1, 3)
 
-    context['articulos_cientificos_nacionales_publicados_isiscopus'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='PUBLICADO', revista__indices__isnull=False).filter(revista__indices__in=indices).distinct()
-    context['articulos_cientificos_nacionales_publicados_otrosindices'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='PUBLICADO', revista__indices__isnull=False).exclude(revista__indices__in=indices).distinct()
-    context['articulos_cientificos_nacionales_publicados_noindizado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='PUBLICADO', revista__indices__isnull=True).distinct()
-    context['articulos_cientificos_nacionales_enprensa'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='EN_PRENSA').distinct()
-    context['articulos_cientificos_nacionales_aceptado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='ACEPTADO').distinct()
-    context['articulos_cientificos_nacionales_enviado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='ENVIADO').distinct()
+    context['articulos_cientificos_nacionales_publicados_isiscopus'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='PUBLICADO', revista__revista_indices__isnull=False).filter(revista__revista_indices__in=indices).distinct()
+    context['articulos_cientificos_nacionales_publicados_otrosindices'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='PUBLICADO', revista__revista_indices__isnull=False).exclude(revista__revista_indices__in=indices).distinct()
+    context['articulos_cientificos_nacionales_publicados_noindizado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='PUBLICADO', revista__revista_indices__isnull=True).distinct()
+    context['articulos_cientificos_nacionales_enprensa'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='EN_PRENSA').distinct()
+    context['articulos_cientificos_nacionales_aceptado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='ACEPTADO').distinct()
+    context['articulos_cientificos_nacionales_enviado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='ENVIADO').distinct()
 
 
-    context['articulos_cientificos_internacionales_publicados_isiscopus'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__indices__isnull=False).filter(revista__indices__in=indices).exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_cientificos_internacionales_publicados_alumnos'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', alumnos__isnull=False).exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_cientificos_internacionales_publicados_otrosindices'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__indices__isnull=False).exclude(revista__indices__in=indices).exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_cientificos_internacionales_publicados_noindizado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__indices__isnull=True).exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_cientificos_internacionales_enprensa'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='EN_PRENSA').exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_cientificos_internacionales_aceptado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='ACEPTADO').exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_cientificos_internacionales_enviado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='ENVIADO').exclude(revista__pais__pais_nombre='México').distinct()
+    context['articulos_cientificos_internacionales_publicados_isiscopus'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__revista_indices__isnull=False).filter(revista__revista_indices__in=indices).exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_cientificos_internacionales_publicados_alumnos'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', alumnos__isnull=False).exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_cientificos_internacionales_publicados_otrosindices'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__revista_indices__isnull=False).exclude(revista__revista_indices__in=indices).exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_cientificos_internacionales_publicados_noindizado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='PUBLICADO', revista__revista_indices__isnull=True).exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_cientificos_internacionales_enprensa'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='EN_PRENSA').exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_cientificos_internacionales_aceptado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='ACEPTADO').exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_cientificos_internacionales_enviado'] = ArticuloCientifico.objects.filter(fecha__year=this_year, status='ENVIADO').exclude(revista__revista_pais__pais_nombre='México').distinct()
 
     context['articulos_cientificos_agradecimientos'] = ArticuloCientifico.objects.filter(fecha__year=this_year, agradecimientos__isnull=False).distinct()
 
@@ -73,15 +73,15 @@ class Informe(View):
     context['articulos_inextenso_memorias_nacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).filter(evento__pais__pais_nombre='México').distinct()
     context['articulos_inextenso_memorias_internacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).exclude(evento__pais__pais_nombre='México').distinct()
 
-    context['articulos_divulgacion_nacionales_publicados'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='PUBLICADO').distinct()
-    context['articulos_divulgacion_nacionales_enprensa'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='EN_PRENSA').distinct()
-    context['articulos_divulgacion_nacionales_aceptado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='ACEPTADO').distinct()
-    context['articulos_divulgacion_nacionales_enviado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__pais__pais_nombre='México', status='ENVIADO').distinct()
+    context['articulos_divulgacion_nacionales_publicados'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='PUBLICADO').distinct()
+    context['articulos_divulgacion_nacionales_enprensa'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='EN_PRENSA').distinct()
+    context['articulos_divulgacion_nacionales_aceptado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='ACEPTADO').distinct()
+    context['articulos_divulgacion_nacionales_enviado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, revista__revista_pais__pais_nombre='México', status='ENVIADO').distinct()
 
-    context['articulos_divulgacion_internacionales_publicados'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='PUBLICADO').exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_divulgacion_internacionales_enprensa'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='EN_PRENSA').exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_divulgacion_internacionales_aceptado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='ACEPTADO').exclude(revista__pais__pais_nombre='México').distinct()
-    context['articulos_divulgacion_internacionales_enviado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='ENVIADO').exclude(revista__pais__pais_nombre='México').distinct()
+    context['articulos_divulgacion_internacionales_publicados'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='PUBLICADO').exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_divulgacion_internacionales_enprensa'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='EN_PRENSA').exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_divulgacion_internacionales_aceptado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='ACEPTADO').exclude(revista__revista_pais__pais_nombre='México').distinct()
+    context['articulos_divulgacion_internacionales_enviado'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, status='ENVIADO').exclude(revista__revista_pais__pais_nombre='México').distinct()
 
     context['articulos_divulgacion_agradecimientos'] = ArticuloDivulgacion.objects.filter(fecha__year=this_year, agradecimientos__isnull=False).distinct()
 

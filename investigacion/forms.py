@@ -23,7 +23,19 @@ class ArticuloCientificoForm(forms.ModelForm):
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True, label='Fecha de publicación')
+        required=False, label='Fecha')
+    fecha_enviado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío')
+    fecha_aceptado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de aceptación')
+    fecha_enprensa = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío a prensa')
+    fecha_publicado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de publicación')
     revista = forms.ModelChoiceField(
         queryset=Revista.objects.all(),
         label="Revista",
