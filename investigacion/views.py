@@ -23,12 +23,22 @@ class ArticuloCientificoJSON(View):
             else:
                 articulos = ArticuloCientifico.objects.filter(Q(autores__id__exact=usuarioid) | Q(alumnos__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)).distinct()
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'revista', 'status', 'fecha'))
+                                         fields=('titulo', 'revista', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
             json = json.replace('PUBLICADO', 'Publicado')
             json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ENVIADO', 'Enviado')
-            json = json.replace('ENVIADO', 'Enviado')
+
+            json = json.replace('"fecha_enviado": null,', '')
+            json = json.replace('"fecha_aceptado": null,', '')
+            json = json.replace('"fecha_enprensa": null,', '')
+            json = json.replace('"fecha_publicado": null,', '')
+
+            json = json.replace('"fecha_enviado"', '"fecha"')
+            json = json.replace('"fecha_aceptado"', '"fecha"')
+            json = json.replace('"fecha_enprensa"', '"fecha"')
+            json = json.replace('"fecha_publicado"', '"fecha"')
 
             return HttpResponse(json, content_type='application/json')
         except:
