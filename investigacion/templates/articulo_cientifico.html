@@ -317,25 +317,20 @@
     </p>
 
     <script>
-        $("#id_autores").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
+        var d_fecha_enviado = $("#d_fecha_enviado");
+        var d_fecha_aceptado = $("#d_fecha_aceptado");
 
-        $("#d_fecha_enviado").hide();
-        $("#d_fecha_aceptado").hide();
+
+        d_fecha_enviado.hide();
+        d_fecha_aceptado.hide();
         $("#d_fecha_enprensa").hide();
         $("#d_fecha_publicado").hide();
 
         $("#id_status").on('change', function () {
             if ($("#id_status").val() == 'ENVIADO') {
-                $("#d_fecha_enviado").show('slow');
+                d_fecha_enviado.show('slow');
                 $("#id_fecha_enviado").attr("required", "true");
-
-                $("#d_fecha_aceptado").hide('slow');
+                d_fecha_aceptado.hide('slow');
                 $('#id_fecha_aceptado').attr("required", null);
                 $('#id_fecha_aceptado').val(null).trigger('change');
                 $("#d_fecha_enprensa").hide('slow');
@@ -344,12 +339,10 @@
                 $("#d_fecha_publicado").hide('slow');
                 $('#id_fecha_publicado').attr("required", null);
                 $('#id_fecha_publicado').val(null).trigger('change');
-
             } else if ($("#id_status").val() == 'ACEPTADO') {
-                $("#d_fecha_aceptado").show('slow');
+                d_fecha_aceptado.show('slow');
                 $("#id_fecha_aceptado").attr("required", "true");
-
-                $("#d_fecha_enviado").hide('slow');
+                d_fecha_enviado.hide('slow');
                 $('#id_fecha_enviado').attr("required", null);
                 $('#id_fecha_enviado').val(null).trigger('change');
                 $("#d_fecha_enprensa").hide('slow');
@@ -358,40 +351,35 @@
                 $("#d_fecha_publicado").hide('slow');
                 $('#id_fecha_publicado').attr("required", null);
                 $('#id_fecha_publicado').val(null).trigger('change');
-
             } else if ($("#id_status").val() == 'EN_PRENSA') {
                 $("#d_fecha_enprensa").show('slow');
                 $('#id_fecha_enprensa').attr("required", "true");
-
-                $("#d_fecha_enviado").hide('slow');
+                d_fecha_enviado.hide('slow');
                 $('#id_fecha_enviado').attr("required", null);
                 $('#id_fecha_enviado').val(null).trigger('change');
-                $("#d_fecha_aceptado").hide('slow');
+                d_fecha_aceptado.hide('slow');
                 $("#id_fecha_aceptado").attr("required", null);
                 $("#id_fecha_aceptado").val(null).trigger('change');
                 $("#d_fecha_publicado").hide('slow');
                 $('#id_fecha_publicado').attr("required", null);
                 $('#id_fecha_publicado').val(null).trigger('change');
-
             } else if ($("#id_status").val() == 'PUBLICADO') {
                 $("#d_fecha_publicado").show('slow');
                 $('#id_fecha_publicado').attr("required", "true");
-
-                $("#d_fecha_enviado").hide('slow');
+                d_fecha_enviado.hide('slow');
                 $('#id_fecha_enviado').attr("required", null);
                 $('#id_fecha_enviado').val(null).trigger('change');
-                $("#d_fecha_aceptado").hide('slow');
+                d_fecha_aceptado.hide('slow');
                 $("#id_fecha_aceptado").attr("required", null);
                 $("#id_fecha_aceptado").val(null).trigger('change');
                 $("#d_fecha_enprensa").hide('slow');
                 $('#id_fecha_enprensa').attr("required", null);
                 $('#id_fecha_enprensa').val(null).trigger('change');
-
             } else {
-                $("#d_fecha_enviado").hide('slow');
+                d_fecha_enviado.hide('slow');
                 $('#id_fecha_enviado').attr("required", null);
                 $('#id_fecha_enviado').val(null).trigger('change');
-                $("#d_fecha_aceptado").hide('slow');
+                d_fecha_aceptado.hide('slow');
                 $("#id_fecha_aceptado").attr("required", null);
                 $("#id_fecha_aceptado").val(null).trigger('change');
                 $("#d_fecha_enprensa").hide('slow');
@@ -401,9 +389,15 @@
                 $('#id_fecha_publicado').attr("required", null);
                 $('#id_fecha_publicado').val(null).trigger('change');
             }
+        });
 
-
-        })
+        $("#id_autores").on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
     </script>
 
 {% endblock %}
