@@ -779,14 +779,13 @@ class Revista(models.Model):
     revista_indices = models.ManyToManyField(Indice, related_name='articulo_cientifico_indices', blank=True)
     revista_issn_impreso = models.CharField(max_length=40, blank=True, verbose_name='ISSN Impreso')
     revista_issn_online = models.CharField(max_length=40, blank=True, verbose_name='ISSN Online')
-    revista_url = models.URLField(blank=True)
     revista_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
     revista_regfechacreado = models.DateField(auto_now_add=True, blank=True, null=True)
     revista_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
     revista_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
 
     def __str__(self):
-        return "{} : {}".format(self.revista_nombre, self.revista_pais)
+        return "{} ({})".format(self.revista_nombre, self.revista_pais)
 
     def natural_key(self):
         return self.revista_nombre

@@ -366,23 +366,82 @@ $(function () {
             detalle_programadoctorado_dialog.dialog("open");
         }
     });
+    
+    /* * * * */
 
-    $("#boton-detalle-proyectoinvestigacion").on("click", function (e) {
-        console.log($("#id_proyecto").val())
-        if ($("#id_proyecto").val() == null) {
+    $("#boton-agregar-revista").on("click", function (e) {
+        console.log("boton agregar revista")
+        agregar_revista_dialog = $("#agregar-revista").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 900,
+            modal: true,
+            class: 'ui-button-left',
+            buttons: {
+                agregar: {
+                    text: "Agregar programa de doctorado",
+                    click: function () {
+                        $("#modal_form_revista_agregar").submit()
+                    },
+                    class: 'btn btn-success ui-button-left'
+                },
+                cancelar: {
+                    text: "Cancelar",
+                    click: function () {
+                        $(this).dialog("close")
+                    },
+                    class: 'btn btn-primary ui-button-left'
+                }
+            },
+
+            open: function (event, ui) {
+                $('#agregar-revista-modal-body').load('/nucleo/revistas/agregar/', function () {
+                    $("#id_revista_indices").djangoSelect2({dropdownParent: $("#agregar-revista")});
+                    $("#id_revista_pais").djangoSelect2({dropdownParent: $("#agregar-revista")});
+                });
+            }
+        });
+        agregar_revista_dialog.dialog("open");
+    });
+
+    $("#boton-detalle-revista").on("click", function (e) {
+        if ($("#id_programa").val() == null) {
             e.stopPropagation();
         } else {
 
-            var win = window.open('/investigacion/proyectos/' + $("#id_proyecto").val().toString() + '/', '_blank');
-            if (win) {
-                //Browser has allowed it to be opened
-                win.focus();
-            } else {
-                //Browser has blocked it
-                alert('Please allow popups for this website');
-            }
+            detalle_revista_dialog = $("#detalle-revista").dialog({
+                autoOpen: false,
+                height: 500,
+                width: 900,
+                modal: true,
+                buttons: {
+                    actualizar: {
+                        text: "Actualizar programa de doctorado",
+                        click: function () {
+                            $("#modal_form_revista_detalle").submit()
+                        },
+                        class: 'btn btn-success ui-button-left'
+                    },
+                    cancelar: {
+                        text: "Cancelar",
+                        click: function () {
+                            $(this).dialog("close")
+                        },
+                        class: 'btn btn-primary ui-button-left'
+                    }
+                },
 
+                open: function (event, ui) {
+                    $('#detalle-revista-modal-body').load(('/nucleo/revistas/' + $("#id_programa").val().toString()) + "/", function () {
+                        console.log("detalle start")
+                        $("#id_revista_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-revista")});
+
+                    });
+                    e.stopPropagation();
+                }
+            });
+            detalle_revista_dialog.dialog("open");
         }
     });
-
+    
 })

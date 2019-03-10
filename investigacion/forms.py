@@ -40,7 +40,7 @@ class ArticuloCientificoForm(forms.ModelForm):
         queryset=Revista.objects.all(),
         label="Revista",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['revista_nombre__icontains'],
             queryset=Revista.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )

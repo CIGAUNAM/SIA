@@ -93,23 +93,27 @@
     </div>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a> <i
-                class="fa fa-edit"></i>
+           title="Nombre de la revista donde se publicó el artículo.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.revista }}
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la revista seleccionada.">
+                <span id="boton-detalle-revista">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la revista seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-revista">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una revista nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
@@ -317,81 +321,90 @@
     </p>
 
     <script>
+        var id_autores = $("#id_autores");
+        var id_status = $("#id_status");
+
         var d_fecha_enviado = $("#d_fecha_enviado");
         var d_fecha_aceptado = $("#d_fecha_aceptado");
+        var d_fecha_enprensa = $("#d_fecha_enprensa");
+        var d_fecha_publicado = $("#d_fecha_publicado");
+        var id_fecha_enviado = $("#id_fecha_enviado");
+        var id_fecha_aceptado = $('#id_fecha_aceptado');
+        var id_fecha_enprensa = $('#id_fecha_enprensa');
+        var id_fecha_publicado = $('#id_fecha_publicado');
 
 
         d_fecha_enviado.hide();
         d_fecha_aceptado.hide();
-        $("#d_fecha_enprensa").hide();
-        $("#d_fecha_publicado").hide();
+        d_fecha_enprensa.hide();
+        d_fecha_publicado.hide();
 
-        $("#id_status").on('change', function () {
-            if ($("#id_status").val() == 'ENVIADO') {
+        id_status.on('change', function () {
+            if (id_status.val() === 'ENVIADO') {
                 d_fecha_enviado.show('slow');
-                $("#id_fecha_enviado").attr("required", "true");
+                id_fecha_enviado.attr("required", "true");
                 d_fecha_aceptado.hide('slow');
-                $('#id_fecha_aceptado').attr("required", null);
-                $('#id_fecha_aceptado').val(null).trigger('change');
-                $("#d_fecha_enprensa").hide('slow');
-                $('#id_fecha_enprensa').attr("required", null);
-                $('#id_fecha_enprensa').val(null).trigger('change');
-                $("#d_fecha_publicado").hide('slow');
-                $('#id_fecha_publicado').attr("required", null);
-                $('#id_fecha_publicado').val(null).trigger('change');
-            } else if ($("#id_status").val() == 'ACEPTADO') {
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'ACEPTADO') {
                 d_fecha_aceptado.show('slow');
-                $("#id_fecha_aceptado").attr("required", "true");
+                id_fecha_aceptado.attr("required", "true");
                 d_fecha_enviado.hide('slow');
-                $('#id_fecha_enviado').attr("required", null);
-                $('#id_fecha_enviado').val(null).trigger('change');
-                $("#d_fecha_enprensa").hide('slow');
-                $('#id_fecha_enprensa').attr("required", null);
-                $('#id_fecha_enprensa').val(null).trigger('change');
-                $("#d_fecha_publicado").hide('slow');
-                $('#id_fecha_publicado').attr("required", null);
-                $('#id_fecha_publicado').val(null).trigger('change');
-            } else if ($("#id_status").val() == 'EN_PRENSA') {
-                $("#d_fecha_enprensa").show('slow');
-                $('#id_fecha_enprensa').attr("required", "true");
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'EN_PRENSA') {
+                d_fecha_enprensa.show('slow');
+                id_fecha_enprensa.attr("required", "true");
                 d_fecha_enviado.hide('slow');
-                $('#id_fecha_enviado').attr("required", null);
-                $('#id_fecha_enviado').val(null).trigger('change');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
                 d_fecha_aceptado.hide('slow');
-                $("#id_fecha_aceptado").attr("required", null);
-                $("#id_fecha_aceptado").val(null).trigger('change');
-                $("#d_fecha_publicado").hide('slow');
-                $('#id_fecha_publicado').attr("required", null);
-                $('#id_fecha_publicado').val(null).trigger('change');
-            } else if ($("#id_status").val() == 'PUBLICADO') {
-                $("#d_fecha_publicado").show('slow');
-                $('#id_fecha_publicado').attr("required", "true");
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'PUBLICADO') {
+                d_fecha_publicado.show('slow');
+                id_fecha_publicado.attr("required", "true");
                 d_fecha_enviado.hide('slow');
-                $('#id_fecha_enviado').attr("required", null);
-                $('#id_fecha_enviado').val(null).trigger('change');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
                 d_fecha_aceptado.hide('slow');
-                $("#id_fecha_aceptado").attr("required", null);
-                $("#id_fecha_aceptado").val(null).trigger('change');
-                $("#d_fecha_enprensa").hide('slow');
-                $('#id_fecha_enprensa').attr("required", null);
-                $('#id_fecha_enprensa').val(null).trigger('change');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
             } else {
                 d_fecha_enviado.hide('slow');
-                $('#id_fecha_enviado').attr("required", null);
-                $('#id_fecha_enviado').val(null).trigger('change');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
                 d_fecha_aceptado.hide('slow');
-                $("#id_fecha_aceptado").attr("required", null);
-                $("#id_fecha_aceptado").val(null).trigger('change');
-                $("#d_fecha_enprensa").hide('slow');
-                $('#id_fecha_enprensa').attr("required", null);
-                $('#id_fecha_enprensa').val(null).trigger('change');
-                $("#d_fecha_publicado").hide('slow');
-                $('#id_fecha_publicado').attr("required", null);
-                $('#id_fecha_publicado').val(null).trigger('change');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
             }
         });
 
-        $("#id_autores").on("select2:select", function (evt) {
+        id_autores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -716,7 +729,107 @@
     </p>
 
     <script>
-        $("#id_autores").on("select2:select", function (evt) {
+        var id_autores = $("#id_autores");
+        var id_status = $("#id_status");
+
+        var d_fecha_enviado = $("#d_fecha_enviado");
+        var d_fecha_aceptado = $("#d_fecha_aceptado");
+        var d_fecha_enprensa = $("#d_fecha_enprensa");
+        var d_fecha_publicado = $("#d_fecha_publicado");
+        var id_fecha_enviado = $("#id_fecha_enviado");
+        var id_fecha_aceptado = $('#id_fecha_aceptado');
+        var id_fecha_enprensa = $('#id_fecha_enprensa');
+        var id_fecha_publicado = $('#id_fecha_publicado');
+
+
+        d_fecha_enviado.hide();
+        d_fecha_aceptado.hide();
+        d_fecha_enprensa.hide();
+        d_fecha_publicado.hide();
+
+        if (id_status.val() === 'ENVIADO') {
+            d_fecha_enviado.show();
+            id_fecha_enviado.attr("required", "true");
+        }
+        if (id_status.val() === 'ACEPTADO') {
+            d_fecha_aceptado.show();
+            id_fecha_aceptado.attr("required", "true");
+        }
+        if (id_status.val() === 'EN_PRENSA') {
+            d_fecha_enprensa.show();
+            id_fecha_enprensa.attr("required", "true");
+        }
+        if (id_status.val() === 'PUBLICADO') {
+            d_fecha_publicado.show();
+            id_fecha_publicado.attr("required", "true");
+        }
+
+        id_status.on('change', function () {
+            if (id_status.val() === 'ENVIADO') {
+                d_fecha_enviado.show('slow');
+                id_fecha_enviado.attr("required", "true");
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'ACEPTADO') {
+                d_fecha_aceptado.show('slow');
+                id_fecha_aceptado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'EN_PRENSA') {
+                d_fecha_enprensa.show('slow');
+                id_fecha_enprensa.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'PUBLICADO') {
+                d_fecha_publicado.show('slow');
+                id_fecha_publicado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+            } else {
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            }
+        });
+
+        id_autores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
