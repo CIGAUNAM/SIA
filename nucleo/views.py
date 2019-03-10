@@ -408,6 +408,53 @@ class ProgramaDoctoradoDetalle(ObjectModalUpdateMixin, View):
 
 
 
+class RevistaAgregar(ObjectModalCreateMixin, View):
+    form_class = RevistaForm
+    model = Revista
+    template_name = 'modal/form_agregar_revista.html'
+
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form_revista_agregar': self.form_class})
+        except Exception as e:
+            print(e)
+            #return HttpResponse("")
+            return render(request, self.template_name, {'modal_form_revista_agregar': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form_revista_agregar': bound_form})
+
+
+class RevistaDetalle(ObjectModalUpdateMixin, View):
+    form_class = RevistaForm
+    model = Revista
+    template_name = 'modal/form_detalle_revista.html'
+
+    def get(self, request, pk):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                obj = get_object_or_404(self.model, pk=pk)
+                return render(request, self.template_name, {'modal_form_revista_detalle': self.form_class(instance=obj)})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro actualizado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'modal_form_revista_detalle': bound_form})
 
 
 
@@ -1090,11 +1137,7 @@ class RevistaLista(ObjectCreateMixinNucleo, View):
     template_name = 'revista.html'
 
 
-class RevistaDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = RevistaForm
-    model = Revista
-    aux = RevistaContext.contexto
-    template_name = 'revista.html'
+
 
 
 class RevistaEliminar(View):
@@ -1428,6 +1471,14 @@ class RESTProgramaDoctoradoDetalle(generics.RetrieveUpdateDestroyAPIView):
     queryset = ProgramaDoctorado.objects.all()
     serializer_class = ProgramaDoctoradoSerializer
 
+
+class RESTRevistaLista(generics.ListCreateAPIView):
+    queryset = Revista.objects.all()
+    serializer_class = RevistaSerializer
+
+class RESTRevistaDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Revista.objects.all()
+    serializer_class = RevistaSerializer
 
 
 

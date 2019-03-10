@@ -1,0 +1,180 @@
+{% if user.is_authenticated %}
+    {% block messages %}
+        {% include 'adminlte/lib/_messages.html' %}
+    {% endblock %}
+
+    <p class="col">
+
+        <form id="modal_form_revista_agregar" action="" method="post">
+            <div id="agregar_revista_errors"></div>
+            {{ modal_form_revista_agregar.errors }}
+            {% csrf_token %}
+
+    <p><strong>Nombre de la revista:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de la revista."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ modal_form_revista_agregar.revista_nombre }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Nombre abreviado en Web of Science (WOS):</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre abreviado en Web of Science (WOS). Solo aplica si existe en WOS">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ modal_form_revista_agregar.revista_nombreabreviadowos }}
+        </div>
+    </div>
+    </p>
+    <p><strong>País:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="País donde se edita la revista.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ modal_form_revista_agregar.revista_pais }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del país.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Índices que la registran:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
+            {{ modal_form_revista_agregar.revista_indices }}
+        </div>
+    </div>
+    </p>
+    <p><strong>ISSN en revista impresa:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="ISSN asignado a la revista impresa donde está publicado el articulo. En caso de estar publicado en revista impresa."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ modal_form_revista_agregar.revista_issn_impreso }}
+        </div>
+    </div>
+    </p>
+    <p><strong>ISSN en revista digital o en línea:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="ISSN asignado a la revista en línea donde está publicado el articulo. En caso de estar publicado en línea."><i
+                class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ modal_form_revista_agregar.revista_issn_online }}
+        </div>
+    </div>
+    </p>
+
+    <script>
+
+        $("#modal_form_revista_agregar").submit(function (event) {
+            console.log("Handler for .submit() modal_form_revista_agregar.revista_");
+            var datos = {
+                revista_nombre: $("#id_revista_nombre").val(),
+                revista_areaconocimiento: $("#id_revista_areaconocimiento").val(),
+                revista_regusuario: {{ user.pk }}
+            };
+
+
+            console.log("datos: ");
+            console.log(datos);
+
+            $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+            $.ajax({
+                type: "POST",
+                url: "/nucleo/rest/programas_doctorado/",
+                dataType: 'json',
+                data: datos,
+                headers: {"X-CSRFToken": $crf_token},
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //console.log(xhr.responseJSON.non_field_errors[0])
+                    console.log("error")
+                    console.log(xhr)
+                    console.log(xhr.responseJSON)
+                    console.log("{{ user.get_username }}")
+                    console.log("{{ user.pk }}")
+                    console.log("{{ user }}")
+
+                    errores_form = '<div class="alert alert-danger alert-dismissible fade1 show" role="alert">' +
+                        '  <p><strong>Se encontraron los siguientes errores:</strong><br /></p><ul>';
+
+
+                    if (xhr.responseJSON.hasOwnProperty('revista_nombre')) {
+                        if (xhr.responseJSON.revista_nombre == "Este campo no puede estar en blanco.") {
+                            errores_form += "<li>El nombre del programa de doctorado no puede estar en blanco</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('revista_areaconocimiento')) {
+                        if (xhr.responseJSON.revista_areaconocimiento == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El campo de área de conocimiento no puede estar en blanco</li>"
+                        }
+                    }
+                    errores_form += '</ul><button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '    <span aria-hidden="true">&times;</span>' +
+                        '  </button>' +
+                        '</div>'
+                    $("#agregar_revista_errors").html(errores_form);
+                },
+
+                success: function (data) {
+                    console.log("success")
+                    $('#id_revista_nombre').val(null).trigger('change');
+                    $('#id_revista_areaconocimiento').val(null).trigger('change');
+                    $('#modal_form_revista_agregar').trigger('reset');
+
+                    console.log("data")
+                    console.log(data)
+                    var nuevo_revista_option = new Option(data.revista_nombre, data.id, true, true);
+                    $('#id_programa').append(nuevo_revista_option).trigger('change');
+                    $('#agregar-revista-modal-body').empty();
+                    agregar_revista_dialog.dialog("close")
+
+                }
+            });
+            event.preventDefault();
+        });
+
+    </script>
+
+    </div>
+
+{% else %}
+    <script>
+        window.location.href = '/login/';
+    </script>
+{% endif %}

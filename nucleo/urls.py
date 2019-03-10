@@ -25,6 +25,29 @@ urlpatterns = [
     url(r'^instituciones/agregar/$', InstitucionAgregar.as_view(), name='institucion_agregar'),
     url(r'^instituciones/(?P<pk>[\w\-]+)/$', InstitucionDetalle.as_view(), name='institucion_detalle'),
 
+    url(r'^programas-licenciatura/json/', ProgramaLicenciaturaJSON.as_view(), name='programa_licenciatura_lista__json'),
+    # url(r'^programas-licenciatura/(?P<pk>[\w\-]+)/eliminar$', ProgramaLicenciaturaEliminar.as_view(), name='programa_licenciatura_eliminar'),
+    url(r'^programas-licenciatura/agregar/$', ProgramaLicenciaturaAgregar.as_view(), name='programa_licenciatura_agregar'),
+    url(r'^programas-licenciatura/(?P<pk>[\w\-]+)/$', ProgramaLicenciaturaDetalle.as_view(), name='programa_licenciatura_detalle'),
+
+    url(r'^programas-maestria/json/', ProgramaMaestriaJSON.as_view(), name='programa_maestria_lista__json'),
+    url(r'^programas-maestria/agregar/$', ProgramaMaestriaAgregar.as_view(), name='programa_maestria_agregar'),
+    # url(r'^programas-maestria/(?P<pk>[\w\-]+)/eliminar$', ProgramaMaestriaEliminar.as_view(), name='programa_maestria_eliminar'),
+    url(r'^programas-maestria/(?P<pk>[\w\-]+)/$', ProgramaMaestriaDetalle.as_view(), name='programa_maestria_detalle'),
+
+    url(r'^programas-doctorado/json/', ProgramaDoctoradoJSON.as_view(), name='programa_doctorado_lista__json'),
+    url(r'^programas-doctorado/agregar/$', ProgramaDoctoradoAgregar.as_view(), name='programa_doctorado_agregar'),
+    # url(r'^programas-doctorado/(?P<pk>[\w\-]+)/eliminar$', ProgramaDoctoradoEliminar.as_view(), name='programa_doctorado_eliminar'),
+    url(r'^programas-doctorado/(?P<pk>[\w\-]+)/$', ProgramaDoctoradoDetalle.as_view(), name='programa_doctorado_detalle'),
+
+    url(r'^revistas/json/', RevistaJSON.as_view(), name='revista_lista__json'),
+    url(r'^revistas/agregar/$', RevistaAgregar.as_view(), name='revista_lista'),
+    # url(r'^revistas/(?P<pk>[\w\-]+)/eliminar$', RevistaEliminar.as_view(), name='revista_eliminar'),
+    url(r'^revistas/(?P<pk>[\w\-]+)/$', RevistaDetalle.as_view(), name='revista_detalle'),
+
+
+
+
     url(r'^dependencias/json/', DependenciaJSON.as_view(), name='dependencia_lista__json'),
     url(r'^dependencias/$', DependenciaLista.as_view(), name='dependencia_lista'),
     # url(r'^dependencias/(?P<pk>[\w\-]+)/eliminar$', DependenciaEliminar.as_view(), name='dependencia_eliminar'),
@@ -71,22 +94,7 @@ urlpatterns = [
     # url(r'^reconocimientos/(?P<pk>[\w\-]+)/eliminar$', ReconocimientoEliminar.as_view(), name='reconocimiento_eliminar'),
     url(r'^reconocimientos/(?P<pk>[\w\-]+)/$', ReconocimientoDetalle.as_view(), name='reconocimiento_detalle'),
 
-    url(r'^programas-licenciatura/json/', ProgramaLicenciaturaJSON.as_view(), name='programa_licenciatura_lista__json'),
-    # url(r'^programas-licenciatura/(?P<pk>[\w\-]+)/eliminar$', ProgramaLicenciaturaEliminar.as_view(), name='programa_licenciatura_eliminar'),
-    url(r'^programas-licenciatura/agregar/$', ProgramaLicenciaturaAgregar.as_view(), name='programa_licenciatura_agregar'),
-    url(r'^programas-licenciatura/(?P<pk>[\w\-]+)/$', ProgramaLicenciaturaDetalle.as_view(), name='programa_licenciatura_detalle'),
 
-
-
-    url(r'^programas-maestria/json/', ProgramaMaestriaJSON.as_view(), name='programa_maestria_lista__json'),
-    url(r'^programas-maestria/agregar/$', ProgramaMaestriaAgregar.as_view(), name='programa_maestria_agregar'),
-    # url(r'^programas-maestria/(?P<pk>[\w\-]+)/eliminar$', ProgramaMaestriaEliminar.as_view(), name='programa_maestria_eliminar'),
-    url(r'^programas-maestria/(?P<pk>[\w\-]+)/$', ProgramaMaestriaDetalle.as_view(), name='programa_maestria_detalle'),
-
-    url(r'^programas-doctorado/json/', ProgramaDoctoradoJSON.as_view(), name='programa_doctorado_lista__json'),
-    url(r'^programas-doctorado/agregar/$', ProgramaDoctoradoAgregar.as_view(), name='programa_doctorado_agregar'),
-    # url(r'^programas-doctorado/(?P<pk>[\w\-]+)/eliminar$', ProgramaDoctoradoEliminar.as_view(), name='programa_doctorado_eliminar'),
-    url(r'^programas-doctorado/(?P<pk>[\w\-]+)/$', ProgramaDoctoradoDetalle.as_view(), name='programa_doctorado_detalle'),
 
     url(r'^tipos-evento/json/', TipoEventoJSON.as_view(), name='tipo_evento_lista__json'),
     url(r'^tipos-evento/$', TipoEventoLista.as_view(), name='tipo_evento_lista'),
@@ -113,10 +121,6 @@ urlpatterns = [
     # url(r'^colecciones/(?P<pk>[\w\-]+)/eliminar$', ColeccionEliminar.as_view(), name='coleccion_eliminar'),
     url(r'^colecciones/(?P<pk>[\w\-]+)/$', ColeccionDetalle.as_view(), name='coleccion_detalle'),
 
-    url(r'^revistas/json/', RevistaJSON.as_view(), name='revista_lista__json'),
-    url(r'^revistas/$', RevistaLista.as_view(), name='revista_lista'),
-    # url(r'^revistas/(?P<pk>[\w\-]+)/eliminar$', RevistaEliminar.as_view(), name='revista_eliminar'),
-    url(r'^revistas/(?P<pk>[\w\-]+)/$', RevistaDetalle.as_view(), name='revista_detalle'),
 
     url(r'^asignaturas/json/', AsignaturaJSON.as_view(), name='asignatura_lista__json'),
     url(r'^asignaturas/$', AsignaturaLista.as_view(), name='asignatura_lista'),
@@ -183,6 +187,9 @@ urlpatterns = [
     url(r'^rest/programas_maestria/(?P<pk>[0-9]+)/$', RESTProgramaMaestriaDetalle.as_view()),
     url(r'^rest/programas_doctorado/$', RESTProgramaDoctoradoLista.as_view()),
     url(r'^rest/programas_doctorado/(?P<pk>[0-9]+)/$', RESTProgramaDoctoradoDetalle.as_view()),
+
+    url(r'^rest/revistas/$', RESTRevistaLista.as_view()),
+    url(r'^rest/revistas/(?P<pk>[0-9]+)/$', RESTRevistaDetalle.as_view()),
 
     # url(r'^rest/cargos/$', views.CargoList.as_view()),
     # url(r'^rest/nombre/(?P<pk>[0-9]+)/$', views.CargoDetail.as_view()),

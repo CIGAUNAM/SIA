@@ -594,29 +594,28 @@ class Libro1Form(forms.ModelForm):
 
 
 class RevistaForm(forms.ModelForm):
-    pais = forms.ModelChoiceField(
+    revista_pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
-        label="Editorial",
+        label="País",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['pais_nombre__icontains'],
             queryset=Pais.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    issn_impreso = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+    revista_issn_impreso = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=False,
                                    label='ISSN impreso')
-    issn_online = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+    revista_issn_online = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=False,
                                   label='ISSN online')
 
     class Meta:
         model = Revista
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
-            'nombre_abreviado_wos': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-            'url': TextInput(attrs={'class': 'form-control pull-right'}),
-            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'revista_nombre': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'revista_nombreabreviadowos': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'revista_descripcion': Textarea(attrs={'style': 'width: 100%', 'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+            'revista_indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
