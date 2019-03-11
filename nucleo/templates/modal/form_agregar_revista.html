@@ -132,9 +132,13 @@
             console.log("datos", datos)
 
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-            $.post({
+            $.ajax({
+                method: "POST",
                 url: "/nucleo/rest/revistas/",
-                data: datos,
+                data: JSON.stringify(datos),
+                processData: true,
+                dataType: 'json',
+                contentType: 'application/json',
                 headers: {"X-CSRFToken": $crf_token},
 
                 error: function (xhr, ajaxOptions, thrownError) {
