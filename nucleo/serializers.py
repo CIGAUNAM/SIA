@@ -50,10 +50,14 @@ class ProgramaDoctoradoSerializer(serializers.ModelSerializer):
         model = ProgramaDoctorado
         fields = '__all__'
 
+
+
 class RevistaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Revista
         fields = '__all__'
+
+
 
 
 

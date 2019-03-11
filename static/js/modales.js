@@ -373,13 +373,13 @@ $(function () {
         console.log("boton agregar revista")
         agregar_revista_dialog = $("#agregar-revista").dialog({
             autoOpen: false,
-            height: 500,
+            height: 700,
             width: 900,
             modal: true,
             class: 'ui-button-left',
             buttons: {
                 agregar: {
-                    text: "Agregar programa de doctorado",
+                    text: "Agregar revista",
                     click: function () {
                         $("#modal_form_revista_agregar").submit()
                     },
@@ -411,12 +411,12 @@ $(function () {
 
             detalle_revista_dialog = $("#detalle-revista").dialog({
                 autoOpen: false,
-                height: 500,
+                height: 700,
                 width: 900,
                 modal: true,
                 buttons: {
                     actualizar: {
-                        text: "Actualizar programa de doctorado",
+                        text: "Actualizar revista",
                         click: function () {
                             $("#modal_form_revista_detalle").submit()
                         },

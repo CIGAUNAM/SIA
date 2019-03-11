@@ -610,7 +610,8 @@ class RevistaForm(forms.ModelForm):
 
     class Meta:
         model = Revista
-        exclude = []
+        exclude = ['revista_regverificado', 'revista_regfechacreado', 'revista_regfechaactualizado', 'revista_regusuario']
+
         widgets = {
             'revista_nombre': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'revista_nombreabreviadowos': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),

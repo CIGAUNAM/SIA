@@ -44,7 +44,6 @@ class ObjectModalCreateMixin:
         bound_form = self.form_class(request.POST)
         if bound_form.is_valid():
             new_obj = bound_form.save(commit=False)
-            new_obj.usuario_creador = request.user
             new_obj = bound_form.save()
             messages.success(request, "Registro creado con éxito")
 
