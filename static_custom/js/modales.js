@@ -373,13 +373,13 @@ $(function () {
         console.log("boton agregar revista")
         agregar_revista_dialog = $("#agregar-revista").dialog({
             autoOpen: false,
-            height: 500,
+            height: 700,
             width: 900,
             modal: true,
             class: 'ui-button-left',
             buttons: {
                 agregar: {
-                    text: "Agregar programa de doctorado",
+                    text: "Agregar revista",
                     click: function () {
                         $("#modal_form_revista_agregar").submit()
                     },
@@ -396,7 +396,8 @@ $(function () {
 
             open: function (event, ui) {
                 $('#agregar-revista-modal-body').load('/nucleo/revistas/agregar/', function () {
-                    $("#id_revista_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-revista")});
+                    $("#id_revista_indices").djangoSelect2({dropdownParent: $("#agregar-revista")});
+                    $("#id_revista_pais").djangoSelect2({dropdownParent: $("#agregar-revista")});
                 });
             }
         });
@@ -410,12 +411,12 @@ $(function () {
 
             detalle_revista_dialog = $("#detalle-revista").dialog({
                 autoOpen: false,
-                height: 500,
+                height: 700,
                 width: 900,
                 modal: true,
                 buttons: {
                     actualizar: {
-                        text: "Actualizar programa de doctorado",
+                        text: "Actualizar revista",
                         click: function () {
                             $("#modal_form_revista_detalle").submit()
                         },
