@@ -188,10 +188,26 @@
                     console.log("data")
                     console.log(data);
 
-                    var nuevo_revista_option = new Option(data.revista_nombre, data.id, true, true);
-                    $('#id_revista').append(nuevo_revista_option).trigger('change');
-                    $('#agregar-revista-modal-body').empty();
-                    agregar_revista_dialog.dialog("close")
+                    var pais_url = "/nucleo/rest/paises/" + data.revista_pais.toString() + "/";
+                    console.log(pais_url);
+
+                    $.ajax({
+                        url: pais_url,
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log("error")
+                            console.log(xhr)
+                        },
+                        success: function (dataf) {
+                            console.log("success ajax");
+                            console.log(dataf.pais_nombre);
+                            pais = dataf.pais_nombre;
+                            console.log(pais);
+                            var nuevo_revista_option = new Option(data.revista_nombre + " (" + pais + ")", data.id, true, true);
+                            $('#id_revista').append(nuevo_revista_option).trigger('change');
+                            $('#agregar-revista-modal-body').empty();
+                            agregar_revista_dialog.dialog("close")
+                        }
+                    });
                 }
             });
             event.preventDefault();
