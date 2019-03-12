@@ -3,40 +3,41 @@
         {% include 'adminlte/lib/_messages.html' %}
     {% endblock %}
 
-    <p class="col">
+    <div class="col">
 
         <form id="modal_form_programamaestria_detalle" action="" method="post">
             <div id="detalle_programamaestria_errors"></div>
             {{ modal_form_programamaestria_detalle.errors }}
             {% csrf_token %}
 
-    <p><strong>Nombre de la maestría:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="bottom"
-           title="Nombre del programa de la maestría.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+            <p><strong>Nombre de la maestría:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="bottom"
+                   title="Nombre del programa de la maestría.">
+                    <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    {{ modal_form_programamaestria_detalle.programamaestria_nombre }}
+                </div>
             </div>
-            {{ modal_form_programamaestria_detalle.programamaestria_nombre }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Área de conocimiento:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Área de conocimiento a la que pertenece la maestría. Las opciones corresponden con las áreas de WOS.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ modal_form_programamaestria_detalle.programamaestria_areaconocimiento }}
-        </div>
-    </div>
-    </p>
+            </p>
+            <p><strong>Área de conocimiento:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Área de conocimiento a la que pertenece la maestría. Las opciones corresponden con las áreas de WOS.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_programamaestria_detalle.programamaestria_areaconocimiento }}
+                </div>
+            </div>
+            </p>
 
-    </form>
+        </form>
+    </div>
 
     <script>
 
@@ -106,8 +107,6 @@
             event.preventDefault();
         });
     </script>
-
-    </div>
 
 {% else %}
     <script>

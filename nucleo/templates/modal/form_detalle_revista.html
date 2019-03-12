@@ -102,52 +102,29 @@
 
         </form>
     </div>
-
+    
     <script>
 
-        $("#modal_form_revista_agregar").submit(function (event) {
-            console.log("Handler for .submit() modal_form_revista_agregar.revista_");
-            revista_indices = $("#id_revista_indices").val();
-            revista_issn_impreso = $("#id_revista_issn_impreso").val();
-            revista_issn_online = $("#id_revista_issn_online").val();
-
+        $("#modal_form_revista_detalle").submit(function (event) {
+            console.log("Handler for .submit() modal_form_revista_detalle.");
             var datos = {
-                "revista_nombre": $("#id_revista_nombre").val(),
-                "revista_nombreabreviadowos": $("#id_revista_nombreabreviadowos").val(),
-                "revista_pais": $("#id_revista_pais").val(),
-                "revista_regusuario": {{ user.pk }}
+                revista_nombre: $("#id_revista_nombre").val(),
+                revista_areaconocimiento: $("#id_revista_areaconocimiento").val(),
+                //revista_regusuario: {{ user.pk }}
             };
 
-            if (revista_indices) {
-                datos['revista_indices'] = revista_indices;
-                console.log("revista_indices", datos['revista_indices']);
-            }
-
-            if (revista_issn_impreso) {
-                datos.revista_issn_impreso = revista_issn_impreso;
-            }
-            if (revista_issn_online) {
-                datos.revista_issn_online = revista_issn_online;
-            }
-
-            //var datosurl = new URLSearchParams(datos).toString();
-
-            console.log("datos", datos)
-
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-            $.ajax({
-                method: "POST",
-                url: "/nucleo/rest/revistas/",
-                data: JSON.stringify(datos),
-                processData: true,
-                dataType: 'json',
-                contentType: 'application/json',
-                headers: {"X-CSRFToken": $crf_token},
+            var patchurl = "/nucleo/rest/programas_maestria/" + $("#id_carrera").val().toString() + "/";
 
+            console.log("patchurl:", patchurl);
+
+            $.ajax({
+                type: "PATCH",
+                url: patchurl,
+                dataType: 'json',
+                data: datos,
+                headers: {"X-CSRFToken": $crf_token},
                 error: function (xhr, ajaxOptions, thrownError) {
-                    //console.log(xhr.responseJSON.non_field_errors[0])
-                    console.log("error")
-                    console.log(xhr)
                     console.log(xhr.responseJSON)
                     console.log("{{ user.get_username }}")
                     console.log("{{ user.pk }}")
@@ -156,14 +133,15 @@
                     errores_form = '<div class="alert alert-danger alert-dismissible fade1 show" role="alert">' +
                         '  <p><strong>Se encontraron los siguientes errores:</strong><br /></p><ul>';
 
+
                     if (xhr.responseJSON.hasOwnProperty('revista_nombre')) {
                         if (xhr.responseJSON.revista_nombre == "Este campo no puede estar en blanco.") {
-                            errores_form += "<li>El nombre de la revista no puede estar en blanco</li>"
+                            errores_form += "<li>El nombre del programa de maestría no puede estar en blanco</li>"
                         }
                     }
-                    if (xhr.responseJSON.hasOwnProperty('revista_pais')) {
-                        if (xhr.responseJSON.revista_pais == "Este campo no puede ser nulo.") {
-                            errores_form += "<li>El país de la revista no puede estar en blanco</li>"
+                    if (xhr.responseJSON.hasOwnProperty('revista_areaconocimiento')) {
+                        if (xhr.responseJSON.revista_areaconocimiento == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El campo de área de conocimiento no puede estar en blanco</li>"
                         }
                     }
 
@@ -171,32 +149,27 @@
                         '    <span aria-hidden="true">&times;</span>' +
                         '  </button>' +
                         '</div>'
-                    $("#agregar_revista_errors").html(errores_form);
+                    $("#detalle_revista_errors").html(errores_form);
                 },
 
                 success: function (data) {
                     console.log("success")
                     $('#id_revista_nombre').val(null).trigger('change');
-                    $('#id_revista_nombreabreviadowos').val(null).trigger('change');
-                    $('#id_revista_pais').val(null).trigger('change');
-                    $('#id_revista_indices').val(null).trigger('change');
-                    $('#id_revista_issn_impreso').val(null).trigger('change');
-                    $('#id_revista_issn_online').val(null).trigger('change');
-
+                    $('#id_revista_areaconocimiento').val(null).trigger('change');
                     $('#modal_form_revista_agregar').trigger('reset');
 
-                    console.log("data")
-                    console.log(data);
 
+                    console.log("data")
+                    console.log(data)
                     var nuevo_revista_option = new Option(data.revista_nombre, data.id, true, true);
-                    $('#id_revista').append(nuevo_revista_option).trigger('change');
-                    $('#agregar-revista-modal-body').empty();
-                    agregar_revista_dialog.dialog("close")
+                    $('#id_programa').append(nuevo_revista_option).trigger('change');
+                    $('#detalle-revista-modal-body').empty();
+                    detalle_revista_dialog.dialog("close")
+
                 }
             });
             event.preventDefault();
         });
-
     </script>
 
 {% else %}
