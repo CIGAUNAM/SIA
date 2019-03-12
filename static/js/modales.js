@@ -366,7 +366,7 @@ $(function () {
             detalle_programadoctorado_dialog.dialog("open");
         }
     });
-    
+
     /* * * * */
 
     $("#boton-agregar-revista").on("click", function (e) {
@@ -405,7 +405,7 @@ $(function () {
     });
 
     $("#boton-detalle-revista").on("click", function (e) {
-        if ($("#id_programa").val() == null) {
+        if ($("#id_revista").val() == null) {
             e.stopPropagation();
         } else {
 
@@ -432,10 +432,10 @@ $(function () {
                 },
 
                 open: function (event, ui) {
-                    $('#detalle-revista-modal-body').load(('/nucleo/revistas/' + $("#id_programa").val().toString()) + "/", function () {
+                    $('#detalle-revista-modal-body').load(('/nucleo/revistas/' + $("#id_revista").val().toString()) + "/", function () {
                         console.log("detalle start")
-                        $("#id_revista_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-revista")});
-
+                        $("#id_revista_indices").djangoSelect2({dropdownParent: $("#agregar-revista")});
+                        $("#id_revista_pais").djangoSelect2({dropdownParent: $("#agregar-revista")});
                     });
                     e.stopPropagation();
                 }
@@ -443,5 +443,5 @@ $(function () {
             detalle_revista_dialog.dialog("open");
         }
     });
-    
+
 })
