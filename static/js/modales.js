@@ -2,6 +2,15 @@ agregar_dependencia_dialog = null
 $(function () {
     $(".ui-dialog-buttonset").removeClass()
 
+    $("#boton-detalle-proyectoinvestigacion").on("click", function (e) {
+        if ($("#id_proyecto").val() == null) {
+            e.stopPropagation();
+        } else {
+            var win = window.open('/investigacion/proyectos/' + $("#id_proyecto").val().toString() + '/', '_blank');
+            win.focus();
+        }
+    });
+
     /*
         agregar_dependencia_dialog = $("#agregar-dependencia").dialog({
             autoOpen: false,

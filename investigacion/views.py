@@ -207,18 +207,26 @@ class LibroInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = Libro.objects.filter(tipo='INVESTIGACION').exclude(Q(autores__id__exact=usuarioid) & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)
-                                                                           & Q(prologo__id__exact=usuarioid))
+                items = Libro.objects.filter(tipo='INVESTIGACION').exclude(Q(autores__id__exact=usuarioid) & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid))
             else:
-                items = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores__id__exact=usuarioid) | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
-                                                                           | Q(prologo__id__exact=usuarioid))
+                items = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores__id__exact=usuarioid) | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'editorial_text', 'ciudad_text', 'status', 'fecha'))
+                                         fields=('nombre', 'editorial_text', 'ciudad_text', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
             json = json.replace('PUBLICADO', 'Publicado')
-            json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ENVIADO', 'Enviado')
+
+            json = json.replace('"fecha_enviado": null,', '')
+            json = json.replace('"fecha_aceptado": null,', '')
+            json = json.replace('"fecha_enprensa": null,', '')
+            json = json.replace('"fecha_publicado": null,', '')
+
+            json = json.replace('"fecha_enviado"', '"fecha"')
+            json = json.replace('"fecha_aceptado"', '"fecha"')
+            json = json.replace('"fecha_enprensa"', '"fecha"')
+            json = json.replace('"fecha_publicado"', '"fecha"')
 
             return HttpResponse(json, content_type='application/json')
         except:

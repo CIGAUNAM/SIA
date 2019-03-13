@@ -357,8 +357,11 @@ class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
+    fecha = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_enviado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_aceptado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_enprensa = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_publicado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
@@ -371,6 +374,5 @@ class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'coordinadores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
