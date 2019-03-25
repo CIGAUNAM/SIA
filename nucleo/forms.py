@@ -564,7 +564,11 @@ class Libro1Form(forms.ModelForm):
         )
     )
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO'))
-    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_enviado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_aceptado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_enprensa = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_publicado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Número de edición')
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True, label='Número de páginas')
     coleccion = forms.ModelChoiceField(
