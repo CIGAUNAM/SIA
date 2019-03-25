@@ -2,6 +2,15 @@ agregar_dependencia_dialog = null
 $(function () {
     $(".ui-dialog-buttonset").removeClass()
 
+    $("#boton-detalle-proyectoinvestigacion").on("click", function (e) {
+        if ($("#id_proyecto").val() == null) {
+            e.stopPropagation();
+        } else {
+            var win = window.open('/investigacion/proyectos/' + $("#id_proyecto").val().toString() + '/', '_blank');
+            win.focus();
+        }
+    });
+
     /*
         agregar_dependencia_dialog = $("#agregar-dependencia").dialog({
             autoOpen: false,
@@ -366,7 +375,7 @@ $(function () {
             detalle_programadoctorado_dialog.dialog("open");
         }
     });
-    
+
     /* * * * */
 
     $("#boton-agregar-revista").on("click", function (e) {
@@ -405,7 +414,7 @@ $(function () {
     });
 
     $("#boton-detalle-revista").on("click", function (e) {
-        if ($("#id_programa").val() == null) {
+        if ($("#id_revista").val() == null) {
             e.stopPropagation();
         } else {
 
@@ -432,10 +441,10 @@ $(function () {
                 },
 
                 open: function (event, ui) {
-                    $('#detalle-revista-modal-body').load(('/nucleo/revistas/' + $("#id_programa").val().toString()) + "/", function () {
+                    $('#detalle-revista-modal-body').load(('/nucleo/revistas/' + $("#id_revista").val().toString()) + "/", function () {
                         console.log("detalle start")
-                        $("#id_revista_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-revista")});
-
+                        $("#id_revista_indices").djangoSelect2({dropdownParent: $("#agregar-revista")});
+                        $("#id_revista_pais").djangoSelect2({dropdownParent: $("#agregar-revista")});
                     });
                     e.stopPropagation();
                 }
@@ -443,5 +452,5 @@ $(function () {
             detalle_revista_dialog.dialog("open");
         }
     });
-    
+
 })

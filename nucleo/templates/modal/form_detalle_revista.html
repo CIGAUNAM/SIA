@@ -5,9 +5,9 @@
 
     <div class="col">
 
-        <form id="modal_form_revista_agregar" action="" method="post">
-            <div id="agregar_revista_errors"></div>
-            {{ modal_form_revista_agregar.errors }}
+        <form id="modal_form_revista_detalle" action="" method="post">
+            <div id="detalle_revista_errors"></div>
+            {{ modal_form_revista_detalle.errors }}
             {% csrf_token %}
 
             <p><strong>Nombre de la revista:</strong>
@@ -19,7 +19,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-pencil-square-o"></i>
                     </div>
-                    {{ modal_form_revista_agregar.revista_nombre }}
+                    {{ modal_form_revista_detalle.revista_nombre }}
                 </div>
             </div>
             </p>
@@ -33,7 +33,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-pencil-square-o"></i>
                     </div>
-                    {{ modal_form_revista_agregar.revista_nombreabreviadowos }}
+                    {{ modal_form_revista_detalle.revista_nombreabreviadowos }}
                 </div>
             </div>
             </p>
@@ -45,7 +45,7 @@
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                    {{ modal_form_revista_agregar.revista_pais }}
+                    {{ modal_form_revista_detalle.revista_pais }}
                     <div class="input-group-addon">
                         <a href="#" data-toggle="tooltip" data-placement="left"
                            title="Mostrar los detalles adicionales del país.">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="input-group-addon">
                         <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
-                           title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                           title="detalle un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                             <i class="fa fa-plus"></i>
                         </a>
                     </div>
@@ -69,7 +69,7 @@
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-                    {{ modal_form_revista_agregar.revista_indices }}
+                    {{ modal_form_revista_detalle.revista_indices }}
                 </div>
             </div>
             </p>
@@ -82,7 +82,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-pencil-square-o"></i>
                     </div>
-                    {{ modal_form_revista_agregar.revista_issn_impreso }}
+                    {{ modal_form_revista_detalle.revista_issn_impreso }}
                 </div>
             </div>
             </p>
@@ -95,7 +95,7 @@
                     <div class="input-group-addon">
                         <i class="fa fa-pencil-square-o"></i>
                     </div>
-                    {{ modal_form_revista_agregar.revista_issn_online }}
+                    {{ modal_form_revista_detalle.revista_issn_online }}
                 </div>
             </div>
             </p>
@@ -105,8 +105,8 @@
 
     <script>
 
-        $("#modal_form_revista_agregar").submit(function (event) {
-            console.log("Handler for .submit() modal_form_revista_agregar.revista_");
+        $("#modal_form_revista_detalle").submit(function (event) {
+            console.log("Handler for .submit() modal_form_revista_detalle.");
             revista_indices = $("#id_revista_indices").val();
             revista_issn_impreso = $("#id_revista_issn_impreso").val();
             revista_issn_online = $("#id_revista_issn_online").val();
@@ -117,6 +117,7 @@
                 "revista_pais": $("#id_revista_pais").val(),
                 "revista_regusuario": {{ user.pk }}
             };
+
 
             if (revista_indices) {
                 datos['revista_indices'] = revista_indices;
@@ -130,14 +131,17 @@
                 datos.revista_issn_online = revista_issn_online;
             }
 
-            //var datosurl = new URLSearchParams(datos).toString();
-
             console.log("datos", datos)
 
+
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+            var patchurl = "/nucleo/rest/revistas/" + $("#id_revista").val().toString() + "/";
+
+            console.log("patchurl:", patchurl);
+
             $.ajax({
-                method: "POST",
-                url: "/nucleo/rest/revistas/",
+                type: "PATCH",
+                url: patchurl,
                 data: JSON.stringify(datos),
                 processData: true,
                 dataType: 'json',
@@ -171,7 +175,7 @@
                         '    <span aria-hidden="true">&times;</span>' +
                         '  </button>' +
                         '</div>'
-                    $("#agregar_revista_errors").html(errores_form);
+                    $("#detalle_revista_errors").html(errores_form);
                 },
 
                 success: function (data) {
@@ -183,7 +187,7 @@
                     $('#id_revista_issn_impreso').val(null).trigger('change');
                     $('#id_revista_issn_online').val(null).trigger('change');
 
-                    $('#modal_form_revista_agregar').trigger('reset');
+                    $('#modal_form_revista_detalle').trigger('reset');
 
                     console.log("data")
                     console.log(data);
@@ -204,15 +208,14 @@
                             console.log(pais);
                             var nuevo_revista_option = new Option(data.revista_nombre + " (" + pais + ")", data.id, true, true);
                             $('#id_revista').append(nuevo_revista_option).trigger('change');
-                            $('#agregar-revista-modal-body').empty();
-                            agregar_revista_dialog.dialog("close")
+                            $('#detalle-revista-modal-body').empty();
+                            detalle_revista_dialog.dialog("close")
                         }
                     });
                 }
             });
             event.preventDefault();
         });
-
     </script>
 
 {% else %}
