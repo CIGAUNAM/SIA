@@ -53,7 +53,11 @@ class CursoEspecializacionForm(forms.ModelForm):
 
 
 class LicenciaturaForm(forms.ModelForm):
+    titulo_obtenido = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    distincion_obtenida = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+
     carrera = forms.ModelChoiceField(
+        required=False,
         queryset=ProgramaLicenciatura.objects.all(),
         label="Carrera",
         widget=ModelSelect2Widget(
@@ -83,7 +87,6 @@ class LicenciaturaForm(forms.ModelForm):
         )
     )
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    tesis_url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_grado = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)

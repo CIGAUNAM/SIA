@@ -46,15 +46,15 @@ class CursoEspecializacion(models.Model):
 
 
 class Licenciatura(models.Model):
-    carrera = models.ForeignKey(ProgramaLicenciatura, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(verbose_name='Descripición', blank=True)
+    titulo_obtenido = models.CharField(max_length=255)
+    carrera = models.ForeignKey(ProgramaLicenciatura, on_delete=models.DO_NOTHING, null=True, blank=True)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(InstitucionSimple, null=True, blank=True, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
-    tesis_url = models.URLField(blank=True)
     fecha_inicio = models.DateField('Fecha de inicio de licenciatura')
     fecha_fin = models.DateField('Fecha de terminación de licenciatura')
     fecha_grado = models.DateField('Fecha de obtención de grado de licenciatura')
+    distincion_obtenida = models.CharField(max_length=255, null=True, blank=True, )
     usuario = models.ForeignKey(User, related_name='licenciaturas', on_delete=models.DO_NOTHING)
 
     def __str__(self):

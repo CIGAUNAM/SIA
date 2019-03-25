@@ -2,158 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="correccion decimales factor de impacto en revista|">
-      <change afterPath="$PROJECT_DIR$/formacion_academica/migrations/0003_auto_20190216_1232.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/formacion_academica/migrations/0004_cursoespecializacion_institucion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nucleo/migrations/0003_auto_20190216_1226.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nucleo/migrations/0004_auto_20190216_1254.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vinculacion/migrations/0002_auto_20190216_1226.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/investigacion/migrations/0003_auto_20190311_1026.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nucleo/migrations/0002_auto_20190227_1304.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nucleo/migrations/0003_auto_20190301_1256.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nucleo/migrations/0004_auto_20190311_1026.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SIA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SIA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formatos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/formatos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin-lte/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin-lte/dist/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin-lte/dist/js/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin-lte/dist/js/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/autocomplete.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/fonts/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-no.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/search.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/change_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/change_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/inlines.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/popup_response.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/timeparse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/django_select2/django_select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/django_select2/django_select2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/jquery/dist/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/jquery/dist/jquery-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/modales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/modales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/css/bootstrap-theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/css/font-awesome-4.0.3.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/css/font-awesome-4.0.3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/docs/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/docs/js/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/docs/js/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/ajax-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/js/ajax-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/coreapi-0.1.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/js/coreapi-0.1.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/js/default.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/rest_framework/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/rest_framework/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sortedm2m/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/sortedm2m/jquery-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sortedm2m/widget.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sortedm2m/widget.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sortedm2m/widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/sortedm2m/widget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/table/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/table/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/table/js/bootstrap.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/table/js/bootstrap.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/table/js/dataTables.fixedColumns.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/table/js/dataTables.fixedColumns.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/table/js/jquery.dataTables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/table/js/jquery.dataTables.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_custom/js/modales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static_custom/js/modales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_academica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_academica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formacion_academica/templates/licenciaturas.html" beforeDir="false" afterPath="$PROJECT_DIR$/formacion_academica/templates/licenciaturas.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +23,7 @@
     <SUITE FILE_PATH="coverage/SIA$migracion.coverage" NAME="migracion Coverage Results" MODIFIED="1527871308629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SIA$migracion2.coverage" NAME="migracion2 Coverage Results" MODIFIED="1507518891980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SIA$misioneros.coverage" NAME="misioneros Coverage Results" MODIFIED="1512580659820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SIA$log.coverage" NAME="log Coverage Results" MODIFIED="1547860082455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/_misc" />
+    <SUITE FILE_PATH="coverage/SIA$0001_initial.coverage" NAME="0001_initial Coverage Results" MODIFIED="1550968122736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vinculacion/migrations" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -208,110 +66,98 @@
     <session id="-1612063786">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.4" value="2" />
-          <entry key="project.open.time.5" value="4" />
-          <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.7" value="6" />
-          <entry key="project.open.time.8" value="4" />
-          <entry key="project.opened" value="22" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Django Console" value="736" />
-          <entry key="html" value="5176" />
-          <entry key="js" value="453" />
-          <entry key="py" value="1936" />
-          <entry key="py@SIA" value="226" />
-          <entry key="tex" value="125" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CommandLine" value="197" />
-          <entry key="HTML" value="5176" />
-          <entry key="JavaScript" value="453" />
-          <entry key="PLAIN_TEXT" value="154" />
-          <entry key="Python" value="2672" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="41" />
-          <entry key="js" value="9" />
-          <entry key="py" value="100" />
-          <entry key="tex" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="41" />
-          <entry key="JavaScript" value="9" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="100" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages">
-        <counts>
-          <entry key="git.branch.checkout.local" value="6" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-810684426">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
           <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.9" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="9" />
-          <entry key="html" value="575" />
-          <entry key="json" value="2" />
-          <entry key="py" value="124" />
-          <entry key="py@SIA" value="166" />
+          <entry key="Django Console" value="299" />
+          <entry key="html" value="900" />
+          <entry key="py" value="367" />
+          <entry key="py@SIA" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="9" />
-          <entry key="CommandLine" value="138" />
-          <entry key="HTML" value="575" />
-          <entry key="JSON" value="2" />
-          <entry key="PLAIN_TEXT" value="28" />
-          <entry key="Python" value="124" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages">
-        <counts>
-          <entry key="git.branch.checkout.local" value="1" />
-          <entry key="git.branch.checkout.remote" value="1" />
-          <entry key="git.branch.create.new" value="1" />
-          <entry key="git.branch.delete.local" value="1" />
+          <entry key="CommandLine" value="63" />
+          <entry key="HTML" value="900" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="666" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="5" />
-          <entry key="html" value="32" />
-          <entry key="js" value="4" />
-          <entry key="json" value="3" />
-          <entry key="py" value="31" />
+          <entry key="html" value="8" />
+          <entry key="js" value="1" />
+          <entry key="py" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="5" />
-          <entry key="HTML" value="32" />
-          <entry key="JSON" value="3" />
+          <entry key="HTML" value="8" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Python" value="22" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-810684426">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="bundle" value="1" />
+          <entry key="crt" value="1" />
+          <entry key="html" value="17" />
+          <entry key="js" value="4" />
+          <entry key="json" value="4" />
+          <entry key="py" value="31" />
+          <entry key="tex" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="17" />
+          <entry key="JSON" value="4" />
           <entry key="JavaScript" value="4" />
+          <entry key="PLAIN_TEXT" value="5" />
           <entry key="Python" value="31" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="2" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Django Console" value="413" />
+          <entry key="html" value="808" />
+          <entry key="js" value="78" />
+          <entry key="json" value="19" />
+          <entry key="py" value="375" />
+          <entry key="py@SIA" value="385" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CommandLine" value="256" />
+          <entry key="HTML" value="808" />
+          <entry key="JSON" value="19" />
+          <entry key="JavaScript" value="78" />
+          <entry key="PLAIN_TEXT" value="129" />
+          <entry key="Python" value="788" />
         </counts>
       </usages-collector>
     </session>
@@ -319,44 +165,53 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html">
+        <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-361">
-              <caret line="160" column="50" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="50" />
+            <state relative-caret-position="356">
+              <caret line="143" selection-start-line="143" selection-end-line="143" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion_academica/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="56" column="23" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#351#2960#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static_custom/js/modales.js">
+        <entry file="file://$PROJECT_DIR$/formacion_academica/templates/licenciaturas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="37" column="39" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="39" />
-              <folding>
-                <element signature="e#318#1318#0" />
-                <element signature="e#1380#1971#0" />
-              </folding>
+            <state relative-caret-position="416">
+              <caret line="269" column="8" selection-start-line="269" selection-start-column="8" selection-end-line="269" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/views.py">
+        <entry file="file://$PROJECT_DIR$/SIA/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="208" column="79" selection-start-line="208" selection-start-column="79" selection-end-line="208" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="89" column="30" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="30" />
-              <folding>
-                <marker date="1550349289737" expanded="false" signature="4259:4260" ph="..." />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -364,17 +219,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1503">
-              <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+            <state relative-caret-position="330">
+              <caret line="22" column="12" selection-start-line="22" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/templates/institucion.html">
+        <entry file="file://$PROJECT_DIR$/templates/cv.tex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
-              <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="104" selection-end-column="8" />
+            <state relative-caret-position="2970">
+              <caret line="198" column="87" selection-start-line="198" selection-start-column="87" selection-end-line="198" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nucleo/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="39" column="36" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="36" />
+              <folding>
+                <element signature="e#169#1131#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/modales.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1695">
+              <caret line="143" column="56" selection-start-line="143" selection-start-column="56" selection-end-line="143" selection-end-column="56" />
+              <folding>
+                <element signature="e#99#1289#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -382,24 +261,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="264" column="50" selection-start-line="264" selection-start-column="50" selection-end-line="264" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nucleo/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="232" column="26" selection-start-line="232" selection-start-column="26" selection-end-line="232" selection-end-column="26" />
-              <folding>
-                <element signature="e#4438#4781#0" />
-                <element signature="e#4825#5296#0" />
-                <element signature="e#5329#5926#0" />
-                <element signature="e#5962#6411#0" />
-                <element signature="e#6446#7048#0" />
-              </folding>
+            <state relative-caret-position="4065">
+              <caret line="271" column="41" selection-start-line="271" selection-start-column="41" selection-end-line="271" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -410,53 +273,44 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA'))</find>
-      <find>s</find>
-      <find>statu</find>
-      <find>dictámenes</find>
-      <find>dictamenes_articulos_revistas_mexicanas</find>
-      <find>9.1</find>
-      <find>premios_internacionales</find>
-      <find>2.3</find>
+      <find>Libro</find>
+      <find>Libr</find>
+      <find>editores</find>
+      <find>cole</find>
+      <find>invest</find>
+      <find>fecha</find>
+      <find>STATUS_PUBLICACION_ARTICULO</find>
+      <find>STATUS_PROYECTO</find>
+      <find>CLASIFICACION_PROYECTO</find>
+      <find>ORGANIZACION_PROYECTO</find>
+      <find>cursos</find>
       <find>cursos_especializacion</find>
-      <find>Participación en eventos de divulgación</find>
-      <find>participacion_eventos_divulgacion</find>
-      <find>Redes académicas</find>
-      <find>sociedades_cientificas</find>
-      <find>Sociedades científicas</find>
-      <find>redes_academicas</find>
-      <find>subs</find>
-      <find>boton-agregar-dependencia</find>
-      <find>xhr</find>
-      <find>dependen</find>
-      <find>url</find>
-      <find>dialog</find>
-      <find>agregar_dependencia_dialog</find>
-      <find>pais__nombre</find>
-      <find>pais_institucion__nombre</find>
-      <find>simple</find>
-      <find>esconder</find>
-      <find>cache</find>
-      <find>errores_form</find>
-      <find>escon</find>
-      <find>dependencia_errors</find>
+      <find>&quot;nombre_extendido&quot;</find>
+      <find>codigo</find>
+      <find>pais</find>
+      <find>zona</find>
+      <find>Programa</find>
+      <find>ProgramaL</find>
+      <find>organi</find>
+      <find>arbitra</find>
+      <find>&quot;nombre&quot;</find>
+      <find>&quot;descripcion&quot;: &quot;&quot;</find>
+      <find>&quot;area_conocimiento&quot;</find>
+      <find>des</find>
+      <find>ProgramaLicenciatura</find>
+      <find>desc</find>
+      <find>descr</find>
+      <find>programamaestria_regusuarioipcion</find>
+      <find>programalice</find>
+      <find>revistas</find>
     </findStrings>
     <replaceStrings>
-      <replace />
-      <replace>ACEPTADO</replace>
-      <replace>fecha__year=year,</replace>
-      <replace>libro_investigacion_</replace>
-      <replace>libro_cientifico</replace>
-      <replace>'ACEPTADO'</replace>
-      <replace>libros</replace>
-      <replace>'EN_PRENSA'</replace>
       <replace>PrologoLibro</replace>
       <replace>prologo_libro_autor__libro__tiene_participacion_prologo</replace>
       <replace>tiene_participacion_prologo=True</replace>
@@ -476,8 +330,17 @@
       <replace>-</replace>
       <replace>PROTECT</replace>
       <replace>c_densidad_follaje</replace>
-      <replace>pais_institucion__pais_nombre</replace>
-      <replace>pais__pais_nombre</replace>
+      <replace>&quot;pais_nombre&quot;</replace>
+      <replace>&quot;pais_nombre_extendido&quot;</replace>
+      <replace>pais_codigo</replace>
+      <replace>pais_zona</replace>
+      <replace>&quot;programalicenciatura_nombre&quot;</replace>
+      <replace>&quot;programalicenciatura_regusuario&quot;: 1</replace>
+      <replace>&quot;programamaestria</replace>
+      <replace>&quot;programalicenciatura_areaconocimiento&quot;</replace>
+      <replace>&quot;programadoctorado_nombre&quot;</replace>
+      <replace>&quot;programadoctorado_regusuario&quot;: 1</replace>
+      <replace>&quot;programadoctorado_areaconocimiento&quot;</replace>
     </replaceStrings>
     <dirStrings>
       <dir />
@@ -495,57 +358,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/formacion_recursos_humanos/views.py" />
+        <option value="$PROJECT_DIR$/formacion_recursos_humanos/utils.py" />
+        <option value="$PROJECT_DIR$/desarrollo_tecnologico/utils.py" />
+        <option value="$PROJECT_DIR$/distinciones/utils.py" />
+        <option value="$PROJECT_DIR$/apoyo_institucional/utils.py" />
+        <option value="$PROJECT_DIR$/_misc/misioneros.py" />
+        <option value="$PROJECT_DIR$/_misc/difusion_cientifica.json" />
         <option value="$PROJECT_DIR$/_misc/divulgacion_cientifica.json" />
         <option value="$PROJECT_DIR$/_misc/docencia.json" />
         <option value="$PROJECT_DIR$/templates/informe" />
+        <option value="$PROJECT_DIR$/SIA/settings.py" />
         <option value="$PROJECT_DIR$/_misc/csp.py" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/models.py" />
         <option value="$PROJECT_DIR$/difusion_cientifica/models.py" />
         <option value="$PROJECT_DIR$/_misc/histo.py" />
         <option value="$PROJECT_DIR$/_misc/naivebayes.py" />
+        <option value="$PROJECT_DIR$/templates/informe.html" />
+        <option value="$PROJECT_DIR$/nucleo/forms.py" />
         <option value="$PROJECT_DIR$/docencia/forms.py" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/forms.py" />
         <option value="$PROJECT_DIR$/SIA/widgets.py" />
+        <option value="$PROJECT_DIR$/SIA/views_reportes.py" />
         <option value="$PROJECT_DIR$/investigacion/utils.py" />
         <option value="$PROJECT_DIR$/investigacion/views.py" />
         <option value="$PROJECT_DIR$/investigacion/templates/libro_investigacion.html" />
         <option value="$PROJECT_DIR$/divulgacion_cientifica/templates/libro_divulgacion.html" />
         <option value="$PROJECT_DIR$/docencia/templates/libro_docencia.html" />
         <option value="$PROJECT_DIR$/investigacion/forms.py" />
-        <option value="$PROJECT_DIR$/vinculacion/forms.py" />
-        <option value="$PROJECT_DIR$/templates/modal/main_modal.html" />
-        <option value="$PROJECT_DIR$/templates/modal/modal_institucion.html" />
-        <option value="$PROJECT_DIR$/_misc/nucleo.json" />
-        <option value="$PROJECT_DIR$/static/css/bs3patch.css" />
-        <option value="$PROJECT_DIR$/static_custom/css/jquery-ui.min.css" />
-        <option value="$PROJECT_DIR$/templates/modal/modal_dependencia.html" />
-        <option value="$PROJECT_DIR$/templates/adminlte/lib/_styles.html" />
-        <option value="$PROJECT_DIR$/templates/adminlte/lib/_scripts.html" />
-        <option value="$PROJECT_DIR$/SIA/utils.py" />
-        <option value="$PROJECT_DIR$/_misc/log.py" />
         <option value="$PROJECT_DIR$/investigacion/models.py" />
-        <option value="$PROJECT_DIR$/templates/cv.tex" />
-        <option value="$PROJECT_DIR$/SIA/views.py" />
-        <option value="$PROJECT_DIR$/templates/informe.html" />
-        <option value="$PROJECT_DIR$/SIA/views_reportes.py" />
-        <option value="$PROJECT_DIR$/formatos/forms.py" />
-        <option value="$PROJECT_DIR$/nucleo/admin.py" />
-        <option value="$PROJECT_DIR$/formacion_academica/forms.py" />
-        <option value="$PROJECT_DIR$/formacion_academica/models.py" />
-        <option value="$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html" />
-        <option value="$PROJECT_DIR$/SIA/urls.py" />
-        <option value="$PROJECT_DIR$/SIA/settings.py" />
-        <option value="$PROJECT_DIR$/static/js/modales.js" />
-        <option value="$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html" />
-        <option value="$PROJECT_DIR$/nucleo/urls.py" />
-        <option value="$PROJECT_DIR$/nucleo/views.py" />
-        <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/_misc/nucleo.json" />
         <option value="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html" />
-        <option value="$PROJECT_DIR$/formatos/models.py" />
-        <option value="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html" />
-        <option value="$PROJECT_DIR$/nucleo/forms.py" />
-        <option value="$PROJECT_DIR$/nucleo/models.py" />
         <option value="$PROJECT_DIR$/static_custom/js/modales.js" />
+        <option value="$PROJECT_DIR$/formacion_recursos_humanos/models.py" />
+        <option value="$PROJECT_DIR$/formacion_recursos_humanos/forms.py" />
+        <option value="$PROJECT_DIR$/_misc/nucleo_bak.json" />
+        <option value="$PROJECT_DIR$/nucleo/models.py" />
+        <option value="$PROJECT_DIR$/nucleo/serializers.py" />
+        <option value="$PROJECT_DIR$/_misc/codice.crt" />
+        <option value="$PROJECT_DIR$/_misc/codice.bundle" />
+        <option value="$PROJECT_DIR$/formacion_academica/templates/maestrias.html" />
+        <option value="$PROJECT_DIR$/formacion_academica/templates/doctorados.html" />
+        <option value="$PROJECT_DIR$/formacion_academica/templates/post_doctorados.html" />
+        <option value="$PROJECT_DIR$/formacion_academica/migrations/0004_auto_20190303_1634.py" />
+        <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/static/js/modales.js" />
+        <option value="$PROJECT_DIR$/nucleo/templates/modal/form_detalle_programalicenciatura.html" />
+        <option value="$PROJECT_DIR$/nucleo/templates/modal/form_agregar_programalicenciatura.html" />
+        <option value="$PROJECT_DIR$/nucleo/views.py" />
+        <option value="$PROJECT_DIR$/formacion_academica/models.py" />
+        <option value="$PROJECT_DIR$/formacion_academica/forms.py" />
+        <option value="$PROJECT_DIR$/formacion_academica/templates/licenciaturas.html" />
       </list>
     </option>
   </component>
@@ -555,7 +418,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1366" />
     <option name="height" value="698" />
@@ -584,10 +447,42 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="formacion_academica" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="formacion_academica" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -609,53 +504,6 @@
           </expand>
           <select />
         </subPane>
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="formacion_academica" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="formacion_academica" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="SIA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="investigacion" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="static_custom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA" type="462c0819:PsiDirectoryNode" />
-              <item name="static_custom" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
       </pane>
     </panes>
   </component>
@@ -667,19 +515,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nucleo/templates/modal" />
+      <recent name="$PROJECT_DIR$/static_custom/js" />
+      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\_misc" />
+      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\nucleo\templates" />
+      <recent name="C:\Users\Nizhi\PycharmProjects\SIA\docencia\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\nucleo\migrations" />
-      <recent name="$PROJECT_DIR$/static/css" />
-      <recent name="$PROJECT_DIR$/nucleo" />
       <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\_misc" />
       <recent name="C:\Users\Nizhi\PycharmProjects\SIA\_misc" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\SIA" />
-      <recent name="C:\Users\Usuario 1\PycharmProjects\SIA\static_custom\js" />
-      <recent name="$PROJECT_DIR$/static/css/images" />
-      <recent name="$PROJECT_DIR$/static_custom/css/images" />
-      <recent name="$PROJECT_DIR$/static_custom/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -698,7 +543,7 @@
     <configuration name="maps.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SIA/maps.html">
       <method v="2" />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="0001_initial" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SIA" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -706,34 +551,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="log" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SIA" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/_misc" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/vinculacion/migrations" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/_misc/log.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vinculacion/migrations/0001_initial.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -815,15 +638,15 @@
       <item itemvalue="Django server.SIA" />
       <item itemvalue="JavaScript Debug.maps.html" />
       <item itemvalue="Python.migracion" />
-      <item itemvalue="Python.log" />
+      <item itemvalue="Python.0001_initial" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.log" />
+        <item itemvalue="Python.0001_initial" />
         <item itemvalue="Python.migracion" />
         <item itemvalue="JavaScript Debug.maps.html" />
-        <item itemvalue="Python.log" />
         <item itemvalue="Python.migracion" />
+        <item itemvalue="JavaScript Debug.maps.html" />
       </list>
     </recent_temporary>
   </component>
@@ -838,398 +661,388 @@
       <option name="presentableId" value="Default" />
       <updated>1505766858927</updated>
     </task>
-    <task id="LOCAL-00186" summary="correccion decimales factor de impacto en revista|">
-      <created>1547861394714</created>
-      <option name="number" value="00186" />
-      <option name="presentableId" value="LOCAL-00186" />
+    <task id="LOCAL-00126" summary="correccion decimales factor de impacto en revista">
+      <created>1530839178975</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1547861394714</updated>
+      <updated>1530839178976</updated>
     </task>
-    <task id="LOCAL-00187" summary="correccion decimales factor de impacto en revista|">
-      <created>1548123700905</created>
-      <option name="number" value="00187" />
-      <option name="presentableId" value="LOCAL-00187" />
+    <task id="LOCAL-00127" summary="correccion decimales factor de impacto en revista">
+      <created>1530926057898</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1548123700905</updated>
+      <updated>1530926057899</updated>
     </task>
-    <task id="LOCAL-00188" summary="correccion decimales factor de impacto en revista|">
-      <created>1548126767589</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
+    <task id="LOCAL-00128" summary="correccion decimales factor de impacto en revista">
+      <created>1531323471890</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1548126767589</updated>
+      <updated>1531323471891</updated>
     </task>
-    <task id="LOCAL-00189" summary="correccion decimales factor de impacto en revista|">
-      <created>1548170830047</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
+    <task id="LOCAL-00129" summary="correccion decimales factor de impacto en revista">
+      <created>1531792502010</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1548170830048</updated>
+      <updated>1531792502011</updated>
     </task>
-    <task id="LOCAL-00190" summary="correccion decimales factor de impacto en revista|">
-      <created>1548172088925</created>
-      <option name="number" value="00190" />
-      <option name="presentableId" value="LOCAL-00190" />
+    <task id="LOCAL-00130" summary="correccion decimales factor de impacto en revista">
+      <created>1531795174495</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1548172088925</updated>
+      <updated>1531795174495</updated>
     </task>
-    <task id="LOCAL-00191" summary="correccion decimales factor de impacto en revista|">
-      <created>1548172186270</created>
-      <option name="number" value="00191" />
-      <option name="presentableId" value="LOCAL-00191" />
+    <task id="LOCAL-00131" summary="correccion decimales factor de impacto en revista">
+      <created>1532042007084</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
       <option name="project" value="LOCAL" />
-      <updated>1548172186270</updated>
+      <updated>1532042007084</updated>
     </task>
-    <task id="LOCAL-00192" summary="correccion decimales factor de impacto en revista|">
-      <created>1548172335971</created>
-      <option name="number" value="00192" />
-      <option name="presentableId" value="LOCAL-00192" />
+    <task id="LOCAL-00132" summary="correccion decimales factor de impacto en revista">
+      <created>1532042577982</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
       <option name="project" value="LOCAL" />
-      <updated>1548172335971</updated>
+      <updated>1532042577982</updated>
     </task>
-    <task id="LOCAL-00193" summary="correccion decimales factor de impacto en revista|">
-      <created>1548172427992</created>
-      <option name="number" value="00193" />
-      <option name="presentableId" value="LOCAL-00193" />
+    <task id="LOCAL-00133" summary="correccion decimales factor de impacto en revista">
+      <created>1533320448954</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
       <option name="project" value="LOCAL" />
-      <updated>1548172427992</updated>
+      <updated>1533320448954</updated>
     </task>
-    <task id="LOCAL-00194" summary="correccion decimales factor de impacto en revista|">
-      <created>1548172504063</created>
-      <option name="number" value="00194" />
-      <option name="presentableId" value="LOCAL-00194" />
+    <task id="LOCAL-00134" summary="correccion decimales factor de impacto en revista">
+      <created>1533346306370</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
       <option name="project" value="LOCAL" />
-      <updated>1548172504063</updated>
+      <updated>1533346306370</updated>
     </task>
-    <task id="LOCAL-00195" summary="correccion decimales factor de impacto en revista|">
-      <created>1548172526807</created>
-      <option name="number" value="00195" />
-      <option name="presentableId" value="LOCAL-00195" />
+    <task id="LOCAL-00135" summary="correccion decimales factor de impacto en revista">
+      <created>1533346348237</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
       <option name="project" value="LOCAL" />
-      <updated>1548172526807</updated>
+      <updated>1533346348237</updated>
     </task>
-    <task id="LOCAL-00196" summary="correccion decimales factor de impacto en revista|">
-      <created>1548172866871</created>
-      <option name="number" value="00196" />
-      <option name="presentableId" value="LOCAL-00196" />
+    <task id="LOCAL-00136" summary="correccion decimales factor de impacto en revista">
+      <created>1533847468993</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
       <option name="project" value="LOCAL" />
-      <updated>1548172866871</updated>
+      <updated>1533847468995</updated>
     </task>
-    <task id="LOCAL-00197" summary="correccion decimales factor de impacto en revista|">
-      <created>1548197960795</created>
-      <option name="number" value="00197" />
-      <option name="presentableId" value="LOCAL-00197" />
+    <task id="LOCAL-00137" summary="correccion decimales factor de impacto en revista">
+      <created>1534268632898</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
       <option name="project" value="LOCAL" />
-      <updated>1548197960795</updated>
+      <updated>1534268632898</updated>
     </task>
-    <task id="LOCAL-00198" summary="correccion decimales factor de impacto en revista|">
-      <created>1548198346027</created>
-      <option name="number" value="00198" />
-      <option name="presentableId" value="LOCAL-00198" />
+    <task id="LOCAL-00138" summary="correccion decimales factor de impacto en revista">
+      <created>1534268639485</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
       <option name="project" value="LOCAL" />
-      <updated>1548198346027</updated>
+      <updated>1534268639485</updated>
     </task>
-    <task id="LOCAL-00199" summary="correccion decimales factor de impacto en revista|">
-      <created>1548198432718</created>
-      <option name="number" value="00199" />
-      <option name="presentableId" value="LOCAL-00199" />
+    <task id="LOCAL-00139" summary="correccion decimales factor de impacto en revista">
+      <created>1534278012964</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
       <option name="project" value="LOCAL" />
-      <updated>1548198432718</updated>
+      <updated>1534278012964</updated>
     </task>
-    <task id="LOCAL-00200" summary="correccion decimales factor de impacto en revista|">
-      <created>1548198497738</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
+    <task id="LOCAL-00140" summary="correccion decimales factor de impacto en revista">
+      <created>1534353338700</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
       <option name="project" value="LOCAL" />
-      <updated>1548198497738</updated>
+      <updated>1534353338701</updated>
     </task>
-    <task id="LOCAL-00201" summary="correccion decimales factor de impacto en revista|">
-      <created>1548198534549</created>
-      <option name="number" value="00201" />
-      <option name="presentableId" value="LOCAL-00201" />
+    <task id="LOCAL-00141" summary="correccion decimales factor de impacto en revista">
+      <created>1534385725287</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
       <option name="project" value="LOCAL" />
-      <updated>1548198534549</updated>
+      <updated>1534385725287</updated>
     </task>
-    <task id="LOCAL-00202" summary="correccion decimales factor de impacto en revista|">
-      <created>1548198918783</created>
-      <option name="number" value="00202" />
-      <option name="presentableId" value="LOCAL-00202" />
+    <task id="LOCAL-00142" summary="correccion decimales factor de impacto en revista">
+      <created>1534433596491</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
       <option name="project" value="LOCAL" />
-      <updated>1548198918783</updated>
+      <updated>1534433596492</updated>
     </task>
-    <task id="LOCAL-00203" summary="correccion decimales factor de impacto en revista|">
-      <created>1548200928670</created>
-      <option name="number" value="00203" />
-      <option name="presentableId" value="LOCAL-00203" />
+    <task id="LOCAL-00143" summary="correccion decimales factor de impacto en revista">
+      <created>1534435129322</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
       <option name="project" value="LOCAL" />
-      <updated>1548200928670</updated>
+      <updated>1534435129322</updated>
     </task>
-    <task id="LOCAL-00204" summary="correccion decimales factor de impacto en revista|">
-      <created>1548203404587</created>
-      <option name="number" value="00204" />
-      <option name="presentableId" value="LOCAL-00204" />
+    <task id="LOCAL-00144" summary="correccion decimales factor de impacto en revista">
+      <created>1534447566688</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
       <option name="project" value="LOCAL" />
-      <updated>1548203404587</updated>
+      <updated>1534447566688</updated>
     </task>
-    <task id="LOCAL-00205" summary="correccion decimales factor de impacto en revista|">
-      <created>1548204079200</created>
-      <option name="number" value="00205" />
-      <option name="presentableId" value="LOCAL-00205" />
+    <task id="LOCAL-00145" summary="correccion decimales factor de impacto en revista|">
+      <created>1534468648375</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
       <option name="project" value="LOCAL" />
-      <updated>1548204079200</updated>
+      <updated>1534468648376</updated>
     </task>
-    <task id="LOCAL-00206" summary="correccion decimales factor de impacto en revista|">
-      <created>1548204131780</created>
-      <option name="number" value="00206" />
-      <option name="presentableId" value="LOCAL-00206" />
+    <task id="LOCAL-00146" summary="correccion decimales factor de impacto en revista|">
+      <created>1534471168557</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
       <option name="project" value="LOCAL" />
-      <updated>1548204131780</updated>
+      <updated>1534471168558</updated>
     </task>
-    <task id="LOCAL-00207" summary="correccion decimales factor de impacto en revista|">
-      <created>1548204238280</created>
-      <option name="number" value="00207" />
-      <option name="presentableId" value="LOCAL-00207" />
+    <task id="LOCAL-00147" summary="correccion decimales factor de impacto en revista|">
+      <created>1534471229073</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
       <option name="project" value="LOCAL" />
-      <updated>1548204238280</updated>
+      <updated>1534471229073</updated>
     </task>
-    <task id="LOCAL-00208" summary="correccion decimales factor de impacto en revista|">
-      <created>1548286965646</created>
-      <option name="number" value="00208" />
-      <option name="presentableId" value="LOCAL-00208" />
+    <task id="LOCAL-00148" summary="correccion decimales factor de impacto en revista|">
+      <created>1534471631522</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
       <option name="project" value="LOCAL" />
-      <updated>1548286965647</updated>
+      <updated>1534471631523</updated>
     </task>
-    <task id="LOCAL-00209" summary="correccion decimales factor de impacto en revista|">
-      <created>1548287898864</created>
-      <option name="number" value="00209" />
-      <option name="presentableId" value="LOCAL-00209" />
+    <task id="LOCAL-00149" summary="correccion decimales factor de impacto en revista|">
+      <created>1534518671215</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
       <option name="project" value="LOCAL" />
-      <updated>1548287898864</updated>
+      <updated>1534518671216</updated>
     </task>
-    <task id="LOCAL-00210" summary="correccion decimales factor de impacto en revista|">
-      <created>1548288083248</created>
-      <option name="number" value="00210" />
-      <option name="presentableId" value="LOCAL-00210" />
+    <task id="LOCAL-00150" summary="correccion decimales factor de impacto en revista|">
+      <created>1534518849399</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
       <option name="project" value="LOCAL" />
-      <updated>1548288083248</updated>
+      <updated>1534518849399</updated>
     </task>
-    <task id="LOCAL-00211" summary="correccion decimales factor de impacto en revista|">
-      <created>1548289337957</created>
-      <option name="number" value="00211" />
-      <option name="presentableId" value="LOCAL-00211" />
+    <task id="LOCAL-00151" summary="correccion decimales factor de impacto en revista|">
+      <created>1534519020038</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
       <option name="project" value="LOCAL" />
-      <updated>1548289337957</updated>
+      <updated>1534519020038</updated>
     </task>
-    <task id="LOCAL-00212" summary="correccion decimales factor de impacto en revista|">
-      <created>1548289771620</created>
-      <option name="number" value="00212" />
-      <option name="presentableId" value="LOCAL-00212" />
+    <task id="LOCAL-00152" summary="correccion decimales factor de impacto en revista|">
+      <created>1534524329667</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
       <option name="project" value="LOCAL" />
-      <updated>1548289771620</updated>
+      <updated>1534524329667</updated>
     </task>
-    <task id="LOCAL-00213" summary="correccion decimales factor de impacto en revista|">
-      <created>1548372397568</created>
-      <option name="number" value="00213" />
-      <option name="presentableId" value="LOCAL-00213" />
+    <task id="LOCAL-00153" summary="correccion decimales factor de impacto en revista|">
+      <created>1534525607781</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
       <option name="project" value="LOCAL" />
-      <updated>1548372397568</updated>
+      <updated>1534525607781</updated>
     </task>
-    <task id="LOCAL-00214" summary="correccion decimales factor de impacto en revista|">
-      <created>1548372746718</created>
-      <option name="number" value="00214" />
-      <option name="presentableId" value="LOCAL-00214" />
+    <task id="LOCAL-00154" summary="correccion decimales factor de impacto en revista|">
+      <created>1534526246795</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
       <option name="project" value="LOCAL" />
-      <updated>1548372746718</updated>
+      <updated>1534526246795</updated>
     </task>
-    <task id="LOCAL-00215" summary="correccion decimales factor de impacto en revista|">
-      <created>1548373187115</created>
-      <option name="number" value="00215" />
-      <option name="presentableId" value="LOCAL-00215" />
+    <task id="LOCAL-00155" summary="correccion decimales factor de impacto en revista|">
+      <created>1535056833350</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
       <option name="project" value="LOCAL" />
-      <updated>1548373187115</updated>
+      <updated>1535056833350</updated>
     </task>
-    <task id="LOCAL-00216" summary="correccion decimales factor de impacto en revista|">
-      <created>1548894186648</created>
-      <option name="number" value="00216" />
-      <option name="presentableId" value="LOCAL-00216" />
+    <task id="LOCAL-00156" summary="correccion decimales factor de impacto en revista|">
+      <created>1535064706319</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
       <option name="project" value="LOCAL" />
-      <updated>1548894186649</updated>
+      <updated>1535064706319</updated>
     </task>
-    <task id="LOCAL-00217" summary="correccion decimales factor de impacto en revista|">
-      <created>1548894718541</created>
-      <option name="number" value="00217" />
-      <option name="presentableId" value="LOCAL-00217" />
+    <task id="LOCAL-00157" summary="correccion decimales factor de impacto en revista|">
+      <created>1535078047184</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
       <option name="project" value="LOCAL" />
-      <updated>1548894718541</updated>
+      <updated>1535078047184</updated>
     </task>
-    <task id="LOCAL-00218" summary="correccion decimales factor de impacto en revista|">
-      <created>1548977791056</created>
-      <option name="number" value="00218" />
-      <option name="presentableId" value="LOCAL-00218" />
+    <task id="LOCAL-00158" summary="correccion decimales factor de impacto en revista|">
+      <created>1535078703219</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
       <option name="project" value="LOCAL" />
-      <updated>1548977791056</updated>
+      <updated>1535078703219</updated>
     </task>
-    <task id="LOCAL-00219" summary="correccion decimales factor de impacto en revista|">
-      <created>1549067691956</created>
-      <option name="number" value="00219" />
-      <option name="presentableId" value="LOCAL-00219" />
+    <task id="LOCAL-00159" summary="correccion decimales factor de impacto en revista|">
+      <created>1536615793638</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
       <option name="project" value="LOCAL" />
-      <updated>1549067691956</updated>
+      <updated>1536615793639</updated>
     </task>
-    <task id="LOCAL-00220" summary="correccion decimales factor de impacto en revista|">
-      <created>1549067920257</created>
-      <option name="number" value="00220" />
-      <option name="presentableId" value="LOCAL-00220" />
+    <task id="LOCAL-00160" summary="correccion decimales factor de impacto en revista|">
+      <created>1536616113504</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
       <option name="project" value="LOCAL" />
-      <updated>1549067920257</updated>
+      <updated>1536616113504</updated>
     </task>
-    <task id="LOCAL-00221" summary="correccion decimales factor de impacto en revista|">
-      <created>1549387776989</created>
-      <option name="number" value="00221" />
-      <option name="presentableId" value="LOCAL-00221" />
+    <task id="LOCAL-00161" summary="correccion decimales factor de impacto en revista|">
+      <created>1536629440465</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
       <option name="project" value="LOCAL" />
-      <updated>1549387776989</updated>
+      <updated>1536629440465</updated>
     </task>
-    <task id="LOCAL-00222" summary="correccion decimales factor de impacto en revista|">
-      <created>1549388192358</created>
-      <option name="number" value="00222" />
-      <option name="presentableId" value="LOCAL-00222" />
+    <task id="LOCAL-00162" summary="correccion decimales factor de impacto en revista|">
+      <created>1536979312482</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
       <option name="project" value="LOCAL" />
-      <updated>1549388192358</updated>
+      <updated>1536979312483</updated>
     </task>
-    <task id="LOCAL-00223" summary="correccion decimales factor de impacto en revista|">
-      <created>1549388539144</created>
-      <option name="number" value="00223" />
-      <option name="presentableId" value="LOCAL-00223" />
+    <task id="LOCAL-00163" summary="correccion decimales factor de impacto en revista|">
+      <created>1540500035451</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
       <option name="project" value="LOCAL" />
-      <updated>1549388539144</updated>
+      <updated>1540500035452</updated>
     </task>
-    <task id="LOCAL-00224" summary="correccion decimales factor de impacto en revista|">
-      <created>1549389842024</created>
-      <option name="number" value="00224" />
-      <option name="presentableId" value="LOCAL-00224" />
+    <task id="LOCAL-00164" summary="correccion decimales factor de impacto en revista|">
+      <created>1540500981918</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
       <option name="project" value="LOCAL" />
-      <updated>1549389842024</updated>
+      <updated>1540500981919</updated>
     </task>
-    <task id="LOCAL-00225" summary="correccion decimales factor de impacto en revista|">
-      <created>1549389937205</created>
-      <option name="number" value="00225" />
-      <option name="presentableId" value="LOCAL-00225" />
+    <task id="LOCAL-00165" summary="correccion decimales factor de impacto en revista|">
+      <created>1540582651142</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
       <option name="project" value="LOCAL" />
-      <updated>1549389937205</updated>
+      <updated>1540582651142</updated>
     </task>
-    <task id="LOCAL-00226" summary="correccion decimales factor de impacto en revista|">
-      <created>1549390338306</created>
-      <option name="number" value="00226" />
-      <option name="presentableId" value="LOCAL-00226" />
+    <task id="LOCAL-00166" summary="correccion decimales factor de impacto en revista|">
+      <created>1540603666758</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
       <option name="project" value="LOCAL" />
-      <updated>1549390338306</updated>
+      <updated>1540603666759</updated>
     </task>
-    <task id="LOCAL-00227" summary="correccion decimales factor de impacto en revista|">
-      <created>1549390438644</created>
-      <option name="number" value="00227" />
-      <option name="presentableId" value="LOCAL-00227" />
+    <task id="LOCAL-00167" summary="correccion decimales factor de impacto en revista|">
+      <created>1550275036640</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
       <option name="project" value="LOCAL" />
-      <updated>1549390438644</updated>
+      <updated>1550275036641</updated>
     </task>
-    <task id="LOCAL-00228" summary="correccion decimales factor de impacto en revista|">
-      <created>1549398346593</created>
-      <option name="number" value="00228" />
-      <option name="presentableId" value="LOCAL-00228" />
+    <task id="LOCAL-00168" summary="correccion decimales factor de impacto en revista|">
+      <created>1550653292893</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
       <option name="project" value="LOCAL" />
-      <updated>1549398346593</updated>
+      <updated>1550653292894</updated>
     </task>
-    <task id="LOCAL-00229" summary="correccion decimales factor de impacto en revista|">
-      <created>1549589492307</created>
-      <option name="number" value="00229" />
-      <option name="presentableId" value="LOCAL-00229" />
+    <task id="LOCAL-00169" summary="correccion decimales factor de impacto en revista|">
+      <created>1550968060449</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
       <option name="project" value="LOCAL" />
-      <updated>1549589492307</updated>
+      <updated>1550968060451</updated>
     </task>
-    <task id="LOCAL-00230" summary="correccion decimales factor de impacto en revista|">
-      <created>1550097117937</created>
-      <option name="number" value="00230" />
-      <option name="presentableId" value="LOCAL-00230" />
+    <task id="LOCAL-00170" summary="correccion decimales factor de impacto en revista|">
+      <created>1550968159497</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
       <option name="project" value="LOCAL" />
-      <updated>1550097117937</updated>
+      <updated>1550968159497</updated>
     </task>
-    <task id="LOCAL-00231" summary="correccion decimales factor de impacto en revista|">
-      <created>1550277445687</created>
-      <option name="number" value="00231" />
-      <option name="presentableId" value="LOCAL-00231" />
+    <task id="LOCAL-00171" summary="correccion decimales factor de impacto en revista|">
+      <created>1551155662463</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
       <option name="project" value="LOCAL" />
-      <updated>1550277445687</updated>
+      <updated>1551155662463</updated>
     </task>
-    <task id="LOCAL-00232" summary="correccion decimales factor de impacto en revista|">
-      <created>1550283433980</created>
-      <option name="number" value="00232" />
-      <option name="presentableId" value="LOCAL-00232" />
+    <task id="LOCAL-00172" summary="correccion decimales factor de impacto en revista|">
+      <created>1551466696951</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
       <option name="project" value="LOCAL" />
-      <updated>1550283433980</updated>
+      <updated>1551466696951</updated>
     </task>
-    <task id="LOCAL-00233" summary="correccion decimales factor de impacto en revista|">
-      <created>1550284748962</created>
-      <option name="number" value="00233" />
-      <option name="presentableId" value="LOCAL-00233" />
+    <task id="LOCAL-00173" summary="correccion decimales factor de impacto en revista|">
+      <created>1551652386713</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
       <option name="project" value="LOCAL" />
-      <updated>1550284748963</updated>
+      <updated>1551652386713</updated>
     </task>
-    <task id="LOCAL-00234" summary="correccion decimales factor de impacto en revista|">
-      <created>1550343347743</created>
-      <option name="number" value="00234" />
-      <option name="presentableId" value="LOCAL-00234" />
+    <task id="LOCAL-00174" summary="correccion decimales factor de impacto en revista|">
+      <created>1551711577811</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
       <option name="project" value="LOCAL" />
-      <updated>1550343347743</updated>
+      <updated>1551711577819</updated>
     </task>
-    <option name="localTasksCounter" value="235" />
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="23" width="1366" height="698" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3379531" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27643505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.18242492" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49779493" visible="true" weight="0.2958843" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50373137" side_tool="true" weight="0.34260288" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49413645" weight="0.33259177" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3403782" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="bottom" id="manage.py@SIA" order="12" sideWeight="0.49626866" weight="0.2458287" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32703003" />
-      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="15" />
+      <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32933104" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32933104" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49779493" weight="0.4271012" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.505287" side_tool="true" weight="0.35506004" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49471298" weight="0.35506004" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.34133792" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="manage.py@SIA" order="13" sideWeight="0.49626866" weight="0.3927959" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32761577" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="16" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.18869936" />
+      <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Data View" order="6" />
       <window_info anchor="right" id="R Packages" order="7" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="8" side_tool="true" weight="0.2238806" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1256,358 +1069,379 @@
           <line>28</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html</url>
-          <line>7</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/agregar_institucion.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/area_especialidad.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static_custom/css/jquery-ui.min.css" />
-    <entry file="file://$PROJECT_DIR$/static/css/jquery-ui.min.css" />
-    <entry file="file://$PROJECT_DIR$/static_custom/select2/js/select2.full.js">
+    <entry file="file://C:/WinPython-365Qt5/python-3.6.5.amd64/Lib/site-packages/sklearn/utils/validation.py" />
+    <entry file="file://C:/WinPython-365Qt5/python-3.6.5.amd64/Lib/site-packages/sklearn/naive_bayes.py" />
+    <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2802">
-          <caret line="4264" column="23" selection-start-line="4264" selection-start-column="4" selection-end-line="4264" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_styles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_scripts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vinculacion/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/WinPython-365Qt5/python-3.6.5.amd64/Lib/site-packages/sklearn/linear_model/least_angle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0002_auto_20181213_2049.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/difusion_cientifica/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="119" column="18" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_recursos_humanos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="102" column="10" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="87" column="25" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views2.py" />
-    <entry file="file://$PROJECT_DIR$/templates/cv.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="100" column="70" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docencia/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_misc/log.py" />
-    <entry file="file://$PROJECT_DIR$/vinculacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="93" column="22" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/distinciones/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="6771" lean-forward="true" selection-start-line="6771" selection-end-line="6771" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/informe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="1085" column="28" selection-start-line="1085" selection-start-column="28" selection-end-line="1085" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modal/modal_dependencia.html" />
-    <entry file="file://$PROJECT_DIR$/templates/modal/modal_institucion.html" />
-    <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="1037">
+          <caret line="616" column="120" selection-start-line="616" selection-start-column="120" selection-end-line="616" selection-end-column="120" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/WPy-3710/python-3.7.1.amd64/Lib/site-packages/django/contrib/auth/views.py">
+    <entry file="file://$PROJECT_DIR$/SIA/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="104" column="16" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="16" />
-          <folding>
-            <element signature="e#1509#3928#0" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="15" column="101" selection-start-line="15" selection-start-column="101" selection-end-line="15" selection-end-column="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apoyo_institucional/models.py">
+    <entry file="file://C:/WPy-3702/python-3.7.0.amd64/Lib/site-packages/django/utils/formats.py" />
+    <entry file="file://$PROJECT_DIR$/docencia/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/modal/main_modal.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1013">
-          <caret line="120" column="323" selection-start-line="120" selection-start-column="323" selection-end-line="120" selection-end-column="323" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_detalle_dependencia.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#637#678#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/modales.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="31" column="105" selection-start-line="31" selection-start-column="105" selection-end-line="31" selection-end-column="105" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        <state relative-caret-position="322">
+          <caret line="207" lean-forward="true" selection-start-line="207" selection-end-line="207" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/admin.py">
+    <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="407">
+          <caret line="212" column="88" lean-forward="true" selection-start-line="212" selection-start-column="88" selection-end-line="212" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/select2/js/select2.full.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="6355" column="5" lean-forward="true" selection-start-line="6355" selection-start-column="5" selection-end-line="6355" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="200" column="109" lean-forward="true" selection-start-line="200" selection-start-column="109" selection-end-line="200" selection-end-column="109" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#372#1415#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divulgacion_cientifica/templates/libro_divulgacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="417" column="18" lean-forward="true" selection-start-line="417" selection-start-column="18" selection-end-line="417" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/templates/libro_investigacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="389" column="35" lean-forward="true" selection-end-line="734" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docencia/templates/libro_docencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="471" column="10" lean-forward="true" selection-start-line="471" selection-start-column="10" selection-end-line="471" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="290" column="41" selection-start-line="290" selection-start-column="41" selection-end-line="290" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#387#3676#0" />
+            <element signature="e#3738#5071#0" />
+            <element signature="e#5120#9378#0" />
+            <element signature="e#9428#10786#0" />
+            <element signature="e#15482#18047#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+          <folding>
+            <element signature="e#112#3943#0" />
+            <element signature="e#3983#8010#0" />
+            <element signature="e#8058#11952#0" />
+            <element signature="e#11987#15792#0" />
+            <element signature="e#15828#19512#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/templates/proyecto_investigacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="211" column="45" lean-forward="true" selection-start-line="211" selection-start-column="45" selection-end-line="211" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="68" column="12" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/informe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="1526" column="8" lean-forward="true" selection-start-line="1526" selection-start-column="8" selection-end-line="1526" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2669">
+          <caret line="9483" column="8" selection-start-line="9483" selection-start-column="8" selection-end-line="9483" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0008_auto_20190223_1659.py" />
+    <entry file="file://$PROJECT_DIR$/docencia/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="59" column="15" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_recursos_humanos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+          <folding>
+            <element signature="e#8619#9871#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_recursos_humanos/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555">
+          <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#257#4692#0" />
+            <element signature="e#4763#7556#0" />
+            <element signature="e#7627#8760#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="108" column="71" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="7098" column="14" selection-start-line="7098" selection-start-column="8" selection-end-line="7098" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_misc/nucleo_bak.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="120315" column="32" selection-start-line="120315" selection-start-column="32" selection-end-line="120315" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_misc/nucleo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-478">
+          <caret line="125431" column="31" selection-start-line="125431" selection-start-column="19" selection-end-line="125431" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_misc/codice.bundle" />
+    <entry file="file://$PROJECT_DIR$/_misc/codice.crt" />
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/doctorados.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1633">
+          <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/maestrias.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-793">
+          <caret line="226" column="8" selection-start-line="226" selection-start-column="8" selection-end-line="226" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/migrations/0003_auto_20190301_1256.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/migrations/0004_auto_20190303_1634.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_programalicenciatura.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_detalle_programalicenciatura.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static_custom/js/modales.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="168" column="107" selection-start-line="168" selection-start-column="107" selection-end-line="168" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/post_doctorados.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3390">
+          <caret line="226" column="8" selection-start-line="226" selection-start-column="8" selection-end-line="226" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2805">
+          <caret line="190" column="37" selection-start-line="190" selection-start-column="37" selection-end-line="190" selection-end-column="37" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ebase.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="199" column="41" selection-start-line="199" selection-start-column="41" selection-end-line="199" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formatos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formatos/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="208" column="79" selection-start-line="208" selection-start-column="79" selection-end-line="208" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/WPy-3710/python-3.7.1.amd64/Lib/site-packages/django_select2/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="156" column="41" selection-start-line="156" selection-start-column="30" selection-end-line="156" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="89" column="30" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="30" />
-          <folding>
-            <marker date="1550349289737" expanded="false" signature="4259:4260" ph="..." />
-          </folding>
+        <state relative-caret-position="21870">
+          <caret line="1474" column="6" selection-start-line="1474" selection-start-column="6" selection-end-line="1474" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="232" column="26" selection-start-line="232" selection-start-column="26" selection-end-line="232" selection-end-column="26" />
-          <folding>
-            <element signature="e#4438#4781#0" />
-            <element signature="e#4825#5296#0" />
-            <element signature="e#5329#5926#0" />
-            <element signature="e#5962#6411#0" />
-            <element signature="e#6446#7048#0" />
-          </folding>
+        <state relative-caret-position="10485">
+          <caret line="707" column="29" selection-start-line="707" selection-start-column="29" selection-end-line="707" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/investigacion/forms.py">
+    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/institucion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="104" selection-end-column="8" />
+        <state relative-caret-position="255">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_institucion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1503">
-          <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+        <state relative-caret-position="330">
+          <caret line="22" column="12" selection-start-line="22" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_dependencia.html">
+    <entry file="file://$PROJECT_DIR$/templates/cv.tex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="160" column="50" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="50" />
+        <state relative-caret-position="2970">
+          <caret line="198" column="87" selection-start-line="198" selection-start-column="87" selection-end-line="198" selection-end-column="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/cursos_especializacion.html">
+    <entry file="file://$PROJECT_DIR$/nucleo/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="135" column="27" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="27" />
+        <state relative-caret-position="360">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="36" />
           <folding>
-            <element signature="n#block#1;n#!!top" />
+            <element signature="e#169#1131#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/modales.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="143" column="56" selection-start-line="143" selection-start-column="56" selection-end-line="143" selection-end-column="56" />
+          <folding>
+            <element signature="e#99#1289#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="264" column="50" selection-start-line="264" selection-start-column="50" selection-end-line="264" selection-end-column="50" />
+        <state relative-caret-position="4065">
+          <caret line="271" column="41" selection-start-line="271" selection-start-column="41" selection-end-line="271" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static_custom/js/modales.js">
+    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="39" />
+        <state relative-caret-position="356">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
           <folding>
-            <element signature="e#318#1318#0" />
-            <element signature="e#1380#1971#0" />
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#351#2960#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="56" column="23" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/templates/licenciaturas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="269" column="8" selection-start-line="269" selection-start-column="8" selection-end-line="269" selection-end-column="8" />
         </state>
       </provider>
     </entry>

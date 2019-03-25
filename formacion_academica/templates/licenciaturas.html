@@ -2,37 +2,18 @@
 
 {% block form_agregar %}
     {{ form.errors }}
-    <p><strong>Carrera:</strong>
+    <p><strong>Título obtenido:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Carrera o Programa de licenciatura acreditado.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Título obtenido en la licenciatura."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.carrera }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <span id="boton-detalle-programalicenciatura">
-                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
-                       title="Mostrar o editar los detalles adicionales del programa de licenciatura seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
-                    <i class="fa fa-eye"></i>
-                    </a>
-                </span>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <span id="boton-agregar-programalicenciatura">
-                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
-                       title="Agregar un programa de licenciatura nuevo cuando no existe en los registros.">
-                    <i class="fa fa-plus"></i>
-                    </a>
-                </span>
-            </div>
+            {{ form.titulo_obtenido }}
         </div>
     </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"> </i> </a> </strong>
-        {{ form.descripcion }}
     </p>
     <p><strong>Dependencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -100,19 +81,6 @@
         </div>
     </div>
     </p>
-    <p><strong>URL de tesis:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-link"></i>
-            </div>
-            {{ form.tesis_url }}
-        </div>
-    </div>
-    </p>
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio de la licenciatura."><i
@@ -149,6 +117,19 @@
                 <i class="fa fa-calendar"></i>
             </div>
             {{ form.fecha_grado }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Distinción obtenida:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si obtuvo alguna distinción, escribir el nombre en este campo."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.distincion_obtenida }}
         </div>
     </div>
     </p>
@@ -156,33 +137,18 @@
 
 {% block form_detalle %}
     {{ form.errors }}
-        <p><strong>Carrera:</strong>
+        <p><strong>Título obtenido:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Carrera o Programa de licenciatura acreditado.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Título obtenido en la licenciatura."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.carrera }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la carrera.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/programas-licenciatura" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una carrera nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.titulo_obtenido }}
         </div>
     </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo informaciòn que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"> </i> </a> </strong>
-        {{ form.descripcion }}
     </p>
     <p><strong>Dependencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -250,19 +216,6 @@
         </div>
     </div>
     </p>
-    <p><strong>URL de tesis:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="URL a la tesis, en caso de estan publicada en algún lugar en internet."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-link"></i>
-            </div>
-            {{ form.tesis_url }}
-        </div>
-    </div>
-    </p>
     <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio de la licenciatura."><i
@@ -302,4 +255,18 @@
         </div>
     </div>
     </p>
+    <p><strong>Distinción obtenida:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si obtuvo alguna distinción, escribir el nombre en este campo."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.distincion_obtenida }}
+        </div>
+    </div>
+    </p>
+
 {% endblock %}
