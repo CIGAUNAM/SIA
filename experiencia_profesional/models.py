@@ -6,7 +6,7 @@ from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion, I
 # Create your models here.
 
 
-class ExperienciaLaboral(models.Model):
+class ExperienciaProfesional(models.Model):
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 

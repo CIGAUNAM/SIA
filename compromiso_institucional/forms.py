@@ -6,22 +6,12 @@ from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget
 
 #
 
-class CargoAcademicoAdministrativoForm(forms.ModelForm):
-    cargo = forms.ModelChoiceField(
-        queryset=Cargo.objects.all(),
-        label="Cargo",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Cargo.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    institucion = forms.ModelChoiceField(
+class LaborDirectivaCoordinacionForm(forms.ModelForm):
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -30,7 +20,7 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_dependencia__icontains'],
             dependent_fields={'institucion': 'institucion'},
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
@@ -40,8 +30,11 @@ class CargoAcademicoAdministrativoForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
-        model = CargoAcademicoAdministrativo
+        model = LaborDirectivaCoordinacion
         exclude = ['usuario', ]
+        widgets = {
+            'tipo_cargo': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class RepresentacionOrganoColegiadoForm(forms.ModelForm):
@@ -202,7 +195,7 @@ class RepresentacionForm(forms.ModelForm):
         model = Representacion
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
@@ -212,7 +205,7 @@ class ComisionForm(forms.ModelForm):
         model = Comision
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }
 
@@ -222,6 +215,6 @@ class ActividadApoyoForm(forms.ModelForm):
         model = ActividadApoyo
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }

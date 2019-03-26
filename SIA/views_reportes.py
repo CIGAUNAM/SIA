@@ -12,13 +12,13 @@ from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionSociedadCientifica, DistincionAlumno
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
 from nucleo.models import User, Libro
-from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
+from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
-from apoyo_institucional.models import ComisionAcademica
+from compromiso_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
 from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
     DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
-from apoyo_institucional.models import CargoAcademicoAdministrativo, RepresentacionOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
+from compromiso_institucional.models import LaborDirectivaCoordinacion, RepresentacionOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -111,7 +111,7 @@ class Informe(View):
     context['servicios_externos_entidadesnoacademicas'] = ServicioExternoEntidadNoAcademica.objects.filter(fecha_inicio__year=this_year).distinct()
     context['otros_programa_vinculacion'] = OtroProgramaVinculacion.objects.filter(fecha__year=this_year).distinct()
     context['sociedades_cientificas'] = ParticipacionSociedadCientifica.objects.filter(fecha_inicio__year=this_year).distinct()
-    context['cargos_academicoadministrativos'] = CargoAcademicoAdministrativo.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(dependencia__institucion_dependencia__id=1).distinct()
+    context['cargos_academicoadministrativos'] = LaborDirectivaCoordinacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(dependencia__institucion_dependencia__id=1).distinct()
     context['representacion_organos_colegiados'] = RepresentacionOrganoColegiado.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
     context['comisiones_academicas'] = ComisionAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=False).distinct()
     context['comisiones_academicas_evaluacion'] = ComisionAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=True).distinct()

@@ -60,11 +60,11 @@ class Representacion(models.Model):
         verbose_name_plural = 'Representaciones'
 
 
-class CargoAcademicoAdministrativo(models.Model):
-    cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+class LaborDirectivaCoordinacion(models.Model):
+    cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING, null=True, blank=True)
+    tipo_cargo = models.CharField(max_length=255) # sacar el texto de cargo
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, blank=True, null=True)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
@@ -77,7 +77,7 @@ class CargoAcademicoAdministrativo(models.Model):
         return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        verbose_name_plural = 'Cargos Académico-Administrativos'
+        verbose_name_plural = 'Labores Directivaa y de Coordinación'
         unique_together = ('cargo', 'usuario', 'dependencia', 'fecha_inicio')
         ordering = ['-fecha_inicio']
         get_latest_by = ['user', 'cargo']

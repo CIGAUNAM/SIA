@@ -3,10 +3,10 @@ from . views import *
 
 urlpatterns = [
 
-    url(r'^cargos-academico-administrativos/json/', CargoAcademicoAdministrativoJSON.as_view(), name='cargo_academico_administrativo_lista__json'),
-    url(r'^cargos-academico-administrativos/$', CargoAcademicoAdministrativoLista.as_view(), name='cargo_academico_administrativo_lista'),
-    url(r'^cargos-academico-administrativos/(?P<pk>[\w\-]+)/eliminar$', CargoAcademicoAdministrativoEliminar.as_view(), name='cargo_academico_administrativo_eliminar'),
-    url(r'^cargos-academico-administrativos/(?P<pk>[\w\-]+)/$', CargoAcademicoAdministrativoDetalle.as_view(), name='cargo_academico_administrativo_detalle'),
+    url(r'^labores-directivas-coordinacion/json/', LaborDirectivaCoordinacionJSON.as_view(), name='labor_directiva_coordinacion_lista__json'),
+    url(r'^labores-directivas-coordinacion/$', LaborDirectivaCoordinacionLista.as_view(), name='labor_directiva_coordinacion_lista'),
+    url(r'^labores-directivas-coordinacion/(?P<pk>[\w\-]+)/eliminar$', LaborDirectivaCoordinacionEliminar.as_view(), name='labor_directiva_coordinacion_eliminar'),
+    url(r'^labores-directivas-coordinacion/(?P<pk>[\w\-]+)/$', LaborDirectivaCoordinacionDetalle.as_view(), name='labor_directiva_coordinacion_detalle'),
 
     url(r'^representaciones-organos-colegiados/json/', RepresentacionOrganoColegiadoJSON.as_view(), name='representacion_organo_colegiado_lista__json'),
     url(r'^representaciones-organos-colegiados/$', RepresentacionOrganoColegiadoLista.as_view(), name='representacion_organo_colegiado_lista'),

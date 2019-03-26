@@ -311,7 +311,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         model = ProyectoInvestigacion
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'otro_problema_nacional_conacyt': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             "responsables": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),

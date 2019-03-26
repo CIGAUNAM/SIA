@@ -7,10 +7,10 @@ from . views import *
 
 urlpatterns = [
 
-    url(r'^laborales/json/', ExperienciaLaboralJSON.as_view(), name='experiencia_laboral_lista__json'),
-    url(r'^laborales/$', ExperienciaLaboralLista.as_view(), name='experiencia_laboral_lista'),
-    url(r'^laborales/(?P<pk>[\w\-]+)/eliminar$', ExperienciaLaboralEliminar.as_view(), name='experiencia_laboral_eliminar'),
-    url(r'^laborales/(?P<pk>[\w\-]+)/$', ExperienciaLaboralDetalle.as_view(), name='experiencia_laboral_detalle'),
+    url(r'^profesionales/json/', ExperienciaProfesionalJSON.as_view(), name='experiencia_laboral_lista__json'),
+    url(r'^profesionales/$', ExperienciaProfesionalLista.as_view(), name='experiencia_laboral_lista'),
+    url(r'^profesionales/(?P<pk>[\w\-]+)/eliminar$', ExperienciaProfesionalEliminar.as_view(), name='experiencia_laboral_eliminar'),
+    url(r'^profesionales/(?P<pk>[\w\-]+)/$', ExperienciaProfesionalDetalle.as_view(), name='experiencia_laboral_detalle'),
 
     url(r'^lineas-investigacion/json/', LineaInvestigacionJSON.as_view(), name='linea_investigacion_lista__json'),
     url(r'^lineas-investigacion/$', LineaInvestigacionLista.as_view(), name='linea_investigacion_lista'),

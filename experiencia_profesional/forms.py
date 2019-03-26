@@ -52,7 +52,7 @@ class ExperienciaLaboralForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de finalización')
 
     class Meta:
-        model = ExperienciaLaboral
+        model = ExperienciaProfesional
         exclude = ['usuario', ]
 
 
