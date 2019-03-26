@@ -200,7 +200,7 @@ class PostDoctoradoForm(forms.ModelForm):
         required=True)
     otra_entidad_financiamiento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Financiamiento de otra entidad')
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de finalización')
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de finalización')
 
     class Meta:
         model = PostDoctorado

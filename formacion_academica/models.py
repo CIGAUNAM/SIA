@@ -129,7 +129,7 @@ class PostDoctorado(models.Model):
     entidad_financiamiento = models.CharField(max_length=20, blank=True, null=True, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('SRE', 'SRE'), ('DGAPA', 'DGAPA'), ('OTRA', 'Otra')))
     otra_entidad_financiamiento = models.CharField(max_length=160, blank=True, null=True)
     fecha_inicio = models.DateField('Fecha de inicio de postdoctorado')
-    fecha_fin = models.DateField('Fecha de terminación de postdoctorado', blank=True, null=True)
+    fecha_fin = models.DateField('Fecha de terminación de postdoctorado')
     usuario = models.ForeignKey(User, related_name='postdoctorado_usuario', on_delete=models.DO_NOTHING)
 
     def __str__(self):

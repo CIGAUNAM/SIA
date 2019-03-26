@@ -5,7 +5,7 @@ bc_seccion = 'Experiencia profesional'
 class ExperienciaLaboralContext:
     obj = 'experiencia profesional'
     objs = 'experiencias profesionales'
-    url_seccion = 'profesionales'
+    url_seccion = 'profesional'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

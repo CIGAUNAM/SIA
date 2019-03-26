@@ -51,8 +51,8 @@
             </span>
         </a>
         <ul class="treeview-menu">
-            <li{% if aux.url_seccion == 'laborales' %} class="active"{% endif %}>
-                <a href="/experiencia/profesionales">
+            <li{% if aux.url_seccion == 'profesional' %} class="active"{% endif %}>
+                <a href="/experiencia/profesional">
                     <i class="fa fa-circle-o"></i> Experiencia profesional
                 </a>
             </li>
@@ -65,6 +65,45 @@
                 <a href="/experiencia/capacidades">
                     <i class="fa fa-circle-o"></i> Capacidades y<br/>
                     <i class="fa fa-none"></i> potencialidades
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="treeview{% if aux.url_categoria == "compromiso-institucional" %} active{% endif %}">
+        <a href="#">
+            <i class="fa fa-life-ring fa-fw"></i> <span>Compromiso institucional <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (UNAM)</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li{% if aux.url_seccion == 'labores-directivas-coordinacion' %} class="active"{% endif %}>
+                <a href="/compromiso-institucional/labores-directivas-coordinacion">
+                    <i class="fa fa-circle-o"></i> Labores directivas<br/>
+                    <i class="fa fa-none"></i> y de coordinación
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'representaciones-organos-colegiados' %} class="active"{% endif %}>
+                <a href="/compromiso-institucional/representaciones-organos-colegiados">
+                    <i class="fa fa-circle-o"></i> Representación en órganos<br/>
+                    <i class="fa fa-none"></i> colegiados de la UNAM
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'comisiones-academicas' %} class="active"{% endif %}>
+                <a href="/compromiso-institucional/comisiones-academicas">
+                    <i class="fa fa-circle-o"></i> Comisiones académicas<br/>
+                    <i class="fa fa-none"></i> del CIGA
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'apoyos-tecnicos' %} class="active"{% endif %}>
+                <a href="/compromiso-institucional/apoyos-tecnicos">
+                    <i class="fa fa-circle-o"></i> Apoyo técnico
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'otras-actividades' %} class="active"{% endif %}>
+                <a href="/compromiso-institucional/otras-actividades">
+                    <i class="fa fa-circle-o"></i> Otras Actividades de apoyo
                 </a>
             </li>
         </ul>
@@ -279,44 +318,7 @@
         </ul>
     </li>
 
-    <li class="treeview{% if aux.url_categoria == "compromiso-institucional" %} active{% endif %}">
-        <a href="#">
-            <i class="fa fa-life-ring fa-fw"></i> <span>Compromiso institucional <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (UNAM)</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li{% if aux.url_seccion == 'labores-directivas-coordinacion' %} class="active"{% endif %}>
-                <a href="/compromiso-institucional/labores-directivas-coordinacion">
-                    <i class="fa fa-circle-o"></i> Labores directivas<br/>
-                    <i class="fa fa-none"></i> y de coordinación
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'representaciones-organos-colegiados' %} class="active"{% endif %}>
-                <a href="/compromiso-institucional/representaciones-organos-colegiados">
-                    <i class="fa fa-circle-o"></i> Representación en órganos<br/>
-                    <i class="fa fa-none"></i> colegiados de la UNAM
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'comisiones-academicas' %} class="active"{% endif %}>
-                <a href="/compromiso-institucional/comisiones-academicas">
-                    <i class="fa fa-circle-o"></i> Comisiones académicas<br/>
-                    <i class="fa fa-none"></i> del CIGA
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'apoyos-tecnicos' %} class="active"{% endif %}>
-                <a href="/compromiso-institucional/apoyos-tecnicos">
-                    <i class="fa fa-circle-o"></i> Apoyo técnico
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'otras-actividades' %} class="active"{% endif %}>
-                <a href="/compromiso-institucional/otras-actividades">
-                    <i class="fa fa-circle-o"></i> Otras Actividades de apoyo
-                </a>
-            </li>
-        </ul>
-    </li>
+
 
     <li class="treeview{% if aux.url_categoria == "movilidad-academica" %} active{% endif %}">
         <a href="#">

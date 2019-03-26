@@ -2,29 +2,7 @@
 
 {% block form_agregar %}
     {{ form.errors }}
-    <p><strong>Cargo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Cargo relativo a la experiencia laboral que se está dando de alta, por ejemplo, Director general, Relaciones públicas, Almacenista, etc.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.cargo }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del cargo seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/cargos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un cargo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
+    <p>Cambiar institución/dependencia a institucion simple, si la institución pertenece a la unam, mostrar el campo de nombramiento</p>
     <p><strong>Cargo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del cargo."><i
@@ -141,29 +119,6 @@
 
 {% block form_detalle %}
     {{ form.errors }}
-    <p><strong>Cargo:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Cargo relativo a la experiencia laboral que se está dando de alta, por ejemplo, Director general, Relaciones públicas, Almacenista, etc.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.cargo }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del cargo seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/cargos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un cargo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Cargo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del cargo."><i
