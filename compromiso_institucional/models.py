@@ -83,10 +83,15 @@ class LaborDirectivaCoordinacion(models.Model):
         get_latest_by = ['user', 'cargo']
 
 
-class RepresentacionOrganoColegiado(models.Model):
-    representacion = models.ForeignKey(Representacion, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+class RepresentacionOrganoColegiadoUNAM(models.Model):
+    representacion = models.ForeignKey(Representacion, on_delete=models.DO_NOTHING, blank=True, null=True)
+    tipo_representacion = models.CharField(max_length=30, choices=(('', '-------'), ('UNAM', 'En la UNAM'), ('FUERA', 'Fuera de la UNAM')))
+    representacion_unam = models.CharField(max_length=30, choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
+                                                                   ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
+                                                                   ('OTRA', 'Otra')), blank=True, null=True)
+    representacion_fuera = models.CharField(max_length=250, blank=True, null=True)
+
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)

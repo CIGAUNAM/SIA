@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from . models import ActividadApoyo, Comision, Representacion, LaborDirectivaCoordinacion, \
-    RepresentacionOrganoColegiado, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
+    RepresentacionOrganoColegiadoUNAM, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
     #OrganoColegiado, ComisionEvaluacion
 
 admin.site.register(ActividadApoyo)
@@ -10,7 +10,7 @@ admin.site.register(Comision)
 admin.site.register(Representacion)
 #admin.site.register(OrganoColegiado)
 admin.site.register(LaborDirectivaCoordinacion)
-admin.site.register(RepresentacionOrganoColegiado)
+admin.site.register(RepresentacionOrganoColegiadoUNAM)
 admin.site.register(ComisionAcademica)
 #admin.site.register(ComisionEvaluacion)
 admin.site.register(ApoyoTecnico)

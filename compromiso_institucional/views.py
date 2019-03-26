@@ -48,7 +48,7 @@ class RepresentacionOrganoColegiadoJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = RepresentacionOrganoColegiado.objects.filter(usuario=usuarioid)
+            items = RepresentacionOrganoColegiadoUNAM.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('representacion', 'dependencia', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
@@ -58,14 +58,14 @@ class RepresentacionOrganoColegiadoJSON(View):
 
 class RepresentacionOrganoColegiadoLista(ObjectCreateMixin, View):
     form_class = RepresentacionOrganoColegiadoForm
-    model = RepresentacionOrganoColegiado
+    model = RepresentacionOrganoColegiadoUNAM
     aux = RepresentacionOrganoColegiadoContext.contexto
     template_name = 'representacion_organo_colegiado.html'
 
 
 class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
     form_class = RepresentacionOrganoColegiadoForm
-    model = RepresentacionOrganoColegiado
+    model = RepresentacionOrganoColegiadoUNAM
     aux = RepresentacionOrganoColegiadoContext.contexto
     template_name = 'representacion_organo_colegiado.html'
 
@@ -73,7 +73,7 @@ class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
 class RepresentacionOrganoColegiadoEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(RepresentacionOrganoColegiado, pk=pk, usuario=request.user)
+            item = get_object_or_404(RepresentacionOrganoColegiadoUNAM, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:

@@ -1,36 +1,42 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Representación:</strong>
+    <p><strong>Tipo de representación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Representación ante organos colegiados.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Tipo de representación."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.representacion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la representacion.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/apoyo-institucional/representaciones" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar una representacion nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo_representacion }}
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+    <p><strong>Representación en la UNAM:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Representación en la UNAM."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.representacion_unam }}
+        </div>
+    </div>
     </p>
+
+    <p><strong>Representación fuera de la UNAM:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título de artículo como aparece publicado.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.representacion_fuera }}
+        </div>
+    </div>
+    </p>
+
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución donde se desarrolló la representación.">
@@ -39,7 +45,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -110,36 +116,42 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Representación:</strong>
+    <p><strong>Tipo de representación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Representación ante organos colegiados.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Tipo de representación."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.representacion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la representacion.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/apoyo-institucional/representaciones" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar una representacion nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo_representacion }}
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+    <p><strong>Representación en la UNAM:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Representación en la UNAM."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.representacion_unam }}
+        </div>
+    </div>
     </p>
+
+    <p><strong>Representación fuera de la UNAM:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Título de artículo como aparece publicado.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.representacion_fuera }}
+        </div>
+    </div>
+    </p>
+
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución donde se desarrolló la representación.">
@@ -148,7 +160,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">

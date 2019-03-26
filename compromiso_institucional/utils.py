@@ -1,5 +1,5 @@
-url_categoria = 'apoyo-institucional'
-bc_seccion = 'Apoyo Institucional'
+url_categoria = 'compromiso-institucional'
+bc_seccion = 'Compromiso Institucional (UNAM)'
 
 
 class LaborDirectivaCoordinacionContext:
@@ -45,11 +45,10 @@ class LaborDirectivaCoordinacionContext:
 
 
 class RepresentacionOrganoColegiadoContext:
-    obj = 'representación en organos colegiados'
-    objs = 'representaciones en organos colegiados'
-    Objs = 'Representaciones en organos colegiados'
-    url_seccion = 'representaciones-organos-colegiados'
-
+    obj = 'representación en organos colegiados de la UNAM'
+    objs = 'representaciones en organos colegiados de la UNAM'
+    Objs = 'Representaciones en organos colegiados de la UNAM'
+    url_seccion = 'representaciones-organos-colegiados de la UNAM'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

@@ -78,6 +78,33 @@
             </span>
         </a>
         <ul class="treeview-menu">
+
+            <li{% if aux.url_seccion == 'articulos-cientificos' %} class="treeview menu-open"{% endif %}>
+                <a href="/investigacion/articulos-cientificos">
+                    <i class="fa fa-circle-o"></i> Producción primaria
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+
+                <ul class="treeview-menu" style="display: block;">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-circle-o"></i> Level Two
+                            <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </li>
+
             <li{% if aux.url_seccion == 'articulos-cientificos' %} class="active"{% endif %}>
                 <a href="/investigacion/articulos-cientificos">
                     <i class="fa fa-circle-o"></i> Artículos científicos
@@ -90,7 +117,7 @@
             </li>
             <li{% if aux.url_seccion == 'capitulos-libros-investigacion' %} class="active"{% endif %}>
                 <a href="/investigacion/capitulos-libros-investigacion">
-                    <i class="fa fa-circle-o"></i> Capítulos en libros <br />
+                    <i class="fa fa-circle-o"></i> Capítulos en libros <br/>
                     <i class="fa fa-none"></i> de investigación
                 </a>
             </li>
@@ -269,12 +296,13 @@
             <li{% if aux.url_seccion == 'representaciones-organos-colegiados' %} class="active"{% endif %}>
                 <a href="/compromiso-institucional/representaciones-organos-colegiados">
                     <i class="fa fa-circle-o"></i> Representación en órganos<br/>
-                    <i class="fa fa-none"></i> colegiados
+                    <i class="fa fa-none"></i> colegiados de la UNAM
                 </a>
             </li>
             <li{% if aux.url_seccion == 'comisiones-academicas' %} class="active"{% endif %}>
                 <a href="/compromiso-institucional/comisiones-academicas">
-                    <i class="fa fa-circle-o"></i> Comisiones académicas
+                    <i class="fa fa-circle-o"></i> Comisiones académicas<br/>
+                    <i class="fa fa-none"></i> del CIGA
                 </a>
             </li>
             <li{% if aux.url_seccion == 'apoyos-tecnicos' %} class="active"{% endif %}>
