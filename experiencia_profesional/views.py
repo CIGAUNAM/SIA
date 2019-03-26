@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from . permissions import IsOwnerOrReadOnly
 from rest_framework import permissions
-from experiencia_laboral.serializers import *
+from experiencia_profesional.serializers import *
 from rest_framework import generics
 from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
@@ -16,11 +16,11 @@ from . utils import *
 
 
 
-class ExperienciaLaboralJSON(View):
+class ExperienciaProfesionalJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            experiencias = ExperienciaLaboral.objects.filter(usuario=usuarioid)
+            experiencias = ExperienciaProfesional.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', experiencias,
                                          fields=('cargo2', 'nombramiento', 'fecha_inicio', 'institucion2'),
                                          use_natural_foreign_keys=True)
@@ -29,25 +29,25 @@ class ExperienciaLaboralJSON(View):
             raise Http404
 
 
-class ExperienciaLaboralLista(ObjectCreateMixin, View):
+class ExperienciaProfesionalLista(ObjectCreateMixin, View):
     form_class = ExperienciaLaboralForm
-    model = ExperienciaLaboral
+    model = ExperienciaProfesional
     aux = ExperienciaLaboralContext.contexto
-    template_name = 'experiencia_laboral.html'
+    template_name = 'experiencia_profesional.html'
 
 
-class ExperienciaLaboralDetalle(ObjectUpdateMixin, View):
+class ExperienciaProfesionalDetalle(ObjectUpdateMixin, View):
     form_class = ExperienciaLaboralForm
-    model = ExperienciaLaboral
+    model = ExperienciaProfesional
     aux = ExperienciaLaboralContext.contexto
 
-    template_name = 'experiencia_laboral.html'
+    template_name = 'experiencia_profesional.html'
 
 
-class ExperienciaLaboralEliminar(View):
+class ExperienciaProfesionalEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ExperienciaLaboral, pk=pk, usuario=request.user)
+            item = get_object_or_404(ExperienciaProfesional, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:
@@ -148,7 +148,7 @@ class CapacidadPotencialidadEliminar(View):
 
 class ExperienciaLaboralList(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
-    queryset = ExperienciaLaboral.objects.all()
+    queryset = ExperienciaProfesional.objects.all()
     serializer_class = ExperienciaLaboralSerializer
 
     def perform_create(self, serializer):
@@ -157,7 +157,7 @@ class ExperienciaLaboralList(generics.ListCreateAPIView):
 
 class ExperienciaLaboralDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
-    queryset = ExperienciaLaboral.objects.all()
+    queryset = ExperienciaProfesional.objects.all()
     serializer_class = ExperienciaLaboralSerializer
 
 

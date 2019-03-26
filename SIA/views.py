@@ -12,9 +12,9 @@ from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
 from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
 from nucleo.models import User, Libro
-from experiencia_laboral.models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
+from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
-from apoyo_institucional.models import ComisionAcademica
+from compromiso_institucional.models import ComisionAcademica
 from movilidad_academica.models import MovilidadAcademica
 from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
     DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
@@ -5379,46 +5379,46 @@ class InformeActividades(View):
                                                    'convenios_academicasp': convenios_academicasp,
                                                    }
 
-            p_investigadores_unam = ExperienciaLaboral.objects.filter(
+            p_investigadores_unam = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Investigador UNAM', fecha_inicio__year__gte=this_year - 2,
                 fecha_inicio__year__lte=this_year - 1).count()
 
-            p_investigadores_catedra = ExperienciaLaboral.objects.filter(
+            p_investigadores_catedra = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Cátedras CONACYT', fecha_inicio__year__gte=this_year - 2,
                 fecha_inicio__year__lte=this_year - 1).count()
 
-            p_investigadores_postdoctoral = ExperienciaLaboral.objects.filter(
+            p_investigadores_postdoctoral = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Investigador Postdoctoral', fecha_inicio__year__gte=this_year - 2,
                 fecha_inicio__year__lte=this_year - 1).count()
 
-            p_investigadores_convenio = ExperienciaLaboral.objects.filter(
+            p_investigadores_convenio = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Investigador por convenio', fecha_inicio__year__gte=this_year - 2,
                 fecha_inicio__year__lte=this_year - 1).count()
 
-            investigadores_unam = ExperienciaLaboral.objects.filter(
+            investigadores_unam = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Investigador UNAM', fecha_inicio__year__gte=this_year - 1).count()
 
-            investigadores_catedra = ExperienciaLaboral.objects.filter(
+            investigadores_catedra = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Cátedras CONACYT', fecha_inicio__year__gte=this_year - 1).count()
 
-            investigadores_postdoctoral = ExperienciaLaboral.objects.filter(
+            investigadores_postdoctoral = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Investigador Postdoctoral', fecha_inicio__year__gte=this_year - 1).count()
 
-            investigadores_convenio = ExperienciaLaboral.objects.filter(
+            investigadores_convenio = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 cargo__nombre='Investigador por convenio', fecha_inicio__year__gte=this_year - 1).count()
 
-            p_investigadores_count = ExperienciaLaboral.objects.filter(
+            p_investigadores_count = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 fecha_inicio__year__gte=this_year - 2, fecha_inicio__year__lte=this_year - 1).count()
-            investigadores_count = ExperienciaLaboral.objects.filter(
+            investigadores_count = ExperienciaProfesional.objects.filter(
                 dependencia__nombre='Centro de Investigaciones en Geografía Ambiental (CIGA)',
                 fecha_inicio__year__gte=this_year - 1).count()
 
@@ -6894,10 +6894,10 @@ class CVInvestigadorDetalle(View):
         maestrias = Maestria.objects.filter(usuario=pk)
         licenciaturas = Licenciatura.objects.filter(usuario=pk)
         cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by('-fecha_inicio')
-        exp_prof_unam_prom = ExperienciaLaboral.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by('-fecha_inicio')
+        exp_prof_unam = ExperienciaProfesional.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by('-fecha_inicio')
+        exp_prof_unam_prom = ExperienciaProfesional.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by('-fecha_inicio')
 
-        exp_prof_ext = ExperienciaLaboral.objects.filter(usuario=pk).exclude(
+        exp_prof_ext = ExperienciaProfesional.objects.filter(usuario=pk).exclude(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
         lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
@@ -7004,17 +7004,17 @@ class CVInvestigadorPDF(View):
         doctorados = Doctorado.objects.filter(usuario=pk).order_by('-fecha_grado')
         postdoctorados = PostDoctorado.objects.filter(usuario=pk).order_by('-fecha_fin')
         cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        exp_prof_unam = ExperienciaLaboral.objects.filter(usuario=pk).filter(
+        exp_prof_unam = ExperienciaProfesional.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by(
             '-fecha_inicio')
-        exp_prof_unam_prom = ExperienciaLaboral.objects.filter(usuario=pk).filter(
+        exp_prof_unam_prom = ExperienciaProfesional.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by(
             '-fecha_inicio')
 
-        exp_prof_ext = ExperienciaLaboral.objects.filter(usuario=pk).exclude(
+        exp_prof_ext = ExperienciaProfesional.objects.filter(usuario=pk).exclude(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
 
-        servicios_acad_admnvos = ExperienciaLaboral.objects.filter(usuario=pk).filter(
+        servicios_acad_admnvos = ExperienciaProfesional.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').exclude(cargo__tipo_cargo='OTRO').order_by(
             '-fecha_inicio')
         comisiones_institucionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')

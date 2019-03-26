@@ -1,5 +1,5 @@
 from rest_framework import permissions
-from experiencia_laboral.serializers import *
+from experiencia_profesional.serializers import *
 from rest_framework import generics
 from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View

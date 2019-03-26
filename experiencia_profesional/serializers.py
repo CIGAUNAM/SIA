@@ -1,11 +1,11 @@
 from rest_framework import serializers
-from experiencia_laboral.models import *
+from experiencia_profesional.models import *
 
 
 
 class ExperienciaLaboralSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ExperienciaLaboral
+        model = ExperienciaProfesional
         usuario = serializers.ReadOnlyField(source='usuario.username')
         fields = ('id', 'dependencia', 'nombramiento', 'es_nombramiento_definitivo', 'nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'usuario')
 

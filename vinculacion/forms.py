@@ -208,6 +208,6 @@ class ClasificacionServicioForm(forms.ModelForm):
         model = ClasificacionServicio
         exclude = []
         widgets = {
-            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
         }

@@ -145,6 +145,10 @@ class MaestriaForm(forms.ModelForm):
 
 
 class DoctoradoForm(forms.ModelForm):
+    titulo_obtenido = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    distincion_obtenida = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+
+    """
     programa = forms.ModelChoiceField(
         queryset=ProgramaDoctorado.objects.all(),
         label="ProgramaDoctorado",
@@ -164,6 +168,8 @@ class DoctoradoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    
+    """
     institucion = forms.ModelChoiceField(
         required=False,
         queryset=InstitucionSimple.objects.all(),
@@ -175,9 +181,9 @@ class DoctoradoForm(forms.ModelForm):
         )
     )
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    tesis_url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
-    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    #tesis_url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    #fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    #fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     fecha_grado = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
 
     class Meta:
@@ -186,26 +192,18 @@ class DoctoradoForm(forms.ModelForm):
 
 
 class PostDoctoradoForm(forms.ModelForm):
-    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de Post Doctorado')
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    area_conocimiento = forms.ModelChoiceField(
-        queryset=AreaConocimiento.objects.all(),
-        label="Área de conocimiento",
+    titulo_proyecto = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de proyecto postdoctoral')
+
+    tutor_responsable = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Tutor o investigador responsable",
         widget=ModelSelect2Widget(
-            search_fields=['areaconocimiento_nombre__icontains'],
-            queryset=AreaConocimiento.objects.all(),
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre_dependencia__icontains'],
-            queryset=Dependencia.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+
     institucion = forms.ModelChoiceField(
         required=False,
         queryset=InstitucionSimple.objects.all(),
@@ -216,16 +214,11 @@ class PostDoctoradoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    proyecto = forms.ModelChoiceField(
-        required=True,
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    entidad_financiamiento = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('SRE', 'SRE'), ('DGAPA', 'DGAPA'), ('OTRA', 'Otra')),
+        required=True)
+    otra_entidad_financiamiento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Financiamiento de otra entidad')
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False, label='Fecha de finalización')
 

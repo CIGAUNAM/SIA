@@ -2,9 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-from . models import ExperienciaLaboral, LineaInvestigacion, CapacidadPotencialidad
+from . models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 
-admin.site.register(ExperienciaLaboral)
+admin.site.register(ExperienciaProfesional)
 admin.site.register(LineaInvestigacion)
 admin.site.register(CapacidadPotencialidad)
 

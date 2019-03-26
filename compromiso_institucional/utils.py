@@ -2,11 +2,11 @@ url_categoria = 'apoyo-institucional'
 bc_seccion = 'Apoyo Institucional'
 
 
-class CargoAcademicoAdministrativoContext:
-    obj = 'cargo académico-administrativo'
-    objs = 'cargos académico-administrativos'
-    Objs = 'Cargos académico-administrativos'
-    url_seccion = 'cargos-academico-administrativos'
+class LaborDirectivaCoordinacionContext:
+    obj = 'labor directiva y de coordinacion'
+    objs = 'labores directivas y de coordinación'
+    Objs = 'Labores directivas y de coordinación'
+    url_seccion = 'labores-directivas-coordinacion'
 
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
@@ -14,7 +14,7 @@ class CargoAcademicoAdministrativoContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Cargo', 'Dependencia', 'Inicio', 'Fin']}
+                'titulos_tabla': ['Tipo cargo', 'Dependencia', 'Inicio', 'Fin']}
 
 
     tabla_mios =  '<script>\n' \
@@ -28,9 +28,9 @@ class CargoAcademicoAdministrativoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.cargo",\n' \
+                                        '"data": "fields.tipo_cargo",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.cargo + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.tipo_cargo + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \

@@ -8,36 +8,36 @@ from . models import *
 # Create your views here.
 
 
-class CargoAcademicoAdministrativoJSON(View):
+class LaborDirectivaCoordinacionJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = CargoAcademicoAdministrativo.objects.filter(usuario=usuarioid)
+            items = LaborDirectivaCoordinacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('cargo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
+                                         fields=('tipo_cargo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class CargoAcademicoAdministrativoLista(ObjectCreateMixin, View):
-    form_class = CargoAcademicoAdministrativoForm
-    model = CargoAcademicoAdministrativo
-    aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'cargo_academico-administrativo.html'
+class LaborDirectivaCoordinacionLista(ObjectCreateMixin, View):
+    form_class = LaborDirectivaCoordinacionForm
+    model = LaborDirectivaCoordinacion
+    aux = LaborDirectivaCoordinacionContext.contexto
+    template_name = 'labor_directiva_coordinacion.html'
 
 
-class CargoAcademicoAdministrativoDetalle(ObjectUpdateMixin, View):
-    form_class = CargoAcademicoAdministrativoForm
-    model = CargoAcademicoAdministrativo
-    aux = CargoAcademicoAdministrativoContext.contexto
-    template_name = 'cargo_academico-administrativo.html'
+class LaborDirectivaCoordinacionDetalle(ObjectUpdateMixin, View):
+    form_class = LaborDirectivaCoordinacionForm
+    model = LaborDirectivaCoordinacion
+    aux = LaborDirectivaCoordinacionContext.contexto
+    template_name = 'labor_directiva_coordinacion.html'
 
 
-class CargoAcademicoAdministrativoEliminar(View):
+class LaborDirectivaCoordinacionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(CargoAcademicoAdministrativo, pk=pk, usuario=request.user)
+            item = get_object_or_404(LaborDirectivaCoordinacion, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:
