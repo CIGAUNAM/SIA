@@ -56,6 +56,7 @@ class LicenciaturaForm(forms.ModelForm):
     titulo_obtenido = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     distincion_obtenida = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
 
+    """
     carrera = forms.ModelChoiceField(
         required=False,
         queryset=ProgramaLicenciatura.objects.all(),
@@ -76,6 +77,7 @@ class LicenciaturaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    """
     institucion = forms.ModelChoiceField(
         required=False,
         queryset=InstitucionSimple.objects.all(),
@@ -87,8 +89,8 @@ class LicenciaturaForm(forms.ModelForm):
         )
     )
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    #fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    #fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_grado = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
@@ -97,6 +99,10 @@ class LicenciaturaForm(forms.ModelForm):
 
 
 class MaestriaForm(forms.ModelForm):
+    titulo_obtenido = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    distincion_obtenida = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+
+    """
     programa = forms.ModelChoiceField(
         queryset=ProgramaMaestria.objects.all(),
         label="ProgramaMaestria",
@@ -116,6 +122,7 @@ class MaestriaForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    """
     institucion = forms.ModelChoiceField(
         required=False,
         queryset=InstitucionSimple.objects.all(),
@@ -127,9 +134,9 @@ class MaestriaForm(forms.ModelForm):
         )
     )
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    tesis_url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
-    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    #tesis_url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    #fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    #fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     fecha_grado = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
 
     class Meta:

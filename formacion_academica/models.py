@@ -48,11 +48,11 @@ class CursoEspecializacion(models.Model):
 class Licenciatura(models.Model):
     titulo_obtenido = models.CharField(max_length=255)
     carrera = models.ForeignKey(ProgramaLicenciatura, on_delete=models.DO_NOTHING, null=True, blank=True)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True,)
     institucion = models.ForeignKey(InstitucionSimple, null=True, blank=True, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
-    fecha_inicio = models.DateField('Fecha de inicio de licenciatura')
-    fecha_fin = models.DateField('Fecha de terminación de licenciatura')
+    #fecha_inicio = models.DateField('Fecha de inicio de licenciatura')
+    #fecha_fin = models.DateField('Fecha de terminación de licenciatura')
     fecha_grado = models.DateField('Fecha de obtención de grado de licenciatura')
     distincion_obtenida = models.CharField(max_length=255, null=True, blank=True, )
     usuario = models.ForeignKey(User, related_name='licenciaturas', on_delete=models.DO_NOTHING)
@@ -64,21 +64,22 @@ class Licenciatura(models.Model):
         return reverse('licenciatura_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['dependencia', 'carrera', 'titulo_tesis']
-        unique_together = ['carrera', 'usuario']
+        ordering = ['titulo_obtenido', 'titulo_tesis']
+        unique_together = ['titulo_obtenido', 'usuario']
 
 
 class Maestria(models.Model):
-    programa = models.ForeignKey(ProgramaMaestria, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(verbose_name='Descripición', blank=True)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    titulo_obtenido = models.CharField(max_length=255)
+    programa = models.ForeignKey(ProgramaMaestria, on_delete=models.DO_NOTHING, null=True, blank=True,)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True,)
     institucion = models.ForeignKey(InstitucionSimple, null=True, blank=True, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
-    tesis_doc = models.FileField(blank=True)
-    tesis_url = models.URLField(blank=True)
-    fecha_inicio = models.DateField('Fecha de inicio de maestría')
-    fecha_fin = models.DateField('Fecha de terminación de maestría', blank=True, null=True)
+    #tesis_doc = models.FileField(blank=True)
+    #tesis_url = models.URLField(blank=True)
+    #fecha_inicio = models.DateField('Fecha de inicio de maestría')
+    #fecha_fin = models.DateField('Fecha de terminación de maestría', blank=True, null=True)
     fecha_grado = models.DateField('Fecha de obtención de grado de maestría', blank=True, null=True)
+    distincion_obtenida = models.CharField(max_length=255, null=True, blank=True, )
     usuario = models.ForeignKey(User, related_name='maestrias', on_delete=models.DO_NOTHING)
 
     def __str__(self):
@@ -88,8 +89,8 @@ class Maestria(models.Model):
         return reverse('maestria_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['dependencia', 'programa', 'titulo_tesis']
-        unique_together = ['programa', 'usuario']
+        ordering = ['titulo_obtenido', 'titulo_tesis']
+        unique_together = ['titulo_obtenido', 'usuario']
 
 
 class Doctorado(models.Model):
