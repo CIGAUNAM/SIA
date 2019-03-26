@@ -20,14 +20,11 @@ CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODAL
 class CursoEspecializacion(models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Nombre del curso',
                               help_text='Nombre del curso texto de ayuda')
-    descripcion = models.TextField(verbose_name='Descripción', blank=True)
     tipo = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_TIPO, verbose_name='Tipo de curso')
     horas = models.PositiveIntegerField(verbose_name='Número de horas')
     fecha_inicio = models.DateField('Fecha de inicio')
     fecha_fin = models.DateField('Fecha de finalización', blank=True, null=True)
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
-    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento',
-                                          on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
