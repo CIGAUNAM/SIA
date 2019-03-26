@@ -15,32 +15,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia donde se llevó a cabo licenciatura, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución donde llevó a cabo sus estudios de licenciatura.">
@@ -78,32 +52,6 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.titulo_tesis }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha de inicio:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de inicio de la licenciatura."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha_inicio }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha de fin:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de terminación de la licenciatura, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha_fin }}
         </div>
     </div>
     </p>
@@ -137,7 +85,7 @@
 
 {% block form_detalle %}
     {{ form.errors }}
-        <p><strong>Título obtenido:</strong>
+    <p><strong>Título obtenido:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título obtenido en la licenciatura."><i
                 class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -147,32 +95,6 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.titulo_obtenido }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia donde se llevó a cabo licenciatura, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
@@ -216,32 +138,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Fecha de inicio:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de inicio de la licenciatura."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha_inicio }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha de fin:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de terminación de la licenciatura, es decir, del término de estudios o acreditación total de creditos necesarios. No es la fecha de titulación que en algunos casos puede ser posterior."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha_fin }}
-        </div>
-    </div>
-    </p>
     <p><strong>Fecha de obtención de grado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de titulación y obtención de grado de licenciatura."><i
@@ -268,5 +164,4 @@
         </div>
     </div>
     </p>
-
 {% endblock %}
