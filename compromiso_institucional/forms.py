@@ -2,7 +2,7 @@ from SIA.widgets import *
 from .models import *
 
 from django import forms
-from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget
+from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Select2Widget
 
 #
 
@@ -38,6 +38,17 @@ class LaborDirectivaCoordinacionForm(forms.ModelForm):
 
 
 class RepresentacionOrganoColegiadoForm(forms.ModelForm):
+    tipo_representacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('UNAM', 'En la UNAM'), ('FUERA', 'Fuera de la UNAM')), required=False)
+    representacion_unam = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
+                 ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
+                 ('OTRA', 'Otra')), required=False)
+
+    reoresentacion_fuera = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+
     representacion = forms.ModelChoiceField(
         queryset=Representacion.objects.all(),
         label="Representación",
@@ -47,7 +58,6 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
@@ -71,8 +81,9 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
-        model = RepresentacionOrganoColegiado
+        model = RepresentacionOrganoColegiadoUNAM
         exclude = ['usuario', ]
+
 
 
 class ComisionAcademicaForm(forms.ModelForm):
