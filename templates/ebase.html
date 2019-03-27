@@ -10,29 +10,34 @@
     {% endblock %}
 {% endblock %}
 
-    {% block content_header %}
-        <section class="content-header">
-            <h1> {{ aux.titulo_pagina }}
-                {% block page_name %}{% endblock %}
-                {% block no_description %}
-                    <small>{% block page_description %}{% endblock %}</small>
-                {% endblock %}
-            </h1>
-            {% block breadcrumbs %}
-                {# Breadcrumb implementation left to developers #}
-                <ol class="breadcrumb">
-                    <li><a href="/">Inicio</a></li>
-                    <li>{{ aux.breadcrumb_seccion }}</li>
-                    <li class="active">{{ aux.titulo_pagina }}</li>
-                </ol>
+{% block content_header %}
+    <section class="content-header">
+        <h1 style="margin-top: 0px; margin-bottom: 14px;"> {{ aux.titulo_pagina }}
+            {% block page_name %}{% endblock %}
+            {% block no_description %}
+                <small>{% block page_description %}{% endblock %}</small>
             {% endblock %}
-        </section>
-    {% endblock %}
+        </h1>
+
+    </section>
+
+    <section class="content-header1">
+        {% block breadcrumbs %}
+            {# Breadcrumb implementation left to developers #}
+            <ol class="breadcrumb" style="margin-bottom: 4px;">
+                <li><a href="/">Inicio</a></li>
+                <li>{{ aux.breadcrumb_seccion }}</li>
+                <li class="active">{{ aux.titulo_pagina }}</li>
+            </ol>
+        {% endblock %}
+    </section>
+
+{% endblock %}
 
 
 
-    {% block content %}
+{% block content %}
 
-    {% endblock %}
+{% endblock %}
 
 
