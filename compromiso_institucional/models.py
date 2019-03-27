@@ -70,17 +70,17 @@ class LaborDirectivaCoordinacion(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "[ {} : {} ] : {} : {} : {} : {}".format(self.usuario, self.cargo, self.dependencia.nombre,
-                                                        self.dependencia.institucion, self.fecha_inicio, self.fecha_fin)
+        return "[{} : {}] : {} : {}".format(self.tipo_cargo, self.dependencia,
+                                                        self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Labores Directivaa y de Coordinación'
-        unique_together = ('cargo', 'usuario', 'dependencia', 'fecha_inicio')
+        unique_together = ('tipo_cargo', 'usuario', 'dependencia', 'fecha_inicio')
         ordering = ['-fecha_inicio']
-        get_latest_by = ['user', 'cargo']
+        get_latest_by = ['user', 'tipo_cargo']
 
 
 class RepresentacionOrganoColegiadoUNAM(models.Model):
