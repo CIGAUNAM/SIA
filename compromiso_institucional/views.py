@@ -50,7 +50,7 @@ class RepresentacionOrganoColegiadoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = RepresentacionOrganoColegiadoUNAM.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('representacion', 'dependencia', 'fecha_inicio', 'fecha_fin'))
+                                         fields=('tipo_representacion', 'representacion_unam', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

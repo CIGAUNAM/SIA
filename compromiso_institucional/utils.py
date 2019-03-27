@@ -48,7 +48,7 @@ class RepresentacionOrganoColegiadoContext:
     obj = 'representación en organos colegiados de la UNAM'
     objs = 'representaciones en organos colegiados de la UNAM'
     Objs = 'Representaciones en organos colegiados de la UNAM'
-    url_seccion = 'representaciones-organos-colegiados de la UNAM'
+    url_seccion = 'representaciones-organos-colegiados-unam'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
