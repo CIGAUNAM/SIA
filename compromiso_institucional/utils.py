@@ -89,7 +89,7 @@ class ComisionAcademicaContext:
     obj = 'comisión académica'
     objs = 'comisiones académicas'
     Objs = 'Comisiones académicas'
-    url_seccion = 'comisiones-academicas'
+    url_seccion = 'comisiones-institucionales-ciga'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

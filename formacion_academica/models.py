@@ -17,6 +17,8 @@ CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODAL
 # Create your models here.
 
 
+
+
 class CursoEspecializacion(models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Nombre del curso',
                               help_text='Nombre del curso texto de ayuda')
@@ -63,6 +65,8 @@ class Licenciatura(models.Model):
     class Meta:
         ordering = ['titulo_obtenido', 'titulo_tesis']
         unique_together = ['titulo_obtenido', 'usuario']
+
+
 
 
 class Maestria(models.Model):

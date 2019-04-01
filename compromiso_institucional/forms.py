@@ -37,43 +37,34 @@ class LaborDirectivaCoordinacionForm(forms.ModelForm):
         }
 
 
-class RepresentacionOrganoColegiadoForm(forms.ModelForm):
+class RepresentacionOrganoColegiadoUNAMForm(forms.ModelForm):
     tipo_representacion = forms.ChoiceField(
-        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', '-------'), ('UNAM', 'En la UNAM'), ('FUERA', 'Fuera de la UNAM')), required=False)
-    representacion_unam = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right', 'placeholder': 'Tipo de representación'}),
+        choices=(('', '-------'), ('DENTRO', 'Dentro de la UNAM'), ('FUERA', 'Fuera de la UNAM')), required=False)
+    representacion_dentro_unam = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
                  ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
                  ('OTRA', 'Otra')), required=False)
 
-    reoresentacion_fuera = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    representacion_dentro_unam_otra = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True)
+    representacion_fuera_unam = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True)
 
-    representacion = forms.ModelChoiceField(
-        queryset=Representacion.objects.all(),
-        label="Representación",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Representacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
+    institucion_dentro_unam = forms.ModelChoiceField(
+        queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=True),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=True),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
+    institucion_fuera_unam = forms.ModelChoiceField(
+        queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=True),
+        label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=True),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -86,25 +77,17 @@ class RepresentacionOrganoColegiadoForm(forms.ModelForm):
 
 
 
-class ComisionAcademicaForm(forms.ModelForm):
-    comision_academica = forms.ModelChoiceField(
-        queryset=Comision.objects.all(),
-        label="Comisión",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Comision.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    es_evaluacion = forms.BooleanField(required=False)
+class ComisionInstitucionalCIGAForm(forms.ModelForm):
+    tipo_institucion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right', 'placeholder': 'Tipo de representación'}),
+        choices=(('', '-------'), ('INTERIOR', 'Al interior del CIGA'), ('EXTERIOR', 'Al exterior del CIGA')), required=False)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    institucion = forms.ModelChoiceField(
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
+            search_fields=['nombre_institucion__icontains'],
             queryset=Institucion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
@@ -113,16 +96,18 @@ class ComisionAcademicaForm(forms.ModelForm):
         queryset=Dependencia.objects.all(),
         label="Dependencia",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
+            search_fields=['nombre_dependencia__icontains'],
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
 
     class Meta:
-        model = ComisionAcademica
+        model = ComisionInstitucionalCIGA
         exclude = ['usuario', ]
+        widgets = {
+            'tipo_comision': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        }
 
 
 class ApoyoTecnicoForm(forms.ModelForm):

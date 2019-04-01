@@ -90,9 +90,9 @@
                     <i class="fa fa-none"></i> colegiados de la UNAM
                 </a>
             </li>
-            <li{% if aux.url_seccion == 'comisiones-academicas' %} class="active"{% endif %}>
-                <a href="/compromiso-institucional/comisiones-academicas/">
-                    <i class="fa fa-circle-o"></i> Comisiones académicas<br/>
+            <li{% if aux.url_seccion == 'comisiones-institucionales-ciga' %} class="active"{% endif %}>
+                <a href="/compromiso-institucional/comisiones-institucionales-ciga/">
+                    <i class="fa fa-circle-o"></i> Comisiones institucionales<br/>
                     <i class="fa fa-none"></i> del CIGA
                 </a>
             </li>
@@ -118,63 +118,61 @@
         </a>
         <ul class="treeview-menu">
 
-            <li{% if aux.url_seccion == 'articulos-cientificos' %} class="treeview menu-open"{% endif %}>
-                <a href="/investigacion/articulos-cientificos">
-                    <i class="fa fa-circle-o"></i> Producción primaria
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
 
-                <ul class="treeview-menu" style="display: block;">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                            <span class="pull-right-container">
+            <li class="treeview">
+                <a href="#"><i class="fa fa-circle-o"></i> Producción primaria
+                    <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li{% if aux.url_seccion == 'articulos-cientificos' %} class="active"{% endif %}>
+                        <a href="/investigacion/articulos-cientificos">
+                            <i class="fa fa-circle-o"></i> Artículos científicos
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                        </ul>
+                    </li>
+                    <li{% if aux.url_seccion == 'libros-investigacion' %} class="active"{% endif %}>
+                        <a href="/investigacion/libros-investigacion">
+                            <i class="fa fa-circle-o"></i> Libros de investigación
+                        </a>
+                    </li>
+                    <li{% if aux.url_seccion == 'capitulos-libros-investigacion' %} class="active"{% endif %}>
+                        <a href="/investigacion/capitulos-libros-investigacion">
+                            <i class="fa fa-circle-o"></i> Capítulos en libros <br/>
+                            <i class="fa fa-none"></i> de investigación
+                        </a>
+                    </li>
+                    <li{% if aux.url_seccion == 'mapas-arbitrados' %} class="active"{% endif %}>
+                        <a href="/investigacion/mapas-arbitrados">
+                            <i class="fa fa-circle-o"></i> Mapas arbitrados
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#"><i class="fa fa-circle-o"></i> Producción <br/>
+                    <i class="fa fa-none"></i> complementaria
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li{% if aux.url_seccion == 'publicaciones-tecnicas' %} class="active"{% endif %}>
+                        <a href="/investigacion/publicaciones-tecnicas/">
+                            <i class="fa fa-circle-o"></i> Publicaciones técnicas
+                        </a>
+                    </li>
+                    <li{% if aux.url_seccion == 'proyectos' %} class="active"{% endif %}>
+                        <a href="/investigacion/proyectos/">
+                            <i class="fa fa-circle-o"></i> Proyectos de <br/>
+                            <i class="fa fa-none"></i> investigación</a>
                     </li>
                 </ul>
-
-
             </li>
 
-            <li{% if aux.url_seccion == 'articulos-cientificos' %} class="active"{% endif %}>
-                <a href="/investigacion/articulos-cientificos">
-                    <i class="fa fa-circle-o"></i> Artículos científicos
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'libros-investigacion' %} class="active"{% endif %}>
-                <a href="/investigacion/libros-investigacion">
-                    <i class="fa fa-circle-o"></i> Libros de investigación
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'capitulos-libros-investigacion' %} class="active"{% endif %}>
-                <a href="/investigacion/capitulos-libros-investigacion">
-                    <i class="fa fa-circle-o"></i> Capítulos en libros <br/>
-                    <i class="fa fa-none"></i> de investigación
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'mapas-arbitrados' %} class="active"{% endif %}>
-                <a href="/investigacion/mapas-arbitrados">
-                    <i class="fa fa-circle-o"></i> Mapas arbitrados
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'informes-tecnicos' %} class="active"{% endif %}>
-                <a href="/investigacion/informes-tecnicos">
-                    <i class="fa fa-circle-o"></i> Informes técnicos
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'proyectos' %} class="active"{% endif %}>
-                <a href="/investigacion/proyectos">
-                    <i class="fa fa-circle-o"></i> Proyectos de investigación
-                </a>
-            </li>
+
         </ul>
     </li>
 
