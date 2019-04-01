@@ -274,10 +274,10 @@ class MapaArbitradoContext:
 
 
 class InformeTecnicoContext:
-    obj = 'informe técnico'
-    objs = 'informes técnicos'
-    Objs = 'Informes técnicos'
-    url_seccion = 'informes-tecnicos'
+    obj = 'publicación técnica'
+    objs = 'publicaciones técnicas'
+    Objs = 'Publicaciones técnicas'
+    url_seccion = 'publicaciones-tecnicas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

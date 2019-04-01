@@ -1,5 +1,5 @@
 from django.db import models
-from nucleo.models import User, Institucion, Dependencia, Cargo
+from nucleo.models import User, Institucion, Dependencia, Cargo, InstitucionSimple
 from django.urls import reverse
 
 
@@ -89,11 +89,12 @@ class RepresentacionOrganoColegiadoUNAM(models.Model):
     representacion_dentro_unam = models.CharField(max_length=30, choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
                                                                           ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
                                                                           ('OTRA', 'Otra')), blank=True, null=True)
+    representacion_dentro_unam_otra = models.CharField(max_length=250, blank=True, null=True)
     representacion_fuera_unam = models.CharField(max_length=250, blank=True, null=True)
 
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    institucion_dentro_unam = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    institucion_fuera_unam = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING, blank=True, null=True)
+    institucion_dentro_unam = models.ForeignKey(InstitucionSimple, blank=True, null=True, related_name='representacion_organo_colegiado_dentrounam', on_delete=models.DO_NOTHING)
+    institucion_fuera_unam = models.ForeignKey(InstitucionSimple, blank=True, null=True, related_name='representacion_organo_colegiado_fueraunam', on_delete=models.DO_NOTHING)
 
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
@@ -113,12 +114,13 @@ class RepresentacionOrganoColegiadoUNAM(models.Model):
         ordering = ['-fecha_inicio']
 
 
-class ComisionAcademica(models.Model):
-    comision_academica = models.ForeignKey(Comision, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
-    es_evaluacion = models.BooleanField(default=False)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+class ComisionInstitucionalCIGA(models.Model):
+    comision_academica = models.ForeignKey(Comision, null=True, blank=True, on_delete=models.DO_NOTHING)
+    tipo_comision = models.CharField(max_length=255) # sacar el texto de comision_academica
+    # es_evaluacion = models.BooleanField(default=False)
+    tipo_institucion = models.CharField(max_length=30, choices=(('', '-------'), ('INTERIOR', 'Al interior del CIGA'), ('EXTERIOR', 'Al exterior del CIGA')))
+    institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)

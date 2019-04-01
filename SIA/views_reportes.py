@@ -14,11 +14,11 @@ from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExt
 from nucleo.models import User, Libro
 from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
-from compromiso_institucional.models import ComisionAcademica
+from compromiso_institucional.models import ComisionInstitucionalCIGA
 from movilidad_academica.models import MovilidadAcademica
 from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
     DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
-from compromiso_institucional.models import LaborDirectivaCoordinacion, RepresentacionOrganoColegiadoUNAM, ComisionAcademica, ApoyoTecnico, ApoyoOtraActividad
+from compromiso_institucional.models import LaborDirectivaCoordinacion, RepresentacionOrganoColegiadoUNAM, ComisionInstitucionalCIGA, ApoyoTecnico, ApoyoOtraActividad
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -113,8 +113,8 @@ class Informe(View):
     context['sociedades_cientificas'] = ParticipacionSociedadCientifica.objects.filter(fecha_inicio__year=this_year).distinct()
     context['cargos_academicoadministrativos'] = LaborDirectivaCoordinacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(dependencia__institucion_dependencia__id=1).distinct()
     context['representacion_organos_colegiados'] = RepresentacionOrganoColegiadoUNAM.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
-    context['comisiones_academicas'] = ComisionAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=False).distinct()
-    context['comisiones_academicas_evaluacion'] = ComisionAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=True).distinct()
+    context['comisiones_academicas'] = ComisionInstitucionalCIGA.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
+    # context['comisiones_academicas_evaluacion'] = ComisionInstitucionalCIGA.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=True).distinct()
     context['apoyo_tecnico'] = ApoyoTecnico.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
     context['otras_actividades_apoyo'] = ApoyoOtraActividad.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
     context['invitados_nacionales'] = MovilidadAcademica.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(tipo='INVITACION').filter(dependencia__institucion_dependencia__pais_institucion__pais_nombre='México').distinct()
@@ -141,9 +141,5 @@ class Informe(View):
     context['distincion_alumnos'] = DistincionAlumno.objects.filter(fecha__year=this_year).distinct()
 
 
-
-
-
     def get(self, request):
         return render(request, self.template_name, self.context)
-

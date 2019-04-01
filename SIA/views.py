@@ -14,7 +14,7 @@ from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExt
 from nucleo.models import User, Libro
 from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
-from compromiso_institucional.models import ComisionAcademica
+from compromiso_institucional.models import ComisionInstitucionalCIGA
 from movilidad_academica.models import MovilidadAcademica
 from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
     DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
@@ -7017,7 +7017,7 @@ class CVInvestigadorPDF(View):
         servicios_acad_admnvos = ExperienciaProfesional.objects.filter(usuario=pk).filter(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').exclude(cargo__tipo_cargo='OTRO').order_by(
             '-fecha_inicio')
-        comisiones_institucionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')
+        comisiones_institucionales = ComisionInstitucionalCIGA.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')
 
         lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
@@ -7099,9 +7099,9 @@ class CVInvestigadorPDF(View):
         organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
         organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        participacion_comisiones_dictaminadoras_nacionales = ComisionAcademica.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio')
+        participacion_comisiones_dictaminadoras_nacionales = ComisionInstitucionalCIGA.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio')
 
-        participacion_comisiones_dictaminadoras_internacionales = ComisionAcademica.objects.filter(usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio')
+        participacion_comisiones_dictaminadoras_internacionales = ComisionInstitucionalCIGA.objects.filter(usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio')
 
         dictamenes_articulos_revistas_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').filter(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
         dictamenes_articulos_revistas_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').exclude(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')

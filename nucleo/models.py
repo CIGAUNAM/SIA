@@ -282,6 +282,9 @@ class Institucion(models.Model):
         verbose_name_plural = 'Instituciones'
 
 
+
+
+
 class Dependencia(models.Model):
     nombre_dependencia = models.CharField(max_length=255)
     descripcion_dependencia = models.TextField(blank=True)

@@ -1,36 +1,31 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Comisión académica:</strong>
+    <p><strong>Tipo de comisión:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Comisión académica.">
+           title="Tipo de comisión institucional.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.comision_academica }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del cargo.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/apoyo-institucional/comisiones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una comisión nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo_comision }}
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+    <p><strong>Al interior o al exterior del CIGA:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Al interior o al exterior del CIGA."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo_institucion }}
+        </div>
+    </div>
     </p>
-    <p><strong>Es comisión de evaluacion:</strong>{{ form.es_evaluacion }}</p>
+
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución donde se llevó a cabo la comisión.">
@@ -39,7 +34,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -110,36 +105,31 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Comisión académica:</strong>
+    <p><strong>Tipo de comisión:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Comisión académica.">
+           title="Tipo de comisión institucional.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.comision_academica }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del cargo.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/apoyo-institucional/comisiones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una comisión nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo_comision }}
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+    <p><strong>Al interior o al exterior del CIGA:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Al interior o al exterior del CIGA."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.tipo_institucion }}
+        </div>
+    </div>
     </p>
-    <p><strong>Es comisión de evaluacion:</strong>{{ form.es_evaluacion }}</p>
+
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución donde se llevó a cabo la comisión.">
@@ -148,7 +138,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">

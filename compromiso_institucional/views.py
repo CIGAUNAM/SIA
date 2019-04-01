@@ -57,14 +57,14 @@ class RepresentacionOrganoColegiadoJSON(View):
 
 
 class RepresentacionOrganoColegiadoLista(ObjectCreateMixin, View):
-    form_class = RepresentacionOrganoColegiadoForm
+    form_class = RepresentacionOrganoColegiadoUNAMForm
     model = RepresentacionOrganoColegiadoUNAM
     aux = RepresentacionOrganoColegiadoContext.contexto
     template_name = 'representacion_organo_colegiado.html'
 
 
 class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
-    form_class = RepresentacionOrganoColegiadoForm
+    form_class = RepresentacionOrganoColegiadoUNAMForm
     model = RepresentacionOrganoColegiadoUNAM
     aux = RepresentacionOrganoColegiadoContext.contexto
     template_name = 'representacion_organo_colegiado.html'
@@ -84,7 +84,7 @@ class ComisionAcademicaJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = ComisionAcademica.objects.filter(usuario=usuarioid)
+            items = ComisionInstitucionalCIGA.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('comision_academica', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
@@ -93,23 +93,23 @@ class ComisionAcademicaJSON(View):
 
 
 class ComisionAcademicaLista(ObjectCreateMixin, View):
-    form_class = ComisionAcademicaForm
-    model = ComisionAcademica
+    form_class = ComisionInstitucionalCIGAForm
+    model = ComisionInstitucionalCIGA
     aux = ComisionAcademicaContext.contexto
-    template_name = 'comision_academica.html'
+    template_name = 'comision_institucional_ciga.html'
 
 
 class ComisionAcademicaDetalle(ObjectUpdateMixin, View):
-    form_class = ComisionAcademicaForm
-    model = ComisionAcademica
+    form_class = ComisionInstitucionalCIGAForm
+    model = ComisionInstitucionalCIGA
     aux = ComisionAcademicaContext.contexto
-    template_name = 'comision_academica.html'
+    template_name = 'comision_institucional_ciga.html'
 
 
 class ComisionAcademicaEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ComisionAcademica, pk=pk, usuario=request.user)
+            item = get_object_or_404(ComisionInstitucionalCIGA, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:

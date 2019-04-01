@@ -11,82 +11,116 @@
         </div>
     </div>
     </p>
-    <p><strong>Representación en la UNAM:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Representación en la UNAM."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.representacion_unam }}
+    <div id="d_representacion_dentro_unam">
+        <p><strong>Representación dentro de la UNAM:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Representación en la UNAM."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.representacion_dentro_unam }}
+            </div>
         </div>
+        </p>
     </div>
-    </p>
+    <div id="d_representacion_dentro_unam_otra">
+        <p><strong>Otra representación dentro de la UNAM:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="En caso de haber seleccionado la opción 'Otra' en el campo anterior, especificar el nombre.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.representacion_dentro_unam_otra }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_representacion_fuera_unam">
+        <p><strong>Representación fuera de la UNAM:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Título de artículo como aparece publicado.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.representacion_fuera_unam }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_institucion_dentro_unam">
+        <p>
+            <strong>Institución:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Institución donde se llevó a cabo la representación.">
+                <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.institucion_dentro_unam }}
 
-    <p><strong>Representación fuera de la UNAM:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título de artículo como aparece publicado.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.representacion_fuera }}
-        </div>
-    </div>
-    </p>
+                <div class="input-group-addon">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
+                    </a>
+                </span>
+                </div>
 
-    <p><strong>Institución:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución donde se desarrolló la representación.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion2 }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <div class="input-group-addon">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
+                </div>
             </div>
         </div>
+        </p>
     </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia donde se desarrolló la representación, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
+    <div id="d_institucion_fuera_unam">
+        <p>
+            <strong>Institución:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Institución donde se llevó a cabo la representación.">
+                <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.institucion_fuera_unam }}
+
+                <div class="input-group-addon">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
+                    </a>
+                </span>
+                </div>
+
+                <div class="input-group-addon">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
+                </div>
             </div>
         </div>
+        </p>
     </div>
-    </p>
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio del servicio."><i
@@ -113,6 +147,62 @@
         </div>
     </div>
     </p>
+
+    <script>
+        var id_tipo_representacion = $("#id_tipo_representacion");
+        var id_representacion_dentro_unam = $("#id_representacion_dentro_unam");
+        var d_representacion_dentro_unam = $("#d_representacion_dentro_unam");
+        var id_representacion_dentro_unam_otra = $("#id_representacion_dentro_unam_otra");
+        var d_representacion_dentro_unam_otra = $("#d_representacion_dentro_unam_otra");
+        var id_representacion_fuera_unam = $("#id_representacion_fuera_unam");
+        var d_representacion_fuera_unam = $("#d_representacion_fuera_unam");
+        var id_institucion_dentro_unam = $("#id_institucion_dentro_unam");
+        var d_institucion_dentro_unam = $("#d_institucion_dentro_unam");
+        var id_institucion_fuera_unam = $("#id_institucion_fuera_unam");
+        var d_institucion_fuera_unam = $("#d_institucion_fuera_unam");
+
+        d_representacion_dentro_unam.hide();
+        d_representacion_dentro_unam_otra.hide();
+        d_representacion_fuera_unam.hide();
+        d_institucion_dentro_unam.hide();
+        d_institucion_fuera_unam.hide();
+
+        id_tipo_representacion.on('change', function () {
+            console.log("change tipo")
+            if (id_tipo_representacion.val() === 'DENTRO') {
+                d_representacion_dentro_unam.show('slow');
+                id_representacion_dentro_unam.attr("required", "true");
+                d_representacion_fuera_unam.hide('slow');
+                id_representacion_fuera_unam.val(null).trigger('change');
+                id_representacion_fuera_unam.attr("required", null);
+
+                id_representacion_dentro_unam.on('change', function () {
+                    if (id_representacion_dentro_unam.val() === 'OTRA') {
+                        d_representacion_dentro_unam_otra.show('slow');
+                        id_representacion_dentro_unam_otra.attr("required", "true");
+                    } else {
+                        d_representacion_dentro_unam_otra.hide('slow');
+                        id_representacion_dentro_unam_otra.val(null).trigger('change');
+                        id_representacion_dentro_unam_otra.attr("required", null);
+                    }
+                });
+
+            } else if (id_tipo_representacion.val() === 'FUERA') {
+                d_representacion_fuera_unam.show('slow');
+                id_representacion_fuera_unam.attr("required", "true");
+                d_representacion_dentro_unam.hide('slow');
+                id_representacion_dentro_unam.val(null).trigger('change');
+                id_representacion_dentro_unam.attr("required", null);
+            } else {
+                d_representacion_fuera_unam.hide('slow');
+                id_representacion_fuera_unam.val(null).trigger('change');
+                id_representacion_fuera_unam.attr("required", null);
+                d_representacion_dentro_unam.hide('slow');
+                id_representacion_dentro_unam.val(null).trigger('change');
+                id_representacion_dentro_unam.attr("required", null);
+            }
+        });
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
@@ -228,4 +318,82 @@
         </div>
     </div>
     </p>
+
+    <script>
+        var id_tipo_representacion = $("#id_tipo_representacion");
+        var id_representacion_dentro_unam = $("#id_representacion_dentro_unam");
+        var d_representacion_dentro_unam = $("#d_representacion_dentro_unam");
+        var id_representacion_dentro_unam_otra = $("#id_representacion_dentro_unam_otra");
+        var d_representacion_dentro_unam_otra = $("#d_representacion_dentro_unam_otra");
+        var id_representacion_fuera_unam = $("#id_representacion_fuera_unam");
+        var d_representacion_fuera_unam = $("#d_representacion_fuera_unam");
+        var id_institucion_dentro_unam = $("#id_institucion_dentro_unam");
+        var d_institucion_dentro_unam = $("#d_institucion_dentro_unam");
+        var id_institucion_fuera_unam = $("#id_institucion_fuera_unam");
+        var d_institucion_fuera_unam = $("#d_institucion_fuera_unam");
+
+        d_representacion_dentro_unam.hide();
+        d_representacion_dentro_unam_otra.hide();
+        d_representacion_fuera_unam.hide();
+        d_institucion_dentro_unam.hide();
+        d_institucion_fuera_unam.hide();
+
+        if (id_tipo_representacion.val() === 'DENTRO') {
+            d_representacion_dentro_unam.show('slow');
+            id_representacion_dentro_unam.attr("required", "true");
+
+            if (id_representacion_dentro_unam.val() === 'OTRA') {
+                d_representacion_dentro_unam_otra.show('slow');
+                id_representacion_dentro_unam_otra.attr("required", "true");
+            }
+
+        } else if (id_tipo_representacion.val() === 'FUERA') {
+            d_representacion_fuera_unam.show('slow');
+            id_representacion_fuera_unam.attr("required", "true");
+        } else {
+            d_representacion_fuera_unam.hide('slow');
+            id_representacion_fuera_unam.val(null).trigger('change');
+            id_representacion_fuera_unam.attr("required", null);
+            d_representacion_dentro_unam.hide('slow');
+            id_representacion_dentro_unam.val(null).trigger('change');
+            id_representacion_dentro_unam.attr("required", null);
+        }
+
+        id_tipo_representacion.on('change', function () {
+            console.log("change tipo")
+            if (id_tipo_representacion.val() === 'DENTRO') {
+                d_representacion_dentro_unam.show('slow');
+                id_representacion_dentro_unam.attr("required", "true");
+                d_representacion_fuera_unam.hide('slow');
+                id_representacion_fuera_unam.val(null).trigger('change');
+                id_representacion_fuera_unam.attr("required", null);
+
+                id_representacion_dentro_unam.on('change', function () {
+                    if (id_representacion_dentro_unam.val() === 'OTRA') {
+                        d_representacion_dentro_unam_otra.show('slow');
+                        id_representacion_dentro_unam_otra.attr("required", "true");
+                    } else {
+                        d_representacion_dentro_unam_otra.hide('slow');
+                        id_representacion_dentro_unam_otra.val(null).trigger('change');
+                        id_representacion_dentro_unam_otra.attr("required", null);
+                    }
+                });
+
+            } else if (id_tipo_representacion.val() === 'FUERA') {
+                d_representacion_fuera_unam.show('slow');
+                id_representacion_fuera_unam.attr("required", "true");
+                d_representacion_dentro_unam.hide('slow');
+                id_representacion_dentro_unam.val(null).trigger('change');
+                id_representacion_dentro_unam.attr("required", null);
+            } else {
+                d_representacion_fuera_unam.hide('slow');
+                id_representacion_fuera_unam.val(null).trigger('change');
+                id_representacion_fuera_unam.attr("required", null);
+                d_representacion_dentro_unam.hide('slow');
+                id_representacion_dentro_unam.val(null).trigger('change');
+                id_representacion_dentro_unam.attr("required", null);
+            }
+        });
+    </script>
+
 {% endblock %}
