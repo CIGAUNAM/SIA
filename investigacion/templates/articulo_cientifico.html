@@ -16,11 +16,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Status de publiciación."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -146,7 +141,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
         {{ form.solo_electronico }}</p>
-    <p><strong>Autores:</strong>
+    <p><strong>Autores de la entidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
@@ -169,6 +164,11 @@
             </div>
         </div>
     </div>
+    </p>
+    <p><strong>Autores como se reportan en el  artículo: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Autores tal cual se reportan en el artículo, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
     </p>
     <p><strong>Alumnos participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -423,7 +423,7 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de artículo como aparece publicado.">
             <i class="fa fa-question-circle"></i>
-        </a>
+        </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -433,14 +433,9 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Status de publiciación."><i class="fa fa-question-circle"></i></a>
+           title="Status de publiciación."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -510,22 +505,27 @@
     </div>
     <p><strong>Revista:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Nombre de la revista donde se publicó el artículo."><i class="fa fa-question-circle"></i></a>
+           title="Nombre de la revista donde se publicó el artículo.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.revista }}
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la revista seleccionada.">
+                <span id="boton-detalle-revista">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la revista seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-revista">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una revista nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
@@ -558,11 +558,11 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
         {{ form.solo_electronico }}</p>
-    <p><strong>Autores:</strong>
+    <p><strong>Autores de la entidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores del artículo, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
@@ -581,6 +581,11 @@
             </div>
         </div>
     </div>
+    </p>
+    <p><strong>Autores como se reportan en el  artículo: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Autores tal cual se reportan en el artículo, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
     </p>
     <p><strong>Alumnos participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -656,28 +661,30 @@
         </div>
     </div>
     </p>
-    <p><strong>Número de página inicial:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="En la revista donde está publicado, en cuál número de pàgina inicia el artìculo.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_inicio }}
+    <div id="d_numpag">
+        <p><strong>Número de página inicial:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="En la revista donde está publicado, en cuál número de pàgina inicia el artìculo.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+                {{ form.pagina_inicio }}
+            </div>
         </div>
-    </div>
-    </p>
-    <p><strong>Número de página final:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="En la revista donde está publicado, en cuál número de pàgina termina el artìculo.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.pagina_fin }}
+        </p>
+        <p><strong>Número de página final:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="En la revista donde está publicado, en cuál número de pàgina termina el artìculo.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+                {{ form.pagina_fin }}
+            </div>
         </div>
+        </p>
     </div>
-    </p>
     <p><strong>ID DOI:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="ID DOI.">

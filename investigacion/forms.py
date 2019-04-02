@@ -15,8 +15,7 @@ from django_select2.forms import Select2Widget, ModelSelect2Widget, ModelSelect2
 class ArticuloCientificoForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                              label='Título de artículo')
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                                  required=False, label='Descripción')
+
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'STATUS_PUBLICACION_ARTICULO', ), required=True)
     solo_electronico = forms.BooleanField(required=False)
@@ -54,8 +53,7 @@ class ArticuloCientificoForm(forms.ModelForm):
                                  required=True, label='Número de página final')
     id_doi = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                              label='ID DOI')
-    id_wos = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
-                             label='ID WOS')
+
     factor_impacto = forms.DecimalField(max_digits=5, decimal_places=3,
         required=False,
         widget=TextInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.001'}),
@@ -70,6 +68,9 @@ class ArticuloCientificoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en el artículo, en el orden y forma.'}),
+                                  required=False, label='Autores como se reportan en el artículo')
 
     class Meta:
         model = ArticuloCientifico
