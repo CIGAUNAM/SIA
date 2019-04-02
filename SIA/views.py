@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.http.response import Http404, HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import View
@@ -7061,9 +7063,7 @@ class CVInvestigadorPDF(View):
         articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).exclude(
             revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
-        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(
-            usuarios=pk, tipo='DIVULGACION').exclude(
-            pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
         libros_divulgacion_editoriales_mexicanas = Libro.objects.filter(
             usuarios=pk, tipo='DIVULGACION').filter(

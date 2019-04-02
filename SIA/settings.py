@@ -200,6 +200,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_custom'),
 )
 
+LANGUAGE_CODE = 'es-MX'
 
 
 # TEMPLATE_DIRS = (

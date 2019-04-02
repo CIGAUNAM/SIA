@@ -122,7 +122,7 @@ class ArticuloCientifico(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     solo_electronico = models.BooleanField(default=False)
     autores = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
-    autores_todos = models.TextField(blank=True)
+    autores_todos = models.TextField(blank=True, null=True)
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_cientifico_agradecimientos', blank=True)
     factor_impacto = models.DecimalField(max_digits=5, decimal_places=3, blank=True, null=True)
@@ -149,11 +149,11 @@ class ArticuloCientifico(models.Model):
 
 class CapituloLibroInvestigacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(LibroInvestigacion, on_delete=models.DO_NOTHING)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
     autores = SortedManyToManyField(User, related_name='capitulo_libro_investigacion_autores', verbose_name='Autores')
+    autores_todos = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)
@@ -169,24 +169,19 @@ class CapituloLibroInvestigacion(models.Model):
 
 class MapaArbitrado(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    escala = models.CharField(max_length=30)
     autores = SortedManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores', blank=True)
+    autores_todos = models.TextField(blank=True, null=True)
     editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
-    coordinadores = models.ManyToManyField(User, related_name='mapa_arbitrado_coordinadores', blank=True)
+    compiladores = models.ManyToManyField(User, related_name='mapa_arbitrado_coordinadores', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='mapa_arbitrado_agradecimientos', blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_LIBRO)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
-    editorial = models.ForeignKey(Editorial, on_delete=models.DO_NOTHING)
+    ciudad_text = models.CharField(max_length=255, blank=True, null=True)
     fecha = models.DateField()
     numero_edicion = models.PositiveIntegerField(default=1)
     numero_paginas = models.PositiveIntegerField(default=1)
-    coleccion = models.ForeignKey(Coleccion, blank=True, null=True, on_delete=models.DO_NOTHING)
-    volumen = models.CharField(max_length=255, blank=True)
-    isbn = models.SlugField(max_length=30, blank=True)
-    url = models.URLField(blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
