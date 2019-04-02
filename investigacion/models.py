@@ -111,7 +111,6 @@ class ProyectoInvestigacion(models.Model):
 
 class ArticuloCientifico(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
     revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
     volumen = models.CharField(max_length=100, null=True, blank=True)
     numero = models.CharField(max_length=100, null=True, blank=True)
@@ -123,6 +122,7 @@ class ArticuloCientifico(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     solo_electronico = models.BooleanField(default=False)
     autores = SortedManyToManyField(User, related_name='articulo_cientifico_autores', verbose_name='Autores')
+    autores_todos = models.TextField(blank=True)
     alumnos = models.ManyToManyField(User, related_name='articulo_cientifico_alumnos', blank=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_cientifico_agradecimientos', blank=True)
     factor_impacto = models.DecimalField(max_digits=5, decimal_places=3, blank=True, null=True)
@@ -130,7 +130,6 @@ class ArticuloCientifico(models.Model):
     pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
     pagina_fin = models.PositiveIntegerField(null=True, blank=True)
     id_doi = models.CharField(max_length=100, null=True, blank=True)
-    id_wos = models.CharField(max_length=100, null=True, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
