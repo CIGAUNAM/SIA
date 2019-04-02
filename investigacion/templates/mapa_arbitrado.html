@@ -16,25 +16,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>Escala:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Escala de representación del mapa.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.escala }}
-        </div>
-    </div>
-    </p>
     <p><strong>Autores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores del mapa, al escribir el inicio del nombre o apellido se filtran
@@ -59,39 +40,16 @@
         </div>
     </div>
     </p>
-    <p><strong>Editores:</strong>
+
+    <p><strong>Compiladores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editores del mapa, al escribir el inicio del nombre o apellido se filtran
+           title="Compiladores del mapa, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.editores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los editores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un editor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Coordinadores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Coordinadores del mapa, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.coordinadores }}
+            {{ form.compiladores }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de los coordinadores.">
@@ -106,6 +64,11 @@
             </div>
         </div>
     </div>
+    </p>
+    <p><strong>Autores como se reportan en el libro: <a href="#" data-toggle="tooltip" data-placement="right"
+                                                        title="Autores tal cual se reportan en el libro, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
     </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"

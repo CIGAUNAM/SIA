@@ -4,11 +4,11 @@ from .models import *
 from nucleo.models import Libro as LibroInvestigacion
 from nucleo.models import ProblemaNacionalConacyt
 
-
 from django import forms
 
 from django.conf import settings
 from django_select2.forms import Select2Widget, ModelSelect2Widget, ModelSelect2MultipleWidget, Select2MultipleWidget
+
 
 #
 
@@ -55,9 +55,10 @@ class ArticuloCientificoForm(forms.ModelForm):
                              label='ID DOI')
 
     factor_impacto = forms.DecimalField(max_digits=5, decimal_places=3,
-        required=False,
-        widget=TextInput(attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.001'}),
-        label='Factor de impácto')
+                                        required=False,
+                                        widget=TextInput(
+                                            attrs={'min': 0, 'class': 'form-control pull-right', 'step': '0.001'}),
+                                        label='Factor de impácto')
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
@@ -70,7 +71,7 @@ class ArticuloCientificoForm(forms.ModelForm):
     )
     autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
                                                            'placeholder': 'Autores tal cual se reportan en el artículo, en el orden y forma.'}),
-                                  required=False, label='Autores como se reportan en el artículo')
+                                    required=False, label='Autores como se reportan en el artículo')
 
     class Meta:
         model = ArticuloCientifico
@@ -78,15 +79,14 @@ class ArticuloCientificoForm(forms.ModelForm):
         widgets = {
             'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
 class CapituloLibroInvestigacionForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                              label='Título del capítulo')
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                                  required=False)
     libro = forms.ModelChoiceField(
         queryset=LibroInvestigacion.objects.filter(tipo='INVESTIGACION'),
         label="Libro",
@@ -100,6 +100,10 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
                                     required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                  required=True, label='Número de página final')
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en el capítulo del libro, en el orden y forma.'}),
+                                    required=False, label='Autores como se reportan en el capítulo del libro')
+
     class Meta:
         model = CapituloLibroInvestigacion
         exclude = []
@@ -111,10 +115,6 @@ class CapituloLibroInvestigacionForm(forms.ModelForm):
 class MapaArbitradoForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                              label='Título del mapa')
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                                  required=False)
-    escala = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                             label='Escala')
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO', ), required=True)
     pais = forms.ModelChoiceField(
@@ -188,6 +188,9 @@ class MapaArbitradoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en el capítulo del libro, en el orden y forma.'}),
+                                    required=False, label='Autores como se reportan en el capítulo del libro')
 
     class Meta:
         model = MapaArbitrado
@@ -195,7 +198,7 @@ class MapaArbitradoForm(forms.ModelForm):
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'editores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'coordinadores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'compiladores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -270,7 +273,9 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         choices=getattr(settings, 'MODALIDAD_PROYECTO'), required=True)
     tipo_financiamiento = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')), required=True)
+        choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'),
+                 ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')),
+        required=True)
     financiamiento_extraordinario = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
         required=False,
@@ -302,11 +307,17 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         ),
         required=False
     )
-    metodologias_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Metodologías')
-    impacto_social_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Impacto social')
-    num_alumnos_doctorado = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True, label='Número de alumnos de doctorado', initial='0')
-    num_alumnos_maestria = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True, label='Número de alumnos de maestría', initial='0')
-    num_alumnos_licenciatura = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True, label='Número de alumnos de doctorado', initial='0')
+    metodologias_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                        label='Metodologías')
+    impacto_social_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                          label='Impacto social')
+    num_alumnos_doctorado = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+                                               required=True, label='Número de alumnos de doctorado', initial='0')
+    num_alumnos_maestria = forms.IntegerField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+                                              required=True, label='Número de alumnos de maestría', initial='0')
+    num_alumnos_licenciatura = forms.IntegerField(
+        widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True,
+        label='Número de alumnos de doctorado', initial='0')
 
     class Meta:
         model = ProyectoInvestigacion
@@ -315,29 +326,39 @@ class ProyectoInvestigacionForm(forms.ModelForm):
             'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             'otro_problema_nacional_conacyt': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-            "responsables": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "responsables": wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "financiamientos": Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'financiamiento_conacyt': TextInput(attrs={'class': 'form-control pull-right'}),
             'financiamiento_papiit': TextInput(attrs={'class': 'form-control pull-right'}),
             'financiamiento_papime': TextInput(attrs={'class': 'form-control pull-right'}),
             'metodologias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'especialidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'areas_especialidad_wos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'impactos_sociales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'areas_especialidad_wos': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'impactos_sociales': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'tecnicos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'alumnos_doctorado': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'alumnos_maestria': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'alumnos_licenciatura': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'problemas_nacionales_conacyt': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'dependencias_colaboracion': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'alumnos_doctorado': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'alumnos_maestria': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'alumnos_licenciatura': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'problemas_nacionales_conacyt': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'dependencias_colaboracion': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
-class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
+class LibroInvestigacionForm(forms.ModelForm):  # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                                  required=False)
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="Pais",
@@ -358,22 +379,37 @@ class LibroInvestigacionForm(forms.ModelForm): # Posiblemente MANTENER, creo que
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
-    fecha = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-    fecha_enviado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-    fecha_aceptado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-    fecha_enprensa = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-    fecha_publicado = forms.DateField(widget=wDateInput(attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_enviado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_aceptado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_enprensa = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_publicado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en el artículo, en el orden y forma.'}),
+                                    required=False, label='Autores como se reportan en el artículo')
 
     class Meta:
         model = LibroInvestigacion
         exclude = ['tipo', ]
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'coordinadores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'compiladores': wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }

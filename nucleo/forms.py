@@ -590,7 +590,7 @@ class Libro1Form(forms.ModelForm):
             'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'coordinadores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'compiladores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'volumen': TextInput(attrs={'class': 'form-control pull-right'}),
             'issn': TextInput(attrs={'class': 'form-control pull-right'}),
             'url': TextInput(attrs={'class': 'form-control pull-right'}),
