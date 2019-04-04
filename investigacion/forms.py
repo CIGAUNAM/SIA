@@ -128,46 +128,13 @@ class MapaArbitradoForm(forms.ModelForm):
         )
     )
 
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'estado': 'estado'},
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    editorial = forms.ModelChoiceField(
-        queryset=Editorial.objects.all(),
-        label="Editorial",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Editorial.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True, label='fecha de liberación')
-    numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
-                                     required=True, label='Número de edición')
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                      required=True, label='Número de páginas')
-    coleccion = forms.ModelChoiceField(
-        required=False,
-        queryset=Coleccion.objects.all(),
-        label="Coleccion",
-        widget=ModelSelect2Widget(
-            required=False,
-            search_fields=['nombre__icontains'],
-            queryset=Coleccion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+
+
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
@@ -187,8 +154,8 @@ class MapaArbitradoForm(forms.ModelForm):
         exclude = []
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'editores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'compiladores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "compiladores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "agradecimientos": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
