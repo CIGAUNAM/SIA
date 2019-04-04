@@ -93,19 +93,19 @@
         </div>
         </p>
     </div>
-    <div id="d_coordinadores">
-        <p><strong>Coordinadores:</strong>
+    <div id="d_compiladores">
+        <p><strong>Compiladores:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
+               title="Compiladores del libro, al escribir el inicio del nombre o apellido se filtran
                                 los resultados que coincidan con la busqueda.">
                 <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-users"></i></div>
-                {{ form.coordinadores }}
+                {{ form.compiladores }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de los coordinadores.">
+                       title="Mostrar los detalles adicionales de los compiladores.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
@@ -323,8 +323,8 @@
     <script>
         var id_autores = $("#id_autores");
         var d_autores = $("#d_autores");
-        var id_coordinadores = $("#id_coordinadores");
-        var d_coordinadores = $("#d_coordinadores");
+        var id_compiladores = $("#id_compiladores");
+        var d_compiladores = $("#d_compiladores");
         var id_isbn = $("#id_isbn");
         var d_isbn = $("#d_isbn");
         var id_tipo_participacion = $("#id_tipo_participacion");
@@ -342,7 +342,7 @@
 
         d_isbn.hide();
         d_autores.hide();
-        d_coordinadores.hide();
+        d_compiladores.hide();
         d_fecha_enviado.hide();
         d_fecha_aceptado.hide();
         d_fecha_enprensa.hide();
@@ -417,22 +417,22 @@
                 if (id_tipo_participacion.val() == 'AUTORIA') {
                     d_autores.show('slow');
                     id_autores.attr("required", "true");
-                    id_coordinadores.val(null).trigger('change');
-                    d_coordinadores.hide('slow');
-                    id_coordinadores.attr("required", null);
+                    id_compiladores.val(null).trigger('change');
+                    d_compiladores.hide('slow');
+                    id_compiladores.attr("required", null);
                 } else if (id_tipo_participacion.val() == 'COMPILACION') {
-                    d_coordinadores.show('slow');
-                    id_coordinadores.attr("required", "true");
+                    d_compiladores.show('slow');
+                    id_compiladores.attr("required", "true");
                     id_autores.val(null).trigger('change');
                     d_autores.hide('slow');
                     id_autores.attr("required", null);
                 } else {
                     d_autores.hide('slow');
-                    d_coordinadores.hide('slow');
+                    d_compiladores.hide('slow');
                     id_autores.attr("required", null);
-                    id_coordinadores.attr("required", null);
+                    id_compiladores.attr("required", null);
                     id_autores.val(null).trigger('change');
-                    id_coordinadores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
                 }
             }
         );
@@ -457,7 +457,7 @@
             $(this).trigger("change");
         });
 
-        id_coordinadores.on("select2:select", function (evt) {
+        id_compiladores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -561,19 +561,19 @@
         </div>
         </p>
     </div>
-    <div id="d_coordinadores">
-        <p><strong>Coordinadores:</strong>
+    <div id="d_compiladores">
+        <p><strong>Compiladores:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
+               title="Compiladores del libro, al escribir el inicio del nombre o apellido se filtran
                                 los resultados que coincidan con la busqueda.">
                 <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-users"></i></div>
-                {{ form.coordinadores }}
+                {{ form.compiladores }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de los coordinadores.">
+                       title="Mostrar los detalles adicionales de los compiladores.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
@@ -791,35 +791,35 @@
     <script>
         $('#d_isbn').hide();
         $('#d_autores').hide();
-        $('#d_coordinadores').hide();
+        $('#d_compiladores').hide();
 
         if ($("#id_tipo_participacion").val() == 'AUTORIA') {
             $('#d_autores').show();
         }
         if ($("#id_tipo_participacion").val() == 'COMPILACION') {
-            $('#d_coordinadores').show();
+            $('#d_compiladores').show();
         }
 
         $("#id_tipo_participacion").on('change', function () {
                 if ($("#id_tipo_participacion").val() == 'AUTORIA') {
                     $('#d_autores').show('slow');
                     $('#id_autores').attr("required", "true");
-                    $('#id_coordinadores').val(null).trigger('change');
-                    $('#d_coordinadores').hide('slow');
-                    $('#id_coordinadores').attr("required", null);
+                    $('#id_compiladores').val(null).trigger('change');
+                    $('#d_compiladores').hide('slow');
+                    $('#id_compiladores').attr("required", null);
                 } else if ($("#id_tipo_participacion").val() == 'COMPILACION') {
-                    $('#d_coordinadores').show('slow');
-                    $('#id_coordinadores').attr("required", "true");
+                    $('#d_compiladores').show('slow');
+                    $('#id_compiladores').attr("required", "true");
                     $('#id_autores').val(null).trigger('change');
                     $('#d_autores').hide('slow');
                     $('#id_autores').attr("required", null);
                 } else {
                     $('#d_autores').hide('slow');
-                    $('#d_coordinadores').hide('slow');
+                    $('#d_compiladores').hide('slow');
                     $('#id_autores').attr("required", null);
-                    $('#id_coordinadores').attr("required", null);
+                    $('#id_compiladores').attr("required", null);
                     $('#id_autores').val(null).trigger('change');
-                    $('#id_coordinadores').val(null).trigger('change');
+                    $('#id_compiladores').val(null).trigger('change');
                 }
             }
         );
@@ -849,7 +849,7 @@
             $(this).append($element);
             $(this).trigger("change");
         });
-        $("#id_coordinadores").on("select2:select", function (evt) {
+        $("#id_compiladores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
