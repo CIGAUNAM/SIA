@@ -898,3 +898,5 @@ class ConvocatoriaArbitraje(models.Model):
         ordering = ['nombre']
         verbose_name = 'Convocatoria'
         verbose_name_plural = 'Convocatorias'
+
+

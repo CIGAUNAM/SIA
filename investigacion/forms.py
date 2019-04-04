@@ -130,10 +130,25 @@ class MapaArbitradoForm(forms.ModelForm):
 
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True, label='fecha de liberación')
+        required=True, label='fecha')
+    fecha_enviado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío')
+    fecha_aceptado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de aceptación')
+    fecha_enprensa = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío a prensa')
+    fecha_publicado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de publicación')
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                      required=True, label='Número de páginas')
-
+    ciudad_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                             label='Ciudad')
+    publicacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                             label='Libro o revista donde se publica')
 
     proyecto = forms.ModelChoiceField(
         required=False,
