@@ -200,7 +200,7 @@ class MapaArbitrado(models.Model):
         ordering = ['fecha', 'titulo']
 
 
-class InformeTecnico(models.Model):
+class PublicacionTecnica(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     autores = SortedManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
@@ -214,10 +214,10 @@ class InformeTecnico(models.Model):
         return "{} : {}".format(self.titulo, self.fecha)
 
     def get_absolute_url(self):
-        return reverse('informe_tecnico_detalle', kwargs={'pk': self.pk})
+        return reverse('publicacion_tecnica_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        verbose_name = "Informe técnico de acceso público"
-        verbose_name_plural = "Informes técnicos de acceso público"
+        verbose_name = "Publicación técnico de acceso público"
+        verbose_name_plural = "Publicaciones técnicas de acceso público"
         ordering = ['fecha', 'titulo']
 
