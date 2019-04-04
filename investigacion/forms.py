@@ -174,7 +174,7 @@ class MapaArbitradoForm(forms.ModelForm):
         }
 
 
-class InformeTecnicoForm(forms.ModelForm):
+class PublicacionTecnicaForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False)
@@ -197,10 +197,10 @@ class InformeTecnicoForm(forms.ModelForm):
     es_publico = forms.BooleanField(required=False)
 
     class Meta:
-        model = InformeTecnico
+        model = PublicacionTecnica
         exclude = []
         widgets = {
-            "autores": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 

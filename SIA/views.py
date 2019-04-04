@@ -5,7 +5,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import View
 
 from formacion_academica.models import CursoEspecializacion
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, InformeTecnico, ProyectoInvestigacion
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, PublicacionTecnica, ProyectoInvestigacion
 from difusion_cientifica.models import MemoriaInExtenso, Resena, Traduccion, OrganizacionEventoAcademico, ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
@@ -863,12 +863,12 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = InformeTecnico.objects.filter(fecha__year=year).filter(
+                total_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year).filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
                         Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
-                                                                            autores=request.user).count()
+                request_user_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year,
+                                                                                autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
@@ -2985,12 +2985,12 @@ class ReporteHistorico(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = InformeTecnico.objects.filter(fecha__year=year).filter(
+                total_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year).filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
                         Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = InformeTecnico.objects.filter(fecha__year=year,
-                                                                            usuarios=request.user).count()
+                request_user_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year,
+                                                                                usuarios=request.user).count()
                 if not total_items_year_sum:
                     total_items_year_sum = 0
                 items_data[i + 1].append(total_items_year_sum)
@@ -6920,8 +6920,8 @@ class CVInvestigadorDetalle(View):
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        informes_tecnicos_mex = InformeTecnico.objects.filter(usuarios=pk).filter(proyecto__institucion__pais__nombre='México').order_by('-fecha')
-        informes_tecnicos_intl = InformeTecnico.objects.filter(usuarios=pk).exclude(proyecto__institucion__pais__nombre='México').order_by('-fecha')
+        informes_tecnicos_mex = PublicacionTecnica.objects.filter(usuarios=pk).filter(proyecto__institucion__pais__nombre='México').order_by('-fecha')
+        informes_tecnicos_intl = PublicacionTecnica.objects.filter(usuarios=pk).exclude(proyecto__institucion__pais__nombre='México').order_by('-fecha')
         articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
@@ -7054,9 +7054,9 @@ class CVInvestigadorPDF(View):
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        informes_tecnicos_mex = InformeTecnico.objects.filter(usuarios=pk, es_publico=True).filter(
+        informes_tecnicos_mex = PublicacionTecnica.objects.filter(usuarios=pk, es_publico=True).filter(
             proyecto__institucion__pais__nombre='México').order_by('-fecha')
-        informes_tecnicos_intl = InformeTecnico.objects.filter(usuarios=pk, es_publico=True).exclude(
+        informes_tecnicos_intl = PublicacionTecnica.objects.filter(usuarios=pk, es_publico=True).exclude(
             proyecto__institucion__pais__nombre='México').order_by('-fecha')
         articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(
             revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')

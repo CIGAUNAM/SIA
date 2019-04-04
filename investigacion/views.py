@@ -175,9 +175,9 @@ class InformeTecnicoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = InformeTecnico.objects.all().exclude(autores__id__exact=usuarioid)
+                items = PublicacionTecnica.objects.all().exclude(autores__id__exact=usuarioid)
             else:
-                items = InformeTecnico.objects.filter(autores__id__exact=usuarioid)
+                items = PublicacionTecnica.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'fecha', 'numero_paginas'))
             return HttpResponse(json, content_type='application/json')
@@ -186,15 +186,15 @@ class InformeTecnicoJSON(View):
 
 
 class InformeTecnicoLista(ObjectCreateVarMixin, View):
-    form_class = InformeTecnicoForm
-    model = InformeTecnico
+    form_class = PublicacionTecnicaForm
+    model = PublicacionTecnica
     aux = InformeTecnicoContext.contexto
     template_name = 'informe_tecnico.html'
 
 
 class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
-    form_class = InformeTecnicoForm
-    model = InformeTecnico
+    form_class = PublicacionTecnicaForm
+    model = PublicacionTecnica
     aux = InformeTecnicoContext.contexto
     template_name = 'informe_tecnico.html'
 
@@ -202,7 +202,7 @@ class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
 class InformeTecnicoEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(InformeTecnico, pk=pk, usuarios=request.user)
+            item = get_object_or_404(PublicacionTecnica, pk=pk, usuarios=request.user)
             item.delete()
             return redirect('../')
         except:
