@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
-from nucleo.models import User, Pais, Estado, Ciudad, Institucion, Dependencia, \
+from nucleo.models import User, Pais, Estado, Ciudad, Institucion, InstitucionSimple, Dependencia, \
     Revista, Indice, Libro as LibroInvestigacion, Editorial, Coleccion, ProblemaNacionalConacyt, Financiamiento, Metodologia, \
     AreaEspecialidad, ImpactoSocial, AreaConocimiento
 from sortedm2m.fields import SortedManyToManyField
@@ -11,8 +11,8 @@ STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO',
                                       (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'),
                                        ('ENVIADO', 'Enviado')))
 
-STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
-                                                                    ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
+STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
+                                                              ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
 
 STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'),
                                                         ('CONCLUIDO', 'Concluído')))
@@ -174,7 +174,7 @@ class MapaArbitrado(models.Model):
     #editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
     compiladores = SortedManyToManyField(User, related_name='mapa_arbitrado_compiladores', blank=True)
     agradecimientos = SortedManyToManyField(User, related_name='mapa_arbitrado_agradecimientos', blank=True)
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_LIBRO)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     # estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.DO_NOTHING)
@@ -203,12 +203,19 @@ class MapaArbitrado(models.Model):
 class PublicacionTecnica(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
+    tipo = models.CharField(max_length=255, choices=(('', '-------'), ('INFORME', 'Informe')))
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
+    fecha = models.DateField(null=True, blank=True)
+    fecha_enviado = models.DateField(null=True, blank=True)
+    fecha_aceptado = models.DateField(null=True, blank=True)
+    fecha_enprensa = models.DateField(null=True, blank=True)
+    fecha_publicado = models.DateField(null=True, blank=True)
     autores = SortedManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
-    fecha = models.DateField(auto_now=False)
-    numero_paginas = models.PositiveIntegerField(default=1)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
     es_publico = models.BooleanField(default=False)
     url = models.URLField(blank=True)
+    cita = models.TextField(blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.fecha)
@@ -220,4 +227,3 @@ class PublicacionTecnica(models.Model):
         verbose_name = "Publicación técnico de acceso público"
         verbose_name_plural = "Publicaciones técnicas de acceso público"
         ordering = ['fecha', 'titulo']
-
