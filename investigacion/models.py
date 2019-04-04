@@ -179,7 +179,12 @@ class MapaArbitrado(models.Model):
     # estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.DO_NOTHING)
     ciudad_text = models.CharField(max_length=255, blank=True, null=True)
-    fecha = models.DateField()
+    publicacion = models.CharField(max_length=255, blank=True, null=True)
+    fecha = models.DateField(null=True, blank=True)
+    fecha_enviado = models.DateField(null=True, blank=True)
+    fecha_aceptado = models.DateField(null=True, blank=True)
+    fecha_enprensa = models.DateField(null=True, blank=True)
+    fecha_publicado = models.DateField(null=True, blank=True)
     numero_paginas = models.PositiveIntegerField(default=1)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
