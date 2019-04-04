@@ -738,7 +738,7 @@ class Libro(models.Model):
                                                     ('DOCENCIA', 'Docencia')))
     tipo_participacion = models.CharField(max_length=50, choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')))
     autores = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
-    coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
+    compiladores = SortedManyToManyField(User, related_name='libro_compiladores', blank=True)
     autores_todos = models.TextField(blank=True, null=True)
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)
     # editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, blank=True, null=True)
