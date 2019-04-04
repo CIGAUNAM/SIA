@@ -116,7 +116,7 @@ class MapaArbitradoForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                              label='Título del mapa')
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                               choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO', ), required=True)
+                               choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     pais = forms.ModelChoiceField(
         required=True,
         queryset=Pais.objects.all(),
@@ -178,11 +178,32 @@ class PublicacionTecnicaForm(forms.ModelForm):
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False)
-    fecha = forms.DateField(
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                               choices=(('', '-------'), ('INFORME', 'Informe')), required=True)
+    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                               choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
+    fecha_enviado = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True)
-    numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
-                                     required=True)
+        required=False, label='Fecha de envío')
+    fecha_aceptado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de aceptación')
+    fecha_enprensa = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío a prensa')
+    fecha_publicado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de publicación')
+    institucion = forms.ModelChoiceField(
+        required=True,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
         required=True,
@@ -195,6 +216,8 @@ class PublicacionTecnicaForm(forms.ModelForm):
         )
     )
     es_publico = forms.BooleanField(required=False)
+    cita = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                  'placeholder': 'Cita completa del producto'}), required=False)
 
     class Meta:
         model = PublicacionTecnica
@@ -347,7 +370,7 @@ class LibroInvestigacionForm(forms.ModelForm):  # Posiblemente MANTENER, creo qu
 
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO', ), required=True)
+        choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)

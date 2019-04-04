@@ -168,7 +168,7 @@ class MapaArbitradoEliminar(View):
             raise Http404
 
 
-class InformeTecnicoJSON(View):
+class PublicacionTecnicaJSON(View):
     otros = False
     def get(self, request):
 
@@ -179,27 +179,43 @@ class InformeTecnicoJSON(View):
             else:
                 items = PublicacionTecnica.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'fecha', 'numero_paginas'))
+                                         fields=('titulo', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ENVIADO', 'Enviado')
+
+            json = json.replace('"fecha_enviado": null,', '')
+            json = json.replace('"fecha_aceptado": null,', '')
+            json = json.replace('"fecha_enprensa": null,', '')
+            json = json.replace('"fecha_publicado": null,', '')
+
+            json = json.replace('"fecha_enviado"', '"fecha"')
+            json = json.replace('"fecha_aceptado"', '"fecha"')
+            json = json.replace('"fecha_enprensa"', '"fecha"')
+            json = json.replace('"fecha_publicado"', '"fecha"')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class InformeTecnicoLista(ObjectCreateVarMixin, View):
+class PublicacionTecnicaLista(ObjectCreateVarMixin, View):
     form_class = PublicacionTecnicaForm
     model = PublicacionTecnica
     aux = InformeTecnicoContext.contexto
-    template_name = 'informe_tecnico.html'
+    template_name = 'publicacion_tecnica.html'
 
 
-class InformeTecnicoDetalle(ObjectUpdateVarMixin, View):
+class PublicacionTecnicaDetalle(ObjectUpdateVarMixin, View):
     form_class = PublicacionTecnicaForm
     model = PublicacionTecnica
     aux = InformeTecnicoContext.contexto
-    template_name = 'informe_tecnico.html'
+    template_name = 'publicacion_tecnica.html'
 
 
-class InformeTecnicoEliminar(View):
+class PublicacionTecnicaEliminar(View):
     def get(self, request, pk):
         try:
             item = get_object_or_404(PublicacionTecnica, pk=pk, usuarios=request.user)

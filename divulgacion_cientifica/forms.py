@@ -192,7 +192,7 @@ class LibroDivulgacionForm(forms.ModelForm):
     coleccion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=getattr(settings, 'STATUS_PUBLICACION_LIBRO', ), required=True)
+        choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
