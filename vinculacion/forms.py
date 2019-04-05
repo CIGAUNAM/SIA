@@ -185,11 +185,3 @@ class OtroProgramaVinculacionForm(forms.ModelForm):
 
 
 
-class ClasificacionServicioForm(forms.ModelForm):
-    class Meta:
-        model = ClasificacionServicio
-        exclude = []
-        widgets = {
-            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-        }
