@@ -406,3 +406,90 @@ class ProyectoInvestigacionContext:
                   '</script>'
 
     contexto['tabla_otros'] = tabla_otros
+
+
+
+
+class ApoyoTecnicoInvestigacionContext:
+    obj = 'apoyo técnico a la investigación'
+    objs = 'apoyos técnicos a la investigación'
+    Objs = 'Apoyos técnicos a la investigación'
+    url_categoria = 'investigacion'
+    url_seccion = 'apoyo-tecnico-investigacion'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
+                'titulos_tabla': ['Actividad', 'Fecha inicio', 'Proyecto']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.actividad",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.actividad + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.proyecto"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+
+
+
+
+class ApoyoTecnicoServicioContext:
+    obj = 'apoyo técnico en servicios'
+    objs = 'apoyos técnicos en servicios'
+    Objs = 'Apoyos técnicos en servicios'
+    url_categoria = 'investigacion'
+    url_seccion = 'apoyo-tecnico-servicios'
+
+    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
+                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
+                'tab_detalle': 'Editar ' + obj,
+                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
+                'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
+                'titulos_tabla': ['Actividad', 'Fecha inicio', 'Proyecto']}
+
+
+    tabla_mios =  '<script>\n' \
+                    '       jQuery(document).ready(function ($jquery) {\n' \
+                    '       $jquery("#tabla_json").dataTable({\n' \
+                                '"iDisplayLength": 15,\n' \
+                                '"ajax": {\n' \
+                                    '"processing": true,\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"dataSrc": ""\n' \
+                                '},\n' \
+                                '"columns": [\n' \
+                                    '{\n' \
+                                        '"data": "fields.actividad",\n' \
+                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.actividad + "</a>");\n' \
+                                        '}\n' \
+                                    '},\n' \
+                                    '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.proyecto"},\n' \
+                                ']\n' \
+                            '});\n' \
+                        '});\n' \
+                  '</script>'
+
+    contexto['tabla_mios'] = tabla_mios
+

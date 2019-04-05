@@ -46,13 +46,21 @@ FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO',
 # Create your models here.
 
 
+class ObjetivoDesarrolloSostenible(models.Model):
+    objetivodesarrollosostenible_nombre = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.objetivodesarrollosostenible_nombre
+
+
+
 class ProyectoInvestigacion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     es_permanente = models.BooleanField(default=False)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     responsables = SortedManyToManyField(User, related_name='proyecto_investigacion_responsables',
                                          verbose_name='Responsables')
@@ -62,28 +70,28 @@ class ProyectoInvestigacion(models.Model):
     organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
     modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
     tematica_genero = models.BooleanField(default=False)
-    # problema_nacional_conacyt = models.ForeignKey(ProblemaNacionalConacyt, blank=True, null=True,                                                  on_delete=models.DO_NOTHING)
     problemas_nacionales_conacyt = models.ManyToManyField(ProblemaNacionalConacyt, related_name='proyecto_investigacion_problemas_nacionales_conacyt', blank=True)
-
     otro_problema_nacional_conacyt = models.TextField(null=True, blank=True)
+    objetivos2030 = models.ManyToManyField(ObjetivoDesarrolloSostenible, blank=True)
 
     tipo_financiamiento = models.CharField(max_length=30, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')))
 
     # financiamientos = models.ManyToManyField(Financiamiento, blank=True)
-    financiamiento_conacyt = models.CharField(max_length=30, unique=True, null=True, blank=True)
+    financiamiento_conacyt_clave = models.CharField(max_length=30, unique=True, null=True, blank=True)
+    financiamiento_conacyt_convocatoria = models.CharField(max_length=160,  null=True, blank=True)
     financiamiento_papiit = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_papime = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_extraordinario = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_extraordinario')
     financiamiento_sin_recurso_ciga = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_sin_recurso_ciga')
-    dependencias_colaboracion = models.ManyToManyField(Dependencia, related_name='proyecto_investigacion_dependencias_colaboracion', blank=True)
+    #dependencias_colaboracion = models.ManyToManyField(Dependencia, related_name='proyecto_investigacion_dependencias_colaboracion', blank=True)
     # metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
-    metodologias_text = models.CharField(max_length=255, null=True, blank=True)
+    #metodologias_text = models.CharField(max_length=255, null=True, blank=True)
 
     # especialidades = models.ManyToManyField(AreaEspecialidad, related_name='proyecto_investigacion_especialidades', blank=True)
-    areas_especialidad_wos = models.ManyToManyField(AreaConocimiento, related_name='proyecto_investigacion_areas_especialidad_wos', blank=True)
+    #areas_especialidad_wos = models.ManyToManyField(AreaConocimiento, related_name='proyecto_investigacion_areas_especialidad_wos', blank=True)
     # impactos_sociales = models.ManyToManyField(ImpactoSocial, related_name='proyecto_investigacion_impactos_sociales',                                                blank=True)
     impacto_social_text = models.CharField(max_length=255, null=True, blank=True)
-    tecnicos = models.ManyToManyField(User, related_name='proyecto_investigacion_impactos_tecnicos', blank=True)
+    #tecnicos = models.ManyToManyField(User, related_name='proyecto_investigacion_impactos_tecnicos', blank=True)
     # alumnos_doctorado = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_doctorado',                                                blank=True)
     # alumnos_maestria = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_maestria',                                              blank=True)
     # alumnos_licenciatura = models.ManyToManyField(User, related_name='proyecto_investigacion_alumnos_licenciatura',                                                  blank=True)
@@ -106,7 +114,6 @@ class ProyectoInvestigacion(models.Model):
 
     class Meta:
         ordering = ['nombre']
-        unique_together = ['financiamiento_conacyt', 'financiamiento_papiit']
 
 
 class ArticuloCientifico(models.Model):
@@ -203,7 +210,15 @@ class MapaArbitrado(models.Model):
 class PublicacionTecnica(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=255, choices=(('', '-------'), ('INFORME', 'Informe')))
+    tipo = models.CharField(max_length=255, choices=(
+        ('', '-------'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico terminado'),
+        ('PROGRAMA_COMPUTO', 'Programa de cómputo especializado documentado'),
+        ('BASE_DATOS', 'Bases de datos geográficos, arbitradas por expertos, para apliciones Web'),
+        ('NORMA_PATENTE', 'Normas y patentes'),
+        ('INFORME_TECNICO', 'Informes técnicos finales dirigidos a tomadores de decisiones'),
+        ('PLAN_MANEJO', 'Planes de manejo, ordenamiento, y gestión territorial, reconocidos oficialmente'),
+        ('CARTA_REVISTA', 'Cartas en revistas de prestigio internacional'),
+        ('TRADUCCION', 'Traducción de libros y revisiones técnicas')))
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     fecha = models.DateField(null=True, blank=True)
     fecha_enviado = models.DateField(null=True, blank=True)
@@ -227,3 +242,72 @@ class PublicacionTecnica(models.Model):
         verbose_name = "Publicación técnico de acceso público"
         verbose_name_plural = "Publicaciones técnicas de acceso público"
         ordering = ['fecha', 'titulo']
+
+
+
+class ActividadApoyoTecnicoInvestigacion(models.Model):
+    actividadapoyotecnicoinvestigacion_nombre = models.CharField(max_length=160, unique=True)
+    orden = models.IntegerField()
+
+    def __str__(self):
+        return self.actividadapoyotecnicoinvestigacion_nombre
+
+    def natural_key(self):
+        return self.actividadapoyotecnicoinvestigacion_nombre
+
+    class Meta:
+        ordering = ['id', 'orden']
+
+
+class ActividadApoyoTecnicoServicio(models.Model):
+    actividadapoyotecnicoservicio_nombre = models.CharField(max_length=160, unique=True)
+    orden = models.IntegerField()
+
+    def __str__(self):
+        return self.actividadapoyotecnicoservicio_nombre
+
+    def natural_key(self):
+        return self.actividadapoyotecnicoservicio_nombre
+
+    class Meta:
+        ordering = ['id', 'orden']
+
+
+class ApoyoTecnicoInvestigacion(models.Model):
+    actividad = models.ForeignKey(ActividadApoyoTecnicoInvestigacion, on_delete=models.DO_NOTHING)
+    actividad_otra = models.CharField(max_length=254, blank=True, null=True)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return "{}, {} ({})".format(self.actividad, self.usuario, self.fecha_inicio)
+
+    def get_absolute_url(self):
+        return reverse('apoyo_tecnico_investigacion_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name = "Apoyo técnico en (o, a la) investigacion"
+        verbose_name_plural = "Apoyos técnicos en (o, a la) investigacion"
+        ordering = ['fecha_inicio', 'actividad']
+
+
+class ApoyoTecnicoServicio(models.Model):
+    actividad = models.ForeignKey(ActividadApoyoTecnicoServicio, on_delete=models.DO_NOTHING)
+    actividad_otra = models.CharField(max_length=254, blank=True, null=True)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return "{}, {} ({})".format(self.actividad, self.usuario, self.fecha_inicio)
+
+    def get_absolute_url(self):
+        return reverse('apoyo_tecnico_servicio_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name = "Apoyo técnico en actividades de servicio"
+        verbose_name_plural = "Apoyos técnicos en actividades de servicio"
+        ordering = ['fecha_inicio', 'actividad']

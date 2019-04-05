@@ -25,7 +25,6 @@ class CursoEspecializacionJSON(View):
             raise Http404
 
 
-
 class CursoEspecializacionLista(ObjectCreateMixin, View):
     form_class = CursoEspecializacionForm
     model = CursoEspecializacion

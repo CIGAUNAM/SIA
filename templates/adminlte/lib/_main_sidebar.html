@@ -96,7 +96,7 @@
                     <i class="fa fa-none"></i> del CIGA
                 </a>
             </li>
-            <li{% if aux.url_seccion == 'apoyos-tecnicos' %} class="active"{% endif %}>
+            <!-- <li{% if aux.url_seccion == 'apoyos-tecnicos' %} class="active"{% endif %}>
                 <a href="/compromiso-institucional/apoyos-tecnicos/">
                     <i class="fa fa-circle-o"></i> Apoyo técnico
                 </a>
@@ -105,7 +105,7 @@
                 <a href="/compromiso-institucional/otras-actividades/">
                     <i class="fa fa-circle-o"></i> Otras Actividades de apoyo
                 </a>
-            </li>
+            </li> -->
         </ul>
     </li>
 
@@ -168,6 +168,16 @@
                         <a href="/investigacion/proyectos/">
                             <i class="fa fa-circle-o"></i> Proyectos de <br/>
                             <i class="fa fa-none"></i> investigación</a>
+                    </li>
+                    <li{% if aux.url_seccion == 'apoyo-tecnico-investigacion' %} class="active"{% endif %}>
+                        <a href="/investigacion/apoyo-tecnico-investigacion/">
+                            <i class="fa fa-circle-o"></i> Apoyo técnico en <br/>
+                            <i class="fa fa-none"></i> (o, a la) investigación</a>
+                    </li>
+                    <li{% if aux.url_seccion == 'apoyo-tecnico-servicios' %} class="active"{% endif %}>
+                        <a href="/investigacion/apoyo-tecnico-servicios/">
+                            <i class="fa fa-circle-o"></i> Apoyo técnico en <br/>
+                            <i class="fa fa-none"></i> actividades de servicio</a>
                     </li>
                 </ul>
             </li>

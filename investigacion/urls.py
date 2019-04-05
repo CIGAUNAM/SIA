@@ -37,5 +37,15 @@ urlpatterns = [
     url(r'^proyectos/(?P<pk>[\w\-]+)/eliminar$', ProyectoInvestigacionEliminar.as_view(), name='proyecto_investigacion_eliminar'),
     url(r'^proyectos/(?P<pk>[\w\-]+)/$', ProyectoInvestigacionDetalle.as_view(), name='proyecto_investigacion_detalle'),
 
+    url(r'^apoyo-tecnico-investigacion/json/', ApoyoTecnicoInvestigacionJSON.as_view(), name='apoyo_tecnico_investigacion_lista__json'),
+    url(r'^apoyo-tecnico-investigacion/$', ApoyoTecnicoInvestigacionLista.as_view(), name='apoyo_tecnico_investigacion_lista'),
+    url(r'^apoyo-tecnico-investigacion/(?P<pk>[\w\-]+)/eliminar$', ApoyoTecnicoInvestigacionEliminar.as_view(), name='apoyo_tecnico_investigacion_eliminar'),
+    url(r'^apoyo-tecnico-investigacion/(?P<pk>[\w\-]+)/$', ApoyoTecnicoInvestigacionDetalle.as_view(), name='apoyo_tecnico_investigacion_detalle'),
+
+    url(r'^apoyo-tecnico-servicios/json/', ApoyoTecnicoServicioJSON.as_view(), name='apoyo_tecnico_servicio_lista__json'),
+    url(r'^apoyo-tecnico-servicios/$', ApoyoTecnicoServicioLista.as_view(), name='apoyo_tecnico_servicio_lista'),
+    url(r'^apoyo-tecnico-servicios/(?P<pk>[\w\-]+)/eliminar$', ApoyoTecnicoServicioEliminar.as_view(), name='apoyo_tecnico_servicio_eliminar'),
+    url(r'^apoyo-tecnico-servicios/(?P<pk>[\w\-]+)/$', ApoyoTecnicoServicioDetalle.as_view(), name='apoyo_tecnico_servicio_detalle'),
+
 ]
 

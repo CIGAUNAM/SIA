@@ -179,7 +179,14 @@ class PublicacionTecnicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False)
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                               choices=(('', '-------'), ('INFORME', 'Informe')), required=True)
+                               choices=(('', '-------'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico terminado'),
+        ('PROGRAMA_COMPUTO', 'Programa de cómputo especializado documentado'),
+        ('BASE_DATOS', 'Bases de datos geográficos, arbitradas por expertos, para apliciones Web'),
+        ('NORMA_PATENTE', 'Normas y patentes'),
+        ('INFORME_TECNICO', 'Informes técnicos finales dirigidos a tomadores de decisiones'),
+        ('PLAN_MANEJO', 'Planes de manejo, ordenamiento, y gestión territorial, reconocidos oficialmente'),
+        ('CARTA_REVISTA', 'Cartas en revistas de prestigio internacional'),
+        ('TRADUCCION', 'Traducción de libros y revisiones técnicas')), required=True)
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     fecha_enviado = forms.DateField(
@@ -235,7 +242,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     fecha_fin = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=False, label='Fecha de fin')
-    institucion = forms.ModelChoiceField(
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -292,16 +299,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         )
     )
     tematica_genero = forms.BooleanField(required=False)
-    problema_nacional_conacyt = forms.ModelChoiceField(
-        queryset=ProblemaNacionalConacyt.objects.all(),
-        label="Problema Nacional Conacyt",
-        widget=ModelSelect2Widget(
-            queryset=ProblemaNacionalConacyt.objects.all(),
-            search_fields=['nombre__icontains'],
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        ),
-        required=False
-    )
+
     metodologias_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                                         label='Metodologías')
     impacto_social_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
@@ -318,35 +316,16 @@ class ProyectoInvestigacionForm(forms.ModelForm):
         model = ProyectoInvestigacion
         exclude = []
         widgets = {
-            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-            'otro_problema_nacional_conacyt': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             "responsables": wSortedSelect2MultipleWidget(
                 attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'participantes': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'dependencias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            "financiamientos": Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'financiamiento_conacyt': TextInput(attrs={'class': 'form-control pull-right'}),
+            'objetivos2030': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'financiamiento_conacyt_clave': TextInput(attrs={'class': 'form-control pull-right'}),
+            'financiamiento_conacyt_convocatoria': TextInput(attrs={'class': 'form-control pull-right'}),
             'financiamiento_papiit': TextInput(attrs={'class': 'form-control pull-right'}),
             'financiamiento_papime': TextInput(attrs={'class': 'form-control pull-right'}),
-            'metodologias': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'especialidades': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'areas_especialidad_wos': Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'impactos_sociales': Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'tecnicos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'alumnos_doctorado': Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'alumnos_maestria': Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'alumnos_licenciatura': Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'problemas_nacionales_conacyt': Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'dependencias_colaboracion': Select2MultipleWidget(
-                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -408,3 +387,71 @@ class LibroInvestigacionForm(forms.ModelForm):  # Posiblemente MANTENER, creo qu
             'agradecimientos': Select2MultipleWidget(
                 attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
+
+
+class ApoyoTecnicoInvestigacionForm(forms.ModelForm):
+    actividad = forms.ModelChoiceField(
+        queryset=ActividadApoyoTecnicoInvestigacion.objects.all(),
+        label="Actividad de apoyo técnico a la investigación",
+        widget=ModelSelect2Widget(
+            search_fields=['actividadapoyotecnicoinvestigacion_nombre__icontains'],
+            queryset=ActividadApoyoTecnicoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    actividad_otra = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                     label='Otra actividad', help_text='Otra actividad de apoyo a la investigación')
+    fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+
+    proyecto = forms.ModelChoiceField(
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ProyectoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+
+    class Meta:
+        model = ApoyoTecnicoInvestigacion
+        exclude = ['usuario', ]
+
+
+class ApoyoTecnicoServicioForm(forms.ModelForm):
+    actividad = forms.ModelChoiceField(
+        queryset=ActividadApoyoTecnicoInvestigacion.objects.all(),
+        label="Actividad de apoyo técnico a la investigación",
+        widget=ModelSelect2Widget(
+            search_fields=['actividadapoyotecnicoinvestigacion_nombre__icontains'],
+            queryset=ActividadApoyoTecnicoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    actividad_otra = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+                                     label='Otra actividad', help_text='Otra actividad de apoyo a la investigación')
+    fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+
+    proyecto = forms.ModelChoiceField(
+        queryset=ProyectoInvestigacion.objects.all(),
+        label="Proyecto de investigación",
+        widget=ModelSelect2Widget(
+            search_fields=['nombre__icontains'],
+            queryset=ProyectoInvestigacion.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+
+    class Meta:
+        model = ApoyoTecnicoServicio
+        exclude = ['usuario', ]
