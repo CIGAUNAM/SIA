@@ -6,7 +6,7 @@ from formacion_academica.models import CursoEspecializacion
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, PublicacionTecnica, ProyectoInvestigacion
 from difusion_cientifica.models import MemoriaInExtenso, Resena, Traduccion, OrganizacionEventoAcademico, ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
-from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion, OtraComision, OtroProgramaVinculacion
+from vinculacion.models import ArbitrajePublicacionAcademica, OtraComision, OtroProgramaVinculacion
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionSociedadCientifica, DistincionAlumno
@@ -105,8 +105,7 @@ class Informe(View):
     context['organizacion_eventos_divulgacion'] = OrganizacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=this_year).distinct()
     context['participacion_eventos_divulgacion'] = ParticipacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=this_year).distinct()
     context['arbitrajes_publicaciones_academicas'] = ArbitrajePublicacionAcademica.objects.filter(fecha_dictamen__year=this_year).distinct()
-    context['arbitrajes_proyectos_investigacion'] = ArbitrajeProyectoInvestigacion.objects.filter(fecha__year=this_year).distinct()
-    context['arbitrajes_otras_actividades'] = OtraComision.objects.filter(fecha__year=this_year).distinct()
+    context['arbitrajes_otras_actividades'] = OtraComision.objects.filter(fecha_inicio__year=this_year).distinct()
     context['redes_academicas'] = RedAcademica.objects.filter(fecha_constitucion__year=this_year).distinct()
     context['servicios_externos_entidadesnoacademicas'] = ServicioExternoEntidadNoAcademica.objects.filter(fecha_inicio__year=this_year).distinct()
     context['otros_programa_vinculacion'] = OtroProgramaVinculacion.objects.filter(fecha__year=this_year).distinct()

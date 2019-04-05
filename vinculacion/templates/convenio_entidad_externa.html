@@ -1,7 +1,8 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Nombre de convenio:</strong>
+    {{ form.errors }}
+    <p><strong>Nombre de convenio o contrato:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de red académica.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -14,10 +15,10 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+    <p><strong>Objetivos: </strong><a href="#" data-toggle="tooltip" data-placement="right"
+                             title="Descripción detallada de los objetivos.">
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        {{ form.objetivos }}
     </p>
     <p><strong>Entidades participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -43,10 +44,18 @@
         </div>
     </div>
     </p>
-    <p><strong>Objetivos: </strong><a href="#" data-toggle="tooltip" data-placement="right"
-                             title="Descripción detallada de los objetivos.">
-        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-        {{ form.objetivos }}
+    <p><strong>Financiamiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Financiamiento.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
     </p>
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -73,35 +82,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Es renovación: </strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿Se trata de una renovación?"><i class="fa fa-question-circle"></i></a>
-        {{ form.es_renovacion }}
-    </p>
-    <p><strong>Financiamientos:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Financiamientos participantes en el convenio, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-money"></i></div>
-            {{ form.financiamientos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los financiamientos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/financiamientos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un financiamiento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Académicos participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Académicos participantes en la red académica, al escribir el inicio del nombre se filtran
@@ -120,6 +100,31 @@
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un académico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto relacionados con este articulo, puede ser uno o varios, si no hay un articulo relacionado con el artículo, seleccionar 'Ninguno'.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
+            {{ form.proyecto }}
+            <div class="input-group-addon">
+                <span id="boton-detalle-proyectoinvestigacion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar los detalles adicionales del proyecto. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
+                    </a>
+                </span>
+            </div>
+            <div class="input-group-addon">
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -129,7 +134,8 @@
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Nombre de convenio:</strong>
+    {{ form.errors }}
+    <p><strong>Nombre de convenio o contrato:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de red académica.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -142,10 +148,10 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+    <p><strong>Objetivos: </strong><a href="#" data-toggle="tooltip" data-placement="right"
+                             title="Descripción detallada de los objetivos.">
+        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        {{ form.objetivos }}
     </p>
     <p><strong>Entidades participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -171,10 +177,18 @@
         </div>
     </div>
     </p>
-    <p><strong>Objetivos: </strong><a href="#" data-toggle="tooltip" data-placement="right"
-                             title="Descripción detallada de los objetivos.">
-        <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-        {{ form.objetivos }}
+    <p><strong>Financiamiento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Financiamiento.">
+            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.nombre }}
+        </div>
+    </div>
     </p>
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -201,35 +215,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Es renovación: </strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿Se trata de una renovación?"><i class="fa fa-question-circle"></i></a>
-        {{ form.es_renovacion }}
-    </p>
-    <p><strong>Financiamientos:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Financiamientos participantes en el convenio, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-money"></i></div>
-            {{ form.financiamientos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los financiamientos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/financiamientos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un financiamiento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Académicos participantes:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Académicos participantes en la red académica, al escribir el inicio del nombre se filtran
@@ -248,6 +233,31 @@
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar un académico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Proyecto:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Proyecto relacionados con este articulo, puede ser uno o varios, si no hay un articulo relacionado con el artículo, seleccionar 'Ninguno'.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-cubes"></i></div>
+            {{ form.proyecto }}
+            <div class="input-group-addon">
+                <span id="boton-detalle-proyectoinvestigacion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar los detalles adicionales del proyecto. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
+                    </a>
+                </span>
+            </div>
+            <div class="input-group-addon">
+                <a href="/investigacion/proyectos/" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar una proyecto nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>

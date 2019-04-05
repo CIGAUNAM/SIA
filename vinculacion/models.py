@@ -74,7 +74,7 @@ class OtraComision(models.Model):
         return reverse('otra_comision_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['-fecha']
+        ordering = ['-fecha_inicio']
         verbose_name = 'Otra comisión'
         verbose_name_plural = 'Otras comisiones'
 
@@ -103,22 +103,23 @@ class RedAcademica(models.Model):
 
 
 class ConvenioEntidadExterna(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
+    nombre = models.CharField(max_length=254, unique=True)
     entidades = models.ManyToManyField(Dependencia)
     objetivos = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     es_renovacion = models.BooleanField(blank=True, default=False)
-    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
+    #financiamientos = models.ManyToManyField(Financiamiento, blank=True)
+    financiamiento_text = models.CharField(max_length=254, blank=True, null=True)
     participantes = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios',
                                            verbose_name='Académicos participantes')
+    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING, blank=True, null=True)
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_inicio)
 
     def get_absolute_url(self):
-        return reverse('convenio_entidad_no_academica_detalle', kwargs={'pk': self.pk})
+        return reverse('convenio_otra_entidad_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="apoyos tecnicos">
+    <list default="true" id="f8139c47-54d6-4ab2-8cc1-a188d6520be9" name="Default" comment="difusion">
+      <change afterPath="$PROJECT_DIR$/vinculacion/migrations/0002_auto_20190405_1310.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/difusion_cientifica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/difusion_cientifica/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/difusion_cientifica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/difusion_cientifica/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/difusion_cientifica/templates/memoria_in_extenso.html" beforeDir="false" afterPath="$PROJECT_DIR$/difusion_cientifica/templates/memoria_in_extenso.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/difusion_cientifica/templates/participacion_evento_academico.html" beforeDir="false" afterPath="$PROJECT_DIR$/difusion_cientifica/templates/participacion_evento_academico.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nucleo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/nucleo/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SIA/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SIA/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SIA/views_reportes.py" beforeDir="false" afterPath="$PROJECT_DIR$/SIA/views_reportes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vinculacion/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vinculacion/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vinculacion/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion_academica.html" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion_academica.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vinculacion/templates/convenio_entidad_externa.html" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/templates/convenio_entidad_externa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vinculacion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vinculacion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/vinculacion/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,30 +31,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/difusion_cientifica/models.py">
+        <entry file="file://$PROJECT_DIR$/nucleo/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="117" column="114" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="114" />
+            <state relative-caret-position="57">
+              <caret line="447" column="20" selection-start-line="447" selection-start-column="6" selection-end-line="447" selection-end-column="20" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#2089#3295#0" />
-                <element signature="e#3334#4211#0" />
-                <element signature="e#4267#5688#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/difusion_cientifica/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275">
-              <caret line="168" column="80" selection-start-line="168" selection-start-column="80" selection-end-line="168" selection-end-column="80" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#1887#4213#0" />
-                <element signature="e#4259#6062#0" />
-                <element signature="e#6125#7904#0" />
               </folding>
             </state>
           </provider>
@@ -62,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vinculacion/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="223">
+              <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -72,45 +55,88 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vinculacion/forms.py">
+        <entry file="file://$PROJECT_DIR$/vinculacion/templates/convenio_entidad_externa.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="202">
+              <caret line="265" column="8" selection-start-line="265" selection-start-column="8" selection-end-line="265" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vinculacion/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion_academica.html">
+        <entry file="file://$PROJECT_DIR$/SIA/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="212" column="10" selection-start-line="212" selection-start-column="10" selection-end-line="212" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-end-line="13" />
+            <state relative-caret-position="214">
+              <caret line="1836" selection-start-line="1836" selection-end-line="1836" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#25#79#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/difusion_cientifica/templates/participacion_evento_academico.html">
+        <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="282" selection-start-line="282" selection-end-line="282" />
+            <state relative-caret-position="156">
+              <caret line="107" column="86" selection-start-line="107" selection-start-column="86" selection-end-line="107" selection-end-column="86" />
               <folding>
-                <element signature="n#block#0;n#!!top" />
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SIA/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/investigacion/templates/articulo_cientifico.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="308" column="8" lean-forward="true" selection-start-line="284" selection-start-column="4" selection-end-line="308" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vinculacion/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vinculacion/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="117" column="48" lean-forward="true" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#3295#4904#0" />
               </folding>
             </state>
           </provider>
@@ -128,7 +154,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ORGANIZACION_PROYECTO</find>
       <find>cursos</find>
       <find>cursos_especializacion</find>
       <find>&quot;nombre_extendido&quot;</find>
@@ -158,6 +183,7 @@
       <find>institucion</find>
       <find>apoyo</find>
       <find>impacto_social_text</find>
+      <find>conveni</find>
     </findStrings>
     <replaceStrings>
       <replace>prologo_libro_autor__libro__tiene_participacion_prologo</replace>
@@ -207,14 +233,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/formacion_recursos_humanos/models.py" />
-        <option value="$PROJECT_DIR$/formacion_recursos_humanos/forms.py" />
-        <option value="$PROJECT_DIR$/_misc/nucleo_bak.json" />
-        <option value="$PROJECT_DIR$/nucleo/serializers.py" />
-        <option value="$PROJECT_DIR$/_misc/codice.crt" />
-        <option value="$PROJECT_DIR$/_misc/codice.bundle" />
-        <option value="$PROJECT_DIR$/formacion_academica/templates/maestrias.html" />
-        <option value="$PROJECT_DIR$/formacion_academica/templates/doctorados.html" />
         <option value="$PROJECT_DIR$/formacion_academica/templates/post_doctorados.html" />
         <option value="$PROJECT_DIR$/formacion_academica/migrations/0004_auto_20190303_1634.py" />
         <option value="$PROJECT_DIR$/templates/main.html" />
@@ -240,7 +258,6 @@
         <option value="$PROJECT_DIR$/divulgacion_cientifica/forms.py" />
         <option value="$PROJECT_DIR$/docencia/forms.py" />
         <option value="$PROJECT_DIR$/investigacion/templates/publicacion_tecnica.html" />
-        <option value="$PROJECT_DIR$/SIA/views_reportes.py" />
         <option value="$PROJECT_DIR$/investigacion/templates/proyecto_investigacion.html" />
         <option value="$PROJECT_DIR$/investigacion/models.py" />
         <option value="$PROJECT_DIR$/investigacion/forms.py" />
@@ -248,16 +265,25 @@
         <option value="$PROJECT_DIR$/investigacion/views.py" />
         <option value="$PROJECT_DIR$/investigacion/templates/apoyo_tecnico_investigacion.html" />
         <option value="$PROJECT_DIR$/investigacion/templates/apoyo_tecnico_servicio.html" />
-        <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
         <option value="$PROJECT_DIR$/investigacion/urls.py" />
         <option value="$PROJECT_DIR$/investigacion/utils.py" />
         <option value="$PROJECT_DIR$/difusion_cientifica/templates/memoria_in_extenso.html" />
         <option value="$PROJECT_DIR$/difusion_cientifica/models.py" />
         <option value="$PROJECT_DIR$/difusion_cientifica/templates/participacion_evento_academico.html" />
         <option value="$PROJECT_DIR$/difusion_cientifica/forms.py" />
-        <option value="$PROJECT_DIR$/vinculacion/models.py" />
-        <option value="$PROJECT_DIR$/vinculacion/forms.py" />
         <option value="$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion_academica.html" />
+        <option value="$PROJECT_DIR$/vinculacion/views.py" />
+        <option value="$PROJECT_DIR$/vinculacion/utils.py" />
+        <option value="$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html" />
+        <option value="$PROJECT_DIR$/vinculacion/templates/otra_comision.html" />
+        <option value="$PROJECT_DIR$/vinculacion/templates/red_academica.html" />
+        <option value="$PROJECT_DIR$/vinculacion/urls.py" />
+        <option value="$PROJECT_DIR$/vinculacion/forms.py" />
+        <option value="$PROJECT_DIR$/vinculacion/templates/convenio_entidad_externa.html" />
+        <option value="$PROJECT_DIR$/vinculacion/admin.py" />
+        <option value="$PROJECT_DIR$/SIA/views_reportes.py" />
+        <option value="$PROJECT_DIR$/vinculacion/models.py" />
+        <option value="$PROJECT_DIR$/SIA/views.py" />
       </list>
     </option>
   </component>
@@ -327,6 +353,12 @@
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIA" type="462c0819:PsiDirectoryNode" />
               <item name="investigacion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIA" type="462c0819:PsiDirectoryNode" />
+              <item name="investigacion" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SIA" type="b2602c69:ProjectViewProjectNode" />
@@ -418,21 +450,7 @@
       <workItem from="1553718013825" duration="2848000" />
       <workItem from="1553729843447" duration="6938000" />
       <workItem from="1553889801314" duration="23211000" />
-      <workItem from="1554356818228" duration="17505000" />
-    </task>
-    <task id="LOCAL-00133" summary="correccion decimales factor de impacto en revista">
-      <created>1533320448954</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1533320448954</updated>
-    </task>
-    <task id="LOCAL-00134" summary="correccion decimales factor de impacto en revista">
-      <created>1533346306370</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1533346306370</updated>
+      <workItem from="1554356818228" duration="21720000" />
     </task>
     <task id="LOCAL-00135" summary="correccion decimales factor de impacto en revista">
       <created>1533346348237</created>
@@ -763,23 +781,37 @@
       <option name="project" value="LOCAL" />
       <updated>1554441362189</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="difusion">
+      <created>1554483927188</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1554483927189</updated>
+    </task>
+    <task id="LOCAL-00183" summary="otras comisiones y redes academicas">
+      <created>1554490451062</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1554490451062</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50502000" />
+    <option name="totallyTimeSpent" value="54717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="698" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29229608" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29229608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32933104" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32933104" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49779493" weight="0.39794168" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49779493" visible="true" weight="0.39794168" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -789,7 +821,7 @@
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49471298" weight="0.44768438" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.2915952" />
       <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="bottom" id="manage.py@SIA" order="13" sideWeight="0.49626866" visible="true" weight="0.3927959" />
+      <window_info anchor="bottom" id="manage.py@SIA" order="13" sideWeight="0.49626866" weight="0.3927959" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32761577" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="16" />
@@ -817,7 +849,9 @@
     <MESSAGE value="correccion decimales factor de impacto en revista|" />
     <MESSAGE value="publicaciones tecnicas" />
     <MESSAGE value="apoyos tecnicos" />
-    <option name="LAST_COMMIT_MESSAGE" value="apoyos tecnicos" />
+    <MESSAGE value="difusion" />
+    <MESSAGE value="otras comisiones y redes academicas" />
+    <option name="LAST_COMMIT_MESSAGE" value="otras comisiones y redes academicas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -840,75 +874,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_misc/histo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="160" column="6" selection-start-line="160" selection-start-column="6" selection-end-line="160" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="7273" selection-start-line="7273" selection-end-line="7283" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/cv.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="77" column="66" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/db/models/fields/related.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="854" column="19" selection-start-line="854" selection-start-column="8" selection-end-line="854" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/templates/modal/form_agregar_revista.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="271" column="41" selection-start-line="271" selection-start-column="41" selection-end-line="271" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compromiso_institucional/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
-          <folding>
-            <element signature="e#137#2383#0" />
-            <element signature="e#2434#4745#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compromiso_institucional/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -1013,13 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="70" column="154" selection-start-line="70" selection-start-column="154" selection-end-line="70" selection-end-column="154" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compromiso_institucional/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1028,16 +986,6 @@
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#2733#4880#0" />
             <element signature="e#4934#6202#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nucleo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="272" selection-start-line="272" selection-end-line="273" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1073,13 +1021,6 @@
           <folding>
             <element signature="e#27#51#0#DjangoTemplate" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/investigacion/templates/articulo_cientifico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="711" column="8" lean-forward="true" selection-start-line="687" selection-start-column="4" selection-end-line="711" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1122,13 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="176" column="72" selection-start-line="176" selection-start-column="72" selection-end-line="176" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/investigacion/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1157,16 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-571">
           <caret line="30" column="10" selection-start-line="30" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="231" column="22" selection-start-line="231" selection-end-line="232" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1214,15 +1138,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/vinculacion/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/difusion_cientifica/models.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1239,7 +1156,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/difusion_cientifica/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
+        <state relative-caret-position="-45">
           <caret line="168" column="80" selection-start-line="168" selection-start-column="80" selection-end-line="168" selection-end-column="80" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -1250,13 +1167,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vinculacion/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vinculacion/models.py">
+    <entry file="file://$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion_academica.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="163">
+          <caret line="215" column="49" selection-start-line="215" selection-start-column="49" selection-end-line="215" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investigacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="249" selection-start-line="249" selection-end-line="258" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/templates/otra_comision.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="207" column="8" selection-start-line="207" selection-start-column="8" selection-end-line="207" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/templates/red_academica.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="186" column="8" selection-start-line="186" selection-start-column="8" selection-end-line="186" selection-end-column="8" />
+          <folding>
+            <element signature="n#block#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <element signature="e#132#2137#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminlte/lib/_main_sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="300" column="56" selection-start-line="300" selection-start-column="56" selection-end-line="300" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="140" column="32" lean-forward="true" selection-start-line="140" selection-start-column="32" selection-end-line="140" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formacion_academica/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nucleo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="447" column="20" selection-start-line="447" selection-start-column="6" selection-end-line="447" selection-end-column="20" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1265,18 +1260,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vinculacion/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="217">
+          <caret line="117" column="48" lean-forward="true" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#3295#4904#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vinculacion/templates/arbitraje_publicacion_academica.html">
+    <entry file="file://$PROJECT_DIR$/investigacion/templates/articulo_cientifico.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="212" column="10" selection-start-line="212" selection-start-column="10" selection-end-line="212" selection-end-column="10" />
+        <state relative-caret-position="172">
+          <caret line="308" column="8" lean-forward="true" selection-start-line="284" selection-start-column="4" selection-end-line="308" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/templates/convenio_entidad_externa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="265" column="8" selection-start-line="265" selection-start-column="8" selection-end-line="265" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views_reportes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="107" column="86" selection-start-line="107" selection-start-column="86" selection-end-line="107" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vinculacion/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SIA/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="1836" selection-start-line="1836" selection-end-line="1836" />
+          <folding>
+            <element signature="e#25#79#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -8,7 +8,7 @@ from formacion_academica.models import CursoEspecializacion
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, PublicacionTecnica, ProyectoInvestigacion
 from difusion_cientifica.models import MemoriaInExtenso, Resena, Traduccion, OrganizacionEventoAcademico, ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
-from vinculacion.models import ArbitrajePublicacionAcademica, ArbitrajeProyectoInvestigacion
+from vinculacion.models import ArbitrajePublicacionAcademica
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
@@ -1835,63 +1835,6 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-            # print(items_data)
-            data_source = SimpleDataSource(data=items_data)
-            chart_arbitrajepublicacionacademica = LineChart(data_source)
-            context['chart_arbitrajepublicacionacademica'] = chart_arbitrajepublicacionacademica
-
-            items_data = [
-                ['Año', 'Mis Arbitrajes de Proyectos de investigación', 'Promedio por persona', 'Max por persona',
-                 'Min por persona']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                items_data.append([str(year)])
-
-                total_items_year_sum = ArbitrajeProyectoInvestigacion.objects.filter(fecha__year=year).filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
-
-                request_user_items_year_sum = ArbitrajeProyectoInvestigacion.objects.filter(fecha__year=year,
-                                                                                            usuario=request.user).count()
-                if not request_user_items_year_sum:
-                    request_user_items_year_sum = 0
-                items_data[i + 1].append(
-                    request_user_items_year_sum)
-
-                users_with_items_year_count = User.objects.filter(
-                    Q(arbitrajeproyectoinvestigacion__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    items_data[i + 1].append(
-                        round(total_items_year_sum / users_with_items_year_count, 2))
-                else:
-                    items_data[i + 1].append(0)
-
-                max_items_year_user = User.objects.filter(
-                    Q(arbitrajeproyectoinvestigacion__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('arbitrajeproyectoinvestigacion')).aggregate(Max('arbitrajeproyectoinvestigacion__count'))[
-                    'arbitrajeproyectoinvestigacion__count__max']
-                if max_items_year_user == None:
-                    max_items_year_user = 0
-                items_data[i + 1].append(
-                    max_items_year_user)
-
-                min_items_year_user = User.objects.filter(
-                    Q(arbitrajeproyectoinvestigacion__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('arbitrajeproyectoinvestigacion')).aggregate(Min('arbitrajeproyectoinvestigacion__count'))[
-                    'arbitrajeproyectoinvestigacion__count__min']
-                if min_items_year_user == None:
-                    min_items_year_user = 0
-                items_data[i + 1].append(
-                    min_items_year_user)
 
             # print(items_data)
             data_source = SimpleDataSource(data=items_data)
