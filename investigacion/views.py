@@ -315,9 +315,9 @@ class ProyectoInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ProyectoInvestigacion.objects.all().exclude(Q(responsables__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid) & Q(tecnicos__id__exact=usuarioid)).distinct()
+                items = ProyectoInvestigacion.objects.all().exclude(Q(responsables__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid)).distinct()
             else:
-                items = ProyectoInvestigacion.objects.filter(Q(responsables__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid) | Q(tecnicos__id__exact=usuarioid)).distinct()
+                items = ProyectoInvestigacion.objects.filter(Q(responsables__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid)).distinct()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'status', 'clasificacion', 'modalidad'))
 
@@ -375,6 +375,84 @@ class ProyectoInvestigacionEliminar(View):
     def get(self, request, pk):
         try:
             item = get_object_or_404(ProyectoInvestigacion, pk=pk)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+
+
+class ApoyoTecnicoInvestigacionJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ApoyoTecnicoInvestigacion.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items,
+                                         fields=('actividad', 'fecha_inicio', 'proyecto'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ApoyoTecnicoInvestigacionLista(ObjectCreateMixin, View):
+    form_class = ApoyoTecnicoInvestigacionForm
+    model = ApoyoTecnicoInvestigacion
+    aux = ApoyoTecnicoInvestigacionContext.contexto
+    template_name = 'apoyo_tecnico_investigacion.html'
+
+
+class ApoyoTecnicoInvestigacionDetalle(ObjectUpdateMixin, View):
+    form_class = ApoyoTecnicoInvestigacionForm
+    model = ApoyoTecnicoInvestigacion
+    aux = ApoyoTecnicoInvestigacionContext.contexto
+    template_name = 'apoyo_tecnico_investigacion.html'
+
+
+class ApoyoTecnicoInvestigacionEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ApoyoTecnicoInvestigacion, pk=pk, usuario=request.user)
+            item.delete()
+            return redirect('../')
+        except:
+            raise Http404
+
+
+
+class ApoyoTecnicoServicioJSON(View):
+    def get(self, request):
+        try:
+            usuarioid = User.objects.get(username=request.user.username).id
+            items = ApoyoTecnicoServicio.objects.filter(usuario=usuarioid)
+            json = serializers.serialize('json', items,
+                                         fields=('actividad', 'fecha_inicio', 'proyecto'),
+                                         use_natural_foreign_keys=True)
+            return HttpResponse(json, content_type='application/json')
+        except:
+            raise Http404
+
+
+class ApoyoTecnicoServicioLista(ObjectCreateMixin, View):
+    form_class = ApoyoTecnicoServicioForm
+    model = ApoyoTecnicoServicio
+    aux = ApoyoTecnicoServicioContext.contexto
+    template_name = 'apoyo_tecnico_servicio.html'
+
+
+class ApoyoTecnicoServicioDetalle(ObjectUpdateMixin, View):
+    form_class = ApoyoTecnicoServicioForm
+    model = ApoyoTecnicoServicio
+    aux = ApoyoTecnicoServicioContext.contexto
+    template_name = 'apoyo_tecnico_servicio.html'
+
+
+class ApoyoTecnicoServicioEliminar(View):
+    def get(self, request, pk):
+        try:
+            item = get_object_or_404(ApoyoTecnicoServicio, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:

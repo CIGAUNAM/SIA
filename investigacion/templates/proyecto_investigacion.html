@@ -63,7 +63,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -71,7 +71,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                <a href="/nucleo/instituciones/" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -199,32 +199,19 @@
            title="¿El proyecto tiene temática de género?"><i class="fa fa-question-circle"></i></a>
         {{ form.tematica_genero }}
     </p>
-    <p><strong>Problemas nacionales CONACYT:</strong>
+    <p><strong>Objetivos de Desarrollo Sostenible (Agenda México 2030):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Problemas Nacionales CONACYT que atiende este proyecto.">
+           title="Objetivos de Desarrollo Sostenible (Agenda México 2030).">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.problemas_nacionales_conacyt }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de Problemas Nacionales CONACYT.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
+            {{ form.objetivos2030 }}
         </div>
     </div>
     </p>
-    <div id="d_otro_problema_nacional_conacyt">
-        <p><strong>Otro problema nacional CONACYT:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Detalles de como este proyecto resuelve otro problema nacional conacyt.">
-                <i class="fa fa-question-circle"></i></a>
-            {{ form.otro_problema_nacional_conacyt }}
-        </p>
-    </div>
-    <p><strong>Tipo de fincanciamiento:</strong>
+
+    <p><strong>Tipo de financiamiento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de financiamento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -234,7 +221,7 @@
         </div>
     </div>
     </p>
-    <div id="d_financiamiento_conacyt">
+    <div id="d_financiamiento_conacyt_clave">
         <p><strong>Clave de financiamiento CONACYT:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Clave de proyecto de financiamiento CONACYT, llenar el campo únicamente si se cuenta con dicho financiamiento.">
@@ -245,7 +232,23 @@
                 <div class="input-group-addon">
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
-                {{ form.financiamiento_conacyt }}
+                {{ form.financiamiento_conacyt_clave }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_financiamiento_conacyt_convocatoria">
+        <p><strong>Convocatoria CONACYT:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Convocatoria CONACYT, llenar el campo únicamente si se cuenta con dicho financiamiento.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.financiamiento_conacyt_convocatoria }}
             </div>
         </div>
         </p>
@@ -332,61 +335,6 @@
         </div>
         </p>
     </div>
-    <p><strong>En colaboración con:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencias que colaboran en el desarrollo del proyecto.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencias_colaboracion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Metodologias:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Metodologias utilizadas en el desarrollo del proyecto.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.metodologias_text }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Áreas de especialidad (WOS):</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Especialidades involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda. Este catalogo corresponde con las áreas de conocimiento de WOS.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-flask"></i></div>
-            {{ form.areas_especialidad_wos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de las especialidades.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Impacto social:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Impacto social del proyecto.">
@@ -398,30 +346,6 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.impacto_social_text }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Técnicos participantes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Técnicos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.tecnicos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los técnicos participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un técnico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
@@ -460,7 +384,7 @@
     </p>
 
     <script>
-        $("#id_autores").on("select2:select", function (evt) {
+        $("#responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -477,42 +401,30 @@
         });
 
 
-
-        $("#d_otro_problema_nacional_conacyt").hide();
-        $("#d_financiamiento_conacyt").hide();
+        $("#d_financiamiento_conacyt_clave").hide();
+        $("#d_financiamiento_conacyt_convocatoria").hide();
         $("#d_financiamiento_papiit").hide();
         $("#d_financiamiento_papime").hide();
         $("#d_financiamiento_extraordinario").hide();
         $("#d_financiamiento_sin_recurso_ciga").hide();
 
-        $("#id_problemas_nacionales_conacyt").on('change', function () {
-            if ($("#id_problemas_nacionales_conacyt").val()) {
-                if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
-                    $("#d_otro_problema_nacional_conacyt").show("slow");
-                } else {
-                    $("#d_otro_problema_nacional_conacyt").hide("slow");
-                    $("#id_otro_problema_nacional_conacyt").val("");
-                }
-            } else {
-                $("#d_otro_problema_nacional_conacyt").hide("slow");
-                $("#id_otro_problema_nacional_conacyt").val("");
-            }
-        });
         
         $("#id_tipo_financiamiento").on('change', function () {
             if ($("#id_tipo_financiamiento").val() == 'CONACYT') {
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").show('slow');
+                $("#d_financiamiento_conacyt_clave").show('slow');
+                $("#d_financiamiento_conacyt_convocatoria").show('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", "true");
+                $("#id_financiamiento_conacyt_clave").attr("required", "true");
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", "true");
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -520,18 +432,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'PAPIIT') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").show('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", "true");
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -539,18 +454,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'PAPIME') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").show('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", "true");
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -558,18 +476,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'EXTRAORDINARIOS') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").show('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", "true");
@@ -577,18 +498,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'SIN_RECURSOS') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").show('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -596,27 +520,27 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == '') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);
                 $("#id_financiamiento_sin_recurso_ciga").attr("required", null);
             }
-
-
-
         });
     </script>
 
@@ -687,7 +611,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -695,7 +619,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
+                <a href="/nucleo/instituciones/" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -823,32 +747,19 @@
            title="¿El proyecto tiene temática de género?"><i class="fa fa-question-circle"></i></a>
         {{ form.tematica_genero }}
     </p>
-    <p><strong>Problemas nacionales CONACYT:</strong>
+    <p><strong>Objetivos de Desarrollo Sostenible (Agenda México 2030):</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Problemas Nacionales CONACYT que atiende este proyecto.">
+           title="Objetivos de Desarrollo Sostenible (Agenda México 2030).">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.problemas_nacionales_conacyt }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de Problemas Nacionales CONACYT.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
+            {{ form.objetivos2030 }}
         </div>
     </div>
     </p>
-    <div id="d_otro_problema_nacional_conacyt">
-        <p><strong>Otro problema nacional CONACYT:</strong>
-            <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Detalles de como este proyecto resuelve otro problema nacional conacyt.">
-                <i class="fa fa-question-circle"></i></a>
-            {{ form.otro_problema_nacional_conacyt }}
-        </p>
-    </div>
-    <p><strong>Tipo de fincanciamiento:</strong>
+
+    <p><strong>Tipo de financiamiento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de financiamento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -858,7 +769,7 @@
         </div>
     </div>
     </p>
-    <div id="d_financiamiento_conacyt">
+    <div id="d_financiamiento_conacyt_clave">
         <p><strong>Clave de financiamiento CONACYT:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Clave de proyecto de financiamiento CONACYT, llenar el campo únicamente si se cuenta con dicho financiamiento.">
@@ -869,7 +780,23 @@
                 <div class="input-group-addon">
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
-                {{ form.financiamiento_conacyt }}
+                {{ form.financiamiento_conacyt_clave }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_financiamiento_conacyt_convocatoria">
+        <p><strong>Convocatoria CONACYT:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Convocatoria CONACYT, llenar el campo únicamente si se cuenta con dicho financiamiento.">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.financiamiento_conacyt_convocatoria }}
             </div>
         </div>
         </p>
@@ -956,61 +883,6 @@
         </div>
         </p>
     </div>
-    <p><strong>En colaboración con:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencias que colaboran en el desarrollo del proyecto.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencias_colaboracion }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Metodologias:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Metodologias utilizadas en el desarrollo del proyecto.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.metodologias_text }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Áreas de especialidad (WOS):</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Especialidades involucradas en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda. Este catalogo corresponde con las áreas de conocimiento de WOS.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-flask"></i></div>
-            {{ form.areas_especialidad_wos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de las especialidades.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Impacto social:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Impacto social del proyecto.">
@@ -1022,30 +894,6 @@
                 <i class="fa fa-pencil-square-o"></i>
             </div>
             {{ form.impacto_social_text }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Técnicos participantes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Técnicos participantes en el desarrollo del proyecto, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.tecnicos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los técnicos participantes.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un técnico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
@@ -1094,7 +942,8 @@
         });
 
         $("#d_otro_problema_nacional_conacyt").hide();
-        $("#d_financiamiento_conacyt").hide();
+        $("#d_financiamiento_conacyt_clave").hide();
+        $("#d_financiamiento_conacyt_convocatoria").hide();
         $("#d_financiamiento_papiit").hide();
         $("#d_financiamiento_papime").hide();
         $("#d_financiamiento_extraordinario").hide();
@@ -1110,7 +959,8 @@
             console.log($("#id_tipo_financiamiento").val());
 
             if ($("#id_tipo_financiamiento").val() == 'CONACYT') {
-                $("#d_financiamiento_conacyt").show();
+                $("#d_financiamiento_conacyt_clave").show();
+                $("#d_financiamiento_conacyt_convocatoria").show();
             }
             if ($("#id_tipo_financiamiento").val() == 'PAPIIT') {
                 $("#d_financiamiento_papiit").show();
@@ -1126,35 +976,22 @@
             }
         }
 
-        $("#id_problemas_nacionales_conacyt").on('change', function () {
-            console.log($("#id_problemas_nacionales_conacyt").val());
-            if ($("#id_problemas_nacionales_conacyt").val()) {
-                if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
-                    $("#d_otro_problema_nacional_conacyt").show("slow");
-                } else {
-                    $("#d_otro_problema_nacional_conacyt").hide("slow");
-                    $("#id_otro_problema_nacional_conacyt").val("");
-                }
-            } else {
-                $("#d_otro_problema_nacional_conacyt").hide("slow");
-                $("#id_otro_problema_nacional_conacyt").val("");
-            }
-        });
-
         $("#id_tipo_financiamiento").on('change', function () {
             if ($("#id_tipo_financiamiento").val() == 'CONACYT') {
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").show('slow');
+                $("#d_financiamiento_conacyt_clave").show('slow');
+                $("#d_financiamiento_conacyt_convocatoria").show('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", "true");
+                $("#id_financiamiento_conacyt_clave").attr("required", "true");
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", "true");
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -1162,18 +999,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'PAPIIT') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").show('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", "true");
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -1181,18 +1021,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'PAPIME') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").show('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", "true");
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -1200,18 +1043,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'EXTRAORDINARIOS') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").show('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", "true");
@@ -1219,18 +1065,21 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == 'SIN_RECURSOS') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").show('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);
@@ -1238,19 +1087,22 @@
             }
 
             if ($("#id_tipo_financiamiento").val() == '') {
-                $("#id_financiamiento_conacyt").val(null);
-                $("#id_financiamiento_papiit").val(null);
-                $("#id_financiamiento_papime").val(null);
+                $("#id_financiamiento_conacyt_clave").val(null).trigger('change');
+                $("#id_financiamiento_conacyt_convocatoria").val(null).trigger('change');
+                $("#id_financiamiento_papiit").val(null).trigger('change');
+                $("#id_financiamiento_papime").val(null).trigger('change');
                 $("#id_financiamiento_extraordinario").val(null).trigger('change');
                 $("#id_financiamiento_sin_recurso_ciga").val(null).trigger('change');
 
-                $("#d_financiamiento_conacyt").hide('slow');
+                $("#d_financiamiento_conacyt_clave").hide('slow');
+                $("#d_financiamiento_conacyt_convocatoria").hide('slow');
                 $("#d_financiamiento_papiit").hide('slow');
                 $("#d_financiamiento_papime").hide('slow');
                 $("#d_financiamiento_extraordinario").hide('slow');
                 $("#d_financiamiento_sin_recurso_ciga").hide('slow');
 
-                $("#id_financiamiento_conacyt").attr("required", null);
+                $("#id_financiamiento_conacyt_clave").attr("required", null);
+                $("#id_financiamiento_conacyt_convocatoria").attr("required", null);
                 $("#id_financiamiento_papiit").attr("required", null);
                 $("#id_financiamiento_papime").attr("required", null);
                 $("#id_financiamiento_extraordinario").attr("required", null);

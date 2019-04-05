@@ -67,8 +67,8 @@ class Informe(View):
 
     context['mapas_arbitrados'] = MapaArbitrado.objects.filter(fecha__year=this_year).distinct()
 
-    context['informes_tecnicos_accesso_publico_nacionales'] = PublicacionTecnica.objects.filter(fecha__year=this_year).filter(proyecto__institucion__pais_institucion__pais_nombre='México').distinct()
-    context['informes_tecnicos_accesso_publico_internacionales'] = PublicacionTecnica.objects.filter(fecha__year=this_year).exclude(proyecto__institucion__pais_institucion__pais_nombre='México').distinct()
+    context['informes_tecnicos_accesso_publico_nacionales'] = PublicacionTecnica.objects.filter(fecha__year=this_year).filter(proyecto__institucion2__pais_institucion__pais_nombre='México').distinct()
+    context['informes_tecnicos_accesso_publico_internacionales'] = PublicacionTecnica.objects.filter(fecha__year=this_year).exclude(proyecto__institucion2__pais_institucion__pais_nombre='México').distinct()
 
     context['articulos_inextenso_memorias_nacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).filter(evento__pais__pais_nombre='México').distinct()
     context['articulos_inextenso_memorias_internacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).exclude(evento__pais__pais_nombre='México').distinct()
