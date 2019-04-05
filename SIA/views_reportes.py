@@ -10,7 +10,7 @@ from vinculacion.models import ArbitrajePublicacionAcademica, OtraComision, Otro
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionSociedadCientifica, DistincionAlumno
-from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
+from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioAsesoriaExterna
 from nucleo.models import User, Libro
 from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
@@ -107,7 +107,7 @@ class Informe(View):
     context['arbitrajes_publicaciones_academicas'] = ArbitrajePublicacionAcademica.objects.filter(fecha_dictamen__year=this_year).distinct()
     context['arbitrajes_otras_actividades'] = OtraComision.objects.filter(fecha_inicio__year=this_year).distinct()
     context['redes_academicas'] = RedAcademica.objects.filter(fecha_constitucion__year=this_year).distinct()
-    context['servicios_externos_entidadesnoacademicas'] = ServicioExternoEntidadNoAcademica.objects.filter(fecha_inicio__year=this_year).distinct()
+    context['servicios_externos_entidadesnoacademicas'] = ServicioAsesoriaExterna.objects.filter(fecha_inicio__year=this_year).distinct()
     context['otros_programa_vinculacion'] = OtroProgramaVinculacion.objects.filter(fecha__year=this_year).distinct()
     context['sociedades_cientificas'] = ParticipacionSociedadCientifica.objects.filter(fecha_inicio__year=this_year).distinct()
     context['cargos_academicoadministrativos'] = LaborDirectivaCoordinacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(dependencia__institucion_dependencia__id=1).distinct()

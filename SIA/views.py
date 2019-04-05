@@ -12,7 +12,7 @@ from vinculacion.models import ArbitrajePublicacionAcademica
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
-from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioExternoEntidadNoAcademica
+from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioAsesoriaExterna
 from nucleo.models import User, Libro
 from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
@@ -7056,7 +7056,7 @@ class CVInvestigadorPDF(View):
         sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
         participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_constitucion')
         convenios_entidades_externas = ConvenioEntidadExterna.objects.filter(usuarios=pk).order_by('-fecha_inicio')
-        servicios_asesorias_externas = ServicioExternoEntidadNoAcademica.objects.filter(usuario=pk).order_by('-fecha_inicio')
+        servicios_asesorias_externas = ServicioAsesoriaExterna.objects.filter(usuario=pk).order_by('-fecha_inicio')
         organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
         participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
 
