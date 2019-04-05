@@ -31,11 +31,10 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         exclude = ['usuario', ]
 
 
-class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
-    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    convocatoria = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    institucion = forms.ModelChoiceField(
+
+
+class OtraComisionForm(forms.ModelForm):
+    comision = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -44,29 +43,8 @@ class ArbitrajeProyectoInvestigacionForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-
-    error_css_class = 'error'
-    required_css_class = 'required'
-
-    class Meta:
-        model = ArbitrajeProyectoInvestigacion
-        exclude = ['usuario', ]
-
-
-class ArbitrajeOtraActividadForm(forms.ModelForm):
-    actividad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    institucion = forms.ModelChoiceField(
+    comision_otra = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -85,16 +63,16 @@ class ArbitrajeOtraActividadForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}            
         )
     )
-    fecha = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
-        model = ArbitrajeOtraActividad
-        exclude = ['usuario', 'tags', ]
+        model = OtraComision
+        exclude = ['usuario', ]
 
 
 class RedAcademicaForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
     objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
     fecha_constitucion = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)

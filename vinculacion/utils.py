@@ -39,58 +39,19 @@ class ArbitrajePublicacionAcademicaContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-class ArbitrajeProyectoInvestigacionContext:
-    obj = 'arbitraje de proyecto de investigación'
-    objs = 'arbitrajes de proyectos de investigación'
-    Objs = 'Arbitrajes de proyectos de investigación'
 
-    url_seccion = 'arbitrajes-proyectos'
-
-    contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
-                'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
-                'tab_detalle': 'Editar ' + obj,
-                'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
-                'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Fecha', 'Dependencia']}
-
-
-    tabla_mios =  '<script>\n' \
-                    '       jQuery(document).ready(function ($jquery) {\n' \
-                    '       $jquery("#tabla_json").dataTable({\n' \
-                                '"iDisplayLength": 15,\n' \
-                                '"ajax": {\n' \
-                                    '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
-                                    '"dataSrc": ""\n' \
-                                '},\n' \
-                                '"columns": [\n' \
-                                    '{\n' \
-                                        '"data": "fields.fecha",\n' \
-                                        '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.fecha + "</a>");\n' \
-                                        '}\n' \
-                                    '},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
-                                ']\n' \
-                            '});\n' \
-                        '});\n' \
-                  '</script>'
-
-    contexto['tabla_mios'] = tabla_mios
-
-
-class ArbitrajeOtraActividadContext:
+class OtraComisionContext:
     obj = 'otra actividad de arbitraje'
     objs = 'otras actividad de arbitraje'
     Objs = 'Otras actividad de arbitraje'
-    url_seccion = 'otros-arbitrajes'
+    url_seccion = 'otras-comisiones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Actividad', 'dependencia', 'Fecha']}
+                'titulos_tabla': ['Comision', 'dependencia', 'Fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -104,9 +65,9 @@ class ArbitrajeOtraActividadContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.actividad",\n' \
+                                        '"data": "fields.comision",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.actividad + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.comision + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.dependencia"},\n' \

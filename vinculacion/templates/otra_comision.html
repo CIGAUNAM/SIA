@@ -1,9 +1,20 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
-    <p><strong>Actividad de arbitraje:</strong>
+    {{ form.errors }}
+    <p><strong>Tipo de comisión:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Actividad de arbitraje.">
+           title="Tipo de comisión, si se selecciona otra, especificar abajo cual."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.comision }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Otra comisión:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si en el campo anterior se selecciona otra comisión, especificar aquí dicha comisión.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -11,14 +22,9 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.actividad }}
+            {{ form.titulo }}
         </div>
     </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
     </p>
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -70,9 +76,22 @@
         </div>
     </div>
     </p>
-    <p><strong>Fecha:</strong>
+    <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de dictamen del arbitraje."><i
+           title="Fecha de inicio de la comisión."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin de la comisión."><i
                 class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
@@ -86,9 +105,20 @@
 {% endblock %}
 
 {% block form_detalle %}
-    <p><strong>Actividad de arbitraje:</strong>
+    {{ form.errors }}
+    <p><strong>Tipo de comisión:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Actividad de arbitraje.">
+           title="Tipo de comisión, si se selecciona otra, especificar abajo cual."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.comision }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Otra comisión:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Si en el campo anterior se selecciona otra comisión, especificar aquí dicha comisión.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -96,14 +126,9 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.actividad }}
+            {{ form.titulo }}
         </div>
     </div>
-    </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
     </p>
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -155,9 +180,22 @@
         </div>
     </div>
     </p>
-    <p><strong>Fecha:</strong>
+    <p><strong>Fecha de inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de dictamen del arbitraje."><i
+           title="Fecha de inicio de la comisión."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Fecha de fin:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de fin de la comisión."><i
                 class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
