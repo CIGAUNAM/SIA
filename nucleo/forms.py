@@ -592,7 +592,7 @@ class Libro1Form(forms.ModelForm):
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'compiladores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'volumen': TextInput(attrs={'class': 'form-control pull-right'}),
-            'issn': TextInput(attrs={'class': 'form-control pull-right'}),
+            'isbn': TextInput(attrs={'class': 'form-control pull-right'}),
             'url': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 

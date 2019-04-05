@@ -9,7 +9,6 @@ ARBITRAJE_ACADEMICO__TIPO = getattr(settings, 'ARBITRAJE_ACADEMICA__TIPO',
 #
 
 class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     tipo = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), 
         choices=ARBITRAJE_ACADEMICO__TIPO, required=True)

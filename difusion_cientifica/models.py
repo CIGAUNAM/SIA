@@ -1,13 +1,12 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Editorial, Evento, Libro, Revista, Indice
+from nucleo.models import User, Editorial, Evento, Libro, Revista, Indice, InstitucionSimple
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 
-EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'),
-                                                      ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
+EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'),
                                                                         ('COMITE', 'Comité organizador'),
                                                                         ('AYUDANTE', 'Ayudante'),
@@ -19,15 +18,19 @@ RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO
 
 
 class MemoriaInExtenso(models.Model):
-    nombre = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
-    descripcion = models.TextField(blank=True)
-    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+    nombre = models.CharField(max_length=254, verbose_name='Nombre de memoria in extenso')
+    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING, null=True, blank=True)
+    evento_text = models.CharField(max_length=254, blank=True, null=True, verbose_name='Nombre del evento')
+    lugar_evento = models.CharField(max_length=254, blank=True, null=True, verbose_name='Lugar del evento')
+
     autores = SortedManyToManyField(User)
+    autores_todos = models.TextField(blank=True, null=True)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
     pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
     pagina_fin = models.PositiveIntegerField(null=True, blank=True)
-    editorial_text = models.CharField(max_length=255, verbose_name='Nombre de memoria in extenso')
-    indices = models.ManyToManyField(Indice, related_name='memoria_in_extenso_indices', blank=True)
-    issn = models.SlugField(max_length=20, blank=True)
+    isbn = models.SlugField(max_length=20, blank=True)
+    url = models.URLField(blank=True)
 
     def __str__(self):
         return self.nombre
@@ -112,14 +115,20 @@ class OrganizacionEventoAcademico(models.Model):
 
 
 class ParticipacionEventoAcademico(models.Model):
+    tipo = models.CharField(max_length=30, choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')))
     titulo = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+    evento = models.ForeignKey(Evento, blank=True, null=True, on_delete=models.DO_NOTHING)
+
+    evento_text = models.CharField(max_length=254, blank=True, null=True, verbose_name='Nombre del evento')
+    lugar_evento = models.CharField(max_length=254, blank=True, null=True, verbose_name='Lugar del evento')
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    fecha = models.DateField()
+
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    resumen_publicado = models.BooleanField(default=False)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
     autores = SortedManyToManyField(User, related_name='participacion_evento_academico_autores', verbose_name='Autores')
+    autores_todos = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.evento)
