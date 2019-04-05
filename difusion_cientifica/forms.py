@@ -9,29 +9,31 @@ from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Sele
 
 class MemoriaInExtensoForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de memoria in extenso')
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    evento = forms.ModelChoiceField(
-        queryset=Evento.objects.all(),
-        label="Evento",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Evento.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-        )
-    )
-    editorial_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                             label='Editorial')
+    evento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre del evento')
+    lugar_evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Lugar del evento')
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Autores como aparecen en la memoria'}),
+                                  required=False)
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                     required=True, label='Número de página inicial')
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                  required=True, label='Número de página final')
-    issn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     class Meta:
         model = MemoriaInExtenso
         exclude = []
         widgets = {
-            'indices': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
@@ -162,21 +164,35 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
+    tipo = forms.ChoiceField(widget=Select2Widget(
+        attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')), required=True)
+
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    evento = forms.ModelChoiceField(
-        queryset=Evento.objects.all(),
-        label="Evento",
+    evento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                  label='Nombre del evento')
+    lugar_evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                   label='Lugar del evento')
+    autores_todos = forms.CharField(widget=Textarea(
+        attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Autores como aparecen publicados.'}),
+                                    required=False)
+    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+    por_invitacion = forms.BooleanField(required=False, label='Participación por invitación')
+    ponencia_magistral = forms.BooleanField(required=False, label='Ponencia Magistral')
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de la participación en el evento.')
+
+
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Evento.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
-    resumen_publicado = forms.BooleanField(required=False, label='Resumen publicado')
-    por_invitacion = forms.BooleanField(required=False, label='Participación por invitación')
-    ponencia_magistral = forms.BooleanField(required=False, label='Ponencia Magistral')
 
     class Meta:
         model = ParticipacionEventoAcademico

@@ -16,31 +16,60 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>Evento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Evento de donde se recoge la memoria.">
+           title="Nombre del evento donde se publicó la memoria.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.evento_text }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Lugar del evento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Lugar del evento.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.lugar_evento }}
+        </div>
+    </div>
+    </p>
+    <p>
+        <strong>Institución organizadora:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución que organiza el evento.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.evento }}
+            {{ form.institucion }}
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del evento.">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
+
             <div class="input-group-addon">
-                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un evento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
@@ -69,6 +98,11 @@
         </div>
     </div>
     </p>
+    <p><strong>Autores como aparecen en la memoría: <a href="#" data-toggle="tooltip" data-placement="right"
+                                                       title="Autores como aparecen en la memoría, en orden y forma .">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
+    </p>
     <p><strong>Número de página inicial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="En la revista donde está publicado, en cuál número de pàgina inicia el artìculo.">
@@ -91,42 +125,17 @@
         </div>
     </div>
     </p>
-    <p><strong>Editorial</em>:</strong>
+
+    <p><strong>ISBN:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publica la memoria.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.editorial_text }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Índices donde se registra:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registra la memoria, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-        </div>
-    </div>
-    </p>
-    <p><strong>ISSN:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISBN asignado a la memoria in extenso."><i
+           title="ISBN asignado a la memoria in extenso, solo si tiene."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.issn }}
+            {{ form.isbn }}
         </div>
     </div>
     </p>
@@ -159,38 +168,67 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>Evento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Evento de donde se recoge la memoria.">
+           title="Nombre del evento donde se publicó la memoria.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.evento_text }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Lugar del evento:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Lugar del evento.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.lugar_evento }}
+        </div>
+    </div>
+    </p>
+    <p>
+        <strong>Institución organizadora:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución que organiza el evento.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.evento }}
+            {{ form.institucion }}
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del evento.">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
+
             <div class="input-group-addon">
-                <a href="/nucleo/eventos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un evento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
     </p>
     <p><strong>Autores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
+           title="Autores , al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -211,6 +249,11 @@
             </div>
         </div>
     </div>
+    </p>
+    <p><strong>Autores como aparecen en la memoría: <a href="#" data-toggle="tooltip" data-placement="right"
+                                                       title="Autores como aparecen en la memoría, en orden y forma .">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
     </p>
     <p><strong>Número de página inicial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -234,42 +277,17 @@
         </div>
     </div>
     </p>
-    <p><strong>Editorial</em>:</strong>
+
+    <p><strong>ISBN:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Editorial que publica la memoria.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.editorial_text }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Índices donde se registra:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Índices que registra la memoria, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-            {{ form.indices }}
-        </div>
-    </div>
-    </p>
-    <p><strong>ISSN:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="ISBN asignado a la memoria in extenso."><i
+           title="ISBN asignado a la memoria in extenso, solo si tiene."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.issn }}
+            {{ form.isbn }}
         </div>
     </div>
     </p>

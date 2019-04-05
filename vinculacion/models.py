@@ -26,7 +26,6 @@ STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN
 
 
 class ArbitrajePublicacionAcademica(models.Model):
-    descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICO__TIPO)
     revista = models.ForeignKey(Revista, blank=True, null=True, on_delete=models.DO_NOTHING)
     libro = models.CharField(max_length=255, blank=True, null=True, )
