@@ -8,15 +8,10 @@ urlpatterns = [
     url(r'^arbitrajes-publicaciones/(?P<pk>[\w\-]+)/eliminar$', ArbitrajePublicacionAcademicaEliminar.as_view(), name='arbitraje_publicacion_academica_eliminar'),
     url(r'^arbitrajes-publicaciones/(?P<pk>[\w\-]+)/$', ArbitrajePublicacionAcademicaDetalle.as_view(), name='arbitraje_publicacion_academica_detalle'),
 
-    url(r'^arbitrajes-proyectos/json/', ArbitrajeProyectoInvestigacionJSON.as_view(), name='arbitraje_proyecto_investigacion_lista__json'),
-    url(r'^arbitrajes-proyectos/$', ArbitrajeProyectoInvestigacionLista.as_view(), name='arbitraje_proyecto_investigacion_lista'),
-    url(r'^arbitrajes-proyectos/(?P<pk>[\w\-]+)/eliminar$', ArbitrajeProyectoInvestigacionEliminar.as_view(), name='arbitraje_proyecto_investigacion_eliminar'),
-    url(r'^arbitrajes-proyectos/(?P<pk>[\w\-]+)/$', ArbitrajeProyectoInvestigacionDetalle.as_view(), name='arbitraje_proyecto_investigacion_detalle'),
-
-    url(r'^otros-arbitrajes/json/', ArbitrajeOtraActividadJSON.as_view(), name='arbitraje_otra_actividad_lista__json'),
-    url(r'^otros-arbitrajes/$', ArbitrajeOtraActividadLista.as_view(), name='arbitraje_otra_actividad_lista'),
-    url(r'^otros-arbitrajes/(?P<pk>[\w\-]+)/eliminar$', ArbitrajeOtraActividadEliminar.as_view(), name='arbitraje_otra_actividad_eliminar'),
-    url(r'^otros-arbitrajes/(?P<pk>[\w\-]+)/$', ArbitrajeOtraActividadDetalle.as_view(), name='arbitraje_otra_actividad_detalle'),
+    url(r'^otras-comisiones/json/', OtraComisionJSON.as_view(), name='otra_comision_lista__json'),
+    url(r'^otras-comisiones/$', OtraComisionLista.as_view(), name='otra_comision_lista'),
+    url(r'^otras-comisiones/(?P<pk>[\w\-]+)/eliminar$', OtraComisionEliminar.as_view(), name='otra_comision_eliminar'),
+    url(r'^otras-comisiones/(?P<pk>[\w\-]+)/$', OtraComisionDetalle.as_view(), name='otra_comision_detalle'),
 
     url(r'^redes-academicas/json/', RedAcademicaJSON.as_view(), name='red_academica_lista__json'),
     url(r'^redes-academicas/json-otros/', RedAcademicaJSON.as_view(otros=True), name='red_academica_lista_otros__json'),

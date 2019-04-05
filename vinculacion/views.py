@@ -47,72 +47,36 @@ class ArbitrajePublicacionAcademicaEliminar(View):
             raise Http404
 
 
-class ArbitrajeProyectoInvestigacionJSON(View):
+class OtraComisionJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = ArbitrajeProyectoInvestigacion.objects.filter(usuario=usuarioid)
+            items = OtraComision.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('fecha', 'dependencia'))
+                                         fields=('comision', 'dependencia', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class ArbitrajeProyectoInvestigacionLista(ObjectCreateMixin, View):
-    form_class = ArbitrajeProyectoInvestigacionForm
-    model = ArbitrajeProyectoInvestigacion
-    aux = ArbitrajeProyectoInvestigacionContext.contexto
-    template_name = 'arbitraje_proyecto_investigacion.html'
+class OtraComisionLista(ObjectCreateMixin, View):
+    form_class = OtraComisionForm
+    model = OtraComision
+    aux = OtraComisionContext.contexto
+    template_name = 'otra_comision.html'
 
 
-class ArbitrajeProyectoInvestigacionDetalle(ObjectUpdateMixin, View):
-    form_class = ArbitrajeProyectoInvestigacionForm
-    model = ArbitrajeProyectoInvestigacion
-    aux = ArbitrajeProyectoInvestigacionContext.contexto
-    template_name = 'arbitraje_proyecto_investigacion.html'
+class OtraComisionDetalle(ObjectUpdateMixin, View):
+    form_class = OtraComisionForm
+    model = OtraComision
+    aux = OtraComisionContext.contexto
+    template_name = 'otra_comision.html'
 
 
-class ArbitrajeProyectoInvestigacionEliminar(View):
+class OtraComisionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ArbitrajeProyectoInvestigacion, pk=pk, usuario=request.user)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
-class ArbitrajeOtraActividadJSON(View):
-    def get(self, request):
-        try:
-            usuarioid = User.objects.get(username=request.user.username).id
-            items = ArbitrajeOtraActividad.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('actividad', 'dependencia', 'fecha'))
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class ArbitrajeOtraActividadLista(ObjectCreateMixin, View):
-    form_class = ArbitrajeOtraActividadForm
-    model = ArbitrajeOtraActividad
-    aux = ArbitrajeOtraActividadContext.contexto
-    template_name = 'arbitraje_otra_actividad.html'
-
-
-class ArbitrajeOtraActividadDetalle(ObjectUpdateMixin, View):
-    form_class = ArbitrajeOtraActividadForm
-    model = ArbitrajeOtraActividad
-    aux = ArbitrajeOtraActividadContext.contexto
-    template_name = 'arbitraje_otra_actividad.html'
-
-
-class ArbitrajeOtraActividadEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(ArbitrajeOtraActividad, pk=pk, usuario=request.user)
+            item = get_object_or_404(OtraComision, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:

@@ -48,7 +48,7 @@ class FormatoServicioTransporteForm(forms.ModelForm):
 
     class Meta:
         model = FormatoServicioTransporte
-        exclude = ['fecha', 'usuario', ]
+        exclude = ['fecha_inicio', 'usuario', ]
 
 
 class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
@@ -93,7 +93,7 @@ class FormatoLicenciaGoceSueldoForm(forms.ModelForm):
 
     class Meta:
         model = FormatoLicenciaGoceSueldo
-        exclude = ['fecha', 'usuario', ]
+        exclude = ['fecha_inicio', 'usuario', ]
 
 
 class FormatoPagoViaticoForm(forms.ModelForm):
@@ -147,4 +147,4 @@ class FormatoPagoViaticoForm(forms.ModelForm):
 
     class Meta:
         model = FormatoPagoViatico
-        exclude = ['fecha', 'usuario', ]
+        exclude = ['fecha_inicio', 'usuario', ]

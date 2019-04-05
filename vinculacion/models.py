@@ -44,50 +44,43 @@ class ArbitrajePublicacionAcademica(models.Model):
         verbose_name = 'Arbitraje en publicaciones académicas'
         verbose_name_plural = 'Arbitrajes en publicaciones académicas'
 
+class Comision(models.Model):
+    comision_nombre = models.CharField(max_length=140, unique=True)
+    orden = models.IntegerField()
 
-class ArbitrajeProyectoInvestigacion(models.Model):
-    fecha = models.DateField()
+    def __str__(self):
+        return self.comision_nombre
+
+    def natural_key(self):
+        return self.comision_nombre
+
+    class Meta:
+        ordering = ['id', 'orden']
+
+class OtraComision(models.Model):
+    comision = models.ForeignKey(Comision, blank=True, null=True, on_delete=models.DO_NOTHING)
+    comision_otra = models.CharField(max_length=255, blank=True, null=True)
     descripcion = models.TextField(blank=True)
-    convocatoria = models.CharField(max_length=200)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {}".format(str(self.proyecto), self.fecha)
+        return "{} : {}".format(self.comision_otra, self.dependencia)
 
     def get_absolute_url(self):
-        return reverse('arbitraje_proyecto_investigacion_detalle', kwargs={'pk': self.pk})
+        return reverse('otra_comision_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha']
-        verbose_name = 'Arbitraje de proyectos de investigación'
-        verbose_name_plural = 'Arbitrajes de proyectos de investigación'
-
-
-class ArbitrajeOtraActividad(models.Model):
-    actividad = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    fecha = models.DateField()
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(self.actividad, self.dependencia)
-
-    def get_absolute_url(self):
-        return reverse('arbitraje_otra_actividad_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['-fecha']
-        verbose_name = 'Arbitraje en otras actividades'
-        verbose_name_plural = 'Arbitraje en otras actividades'
+        verbose_name = 'Otra comisión'
+        verbose_name_plural = 'Otras comisiones'
 
 
 class RedAcademica(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
     ambito = models.CharField(max_length=20, choices=RED_ACADEMICA__CLASIFICACION)
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
