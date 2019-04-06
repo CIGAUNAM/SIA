@@ -800,6 +800,29 @@ class Revista(models.Model):
         get_latest_by = ['revista_nombre']
 
 
+class RevistaDivulgacion(models.Model):
+    revistadivulgacion_nombre = models.CharField(max_length=255, unique=True)
+    revistadivulgacion_pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    revistadivulgacion_issnimpreso = models.CharField(max_length=40, null=True, blank=True, verbose_name='ISSN Impreso')
+    revistadivulgacion_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
+    revistadivulgacion_regfechacreado = models.DateField(auto_now_add=True, blank=True, null=True)
+    revistadivulgacion_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
+    revistadivulgacion_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
+
+    def __str__(self):
+        return "{} ({})".format(self.revistadivulgacion_nombre, self.revistadivulgacion_pais)
+
+    def natural_key(self):
+        return self.revistadivulgacion_nombre
+
+    def get_absolute_url(self):
+        return reverse('revistadivulgacion_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        ordering = ['revistadivulgacion_nombre']
+        get_latest_by = ['revistadivulgacion_nombre']
+
+
 class Asignatura(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
