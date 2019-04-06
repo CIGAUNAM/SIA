@@ -33,10 +33,10 @@ urlpatterns = [
     # url(r'^representaciones/(?P<pk>[\w\-]+)/eliminar$', RepresentacionEliminar.as_view(), name='representacion_eliminar'),
     url(r'^representaciones/(?P<pk>[\w\-]+)/$', RepresentacionDetalle.as_view(), name='representacion_detalle'),
 
-    url(r'^comisiones/json/', ComisionJSON.as_view(), name='comision_lista__json'),
-    url(r'^comisiones/$', ComisionLista.as_view(), name='comision_lista'),
+    url(r'^comisiones-institucionales/json/', ComisionJSON.as_view(), name='comisioninstitucional_lista__json'),
+    url(r'^comisiones-institucionales/$', ComisionLista.as_view(), name='comisioninstitucional_lista'),
     # url(r'^comisiones/(?P<pk>[\w\-]+)/eliminar$', ComisionEliminar.as_view(), name='comision_eliminar'),
-    url(r'^comisiones/(?P<pk>[\w\-]+)/$', ComisionDetalle.as_view(), name='comision_detalle'),
+    url(r'^comisiones-institucionales/(?P<pk>[\w\-]+)/$', ComisionDetalle.as_view(), name='comisioninstitucional_detalle'),
 
     url(r'^actividades-apoyo/json/', ActividadApoyoJSON.as_view(), name='actividad_apoyo_lista__json'),
     url(r'^actividades-apoyo/$', ActividadApoyoLista.as_view(), name='actividad_apoyo_lista'),

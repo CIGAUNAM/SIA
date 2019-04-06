@@ -227,7 +227,7 @@ class RepresentacionEliminar(View):
 class ComisionJSON(View):
     def get(self, request):
         try:
-            items = Comision.objects.all()
+            items = ComisionInstitucional.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre',))
             return HttpResponse(json, content_type='application/json')
@@ -237,14 +237,14 @@ class ComisionJSON(View):
 
 class ComisionLista(ObjectCreateMixinNucleo, View):
     form_class = ComisionForm
-    model = Comision
+    model = ComisionInstitucional
     aux = ComisionContext.contexto
     template_name = 'main.html'
 
 
 class ComisionDetalle(ObjectUpdateMixinNucleo, View):
     form_class = ComisionForm
-    model = Comision
+    model = ComisionInstitucional
     aux = ComisionContext.contexto
     template_name = 'main.html'
 
@@ -252,7 +252,7 @@ class ComisionDetalle(ObjectUpdateMixinNucleo, View):
 class ComisionEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(Comision, pk=pk)
+            item = get_object_or_404(ComisionInstitucional, pk=pk)
             item.delete()
             return redirect('../')
         except:

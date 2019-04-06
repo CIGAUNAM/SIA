@@ -6,21 +6,21 @@ from django.urls import reverse
 # Create your models here.
 
 
-class Comision(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
+class ComisionInstitucional(models.Model):
+    comisioninstitucional_nombre = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
-        return self.nombre
+        return self.comisioninstitucional_nombre
 
     def natural_key(self):
-        return self.nombre
+        return self.comisioninstitucional_nombre
 
     def get_absolute_url(self):
-        return reverse('comision_detalle', kwargs={'pk': self.pk})
+        return reverse('comisioninstitucional_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        verbose_name_plural = 'Comisiones'
+        verbose_name = 'Comisión Institucional'
+        verbose_name_plural = 'Comisiones Institucionales'
 
 
 class ActividadApoyo(models.Model):
@@ -115,7 +115,7 @@ class RepresentacionOrganoColegiadoUNAM(models.Model):
 
 
 class ComisionInstitucionalCIGA(models.Model):
-    comision_academica = models.ForeignKey(Comision, null=True, blank=True, on_delete=models.DO_NOTHING)
+    comision_academica = models.ForeignKey(ComisionInstitucional, null=True, blank=True, on_delete=models.DO_NOTHING)
     tipo_comision = models.CharField(max_length=255) # sacar el texto de comision_academica
     # es_evaluacion = models.BooleanField(default=False)
     tipo_institucion = models.CharField(max_length=30, choices=(('', '-------'), ('INTERIOR', 'Al interior del CIGA'), ('EXTERIOR', 'Al exterior del CIGA')))
