@@ -4,7 +4,8 @@
     {{ form.errors }}
     <p><strong>Tipo de comisión:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de comisión, si se selecciona otra, especificar abajo cual."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Tipo de comisión, si se selecciona otra, especificar abajo cual."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -12,20 +13,23 @@
         </div>
     </div>
     </p>
-    <p><strong>Otra comisión:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Si en el campo anterior se selecciona otra comisión, especificar aquí dicha comisión.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+    <div id="d_comision_otra">
+        <p><strong>Otra comisión:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Si en el campo anterior se selecciona otra comisión, especificar aquí dicha comisión.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.comision_otra }}
             </div>
-            {{ form.titulo }}
         </div>
+        </p>
     </div>
-    </p>
+
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Institución donde se llevó a cabo el arbitraje.">
@@ -34,7 +38,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -85,7 +89,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha }}
+            {{ form.fecha_inicio }}
         </div>
     </div>
     </p>
@@ -98,17 +102,40 @@
             <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
             </div>
-            {{ form.fecha }}
+            {{ form.fecha_fin }}
         </div>
     </div>
     </p>
+
+    <script>
+        var id_comision = $("#id_comision");
+        var id_comision_otra = $("#id_comision_otra");
+        var d_comision_otra = $("#d_comision_otra");
+
+        d_comision_otra.hide();
+
+        id_comision.on('change', function () {
+            if (id_comision.val() === '1') {
+                d_comision_otra.show('slow');
+                id_comision_otra.attr("required", "true");
+            } else {
+                id_comision_otra.val(null).trigger('change');
+                id_comision_otra.attr("required", null);
+                d_comision_otra.hide('slow');
+            }
+        })
+
+
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
     {{ form.errors }}
     <p><strong>Tipo de comisión:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tipo de comisión, si se selecciona otra, especificar abajo cual."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Tipo de comisión, si se selecciona otra, especificar abajo cual."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>

@@ -132,15 +132,15 @@ class RedAcademicaEliminar(View):
             raise Http404
 
 
-class ConvenioEntidadExternaJSON(View):
+class ConvenioOtraEntidadJSON(View):
     otros = False
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ConvenioEntidadExterna.objects.all().exclude(participantes__id__exact=usuarioid)
+                items = ConvenioOtraEntidad.objects.all().exclude(participantes__id__exact=usuarioid)
             else:
-                items = ConvenioEntidadExterna.objects.filter(participantes__id__exact=usuarioid)
+                items = ConvenioOtraEntidad.objects.filter(participantes__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'fecha_fin'))
 
@@ -149,24 +149,24 @@ class ConvenioEntidadExternaJSON(View):
             raise Http404
 
 
-class ConvenioEntidadExternaLista(ObjectCreateVarMixin, View):
-    form_class = ConvenioEntidadExternaForm
-    model = ConvenioEntidadExterna
-    aux = ConvenioEntidadExternaContext.contexto
-    template_name = 'convenio_entidad_externa.html'
+class ConvenioOtraEntidadLista(ObjectCreateVarMixin, View):
+    form_class = ConvenioOtraEntidadForm
+    model = ConvenioOtraEntidad
+    aux = ConvenioOtraEntidadContext.contexto
+    template_name = 'convenio_otra_entidad.html'
 
 
-class ConvenioEntidadExternaDetalle(ObjectUpdateVarMixin, View):
-    form_class = ConvenioEntidadExternaForm
-    model = ConvenioEntidadExterna
-    aux = ConvenioEntidadExternaContext.contexto
-    template_name = 'convenio_entidad_externa.html'
+class ConvenioOtraEntidadDetalle(ObjectUpdateVarMixin, View):
+    form_class = ConvenioOtraEntidadForm
+    model = ConvenioOtraEntidad
+    aux = ConvenioOtraEntidadContext.contexto
+    template_name = 'convenio_otra_entidad.html'
 
 
-class ConvenioEntidadExternaEliminar(View):
+class ConvenioOtraEntidadEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ConvenioEntidadExterna, pk=pk, usuarios=request.user)
+            item = get_object_or_404(ConvenioOtraEntidad, pk=pk, usuarios=request.user)
             item.delete()
             return redirect('../')
         except:

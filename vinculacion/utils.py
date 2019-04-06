@@ -41,9 +41,9 @@ class ArbitrajePublicacionAcademicaContext:
 
 
 class OtraComisionContext:
-    obj = 'otra actividad de arbitraje'
-    objs = 'otras actividad de arbitraje'
-    Objs = 'Otras actividad de arbitraje'
+    obj = 'otra comisión'
+    objs = 'otras comisiones'
+    Objs = 'Otras comisiones'
     url_seccion = 'otras-comisiones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
@@ -145,11 +145,11 @@ class RedAcademicaContext:
     contexto['tabla_otros'] = tabla_otros
 
 
-class ConvenioEntidadExternaContext:
-    obj = 'convenio con entidades no académicas'
-    objs = 'convenios con entidades no académicas'
-    Objs = 'Convenios con entidades no académicas'
-    url_seccion = 'convenios-entidades-externas'
+class ConvenioOtraEntidadContext:
+    obj = 'convenio con otras entidades'
+    objs = 'convenio con otras entidades'
+    Objs = 'Convenios con otras entidades'
+    url_seccion = 'convenios-otras-entidades'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

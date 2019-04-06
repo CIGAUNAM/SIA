@@ -19,11 +19,11 @@ urlpatterns = [
     url(r'^redes-academicas/(?P<pk>[\w\-]+)/eliminar$', RedAcademicaEliminar.as_view(), name='red_academica_eliminar'),
     url(r'^redes-academicas/(?P<pk>[\w\-]+)/$', RedAcademicaDetalle.as_view(), name='red_academica_detalle'),
 
-    url(r'^convenios-entidades-externas/json/', ConvenioEntidadExternaJSON.as_view(), name='convenio_entidad_externa_lista__json'),
-    url(r'^convenios-entidades-externas/json-otros/', ConvenioEntidadExternaJSON.as_view(otros=True), name='convenio_entidad_externa_lista_otros__json'),
-    url(r'^convenios-entidades-externas/$', ConvenioEntidadExternaLista.as_view(), name='convenio_entidad_externa_lista'),
-    url(r'^convenios-entidades-externas/(?P<pk>[\w\-]+)/eliminar$', ConvenioEntidadExternaEliminar.as_view(), name='convenio_entidad_externa_eliminar'),
-    url(r'^convenios-entidades-externas/(?P<pk>[\w\-]+)/$', ConvenioEntidadExternaDetalle.as_view(), name='convenio_entidad_externa_detalle'),
+    url(r'^convenios-otras-entidades/json/', ConvenioOtraEntidadJSON.as_view(), name='convenio_otra_entidad_lista__json'),
+    url(r'^convenios-otras-entidades/json-otros/', ConvenioOtraEntidadJSON.as_view(otros=True), name='convenio_otra_entidad_lista_otros__json'),
+    url(r'^convenios-otras-entidades/$', ConvenioOtraEntidadLista.as_view(), name='convenio_otra_entidad_lista'),
+    url(r'^convenios-otras-entidades/(?P<pk>[\w\-]+)/eliminar$', ConvenioOtraEntidadEliminar.as_view(), name='convenio_otra_entidad_eliminar'),
+    url(r'^convenios-otras-entidades/(?P<pk>[\w\-]+)/$', ConvenioOtraEntidadDetalle.as_view(), name='convenio_otra_entidad_detalle'),
 
     url(r'^servicios-asesorias-externas/json/', ServicioAsesoriaExternaJSON.as_view(), name='servicio_asesoria_exterma_lista__json'),
     url(r'^servicios-asesorias-externas/$', ServicioAsesoriaExternaLista.as_view(), name='servicio_asesoria_exterma_lista'),

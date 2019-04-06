@@ -10,7 +10,7 @@ from vinculacion.models import ArbitrajePublicacionAcademica, OtraComision, Otro
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionSociedadCientifica, DistincionAlumno
-from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioAsesoriaExterna
+from vinculacion.models import ConvenioOtraEntidad, RedAcademica, ServicioAsesoriaExterna
 from nucleo.models import User, Libro
 from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
