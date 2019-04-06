@@ -56,7 +56,7 @@ class ComisionVinculacion(models.Model):
         return self.comisionvinculacion_nombre
 
     class Meta:
-        ordering = ['id', 'comisionvinculacion_orden']
+        ordering = ['comisionvinculacion_orden', 'id']
 
 class OtraComision(models.Model):
     comision = models.ForeignKey(ComisionVinculacion, blank=True, null=True, on_delete=models.DO_NOTHING)
@@ -103,7 +103,7 @@ class RedAcademica(models.Model):
         verbose_name_plural = 'Redes académicas'
 
 
-class ConvenioEntidadExterna(models.Model):
+class ConvenioOtraEntidad(models.Model):
     nombre = models.CharField(max_length=254, unique=True)
     entidades = models.ManyToManyField(Dependencia)
     objetivos = models.TextField()

@@ -12,7 +12,7 @@ from vinculacion.models import ArbitrajePublicacionAcademica
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
-from vinculacion.models import ConvenioEntidadExterna, RedAcademica, ServicioAsesoriaExterna
+from vinculacion.models import ConvenioOtraEntidad, RedAcademica, ServicioAsesoriaExterna
 from nucleo.models import User, Libro
 from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
 from formacion_academica.models import Doctorado, Maestria, Licenciatura, PostDoctorado
@@ -5195,51 +5195,51 @@ class InformeActividades(View):
                 'prevencion_riesgos_naturalesp': prevencion_riesgos_naturalesp,
             }
 
-            p_convenios_federales = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='FEDERAL',
-                                                                          fecha_inicio__year__gte=this_year - 2,
-                                                                          fecha_fin__year__lte=this_year - 1).count()
-            convenios_federales = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='FEDERAL',
-                                                                        fecha_inicio__year__gte=this_year - 1).count()
+            p_convenios_federales = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='FEDERAL',
+                                                                       fecha_inicio__year__gte=this_year - 2,
+                                                                       fecha_fin__year__lte=this_year - 1).count()
+            convenios_federales = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='FEDERAL',
+                                                                     fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_estatales = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='ESTATAL',
-                                                                          fecha_inicio__year__gte=this_year - 2,
-                                                                          fecha_fin__year__lte=this_year - 1).count()
-            convenios_estatales = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='ESTATAL',
-                                                                        fecha_inicio__year__gte=this_year - 1).count()
+            p_convenios_estatales = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='ESTATAL',
+                                                                       fecha_inicio__year__gte=this_year - 2,
+                                                                       fecha_fin__year__lte=this_year - 1).count()
+            convenios_estatales = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='ESTATAL',
+                                                                     fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_municipales = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='MUNICIPAL',
-                                                                            fecha_inicio__year__gte=this_year - 2,
-                                                                            fecha_fin__year__lte=this_year - 1).count()
-            convenios_municipales = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='MUNICIPAL',
-                                                                          fecha_inicio__year__gte=this_year - 1).count()
-
-            p_convenios_privadas = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='PRIVADA',
+            p_convenios_municipales = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='MUNICIPAL',
                                                                          fecha_inicio__year__gte=this_year - 2,
                                                                          fecha_fin__year__lte=this_year - 1).count()
-            convenios_privadas = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='PRIVADA',
+            convenios_municipales = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='MUNICIPAL',
                                                                        fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_nolucrativas = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='NO_LUCRATIVA',
-                                                                             fecha_inicio__year__gte=this_year - 2,
-                                                                             fecha_fin__year__lte=this_year - 1).count()
-            convenios_nolucrativas = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='NO_LUCRATIVA',
-                                                                           fecha_inicio__year__gte=this_year - 1).count()
+            p_convenios_privadas = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='PRIVADA',
+                                                                      fecha_inicio__year__gte=this_year - 2,
+                                                                      fecha_fin__year__lte=this_year - 1).count()
+            convenios_privadas = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='PRIVADA',
+                                                                    fecha_inicio__year__gte=this_year - 1).count()
 
-            p_convenios_extranjeras = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='EXTRANJERA',
-                                                                            fecha_inicio__year__gte=this_year - 2,
+            p_convenios_nolucrativas = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='NO_LUCRATIVA',
+                                                                          fecha_inicio__year__gte=this_year - 2,
+                                                                          fecha_fin__year__lte=this_year - 1).count()
+            convenios_nolucrativas = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='NO_LUCRATIVA',
+                                                                        fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_extranjeras = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='EXTRANJERA',
+                                                                         fecha_inicio__year__gte=this_year - 2,
+                                                                         fecha_fin__year__lte=this_year - 1).count()
+            convenios_extranjeras = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='EXTRANJERA',
+                                                                       fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_academicas = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='ACADEMICA',
+                                                                        fecha_inicio__year__gte=this_year - 2,
+                                                                        fecha_fin__year__lte=this_year - 1).count()
+            convenios_academicas = ConvenioOtraEntidad.objects.filter(entidades__clasificacion='ACADEMICA',
+                                                                      fecha_inicio__year__gte=this_year - 1).count()
+
+            p_convenios_externos_count = ConvenioOtraEntidad.objects.filter(fecha_inicio__year__gte=this_year - 2,
                                                                             fecha_fin__year__lte=this_year - 1).count()
-            convenios_extranjeras = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='EXTRANJERA',
-                                                                          fecha_inicio__year__gte=this_year - 1).count()
-
-            p_convenios_academicas = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='ACADEMICA',
-                                                                           fecha_inicio__year__gte=this_year - 2,
-                                                                           fecha_fin__year__lte=this_year - 1).count()
-            convenios_academicas = ConvenioEntidadExterna.objects.filter(entidades__clasificacion='ACADEMICA',
-                                                                         fecha_inicio__year__gte=this_year - 1).count()
-
-            p_convenios_externos_count = ConvenioEntidadExterna.objects.filter(fecha_inicio__year__gte=this_year - 2,
-                                                                               fecha_fin__year__lte=this_year - 1).count()
-            convenios_externos_count = ConvenioEntidadExterna.objects.filter(
+            convenios_externos_count = ConvenioOtraEntidad.objects.filter(
                 fecha_inicio__year__gte=this_year - 1).count()
 
             if p_convenios_externos_count == 0:
@@ -7055,7 +7055,7 @@ class CVInvestigadorPDF(View):
         profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio')
         sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
         participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_constitucion')
-        convenios_entidades_externas = ConvenioEntidadExterna.objects.filter(usuarios=pk).order_by('-fecha_inicio')
+        convenios_entidades_externas = ConvenioOtraEntidad.objects.filter(usuarios=pk).order_by('-fecha_inicio')
         servicios_asesorias_externas = ServicioAsesoriaExterna.objects.filter(usuario=pk).order_by('-fecha_inicio')
         organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
         participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
