@@ -15,11 +15,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Status de publiciación."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -30,14 +25,74 @@
         </div>
     </div>
     </p>
-    <p><strong>Revista:</strong>
+    <div id="d_fecha_enviado">
+        <p><strong>Fecha de enviado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que se envío del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enviado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_aceptado">
+        <p><strong>Fecha de aceptación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que artículo fue aceptado."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_aceptado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_enprensa">
+        <p><strong>Fecha de envío a prensa:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que el artículo es envíado a prensa antes de su publicación."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enprensa }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_publicado">
+        <p><strong>Fecha de publicación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha de publicación del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_publicado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <p><strong>Revista de divulgación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.revista }}
+            {{ form.revista_divulgacion }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de la revista seleccionada.">
@@ -45,7 +100,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                <a href="/nucleo/revistas-divulgacion/" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -53,43 +108,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Volumen:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número o letra de volumen de la revista (si aplica)."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.volumen }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Número:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de la revista.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.numero }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del artículo en el medio que haya sido publicado."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-        </div>
-    </div>
-    </p>
+
     <p><strong>Sólo electronico: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo se encuentra publicado únicamente en un medio electrónico?"><i
@@ -120,9 +139,14 @@
         </div>
     </div>
     </p>
-    <p><strong>Agradecimiento a:</strong>
+    <p><strong>Autores como se reportan en el  artículo: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Autores tal cual se reportan en el artículo, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
+    </p>
+    <p><strong>Agradecimientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+           title="Técnicos que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
@@ -181,7 +205,90 @@
     </p>
 
     <script>
-        $("#id_autores").on("select2:select", function (evt) {
+        var id_autores = $("#id_autores");
+        var id_status = $("#id_status");
+
+        var d_fecha_enviado = $("#d_fecha_enviado");
+        var d_fecha_aceptado = $("#d_fecha_aceptado");
+        var d_fecha_enprensa = $("#d_fecha_enprensa");
+        var d_fecha_publicado = $("#d_fecha_publicado");
+        var id_fecha_enviado = $("#id_fecha_enviado");
+        var id_fecha_aceptado = $('#id_fecha_aceptado');
+        var id_fecha_enprensa = $('#id_fecha_enprensa');
+        var id_fecha_publicado = $('#id_fecha_publicado');
+
+
+        d_fecha_enviado.hide();
+        d_fecha_aceptado.hide();
+        d_fecha_enprensa.hide();
+        d_fecha_publicado.hide();
+
+        id_status.on('change', function () {
+            if (id_status.val() === 'ENVIADO') {
+                d_fecha_enviado.show('slow');
+                id_fecha_enviado.attr("required", "true");
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'ACEPTADO') {
+                d_fecha_aceptado.show('slow');
+                id_fecha_aceptado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'EN_PRENSA') {
+                d_fecha_enprensa.show('slow');
+                id_fecha_enprensa.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'PUBLICADO') {
+                d_fecha_publicado.show('slow');
+                id_fecha_publicado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+            } else {
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            }
+        });
+
+        id_autores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -189,6 +296,7 @@
             $(this).trigger("change");
         });
     </script>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -206,11 +314,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>Status:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Status de publiciación."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -221,14 +324,74 @@
         </div>
     </div>
     </p>
-    <p><strong>Revista:</strong>
+    <div id="d_fecha_enviado">
+        <p><strong>Fecha de enviado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que se envío del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enviado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_aceptado">
+        <p><strong>Fecha de aceptación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que artículo fue aceptado."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_aceptado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_enprensa">
+        <p><strong>Fecha de envío a prensa:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que el artículo es envíado a prensa antes de su publicación."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enprensa }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_publicado">
+        <p><strong>Fecha de publicación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha de publicación del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_publicado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <p><strong>Revista de divulgación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de la revista donde se publicó el artículo.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.revista }}
+            {{ form.revista_divulgacion }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales de la revista seleccionada.">
@@ -236,7 +399,7 @@
                 </a>
             </div>
             <div class="input-group-addon">
-                <a href="/nucleo/revistas" data-toggle="tooltip" data-placement="left" target="_blank"
+                <a href="/nucleo/revistas-divulgacion/" data-toggle="tooltip" data-placement="left" target="_blank"
                    title="Agregar una revista nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
@@ -244,43 +407,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Volumen:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número o letra de volumen de la revista (si aplica)."><i
-                class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
-            </div>
-            {{ form.volumen }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Número:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de la revista.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.numero }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del artículo en el medio que haya sido publicado."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-        </div>
-    </div>
-    </p>
+
     <p><strong>Sólo electronico: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="¿El articulo se encuentra publicado únicamente en un medio electrónico?"><i
@@ -311,9 +438,14 @@
         </div>
     </div>
     </p>
-    <p><strong>Agradecimiento a:</strong>
+    <p><strong>Autores como se reportan en el  artículo: <a href="#" data-toggle="tooltip" data-placement="right"
+                               title="Autores tal cual se reportan en el artículo, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
+    </p>
+    <p><strong>Agradecimientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+           title="Técnicos que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
@@ -372,7 +504,107 @@
     </p>
 
     <script>
-        $("#id_autores").on("select2:select", function (evt) {
+        var id_autores = $("#id_autores");
+        var id_status = $("#id_status");
+
+        var d_fecha_enviado = $("#d_fecha_enviado");
+        var d_fecha_aceptado = $("#d_fecha_aceptado");
+        var d_fecha_enprensa = $("#d_fecha_enprensa");
+        var d_fecha_publicado = $("#d_fecha_publicado");
+        var id_fecha_enviado = $("#id_fecha_enviado");
+        var id_fecha_aceptado = $('#id_fecha_aceptado');
+        var id_fecha_enprensa = $('#id_fecha_enprensa');
+        var id_fecha_publicado = $('#id_fecha_publicado');
+
+
+        d_fecha_enviado.hide();
+        d_fecha_aceptado.hide();
+        d_fecha_enprensa.hide();
+        d_fecha_publicado.hide();
+
+        if (id_status.val() === 'ENVIADO') {
+            d_fecha_enviado.show();
+            id_fecha_enviado.attr("required", "true");
+        }
+        if (id_status.val() === 'ACEPTADO') {
+            d_fecha_aceptado.show();
+            id_fecha_aceptado.attr("required", "true");
+        }
+        if (id_status.val() === 'EN_PRENSA') {
+            d_fecha_enprensa.show();
+            id_fecha_enprensa.attr("required", "true");
+        }
+        if (id_status.val() === 'PUBLICADO') {
+            d_fecha_publicado.show();
+            id_fecha_publicado.attr("required", "true");
+        }
+
+        id_status.on('change', function () {
+            if (id_status.val() === 'ENVIADO') {
+                d_fecha_enviado.show('slow');
+                id_fecha_enviado.attr("required", "true");
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'ACEPTADO') {
+                d_fecha_aceptado.show('slow');
+                id_fecha_aceptado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'EN_PRENSA') {
+                d_fecha_enprensa.show('slow');
+                id_fecha_enprensa.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'PUBLICADO') {
+                d_fecha_publicado.show('slow');
+                id_fecha_publicado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+            } else {
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            }
+        });
+
+        id_autores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -380,4 +612,5 @@
             $(this).trigger("change");
         });
     </script>
+
 {% endblock %}

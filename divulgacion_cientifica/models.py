@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Evento, Libro, Revista, Indice, MedioDivulgacion, Financiamiento
+from nucleo.models import User, Evento, Libro, Revista, RevistaDivulgacion, Indice, MedioDivulgacion, Financiamiento
 from investigacion.models import ProyectoInvestigacion
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -23,18 +23,24 @@ STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (
 
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
     autores = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
+    autores_todos = models.TextField(blank=True, null=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_divulgacion_agradecimientos', blank=True)
     url = models.URLField(blank=True)
     solo_electronico = models.BooleanField(default=False)
-    revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
-    fecha = models.DateField()
-    volumen = models.CharField(max_length=100, blank=True)
-    numero = models.CharField(max_length=100, blank=True)
+    revista = models.ForeignKey(RevistaDivulgacion, related_name='articulodivulgacion_revista', blank=True, null=True, on_delete=models.DO_NOTHING)
+    revista_divulgacion = models.ForeignKey(RevistaDivulgacion, related_name='articulodivulgacion_revistadivulgacion', blank=True, null=True, on_delete=models.DO_NOTHING)
+    fecha = models.DateField(null=True, blank=True)
+    fecha_enviado = models.DateField(null=True, blank=True)
+    fecha_aceptado = models.DateField(null=True, blank=True)
+    fecha_enprensa = models.DateField(null=True, blank=True)
+    fecha_publicado = models.DateField(null=True, blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
+
+    volumen = models.CharField(max_length=100, blank=True)
+    numero = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)

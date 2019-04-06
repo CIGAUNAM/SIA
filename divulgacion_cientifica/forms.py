@@ -10,26 +10,35 @@ from nucleo.models import Pais, Estado, Ciudad
 class ArticuloDivulgacionForm(forms.ModelForm):
     titulo = forms.CharField(
         widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de artículo')
-    descripcion = forms.CharField(
-        widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-        required=False, label='Descripción')
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'STATUS_PUBLICACION_ARTICULO', ), required=True)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     solo_electronico = forms.BooleanField(required=False)
-    revista = forms.ModelChoiceField(
-        queryset=Revista.objects.all(),
+    revista_divulgacion = forms.ModelChoiceField(
+        queryset=RevistaDivulgacion.objects.all(),
         label="Revista",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Revista.objects.all(),
+            search_fields=['revistadivulgacion_nombre__icontains'],
+            queryset=RevistaDivulgacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True, label='Fecha de publicación')
+        required=False, label='Fecha de publicación')
+    fecha_enviado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío')
+    fecha_aceptado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de aceptación')
+    fecha_enprensa = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío a prensa')
+    fecha_publicado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de publicación')
     volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     numero = forms.CharField(
         widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Número')
@@ -38,6 +47,10 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     pagina_fin = forms.CharField(
         widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
         required=True, label='Número de página final')
+    autores_todos = forms.CharField(
+        widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                               'placeholder': 'Autores tal cual se reportan en el artículo, en el orden y forma.'}),
+        required=False, label='Autores como se reportan en el artículo')
 
     class Meta:
         model = ArticuloDivulgacion
