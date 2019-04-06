@@ -35,11 +35,11 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
 
 class OtraComisionForm(forms.ModelForm):
     comision = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
+        queryset=ComisionVinculacion.objects.all(),
+        label="Comisión",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
+            search_fields=['comisionvinculacion_nombre__icontains'],
+            queryset=ComisionVinculacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

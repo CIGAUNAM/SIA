@@ -45,21 +45,21 @@ class ArbitrajePublicacionAcademica(models.Model):
         verbose_name = 'Arbitraje en publicaciones académicas'
         verbose_name_plural = 'Arbitrajes en publicaciones académicas'
 
-class Comision(models.Model):
-    comision_nombre = models.CharField(max_length=140, unique=True)
-    orden = models.IntegerField()
+class ComisionVinculacion(models.Model):
+    comisionvinculacion_nombre = models.CharField(max_length=140, unique=True)
+    comisionvinculacion_orden = models.IntegerField()
 
     def __str__(self):
-        return self.comision_nombre
+        return self.comisionvinculacion_nombre
 
     def natural_key(self):
-        return self.comision_nombre
+        return self.comisionvinculacion_nombre
 
     class Meta:
-        ordering = ['id', 'orden']
+        ordering = ['id', 'comisionvinculacion_orden']
 
 class OtraComision(models.Model):
-    comision = models.ForeignKey(Comision, blank=True, null=True, on_delete=models.DO_NOTHING)
+    comision = models.ForeignKey(ComisionVinculacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     comision_otra = models.CharField(max_length=255, blank=True, null=True)
     descripcion = models.TextField(blank=True)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)

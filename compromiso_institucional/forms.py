@@ -198,7 +198,7 @@ class RepresentacionForm(forms.ModelForm):
 
 class ComisionForm(forms.ModelForm):
     class Meta:
-        model = Comision
+        model = ComisionInstitucional
         exclude = []
         widgets = {
             'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
