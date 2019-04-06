@@ -210,12 +210,12 @@ class ConvenioOtraEntidadContext:
     contexto['tabla_otros'] = tabla_otros
 
 
-class ServicioExternoEntidadNoAcademicaContext:
-    obj = 'servicio externo a entidades no académicas'
-    objs = 'servicios externos a entidades no académicas'
-    Objs = 'Servicios externos a entidades no académicas'
+class ServicioAsesoriaExternaContext:
+    obj = 'servicio o asesoría externa'
+    objs = 'servicios o asesorías externas'
+    Objs = 'Servicios o asesorías externas'
 
-    url_seccion = 'servicios-externos-no-academicos'
+    url_seccion = 'servicios-asesorias-externas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
