@@ -173,11 +173,11 @@ class ConvenioEntidadExternaEliminar(View):
             raise Http404
 
 
-class ServicioExternoEntidadNoAcademicaJSON(View):
+class ServicioAsesoriaExternaJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = ServicioExternoEntidadNoAcademica.objects.filter(usuario=usuarioid)
+            items = ServicioAsesoriaExterna.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre_servicio', 'clasificacion_servicio', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json')
@@ -185,24 +185,24 @@ class ServicioExternoEntidadNoAcademicaJSON(View):
             raise Http404
 
 
-class ServicioExternoEntidadNoAcademicaLista(ObjectCreateMixin, View):
-    form_class = ServicioExternoEntidadNoAcademicaForm
-    model = ServicioExternoEntidadNoAcademica
+class ServicioAsesoriaExternaLista(ObjectCreateMixin, View):
+    form_class = ServicioAsesoriaExternaForm
+    model = ServicioAsesoriaExterna
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
     template_name = 'servicio_externo.html'
 
 
-class ServicioExternoEntidadNoAcademicaDetalle(ObjectUpdateMixin, View):
-    form_class = ServicioExternoEntidadNoAcademicaForm
-    model = ServicioExternoEntidadNoAcademica
+class ServicioAsesoriaExternaDetalle(ObjectUpdateMixin, View):
+    form_class = ServicioAsesoriaExternaForm
+    model = ServicioAsesoriaExterna
     aux = ServicioExternoEntidadNoAcademicaContext.contexto
     template_name = 'servicio_externo.html'
 
 
-class ServicioExternoEntidadNoAcademicaEliminar(View):
+class ServicioAsesoriaExternaEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(ServicioExternoEntidadNoAcademica, pk=pk, usuario=request.user)
+            item = get_object_or_404(ServicioAsesoriaExterna, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:
@@ -250,38 +250,3 @@ class OtroProgramaVinculacionEliminar(View):
         except:
             raise Http404
 
-
-class ClasificacionServicioJSON(View):
-    def get(self, request):
-        try:
-            #usuarioid = User.objects.get(username=request.user.username).id
-            items = ClasificacionServicio.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre'))
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class ClasificacionServicioLista(ObjectCreateMixinNucleo, View):
-    form_class = ClasificacionServicioForm
-    model = ClasificacionServicio
-    aux = ClasificacionServicioContext.contexto
-    template_name = 'main.html'
-
-
-class ClasificacionServicioDetalle(ObjectUpdateMixinNucleo, View):
-    form_class = ClasificacionServicioForm
-    model = ClasificacionServicio
-    aux = ClasificacionServicioContext.contexto
-    template_name = 'main.html'
-
-
-class ClasificacionServicioEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(ClasificacionServicio, pk=pk)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404

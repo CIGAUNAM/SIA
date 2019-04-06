@@ -100,16 +100,17 @@ class RedAcademicaForm(forms.ModelForm):
 
 class ConvenioEntidadExternaForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
-    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    es_renovacion = forms.BooleanField(required=False)
     entidades = forms.ModelMultipleChoiceField(
-        queryset=Dependencia.objects.exclude(institucion_dependencia__clasificacion_institucion='ACADEMICA'),
+        queryset=Dependencia.objects.all(),
         required=True,
         widget=Select2MultipleWidget(
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'})
         )
+    objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    es_renovacion = forms.BooleanField(required=False)
+
     financiamiento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     proyecto = forms.ModelChoiceField(
         queryset=ProyectoInvestigacion.objects.all(),
@@ -126,35 +127,30 @@ class ConvenioEntidadExternaForm(forms.ModelForm):
         exclude = ['tags', ]
         widgets = {
             "participantes": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            # "entidades": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
-class ServicioExternoEntidadNoAcademicaForm(forms.ModelForm):
+class ServicioAsesoriaExternaForm(forms.ModelForm):
     nombre_servicio = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre de servicio')
-    clasificacion_servicio = forms.ModelChoiceField(
-        queryset=ClasificacionServicio.objects.all(),
-        label="Clasificacion de servicio",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=ClasificacionServicio.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-    incluye_financiamiento = forms.BooleanField(required=False)
+
+    institucion = forms.ModelChoiceField(
+        queryset=InstitucionSimple.objects.all(),
+        label="Proyecto de investigación",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    financiamiento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre de servicio')
+
 
     class Meta:
-        model = ServicioExternoEntidadNoAcademica
-        exclude = ['usuario', 'tags', ]
-        widgets = {
-            "financiamientos": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            "entidades": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        }
+        model = ServicioAsesoriaExterna
+        exclude = ['usuario', ]
 
 
 class OtroProgramaVinculacionForm(forms.ModelForm):
@@ -189,11 +185,3 @@ class OtroProgramaVinculacionForm(forms.ModelForm):
 
 
 
-class ClasificacionServicioForm(forms.ModelForm):
-    class Meta:
-        model = ClasificacionServicio
-        exclude = []
-        widgets = {
-            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
-            'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-        }

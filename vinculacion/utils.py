@@ -149,7 +149,7 @@ class ConvenioEntidadExternaContext:
     obj = 'convenio con entidades no académicas'
     objs = 'convenios con entidades no académicas'
     Objs = 'Convenios con entidades no académicas'
-    url_seccion = 'convenios-entidades-no-academicas'
+    url_seccion = 'convenios-entidades-externas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,

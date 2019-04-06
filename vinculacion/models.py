@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Revista, Indice, Financiamiento, ProyectoInsvestigacionArbitrado
+from nucleo.models import User, Institucion, Dependencia, Revista, Indice, Financiamiento, \
+    ProyectoInsvestigacionArbitrado, InstitucionSimple
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, LibroInvestigacion, CapituloLibroInvestigacion
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -119,7 +120,7 @@ class ConvenioEntidadExterna(models.Model):
         return "{} : {}".format(self.nombre, self.fecha_inicio)
 
     def get_absolute_url(self):
-        return reverse('convenio_otra_entidad_detalle', kwargs={'pk': self.pk})
+        return reverse('convenio_entidad_externa_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']
@@ -127,44 +128,26 @@ class ConvenioEntidadExterna(models.Model):
         verbose_name_plural = 'Convenios con entidades externas'
 
 
-class ClasificacionServicio(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
+class ServicioAsesoriaExterna(models.Model):
+    nombre_servicio = models.CharField(max_length=254)
     descripcion = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('clasificacion_servicio_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        verbose_name = 'Clasificación de servicio'
-        verbose_name_plural = 'Clasificaciones de servicios'
-
-
-class ServicioExternoEntidadNoAcademica(models.Model):
-    nombre_servicio = models.CharField(max_length=255)
-    clasificacion_servicio = models.ForeignKey(ClasificacionServicio, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
-    entidades = models.ManyToManyField(Dependencia)
+    entidades = models.ManyToManyField(Dependencia, blank=True, null=True)
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
-    financiamientos = models.ManyToManyField(Financiamiento, blank=True)
+    financiamiento_text = models.CharField(max_length=254)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {}".format(self.nombre_servicio, self.fecha_inicio)
 
     def get_absolute_url(self):
-        return reverse('servicio_externo_entidad_no_academica_detalle', kwargs={'pk': self.pk})
+        return reverse('servicio_asesoria_exterma_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = 'Servicio o asesoria externa a entidades no académicas'
-        verbose_name_plural = 'Servicios o asesorias externas a entidades no académicas'
+        verbose_name = 'Servicio o asesoria externa'
+        verbose_name_plural = 'Servicios o asesorias externas'
 
 
 class OtroProgramaVinculacion(models.Model):
