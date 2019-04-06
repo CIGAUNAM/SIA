@@ -248,6 +248,12 @@
                     <i class="fa fa-circle-o"></i> Redes académicas
                 </a>
             </li>
+            <li{% if aux.url_seccion == 'servicios-asesorias-externas' %} class="active"{% endif %}>
+                <a href="/vinculacion/servicios-asesorias-externas">
+                    <i class="fa fa-circle-o"></i> Servicios o <br>
+                    <i class="fa fa-none"></i> asesorías externas
+                </a>
+            </li>
             <li{% if aux.url_seccion == 'convenios-otras-entidades' %} class="active"{% endif %}>
                 <a href="/vinculacion/convenios-otras-entidades/">
                     <i class="fa fa-circle-o"></i> Convenios con otras<br/>
@@ -257,18 +263,6 @@
             <li{% if aux.url_seccion == 'otras-comisiones' %} class="active"{% endif %}>
                 <a href="/vinculacion/otras-comisiones/">
                     <i class="fa fa-circle-o"></i> Otras comisiones<br/>
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'servicios-asesorias-externas' %} class="active"{% endif %}>
-                <a href="/vinculacion/servicios-asesorias-externas">
-                    <i class="fa fa-circle-o"></i> Servicios o <br>
-                    <i class="fa fa-none"></i> asesorías externas
-                </a>
-            </li>
-            <li{% if aux.url_seccion == 'otros-programas-vinculacion' %} class="active"{% endif %}>
-                <a href="/vinculacion/otros-programas-vinculacion">
-                    <i class="fa fa-circle-o"></i> Otros programas de<br>
-                    <i class="fa fa-none"></i> vinculación y colaboración
                 </a>
             </li>
         </ul>

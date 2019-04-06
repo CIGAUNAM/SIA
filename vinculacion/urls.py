@@ -30,9 +30,4 @@ urlpatterns = [
     url(r'^servicios-asesorias-externas/(?P<pk>[\w\-]+)/eliminar$', ServicioAsesoriaExternaEliminar.as_view(), name='servicio_asesoria_exterma_eliminar'),
     url(r'^servicios-asesorias-externas/(?P<pk>[\w\-]+)/$', ServicioAsesoriaExternaDetalle.as_view(), name='servicio_asesoria_exterma_detalle'),
 
-    url(r'^otros-programas-vinculacion/json/', OtroProgramaVinculacionJSON.as_view(), name='otro_programa_vinculacion_lista__json'),
-    url(r'^otros-programas-vinculacion/$', OtroProgramaVinculacionLista.as_view(), name='otro_programa_vinculacion_lista'),
-    url(r'^otros-programas-vinculacion/(?P<pk>[\w\-]+)/eliminar$', OtroProgramaVinculacionEliminar.as_view(), name='otro_programa_vinculacion_eliminar'),
-    url(r'^otros-programas-vinculacion/(?P<pk>[\w\-]+)/$', OtroProgramaVinculacionDetalle.as_view(), name='otro_programa_vinculacion_detalle'),
-
 ]
