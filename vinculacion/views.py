@@ -188,14 +188,14 @@ class ServicioAsesoriaExternaJSON(View):
 class ServicioAsesoriaExternaLista(ObjectCreateMixin, View):
     form_class = ServicioAsesoriaExternaForm
     model = ServicioAsesoriaExterna
-    aux = ServicioExternoEntidadNoAcademicaContext.contexto
+    aux = ServicioAsesoriaExternaContext.contexto
     template_name = 'servicio_externo.html'
 
 
 class ServicioAsesoriaExternaDetalle(ObjectUpdateMixin, View):
     form_class = ServicioAsesoriaExternaForm
     model = ServicioAsesoriaExterna
-    aux = ServicioExternoEntidadNoAcademicaContext.contexto
+    aux = ServicioAsesoriaExternaContext.contexto
     template_name = 'servicio_externo.html'
 
 
