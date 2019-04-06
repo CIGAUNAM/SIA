@@ -148,28 +148,3 @@ class ServicioAsesoriaExterna(models.Model):
         ordering = ['-fecha_inicio']
         verbose_name = 'Servicio o asesoria externa'
         verbose_name_plural = 'Servicios o asesorias externas'
-
-
-class OtroProgramaVinculacion(models.Model):
-    nombre = models.CharField(max_length=255)
-    fecha = models.DateField()
-    tipo = models.CharField(max_length=20, choices=(('VINCULACION', 'Vinculación'), ('COLABORACION', 'Colaboración'),
-                                                    ('COOPERACION', 'Cooperación'), ('OTRO', 'Otro')))
-    descripcion = models.TextField()
-    resultados = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(self.nombre, self.fecha)
-
-    def get_absolute_url(self):
-        return reverse('otro_programa_vinculacion_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['-fecha', 'nombre']
-        verbose_name = 'Otro programa o acción de vinculación, colaboración y/o cooperación'
-        verbose_name_plural = 'Otros programas o acciones de vinculación, colaboración y/o cooperación'
-
-
