@@ -190,7 +190,8 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
 
 class LibroDivulgacionForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                                  required=False)
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="Pais",
@@ -200,29 +201,48 @@ class LibroDivulgacionForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+
     ciudad_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
     editorial_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
-    coleccion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
+    coleccion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}))
+        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
+    fecha = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_enviado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_aceptado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_enprensa = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_publicado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False)
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en el artículo, en el orden y forma.'}),
+                                    required=False, label='Autores como se reportan en el artículo')
 
     class Meta:
         model = LibroDivulgacion
         exclude = ['tipo', ]
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'compiladores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'compiladores': wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
