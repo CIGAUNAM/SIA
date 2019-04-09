@@ -56,14 +56,12 @@ class ArticuloDivulgacion(models.Model):
 
 class CapituloLibroDivulgacion(models.Model):
     titulo = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
     libro = models.ForeignKey(Libro, on_delete=models.DO_NOTHING)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
     autores = SortedManyToManyField(User, related_name='capitulo_libro_divulgacion_autores', verbose_name='Autores')
-
+    autores_todos = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.libro)
@@ -75,7 +73,7 @@ class CapituloLibroDivulgacion(models.Model):
         verbose_name = "Capítulo en libro de divulgación"
         verbose_name_plural = "Capítulos en libros de divulgración"
         ordering = ['titulo']
-        unique_together = ['titulo', 'libro', 'usuario']
+        unique_together = ['titulo', 'libro']
 
 
 class OrganizacionEventoDivulgacion(models.Model):

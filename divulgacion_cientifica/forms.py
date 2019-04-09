@@ -64,8 +64,6 @@ class ArticuloDivulgacionForm(forms.ModelForm):
 class CapituloLibroDivulgacionForm(forms.ModelForm):
     titulo = forms.CharField(
         widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título del capítulo')
-    descripcion = forms.CharField(
-        widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     libro = forms.ModelChoiceField(
         queryset=Libro.objects.filter(tipo='DIVULGACION'),
         label="Libro",
@@ -79,20 +77,14 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
                                     required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                  required=True, label='Número de página final')
-    proyecto = forms.ModelChoiceField(
-        required=False,
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en el capítulo del libro, en el orden y forma.'}),
+                                    required=False, label='Autores como se reportan en el capítulo del libro')
+
 
     class Meta:
         model = CapituloLibroDivulgacion
-        exclude = []
+        exclude = ['usuario', ]
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
