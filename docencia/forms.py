@@ -38,6 +38,12 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                      label='Nombre del programa',
+                                      help_text='Programa o carrera a la que pertenece la asignatura.')
+    asignatura_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                   label='Nombre de la asignatura',
+                                   help_text='Nombre de la asignatura impartida.')
     asignatura = forms.ModelChoiceField(
         queryset=Asignatura.objects.all(),
         label="Asignatura",
@@ -50,7 +56,7 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
     modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
     nombramiento = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                               choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'), ('COLABORADOR', 'Colaborador o Invitado')), required=True)
-    institucion = forms.ModelChoiceField(
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -64,7 +70,6 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
         label="Dependencia",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )

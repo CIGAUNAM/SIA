@@ -222,11 +222,11 @@ class InvitadoMovilidadEliminar(View):
             raise Http404
 
 
-class EstanciaMovilidadJSON(View):
+class EstanciaAcademicaJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = EstanciaMovilidad.objects.filter(usuario=usuarioid)
+            items = EstanciaAcademica.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items,
                                          fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
@@ -235,24 +235,24 @@ class EstanciaMovilidadJSON(View):
             raise Http404
 
 
-class EstanciaMovilidadLista(ObjectCreateMixin, View):
-    form_class = EstanciaMovilidadForm
-    model = EstanciaMovilidad
-    aux = EstanciaMovilidadContext.contexto
-    template_name = 'estancia_movilidad.html'
+class EstanciaAcademicaLista(ObjectCreateMixin, View):
+    form_class = EstanciaAcademicaForm
+    model = EstanciaAcademica
+    aux = EstanciaAcademicaContext.contexto
+    template_name = 'estancia_academica.html'
 
 
-class EstanciaMovilidadDetalle(ObjectUpdateMixin, View):
-    form_class = EstanciaMovilidadForm
-    model = EstanciaMovilidad
-    aux = EstanciaMovilidadContext.contexto
-    template_name = 'estancia_movilidad.html'
+class EstanciaAcademicaDetalle(ObjectUpdateMixin, View):
+    form_class = EstanciaAcademicaForm
+    model = EstanciaAcademica
+    aux = EstanciaAcademicaContext.contexto
+    template_name = 'estancia_academica.html'
 
 
-class EstanciaMovilidadEliminar(View):
+class EstanciaAcademicaEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(EstanciaMovilidad, pk=pk, usuario=request.user)
+            item = get_object_or_404(EstanciaAcademica, pk=pk, usuario=request.user)
             item.delete()
             return redirect('../')
         except:
