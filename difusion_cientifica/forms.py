@@ -169,7 +169,6 @@ class ParticipacionEventoAcademicoForm(forms.ModelForm):
         choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')), required=True)
 
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     evento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                                   label='Nombre del evento')
     lugar_evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,

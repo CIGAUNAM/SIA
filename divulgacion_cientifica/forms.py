@@ -127,23 +127,23 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
 
 
 class ParticipacionEventoDivulgacionForm(forms.ModelForm):
+    tipo = forms.ChoiceField(widget=Select2Widget(
+        attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')), required=True)
     titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                                  required=False)
-    evento = forms.ModelChoiceField(
-        queryset=Evento.objects.all(),
-        label="Evento",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Evento.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    resumen_publicado = forms.BooleanField(required=False, label='Resumen publicado')
+    evento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                  label='Nombre del evento')
+    lugar_evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                   label='Lugar del evento')
+    autores_todos = forms.CharField(widget=Textarea(
+        attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Autores como aparecen publicados.'}),
+                                    required=False)
+
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
     por_invitacion = forms.BooleanField(required=False, label='Participación por invitación')
     ponencia_magistral = forms.BooleanField(required=False, label='Ponencia Magistral')
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de la participación en el evento.')
 
     class Meta:
         model = ParticipacionEventoDivulgacion
