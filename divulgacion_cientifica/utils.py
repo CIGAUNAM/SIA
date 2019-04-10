@@ -324,9 +324,9 @@ class ParticipacionEventoDivulgacionContext:
 
 
 class ProgramaRadioTelevisionInternetContext:
-    obj = 'programa de radio, televisión o internet'
-    objs = 'programas de radio, televisión o internet'
-    Objs = 'Programas de radio, televisión o internet'
+    obj = 'programa de radio, televisión, internet o medios impresos'
+    objs = 'programas de radio, televisión, internet o medios impresos'
+    Objs = 'Programas de radio, televisión, internet o medios impresos'
     url_seccion = 'medios-divulgacion'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,

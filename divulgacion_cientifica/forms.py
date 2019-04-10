@@ -165,15 +165,8 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
         choices=(('PRODUCCION', 'Producción'), ('PARTICIPACION', 'Participación'), ('ENTREVISTA', 'Entrevista'),
                  ('OTRA', 'Otra')),
         required=True)
-    medio_divulgacion = forms.ModelChoiceField(
-        queryset=MedioDivulgacion.objects.all(),
-        label="Medio de divulgación",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=MedioDivulgacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    medio_divulgacion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+
 
     class Meta:
         model = ProgramaRadioTelevisionInternet
