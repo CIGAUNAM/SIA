@@ -126,13 +126,14 @@ class ParticipacionEventoDivulgacion(models.Model):
 
 
 class ProgramaRadioTelevisionInternet(models.Model):
-    tema = models.CharField(max_length=255)
+    tema = models.CharField(max_length=254)
     fecha = models.DateField()
     descripcion = models.TextField(blank=True)
     actividad = models.CharField(max_length=20, choices=(
         ('PRODUCCION', 'Producción'), ('PARTICIPACION', 'Participación'), ('ENTREVISTA', 'Entrevista'),
         ('OTRA', 'Otra')))
-    medio_divulgacion = models.ForeignKey(MedioDivulgacion, on_delete=models.DO_NOTHING)
+    medio_divulgacion = models.ForeignKey(MedioDivulgacion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    medio_divulgacion_text = models.CharField(max_length=254, blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
@@ -143,5 +144,5 @@ class ProgramaRadioTelevisionInternet(models.Model):
 
     class Meta:
         ordering = ['fecha', 'tema']
-        verbose_name = 'Programa de radio, televisión o internet'
-        verbose_name_plural = 'Programas de radio, televisión o internet'
+        verbose_name = 'Programa de radio, televisión, internet o medios impresos'
+        verbose_name_plural = 'Programas de radio, televisión, internet o medios impresos'
