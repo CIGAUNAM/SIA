@@ -10,11 +10,11 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.titulo }}
+            {{ form.titulo_tesis }}
         </div>
     </div>
     </p>
-    <p><strong>Especialidad:</strong>
+    <p><strong>Carrera o programa:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Especialidad."><i
                 class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -23,7 +23,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.especialidad }}
+            {{ form.programa }}
         </div>
     </div>
     </p>
@@ -51,11 +51,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>Nivel académico:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nivel académico de asesoría."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -66,6 +61,31 @@
         </div>
     </div>
     </p>
+    <p><strong>Estatus:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Estatus de la tesis, si está terminada o en proceso."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.status }}
+        </div>
+    </div>
+    </p>
+    <div id="d_fecha_examen">
+    <p><strong>Fecha de examen recepcional:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de examen recepcional. Solo escribir si ya se llevó a cabo o está confirmada la fecha. En caso contrario dejar en blanco. Este campo es útil para discriminar si un registro se toma como concluido o en proceso a partir de la existencia de la fecha de examen.">
+            <i class="fa fa-question-circle"></i></a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha_examen }}
+        </div>
+    </div>
+    </p>
+    </div>
     <p><strong>Institución:</strong>
         <a href="/nucleo/institucion" data-toggle="tooltip" data-placement="right"
            title="Institución donde se llevó a cabo la asesoría, la selección de
@@ -76,7 +96,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -127,55 +147,19 @@
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.beca }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la beca.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/becas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una beca nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
     <p><strong>Reconocimiento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Reconocimiento recibido por el asesorado.">
-            <i class="fa fa-question-circle"></i>
-        </a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-trophy"></i></div>
-            {{ form.reconocimiento }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del reconocimiento seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/distinciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un reconocimiento nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Fecha de examen recepcional:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de examen recepcional. Solo escribir si ya se llevó a cabo o está confirmada la fecha. En caso contrario dejar en blanco. Este campo es útil para discriminar si un registro se toma como concluido o en proceso a partir de la existencia de la fecha de examen.">
-            <i class="fa fa-question-circle"></i></a>
+           title="En caso de que el asesorado haya obtenido un reconocimiento por su tesis, mencionarlo en este campo."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.fecha_examen }}
+            {{ form.reconocimiento_text }}
         </div>
     </div>
     </p>
@@ -227,35 +211,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Tutores:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Tutores o directores de la tesis. En caso de haber más de uno, el primero seleccionado es el director pricipal, el segudo, co-director, etc. Es decir, el orden de selección representa el orden de dirección.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.tutores }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los tutores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un tutor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
 
     <script>
+    var id_status = $("#id_status");
+
+
         $(function () {
             $("#id_director").val('{{ request.user.id }}').trigger('change')
-            $("#id_tutores").val("{{ request.user.id }}")
         });
+
     </script>
 {% endblock %}
 
@@ -282,7 +246,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.especialidad }}
+            {{ form.programa }}
         </div>
     </div>
     </p>

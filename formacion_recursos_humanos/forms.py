@@ -196,8 +196,8 @@ class DesarrolloGrupoInvestigacionInternoForm(forms.ModelForm):
 
 
 class DireccionTesisForm(forms.ModelForm):
-    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    especialidad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     asesorado = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label="Asesorado",
@@ -225,9 +225,10 @@ class DireccionTesisForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
     nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'NIVEL_ACADEMICO', ), required=True)
-    institucion = forms.ModelChoiceField(
+    status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', '-------'), ('EN_PROCESO', 'Tesis en proceso'), ('TERMINADA', 'Tesis terminada')), required=True)
+
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -256,16 +257,7 @@ class DireccionTesisForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    reconocimiento = forms.ModelChoiceField(
-        required=False,
-        queryset=Distincion.objects.all(),
-        label="Reconocimiento",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Distincion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    reconocimiento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
 
     fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
 
