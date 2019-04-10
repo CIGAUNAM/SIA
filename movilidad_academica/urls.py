@@ -23,10 +23,10 @@ urlpatterns = [
     url(r'^invitados/(?P<pk>[\w\-]+)/eliminar$', InvitadoMovilidadEliminar.as_view(), name='invitado_eliminar'),
     url(r'^invitados/(?P<pk>[\w\-]+)/$', InvitadoMovilidadDetalle.as_view(), name='invitado_detalle'),
 
-    url(r'^estancias/json/', EstanciaMovilidadJSON.as_view(), name='estancia_lista__json'),
-    url(r'^estancias/$', EstanciaMovilidadLista.as_view(), name='estancia_lista'),
-    url(r'^estancias/(?P<pk>[\w\-]+)/eliminar$', EstanciaMovilidadEliminar.as_view(), name='estancia_eliminar'),
-    url(r'^estancias/(?P<pk>[\w\-]+)/$', EstanciaMovilidadDetalle.as_view(), name='estancia_detalle'),
+    url(r'^estancias-academicas/json/', EstanciaAcademicaJSON.as_view(), name='estancia_academica_lista__json'),
+    url(r'^estancias-academicas/$', EstanciaAcademicaLista.as_view(), name='estancia_academica_lista'),
+    url(r'^estancias-academicas/(?P<pk>[\w\-]+)/eliminar$', EstanciaAcademicaEliminar.as_view(), name='estancia_academica_eliminar'),
+    url(r'^estancias-academicas/(?P<pk>[\w\-]+)/$', EstanciaAcademicaDetalle.as_view(), name='estancia_academica_detalle'),
 
     url(r'^sabaticos/json/', SabaticoMovilidadJSON.as_view(), name='sabatico_lista__json'),
     url(r'^sabaticos/$', SabaticoMovilidadLista.as_view(), name='sabatico_lista'),
