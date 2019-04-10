@@ -313,10 +313,6 @@
         </ul>
     </li>
 
-
-
-
-
     <li class="treeview{% if aux.url_categoria == "movilidad-academica" %} active{% endif %}">
         <a href="#">
             <i class="fa fa-plane fa-fw"></i> <span>Movilidad académica</span>
@@ -388,26 +384,31 @@
             </span>
         </a>
         <ul class="treeview-menu">
-            <li{% if aux.url_seccion == 'asesorias' %} class="active"{% endif %}>
-                <a href="/formacion-recursos-humanos/asesorias">
-                    <i class="fa fa-circle-o"></i> Asesor en residencias,<br/>
-                    <i class="fa fa-none"></i> prácticas, estancias o servicio
-                </a>
-            </li>
             <li{% if aux.url_seccion == 'direccion-tesis' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/direccion-tesis">
                     <i class="fa fa-circle-o"></i> Dirección de tesis
                 </a>
             </li>
-            <li{% if aux.url_seccion == 'comites-tutorales' %} class="active"{% endif %}>
+        <li{% if aux.url_seccion == 'comites-tutorales' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-tutorales">
                     <i class="fa fa-circle-o"></i> Comités tutorales
                 </a>
             </li>
-            <li{% if aux.url_seccion == 'comites-candidatura-doctoral' %} class="active"{% endif %}>
+        <li{% if aux.url_seccion == 'comites-candidatura-doctoral' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-candidatura-doctoral">
                     <i class="fa fa-circle-o"></i> Comité de examen de<br/>
                     <i class="fa fa-none"></i> candidatura doctoral
+                </a>
+            </li>
+        <li{% if aux.url_seccion == 'comites-sinodales' %} class="active"{% endif %}>
+                <a href="/formacion-recursos-humanos/comites-sinodales">
+                    <i class="fa fa-circle-o"></i> Comité sinodal
+                </a>
+            </li>
+            <li{% if aux.url_seccion == 'asesorias' %} class="active"{% endif %}>
+                <a href="/formacion-recursos-humanos/asesorias">
+                    <i class="fa fa-circle-o"></i> Asesor en residencias,<br/>
+                    <i class="fa fa-none"></i> prácticas, estancias o servicio
                 </a>
             </li>
             <li{% if aux.url_seccion == 'supervision-investigadores-postdoctorales' %} class="active"{% endif %}>
