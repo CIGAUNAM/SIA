@@ -18,17 +18,20 @@ STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO',
 class CursoDocenciaEscolarizado(models.Model):
     nivel = models.CharField(max_length=30, choices=(('', '------'), ('LICENCIATURA', 'Licenciatura'),
                                                      ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+
     licenciatura = models.ForeignKey(ProgramaLicenciatura, blank=True, null=True, on_delete=models.DO_NOTHING)
     maestria = models.ForeignKey(ProgramaMaestria, blank=True, null=True, on_delete=models.DO_NOTHING)
     doctorado = models.ForeignKey(ProgramaDoctorado, blank=True, null=True, on_delete=models.DO_NOTHING)
-    asignatura = models.ForeignKey(Asignatura, on_delete=models.DO_NOTHING)
+    programa = models.CharField(max_length=254, blank=True, null=True)
+    asignatura = models.ForeignKey(Asignatura, blank=True, null=True, on_delete=models.DO_NOTHING)
+    asignatura_text = models.CharField(max_length=254, blank=True, null=True)
     modalidad = models.CharField(max_length=30, choices=(('', 'Seleccionar modalidad de curso'),
                                                          ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'),
                                                          ('MIXTO', 'Mixto'), ('OTRO', 'Otro')))
     nombramiento = models.CharField(max_length=30, choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'),
                                                             ('COLABORADOR', 'Colaborador o Invitado')))
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
