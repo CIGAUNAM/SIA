@@ -100,28 +100,31 @@ class DesarrolloGrupoInvestigacionInterno(models.Model):
 
 
 class DireccionTesis(models.Model):
-    titulo = models.CharField(max_length=255, unique=True)
-    especialidad = models.CharField(max_length=255)
+    titulo_tesis = models.CharField(max_length=255, unique=True)
+    programa = models.CharField(max_length=255)
     asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado', on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
     nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    status = models.CharField(max_length=255, choices=(
+        ('', '-------'), ('EN_PROCESO', 'Tesis en proceso'), ('TERMINADA', 'Tesis terminada')))
+    fecha_examen = models.DateField(null=True, blank=True)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
     reconocimiento = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    fecha_examen = models.DateField(null=True, blank=True)
+    reconocimiento_text = models.CharField(max_length=255)
     director = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_director', on_delete=models.DO_NOTHING)
     codirector = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_codirector', on_delete=models.DO_NOTHING)
-    tutores = SortedManyToManyField(User, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
+    tutores = SortedManyToManyField(User, null=True, blank=True, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
+
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.asesorado, self.nivel_academico)
+        return "{} : {}".format(self.titulo_tesis, self.asesorado, self.nivel_academico)
 
     def get_absolute_url(self):
         return reverse('direccion_tesis_detalle', kwargs={'pk': self.pk})
 
     def natural_key(self):
-        return self.titulo
+        return self.titulo_tesis
 
     class Meta:
         ordering = ['-fecha_examen']
