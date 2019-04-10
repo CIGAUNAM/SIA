@@ -244,7 +244,6 @@ class PublicacionTecnica(models.Model):
         ordering = ['fecha', 'titulo']
 
 
-
 class ActividadApoyoTecnicoInvestigacion(models.Model):
     actividadapoyotecnicoinvestigacion_nombre = models.CharField(max_length=160, unique=True)
     orden = models.IntegerField()
