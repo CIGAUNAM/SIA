@@ -1,13 +1,11 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Evento, Libro, Revista, RevistaDivulgacion, Indice, MedioDivulgacion, Financiamiento
+from nucleo.models import User, Evento, Libro, Revista, InstitucionSimple, RevistaDivulgacion, Indice, MedioDivulgacion, Financiamiento
 from investigacion.models import ProyectoInvestigacion
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
-EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (
-    ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'),
-    ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
+EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (
     ('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'),
     ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
@@ -100,10 +98,15 @@ class OrganizacionEventoDivulgacion(models.Model):
 
 
 class ParticipacionEventoDivulgacion(models.Model):
+    tipo = models.CharField(max_length=30, choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')))
     titulo = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    resumen_publicado = models.BooleanField(default=False)
+
+    evento_text = models.CharField(max_length=254, blank=True, null=True, verbose_name='Nombre del evento')
+    lugar_evento = models.CharField(max_length=254, blank=True, null=True, verbose_name='Lugar del evento')
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    fecha = models.DateField()
+
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
