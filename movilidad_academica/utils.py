@@ -42,12 +42,12 @@ class InvitadoMovilidadContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-class EstanciaMovilidadContext:
-    obj = 'estancia'
-    objs = 'estancias'
-    Objs = 'Estancias'
+class EstanciaAcademicaContext:
+    obj = 'estancia académica en otras dependencias'
+    objs = 'estancias académicas en otras dependencias'
+    Objs = 'Estancias académicas en otras dependencias'
 
-    url_seccion = 'estancias'
+    url_seccion = 'estancias-academicas'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
