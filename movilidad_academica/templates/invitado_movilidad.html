@@ -15,11 +15,36 @@
         </div>
     </div>
     </p>
+    <p>
+        <strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución de donde proviene el profesor visitante.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
 
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+            <div class="input-group-addon">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
+                    </a>
+                </span>
+            </div>
+
+            <div class="input-group-addon">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
+                    <i class="fa fa-plus"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
     </p>
     <p><strong>Dependencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -48,7 +73,7 @@
     </div>
     </p>
     <p><strong>Actividades: </strong><a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Detalles de las actividades realizadas durante el periodo de movilidad.">
+                                        title="Detalles de las actividades realizadas durante el periodo de movilidad.">
         <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         {{ form.actividades }}
     </p>
@@ -151,11 +176,36 @@
         </div>
     </div>
     </p>
+    <p>
+        <strong>Institución:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Institución de donde proviene el profesor visitante.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.institucion }}
 
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
+            <div class="input-group-addon">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
+                    </a>
+                </span>
+            </div>
+
+            <div class="input-group-addon">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
+                    <i class="fa fa-plus"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
     </p>
     <p><strong>Dependencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -184,7 +234,7 @@
     </div>
     </p>
     <p><strong>Actividades: </strong><a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Detalles de las actividades realizadas durante el periodo de movilidad.">
+                                        title="Detalles de las actividades realizadas durante el periodo de movilidad.">
         <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         {{ form.actividades }}
     </p>

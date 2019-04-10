@@ -1,5 +1,5 @@
 from django.db import models
-from nucleo.models import User, Institucion, Dependencia, Financiamiento
+from nucleo.models import User, Institucion, InstitucionSimple, Dependencia, Financiamiento
 from investigacion.models import ProyectoInvestigacion
 from vinculacion.models import RedAcademica
 from django.urls import reverse
@@ -36,8 +36,8 @@ class MovilidadAcademica(models.Model):
 
 class InvitadoMovilidad(models.Model):
     invitado = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
     actividades = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -59,10 +59,10 @@ class InvitadoMovilidad(models.Model):
         verbose_name_plural = 'Invitados'
 
 
-class EstanciaMovilidad(models.Model):
+class EstanciaAcademica(models.Model):
     anfitrion = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
     actividades = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -76,7 +76,7 @@ class EstanciaMovilidad(models.Model):
         return "{} : {}".format(str(self.anfitrion), str(self.dependencia))
 
     def get_absolute_url(self):
-        return reverse('estancia_detalle', kwargs={'pk': self.pk})
+        return reverse('estancia_academica_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']
@@ -86,12 +86,11 @@ class EstanciaMovilidad(models.Model):
 
 class SabaticoMovilidad(models.Model):
     anfitrion = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
     actividades = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    intercambio_unam = models.BooleanField(default=False)
     financiamiento = models.CharField(max_length=50, choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'), ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
     redes_academicas = models.ManyToManyField(RedAcademica, blank=True)
     proyecto = models.CharField(max_length=255, blank=True, null=True)
