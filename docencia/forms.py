@@ -85,26 +85,18 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
 
 
 class CursoDocenciaExtracurricularForm(forms.ModelForm):
-    asignatura = forms.ModelChoiceField(
-        queryset=Asignatura.objects.all(),
-        label="Asignatura",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Asignatura.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    tipo = forms.ModelChoiceField(
-        queryset=TipoCurso.objects.all(),
-        label="Tipo de curso",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=TipoCurso.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    asignatura_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                      label='Nombre de la asignatura',
+                                      help_text='Nombre de la asignatura impartida.')
     modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
-    institucion = forms.ModelChoiceField(
+    tipo_curso = forms.ChoiceField(widget=Select2Widget(
+        attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '------'), ('DIPLOMADO', 'Diplomado'), ('TALLER', 'Taller'), ('SEMINARIO', 'Seminario'),
+                 ('CURSO', 'Curso'), ('OTRO', 'Otro')), required=True)
+    otro_tipo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                      label='Otro tipo de curso',
+                                      help_text='Otro tipo de curso.')
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -118,7 +110,6 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
         label="Dependencia",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
             queryset=Dependencia.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
