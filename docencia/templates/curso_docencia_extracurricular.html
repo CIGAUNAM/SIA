@@ -2,30 +2,6 @@
 
 {% block form_agregar %}
     {{ form.errors }}
-    <p><strong>Asignatura o curso:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Asignatura o curso impartido.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.asignatura }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la asignatura o curso.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/asignaturas" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una asignatura o cuerso nuevos. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Tipo de curso:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de curso (si forma parte de un diplomado, etc). Puede ir vacío si no hay información para este campo.">
@@ -50,6 +26,36 @@
         </div>
     </div>
     </p>
+    <div id="d_otro_tipo">
+        <p><strong>Otro tipo de curso:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Especificar tipo de curso impartido."><i
+                    class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.otro_tipo }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <p><strong>Asignatura o curso:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Nombre de la asignatura o curso impartido."><i
+                class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-pencil-square-o"></i>
+            </div>
+            {{ form.asignatura }}
+        </div>
+    </div>
+    </p>
     <p><strong>Modalidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Modalidad del curso.">
@@ -59,6 +65,18 @@
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.modalidad }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Clasificación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Clasificación, si se trata de apoyo al posgrado en Geografía o de un curso de capacitación.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.clasificacion }}
         </div>
     </div>
     </p>
@@ -72,7 +90,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -165,10 +183,23 @@
         </div>
     </div>
     </p>
+
+    <script>
+    var id_tipo_curso = $("#id_tipo_curso");
+    var d_otro_tipo = $("#d_otro_tipo");
+
+    d_otro_tipo.hide();
+
+    if (id_tipo_curso.val() === 'OTRO') {
+
+    }
+
+
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
-        {{ form.errors }}
+    {{ form.errors }}
     <p><strong>Asignatura o curso:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Asignatura o curso impartido.">
