@@ -8,8 +8,7 @@ from sortedm2m.fields import SortedManyToManyField
 
 
 STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO',
-                                      (('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-                                       ('OTRO', 'Otro')))
+                                      (('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
 
 
 # Create your models here.
@@ -88,12 +87,14 @@ class CursoDocenciaExtracurricular(models.Model):
 
 class ArticuloDocencia(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
-    revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
-    volumen = models.CharField(max_length=100, null=True, blank=True)
-    numero = models.CharField(max_length=100, null=True, blank=True)
-    fecha = models.DateField(auto_now=False)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
+
+    fecha = models.DateField(null=True, blank=True)
+    fecha_enviado = models.DateField(null=True, blank=True)
+    fecha_aceptado = models.DateField(null=True, blank=True)
+    fecha_enprensa = models.DateField(null=True, blank=True)
+    fecha_publicado = models.DateField(null=True, blank=True)
+
     solo_electronico = models.BooleanField(default=False)
     autores = SortedManyToManyField(User, related_name='articulo_docencia_autores', verbose_name='Autores')
     alumnos = models.ManyToManyField(User, related_name='articulo_docencia_alumnos', blank=True)
@@ -103,7 +104,7 @@ class ArticuloDocencia(models.Model):
     pagina_fin = models.PositiveIntegerField()
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.revista)
+        return self.titulo
 
     def get_absolute_url(self):
         return reverse('articulo_docencia_detalle', kwargs={'pk': self.pk})
