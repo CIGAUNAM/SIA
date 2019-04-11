@@ -111,7 +111,7 @@ class DireccionTesis(models.Model):
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
     reconocimiento = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    reconocimiento_text = models.CharField(max_length=255)
+    reconocimiento_text = models.CharField(max_length=255, null=True, blank=True,)
     director = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_director', on_delete=models.DO_NOTHING)
     codirector = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_codirector', on_delete=models.DO_NOTHING)
     tutores = SortedManyToManyField(User, null=True, blank=True, related_name='direccion_tesis_usuarios', verbose_name='Tutores')

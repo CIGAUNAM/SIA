@@ -1,7 +1,7 @@
 from SIA.widgets import *
 from . models import *
 from django import forms
-from nucleo.models import Institucion, Pais, Estado, Ciudad, Editorial, Coleccion, Libro as LibroDocencia
+from nucleo.models import Institucion, Pais, Libro as LibroDocencia
 from django_select2.forms import Select2MultipleWidget, Select2Widget, ModelSelect2Widget
 
 #
@@ -136,19 +136,20 @@ class ArticuloDocenciaForm(forms.ModelForm):
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True, label='Fecha de publicación')
-    revista = forms.ModelChoiceField(
-        queryset=Revista.objects.all(),
-        label="Revista",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Revista.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    numero = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
-                             label='Número')
+        required=True, label='fecha')
+    fecha_enviado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío')
+    fecha_aceptado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de aceptación')
+    fecha_enprensa = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de envío a prensa')
+    fecha_publicado = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=False, label='Fecha de publicación')
+
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                     required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
