@@ -369,6 +369,5 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         model = ComiteCandidaturaDoctoral
         exclude = []
         widgets = {
-            'asesores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'miembros_comite': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }

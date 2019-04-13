@@ -240,9 +240,9 @@ class ComiteCandidaturaDoctoralJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ComiteCandidaturaDoctoral.objects.all().exclude(asesores=usuarioid).exclude(sinodales=usuarioid)
+                items = ComiteCandidaturaDoctoral.objects.all().exclude(Q(miembros_comite=usuarioid) & Q(director=usuarioid) & Q(codirector=usuarioid))
             else:
-                items = ComiteCandidaturaDoctoral.objects.filter(Q(asesores=usuarioid) | Q(sinodales=usuarioid))
+                items = ComiteCandidaturaDoctoral.objects.filter(Q(miembros_comite=usuarioid) | Q(director=usuarioid) | Q(codirector=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('candidato', 'programa_doctorado', 'proyecto', 'fecha_defensa'))
             return HttpResponse(json, content_type='application/json')
         except:
