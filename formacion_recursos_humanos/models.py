@@ -19,14 +19,13 @@ class AsesoriaEstudiante(models.Model):
     tipo = models.CharField(max_length=30, choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'),
                                                     ('PRACTICA', 'Prácticas profesionales'),
                                                     ('ESTANCIA', 'Estancia de investigación'),
-                                                    ('BECARIO', 'Becario de proyecto de investigación'),
+                                                    ('ASESORIA_TECNICA', 'Asesoría técnica'),
                                                     ('SERVICIO_SOCIAL', 'Servicio Social')))
     nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
-    proyecto_externo = models.CharField(max_length=254, null=True, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
