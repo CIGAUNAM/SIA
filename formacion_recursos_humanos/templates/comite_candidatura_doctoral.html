@@ -39,34 +39,57 @@
         </div>
     </div>
     </p>
-    <p><strong>Asesores:</strong>
+    <p><strong>Director de tesis:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+           title="Director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.asesores }}
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.director }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los otros asesores participantes.">
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un asesor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Sinodales:</strong>
+    <p><strong>Co-director de tesis:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Otros sinodales participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
+           title="Co-director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.codirector }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Miembros del comité de examen:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Miembros del comité de examen.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -87,50 +110,29 @@
         </div>
     </div>
     </p>
-    <p><strong>Proyecto:</strong>
+    <p><strong>Programa de doctorado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto relacionado con el comité tutoral.">
-            <i class="fa fa-question-circle"></i></a>
+           title="Programa de doctorado."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.proyecto }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del proyecto seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.programa }}
         </div>
     </div>
     </p>
-    <p><strong>Programa de doctorado:</strong>
+    <p><strong>Especialidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Programa de doctorado cursado por el alumno asesorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Especialidad."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.programa_doctorado }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del doctorado.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un doctorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.programa }}
         </div>
     </div>
     </p>
@@ -200,17 +202,7 @@
     </p>
 
     <script>
-        $("#id_asesores").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
-    </script>
-
-    <script>
-        $("#id_sinodales").on("select2:select", function (evt) {
+        $("#miembros_comite").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -222,7 +214,8 @@
 {% endblock %}
 
 {% block form_detalle %}
-        <p><strong>Candidato:</strong>
+    {{ form.errors }}
+    <p><strong>Candidato:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Candidato a doctor.">
             <i class="fa fa-question-circle"></i>
@@ -259,34 +252,57 @@
         </div>
     </div>
     </p>
-    <p><strong>Asesores:</strong>
+    <p><strong>Director de tesis:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Otros asesores participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
+           title="Director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.asesores }}
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.director }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los otros asesores participantes.">
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
                     <i class="fa fa-eye"></i>
                 </a>
             </div>
             <div class="input-group-addon">
                 <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un asesor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
     </div>
     </p>
-    <p><strong>Sinodales:</strong>
+    <p><strong>Co-director de tesis:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Otros sinodales participantes en el comité, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
+           title="Co-director de tesis.">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+            {{ form.codirector }}
+            <div class="input-group-addon">
+                <a href="#" data-toggle="tooltip" data-placement="left"
+                   title="Mostrar los detalles adicionales del asesorado seleccionado.">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </div>
+            <div class="input-group-addon">
+                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                   title="Agregar un director nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </p>
+    <p><strong>Miembros del comité de examen:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Miembros del comité de examen.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -307,50 +323,29 @@
         </div>
     </div>
     </p>
-    <p><strong>Proyecto:</strong>
+    <p><strong>Programa de doctorado:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Proyecto relacionado con el comité tutoral.">
-            <i class="fa fa-question-circle"></i></a>
+           title="Programa de doctorado."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.proyecto }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del proyecto seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/proyectos" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un proyecto nuevo. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.programa }}
         </div>
     </div>
     </p>
-    <p><strong>Programa de doctorado:</strong>
+    <p><strong>Especialidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Programa de doctorado cursado por el alumno asesorado. Seleccionar un doctorado sólo si corresponde con el nivel seleccionado arriba.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Especialidad."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.programa_doctorado }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre del doctorado.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/programas-doctorado" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un doctorado nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.programa }}
         </div>
     </div>
     </p>
@@ -420,17 +415,7 @@
     </p>
 
     <script>
-        $("#id_asesores").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
-    </script>
-
-    <script>
-        $("#id_sinodales").on("select2:select", function (evt) {
+        $("#miembros_comite").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
