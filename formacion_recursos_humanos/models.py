@@ -150,7 +150,6 @@ class ComiteTutoral(models.Model):
     fecha_examen = models.DateField(null=True, blank=True)
     miembros_comite = SortedManyToManyField(User, related_name='comite_tutoral_miembros_comite', verbose_name='Miembros de comité tutoral')
 
-
     def __str__(self):
         return "{} : {}".format(str(self.estudiante), self.fecha_inicio)
 
@@ -167,13 +166,17 @@ class ComiteCandidaturaDoctoral(models.Model):
     candidato = models.ForeignKey(User, related_name='comite_candidatura_doctoral_candidato',
                                   on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255, null=True, blank=True)
+    programa = models.CharField(max_length=255, null=True, blank=True)
+    especialidad = models.CharField(max_length=255, null=True, blank=True)
+
     asesores = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_asesores', blank=True)
-    sinodales = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_defensa = models.DateField()
+    miembros_comite = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
+    director = models.ForeignKey(User, null=True, blank=True, related_name='comite_candidatura_doctoral_director', on_delete=models.DO_NOTHING)
+    codirector = models.ForeignKey(User, null=True, blank=True, related_name='comite_candidatura_doctoral_codirector', on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "{} : {}".format(str(self.candidato), self.fecha_defensa)
