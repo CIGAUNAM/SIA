@@ -229,7 +229,7 @@ class DesarrolloGrupoInvestigacionInternoContext:
 
 
 class ComiteTutoralContext:
-    obj = 'ccmité tutoral'
+    obj = 'comité tutoral'
     objs = 'comités tutorales'
     Objs = 'Comités tutorales'
     url_seccion = 'comites-tutorales'
@@ -239,8 +239,7 @@ class ComiteTutoralContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Estudiante', 'Nivel académico', 'Fecha de inicio']}
-
+                'titulos_tabla': ['Estudiante', 'Fecha de inicio', 'fecha de fin', 'Programa']}
 
     tabla_mios =  '<script>\n' \
                     '       jQuery(document).ready(function ($jquery) {\n' \
@@ -258,8 +257,9 @@ class ComiteTutoralContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.estudiante + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.nivel_academico"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.fecha_fin"},\n' \
+                                    '{"data": "fields.programa"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -283,8 +283,9 @@ class ComiteTutoralContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.estudiante + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.nivel_academico"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
+                                    '{"data": "fields.fecha_fin"},\n' \
+                                    '{"data": "fields.programa"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
