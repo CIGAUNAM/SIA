@@ -260,6 +260,8 @@ class DireccionTesisForm(forms.ModelForm):
     reconocimiento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
 
     fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
         model = DireccionTesis
