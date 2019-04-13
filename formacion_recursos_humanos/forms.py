@@ -281,40 +281,9 @@ class ComiteTutoralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', '-------'), ('LICENCIATURA', 'Licenciatura'),
-                                                               ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
-    programa_licenciatura = forms.ModelChoiceField(
-        required=False,
-        queryset=ProgramaLicenciatura.objects.all(),
-        label="Programa de maestria",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProgramaLicenciatura.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    programa_maestria = forms.ModelChoiceField(
-        required=False,
-        queryset=ProgramaMaestria.objects.all(),
-        label="Programa de maestria",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProgramaMaestria.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    programa_doctorado = forms.ModelChoiceField(
-        required=False,
-        queryset=ProgramaDoctorado.objects.all(),
-        label="Programa de doctorado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProgramaDoctorado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    institucion = forms.ModelChoiceField(
+    institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -336,23 +305,12 @@ class ComiteTutoralForm(forms.ModelForm):
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     fecha_examen = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
-    proyecto = forms.ModelChoiceField(
-        required=False,
-        queryset=ProyectoInvestigacion.objects.all(),
-        label="Proyecto",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProyectoInvestigacion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
 
     class Meta:
         model = ComiteTutoral
         exclude = []
         widgets = {
-            'asesores': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'sinodales': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'miembros_comite': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -411,6 +369,6 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         model = ComiteCandidaturaDoctoral
         exclude = []
         widgets = {
-            'asesores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'tutores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'sinodales': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }

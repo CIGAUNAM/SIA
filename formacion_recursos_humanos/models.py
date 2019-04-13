@@ -140,16 +140,16 @@ class ComiteTutoral(models.Model):
     programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
+    programa = models.CharField(max_length=255, null=True, blank=True)
+
     titulo_tesis = models.CharField(max_length=255, null=True, blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
     fecha_examen = models.DateField(null=True, blank=True)
-    asesores = SortedManyToManyField(User, related_name='comite_tutoral_asesores', verbose_name='Asesores', blank=True)
-    sinodales = SortedManyToManyField(User, related_name='comite_tutoral_sinodales', verbose_name='Sinodales',
-                                      blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
+    miembros_comite = SortedManyToManyField(User, related_name='comite_tutoral_miembros_comite', verbose_name='Miembros de comité tutoral')
+
 
     def __str__(self):
         return "{} : {}".format(str(self.estudiante), self.fecha_inicio)
