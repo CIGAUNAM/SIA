@@ -101,11 +101,13 @@ class DesarrolloGrupoInvestigacionInterno(models.Model):
 
 class DireccionTesis(models.Model):
     titulo_tesis = models.CharField(max_length=255, unique=True)
+    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     programa = models.CharField(max_length=255)
     asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado', on_delete=models.DO_NOTHING)
-    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     status = models.CharField(max_length=255, choices=(
         ('', '-------'), ('EN_PROCESO', 'Tesis en proceso'), ('TERMINADA', 'Tesis terminada')))
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
     fecha_examen = models.DateField(null=True, blank=True)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)

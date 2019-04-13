@@ -55,7 +55,7 @@ class DireccionTesisContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Título', 'Asesorado', 'Nivel', 'Dependencia', 'Examen']}
+                'titulos_tabla': ['Título', 'Asesorado', 'Nivel', 'Dependencia', 'Fecha inicio', 'fecha fin', 'fecha examen']}
 
     tabla_mios = '<script>\n' \
                  '       jQuery(document).ready(function ($jquery) {\n' \
@@ -78,6 +78,8 @@ class DireccionTesisContext:
                    '{"data": "fields.asesorado"},\n' \
                    '{"data": "fields.nivel_academico"},\n' \
                    '{"data": "fields.dependencia"},\n' \
+                   '{"data": "fields.fecha_inicio"},\n' \
+                   '{"data": "fields.fecha_fin"},\n' \
                    '{"data": "fields.fecha_examen"},\n' \
                    ']\n' \
                    '});\n' \
@@ -107,6 +109,8 @@ class DireccionTesisContext:
                    '{"data": "fields.asesorado"},\n' \
                    '{"data": "fields.nivel_academico"},\n' \
                    '{"data": "fields.dependencia"},\n' \
+                   '{"data": "fields.fecha_inicio"},\n' \
+                   '{"data": "fields.fecha_fin"},\n' \
                    '{"data": "fields.fecha_examen"},\n' \
                    ']\n' \
                    '});\n' \

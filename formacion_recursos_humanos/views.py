@@ -151,12 +151,12 @@ class DireccionTesisJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             if self.otros:
-                items = DireccionTesis.objects.all().exclude(tutores__id__exact=usuarioid)
+                items = DireccionTesis.objects.all().exclude(Q(director__id__exact=usuarioid) & Q(codirector__id__exact=usuarioid))
             else:
-                items = DireccionTesis.objects.filter(tutores__id__exact=usuarioid)
+                items = DireccionTesis.objects.filter(Q(director__id__exact=usuarioid) | Q(codirector__id__exact=usuarioid))
 
             json = serializers.serialize('json', items,
-                                         fields=('titulo', 'asesorado', 'nivel_academico', 'dependencia', 'fecha_examen'),
+                                         fields=('titulo_tesis', 'asesorado', 'nivel_academico', 'dependencia', 'fecha_examen', 'fecha_inicio', 'fecha_fin'),
                                          use_natural_foreign_keys=True)
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
