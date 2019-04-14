@@ -16,39 +16,10 @@ class AsesoriaEstudianteForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Prácticas profesionales'), ('ESTANCIA', 'Estancia de investigación'), ('BECARIO', 'Becario de proyecto de investigación'), ('SERVICIO_SOCIAL', 'Servicio Social')), required=True)
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'), ('PRACTICA', 'Prácticas profesionales'), ('ESTANCIA', 'Estancia de investigación'), ('ASESORIA_TECNICA', 'Asesoría técnica'), ('SERVICIO_SOCIAL', 'Servicio Social')), required=True)
     nivel_academico = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'NIVEL_ACADEMICO', ), required=True)
-    programa_licenciatura = forms.ModelChoiceField(
-        required=False,
-        queryset=ProgramaLicenciatura.objects.all(),
-        label="Programa de licenciatura",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProgramaLicenciatura.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    programa_maestria = forms.ModelChoiceField(
-        required=False,
-        queryset=ProgramaMaestria.objects.all(),
-        label="Programa de mestria",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProgramaMaestria.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    programa_doctorado = forms.ModelChoiceField(
-        required=False,
-        queryset=ProgramaDoctorado.objects.all(),
-        label="Programa de doctorado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProgramaDoctorado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+
     beca = forms.ModelChoiceField(
         required=False,
         queryset=Beca.objects.all(),
