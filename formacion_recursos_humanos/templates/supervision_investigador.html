@@ -26,9 +26,9 @@
         </div>
     </div>
     </p>
-    <p><strong>Disciplina:</strong>
+    <p><strong>Título de posdoctoral o de cátedra:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Disciplina a la que pertenece el investigador.">
+           title="Título de posdoctoral o de cátedra.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -36,7 +36,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.disciplina }}
+            {{ form.titulo_proyecto }}
         </div>
     </div>
     </p>
@@ -50,7 +50,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -165,78 +165,7 @@
         </div>
     </div>
     </p>
-    <p><strong>Articulos:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Artículos que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.articulos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los artículos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Libros:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Libros que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.libros }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los libros.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Capítulos en libros de investigación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Capítulos en libros de investigación, que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.capitulos_libros }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los capítulos en libros de investigación.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un capítulo en libro de investigación nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -265,9 +194,9 @@
         </div>
     </div>
     </p>
-    <p><strong>Disciplina:</strong>
+    <p><strong>Título de posdoctoral o de cátedra:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Disciplina a la que pertenece el investigador.">
+           title="Título de posdoctoral o de cátedra.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -275,7 +204,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.disciplina }}
+            {{ form.titulo_proyecto }}
         </div>
     </div>
     </p>
@@ -289,7 +218,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+            {{ form.institucion2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales al nombre de la institución.">
@@ -404,76 +333,5 @@
         </div>
     </div>
     </p>
-    <p><strong>Articulos:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Artículos que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.articulos }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los artículos.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/articulos-cientificos/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un artículo nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Libros:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Libros que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.libros }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los libros.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un libro nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Capítulos en libros de investigación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Capítulos en libros de investigación, que se desprendan de la colaboración de la estancia postdoctoral. al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.capitulos_libros }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los capítulos en libros de investigación.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/investigacion/capitulos-libros-investigacion/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un capítulo en libro de investigación nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
+
 {% endblock %}

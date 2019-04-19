@@ -50,16 +50,14 @@ class AsesoriaEstudiante(models.Model):
 class SupervisionInvestigadorPostDoctoral(models.Model):
     investigador = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_investigador',
                                      on_delete=models.DO_NOTHING)
-    disciplina = models.CharField(max_length=200)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    titulo_proyecto = models.CharField(max_length=200)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    articulos = models.ManyToManyField(ArticuloCientifico, blank=True)
-    libros = models.ManyToManyField(LibroInvestigacion, blank=True)
-    capitulos_libros = models.ManyToManyField(CapituloLibroInvestigacion, blank=True)
+
     usuario = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_usuario',
                                 on_delete=models.DO_NOTHING)
 
