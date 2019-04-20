@@ -163,9 +163,9 @@ class SupervisionInvestigadorPostDoctoralContext:
 
 
 class DesarrolloGrupoInvestigacionInternoContext:
-    obj = 'grupo de investigación'
-    objs = 'grupos de investigación'
-    Objs = 'Grupos de investigación'
+    obj = 'grupo de investigación interno'
+    objs = 'grupos de investigación internos'
+    Objs = 'Grupos de investigación interno'
     url_seccion = 'grupos-investigacion-internos'
     usuarios = True
 
