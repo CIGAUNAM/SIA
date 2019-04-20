@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Editorial, Evento, Libro, Revista, Indice, InstitucionSimple
+from nucleo.models import User, Editorial, Evento, Pais, TipoEvento, Libro, Revista, Indice, InstitucionSimple
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
@@ -91,20 +91,46 @@ class Traduccion(models.Model):
         verbose_name_plural = 'Reseñas de libros'
 
 
-class OrganizacionEventoAcademico(models.Model):
-    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
-    numero_ponentes = models.PositiveIntegerField()
-    numero_asistentes = models.PositiveIntegerField()
-    ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_academico_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
-    comite_organizador = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
-    ayudantes = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_ayudantes', verbose_name='Ayudantes')
-    apoyo_tecnico = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
+class EventoDifusion(models.Model):
+    evento_nombre = models.CharField(max_length=255)
+    evento_tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
+    evento_fecha_inicio = models.DateField()
+    evento_fecha_fin = models.DateField()
+    evento_pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    evento_ciudad = models.CharField(max_length=255)
+    evento_ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
+    evento_numeroponentes = models.PositiveIntegerField()
+    evento_numeroasistentes = models.PositiveIntegerField()
 
     def __str__(self):
-        return "{}, {}, {}, {}, {}".format(self.evento.tipo, self.evento, self.evento.fecha_inicio,
-                                               self.evento.ciudad, self.evento.pais.nombre)
+        return self.evento_nombre
+
+    def natural_key(self):
+        return self.evento_nombre
+
+    def get_absolute_url(self):
+        return reverse('eventodifusion_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        unique_together = ['evento_fecha_inicio', 'evento_nombre']
+
+
+class OrganizacionEventoAcademico(models.Model):
+    evento2 = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+    tipo_participacion = models.CharField(
+        max_length=50,
+        choices=(('', '-------'), ('COORDINADOR', 'Coordinador general'), ('COMITE_ORGANIZADOR', 'Comité organizador'),
+                 ('APOYO_TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro tipo de participaciòn')))
+    tipo_participacion_otro = models.CharField(max_length=254, blank=True, null=True)
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_academico_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
+    comite_organizador = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
+    apoyo_tecnico = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
+
+
+    def __str__(self):
+        return "{}, {}".format(self.evento2, self.tipo_participacion)
 
     def get_absolute_url(self):
         return reverse('organizacion_evento_academico_detalle', kwargs={'pk': self.pk})

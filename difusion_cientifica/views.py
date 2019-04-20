@@ -159,26 +159,21 @@ class OrganizacionEventoAcademicoJSON(View):
                 items = OrganizacionEventoAcademico.objects.filter(Q(coordinador_general__id__exact=usuarioid) | Q(comite_organizador__id__exact=usuarioid) | Q(ayudantes__id__exact=usuarioid) | Q(apoyo_tecnico__id__exact=usuarioid)).distinct()
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('evento', 'responsabilidad', 'ambito'))
-
-            json = json.replace('INSTITUCIONAL', 'Institucional')
-            json = json.replace('REGIONAL', 'Regional')
-            json = json.replace('INTERNACIONAL', 'Internacional')
-            json = json.replace('NACIONAL', 'Nacional')
+                                         fields=('evento2', 'tipo_participacion'))
 
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class OrganizacionEventoAcademicoLista(ObjectCreateVarMixin, View):
+class OrganizacionEventoAcademicoLista(ObjectCreateMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto
     template_name = 'organizacion_evento_academico.html'
 
 
-class OrganizacionEventoAcademicoDetalle(ObjectUpdateVarMixin, View):
+class OrganizacionEventoAcademicoDetalle(ObjectUpdateMixin, View):
     form_class = OrganizacionEventoAcademicoForm
     model = OrganizacionEventoAcademico
     aux = OrganizacionEventoAcademicoContext.contexto
