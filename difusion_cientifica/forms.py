@@ -129,7 +129,7 @@ class TraduccionForm(forms.ModelForm):
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
-    evento = forms.ModelChoiceField(
+    evento2 = forms.ModelChoiceField(
         queryset=Evento.objects.all(),
         label="Evento",
         widget=ModelSelect2Widget(
@@ -138,29 +138,18 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    numero_ponentes = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    numero_asistentes = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
-    coordinador_general = forms.ModelChoiceField(
-        required=False,
-        queryset=User.objects.all(),
-        label="Coordinador general",
-        widget=ModelSelect2Widget(
-            search_fields=['first_name__icontains', 'last_name__icontains'],
-            queryset=User.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    tipo_participacion = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('COORDINADOR', 'Coordinador general'), ('COMITE_ORGANIZADOR', 'Comité organizador'),
+                 ('APOYO_TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro tipo de participaciòn')), required=True)
+    tipo_participacion_otro = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}),
+                                              required=False, label='Otro tipo de participación')
+
 
     class Meta:
         model = OrganizacionEventoAcademico
-        exclude = []
-        widgets = {
-            'comite_organizador': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'ayudantes': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'apoyo_tecnico': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        }
+        exclude = ['usuario', ]
+
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
