@@ -179,6 +179,11 @@
                             <i class="fa fa-circle-o"></i> Apoyo técnico en <br/>
                             <i class="fa fa-none"></i> actividades de servicio</a>
                     </li>
+                    <li{% if aux.url_seccion == 'desarrollos-tecnologicos' %} class="active"{% endif %}>
+                        <a href="/desarrollos-tecnologicos/desarrollos-tecnologicos/">
+                            <i class="fa fa-circle-o"></i> Desarrollos tecnológicos
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -389,19 +394,19 @@
                     <i class="fa fa-circle-o"></i> Dirección de tesis
                 </a>
             </li>
-        <li{% if aux.url_seccion == 'comites-tutorales' %} class="active"{% endif %}>
+            <li{% if aux.url_seccion == 'comites-tutorales' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-tutorales">
-                    <i class="fa fa-circle-o"></i> Comités tutorales para<br />
+                    <i class="fa fa-circle-o"></i> Comités tutorales para<br/>
                     <i class="fa fa-none"></i> estudiantes de doctorado
                 </a>
             </li>
-        <li{% if aux.url_seccion == 'comites-candidatura-doctoral' %} class="active"{% endif %}>
+            <li{% if aux.url_seccion == 'comites-candidatura-doctoral' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-candidatura-doctoral">
-                    <i class="fa fa-circle-o"></i> Comités de examen de<br />
+                    <i class="fa fa-circle-o"></i> Comités de examen de<br/>
                     <i class="fa fa-none"></i> candidatura doctoral
                 </a>
             </li>
-        <li{% if aux.url_seccion == 'comites-sinodales' %} class="active"{% endif %}>
+            <li{% if aux.url_seccion == 'comites-sinodales' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/comites-sinodales">
                     <i class="fa fa-circle-o"></i> Comités de sinodal
                 </a>
@@ -409,15 +414,15 @@
             <li{% if aux.url_seccion == 'asesorias' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/asesorias">
                     <i class="fa fa-circle-o"></i> Asesor en residencias,<br/>
-                    <i class="fa fa-none"></i> prácticas, estancias o<br />
+                    <i class="fa fa-none"></i> prácticas, estancias o<br/>
                     <i class="fa fa-none"></i> social
                 </a>
             </li>
             <li{% if aux.url_seccion == 'supervision-investigadores-postdoctorales' %} class="active"{% endif %}>
                 <a href="/formacion-recursos-humanos/supervision-investigadores-postdoctorales/">
-                    <i class="fa fa-circle-o"></i> Supervisión de <br />
-                    <i class="fa fa-none"></i> investigadores <br />
-                    <i class="fa fa-none"></i> posdoctorales o cátedras <br />
+                    <i class="fa fa-circle-o"></i> Supervisión de <br/>
+                    <i class="fa fa-none"></i> investigadores <br/>
+                    <i class="fa fa-none"></i> posdoctorales o cátedras <br/>
                     <i class="fa fa-none"></i> CONACyT
                 </a>
             </li>
@@ -428,22 +433,6 @@
                 </a>
             </li>
 
-        </ul>
-    </li>
-
-    <li class="treeview{% if aux.url_categoria == "desarrollos-tecnologicos" %} active{% endif %}">
-        <a href="#">
-            <i class="fa fa-cogs fa-fw"></i> <span>Desarrollos tecnológicos</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li{% if aux.url_seccion == 'desarrollos-tecnologicos' %} class="active"{% endif %}>
-                <a href="/desarrollos-tecnologicos/desarrollos-tecnologicos">
-                    <i class="fa fa-circle-o"></i> Desarrollos tecnológicos
-                </a>
-            </li>
         </ul>
     </li>
 
