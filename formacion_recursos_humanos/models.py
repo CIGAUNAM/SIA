@@ -77,7 +77,6 @@ class DesarrolloGrupoInvestigacionInterno(models.Model):
     nombre = models.CharField(max_length=255)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
-    grado_consolidacion = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
     usuarios = models.ManyToManyField(User)
 
