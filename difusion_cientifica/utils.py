@@ -235,8 +235,6 @@ class OrganizacionEventoAcademicoContext:
     contexto['tabla_mios'] = tabla_mios
 
 
-
-
 class ParticipacionEventoAcademicoContext:
     obj = 'participación en evento académico'
     objs = 'participaciones en eventos académicos'
