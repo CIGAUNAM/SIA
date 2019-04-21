@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^capitulos-libros-divulgacion/(?P<pk>[\w\-]+)/$', CapituloLibroDivulgacionDetalle.as_view(), name='capitulo_libro_divulgacion_detalle'),
 
     url(r'^organizacion-eventos-divulgacion/json/', OrganizacionEventoDivulgacionJSON.as_view(), name='organizacion_evento_divulgacion_lista__json'),
-    url(r'^organizacion-eventos-divulgacion/json-otros/', OrganizacionEventoDivulgacionJSON.as_view(otros=True), name='organizacion_evento_divulgacion_lista_otros__json'),
+    #url(r'^organizacion-eventos-divulgacion/json-otros/', OrganizacionEventoDivulgacionJSON.as_view(otros=True), name='organizacion_evento_divulgacion_lista_otros__json'),
     url(r'^organizacion-eventos-divulgacion/$', OrganizacionEventoDivulgacionLista.as_view(), name='organizacion_evento_divulgacion_lista'),
     url(r'^organizacion-eventos-divulgacion/(?P<pk>[\w\-]+)/eliminar$', OrganizacionEventoDivulgacionEliminar.as_view(), name='organizacion_evento_divulgacion_eliminar'),
     url(r'^organizacion-eventos-divulgacion/(?P<pk>[\w\-]+)/$', OrganizacionEventoDivulgacionDetalle.as_view(), name='organizacion_evento_divulgacion_detalle'),
