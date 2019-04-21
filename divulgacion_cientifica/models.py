@@ -28,7 +28,7 @@ class ArticuloDivulgacion(models.Model):
     url = models.URLField(blank=True)
     solo_electronico = models.BooleanField(default=False)
     revista = models.ForeignKey(RevistaDivulgacion, related_name='articulodivulgacion_revista', blank=True, null=True, on_delete=models.DO_NOTHING)
-    revista_divulgacion = models.ForeignKey(RevistaDivulgacion, related_name='articulodivulgacion_revistadivulgacion', blank=True, null=True, on_delete=models.DO_NOTHING)
+    #revista_divulgacion = models.ForeignKey(RevistaDivulgacion, related_name='articulodivulgacion_revistadivulgacion', blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha = models.DateField(null=True, blank=True)
     fecha_enviado = models.DateField(null=True, blank=True)
     fecha_aceptado = models.DateField(null=True, blank=True)
