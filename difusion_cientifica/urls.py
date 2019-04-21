@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^traducciones/(?P<pk>[\w\-]+)/$', TraduccionDetalle.as_view(), name='traduccion_detalle'),
 
     url(r'^organizacion-eventos-academicos/json/', OrganizacionEventoAcademicoJSON.as_view(), name='organizacion_evento_academico_lista__json'),
-    url(r'^organizacion-eventos-academicos/json-otros/', OrganizacionEventoAcademicoJSON.as_view(otros=True), name='organizacion_evento_academico_lista_otros__json'),
+    #url(r'^organizacion-eventos-academicos/json-otros/', OrganizacionEventoAcademicoJSON.as_view(otros=True), name='organizacion_evento_academico_lista_otros__json'),
     url(r'^organizacion-eventos-academicos/$', OrganizacionEventoAcademicoLista.as_view(), name='organizacion_evento_academico_lista'),
     url(r'^organizacion-eventos-academicos/(?P<pk>[\w\-]+)/eliminar$', OrganizacionEventoAcademicoEliminar.as_view(), name='organizacion_evento_academico_eliminar'),
     url(r'^organizacion-eventos-academicos/(?P<pk>[\w\-]+)/$', OrganizacionEventoAcademicoDetalle.as_view(), name='organizacion_evento_academico_detalle'),
