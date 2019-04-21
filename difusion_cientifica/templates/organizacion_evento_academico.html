@@ -10,7 +10,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.evento }}
+            {{ form.evento2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales del evento.">
@@ -26,163 +26,50 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>Número de ponentes:</strong>
+    <p><strong>Tipo de participación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de ponentes que participaron en el evento.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.numero_ponentes }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Número de asistentes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de personas que asistieron al evento.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.numero_asistentes }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Ámbito:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Tipo de participación."><i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ambito }}
+            {{ form.tipo_participacion }}
         </div>
     </div>
     </p>
-    <p><strong>Coordinador general:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Coordinador general, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.coordinador_general }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+    <div id="d_tipo_participacion_otro">
+        <p><strong>Otro tipo de participación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Otro tipo de participación, en caso de seleccionar 'otro' en el campo anterior, especificar el tipo aquí.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.tipo_participacion_otro }}
             </div>
         </div>
+        </p>
     </div>
-    </p>
-    <p><strong>Comité organizador:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.comite_organizador }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un organizador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Ayudantes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.ayudantes }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un ayudante nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Apoyo técnico:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.apoyo_tecnico }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un técnico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
 
     <script>
-        $("#id_comite_organizador").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
+        var id_tipo_participacion = $("#id_tipo_participacion");
+        var id_tipo_participacion_otro = $("#id_tipo_participacion_otro");
+        var d_tipo_participacion_otro = $("#d_tipo_participacion_otro");
 
-        $("#id_ayudantes").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
+        d_tipo_participacion_otro.hide();
 
-        $("#id_apoyo_tecnico").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
+        id_tipo_participacion.on('change', function (evt) {
+            if (id_tipo_participacion.val() === 'OTRO') {
+                d_tipo_participacion_otro.show('slow');
+                id_tipo_participacion_otro.attr("required", "true");
+            } else {
+                id_tipo_participacion_otro.val(null).trigger('change');
+                id_tipo_participacion_otro.attr("required", null);
+                d_tipo_participacion_otro.hide('slow');
+            }
         });
     </script>
 {% endblock %}
@@ -197,7 +84,7 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.evento }}
+            {{ form.evento2 }}
             <div class="input-group-addon">
                 <a href="#" data-toggle="tooltip" data-placement="left"
                    title="Mostrar los detalles adicionales del evento.">
@@ -213,163 +100,59 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
-    <p><strong>Número de ponentes:</strong>
+    <p><strong>Tipo de participación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de ponentes que participaron en el evento.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.numero_ponentes }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Número de asistentes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Número de personas que asistieron al evento.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
-            {{ form.numero_asistentes }}
-        </div>
-    </div>
-    </p>
-    <p><strong>Ámbito:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Tipo de participación."><i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ambito }}
+            {{ form.tipo_participacion }}
         </div>
     </div>
     </p>
-    <p><strong>Coordinador general:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Coordinador general, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.coordinador_general }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un coordinador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+    <div id="d_tipo_participacion_otro">
+        <p><strong>Otro tipo de participación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Otro tipo de participación, en caso de seleccionar 'otro' en el campo anterior, especificar el tipo aquí.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.tipo_participacion_otro }}
             </div>
         </div>
+        </p>
     </div>
-    </p>
-    <p><strong>Comité organizador:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.comite_organizador }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un organizador nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Ayudantes:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.ayudantes }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un ayudante nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Apoyo técnico:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores, al escribir el inicio del nombre o apellido se filtran
-                            los resultados que coincidan con la busqueda.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.apoyo_tecnico }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los autores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un técnico nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
 
     <script>
-        $("#id_comite_organizador").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
+        var id_tipo_participacion = $("#id_tipo_participacion");
+        var id_tipo_participacion_otro = $("#id_tipo_participacion_otro");
+        var d_tipo_participacion_otro = $("#d_tipo_participacion_otro");
 
-        $("#id_ayudantes").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
+        d_tipo_participacion_otro.hide();
 
-        $("#id_apoyo_tecnico").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
+        if (id_tipo_participacion.val() === 'OTRO') {
+            d_tipo_participacion_otro.show('slow');
+            id_tipo_participacion_otro.attr("required", "true");
+        } else {
+            id_tipo_participacion_otro.val(null).trigger('change');
+            id_tipo_participacion_otro.attr("required", null);
+            d_tipo_participacion_otro.hide('slow');
+        }
+
+        id_tipo_participacion.on('change', function (evt) {
+            if (id_tipo_participacion.val() === 'OTRO') {
+                d_tipo_participacion_otro.show('slow');
+                id_tipo_participacion_otro.attr("required", "true");
+            } else {
+                id_tipo_participacion_otro.val(null).trigger('change');
+                id_tipo_participacion_otro.attr("required", null);
+                d_tipo_participacion_otro.hide('slow');
+            }
         });
     </script>
 {% endblock %}

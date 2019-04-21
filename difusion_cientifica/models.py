@@ -128,7 +128,6 @@ class OrganizacionEventoAcademico(models.Model):
     comite_organizador = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
     apoyo_tecnico = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
 
-
     def __str__(self):
         return "{}, {}".format(self.evento2, self.tipo_participacion)
 

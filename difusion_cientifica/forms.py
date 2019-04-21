@@ -145,7 +145,6 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
     tipo_participacion_otro = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}),
                                               required=False, label='Otro tipo de participación')
 
-
     class Meta:
         model = OrganizacionEventoAcademico
         exclude = ['usuario', ]
