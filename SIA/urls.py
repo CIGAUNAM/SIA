@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView, LogoutView
 
 #from nucleo.views import inicio
 from nucleo.views import *
@@ -29,8 +30,8 @@ from SIA.views_reportes import *
 
 
 urlpatterns = [
-    url(r'^login/$', auth_views.login, {'template_name': 'adminlte/login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, {'template_name': 'adminlte/login.html'}, name='logout'),
+    url(r'^login/$', LoginView.as_view(), {'template_name': 'adminlte/login.html'}, name='login'),
+    url(r'^logout/$', LogoutView.as_view(), {'template_name': 'adminlte/login.html'}, name='logout'),
 
     #url(r'^password_change/$', auth_views.password_change, name='password_change'),
     #url(r'^password_change/done/$', auth_views.password_change_done, name='password_change_done'),
