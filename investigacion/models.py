@@ -204,7 +204,6 @@ class MapaArbitrado(models.Model):
     class Meta:
         verbose_name = "Mapa arbitrado"
         verbose_name_plural = "Mapas arbitrados"
-        ordering = ['fecha', 'titulo']
 
 
 class PublicacionTecnica(models.Model):
