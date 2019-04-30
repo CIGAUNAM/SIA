@@ -217,3 +217,39 @@ THUMBNAIL_PROCESSORS = (
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
+
+"""
+
+CREATE TABLE `divulgacion_cientifica_eventodivulgacion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `evento_nombre` varchar(255) NOT NULL,
+  `evento_fecha_inicio` date NOT NULL,
+  `evento_fecha_fin` date NOT NULL,
+  `evento_ciudad` varchar(255) NOT NULL,
+  `evento_ambito` varchar(20) NOT NULL,
+  `evento_numeroponentes` int(10) unsigned NOT NULL,
+  `evento_numeroasistentes` int(10) unsigned NOT NULL,
+  `evento_pais_id` int(11) NOT NULL,
+  `evento_tipo_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+
+        
+            migrations.CreateModel(
+            name='EventoDivulgacion',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('evento_nombre', models.CharField(max_length=255)),
+                ('evento_fecha_inicio', models.DateField()),
+                ('evento_fecha_fin', models.DateField()),
+                ('evento_ciudad', models.CharField(max_length=255)),
+                ('evento_ambito', models.CharField(choices=[('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')], max_length=20)),
+                ('evento_numeroponentes', models.PositiveIntegerField()),
+                ('evento_numeroasistentes', models.PositiveIntegerField()),
+                ('evento_pais', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='nucleo.Pais')),
+                ('evento_tipo', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='nucleo.TipoEvento')),
+            ],
+        ),
+        
+
+"""

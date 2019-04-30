@@ -249,12 +249,10 @@ class InstitucionSimple(models.Model):
         return reverse('institucion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        unique_together = ('institucion_nombre', 'institucion_pais')
+        unique_together = ('institucion_nombre', 'institucion_pais', 'institucion_ciudad')
         ordering = ['institucion_nombre']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
-
-
 
 
 class Institucion(models.Model):
@@ -277,12 +275,9 @@ class Institucion(models.Model):
         return reverse('institucion_detalle_mal', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['nombre_institucion']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
-
-
-
+        ordering = ['-id']
 
 
 class Dependencia(models.Model):
