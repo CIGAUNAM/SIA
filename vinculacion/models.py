@@ -131,7 +131,7 @@ class ConvenioOtraEntidad(models.Model):
 class ServicioAsesoriaExterna(models.Model):
     nombre_servicio = models.CharField(max_length=254)
     descripcion = models.TextField(blank=True)
-    entidades = models.ManyToManyField(Dependencia, blank=True, null=True)
+    entidades = models.ManyToManyField(Dependencia, blank=True)
     institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)

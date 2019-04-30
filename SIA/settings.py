@@ -63,9 +63,9 @@ INSTALLED_APPS = [
     'django.contrib.admin',
 
     'nucleo.apps.NucleoConfig',
+    'investigacion.apps.InvestigacionConfig',
     'formacion_academica.apps.FormacionAcademicaConfig',
     'experiencia_profesional.apps.ExperienciaLaboralConfig',
-    'investigacion.apps.InvestigacionConfig',
     'difusion_cientifica.apps.DifusionCientificaConfig',
     'divulgacion_cientifica.apps.DivulgacionCientificaConfig',
     'vinculacion.apps.VinculacionConfig',
