@@ -28,7 +28,7 @@ class CursoEspecializacion(models.Model):
     fecha_fin = models.DateField('Fecha de finalización', blank=True, null=True)
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
 
     def __str__(self):
@@ -48,7 +48,7 @@ class Licenciatura(models.Model):
     titulo_obtenido = models.CharField(max_length=255)
     carrera = models.ForeignKey(ProgramaLicenciatura, on_delete=models.DO_NOTHING, null=True, blank=True)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True,)
-    institucion = models.ForeignKey(InstitucionSimple, null=True, blank=True, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
     #fecha_inicio = models.DateField('Fecha de inicio de licenciatura')
     #fecha_fin = models.DateField('Fecha de terminación de licenciatura')
@@ -73,7 +73,7 @@ class Maestria(models.Model):
     titulo_obtenido = models.CharField(max_length=255)
     programa = models.ForeignKey(ProgramaMaestria, on_delete=models.DO_NOTHING, null=True, blank=True,)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True,)
-    institucion = models.ForeignKey(InstitucionSimple, null=True, blank=True, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
     #tesis_doc = models.FileField(blank=True)
     #tesis_url = models.URLField(blank=True)
@@ -99,7 +99,7 @@ class Doctorado(models.Model):
     programa = models.ForeignKey(ProgramaDoctorado, on_delete=models.DO_NOTHING, null=True, blank=True)
     #descripcion = models.TextField(verbose_name='Descripición', blank=True)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, null=True, blank=True, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
     #tesis_doc = models.FileField(blank=True)
     #tesis_url = models.URLField(blank=True)
@@ -128,7 +128,7 @@ class PostDoctorado(models.Model):
     #descripcion = models.TextField(verbose_name='Descripición', blank=True)
     #area_conocimiento = models.ForeignKey(AreaConocimiento, related_name='postdoctorado_area_conocimiento', verbose_name='Área de conocimiento', on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, blank=True, null=True)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING, blank=True, null=True)
     entidad_financiamiento = models.CharField(max_length=20, blank=True, null=True, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('SRE', 'SRE'), ('DGAPA', 'DGAPA'), ('OTRA', 'Otra')))
     otra_entidad_financiamiento = models.CharField(max_length=160, blank=True, null=True)
@@ -143,5 +143,5 @@ class PostDoctorado(models.Model):
         return reverse('postdoctorado_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['fecha_fin', 'institucion']
+        ordering = ['fecha_fin', 'institucion2']
         unique_together = ['titulo_proyecto', 'usuario']
