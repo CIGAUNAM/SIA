@@ -21,10 +21,10 @@ class ExperienciaProfesionalJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = ExperienciaProfesional.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', experiencias,
+            json = serializers.serialize('json2', experiencias,
                                          fields=('cargo2', 'nombramiento', 'fecha_inicio', 'institucion2'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -59,10 +59,10 @@ class LineaInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = LineaInvestigacion.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', experiencias,
+            json = serializers.serialize('json2', experiencias,
                                          fields=('linea_investigacion', 'fecha_inicio', 'dependencia'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -96,10 +96,10 @@ class CapacidadPotencialidadJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = CapacidadPotencialidad.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', experiencias,
+            json = serializers.serialize('json2', experiencias,
                                          fields=('nombre', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 

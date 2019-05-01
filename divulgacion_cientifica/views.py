@@ -20,9 +20,9 @@ class ArticuloDivulgacionJSON(View):
                 items = ArticuloDivulgacion.objects.all().exclude(autores__id__exact=usuarioid)
             else:
                 items = ArticuloDivulgacion.objects.filter(autores__id__exact=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'status', 'revista'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -62,9 +62,9 @@ class CapituloLibroDivulgacionJSON(View):
             else:
                 items = CapituloLibroDivulgacion.objects.filter(autores__id__exact=usuarioid)
 
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -99,10 +99,10 @@ class OrganizacionEventoDivulgacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             items = OrganizacionEventoDivulgacion.objects.filter(usuario__id=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('evento2', 'tipo_participacion'))
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -140,7 +140,7 @@ class ParticipacionEventoDivulgacionJSON(View):
                 items = ParticipacionEventoDivulgacion.objects.exclude(autores=usuarioid)
             else:
                 items = ParticipacionEventoDivulgacion.objects.filter(autores=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('evento', 'ambito'))
 
             json = json.replace('INSTITUCIONAL', 'Institucional')
@@ -153,7 +153,7 @@ class ParticipacionEventoDivulgacionJSON(View):
             json = json.replace('AYUDANTE', 'Ayudante')
             json = json.replace('TECNICO', 'Apoyo técnico')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -187,7 +187,7 @@ class ProgramaRadioTelevisionInternetJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ProgramaRadioTelevisionInternet.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('tema', 'fecha', 'actividad', 'medio_divulgacion'))
 
             json = json.replace('PRODUCCION', 'Producciòn')
@@ -195,7 +195,7 @@ class ProgramaRadioTelevisionInternetJSON(View):
             json = json.replace('ENTREVISTA', 'Entrevista')
             json = json.replace('OTRA', 'Otra')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -238,7 +238,7 @@ class LibroDivulgacionJSON(View):
                 items = Libro.objects.filter(tipo='DIVULGACION').filter(
                     Q(autores__id__exact=usuarioid) | Q(compiladores__id__exact=usuarioid) | Q(
                         agradecimientos__id__exact=usuarioid))
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial_text', 'ciudad_text', 'status', 'fecha_enviado',
                                                  'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
@@ -257,7 +257,7 @@ class LibroDivulgacionJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 

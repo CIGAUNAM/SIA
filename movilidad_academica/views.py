@@ -37,7 +37,7 @@ class MovilidadJSON(View):
                 json += '}}, '
             json += ']'
             json = json.replace('}}, ]', '}}]')
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -71,7 +71,7 @@ class MovilidadLista(ObjectCreateMixin, View):
                      '"iDisplayLength": 15,\n' \
                      '"ajax": {\n' \
                      '"processing": true,\n' \
-                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json/",\n' \
+                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json2/",\n' \
                       '"dataSrc": ""\n' \
                       '},\n' \
                       '"columns": [\n' \
@@ -135,7 +135,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
                      '"iDisplayLength": 15,\n' \
                      '"ajax": {\n' \
                      '"processing": true,\n' \
-                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json/",\n' \
+                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json2/",\n' \
                      '"dataSrc": ""\n' \
                      '},\n' \
                      '"columns": [\n' \
@@ -189,10 +189,10 @@ class InvitadoMovilidadJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = InvitadoMovilidad.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items,
+            json = serializers.serialize('json2', items,
                                          fields=('invitado', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -227,10 +227,10 @@ class EstanciaAcademicaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = EstanciaAcademica.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items,
+            json = serializers.serialize('json2', items,
                                          fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -265,10 +265,10 @@ class SabaticoMovilidadJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = SabaticoMovilidad.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items,
+            json = serializers.serialize('json2', items,
                                          fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 

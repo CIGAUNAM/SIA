@@ -5303,7 +5303,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     **
 	     > Parameters
 	     **
-	     - json (array)
+	     - json2 (array)
 	     = (object) resulting set of imported elements
 	     > Usage
 	     | paper.add([
@@ -5372,7 +5372,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     > Parameters
 	     **
 	     - token (string) string to format
-	     - json (object) object which properties will be used as a replacement
+	     - json2 (object) object which properties will be used as a replacement
 	     = (string) formated string
 	     > Usage
 	     | // this will draw a rectangular shape equivalent to "M10,20h40v50h-40z"

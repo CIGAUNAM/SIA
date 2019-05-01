@@ -19,9 +19,9 @@ class MemoriaInExtensoJSON(View):
                 items = MemoriaInExtenso.objects.all().exclude(autores__id__exact=usuarioid)
             else:
                 items = MemoriaInExtenso.objects.filter(autores__id__exact=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'evento'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -61,7 +61,7 @@ class ResenaJSON(View):
             else:
                 items = Resena.objects.filter(autores__id__exact=usuarioid)
 
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'tipo', 'libro_resenado', 'articulo_resenado', 'revista_publica', 'fecha'))
             json = json.replace('"libro_resenado": null, ', '')
             json = json.replace('"articulo_resenado": null, ', '')
@@ -70,7 +70,7 @@ class ResenaJSON(View):
             json = json.replace('articulo_resenado', 'publicacion_resenada')
             json = json.replace('libro_resenado', 'publicacion_resenada')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -109,7 +109,7 @@ class TraduccionJSON(View):
             else:
                 items = Traduccion.objects.filter(autores__id__exact=usuarioid)
 
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'tipo', 'libro', 'articulo', 'fecha'))
             json = json.replace('"libro": null, ', '')
             json = json.replace('"articulo": null, ', '')
@@ -118,7 +118,7 @@ class TraduccionJSON(View):
             json = json.replace('articulo', 'publicacion')
             json = json.replace('libro', 'publicacion')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -153,10 +153,10 @@ class OrganizacionEventoAcademicoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             items = OrganizacionEventoAcademico.objects.filter(usuario__id=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('evento2', 'tipo_participacion'))
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -196,7 +196,7 @@ class ParticipacionEventoAcademicoJSON(View):
             else:
                 items = ParticipacionEventoAcademico.objects.filter(autores__id__exact=usuarioid)
 
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'evento', 'ambito'))
 
             json = json.replace('COORDINADOR', 'Coordinador general')
@@ -210,7 +210,7 @@ class ParticipacionEventoAcademicoJSON(View):
             json = json.replace('NACIONAL', 'Nacional')
 
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
