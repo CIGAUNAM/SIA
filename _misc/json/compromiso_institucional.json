@@ -1,2 +1,1964 @@
 [
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 1,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 2,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de jurado calificador"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 3,
+    "fields": {
+      "comisioninstitucional_nombre": "Comit\u00e9 de evaluaci\u00f3n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 4,
+    "fields": {
+      "comisioninstitucional_nombre": "\u00c1rbitro revisor"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 5,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 6,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del subcomit\u00e9 de ingreso al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 7,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la comisi\u00f3n del CIGA- UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 8,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la comisi\u00f3n para la elaboraci\u00f3n del examen para el  ingreso a  la Maestr\u00eda en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 9,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la comisi\u00f3n para la elaboraci\u00f3n del examen y la Gu\u00eda de estudios para el  ingreso a  la Maestr\u00eda en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 10,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la Comisi\u00f3n para la adecuaci\u00f3n del Plan de estudios de la Maestr\u00eda y Doctorado del Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 11,
+    "fields": {
+      "comisioninstitucional_nombre": "Responsable de la comisi\u00f3n para la propuesta del Campo de Conocimiento en Manejo Integrado del Paisaje en la Maestr\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 12,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n dictaminadora del Posgrado en Geograf\u00eda para el Ingreso al Programa de Posgrado de doctorado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 13,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictamen de los mapas correspondientes al Grupo tem\u00e1tico de Regiones Ambientales biof\u00edsicas de M\u00e9xico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 14,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictamen de los mapas correspondientes al  Grupo tem\u00e1tico de Inundaciones de la Secci\u00f3n Naturaleza y Ambiente del Nuevo Atlas Nacional de M\u00e9xico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 15,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Consejo de expertos IX, Suelos,  del Nuevo Atlas Nacional de Cuba"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 16,
+    "fields": {
+      "comisioninstitucional_nombre": "Coordinador Acad\u00e9mico de la Especialidad en Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 17,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador del libro: Contribuciones para el desarrollo sostenible de la Cuenca del Lago de Cuitzeo, Michoac\u00e1n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 18,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del jurado calificador del Programa de formaci\u00f3n y capacitaci\u00f3n de t\u00e9cnicos comunitarios 2011 (PROFORTEC)"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 19,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del comit\u00e9 de evaluaci\u00f3n del concurso de oposici\u00f3n abierto para ocupar una plaza de T\u00e9cnico Titular A. Instituto de Geograf\u00eda , UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 20,
+    "fields": {
+      "comisioninstitucional_nombre": "\u00c1rbitro revisor de las ponencias de la XIX Reuni\u00f3n Nacional SELPER - M\u00e9xico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 21,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador del libro: La innovaci\u00f3n tecnol\u00f3gica como soporte para la toma de decisiones en el desarrollo territorial"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 22,
+    "fields": {
+      "comisioninstitucional_nombre": "\u00c1rbitro revisor de las ponencias de la XIII Conferencia Iberoamericana de Sistemas de Informaci\u00f3n Geogr\u00e1fica (CONFIBSIG)"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 23,
+    "fields": {
+      "comisioninstitucional_nombre": "\u00c1rbitro revisor del art\u00edculo Assessment of Debris Flow Hazard Using Bayesian Network"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 24,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador del libro: Temas Selectos de Geom\u00e1tica: m\u00e9todos y aplicaciones"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 25,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro dictaminador de proyectos del Comit\u00e9 Acad\u00e9mico del Observatorio de Visualizaci\u00f3n de la UNAM (IXTLI), en representaci\u00f3n del Consejo de \u00c1rea de las Ciencias Sociales"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 26,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador del proyecto: Semantic mapping between different conceptualizations in geospatial domain"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 27,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador del proyecto: Evaluaci\u00f3n de t\u00e9cnicas de percepci\u00f3n remota usando im\u00e1genes satelitales de alta resoluci\u00f3n para la caracterizaci\u00f3n biof\u00edsica de ambientes forestales en la Pen\u00ednsula de Yucat\u00e1n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 28,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador del proyecto: Intercambio de Experiencias sobre Sistemas de Informaci\u00f3n Geogr\u00e1fica M\u00e9xico-EUA"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 29,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del jurado calificador del examen de oposici\u00f3n para Profesor de Asignatura en el \u00c1rea de Ciencias Biol\u00f3gicas, Universidad Aut\u00f3noma Metropolitana"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 30,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador del proyecto:Sistemas de informaci\u00f3n geogr\u00e1fica en el sistema de vigilancia de la calidad de agua de consumo\u201d M\u00e9xico-Cuba, para CONACYT"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 31,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Jurado Calificador para los concursos de oposici\u00f3n de las plazas 69091-70 y 69088-83 en las \u00e1reas de Estudios Ambientales y de Ingenier\u00eda Ambiental, del Centro Tecnol\u00f3gico Arag\u00f3n, ENEP Arag\u00f3n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 32,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador del proyecto: Sistema de informaci\u00f3n ambiental para el estado de Quer\u00e9taro\u201d. Para CONACyT. Referencia: R28828-T"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 33,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador de la revista Investigaciones Geogr\u00e1ficas, en las \u00e1reas de Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 34,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador de la revista Geograf\u00eda y Desarrollo, en el \u00e1rea Sistemas de Informaci\u00f3n Geogr\u00e1fica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 35,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Registro CONACyT de Evaluadores Acreditados (RCEA)"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 36,
+    "fields": {
+      "comisioninstitucional_nombre": "Comentarista en la presentaci\u00f3n de avances de investigaci\u00f3n del Dr. Mart\u00edn S\u00e1nchez Rodr\u00edguez con el titulo Un lugar sin limites. Propuesta de reforma a la Ley de Divisi\u00f3n Municipal del Estado de Michoac\u00e1n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 37,
+    "fields": {
+      "comisioninstitucional_nombre": "Comentarista en la presentaci\u00f3n de avances de investigaci\u00f3n de la Dra. Claudia Espejel Carbajal-Hacia una s\u00edntesis de la historia prehisp\u00e1nica de Michoac\u00e1n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 38,
+    "fields": {
+      "comisioninstitucional_nombre": "Representante del Personal Acad\u00e9mico del CIGA ante el Consejo Acad\u00e9mico de \u00c1reas de Ciencias Sociales"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 39,
+    "fields": {
+      "comisioninstitucional_nombre": "Representante Suplente del Personal Acad\u00e9mico del CIGA ante el Consejo T\u00e9cnico de la investigaci\u00f3n Cient\u00edfica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 40,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Consejo Interno del CIGA"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 41,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la Comisi\u00f3n Evaluadora del Programa PRIDE y del Programa PAIPA"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 42,
+    "fields": {
+      "comisioninstitucional_nombre": "Representante del Personal Acad\u00e9mico del CIGA ante el Consejo T\u00e9cnico de la Investigaci\u00f3n Cient\u00edfica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 43,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la Comisi\u00f3n para los lineamientos a Investigador Titular C del Consejo T\u00e9cnico de la Investigaci\u00f3n Cient\u00edfica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 44,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador de proyectos"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 45,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador del Programa Nacional de Posgrado"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 46,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador ingreso al programa de posgrado de Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 47,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador de proyectos Ciencia b\u00e1sica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 48,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador de proyectos CONACYT-INEGI"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 49,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador de proyectos CONACYT-Problemas Nacionales"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 50,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador de proyectos DGAPA-PAPIIT"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 51,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador de proyectos Sab\u00e1tico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 52,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador de proyectos CONACYT"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 53,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2019-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 54,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2017-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 55,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2016-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 56,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2013-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 57,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2012-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 58,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2011-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 59,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes a la Licenciatura en Ciencias Ambientales, para la convocatoria 2010"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 60,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de moderadores en el Coloquio de Doctorandos en Geograf\u00eda, organizado por el Programa de Posgrado en Geograf\u00eda, en el Centro de Investigaciones en Geograf\u00eda Ambiental"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 61,
+    "fields": {
+      "comisioninstitucional_nombre": "Comit\u00e9 Tutoral en el IV Coloquio de Doctorantes en Urbanismo, celebrado por el Programa de Posgrado en Urbanismo"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 62,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2009"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 63,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n Verificadora del Programa \u201cAgenda desde lo Local\u201d implementada en los municipios del estado de Michoac\u00e1n de manera coordinada entre el Instituto Nacional para el Federalismo y el Desarrollo Municipal, la Secretar\u00eda de Gobernaci\u00f3n y el Centro Esta"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 64,
+    "fields": {
+      "comisioninstitucional_nombre": "Admisi\u00f3n de Aspirantes a la Licenciatura en Ciencias Ambientales, para la convocatoria 2008-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 65,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes a la Licenciatura en Ciencias Ambientales, para la convocatoria 2007"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 66,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de comentaristas en el 1er. Coloquio de Estudiantes de Doctorado en Urbanismo, celebrado en la Torre de Ingenier\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 67,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de Tutores del Posgrado en Geograf\u00eda que elabor\u00f3, junto con la Direcci\u00f3n General de Evaluaci\u00f3n Educativa de la Secretar\u00eda de Desarrollo Institucional de la UNAM, la estructura y los reactivos del examen para los aspirantes a ingresar a la Maestr\u00ed"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 68,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de Poblaci\u00f3n, Medio Ambiente y Desarrollo Sustentable (COPOMADS) de la Secretar\u00eda de Medio Ambiente del Gobierno del Distrito Federal"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 69,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Urbanismo, para la convocatoria 2006"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 70,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2006"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 71,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de Tutores del Posgrado en Geograf\u00eda que colabor\u00f3, junto con la Direcci\u00f3n General de Evaluaci\u00f3n Educativa de la Secretar\u00eda de Desarrollo Institucional de la UNAM, en la elaboraci\u00f3n de la gu\u00eda para preparar el examen general de conocimientos de lo"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 72,
+    "fields": {
+      "comisioninstitucional_nombre": "Comentaristas en el III Coloquio Anual de Doctorandos en Geograf\u00eda, celebrado en el Instituto de Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 73,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2005"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 74,
+    "fields": {
+      "comisioninstitucional_nombre": "Selecci\u00f3n y Admisi\u00f3n de Aspirantes al Posgrado en Geograf\u00eda, para la convocatoria 2004"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 75,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de comentaristas en el IV Coloquio Anual de Doctorandos en Geograf\u00eda, celebrado en el Instituto de Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 76,
+    "fields": {
+      "comisioninstitucional_nombre": "Revisi\u00f3n de la Presentaci\u00f3n del Reporte de la Sesi\u00f3n efectuada en Michoac\u00e1n, de los Asociados del Programa LEAD-M\u00e9xico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 77,
+    "fields": {
+      "comisioninstitucional_nombre": "Arbitro para el proyecto 0130947, Convocatoria Ciencia B\u00e1sica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 78,
+    "fields": {
+      "comisioninstitucional_nombre": "Arbitro para el proyecto 0130947; Convocatoria Ciencia B\u00e1sica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 79,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Comit\u00e9 Asesor  del Programa de Conservaci\u00f3n de Ma\u00edz Criollo de la SEMARNAT-CONANP"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 80,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la Comisi\u00f3n Dictaminadora del PRIDE, CIGA, UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 81,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Comit\u00e9 Asesor  del Programa de Conservaci\u00f3n de Ma\u00edz Criollo de la CONABIO"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 82,
+    "fields": {
+      "comisioninstitucional_nombre": "Acciones Compelentarias al Programa de Conservaci\u00f3n de Ma\u00edz Criollo PROMAC de la CONANP"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 83,
+    "fields": {
+      "comisioninstitucional_nombre": "Programa de Consejo de Ciencia y Tecnolog\u00eda de Uruguay. Evaluaci\u00f3n de Proyecto de Investigaci\u00f3n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 84,
+    "fields": {
+      "comisioninstitucional_nombre": "Reuniones Taller de la propuesta proyecto Asegurando el futuro de la agricultura mundial ante el cambio clim\u00e1tico mediante la conservaci\u00f3n de la diversidad gen\u00e9tica de los agroeocosistemas tradicionales de M\u00e9xico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 85,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluadora T\u00e9cnica en la Edici\u00f3n 2016. Evaluaci\u00f3n de FMV 3 2016 1 126510"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 86,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador externo de la Maestr\u00eda en Estudios Territoriales, Paisaje y Patrimonio, para la evaluaci\u00f3n de permanencia en el Programa de Posgrado de Calidad PNPC del CONACYT"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 87,
+    "fields": {
+      "comisioninstitucional_nombre": "Revisor del subcomponente: Antecedentes hist\u00f3ricos y sociales del Plan maestro de manejo integral y aprovechamiento sustentable de la cuenca del r\u00edo Magdalena del Distrito Federal"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 88,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador de anteproyecto, Convocatoria 2017-1"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 89,
+    "fields": {
+      "comisioninstitucional_nombre": "Evaluador en el proceso de admisi\u00f3n Convocatoria 2016-1, Maestr\u00eda en Docencia para la Educaci\u00f3n Media Superior (MADEMS) en Ciencias Sociales"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 90,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador de anteproyectos, Convocatoria 2015-1, Maestr\u00eda en Estudios Latinoamericanos en Territorio, Sociedad y Cultura"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 91,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador en la Comisi\u00f3n de Admisi\u00f3n 2013-1 del Posgrado en Geograf\u00eda UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 92,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador en la Comisi\u00f3n de Admisi\u00f3n 2012-1 del Posgrado en Geograf\u00eda UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 93,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador en la Comisi\u00f3n de Admisi\u00f3n 2010-1 del Posgrado en Geograf\u00eda UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 94,
+    "fields": {
+      "comisioninstitucional_nombre": "Dictaminador de propuestas para el V Congreso Internacional de Ordenamiento Ecol\u00f3gico y Territorial"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 95,
+    "fields": {
+      "comisioninstitucional_nombre": "Responsable de planeaci\u00f3n del Centro de Investigaciones en Geograf\u00eda Ambiental"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 96,
+    "fields": {
+      "comisioninstitucional_nombre": "Secretaria del consejo interno del CIGA"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 97,
+    "fields": {
+      "comisioninstitucional_nombre": "Enlace Institucional del CIGA ante C\u00e1tedras CONACyT"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 98,
+    "fields": {
+      "comisioninstitucional_nombre": "Representante del CIGA en la Red de Internacionalizaci\u00f3n (RURI) de la UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 99,
+    "fields": {
+      "comisioninstitucional_nombre": "Entrevistador en la Comisi\u00f3n de Admisi\u00f3n e Ingreso 2019-1 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 100,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de admisi\u00f3n e ingreso al Posgrado"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 101,
+    "fields": {
+      "comisioninstitucional_nombre": "Moderador"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 102,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n dictaminadora del Posgrado en Geograf\u00eda para el Ingreso al Programa de Maestr\u00eda en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 103,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de Comisi\u00f3n Dictaminadora"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 104,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la Comisi\u00f3n Externa"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 105,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro de la Comisi\u00f3n de Biblioteca"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 106,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Comit\u00e9 Editorial"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 107,
+    "fields": {
+      "comisioninstitucional_nombre": "Comisi\u00f3n de Seminarios"
+    }
+  },
+  {
+    "model": "compromiso_institucional.comisioninstitucional",
+    "pk": 108,
+    "fields": {
+      "comisioninstitucional_nombre": "Miembro del Comite de ingreso al posgrado"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 1,
+    "fields": {
+      "nombre": "Evaluador"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 2,
+    "fields": {
+      "nombre": "Revisor"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 3,
+    "fields": {
+      "nombre": "Revisor T\u00e9cnico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 4,
+    "fields": {
+      "nombre": "Editor"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 5,
+    "fields": {
+      "nombre": "Evaluador acad\u00e9mico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 6,
+    "fields": {
+      "nombre": "Dictaminador"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 7,
+    "fields": {
+      "nombre": "Comit\u00e9 Cient\u00edfico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 8,
+    "fields": {
+      "nombre": "Co-Coordinador"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 9,
+    "fields": {
+      "nombre": "Apoyo en la Sala de Ma\u00edz y Agricultura para la Reestructuraci\u00f3n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 10,
+    "fields": {
+      "nombre": "Segundo apoyo en la Sala de Ma\u00edz y Agricultura para la Reestructuraci\u00f3n Museo Artes y Oficios de P\u00e1tzcuaro"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 11,
+    "fields": {
+      "nombre": "Presentaci\u00f3n del libro: Ecolog\u00eda y Transformaci\u00f3n Campesina en la Meseta P\u00farh\u00e9pecha"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 12,
+    "fields": {
+      "nombre": "Presentaci\u00f3n del libro:Evaluaci\u00f3n de sustentabilidad un enfoque din\u00e1mico y multidimensional"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 13,
+    "fields": {
+      "nombre": "Apoyo a la Comisi\u00f3n de Admisi\u00f3n e Ingreso 2009-1 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 14,
+    "fields": {
+      "nombre": "Entrevista para la Selecci\u00f3n de Estudiantes para la Nueva generaci\u00f3n de la Licenciatura en Ciencias Ambientales"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 15,
+    "fields": {
+      "nombre": "Comisi\u00f3n de Admisi\u00f3n e Ingreso 2009-2 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 16,
+    "fields": {
+      "nombre": "Comisi\u00f3n de Admisi\u00f3n e Ingreso 2010-2 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 17,
+    "fields": {
+      "nombre": "Comisi\u00f3n de Admisi\u00f3n e Ingreso 2011-1 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 18,
+    "fields": {
+      "nombre": "Comisi\u00f3n de Admisi\u00f3n e Ingreso 2012-1 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 19,
+    "fields": {
+      "nombre": "Comisi\u00f3n de Admisi\u00f3n e Ingreso 2013-1 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 20,
+    "fields": {
+      "nombre": "Comisi\u00f3n de Admisi\u00f3n e Ingreso 2014-1 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 21,
+    "fields": {
+      "nombre": "Comisi\u00f3n de Admisi\u00f3n e Ingreso 2015-1 al Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 22,
+    "fields": {
+      "nombre": "Comisi\u00f3n Dictaminadora 2016-1 del Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 23,
+    "fields": {
+      "nombre": "Comisi\u00f3n Dictaminadora 2018-1 del Posgrado en Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 24,
+    "fields": {
+      "nombre": "Evaluador del protocolo doctoral:La transformaci\u00f3n del paisaje cultural de la regi\u00f3n Zacap\u00fa, Michoac\u00e1n en el siglo XX"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 25,
+    "fields": {
+      "nombre": "Tutora del Programa de Doctorado en Medio Ambiente y Sociedad"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 26,
+    "fields": {
+      "nombre": "Tutora del Posgrado en Ciencias de la Sostenibilidad"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 27,
+    "fields": {
+      "nombre": "Lineamientos para un programa de conservaci\u00f3n de ma\u00edces criollos en M\u00e9xico. Programa Conservaci\u00f3n Ma\u00edces Criollos"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 28,
+    "fields": {
+      "nombre": "Asesor\u00eda: a la Red tsiri para la conservaci\u00f3n de los ma\u00edces nativos y ala agricultura campesina"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 29,
+    "fields": {
+      "nombre": "Asesor\u00eda: La biodiversidad en el contexto de sistema productivos agro-forestales"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 30,
+    "fields": {
+      "nombre": "Asesor\u00eda: Acciones complementarias al Programa de Conservaci\u00f3n de Ma\u00edz"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 31,
+    "fields": {
+      "nombre": "Asesor\u00eda. Comisi\u00f3n del Lago de P\u00e1tzcuaro"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 32,
+    "fields": {
+      "nombre": "Reuni\u00f3n sobre el Censo Agropecuario 2017, INEGI, Morelia"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 33,
+    "fields": {
+      "nombre": "Reuni\u00f3n Taller de Arranque del proyecto \u201cAsegurando el futuro de la agricultura mundial ante el cambio clim\u00e1tico mediante la conservaci\u00f3n de la diversidad gen\u00e9tica de los agroeocosistemas tradicionales de M\u00e9xico\u201d Camino Real Pedregal"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 34,
+    "fields": {
+      "nombre": "Acciones complementarias al Programa de Conservaci\u00f3n de Ma\u00edz Taller"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 35,
+    "fields": {
+      "nombre": "Fiesta de la Ciencias y las Humanidades 2017"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 36,
+    "fields": {
+      "nombre": "Comentarios al \u201cPrograma Municipal de Ordenamiento Territorial y Desarrollo Urbano Sustentable"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 37,
+    "fields": {
+      "nombre": "Responsable de actividades de Divulgaci\u00f3n y Difusi\u00f3n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 38,
+    "fields": {
+      "nombre": "Verificador de la Agenda de Desarrollo Municipal"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 39,
+    "fields": {
+      "nombre": "Mantenimiento y soporte t\u00e9cnico Red Interna"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 40,
+    "fields": {
+      "nombre": "Mantenimiento y soporte t\u00e9cnico Red de voz"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 41,
+    "fields": {
+      "nombre": "Enlace a Internet"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 42,
+    "fields": {
+      "nombre": "Videoconferencias y Ponencias"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 43,
+    "fields": {
+      "nombre": "CATIC-DGTIC"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 44,
+    "fields": {
+      "nombre": "Soporte t\u00e9cnico Correo Electronico y servicios"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 45,
+    "fields": {
+      "nombre": "Servidores de aplicaciones"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 46,
+    "fields": {
+      "nombre": "Soporte T\u00e9cnico"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 47,
+    "fields": {
+      "nombre": "Participaci\u00f3n en la Comisi\u00f3n Ad-Hoc dentro del proceso de Elecciones de Representantes de Tutores y Alumnos de Maestr\u00eda y Doctorado ante Comit\u00e9 Acad\u00e9mico del Posgrado en Geograf\u00eda 2015"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 48,
+    "fields": {
+      "nombre": "Consultor\u00eda: Lineamientos para un programa de conservaci\u00f3n de ma\u00edces criollos en M\u00e9xico."
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 49,
+    "fields": {
+      "nombre": "Miembro del comit\u00e9 editorial"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 50,
+    "fields": {
+      "nombre": "Desarrollo Web"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 51,
+    "fields": {
+      "nombre": "Gesti\u00f3n de contenido Web"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 52,
+    "fields": {
+      "nombre": "An\u00e1lisis de datos"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 53,
+    "fields": {
+      "nombre": "Correo Institucional"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 54,
+    "fields": {
+      "nombre": "Soporte en impresi\u00f3n de gran formato"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 55,
+    "fields": {
+      "nombre": "Comisi\u00f3n de elaboraci\u00f3n de Examen de Admisi\u00f3n a la Maestr\u00eda de Geograf\u00eda"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 56,
+    "fields": {
+      "nombre": "Mantenimiento del Sistema de Informaci\u00f3n Acad\u00e9mica"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 57,
+    "fields": {
+      "nombre": "T\u00e9cnico auxiliar en la instalaci\u00f3n y manejo de ArcGIS"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 58,
+    "fields": {
+      "nombre": "Soporte t\u00e9cnico e instalaci\u00f3n de software especializado"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 59,
+    "fields": {
+      "nombre": "Apoyo t\u00e9cnico e instalaci\u00f3n de software especializado"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 60,
+    "fields": {
+      "nombre": "Participaci\u00f3n en el proceso de validaci\u00f3n social del perfil profesional"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 61,
+    "fields": {
+      "nombre": "Visita guiada"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 62,
+    "fields": {
+      "nombre": "Jurado"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 63,
+    "fields": {
+      "nombre": "Apoyo t\u00e9cnico y gesti\u00f3n"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 64,
+    "fields": {
+      "nombre": "Co-responsable del Seminario CIGA-IIES"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 65,
+    "fields": {
+      "nombre": "Miembro de la Comisi\u00f3n Local de Seguridad del Centro de Investigaciones en Geografia Ambiental (CIGA-UNAM Campus Morelia)"
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 66,
+    "fields": {
+      "nombre": "Asistencia y asesor\u00eda t\u00e9cnica a grupos campesinos de origen maya de la Cuenca del Lago Atitl\u00e1n en el Departamento de Solol\u00e1 (Guatemala)."
+    }
+  },
+  {
+    "model": "compromiso_institucional.actividadapoyo",
+    "pk": 67,
+    "fields": {
+      "nombre": "Muestreo de agua y an\u00e1lisis de laboratorio"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 1,
+    "fields": {
+      "nombre": "Representante de los T\u00e9cnicos Acad\u00e9micos del CIGA ante el Consejo Interno"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 2,
+    "fields": {
+      "nombre": "Asociado"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 3,
+    "fields": {
+      "nombre": "RED de Educaci\u00f3n Cont\u00ednua"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 4,
+    "fields": {
+      "nombre": "Miembro de la Comisi\u00f3n de Biblioteca"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 5,
+    "fields": {
+      "nombre": "Miembro del Comit\u00e9 Editorial"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 6,
+    "fields": {
+      "nombre": "Dictaminador Comisi\u00f3n Dictaminadora del Consejo Acad\u00e9mico de Area de Ciencias Sociales (CAACS) para la Escuela Nacional de Estudios Superiores, Campus Morelia"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 7,
+    "fields": {
+      "nombre": "Evaluador de la Comisi\u00f3n Evaluadora del PRIDE del Centro Peninsular en Humanidades y Ciencias del  Consejo Acad\u00e9mico de Area de las Artes y Humanidades (CAAHA"
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacion",
+    "pk": 8,
+    "fields": {
+      "nombre": "Consejo Acad\u00e9mico de Area de Ciencias Sociales. UNAM"
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 1,
+    "fields": {
+      "cargo": 84,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "2017-01-04",
+      "fecha_fin": "2018-02-26",
+      "usuario": 14
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 2,
+    "fields": {
+      "cargo": 63,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 384,
+      "fecha_inicio": "2015-03-03",
+      "fecha_fin": "2018-12-31",
+      "usuario": 14
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 3,
+    "fields": {
+      "cargo": 85,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "2015-07-08",
+      "fecha_fin": "2016-12-14",
+      "usuario": 14
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 4,
+    "fields": {
+      "cargo": 87,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "1998-03-04",
+      "fecha_fin": "2004-04-14",
+      "usuario": 14
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 5,
+    "fields": {
+      "cargo": 60,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "1986-06-10",
+      "fecha_fin": "1990-06-12",
+      "usuario": 14
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 6,
+    "fields": {
+      "cargo": 86,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 384,
+      "fecha_inicio": "2015-01-01",
+      "fecha_fin": "2016-02-01",
+      "usuario": 14
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 7,
+    "fields": {
+      "cargo": 117,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "2002-02-16",
+      "fecha_fin": "2015-10-31",
+      "usuario": 17
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 8,
+    "fields": {
+      "cargo": 37,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 2,
+      "fecha_inicio": "2011-03-01",
+      "fecha_fin": "2015-10-31",
+      "usuario": 17
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 9,
+    "fields": {
+      "cargo": 110,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 2,
+      "fecha_inicio": "2009-10-31",
+      "fecha_fin": "2015-10-31",
+      "usuario": 17
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 10,
+    "fields": {
+      "cargo": 111,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "2008-01-01",
+      "fecha_fin": "2015-01-01",
+      "usuario": 17
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 11,
+    "fields": {
+      "cargo": 112,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 2,
+      "fecha_inicio": "2008-01-01",
+      "fecha_fin": "2011-01-03",
+      "usuario": 17
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 12,
+    "fields": {
+      "cargo": 113,
+      "tipo_cargo": "corregir",
+      "institucion2": 282,
+      "dependencia": 394,
+      "fecha_inicio": "2000-09-18",
+      "fecha_fin": "2006-06-22",
+      "usuario": 17
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 13,
+    "fields": {
+      "cargo": 114,
+      "tipo_cargo": "corregir",
+      "institucion2": 99,
+      "dependencia": 387,
+      "fecha_inicio": "1994-02-01",
+      "fecha_fin": "2000-02-08",
+      "usuario": 17
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 14,
+    "fields": {
+      "cargo": 149,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2017-01-03",
+      "fecha_fin": "2017-12-29",
+      "usuario": 9
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 15,
+    "fields": {
+      "cargo": 150,
+      "tipo_cargo": "corregir",
+      "institucion2": 278,
+      "dependencia": 2,
+      "fecha_inicio": "2016-10-03",
+      "fecha_fin": "2019-01-28",
+      "usuario": 9
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 16,
+    "fields": {
+      "cargo": 151,
+      "tipo_cargo": "corregir",
+      "institucion2": 278,
+      "dependencia": 3,
+      "fecha_inicio": "2016-01-04",
+      "fecha_fin": "2018-07-31",
+      "usuario": 9
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 17,
+    "fields": {
+      "cargo": 152,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2017-01-02",
+      "fecha_fin": "2017-12-28",
+      "usuario": 9
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 18,
+    "fields": {
+      "cargo": 21,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 1,
+      "fecha_inicio": "2007-09-15",
+      "fecha_fin": "2008-12-31",
+      "usuario": 23
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 19,
+    "fields": {
+      "cargo": 169,
+      "tipo_cargo": "corregir",
+      "institucion2": 355,
+      "dependencia": 2,
+      "fecha_inicio": "2016-09-08",
+      "fecha_fin": "2018-04-01",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 20,
+    "fields": {
+      "cargo": 170,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2015-09-11",
+      "fecha_fin": "2018-04-02",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 22,
+    "fields": {
+      "cargo": 171,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2009-01-01",
+      "fecha_fin": "2014-02-28",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 23,
+    "fields": {
+      "cargo": 172,
+      "tipo_cargo": "corregir",
+      "institucion2": 119,
+      "dependencia": 374,
+      "fecha_inicio": "2015-01-01",
+      "fecha_fin": "2018-01-01",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 26,
+    "fields": {
+      "cargo": 173,
+      "tipo_cargo": "corregir",
+      "institucion2": 119,
+      "dependencia": 374,
+      "fecha_inicio": "2015-01-02",
+      "fecha_fin": "2018-02-28",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 28,
+    "fields": {
+      "cargo": 174,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2008-01-01",
+      "fecha_fin": "2008-12-30",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 29,
+    "fields": {
+      "cargo": 27,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2007-09-03",
+      "fecha_fin": "2011-09-02",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 30,
+    "fields": {
+      "cargo": 176,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2007-11-03",
+      "fecha_fin": "2008-11-30",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 31,
+    "fields": {
+      "cargo": 179,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 384,
+      "fecha_inicio": "2007-11-05",
+      "fecha_fin": "2008-12-04",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 32,
+    "fields": {
+      "cargo": 183,
+      "tipo_cargo": "corregir",
+      "institucion2": 372,
+      "dependencia": 384,
+      "fecha_inicio": "2006-06-01",
+      "fecha_fin": "2007-08-01",
+      "usuario": 33
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 33,
+    "fields": {
+      "cargo": 206,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "2007-01-01",
+      "fecha_fin": "2007-12-01",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 34,
+    "fields": {
+      "cargo": 207,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2008-06-01",
+      "fecha_fin": "2008-12-01",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 35,
+    "fields": {
+      "cargo": 208,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2009-01-01",
+      "fecha_fin": "2009-12-01",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 36,
+    "fields": {
+      "cargo": 208,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2010-06-01",
+      "fecha_fin": "2010-07-01",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 37,
+    "fields": {
+      "cargo": 209,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2011-01-11",
+      "fecha_fin": "2015-01-11",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 38,
+    "fields": {
+      "cargo": 210,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2011-01-01",
+      "fecha_fin": "2015-01-01",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 39,
+    "fields": {
+      "cargo": 211,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 1,
+      "fecha_inicio": "2013-01-01",
+      "fecha_fin": "2015-01-01",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 40,
+    "fields": {
+      "cargo": 212,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2016-01-01",
+      "fecha_fin": "2020-01-01",
+      "usuario": 32
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 41,
+    "fields": {
+      "cargo": 171,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2015-10-05",
+      "fecha_fin": "2018-10-08",
+      "usuario": 36
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 42,
+    "fields": {
+      "cargo": 221,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2011-03-21",
+      "fecha_fin": "2018-10-29",
+      "usuario": 36
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 43,
+    "fields": {
+      "cargo": 227,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 551,
+      "fecha_inicio": "2016-01-01",
+      "fecha_fin": "2018-12-31",
+      "usuario": 50
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 44,
+    "fields": {
+      "cargo": 233,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2015-03-02",
+      "fecha_fin": "2017-02-28",
+      "usuario": 26
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 45,
+    "fields": {
+      "cargo": 234,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2015-08-14",
+      "fecha_fin": "2015-08-14",
+      "usuario": 26
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 46,
+    "fields": {
+      "cargo": 235,
+      "tipo_cargo": "corregir",
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2015-10-27",
+      "fecha_fin": "2015-10-27",
+      "usuario": 26
+    }
+  },
+  {
+    "model": "compromiso_institucional.labordirectivacoordinacion",
+    "pk": 47,
+    "fields": {
+      "cargo": 118,
+      "tipo_cargo": "corregir",
+      "institucion2": 245,
+      "dependencia": 547,
+      "fecha_inicio": "2015-10-01",
+      "fecha_fin": "2018-11-30",
+      "usuario": 11
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 1,
+    "fields": {
+      "representacion": 1,
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2017-08-18",
+      "fecha_fin": "2019-08-18",
+      "usuario": 19
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 2,
+    "fields": {
+      "representacion": 2,
+      "institucion2": 509,
+      "dependencia": 622,
+      "fecha_inicio": "2017-08-01",
+      "fecha_fin": "2018-12-31",
+      "usuario": 44
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 3,
+    "fields": {
+      "representacion": 1,
+      "institucion2": 269,
+      "dependencia": 557,
+      "fecha_inicio": "2015-10-28",
+      "fecha_fin": "2017-08-07",
+      "usuario": 12
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 4,
+    "fields": {
+      "representacion": 3,
+      "institucion2": 1,
+      "dependencia": 625,
+      "fecha_inicio": "2018-05-03",
+      "fecha_fin": "2018-07-31",
+      "usuario": 16
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 5,
+    "fields": {
+      "representacion": 4,
+      "institucion2": 245,
+      "dependencia": 551,
+      "fecha_inicio": "2016-03-01",
+      "fecha_fin": "2018-12-31",
+      "usuario": 50
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 6,
+    "fields": {
+      "representacion": 5,
+      "institucion2": 245,
+      "dependencia": 551,
+      "fecha_inicio": "2018-04-01",
+      "fecha_fin": "2018-12-31",
+      "usuario": 50
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 7,
+    "fields": {
+      "representacion": 6,
+      "institucion2": 355,
+      "dependencia": 556,
+      "fecha_inicio": "2018-08-31",
+      "fecha_fin": "2020-08-30",
+      "usuario": 27
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 8,
+    "fields": {
+      "representacion": 7,
+      "institucion2": 1,
+      "dependencia": 717,
+      "fecha_inicio": "2017-04-19",
+      "fecha_fin": "2019-04-19",
+      "usuario": 27
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 9,
+    "fields": {
+      "representacion": 8,
+      "institucion2": 1,
+      "dependencia": 4,
+      "fecha_inicio": "2016-09-03",
+      "fecha_fin": "2020-09-03",
+      "usuario": 27
+    }
+  },
+  {
+    "model": "compromiso_institucional.representacionorganocolegiadounam",
+    "pk": 10,
+    "fields": {
+      "representacion": 6,
+      "institucion2": 269,
+      "dependencia": 739,
+      "fecha_inicio": "2018-11-27",
+      "fecha_fin": "2020-11-27",
+      "usuario": 42
+    }
+  }
+
+
 ]
