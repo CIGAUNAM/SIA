@@ -15,10 +15,10 @@ class ArbitrajePublicacionAcademicaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ArbitrajePublicacionAcademica.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('fecha_dictamen'))
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -52,9 +52,9 @@ class OtraComisionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = OtraComision.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('comision', 'dependencia', 'fecha'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -92,7 +92,7 @@ class RedAcademicaJSON(View):
                 items = RedAcademica.objects.all().exclude(participantes__id__exact=usuarioid)
             else:
                 items = RedAcademica.objects.filter(participantes__id__exact=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'ambito', 'fecha_constitucion'))
 
             json = json.replace('LOCAL', 'Local')
@@ -103,7 +103,7 @@ class RedAcademicaJSON(View):
             json = json.replace('false', '"No"')
             json = json.replace('true', '"Si"')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -141,10 +141,10 @@ class ConvenioOtraEntidadJSON(View):
                 items = ConvenioOtraEntidad.objects.all().exclude(participantes__id__exact=usuarioid)
             else:
                 items = ConvenioOtraEntidad.objects.filter(participantes__id__exact=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'fecha_fin'))
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -178,9 +178,9 @@ class ServicioAsesoriaExternaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ServicioAsesoriaExterna.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre_servicio', 'clasificacion_servicio', 'fecha_inicio', 'fecha_fin'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 

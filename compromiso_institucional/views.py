@@ -13,9 +13,9 @@ class LaborDirectivaCoordinacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = LaborDirectivaCoordinacion.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('tipo_cargo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -49,9 +49,9 @@ class RepresentacionOrganoColegiadoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = RepresentacionOrganoColegiadoUNAM.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('tipo_representacion', 'representacion_unam', 'fecha_inicio', 'fecha_fin'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -85,9 +85,9 @@ class ComisionAcademicaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ComisionInstitucionalCIGA.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('comision_academica', 'fecha_inicio', 'fecha_fin'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -121,9 +121,9 @@ class ApoyoTecnicoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ApoyoTecnico.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('actividad_apoyo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -157,9 +157,9 @@ class ApoyoOtraActividadJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ApoyoOtraActividad.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('actividad_apoyo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -193,9 +193,9 @@ class RepresentacionJSON(View):
         try:
             #usuarioid = User.objects.get(username=request.user.username).id
             items = Representacion.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre',))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -228,9 +228,9 @@ class ComisionJSON(View):
     def get(self, request):
         try:
             items = ComisionInstitucional.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre',))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -263,9 +263,9 @@ class ActividadApoyoJSON(View):
     def get(self, request):
         try:
             items = ActividadApoyo.objects.all()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre',))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 

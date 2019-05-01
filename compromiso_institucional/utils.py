@@ -23,7 +23,7 @@ class LaborDirectivaCoordinacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -64,7 +64,7 @@ class RepresentacionOrganoColegiadoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -105,7 +105,7 @@ class ComisionAcademicaContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -146,7 +146,7 @@ class ApoyoTecnicoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -188,7 +188,7 @@ class ApoyoOtraActividadContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -227,7 +227,7 @@ class RepresentacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -264,7 +264,7 @@ class ComisionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -300,7 +300,7 @@ class ActividadApoyoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \

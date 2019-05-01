@@ -1,0 +1,2242 @@
+[
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 1,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-02-05",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 2,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-10-16",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 3,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-12-02",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 4,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-02-20",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 5,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-06-20",
+    "usuario": 53
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 6,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-04-04",
+    "usuario": 9
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 7,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2007-12-07",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 8,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 9,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 10,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 11,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 12,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-01-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 13,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 14,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-01-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 15,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 16,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 17,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-07-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 18,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-07-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 19,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-11-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 20,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-11-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 21,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2007-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 22,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2007-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 23,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 24,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 25,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 26,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-06-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 27,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-06-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 28,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-06-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 29,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-05-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 30,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-09-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 31,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2012-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 32,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2012-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 33,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2012-02-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 34,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 35,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-06-10",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 36,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 37,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 38,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-03-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 39,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-04-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 40,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-05-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 41,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-06-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 42,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-07-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 43,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-07-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 44,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-10-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 45,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-05-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 46,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-06-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 47,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-10-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 48,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-09-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 49,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 50,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 51,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2016-03-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 52,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-02-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 53,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-02-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 54,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-05-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 55,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-07-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 56,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-09-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 57,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-07-09",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 58,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 59,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-05-11",
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 60,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-04-09",
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 61,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2015-02-16",
+    "usuario": 15
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 62,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 203,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-07-02",
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 63,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 398,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-21",
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 64,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-03-06",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 65,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-02-13",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 66,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-04-17",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 67,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-06-06",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 69,
+  "fields": {
+    "tipo": "LIBRO",
+    "revista": null,
+    "libro": "An\u00e1lisis espacial con R. Usa R como un sistema de informaci\u00f3n geogr\u00e1fico",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-09",
+    "usuario": 19
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 70,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2018-05-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 71,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2017-12-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 72,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2014-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 73,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 74,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 75,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2013-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 76,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 77,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 78,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 79,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-04-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 80,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-06-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 81,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2011-05-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 82,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 83,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 84,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 85,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-04-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 86,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2010-05-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 87,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 88,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 89,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2009-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 90,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 91,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2008-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 92,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2005-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 93,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2005-02-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 94,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2005-03-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 95,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": null,
+    "libro": null,
+    "capitulo_libro": null,
+    "fecha_dictamen": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 96,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 351,
+    "libro": "Bit\u00e1cora Urbana Territorial.",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-10",
+    "usuario": 44
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 98,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 15,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-06-20",
+    "usuario": 29
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 99,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 191,
+    "libro": "no aplica",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-21",
+    "usuario": 1838
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 101,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 360,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-07-31",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 102,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 361,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-18",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 103,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 362,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-10-15",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 104,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 362,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-14",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 105,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Biodiversidad, servicios ecosist\u00e9micos y los objetivos del desarrollo sostenible en M\u00e9xico",
+    "capitulo_libro": "Hacia el manejo forestal sostenible: una revisi\u00f3n r\u00e1pida de las pol\u00edticas forestales en M\u00e9xico",
+    "fecha_dictamen": "2018-09-27",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 106,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Biodiversidad, servicios ecosist\u00e9micos y los objetivos del desarrollo sostenible en M\u00e9xico",
+    "capitulo_libro": "El papel de las OSC en la conservaci\u00f3n y el aprovechamiento sustentable de la biodiversidad y los SE en M\u00e9xico: Casos y experiencias",
+    "fecha_dictamen": "2018-10-01",
+    "usuario": 1837
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 107,
+  "fields": {
+    "tipo": "LIBRO",
+    "revista": null,
+    "libro": "Alimentaci\u00f3n, recursos tradicionales y ciencia: el prisma de los quelites. Un proyecto multidisciplinario.",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-14",
+    "usuario": 32
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 108,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 363,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-14",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 109,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 360,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-24",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 110,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 364,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2017-09-12",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 111,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 364,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2016-09-08",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 112,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 258,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2016-08-03",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 113,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2016-11-10",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 114,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 365,
+    "libro": "Revista Ciencia ergo-sum",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2015-07-16",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 115,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 366,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2013-11-25",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 116,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2015-10-22",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 117,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2014-06-10",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 118,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 196,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2013-05-22",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 119,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Dimensiones sociales en el Manejo de Cuencas en M\u00e9xico",
+    "capitulo_libro": "Dimensiones sociales en el Manejo de Cuencas en M\u00e9xico",
+    "fecha_dictamen": "2014-10-28",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 120,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "Ambiente, Sociedad y Econom\u00eda",
+    "capitulo_libro": "Ambiente, Sociedad y Econom\u00eda",
+    "fecha_dictamen": "2014-11-27",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 121,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades",
+    "capitulo_libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades\"",
+    "fecha_dictamen": "2009-06-16",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 122,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades\".",
+    "capitulo_libro": "\u201cOrdenamiento territorial y participaci\u00f3n social: problemas y posibilidades",
+    "fecha_dictamen": "2009-11-19",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 123,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "CARTOGRAFIA BIOGEOGRAFICA Y DE LOS PAISAJES",
+    "capitulo_libro": "CARTOGRAFIA BIOGEOGRAFICA Y DE LOS PAISAJES",
+    "fecha_dictamen": "2018-02-14",
+    "usuario": 17
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 124,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 369,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-01-23",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 125,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 370,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-11",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 126,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 370,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-14",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 127,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 15,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-06-24",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 128,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 371,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-07-29",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 129,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 372,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-02-11",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 130,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 294,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-07-05",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 131,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 128,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-10-14",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 132,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 55,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-04-06",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 133,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 371,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-22",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 134,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 294,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-30",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 135,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 128,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-09-12",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 136,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 373,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-03-29",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 137,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 134,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-12",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 138,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 292,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-23",
+    "usuario": 25
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 139,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 15,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2017-09-09",
+    "usuario": 54
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 140,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 143,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2017-08-18",
+    "usuario": 54
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 141,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 377,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-28",
+    "usuario": 54
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 142,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 382,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-22",
+    "usuario": 5
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 143,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 383,
+    "libro": "Revista Journal of Mountain Science",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-06-12",
+    "usuario": 42
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 144,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 51,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-03-23",
+    "usuario": 93
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 145,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 167,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-10-15",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 146,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 94,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-05",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 147,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 143,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-12-02",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 148,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 386,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-03",
+    "usuario": 28
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 149,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 192,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-15",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 150,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 39,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-08-23",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 151,
+  "fields": {
+    "tipo": "LIBRO",
+    "revista": null,
+    "libro": "Paisaje y legislaci\u00f3n. Un debate abierto en M\u00e9xico",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-11-26",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 152,
+  "fields": {
+    "tipo": "ARTICULO",
+    "revista": 389,
+    "libro": "",
+    "capitulo_libro": "",
+    "fecha_dictamen": "2018-05-17",
+    "usuario": 31
+  }
+},
+{
+  "model": "vinculacion.arbitrajepublicacionacademica",
+  "pk": 153,
+  "fields": {
+    "tipo": "CAPITULO_LIBRO",
+    "revista": null,
+    "libro": "",
+    "capitulo_libro": "Expansi\u00f3n periurbana y trasformaciones en el espacio geogr\u00e1fico: la recarga h\u00eddrica en el \u00c1rea Metropolitana de Guadalajara",
+    "fecha_dictamen": "2018-06-25",
+    "usuario": 36
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 1,
+  "fields": {
+    "nombre": "Red de Pobreza y Desarrollo Urbano",
+    "ambito": "NACIONAL",
+    "objetivos": "Generar informaci\u00f3n relacionada con pobreza que impacte pol\u00edticas p\u00fablicas",
+    "fecha_constitucion": "2011-12-22",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      36
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 2,
+  "fields": {
+    "nombre": "Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoam\u00e9rica",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Su objetivo es ser una plataforma de discusi\u00f3n, difusi\u00f3n y capacitaci\u00f3n en temas de desarrollo urbano sustentable, mediante el intercambio de conocimiento y experiencias, para apoyar y acompa\u00f1ar la implementaci\u00f3n de la Nueva Agenda Urbana (NAU) en la regi\u00f3n producto de H\u00e1bitat III. Adem\u00e1s, busca proponer l\u00edneas de investigaci\u00f3n y apoyar l\u00edneas de acci\u00f3n relevantes y necesarias a nivel local, nacional y regional para el desarrollo urbano sustentable.",
+    "fecha_constitucion": "2016-05-02",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      577
+    ],
+    "participantes": [
+      892
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 3,
+  "fields": {
+    "nombre": "Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoam\u00e9rica (REDEUS-LAC)",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "La Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoam\u00e9rica y el Caribe (REDEUS_LAC) est\u00e1 dirigida y encabezada por el Centro de Desarrollo Urbano Sustentable (CEDEUS). Su objetivo es ser una plataforma de discusi\u00f3n, difusi\u00f3n y capacitaci\u00f3n en temas de desarrollo urbano sustentable, mediante el intercambio de conocimiento y experiencias, para apoyar y acompa\u00f1ar la implementaci\u00f3n de la Nueva Agenda Urbana (NAU) en la regi\u00f3n producto de H\u00e1bitat III. Adem\u00e1s, busca proponer l\u00edneas de investigaci\u00f3n y apoyar l\u00edneas de acci\u00f3n relevantes y necesarias a nivel local, nacional y regional para el desarrollo urbano sustentable.",
+    "fecha_constitucion": "2016-05-02",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      577
+    ],
+    "participantes": [
+      36
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 4,
+  "fields": {
+    "nombre": "Red de An\u00e1lisis de Procesos Socio-espaciales en Periferias Urbanas",
+    "ambito": "NACIONAL",
+    "objetivos": "Realizar trabajos de investigaci\u00f3n colaborativos sobre periferias urbanas",
+    "fecha_constitucion": "2018-02-28",
+    "fecha_fin": null,
+    "proyecto": 1,
+    "entidades": [
+      4,
+      581,
+      580
+    ],
+    "participantes": [
+      1235,
+      1234,
+      36
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 5,
+  "fields": {
+    "nombre": "Red tem\u00e1tica de Socioecosistemas y Sustentabilidad",
+    "ambito": "NACIONAL",
+    "objetivos": "Red de an\u00e1lisis de socioecosistemas con actores sociales diversos",
+    "fecha_constitucion": "2015-07-01",
+    "fecha_fin": null,
+    "proyecto": 304,
+    "entidades": [
+      557,
+      137,
+      6,
+      305
+    ],
+    "participantes": [
+      53
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 6,
+  "fields": {
+    "nombre": "Convenio de Colaboraci\u00f3n Institucional",
+    "ambito": "NACIONAL",
+    "objetivos": "Colaboraci\u00f3n institucional",
+    "fecha_constitucion": "2009-01-01",
+    "fecha_fin": "2014-06-30",
+    "proyecto": 1,
+    "entidades": [
+      4,
+      297
+    ],
+    "participantes": [
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 7,
+  "fields": {
+    "nombre": "Convenio de Coedici\u00f3n de la obra: Evaluaci\u00f3n de sustentabilidad - un enfoque din\u00e1mico y multidimensional",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Convenio de coedici\u00f3n",
+    "fecha_constitucion": "1900-01-01",
+    "fecha_fin": "1900-01-01",
+    "proyecto": 1,
+    "entidades": [
+      4,
+      494
+    ],
+    "participantes": [
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 8,
+  "fields": {
+    "nombre": "Convenio Investigaci\u00f3n e Intercambio Acad\u00e9mico",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Convenio investigaci\u00f3n e intercambio acad\u00e9mico",
+    "fecha_constitucion": "2012-01-01",
+    "fecha_fin": "2012-12-31",
+    "proyecto": 1,
+    "entidades": [
+      4,
+      135
+    ],
+    "participantes": [
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 9,
+  "fields": {
+    "nombre": "Red Nacional de Investigadores en Resiliencia en sistemas Socio-Ecologicos",
+    "ambito": "NACIONAL",
+    "objetivos": "Pertenencia",
+    "fecha_constitucion": "2014-10-01",
+    "fecha_fin": "2016-10-01",
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      15
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 10,
+  "fields": {
+    "nombre": "Red Tem\u00e1tica Programa Mexicano del Carbono",
+    "ambito": "NACIONAL",
+    "objetivos": "Pertenencia",
+    "fecha_constitucion": "2015-01-01",
+    "fecha_fin": "2016-01-01",
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      15
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 11,
+  "fields": {
+    "nombre": "Red de Socioecosistemas y Sustentabilidad",
+    "ambito": "NACIONAL",
+    "objetivos": "Pertenencia",
+    "fecha_constitucion": "2014-10-01",
+    "fecha_fin": "2016-10-01",
+    "proyecto": 1,
+    "entidades": [
+      65
+    ],
+    "participantes": [
+      15
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 12,
+  "fields": {
+    "nombre": "Convenio de colaboraci\u00f3n",
+    "ambito": "REGIONAL",
+    "objetivos": "Realizar investigaci\u00f3n sobre las propiedades magn\u00e9ticas de los suelos relacionadas con la evaluaci\u00f3n de pr\u00e1cticas de manejo as\u00ed como en la clasificaci\u00f3n y geograf\u00eda de suelos.",
+    "fecha_constitucion": "1900-01-01",
+    "fecha_fin": "1900-01-01",
+    "proyecto": 1,
+    "entidades": [
+      667,
+      19
+    ],
+    "participantes": [
+      30
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 13,
+  "fields": {
+    "nombre": "Estancia corta en el \u00c1rea de Geograf\u00eda Humana",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Se imparti\u00f3 un seminario a profesores y doctorandos del Dpto., se intercambiaron experiencias sobre los proyectos de investigaci\u00f3n que tenemos en marcha y se exploraron futuras colaboraciones en materia de investigaci\u00f3n (participaci\u00f3n conjunta en proyectos y publicaciones) y en docencia (intercambio de estudiantes de posgrado y colaboraci\u00f3n docente entre ambas instituciones).",
+    "fecha_constitucion": "2017-12-11",
+    "fecha_fin": "2017-12-15",
+    "proyecto": 338,
+    "entidades": [
+      277
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 14,
+  "fields": {
+    "nombre": "Estancia corta en el Internet Interdisciplinary Institute de la Universitat Oberta de Catalunya",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Avanzar en el dise\u00f1o de un art\u00edculo cient\u00edfico de car\u00e1cter te\u00f3rico-conceptual sobre el mapeo, la medici\u00f3n y el monitoreo comunitario como formas de innovaci\u00f3n social en comunidades.",
+    "fecha_constitucion": "2017-07-03",
+    "fecha_fin": "2017-07-07",
+    "proyecto": 338,
+    "entidades": [
+      694
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 15,
+  "fields": {
+    "nombre": "Estancia corta en el Institut de Ci\u00e8ncia y Tecnologia Ambientals de la Universitat Aut\u00f2noma de Barcelona",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Avanzar en el dise\u00f1o de un art\u00edculo cient\u00edfico de car\u00e1cter te\u00f3rico y conceptual sobre el mapeo, la medici\u00f3n y el monitoreo comunitario como formas de innovaci\u00f3n social en comunidades.",
+    "fecha_constitucion": "2017-06-26",
+    "fecha_fin": "2017-06-30",
+    "proyecto": 338,
+    "entidades": [
+      603
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 16,
+  "fields": {
+    "nombre": "Estancia corta a la Universidad Nacional de General Sarmiento",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Los objetivos de la estancia fueron avanzar en la redacci\u00f3n de un art\u00edculo cient\u00edfico de car\u00e1cter te\u00f3rico y conceptual, realizar visitas de campo para conocer la zona de estudio, y presentar parte de mi trabajo al cuerpo acad\u00e9mico y los estudiantes de la Lic. en Ecolog\u00eda Urbana.",
+    "fecha_constitucion": "2016-06-05",
+    "fecha_fin": "2016-06-15",
+    "proyecto": 380,
+    "entidades": [
+      283
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 17,
+  "fields": {
+    "nombre": "Estancia de investigaci\u00f3n en el Centro de Investigaciones en Geograf\u00eda Ambiental (CIGA)",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Trabajo en diversas publicaciones en colaboraci\u00f3n con varios investigadores",
+    "fecha_constitucion": "2013-01-01",
+    "fecha_fin": "2013-05-01",
+    "proyecto": 1,
+    "entidades": [
+      4
+    ],
+    "participantes": [
+      43
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 18,
+  "fields": {
+    "nombre": "Red de Argentinos Investigadores y Cient\u00edficos en el Exterior",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "Difundir las actividades cient\u00edficas y tecnol\u00f3gicas del pa\u00eds en el exterior.\r\nIncrementar la vinculaci\u00f3n entre investigadores argentinos residentes en el pa\u00eds y en el extranjero.\r\n\r\nMejorar la calidad y disponibilidad de la informaci\u00f3n acerca de los investigadores y profesionales argentinos altamente capacitados que residen en el exterior.",
+    "fecha_constitucion": "2008-12-02",
+    "fecha_fin": null,
+    "proyecto": 396,
+    "entidades": [
+      750
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 19,
+  "fields": {
+    "nombre": "International Network of Research on Coupled Human and Natural Systems (CHANS)",
+    "ambito": "INTERNACIONAL",
+    "objetivos": "La red CHANS-Net aprovecha las mejores mentes de todas las disciplinas que crear\u00e1n una revoluci\u00f3n en la sostenibilidad.",
+    "fecha_constitucion": "2013-01-07",
+    "fecha_fin": null,
+    "proyecto": 412,
+    "entidades": [
+      752
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 20,
+  "fields": {
+    "nombre": "Red Mexicana de Bioenerg\u00eda (REMBIO)",
+    "ambito": "NACIONAL",
+    "objetivos": "Difusi\u00f3n de informaci\u00f3n actualizada sobre Bioenerg\u00eda\r\nDesarrollo de estudios estrat\u00e9gicos en las \u00e1reas de inter\u00e9s de la REMBIO\r\nAsesor\u00eda especializada para gesti\u00f3n de proyectos y estudios de factibilidad.\r\nAn\u00e1lisis y evaluaci\u00f3n de Pol\u00edticas P\u00fablicas\r\nParticipaci\u00f3n de foros, congresos y seminarios\r\nOrganizaci\u00f3n de congresos y seminarios, incluyendo una reuni\u00f3n nacional\r\nEjecuci\u00f3n de proyectos",
+    "fecha_constitucion": "2006-01-02",
+    "fecha_fin": "2011-12-30",
+    "proyecto": 199,
+    "entidades": [
+      630
+    ],
+    "participantes": [
+      26
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 21,
+  "fields": {
+    "nombre": "Observatorio de Derecho a la Alimentaci\u00f3n",
+    "ambito": "REGIONAL",
+    "objetivos": "Los proncipales objetivos de la Red son:\r\n1. Propiciar la discusi\u00f3n sobre los enfoques del Derecho, su efectividad en las legislaciones nacionales y el impacto de \u00e9stas en la protecci\u00f3n efectiva del derecho a la alimentaci\u00f3n.\r\n2. Incentivar la investigaci\u00f3n, la docencia y la extensi\u00f3n entre acad\u00e9micos de la regi\u00f3n, estudiantes de Derecho, profesores universitarios, abogados, jueces, empleados p\u00fablicos, y p\u00fablico en general.\r\n3. Ser un \u00f3rgano consultivo en la materia a nivel nacional y regional.",
+    "fecha_constitucion": "2018-11-15",
+    "fecha_fin": "2020-08-31",
+    "proyecto": 231,
+    "entidades": [
+      483,
+      105,
+      190
+    ],
+    "participantes": [
+      941,
+      32
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 22,
+  "fields": {
+    "nombre": "Red Tem\u00e1tica Programa Mexicano de Carbono",
+    "ambito": "NACIONAL",
+    "objetivos": "La red tem\u00e1tica del PMC se consolid\u00f3 en el a\u00f1o 2016 como Red Tem\u00e1tica del CONACYT y est\u00e1 integrada por 195 investigadores en la modalidad de Redes Tem\u00e1ticas Continuidad.\r\nContribuir en las medidas y propuestas para mitigaci\u00f3n y adaptaci\u00f3n al cambio clim\u00e1tico.",
+    "fecha_constitucion": "2016-06-01",
+    "fecha_fin": null,
+    "proyecto": 416,
+    "entidades": [
+      765
+    ],
+    "participantes": [
+      54,
+      20
+    ]
+  }
+},
+{
+  "model": "vinculacion.redacademica",
+  "pk": 23,
+  "fields": {
+    "nombre": "Red de Cient\u00edficos Espa\u00f1oles en M\u00e9xico- RECEMX",
+    "ambito": "NACIONAL",
+    "objetivos": "I.\tOrganizar cursos, seminarios, pl\u00e1ticas o cualquier evento similar relacionado con su objeto social;\r\nII.\tIntercambiar y transferir conocimientos acad\u00e9micos, t\u00e9cnicos, administrativos y de apoyo para la adecuada integraci\u00f3n de los investigadores que coadyuven a la realizaci\u00f3n del objeto social de la Asociaci\u00f3n\r\nIII.\tCrear redes cient\u00edficas, tecnol\u00f3gicas y de vinculaci\u00f3n entre los generadores de ciencia, tecnolog\u00eda e innovaci\u00f3n, ya sean instituciones p\u00fablicas o privadas, tanto nacionales como extranjeras, que sean necesarias para la consecuci\u00f3n de su objeto social;\r\nIV.\tRealizar el acopio, procesamiento, sistematizaci\u00f3n, difusi\u00f3n y divulgaci\u00f3n de informaci\u00f3n acerca de las actividades de investigaci\u00f3n cient\u00edfica, desarrollo tecnol\u00f3gico e innovaci\u00f3n que se lleven a cabo de conformidad con su objeto social;\r\nV.\tPromover el desarrollo, la vinculaci\u00f3n y diseminaci\u00f3n de la investigaci\u00f3n cient\u00edfica que se derive de las actividades de investigaci\u00f3n b\u00e1sica y aplicada, el desarrollo tecnol\u00f3gico de calidad y la innovaci\u00f3n, asociados a la actualizaci\u00f3n y mejoramiento de la calidad de vida de la sociedad;\r\nVI.\tDesarrollar asesor\u00edas, an\u00e1lisis y estudios que sean requeridos por diversas instituciones con las que se haya establecido un v\u00ednculo, mismos que buscar\u00e1n transferir conocimientos derivados de la investigaci\u00f3n cient\u00edfica y tecnol\u00f3gica llevada a cabo de conformidad con el objeto social de la Asociaci\u00f3n;\r\nVII.\tPromover y participar con centros e instituciones de divulgaci\u00f3n y/o difusi\u00f3n de la ciencia, tecnolog\u00eda e innovaci\u00f3n para ni\u00f1os y j\u00f3venes que se identifiquen con los fines o actividades de la Asociaci\u00f3n;\r\nVIII.\tRealizar proyectos de investigaci\u00f3n cient\u00edfica y tecnol\u00f3gica a trav\u00e9s de recursos humanos y tecnol\u00f3gicos especializados;\r\nIX.\tLlevar a cabo la creaci\u00f3n, equipamiento y mantenimiento de instalaciones de investigaci\u00f3n cient\u00edfica y tecnol\u00f3gica y otras relacionadas con \u00e9sta, as\u00ed como suministrar los materiales necesarios para la misma;\r\nX.\tRecibir todo tipo de recursos econ\u00f3micos y materiales a nivel nacional e internacional, incluyendo, de manera enunciativa mas no limitativa, cualquier tipo de bien mueble o inmueble, o de cualquier otra naturaleza, de asociados, afiliados o de terceras personas con el prop\u00f3sito de cumplir con el objeto social y los fines de la Asociaci\u00f3n, as\u00ed como recibir donativos, en efectivo y en especie, y recaudar y procurar fondos, sujeto a las disposiciones, restricciones y limitantes que, en su caso, establezca la legislaci\u00f3n aplicable, provenientes de personas f\u00edsicas o morales o fideicomisos autorizados para recibir donativos deducibles, incluyendo todo tipo de entidades privadas y p\u00fablicas o gubernamentales, nacionales o internacionales, que resulten necesarios o convenientes para la consecuci\u00f3n de su objeto social;\r\nXI.\tColaborar, coordinar y coadyuvar con todo tipo de personas, asociaciones, sociedades e instituciones privadas y p\u00fablicas o gubernamentales, nacionales o extranjeras, que persigan fines similares o complementarios a los de la Asociaci\u00f3n;\r\nXII.\tPromover a la Asociaci\u00f3n por los medios que resulten necesarios o convenientes, ya sea para fines publicitarios o para la obtenci\u00f3n de fondos, incluyendo realizar actividades de promoci\u00f3n en medios de comunicaci\u00f3n masivos que permitan el posicionamiento y reconocimiento nacional e internacional de la Asociaci\u00f3n;\r\nXIII.\tApoyar econ\u00f3micamente las actividades de personas morales autorizadas para recibir donativos deducibles en los t\u00e9rminos de la Ley del Impuesto sobre la Renta, siempre que dichas actividades est\u00e9n relacionadas con el objeto social y fines de la Asociaci\u00f3n;\r\nXIV.\tCelebrar toda clase de convenios, contratos y documentos, incluyendo de manera enunciativa mas no limitativa, de donaci\u00f3n, compraventa, suministro, distribuci\u00f3n, fideicomiso, agencia, comisi\u00f3n, dep\u00f3sito, arrendamiento, subarrendamiento, administraci\u00f3n, servicios, trabajo, asistencia t\u00e9cnica, consultor\u00eda, dise\u00f1o, construcci\u00f3n, incluyendo aquellos con autoridades federales, estatales o locales, que sean necesarios o convenientes para la consecuci\u00f3n de su objeto;\r\nXV.\tObtener por cualquier t\u00edtulo legal, concesiones, permisos, autorizaciones o licencias de cualquier entidad gubernamental, ya sea federal, estatal o municipal;\r\nXVI.\tContratar al personal necesario para el cumplimiento del objeto social;\r\nXVII.\tRealizar toda clase de actos jur\u00eddicos, y materiales, as\u00ed como celebrar contratos y convenios, sean principales o auxiliares y/o civiles o de cualquier otra naturaleza, dentro de lo permitido por la legislaci\u00f3n aplicable, que sean necesarios o convenientes para la consecuci\u00f3n de su objeto social, y\r\nXVIII.\tConferir toda clase de mandatos que resulten necesarios para el cumplimiento del objeto social",
+    "fecha_constitucion": "2017-03-16",
+    "fecha_fin": "2019-04-01",
+    "proyecto": 430,
+    "entidades": [
+      557,
+      234,
+      722,
+      152,
+      10,
+      393,
+      581,
+      201
+    ],
+    "participantes": [
+      259,
+      157,
+      1840,
+      32,
+      31
+    ]
+  }
+}
+]

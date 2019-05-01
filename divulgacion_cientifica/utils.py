@@ -21,7 +21,7 @@ class ArticuloDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -46,7 +46,7 @@ class ArticuloDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -85,7 +85,7 @@ class LibroDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -112,7 +112,7 @@ class LibroDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -153,7 +153,7 @@ class CapituloLibroDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -177,7 +177,7 @@ class CapituloLibroDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -216,7 +216,7 @@ class OrganizacionEventoDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -257,7 +257,7 @@ class ParticipacionEventoDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -281,7 +281,7 @@ class ParticipacionEventoDivulgacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -320,7 +320,7 @@ class ProgramaRadioTelevisionInternetContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \

@@ -17,13 +17,13 @@ class CursoDocenciaEscolarizadoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = CursoDocenciaEscolarizado.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -48,7 +48,7 @@ class CursoDocenciaExtracurricularJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = CursoDocenciaExtracurricular.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'dependencia', 'fecha_inicio', 'total_horas'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')
@@ -56,7 +56,7 @@ class CursoDocenciaExtracurricularJSON(View):
             json = json.replace('DOCTORADO', 'Doctorado')
             json = json.replace('OTRO', 'Otro')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -95,7 +95,7 @@ class ArticuloDocenciaJSON(View):
                 articulos = ArticuloDocencia.objects.all().exclude(autores__id__exact=usuarioid)
             else:
                 articulos = ArticuloDocencia.objects.filter(autores__id__exact=usuarioid)
-            json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', articulos, use_natural_foreign_keys=True,
                                          fields=('titulo', 'revista', 'status', 'fecha'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -104,7 +104,7 @@ class ArticuloDocenciaJSON(View):
             json = json.replace('ENVIADO', 'Enviado')
             json = json.replace('ENVIADO', 'Enviado')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -147,7 +147,7 @@ class LibroDocenciaJSON(View):
                 items = Libro.objects.filter(tipo='DOCENCIA').filter(Q(autores__id__exact=usuarioid)
                                                                            | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
                                                                            | Q(prologo__id__exact=usuarioid))
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial_text', 'ciudad', 'status', 'fecha'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -155,7 +155,7 @@ class LibroDocenciaJSON(View):
             json = json.replace('ACEPTADO', 'Aceptado')
             json = json.replace('ENVIADO', 'Enviado')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -229,14 +229,14 @@ class ProgramaEstudioJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ProgramaEstudio.objects.filter(usuario__id__exact=usuarioid,)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'nivel', 'fecha'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 

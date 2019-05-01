@@ -22,7 +22,7 @@ class ArticuloCientificoJSON(View):
                 articulos = ArticuloCientifico.objects.all().exclude(Q(autores__id__exact=usuarioid) & Q(alumnos__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)).distinct()
             else:
                 articulos = ArticuloCientifico.objects.filter(Q(autores__id__exact=usuarioid) | Q(alumnos__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)).distinct()
-            json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', articulos, use_natural_foreign_keys=True,
                                          fields=('titulo', 'revista', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -40,7 +40,7 @@ class ArticuloCientificoJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -80,9 +80,9 @@ class CapituloLibroInvestigacionJSON(View):
             else:
                 items = CapituloLibroInvestigacion.objects.filter(autores__id__exact=usuarioid)
 
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro', 'pagina_inicio', 'pagina_fin'))
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -121,7 +121,7 @@ class MapaArbitradoJSON(View):
                 items = MapaArbitrado.objects.all().exclude(autores__id__exact=usuarioid)
             else:
                 items = MapaArbitrado.objects.filter(autores__id__exact=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'status', 'editorial', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -139,7 +139,7 @@ class MapaArbitradoJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -178,7 +178,7 @@ class PublicacionTecnicaJSON(View):
                 items = PublicacionTecnica.objects.all().exclude(autores__id__exact=usuarioid)
             else:
                 items = PublicacionTecnica.objects.filter(autores__id__exact=usuarioid)
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -196,7 +196,7 @@ class PublicacionTecnicaJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -235,7 +235,7 @@ class LibroInvestigacionJSON(View):
                 items = Libro.objects.filter(tipo='INVESTIGACION').exclude(Q(autores__id__exact=usuarioid) & Q(compiladores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid))
             else:
                 items = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores__id__exact=usuarioid) | Q(compiladores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid))
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial_text', 'ciudad_text', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -253,7 +253,7 @@ class LibroInvestigacionJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -318,7 +318,7 @@ class ProyectoInvestigacionJSON(View):
                 items = ProyectoInvestigacion.objects.all().exclude(Q(responsables__id__exact=usuarioid) & Q(participantes__id__exact=usuarioid)).distinct()
             else:
                 items = ProyectoInvestigacion.objects.filter(Q(responsables__id__exact=usuarioid) | Q(participantes__id__exact=usuarioid)).distinct()
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'status', 'clasificacion', 'modalidad'))
 
             json = json.replace('NUEVO', 'Nuevo')
@@ -334,7 +334,7 @@ class ProyectoInvestigacionJSON(View):
             json = json.replace('INVESTIGACION_FRONTERA', 'Investigación de frontera')
             json = json.replace('OTRO', 'Otro')
 
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -389,10 +389,10 @@ class ApoyoTecnicoInvestigacionJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ApoyoTecnicoInvestigacion.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items,
+            json = serializers.serialize('json2', items,
                                          fields=('actividad', 'fecha_inicio', 'proyecto'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
@@ -427,10 +427,10 @@ class ApoyoTecnicoServicioJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ApoyoTecnicoServicio.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json', items,
+            json = serializers.serialize('json2', items,
                                          fields=('actividad', 'fecha_inicio', 'proyecto'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json')
+            return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
 
