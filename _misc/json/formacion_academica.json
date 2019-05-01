@@ -4285,7 +4285,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 3,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir1",
     "carrera": 3,
     "dependencia": 203,
     "titulo_tesis": "-",
@@ -4298,7 +4298,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 4,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir2",
     "carrera": 1,
     "dependencia": 204,
     "titulo_tesis": "Evaluaci\u00f3n Edafo-Morfom\u00e9trica para un Mejor Aprovechamiento del Recurso Tierra en el Municipio Los Palacios, Pinar del R\u00edo, Cuba.",
@@ -4311,7 +4311,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 5,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir3",
     "carrera": 21,
     "dependencia": 102,
     "titulo_tesis": "Sistema de Informaci\u00f3n Geogr\u00e1fica para el Ordenamiento Ecol\u00f3gico Territorial de la Regi\u00f3n de la Mariposa Monarca (SIG-POETMM)",
@@ -4324,7 +4324,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 6,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir4",
     "carrera": 4,
     "dependencia": 205,
     "titulo_tesis": "--",
@@ -4337,7 +4337,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 7,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir5",
     "carrera": 5,
     "dependencia": 60,
     "titulo_tesis": "Diagn\u00f3stico de la agricultura y sus perspectivas en la Comunidad San Francisco Uricho",
@@ -4350,7 +4350,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 8,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir6",
     "carrera": 6,
     "dependencia": 206,
     "titulo_tesis": "An\u00e1lisis de Ciclo de vida de la tortilla a base de ma\u00edz nativo Red Tsiri de la Cuenca del Lago de P\u00e1tzcuaro, Michoac\u00e1n",
@@ -4363,7 +4363,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 9,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir7",
     "carrera": 7,
     "dependencia": 153,
     "titulo_tesis": "Estudio demogr\u00e1fico de Panicum miliacium en un cultivo de sorgo en Puru\u00e1ndiro, Michoac\u00e1n",
@@ -4376,7 +4376,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 10,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir8",
     "carrera": 8,
     "dependencia": 647,
     "titulo_tesis": "Pendiente",
@@ -4389,7 +4389,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 11,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir9",
     "carrera": 9,
     "dependencia": 141,
     "titulo_tesis": "Mass Media Y Mercadotecnia Politica",
@@ -4402,7 +4402,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 12,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir10",
     "carrera": 10,
     "dependencia": 125,
     "titulo_tesis": "Las chinampas urbanas en Tenochitlan-Tlateloco",
@@ -4415,7 +4415,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 13,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir11",
     "carrera": 11,
     "dependencia": 209,
     "titulo_tesis": "Determinaci\u00f3n del mercurio en la composta",
@@ -4428,7 +4428,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 14,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir12",
     "carrera": 12,
     "dependencia": 210,
     "titulo_tesis": "Levantamiento de suelos y evaluaci\u00f3n de la calidad del mapa de suelos en el Colegio de Postgraduados, Campus Montecillo, Estado de M\u00e9xico, M\u00e9xico",
@@ -4441,7 +4441,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 15,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir13",
     "carrera": 2,
     "dependencia": 211,
     "titulo_tesis": "Linear programming for optimal spatial allocation of hospital catchment areas, \tEast Midlands",
@@ -4454,7 +4454,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 16,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir14",
     "carrera": 13,
     "dependencia": 24,
     "titulo_tesis": "La monta\u00f1a, el templo y la iglesia. Organizaci\u00f3n del espacio urbano de la Nueva Espa\u00f1a, siglo XVI. El caso de Tamu\u00edn en la Huasteca Potosina (",
@@ -4467,7 +4467,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 17,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir15",
     "carrera": 14,
     "dependencia": 211,
     "titulo_tesis": "-",
@@ -4480,7 +4480,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 18,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir16",
     "carrera": 15,
     "dependencia": 49,
     "titulo_tesis": "\"Evaluaci\u00f3n de los programas para el desarrollo local y alternativas para mejorar su impacto. El caso de La Huacana, Michoac\u00e1n  en la administraci\u00f3n 2005-2007\"",
@@ -4493,7 +4493,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 19,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir17",
     "carrera": 8,
     "dependencia": 23,
     "titulo_tesis": "Diversidad y distribuci\u00f3n de la familia Cactaceae en la regi\u00f3n del Desierto Chihuahuense",
@@ -4506,7 +4506,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 20,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir18",
     "carrera": 16,
     "dependencia": 131,
     "titulo_tesis": "Programa de Ordenaci\u00f3n de Embalses (POE) en la Comunidad de Madrid",
@@ -4519,7 +4519,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 21,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir19",
     "carrera": 17,
     "dependencia": 212,
     "titulo_tesis": "Caracterizaci\u00f3n de vol\u00e1tiles en mieles del centro de Argentina",
@@ -4532,7 +4532,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 22,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir20",
     "carrera": 10,
     "dependencia": 152,
     "titulo_tesis": "Hacia el rescate y salvamento de la praxis arqueologica en M\u00e9xico. Costa Azul, Baja California. Excavaciones arqueol\u00f3gicas a trav\u00e9s de un salvamento arqueol\u00f3gico.",
@@ -4545,7 +4545,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 23,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir21",
     "carrera": 18,
     "dependencia": 213,
     "titulo_tesis": "La importancia de Turismo para el desarrollo econ\u00f3mico en la ciudad de Urumqi, XinJiang, China",
@@ -4558,7 +4558,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 24,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir22",
     "carrera": 19,
     "dependencia": 26,
     "titulo_tesis": "Arenas Pol\u00edticas en la Meseta Pur\u00e9pecha",
@@ -4571,7 +4571,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 25,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir23",
     "carrera": 1,
     "dependencia": 41,
     "titulo_tesis": "Estudio Geomorfol\u00f3gico de la Porci\u00f3n Sureste del Golfo de M\u00e9xico",
@@ -4584,7 +4584,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 26,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir34",
     "carrera": 20,
     "dependencia": 132,
     "titulo_tesis": "Teledetecci\u00f3n y an\u00e1lisis del uso del espacio en el sudeste del valle de Yocavil (Dpto. de Santa Mar\u00eda, Prov. de Catamarca).",
@@ -4597,7 +4597,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 27,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir35",
     "carrera": 21,
     "dependencia": 102,
     "titulo_tesis": "Evaluaci\u00f3n de Seguridad en Redes",
@@ -4610,7 +4610,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 28,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir36",
     "carrera": 22,
     "dependencia": 29,
     "titulo_tesis": "Inducci\u00f3n de la Actividad Ov\u00e1rica en Borregas Suffolk en \u00c9poca de Anestro Mediante el Uso de Esponjas Intravaginales Impregnadas con Acetato de Fluorogestona.",
@@ -4623,7 +4623,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 29,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir37",
     "carrera": 21,
     "dependencia": 102,
     "titulo_tesis": "Implementaci\u00f3n del portal Web del CIEco usando un administrador de contenido",
@@ -4636,7 +4636,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 30,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir38",
     "carrera": 23,
     "dependencia": 193,
     "titulo_tesis": "La industria del bacanora: una oportunidad econ\u00f3mica para el desarrollo de la regi\u00f3n sierra de Sonora",
@@ -4649,7 +4649,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 31,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir39",
     "carrera": 8,
     "dependencia": 23,
     "titulo_tesis": "Evaluaci\u00f3n del Deterioro de la Vegetaci\u00f3n en el Sistema Estuarino Chantuto-Teculapa-Panzacola, Chiapas.",
@@ -4662,7 +4662,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 33,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir40",
     "carrera": 24,
     "dependencia": 52,
     "titulo_tesis": "Eficiencia Biol\u00f3gica Y Econ\u00f3mica Del Proceso De Producci\u00f3n De Papaya En El Tr\u00f3pico Seco De Michoac\u00e1n",
@@ -4675,7 +4675,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 34,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir41",
     "carrera": 1,
     "dependencia": 41,
     "titulo_tesis": "Los M\u00e9todos de C\u00e1lculo de Horas Fr\u00edo: el M\u00e9todo G\u00f3mez-Morales",
@@ -4688,7 +4688,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 35,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir42",
     "carrera": 1,
     "dependencia": 387,
     "titulo_tesis": "Algunos aspectos de la transformaci\u00f3n de la naturaleza en el ejemplo del r\u00edo Almendares",
@@ -4701,7 +4701,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 36,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir43",
     "carrera": 2,
     "dependencia": 384,
     "titulo_tesis": "Tapachula y su funci\u00f3n regional en el Soconusco. Una  ciudad media de impulso agr\u00edcola",
@@ -4714,7 +4714,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 38,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir44",
     "carrera": 43,
     "dependencia": 267,
     "titulo_tesis": "Propuesta Arquitect\u00f3nica de Unidad M\u00e9dico-Ginecol\u00f3gica, para la zona nororiente de Tuxtla Guti\u00e9rrez, Chiapas",
@@ -4727,7 +4727,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 40,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir45",
     "carrera": 17,
     "dependencia": 584,
     "titulo_tesis": "Desconocido",
@@ -4740,7 +4740,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 41,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir45",
     "carrera": 16,
     "dependencia": 585,
     "titulo_tesis": "Desconocido",
@@ -4753,7 +4753,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 42,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir47",
     "carrera": 2,
     "dependencia": 41,
     "titulo_tesis": "El Uso de Fotograf\u00edas A\u00e9reas Digitales y SIG en la Actualizaci\u00f3n Cartogr\u00e1fica de la Zona Federal del Ex-Lago de Texcoco",
@@ -4766,7 +4766,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 43,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir48",
     "carrera": 8,
     "dependencia": 23,
     "titulo_tesis": "Estudio y evaluaci\u00f3n de algunas propiedades f\u00edsicas y qu\u00edmicas de los suelos agr\u00edcolas aleda\u00f1os al Ingenio azucarero \u201cEl Potrero\u201d en C\u00f3rdoba, Veracruz, M\u00e9xico.",
@@ -4779,7 +4779,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 44,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir49",
     "carrera": 12,
     "dependencia": 305,
     "titulo_tesis": "Pendiente",
@@ -4792,7 +4792,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 45,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir50",
     "carrera": 4,
     "dependencia": 651,
     "titulo_tesis": "Aspectos ecol\u00f3gicos del uso pasivo de energ\u00eda solar",
@@ -4805,7 +4805,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 46,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir51",
     "carrera": 26,
     "dependencia": 42,
     "titulo_tesis": "Matrices de diferenciaci\u00f3n en 3+1 dimensiones.",
@@ -4818,7 +4818,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 47,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir52",
     "carrera": 12,
     "dependencia": 218,
     "titulo_tesis": "Trabajo de fin de carrera: Plan de negocios para la producci\u00f3n de aceite esencial de or\u00e9gano en Quer\u00e9taro.",
@@ -4831,7 +4831,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 48,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir53",
     "carrera": 38,
     "dependencia": 50,
     "titulo_tesis": "Aplicacio?n de un sistema de informacio?n geogra?fica para el ca?lculo de escurrimiento con el me?todo de los nu?meros de curva del USSCS (Caso: Cuenca del Lago Cuitzeo).",
@@ -4844,7 +4844,7 @@
   "model": "formacion_academica.maestria",
   "pk": 1,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir54",
     "programa": 14,
     "dependencia": 129,
     "titulo_tesis": "Pixel based and object oriented image analysis in coal fire mapping",
@@ -4857,7 +4857,7 @@
   "model": "formacion_academica.maestria",
   "pk": 2,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir55",
     "programa": 17,
     "dependencia": 41,
     "titulo_tesis": "Aplicaci\u00f3n de un modelo espacial para la elaboraci\u00f3n de escenarios de uso/cobertura del suelo en La Huacana, Michoac\u00e1n",
@@ -4870,7 +4870,7 @@
   "model": "formacion_academica.maestria",
   "pk": 3,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir56",
     "programa": 7,
     "dependencia": 128,
     "titulo_tesis": "The applicability of a stochastic-dynamic model of land use change in a Mexican dry tropical region",
@@ -4883,7 +4883,7 @@
   "model": "formacion_academica.maestria",
   "pk": 4,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir67",
     "programa": 23,
     "dependencia": 121,
     "titulo_tesis": "An\u00e1lisis de la ordenaci\u00f3n del territorio en M\u00e9xico y Espa\u00f1a",
@@ -4896,7 +4896,7 @@
   "model": "formacion_academica.maestria",
   "pk": 5,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir68",
     "programa": 16,
     "dependencia": 215,
     "titulo_tesis": "Diversidad de Ecosistemas en el Archipi\u00e9lago de Camag\u00fcey, Cuba.",
@@ -4909,7 +4909,7 @@
   "model": "formacion_academica.maestria",
   "pk": 6,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir69",
     "programa": 22,
     "dependencia": 216,
     "titulo_tesis": "Propuesta Estrat\u00e9gica y An\u00e1lisis de Desempe\u00f1o de Herramientas de Monitoreo y de Control para Redes Publicas en Institutos de Investigaci\u00f3n",
@@ -4922,7 +4922,7 @@
   "model": "formacion_academica.maestria",
   "pk": 7,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir70",
     "programa": 24,
     "dependencia": 41,
     "titulo_tesis": "Transformaci\u00f3n de los paisajes agr\u00edcolas durante \u00faltimos 20 a\u00f1os en la cuenca de Lago de P\u00e1tzcuaro y sus tendencias a la permanencia o desaparici\u00f3n.",
@@ -4935,7 +4935,7 @@
   "model": "formacion_academica.maestria",
   "pk": 8,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir71",
     "programa": 6,
     "dependencia": 23,
     "titulo_tesis": "El sistema alimentario del maiz en P\u00e1tzcuaro Michoac\u00e1n",
@@ -4948,7 +4948,7 @@
   "model": "formacion_academica.maestria",
   "pk": 9,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir72",
     "programa": 21,
     "dependencia": 174,
     "titulo_tesis": "La Ecolog\u00eda del Paisaje en Relaci\u00f3n con los Sistemas de Producci\u00f3n en el Valle de Sacaba. Cochabamba- Bolivia",
@@ -4961,7 +4961,7 @@
   "model": "formacion_academica.maestria",
   "pk": 10,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir73",
     "programa": 48,
     "dependencia": 128,
     "titulo_tesis": "Polylepis Forest Condition Related with Two Threatening Factors",
@@ -4974,7 +4974,7 @@
   "model": "formacion_academica.maestria",
   "pk": 11,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir74",
     "programa": 26,
     "dependencia": 217,
     "titulo_tesis": "La cultura politica de los estudiantes universitarios",
@@ -4987,7 +4987,7 @@
   "model": "formacion_academica.maestria",
   "pk": 12,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir75",
     "programa": 4,
     "dependencia": 125,
     "titulo_tesis": "Comparaci\u00f3n entre los Pames y los Guamares seg\u00fan las fuentes arqueol\u00f3gicas y etnohist\u00f3ricas.",
@@ -5000,7 +5000,7 @@
   "model": "formacion_academica.maestria",
   "pk": 13,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir76",
     "programa": 8,
     "dependencia": 17,
     "titulo_tesis": "Din\u00e1mica de la Erosi\u00f3n/Sedimentaci\u00f3n en la \u00c9poca Prehisp\u00e1nica y Periodo Colonial. Reconstrucci\u00f3n de las condiciones Paleoambientales en el Valle de Teotihuac\u00e1n (Estado de M\u00e9xico)",
@@ -5013,7 +5013,7 @@
   "model": "formacion_academica.maestria",
   "pk": 14,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir77",
     "programa": 17,
     "dependencia": 126,
     "titulo_tesis": "-",
@@ -5026,7 +5026,7 @@
   "model": "formacion_academica.maestria",
   "pk": 15,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir78",
     "programa": 19,
     "dependencia": 44,
     "titulo_tesis": "Paisaje, territorio y paisaje ritual: La Huasteca potosina. Estudio de Geograf\u00eda hist\u00f3rica.",
@@ -5039,7 +5039,7 @@
   "model": "formacion_academica.maestria",
   "pk": 16,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir79",
     "programa": 20,
     "dependencia": 126,
     "titulo_tesis": "Delphi Technique",
@@ -5052,7 +5052,7 @@
   "model": "formacion_academica.maestria",
   "pk": 17,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir80",
     "programa": 10,
     "dependencia": 43,
     "titulo_tesis": "\"Competitividad de la industria electr\u00f3nica de M\u00e9xico y China en el mercado de Estados Unidos: 1993-2005\"",
@@ -5065,7 +5065,7 @@
   "model": "formacion_academica.maestria",
   "pk": 18,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir81",
     "programa": 15,
     "dependencia": 48,
     "titulo_tesis": "Cultura del ma\u00edz: impacto a la soberan\u00eda alimentaria por la entrada del ma\u00edz gen\u00e9ticamente modificado en M\u00e9xico",
@@ -5078,7 +5078,7 @@
   "model": "formacion_academica.maestria",
   "pk": 19,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir82",
     "programa": 6,
     "dependencia": 23,
     "titulo_tesis": "Estructura y composici\u00f3n de la selva baja caducifolia de Huautla, Morelos",
@@ -5091,7 +5091,7 @@
   "model": "formacion_academica.maestria",
   "pk": 20,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir83",
     "programa": 1,
     "dependencia": 17,
     "titulo_tesis": "Toposecuencia de paleosuelos volc\u00e1nicos como herramienta para la reconstrucci\u00f3n paleoambiental del Cuaternario tard\u00edo en Tlaxcala",
@@ -5104,7 +5104,7 @@
   "model": "formacion_academica.maestria",
   "pk": 21,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir84",
     "programa": 3,
     "dependencia": 95,
     "titulo_tesis": "El dilema de los comunes. Un estudio de la crisis m\u00faltiple  en la  Meseta  Purepecha",
@@ -5117,7 +5117,7 @@
   "model": "formacion_academica.maestria",
   "pk": 22,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir85",
     "programa": 11,
     "dependencia": 219,
     "titulo_tesis": "Regionalizaci\u00f3n Geomorfol\u00f3gica y de Paisajes de la Zona Costera entre Guaymas y Agiabampo, Sonora, M\u00e9xico",
@@ -5130,7 +5130,7 @@
   "model": "formacion_academica.maestria",
   "pk": 23,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir86",
     "programa": 27,
     "dependencia": 216,
     "titulo_tesis": "Gesti\u00f3n de proyectos mediante PMBok para el Desarrollo de software Kurhanguni  \"An\u00e1lisis de la participaci\u00f3n comunitaria en proyectos para el desarrollo rural\"",
@@ -5143,7 +5143,7 @@
   "model": "formacion_academica.maestria",
   "pk": 24,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir87",
     "programa": 92,
     "dependencia": 134,
     "titulo_tesis": "A multidimensional approach to poverty among farmers with small holdings",
@@ -5156,7 +5156,7 @@
   "model": "formacion_academica.maestria",
   "pk": 25,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir88",
     "programa": 13,
     "dependencia": 135,
     "titulo_tesis": "A contingent valuation exercise with a fix bid and varying environmental quality levels",
@@ -5169,7 +5169,7 @@
   "model": "formacion_academica.maestria",
   "pk": 26,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir89",
     "programa": 25,
     "dependencia": 4,
     "titulo_tesis": "Estado Ambiental de la Regi\u00f3n Baj\u00edo, Michoac\u00e1n en el periodo 1990, 2000 y 2010. M\u00e9xico",
@@ -5182,7 +5182,7 @@
   "model": "formacion_academica.maestria",
   "pk": 27,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir90",
     "programa": 9,
     "dependencia": 47,
     "titulo_tesis": "Compresi\u00f3n de Bases de Datos M\u00e9tricas",
@@ -5195,7 +5195,7 @@
   "model": "formacion_academica.maestria",
   "pk": 28,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir91",
     "programa": 18,
     "dependencia": 220,
     "titulo_tesis": "Search and space theory as the foundations for the design of an object-oriented GIS",
@@ -5208,7 +5208,7 @@
   "model": "formacion_academica.maestria",
   "pk": 29,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir92",
     "programa": 12,
     "dependencia": 153,
     "titulo_tesis": "Estrategias Productivas, Comerciales Y De Vida De Los Productores De Mango En Apatzing\u00e1n, Michoac\u00e1n, M\u00e9xico.",
@@ -5221,7 +5221,7 @@
   "model": "formacion_academica.maestria",
   "pk": 30,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir93",
     "programa": 50,
     "dependencia": 358,
     "titulo_tesis": "The effect of organic amendments on soil organic  matter dynamics and nutrient availability",
@@ -5234,7 +5234,7 @@
   "model": "formacion_academica.maestria",
   "pk": 31,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir94",
     "programa": 60,
     "dependencia": 201,
     "titulo_tesis": "Espacio p\u00fablico y comercial. An\u00e1lisis espacial de la localizaci\u00f3n de los tianguis en el municipio de Guadalajara",
@@ -5247,7 +5247,7 @@
   "model": "formacion_academica.maestria",
   "pk": 32,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir95",
     "programa": 6,
     "dependencia": 23,
     "titulo_tesis": "Estudio sobre la utilizaci\u00f3n de los licores \u00e1cidos de la industria metal\u00fargica, en la recuperaci\u00f3n de los suelos salino-s\u00f3dicos.",
@@ -5260,7 +5260,7 @@
   "model": "formacion_academica.maestria",
   "pk": 33,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir96",
     "programa": 7,
     "dependencia": 544,
     "titulo_tesis": "Digital   Stereo   Image   Interpretation   for   Natural   Hazard    Assessment (Interpretaci\u00f3n   Digital   de   Im\u00e1genes   Estereosc\u00f3picas   para   la    Evaluaci\u00f3n de Peligros Naturales)",
@@ -5273,7 +5273,7 @@
   "model": "formacion_academica.maestria",
   "pk": 34,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir97",
     "programa": 8,
     "dependencia": 17,
     "titulo_tesis": "Adsorci\u00f3n de As, Cu, Cd, Pb y Zn derivados de material de desecho de la miner\u00eda, en sedimentos naturales de la cuenca de la Presa de Mata, Guanajuato: Control natural",
@@ -5286,7 +5286,7 @@
   "model": "formacion_academica.maestria",
   "pk": 35,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir98",
     "programa": 80,
     "dependencia": 603,
     "titulo_tesis": "Investigando el impacto socio-econ\u00f3mico del esquema REDD implementado en el proyecto comunitario de carbono forestal Nhambita, Mozambique",
@@ -5299,7 +5299,7 @@
   "model": "formacion_academica.maestria",
   "pk": 36,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir99",
     "programa": 86,
     "dependencia": 720,
     "titulo_tesis": "Biosphere Reserves: contribution to sustainable local development?",
@@ -5312,7 +5312,7 @@
   "model": "formacion_academica.maestria",
   "pk": 37,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir100",
     "programa": 89,
     "dependencia": 784,
     "titulo_tesis": "Green commercial buildings in Mexico: Energy and water efficiency scenarios",
@@ -5325,7 +5325,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 1,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir101",
     "programa": 2,
     "dependencia": 64,
     "titulo_tesis": "Los espacios forestales de la Sierra de Angangueo (Michoac\u00e1n-Estado de M\u00e9xico), M\u00e9xico. Una visi\u00f3n geogr\u00e1fica",
@@ -5338,7 +5338,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 2,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir102",
     "programa": 19,
     "dependencia": 121,
     "titulo_tesis": "Modelo de evaluaci\u00f3n de la factibilidad para la Agenda Local 21 en pa\u00edses en desarrollo",
@@ -5351,7 +5351,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 3,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir103",
     "programa": 13,
     "dependencia": 107,
     "titulo_tesis": "Relaci\u00f3n entre la Heterogeneidad Geoecol\u00f3gica y la Biodiversidad en Ecosistemas Costeros Tropicales.",
@@ -5364,7 +5364,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 4,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir11",
     "programa": 17,
     "dependencia": 122,
     "titulo_tesis": "Maize population structure and diversity related to ethnolinguistic variation",
@@ -5377,7 +5377,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 5,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir12",
     "programa": 9,
     "dependencia": 123,
     "titulo_tesis": "Sustentabilidad y Sistemas de Manejo en Comunidades Ind\u00edgenas en Chile",
@@ -5390,7 +5390,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 6,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir13",
     "programa": 4,
     "dependencia": 124,
     "titulo_tesis": "The socio-cultural dimension of flood vulnerability in a periurban community in central Mexico",
@@ -5403,7 +5403,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 7,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir14",
     "programa": 3,
     "dependencia": 125,
     "titulo_tesis": "La ocupaci\u00f3n del territorio en la regi\u00f3n de Ac\u00e1mbaro (Guanajuato- Michoac\u00e1n) entre el Poscl\u00e1sico tard\u00edo  y el siglo XVI.",
@@ -5416,7 +5416,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 8,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir15",
     "programa": 6,
     "dependencia": 17,
     "titulo_tesis": "Din\u00e1mica de la Erosi\u00f3n/Sedimentaci\u00f3n en la \u00c9poca Prehisp\u00e1nica y Periodo Colonial. Reconstrucci\u00f3n de las condiciones Paleoambientales en el Valle de Teotihuac\u00e1n (Estado de M\u00e9xico)",
@@ -5429,7 +5429,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 9,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir16",
     "programa": 17,
     "dependencia": 126,
     "titulo_tesis": "The Diffusion of Regional Underdevelop\u00acment; Articulation of Capital and Peasantry in Sukumaland, Tanzania",
@@ -5442,7 +5442,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 10,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir17",
     "programa": 17,
     "dependencia": 4,
     "titulo_tesis": "Historia ambiental de paisajes latinoamericanos: abandono y reapropiaci\u00f3n. Casos en M\u00e9xico y Argentina",
@@ -5455,7 +5455,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 11,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir18",
     "programa": 22,
     "dependencia": 127,
     "titulo_tesis": "Social Forestry as  Sustainable Development",
@@ -5468,7 +5468,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 12,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir19",
     "programa": 8,
     "dependencia": 43,
     "titulo_tesis": "\"Sistemas de innovaci\u00f3n y reservas de la biosfera: acciones para el desarrollo regional sustentable en Zicuir\u00e1n-Infiernillo\"",
@@ -5481,7 +5481,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 13,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir20",
     "programa": 5,
     "dependencia": 6,
     "titulo_tesis": "Sistemas agroforestales y conservaci\u00f3n de biodiversidad en el Valle de Tehuac\u00e1n, Cuicatl\u00e1n",
@@ -5494,7 +5494,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 14,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir21",
     "programa": 15,
     "dependencia": 131,
     "titulo_tesis": "El paisaje en Am\u00e9rica Latina. Experiencia de valoraci\u00f3n participada de paisajes visuales para la gesti\u00f3n ambiental en La Habana, Cuba",
@@ -5507,7 +5507,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 15,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir22",
     "programa": 20,
     "dependencia": 23,
     "titulo_tesis": "An\u00e1lisis multi-escalar de los patrones espaciales de oferta y demanda de le\u00f1a para uso residencial en M\u00e9xico",
@@ -5520,7 +5520,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 16,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir23",
     "programa": 1,
     "dependencia": 17,
     "titulo_tesis": "Impacto Cultural Y Natural En Las Secuencias Edafosedimentarias Del Holoceno En La Regi\u00f3n Suroriental De M\u00e9xico. Un Estudio Geoarqueol\u00f3gico En Las Tierras Bajas Mayas",
@@ -5533,7 +5533,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 17,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir24",
     "programa": 1,
     "dependencia": 16,
     "titulo_tesis": "Object based image analysis with remote sensing images",
@@ -5546,7 +5546,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 18,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir25",
     "programa": 11,
     "dependencia": 150,
     "titulo_tesis": "La transformaci\u00f3n corporativa del comunalismo forestal",
@@ -5559,7 +5559,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 19,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir26",
     "programa": 10,
     "dependencia": 18,
     "titulo_tesis": "Implicaciones del cambio de cobertura vegetal y uso del suelo en el balance h\u00eddrico a nivel regional. El caso de la cuenca del lago de Cuitzeo",
@@ -5572,7 +5572,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 20,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir27",
     "programa": 3,
     "dependencia": 132,
     "titulo_tesis": "Habitar una regi\u00f3n. Espacialidad arquitect\u00f3nica y construcci\u00f3n de paisajes en Andalhuala, valle de Yocavil (Catamarca, Argentina).",
@@ -5585,7 +5585,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 21,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir28",
     "programa": 12,
     "dependencia": 107,
     "titulo_tesis": "Diversidad ac\u00fastica de la Biofon\u00eda y degradaci\u00f3n del bosque tropical: \u00bfC\u00f3mo los an\u00e1lisis del paisaje sonoro pueden complementar la evaluaci\u00f3n de la integridad ecosist\u00e9mica?",
@@ -5598,7 +5598,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 22,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir29",
     "programa": 44,
     "dependencia": 134,
     "titulo_tesis": "Effects of urban growth in the process of impoverishment of campesinos\u00b4 households living in peri-urban areas: A case study in Mexico City.",
@@ -5611,7 +5611,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 23,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir30",
     "programa": 16,
     "dependencia": 135,
     "titulo_tesis": "Value equivalency analysis: quantity compensation, distance decay and time treatment",
@@ -5624,7 +5624,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 24,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir31",
     "programa": 14,
     "dependencia": 107,
     "titulo_tesis": "Manejo de la zona riparia de la cuenca de r\u00edo Cutizmala, Jal,",
@@ -5637,7 +5637,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 26,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir32",
     "programa": 18,
     "dependencia": 153,
     "titulo_tesis": "An\u00e1lisis Normativo Y Pr\u00e1ctico De La Fertilidad Qu\u00edmica Y F\u00edsica Ed\u00e1fica En La Agricultura Org\u00e1nica Y Convencional",
@@ -5650,7 +5650,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 27,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir33",
     "programa": 23,
     "dependencia": 1,
     "titulo_tesis": "Definition of a minimum set of spatial relations. Theory and applications\u201d.",
@@ -5663,7 +5663,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 28,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir34",
     "programa": 24,
     "dependencia": 388,
     "titulo_tesis": "An\u00e1lisis ec\u00f3logo-geoqu\u00edmico del territorio de la Ciudad de Moa y las cuencas de los r\u00edos Moa y Caba\u00f1as en el noreste de Cuba",
@@ -5676,7 +5676,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 29,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir35",
     "programa": 23,
     "dependencia": 445,
     "titulo_tesis": "Tecnolog\u00eda, empleo y territorio en el marco de la globalizaci\u00f3n econ\u00f3mica. El caso de la industria automotriz en M\u00e9xico",
@@ -5689,7 +5689,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 30,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir36",
     "programa": 5,
     "dependencia": 23,
     "titulo_tesis": "El efecto de las leguminosas en el mejoramiento de la calidad de los suelos Ando en sistema agr\u00edcolas de ladera en la cuenca del Lago de Zirahu\u00e9n",
@@ -5702,7 +5702,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 31,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir37",
     "programa": 31,
     "dependencia": 267,
     "titulo_tesis": "Pr\u00e1cticas sociales y vida cotidiana de los habitantes en las Ciudades Rurales Sustentables Nuevo Juan de Grijalva y Santiago El Pinar, Chiapas",
@@ -5715,7 +5715,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 32,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir38",
     "programa": 5,
     "dependencia": 23,
     "titulo_tesis": "Efecto de la aplicaci\u00f3n de vinazas crudas y modificadas por microorganismos anaerobios y aerobios sobre las propiedades qu\u00edmicas de dos suelos del municipio Miguel Alem\u00e1n del estado de Veracruz, M\u00e9xico.",
@@ -5728,7 +5728,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 33,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir39",
     "programa": 38,
     "dependencia": 603,
     "titulo_tesis": "Desconocido",
@@ -5741,7 +5741,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 34,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir40",
     "programa": 38,
     "dependencia": 603,
     "titulo_tesis": "Investigando la preparaci\u00f3n para REDD+ en M\u00e9xico: Actores, discursos y distribuci\u00f3n de beneficios",
@@ -5754,7 +5754,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 35,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir41",
     "programa": 6,
     "dependencia": 560,
     "titulo_tesis": "Fluctuaci\u00f3n de Campo Magn\u00e9tico Terrestre durante los \u00faltimos 5Ma en M\u00e9xico; Adquisici\u00f3n de nuevos datos y modelaci\u00f3n matem\u00e1tica.",
@@ -5767,7 +5767,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 36,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir42",
     "programa": 40,
     "dependencia": 725,
     "titulo_tesis": "La participaci\u00f3n de la poblaci\u00f3n rural en la conservaci\u00f3n de la naturaleza.",
@@ -5780,7 +5780,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 37,
   "fields": {
-    "titulo_obtenido": "corregir",
+    "titulo_obtenido": "corregir43",
     "programa": 42,
     "dependencia": 28,
     "titulo_tesis": "Escenarios espaciales expli?citos de uso mu?ltiple de combustibles para coccio?n en el sector energe?tico residencial mexicano y su potencial de mitigacio?n de gases efecto invernadero",
