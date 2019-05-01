@@ -16,7 +16,7 @@ class DistincionAcademicoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
 
             items = DistincionAcademico.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'institucion', 'fecha'))
 
             return HttpResponse(json, content_type='application/json2')
@@ -58,7 +58,7 @@ class DistincionAlumnoJSON(View):
                 items = DistincionAlumno.objects.all().exclude(tutores=usuarioid)
             else:
                 items = DistincionAlumno.objects.filter(tutores=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'alumno', 'nivel_academico', 'institucion', 'fecha'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')
@@ -103,7 +103,7 @@ class ParticipacionComisionExpertosJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ParticipacionComisionExpertos.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'institucion', 'fecha_inicio'))
 
             return HttpResponse(json, content_type='application/json2')
@@ -143,7 +143,7 @@ class ParticipacionSociedadCientificaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ParticipacionSociedadCientifica.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'tipo', 'ambito'))
 
             json = json.replace('INVITACION', 'Por invitación')
@@ -190,7 +190,7 @@ class CitaPublicacionJSON(View):
                 items = CitaPublicacion.objects.all().exclude(tutores=usuarioid)
             else:
                 items = CitaPublicacion.objects.filter(tutores=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'alumno', 'grado_academico', 'dependencia', 'ambito', 'fecha'))
 
             json = json.replace('INSTITUCIONAL', 'Institucional')
