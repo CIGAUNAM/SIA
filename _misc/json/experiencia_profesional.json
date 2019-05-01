@@ -1,2 +1,5359 @@
 [
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 1,
+  "fields": {
+    "institucion2": 11,
+    "dependencia": 91,
+    "nombramiento": 1,
+    "cargo": 1,
+    "fecha_inicio": "2014-01-01",
+    "fecha_fin": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 2,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 46,
+    "cargo": 2,
+    "fecha_inicio": "2014-03-01",
+    "fecha_fin": null,
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 3,
+  "fields": {
+    "institucion2": 10,
+    "dependencia": 80,
+    "nombramiento": 1,
+    "cargo": 3,
+    "fecha_inicio": "1968-06-01",
+    "fecha_fin": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 4,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 59,
+    "cargo": 2,
+    "fecha_inicio": "2011-04-28",
+    "fecha_fin": "2016-03-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 5,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 6,
+    "nombramiento": 20,
+    "cargo": 2,
+    "fecha_inicio": "2010-07-28",
+    "fecha_fin": "2010-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 6,
+  "fields": {
+    "institucion2": 52,
+    "dependencia": 147,
+    "nombramiento": 1,
+    "cargo": 4,
+    "fecha_inicio": "2000-02-28",
+    "fecha_fin": "2005-09-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 7,
+  "fields": {
+    "institucion2": 10,
+    "dependencia": 74,
+    "nombramiento": 1,
+    "cargo": 5,
+    "fecha_inicio": "1999-06-28",
+    "fecha_fin": "2000-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 8,
+  "fields": {
+    "institucion2": 44,
+    "dependencia": 137,
+    "nombramiento": 1,
+    "cargo": 6,
+    "fecha_inicio": "1998-05-28",
+    "fecha_fin": "1999-07-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 9,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 12,
+    "nombramiento": 1,
+    "cargo": 6,
+    "fecha_inicio": "1997-08-28",
+    "fecha_fin": "1998-04-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 10,
+  "fields": {
+    "institucion2": 212,
+    "dependencia": 339,
+    "nombramiento": 1,
+    "cargo": 6,
+    "fecha_inicio": "1997-05-28",
+    "fecha_fin": "1997-07-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 11,
+  "fields": {
+    "institucion2": 208,
+    "dependencia": 334,
+    "nombramiento": 1,
+    "cargo": 7,
+    "fecha_inicio": "1994-10-28",
+    "fecha_fin": "1995-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 12,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 1,
+    "cargo": 6,
+    "fecha_inicio": "1993-01-28",
+    "fecha_fin": "1994-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 13,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 13,
+    "nombramiento": 1,
+    "cargo": 6,
+    "fecha_inicio": "1991-01-28",
+    "fecha_fin": "1992-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 14,
+  "fields": {
+    "institucion2": 62,
+    "dependencia": 160,
+    "nombramiento": 1,
+    "cargo": 8,
+    "fecha_inicio": "1989-10-28",
+    "fecha_fin": "1990-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 15,
+  "fields": {
+    "institucion2": 46,
+    "dependencia": 139,
+    "nombramiento": 1,
+    "cargo": 9,
+    "fecha_inicio": "1989-01-28",
+    "fecha_fin": "1989-08-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 16,
+  "fields": {
+    "institucion2": 2,
+    "dependencia": 46,
+    "nombramiento": 42,
+    "cargo": 2,
+    "fecha_inicio": "1995-02-01",
+    "fecha_fin": null,
+    "usuario": 29
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 17,
+  "fields": {
+    "institucion2": 33,
+    "dependencia": 121,
+    "nombramiento": 1,
+    "cargo": 10,
+    "fecha_inicio": "2012-10-28",
+    "fecha_fin": "2014-02-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 18,
+  "fields": {
+    "institucion2": 110,
+    "dependencia": 215,
+    "nombramiento": 39,
+    "cargo": 12,
+    "fecha_inicio": "1988-02-28",
+    "fecha_fin": "2001-11-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 19,
+  "fields": {
+    "institucion2": 52,
+    "dependencia": 147,
+    "nombramiento": 1,
+    "cargo": 13,
+    "fecha_inicio": "2001-11-28",
+    "fecha_fin": "2004-04-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 20,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 41,
+    "cargo": 14,
+    "fecha_inicio": "2004-04-28",
+    "fecha_fin": "2006-04-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 21,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 45,
+    "cargo": 2,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": null,
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 22,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 64,
+    "cargo": 2,
+    "fecha_inicio": "2014-10-01",
+    "fecha_fin": null,
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 23,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 63,
+    "cargo": 2,
+    "fecha_inicio": "2011-06-28",
+    "fecha_fin": "2014-10-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 24,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 59,
+    "cargo": 2,
+    "fecha_inicio": "2007-03-28",
+    "fecha_fin": "2011-06-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 25,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 11,
+    "fecha_inicio": "2006-03-28",
+    "fecha_fin": "2007-02-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 26,
+  "fields": {
+    "institucion2": 213,
+    "dependencia": 340,
+    "nombramiento": 1,
+    "cargo": 16,
+    "fecha_inicio": "2001-01-28",
+    "fecha_fin": "2005-12-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 27,
+  "fields": {
+    "institucion2": 18,
+    "dependencia": 102,
+    "nombramiento": 1,
+    "cargo": 17,
+    "fecha_inicio": "2004-06-28",
+    "fecha_fin": "2004-12-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 28,
+  "fields": {
+    "institucion2": 209,
+    "dependencia": 336,
+    "nombramiento": 1,
+    "cargo": 17,
+    "fecha_inicio": "1999-02-28",
+    "fecha_fin": "1999-08-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 29,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 48,
+    "cargo": 2,
+    "fecha_inicio": "1994-01-28",
+    "fecha_fin": "1996-02-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 30,
+  "fields": {
+    "institucion2": 124,
+    "dependencia": 232,
+    "nombramiento": 38,
+    "cargo": 2,
+    "fecha_inicio": "1996-02-28",
+    "fecha_fin": "2000-03-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 31,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 20,
+    "nombramiento": 38,
+    "cargo": 2,
+    "fecha_inicio": "2000-07-28",
+    "fecha_fin": "2004-07-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 32,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 42,
+    "cargo": 2,
+    "fecha_inicio": "2007-08-28",
+    "fecha_fin": "2010-02-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 33,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 43,
+    "cargo": 2,
+    "fecha_inicio": "2010-02-28",
+    "fecha_fin": "2015-05-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 34,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 44,
+    "cargo": 2,
+    "fecha_inicio": "2015-06-01",
+    "fecha_fin": null,
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 35,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 72,
+    "fecha_inicio": "2014-10-01",
+    "fecha_fin": null,
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 36,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 73,
+    "fecha_inicio": "2014-09-01",
+    "fecha_fin": null,
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 37,
+  "fields": {
+    "institucion2": 216,
+    "dependencia": 343,
+    "nombramiento": 1,
+    "cargo": 18,
+    "fecha_inicio": "2008-10-28",
+    "fecha_fin": "2009-07-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 38,
+  "fields": {
+    "institucion2": 214,
+    "dependencia": 341,
+    "nombramiento": 1,
+    "cargo": 19,
+    "fecha_inicio": "2006-04-28",
+    "fecha_fin": "2006-09-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 39,
+  "fields": {
+    "institucion2": 215,
+    "dependencia": 342,
+    "nombramiento": 1,
+    "cargo": 20,
+    "fecha_inicio": "2005-09-28",
+    "fecha_fin": "2006-02-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 40,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 53,
+    "cargo": 76,
+    "fecha_inicio": "1994-12-28",
+    "fecha_fin": "1997-12-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 41,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 51,
+    "cargo": 76,
+    "fecha_inicio": "1997-12-28",
+    "fecha_fin": "2001-12-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 42,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 52,
+    "cargo": 76,
+    "fecha_inicio": "2001-12-28",
+    "fecha_fin": "2006-08-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 43,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 64,
+    "cargo": 76,
+    "fecha_inicio": "2007-09-28",
+    "fecha_fin": "2015-09-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 44,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 3,
+    "nombramiento": 64,
+    "cargo": 76,
+    "fecha_inicio": "2006-08-28",
+    "fecha_fin": "2007-08-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 45,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 65,
+    "cargo": 76,
+    "fecha_inicio": "2015-10-01",
+    "fecha_fin": null,
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 46,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 64,
+    "cargo": 21,
+    "fecha_inicio": "2009-01-01",
+    "fecha_fin": "2015-09-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 47,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 22,
+    "fecha_inicio": "2007-11-28",
+    "fecha_fin": "2011-10-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 48,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 23,
+    "fecha_inicio": "2007-10-28",
+    "fecha_fin": "2011-10-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 49,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 24,
+    "fecha_inicio": "2011-11-28",
+    "fecha_fin": "2012-04-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 50,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 25,
+    "fecha_inicio": "2010-12-28",
+    "fecha_fin": "2012-04-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 51,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 26,
+    "fecha_inicio": "2008-08-28",
+    "fecha_fin": "2012-06-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 52,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 27,
+    "fecha_inicio": "2011-11-28",
+    "fecha_fin": "2012-06-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 53,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 28,
+    "fecha_inicio": "2013-10-28",
+    "fecha_fin": "2014-10-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 54,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 29,
+    "fecha_inicio": "2013-02-28",
+    "fecha_fin": "2014-03-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 55,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 30,
+    "fecha_inicio": "2014-02-28",
+    "fecha_fin": "2014-12-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 56,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 31,
+    "fecha_inicio": "2013-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 57,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 32,
+    "fecha_inicio": "2014-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 58,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 33,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 59,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 34,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 60,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 35,
+    "fecha_inicio": "2015-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 61,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 10,
+    "nombramiento": 1,
+    "cargo": 36,
+    "fecha_inicio": "2012-04-28",
+    "fecha_fin": "2015-02-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 62,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 37,
+    "fecha_inicio": "2015-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 63,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 20,
+    "nombramiento": 41,
+    "cargo": 2,
+    "fecha_inicio": "2004-11-28",
+    "fecha_fin": "2007-08-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 64,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 59,
+    "cargo": 2,
+    "fecha_inicio": "2007-08-28",
+    "fecha_fin": "2011-02-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 65,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 63,
+    "cargo": 2,
+    "fecha_inicio": "2011-02-28",
+    "fecha_fin": "2015-03-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 66,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 64,
+    "cargo": 2,
+    "fecha_inicio": "2015-03-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 67,
+  "fields": {
+    "institucion2": 217,
+    "dependencia": 344,
+    "nombramiento": 1,
+    "cargo": 38,
+    "fecha_inicio": "1974-01-28",
+    "fecha_fin": "1982-09-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 68,
+  "fields": {
+    "institucion2": 39,
+    "dependencia": 127,
+    "nombramiento": 1,
+    "cargo": 39,
+    "fecha_inicio": "1982-09-28",
+    "fecha_fin": "2008-06-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 69,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 10,
+    "nombramiento": 20,
+    "cargo": 40,
+    "fecha_inicio": "2012-08-01",
+    "fecha_fin": null,
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 70,
+  "fields": {
+    "institucion2": 218,
+    "dependencia": 345,
+    "nombramiento": 1,
+    "cargo": 41,
+    "fecha_inicio": "2012-07-28",
+    "fecha_fin": "2012-08-01",
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 71,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 98,
+    "fecha_inicio": "2013-06-13",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 72,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 41,
+    "cargo": 42,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": "2014-10-01",
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 73,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 41,
+    "cargo": 42,
+    "fecha_inicio": "2014-11-01",
+    "fecha_fin": null,
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 75,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 63,
+    "cargo": 2,
+    "fecha_inicio": "2016-04-01",
+    "fecha_fin": null,
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 76,
+  "fields": {
+    "institucion2": 141,
+    "dependencia": 252,
+    "nombramiento": 1,
+    "cargo": 223,
+    "fecha_inicio": "2009-04-28",
+    "fecha_fin": "2014-03-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 77,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 2,
+    "fecha_inicio": "2010-03-28",
+    "fecha_fin": "2015-12-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 78,
+  "fields": {
+    "institucion2": 11,
+    "dependencia": 92,
+    "nombramiento": 1,
+    "cargo": 43,
+    "fecha_inicio": "2004-08-28",
+    "fecha_fin": "2004-12-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 79,
+  "fields": {
+    "institucion2": 46,
+    "dependencia": 139,
+    "nombramiento": 1,
+    "cargo": 44,
+    "fecha_inicio": "2005-07-28",
+    "fecha_fin": "2005-12-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 80,
+  "fields": {
+    "institucion2": 219,
+    "dependencia": 346,
+    "nombramiento": 1,
+    "cargo": 45,
+    "fecha_inicio": "2005-06-28",
+    "fecha_fin": "2007-03-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 81,
+  "fields": {
+    "institucion2": 46,
+    "dependencia": 139,
+    "nombramiento": 1,
+    "cargo": 46,
+    "fecha_inicio": "2007-03-28",
+    "fecha_fin": "2007-09-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 82,
+  "fields": {
+    "institucion2": 220,
+    "dependencia": 347,
+    "nombramiento": 1,
+    "cargo": 47,
+    "fecha_inicio": "2007-09-28",
+    "fecha_fin": "2010-02-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 83,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 1,
+    "cargo": 48,
+    "fecha_inicio": "2006-02-28",
+    "fecha_fin": "2006-05-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 84,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 45,
+    "cargo": 232,
+    "fecha_inicio": "2016-04-01",
+    "fecha_fin": "2018-11-26",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 85,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 60,
+    "cargo": 2,
+    "fecha_inicio": "2016-04-01",
+    "fecha_fin": null,
+    "usuario": 35
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 86,
+  "fields": {
+    "institucion2": 221,
+    "dependencia": 348,
+    "nombramiento": 1,
+    "cargo": 49,
+    "fecha_inicio": "2006-04-28",
+    "fecha_fin": "2008-12-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 87,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 1,
+    "cargo": 50,
+    "fecha_inicio": "2007-04-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 88,
+  "fields": {
+    "institucion2": 222,
+    "dependencia": 349,
+    "nombramiento": 1,
+    "cargo": 51,
+    "fecha_inicio": "2011-02-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 89,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 5,
+    "nombramiento": 1,
+    "cargo": 52,
+    "fecha_inicio": "2015-09-01",
+    "fecha_fin": null,
+    "usuario": 39
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 90,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 27,
+    "nombramiento": 20,
+    "cargo": 40,
+    "fecha_inicio": "2014-01-28",
+    "fecha_fin": "2016-12-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 91,
+  "fields": {
+    "institucion2": 52,
+    "dependencia": 146,
+    "nombramiento": 1,
+    "cargo": 53,
+    "fecha_inicio": "2008-08-28",
+    "fecha_fin": "2009-08-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 92,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 47,
+    "cargo": 167,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": "2012-03-09",
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 93,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 59,
+    "cargo": 226,
+    "fecha_inicio": "2016-06-01",
+    "fecha_fin": null,
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 94,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 54,
+    "fecha_inicio": "2016-02-01",
+    "fecha_fin": "2016-05-31",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 95,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 1,
+    "cargo": 55,
+    "fecha_inicio": "2008-08-28",
+    "fecha_fin": "2008-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 96,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 6,
+    "nombramiento": 1,
+    "cargo": 56,
+    "fecha_inicio": "2007-08-28",
+    "fecha_fin": "2007-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 97,
+  "fields": {
+    "institucion2": 120,
+    "dependencia": 227,
+    "nombramiento": 1,
+    "cargo": 57,
+    "fecha_inicio": "2015-10-28",
+    "fecha_fin": "2015-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 98,
+  "fields": {
+    "institucion2": 11,
+    "dependencia": 93,
+    "nombramiento": 1,
+    "cargo": 58,
+    "fecha_inicio": "2013-01-28",
+    "fecha_fin": "2015-01-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 99,
+  "fields": {
+    "institucion2": 2,
+    "dependencia": 42,
+    "nombramiento": 1,
+    "cargo": 58,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": "2010-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 100,
+  "fields": {
+    "institucion2": 225,
+    "dependencia": 352,
+    "nombramiento": 1,
+    "cargo": 59,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": "2009-10-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 101,
+  "fields": {
+    "institucion2": 226,
+    "dependencia": 353,
+    "nombramiento": null,
+    "cargo": 225,
+    "fecha_inicio": "2006-01-25",
+    "fecha_fin": "2006-07-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 102,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 28,
+    "nombramiento": 52,
+    "cargo": 2,
+    "fecha_inicio": "1984-08-28",
+    "fecha_fin": "1986-10-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 103,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 59,
+    "cargo": 60,
+    "fecha_inicio": "1986-11-28",
+    "fecha_fin": "1990-09-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 104,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 58,
+    "cargo": 89,
+    "fecha_inicio": "1992-10-28",
+    "fecha_fin": "1994-04-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 105,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 58,
+    "cargo": 61,
+    "fecha_inicio": "1998-10-28",
+    "fecha_fin": "2001-10-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 106,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 65,
+    "cargo": 61,
+    "fecha_inicio": "2001-11-28",
+    "fecha_fin": "2004-11-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 107,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 65,
+    "cargo": 2,
+    "fecha_inicio": "2004-12-28",
+    "fecha_fin": "2009-12-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 108,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 65,
+    "cargo": 62,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 109,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 65,
+    "cargo": 63,
+    "fecha_inicio": "2015-11-01",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 110,
+  "fields": {
+    "institucion2": 52,
+    "dependencia": 147,
+    "nombramiento": 1,
+    "cargo": 64,
+    "fecha_inicio": "1995-02-28",
+    "fecha_fin": "1996-02-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 111,
+  "fields": {
+    "institucion2": 227,
+    "dependencia": 354,
+    "nombramiento": 1,
+    "cargo": 65,
+    "fecha_inicio": "1996-02-28",
+    "fecha_fin": "1998-10-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 112,
+  "fields": {
+    "institucion2": 9,
+    "dependencia": 65,
+    "nombramiento": 1,
+    "cargo": 72,
+    "fecha_inicio": "2014-10-28",
+    "fecha_fin": "2015-12-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 113,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 41,
+    "cargo": 69,
+    "fecha_inicio": "2016-01-01",
+    "fecha_fin": null,
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 114,
+  "fields": {
+    "institucion2": 228,
+    "dependencia": 355,
+    "nombramiento": 1,
+    "cargo": 66,
+    "fecha_inicio": "2012-01-01",
+    "fecha_fin": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 115,
+  "fields": {
+    "institucion2": 2,
+    "dependencia": 42,
+    "nombramiento": 1,
+    "cargo": 67,
+    "fecha_inicio": "2014-06-28",
+    "fecha_fin": "2015-04-01",
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 116,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 117,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 118,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 119,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 29
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 120,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 28
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 121,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 18
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 122,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 45,
+    "cargo": 155,
+    "fecha_inicio": "2012-03-09",
+    "fecha_fin": "2017-05-25",
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 123,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 41,
+    "cargo": 167,
+    "fecha_inicio": "2011-04-01",
+    "fecha_fin": "2015-10-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 124,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2016-08-01",
+    "fecha_fin": null,
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 125,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 126,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 24
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 127,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 36
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 128,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 129,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 22
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 131,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 132,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 133,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2017-09-01",
+    "fecha_fin": null,
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 134,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 135,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 136,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 69,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 39
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 137,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 154,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 138,
+  "fields": {
+    "institucion2": 462,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 72,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": "2018-09-30",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 139,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 70,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 140,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 70,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 5
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 141,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 71,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 59
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 142,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 71,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 144,
+  "fields": {
+    "institucion2": 208,
+    "dependencia": 334,
+    "nombramiento": 1,
+    "cargo": 77,
+    "fecha_inicio": "2012-10-08",
+    "fecha_fin": "2013-10-09",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 145,
+  "fields": {
+    "institucion2": 208,
+    "dependencia": 334,
+    "nombramiento": 1,
+    "cargo": 78,
+    "fecha_inicio": "2005-10-03",
+    "fecha_fin": "2006-10-19",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 146,
+  "fields": {
+    "institucion2": 236,
+    "dependencia": 363,
+    "nombramiento": 1,
+    "cargo": 79,
+    "fecha_inicio": "1997-02-12",
+    "fecha_fin": "1998-07-23",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 147,
+  "fields": {
+    "institucion2": 236,
+    "dependencia": 363,
+    "nombramiento": 1,
+    "cargo": 80,
+    "fecha_inicio": "1995-03-15",
+    "fecha_fin": "1996-12-09",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 148,
+  "fields": {
+    "institucion2": 237,
+    "dependencia": 364,
+    "nombramiento": 1,
+    "cargo": 81,
+    "fecha_inicio": "1995-03-11",
+    "fecha_fin": "1996-05-15",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 149,
+  "fields": {
+    "institucion2": 239,
+    "dependencia": 365,
+    "nombramiento": 1,
+    "cargo": 82,
+    "fecha_inicio": "1992-10-20",
+    "fecha_fin": "1994-07-14",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 150,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": 1,
+    "cargo": 84,
+    "fecha_inicio": "2017-03-08",
+    "fecha_fin": "2018-12-31",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 151,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": 1,
+    "cargo": 63,
+    "fecha_inicio": "2015-05-26",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 152,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": 65,
+    "cargo": 85,
+    "fecha_inicio": "2015-07-03",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 153,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": 1,
+    "cargo": 86,
+    "fecha_inicio": "2009-04-10",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 154,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": 1,
+    "cargo": 87,
+    "fecha_inicio": "1998-02-10",
+    "fecha_fin": "2005-07-15",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 155,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 88,
+    "fecha_inicio": "2017-01-03",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 156,
+  "fields": {
+    "institucion2": 255,
+    "dependencia": 375,
+    "nombramiento": null,
+    "cargo": 91,
+    "fecha_inicio": "2013-01-01",
+    "fecha_fin": "2014-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 157,
+  "fields": {
+    "institucion2": 239,
+    "dependencia": 379,
+    "nombramiento": null,
+    "cargo": 93,
+    "fecha_inicio": "1995-02-08",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 158,
+  "fields": {
+    "institucion2": 10,
+    "dependencia": 80,
+    "nombramiento": null,
+    "cargo": 94,
+    "fecha_inicio": "1992-01-01",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 159,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": null,
+    "cargo": 97,
+    "fecha_inicio": "2013-06-13",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 161,
+  "fields": {
+    "institucion2": 9,
+    "dependencia": 65,
+    "nombramiento": null,
+    "cargo": 115,
+    "fecha_inicio": "2017-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 162,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": null,
+    "cargo": 116,
+    "fecha_inicio": "2013-04-19",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 163,
+  "fields": {
+    "institucion2": 9,
+    "dependencia": 65,
+    "nombramiento": null,
+    "cargo": 115,
+    "fecha_inicio": "2010-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 164,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 99,
+    "fecha_inicio": "2010-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 165,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": null,
+    "cargo": 101,
+    "fecha_inicio": "2008-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 166,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 99,
+    "fecha_inicio": "2008-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 167,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 99,
+    "fecha_inicio": "2009-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 168,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 102,
+    "fecha_inicio": "2008-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 169,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 1,
+    "nombramiento": null,
+    "cargo": 103,
+    "fecha_inicio": "2007-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 170,
+  "fields": {
+    "institucion2": 99,
+    "dependencia": 387,
+    "nombramiento": null,
+    "cargo": 104,
+    "fecha_inicio": "2006-01-02",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 171,
+  "fields": {
+    "institucion2": 99,
+    "dependencia": 387,
+    "nombramiento": null,
+    "cargo": 105,
+    "fecha_inicio": "1997-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 172,
+  "fields": {
+    "institucion2": 99,
+    "dependencia": 387,
+    "nombramiento": null,
+    "cargo": 106,
+    "fecha_inicio": "1980-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 173,
+  "fields": {
+    "institucion2": 99,
+    "dependencia": 387,
+    "nombramiento": null,
+    "cargo": 107,
+    "fecha_inicio": "1977-02-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 174,
+  "fields": {
+    "institucion2": 328,
+    "dependencia": 420,
+    "nombramiento": 1,
+    "cargo": 120,
+    "fecha_inicio": "2015-03-01",
+    "fecha_fin": "2015-03-15",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 175,
+  "fields": {
+    "institucion2": 328,
+    "dependencia": 420,
+    "nombramiento": 1,
+    "cargo": 120,
+    "fecha_inicio": "2014-02-14",
+    "fecha_fin": "2014-03-14",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 176,
+  "fields": {
+    "institucion2": 323,
+    "dependencia": 422,
+    "nombramiento": 1,
+    "cargo": 121,
+    "fecha_inicio": "2013-02-04",
+    "fecha_fin": "2013-04-04",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 177,
+  "fields": {
+    "institucion2": 324,
+    "dependencia": 423,
+    "nombramiento": 1,
+    "cargo": 122,
+    "fecha_inicio": "2012-08-06",
+    "fecha_fin": "2012-08-31",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 178,
+  "fields": {
+    "institucion2": 325,
+    "dependencia": 424,
+    "nombramiento": 1,
+    "cargo": 123,
+    "fecha_inicio": "2011-07-01",
+    "fecha_fin": "2011-08-31",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 179,
+  "fields": {
+    "institucion2": 322,
+    "dependencia": 420,
+    "nombramiento": 1,
+    "cargo": 124,
+    "fecha_inicio": "2010-03-08",
+    "fecha_fin": "2010-03-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 180,
+  "fields": {
+    "institucion2": 326,
+    "dependencia": 425,
+    "nombramiento": 1,
+    "cargo": 125,
+    "fecha_inicio": "2010-02-01",
+    "fecha_fin": "2010-02-26",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 181,
+  "fields": {
+    "institucion2": 328,
+    "dependencia": 420,
+    "nombramiento": 1,
+    "cargo": 126,
+    "fecha_inicio": "2009-04-08",
+    "fecha_fin": "2009-05-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 182,
+  "fields": {
+    "institucion2": 327,
+    "dependencia": 426,
+    "nombramiento": 1,
+    "cargo": 127,
+    "fecha_inicio": "2008-08-04",
+    "fecha_fin": "2018-08-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 183,
+  "fields": {
+    "institucion2": 321,
+    "dependencia": 420,
+    "nombramiento": 1,
+    "cargo": 128,
+    "fecha_inicio": "2008-03-03",
+    "fecha_fin": "2008-03-27",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 184,
+  "fields": {
+    "institucion2": 329,
+    "dependencia": 425,
+    "nombramiento": 1,
+    "cargo": 129,
+    "fecha_inicio": "2008-02-05",
+    "fecha_fin": "2008-02-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 185,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": 1,
+    "cargo": 131,
+    "fecha_inicio": "2007-08-03",
+    "fecha_fin": "2007-08-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 186,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": 1,
+    "cargo": 133,
+    "fecha_inicio": "2007-06-04",
+    "fecha_fin": "2007-06-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 187,
+  "fields": {
+    "institucion2": 324,
+    "dependencia": 420,
+    "nombramiento": 1,
+    "cargo": 134,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": "2007-04-12",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 189,
+  "fields": {
+    "institucion2": 324,
+    "dependencia": 423,
+    "nombramiento": 1,
+    "cargo": 140,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": "2007-03-31",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 190,
+  "fields": {
+    "institucion2": 324,
+    "dependencia": 423,
+    "nombramiento": 1,
+    "cargo": 135,
+    "fecha_inicio": "2007-03-02",
+    "fecha_fin": "2007-03-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 191,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": 1,
+    "cargo": 136,
+    "fecha_inicio": "2007-02-05",
+    "fecha_fin": "2007-02-28",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 192,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": 1,
+    "cargo": 138,
+    "fecha_inicio": "2006-06-01",
+    "fecha_fin": "2006-07-28",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 193,
+  "fields": {
+    "institucion2": 322,
+    "dependencia": 420,
+    "nombramiento": 1,
+    "cargo": 139,
+    "fecha_inicio": "2006-03-01",
+    "fecha_fin": "2006-03-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 194,
+  "fields": {
+    "institucion2": 103,
+    "dependencia": 423,
+    "nombramiento": 1,
+    "cargo": 140,
+    "fecha_inicio": "2006-02-01",
+    "fecha_fin": "2006-02-28",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 195,
+  "fields": {
+    "institucion2": 333,
+    "dependencia": 428,
+    "nombramiento": null,
+    "cargo": 141,
+    "fecha_inicio": "2006-09-06",
+    "fecha_fin": "2013-08-22",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 196,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": null,
+    "cargo": 142,
+    "fecha_inicio": "2005-09-06",
+    "fecha_fin": "2005-09-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 197,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": null,
+    "cargo": 143,
+    "fecha_inicio": "2004-08-04",
+    "fecha_fin": "2004-09-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 198,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": null,
+    "cargo": 145,
+    "fecha_inicio": "2004-09-01",
+    "fecha_fin": "2007-09-27",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 199,
+  "fields": {
+    "institucion2": 330,
+    "dependencia": 427,
+    "nombramiento": null,
+    "cargo": 133,
+    "fecha_inicio": "2004-04-05",
+    "fecha_fin": "2004-06-22",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 200,
+  "fields": {
+    "institucion2": 322,
+    "dependencia": 420,
+    "nombramiento": null,
+    "cargo": 147,
+    "fecha_inicio": "2003-07-01",
+    "fecha_fin": "2003-07-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 201,
+  "fields": {
+    "institucion2": 328,
+    "dependencia": 421,
+    "nombramiento": null,
+    "cargo": 148,
+    "fecha_inicio": "2002-07-01",
+    "fecha_fin": "2002-07-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 202,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 384,
+    "nombramiento": 47,
+    "cargo": 153,
+    "fecha_inicio": "2017-04-06",
+    "fecha_fin": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 203,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 384,
+    "nombramiento": 46,
+    "cargo": 154,
+    "fecha_inicio": "2014-04-03",
+    "fecha_fin": "2017-04-05",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 204,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 384,
+    "nombramiento": 45,
+    "cargo": 155,
+    "fecha_inicio": "2011-02-11",
+    "fecha_fin": "2014-04-02",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 205,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 384,
+    "nombramiento": 45,
+    "cargo": 156,
+    "fecha_inicio": "2007-08-16",
+    "fecha_fin": "2011-02-10",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 206,
+  "fields": {
+    "institucion2": 246,
+    "dependencia": 2,
+    "nombramiento": 45,
+    "cargo": 156,
+    "fecha_inicio": "2006-04-01",
+    "fecha_fin": "2007-08-15",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 207,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 159,
+    "fecha_inicio": "2005-10-01",
+    "fecha_fin": "2006-03-30",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 208,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 158,
+    "fecha_inicio": "2003-10-01",
+    "fecha_fin": "2005-09-30",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 209,
+  "fields": {
+    "institucion2": 246,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 157,
+    "fecha_inicio": "2003-02-01",
+    "fecha_fin": "2003-07-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 210,
+  "fields": {
+    "institucion2": 341,
+    "dependencia": 2,
+    "nombramiento": null,
+    "cargo": 160,
+    "fecha_inicio": "1996-02-01",
+    "fecha_fin": "1998-08-06",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 211,
+  "fields": {
+    "institucion2": 246,
+    "dependencia": 384,
+    "nombramiento": null,
+    "cargo": 161,
+    "fecha_inicio": "1995-08-21",
+    "fecha_fin": "1996-02-29",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 212,
+  "fields": {
+    "institucion2": 342,
+    "dependencia": 384,
+    "nombramiento": null,
+    "cargo": 162,
+    "fecha_inicio": "1990-04-01",
+    "fecha_fin": "1992-03-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 213,
+  "fields": {
+    "institucion2": 187,
+    "dependencia": 305,
+    "nombramiento": null,
+    "cargo": 163,
+    "fecha_inicio": "1992-05-16",
+    "fecha_fin": "1994-01-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 214,
+  "fields": {
+    "institucion2": 343,
+    "dependencia": 435,
+    "nombramiento": null,
+    "cargo": 164,
+    "fecha_inicio": "1994-01-01",
+    "fecha_fin": "1995-12-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 215,
+  "fields": {
+    "institucion2": 344,
+    "dependencia": 436,
+    "nombramiento": null,
+    "cargo": 166,
+    "fecha_inicio": "1993-06-01",
+    "fecha_fin": "1993-12-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 216,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 156,
+    "fecha_inicio": "2007-08-17",
+    "fecha_fin": "2015-06-11",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 217,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 20,
+    "nombramiento": null,
+    "cargo": 156,
+    "fecha_inicio": "2006-06-01",
+    "fecha_fin": "2007-08-17",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 218,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": null,
+    "cargo": 156,
+    "fecha_inicio": "2005-07-01",
+    "fecha_fin": "2006-06-30",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 219,
+  "fields": {
+    "institucion2": 246,
+    "dependencia": 384,
+    "nombramiento": 46,
+    "cargo": 167,
+    "fecha_inicio": "2000-07-01",
+    "fecha_fin": "2005-06-30",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 220,
+  "fields": {
+    "institucion2": 371,
+    "dependencia": 137,
+    "nombramiento": null,
+    "cargo": 168,
+    "fecha_inicio": "1994-02-01",
+    "fecha_fin": "1994-12-31",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 221,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 46,
+    "cargo": 68,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 222,
+  "fields": {
+    "institucion2": 399,
+    "dependencia": 479,
+    "nombramiento": null,
+    "cargo": 186,
+    "fecha_inicio": "1993-05-03",
+    "fecha_fin": "1993-09-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 223,
+  "fields": {
+    "institucion2": 400,
+    "dependencia": 480,
+    "nombramiento": null,
+    "cargo": 187,
+    "fecha_inicio": "1993-06-01",
+    "fecha_fin": "1993-08-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 224,
+  "fields": {
+    "institucion2": 401,
+    "dependencia": 481,
+    "nombramiento": null,
+    "cargo": 188,
+    "fecha_inicio": "1993-01-03",
+    "fecha_fin": "1995-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 225,
+  "fields": {
+    "institucion2": 181,
+    "dependencia": 297,
+    "nombramiento": null,
+    "cargo": 189,
+    "fecha_inicio": "1994-01-03",
+    "fecha_fin": "1996-01-10",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 227,
+  "fields": {
+    "institucion2": 403,
+    "dependencia": 482,
+    "nombramiento": null,
+    "cargo": 205,
+    "fecha_inicio": "1997-04-02",
+    "fecha_fin": "1998-04-07",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 228,
+  "fields": {
+    "institucion2": 402,
+    "dependencia": 297,
+    "nombramiento": null,
+    "cargo": 190,
+    "fecha_inicio": "1987-01-02",
+    "fecha_fin": "1989-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 229,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 13,
+    "nombramiento": null,
+    "cargo": 191,
+    "fecha_inicio": "1988-01-01",
+    "fecha_fin": "1989-01-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 230,
+  "fields": {
+    "institucion2": 231,
+    "dependencia": 646,
+    "nombramiento": null,
+    "cargo": 191,
+    "fecha_inicio": "1989-09-02",
+    "fecha_fin": "1989-12-06",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 231,
+  "fields": {
+    "institucion2": 231,
+    "dependencia": 646,
+    "nombramiento": null,
+    "cargo": 193,
+    "fecha_inicio": "1990-01-01",
+    "fecha_fin": "1992-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 232,
+  "fields": {
+    "institucion2": 231,
+    "dependencia": 646,
+    "nombramiento": null,
+    "cargo": 191,
+    "fecha_inicio": "1992-09-01",
+    "fecha_fin": "1993-10-04",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 233,
+  "fields": {
+    "institucion2": 181,
+    "dependencia": 297,
+    "nombramiento": null,
+    "cargo": 193,
+    "fecha_inicio": "1992-01-01",
+    "fecha_fin": "1999-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 234,
+  "fields": {
+    "institucion2": 405,
+    "dependencia": 483,
+    "nombramiento": null,
+    "cargo": 193,
+    "fecha_inicio": "2005-01-12",
+    "fecha_fin": "2005-02-12",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 235,
+  "fields": {
+    "institucion2": 181,
+    "dependencia": 297,
+    "nombramiento": 6,
+    "cargo": 202,
+    "fecha_inicio": "2004-02-11",
+    "fecha_fin": "2004-04-11",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 236,
+  "fields": {
+    "institucion2": 406,
+    "dependencia": 484,
+    "nombramiento": null,
+    "cargo": 200,
+    "fecha_inicio": "2002-01-01",
+    "fecha_fin": "2004-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 238,
+  "fields": {
+    "institucion2": 181,
+    "dependencia": 297,
+    "nombramiento": null,
+    "cargo": 202,
+    "fecha_inicio": "2005-01-01",
+    "fecha_fin": "2005-12-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 239,
+  "fields": {
+    "institucion2": 405,
+    "dependencia": 157,
+    "nombramiento": null,
+    "cargo": 200,
+    "fecha_inicio": "2005-11-01",
+    "fecha_fin": "2005-11-30",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 240,
+  "fields": {
+    "institucion2": 139,
+    "dependencia": 250,
+    "nombramiento": null,
+    "cargo": 204,
+    "fecha_inicio": "2006-01-01",
+    "fecha_fin": "2006-12-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 242,
+  "fields": {
+    "institucion2": 198,
+    "dependencia": 319,
+    "nombramiento": 1,
+    "cargo": 105,
+    "fecha_inicio": "2016-08-01",
+    "fecha_fin": "2017-08-31",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 243,
+  "fields": {
+    "institucion2": 451,
+    "dependencia": 525,
+    "nombramiento": null,
+    "cargo": 40,
+    "fecha_inicio": "2014-08-01",
+    "fecha_fin": "2017-08-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 244,
+  "fields": {
+    "institucion2": 452,
+    "dependencia": 526,
+    "nombramiento": null,
+    "cargo": 213,
+    "fecha_inicio": "2008-07-01",
+    "fecha_fin": "2009-03-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 245,
+  "fields": {
+    "institucion2": 453,
+    "dependencia": 527,
+    "nombramiento": null,
+    "cargo": 9,
+    "fecha_inicio": "2006-02-01",
+    "fecha_fin": "2006-04-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 246,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 46,
+    "cargo": 69,
+    "fecha_inicio": "2012-10-11",
+    "fecha_fin": null,
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 247,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 45,
+    "cargo": 69,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": null,
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 248,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 65,
+    "cargo": 76,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 249,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 23,
+    "nombramiento": null,
+    "cargo": 216,
+    "fecha_inicio": "1989-05-01",
+    "fecha_fin": "1989-10-31",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 250,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 23,
+    "nombramiento": null,
+    "cargo": 216,
+    "fecha_inicio": "1989-10-01",
+    "fecha_fin": "1990-05-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 251,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 23,
+    "nombramiento": null,
+    "cargo": 216,
+    "fecha_inicio": "1993-11-01",
+    "fecha_fin": "1994-04-30",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 252,
+  "fields": {
+    "institucion2": 456,
+    "dependencia": 535,
+    "nombramiento": 46,
+    "cargo": 15,
+    "fecha_inicio": "2005-09-01",
+    "fecha_fin": "2007-08-30",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 253,
+  "fields": {
+    "institucion2": 456,
+    "dependencia": 535,
+    "nombramiento": 41,
+    "cargo": 69,
+    "fecha_inicio": "1995-02-01",
+    "fecha_fin": "2005-08-30",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 254,
+  "fields": {
+    "institucion2": 269,
+    "dependencia": 548,
+    "nombramiento": 59,
+    "cargo": 76,
+    "fecha_inicio": "2005-01-03",
+    "fecha_fin": "2007-08-03",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 255,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 59,
+    "cargo": 76,
+    "fecha_inicio": "2007-08-06",
+    "fecha_fin": "2011-02-05",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 256,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 63,
+    "cargo": 76,
+    "fecha_inicio": "2011-02-01",
+    "fecha_fin": null,
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 257,
+  "fields": {
+    "institucion2": 73,
+    "dependencia": 175,
+    "nombramiento": null,
+    "cargo": 217,
+    "fecha_inicio": "2000-01-01",
+    "fecha_fin": "2002-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 258,
+  "fields": {
+    "institucion2": 73,
+    "dependencia": 549,
+    "nombramiento": null,
+    "cargo": 217,
+    "fecha_inicio": "2001-01-02",
+    "fecha_fin": "2002-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 259,
+  "fields": {
+    "institucion2": 73,
+    "dependencia": 175,
+    "nombramiento": null,
+    "cargo": 218,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": null,
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 260,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 214,
+    "fecha_inicio": "2008-07-22",
+    "fecha_fin": null,
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 261,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 153,
+    "fecha_inicio": "2014-07-12",
+    "fecha_fin": null,
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 262,
+  "fields": {
+    "institucion2": 39,
+    "dependencia": 573,
+    "nombramiento": null,
+    "cargo": 219,
+    "fecha_inicio": "2003-01-01",
+    "fecha_fin": "2008-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 263,
+  "fields": {
+    "institucion2": 39,
+    "dependencia": 573,
+    "nombramiento": null,
+    "cargo": 106,
+    "fecha_inicio": "1994-01-01",
+    "fecha_fin": "2003-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 264,
+  "fields": {
+    "institucion2": 39,
+    "dependencia": 573,
+    "nombramiento": null,
+    "cargo": 106,
+    "fecha_inicio": "1991-01-01",
+    "fecha_fin": "1994-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 265,
+  "fields": {
+    "institucion2": 39,
+    "dependencia": 573,
+    "nombramiento": null,
+    "cargo": 220,
+    "fecha_inicio": "1998-01-01",
+    "fecha_fin": "1991-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 266,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 45,
+    "cargo": 156,
+    "fecha_inicio": "2007-10-01",
+    "fecha_fin": "2014-04-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 267,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 45,
+    "cargo": 156,
+    "fecha_inicio": "2006-10-01",
+    "fecha_fin": "2007-10-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 268,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 41,
+    "cargo": 167,
+    "fecha_inicio": "2001-10-01",
+    "fecha_fin": "2006-10-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 269,
+  "fields": {
+    "institucion2": 97,
+    "dependencia": 583,
+    "nombramiento": null,
+    "cargo": 105,
+    "fecha_inicio": "1989-10-01",
+    "fecha_fin": "1991-12-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 270,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 59,
+    "cargo": 76,
+    "fecha_inicio": "2000-02-01",
+    "fecha_fin": "2001-01-31",
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 271,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 63,
+    "cargo": 76,
+    "fecha_inicio": "2003-04-01",
+    "fecha_fin": "2003-09-12",
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 272,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 16,
+    "nombramiento": 59,
+    "cargo": 76,
+    "fecha_inicio": "2004-11-01",
+    "fecha_fin": "2007-07-31",
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 273,
+  "fields": {
+    "institucion2": 509,
+    "dependencia": 622,
+    "nombramiento": 5,
+    "cargo": 43,
+    "fecha_inicio": "2018-07-18",
+    "fecha_fin": "2018-07-19",
+    "usuario": 1087
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 274,
+  "fields": {
+    "institucion2": 43,
+    "dependencia": 603,
+    "nombramiento": 1,
+    "cargo": 10,
+    "fecha_inicio": "2008-01-01",
+    "fecha_fin": "2017-02-28",
+    "usuario": 91
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 275,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": null,
+    "cargo": 218,
+    "fecha_inicio": "2010-10-01",
+    "fecha_fin": "2011-03-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 276,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 41,
+    "cargo": 229,
+    "fecha_inicio": "2015-11-02",
+    "fecha_fin": "2016-03-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 277,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 551,
+    "nombramiento": 41,
+    "cargo": 167,
+    "fecha_inicio": "2018-10-01",
+    "fecha_fin": null,
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 279,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 6,
+    "nombramiento": null,
+    "cargo": 231,
+    "fecha_inicio": "2003-01-02",
+    "fecha_fin": "2003-07-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 281,
+  "fields": {
+    "institucion2": 567,
+    "dependencia": 705,
+    "nombramiento": null,
+    "cargo": 231,
+    "fecha_inicio": "2001-03-01",
+    "fecha_fin": "2001-09-30",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 282,
+  "fields": {
+    "institucion2": 1,
+    "dependencia": 4,
+    "nombramiento": 46,
+    "cargo": 154,
+    "fecha_inicio": "2017-05-25",
+    "fecha_fin": null,
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 283,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 547,
+    "nombramiento": null,
+    "cargo": 99,
+    "fecha_inicio": "2011-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 284,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 547,
+    "nombramiento": null,
+    "cargo": 115,
+    "fecha_inicio": "2013-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 285,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 547,
+    "nombramiento": null,
+    "cargo": 88,
+    "fecha_inicio": "2016-10-27",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 286,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 551,
+    "nombramiento": null,
+    "cargo": 116,
+    "fecha_inicio": "2018-05-04",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 287,
+  "fields": {
+    "institucion2": 245,
+    "dependencia": 551,
+    "nombramiento": 63,
+    "cargo": 99,
+    "fecha_inicio": "2011-02-10",
+    "fecha_fin": null,
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 288,
+  "fields": {
+    "institucion2": 604,
+    "dependencia": 788,
+    "nombramiento": null,
+    "cargo": 236,
+    "fecha_inicio": "2012-01-02",
+    "fecha_fin": "2012-06-29",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 289,
+  "fields": {
+    "institucion2": 620,
+    "dependencia": 789,
+    "nombramiento": 1,
+    "cargo": 238,
+    "fecha_inicio": "2007-06-04",
+    "fecha_fin": "2008-01-31",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 290,
+  "fields": {
+    "institucion2": 621,
+    "dependencia": 790,
+    "nombramiento": 1,
+    "cargo": 239,
+    "fecha_inicio": "2004-04-05",
+    "fecha_fin": "2007-05-31",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 291,
+  "fields": {
+    "institucion2": 2,
+    "dependencia": 791,
+    "nombramiento": 2,
+    "cargo": 40,
+    "fecha_inicio": "2015-01-05",
+    "fecha_fin": "2017-02-14",
+    "usuario": 93
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 1,
+  "fields": {
+    "linea_investigacion": "Geograf\u00eda de los Paisajes y Geoecolog\u00eda",
+    "descripcion": "",
+    "institucion2": 99,
+    "dependencia": 387,
+    "fecha_inicio": "1977-01-19",
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 2,
+  "fields": {
+    "linea_investigacion": "Ordenamientos Ambiental, Ecol\u00f3gico y Territorial",
+    "descripcion": "",
+    "institucion2": 99,
+    "dependencia": 387,
+    "fecha_inicio": "1977-02-08",
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 3,
+  "fields": {
+    "linea_investigacion": "Geoqu\u00edmica ambiental",
+    "descripcion": "",
+    "institucion2": 99,
+    "dependencia": 387,
+    "fecha_inicio": "1985-04-04",
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 4,
+  "fields": {
+    "linea_investigacion": "Historia Ambiental",
+    "descripcion": "patr\u00f3n de asentamiento\r\nreconstrucci\u00f3n de las formas del paisaje\r\ncambio de uso de suelo en una perspectiva hist\u00f3rica\r\n patr\u00f3n agropecuario\r\nexplotaci\u00f3n de los recursos naturales",
+    "institucion2": 245,
+    "dependencia": 1,
+    "fecha_inicio": "2003-01-01",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 5,
+  "fields": {
+    "linea_investigacion": "relaci\u00f3n sociedad \u2013 medio ambiente",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 1,
+    "fecha_inicio": "2003-01-01",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 6,
+  "fields": {
+    "linea_investigacion": "Arqueogeograf\u00eda",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2003-01-07",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 7,
+  "fields": {
+    "linea_investigacion": "Geohistoria",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 384,
+    "fecha_inicio": "2003-01-14",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 8,
+  "fields": {
+    "linea_investigacion": "Planeaci\u00f3n espacial y manejo de recursos naturales desde la perspectiva de la Geograf\u00eda f\u00edsica",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 384,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 9,
+  "fields": {
+    "linea_investigacion": "Geomorfolog\u00eda, Hidrolog\u00eda y ecolog\u00eda el paisaje",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 384,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 10,
+  "fields": {
+    "linea_investigacion": "Cuantificaci\u00f3n y an\u00e1lisis del cambio de uso del suelo,",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 384,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 11,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis de los efectos hidrol\u00f3gicos y edafol\u00f3gicos del cambio de cobertura",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 384,
+    "fecha_inicio": "2000-01-03",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 12,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis de la conectividad espacial",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 384,
+    "fecha_inicio": "2014-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 13,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis las tendencias y variaciones de cambio clim\u00e1tico",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 384,
+    "fecha_inicio": "2003-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 14,
+  "fields": {
+    "linea_investigacion": "Procesos Socio-Econ\u00f3micos y Ambientales en Territorios Urbanos y Periurbanos",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 384,
+    "fecha_inicio": "2006-01-01",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 16,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis Urbano-Regional",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 384,
+    "fecha_inicio": "2000-01-03",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 17,
+  "fields": {
+    "linea_investigacion": "Mercado Laboral Urbano",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 384,
+    "fecha_inicio": "2000-01-03",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 18,
+  "fields": {
+    "linea_investigacion": "Estudio y Conservaci\u00f3n de la Agro-Diversidad en el Contexto de los Sistemas de Producci\u00f3n Campesinos a Nivel Unidad de Producci\u00f3n y Regional",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 19,
+  "fields": {
+    "linea_investigacion": "Importancia de la conservaci\u00f3n de los ma\u00edces nativos y la milpa",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2005-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 20,
+  "fields": {
+    "linea_investigacion": "Evaluaci\u00f3n de Sustentabilidad de Agricultura y Sistemas Alimentarios",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "1999-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 21,
+  "fields": {
+    "linea_investigacion": "Agricultura Ecol\u00f3gica y Calidad de Suelos",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "1992-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 22,
+  "fields": {
+    "linea_investigacion": "Historia y Paisaje desde el cambio de uso de suelo y tenencia de la tierra en M\u00e9xico.",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2004-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 24,
+  "fields": {
+    "linea_investigacion": "Teor\u00eda e Historiograf\u00eda de la Geograf\u00eda Hist\u00f3rica e Historia Ambiental",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2008-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 25,
+  "fields": {
+    "linea_investigacion": "Historia, historiograf\u00eda y epistemolog\u00eda de la Geograf\u00eda",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2008-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 26,
+  "fields": {
+    "linea_investigacion": "Geograf\u00eda cultural y paisajes hist\u00f3ricos",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 1,
+    "fecha_inicio": "2008-03-10",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 29,
+  "fields": {
+    "linea_investigacion": "Estudios regionales, urbano y periurbanos",
+    "descripcion": "Estudios regionales, urbano y periurbanos de las ciudades medias, espec\u00edficamente las din\u00e1micas y segregaci\u00f3n socio espacial.",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "2009-01-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 30,
+  "fields": {
+    "linea_investigacion": "Estudios Regionales y territoriales.",
+    "descripcion": "Implicaciones sociales y espaciales de programas gubernamentales y las distinciones en la reconfiguraci\u00f3n territorial, espec\u00edficamente los efectos del programa Ciudades Rurales Sustentables, Pueblos M\u00e1gicos y las Ciudades Patrimonio en el desarrollo y sostenibilidad de los territorios.",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "2014-01-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 31,
+  "fields": {
+    "linea_investigacion": "Evaluaci\u00f3n de tierras en sentido amplio, incluyendo ambientes urbanos, rurales, periurbanos, industriales y mineros, con las siguientes tres subl\u00edneas",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 32,
+  "fields": {
+    "linea_investigacion": "Inventario de recurso naturales y evaluaci\u00f3n de su calidad: suelos, polvos, clima y cuerpos de agua",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 33,
+  "fields": {
+    "linea_investigacion": "Valoraci\u00f3n del conocimiento local sobre el ambiente, recursos naturales y formas de manejo. Culturas Maya, Chichimeca y Pur\u00e9pecha, principalmente.",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 34,
+  "fields": {
+    "linea_investigacion": "Dise\u00f1o de modelos de evaluaci\u00f3n de la aptitud/calidad de los recursos naturales.",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 35,
+  "fields": {
+    "linea_investigacion": "Levantamiento, clasificaci\u00f3n y cartograf\u00eda de paisajes f\u00edsico-geogr\u00e1ficos.",
+    "descripcion": "Se refiere a la elaboraci\u00f3n y edici\u00f3n de mapas de paisajes f\u00edsico-geogr\u00e1ficos a diferentes escalas, tanto locales como regionales.",
+    "institucion2": 110,
+    "dependencia": 215,
+    "fecha_inicio": "1988-02-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 36,
+  "fields": {
+    "linea_investigacion": "Estructura, funcionamiento y manejo de riberas fluviales",
+    "descripcion": "An\u00e1lisis de la estructura y funcionamiento de las riberas fluviales para su manejo sustentable, desde el enfoque de los sistemas socioecol\u00f3gicos.",
+    "institucion2": 428,
+    "dependencia": 504,
+    "fecha_inicio": "2014-12-05",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 37,
+  "fields": {
+    "linea_investigacion": "Monitoreo comunitario del agua",
+    "descripcion": "An\u00e1lisis de la calidad del agua con herramientas que permiten la participaci\u00f3n comunitaria",
+    "institucion2": 142,
+    "dependencia": 253,
+    "fecha_inicio": "2004-08-02",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 38,
+  "fields": {
+    "linea_investigacion": "Sistemas de conocimiento",
+    "descripcion": "B\u00fasqueda de di\u00e1logo entre m\u00faltiples sistemas de conocimiento sobre los ecosistemas. Valores y conocimiento locales e ind\u00edgenas. Di\u00e1logo de saberes.",
+    "institucion2": 1,
+    "dependencia": 6,
+    "fecha_inicio": "2018-09-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 39,
+  "fields": {
+    "linea_investigacion": "Pobreza y Vulnerabilidad",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2011-03-14",
+    "usuario": 36
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 40,
+  "fields": {
+    "linea_investigacion": "Procesos territoriales y din\u00e1micas sociales en periferias urbanas",
+    "descripcion": "",
+    "institucion2": 245,
+    "dependencia": 551,
+    "fecha_inicio": "2011-03-14",
+    "usuario": 36
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 41,
+  "fields": {
+    "linea_investigacion": "El manejo de forester\u00eda comunitaria.",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "1978-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 42,
+  "fields": {
+    "linea_investigacion": "Implicaciones en pol\u00edtica del cambio clim\u00e1tico global. Deforestaci\u00f3n, degradaci\u00f3n, forester\u00eda comunitaria y fortalecimiento de capacidades institucionales locales; el mercado de carbono.",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 43,
+  "fields": {
+    "linea_investigacion": "Bioenerg\u00eda y biofuels; impactos sociales.",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "2007-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 44,
+  "fields": {
+    "linea_investigacion": "G\u00e9nero y energ\u00eda. Perspectiva de g\u00e9nero y herramientas de planeaci\u00f3n en uso de la energ\u00eda.",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "1995-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 45,
+  "fields": {
+    "linea_investigacion": "Programas de investigacion corriente: \u201dForesteria comunitaria y captura de carbono\u201d, \u201dPol\u00edticas para promover el carbono forestal\u201d y : \u00a8Mejorar el conocimiento de la 'porosidad de la interfaz' en la comunicaci\u00f3n ciencia-pol\u00edtica\u00a8",
+    "descripcion": "",
+    "institucion2": 449,
+    "dependencia": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 46,
+  "fields": {
+    "linea_investigacion": "Modelado espacio-temporal de los impactos ambientales por la extracci\u00f3n y producci\u00f3n de le\u00f1a y carb\u00f3n vegetal bajo patrones de aprovechamiento tradicional",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2003-01-06",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 47,
+  "fields": {
+    "linea_investigacion": "Modelado prospectivo del potencial de los recursos dendroenerg\u00e9ticos bajo patrones de aprovechamiento tecnificado",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2006-01-02",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 48,
+  "fields": {
+    "linea_investigacion": "Seguridad energ\u00e9tica de la poblaci\u00f3n rural y urbana de bajos recursos",
+    "descripcion": "",
+    "institucion2": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2011-01-03",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 49,
+  "fields": {
+    "linea_investigacion": "Ecolog\u00eda pol\u00edtica",
+    "descripcion": "",
+    "institucion2": 43,
+    "dependencia": 603,
+    "fecha_inicio": "2007-09-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 50,
+  "fields": {
+    "linea_investigacion": "Econom\u00eda ecol\u00f3gica",
+    "descripcion": "",
+    "institucion2": 43,
+    "dependencia": 603,
+    "fecha_inicio": "2014-03-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 51,
+  "fields": {
+    "linea_investigacion": "A.\tPaisajes Mineros. Estudios de caso del Conflicto socio-ambientales en enclaves mineros.",
+    "descripcion": "La actividad minera moderna frecuentemente se presenta como una econom\u00eda de enclave. Es decir, la presencia de un complejo industrial (frecuentemente propiedad de grandes corporaciones) ubicado en un determinado paisaje que en su entorno genera o impulsa un poblado de trabajadores y con ello despliega una econom\u00eda local. El objetivo de la l\u00ednea de investigaci\u00f3n es el explotar los conflictos sociales asociados tanto a la disputa de derechos de acceso al mineral como a los efectos ambientales de las actividades mineras en el paisaje social local.",
+    "institucion2": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2007-03-11",
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 52,
+  "fields": {
+    "linea_investigacion": "Modelaci\u00f3n espacial y temporal de los cambios de cubierta/uso del suelo y de la conectividad del paisaje en Michoac\u00e1n",
+    "descripcion": "Analizar y modelar el efecto de los CCUS sobre la conectividad del paisaje con base de diferentes escenarios de cambio en el estado de Michoac\u00e1n.",
+    "institucion2": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2018-09-01",
+    "usuario": 1841
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 53,
+  "fields": {
+    "linea_investigacion": "Geograf\u00eda Econ\u00f3mica",
+    "descripcion": "Se analizan las diferentes maneras en que los agentes (individuos, productores, consumidores organizaciones, empresas), factores (tecnolog\u00eda, instituciones, recursos naturales) y procesos econ\u00f3micos (reconfiguraci\u00f3n, globalizaci\u00f3n,  producci\u00f3n, distribuci\u00f3n y consumo) se conjugan en los territorios. El eje central es poner de manifiesto la mutua articulaci\u00f3n de los distintos niveles espaciales, propiciada por la l\u00f3gica capitalista en raz\u00f3n de su proceso de reproducci\u00f3n, a fin de demostrar c\u00f3mo el sistema actual es capaz de extraer excedentes en las m\u00e1s variadas circunstancias, haciendo un uso intensivo de la naturaleza diferenciada y heterog\u00e9nea del espacio geogr\u00e1fico.",
+    "institucion2": 1,
+    "dependencia": 4,
+    "fecha_inicio": "2011-10-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 54,
+  "fields": {
+    "linea_investigacion": "Econom\u00eda ambiental y de los recursos naturales",
+    "descripcion": "El estudio de la relaci\u00f3n de las actividades econ\u00f3micas con el medio ambiente. As\u00ed la actividad econ\u00f3mica toma recursos naturales para llevarse a cabo, de esta manera genera efectos externos que deben ser internalizados por los contaminadores.",
+    "institucion2": 43,
+    "dependencia": 763,
+    "fecha_inicio": "2006-02-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 55,
+  "fields": {
+    "linea_investigacion": "Desarrollo Sustentable",
+    "descripcion": "Estudio del desarrollo sustentable desde diversos enfoques econ\u00f3micos para una mejor comprensi\u00f3n de los problemas, amenazas y oportunidades que pueden surgir como alternativa al crecimiento y desarrollo econ\u00f3mico.",
+    "institucion2": 494,
+    "dependencia": 764,
+    "fecha_inicio": "2014-02-03",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 56,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis espacial de la demanda de le\u00f1a",
+    "descripcion": "",
+    "institucion2": 269,
+    "dependencia": 557,
+    "fecha_inicio": "2017-02-16",
+    "usuario": 93
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 1,
+  "fields": {
+    "nombre": "Planificaci\u00f3n del territorio",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 2,
+  "fields": {
+    "nombre": "Manejo de zona costera",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 3,
+  "fields": {
+    "nombre": "Gesti\u00f3n ambiental",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 4,
+  "fields": {
+    "nombre": "Gobernanza",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 5,
+  "fields": {
+    "nombre": "Ambientes urbanos y periurbanos",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 6,
+  "fields": {
+    "nombre": "Bases de datos: Visual FoxPro, MySQL, Access, Oracle, Excel. etc.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 7,
+  "fields": {
+    "nombre": "Dise\u00f1o de im\u00e1genes: Photoshop, Corel Draw, Flash (Multimedia), Adobe Illustrator, Page Maker",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 8,
+  "fields": {
+    "nombre": "Programaci\u00f3n: Visual Basic, Visual C++, JBuilder, Java, C++, PHP, HTML, JavaSever Page, Javascript, Servlets, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2002-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 9,
+  "fields": {
+    "nombre": "Levantamiento, clasificaci\u00f3n y cartograf\u00eda de paisajes f\u00edsico-geogr\u00e1ficos",
+    "descripcion": "",
+    "fecha_inicio": "1987-01-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 10,
+  "fields": {
+    "nombre": "Heterogeneidad geoecol\u00f3gica y su relaci\u00f3n con la distribuci\u00f3n de la biodiversidad ",
+    "descripcion": "",
+    "fecha_inicio": "1994-01-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 11,
+  "fields": {
+    "nombre": "Ordenamiento ecol\u00f3gico territorial ",
+    "descripcion": "",
+    "fecha_inicio": "1987-01-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 12,
+  "fields": {
+    "nombre": "Mantenimiento: Preventivo y Correctivo de Microcomputadoras y Servidores.",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 13,
+  "fields": {
+    "nombre": "Redes: An\u00e1lisis, dise\u00f1o e instalaci\u00f3n de redes LAN y WAN (switches y ruteadores CISCO), Seguridad ",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 14,
+  "fields": {
+    "nombre": "Redes Internas conectadas a Internet (Firewall\u00b4s) (Packeeteer, CISCO, Fortinet, SonicWall), Instalaci\u00f3n y configuraci\u00f3n de Servidores Web, Correo, FTP, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 15,
+  "fields": {
+    "nombre": "Administraci\u00f3n y configuraci\u00f3n de terminales VOIP en un conmutador NEC NEAX IPX 2400",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 16,
+  "fields": {
+    "nombre": "Uso y administraci\u00f3n de videoconferencias utilizando el est\u00e1ndar H.323 (Polycom, Sony, Tandberg).",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 17,
+  "fields": {
+    "nombre": "Sistemas Operativos: Windows, Unix (Fedora, Suse, Red Hat, Debian), MacOS.",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 18,
+  "fields": {
+    "nombre": "SIG Intranet: Arcview, ARCGIS, Ilwis, Idrisi, Envi, Erdas, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 19,
+  "fields": {
+    "nombre": "SIG Internet: Map Server, Alov Map, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 20,
+  "fields": {
+    "nombre": "Experiencia en modelado y an\u00e1lisis de procesos de cambio de uso y cubierta del suelo.",
+    "descripcion": "",
+    "fecha_inicio": "1994-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 21,
+  "fields": {
+    "nombre": "Manejo especializado de los principales Sistemas de Informaci\u00f3n Geogr\u00e1fica: ArcGis 10x, ArcInfo 9.0, ArcView, Ilwis, QGis.",
+    "descripcion": "",
+    "fecha_inicio": "1989-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 22,
+  "fields": {
+    "nombre": "Monitoreo de la deforestaci\u00f3n con base en im\u00e1genes de sat\u00e9lite",
+    "descripcion": "",
+    "fecha_inicio": "1998-01-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 23,
+  "fields": {
+    "nombre": "Modelaci\u00f3n de los cambios de cubierta/uso del suelo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 24,
+  "fields": {
+    "nombre": "Cartograf\u00eda de la vegetaci\u00f3n con base en percepci\u00f3n remota y SIG",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 25,
+  "fields": {
+    "nombre": "territorialidad, cultura y politica",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 26,
+  "fields": {
+    "nombre": "La perspectiva sociocultural de la vulnerabilidad a desastres",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 27,
+  "fields": {
+    "nombre": "La perspectiva critica de los sistemas de informacion geografica y la integracion de las nuevas tecnologias de comunicacion",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 28,
+  "fields": {
+    "nombre": "Ciencia del suelo, clasificaci\u00f3n y evaluaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 29,
+  "fields": {
+    "nombre": "Geomorfolog\u00eda del paisaje y edafolog\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 30,
+  "fields": {
+    "nombre": "Modelaci\u00f3n de cuencas",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 31,
+  "fields": {
+    "nombre": "Evaluaci\u00f3n y gesti\u00f3n del territorio asociado a cambios de uso de suelo y variabilidad clim\u00e1tica",
+    "descripcion": "",
+    "fecha_inicio": "2013-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 32,
+  "fields": {
+    "nombre": "Influencia antr\u00f3pica en los procesos geom\u00f3rficos y erosi\u00f3n del suelo",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 33,
+  "fields": {
+    "nombre": "El manejo de forester\u00eda comunitaria ",
+    "descripcion": "",
+    "fecha_inicio": "1978-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 34,
+  "fields": {
+    "nombre": "Implicaciones en pol\u00edtica del cambio clim\u00e1tico global. Deforestaci\u00f3n, degradaci\u00f3n, forester\u00eda comunitaria y fortalecimiento de capacidades institucionales locales; el mercado de carbono ",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 35,
+  "fields": {
+    "nombre": "Bioenerg\u00eda y biofuels; impactos sociales  ",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 36,
+  "fields": {
+    "nombre": "G\u00e9nero y energ\u00eda. Perspectiva de g\u00e9nero y herramientas de planeaci\u00f3n en uso de la energ\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "1995-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 37,
+  "fields": {
+    "nombre": "Foresteria comunitaria y captura de carbono",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 38,
+  "fields": {
+    "nombre": "Pol\u00edticas para promover el carbono forestal",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 39,
+  "fields": {
+    "nombre": "Gesti\u00f3n p\u00fablica",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 40,
+  "fields": {
+    "nombre": "Competitividad",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 41,
+  "fields": {
+    "nombre": "Estructura econ\u00f3mica",
+    "descripcion": "",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 42,
+  "fields": {
+    "nombre": "Innovaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 43,
+  "fields": {
+    "nombre": "Desarrollo sustentable",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 44,
+  "fields": {
+    "nombre": "Manejo y Conservaci\u00f3n de biodiversidad en socioecosistemas",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 45,
+  "fields": {
+    "nombre": "Complejidad y sistemas complejos para el estudio de problemas ambientales",
+    "descripcion": "",
+    "fecha_inicio": "2012-01-01",
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 46,
+  "fields": {
+    "nombre": "Valoraci\u00f3n y percepci\u00f3n del paisaje",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 47,
+  "fields": {
+    "nombre": "Conservaci\u00f3n y desarrollo en ANP",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 48,
+  "fields": {
+    "nombre": "Modelado espacio-temporal de los impactos ambientales por la extracci\u00f3n y producci\u00f3n de le\u00f1a y carb\u00f3n vegetal bajo patrones de aprovechamiento tradicional",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 49,
+  "fields": {
+    "nombre": "Modelado prospectivo del potencial de los recursos dendroenerg\u00e9ticos bajo patrones de aprovechamiento tecnificado ",
+    "descripcion": "",
+    "fecha_inicio": "2006-01-01",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 50,
+  "fields": {
+    "nombre": "Seguridad energ\u00e9tica de la poblaci\u00f3n rural y urbana de bajos recursos",
+    "descripcion": "",
+    "fecha_inicio": "2011-01-01",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 51,
+  "fields": {
+    "nombre": "Geograf\u00eda del Paisaje",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 52,
+  "fields": {
+    "nombre": "Uso del suelo",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 53,
+  "fields": {
+    "nombre": "An\u00e1lisis espacial",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 54,
+  "fields": {
+    "nombre": "Manejo comunitario de recursos forestales",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 55,
+  "fields": {
+    "nombre": "Pol\u00edtica ambiental",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 56,
+  "fields": {
+    "nombre": "Arqueolog\u00eda del paisaje",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 57,
+  "fields": {
+    "nombre": "Sensores remotos y teledetecci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 58,
+  "fields": {
+    "nombre": "Sistemas de Informaci\u00f3n geogr\u00e1fica participativos",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 59,
+  "fields": {
+    "nombre": "SIG y an\u00e1lisis espaciales",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 60,
+  "fields": {
+    "nombre": "historia ambiental, arqueogeograf\u00eda, geohistoria, relaci\u00f3n sociedad, medio ambiente, patr\u00f3n de asentamiento, reconstrucci\u00f3n de las formas del paisaje...",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 61,
+  "fields": {
+    "nombre": "Historia y paisaje desde el cambio de uso de suelo y tenencia de la tierra",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 62,
+  "fields": {
+    "nombre": "Teor\u00eda e historiograf\u00eda de la geograf\u00eda hist\u00f3rica e historia ambiental",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 63,
+  "fields": {
+    "nombre": "Geograf\u00eda cultural y paisajes hist\u00f3ricos",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 64,
+  "fields": {
+    "nombre": "Econom\u00eda Ambiental. Instrumentos de Pol\u00edtica Ambiental. Desarrollo Sustentable.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 65,
+  "fields": {
+    "nombre": "Especializaci\u00f3n avanzada en el manejo de Sistemas de Informaci\u00f3n Geogr\u00e1fica aplicando diversos programas (ArcView, ArcGIS, Erdas, ILWIS).",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 66,
+  "fields": {
+    "nombre": "Elaboraci\u00f3n de modelos y an\u00e1lisis de cambio de coberturas y uso de suelo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 67,
+  "fields": {
+    "nombre": "Aplicaci\u00f3n de t\u00e9cnicas de an\u00e1lisis por criterios m\u00faltiples en relaci\u00f3n a la caracterizaci\u00f3n, diagn\u00f3stico y priorizaci\u00f3n de sistemas ambientales con fines de conservaci\u00f3n.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 68,
+  "fields": {
+    "nombre": "Aplicaci\u00f3n de conceptos asociados a la Ecolog\u00eda del Paisaje con capacidad de determinar y recolectar el tipo de informaci\u00f3n necesaria en suelo y vegetaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 69,
+  "fields": {
+    "nombre": "Aplicaci\u00f3n de T\u00e9cnicas geoestad\u00edsticas en el an\u00e1lisis de datos espaciales",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 70,
+  "fields": {
+    "nombre": "Conocimiento avanzado en t\u00e9cnicas participativas de cartograf\u00eda y realizaci\u00f3n de talleres",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 71,
+  "fields": {
+    "nombre": "Conocimiento sobre dise\u00f1o y uso de cuestionarios y encuestas.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 72,
+  "fields": {
+    "nombre": "Las ciencias sociales en la era de la globalizaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2011-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 73,
+  "fields": {
+    "nombre": "La cooperaci\u00f3n cient\u00edfica internacional en el mundo contempor\u00e1neo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 74,
+  "fields": {
+    "nombre": "Actividad cient\u00edfica en la Patagonia argentina y chilena",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 75,
+  "fields": {
+    "nombre": "La evaluaci\u00f3n acad\u00e9mica, gerencialismo  y la ilusi\u00f3n de lo cuantitativo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 76,
+  "fields": {
+    "nombre": "Agrobiodiversidad y agroecolog\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 77,
+  "fields": {
+    "nombre": "Recursos fitogen\u00e9ticos",
+    "descripcion": "",
+    "fecha_inicio": "2006-01-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 78,
+  "fields": {
+    "nombre": "Planeaci\u00f3n y manejo de recursos naturales y desarrollo rural",
+    "descripcion": "",
+    "fecha_inicio": "2002-01-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 79,
+  "fields": {
+    "nombre": "Erosi\u00f3n h\u00eddrica de suelos",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 81,
+  "fields": {
+    "nombre": "Manejo de zonas riparias",
+    "descripcion": "An\u00e1lisis hidrol\u00f3gico, geomorfol\u00f3gico y de vegetaci\u00f3n de las riberas fluviales y sus propiedades",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 82,
+  "fields": {
+    "nombre": "Monitoreo comunitario del agua",
+    "descripcion": "Capacitaci\u00f3n y an\u00e1lisis de la infromaci\u00f3n proveniente del monitoreo comunitario del agua",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 83,
+  "fields": {
+    "nombre": "Sistemas socio-ecol\u00f3gicos",
+    "descripcion": "An\u00e1lisis de la problem\u00e1tica ambiental a partir del enfoque de sistemas socioecol\u00f3gicos",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 84,
+  "fields": {
+    "nombre": "Sistemas de Informaci\u00f3n Geogr\u00e1fica (Geom\u00e1tica)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 85,
+  "fields": {
+    "nombre": "Inventario de recurso naturales y evaluaci\u00f3n de su calidad: suelos, polvos, clima y cuerpos de agua",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 86,
+  "fields": {
+    "nombre": "Valoraci\u00f3n del conocimiento local sobre el ambiente, recursos naturales y formas de manejo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 87,
+  "fields": {
+    "nombre": "Dise\u00f1o de modelos de evaluaci\u00f3n de la aptitud/calidad de los recursos naturales.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 88,
+  "fields": {
+    "nombre": "Evaluaci\u00f3n de tierras en sentido amplio, incluyendo ambientes urbanos, rurales, periurbanos, industriales y mineros, con las siguientes tres subl\u00edneas",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 89,
+  "fields": {
+    "nombre": "Percepci\u00f3n Remota (Teledetecci\u00f3n)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 90,
+  "fields": {
+    "nombre": "An\u00e1lisis Espacial (Modelado)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 91,
+  "fields": {
+    "nombre": "Drones (Operaci\u00f3n y Aplicaciones Cient\u00edficas)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 92,
+  "fields": {
+    "nombre": "Riesgo, Peligro y Vulnerabilidad (Modelado)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 93,
+  "fields": {
+    "nombre": "Ecolog\u00eda Pol\u00edtica",
+    "descripcion": "",
+    "fecha_inicio": "2012-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 94,
+  "fields": {
+    "nombre": "Cubiertas y Usos del Territorio",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 95,
+  "fields": {
+    "nombre": "Etnoecolog\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 96,
+  "fields": {
+    "nombre": "Innovaci\u00f3n Comunitaria",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 97,
+  "fields": {
+    "nombre": "Coordinaci\u00f3n de equipos acad\u00e9micos interdisciplinarios, elaboraci\u00f3n de propuestas t\u00e9cnicas, coordinaci\u00f3n de proyectos y elaboraci\u00f3n de informes t\u00e9cnicos.",
+    "descripcion": "",
+    "fecha_inicio": "2000-02-07",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 98,
+  "fields": {
+    "nombre": "Conocimiento extenso del manejo de los principales programas de sistemas de informaci\u00f3n geogr\u00e1fica y procesamiento de im\u00e1genes digitales: ARCGIS, IDRISI, MAPInfo, ArcView, ERDAS, ENVI.",
+    "descripcion": "",
+    "fecha_inicio": "2000-03-09",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 99,
+  "fields": {
+    "nombre": "Conocimiento experto de la operaci\u00f3n de sistemas de bases de datos relacionales.",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 100,
+  "fields": {
+    "nombre": "Conocimiento experto sobre t\u00e9cnicas de an\u00e1lisis y modelamiento espacial",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 101,
+  "fields": {
+    "nombre": "Conocimiento extenso de computadoras y sistemas operativos: PCs, Apple, estaciones",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 102,
+  "fields": {
+    "nombre": "Conocimiento amplio de software de prop\u00f3sito general: hojas de c\u00e1lculo, procesadores de texto, programas de edici\u00f3n gr\u00e1fica, paquetes estad\u00edsticos, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 103,
+  "fields": {
+    "nombre": "Capacidad de impartir cursos en los niveles de Licenciatura, Especialidad y Posgrado en las \u00e1reas de Sistemas de Informaci\u00f3n Geogr\u00e1fica, Percepci\u00f3n Remota, Peligro, Vulnerabilidad y Riesgo, y M\u00e9todos Multicriterio para la Toma de Decisiones.",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 104,
+  "fields": {
+    "nombre": "An\u00e1lisis de suelo y agua en laboratorio y campo. Manejo de equipo de laboratorio de suelo. Conocimiento y manejo de laboratoria bajo sistema de calidad.",
+    "descripcion": "",
+    "fecha_inicio": "2004-11-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 105,
+  "fields": {
+    "nombre": "Experiencia en actividades de divulgaci\u00f3n cient\u00edfica y coordinaci\u00f3n de grupos de trabajo en tareas de divulgaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2015-09-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 106,
+  "fields": {
+    "nombre": "Habilidades y dominio de t\u00e9cnicas",
+    "descripcion": "Programaci\u00f3n: Java, JavaScript, C#, C, C++, SQL, PHP, HTML, CSS, XML, Matlab, Latex, \r\nGestores de contenido: Joomla!, Wordpress, Drupal, Prestashop, Magento.\r\nImplementaci\u00f3n y desarrollo de WebServices: REST/SOAP.\r\nElearning: Moodle, Edmodo, Udemy.\r\nBases de Datos: MySQL, Oracle, SQLite, PostgreSQL, Visual FoxPro, Access, Excel.\r\nSoporte T\u00e9cnico: Mantenimiento preventivo y correctivo de equipo de c\u00f3mputo y servidores.\r\nRedes: Instalaci\u00f3n de redes de \u00e1rea local LAN, esquemas de seguridad de redes conectadas a Internet (Firewalls), Instalaci\u00f3n y configuraci\u00f3n de servidores Web, Correo, FTP y servidores dedicados.\r\nSistemas Operativos: Windows, CentOS, Fedora, Suse, Ubuntu, MacOS.\r\nAn\u00e1lisis Estad\u00edstico: Google Analytics, FusionTables.\r\nDise\u00f1o Gr\u00e1fico: Corel Draw,  PhotoPaint,  Suite  Adobe:  Illustrator,  Photoshop, InDesign, Premiere, AfterEffects, Flash, LifeCycle.\r\nWebservices de Mapas: Google Maps API, OpenStreetMap, OpenLayers.",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 107,
+  "fields": {
+    "nombre": "Especializaci\u00f3n",
+    "descripcion": "Dise\u00f1o Web centrado en el usuario: usabilidad y arquitectura de la informaci\u00f3n. Modelos de tecnolog\u00eda y sistemas para educaci\u00f3n en l\u00ednea.",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 108,
+  "fields": {
+    "nombre": "Complejidad",
+    "descripcion": "Estructura y esquemas de b\u00fasqueda por similitud de contenido.",
+    "fecha_inicio": "2013-08-12",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 109,
+  "fields": {
+    "nombre": "An\u00e1lisis espacial. Programaci\u00f3n. An\u00e1lisis estad\u00edstico.",
+    "descripcion": "",
+    "fecha_inicio": "2017-02-16",
+    "usuario": 93
+  }
+}
 ]
