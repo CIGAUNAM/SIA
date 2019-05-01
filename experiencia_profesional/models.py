@@ -31,7 +31,7 @@ class ExperienciaProfesional(models.Model):
         ordering = ['fecha_inicio', 'institucion2']
         verbose_name = "Experiencia Laboral"
         verbose_name_plural = "Experiencias Laborales"
-        unique_together = ['institucion2', 'cargo', 'usuario']
+        # unique_together = ['institucion2', 'cargo', 'usuario']
 
 
 class LineaInvestigacion(models.Model):
