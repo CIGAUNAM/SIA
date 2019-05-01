@@ -4740,7 +4740,7 @@
   "model": "formacion_academica.licenciatura",
   "pk": 41,
   "fields": {
-    "titulo_obtenido": "corregir45",
+    "titulo_obtenido": "corregir451",
     "carrera": 16,
     "dependencia": 585,
     "titulo_tesis": "Desconocido",
