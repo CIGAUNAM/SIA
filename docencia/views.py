@@ -17,7 +17,7 @@ class CursoDocenciaEscolarizadoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = CursoDocenciaEscolarizado.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'nivel', 'dependencia', 'fecha_inicio', 'total_horas'))
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
@@ -48,7 +48,7 @@ class CursoDocenciaExtracurricularJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = CursoDocenciaExtracurricular.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('asignatura', 'dependencia', 'fecha_inicio', 'total_horas'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')
@@ -95,7 +95,7 @@ class ArticuloDocenciaJSON(View):
                 articulos = ArticuloDocencia.objects.all().exclude(autores__id__exact=usuarioid)
             else:
                 articulos = ArticuloDocencia.objects.filter(autores__id__exact=usuarioid)
-            json = serializers.serialize('json2', articulos, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
                                          fields=('titulo', 'revista', 'status', 'fecha'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -147,7 +147,7 @@ class LibroDocenciaJSON(View):
                 items = Libro.objects.filter(tipo='DOCENCIA').filter(Q(autores__id__exact=usuarioid)
                                                                            | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
                                                                            | Q(prologo__id__exact=usuarioid))
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'editorial_text', 'ciudad', 'status', 'fecha'))
 
             json = json.replace('PUBLICADO', 'Publicado')
@@ -229,7 +229,7 @@ class ProgramaEstudioJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = ProgramaEstudio.objects.filter(usuario__id__exact=usuarioid,)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'nivel', 'fecha'))
 
             json = json.replace('LICENCIATURA', 'Licenciatura')

@@ -22,7 +22,7 @@ class DesarrolloTecnologicoJSON(View):
                 items = DesarrolloTecnologico.objects.all().exclude(autores=usuarioid)
             else:
                 items = DesarrolloTecnologico.objects.filter(autores=usuarioid)
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'patente', 'licencia', 'fecha'))
             return HttpResponse(json, content_type='application/json2')
         except:
@@ -70,7 +70,7 @@ class LicenciaJSON(View):
     def get(self, request):
         try:
             items = Licencia.objects.all()
-            json = serializers.serialize('json2', items, use_natural_foreign_keys=True,
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', ))
             return HttpResponse(json, content_type='application/json2')
         except:

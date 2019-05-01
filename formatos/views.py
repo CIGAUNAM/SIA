@@ -17,7 +17,7 @@ class FormatoServicioTransporteJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = FormatoServicioTransporte.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items,
+            json = serializers.serialize('json', items,
                                          fields=('fecha_inicio', 'ciudad'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
@@ -55,7 +55,7 @@ class FormatoLicenciaGoceSueldoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = FormatoLicenciaGoceSueldo.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items,
+            json = serializers.serialize('json', items,
                                          fields=('evento', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
@@ -93,7 +93,7 @@ class FormatoPagoViaticoJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = FormatoPagoViatico.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items,
+            json = serializers.serialize('json', items,
                                          fields=('evento', 'fecha_salida'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')

@@ -189,7 +189,7 @@ class InvitadoMovilidadJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = InvitadoMovilidad.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items,
+            json = serializers.serialize('json', items,
                                          fields=('invitado', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
@@ -227,7 +227,7 @@ class EstanciaAcademicaJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = EstanciaAcademica.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items,
+            json = serializers.serialize('json', items,
                                          fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
@@ -265,7 +265,7 @@ class SabaticoMovilidadJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             items = SabaticoMovilidad.objects.filter(usuario=usuarioid)
-            json = serializers.serialize('json2', items,
+            json = serializers.serialize('json', items,
                                          fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
