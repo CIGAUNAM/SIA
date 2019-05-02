@@ -23,7 +23,7 @@ class CursoDocenciaEscolarizadoJSON(View):
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -56,7 +56,7 @@ class CursoDocenciaExtracurricularJSON(View):
             json = json.replace('DOCTORADO', 'Doctorado')
             json = json.replace('OTRO', 'Otro')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -104,7 +104,7 @@ class ArticuloDocenciaJSON(View):
             json = json.replace('ENVIADO', 'Enviado')
             json = json.replace('ENVIADO', 'Enviado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -155,7 +155,7 @@ class LibroDocenciaJSON(View):
             json = json.replace('ACEPTADO', 'Aceptado')
             json = json.replace('ENVIADO', 'Enviado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -236,7 +236,7 @@ class ProgramaEstudioJSON(View):
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

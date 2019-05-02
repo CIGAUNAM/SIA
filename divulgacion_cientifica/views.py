@@ -22,7 +22,7 @@ class ArticuloDivulgacionJSON(View):
                 items = ArticuloDivulgacion.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'status', 'revista'))
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -64,7 +64,7 @@ class CapituloLibroDivulgacionJSON(View):
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro'))
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -102,7 +102,7 @@ class OrganizacionEventoDivulgacionJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento2', 'tipo_participacion'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -153,7 +153,7 @@ class ParticipacionEventoDivulgacionJSON(View):
             json = json.replace('AYUDANTE', 'Ayudante')
             json = json.replace('TECNICO', 'Apoyo técnico')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -195,7 +195,7 @@ class ProgramaRadioTelevisionInternetJSON(View):
             json = json.replace('ENTREVISTA', 'Entrevista')
             json = json.replace('OTRA', 'Otra')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -257,7 +257,7 @@ class LibroDivulgacionJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

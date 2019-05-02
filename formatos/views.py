@@ -20,7 +20,7 @@ class FormatoServicioTransporteJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('fecha_inicio', 'ciudad'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -58,7 +58,7 @@ class FormatoLicenciaGoceSueldoJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('evento', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -96,7 +96,7 @@ class FormatoPagoViaticoJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('evento', 'fecha_salida'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

@@ -34,7 +34,7 @@ class AsesoriaEstudianteJSON(View):
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -72,7 +72,7 @@ class SupervisionInvestigadorPostDoctoralJSON(View):
                                          fields=(
                                              'investigador', 'dependencia', 'fecha_inicio', 'proyecto'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -115,7 +115,7 @@ class DesarrolloGrupoInvestigacionInternoJSON(View):
             json = serializers.serialize('json', articulos, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'pais'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -162,7 +162,7 @@ class DireccionTesisJSON(View):
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -204,7 +204,7 @@ class ComiteTutoralJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('estudiante', 'programa', 'fecha_inicio', 'fecha_fin'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -244,7 +244,7 @@ class ComiteCandidaturaDoctoralJSON(View):
             else:
                 items = ComiteCandidaturaDoctoral.objects.filter(Q(miembros_comite=usuarioid) | Q(director=usuarioid) | Q(codirector=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('candidato', 'programa_doctorado', 'proyecto', 'fecha_defensa'))
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

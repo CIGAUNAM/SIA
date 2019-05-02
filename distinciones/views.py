@@ -19,7 +19,7 @@ class DistincionAcademicoJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('distincion', 'institucion', 'fecha'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -65,7 +65,7 @@ class DistincionAlumnoJSON(View):
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -106,7 +106,7 @@ class ParticipacionComisionExpertosJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'institucion', 'fecha_inicio'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -151,7 +151,7 @@ class ParticipacionSociedadCientificaJSON(View):
             json = json.replace('INTERNACIONAL', 'Internacional')
             json = json.replace('NACIONAL', 'Nacional')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -203,7 +203,7 @@ class CitaPublicacionJSON(View):
             json = json.replace('MAESTRIA', 'Maestría')
             json = json.replace('DOCTORADO', 'Doctorado')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

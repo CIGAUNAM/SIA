@@ -37,7 +37,7 @@ class MovilidadJSON(View):
                 json += '}}, '
             json += ']'
             json = json.replace('}}, ]', '}}]')
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -71,7 +71,7 @@ class MovilidadLista(ObjectCreateMixin, View):
                      '"iDisplayLength": 15,\n' \
                      '"ajax": {\n' \
                      '"processing": true,\n' \
-                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json2/",\n' \
+                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json/",\n' \
                       '"dataSrc": ""\n' \
                       '},\n' \
                       '"columns": [\n' \
@@ -135,7 +135,7 @@ class MovilidadDetalle(ObjectUpdateMixin, View):
                      '"iDisplayLength": 15,\n' \
                      '"ajax": {\n' \
                      '"processing": true,\n' \
-                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json2/",\n' \
+                     '"url": "/' + str(self.url_categoria) + '/' + str(self.url_seccion) + '/json/",\n' \
                      '"dataSrc": ""\n' \
                      '},\n' \
                      '"columns": [\n' \
@@ -192,7 +192,7 @@ class InvitadoMovilidadJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('invitado', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -230,7 +230,7 @@ class EstanciaAcademicaJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -268,7 +268,7 @@ class SabaticoMovilidadJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('anfitrion', 'dependencia', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

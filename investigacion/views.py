@@ -40,7 +40,7 @@ class ArticuloCientificoJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -82,7 +82,7 @@ class CapituloLibroInvestigacionJSON(View):
 
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('titulo', 'libro', 'pagina_inicio', 'pagina_fin'))
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -139,7 +139,7 @@ class MapaArbitradoJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -196,7 +196,7 @@ class PublicacionTecnicaJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -253,7 +253,7 @@ class LibroInvestigacionJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -334,7 +334,7 @@ class ProyectoInvestigacionJSON(View):
             json = json.replace('INVESTIGACION_FRONTERA', 'Investigación de frontera')
             json = json.replace('OTRO', 'Otro')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -392,7 +392,7 @@ class ApoyoTecnicoInvestigacionJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('actividad', 'fecha_inicio', 'proyecto'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -430,7 +430,7 @@ class ApoyoTecnicoServicioJSON(View):
             json = serializers.serialize('json', items,
                                          fields=('actividad', 'fecha_inicio', 'proyecto'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

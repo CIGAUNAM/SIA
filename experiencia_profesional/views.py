@@ -24,7 +24,7 @@ class ExperienciaProfesionalJSON(View):
             json = serializers.serialize('json', experiencias,
                                          fields=('cargo2', 'nombramiento', 'fecha_inicio', 'institucion'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -62,7 +62,7 @@ class LineaInvestigacionJSON(View):
             json = serializers.serialize('json', experiencias,
                                          fields=('linea_investigacion', 'fecha_inicio', 'institucion'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -99,7 +99,7 @@ class CapacidadPotencialidadJSON(View):
             json = serializers.serialize('json', experiencias,
                                          fields=('nombre', 'fecha_inicio'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
