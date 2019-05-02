@@ -70,11 +70,11 @@ class RepresentacionOrganoColegiadoUNAMForm(forms.ModelForm):
         )
     )
     institucion_fuera_unam = forms.ModelChoiceField(
-        queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=True),
+        queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=False),
         label="Institución",
         widget=ModelSelect2Widget(
             search_fields=['institucion_nombre__icontains'],
-            queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=True),
+            queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=False),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

@@ -26,37 +26,39 @@
         </div>
     </div>
     </p>
-    <p>
-        <strong>Institución:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución donde se llevó a cabo la comisión.">
-            <i class="fa fa-question-circle"></i></a>
-        <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion }}
+    <div id="d_institucion">
+        <p>
+            <strong>Institución:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Institución donde se llevó a cabo la comisión.">
+                <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.institucion }}
 
-            <div class="input-group-addon">
+                <div class="input-group-addon">
                 <span id="boton-detalle-institucion">
                     <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
                        title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
                     </a>
                 </span>
-            </div>
+                </div>
 
-            <div class="input-group-addon">
+                <div class="input-group-addon">
                 <span id="boton-agregar-institucion">
                     <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
                        title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
                     </a>
                 </span>
+                </div>
             </div>
         </div>
+        </p>
     </div>
-    </p>
     <p><strong>Fecha inicio:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de inicio del servicio."><i
@@ -83,6 +85,25 @@
         </div>
     </div>
     </p>
+
+    <script>
+        var id_institucion = $("#id_institucion");
+        var d_institucion = $("#d_institucion");
+        var tipo_institucion = $("#tipo_institucion");
+
+        d_institucion.hide();
+
+        tipo_institucion.on('change', function () {
+            if (tipo_institucion.val() === 'EXTERIOR') {
+                d_institucion.show('slow');
+                id_institucion.attr("required", "true");
+            } else {
+                id_institucion.attr("required", null);
+                id_institucion.val(null).trigger('change');
+                d_institucion.hide('slow');
+            }
+        });
+    </script>
 {% endblock %}
 
 {% block form_detalle %}
@@ -194,4 +215,32 @@
         </div>
     </div>
     </p>
+
+    <script>
+        var id_institucion = $("#id_institucion");
+        var d_institucion = $("#d_institucion");
+        var tipo_institucion = $("#tipo_institucion");
+
+        d_institucion.hide();
+
+        if (tipo_institucion.val() === 'EXTERIOR') {
+            d_institucion.show('slow');
+            id_institucion.attr("required", "true");
+        } else {
+            id_institucion.attr("required", null);
+            id_institucion.val(null).trigger('change');
+            d_institucion.hide('slow');
+        }
+
+        tipo_institucion.on('change', function () {
+            if (tipo_institucion.val() === 'EXTERIOR') {
+                d_institucion.show('slow');
+                id_institucion.attr("required", "true");
+            } else {
+                id_institucion.attr("required", null);
+                id_institucion.val(null).trigger('change');
+                d_institucion.hide('slow');
+            }
+        });
+    </script>
 {% endblock %}
