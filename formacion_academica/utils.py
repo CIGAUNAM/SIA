@@ -32,7 +32,7 @@ class CursoEspecializacionContext:
                                     '},\n' \
                                     '{"data": "fields.tipo"},\n' \
                                     '{"data": "fields.horas"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha_fin"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -73,7 +73,7 @@ class LicenciaturaContext:
                                     '},\n' \
                                     '{"data": "fields.titulo_tesis"},\n' \
                                     '{"data": "fields.fecha_grado"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -110,7 +110,7 @@ class MaestriaContext:
                                     '},\n' \
                                     '{"data": "fields.titulo_tesis"},\n' \
                                     '{"data": "fields.fecha_grado"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -147,7 +147,7 @@ class DoctoradoContext:
                                     '},\n' \
                                     '{"data": "fields.titulo_tesis"},\n' \
                                     '{"data": "fields.fecha_grado"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -185,7 +185,7 @@ class PostDoctoradoContext:
                                     '{"data": "fields.area_conocimiento"},\n' \
                                     '{"data": "fields.fecha_fin"},\n' \
                                     '{"data": "fields.proyecto"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
