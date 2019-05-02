@@ -18,7 +18,7 @@ class CursoEspecializacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             cursos = CursoEspecializacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', cursos,
-                                         fields=('nombre', 'tipo', 'horas', 'dependencia', 'fecha_fin'),
+                                         fields=('nombre', 'tipo', 'horas', 'institucion', 'fecha_fin'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
         except:
@@ -55,7 +55,7 @@ class LicenciaturaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             licenciaturas = Licenciatura.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', licenciaturas,
-                                         fields=('carrera', 'titulo_tesis', 'fecha_grado', 'dependencia'),
+                                         fields=('carrera', 'titulo_tesis', 'fecha_grado', 'institucion'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
         except:
@@ -92,7 +92,7 @@ class MaestriaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             maestrias = Maestria.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', maestrias,
-                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'),
+                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'institucion'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
         except:
@@ -129,7 +129,7 @@ class DoctoradoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             maestrias = Doctorado.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', maestrias,
-                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'dependencia'),
+                                         fields=('programa', 'titulo_tesis', 'fecha_grado', 'institucion'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
         except:
@@ -166,7 +166,7 @@ class PostDoctoradoJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             maestrias = PostDoctorado.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', maestrias,
-                                         fields=('nombre', 'area_conocimiento', 'fecha_fin', 'proyecto', 'dependencia'),
+                                         fields=('nombre', 'area_conocimiento', 'fecha_fin', 'proyecto', 'institucion'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
         except:
