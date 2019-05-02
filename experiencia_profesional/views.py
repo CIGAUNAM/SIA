@@ -22,7 +22,7 @@ class ExperienciaProfesionalJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = ExperienciaProfesional.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', experiencias,
-                                         fields=('cargo2', 'nombramiento', 'fecha_inicio', 'institucion2'),
+                                         fields=('cargo2', 'nombramiento', 'fecha_inicio', 'institucion'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
         except:
@@ -60,7 +60,7 @@ class LineaInvestigacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             experiencias = LineaInvestigacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', experiencias,
-                                         fields=('linea_investigacion', 'fecha_inicio', 'dependencia'),
+                                         fields=('linea_investigacion', 'fecha_inicio', 'institucion'),
                                          use_natural_foreign_keys=True)
             return HttpResponse(json, content_type='application/json2')
         except:
