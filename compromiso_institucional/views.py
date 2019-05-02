@@ -14,7 +14,7 @@ class LaborDirectivaCoordinacionJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = LaborDirectivaCoordinacion.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('tipo_cargo', 'dependencia', 'fecha_inicio', 'fecha_fin'))
+                                         fields=('tipo_cargo', 'institucion', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404
@@ -86,7 +86,7 @@ class ComisionAcademicaJSON(View):
             usuarioid = User.objects.get(username=request.user.username).id
             items = ComisionInstitucionalCIGA.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('comision_academica', 'fecha_inicio', 'fecha_fin'))
+                                         fields=('comision_academica', 'institucion', 'fecha_inicio', 'fecha_fin'))
             return HttpResponse(json, content_type='application/json2')
         except:
             raise Http404

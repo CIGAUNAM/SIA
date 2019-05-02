@@ -14,7 +14,7 @@ class LaborDirectivaCoordinacionContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Tipo cargo', 'Dependencia', 'Inicio', 'Fin']}
+                'titulos_tabla': ['Tipo cargo', 'Institución', 'Inicio', 'Fin']}
 
 
     tabla_mios =  '<script>\n' \
@@ -33,7 +33,7 @@ class LaborDirectivaCoordinacionContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.tipo_cargo + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
                                     '{"data": "fields.fecha_fin"},\n' \
                                 ']\n' \
