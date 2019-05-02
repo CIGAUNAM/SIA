@@ -10,6 +10,18 @@ class ExperienciaLaboralForm(forms.ModelForm):
     cargo2 = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True,
                              label='Cargo',
                              help_text='Nombre del cargo')
+
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+
     institucion2 = forms.ModelChoiceField(
         required=True,
         queryset=Institucion.objects.all(),
@@ -59,6 +71,18 @@ class ExperienciaLaboralForm(forms.ModelForm):
 class LineaInvestigacionForm(forms.ModelForm):
     linea_investigacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Línea de investigación')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False, label='Descripción')
+
+    institucion = forms.ModelChoiceField(
+        required=False,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+
     institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",

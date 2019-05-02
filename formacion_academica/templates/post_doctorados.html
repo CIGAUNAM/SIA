@@ -100,8 +100,12 @@
         var id_otra_entidad_financiamiento = $("#id_otra_entidad_financiamiento");
         var id_entidad_financiamiento = $("#id_entidad_financiamiento");
 
+        d_otra_entidad_financiamiento.hide();
+
         id_entidad_financiamiento.on('change', function () {
-            if (id_entidad_financiamiento == 'OTRA') {
+            if (id_entidad_financiamiento.val() === 'OTRA') {
+                console.log(id_entidad_financiamiento.val());
+
                 d_otra_entidad_financiamiento.show('slow')
                 id_otra_entidad_financiamiento.attr("required", "true");
             } else {
@@ -214,21 +218,21 @@
         var id_otra_entidad_financiamiento = $("#id_otra_entidad_financiamiento");
         var id_entidad_financiamiento = $("#id_entidad_financiamiento");
 
-        if (id_entidad_financiamiento == 'OTRA') {
-            d_otra_entidad_financiamiento.show()
+        if (id_entidad_financiamiento.val() === 'OTRA') {
+            d_otra_entidad_financiamiento.show();
             id_otra_entidad_financiamiento.attr("required", "true");
         } else {
-            d_otra_entidad_financiamiento.hide()
+            d_otra_entidad_financiamiento.hide();
             id_otra_entidad_financiamiento.attr("required", null);
             id_otra_entidad_financiamiento.val(null).trigger('change');
         }
 
         id_entidad_financiamiento.on('change', function () {
-            if (id_entidad_financiamiento == 'OTRA') {
-                d_otra_entidad_financiamiento.show('slow')
+            if (id_entidad_financiamiento.val() === 'OTRA') {
+                d_otra_entidad_financiamiento.show('slow');
                 id_otra_entidad_financiamiento.attr("required", "true");
             } else {
-                d_otra_entidad_financiamiento.hide('slow')
+                d_otra_entidad_financiamiento.hide('slow');
                 id_otra_entidad_financiamiento.attr("required", null);
                 id_otra_entidad_financiamiento.val(null).trigger('change');
             }

@@ -33,7 +33,7 @@ class ExperienciaLaboralContext:
                                     '},\n' \
                                     '{"data": "fields.nombramiento"},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
-                                    '{"data": "fields.institucion2"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -52,7 +52,7 @@ class LineaInvestigacionContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
-                'titulos_tabla': ['Lìnea de Investigación', 'Fecha de inicio', 'Dependencia']}
+                'titulos_tabla': ['Lìnea de Investigación', 'Fecha de inicio', 'Institución']}
 
 
     tabla_mios =  '<script>\n' \
@@ -72,7 +72,7 @@ class LineaInvestigacionContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.fecha_inicio"},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

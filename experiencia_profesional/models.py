@@ -10,6 +10,8 @@ class ExperienciaProfesional(models.Model):
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
 
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
     cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
     cargo2 = models.CharField(max_length=254, blank=True, null=True)
     tipo_cargo = models.CharField(max_length=30, blank=True, null=True,
@@ -38,6 +40,8 @@ class LineaInvestigacion(models.Model):
     linea_investigacion = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
