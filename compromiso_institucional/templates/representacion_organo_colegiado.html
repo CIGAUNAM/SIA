@@ -42,7 +42,7 @@
     <div id="d_representacion_fuera_unam">
         <p><strong>Representación fuera de la UNAM:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Título de artículo como aparece publicado.">
+               title="En caso de que la representación sea fuera de la unam, especificar aquí el nombre.">
                 <i class="fa fa-question-circle"></i>
             </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
@@ -226,21 +226,22 @@
         </div>
     </div>
     </p>
-
-    <p><strong>Representación fuera de la UNAM:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Título de artículo como aparece publicado.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-pencil-square-o"></i>
+    <div id="d_representacion_fuera_unam">
+        <p><strong>Representación fuera de la UNAM:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="En caso de que la representación sea fuera de la unam, especificar aquí el nombre.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                {{ form.representacion_fuera_unam }}
             </div>
-            {{ form.representacion_fuera }}
         </div>
+        </p>
     </div>
-    </p>
 
     <p><strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
