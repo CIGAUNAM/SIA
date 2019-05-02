@@ -18,7 +18,7 @@ class ArbitrajePublicacionAcademicaJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('fecha_dictamen'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -54,7 +54,7 @@ class OtraComisionJSON(View):
             items = OtraComision.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('comision', 'dependencia', 'fecha'))
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -103,7 +103,7 @@ class RedAcademicaJSON(View):
             json = json.replace('false', '"No"')
             json = json.replace('true', '"Si"')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -144,7 +144,7 @@ class ConvenioOtraEntidadJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'fecha_fin'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -180,7 +180,7 @@ class ServicioAsesoriaExternaJSON(View):
             items = ServicioAsesoriaExterna.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre_servicio', 'clasificacion_servicio', 'fecha_inicio', 'fecha_fin'))
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

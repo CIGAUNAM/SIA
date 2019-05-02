@@ -20,7 +20,7 @@ class CursoEspecializacionJSON(View):
             json = serializers.serialize('json', cursos,
                                          fields=('nombre', 'tipo', 'horas', 'institucion', 'fecha_fin'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -57,7 +57,7 @@ class LicenciaturaJSON(View):
             json = serializers.serialize('json', licenciaturas,
                                          fields=('carrera', 'titulo_tesis', 'fecha_grado', 'institucion'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -94,7 +94,7 @@ class MaestriaJSON(View):
             json = serializers.serialize('json', maestrias,
                                          fields=('programa', 'titulo_tesis', 'fecha_grado', 'institucion'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -131,7 +131,7 @@ class DoctoradoJSON(View):
             json = serializers.serialize('json', maestrias,
                                          fields=('programa', 'titulo_tesis', 'fecha_grado', 'institucion'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -168,7 +168,7 @@ class PostDoctoradoJSON(View):
             json = serializers.serialize('json', maestrias,
                                          fields=('nombre', 'area_conocimiento', 'fecha_fin', 'proyecto', 'institucion'),
                                          use_natural_foreign_keys=True)
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 

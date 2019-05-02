@@ -21,7 +21,7 @@ class MemoriaInExtensoJSON(View):
                 items = MemoriaInExtenso.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'evento'))
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -70,7 +70,7 @@ class ResenaJSON(View):
             json = json.replace('articulo_resenado', 'publicacion_resenada')
             json = json.replace('libro_resenado', 'publicacion_resenada')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -118,7 +118,7 @@ class TraduccionJSON(View):
             json = json.replace('articulo', 'publicacion')
             json = json.replace('libro', 'publicacion')
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -156,7 +156,7 @@ class OrganizacionEventoAcademicoJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('evento2', 'tipo_participacion'))
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
@@ -210,7 +210,7 @@ class ParticipacionEventoAcademicoJSON(View):
             json = json.replace('NACIONAL', 'Nacional')
 
 
-            return HttpResponse(json, content_type='application/json2')
+            return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
