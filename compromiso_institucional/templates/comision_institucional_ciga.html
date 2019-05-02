@@ -89,12 +89,12 @@
     <script>
         var id_institucion = $("#id_institucion");
         var d_institucion = $("#d_institucion");
-        var tipo_institucion = $("#tipo_institucion");
-
+        var id_tipo_institucion = $("#id_tipo_institucion");
         d_institucion.hide();
 
-        tipo_institucion.on('change', function () {
-            if (tipo_institucion.val() === 'EXTERIOR') {
+        id_tipo_institucion.on('change', function () {
+            console.log(id_tipo_institucion.val())
+            if (id_tipo_institucion.val() === 'EXTERIOR') {
                 d_institucion.show('slow');
                 id_institucion.attr("required", "true");
             } else {
@@ -219,11 +219,10 @@
     <script>
         var id_institucion = $("#id_institucion");
         var d_institucion = $("#d_institucion");
-        var tipo_institucion = $("#tipo_institucion");
-
+        var id_tipo_institucion = $("#id_tipo_institucion");
         d_institucion.hide();
 
-        if (tipo_institucion.val() === 'EXTERIOR') {
+        if (id_tipo_institucion.val() === 'EXTERIOR') {
             d_institucion.show('slow');
             id_institucion.attr("required", "true");
         } else {
@@ -232,8 +231,8 @@
             d_institucion.hide('slow');
         }
 
-        tipo_institucion.on('change', function () {
-            if (tipo_institucion.val() === 'EXTERIOR') {
+        id_tipo_institucion.on('change', function () {
+            if (id_tipo_institucion.val() === 'EXTERIOR') {
                 d_institucion.show('slow');
                 id_institucion.attr("required", "true");
             } else {
