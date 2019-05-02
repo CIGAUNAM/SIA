@@ -187,12 +187,25 @@
                     }
                 });
 
+                d_institucion_dentro_unam.show('slow');
+                id_institucion_dentro_unam.attr("required", "true");
+                id_institucion_fuera_unam.attr("required", null);
+                id_institucion_fuera_unam.val(null).trigger('change');
+                d_institucion_fuera_unam.hide('slow');
+
             } else if (id_tipo_representacion.val() === 'FUERA') {
                 d_representacion_fuera_unam.show('slow');
                 id_representacion_fuera_unam.attr("required", "true");
                 d_representacion_dentro_unam.hide('slow');
                 id_representacion_dentro_unam.val(null).trigger('change');
                 id_representacion_dentro_unam.attr("required", null);
+
+                d_institucion_fuera_unam.show('slow');
+                id_institucion_fuera_unam.attr("required", "true");
+                id_institucion_dentro_unam.attr("required", null);
+                id_institucion_dentro_unam.val(null).trigger('change');
+                d_institucion_dentro_unam.hide('slow');
+
             } else {
                 d_representacion_fuera_unam.hide('slow');
                 id_representacion_fuera_unam.val(null).trigger('change');
@@ -200,6 +213,15 @@
                 d_representacion_dentro_unam.hide('slow');
                 id_representacion_dentro_unam.val(null).trigger('change');
                 id_representacion_dentro_unam.attr("required", null);
+
+                id_institucion_fuera_unam.attr("required", null);
+                id_institucion_fuera_unam.val(null).trigger('change');
+                d_institucion_fuera_unam.hide('slow');
+
+                id_institucion_dentro_unam.attr("required", null);
+                id_institucion_dentro_unam.val(null).trigger('change');
+                d_institucion_dentro_unam.hide('slow');
+
             }
         });
     </script>
@@ -342,15 +364,40 @@
         if (id_tipo_representacion.val() === 'DENTRO') {
             d_representacion_dentro_unam.show('slow');
             id_representacion_dentro_unam.attr("required", "true");
+            d_representacion_fuera_unam.hide('slow');
+            id_representacion_fuera_unam.val(null).trigger('change');
+            id_representacion_fuera_unam.attr("required", null);
 
-            if (id_representacion_dentro_unam.val() === 'OTRA') {
-                d_representacion_dentro_unam_otra.show('slow');
-                id_representacion_dentro_unam_otra.attr("required", "true");
-            }
+            id_representacion_dentro_unam.on('change', function () {
+                if (id_representacion_dentro_unam.val() === 'OTRA') {
+                    d_representacion_dentro_unam_otra.show('slow');
+                    id_representacion_dentro_unam_otra.attr("required", "true");
+                } else {
+                    d_representacion_dentro_unam_otra.hide('slow');
+                    id_representacion_dentro_unam_otra.val(null).trigger('change');
+                    id_representacion_dentro_unam_otra.attr("required", null);
+                }
+            });
+
+            d_institucion_dentro_unam.show('slow');
+            id_institucion_dentro_unam.attr("required", "true");
+            id_institucion_fuera_unam.attr("required", null);
+            id_institucion_fuera_unam.val(null).trigger('change');
+            d_institucion_fuera_unam.hide('slow');
 
         } else if (id_tipo_representacion.val() === 'FUERA') {
             d_representacion_fuera_unam.show('slow');
             id_representacion_fuera_unam.attr("required", "true");
+            d_representacion_dentro_unam.hide('slow');
+            id_representacion_dentro_unam.val(null).trigger('change');
+            id_representacion_dentro_unam.attr("required", null);
+
+            d_institucion_fuera_unam.show('slow');
+            id_institucion_fuera_unam.attr("required", "true");
+            id_institucion_dentro_unam.attr("required", null);
+            id_institucion_dentro_unam.val(null).trigger('change');
+            d_institucion_dentro_unam.hide('slow');
+
         } else {
             d_representacion_fuera_unam.hide('slow');
             id_representacion_fuera_unam.val(null).trigger('change');
@@ -358,6 +405,14 @@
             d_representacion_dentro_unam.hide('slow');
             id_representacion_dentro_unam.val(null).trigger('change');
             id_representacion_dentro_unam.attr("required", null);
+
+            id_institucion_fuera_unam.attr("required", null);
+            id_institucion_fuera_unam.val(null).trigger('change');
+            d_institucion_fuera_unam.hide('slow');
+
+            id_institucion_dentro_unam.attr("required", null);
+            id_institucion_dentro_unam.val(null).trigger('change');
+            d_institucion_dentro_unam.hide('slow');
         }
 
         id_tipo_representacion.on('change', function () {
@@ -380,12 +435,25 @@
                     }
                 });
 
+                d_institucion_dentro_unam.show('slow');
+                id_institucion_dentro_unam.attr("required", "true");
+                id_institucion_fuera_unam.attr("required", null);
+                id_institucion_fuera_unam.val(null).trigger('change');
+                d_institucion_fuera_unam.hide('slow');
+
             } else if (id_tipo_representacion.val() === 'FUERA') {
                 d_representacion_fuera_unam.show('slow');
                 id_representacion_fuera_unam.attr("required", "true");
                 d_representacion_dentro_unam.hide('slow');
                 id_representacion_dentro_unam.val(null).trigger('change');
                 id_representacion_dentro_unam.attr("required", null);
+
+                d_institucion_fuera_unam.show('slow');
+                id_institucion_fuera_unam.attr("required", "true");
+                id_institucion_dentro_unam.attr("required", null);
+                id_institucion_dentro_unam.val(null).trigger('change');
+                d_institucion_dentro_unam.hide('slow');
+
             } else {
                 d_representacion_fuera_unam.hide('slow');
                 id_representacion_fuera_unam.val(null).trigger('change');
@@ -393,6 +461,14 @@
                 d_representacion_dentro_unam.hide('slow');
                 id_representacion_dentro_unam.val(null).trigger('change');
                 id_representacion_dentro_unam.attr("required", null);
+
+                id_institucion_fuera_unam.attr("required", null);
+                id_institucion_fuera_unam.val(null).trigger('change');
+                d_institucion_fuera_unam.hide('slow');
+
+                id_institucion_dentro_unam.attr("required", null);
+                id_institucion_dentro_unam.val(null).trigger('change');
+                d_institucion_dentro_unam.hide('slow');
             }
         });
     </script>
