@@ -8293,7 +8293,7 @@ jQuery.extend( {
 			text: "text/plain",
 			html: "text/html",
 			xml: "application/xml, text/xml",
-			json: "application/json2, text/javascript"
+			json: "application/json, text/javascript"
 		},
 
 		contents: {
@@ -8318,7 +8318,7 @@ jQuery.extend( {
 			// Text to html (true = no transformation)
 			"text html": true,
 
-			// Evaluate text as a json2 expression
+			// Evaluate text as a json expression
 			"text json": jQuery.parseJSON,
 
 			// Parse text as xml
@@ -9272,7 +9272,7 @@ jQuery.ajaxSetup( {
 } );
 
 // Detect, normalize options and install callbacks for jsonp requests
-jQuery.ajaxPrefilter( "json2 jsonp", function( s, originalSettings, jqXHR ) {
+jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 	var callbackName, overwritten, responseContainer,
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
@@ -9298,7 +9298,7 @@ jQuery.ajaxPrefilter( "json2 jsonp", function( s, originalSettings, jqXHR ) {
 			s.url += ( rquery.test( s.url ) ? "&" : "?" ) + s.jsonp + "=" + callbackName;
 		}
 
-		// Use data converter to retrieve json2 after script execution
+		// Use data converter to retrieve json after script execution
 		s.converters[ "script json" ] = function() {
 			if ( !responseContainer ) {
 				jQuery.error( callbackName + " was not called" );
@@ -9306,7 +9306,7 @@ jQuery.ajaxPrefilter( "json2 jsonp", function( s, originalSettings, jqXHR ) {
 			return responseContainer[ 0 ];
 		};
 
-		// Force json2 dataType
+		// Force json dataType
 		s.dataTypes[ 0 ] = "json";
 
 		// Install callback

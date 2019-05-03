@@ -40,6 +40,13 @@ class ArticuloCientificoJSON(View):
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
 
+            json = json.replace('"fecha": null}', '}')
+            json = json.replace(',   }', '}')
+            json = json.replace(',  }', '}')
+            json = json.replace(', }', '}')
+            json = json.replace(',}', '}')
+
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
@@ -122,7 +129,7 @@ class MapaArbitradoJSON(View):
             else:
                 items = MapaArbitrado.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'status', 'editorial', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
+                                         fields=('titulo', 'status', 'publicacion', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
 
             json = json.replace('PUBLICADO', 'Publicado')
             json = json.replace('ACEPTADO', 'Aceptado')
@@ -138,6 +145,13 @@ class MapaArbitradoJSON(View):
             json = json.replace('"fecha_aceptado"', '"fecha"')
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
+
+            json = json.replace('"fecha": null}', '}')
+            json = json.replace(',   }', '}')
+            json = json.replace(',  }', '}')
+            json = json.replace(', }', '}')
+            json = json.replace(',}', '}')
+
 
             return HttpResponse(json, content_type='application/json')
         except:
@@ -179,7 +193,7 @@ class PublicacionTecnicaJSON(View):
             else:
                 items = PublicacionTecnica.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
+                                         fields=('titulo', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado', 'status'))
 
             json = json.replace('PUBLICADO', 'Publicado')
             json = json.replace('ACEPTADO', 'Aceptado')
@@ -195,6 +209,13 @@ class PublicacionTecnicaJSON(View):
             json = json.replace('"fecha_aceptado"', '"fecha"')
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
+
+            json = json.replace('"fecha": null}', '}')
+            json = json.replace(',   }', '}')
+            json = json.replace(',  }', '}')
+            json = json.replace(', }', '}')
+            json = json.replace(',}', '}')
+
 
             return HttpResponse(json, content_type='application/json')
         except:
@@ -236,7 +257,7 @@ class LibroInvestigacionJSON(View):
             else:
                 items = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(autores__id__exact=usuarioid) | Q(compiladores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'editorial_text', 'ciudad_text', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado'))
+                                         fields=('nombre', 'editorial_text', 'ciudad_text', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado', 'status'))
 
             json = json.replace('PUBLICADO', 'Publicado')
             json = json.replace('ACEPTADO', 'Aceptado')
@@ -248,10 +269,22 @@ class LibroInvestigacionJSON(View):
             json = json.replace('"fecha_enprensa": null,', '')
             json = json.replace('"fecha_publicado": null,', '')
 
+            json = json.replace('"fecha_enviado": null', '')
+            json = json.replace('"fecha_aceptado": null', '')
+            json = json.replace('"fecha_enprensa": null', '')
+            json = json.replace('"fecha_publicado": null', '')
+
             json = json.replace('"fecha_enviado"', '"fecha"')
             json = json.replace('"fecha_aceptado"', '"fecha"')
             json = json.replace('"fecha_enprensa"', '"fecha"')
             json = json.replace('"fecha_publicado"', '"fecha"')
+
+            json = json.replace('"fecha": null}', '}')
+            json = json.replace(',   }', '}')
+            json = json.replace(',  }', '}')
+            json = json.replace(', }', '}')
+            json = json.replace(',}', '}')
+
 
             return HttpResponse(json, content_type='application/json')
         except:
