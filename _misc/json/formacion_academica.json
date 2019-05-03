@@ -10,6 +10,7 @@
     "fecha_fin": "2015-02-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 26,
+    "institucion": null,
     "usuario": 36
   }
 },
@@ -24,6 +25,7 @@
     "fecha_fin": "2006-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 137,
+    "institucion": null,
     "usuario": 42
   }
 },
@@ -38,6 +40,7 @@
     "fecha_fin": "2015-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 139,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -52,6 +55,7 @@
     "fecha_fin": "2015-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 1,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -66,6 +70,7 @@
     "fecha_fin": "2015-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -80,6 +85,7 @@
     "fecha_fin": "2015-02-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 26,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -94,6 +100,7 @@
     "fecha_fin": "2015-02-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -108,6 +115,7 @@
     "fecha_fin": "2014-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -122,6 +130,7 @@
     "fecha_fin": "2013-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -136,6 +145,7 @@
     "fecha_fin": "2013-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 141,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -150,6 +160,7 @@
     "fecha_fin": "2011-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -164,6 +175,7 @@
     "fecha_fin": "2012-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -178,6 +190,7 @@
     "fecha_fin": "2011-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 144,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -192,6 +205,7 @@
     "fecha_fin": "2011-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 144,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -206,6 +220,7 @@
     "fecha_fin": "2011-02-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 86,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -220,6 +235,7 @@
     "fecha_fin": "2015-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -234,6 +250,7 @@
     "fecha_fin": "2015-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -248,6 +265,7 @@
     "fecha_fin": "2005-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -262,6 +280,7 @@
     "fecha_fin": "2005-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 128,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -276,6 +295,7 @@
     "fecha_fin": "2005-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 148,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -290,6 +310,7 @@
     "fecha_fin": "2015-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -304,6 +325,7 @@
     "fecha_fin": "2004-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -318,6 +340,7 @@
     "fecha_fin": "2004-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -332,6 +355,7 @@
     "fecha_fin": "2004-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -346,6 +370,7 @@
     "fecha_fin": "2003-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 149,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -360,6 +385,7 @@
     "fecha_fin": "2003-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 154,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -374,6 +400,7 @@
     "fecha_fin": "2002-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 160,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -388,6 +415,7 @@
     "fecha_fin": "2002-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -402,6 +430,7 @@
     "fecha_fin": "2002-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 160,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -416,6 +445,7 @@
     "fecha_fin": "2015-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 160,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -430,6 +460,7 @@
     "fecha_fin": "2002-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 160,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -444,6 +475,7 @@
     "fecha_fin": "2001-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -458,6 +490,7 @@
     "fecha_fin": "2015-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -472,6 +505,7 @@
     "fecha_fin": "2001-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 147,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -486,6 +520,7 @@
     "fecha_fin": "2000-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 161,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -500,6 +535,7 @@
     "fecha_fin": "2015-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 160,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -514,6 +550,7 @@
     "fecha_fin": "1999-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 160,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -528,6 +565,7 @@
     "fecha_fin": "1985-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 162,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -542,6 +580,7 @@
     "fecha_fin": "2015-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 6,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -556,6 +595,7 @@
     "fecha_fin": "2011-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 8
   }
 },
@@ -570,6 +610,7 @@
     "fecha_fin": "2009-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 33,
+    "institucion": null,
     "usuario": 8
   }
 },
@@ -584,6 +625,7 @@
     "fecha_fin": "2009-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 164,
+    "institucion": null,
     "usuario": 8
   }
 },
@@ -598,6 +640,7 @@
     "fecha_fin": "2015-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 139,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -612,6 +655,7 @@
     "fecha_fin": "2001-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 24,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -626,6 +670,7 @@
     "fecha_fin": "2001-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 24,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -640,6 +685,7 @@
     "fecha_fin": "2005-02-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 3,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -654,6 +700,7 @@
     "fecha_fin": "2005-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 151,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -668,6 +715,7 @@
     "fecha_fin": "2008-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -682,6 +730,7 @@
     "fecha_fin": "2008-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -696,6 +745,7 @@
     "fecha_fin": "2011-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 165,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -710,6 +760,7 @@
     "fecha_fin": "2013-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 11
   }
 },
@@ -724,6 +775,7 @@
     "fecha_fin": "2015-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 22
   }
 },
@@ -738,6 +790,7 @@
     "fecha_fin": "2011-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 166,
+    "institucion": null,
     "usuario": 6
   }
 },
@@ -752,6 +805,7 @@
     "fecha_fin": "2012-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 167,
+    "institucion": null,
     "usuario": 6
   }
 },
@@ -766,6 +820,7 @@
     "fecha_fin": "2011-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 168,
+    "institucion": null,
     "usuario": 6
   }
 },
@@ -780,6 +835,7 @@
     "fecha_fin": "2013-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 170,
+    "institucion": null,
     "usuario": 6
   }
 },
@@ -794,6 +850,7 @@
     "fecha_fin": "2005-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 43,
+    "institucion": null,
     "usuario": 6
   }
 },
@@ -808,6 +865,7 @@
     "fecha_fin": "2015-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 18
   }
 },
@@ -822,6 +880,7 @@
     "fecha_fin": "2015-08-29",
     "modalidad": "PRESENCIAL",
     "dependencia": 19,
+    "institucion": null,
     "usuario": 13
   }
 },
@@ -836,6 +895,7 @@
     "fecha_fin": "1998-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 173,
+    "institucion": null,
     "usuario": 27
   }
 },
@@ -850,6 +910,7 @@
     "fecha_fin": "2000-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 175,
+    "institucion": null,
     "usuario": 23
   }
 },
@@ -864,6 +925,7 @@
     "fecha_fin": "2002-02-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 176,
+    "institucion": null,
     "usuario": 23
   }
 },
@@ -878,6 +940,7 @@
     "fecha_fin": "2003-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 128,
+    "institucion": null,
     "usuario": 23
   }
 },
@@ -892,6 +955,7 @@
     "fecha_fin": "2016-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 177,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -906,6 +970,7 @@
     "fecha_fin": "2016-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 180,
+    "institucion": null,
     "usuario": 5
   }
 },
@@ -920,6 +985,7 @@
     "fecha_fin": "2016-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 25
   }
 },
@@ -934,6 +1000,7 @@
     "fecha_fin": "2016-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 40
   }
 },
@@ -948,6 +1015,7 @@
     "fecha_fin": "2010-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -962,6 +1030,7 @@
     "fecha_fin": "2008-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 751,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -976,6 +1045,7 @@
     "fecha_fin": "2006-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 179,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -990,6 +1060,7 @@
     "fecha_fin": "2006-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 179,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -1004,6 +1075,7 @@
     "fecha_fin": "2006-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 179,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -1018,6 +1090,7 @@
     "fecha_fin": "2016-02-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 34,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -1032,6 +1105,7 @@
     "fecha_fin": "2015-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 46,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -1046,6 +1120,7 @@
     "fecha_fin": "2015-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 182,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1060,6 +1135,7 @@
     "fecha_fin": "2015-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 183,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1074,6 +1150,7 @@
     "fecha_fin": "2015-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 185,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1088,6 +1165,7 @@
     "fecha_fin": "2015-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 183,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1102,6 +1180,7 @@
     "fecha_fin": "2016-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 6,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1116,6 +1195,7 @@
     "fecha_fin": "2016-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1130,6 +1210,7 @@
     "fecha_fin": "2016-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1144,6 +1225,7 @@
     "fecha_fin": "2016-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 186,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1158,6 +1240,7 @@
     "fecha_fin": "2005-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1172,6 +1255,7 @@
     "fecha_fin": "2005-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 102,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1186,6 +1270,7 @@
     "fecha_fin": "2005-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 102,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1200,6 +1285,7 @@
     "fecha_fin": "2006-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 187,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1214,6 +1300,7 @@
     "fecha_fin": "2006-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 102,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1228,6 +1315,7 @@
     "fecha_fin": "2006-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 2,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1242,6 +1330,7 @@
     "fecha_fin": "2007-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 2,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1256,6 +1345,7 @@
     "fecha_fin": "2007-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 3,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1270,6 +1360,7 @@
     "fecha_fin": "2007-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 3,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1284,6 +1375,7 @@
     "fecha_fin": "2007-07-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 3,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1298,6 +1390,7 @@
     "fecha_fin": "2007-07-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 3,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1312,6 +1405,7 @@
     "fecha_fin": "2007-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 3,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1326,6 +1420,7 @@
     "fecha_fin": "2007-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 3,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1340,6 +1435,7 @@
     "fecha_fin": "2007-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 2,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1354,6 +1450,7 @@
     "fecha_fin": "2008-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 6,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1368,6 +1465,7 @@
     "fecha_fin": "2008-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1382,6 +1480,7 @@
     "fecha_fin": "2009-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1396,6 +1495,7 @@
     "fecha_fin": "2009-12-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1410,6 +1510,7 @@
     "fecha_fin": "2010-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1424,6 +1525,7 @@
     "fecha_fin": "2010-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 189,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1438,6 +1540,7 @@
     "fecha_fin": "2010-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 6,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1452,6 +1555,7 @@
     "fecha_fin": "2010-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1466,6 +1570,7 @@
     "fecha_fin": "2012-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1480,6 +1585,7 @@
     "fecha_fin": "2012-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1494,6 +1600,7 @@
     "fecha_fin": "2012-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 188,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1508,6 +1615,7 @@
     "fecha_fin": "2013-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 6,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1522,6 +1630,7 @@
     "fecha_fin": "2013-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 2,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1536,6 +1645,7 @@
     "fecha_fin": "2014-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 1,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1550,6 +1660,7 @@
     "fecha_fin": "2016-01-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 31
   }
 },
@@ -1564,6 +1675,7 @@
     "fecha_fin": "2016-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 1,
+    "institucion": null,
     "usuario": 36
   }
 },
@@ -1578,6 +1690,7 @@
     "fecha_fin": "2016-05-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 29
   }
 },
@@ -1592,6 +1705,7 @@
     "fecha_fin": "2013-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -1606,6 +1720,7 @@
     "fecha_fin": "2016-10-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 29
   }
 },
@@ -1620,6 +1735,7 @@
     "fecha_fin": "2016-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 190,
+    "institucion": null,
     "usuario": 53
   }
 },
@@ -1634,6 +1750,7 @@
     "fecha_fin": "2016-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -1648,6 +1765,7 @@
     "fecha_fin": "2016-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 194,
+    "institucion": null,
     "usuario": 22
   }
 },
@@ -1662,6 +1780,7 @@
     "fecha_fin": "2016-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -1676,6 +1795,7 @@
     "fecha_fin": "2016-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 1,
+    "institucion": null,
     "usuario": 18
   }
 },
@@ -1690,6 +1810,7 @@
     "fecha_fin": "2016-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 195,
+    "institucion": null,
     "usuario": 6
   }
 },
@@ -1704,6 +1825,7 @@
     "fecha_fin": "2016-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 40
   }
 },
@@ -1718,6 +1840,7 @@
     "fecha_fin": "2016-03-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 40
   }
 },
@@ -1732,6 +1855,7 @@
     "fecha_fin": "2016-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 198,
+    "institucion": null,
     "usuario": 40
   }
 },
@@ -1746,6 +1870,7 @@
     "fecha_fin": "2016-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 199,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -1760,6 +1885,7 @@
     "fecha_fin": "2016-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 200,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -1774,6 +1900,7 @@
     "fecha_fin": "2016-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -1788,6 +1915,7 @@
     "fecha_fin": "2016-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 196,
+    "institucion": null,
     "usuario": 5
   }
 },
@@ -1802,6 +1930,7 @@
     "fecha_fin": "2016-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 42,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -1816,6 +1945,7 @@
     "fecha_fin": "2016-08-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 13
   }
 },
@@ -1830,6 +1960,7 @@
     "fecha_fin": "2016-06-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 8
   }
 },
@@ -1844,6 +1975,7 @@
     "fecha_fin": "2016-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 8
   }
 },
@@ -1858,6 +1990,7 @@
     "fecha_fin": "2016-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 37,
+    "institucion": null,
     "usuario": 36
   }
 },
@@ -1872,6 +2005,7 @@
     "fecha_fin": "2001-10-16",
     "modalidad": "PRESENCIAL",
     "dependencia": 394,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1886,6 +2020,7 @@
     "fecha_fin": "1999-11-03",
     "modalidad": "PRESENCIAL",
     "dependencia": 394,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1900,6 +2035,7 @@
     "fecha_fin": "1993-06-06",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1914,6 +2050,7 @@
     "fecha_fin": "1992-11-11",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1928,6 +2065,7 @@
     "fecha_fin": "1990-12-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1942,6 +2080,7 @@
     "fecha_fin": "1987-11-04",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1956,6 +2095,7 @@
     "fecha_fin": "1983-12-05",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1970,6 +2110,7 @@
     "fecha_fin": "1983-07-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 395,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1984,6 +2125,7 @@
     "fecha_fin": "1983-11-16",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -1998,6 +2140,7 @@
     "fecha_fin": "1983-08-18",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2012,6 +2155,7 @@
     "fecha_fin": "1982-07-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 396,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2026,6 +2170,7 @@
     "fecha_fin": "1982-04-20",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2040,6 +2185,7 @@
     "fecha_fin": "1982-07-22",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2054,6 +2200,7 @@
     "fecha_fin": "1985-10-23",
     "modalidad": "PRESENCIAL",
     "dependencia": 394,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2068,6 +2215,7 @@
     "fecha_fin": "1978-05-09",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2082,6 +2230,7 @@
     "fecha_fin": "1979-04-26",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2096,6 +2245,7 @@
     "fecha_fin": "1979-06-04",
     "modalidad": "PRESENCIAL",
     "dependencia": 387,
+    "institucion": null,
     "usuario": 17
   }
 },
@@ -2110,6 +2260,7 @@
     "fecha_fin": "2017-06-03",
     "modalidad": "PRESENCIAL",
     "dependencia": 2,
+    "institucion": null,
     "usuario": 9
   }
 },
@@ -2124,6 +2275,7 @@
     "fecha_fin": "2014-09-11",
     "modalidad": "PRESENCIAL",
     "dependencia": 2,
+    "institucion": null,
     "usuario": 9
   }
 },
@@ -2138,6 +2290,7 @@
     "fecha_fin": "2011-06-24",
     "modalidad": "PRESENCIAL",
     "dependencia": 420,
+    "institucion": null,
     "usuario": 9
   }
 },
@@ -2152,6 +2305,7 @@
     "fecha_fin": "2000-06-30",
     "modalidad": "PRESENCIAL",
     "dependencia": 446,
+    "institucion": null,
     "usuario": 33
   }
 },
@@ -2166,6 +2320,7 @@
     "fecha_fin": "1992-12-18",
     "modalidad": "PRESENCIAL",
     "dependencia": 358,
+    "institucion": null,
     "usuario": 32
   }
 },
@@ -2180,6 +2335,7 @@
     "fecha_fin": "1995-05-01",
     "modalidad": "PRESENCIAL",
     "dependencia": 137,
+    "institucion": null,
     "usuario": 32
   }
 },
@@ -2194,6 +2350,7 @@
     "fecha_fin": "2018-01-19",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -2208,6 +2365,7 @@
     "fecha_fin": "2018-02-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -2222,6 +2380,7 @@
     "fecha_fin": "2017-11-11",
     "modalidad": "OTRO",
     "dependencia": 384,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2236,6 +2395,7 @@
     "fecha_fin": "2017-10-13",
     "modalidad": "OTRO",
     "dependencia": 1,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2250,6 +2410,7 @@
     "fecha_fin": "2016-01-01",
     "modalidad": "OTRO",
     "dependencia": 319,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2264,6 +2425,7 @@
     "fecha_fin": "2012-11-09",
     "modalidad": "OTRO",
     "dependencia": 267,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2278,6 +2440,7 @@
     "fecha_fin": "2011-01-01",
     "modalidad": "OTRO",
     "dependencia": 267,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2292,6 +2455,7 @@
     "fecha_fin": "2010-03-01",
     "modalidad": "OTRO",
     "dependencia": 523,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2306,6 +2470,7 @@
     "fecha_fin": "2009-01-01",
     "modalidad": "OTRO",
     "dependencia": 201,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2320,6 +2485,7 @@
     "fecha_fin": "2008-05-01",
     "modalidad": "OTRO",
     "dependencia": 201,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2334,6 +2500,7 @@
     "fecha_fin": "2008-07-23",
     "modalidad": "OTRO",
     "dependencia": 524,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2348,6 +2515,7 @@
     "fecha_fin": "2005-09-09",
     "modalidad": "OTRO",
     "dependencia": 267,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -2362,6 +2530,7 @@
     "fecha_fin": "2004-12-01",
     "modalidad": "OTRO",
     "dependencia": 530,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2376,6 +2545,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 531,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2390,6 +2560,7 @@
     "fecha_fin": "2006-10-05",
     "modalidad": "OTRO",
     "dependencia": 532,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2404,6 +2575,7 @@
     "fecha_fin": "2012-05-25",
     "modalidad": "EN_LINEA",
     "dependencia": 524,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2418,6 +2590,7 @@
     "fecha_fin": "2007-03-02",
     "modalidad": "OTRO",
     "dependencia": 533,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2432,6 +2605,7 @@
     "fecha_fin": "2007-07-27",
     "modalidad": "OTRO",
     "dependencia": 530,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2446,6 +2620,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 534,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2460,6 +2635,7 @@
     "fecha_fin": "2006-05-22",
     "modalidad": "OTRO",
     "dependencia": 534,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2474,6 +2650,7 @@
     "fecha_fin": "2004-09-28",
     "modalidad": "OTRO",
     "dependencia": 535,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2488,6 +2665,7 @@
     "fecha_fin": "2004-02-11",
     "modalidad": "OTRO",
     "dependencia": 535,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2502,6 +2680,7 @@
     "fecha_fin": "2004-01-28",
     "modalidad": "OTRO",
     "dependencia": 530,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2516,6 +2695,7 @@
     "fecha_fin": "2003-11-28",
     "modalidad": "OTRO",
     "dependencia": 535,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2530,6 +2710,7 @@
     "fecha_fin": "2003-09-12",
     "modalidad": "OTRO",
     "dependencia": 524,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2544,6 +2725,7 @@
     "fecha_fin": "2003-02-21",
     "modalidad": "OTRO",
     "dependencia": 536,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2558,6 +2740,7 @@
     "fecha_fin": "2002-10-11",
     "modalidad": "OTRO",
     "dependencia": 530,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2572,6 +2755,7 @@
     "fecha_fin": "2002-02-21",
     "modalidad": "OTRO",
     "dependencia": 536,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2586,6 +2770,7 @@
     "fecha_fin": "2004-04-20",
     "modalidad": "OTRO",
     "dependencia": 536,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2600,6 +2785,7 @@
     "fecha_fin": "2000-10-19",
     "modalidad": "OTRO",
     "dependencia": 537,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2614,6 +2800,7 @@
     "fecha_fin": "2000-10-13",
     "modalidad": "OTRO",
     "dependencia": 65,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2628,6 +2815,7 @@
     "fecha_fin": "2000-09-29",
     "modalidad": "OTRO",
     "dependencia": 538,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2642,6 +2830,7 @@
     "fecha_fin": "2000-09-14",
     "modalidad": "OTRO",
     "dependencia": 250,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2656,6 +2845,7 @@
     "fecha_fin": "2000-03-16",
     "modalidad": "OTRO",
     "dependencia": 250,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2670,6 +2860,7 @@
     "fecha_fin": "2000-02-25",
     "modalidad": "OTRO",
     "dependencia": 536,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2684,6 +2875,7 @@
     "fecha_fin": "2000-02-15",
     "modalidad": "OTRO",
     "dependencia": 530,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2698,6 +2890,7 @@
     "fecha_fin": "2000-02-11",
     "modalidad": "OTRO",
     "dependencia": 250,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2712,6 +2905,7 @@
     "fecha_fin": "1999-12-03",
     "modalidad": "OTRO",
     "dependencia": 250,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2726,6 +2920,7 @@
     "fecha_fin": "1998-06-12",
     "modalidad": "OTRO",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2740,6 +2935,7 @@
     "fecha_fin": "1997-12-08",
     "modalidad": "OTRO",
     "dependencia": 539,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2754,6 +2950,7 @@
     "fecha_fin": "1997-02-06",
     "modalidad": "OTRO",
     "dependencia": 535,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2768,6 +2965,7 @@
     "fecha_fin": "1995-06-21",
     "modalidad": "OTRO",
     "dependencia": 535,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2782,6 +2980,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 535,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2796,6 +2995,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2810,6 +3010,7 @@
     "fecha_fin": "1991-11-28",
     "modalidad": "OTRO",
     "dependencia": 528,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2824,6 +3025,7 @@
     "fecha_fin": "1991-11-15",
     "modalidad": "OTRO",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2838,6 +3040,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 540,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2852,6 +3055,7 @@
     "fecha_fin": "1991-04-26",
     "modalidad": "OTRO",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2866,6 +3070,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 528,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2880,6 +3085,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 541,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2894,6 +3100,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 541,
+    "institucion": null,
     "usuario": 30
   }
 },
@@ -2908,6 +3115,7 @@
     "fecha_fin": "2010-06-18",
     "modalidad": "OTRO",
     "dependencia": 542,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -2922,6 +3130,7 @@
     "fecha_fin": "2000-12-08",
     "modalidad": "OTRO",
     "dependencia": 174,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -2936,6 +3145,7 @@
     "fecha_fin": "2001-06-08",
     "modalidad": "OTRO",
     "dependencia": 447,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -2950,6 +3160,7 @@
     "fecha_fin": "2002-11-15",
     "modalidad": "OTRO",
     "dependencia": 140,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -2964,6 +3175,7 @@
     "fecha_fin": "2018-06-05",
     "modalidad": "OTRO",
     "dependencia": 543,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -2978,6 +3190,7 @@
     "fecha_fin": "2006-05-17",
     "modalidad": "OTRO",
     "dependencia": 544,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -2992,6 +3205,7 @@
     "fecha_fin": "2006-09-29",
     "modalidad": "OTRO",
     "dependencia": 524,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3006,6 +3220,7 @@
     "fecha_fin": "2006-09-29",
     "modalidad": "OTRO",
     "dependencia": 524,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3020,6 +3235,7 @@
     "fecha_fin": "2008-02-01",
     "modalidad": "OTRO",
     "dependencia": 519,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3034,6 +3250,7 @@
     "fecha_fin": "2008-06-18",
     "modalidad": "OTRO",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3048,6 +3265,7 @@
     "fecha_fin": "2008-07-04",
     "modalidad": "OTRO",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3062,6 +3280,7 @@
     "fecha_fin": "2008-08-22",
     "modalidad": "EN_LINEA",
     "dependencia": 158,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3076,6 +3295,7 @@
     "fecha_fin": "2009-02-05",
     "modalidad": "OTRO",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3090,6 +3310,7 @@
     "fecha_fin": "2009-05-15",
     "modalidad": "OTRO",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3104,6 +3325,7 @@
     "fecha_fin": "2009-06-09",
     "modalidad": "OTRO",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3118,6 +3340,7 @@
     "fecha_fin": "2010-07-09",
     "modalidad": "OTRO",
     "dependencia": 542,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3132,6 +3355,7 @@
     "fecha_fin": "2011-07-15",
     "modalidad": "OTRO",
     "dependencia": 545,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3146,6 +3370,7 @@
     "fecha_fin": "2012-05-09",
     "modalidad": "OTRO",
     "dependencia": 305,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3160,6 +3385,7 @@
     "fecha_fin": "2012-02-27",
     "modalidad": "OTRO",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3174,6 +3400,7 @@
     "fecha_fin": "2012-06-30",
     "modalidad": "OTRO",
     "dependencia": 545,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3188,6 +3415,7 @@
     "fecha_fin": "2013-03-08",
     "modalidad": "OTRO",
     "dependencia": 546,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3202,6 +3430,7 @@
     "fecha_fin": "2014-06-27",
     "modalidad": "OTRO",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3216,6 +3445,7 @@
     "fecha_fin": "2010-02-23",
     "modalidad": "EN_LINEA",
     "dependencia": 139,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3230,6 +3460,7 @@
     "fecha_fin": "2017-10-13",
     "modalidad": "OTRO",
     "dependencia": 547,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -3244,6 +3475,7 @@
     "fecha_fin": "2017-03-23",
     "modalidad": "PRESENCIAL",
     "dependencia": 574,
+    "institucion": null,
     "usuario": 36
   }
 },
@@ -3258,6 +3490,7 @@
     "fecha_fin": "2017-05-30",
     "modalidad": "PRESENCIAL",
     "dependencia": 547,
+    "institucion": null,
     "usuario": 36
   }
 },
@@ -3272,6 +3505,7 @@
     "fecha_fin": "1995-09-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 16,
+    "institucion": null,
     "usuario": 13
   }
 },
@@ -3286,6 +3520,7 @@
     "fecha_fin": "2017-09-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 547,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -3300,6 +3535,7 @@
     "fecha_fin": "2017-06-29",
     "modalidad": "PRESENCIAL",
     "dependencia": 556,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -3314,6 +3550,7 @@
     "fecha_fin": "2017-07-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 200,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -3328,6 +3565,7 @@
     "fecha_fin": "2018-06-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 551,
+    "institucion": null,
     "usuario": 40
   }
 },
@@ -3342,6 +3580,7 @@
     "fecha_fin": "2018-03-16",
     "modalidad": "PRESENCIAL",
     "dependencia": 633,
+    "institucion": null,
     "usuario": 12
   }
 },
@@ -3356,6 +3595,7 @@
     "fecha_fin": "2018-04-13",
     "modalidad": "PRESENCIAL",
     "dependencia": 633,
+    "institucion": null,
     "usuario": 12
   }
 },
@@ -3370,6 +3610,7 @@
     "fecha_fin": "2018-04-12",
     "modalidad": "PRESENCIAL",
     "dependencia": 557,
+    "institucion": null,
     "usuario": 12
   }
 },
@@ -3384,6 +3625,7 @@
     "fecha_fin": "2017-06-29",
     "modalidad": "PRESENCIAL",
     "dependencia": 628,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -3398,6 +3640,7 @@
     "fecha_fin": "2017-07-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 628,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -3412,6 +3655,7 @@
     "fecha_fin": "2017-02-17",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -3426,6 +3670,7 @@
     "fecha_fin": "2018-02-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -3440,6 +3685,7 @@
     "fecha_fin": "2018-02-09",
     "modalidad": "PRESENCIAL",
     "dependencia": 226,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -3454,6 +3700,7 @@
     "fecha_fin": "2017-04-01",
     "modalidad": "EN_LINEA",
     "dependencia": 206,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3468,6 +3715,7 @@
     "fecha_fin": "2017-06-03",
     "modalidad": "PRESENCIAL",
     "dependencia": 551,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3482,6 +3730,7 @@
     "fecha_fin": "2017-12-08",
     "modalidad": "PRESENCIAL",
     "dependencia": 42,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3496,6 +3745,7 @@
     "fecha_fin": "2018-01-31",
     "modalidad": "EN_LINEA",
     "dependencia": 655,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3510,6 +3760,7 @@
     "fecha_fin": "2006-10-13",
     "modalidad": "PRESENCIAL",
     "dependencia": 102,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3524,6 +3775,7 @@
     "fecha_fin": "2006-10-13",
     "modalidad": "PRESENCIAL",
     "dependencia": 102,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3538,6 +3790,7 @@
     "fecha_fin": "2005-07-16",
     "modalidad": "PRESENCIAL",
     "dependencia": 659,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3552,6 +3805,7 @@
     "fecha_fin": "2014-10-17",
     "modalidad": "PRESENCIAL",
     "dependencia": 200,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3566,6 +3820,7 @@
     "fecha_fin": "2015-02-07",
     "modalidad": "PRESENCIAL",
     "dependencia": 660,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3580,6 +3835,7 @@
     "fecha_fin": "2015-06-24",
     "modalidad": "PRESENCIAL",
     "dependencia": 661,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3594,6 +3850,7 @@
     "fecha_fin": "2015-10-17",
     "modalidad": "EN_LINEA",
     "dependencia": 660,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3608,6 +3865,7 @@
     "fecha_fin": "2018-07-11",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3622,6 +3880,7 @@
     "fecha_fin": "2016-01-30",
     "modalidad": "PRESENCIAL",
     "dependencia": 662,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3636,6 +3895,7 @@
     "fecha_fin": "2016-01-30",
     "modalidad": "PRESENCIAL",
     "dependencia": 662,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3650,6 +3910,7 @@
     "fecha_fin": "2018-07-23",
     "modalidad": "PRESENCIAL",
     "dependencia": 747,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3664,6 +3925,7 @@
     "fecha_fin": "2016-01-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 6,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3678,6 +3940,7 @@
     "fecha_fin": "2016-02-28",
     "modalidad": "EN_LINEA",
     "dependencia": 183,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3692,6 +3955,7 @@
     "fecha_fin": "2016-03-30",
     "modalidad": "EN_LINEA",
     "dependencia": 185,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3706,6 +3970,7 @@
     "fecha_fin": "2016-03-30",
     "modalidad": "EN_LINEA",
     "dependencia": 64,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3720,6 +3985,7 @@
     "fecha_fin": "2018-10-24",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -3734,6 +4000,7 @@
     "fecha_fin": "2018-10-25",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -3748,6 +4015,7 @@
     "fecha_fin": "2018-10-25",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 44
   }
 },
@@ -3762,6 +4030,7 @@
     "fecha_fin": "2018-09-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 667,
+    "institucion": null,
     "usuario": 40
   }
 },
@@ -3776,6 +4045,7 @@
     "fecha_fin": "2018-08-06",
     "modalidad": "PRESENCIAL",
     "dependencia": 199,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -3790,6 +4060,7 @@
     "fecha_fin": "2018-08-22",
     "modalidad": "PRESENCIAL",
     "dependencia": 643,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -3804,6 +4075,7 @@
     "fecha_fin": "2018-11-20",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 1841
   }
 },
@@ -3818,6 +4090,7 @@
     "fecha_fin": "2018-03-20",
     "modalidad": "MIXTO",
     "dependencia": 471,
+    "institucion": null,
     "usuario": 34
   }
 },
@@ -3832,6 +4105,7 @@
     "fecha_fin": "2018-03-20",
     "modalidad": "MIXTO",
     "dependencia": 726,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3846,6 +4120,7 @@
     "fecha_fin": "2018-11-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 557,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -3860,6 +4135,7 @@
     "fecha_fin": "2017-04-26",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3874,6 +4150,7 @@
     "fecha_fin": "2017-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3888,6 +4165,7 @@
     "fecha_fin": "2017-05-29",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3902,6 +4180,7 @@
     "fecha_fin": "2018-11-20",
     "modalidad": "EN_LINEA",
     "dependencia": 199,
+    "institucion": null,
     "usuario": 16
   }
 },
@@ -3916,6 +4195,7 @@
     "fecha_fin": "2017-02-22",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3930,6 +4210,7 @@
     "fecha_fin": "2017-06-23",
     "modalidad": "PRESENCIAL",
     "dependencia": 34,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3944,6 +4225,7 @@
     "fecha_fin": "2018-09-13",
     "modalidad": "EN_LINEA",
     "dependencia": 471,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3958,6 +4240,7 @@
     "fecha_fin": "2018-09-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3972,6 +4255,7 @@
     "fecha_fin": "2018-10-18",
     "modalidad": "PRESENCIAL",
     "dependencia": 745,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -3986,6 +4270,7 @@
     "fecha_fin": "2017-11-10",
     "modalidad": "PRESENCIAL",
     "dependencia": 739,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -4000,6 +4285,7 @@
     "fecha_fin": "2018-04-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 663,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -4014,6 +4300,7 @@
     "fecha_fin": "2018-05-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 665,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -4028,6 +4315,7 @@
     "fecha_fin": "2018-11-14",
     "modalidad": "PRESENCIAL",
     "dependencia": 667,
+    "institucion": null,
     "usuario": 50
   }
 },
@@ -4042,6 +4330,7 @@
     "fecha_fin": "2018-07-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 562,
+    "institucion": null,
     "usuario": 13
   }
 },
@@ -4056,6 +4345,7 @@
     "fecha_fin": "2016-08-31",
     "modalidad": "PRESENCIAL",
     "dependencia": 31,
+    "institucion": null,
     "usuario": 13
   }
 },
@@ -4070,6 +4360,7 @@
     "fecha_fin": "2001-12-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 785,
+    "institucion": null,
     "usuario": 43
   }
 },
@@ -4084,6 +4375,7 @@
     "fecha_fin": "2014-11-07",
     "modalidad": "PRESENCIAL",
     "dependencia": 787,
+    "institucion": null,
     "usuario": 43
   }
 },
@@ -4098,6 +4390,7 @@
     "fecha_fin": "2017-03-24",
     "modalidad": "PRESENCIAL",
     "dependencia": 739,
+    "institucion": null,
     "usuario": 43
   }
 },
@@ -4112,6 +4405,7 @@
     "fecha_fin": "2018-09-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 551,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -4126,6 +4420,7 @@
     "fecha_fin": "2018-06-05",
     "modalidad": "PRESENCIAL",
     "dependencia": 798,
+    "institucion": null,
     "usuario": 35
   }
 },
@@ -4140,6 +4435,7 @@
     "fecha_fin": "2018-09-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 31,
+    "institucion": null,
     "usuario": 12
   }
 },
@@ -4154,6 +4450,7 @@
     "fecha_fin": "2018-09-18",
     "modalidad": "PRESENCIAL",
     "dependencia": 31,
+    "institucion": null,
     "usuario": 12
   }
 },
@@ -4168,6 +4465,7 @@
     "fecha_fin": "2018-11-14",
     "modalidad": "PRESENCIAL",
     "dependencia": 4,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -4182,6 +4480,7 @@
     "fecha_fin": "2018-11-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 667,
+    "institucion": null,
     "usuario": 36
   }
 },
@@ -4196,6 +4495,7 @@
     "fecha_fin": "2018-11-22",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -4210,6 +4510,7 @@
     "fecha_fin": "2018-08-06",
     "modalidad": "PRESENCIAL",
     "dependencia": 199,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -4224,6 +4525,7 @@
     "fecha_fin": "2018-08-06",
     "modalidad": "PRESENCIAL",
     "dependencia": 199,
+    "institucion": null,
     "usuario": 15
   }
 },
@@ -4238,6 +4540,7 @@
     "fecha_fin": "2018-11-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 10,
+    "institucion": null,
     "usuario": 38
   }
 },
@@ -4252,6 +4555,7 @@
     "fecha_fin": "2018-10-25",
     "modalidad": "PRESENCIAL",
     "dependencia": 384,
+    "institucion": null,
     "usuario": 19
   }
 },
@@ -4262,6 +4566,7 @@
     "titulo_obtenido": "corregir",
     "carrera": 1,
     "dependencia": 201,
+    "institucion": null,
     "titulo_tesis": "Aportes de los Sistemas de Informaci\u00f3n Geogr\u00e1fica y de la Percepci\u00f3n Remota en la generaci\u00f3n de cartograf\u00eda forestal",
     "fecha_grado": "1995-03-01",
     "distincion_obtenida": null,
@@ -4275,6 +4580,7 @@
     "titulo_obtenido": "corregir",
     "carrera": 2,
     "dependencia": 41,
+    "institucion": null,
     "titulo_tesis": "Pron\u00f3stico del cambio de uso del suelo en \u00e1reas forestales del estado de Michoac\u00e1n",
     "fecha_grado": "2007-10-01",
     "distincion_obtenida": null,
@@ -4288,6 +4594,7 @@
     "titulo_obtenido": "corregir1",
     "carrera": 3,
     "dependencia": 203,
+    "institucion": null,
     "titulo_tesis": "-",
     "fecha_grado": "2006-09-01",
     "distincion_obtenida": null,
@@ -4301,6 +4608,7 @@
     "titulo_obtenido": "corregir2",
     "carrera": 1,
     "dependencia": 204,
+    "institucion": null,
     "titulo_tesis": "Evaluaci\u00f3n Edafo-Morfom\u00e9trica para un Mejor Aprovechamiento del Recurso Tierra en el Municipio Los Palacios, Pinar del R\u00edo, Cuba.",
     "fecha_grado": "1987-07-01",
     "distincion_obtenida": null,
@@ -4314,6 +4622,7 @@
     "titulo_obtenido": "corregir3",
     "carrera": 21,
     "dependencia": 102,
+    "institucion": null,
     "titulo_tesis": "Sistema de Informaci\u00f3n Geogr\u00e1fica para el Ordenamiento Ecol\u00f3gico Territorial de la Regi\u00f3n de la Mariposa Monarca (SIG-POETMM)",
     "fecha_grado": "2007-02-01",
     "distincion_obtenida": null,
@@ -4327,6 +4636,7 @@
     "titulo_obtenido": "corregir4",
     "carrera": 4,
     "dependencia": 205,
+    "institucion": null,
     "titulo_tesis": "--",
     "fecha_grado": "1988-06-01",
     "distincion_obtenida": null,
@@ -4340,6 +4650,7 @@
     "titulo_obtenido": "corregir5",
     "carrera": 5,
     "dependencia": 60,
+    "institucion": null,
     "titulo_tesis": "Diagn\u00f3stico de la agricultura y sus perspectivas en la Comunidad San Francisco Uricho",
     "fecha_grado": "2015-03-01",
     "distincion_obtenida": null,
@@ -4353,6 +4664,7 @@
     "titulo_obtenido": "corregir6",
     "carrera": 6,
     "dependencia": 206,
+    "institucion": null,
     "titulo_tesis": "An\u00e1lisis de Ciclo de vida de la tortilla a base de ma\u00edz nativo Red Tsiri de la Cuenca del Lago de P\u00e1tzcuaro, Michoac\u00e1n",
     "fecha_grado": "2015-01-01",
     "distincion_obtenida": null,
@@ -4366,6 +4678,7 @@
     "titulo_obtenido": "corregir7",
     "carrera": 7,
     "dependencia": 153,
+    "institucion": null,
     "titulo_tesis": "Estudio demogr\u00e1fico de Panicum miliacium en un cultivo de sorgo en Puru\u00e1ndiro, Michoac\u00e1n",
     "fecha_grado": "2003-01-01",
     "distincion_obtenida": null,
@@ -4379,6 +4692,7 @@
     "titulo_obtenido": "corregir8",
     "carrera": 8,
     "dependencia": 647,
+    "institucion": null,
     "titulo_tesis": "Pendiente",
     "fecha_grado": "2002-09-02",
     "distincion_obtenida": null,
@@ -4392,6 +4706,7 @@
     "titulo_obtenido": "corregir9",
     "carrera": 9,
     "dependencia": 141,
+    "institucion": null,
     "titulo_tesis": "Mass Media Y Mercadotecnia Politica",
     "fecha_grado": "1996-01-01",
     "distincion_obtenida": null,
@@ -4405,6 +4720,7 @@
     "titulo_obtenido": "corregir10",
     "carrera": 10,
     "dependencia": 125,
+    "institucion": null,
     "titulo_tesis": "Las chinampas urbanas en Tenochitlan-Tlateloco",
     "fecha_grado": "2004-09-01",
     "distincion_obtenida": null,
@@ -4418,6 +4734,7 @@
     "titulo_obtenido": "corregir11",
     "carrera": 11,
     "dependencia": 209,
+    "institucion": null,
     "titulo_tesis": "Determinaci\u00f3n del mercurio en la composta",
     "fecha_grado": "2005-07-01",
     "distincion_obtenida": null,
@@ -4431,6 +4748,7 @@
     "titulo_obtenido": "corregir12",
     "carrera": 12,
     "dependencia": 210,
+    "institucion": null,
     "titulo_tesis": "Levantamiento de suelos y evaluaci\u00f3n de la calidad del mapa de suelos en el Colegio de Postgraduados, Campus Montecillo, Estado de M\u00e9xico, M\u00e9xico",
     "fecha_grado": "2008-07-01",
     "distincion_obtenida": null,
@@ -4444,6 +4762,7 @@
     "titulo_obtenido": "corregir13",
     "carrera": 2,
     "dependencia": 211,
+    "institucion": null,
     "titulo_tesis": "Linear programming for optimal spatial allocation of hospital catchment areas, \tEast Midlands",
     "fecha_grado": "1970-07-01",
     "distincion_obtenida": null,
@@ -4457,6 +4776,7 @@
     "titulo_obtenido": "corregir14",
     "carrera": 13,
     "dependencia": 24,
+    "institucion": null,
     "titulo_tesis": "La monta\u00f1a, el templo y la iglesia. Organizaci\u00f3n del espacio urbano de la Nueva Espa\u00f1a, siglo XVI. El caso de Tamu\u00edn en la Huasteca Potosina (",
     "fecha_grado": "2004-04-01",
     "distincion_obtenida": null,
@@ -4470,6 +4790,7 @@
     "titulo_obtenido": "corregir15",
     "carrera": 14,
     "dependencia": 211,
+    "institucion": null,
     "titulo_tesis": "-",
     "fecha_grado": "1970-08-01",
     "distincion_obtenida": null,
@@ -4483,6 +4804,7 @@
     "titulo_obtenido": "corregir16",
     "carrera": 15,
     "dependencia": 49,
+    "institucion": null,
     "titulo_tesis": "\"Evaluaci\u00f3n de los programas para el desarrollo local y alternativas para mejorar su impacto. El caso de La Huacana, Michoac\u00e1n  en la administraci\u00f3n 2005-2007\"",
     "fecha_grado": "2006-09-01",
     "distincion_obtenida": null,
@@ -4496,6 +4818,7 @@
     "titulo_obtenido": "corregir17",
     "carrera": 8,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "Diversidad y distribuci\u00f3n de la familia Cactaceae en la regi\u00f3n del Desierto Chihuahuense",
     "fecha_grado": "2006-02-01",
     "distincion_obtenida": null,
@@ -4509,6 +4832,7 @@
     "titulo_obtenido": "corregir18",
     "carrera": 16,
     "dependencia": 131,
+    "institucion": null,
     "titulo_tesis": "Programa de Ordenaci\u00f3n de Embalses (POE) en la Comunidad de Madrid",
     "fecha_grado": "1998-10-01",
     "distincion_obtenida": null,
@@ -4522,6 +4846,7 @@
     "titulo_obtenido": "corregir19",
     "carrera": 17,
     "dependencia": 212,
+    "institucion": null,
     "titulo_tesis": "Caracterizaci\u00f3n de vol\u00e1tiles en mieles del centro de Argentina",
     "fecha_grado": "2000-03-01",
     "distincion_obtenida": null,
@@ -4535,6 +4860,7 @@
     "titulo_obtenido": "corregir20",
     "carrera": 10,
     "dependencia": 152,
+    "institucion": null,
     "titulo_tesis": "Hacia el rescate y salvamento de la praxis arqueologica en M\u00e9xico. Costa Azul, Baja California. Excavaciones arqueol\u00f3gicas a trav\u00e9s de un salvamento arqueol\u00f3gico.",
     "fecha_grado": "2006-07-01",
     "distincion_obtenida": null,
@@ -4548,6 +4874,7 @@
     "titulo_obtenido": "corregir21",
     "carrera": 18,
     "dependencia": 213,
+    "institucion": null,
     "titulo_tesis": "La importancia de Turismo para el desarrollo econ\u00f3mico en la ciudad de Urumqi, XinJiang, China",
     "fecha_grado": "1998-07-01",
     "distincion_obtenida": null,
@@ -4561,6 +4888,7 @@
     "titulo_obtenido": "corregir22",
     "carrera": 19,
     "dependencia": 26,
+    "institucion": null,
     "titulo_tesis": "Arenas Pol\u00edticas en la Meseta Pur\u00e9pecha",
     "fecha_grado": "1995-01-01",
     "distincion_obtenida": null,
@@ -4574,6 +4902,7 @@
     "titulo_obtenido": "corregir23",
     "carrera": 1,
     "dependencia": 41,
+    "institucion": null,
     "titulo_tesis": "Estudio Geomorfol\u00f3gico de la Porci\u00f3n Sureste del Golfo de M\u00e9xico",
     "fecha_grado": "1994-10-01",
     "distincion_obtenida": null,
@@ -4587,6 +4916,7 @@
     "titulo_obtenido": "corregir34",
     "carrera": 20,
     "dependencia": 132,
+    "institucion": null,
     "titulo_tesis": "Teledetecci\u00f3n y an\u00e1lisis del uso del espacio en el sudeste del valle de Yocavil (Dpto. de Santa Mar\u00eda, Prov. de Catamarca).",
     "fecha_grado": "2009-04-01",
     "distincion_obtenida": null,
@@ -4600,6 +4930,7 @@
     "titulo_obtenido": "corregir35",
     "carrera": 21,
     "dependencia": 102,
+    "institucion": null,
     "titulo_tesis": "Evaluaci\u00f3n de Seguridad en Redes",
     "fecha_grado": "2009-01-01",
     "distincion_obtenida": null,
@@ -4613,6 +4944,7 @@
     "titulo_obtenido": "corregir36",
     "carrera": 22,
     "dependencia": 29,
+    "institucion": null,
     "titulo_tesis": "Inducci\u00f3n de la Actividad Ov\u00e1rica en Borregas Suffolk en \u00c9poca de Anestro Mediante el Uso de Esponjas Intravaginales Impregnadas con Acetato de Fluorogestona.",
     "fecha_grado": "1992-06-15",
     "distincion_obtenida": null,
@@ -4626,6 +4958,7 @@
     "titulo_obtenido": "corregir37",
     "carrera": 21,
     "dependencia": 102,
+    "institucion": null,
     "titulo_tesis": "Implementaci\u00f3n del portal Web del CIEco usando un administrador de contenido",
     "fecha_grado": "2009-03-01",
     "distincion_obtenida": null,
@@ -4639,6 +4972,7 @@
     "titulo_obtenido": "corregir38",
     "carrera": 23,
     "dependencia": 193,
+    "institucion": null,
     "titulo_tesis": "La industria del bacanora: una oportunidad econ\u00f3mica para el desarrollo de la regi\u00f3n sierra de Sonora",
     "fecha_grado": "2003-01-01",
     "distincion_obtenida": null,
@@ -4652,6 +4986,7 @@
     "titulo_obtenido": "corregir39",
     "carrera": 8,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "Evaluaci\u00f3n del Deterioro de la Vegetaci\u00f3n en el Sistema Estuarino Chantuto-Teculapa-Panzacola, Chiapas.",
     "fecha_grado": "1995-07-01",
     "distincion_obtenida": null,
@@ -4665,6 +5000,7 @@
     "titulo_obtenido": "corregir40",
     "carrera": 24,
     "dependencia": 52,
+    "institucion": null,
     "titulo_tesis": "Eficiencia Biol\u00f3gica Y Econ\u00f3mica Del Proceso De Producci\u00f3n De Papaya En El Tr\u00f3pico Seco De Michoac\u00e1n",
     "fecha_grado": "2000-07-01",
     "distincion_obtenida": null,
@@ -4678,6 +5014,7 @@
     "titulo_obtenido": "corregir41",
     "carrera": 1,
     "dependencia": 41,
+    "institucion": null,
     "titulo_tesis": "Los M\u00e9todos de C\u00e1lculo de Horas Fr\u00edo: el M\u00e9todo G\u00f3mez-Morales",
     "fecha_grado": "1984-08-25",
     "distincion_obtenida": null,
@@ -4691,6 +5028,7 @@
     "titulo_obtenido": "corregir42",
     "carrera": 1,
     "dependencia": 387,
+    "institucion": null,
     "titulo_tesis": "Algunos aspectos de la transformaci\u00f3n de la naturaleza en el ejemplo del r\u00edo Almendares",
     "fecha_grado": "1977-07-16",
     "distincion_obtenida": null,
@@ -4704,6 +5042,7 @@
     "titulo_obtenido": "corregir43",
     "carrera": 2,
     "dependencia": 384,
+    "institucion": null,
     "titulo_tesis": "Tapachula y su funci\u00f3n regional en el Soconusco. Una  ciudad media de impulso agr\u00edcola",
     "fecha_grado": "1994-06-16",
     "distincion_obtenida": null,
@@ -4717,6 +5056,7 @@
     "titulo_obtenido": "corregir44",
     "carrera": 43,
     "dependencia": 267,
+    "institucion": null,
     "titulo_tesis": "Propuesta Arquitect\u00f3nica de Unidad M\u00e9dico-Ginecol\u00f3gica, para la zona nororiente de Tuxtla Guti\u00e9rrez, Chiapas",
     "fecha_grado": "2006-09-11",
     "distincion_obtenida": null,
@@ -4730,6 +5070,7 @@
     "titulo_obtenido": "corregir45",
     "carrera": 17,
     "dependencia": 584,
+    "institucion": null,
     "titulo_tesis": "Desconocido",
     "fecha_grado": "2000-10-01",
     "distincion_obtenida": null,
@@ -4743,6 +5084,7 @@
     "titulo_obtenido": "corregir451",
     "carrera": 16,
     "dependencia": 585,
+    "institucion": null,
     "titulo_tesis": "Desconocido",
     "fecha_grado": "2003-07-01",
     "distincion_obtenida": null,
@@ -4756,6 +5098,7 @@
     "titulo_obtenido": "corregir47",
     "carrera": 2,
     "dependencia": 41,
+    "institucion": null,
     "titulo_tesis": "El Uso de Fotograf\u00edas A\u00e9reas Digitales y SIG en la Actualizaci\u00f3n Cartogr\u00e1fica de la Zona Federal del Ex-Lago de Texcoco",
     "fecha_grado": "1999-01-21",
     "distincion_obtenida": null,
@@ -4769,6 +5112,7 @@
     "titulo_obtenido": "corregir48",
     "carrera": 8,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "Estudio y evaluaci\u00f3n de algunas propiedades f\u00edsicas y qu\u00edmicas de los suelos agr\u00edcolas aleda\u00f1os al Ingenio azucarero \u201cEl Potrero\u201d en C\u00f3rdoba, Veracruz, M\u00e9xico.",
     "fecha_grado": "1996-07-05",
     "distincion_obtenida": null,
@@ -4782,6 +5126,7 @@
     "titulo_obtenido": "corregir49",
     "carrera": 12,
     "dependencia": 305,
+    "institucion": null,
     "titulo_tesis": "Pendiente",
     "fecha_grado": "1988-06-20",
     "distincion_obtenida": null,
@@ -4795,6 +5140,7 @@
     "titulo_obtenido": "corregir50",
     "carrera": 4,
     "dependencia": 651,
+    "institucion": null,
     "titulo_tesis": "Aspectos ecol\u00f3gicos del uso pasivo de energ\u00eda solar",
     "fecha_grado": "2004-12-22",
     "distincion_obtenida": null,
@@ -4808,6 +5154,7 @@
     "titulo_obtenido": "corregir51",
     "carrera": 26,
     "dependencia": 42,
+    "institucion": null,
     "titulo_tesis": "Matrices de diferenciaci\u00f3n en 3+1 dimensiones.",
     "fecha_grado": "2010-09-19",
     "distincion_obtenida": null,
@@ -4821,6 +5168,7 @@
     "titulo_obtenido": "corregir52",
     "carrera": 12,
     "dependencia": 218,
+    "institucion": null,
     "titulo_tesis": "Trabajo de fin de carrera: Plan de negocios para la producci\u00f3n de aceite esencial de or\u00e9gano en Quer\u00e9taro.",
     "fecha_grado": "2003-12-12",
     "distincion_obtenida": null,
@@ -4834,6 +5182,7 @@
     "titulo_obtenido": "corregir53",
     "carrera": 38,
     "dependencia": 50,
+    "institucion": null,
     "titulo_tesis": "Aplicacio?n de un sistema de informacio?n geogra?fica para el ca?lculo de escurrimiento con el me?todo de los nu?meros de curva del USSCS (Caso: Cuenca del Lago Cuitzeo).",
     "fecha_grado": "2005-04-29",
     "distincion_obtenida": null,
@@ -4847,6 +5196,7 @@
     "titulo_obtenido": "corregir54",
     "programa": 14,
     "dependencia": 129,
+    "institucion": null,
     "titulo_tesis": "Pixel based and object oriented image analysis in coal fire mapping",
     "fecha_grado": "2003-03-01",
     "distincion_obtenida": null,
@@ -4860,6 +5210,7 @@
     "titulo_obtenido": "corregir55",
     "programa": 17,
     "dependencia": 41,
+    "institucion": null,
     "titulo_tesis": "Aplicaci\u00f3n de un modelo espacial para la elaboraci\u00f3n de escenarios de uso/cobertura del suelo en La Huacana, Michoac\u00e1n",
     "fecha_grado": "2008-04-01",
     "distincion_obtenida": null,
@@ -4873,6 +5224,7 @@
     "titulo_obtenido": "corregir56",
     "programa": 7,
     "dependencia": 128,
+    "institucion": null,
     "titulo_tesis": "The applicability of a stochastic-dynamic model of land use change in a Mexican dry tropical region",
     "fecha_grado": "2007-03-01",
     "distincion_obtenida": null,
@@ -4886,6 +5238,7 @@
     "titulo_obtenido": "corregir67",
     "programa": 23,
     "dependencia": 121,
+    "institucion": null,
     "titulo_tesis": "An\u00e1lisis de la ordenaci\u00f3n del territorio en M\u00e9xico y Espa\u00f1a",
     "fecha_grado": "2009-06-01",
     "distincion_obtenida": null,
@@ -4899,6 +5252,7 @@
     "titulo_obtenido": "corregir68",
     "programa": 16,
     "dependencia": 215,
+    "institucion": null,
     "titulo_tesis": "Diversidad de Ecosistemas en el Archipi\u00e9lago de Camag\u00fcey, Cuba.",
     "fecha_grado": "1996-11-01",
     "distincion_obtenida": null,
@@ -4912,6 +5266,7 @@
     "titulo_obtenido": "corregir69",
     "programa": 22,
     "dependencia": 216,
+    "institucion": null,
     "titulo_tesis": "Propuesta Estrat\u00e9gica y An\u00e1lisis de Desempe\u00f1o de Herramientas de Monitoreo y de Control para Redes Publicas en Institutos de Investigaci\u00f3n",
     "fecha_grado": "2009-12-01",
     "distincion_obtenida": null,
@@ -4925,6 +5280,7 @@
     "titulo_obtenido": "corregir70",
     "programa": 24,
     "dependencia": 41,
+    "institucion": null,
     "titulo_tesis": "Transformaci\u00f3n de los paisajes agr\u00edcolas durante \u00faltimos 20 a\u00f1os en la cuenca de Lago de P\u00e1tzcuaro y sus tendencias a la permanencia o desaparici\u00f3n.",
     "fecha_grado": "2015-01-01",
     "distincion_obtenida": null,
@@ -4938,6 +5294,7 @@
     "titulo_obtenido": "corregir71",
     "programa": 6,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "El sistema alimentario del maiz en P\u00e1tzcuaro Michoac\u00e1n",
     "fecha_grado": "2007-03-01",
     "distincion_obtenida": null,
@@ -4951,6 +5308,7 @@
     "titulo_obtenido": "corregir72",
     "programa": 21,
     "dependencia": 174,
+    "institucion": null,
     "titulo_tesis": "La Ecolog\u00eda del Paisaje en Relaci\u00f3n con los Sistemas de Producci\u00f3n en el Valle de Sacaba. Cochabamba- Bolivia",
     "fecha_grado": "2002-12-18",
     "distincion_obtenida": null,
@@ -4964,6 +5322,7 @@
     "titulo_obtenido": "corregir73",
     "programa": 48,
     "dependencia": 128,
+    "institucion": null,
     "titulo_tesis": "Polylepis Forest Condition Related with Two Threatening Factors",
     "fecha_grado": "2004-03-11",
     "distincion_obtenida": null,
@@ -4977,6 +5336,7 @@
     "titulo_obtenido": "corregir74",
     "programa": 26,
     "dependencia": 217,
+    "institucion": null,
     "titulo_tesis": "La cultura politica de los estudiantes universitarios",
     "fecha_grado": "2001-05-01",
     "distincion_obtenida": null,
@@ -4990,6 +5350,7 @@
     "titulo_obtenido": "corregir75",
     "programa": 4,
     "dependencia": 125,
+    "institucion": null,
     "titulo_tesis": "Comparaci\u00f3n entre los Pames y los Guamares seg\u00fan las fuentes arqueol\u00f3gicas y etnohist\u00f3ricas.",
     "fecha_grado": "2005-06-01",
     "distincion_obtenida": null,
@@ -5003,6 +5364,7 @@
     "titulo_obtenido": "corregir76",
     "programa": 8,
     "dependencia": 17,
+    "institucion": null,
     "titulo_tesis": "Din\u00e1mica de la Erosi\u00f3n/Sedimentaci\u00f3n en la \u00c9poca Prehisp\u00e1nica y Periodo Colonial. Reconstrucci\u00f3n de las condiciones Paleoambientales en el Valle de Teotihuac\u00e1n (Estado de M\u00e9xico)",
     "fecha_grado": "2014-07-01",
     "distincion_obtenida": null,
@@ -5016,6 +5378,7 @@
     "titulo_obtenido": "corregir77",
     "programa": 17,
     "dependencia": 126,
+    "institucion": null,
     "titulo_tesis": "-",
     "fecha_grado": "1971-09-01",
     "distincion_obtenida": null,
@@ -5029,6 +5392,7 @@
     "titulo_obtenido": "corregir78",
     "programa": 19,
     "dependencia": 44,
+    "institucion": null,
     "titulo_tesis": "Paisaje, territorio y paisaje ritual: La Huasteca potosina. Estudio de Geograf\u00eda hist\u00f3rica.",
     "fecha_grado": "2008-08-01",
     "distincion_obtenida": null,
@@ -5042,6 +5406,7 @@
     "titulo_obtenido": "corregir79",
     "programa": 20,
     "dependencia": 126,
+    "institucion": null,
     "titulo_tesis": "Delphi Technique",
     "fecha_grado": "1972-06-01",
     "distincion_obtenida": null,
@@ -5055,6 +5420,7 @@
     "titulo_obtenido": "corregir80",
     "programa": 10,
     "dependencia": 43,
+    "institucion": null,
     "titulo_tesis": "\"Competitividad de la industria electr\u00f3nica de M\u00e9xico y China en el mercado de Estados Unidos: 1993-2005\"",
     "fecha_grado": "2009-08-01",
     "distincion_obtenida": null,
@@ -5068,6 +5434,7 @@
     "titulo_obtenido": "corregir81",
     "programa": 15,
     "dependencia": 48,
+    "institucion": null,
     "titulo_tesis": "Cultura del ma\u00edz: impacto a la soberan\u00eda alimentaria por la entrada del ma\u00edz gen\u00e9ticamente modificado en M\u00e9xico",
     "fecha_grado": "2015-06-01",
     "distincion_obtenida": null,
@@ -5081,6 +5448,7 @@
     "titulo_obtenido": "corregir82",
     "programa": 6,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "Estructura y composici\u00f3n de la selva baja caducifolia de Huautla, Morelos",
     "fecha_grado": "2009-06-01",
     "distincion_obtenida": null,
@@ -5094,6 +5462,7 @@
     "titulo_obtenido": "corregir83",
     "programa": 1,
     "dependencia": 17,
+    "institucion": null,
     "titulo_tesis": "Toposecuencia de paleosuelos volc\u00e1nicos como herramienta para la reconstrucci\u00f3n paleoambiental del Cuaternario tard\u00edo en Tlaxcala",
     "fecha_grado": "2010-04-01",
     "distincion_obtenida": null,
@@ -5107,6 +5476,7 @@
     "titulo_obtenido": "corregir84",
     "programa": 3,
     "dependencia": 95,
+    "institucion": null,
     "titulo_tesis": "El dilema de los comunes. Un estudio de la crisis m\u00faltiple  en la  Meseta  Purepecha",
     "fecha_grado": "1996-01-01",
     "distincion_obtenida": null,
@@ -5120,6 +5490,7 @@
     "titulo_obtenido": "corregir85",
     "programa": 11,
     "dependencia": 219,
+    "institucion": null,
     "titulo_tesis": "Regionalizaci\u00f3n Geomorfol\u00f3gica y de Paisajes de la Zona Costera entre Guaymas y Agiabampo, Sonora, M\u00e9xico",
     "fecha_grado": "1997-01-01",
     "distincion_obtenida": null,
@@ -5133,6 +5504,7 @@
     "titulo_obtenido": "corregir86",
     "programa": 27,
     "dependencia": 216,
+    "institucion": null,
     "titulo_tesis": "Gesti\u00f3n de proyectos mediante PMBok para el Desarrollo de software Kurhanguni  \"An\u00e1lisis de la participaci\u00f3n comunitaria en proyectos para el desarrollo rural\"",
     "fecha_grado": "2013-06-01",
     "distincion_obtenida": null,
@@ -5146,6 +5518,7 @@
     "titulo_obtenido": "corregir87",
     "programa": 92,
     "dependencia": 134,
+    "institucion": null,
     "titulo_tesis": "A multidimensional approach to poverty among farmers with small holdings",
     "fecha_grado": "2001-12-18",
     "distincion_obtenida": null,
@@ -5159,6 +5532,7 @@
     "titulo_obtenido": "corregir88",
     "programa": 13,
     "dependencia": 135,
+    "institucion": null,
     "titulo_tesis": "A contingent valuation exercise with a fix bid and varying environmental quality levels",
     "fecha_grado": "2007-01-01",
     "distincion_obtenida": null,
@@ -5172,6 +5546,7 @@
     "titulo_obtenido": "corregir89",
     "programa": 25,
     "dependencia": 4,
+    "institucion": null,
     "titulo_tesis": "Estado Ambiental de la Regi\u00f3n Baj\u00edo, Michoac\u00e1n en el periodo 1990, 2000 y 2010. M\u00e9xico",
     "fecha_grado": "2016-05-01",
     "distincion_obtenida": null,
@@ -5185,6 +5560,7 @@
     "titulo_obtenido": "corregir90",
     "programa": 9,
     "dependencia": 47,
+    "institucion": null,
     "titulo_tesis": "Compresi\u00f3n de Bases de Datos M\u00e9tricas",
     "fecha_grado": "2013-08-01",
     "distincion_obtenida": null,
@@ -5198,6 +5574,7 @@
     "titulo_obtenido": "corregir91",
     "programa": 18,
     "dependencia": 220,
+    "institucion": null,
     "titulo_tesis": "Search and space theory as the foundations for the design of an object-oriented GIS",
     "fecha_grado": "1992-10-01",
     "distincion_obtenida": null,
@@ -5211,6 +5588,7 @@
     "titulo_obtenido": "corregir92",
     "programa": 12,
     "dependencia": 153,
+    "institucion": null,
     "titulo_tesis": "Estrategias Productivas, Comerciales Y De Vida De Los Productores De Mango En Apatzing\u00e1n, Michoac\u00e1n, M\u00e9xico.",
     "fecha_grado": "2005-04-01",
     "distincion_obtenida": null,
@@ -5224,6 +5602,7 @@
     "titulo_obtenido": "corregir93",
     "programa": 50,
     "dependencia": 358,
+    "institucion": null,
     "titulo_tesis": "The effect of organic amendments on soil organic  matter dynamics and nutrient availability",
     "fecha_grado": "1992-12-19",
     "distincion_obtenida": null,
@@ -5237,6 +5616,7 @@
     "titulo_obtenido": "corregir94",
     "programa": 60,
     "dependencia": 201,
+    "institucion": null,
     "titulo_tesis": "Espacio p\u00fablico y comercial. An\u00e1lisis espacial de la localizaci\u00f3n de los tianguis en el municipio de Guadalajara",
     "fecha_grado": "2009-07-14",
     "distincion_obtenida": null,
@@ -5250,6 +5630,7 @@
     "titulo_obtenido": "corregir95",
     "programa": 6,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "Estudio sobre la utilizaci\u00f3n de los licores \u00e1cidos de la industria metal\u00fargica, en la recuperaci\u00f3n de los suelos salino-s\u00f3dicos.",
     "fecha_grado": "1992-03-18",
     "distincion_obtenida": null,
@@ -5263,6 +5644,7 @@
     "titulo_obtenido": "corregir96",
     "programa": 7,
     "dependencia": 544,
+    "institucion": null,
     "titulo_tesis": "Digital   Stereo   Image   Interpretation   for   Natural   Hazard    Assessment (Interpretaci\u00f3n   Digital   de   Im\u00e1genes   Estereosc\u00f3picas   para   la    Evaluaci\u00f3n de Peligros Naturales)",
     "fecha_grado": "2003-03-13",
     "distincion_obtenida": null,
@@ -5276,6 +5658,7 @@
     "titulo_obtenido": "corregir97",
     "programa": 8,
     "dependencia": 17,
+    "institucion": null,
     "titulo_tesis": "Adsorci\u00f3n de As, Cu, Cd, Pb y Zn derivados de material de desecho de la miner\u00eda, en sedimentos naturales de la cuenca de la Presa de Mata, Guanajuato: Control natural",
     "fecha_grado": "2001-08-01",
     "distincion_obtenida": null,
@@ -5289,6 +5672,7 @@
     "titulo_obtenido": "corregir98",
     "programa": 80,
     "dependencia": 603,
+    "institucion": null,
     "titulo_tesis": "Investigando el impacto socio-econ\u00f3mico del esquema REDD implementado en el proyecto comunitario de carbono forestal Nhambita, Mozambique",
     "fecha_grado": "2009-10-01",
     "distincion_obtenida": null,
@@ -5302,6 +5686,7 @@
     "titulo_obtenido": "corregir99",
     "programa": 86,
     "dependencia": 720,
+    "institucion": null,
     "titulo_tesis": "Biosphere Reserves: contribution to sustainable local development?",
     "fecha_grado": "2007-09-20",
     "distincion_obtenida": null,
@@ -5315,6 +5700,7 @@
     "titulo_obtenido": "corregir100",
     "programa": 89,
     "dependencia": 784,
+    "institucion": null,
     "titulo_tesis": "Green commercial buildings in Mexico: Energy and water efficiency scenarios",
     "fecha_grado": "2010-03-20",
     "distincion_obtenida": null,
@@ -5328,6 +5714,7 @@
     "titulo_obtenido": "corregir101",
     "programa": 2,
     "dependencia": 64,
+    "institucion": null,
     "titulo_tesis": "Los espacios forestales de la Sierra de Angangueo (Michoac\u00e1n-Estado de M\u00e9xico), M\u00e9xico. Una visi\u00f3n geogr\u00e1fica",
     "fecha_grado": "2001-10-01",
     "distincion_obtenida": null,
@@ -5341,6 +5728,7 @@
     "titulo_obtenido": "corregir102",
     "programa": 19,
     "dependencia": 121,
+    "institucion": null,
     "titulo_tesis": "Modelo de evaluaci\u00f3n de la factibilidad para la Agenda Local 21 en pa\u00edses en desarrollo",
     "fecha_grado": "2012-09-01",
     "distincion_obtenida": null,
@@ -5354,6 +5742,7 @@
     "titulo_obtenido": "corregir103",
     "programa": 13,
     "dependencia": 107,
+    "institucion": null,
     "titulo_tesis": "Relaci\u00f3n entre la Heterogeneidad Geoecol\u00f3gica y la Biodiversidad en Ecosistemas Costeros Tropicales.",
     "fecha_grado": "2004-04-01",
     "distincion_obtenida": null,
@@ -5367,6 +5756,7 @@
     "titulo_obtenido": "corregir11",
     "programa": 17,
     "dependencia": 122,
+    "institucion": null,
     "titulo_tesis": "Maize population structure and diversity related to ethnolinguistic variation",
     "fecha_grado": "2014-09-01",
     "distincion_obtenida": null,
@@ -5380,6 +5770,7 @@
     "titulo_obtenido": "corregir12",
     "programa": 9,
     "dependencia": 123,
+    "institucion": null,
     "titulo_tesis": "Sustentabilidad y Sistemas de Manejo en Comunidades Ind\u00edgenas en Chile",
     "fecha_grado": "2015-11-01",
     "distincion_obtenida": null,
@@ -5393,6 +5784,7 @@
     "titulo_obtenido": "corregir13",
     "programa": 4,
     "dependencia": 124,
+    "institucion": null,
     "titulo_tesis": "The socio-cultural dimension of flood vulnerability in a periurban community in central Mexico",
     "fecha_grado": "2011-03-01",
     "distincion_obtenida": null,
@@ -5406,6 +5798,7 @@
     "titulo_obtenido": "corregir14",
     "programa": 3,
     "dependencia": 125,
+    "institucion": null,
     "titulo_tesis": "La ocupaci\u00f3n del territorio en la regi\u00f3n de Ac\u00e1mbaro (Guanajuato- Michoac\u00e1n) entre el Poscl\u00e1sico tard\u00edo  y el siglo XVI.",
     "fecha_grado": "2012-12-01",
     "distincion_obtenida": null,
@@ -5419,6 +5812,7 @@
     "titulo_obtenido": "corregir15",
     "programa": 6,
     "dependencia": 17,
+    "institucion": null,
     "titulo_tesis": "Din\u00e1mica de la Erosi\u00f3n/Sedimentaci\u00f3n en la \u00c9poca Prehisp\u00e1nica y Periodo Colonial. Reconstrucci\u00f3n de las condiciones Paleoambientales en el Valle de Teotihuac\u00e1n (Estado de M\u00e9xico)",
     "fecha_grado": "2014-07-01",
     "distincion_obtenida": null,
@@ -5432,6 +5826,7 @@
     "titulo_obtenido": "corregir16",
     "programa": 17,
     "dependencia": 126,
+    "institucion": null,
     "titulo_tesis": "The Diffusion of Regional Underdevelop\u00acment; Articulation of Capital and Peasantry in Sukumaland, Tanzania",
     "fecha_grado": "1980-08-01",
     "distincion_obtenida": null,
@@ -5445,6 +5840,7 @@
     "titulo_obtenido": "corregir17",
     "programa": 17,
     "dependencia": 4,
+    "institucion": null,
     "titulo_tesis": "Historia ambiental de paisajes latinoamericanos: abandono y reapropiaci\u00f3n. Casos en M\u00e9xico y Argentina",
     "fecha_grado": "2015-07-01",
     "distincion_obtenida": null,
@@ -5458,6 +5854,7 @@
     "titulo_obtenido": "corregir18",
     "programa": 22,
     "dependencia": 127,
+    "institucion": null,
     "titulo_tesis": "Social Forestry as  Sustainable Development",
     "fecha_grado": "1994-06-01",
     "distincion_obtenida": null,
@@ -5471,6 +5868,7 @@
     "titulo_obtenido": "corregir19",
     "programa": 8,
     "dependencia": 43,
+    "institucion": null,
     "titulo_tesis": "\"Sistemas de innovaci\u00f3n y reservas de la biosfera: acciones para el desarrollo regional sustentable en Zicuir\u00e1n-Infiernillo\"",
     "fecha_grado": "2014-08-01",
     "distincion_obtenida": null,
@@ -5484,6 +5882,7 @@
     "titulo_obtenido": "corregir20",
     "programa": 5,
     "dependencia": 6,
+    "institucion": null,
     "titulo_tesis": "Sistemas agroforestales y conservaci\u00f3n de biodiversidad en el Valle de Tehuac\u00e1n, Cuicatl\u00e1n",
     "fecha_grado": "2015-02-01",
     "distincion_obtenida": null,
@@ -5497,6 +5896,7 @@
     "titulo_obtenido": "corregir21",
     "programa": 15,
     "dependencia": 131,
+    "institucion": null,
     "titulo_tesis": "El paisaje en Am\u00e9rica Latina. Experiencia de valoraci\u00f3n participada de paisajes visuales para la gesti\u00f3n ambiental en La Habana, Cuba",
     "fecha_grado": "2007-04-01",
     "distincion_obtenida": null,
@@ -5510,6 +5910,7 @@
     "titulo_obtenido": "corregir22",
     "programa": 20,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "An\u00e1lisis multi-escalar de los patrones espaciales de oferta y demanda de le\u00f1a para uso residencial en M\u00e9xico",
     "fecha_grado": "2008-06-01",
     "distincion_obtenida": null,
@@ -5523,6 +5924,7 @@
     "titulo_obtenido": "corregir23",
     "programa": 1,
     "dependencia": 17,
+    "institucion": null,
     "titulo_tesis": "Impacto Cultural Y Natural En Las Secuencias Edafosedimentarias Del Holoceno En La Regi\u00f3n Suroriental De M\u00e9xico. Un Estudio Geoarqueol\u00f3gico En Las Tierras Bajas Mayas",
     "fecha_grado": "2014-08-01",
     "distincion_obtenida": null,
@@ -5536,6 +5938,7 @@
     "titulo_obtenido": "corregir24",
     "programa": 1,
     "dependencia": 16,
+    "institucion": null,
     "titulo_tesis": "Object based image analysis with remote sensing images",
     "fecha_grado": "2015-01-01",
     "distincion_obtenida": null,
@@ -5549,6 +5952,7 @@
     "titulo_obtenido": "corregir25",
     "programa": 11,
     "dependencia": 150,
+    "institucion": null,
     "titulo_tesis": "La transformaci\u00f3n corporativa del comunalismo forestal",
     "fecha_grado": "2005-02-01",
     "distincion_obtenida": null,
@@ -5562,6 +5966,7 @@
     "titulo_obtenido": "corregir26",
     "programa": 10,
     "dependencia": 18,
+    "institucion": null,
     "titulo_tesis": "Implicaciones del cambio de cobertura vegetal y uso del suelo en el balance h\u00eddrico a nivel regional. El caso de la cuenca del lago de Cuitzeo",
     "fecha_grado": "2002-12-01",
     "distincion_obtenida": null,
@@ -5575,6 +5980,7 @@
     "titulo_obtenido": "corregir27",
     "programa": 3,
     "dependencia": 132,
+    "institucion": null,
     "titulo_tesis": "Habitar una regi\u00f3n. Espacialidad arquitect\u00f3nica y construcci\u00f3n de paisajes en Andalhuala, valle de Yocavil (Catamarca, Argentina).",
     "fecha_grado": "2015-04-01",
     "distincion_obtenida": null,
@@ -5588,6 +5994,7 @@
     "titulo_obtenido": "corregir28",
     "programa": 12,
     "dependencia": 107,
+    "institucion": null,
     "titulo_tesis": "Diversidad ac\u00fastica de la Biofon\u00eda y degradaci\u00f3n del bosque tropical: \u00bfC\u00f3mo los an\u00e1lisis del paisaje sonoro pueden complementar la evaluaci\u00f3n de la integridad ecosist\u00e9mica?",
     "fecha_grado": "3001-01-01",
     "distincion_obtenida": null,
@@ -5601,6 +6008,7 @@
     "titulo_obtenido": "corregir29",
     "programa": 44,
     "dependencia": 134,
+    "institucion": null,
     "titulo_tesis": "Effects of urban growth in the process of impoverishment of campesinos\u00b4 households living in peri-urban areas: A case study in Mexico City.",
     "fecha_grado": "2007-07-01",
     "distincion_obtenida": null,
@@ -5614,6 +6022,7 @@
     "titulo_obtenido": "corregir30",
     "programa": 16,
     "dependencia": 135,
+    "institucion": null,
     "titulo_tesis": "Value equivalency analysis: quantity compensation, distance decay and time treatment",
     "fecha_grado": "2011-01-01",
     "distincion_obtenida": null,
@@ -5627,6 +6036,7 @@
     "titulo_obtenido": "corregir31",
     "programa": 14,
     "dependencia": 107,
+    "institucion": null,
     "titulo_tesis": "Manejo de la zona riparia de la cuenca de r\u00edo Cutizmala, Jal,",
     "fecha_grado": "2014-12-01",
     "distincion_obtenida": null,
@@ -5640,6 +6050,7 @@
     "titulo_obtenido": "corregir32",
     "programa": 18,
     "dependencia": 153,
+    "institucion": null,
     "titulo_tesis": "An\u00e1lisis Normativo Y Pr\u00e1ctico De La Fertilidad Qu\u00edmica Y F\u00edsica Ed\u00e1fica En La Agricultura Org\u00e1nica Y Convencional",
     "fecha_grado": "2010-12-01",
     "distincion_obtenida": null,
@@ -5653,6 +6064,7 @@
     "titulo_obtenido": "corregir33",
     "programa": 23,
     "dependencia": 1,
+    "institucion": null,
     "titulo_tesis": "Definition of a minimum set of spatial relations. Theory and applications\u201d.",
     "fecha_grado": "2015-11-24",
     "distincion_obtenida": null,
@@ -5666,6 +6078,7 @@
     "titulo_obtenido": "corregir34",
     "programa": 24,
     "dependencia": 388,
+    "institucion": null,
     "titulo_tesis": "An\u00e1lisis ec\u00f3logo-geoqu\u00edmico del territorio de la Ciudad de Moa y las cuencas de los r\u00edos Moa y Caba\u00f1as en el noreste de Cuba",
     "fecha_grado": "1991-04-04",
     "distincion_obtenida": null,
@@ -5679,6 +6092,7 @@
     "titulo_obtenido": "corregir35",
     "programa": 23,
     "dependencia": 445,
+    "institucion": null,
     "titulo_tesis": "Tecnolog\u00eda, empleo y territorio en el marco de la globalizaci\u00f3n econ\u00f3mica. El caso de la industria automotriz en M\u00e9xico",
     "fecha_grado": "1999-12-13",
     "distincion_obtenida": null,
@@ -5692,6 +6106,7 @@
     "titulo_obtenido": "corregir36",
     "programa": 5,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "El efecto de las leguminosas en el mejoramiento de la calidad de los suelos Ando en sistema agr\u00edcolas de ladera en la cuenca del Lago de Zirahu\u00e9n",
     "fecha_grado": "2002-10-25",
     "distincion_obtenida": null,
@@ -5705,6 +6120,7 @@
     "titulo_obtenido": "corregir37",
     "programa": 31,
     "dependencia": 267,
+    "institucion": null,
     "titulo_tesis": "Pr\u00e1cticas sociales y vida cotidiana de los habitantes en las Ciudades Rurales Sustentables Nuevo Juan de Grijalva y Santiago El Pinar, Chiapas",
     "fecha_grado": "2014-10-17",
     "distincion_obtenida": null,
@@ -5718,6 +6134,7 @@
     "titulo_obtenido": "corregir38",
     "programa": 5,
     "dependencia": 23,
+    "institucion": null,
     "titulo_tesis": "Efecto de la aplicaci\u00f3n de vinazas crudas y modificadas por microorganismos anaerobios y aerobios sobre las propiedades qu\u00edmicas de dos suelos del municipio Miguel Alem\u00e1n del estado de Veracruz, M\u00e9xico.",
     "fecha_grado": "2000-01-31",
     "distincion_obtenida": null,
@@ -5731,6 +6148,7 @@
     "titulo_obtenido": "corregir39",
     "programa": 38,
     "dependencia": 603,
+    "institucion": null,
     "titulo_tesis": "Desconocido",
     "fecha_grado": null,
     "distincion_obtenida": null,
@@ -5744,6 +6162,7 @@
     "titulo_obtenido": "corregir40",
     "programa": 38,
     "dependencia": 603,
+    "institucion": null,
     "titulo_tesis": "Investigando la preparaci\u00f3n para REDD+ en M\u00e9xico: Actores, discursos y distribuci\u00f3n de beneficios",
     "fecha_grado": "2016-02-01",
     "distincion_obtenida": null,
@@ -5757,6 +6176,7 @@
     "titulo_obtenido": "corregir41",
     "programa": 6,
     "dependencia": 560,
+    "institucion": null,
     "titulo_tesis": "Fluctuaci\u00f3n de Campo Magn\u00e9tico Terrestre durante los \u00faltimos 5Ma en M\u00e9xico; Adquisici\u00f3n de nuevos datos y modelaci\u00f3n matem\u00e1tica.",
     "fecha_grado": "2018-08-31",
     "distincion_obtenida": null,
@@ -5770,6 +6190,7 @@
     "titulo_obtenido": "corregir42",
     "programa": 40,
     "dependencia": 725,
+    "institucion": null,
     "titulo_tesis": "La participaci\u00f3n de la poblaci\u00f3n rural en la conservaci\u00f3n de la naturaleza.",
     "fecha_grado": "2014-09-12",
     "distincion_obtenida": null,
@@ -5783,6 +6204,7 @@
     "titulo_obtenido": "corregir43",
     "programa": 42,
     "dependencia": 28,
+    "institucion": null,
     "titulo_tesis": "Escenarios espaciales expli?citos de uso mu?ltiple de combustibles para coccio?n en el sector energe?tico residencial mexicano y su potencial de mitigacio?n de gases efecto invernadero",
     "fecha_grado": "2016-02-26",
     "distincion_obtenida": null,
@@ -5796,6 +6218,7 @@
     "titulo_proyecto": "05564e04-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5811,6 +6234,7 @@
     "titulo_proyecto": "Paisajes f\u00edsico-geogr\u00e1ficos de M\u00e9xico a escala 1:500 000",
     "tutor": 1,
     "dependencia": 16,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5826,6 +6250,7 @@
     "titulo_proyecto": "05564e06-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5841,6 +6266,7 @@
     "titulo_proyecto": "Postdoctorado DGAPA en el CIGA - UNAM",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5856,6 +6282,7 @@
     "titulo_proyecto": "05564e08-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5871,6 +6298,7 @@
     "titulo_proyecto": "Producci\u00f3n y consumo de carb\u00f3n vegetal en la Cuenca de Cuitzeo, evaluaci\u00f3n y perspectivas para un manejo sustentable",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5886,6 +6314,7 @@
     "titulo_proyecto": "05564e0a-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 6,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5901,6 +6330,7 @@
     "titulo_proyecto": "05564e0b-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 221,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5916,6 +6346,7 @@
     "titulo_proyecto": "Implicaciones del cambio de la cobertura vegetal y el uso del suelo en el balance h\u00eddrico",
     "tutor": 1,
     "dependencia": 20,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5931,6 +6362,7 @@
     "titulo_proyecto": "Uso de Cartograf\u00eda Comunitaria y Sistemas de Informaci\u00f3n Geogr\u00e1fica Participativos (SIGP) para el desarrollo de una nueva Arqueolog\u00eda del Paisaje en Yocavil (Noroeste argentino).",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5946,6 +6378,7 @@
     "titulo_proyecto": "Estimating the opportunity costs of REDD+",
     "tutor": 1,
     "dependencia": 1,
+    "institucion": null,
     "proyecto": 288,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5961,6 +6394,7 @@
     "titulo_proyecto": "El papel de las comunidades ind\u00edgenas ante algunos instrumentos de pol\u00edtica ambiental dirigidas a la mitigaci\u00f3n del cambio clim\u00e1tico",
     "tutor": 1,
     "dependencia": 1,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5976,6 +6410,7 @@
     "titulo_proyecto": "05564e10-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -5991,6 +6426,7 @@
     "titulo_proyecto": "Proyecto: Pasos hacia el co-manejo de cuencas en la regi\u00f3n de la mariposa Monarca: restauraci\u00f3n y monitoreo participativo de los bosques ribere\u00f1os.",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6006,6 +6442,7 @@
     "titulo_proyecto": "05564e12-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 42,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6021,6 +6458,7 @@
     "titulo_proyecto": "05564e13-07d9-11e8-8bd6-9eb3153f17dd",
     "tutor": 1,
     "dependencia": 1,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6036,6 +6474,7 @@
     "titulo_proyecto": "Estancia posdoctoral",
     "tutor": 1,
     "dependencia": 234,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6051,6 +6490,7 @@
     "titulo_proyecto": "Transformaci\u00f3n territorial en Tepoztl\u00e1n por la acci\u00f3n del Programa Pueblos M\u00e1gicos.",
     "tutor": 1,
     "dependencia": 524,
+    "institucion": null,
     "proyecto": 271,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6066,6 +6506,7 @@
     "titulo_proyecto": "Pr\u00e1cticas cotidianas y respuestas de los habitantes al Programa Pueblos M\u00e1gicos en Tepoztl\u00e1n, Morelos.",
     "tutor": 1,
     "dependencia": 524,
+    "institucion": null,
     "proyecto": 271,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6081,6 +6522,7 @@
     "titulo_proyecto": "Geograf\u00eda Ambiental",
     "tutor": 1,
     "dependencia": 557,
+    "institucion": null,
     "proyecto": 271,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6096,6 +6538,7 @@
     "titulo_proyecto": "La representaci\u00f3n democr\u00e1tica de comunidades locales en el proceso de preparaci\u00f3n para REDD+ en M\u00e9xico",
     "tutor": 1,
     "dependencia": 667,
+    "institucion": null,
     "proyecto": 280,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6111,6 +6554,7 @@
     "titulo_proyecto": "Monitoreo magn\u00e9tico de la contaminaci\u00f3n por metales pesados en suelos y polvos urbanos dentro de la Ciudad de M\u00e9xico",
     "tutor": 1,
     "dependencia": 4,
+    "institucion": null,
     "proyecto": 352,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6126,6 +6570,7 @@
     "titulo_proyecto": "Peligros hidro-metereol\u00f3gicos y vulnerabilidad de peque\u00f1as localidades rurales marginales en zonas de escasa accesibilidad. El caso de la Sierra-Costa de Michoac\u00e1n",
     "tutor": 1,
     "dependencia": 634,
+    "institucion": null,
     "proyecto": 276,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6141,6 +6586,7 @@
     "titulo_proyecto": "Charcoal-driven degradation in secondary forests: Conserving biodiversity while maintaining production levels, using opportunities under REDD+",
     "tutor": 1,
     "dependencia": 704,
+    "institucion": null,
     "proyecto": 1,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6156,6 +6602,7 @@
     "titulo_proyecto": "Geografia Hist\u00f3rica do Caf\u00e9 no Vale do Rio Para\u00edba do Sul",
     "tutor": 1,
     "dependencia": 728,
+    "institucion": null,
     "proyecto": 395,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6171,6 +6618,7 @@
     "titulo_proyecto": "An\u00e1lisis espacial de la demanda de le\u00f1a a trav\u00e9s de modelos estad\u00edsticos y sus impactos socioambientales y econ\u00f3micos",
     "tutor": 1,
     "dependencia": 557,
+    "institucion": null,
     "proyecto": 428,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
