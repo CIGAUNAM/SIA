@@ -21,7 +21,7 @@ class FormatoServicioTransporteContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -59,7 +59,7 @@ class FormatoLicenciaGoceSueldoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -97,7 +97,7 @@ class FormatoPagoViaticoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \

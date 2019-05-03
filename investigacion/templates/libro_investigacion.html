@@ -234,24 +234,6 @@
         </div>
         </p>
     </div>
-    <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del libro.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de publicación del libro."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Número de edición:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de edición. Así sea la primera, indicar el número.">
@@ -349,6 +331,7 @@
         d_fecha_publicado.hide();
 
         id_status.on('change', function () {
+            console.log(id_status.val())
             if (id_status.val() === 'ENVIADO') {
                 d_fecha_enviado.show('slow');
                 id_fecha_enviado.attr("required", "true");
@@ -702,24 +685,6 @@
         </div>
         </p>
     </div>
-    <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del libro.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de publicación del libro."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Número de edición:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de edición. Así sea la primera, indicar el número.">

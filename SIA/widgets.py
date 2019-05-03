@@ -13,7 +13,7 @@ class wDateInput(DateInput):
 
     def format_value(self, value):
         if value is not None:
-            return formats.localize_input(value, self.format or formats.get_format(self.format_key)[0])
+            return formats.localize_input(value, self.format or formats.get_format(self.format_key)[3])
 
 
 class wSortedChoiceWidget(ChoiceWidget):

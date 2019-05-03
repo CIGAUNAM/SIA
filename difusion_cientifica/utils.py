@@ -20,7 +20,7 @@ class MemoriaInExtensoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -44,7 +44,7 @@ class MemoriaInExtensoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -83,7 +83,7 @@ class ResenaContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -110,7 +110,7 @@ class ResenaContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -150,7 +150,7 @@ class TraduccionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -176,7 +176,7 @@ class TraduccionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -216,7 +216,7 @@ class OrganizacionEventoAcademicoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -255,7 +255,7 @@ class ParticipacionEventoAcademicoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -280,7 +280,7 @@ class ParticipacionEventoAcademicoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \

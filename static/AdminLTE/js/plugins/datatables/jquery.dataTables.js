@@ -1992,7 +1992,7 @@
 		/**
 		 * Data the data from the server (nuking the old) and redraw the table
 		 *  @param {object} oSettings dataTables settings object
-		 *  @param {object} json json2 data return from the server.
+		 *  @param {object} json json data return from the server.
 		 *  @param {string} json.sEcho Tracking flag for DataTables to match requests
 		 *  @param {int} json.iTotalRecords Number of records in the data set, not accounting for filtering
 		 *  @param {int} json.iTotalDisplayRecords Number of records in the data set, accounting for filtering
@@ -4861,11 +4861,11 @@
 		
 		
 		/**
-		 * JSON stringify. If JSON.stringify it provided by the browser, json2.js or any other
+		 * JSON stringify. If JSON.stringify it provided by the browser, json.js or any other
 		 * library, then we use that as it is fast, safe and accurate. If the function isn't 
 		 * available then we need to built it ourselves - the inspiration for this function comes
 		 * from Craig Buckler ( http://www.sitepoint.com/javascript-json-serialization/ ). It is
-		 * not perfect and absolutely should not be used as a replacement to json2.js - but it does
+		 * not perfect and absolutely should not be used as a replacement to json.js - but it does
 		 * do what we need, without requiring a dependency for DataTables.
 		 *  @param {object} o JSON object to be converted
 		 *  @returns {string} JSON string
@@ -8633,14 +8633,14 @@
 		 * since that is obtained using an async XHR call.
 		 *  @type function
 		 *  @param {object} oSettings DataTables settings object
-		 *  @param {object} json2 The JSON object request from the server - only
+		 *  @param {object} json The JSON object request from the server - only
 		 *    present if client-side Ajax sourced data is used
 		 *  @dtopt Callbacks
 		 * 
 		 *  @example
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
-		 *        "fnInitComplete": function(oSettings, json2) {
+		 *        "fnInitComplete": function(oSettings, json) {
 		 *          alert( 'DataTables has finished its initialisation.' );
 		 *        }
 		 *      } );
@@ -8726,7 +8726,7 @@
 		 *        "sAjaxSource": "xhr.php",
 		 *        "fnServerData": function ( sSource, aoData, fnCallback, oSettings ) {
 		 *          oSettings.jqXHR = $.ajax( {
-		 *            "dataType": 'json2',
+		 *            "dataType": 'json',
 		 *            "type": "POST", 
 		 *            "url": sSource, 
 		 *            "data": aoData, 
@@ -8815,9 +8815,9 @@
 		 *          $.ajax( {
 		 *            "url": "/state_load",
 		 *            "async": false,
-		 *            "dataType": "json2",
-		 *            "success": function (json2) {
-		 *              o = json2;
+		 *            "dataType": "json",
+		 *            "success": function (json) {
+		 *              o = json;
 		 *            }
 		 *          } );
 		 *          
@@ -8918,7 +8918,7 @@
 		 *          $.ajax( {
 		 *            "url": "/state_save",
 		 *            "data": oData,
-		 *            "dataType": "json2",
+		 *            "dataType": "json",
 		 *            "method": "POST"
 		 *            "success": function () {}
 		 *          } );
@@ -11103,7 +11103,7 @@
 		 *   <ul>
 		 *     <li>function:fn - function to call. Takes two parameters, oSettings
 		 *       and the JSON string to save that has been thus far created. Returns
-		 *       a JSON string to be inserted into a json2 object
+		 *       a JSON string to be inserted into a json object
 		 *       (i.e. '"param": [ 0, 1, 2]')</li>
 		 *     <li>string:sName - name of callback</li>
 		 *   </ul>

@@ -8,7 +8,8 @@ urlpatterns = [
     url(r'^articulos-cientificos/(?P<pk>[\w\-]+)/eliminar$', ArticuloCientificoEliminar.as_view(), name='articulo_cientifico_eliminar'),
     url(r'^articulos-cientificos/(?P<pk>[\w\-]+)/$', ArticuloCientificoDetalle.as_view(), name='articulo_cientifico_detalle'),
 
-    url(r'^libros-investigacion/json/', LibroInvestigacionJSON.as_view(), name='libro_investigacion_lista__json'), url(r'^libros-investigacion/json-otros/', LibroInvestigacionJSON.as_view(otros=True), name='libro_investigacion_lista_otros__json'),
+    url(r'^libros-investigacion/json/', LibroInvestigacionJSON.as_view(), name='libro_investigacion_lista__json'),
+    url(r'^libros-investigacion/json-otros/', LibroInvestigacionJSON.as_view(otros=True), name='libro_investigacion_lista_otros__json'),
     url(r'^libros-investigacion/$', LibroInvestigacionLista.as_view(), name='libro_investigacion_lista'),
     url(r'^libros-investigacion/(?P<pk>[\w\-]+)/eliminar$', LibroInvestigacionEliminar.as_view(), name='libro_investigacion_eliminar'),
     url(r'^libros-investigacion/(?P<pk>[\w\-]+)/$', LibroInvestigacionDetalle.as_view(), name='libro_investigacion_detalle'),

@@ -196,7 +196,7 @@ class MapaArbitrado(models.Model):
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : ({}) : {}".format(self.titulo, self.escala, self.fecha)
+        return "{} : {}".format(self.titulo, self.fecha)
 
     def get_absolute_url(self):
         return reverse('mapa_arbitrado_detalle', kwargs={'pk': self.pk})

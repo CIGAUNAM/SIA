@@ -23,7 +23,7 @@ class ArticuloCientificoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -49,7 +49,7 @@ class ArticuloCientificoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -91,7 +91,7 @@ class LibroInvestigacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -118,7 +118,7 @@ class LibroInvestigacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -159,7 +159,7 @@ class CapituloLibroInvestigacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -185,7 +185,7 @@ class CapituloLibroInvestigacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -217,7 +217,7 @@ class MapaArbitradoContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Título', 'Status', 'Editorial', 'Fecha']}
+                'titulos_tabla': ['Título', 'Status', 'Publicacion', 'Fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -226,7 +226,7 @@ class MapaArbitradoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -237,7 +237,7 @@ class MapaArbitradoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.status"},\n' \
-                                    '{"data": "fields.editorial"},\n' \
+                                    '{"data": "fields.publicacion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -252,7 +252,7 @@ class MapaArbitradoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -263,7 +263,7 @@ class MapaArbitradoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.status"},\n' \
-                                    '{"data": "fields.editorial"},\n' \
+                                    '{"data": "fields.publicacion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -293,7 +293,7 @@ class InformeTecnicoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -318,7 +318,7 @@ class InformeTecnicoContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -359,7 +359,7 @@ class ProyectoInvestigacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -386,7 +386,7 @@ class ProyectoInvestigacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2-otros/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json-otros/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -431,7 +431,7 @@ class ApoyoTecnicoInvestigacionContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
@@ -474,7 +474,7 @@ class ApoyoTecnicoServicioContext:
                                 '"iDisplayLength": 15,\n' \
                                 '"ajax": {\n' \
                                     '"processing": true,\n' \
-                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json2/",\n' \
+                                    '"url": "/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/json/",\n' \
                                     '"dataSrc": ""\n' \
                                 '},\n' \
                                 '"columns": [\n' \
