@@ -2489,6 +2489,25 @@
 },
 {
   "model": "difusion_cientifica.resena",
+  "pk": 5,
+  "fields": {
+    "titulo": "Anuncian la realizaci\u00f3n de la Primera Feria del Conocimiento Tradicional",
+    "descripcion": "",
+    "tipo": "ARTICULO",
+    "libro_resenado": null,
+    "articulo_resenado": 305,
+    "fecha": "2011-05-10",
+    "revista_publica": 218,
+    "pagina_inicio": 1,
+    "pagina_fin": 1,
+    "url": "",
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "difusion_cientifica.resena",
   "pk": 6,
   "fields": {
     "titulo": "Los pueblos ind\u00edgenas un tema de reflexi\u00f3n",
