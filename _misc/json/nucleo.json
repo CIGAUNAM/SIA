@@ -110665,6 +110665,42 @@
 },
 {
   "model": "nucleo.dependencia",
+  "pk": 96,
+  "fields": {
+    "nombre_dependencia": "Interciencia, Revista de Ciencia y Tecnolog\u00eda de Am\u00e9rica Latina",
+    "descripcion_dependencia": "",
+    "institucion_dependencia": 14,
+    "ciudad": 45,
+    "ciudad_text_dependencia": "corregir",
+    "subsistema_unam_dependencia": null,
+    "validado": false,
+    "fecha_creado": "2019-04-30",
+    "fecha_actualizado": "2019-04-30",
+    "usuario_creador": 1,
+    "clasificacion": null,
+    "pais": null
+  }
+},
+{
+  "model": "nucleo.dependencia",
+  "pk": 97,
+  "fields": {
+    "nombre_dependencia": "Advances in Meteorology",
+    "descripcion_dependencia": "",
+    "institucion_dependencia": 15,
+    "ciudad": 46,
+    "ciudad_text_dependencia": "corregir",
+    "subsistema_unam_dependencia": null,
+    "validado": false,
+    "fecha_creado": "2019-04-30",
+    "fecha_actualizado": "2019-04-30",
+    "usuario_creador": 1,
+    "clasificacion": null,
+    "pais": null
+  }
+},
+{
+  "model": "nucleo.dependencia",
   "pk": 98,
   "fields": {
     "nombre_dependencia": "Instituto de Arquitectura, Dise\u00f1o y Arte, Universidad Aut\u00f3noma de Ciudad Ju\u00e1rez",
@@ -110729,9 +110765,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -110747,9 +110783,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -110757,7 +110793,7 @@
   "model": "nucleo.dependencia",
   "pk": 103,
   "fields": {
-    "nombre_dependencia": "Departamento de Sistemas y Computaci\u00f3n",
+    "nombre_dependencia": "Departamento de Sistemas y Computaci\u00f3n, Instituto Tecnol\u00f3gico de Morelia (ITM)",
     "descripcion_dependencia": "",
     "institucion_dependencia": 18,
     "ciudad": 1,
@@ -110765,9 +110801,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -110783,9 +110819,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -110801,27 +110837,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
-    "pais": 45
-  }
-},
-{
-  "model": "nucleo.dependencia",
-  "pk": 106,
-  "fields": {
-    "nombre_dependencia": "Comisi\u00f3n Nacional de Acreditaci\u00f3n",
-    "descripcion_dependencia": "",
-    "institucion_dependencia": 20,
-    "ciudad": 33,
-    "ciudad_text_dependencia": "Santiago",
-    "subsistema_unam_dependencia": null,
-    "validado": false,
-    "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
-    "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 45
   }
 },
@@ -110837,9 +110855,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -110855,28 +110873,10 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
-  }
-},
-{
-  "model": "nucleo.dependencia",
-  "pk": 109,
-  "fields": {
-    "nombre_dependencia": "Revista Investigaci\u00f3n y Amazon\u00eda",
-    "descripcion_dependencia": "",
-    "institucion_dependencia": 23,
-    "ciudad": 50,
-    "ciudad_text_dependencia": "Tingo Mar\u00eda",
-    "subsistema_unam_dependencia": null,
-    "validado": false,
-    "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
-    "usuario_creador": 1,
-    "clasificacion": "",
-    "pais": 174
   }
 },
 {
@@ -110891,64 +110891,10 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 174
-  }
-},
-{
-  "model": "nucleo.dependencia",
-  "pk": 111,
-  "fields": {
-    "nombre_dependencia": "Global Geobotany",
-    "descripcion_dependencia": "",
-    "institucion_dependencia": 25,
-    "ciudad": 25,
-    "ciudad_text_dependencia": "Madrid",
-    "subsistema_unam_dependencia": null,
-    "validado": false,
-    "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
-    "usuario_creador": 1,
-    "clasificacion": "",
-    "pais": 67
-  }
-},
-{
-  "model": "nucleo.dependencia",
-  "pk": 112,
-  "fields": {
-    "nombre_dependencia": "International Journal of Geobotanical Research",
-    "descripcion_dependencia": "",
-    "institucion_dependencia": 25,
-    "ciudad": 25,
-    "ciudad_text_dependencia": "Madrid",
-    "subsistema_unam_dependencia": null,
-    "validado": false,
-    "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
-    "usuario_creador": 1,
-    "clasificacion": "",
-    "pais": 67
-  }
-},
-{
-  "model": "nucleo.dependencia",
-  "pk": 113,
-  "fields": {
-    "nombre_dependencia": "APPEAR",
-    "descripcion_dependencia": "",
-    "institucion_dependencia": 26,
-    "ciudad": 37,
-    "ciudad_text_dependencia": "Viena",
-    "subsistema_unam_dependencia": null,
-    "validado": false,
-    "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
-    "usuario_creador": 1,
-    "clasificacion": "",
-    "pais": 17
   }
 },
 {
@@ -110963,9 +110909,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -110981,9 +110927,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -110999,9 +110945,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 179
   }
 },
@@ -111035,9 +110981,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111053,9 +110999,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111063,7 +111009,7 @@
   "model": "nucleo.dependencia",
   "pk": 120,
   "fields": {
-    "nombre_dependencia": "Fondo Mar\u00eda Vi\u00f1as",
+    "nombre_dependencia": "Agencia Nacional de Investigaci\u00f3n e Innovaci\u00f3n de Uruguay (ANII)",
     "descripcion_dependencia": "",
     "institucion_dependencia": 32,
     "ciudad": 53,
@@ -111071,9 +111017,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 235
   }
 },
@@ -111089,9 +111035,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111107,9 +111053,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -111125,9 +111071,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 49
   }
 },
@@ -111143,9 +111089,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 179
   }
 },
@@ -111161,9 +111107,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 74
   }
 },
@@ -111179,9 +111125,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -111197,9 +111143,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 167
   }
 },
@@ -111215,9 +111161,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 167
   }
 },
@@ -111233,9 +111179,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 167
   }
 },
@@ -111251,9 +111197,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 167
   }
 },
@@ -111269,9 +111215,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -111287,27 +111233,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
-    "pais": 13
-  }
-},
-{
-  "model": "nucleo.dependencia",
-  "pk": 133,
-  "fields": {
-    "nombre_dependencia": "Proyecto Arqueol\u00f3gico Yocavil",
-    "descripcion_dependencia": "",
-    "institucion_dependencia": 41,
-    "ciudad": 60,
-    "ciudad_text_dependencia": "Buenos Aires",
-    "subsistema_unam_dependencia": null,
-    "validado": false,
-    "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
-    "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -111323,7 +111251,7 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
     "clasificacion": "ACADEMICA",
     "pais": 16
@@ -111341,9 +111269,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -111359,9 +111287,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -111377,9 +111305,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111395,9 +111323,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111409,13 +111337,13 @@
     "descripcion_dependencia": "",
     "institucion_dependencia": 46,
     "ciudad": 66,
-    "ciudad_text_dependencia": "Aguascalientes",
+    "ciudad_text_dependencia": "Morelia",
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "NO_LUCRATIVA",
+    "clasificacion": "ESTATAL",
     "pais": 1
   }
 },
@@ -111431,9 +111359,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111449,9 +111377,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111467,9 +111395,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111485,9 +111413,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -111503,9 +111431,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -111521,9 +111449,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "FEDERAL",
     "pais": 1
   }
 },
@@ -111567,7 +111495,7 @@
   "model": "nucleo.dependencia",
   "pk": 148,
   "fields": {
-    "nombre_dependencia": "Ibero OnLine",
+    "nombre_dependencia": "Ibero OnLine, Universidad Iberoamericana (UIA)",
     "descripcion_dependencia": "",
     "institucion_dependencia": 53,
     "ciudad": 13,
@@ -111575,9 +111503,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111593,9 +111521,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -111611,9 +111539,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111621,7 +111549,7 @@
   "model": "nucleo.dependencia",
   "pk": 151,
   "fields": {
-    "nombre_dependencia": "Coordinaci\u00f3n de Antropolog\u00eda",
+    "nombre_dependencia": "Coordinaci\u00f3n de Antropolog\u00eda, Instituto Nacional de Antropolog\u00eda e Historia (INAH)",
     "descripcion_dependencia": "",
     "institucion_dependencia": 55,
     "ciudad": 13,
@@ -111629,9 +111557,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "FEDERAL",
     "pais": 1
   }
 },
@@ -111639,7 +111567,7 @@
   "model": "nucleo.dependencia",
   "pk": 152,
   "fields": {
-    "nombre_dependencia": "Escuela Nacional de Antropolog\u00eda e Historia",
+    "nombre_dependencia": "Escuela Nacional de Antropolog\u00eda e Historia, Instituto Nacional de Antropolog\u00eda e Historia (INAH)",
     "descripcion_dependencia": "",
     "institucion_dependencia": 55,
     "ciudad": 13,
@@ -111647,9 +111575,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111665,9 +111593,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111683,9 +111611,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111701,9 +111629,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 68
   }
 },
@@ -111719,9 +111647,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -111737,9 +111665,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -111755,9 +111683,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 68
   }
 },
@@ -111773,9 +111701,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 68
   }
 },
@@ -111791,9 +111719,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -111809,9 +111737,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111827,9 +111755,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111845,9 +111773,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "FEDERAL",
     "pais": 1
   }
 },
@@ -111863,9 +111791,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111881,9 +111809,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111899,9 +111827,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -111917,9 +111845,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -111935,9 +111863,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "FEDERAL",
     "pais": 1
   }
 },
@@ -111953,9 +111881,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -111971,9 +111899,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -111989,9 +111917,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -112007,9 +111935,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -112025,9 +111953,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -112079,9 +112007,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 216
   }
 },
@@ -112097,9 +112025,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -112115,9 +112043,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -112133,9 +112061,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -112151,9 +112079,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 6
   }
 },
@@ -112169,9 +112097,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 67
   }
 },
@@ -112187,9 +112115,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -112205,9 +112133,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -112223,9 +112151,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 67
   }
 },
@@ -112241,9 +112169,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 67
   }
 },
@@ -112259,9 +112187,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -112277,9 +112205,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112295,9 +112223,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -112313,9 +112241,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -112331,9 +112259,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -112349,9 +112277,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -112367,9 +112295,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "PRIVADA",
     "pais": 1
   }
 },
@@ -112385,9 +112313,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112403,9 +112331,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112421,9 +112349,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -112439,9 +112367,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -112449,7 +112377,7 @@
   "model": "nucleo.dependencia",
   "pk": 197,
   "fields": {
-    "nombre_dependencia": "Facultad de Ciencias Naturales",
+    "nombre_dependencia": "Facultad de Ciencias Naturales, Universidad Nacional de Tucum\u00e1n",
     "descripcion_dependencia": "",
     "institucion_dependencia": 94,
     "ciudad": 81,
@@ -112457,9 +112385,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -112467,7 +112395,7 @@
   "model": "nucleo.dependencia",
   "pk": 198,
   "fields": {
-    "nombre_dependencia": "Laboratorio de Geoarqueolog\u00eda de la Facultad de Ciencias Naturales",
+    "nombre_dependencia": "Laboratorio de Geoarqueolog\u00eda de la Facultad de Ciencias Naturales, Universidad Nacional de Tucum\u00e1n",
     "descripcion_dependencia": "",
     "institucion_dependencia": 94,
     "ciudad": 81,
@@ -112475,9 +112403,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -112493,7 +112421,7 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
     "clasificacion": "NO_LUCRATIVA",
     "pais": 1
@@ -112511,9 +112439,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112529,9 +112457,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112539,7 +112467,7 @@
   "model": "nucleo.dependencia",
   "pk": 202,
   "fields": {
-    "nombre_dependencia": "Centro Universitario de Ciencias Sociales y Humanidades",
+    "nombre_dependencia": "Centro Universitario de Ciencias Sociales y Humanidades, Universidad de Guadalajara",
     "descripcion_dependencia": "",
     "institucion_dependencia": 97,
     "ciudad": 20,
@@ -112547,9 +112475,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112565,9 +112493,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -112575,7 +112503,7 @@
   "model": "nucleo.dependencia",
   "pk": 204,
   "fields": {
-    "nombre_dependencia": "Facultad de Geograf\u00eda",
+    "nombre_dependencia": "Facultad de Geograf\u00eda, Universidad de la Habana",
     "descripcion_dependencia": "",
     "institucion_dependencia": 99,
     "ciudad": 84,
@@ -112583,9 +112511,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "ESTATAL",
+    "clasificacion": "ACADEMICA",
     "pais": 56
   }
 },
@@ -112601,9 +112529,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 74
   }
 },
@@ -112619,9 +112547,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -112637,9 +112565,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 74
   }
 },
@@ -112655,9 +112583,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 74
   }
 },
@@ -112673,9 +112601,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -112691,9 +112619,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -112709,9 +112637,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 179
   }
 },
@@ -112727,9 +112655,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -112745,9 +112673,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 46
   }
 },
@@ -112763,9 +112691,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112773,7 +112701,7 @@
   "model": "nucleo.dependencia",
   "pk": 215,
   "fields": {
-    "nombre_dependencia": "Instituto de Ecolog\u00eda y Sistem\u00e1tica",
+    "nombre_dependencia": "Instituto de Ecolog\u00eda y Sistem\u00e1tica, Academia de Ciencias de Cuba",
     "descripcion_dependencia": "",
     "institucion_dependencia": 110,
     "ciudad": 84,
@@ -112781,9 +112709,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 56
   }
 },
@@ -112799,9 +112727,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112817,9 +112745,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112835,9 +112763,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112853,9 +112781,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -112871,9 +112799,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 167
   }
 },
@@ -112889,9 +112817,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 118
   }
 },
@@ -112907,9 +112835,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -112925,9 +112853,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -112943,9 +112871,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -112961,9 +112889,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "MUNICIPAL",
     "pais": 1
   }
 },
@@ -112979,9 +112907,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "MUNICIPAL",
     "pais": 1
   }
 },
@@ -112997,9 +112925,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "MUNICIPAL",
     "pais": 1
   }
 },
@@ -113015,9 +112943,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -113025,7 +112953,7 @@
   "model": "nucleo.dependencia",
   "pk": 229,
   "fields": {
-    "nombre_dependencia": "Departamento de Farmacia y Tecnolog\u00eda Farmac\u00e9utica",
+    "nombre_dependencia": "Departamento de Farmacia y Tecnolog\u00eda Farmac\u00e9utica, Universidad de Santiago de Compostela",
     "descripcion_dependencia": "",
     "institucion_dependencia": 121,
     "ciudad": 96,
@@ -113033,9 +112961,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -113051,9 +112979,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 42
   }
 },
@@ -113069,9 +112997,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -113087,9 +113015,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113097,7 +113025,7 @@
   "model": "nucleo.dependencia",
   "pk": 233,
   "fields": {
-    "nombre_dependencia": "Instituto de Ecolog\u00eda, Pesquer\u00edas y Oceanograf\u00eda del Golfo de M\u00e9xico (EPOMEX)",
+    "nombre_dependencia": "Instituto de Ecolog\u00eda, Pesquer\u00edas y Oceanograf\u00eda del Golfo de M\u00e9xico (EPOMEX), Universidad Aut\u00f3noma de Campeche (UACAM)",
     "descripcion_dependencia": "",
     "institucion_dependencia": 124,
     "ciudad": 98,
@@ -113105,9 +113033,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113123,9 +113051,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113141,9 +113069,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 33
   }
 },
@@ -113159,9 +113087,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 33
   }
 },
@@ -113177,9 +113105,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 74
   }
 },
@@ -113195,9 +113123,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -113213,9 +113141,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113231,9 +113159,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "FEDERAL",
     "pais": 1
   }
 },
@@ -113249,9 +113177,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113259,7 +113187,7 @@
   "model": "nucleo.dependencia",
   "pk": 242,
   "fields": {
-    "nombre_dependencia": "Departamento de Geom\u00e1tica e Hidr\u00e1ulica",
+    "nombre_dependencia": "Departamento de Geom\u00e1tica e Hidr\u00e1ulica, Universidad de Guanajuato",
     "descripcion_dependencia": "",
     "institucion_dependencia": 132,
     "ciudad": 28,
@@ -113267,9 +113195,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113285,9 +113213,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113303,9 +113231,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 116
   }
 },
@@ -113321,9 +113249,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 67
   }
 },
@@ -113339,9 +113267,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 167
   }
 },
@@ -113357,9 +113285,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 167
   }
 },
@@ -113375,9 +113303,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113393,9 +113321,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113411,9 +113339,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113429,9 +113357,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 13
   }
 },
@@ -113447,9 +113375,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 13
   }
 },
@@ -113465,9 +113393,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113483,9 +113411,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113501,9 +113429,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113519,9 +113447,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113537,9 +113465,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 68
   }
 },
@@ -113555,9 +113483,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ESTATAL",
     "pais": 1
   }
 },
@@ -113565,7 +113493,7 @@
   "model": "nucleo.dependencia",
   "pk": 259,
   "fields": {
-    "nombre_dependencia": "Secretaria de Medio Ambiente",
+    "nombre_dependencia": "Secretar\u00eda de Medio Ambiente, Gobierno del Estado de Jalisco",
     "descripcion_dependencia": "",
     "institucion_dependencia": 147,
     "ciudad": 20,
@@ -113573,9 +113501,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ESTATAL",
     "pais": 1
   }
 },
@@ -113591,9 +113519,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ESTATAL",
     "pais": 1
   }
 },
@@ -113609,9 +113537,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -113627,9 +113555,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -113645,9 +113573,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -113663,9 +113591,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113681,9 +113609,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 74
   }
 },
@@ -113699,9 +113627,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 74
   }
 },
@@ -113717,9 +113645,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113735,9 +113663,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -113753,9 +113681,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -113771,9 +113699,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 216
   }
 },
@@ -113789,9 +113717,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 74
   }
 },
@@ -113807,9 +113735,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113825,9 +113753,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -113843,9 +113771,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -113853,7 +113781,7 @@
   "model": "nucleo.dependencia",
   "pk": 275,
   "fields": {
-    "nombre_dependencia": "Universidad Estatal",
+    "nombre_dependencia": "Universidad Estatal de Washington",
     "descripcion_dependencia": "",
     "institucion_dependencia": 161,
     "ciudad": 113,
@@ -113861,9 +113789,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -113879,9 +113807,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -113897,9 +113825,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 67
   }
 },
@@ -113915,9 +113843,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 212
   }
 },
@@ -113933,9 +113861,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 13
   }
 },
@@ -113943,7 +113871,7 @@
   "model": "nucleo.dependencia",
   "pk": 280,
   "fields": {
-    "nombre_dependencia": "La Universidad de Texas A&M",
+    "nombre_dependencia": "La Universidad de Texas A & M",
     "descripcion_dependencia": "",
     "institucion_dependencia": 166,
     "ciudad": 41,
@@ -113951,9 +113879,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -113961,7 +113889,7 @@
   "model": "nucleo.dependencia",
   "pk": 281,
   "fields": {
-    "nombre_dependencia": "HEC Montreal",
+    "nombre_dependencia": "Universidad de Montreal",
     "descripcion_dependencia": "",
     "institucion_dependencia": 167,
     "ciudad": 115,
@@ -113969,9 +113897,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 42
   }
 },
@@ -113987,9 +113915,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -113997,7 +113925,7 @@
   "model": "nucleo.dependencia",
   "pk": 283,
   "fields": {
-    "nombre_dependencia": "Instituto del Conurbano (ICO)",
+    "nombre_dependencia": "Instituto del Conurbano (ICO), Universidad Nacional de General Sarmiento (UNGS)",
     "descripcion_dependencia": "",
     "institucion_dependencia": 169,
     "ciudad": 60,
@@ -114005,9 +113933,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 13
   }
 },
@@ -114023,9 +113951,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 39
   }
 },
@@ -114041,9 +113969,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 116
   }
 },
@@ -114059,9 +113987,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 162
   }
 },
@@ -114077,9 +114005,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 67
   }
 },
@@ -114095,9 +114023,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 13
   }
 },
@@ -114105,7 +114033,7 @@
   "model": "nucleo.dependencia",
   "pk": 289,
   "fields": {
-    "nombre_dependencia": "Honorable Concejo Deliberante",
+    "nombre_dependencia": "Honorable Concejo Deliberante, Partido de La Costa",
     "descripcion_dependencia": "",
     "institucion_dependencia": 175,
     "ciudad": 60,
@@ -114113,9 +114041,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 13
   }
 },
@@ -114131,9 +114059,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -114149,9 +114077,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114159,7 +114087,7 @@
   "model": "nucleo.dependencia",
   "pk": 292,
   "fields": {
-    "nombre_dependencia": "Unidad de Ciencias de la Tierra",
+    "nombre_dependencia": "Unidad de Ciencias de la Tierra, Universidad Aut\u00f3noma de Guerrero",
     "descripcion_dependencia": "",
     "institucion_dependencia": 177,
     "ciudad": 122,
@@ -114167,9 +114095,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114185,9 +114113,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114203,9 +114131,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114221,9 +114149,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114231,7 +114159,7 @@
   "model": "nucleo.dependencia",
   "pk": 296,
   "fields": {
-    "nombre_dependencia": "Unidad 161 Morelia",
+    "nombre_dependencia": "Unidad 161 Morelia, Universidad Pedag\u00f3gica Nacional",
     "descripcion_dependencia": "",
     "institucion_dependencia": 180,
     "ciudad": 1,
@@ -114239,9 +114167,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114257,9 +114185,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "NO_LUCRATIVA",
     "pais": 1
   }
 },
@@ -114275,9 +114203,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 1
   }
 },
@@ -114293,9 +114221,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "INTERNACIONAL",
     "pais": 6
   }
 },
@@ -114311,9 +114239,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -114321,7 +114249,7 @@
   "model": "nucleo.dependencia",
   "pk": 301,
   "fields": {
-    "nombre_dependencia": "Center for Latin American Studies",
+    "nombre_dependencia": "Center for Latin American Studies, Universidad de Florida",
     "descripcion_dependencia": "",
     "institucion_dependencia": 184,
     "ciudad": 124,
@@ -114329,9 +114257,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 68
   }
 },
@@ -114347,9 +114275,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114357,7 +114285,7 @@
   "model": "nucleo.dependencia",
   "pk": 303,
   "fields": {
-    "nombre_dependencia": "Departamento de Geociencias",
+    "nombre_dependencia": "Departamento de Geociencias, Instituto Tecnol\u00f3gico Superior de Tac\u00e1mbaro",
     "descripcion_dependencia": "",
     "institucion_dependencia": 185,
     "ciudad": 8,
@@ -114365,9 +114293,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114383,9 +114311,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 91
   }
 },
@@ -114401,9 +114329,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
@@ -114419,9 +114347,9 @@
     "subsistema_unam_dependencia": null,
     "validado": false,
     "fecha_creado": "2019-04-30",
-    "fecha_actualizado": "2019-05-07",
+    "fecha_actualizado": "2019-05-08",
     "usuario_creador": 1,
-    "clasificacion": "",
+    "clasificacion": "ACADEMICA",
     "pais": 1
   }
 },
