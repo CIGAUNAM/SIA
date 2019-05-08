@@ -50,7 +50,8 @@ ENTIDAD_CLASIFICACION = getattr(settings, 'ENTIDAD_CLASIFICACION', (('', '------
                                                                     ('ESTATAL', 'Gubernamental estatal'),
                                                                     ('MUNICIPAL', 'Gubernamental municipal'),
                                                                     ('PRIVADA', 'Sector privado'),
-                                                                    ('NO_LUCRATIVA', 'Sector privado no lucrativo')))
+                                                                    ('NO_LUCRATIVA', 'Sector privado no lucrativo'),
+                                                                    ('INTERNACIONAL', 'Internacional')))
 
 
 # Create your models here.
@@ -299,8 +300,12 @@ class Dependencia(models.Model):
     fecha_actualizado = models.DateField(auto_now=True, null=True, blank=True)
     usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT, default=1)
 
+    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION, null=True, blank=True)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True)
+
+
     def __str__(self):
-        return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre_institucion, )
+        return "{} :: {}".format(self.nombre_dependencia, self.institucion_dependencia.nombre_institucion)
 
     def natural_key(self):
         return self.nombre_dependencia
@@ -310,7 +315,7 @@ class Dependencia(models.Model):
 
     class Meta:
         unique_together = ('nombre_dependencia', 'institucion_dependencia')
-        ordering = ['nombre_dependencia']
+        ordering = ['pk']
 
 
 
