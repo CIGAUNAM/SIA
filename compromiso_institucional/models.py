@@ -98,6 +98,7 @@ class RepresentacionOrganoColegiadoUNAM(models.Model):
     institucion_fuera_unam = models.ForeignKey(InstitucionSimple, blank=True, null=True, related_name='representacion_organo_colegiado_fueraunam', on_delete=models.DO_NOTHING)
 
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
