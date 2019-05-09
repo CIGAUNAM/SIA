@@ -64,6 +64,7 @@ class OtraComision(models.Model):
     descripcion = models.TextField(blank=True)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
@@ -87,6 +88,7 @@ class RedAcademica(models.Model):
     fecha_constitucion = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
     entidades = models.ManyToManyField(Dependencia, related_name='red_academica_entidades')
+    instituciones = models.ManyToManyField(InstitucionSimple, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(User, related_name='red_academica_usuarios',
                                       verbose_name='Académicos participantes')
@@ -106,6 +108,7 @@ class RedAcademica(models.Model):
 class ConvenioOtraEntidad(models.Model):
     nombre = models.CharField(max_length=254, unique=True)
     entidades = models.ManyToManyField(Dependencia)
+    instituciones = models.ManyToManyField(InstitucionSimple, blank=True)
     objetivos = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)

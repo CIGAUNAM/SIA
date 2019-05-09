@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, \
+from nucleo.models import User, Institucion, InstitucionSimple, Dependencia, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado, \
     Asignatura, Revista, Indice, TipoCurso
 from investigacion.models import ProyectoInvestigacion
 from django.urls import reverse
@@ -31,6 +31,7 @@ class CursoDocenciaEscolarizado(models.Model):
                                                             ('COLABORADOR', 'Colaborador o Invitado')))
     institucion2 = models.ForeignKey(Institucion, blank=True, null=True, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
@@ -66,6 +67,7 @@ class CursoDocenciaExtracurricular(models.Model):
                                            ('CAPACITACION', 'Curso de capacitación')))
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     total_horas = models.PositiveIntegerField()
@@ -74,7 +76,7 @@ class CursoDocenciaExtracurricular(models.Model):
                                 on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.asignatura, str(self.dependencia.nombre), self.fecha_inicio)
+        return "{} : {} : {}".format(self.asignatura_text, str(self.institucion), self.fecha_inicio)
 
     def get_absolute_url(self):
         return reverse('curso_docencia_extracurricular_detalle', kwargs={'pk': self.pk})
@@ -124,8 +126,11 @@ class ProgramaEstudio(models.Model):
                                                      ('OTRO', 'Otro')))
     fecha = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
+
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.nivel.title())
