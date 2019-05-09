@@ -57,7 +57,7 @@ class Licenciatura(models.Model):
     usuario = models.ForeignKey(User, related_name='licenciaturas', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{}, {}, {}".format(str(self.carrera.nombre), self.dependencia, self.titulo_tesis)
+        return "{}, {}, {}".format(str(self.carrera.programalicenciatura_nombre), self.dependencia, self.titulo_tesis)
 
     def get_absolute_url(self):
         return reverse('licenciatura_detalle', kwargs={'pk': self.pk})
@@ -65,8 +65,6 @@ class Licenciatura(models.Model):
     class Meta:
         ordering = ['titulo_obtenido', 'titulo_tesis']
         unique_together = ['titulo_obtenido', 'usuario']
-
-
 
 
 class Maestria(models.Model):
@@ -84,7 +82,7 @@ class Maestria(models.Model):
     usuario = models.ForeignKey(User, related_name='maestrias', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{}, {}, {}".format(self.programa.nombre, self.dependencia, self.titulo_tesis)
+        return "{}, {}, {}".format(self.programa.programamaestria_nombre, self.dependencia, self.titulo_tesis)
 
     def get_absolute_url(self):
         return reverse('maestria_detalle', kwargs={'pk': self.pk})
@@ -110,7 +108,7 @@ class Doctorado(models.Model):
     usuario = models.ForeignKey(User, related_name='doctorados', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{}, {}, {}".format(self.programa.nombre, self.dependencia,  self.titulo_tesis)
+        return "{}, {}, {}".format(self.programa.programadoctorado_nombre, self.titulo_obtenido,  self.titulo_tesis)
 
     def get_absolute_url(self):
         return reverse('doctorado_detalle', kwargs={'pk': self.pk})
@@ -137,7 +135,7 @@ class PostDoctorado(models.Model):
     usuario = models.ForeignKey(User, related_name='postdoctorado_usuario', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.titulo_proyecto, self.dependencia, self.area_conocimiento)
+        return "{} : {}".format(self.titulo_proyecto, self.institucion)
 
     def get_absolute_url(self):
         return reverse('postdoctorado_detalle', kwargs={'pk': self.pk})

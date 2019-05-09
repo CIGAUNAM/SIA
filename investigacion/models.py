@@ -61,6 +61,7 @@ class ProyectoInvestigacion(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     responsables = SortedManyToManyField(User, related_name='proyecto_investigacion_responsables',
                                          verbose_name='Responsables')
@@ -81,8 +82,8 @@ class ProyectoInvestigacion(models.Model):
     financiamiento_conacyt_convocatoria = models.CharField(max_length=160,  null=True, blank=True)
     financiamiento_papiit = models.CharField(max_length=30, unique=True, null=True, blank=True)
     financiamiento_papime = models.CharField(max_length=30, unique=True, null=True, blank=True)
-    financiamiento_extraordinario = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_extraordinario')
-    financiamiento_sin_recurso_ciga = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_sin_recurso_ciga')
+    financiamiento_extraordinario2 = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_extraordinario')
+    financiamiento_sin_recurso_ciga2 = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='proyecto_investigacion_financiamiento_sin_recurso_ciga')
     #dependencias_colaboracion = models.ManyToManyField(Dependencia, related_name='proyecto_investigacion_dependencias_colaboracion', blank=True)
     # metodologias = models.ManyToManyField(Metodologia, related_name='proyecto_investigacion_metodologias', blank=True)
     #metodologias_text = models.CharField(max_length=255, null=True, blank=True)

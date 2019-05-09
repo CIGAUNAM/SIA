@@ -251,7 +251,7 @@ class InstitucionSimple(models.Model):
 
     class Meta:
         unique_together = ('institucion_nombre', 'institucion_pais', 'institucion_ciudad')
-        ordering = ['institucion_nombre']
+        ordering = ['pk']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
 
@@ -300,8 +300,8 @@ class Dependencia(models.Model):
     fecha_actualizado = models.DateField(auto_now=True, null=True, blank=True)
     usuario_creador = models.ForeignKey(User, on_delete=models.PROTECT, default=1)
 
-    clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION, null=True, blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True)
+    # clasificacion = models.CharField(max_length=20, choices=ENTIDAD_CLASIFICACION, null=True, blank=True)
+    # pais = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True)
 
 
     def __str__(self):
