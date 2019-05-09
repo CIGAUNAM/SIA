@@ -1,0 +1,574 @@
+[
+{
+  "model": "desarrollo_tecnologico.licencia",
+  "pk": 1,
+  "fields": {
+    "nombre": "otra",
+    "descripcion": "no tiene",
+    "url": "http://127.0.0.1"
+  }
+},
+{
+  "model": "desarrollo_tecnologico.licencia",
+  "pk": 2,
+  "fields": {
+    "nombre": "GPL",
+    "descripcion": "",
+    "url": ""
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 1,
+  "fields": {
+    "nombre": "Dise\u00f1o e implementaci\u00f3n de la iniciativa de innovaci\u00f3n tecnol\u00f3gica \u201cGeodrones\u201d",
+    "proyecto": null,
+    "descripcion": "Esta iniciativa se enfoca en la integraci\u00f3n de la tecnolog\u00eda de los veh\u00edculos a\u00e9reos no tripulados (drones) para el mejoramiento de la capacidad de adquisici\u00f3n de informaci\u00f3n geogr\u00e1fica en cuatro \u00e1reas: investigaci\u00f3n, educaci\u00f3n y capacitaci\u00f3n, divulgaci\u00f3n de la ciencia y asimilaci\u00f3n comunitaria. \r\n\u2022\tEstas actividades son de gran importancia ya que mediante ellas se facilita la adquisici\u00f3n de informaci\u00f3n de diversos aspectos relativos a las ciencias de la tierra, ciencias ambientales y ciencias sociales, que mejoran la capacidad de realizar actividades en los rubros citados.\r\n\u2022\tEn estas actividades se participa como coordinador de la iniciativa. \r\nSu impacto es alto ya que no solo se beneficia a la comunidad acad\u00e9mica (investigadores, profesores y alumnos)  sino tambi\u00e9n a otros sectores de la sociedad tales como a los alumnos de las escuelas de nivel b\u00e1sico  y medio, as\u00ed como a comunidades campesinas",
+    "version": "1",
+    "patente": "Patente en tr\u00e1mite",
+    "licencia": 1,
+    "url": "",
+    "fecha": "2017-03-08",
+    "autores": [
+      14
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 2,
+  "fields": {
+    "nombre": "45456",
+    "proyecto": null,
+    "descripcion": "",
+    "version": "1",
+    "patente": "1",
+    "licencia": 1,
+    "url": "",
+    "fecha": "2018-02-01",
+    "autores": [
+      14
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 3,
+  "fields": {
+    "nombre": "Laboratorio Universitario de Drones de la UNAM",
+    "proyecto": null,
+    "descripcion": "A ra\u00edz de su trabajo pionero en el uso de drones para aplicaciones en ciencias de la tierra y ambientales, es el impulsor de la iniciativa para crear el Laboratorio Universitario de Drones y de la introducci\u00f3n del uso y conocimiento de esta tecnolog\u00eda en el \u00e1mbito educativo, actualmente impartiendo materias optativas obre el tema en 4 licenciaturas y un posgrado de la UNAM",
+    "version": "1",
+    "patente": "en tr\u00e1mite",
+    "licencia": 1,
+    "url": "",
+    "fecha": "2018-02-12",
+    "autores": [
+      14
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 4,
+  "fields": {
+    "nombre": "Sistema de Informaci\u00f3n Espacial de la UNAM",
+    "proyecto": null,
+    "descripcion": "Es co-Coordinador, por parte de la dependencia, y en conjunto con la Direcci\u00f3n General de Obras y Conservaci\u00f3n, el Instituto de Geograf\u00eda y el Posgrado en Arquitectura, del proyecto que ahora forma parte del Programa de Trabajo 2017 del Rector de la UNAM.",
+    "version": "1",
+    "patente": "en tr\u00e1mite",
+    "licencia": 1,
+    "url": "",
+    "fecha": "2017-02-09",
+    "autores": [
+      14
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 5,
+  "fields": {
+    "nombre": "Dispositivo basado en sensorestromec\u00e1nicos para la medici\u00f3n de deformaciones y desplazamientos de masas de tierra",
+    "proyecto": null,
+    "descripcion": "Es desarrollador de un dispositivo basado en sensores electromec\u00e1nicos para la medici\u00f3n de deformaciones y desplazamientos de masas de tierra, com\u00fanmente conocidos como deslizamientos, capaz de transmitir v\u00eda in\u00e1lambrica la magnitud del movimiento de la tierra en este tipo de fen\u00f3menos. El dispositivo es de gran utilidad para la prevenci\u00f3n de riesgos causados por deslaves y deslizamientos de tierra",
+    "version": "1",
+    "patente": "en tr\u00e1mite",
+    "licencia": 1,
+    "url": "",
+    "fecha": "2018-02-12",
+    "autores": [
+      14
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 6,
+  "fields": {
+    "nombre": "NC-95-06-101-SNPMA Paisajes, T\u00e9rminos y Definiciones",
+    "proyecto": null,
+    "descripcion": "Comit\u00e9 Estatal de Normalizaci\u00f3n. Norma estatal cubana. Unidad impresora CEN",
+    "version": "1",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "1987-08-12",
+    "autores": [
+      537,
+      17
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 7,
+  "fields": {
+    "nombre": "Marco de Evaluaci\u00f3n de Sistemas de Manejo Incorporando Indicadores de Sustentabilidad (MESMIS)",
+    "proyecto": null,
+    "descripcion": "Varias publicaciones, informaci\u00f3n sobre la metodolog\u00eda e impactos en internet: www.gira.org.mx.",
+    "version": "",
+    "patente": "",
+    "licencia": 1,
+    "url": "",
+    "fecha": "2005-01-04",
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 8,
+  "fields": {
+    "nombre": "MESMIS on line",
+    "proyecto": null,
+    "descripcion": "software v\u00eda Internet que aparece en ingl\u00e9s en la P\u00e1gina Web",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "http://mesmis.gira.org.mx/mesmis-interactivo",
+    "fecha": "2005-01-05",
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 9,
+  "fields": {
+    "nombre": "MESMIS interactivo",
+    "proyecto": null,
+    "descripcion": "software v\u00eda Internet",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "http://mesmis.gira.org.mx/mesmis-interactivo",
+    "fecha": "2010-01-05",
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 10,
+  "fields": {
+    "nombre": "Evaluaci\u00f3n del impacto ecol\u00f3gico del cultivo de aguacate a nivel de parcela en el Estado de Michoac\u00e1n: validaci\u00f3n de indicadores ambientales en los principales tipos de producci\u00f3n",
+    "proyecto": null,
+    "descripcion": "Manual de informaci\u00f3n para p\u00fablico en general. CiEco, CIGA \u2013 UNAM.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2013-01-04",
+    "autores": [
+      32,
+      171
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 11,
+  "fields": {
+    "nombre": "Evaluaci\u00f3n del impacto ecol\u00f3gico del cultivo de aguacate a nivel de parcela en el Estado de Michoac\u00e1n: (DUPLICADO)",
+    "proyecto": null,
+    "descripcion": "www.gira.org.mx/sustentabilidad/",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2014-02-03",
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 12,
+  "fields": {
+    "nombre": "Gu\u00eda de colores para verificar el nivel de nitr\u00f3geno en las hojas del aguacatero Hass en Michoac\u00e1n",
+    "proyecto": null,
+    "descripcion": "Nutricional (versi\u00f3n impresa y en digital) CIGA UNAM",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2014-04-01",
+    "autores": [
+      454,
+      346,
+      32,
+      171
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 13,
+  "fields": {
+    "nombre": "Base de datos SUSTENTA",
+    "proyecto": null,
+    "descripcion": "www.gira.org.mx/sustentabilidad",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "http://www.gira.org.mx/sustentabilidad",
+    "fecha": "1900-01-01",
+    "autores": [
+      32
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 14,
+  "fields": {
+    "nombre": "Conservaci\u00f3n de la agrobiodiversidad de las milpas en M\u00e9xico",
+    "proyecto": null,
+    "descripcion": "Conservaci\u00f3n de la agrobiodiversidad de las milpas en M\u00e9xico. CONANP. CONABIO, ECOSUR, INIFAP, Instituto de Biolog\u00eda y CIGA - UNAM.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2014-01-01",
+    "autores": [
+      971,
+      1580,
+      253,
+      1581,
+      32,
+      972
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 15,
+  "fields": {
+    "nombre": "Bases de datos geogr\u00e1ficas de suelos, clima y agua",
+    "proyecto": 194,
+    "descripcion": "as\u00ed como entrega de art\u00edculos cient\u00edficos al Dr. Eduardo Batllori Sampedro titular de la Secretar\u00eda de Desarrollo Urbano y Medio Ambiente de Yucat\u00e1n.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2012-05-23",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 16,
+  "fields": {
+    "nombre": "Bases de datos geogr\u00e1ficas de la reseva de la biosfera Zicuiran-Infiernillo",
+    "proyecto": null,
+    "descripcion": "entregadas al director de la reserva Bi\u00f3l. Alejandro Torres Garc\u00eda.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2011-11-14",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 17,
+  "fields": {
+    "nombre": "Bases de datos geogr\u00e1ficas (Caracterizaci\u00f3n y diagn\u00f3stico) de la regi\u00f3n Infiernillo",
+    "proyecto": null,
+    "descripcion": "entregadas a la Secretar\u00eda de Desarrollo Urbano y Medio Ambiente de Michoac\u00e1n",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2009-03-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 18,
+  "fields": {
+    "nombre": "Base de datos georeferenciada de las empresas generadoras de residuos peligrosos con un margo geogr\u00e1fico (geopedol\u00f3gico)",
+    "proyecto": null,
+    "descripcion": "Proyecto: \"Diagn\u00f3stico de los Residuos Peligrosos en la Entidad\". (Modalidad A), con clave: FOMIX YUC-2005-04-21281,\r\nfinanciado por el Fondo Mixto CONACYT - Gobierno del Estado de Yucat\u00e1n de la convocatoria 2005-04. \r\nLa base de datos se entreg\u00f3 a la  Secretar\u00eda de Ecolog\u00eda para ser usada en la elaboraci\u00f3n de las pol\u00edticas ambientales del estado de Yucat\u00e1n. , como por ejemplo el \"Estudio de la Gesti\u00f3n Integral de los Residuos S\u00f3lidosUrbanos en el \u00c1rea Metropolitana\" que est\u00e1 elaborando esta Secretar\u00eda para diagnosticar la situaci\u00f3n actual del \u00e1rea metropolitana de la ciudad de M\u00e9rida en lo referente al manejo, gesti\u00f3n y disposici\u00f3n final de los residuos s\u00f3lidos urbanos, as\u00ed como los de manejo especial y las empresas que los generan. \r\nDocumento probatorio: Carta de agradecimiento del Secretario de Ecolog\u00eda, Dr. Eduardo Batllori Sampedro.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2007-12-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 19,
+  "fields": {
+    "nombre": "Bases de datos digitales del medio f\u00edsico para la creaci\u00f3n de las zonas agroecol\u00f3gicas de Yucat\u00e1n",
+    "proyecto": null,
+    "descripcion": "Como apoyo al Plan estatal de desarrollo y en el programa estatal de medio ambiente. Direcci\u00f3n de conservaci\u00f3n y manejo de recursos naturales del Gobierno del estado de Yucat\u00e1n.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2007-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 20,
+  "fields": {
+    "nombre": "Bases de datos digitales del medio f\u00edsico (\u00edndices agroclim\u00e1ticos y calidad del agua del acu\u00edfero)",
+    "proyecto": null,
+    "descripcion": "Para ser utilizadas en los programas de ordenamiento ecol\u00f3gico del territorio de Yucat\u00e1n y ordenamiento ecol\u00f3gico del territorio costero de Yucat\u00e1n. Direcci\u00f3n de conservaci\u00f3n y manejo de recursos naturales del Gobierno del estado de Yucat\u00e1n.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2005-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 21,
+  "fields": {
+    "nombre": "Bases de datos digitales del medio f\u00edsico (mapa y bases de datos de: suelos, paisajes geomorfol\u00f3gicos, mapa de la conductividad el\u00e9ctrica del agua del acu\u00edfero; base de datos de perfiles, base de datos del estado (l\u00edmites pol\u00edticos)",
+    "proyecto": null,
+    "descripcion": "Para ser utilizadas en el programa de ordenamiento ecol\u00f3gico del territorio de Yucat\u00e1n. Direcci\u00f3n de conservaci\u00f3n y manejo de recursos naturales del Gobierno del estado de Yucat\u00e1n.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2004-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 22,
+  "fields": {
+    "nombre": "Manejo de los residuales de la planta de biogas perteneciente a la Empresa mielera Heriberto Duquesne de la provincia de Villa Clara",
+    "proyecto": null,
+    "descripcion": "Este desarrollo tecnol\u00f3gico consiste en la identificaci\u00f3n de los suelos (\u00e1cidos y degradados) para la aplicaci\u00f3n de aguas residuales de alta carga org\u00e1nica (vinazas), de esta  forma se recuperan lo suelos degradados y se mineraliza la materia org\u00e1nica soluble contenida en las vinazas. Esta materia org\u00e1nica soluble es la causante de la degradaci\u00f3n de los cuerpos de agua que la reciben. El desarrollo tecnol\u00f3gico se fundamenta con una carta expedida por el director regional del Instituto Nacional de Investigaciones en Ca\u00f1a de Az\u00facar y por la siguiente informaci\u00f3n.",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "1900-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 23,
+  "fields": {
+    "nombre": "App para el muestreo de suelos urbanos",
+    "proyecto": null,
+    "descripcion": "con registro UNAM",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2017-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 24,
+  "fields": {
+    "nombre": "App para el muestreo polvos urbanos",
+    "proyecto": null,
+    "descripcion": "con registro UNAM",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2017-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 25,
+  "fields": {
+    "nombre": "App para el muestreo plantas urbanas",
+    "proyecto": null,
+    "descripcion": "con registro UNAM",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2017-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 26,
+  "fields": {
+    "nombre": "Software: Sistema de monitoreo de la contaminaci\u00f3n por metales pesados en la CDMX",
+    "proyecto": null,
+    "descripcion": "En proceso de registro",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2017-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 27,
+  "fields": {
+    "nombre": "Agriaqua",
+    "proyecto": null,
+    "descripcion": "software para evaluar la calidad agr\u00edcola del agua de riego",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2014-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 28,
+  "fields": {
+    "nombre": "Assofu (Assessment soil function)",
+    "proyecto": null,
+    "descripcion": "(Assessment soil function), software para evaluar las funciones ambientales de los suelos",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2012-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 29,
+  "fields": {
+    "nombre": "Moclic (Monitoring Climate Change)",
+    "proyecto": null,
+    "descripcion": "(Monitoring Climate Change), software para monitorear el cambio clim\u00e1tico",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2012-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 30,
+  "fields": {
+    "nombre": "ICC (Indicadores de cambio clim\u00e1tico)",
+    "proyecto": null,
+    "descripcion": "software para evaluar el cambio clim\u00e1tico con datos diarios",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2015-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 31,
+  "fields": {
+    "nombre": "S&E (Soil and Environment)",
+    "proyecto": null,
+    "descripcion": "software para evaluar las funciones ambientales de los suelos con datos de perfiles",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "2015-01-01",
+    "autores": [
+      30
+    ]
+  }
+},
+{
+  "model": "desarrollo_tecnologico.desarrollotecnologico",
+  "pk": 32,
+  "fields": {
+    "nombre": "Plagas forestales",
+    "proyecto": null,
+    "descripcion": "software para relacionar las plagas forestales con los elementos del clima",
+    "version": "",
+    "patente": "",
+    "licencia": null,
+    "url": "",
+    "fecha": "1900-01-01",
+    "autores": [
+      30
+    ]
+  }
+}
+]
