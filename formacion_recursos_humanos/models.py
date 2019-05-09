@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Beca, ProgramaLicenciatura, ProgramaMaestria, \
+from nucleo.models import User, Institucion, InstitucionSimple, Dependencia, Beca, ProgramaLicenciatura, ProgramaMaestria, \
     ProgramaDoctorado, Pais, Distincion, Libro as LibroInvestigacion
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, CapituloLibroInvestigacion
 from sortedm2m.fields import SortedManyToManyField
@@ -27,8 +27,9 @@ class AsesoriaEstudiante(models.Model):
     programa = models.CharField(max_length=255)
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
     proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     periodo_academico = models.CharField(max_length=200)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -53,6 +54,8 @@ class SupervisionInvestigadorPostDoctoral(models.Model):
     titulo_proyecto = models.CharField(max_length=200)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
     beca = models.ForeignKey(Beca, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
@@ -107,6 +110,8 @@ class DireccionTesis(models.Model):
     fecha_examen = models.DateField(null=True, blank=True)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
     beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
     reconocimiento = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
     reconocimiento_text = models.CharField(max_length=255, null=True, blank=True,)
@@ -141,6 +146,8 @@ class ComiteTutoral(models.Model):
     titulo_tesis = models.CharField(max_length=255, null=True, blank=True)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
     fecha_examen = models.DateField(null=True, blank=True)
@@ -169,6 +176,8 @@ class ComiteCandidaturaDoctoral(models.Model):
     programa_doctorado = models.ForeignKey(ProgramaDoctorado, on_delete=models.DO_NOTHING)
     institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+
     fecha_defensa = models.DateField()
     miembros_comite = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
     director = models.ForeignKey(User, null=True, blank=True, related_name='comite_candidatura_doctoral_director', on_delete=models.DO_NOTHING)
