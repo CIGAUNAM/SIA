@@ -136,10 +136,10 @@ class MapaArbitradoJSON(View):
             json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ENVIADO', 'Enviado')
 
-            json = json.replace('"fecha_enviado": null,', '')
-            json = json.replace('"fecha_aceptado": null,', '')
-            json = json.replace('"fecha_enprensa": null,', '')
-            json = json.replace('"fecha_publicado": null,', '')
+            json = json.replace(' "fecha_enviado": null,', '')
+            json = json.replace(' "fecha_aceptado": null,', '')
+            json = json.replace(' "fecha_enprensa": null,', '')
+            json = json.replace(' "fecha_publicado": null,', '')
 
             json = json.replace('"fecha_enviado"', '"fecha"')
             json = json.replace('"fecha_aceptado"', '"fecha"')
