@@ -86,7 +86,7 @@ class LaborDirectivaCoordinacion(models.Model):
 
 class RepresentacionOrganoColegiadoUNAM(models.Model):
     representacion = models.ForeignKey(Representacion, on_delete=models.DO_NOTHING, blank=True, null=True)
-    tipo_representacion = models.CharField(max_length=30, choices=(('', '-------'), ('DENTRO', 'Dentro de la UNAM'), ('FUERA', 'Fuera de la UNAM')))
+    tipo_representacion = models.CharField(max_length=30, choices=(('', '-------'), ('DENTRO', 'Dentro de la UNAM'), ('REPRESENTACION', 'Con representacion UNAM (Solo por designación)')))
     representacion_dentro_unam = models.CharField(max_length=30, choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
                                                                           ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
                                                                           ('OTRA', 'Otra')), blank=True, null=True)

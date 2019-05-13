@@ -50,7 +50,7 @@ class LaborDirectivaCoordinacionForm(forms.ModelForm):
 class RepresentacionOrganoColegiadoUNAMForm(forms.ModelForm):
     tipo_representacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right', 'placeholder': 'Tipo de representación'}),
-        choices=(('', '-------'), ('DENTRO', 'Dentro de la UNAM'), ('FUERA', 'Fuera de la UNAM')), required=False)
+        choices=(('', '-------'), ('DENTRO', 'Dentro de la UNAM'), ('REPRESENTACION', 'Con representacion UNAM (Solo por designación)')), required=True)
     representacion_dentro_unam = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
@@ -93,7 +93,7 @@ class ComisionInstitucionalCIGAForm(forms.ModelForm):
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     institucion = forms.ModelChoiceField(
-        required=True,
+        required=False,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
