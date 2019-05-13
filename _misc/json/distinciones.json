@@ -1101,7 +1101,8 @@
   "fields": {
     "nombre": "Comite Editorial",
     "descripcion": "",
-    "institucion": 222,
+    "institucion2": 222,
+    "institucion": 349,
     "fecha_inicio": "2018-06-03",
     "fecha_fin": "2020-07-31",
     "usuario": 29
@@ -1113,7 +1114,8 @@
   "fields": {
     "nombre": "Miembro del Tribunal Permanente para la defensa de Doctorados en Ciencias Geogr\u00e1ficas de la Comisi\u00f3n Nacional de Grados Cient\u00edficos del Ministerio de Educaci\u00f3n Superior de Cuba.",
     "descripcion": "",
-    "institucion": 308,
+    "institucion2": 308,
+    "institucion": null,
     "fecha_inicio": "1995-01-01",
     "fecha_fin": "2006-12-31",
     "usuario": 17
@@ -1125,7 +1127,8 @@
   "fields": {
     "nombre": "Miembro fundador del Consejo Universitario de Postgrado en la Universidad de la Habana.",
     "descripcion": "",
-    "institucion": 99,
+    "institucion2": 99,
+    "institucion": null,
     "fecha_inicio": "1996-01-01",
     "fecha_fin": "2006-12-31",
     "usuario": 17
@@ -1137,7 +1140,8 @@
   "fields": {
     "nombre": "Comit\u00e9 Editorial",
     "descripcion": "",
-    "institucion": 566,
+    "institucion2": 566,
+    "institucion": 808,
     "fecha_inicio": "2018-11-05",
     "fecha_fin": "2020-12-31",
     "usuario": 29
@@ -1149,7 +1153,8 @@
   "fields": {
     "nombre": "Jurado a la 2a Feria de proyectos del Departamento de Sistemas y Computaci\u00f3n",
     "descripcion": "",
-    "institucion": 18,
+    "institucion2": 18,
+    "institucion": null,
     "fecha_inicio": "2013-05-30",
     "fecha_fin": "2013-05-31",
     "usuario": 50
@@ -1161,7 +1166,8 @@
   "fields": {
     "nombre": "Informe de Verificaci\u00f3n F\u00edsica y comisi\u00f3n de Biblioteca. adquirido",
     "descripcion": "OF. NO. DGB.ST./127/2018",
-    "institucion": 520,
+    "institucion2": 520,
+    "institucion": 31,
     "fecha_inicio": "2017-05-22",
     "fecha_fin": "2017-05-22",
     "usuario": 50
@@ -1173,7 +1179,8 @@
   "fields": {
     "nombre": "Reconocimiento por ejercicio presupuestal 2016",
     "descripcion": "OF. NO. DGB. 001/2017",
-    "institucion": 605,
+    "institucion2": 605,
+    "institucion": null,
     "fecha_inicio": "2017-02-27",
     "fecha_fin": "2017-02-27",
     "usuario": 50
