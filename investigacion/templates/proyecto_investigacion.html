@@ -45,7 +45,8 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de finalización del proyecto. Este campo puede ir vacío si el proyecto es permanente, o si no
            hay una fecha definida, en cuyo caso se asume que el proyecto es de tiempo indefinido o permanente, en caso
-           contrario especificar la fecha de fin. Si la fecha de finalización es en el futuro pero se tiene establecida, especificarla."><i class="fa fa-question-circle"></i></a>
+           contrario especificar la fecha de fin. Si la fecha de finalización es en el futuro pero se tiene establecida, especificarla."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -55,52 +56,33 @@
         </div>
     </div>
     </p>
-    <p><strong>Institución:</strong>
+    <p>
+        <strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución que involucrada.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Institución.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion2 }}
+            {{ form.institucion }}
+
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
+
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia que involucrada, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
@@ -210,7 +192,6 @@
         </div>
     </div>
     </p>
-
     <p><strong>Tipo de financiamiento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Tipo de financiamento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
@@ -286,50 +267,66 @@
         </p>
     </div>
     <div id="d_financiamiento_extraordinario">
-        <p><strong>Dependencia que proporciona financiamiento extraordinario:</strong>
+        <p>
+            <strong>Institución que proporciona financiamiento extraordinario:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Dependencia que proporciona financiamiento extraordinario.">
-                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+               title="Institución que proporciona financiamiento extraordinario.">
+                <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
                 {{ form.financiamiento_extraordinario }}
+
                 <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                        <i class="fa fa-eye"></i>
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
                     </a>
+                </span>
                 </div>
+
                 <div class="input-group-addon">
-                    <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
+                    <i class="fa fa-plus"></i>
                     </a>
+                </span>
                 </div>
             </div>
         </div>
         </p>
     </div>
     <div id="d_financiamiento_sin_recurso_ciga">
-        <p><strong>Dependencia que proporciona financiamiento:</strong>
+    <p>
+            <strong>Institución que proporciona el financiamiento:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Dependencia que proporciona financiamiento.">
-                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+               title="Institución que proporciona el financiamiento.">
+                <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
                 {{ form.financiamiento_sin_recurso_ciga }}
+
                 <div class="input-group-addon">
-                    <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                        <i class="fa fa-eye"></i>
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
                     </a>
+                </span>
                 </div>
+
                 <div class="input-group-addon">
-                    <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                       title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                        <i class="fa fa-plus"></i>
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
+                    <i class="fa fa-plus"></i>
                     </a>
+                </span>
                 </div>
             </div>
         </div>
@@ -384,13 +381,6 @@
     </p>
 
     <script>
-        $("#responsables").on("select2:select", function (evt) {
-            var element = evt.params.data.element;
-            var $element = $(element);
-            $element.detach();
-            $(this).append($element);
-            $(this).trigger("change");
-        });
 
         $("#id_responsables").on("select2:select", function (evt) {
             var element = evt.params.data.element;
@@ -400,7 +390,6 @@
             $(this).trigger("change");
         });
 
-
         $("#d_financiamiento_conacyt_clave").hide();
         $("#d_financiamiento_conacyt_convocatoria").hide();
         $("#d_financiamiento_papiit").hide();
@@ -408,7 +397,7 @@
         $("#d_financiamiento_extraordinario").hide();
         $("#d_financiamiento_sin_recurso_ciga").hide();
 
-        
+
         $("#id_tipo_financiamiento").on('change', function () {
             if ($("#id_tipo_financiamiento").val() == 'CONACYT') {
                 $("#id_financiamiento_papiit").val(null).trigger('change');
@@ -593,7 +582,8 @@
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de finalización del proyecto. Este campo puede ir vacío si el proyecto es permanente, o si no
            hay una fecha definida, en cuyo caso se asume que el proyecto es de tiempo indefinido o permanente, en caso
-           contrario especificar la fecha de fin. Si la fecha de finalización es en el futuro pero se tiene establecida, especificarla."><i class="fa fa-question-circle"></i></a>
+           contrario especificar la fecha de fin. Si la fecha de finalización es en el futuro pero se tiene establecida, especificarla."><i
+                class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
@@ -603,52 +593,33 @@
         </div>
     </div>
     </p>
-    <p><strong>Institución:</strong>
+    <p>
+        <strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución que involucrada.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Institución.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion2 }}
+            {{ form.institucion }}
+
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
+
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia que involucrada, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen. En caso de no existir una dependencia hija de una institución, es necesario que exista entonces una dependencia con el mismo nombre que la institución y que pertenezca a ella.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
@@ -950,10 +921,10 @@
         $("#d_financiamiento_sin_recurso_ciga").hide();
 
         if ($("#id_problemas_nacionales_conacyt").val()) {
-                if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
-                    $("#d_otro_problema_nacional_conacyt").show();
-                }
+            if ($("#id_problemas_nacionales_conacyt").val().includes("1")) {
+                $("#d_otro_problema_nacional_conacyt").show();
             }
+        }
 
         if ($("#id_tipo_financiamiento").val()) {
             console.log($("#id_tipo_financiamiento").val());

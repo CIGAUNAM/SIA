@@ -50,21 +50,11 @@ class AsesoriaEstudianteForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
+        queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -94,22 +84,12 @@ class SupervisionInvestigadorPostDoctoralForm(forms.ModelForm):
     )
     titulo_proyecto = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                                       label='Disciplina')
-    institucion2 = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
+    institucion = forms.ModelChoiceField(
+        queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -213,22 +193,12 @@ class DireccionTesisForm(forms.ModelForm):
                                ('', '-------'), ('EN_PROCESO', 'Tesis en proceso'), ('TERMINADA', 'Tesis terminada')),
                                required=True)
 
-    institucion2 = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
+    institucion = forms.ModelChoiceField(
+        queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -274,22 +244,12 @@ class ComiteTutoralForm(forms.ModelForm):
     )
     programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    institucion2 = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
+    institucion = forms.ModelChoiceField(
+        queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -343,27 +303,38 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
+        queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     fecha_defensa = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
+    director = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Director",
+        widget=ModelSelect2Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    codirector = forms.ModelChoiceField(
+        queryset=User.objects.all(),
+        label="Codirector",
+        widget=ModelSelect2Widget(
+            search_fields=['first_name__icontains', 'last_name__icontains', 'username__icontains'],
+            queryset=User.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+    programa_doctorado = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    especialidad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+
 
     class Meta:
         model = ComiteCandidaturaDoctoral
