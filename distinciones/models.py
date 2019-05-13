@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
-from nucleo.models import User, Institucion, Distincion, Libro
+from nucleo.models import User, Institucion, InstitucionSimple, Distincion, Libro
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion
 
 NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
@@ -49,7 +49,8 @@ class DistincionAlumno(models.Model):
 class ParticipacionComisionExpertos(models.Model):
     nombre = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)

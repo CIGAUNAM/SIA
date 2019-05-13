@@ -50,6 +50,7 @@ class AsesoriaEstudianteForm(forms.ModelForm):
         )
     )
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -85,6 +86,7 @@ class SupervisionInvestigadorPostDoctoralForm(forms.ModelForm):
     titulo_proyecto = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                                       label='Disciplina')
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -194,6 +196,7 @@ class DireccionTesisForm(forms.ModelForm):
                                required=True)
 
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -245,6 +248,7 @@ class ComiteTutoralForm(forms.ModelForm):
     programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -283,6 +287,7 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         )
     )
     titulo_tesis = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     proyecto = forms.ModelChoiceField(
         required=False,
         queryset=ProyectoInvestigacion.objects.all(),
@@ -293,16 +298,9 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    programa_doctorado = forms.ModelChoiceField(
-        queryset=ProgramaDoctorado.objects.all(),
-        label="Programa de doctorado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ProgramaDoctorado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+
     institucion = forms.ModelChoiceField(
+        required=True,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
