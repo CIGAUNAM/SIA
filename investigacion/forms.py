@@ -235,6 +235,8 @@ class PublicacionTecnicaForm(forms.ModelForm):
 
 
 class ProyectoInvestigacionForm(forms.ModelForm):
+    nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                             label='Nombre del proyecto')
     es_permanente = forms.BooleanField(required=False)
     fecha_inicio = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
@@ -242,22 +244,12 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     fecha_fin = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=False, label='Fecha de fin')
-    institucion2 = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
+    institucion = forms.ModelChoiceField(
+        queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
-            search_fields=['nombre_institucion__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre_dependencia__icontains'],
-            dependent_fields={'institucion': 'institucion'},
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )

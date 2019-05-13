@@ -55,7 +55,7 @@ class DireccionTesisContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Título', 'Asesorado', 'Nivel', 'Dependencia', 'Fecha inicio', 'fecha fin', 'fecha examen']}
+                'titulos_tabla': ['Título de tesis', 'Asesorado', 'Nivel', 'Institución', 'Fecha inicio', 'fecha fin', 'fecha examen']}
 
     tabla_mios = '<script>\n' \
                  '       jQuery(document).ready(function ($jquery) {\n' \
@@ -68,16 +68,16 @@ class DireccionTesisContext:
                  '},\n' \
                  '"columns": [\n' \
                  '{\n' \
-                 '"data": "fields.titulo",\n' \
+                 '"data": "fields.titulo_tesis",\n' \
                  '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
                  '$(nTd).html("<a href=\'/' + str(
         contexto['url_categoria']) + '/' + str(
-        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
+        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo_tesis + "</a>");\n' \
                    '}\n' \
                    '},\n' \
                    '{"data": "fields.asesorado"},\n' \
                    '{"data": "fields.nivel_academico"},\n' \
-                   '{"data": "fields.dependencia"},\n' \
+                   '{"data": "fields.institucion"},\n' \
                    '{"data": "fields.fecha_inicio"},\n' \
                    '{"data": "fields.fecha_fin"},\n' \
                    '{"data": "fields.fecha_examen"},\n' \
@@ -99,16 +99,16 @@ class DireccionTesisContext:
                   '},\n' \
                   '"columns": [\n' \
                   '{\n' \
-                  '"data": "fields.titulo",\n' \
+                  '"data": "fields.titulo_tesis",\n' \
                   '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
                   '$(nTd).html("<a href=\'/' + str(
         contexto['url_categoria']) + '/' + str(
-        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
+        contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo_tesis + "</a>");\n' \
                    '}\n' \
                    '},\n' \
                    '{"data": "fields.asesorado"},\n' \
                    '{"data": "fields.nivel_academico"},\n' \
-                   '{"data": "fields.dependencia"},\n' \
+                   '{"data": "fields.institucion"},\n' \
                    '{"data": "fields.fecha_inicio"},\n' \
                    '{"data": "fields.fecha_fin"},\n' \
                    '{"data": "fields.fecha_examen"},\n' \
@@ -305,7 +305,7 @@ class ComiteCandidaturaDoctoralContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Candidato', 'Programa', 'Proyecto', 'Defensa']}
+                'titulos_tabla': ['Candidato', 'Programa', 'Defensa']}
 
 
     tabla_mios =  '<script>\n' \
@@ -325,7 +325,6 @@ class ComiteCandidaturaDoctoralContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.programa_doctorado"},\n' \
-                                    '{"data": "fields.proyecto"},\n' \
                                     '{"data": "fields.fecha_defensa"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -351,7 +350,6 @@ class ComiteCandidaturaDoctoralContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.programa_doctorado"},\n' \
-                                    '{"data": "fields.proyecto"},\n' \
                                     '{"data": "fields.fecha_defensa"},\n' \
                                 ']\n' \
                             '});\n' \

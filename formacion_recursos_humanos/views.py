@@ -156,7 +156,7 @@ class DireccionTesisJSON(View):
                 items = DireccionTesis.objects.filter(Q(director__id__exact=usuarioid) | Q(codirector__id__exact=usuarioid))
 
             json = serializers.serialize('json', items,
-                                         fields=('titulo_tesis', 'asesorado', 'nivel_academico', 'dependencia', 'fecha_examen', 'fecha_inicio', 'fecha_fin'),
+                                         fields=('titulo_tesis', 'asesorado', 'nivel_academico', 'institucion', 'fecha_examen', 'fecha_inicio', 'fecha_fin'),
                                          use_natural_foreign_keys=True)
             json = json.replace('LICENCIATURA', 'Licenciatura')
             json = json.replace('MAESTRIA', 'Maestría')
@@ -240,10 +240,10 @@ class ComiteCandidaturaDoctoralJSON(View):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = ComiteCandidaturaDoctoral.objects.all().exclude(Q(miembros_comite=usuarioid) & Q(director=usuarioid) & Q(codirector=usuarioid))
+                items = ComiteCandidaturaDoctoral.objects.all().exclude(Q(director=usuarioid) & Q(codirector=usuarioid))
             else:
-                items = ComiteCandidaturaDoctoral.objects.filter(Q(miembros_comite=usuarioid) | Q(director=usuarioid) | Q(codirector=usuarioid))
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('candidato', 'programa_doctorado', 'proyecto', 'fecha_defensa'))
+                items = ComiteCandidaturaDoctoral.objects.filter(Q(director=usuarioid) | Q(codirector=usuarioid))
+            json = serializers.serialize('json', items, use_natural_foreign_keys=True, fields=('candidato', 'programa_doctorado', 'fecha_defensa'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

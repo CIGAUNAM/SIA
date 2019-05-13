@@ -61,54 +61,33 @@
         </div>
     </div>
     </p>
-    <p><strong>Institución:</strong>
+    <p>
+        <strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución donde se llevó a cabo el curso, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Institución donde se impartió el curso.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion2 }}
+            {{ form.institucion }}
+
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
+
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia donde se llevó a cabo el curso, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
@@ -229,54 +208,33 @@
         </div>
     </div>
     </p>
-    <p><strong>Institución:</strong>
+    <p>
+        <strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Institución donde se llevó a cabo el curso, la selección de
-                                              institución filtra las dependencias que pertenecen a la institución
-                                              seleccionada de tal manera que se haga una selección más detallada.">
-            <i class="fa fa-question-circle"></i>
-        </a> <i class="fa fa-edit"></i>
+           title="Institución donde se impartió el curso.">
+            <i class="fa fa-question-circle"></i></a>
+        <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.institucion2 }}
+            {{ form.institucion }}
+
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la institución.">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
                     <i class="fa fa-eye"></i>
-                </a>
+                    </a>
+                </span>
             </div>
+
             <div class="input-group-addon">
-                <a href="/nucleo/instituciones" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una institución nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
                     <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Dependencia:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Dependencia donde se llevó a cabo el curso, las opciones
-                                              disponibles están en función de la institución seleccionada en el campo
-                                              anterior. Si no se selecciona una institución, se enlistan todas las
-                                              dependencias pero no se puede saber a cual institución pertenecen.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.dependencia }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al nombre de la dependencia.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/dependencias" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar una dependencia nueva. Cuando no existe en los registros aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
+                    </a>
+                </span>
             </div>
         </div>
     </div>

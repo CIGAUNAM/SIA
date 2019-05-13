@@ -95,6 +95,7 @@ class RedAcademicaForm(forms.ModelForm):
             'paises': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             "participantes": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             "entidades": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "instituciones": Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
