@@ -66,6 +66,7 @@ class ProyectoInvestigacion(models.Model):
     responsables = SortedManyToManyField(User, related_name='proyecto_investigacion_responsables',
                                          verbose_name='Responsables')
     participantes = models.ManyToManyField(User, related_name='proyecto_investigacion_participantes', blank=True)
+    participantes_externos_text = models.TextField(blank=True, null=True)
     status = models.CharField(max_length=30, choices=STATUS_PROYECTO)
     clasificacion = models.CharField(max_length=30, choices=CLASIFICACION_PROYECTO)
     organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
@@ -75,7 +76,7 @@ class ProyectoInvestigacion(models.Model):
     otro_problema_nacional_conacyt = models.TextField(null=True, blank=True)
     objetivos2030 = models.ManyToManyField(ObjetivoDesarrolloSostenible, blank=True)
 
-    tipo_financiamiento = models.CharField(max_length=30, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')))
+    tipo_financiamiento = models.CharField(max_length=30, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA (en colaboración con otras dependencias)')))
 
     # financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     financiamiento_conacyt_clave = models.CharField(max_length=30, unique=True, null=True, blank=True)
@@ -181,8 +182,8 @@ class MapaArbitrado(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     autores = SortedManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores', blank=True)
     autores_todos = models.TextField(blank=True, null=True)
-    #editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
-    compiladores = SortedManyToManyField(User, related_name='mapa_arbitrado_compiladores', blank=True)
+    # editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
+    # compiladores = SortedManyToManyField(User, related_name='mapa_arbitrado_compiladores', blank=True)
     agradecimientos = SortedManyToManyField(User, related_name='mapa_arbitrado_agradecimientos', blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
@@ -228,6 +229,7 @@ class PublicacionTecnica(models.Model):
     fecha_enprensa = models.DateField(null=True, blank=True)
     fecha_publicado = models.DateField(null=True, blank=True)
     autores = SortedManyToManyField(User, related_name='informe_tecnico_autores', verbose_name='Autores')
+    autores_todos = models.TextField(blank=True, null=True)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
     es_publico = models.BooleanField(default=False)

@@ -16,11 +16,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Pais donde se publicó el libro de docencia.">
@@ -30,18 +25,6 @@
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.pais }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del país seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
@@ -73,9 +56,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Autoría o compilación:</strong>
+    <p><strong>Autores como se reportan en el libro: <a href="#" data-toggle="tooltip" data-placement="right"
+                                                        title="Autores tal cual se reportan en el libro, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
+    </p>
+    <p><strong>Tipo de participación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Seleccionar según sea el caso: Autoría cuando el o los autores pertenecen al CIGA; Compilado cuando es una compilación, y los compiladores son del CIGA pero los autores pueden ser externos."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Seleccionar según sea el caso: Autoría cuando el o los autores pertenecen al CIGA; Compilado cuando es una compilación, y los compiladores son del CIGA pero los autores pueden ser externos."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -109,19 +98,71 @@
         </div>
         </p>
     </div>
+    <div id="d_editores">
+        <p><strong>Editores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Editores del libro, no confundir con autores de capítulo, si usted está agregando este libro para asociarlo a un capitulo en cuyo capítulo es autor, debe agrear su nombre en el campo autores en el capitulo, no en el libro.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.editores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los autores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <div id="d_coordinadores">
         <p><strong>Coordinadores:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
-                                los resultados que coincidan con la busqueda.">
-                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+               title="Coordinadores del libro, no confundir con autores de capítulo, si usted está agregando este libro para asociarlo a un capitulo en cuyo capítulo es autor, debe agrear su nombre en el campo autores en el capitulo, no en el libro.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-users"></i></div>
                 {{ form.coordinadores }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de los coordinadores.">
+                       title="Mostrar los detalles adicionales de los autores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_compiladores">
+        <p><strong>Compiladores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Compiladores del libro, al escribir el inicio del nombre o apellido se filtran
+                                los resultados que coincidan con la busqueda.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.compiladores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los compiladores.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
@@ -135,32 +176,9 @@
         </div>
         </p>
     </div>
-    <p><strong>Prólogo:</strong>
+    <p><strong>Agradecimientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.prologo }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los coordinadores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Agradecimiento a:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+           title="Técnicos que tuvieron participación en el desarrollo del libro y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
@@ -192,6 +210,66 @@
         </div>
     </div>
     </p>
+    <div id="d_fecha_enviado">
+        <p><strong>Fecha de enviado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que se envío del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enviado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_aceptado">
+        <p><strong>Fecha de aceptación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que artículo fue aceptado."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_aceptado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_enprensa">
+        <p><strong>Fecha de envío a prensa:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que el artículo es envíado a prensa antes de su publicación."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enprensa }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_publicado">
+        <p><strong>Fecha de publicación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha de publicación del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_publicado }}
+            </div>
+        </div>
+        </p>
+    </div>
     <div id="d_isbn">
         <p><strong>ISBN:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
@@ -208,24 +286,6 @@
         </div>
         </p>
     </div>
-    <p><strong>Fecha de publicación:</strong>
-    <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del libro.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de publicación del libro."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Número de edición:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de edición. Así sea la primera, indicar el número.">
@@ -288,69 +348,210 @@
         </div>
     </div>
     </p>
-    <p><strong>Libro arbitrado por pares: </strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
-        {{ form.arbitrado_pares }}</p>
 
     <script>
-        $('#d_isbn').hide();
-        $('#d_autores').hide();
-        $('#d_coordinadores').hide();
+        var id_autores = $("#id_autores");
+        var d_autores = $("#d_autores");
+        var id_editores = $("#id_editores");
+        var d_editores = $("#d_editores");
+        var id_coordinadores = $("#id_coordinadores");
+        var d_coordinadores = $("#d_coordinadores");
+        var id_compiladores = $("#id_compiladores");
+        var d_compiladores = $("#d_compiladores");
+        var id_isbn = $("#id_isbn");
+        var d_isbn = $("#d_isbn");
+        var id_tipo_participacion = $("#id_tipo_participacion");
 
-        $("#id_tipo_participacion").on('change', function () {
-            if ($("#id_tipo_participacion").val() == 'AUTORIA') {
-                $('#d_autores').show('slow');
-                $('#id_autores').attr("required", "true");
-                $('#id_coordinadores').val(null).trigger('change');
-                $('#d_coordinadores').hide('slow');
-                $('#id_coordinadores').attr("required", null);
-                } else if ($("#id_tipo_participacion").val() == 'COMPILACION') {
-                $('#d_coordinadores').show('slow');
-                $('#id_coordinadores').attr("required", "true");
-                $('#id_autores').val(null).trigger('change');
-                $('#d_autores').hide('slow');
-                $('#id_autores').attr("required", null);
+        var id_status = $("#id_status");
+
+        var d_fecha_enviado = $("#d_fecha_enviado");
+        var d_fecha_aceptado = $("#d_fecha_aceptado");
+        var d_fecha_enprensa = $("#d_fecha_enprensa");
+        var d_fecha_publicado = $("#d_fecha_publicado");
+        var id_fecha_enviado = $("#id_fecha_enviado");
+        var id_fecha_aceptado = $('#id_fecha_aceptado');
+        var id_fecha_enprensa = $('#id_fecha_enprensa');
+        var id_fecha_publicado = $('#id_fecha_publicado');
+
+        d_isbn.hide();
+        d_autores.hide();
+        d_editores.hide();
+        d_coordinadores.hide();
+        d_compiladores.hide();
+        d_fecha_enviado.hide();
+        d_fecha_aceptado.hide();
+        d_fecha_enprensa.hide();
+        d_fecha_publicado.hide();
+
+        id_status.on('change', function () {
+            console.log(id_status.val())
+            if (id_status.val() === 'ENVIADO') {
+                d_fecha_enviado.show('slow');
+                id_fecha_enviado.attr("required", "true");
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'ACEPTADO') {
+                d_fecha_aceptado.show('slow');
+                id_fecha_aceptado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'EN_PRENSA') {
+                d_fecha_enprensa.show('slow');
+                id_fecha_enprensa.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'PUBLICADO') {
+                d_fecha_publicado.show('slow');
+                id_fecha_publicado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
             } else {
-                $('#d_autores').hide('slow');
-                $('#d_coordinadores').hide('slow');
-                $('#id_autores').attr("required", null);
-                $('#id_coordinadores').attr("required", null);
-                $('#id_autores').val(null).trigger('change');
-                $('#id_coordinadores').val(null).trigger('change');
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
             }
-            }
-        );
+        });
 
-        $("#id_status").on('change', function () {
-                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                    $('#d_isbn').show('slow');
-                    $('#id_isbn').attr("required", "true");
+        id_tipo_participacion.on('change', function () {
+                if (id_tipo_participacion.val() == 'AUTORIA') {
+                    d_autores.show('slow');
+                    id_autores.attr("required", "true");
+                    id_editores.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_editores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_editores.attr("required", null);
+                    id_coordinadores.attr("required", null);
+                    id_compiladores.attr("required", null);
+                } else if (id_tipo_participacion.val() == 'EDICION') {
+                    d_editores.show('slow');
+                    id_editores.attr("required", "true");
+                    id_autores.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_coordinadores.attr("required", null);
+                    id_compiladores.attr("required", null);
+                } else if (id_tipo_participacion.val() == 'COORDINACION') {
+                    d_coordinadores.show('slow');
+                    id_coordinadores.attr("required", "true");
+                    id_autores.val(null).trigger('change');
+                    id_editores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_editores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_editores.attr("required", null);
+                    id_compiladores.attr("required", null);
+                } else if (id_tipo_participacion.val() == 'COMPILACION') {
+                    d_compiladores.show('slow');
+                    id_compiladores.attr("required", "true");
+                    id_autores.val(null).trigger('change');
+                    id_editores.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_editores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_editores.attr("required", null);
+                    id_coordinadores.attr("required", null);
                 } else {
-                    $("#id_isbn").val("");
-                    $('#d_isbn').hide('slow');
-                    $('#id_isbn').attr("required", null);
+                    id_autores.val(null).trigger('change');
+                    id_editoress.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_editores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_editoress.attr("required", null);
+                    id_coordinadores.attr("required", null);
+                    id_compiladores.attr("required", null);
                 }
             }
         );
-    </script>
 
-    <script>
-        $("#id_autores").on("select2:select", function (evt) {
+        id_status.on('change', function () {
+                if (id_status.val() == 'PUBLICADO' || id_status.val() == 'EN_PRENSA') {
+                    d_isbn.show('slow');
+                    id_isbn.attr("required", "true");
+                } else {
+                    id_isbn.val("");
+                    d_isbn.hide('slow');
+                    id_isbn.attr("required", null);
+                }
+            }
+        );
+
+        id_autores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
         });
-        $("#id_coordinadores").on("select2:select", function (evt) {
+
+        id_editores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
         });
-        $("#id_prologo").on("select2:select", function (evt) {
+
+        id_coordinadores.on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+
+        id_compiladores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
@@ -377,11 +578,6 @@
         </div>
     </div>
     </p>
-    <p><strong>Descripción: <a href="#" data-toggle="tooltip" data-placement="right"
-                               title="Descripción detallada adicional, por ejemplo información que no está contemplada en los demás campos.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.descripcion }}
-    </p>
     <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Pais donde se publicó el libro de docencia.">
@@ -391,18 +587,6 @@
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
             {{ form.pais }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales del país seleccionado.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
         </div>
     </div>
     </p>
@@ -434,9 +618,15 @@
         </div>
     </div>
     </p>
-    <p><strong>Autoría o compilación:</strong>
+    <p><strong>Autores como se reportan en el libro: <a href="#" data-toggle="tooltip" data-placement="right"
+                                                        title="Autores tal cual se reportan en el libro, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
+    </p>
+    <p><strong>Tipo de participación:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Seleccionar según sea el caso: Autoría cuando el o los autores pertenecen al CIGA; Compilado cuando es una compilación, y los compiladores son del CIGA pero los autores pueden ser externos."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Seleccionar según sea el caso: Autoría cuando el o los autores pertenecen al CIGA; Compilado cuando es una compilación, y los compiladores son del CIGA pero los autores pueden ser externos."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -470,19 +660,71 @@
         </div>
         </p>
     </div>
+    <div id="d_editores">
+        <p><strong>Editores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Editores del libro, no confundir con autores de capítulo, si usted está agregando este libro para asociarlo a un capitulo en cuyo capítulo es autor, debe agrear su nombre en el campo autores en el capitulo, no en el libro.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.editores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los autores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <div id="d_coordinadores">
         <p><strong>Coordinadores:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Coordinadores del libro, al escribir el inicio del nombre o apellido se filtran
-                                los resultados que coincidan con la busqueda.">
-                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+               title="Coordinadores del libro, no confundir con autores de capítulo, si usted está agregando este libro para asociarlo a un capitulo en cuyo capítulo es autor, debe agrear su nombre en el campo autores en el capitulo, no en el libro.">
+                <i class="fa fa-question-circle"></i>
+            </a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-users"></i></div>
                 {{ form.coordinadores }}
                 <div class="input-group-addon">
                     <a href="#" data-toggle="tooltip" data-placement="left"
-                       title="Mostrar los detalles adicionales de los coordinadores.">
+                       title="Mostrar los detalles adicionales de los autores.">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="input-group-addon">
+                    <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
+                       title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_compiladores">
+        <p><strong>Compiladores:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Compiladores del libro, al escribir el inicio del nombre o apellido se filtran
+                                los resultados que coincidan con la busqueda.">
+                <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-users"></i></div>
+                {{ form.compiladores }}
+                <div class="input-group-addon">
+                    <a href="#" data-toggle="tooltip" data-placement="left"
+                       title="Mostrar los detalles adicionales de los compiladores.">
                         <i class="fa fa-eye"></i>
                     </a>
                 </div>
@@ -496,32 +738,9 @@
         </div>
         </p>
     </div>
-    <p><strong>Prólogo:</strong>
+    <p><strong>Agradecimientos:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Si el libro cuenta con prólogo escrito por un autor adscrito a la entedidad (o varios), agregar el o los nombres.">
-            <i class="fa fa-question-circle"></i></a>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-users"></i></div>
-            {{ form.prologo }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de los coordinadores.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/usuarios" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un autor nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    </p>
-    <p><strong>Agradecimiento a:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Personas que tuvieron participación en el desarrollo del artículo y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
+           title="Técnicos que tuvieron participación en el desarrollo del libro y se mencionan como agradecimientos, al escribir el inicio del nombre o apellido se filtran
                             los resultados que coincidan con la busqueda.">
             <i class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
@@ -553,6 +772,66 @@
         </div>
     </div>
     </p>
+    <div id="d_fecha_enviado">
+        <p><strong>Fecha de enviado:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que se envío del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enviado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_aceptado">
+        <p><strong>Fecha de aceptación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que artículo fue aceptado."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_aceptado }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_enprensa">
+        <p><strong>Fecha de envío a prensa:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha en que el artículo es envíado a prensa antes de su publicación."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_enprensa }}
+            </div>
+        </div>
+        </p>
+    </div>
+    <div id="d_fecha_publicado">
+        <p><strong>Fecha de publicación:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Fecha de publicación del artículo."><i
+                    class="fa fa-question-circle"></i></a>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form.fecha_publicado }}
+            </div>
+        </div>
+        </p>
+    </div>
     <div id="d_isbn">
         <p><strong>ISBN:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
@@ -569,24 +848,6 @@
         </div>
         </p>
     </div>
-    <p><strong>Fecha de publicación:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de publicación del libro.">
-            <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group date">
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            {{ form.fecha }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Fecha de publicación del libro."><i
-                        class="fa fa-question-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    </p>
     <p><strong>Número de edición:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Número de edición. Así sea la primera, indicar el número.">
@@ -649,81 +910,347 @@
         </div>
     </div>
     </p>
-    <p><strong>Libro arbitrado por pares: </strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="¿El articulo fue publicado sólo en un medio electronico?."><i class="fa fa-question-circle"></i></a>
-        {{ form.arbitrado_pares }}</p>
-
 
     <script>
-        $('#d_isbn').hide();
-        $('#d_autores').hide();
-        $('#d_coordinadores').hide();
+        var id_autores = $("#id_autores");
+        var d_autores = $("#d_autores");
+        var id_editores = $("#id_editores");
+        var d_editores = $("#d_editores");
+        var id_coordinadores = $("#id_coordinadores");
+        var d_coordinadores = $("#d_coordinadores");
+        var id_compiladores = $("#id_compiladores");
+        var d_compiladores = $("#d_compiladores");
+        var id_isbn = $("#id_isbn");
+        var d_isbn = $("#d_isbn");
+        var id_tipo_participacion = $("#id_tipo_participacion");
 
-        if ($("#id_tipo_participacion").val() == 'AUTORIA') {
-            $('#d_autores').show();
-        }
-        if ($("#id_tipo_participacion").val() == 'COMPILACION') {
-            $('#d_coordinadores').show();
+        var id_status = $("#id_status");
+
+        var d_fecha_enviado = $("#d_fecha_enviado");
+        var d_fecha_aceptado = $("#d_fecha_aceptado");
+        var d_fecha_enprensa = $("#d_fecha_enprensa");
+        var d_fecha_publicado = $("#d_fecha_publicado");
+        var id_fecha_enviado = $("#id_fecha_enviado");
+        var id_fecha_aceptado = $('#id_fecha_aceptado');
+        var id_fecha_enprensa = $('#id_fecha_enprensa');
+        var id_fecha_publicado = $('#id_fecha_publicado');
+
+        d_isbn.hide();
+        d_autores.hide();
+        d_editores.hide();
+        d_coordinadores.hide();
+        d_compiladores.hide();
+        d_fecha_enviado.hide();
+        d_fecha_aceptado.hide();
+        d_fecha_enprensa.hide();
+        d_fecha_publicado.hide();
+
+        if (id_status.val() === 'ENVIADO') {
+            d_fecha_enviado.show('slow');
+            id_fecha_enviado.attr("required", "true");
+            d_fecha_aceptado.hide('slow');
+            id_fecha_aceptado.attr("required", null);
+            id_fecha_aceptado.val(null).trigger('change');
+            d_fecha_enprensa.hide('slow');
+            id_fecha_enprensa.attr("required", null);
+            id_fecha_enprensa.val(null).trigger('change');
+            d_fecha_publicado.hide('slow');
+            id_fecha_publicado.attr("required", null);
+            id_fecha_publicado.val(null).trigger('change');
+        } else if (id_status.val() === 'ACEPTADO') {
+            d_fecha_aceptado.show('slow');
+            id_fecha_aceptado.attr("required", "true");
+            d_fecha_enviado.hide('slow');
+            id_fecha_enviado.attr("required", null);
+            id_fecha_enviado.val(null).trigger('change');
+            d_fecha_enprensa.hide('slow');
+            id_fecha_enprensa.attr("required", null);
+            id_fecha_enprensa.val(null).trigger('change');
+            d_fecha_publicado.hide('slow');
+            id_fecha_publicado.attr("required", null);
+            id_fecha_publicado.val(null).trigger('change');
+        } else if (id_status.val() === 'EN_PRENSA') {
+            d_fecha_enprensa.show('slow');
+            id_fecha_enprensa.attr("required", "true");
+            d_fecha_enviado.hide('slow');
+            id_fecha_enviado.attr("required", null);
+            id_fecha_enviado.val(null).trigger('change');
+            d_fecha_aceptado.hide('slow');
+            id_fecha_aceptado.attr("required", null);
+            id_fecha_aceptado.val(null).trigger('change');
+            d_fecha_publicado.hide('slow');
+            id_fecha_publicado.attr("required", null);
+            id_fecha_publicado.val(null).trigger('change');
+        } else if (id_status.val() === 'PUBLICADO') {
+            d_fecha_publicado.show('slow');
+            id_fecha_publicado.attr("required", "true");
+            d_fecha_enviado.hide('slow');
+            id_fecha_enviado.attr("required", null);
+            id_fecha_enviado.val(null).trigger('change');
+            d_fecha_aceptado.hide('slow');
+            id_fecha_aceptado.attr("required", null);
+            id_fecha_aceptado.val(null).trigger('change');
+            d_fecha_enprensa.hide('slow');
+            id_fecha_enprensa.attr("required", null);
+            id_fecha_enprensa.val(null).trigger('change');
+        } else {
+            d_fecha_enviado.hide('slow');
+            id_fecha_enviado.attr("required", null);
+            id_fecha_enviado.val(null).trigger('change');
+            d_fecha_aceptado.hide('slow');
+            id_fecha_aceptado.attr("required", null);
+            id_fecha_aceptado.val(null).trigger('change');
+            d_fecha_enprensa.hide('slow');
+            id_fecha_enprensa.attr("required", null);
+            id_fecha_enprensa.val(null).trigger('change');
+            d_fecha_publicado.hide('slow');
+            id_fecha_publicado.attr("required", null);
+            id_fecha_publicado.val(null).trigger('change');
         }
 
-        $("#id_tipo_participacion").on('change', function () {
-            if ($("#id_tipo_participacion").val() == 'AUTORIA') {
-                $('#d_autores').show('slow');
-                $('#id_autores').attr("required", "true");
-                $('#id_coordinadores').val(null).trigger('change');
-                $('#d_coordinadores').hide('slow');
-                $('#id_coordinadores').attr("required", null);
-                } else if ($("#id_tipo_participacion").val() == 'COMPILACION') {
-                $('#d_coordinadores').show('slow');
-                $('#id_coordinadores').attr("required", "true");
-                $('#id_autores').val(null).trigger('change');
-                $('#d_autores').hide('slow');
-                $('#id_autores').attr("required", null);
+        if (id_tipo_participacion.val() == 'AUTORIA') {
+            d_autores.show('slow');
+            id_autores.attr("required", "true");
+            id_editores.val(null).trigger('change');
+            id_coordinadores.val(null).trigger('change');
+            id_compiladores.val(null).trigger('change');
+            d_editores.hide('slow');
+            d_coordinadores.hide('slow');
+            d_compiladores.hide('slow');
+            id_editores.attr("required", null);
+            id_coordinadores.attr("required", null);
+            id_compiladores.attr("required", null);
+        } else if (id_tipo_participacion.val() == 'EDICION') {
+            d_editores.show('slow');
+            id_editores.attr("required", "true");
+            id_autores.val(null).trigger('change');
+            id_coordinadores.val(null).trigger('change');
+            id_compiladores.val(null).trigger('change');
+            d_autores.hide('slow');
+            d_coordinadores.hide('slow');
+            d_compiladores.hide('slow');
+            id_autores.attr("required", null);
+            id_coordinadores.attr("required", null);
+            id_compiladores.attr("required", null);
+        } else if (id_tipo_participacion.val() == 'COORDINACION') {
+            d_coordinadores.show('slow');
+            id_coordinadores.attr("required", "true");
+            id_autores.val(null).trigger('change');
+            id_editores.val(null).trigger('change');
+            id_compiladores.val(null).trigger('change');
+            d_autores.hide('slow');
+            d_editores.hide('slow');
+            d_compiladores.hide('slow');
+            id_autores.attr("required", null);
+            id_editores.attr("required", null);
+            id_compiladores.attr("required", null);
+        } else if (id_tipo_participacion.val() == 'COMPILACION') {
+            d_compiladores.show('slow');
+            id_compiladores.attr("required", "true");
+            id_autores.val(null).trigger('change');
+            id_editores.val(null).trigger('change');
+            id_coordinadores.val(null).trigger('change');
+            d_autores.hide('slow');
+            d_editores.hide('slow');
+            d_coordinadores.hide('slow');
+            id_autores.attr("required", null);
+            id_editores.attr("required", null);
+            id_coordinadores.attr("required", null);
+        } else {
+            id_autores.val(null).trigger('change');
+            id_editoress.val(null).trigger('change');
+            id_coordinadores.val(null).trigger('change');
+            id_compiladores.val(null).trigger('change');
+            d_autores.hide('slow');
+            d_editores.hide('slow');
+            d_coordinadores.hide('slow');
+            d_compiladores.hide('slow');
+            id_autores.attr("required", null);
+            id_editoress.attr("required", null);
+            id_coordinadores.attr("required", null);
+            id_compiladores.attr("required", null);
+        }
+
+        if (id_status.val() == 'PUBLICADO' || id_status.val() == 'EN_PRENSA') {
+            d_isbn.show('slow');
+            id_isbn.attr("required", "true");
+        } else {
+            id_isbn.val("");
+            d_isbn.hide('slow');
+            id_isbn.attr("required", null);
+        }
+
+        id_status.on('change', function () {
+            console.log(id_status.val())
+            if (id_status.val() === 'ENVIADO') {
+                d_fecha_enviado.show('slow');
+                id_fecha_enviado.attr("required", "true");
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'ACEPTADO') {
+                d_fecha_aceptado.show('slow');
+                id_fecha_aceptado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'EN_PRENSA') {
+                d_fecha_enprensa.show('slow');
+                id_fecha_enprensa.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
+            } else if (id_status.val() === 'PUBLICADO') {
+                d_fecha_publicado.show('slow');
+                id_fecha_publicado.attr("required", "true");
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
             } else {
-                $('#d_autores').hide('slow');
-                $('#d_coordinadores').hide('slow');
-                $('#id_autores').attr("required", null);
-                $('#id_coordinadores').attr("required", null);
-                $('#id_autores').val(null).trigger('change');
-                $('#id_coordinadores').val(null).trigger('change');
+                d_fecha_enviado.hide('slow');
+                id_fecha_enviado.attr("required", null);
+                id_fecha_enviado.val(null).trigger('change');
+                d_fecha_aceptado.hide('slow');
+                id_fecha_aceptado.attr("required", null);
+                id_fecha_aceptado.val(null).trigger('change');
+                d_fecha_enprensa.hide('slow');
+                id_fecha_enprensa.attr("required", null);
+                id_fecha_enprensa.val(null).trigger('change');
+                d_fecha_publicado.hide('slow');
+                id_fecha_publicado.attr("required", null);
+                id_fecha_publicado.val(null).trigger('change');
             }
-            }
-        );
+        });
 
-        if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-            $('#d_isbn').show();
-        }
 
-        $("#id_status").on('change', function () {
-                if ($("#id_status").val() == 'PUBLICADO' || $("#id_status").val() == 'EN_PRENSA') {
-                    $('#d_isbn').show('slow');
-                    $('#id_isbn').attr("required", "true");
+        id_tipo_participacion.on('change', function () {
+                if (id_tipo_participacion.val() == 'AUTORIA') {
+                    d_autores.show('slow');
+                    id_autores.attr("required", "true");
+                    id_editores.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_editores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_editores.attr("required", null);
+                    id_coordinadores.attr("required", null);
+                    id_compiladores.attr("required", null);
+                } else if (id_tipo_participacion.val() == 'EDICION') {
+                    d_editores.show('slow');
+                    id_editores.attr("required", "true");
+                    id_autores.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_coordinadores.attr("required", null);
+                    id_compiladores.attr("required", null);
+                } else if (id_tipo_participacion.val() == 'COORDINACION') {
+                    d_coordinadores.show('slow');
+                    id_coordinadores.attr("required", "true");
+                    id_autores.val(null).trigger('change');
+                    id_editores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_editores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_editores.attr("required", null);
+                    id_compiladores.attr("required", null);
+                } else if (id_tipo_participacion.val() == 'COMPILACION') {
+                    d_compiladores.show('slow');
+                    id_compiladores.attr("required", "true");
+                    id_autores.val(null).trigger('change');
+                    id_editores.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_editores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_editores.attr("required", null);
+                    id_coordinadores.attr("required", null);
                 } else {
-                    $("#id_isbn").val("");
-                    $('#d_isbn').hide('slow');
-                    $('#id_isbn').attr("required", null);
+                    id_autores.val(null).trigger('change');
+                    id_editoress.val(null).trigger('change');
+                    id_coordinadores.val(null).trigger('change');
+                    id_compiladores.val(null).trigger('change');
+                    d_autores.hide('slow');
+                    d_editores.hide('slow');
+                    d_coordinadores.hide('slow');
+                    d_compiladores.hide('slow');
+                    id_autores.attr("required", null);
+                    id_editoress.attr("required", null);
+                    id_coordinadores.attr("required", null);
+                    id_compiladores.attr("required", null);
                 }
             }
         );
-    </script>
 
-    <script>
-        $("#id_autores").on("select2:select", function (evt) {
+
+        id_status.on('change', function () {
+                if (id_status.val() == 'PUBLICADO' || id_status.val() == 'EN_PRENSA') {
+                    d_isbn.show('slow');
+                    id_isbn.attr("required", "true");
+                } else {
+                    id_isbn.val("");
+                    d_isbn.hide('slow');
+                    id_isbn.attr("required", null);
+                }
+            }
+        );
+
+        id_autores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
         });
-        $("#id_coordinadores").on("select2:select", function (evt) {
+
+        id_editores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
             $(this).append($element);
             $(this).trigger("change");
         });
-        $("#id_prologo").on("select2:select", function (evt) {
+
+        id_coordinadores.on("select2:select", function (evt) {
+            var element = evt.params.data.element;
+            var $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change");
+        });
+
+        id_compiladores.on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
             $element.detach();
