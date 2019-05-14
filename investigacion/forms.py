@@ -146,9 +146,9 @@ class MapaArbitradoForm(forms.ModelForm):
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                      required=True, label='Número de páginas')
     ciudad_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
-                             label='Ciudad')
+                                  label='Ciudad')
     publicacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
-                             label='Libro o revista donde se publica')
+                                  label='Libro o revista donde se publica')
 
     proyecto = forms.ModelChoiceField(
         required=False,
@@ -169,8 +169,8 @@ class MapaArbitradoForm(forms.ModelForm):
         exclude = []
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            "compiladores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            "agradecimientos": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "agradecimientos": wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -179,14 +179,17 @@ class PublicacionTecnicaForm(forms.ModelForm):
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False)
     tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                               choices=(('', '-------'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico terminado'),
-        ('PROGRAMA_COMPUTO', 'Programa de cómputo especializado documentado'),
-        ('BASE_DATOS', 'Bases de datos geográficos, arbitradas por expertos, para apliciones Web'),
-        ('NORMA_PATENTE', 'Normas y patentes'),
-        ('INFORME_TECNICO', 'Informes técnicos finales dirigidos a tomadores de decisiones'),
-        ('PLAN_MANEJO', 'Planes de manejo, ordenamiento, y gestión territorial, reconocidos oficialmente'),
-        ('CARTA_REVISTA', 'Cartas en revistas de prestigio internacional'),
-        ('TRADUCCION', 'Traducción de libros y revisiones técnicas')), required=True)
+                             choices=(('', '-------'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico terminado'),
+                                      ('PROGRAMA_COMPUTO', 'Programa de cómputo especializado documentado'),
+                                      ('BASE_DATOS',
+                                       'Bases de datos geográficos, arbitradas por expertos, para apliciones Web'),
+                                      ('NORMA_PATENTE', 'Normas y patentes'),
+                                      ('INFORME_TECNICO',
+                                       'Informes técnicos finales dirigidos a tomadores de decisiones'),
+                                      ('PLAN_MANEJO',
+                                       'Planes de manejo, ordenamiento, y gestión territorial, reconocidos oficialmente'),
+                                      ('CARTA_REVISTA', 'Cartas en revistas de prestigio internacional'),
+                                      ('TRADUCCION', 'Traducción de libros y revisiones técnicas')), required=True)
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     fecha_enviado = forms.DateField(
@@ -201,6 +204,9 @@ class PublicacionTecnicaForm(forms.ModelForm):
     fecha_publicado = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=False, label='Fecha de publicación')
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en la publicación, en el orden y forma.'}),
+                                    required=False, label='Autores como se reportan en la publicación')
     institucion = forms.ModelChoiceField(
         required=True,
         queryset=InstitucionSimple.objects.all(),
@@ -268,7 +274,7 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     tipo_financiamiento = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'),
-                 ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA')),
+                 ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA (en colaboración con otras dependencias)')),
         required=True)
     financiamiento_extraordinario = forms.ModelChoiceField(
         queryset=Dependencia.objects.all(),
@@ -303,12 +309,14 @@ class ProyectoInvestigacionForm(forms.ModelForm):
     num_alumnos_licenciatura = forms.IntegerField(
         widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=True,
         label='Número de alumnos de doctorado', initial='0')
+    participantes_externos_text = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Participantes externos (No adscritos al CIGA), separar cada participante por coma.'}),
+                                    required=False, label='Autores como se reportan en la publicación')
 
     class Meta:
         model = ProyectoInvestigacion
         exclude = []
         widgets = {
-            'comisioninstitucional_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
             'descripcion': Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
             "responsables": wSortedSelect2MultipleWidget(
                 attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
@@ -344,7 +352,8 @@ class LibroInvestigacionForm(forms.ModelForm):  # Posiblemente MANTENER, creo qu
         choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
+        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('EDICION', 'Edición'), ('COORDINACION', 'Coordinación'),
+                 ('COMPILACION', 'Compilación')), required=True)
     fecha = forms.DateField(widget=wDateInput(
         attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=False)
@@ -374,6 +383,10 @@ class LibroInvestigacionForm(forms.ModelForm):  # Posiblemente MANTENER, creo qu
         exclude = ['tipo', ]
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "editores": wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "coordinadores": wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'compiladores': wSortedSelect2MultipleWidget(
                 attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'agradecimientos': Select2MultipleWidget(

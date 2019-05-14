@@ -1,13 +1,16 @@
 from SIA.widgets import *
-from . models import *
+from .models import *
 from django import forms
 from nucleo.models import Institucion, Pais, Libro as LibroDocencia
 from django_select2.forms import Select2MultipleWidget, Select2Widget, ModelSelect2Widget
 
+
 #
 
 class CursoDocenciaEscolarizadoForm(forms.ModelForm):
-    nivel = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar nivel de curso'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
+    nivel = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                              choices=(('', 'Seleccionar nivel de curso'), ('LICENCIATURA', 'Licenciatura'),
+                                       ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')), required=True)
     licenciatura = forms.ModelChoiceField(
         required=False,
         queryset=ProgramaLicenciatura.objects.all(),
@@ -39,11 +42,11 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
         )
     )
     programa = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                                      label='Nombre del programa',
-                                      help_text='Programa o carrera a la que pertenece la asignatura.')
+                               label='Nombre del programa',
+                               help_text='Programa o carrera a la que pertenece la asignatura.')
     asignatura_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                                   label='Nombre de la asignatura',
-                                   help_text='Nombre de la asignatura impartida.')
+                                      label='Nombre de la asignatura',
+                                      help_text='Nombre de la asignatura impartida.')
     asignatura = forms.ModelChoiceField(
         queryset=Asignatura.objects.all(),
         label="Asignatura",
@@ -53,9 +56,14 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
-    nombramiento = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                              choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'), ('COLABORADOR', 'Colaborador o Invitado')), required=True)
+    modalidad = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(
+        ('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'),
+        ('MIXTO', 'Mixto')), required=True)
+    nombramiento = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('TITULAR', 'Titular o Coordinador'), ('COLABORADOR', 'Colaborador o Invitado')),
+        required=True)
     institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
@@ -74,10 +82,16 @@ class CursoDocenciaEscolarizadoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    total_horas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    periodo_academico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Semestre/Año académico')
+    fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    total_horas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                  required=True)
+    periodo_academico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                        label='Semestre/Año académico')
 
     class Meta:
         model = CursoDocenciaEscolarizado
@@ -88,14 +102,17 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
     asignatura_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                                       label='Nombre de la asignatura',
                                       help_text='Nombre de la asignatura impartida.')
-    modalidad = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'), ('MIXTO', 'Mixto')), required=True)
+    modalidad = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=(
+        ('', 'Seleccionar modalidad de curso'), ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'),
+        ('MIXTO', 'Mixto')), required=True)
     tipo_curso = forms.ChoiceField(widget=Select2Widget(
         attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=(('', '------'), ('DIPLOMADO', 'Diplomado'), ('TALLER', 'Taller'), ('SEMINARIO', 'Seminario'),
                  ('CURSO', 'Curso'), ('OTRO', 'Otro')), required=True)
     otro_tipo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                                      label='Otro tipo de curso',
-                                      help_text='Otro tipo de curso.')
+                                label='Otro tipo de curso',
+                                help_text='Otro tipo de curso.')
     institucion2 = forms.ModelChoiceField(
         queryset=Institucion.objects.all(),
         label="Institución",
@@ -114,10 +131,16 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    total_horas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    periodo_academico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Semestre/Año académico')
+    fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True)
+    total_horas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                  required=True)
+    periodo_academico = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                                        label='Semestre/Año académico')
 
     class Meta:
         model = CursoDocenciaExtracurricular
@@ -127,7 +150,8 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
 
 
 class ArticuloDocenciaForm(forms.ModelForm):
-    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de artículo')
+    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
+                             label='Título de artículo')
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False, label='Descripción')
     status = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
@@ -161,13 +185,15 @@ class ArticuloDocenciaForm(forms.ModelForm):
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'alumnos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'agradecimientos': Select2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
-class LibroDocenciaForm(forms.ModelForm): # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
+class LibroDocenciaForm(forms.ModelForm):  # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
+    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
+                                  required=False)
     pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),
         label="Pais",
@@ -177,30 +203,55 @@ class LibroDocenciaForm(forms.ModelForm): # Posiblemente MANTENER, creo que esta
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+
     ciudad_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
     editorial_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
-    coleccion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
+    coleccion_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+
     status = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
+        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('EDICION', 'Edición'), ('COORDINACION', 'Coordinación'),
+                 ('COMPILACION', 'Compilación')), required=True)
+    fecha = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_enviado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_aceptado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_enprensa = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
+        required=False)
+    fecha_publicado = forms.DateField(widget=wDateInput(
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
+        required=False)
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
-
     volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
+                                                           'placeholder': 'Autores tal cual se reportan en el artículo, en el orden y forma.'}),
+                                    required=False, label='Autores como se reportan en el artículo')
+
     class Meta:
         model = LibroDocencia
         exclude = ['tipo', ]
         widgets = {
             "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "editores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "coordinadores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'compiladores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-            'prologo': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'agradecimientos': Select2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
@@ -211,9 +262,10 @@ class ProgramaEstudioForm(forms.ModelForm):
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False, label='Descripción')
     nivel = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                             choices=(
-                                 ('', 'Seleccionar un nivel académico'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'),
-                                 ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')), required=True)
+                              choices=(
+                                  ('', 'Seleccionar un nivel académico'), ('LICENCIATURA', 'Licenciatura'),
+                                  ('MAESTRIA', 'Maestría'),
+                                  ('DOCTORADO', 'Doctorado'), ('OTRO', 'Otro')), required=True)
     fecha = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True, label='Fecha de publicación')

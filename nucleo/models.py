@@ -736,8 +736,10 @@ class Libro(models.Model):
     descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
                                                     ('DOCENCIA', 'Docencia')))
-    tipo_participacion = models.CharField(max_length=50, choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')))
-    autores = SortedManyToManyField(User, related_name='libro_autores', blank=True, verbose_name='Autores')
+    tipo_participacion = models.CharField(max_length=50, choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('EDICION', 'Edición'), ('COORDINACION', 'Coordinación'), ('COMPILACION', 'Compilación')))
+    autores = SortedManyToManyField(User, related_name='libro_autores', blank=True)
+    editores = SortedManyToManyField(User, related_name='libro_editores', blank=True)
+    coordinadores = SortedManyToManyField(User, related_name='libro_coordinadores', blank=True)
     compiladores = SortedManyToManyField(User, related_name='libro_compiladores', blank=True)
     autores_todos = models.TextField(blank=True, null=True)
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)

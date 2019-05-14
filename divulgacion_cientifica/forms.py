@@ -160,7 +160,7 @@ class ProgramaRadioTelevisionInternetForm(forms.ModelForm):
         exclude = ['usuario', ]
 
 
-class LibroDivulgacionForm(forms.ModelForm):
+class LibroDivulgacionForm(forms.ModelForm):  # Posiblemente MANTENER, creo que estaba duplicado (borrar el otro)
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
     descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
                                   required=False)
@@ -183,21 +183,27 @@ class LibroDivulgacionForm(forms.ModelForm):
         choices=getattr(settings, 'STATUS_PUBLICACION', ), required=True)
     tipo_participacion = forms.ChoiceField(
         widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('COMPILACION', 'Compilación')), required=True)
+        choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('EDICION', 'Edición'), ('COORDINACION', 'Coordinación'),
+                 ('COMPILACION', 'Compilación')), required=True)
     fecha = forms.DateField(widget=wDateInput(
-        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
         required=False)
     fecha_enviado = forms.DateField(widget=wDateInput(
-        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
         required=False)
     fecha_aceptado = forms.DateField(widget=wDateInput(
-        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
         required=False)
     fecha_enprensa = forms.DateField(widget=wDateInput(
-        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
         required=False)
     fecha_publicado = forms.DateField(widget=wDateInput(
-        attrs={'style': 'width: 100%', 'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        attrs={'style': 'width: 100%', 'data-provider': 'datepicker',
+               'class': 'datepicker form-control pull-right'}),
         required=False)
     numero_edicion = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
     numero_paginas = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}))
@@ -212,7 +218,12 @@ class LibroDivulgacionForm(forms.ModelForm):
         model = LibroDivulgacion
         exclude = ['tipo', ]
         widgets = {
-            "autores": wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "autores": wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "editores": wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            "coordinadores": wSortedSelect2MultipleWidget(
+                attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'compiladores': wSortedSelect2MultipleWidget(
                 attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
             'agradecimientos': Select2MultipleWidget(

@@ -182,7 +182,7 @@ class LibroDocenciaContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.editorial_text"},\n' \
-                                    '{"data": "fields.ciudad"},\n' \
+                                    '{"data": "fields.ciudad_text"},\n' \
                                     '{"data": "fields.status"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
@@ -209,7 +209,7 @@ class LibroDocenciaContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.editorial_text"},\n' \
-                                    '{"data": "fields.ciudad"},\n' \
+                                    '{"data": "fields.ciudad_text"},\n' \
                                     '{"data": "fields.status"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \

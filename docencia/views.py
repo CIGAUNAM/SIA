@@ -2,17 +2,19 @@ from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
 from SIA.utils import *
-from . forms import *
-from . utils import *
-from . models import *
+from .forms import *
+from .utils import *
+from .models import *
 from nucleo.models import Libro as LibroLibroDocencia
 from django.db.models import Q
+
 
 # Create your views here.
 
 
 class CursoDocenciaEscolarizadoJSON(View):
     otros = False
+
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
@@ -44,6 +46,7 @@ class CursoDocenciaEscolarizadoDetalle(ObjectUpdateMixin, View):
 
 class CursoDocenciaExtracurricularJSON(View):
     otros = False
+
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
@@ -78,7 +81,8 @@ class CursoDocenciaExtracurricularDetalle(ObjectUpdateMixin, View):
 class CursoDocenciaEliminar(View):
     def get(self, request, pk):
         try:
-            item = get_object_or_404(CursoDocenciaEscolarizado, Q(pk=pk, academicos_participantes=request.user) | Q(pk=pk, usuario=request.user))
+            item = get_object_or_404(CursoDocenciaEscolarizado,
+                                     Q(pk=pk, academicos_participantes=request.user) | Q(pk=pk, usuario=request.user))
             item.delete()
             return redirect('../')
         except:
@@ -87,6 +91,7 @@ class CursoDocenciaEliminar(View):
 
 class ArticuloDocenciaJSON(View):
     otros = False
+
     def get(self, request):
 
         try:
@@ -135,25 +140,52 @@ class ArticuloDocenciaEliminar(View):
 
 class LibroDocenciaJSON(View):
     otros = False
+
     def get(self, request):
 
         try:
             usuarioid = User.objects.get(username=request.user.username).id
             if self.otros:
-                items = Libro.objects.filter(tipo='DOCENCIA').exclude(Q(autores__id__exact=usuarioid)
-                                                                           & Q(coordinadores__id__exact=usuarioid) & Q(agradecimientos__id__exact=usuarioid)
-                                                                           & Q(prologo__id__exact=usuarioid))
+                items = Libro.objects.filter(tipo='DOCENCIA').exclude(
+                    Q(autores__id__exact=usuarioid) & Q(editores__id__exact=usuarioid) & Q(
+                        coordinadores__id__exact=usuarioid) & Q(compiladores__id__exact=usuarioid) & Q(
+                        agradecimientos__id__exact=usuarioid))
             else:
-                items = Libro.objects.filter(tipo='DOCENCIA').filter(Q(autores__id__exact=usuarioid)
-                                                                           | Q(coordinadores__id__exact=usuarioid) | Q(agradecimientos__id__exact=usuarioid)
-                                                                           | Q(prologo__id__exact=usuarioid))
+                items = Libro.objects.filter(tipo='DOCENCIA').filter(
+                    Q(autores__id__exact=usuarioid) & Q(editores__id__exact=usuarioid) | Q(
+                        coordinadores__id__exact=usuarioid) | Q(compiladores__id__exact=usuarioid) | Q(
+                        agradecimientos__id__exact=usuarioid))
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'editorial_text', 'ciudad', 'status', 'fecha'))
+                                         fields=(
+                                         'nombre', 'editorial_text', 'ciudad_text', 'fecha_enviado', 'fecha_aceptado',
+                                         'fecha_enprensa', 'fecha_publicado', 'status'))
 
             json = json.replace('PUBLICADO', 'Publicado')
-            json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('EN_PRENSA', 'En prensa')
             json = json.replace('ENVIADO', 'Enviado')
+
+            json = json.replace('"fecha_enviado": null,', '')
+            json = json.replace('"fecha_aceptado": null,', '')
+            json = json.replace('"fecha_enprensa": null,', '')
+            json = json.replace('"fecha_publicado": null,', '')
+
+            json = json.replace('"fecha_enviado": null', '')
+            json = json.replace('"fecha_aceptado": null', '')
+            json = json.replace('"fecha_enprensa": null', '')
+            json = json.replace('"fecha_publicado": null', '')
+
+            json = json.replace('"fecha_enviado"', '"fecha"')
+            json = json.replace('"fecha_aceptado"', '"fecha"')
+            json = json.replace('"fecha_enprensa"', '"fecha"')
+            json = json.replace('"fecha_publicado"', '"fecha"')
+
+            json = json.replace('"fecha": null}', '}')
+            json = json.replace(',    }', '}')
+            json = json.replace(',   }', '}')
+            json = json.replace(',  }', '}')
+            json = json.replace(', }', '}')
+            json = json.replace(',}', '}')
 
             return HttpResponse(json, content_type='application/json')
         except:
@@ -173,7 +205,8 @@ class LibroDocenciaLista(ObjectCreateVarMixin, View):
             new_obj.tipo = 'DOCENCIA'
             new_obj = bound_form.save()
 
-            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(new_obj.pk)) #corregir el redirect
+            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(
+                new_obj.pk))  # corregir el redirect
 
         else:
             return render(request, self.template_name, {'form': bound_form, 'aux': self.aux, 'active': 'agregar'})
@@ -187,7 +220,8 @@ class LibroDocenciaDetalle(ObjectUpdateVarMixin, View):
 
     def get(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
-        return render(request, self.template_name, {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
+        return render(request, self.template_name,
+                      {'form': self.form_class(instance=obj), 'aux': self.aux, 'active': 'detalle'})
 
     def post(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
@@ -195,7 +229,8 @@ class LibroDocenciaDetalle(ObjectUpdateVarMixin, View):
         if bound_form.is_valid():
             det_obj = bound_form.save()
             print(det_obj)
-            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(det_obj.pk))  # corregir el redirect
+            return redirect("/" + self.aux['url_categoria'] + "/" + self.aux['url_seccion'] + "/" + str(
+                det_obj.pk))  # corregir el redirect
         else:
             return render(request, self.template_name, {'aux': self.aux, 'form': bound_form, 'active': 'detalle'})
 
@@ -210,25 +245,14 @@ class LibroDocenciaEliminar(View):
             raise Http404
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 class ProgramaEstudioJSON(View):
     otros = False
+
     def get(self, request):
 
         try:
             usuarioid = User.objects.get(username=request.user.username).id
-            items = ProgramaEstudio.objects.filter(usuario__id__exact=usuarioid,)
+            items = ProgramaEstudio.objects.filter(usuario__id__exact=usuarioid, )
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'nivel', 'fecha'))
 
@@ -239,6 +263,7 @@ class ProgramaEstudioJSON(View):
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
+
 
 class ProgramaEstudioLista(ObjectCreateMixin, View):
     form_class = ProgramaEstudioForm
