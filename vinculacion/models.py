@@ -29,9 +29,10 @@ STATUS_PROYECTO = getattr(settings, 'STATUS_PROYECTO', (('NUEVO', 'Nuevo'), ('EN
 class ArbitrajePublicacionAcademica(models.Model):
     tipo = models.CharField(max_length=20, choices=ARBITRAJE_ACADEMICO__TIPO)
     revista = models.ForeignKey(Revista, blank=True, null=True, on_delete=models.DO_NOTHING)
-    libro = models.CharField(max_length=255, blank=True, null=True, )
-    capitulo_libro = models.CharField(max_length=255, blank=True, null=True, )
+    libro = models.CharField(max_length=255, blank=True, null=True)
+    capitulo_libro = models.CharField(max_length=255, blank=True, null=True)
     fecha_dictamen = models.DateField()
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
@@ -118,6 +119,7 @@ class ConvenioOtraEntidad(models.Model):
     participantes = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios',
                                            verbose_name='Académicos participantes')
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING, blank=True, null=True)
+    ambito = models.CharField(max_length=20, choices=(('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'INTERNACIONAL')))
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_inicio)
