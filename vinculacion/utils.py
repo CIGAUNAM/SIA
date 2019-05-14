@@ -41,9 +41,9 @@ class ArbitrajePublicacionAcademicaContext:
 
 
 class OtraComisionContext:
-    obj = 'otra comisión'
-    objs = 'otras comisiones'
-    Objs = 'Otras comisiones'
+    obj = 'otra comisión de arbitraje'
+    objs = 'otras comisiones de arbitraje'
+    Objs = 'Otras comisiones de arbitraje'
     url_seccion = 'otras-comisiones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,

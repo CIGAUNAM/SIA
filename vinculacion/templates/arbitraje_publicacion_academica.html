@@ -14,7 +14,8 @@
     <div id="d_revista">
         <p><strong>Revista:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre de la revista donde se publicó el artículo arbitrado."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+               title="Nombre de la revista donde se publicó el artículo arbitrado."><i
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -67,6 +68,38 @@
         </div>
         </p>
     </div>
+    <div id="d_institucion">
+        <p>
+            <strong>Institución que solicita el dictamen:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Institución que solicita el dictamen.">
+                <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.institucion }}
+                <div class="input-group-addon">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
+                    </a>
+                </span>
+                </div>
+
+                <div class="input-group-addon">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
+                    <i class="fa fa-plus"></i>
+                    </a>
+                </span>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Fecha de dictamen:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de dictamen del arbitraje."><i
@@ -85,60 +118,71 @@
         $('#d_revista').hide();
         $('#d_libro').hide();
         $('#d_capitulo_libro').hide();
+        $('#d_institucion').hide();
 
         $("#id_tipo").on('change', function () {
             if ($('#id_tipo').val() == 'ARTICULO') {
-                $("#id_libro").val(null);
-                $("#id_capitulo_libro").val(null);
-                //$("#id_financiamiento_extraordinario").val(null).trigger('change');
+                $("#id_libro").val(null).trigger('change');
+                $("#id_capitulo_libro").val(null).trigger('change');
+                $("#id_institucion").val(null).trigger('change');
 
                 $("#d_revista").show('slow');
                 $("#d_libro").hide('slow');
                 $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").hide('slow');
 
                 $("#id_revista").attr("required", "true");
                 $("#id_libro").attr("required", null);
                 $("#id_capitulo_libro").attr("required", null);
+                $("#id_institucion").attr("required", null);
             }
 
             if ($('#id_tipo').val() == 'LIBRO') {
                 $("#id_revista").val(null).trigger('change');
-                $("#id_capitulo_libro").val(null);
+                $("#id_capitulo_libro").val(null).trigger('change');
 
                 $("#d_revista").hide('slow');
                 $("#d_libro").show('slow');
                 $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").show('slow');
 
                 $("#id_revista").attr("required", null);
-                $("#id_libro").attr("required", "true");
                 $("#id_capitulo_libro").attr("required", null);
+                $("#id_libro").attr("required", "true");
+                $("#id_institucion").attr("required", "true");
+
             }
 
             if ($('#id_tipo').val() == 'CAPITULO_LIBRO') {
                 $("#id_revista").val(null).trigger('change');
-                $("#id_libro").val(null);
+                $("#id_libro").val(null).trigger('change');
 
                 $("#d_revista").hide('slow');
                 $("#d_libro").hide('slow');
+                $("#d_institucion").show('slow');
                 $("#d_capitulo_libro").show('slow');
 
                 $("#id_revista").attr("required", null);
                 $("#id_libro").attr("required", null);
                 $("#id_capitulo_libro").attr("required", "true");
+                $("#id_institucion").attr("required", "true");
             }
 
             if ($('#id_tipo').val() == '') {
                 $("#id_revista").val(null).trigger('change');
                 $("#id_libro").val(null);
                 $("#id_capitulo_libro").val(null);
+                $("#id_institucion").val(null);
 
                 $("#d_revista").hide('slow');
                 $("#d_libro").hide('slow');
                 $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").hide('slow');
 
                 $("#id_revista").attr("required", null);
                 $("#id_libro").attr("required", null);
                 $("#id_capitulo_libro").attr("required", null);
+                $("#id_institucion").attr("required", null);
             }
         });
     </script>
@@ -158,7 +202,8 @@
     <div id="d_libro">
         <p><strong>Revista:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Nombre de la revista donde se publicó el artículo arbitrado."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+               title="Nombre de la revista donde se publicó el artículo arbitrado."><i
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
@@ -211,6 +256,38 @@
         </div>
         </p>
     </div>
+    <div id="d_institucion">
+        <p>
+            <strong>Institución que solicita el dictamen:</strong>
+            <a href="#" data-toggle="tooltip" data-placement="right"
+               title="Institución que solicita el dictamen.">
+                <i class="fa fa-question-circle"></i></a>
+            <i class="fa fa-edit"></i>
+        <div class="form-group" style="margin-top: -10px;">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                {{ form.institucion }}
+                <div class="input-group-addon">
+                <span id="boton-detalle-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Mostrar o editar los detalles adicionales de la institución seleccionada. La edición solo se permite cuando el registro es reciente y no está siendo usado por nadie más, y que no haya sido verificado aún por un administrador. Si no se ha seleccionado ningún elemento no se puede mostrar el detalle, pues no se puede obtener el detalle de un elemento vacío.">
+                    <i class="fa fa-eye"></i>
+                    </a>
+                </span>
+                </div>
+
+                <div class="input-group-addon">
+                <span id="boton-agregar-institucion">
+                    <a data-toggle="tooltip" data-placement="left" style="cursor: pointer;" }
+                       title="Agregar una institución nueva cuando no existe en los registros.">
+                    <i class="fa fa-plus"></i>
+                    </a>
+                </span>
+                </div>
+            </div>
+        </div>
+        </p>
+    </div>
     <p><strong>Fecha de dictamen:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Fecha de dictamen del arbitraje."><i
@@ -229,72 +306,121 @@
         $('#d_revista').hide();
         $('#d_libro').hide();
         $('#d_capitulo_libro').hide();
+        $('#d_institucion').hide();
+
 
         if ($("#id_tipo").val()) {
-            if ($("#id_tipo_financiamiento").val() == 'ARTICULO') {
-                $("#d_revista").show();
-            }
-            if ($("#id_tipo_financiamiento").val() == 'LIBRO') {
-                $("#d_libro").show();
-            }
-            if ($("#id_tipo_financiamiento").val() == 'CAPITULO_LIBRO') {
-                $("#d_capitulo_libro").show();
-            }
-        }
-
-        $("#id_tipo").on('change', function () {
             if ($('#id_tipo').val() == 'ARTICULO') {
-                $("#id_libro").val(null);
-                $("#id_capitulo_libro").val(null);
-                //$("#id_financiamiento_extraordinario").val(null).trigger('change');
+                $("#id_libro").val(null).trigger('change');
+                $("#id_capitulo_libro").val(null).trigger('change');
+                $("#id_institucion").val(null).trigger('change');
 
                 $("#d_revista").show('slow');
                 $("#d_libro").hide('slow');
                 $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").hide('slow');
 
                 $("#id_revista").attr("required", "true");
                 $("#id_libro").attr("required", null);
                 $("#id_capitulo_libro").attr("required", null);
+                $("#id_institucion").attr("required", null);
             }
 
             if ($('#id_tipo').val() == 'LIBRO') {
                 $("#id_revista").val(null).trigger('change');
-                $("#id_capitulo_libro").val(null);
+                $("#id_capitulo_libro").val(null).trigger('change');
 
                 $("#d_revista").hide('slow');
                 $("#d_libro").show('slow');
                 $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").show('slow');
 
                 $("#id_revista").attr("required", null);
-                $("#id_libro").attr("required", "true");
                 $("#id_capitulo_libro").attr("required", null);
+                $("#id_libro").attr("required", "true");
+                $("#id_institucion").attr("required", "true");
+
             }
 
             if ($('#id_tipo').val() == 'CAPITULO_LIBRO') {
                 $("#id_revista").val(null).trigger('change');
-                $("#id_libro").val(null);
+                $("#id_libro").val(null).trigger('change');
 
                 $("#d_revista").hide('slow');
                 $("#d_libro").hide('slow');
+                $("#d_institucion").show('slow');
                 $("#d_capitulo_libro").show('slow');
 
                 $("#id_revista").attr("required", null);
                 $("#id_libro").attr("required", null);
                 $("#id_capitulo_libro").attr("required", "true");
+                $("#id_institucion").attr("required", "true");
+            }
+        }
+
+        $("#id_tipo").on('change', function () {
+            if ($('#id_tipo').val() == 'ARTICULO') {
+                $("#id_libro").val(null).trigger('change');
+                $("#id_capitulo_libro").val(null).trigger('change');
+                $("#id_institucion").val(null).trigger('change');
+
+                $("#d_revista").show('slow');
+                $("#d_libro").hide('slow');
+                $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").hide('slow');
+
+                $("#id_revista").attr("required", "true");
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", null);
+                $("#id_institucion").attr("required", null);
+            }
+
+            if ($('#id_tipo').val() == 'LIBRO') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_capitulo_libro").val(null).trigger('change');
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").show('slow');
+                $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").show('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_capitulo_libro").attr("required", null);
+                $("#id_libro").attr("required", "true");
+                $("#id_institucion").attr("required", "true");
+
+            }
+
+            if ($('#id_tipo').val() == 'CAPITULO_LIBRO') {
+                $("#id_revista").val(null).trigger('change');
+                $("#id_libro").val(null).trigger('change');
+
+                $("#d_revista").hide('slow');
+                $("#d_libro").hide('slow');
+                $("#d_institucion").show('slow');
+                $("#d_capitulo_libro").show('slow');
+
+                $("#id_revista").attr("required", null);
+                $("#id_libro").attr("required", null);
+                $("#id_capitulo_libro").attr("required", "true");
+                $("#id_institucion").attr("required", "true");
             }
 
             if ($('#id_tipo').val() == '') {
                 $("#id_revista").val(null).trigger('change');
                 $("#id_libro").val(null);
                 $("#id_capitulo_libro").val(null);
+                $("#id_institucion").val(null);
 
                 $("#d_revista").hide('slow');
                 $("#d_libro").hide('slow');
                 $("#d_capitulo_libro").hide('slow');
+                $("#d_institucion").hide('slow');
 
                 $("#id_revista").attr("required", null);
                 $("#id_libro").attr("required", null);
                 $("#id_capitulo_libro").attr("required", null);
+                $("#id_institucion").attr("required", null);
             }
         });
     </script>

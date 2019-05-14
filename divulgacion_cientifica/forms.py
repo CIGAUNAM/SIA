@@ -125,6 +125,16 @@ class ParticipacionEventoDivulgacionForm(forms.ModelForm):
     autores_todos = forms.CharField(widget=Textarea(
         attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Autores como aparecen publicados.'}),
                                     required=False)
+    institucion = forms.ModelChoiceField(
+        required=True,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
 
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
                                choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
