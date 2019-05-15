@@ -92,31 +92,32 @@ class Traduccion(models.Model):
 
 
 class EventoDifusion(models.Model):
-    evento_nombre = models.CharField(max_length=255)
-    evento_tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
-    evento_fecha_inicio = models.DateField()
-    evento_fecha_fin = models.DateField()
-    evento_pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    evento_ciudad = models.CharField(max_length=255)
-    evento_ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    evento_numeroponentes = models.PositiveIntegerField()
-    evento_numeroasistentes = models.PositiveIntegerField()
+    eventodifusion_nombre = models.CharField(max_length=255)
+    eventodifusion_tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
+    eventodifusion_fecha_inicio = models.DateField()
+    eventodifusion_fecha_fin = models.DateField()
+    eventodifusion_pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    eventodifusion_ciudad = models.CharField(max_length=255)
+    eventodifusion_ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
+    eventodifusion_numeroponentes = models.PositiveIntegerField()
+    eventodifusion_numeroasistentes = models.PositiveIntegerField()
 
     def __str__(self):
-        return self.evento_nombre
+        return self.eventodifusion_nombre
 
     def natural_key(self):
-        return self.evento_nombre
+        return self.eventodifusion_nombre
 
     def get_absolute_url(self):
         return reverse('eventodifusion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        unique_together = ['evento_fecha_inicio', 'evento_nombre']
+        unique_together = ['eventodifusion_fecha_inicio', 'eventodifusion_nombre']
 
 
 class OrganizacionEventoAcademico(models.Model):
     evento2 = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+    evento = models.ForeignKey(Evento, related_name='OrganizacionEventoAcademico_evento', on_delete=models.DO_NOTHING)
     tipo_participacion = models.CharField(
         max_length=50,
         choices=(('', '-------'), ('COORDINADOR', 'Coordinador general'), ('COMITE_ORGANIZADOR', 'Comité organizador'),
