@@ -116,8 +116,8 @@ class EventoDifusion(models.Model):
 
 
 class OrganizacionEventoAcademico(models.Model):
-    evento2 = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    evento = models.ForeignKey(Evento, blank=True, null=True, related_name='OrganizacionEventoAcademico_evento', on_delete=models.DO_NOTHING)
+    # evento2 = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+    evento = models.ForeignKey(EventoDifusion, related_name='OrganizacionEventoAcademico_evento', on_delete=models.DO_NOTHING)
     tipo_participacion = models.CharField(
         max_length=50,
         choices=(('', '-------'), ('COORDINADOR', 'Coordinador general'), ('COMITE_ORGANIZADOR', 'Comité organizador'),
@@ -130,7 +130,7 @@ class OrganizacionEventoAcademico(models.Model):
     apoyo_tecnico = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
 
     def __str__(self):
-        return "{}, {}".format(self.evento2, self.tipo_participacion)
+        return "{}, {}".format(self.evento, self.tipo_participacion)
 
     def get_absolute_url(self):
         return reverse('organizacion_evento_academico_detalle', kwargs={'pk': self.pk})

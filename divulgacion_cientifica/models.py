@@ -98,6 +98,31 @@ class EventoDivulgacion(models.Model):
         unique_together = ['evento_fecha_inicio', 'evento_nombre']
 
 
+class EventoDivulgacion(models.Model):
+    eventodivulgacion_nombre = models.CharField(max_length=255)
+    eventodivulgacion_tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
+    eventodivulgacion_fecha_inicio = models.DateField()
+    eventodivulgacion_fecha_fin = models.DateField()
+    eventodivulgacion_pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    eventodivulgacion_ciudad = models.CharField(max_length=255)
+    eventodivulgacion_ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
+    eventodivulgacion_numeroponentes = models.PositiveIntegerField()
+    eventodivulgacion_numeroasistentes = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.eventodivulgacion_nombre
+
+    def natural_key(self):
+        return self.eventodivulgacion_nombre
+
+    def get_absolute_url(self):
+        return reverse('eventodivulgacion_detalle', kwargs={'pk': self.pk})
+
+    class Meta:
+        unique_together = ['eventodivulgacion_fecha_inicio', 'eventodivulgacion_nombre']
+
+
+
 class OrganizacionEventoDivulgacion(models.Model):
     evento2 = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
     tipo_participacion = models.CharField(
