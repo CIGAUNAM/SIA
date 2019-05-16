@@ -5648,7 +5648,7 @@
     "evento": 742,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11
+    "usuario": 11,
     "coordinador_general": null,
     "comite_organizador": [
       11
@@ -6363,7 +6363,7 @@
     "evento": 1018,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [
       50

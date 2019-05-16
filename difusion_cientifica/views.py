@@ -51,102 +51,6 @@ class MemoriaInExtensoEliminar(View):
             raise Http404
 
 
-class ResenaJSON(View):
-    otros = False
-    def get(self, request):
-        try:
-            usuarioid = User.objects.get(username=request.user.username).id
-            if self.otros:
-                items = Resena.objects.all().exclude(autores__id__exact=usuarioid)
-            else:
-                items = Resena.objects.filter(autores__id__exact=usuarioid)
-
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'tipo', 'libro_resenado', 'articulo_resenado', 'revista_publica', 'fecha'))
-            json = json.replace('"libro_resenado": null, ', '')
-            json = json.replace('"articulo_resenado": null, ', '')
-            json = json.replace('LIBRO', 'Libro')
-            json = json.replace('ARTICULO', 'Artículo')
-            json = json.replace('articulo_resenado', 'publicacion_resenada')
-            json = json.replace('libro_resenado', 'publicacion_resenada')
-
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class ResenaLista(ObjectCreateVarMixin, View):
-    form_class = ResenaForm
-    model = Resena
-    aux = ResenaContext.contexto
-    template_name = 'resena.html'
-
-
-class ResenaDetalle(ObjectUpdateVarMixin, View):
-    form_class = ResenaForm
-    model = Resena
-    aux = ResenaContext.contexto
-    template_name = 'resena.html'
-
-
-class ResenaEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(Resena, pk=pk, usuario=request.user)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
-class TraduccionJSON(View):
-    otros = False
-    def get(self, request):
-        try:
-            usuarioid = User.objects.get(username=request.user.username).id
-            if self.otros:
-                items = Traduccion.objects.all().exclude(autores__id__exact=usuarioid)
-            else:
-                items = Traduccion.objects.filter(autores__id__exact=usuarioid)
-
-            json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'tipo', 'libro', 'articulo', 'fecha'))
-            json = json.replace('"libro": null, ', '')
-            json = json.replace('"articulo": null, ', '')
-            json = json.replace('LIBRO', 'Libro')
-            json = json.replace('ARTICULO', 'Artículo')
-            json = json.replace('articulo', 'publicacion')
-            json = json.replace('libro', 'publicacion')
-
-            return HttpResponse(json, content_type='application/json')
-        except:
-            raise Http404
-
-
-class TraduccionLista(ObjectCreateVarMixin, View):
-    form_class = TraduccionForm
-    model = Traduccion
-    aux = TraduccionContext.contexto
-    template_name = 'traduccion.html'
-
-
-class TraduccionDetalle(ObjectUpdateVarMixin, View):
-    form_class = TraduccionForm
-    model = Traduccion
-    aux = TraduccionContext.contexto
-    template_name = 'traduccion.html'
-
-
-class TraduccionEliminar(View):
-    def get(self, request, pk):
-        try:
-            item = get_object_or_404(Resena, pk=pk, usuario=request.user)
-            item.delete()
-            return redirect('../')
-        except:
-            raise Http404
-
-
 class OrganizacionEventoAcademicoJSON(View):
     def get(self, request):
         try:
@@ -154,7 +58,7 @@ class OrganizacionEventoAcademicoJSON(View):
 
             items = OrganizacionEventoAcademico.objects.filter(usuario__id=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('evento2', 'tipo_participacion'))
+                                         fields=('evento', 'tipo_participacion'))
 
             return HttpResponse(json, content_type='application/json')
         except:

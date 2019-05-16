@@ -9,18 +9,6 @@ urlpatterns = [
     url(r'^memorias-in-extenso/(?P<pk>[\w\-]+)/eliminar$', MemoriaInExtensoEliminar.as_view(), name='memoria_in_extenso_eliminar'),
     url(r'^memorias-in-extenso/(?P<pk>[\w\-]+)/$', MemoriaInExtensoDetalle.as_view(), name='memoria_in_extenso_detalle'),
 
-    url(r'^resenas/json/', ResenaJSON.as_view(), name='resena_lista__json'),
-    url(r'^resenas/json-otros/', ResenaJSON.as_view(otros=True), name='resena_lista_otros__json'),
-    url(r'^resenas/$', ResenaLista.as_view(), name='resena_lista'),
-    url(r'^resenas/(?P<pk>[\w\-]+)/eliminar$', ResenaEliminar.as_view(), name='resena_eliminar'),
-    url(r'^resenas/(?P<pk>[\w\-]+)/$', ResenaDetalle.as_view(), name='resena_detalle'),
-
-    url(r'^traducciones/json/', TraduccionJSON.as_view(), name='traduccion_lista__json'),
-    url(r'^traducciones/json-otros/', TraduccionJSON.as_view(otros=True), name='traduccion_lista_otros__json'),
-    url(r'^traducciones/$', TraduccionLista.as_view(), name='traduccion_lista'),
-    url(r'^traducciones/(?P<pk>[\w\-]+)/eliminar$', TraduccionEliminar.as_view(), name='traduccion_eliminar'),
-    url(r'^traducciones/(?P<pk>[\w\-]+)/$', TraduccionDetalle.as_view(), name='traduccion_detalle'),
-
     url(r'^organizacion-eventos-academicos/json/', OrganizacionEventoAcademicoJSON.as_view(), name='organizacion_evento_academico_lista__json'),
     #url(r'^organizacion-eventos-academicos/json-otros/', OrganizacionEventoAcademicoJSON.as_view(otros=True), name='organizacion_evento_academico_lista_otros__json'),
     url(r'^organizacion-eventos-academicos/$', OrganizacionEventoAcademicoLista.as_view(), name='organizacion_evento_academico_lista'),
