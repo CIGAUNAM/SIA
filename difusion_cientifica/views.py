@@ -6,6 +6,10 @@ from SIA.utils import *
 from . forms import *
 from . utils import *
 from . models import *
+from . serializers import EventoDifusionSerializer
+
+from rest_framework import generics
+from django.core import serializers
 
 # Create your views here.
 
@@ -141,3 +145,13 @@ class ParticipacionEventoAcademicoEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
+
+
+class RESTEventoDifusionLista(generics.ListCreateAPIView):
+    queryset = EventoDifusion.objects.all()
+    serializer_class = EventoDifusionSerializer
+
+class RESTEventoDifusionDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = InstitucionSimple.objects.all()
+    serializer_class = EventoDifusionSerializer

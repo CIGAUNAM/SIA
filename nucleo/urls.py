@@ -179,8 +179,9 @@ urlpatterns = [
     url(r'^rest/paises/(?P<pk>[0-9]+)/$', RESTPaisDetalle.as_view()),
     url(r'^rest/instituciones/$', RESTInstitucionLista.as_view()),
     url(r'^rest/instituciones/(?P<pk>[0-9]+)/$', RESTInstitucionDetalle.as_view()),
-    #url(r'^rest/dependencias/$', RESTDependenciaLista.as_view()),
-    #url(r'^rest/dependencias/(?P<pk>[0-9]+)/$', RESTDependenciaDetalle.as_view()),
+
+
+
     url(r'^rest/programas_licenciatura/$', RESTProgramaLicenciaturaLista.as_view()),
     url(r'^rest/programas_licenciatura/(?P<pk>[0-9]+)/$', RESTProgramaLicenciaturaDetalle.as_view()),
     url(r'^rest/programas_maestria/$', RESTProgramaMaestriaLista.as_view()),
@@ -190,6 +191,8 @@ urlpatterns = [
 
     url(r'^rest/revistas/$', RESTRevistaLista.as_view()),
     url(r'^rest/revistas/(?P<pk>[0-9]+)/$', RESTRevistaDetalle.as_view()),
+
+
 
     # url(r'^rest/cargos/$', views.CargoList.as_view()),
     # url(r'^rest/nombre/(?P<pk>[0-9]+)/$', views.CargoDetail.as_view()),

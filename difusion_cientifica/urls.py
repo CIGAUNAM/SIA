@@ -21,4 +21,6 @@ urlpatterns = [
     url(r'^participacion-eventos-academicos/(?P<pk>[\w\-]+)/eliminar$', ParticipacionEventoAcademicoEliminar.as_view(), name='participacion_evento_academico_eliminar'),
     url(r'^participacion-eventos-academicos/(?P<pk>[\w\-]+)/$', ParticipacionEventoAcademicoDetalle.as_view(), name='participacion_evento_academico_detalle'),
 
+    url(r'^rest/eventos-difusion/$', RESTEventoDifusionLista.as_view()),
+    url(r'^rest/eventos-difusion/(?P<pk>[0-9]+)/$', RESTEventoDifusionDetalle.as_view()),
 ]
