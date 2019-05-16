@@ -147,10 +147,10 @@ class ParticipacionEventoAcademicoEliminar(View):
             raise Http404
 
 
-
 class RESTEventoDifusionLista(generics.ListCreateAPIView):
     queryset = EventoDifusion.objects.all()
     serializer_class = EventoDifusionSerializer
+
 
 class RESTEventoDifusionDetalle(generics.RetrieveUpdateDestroyAPIView):
     queryset = InstitucionSimple.objects.all()
