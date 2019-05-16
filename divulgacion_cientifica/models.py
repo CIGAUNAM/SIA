@@ -75,30 +75,6 @@ class CapituloLibroDivulgacion(models.Model):
 
 
 class EventoDivulgacion(models.Model):
-    evento_nombre = models.CharField(max_length=255)
-    evento_tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
-    evento_fecha_inicio = models.DateField()
-    evento_fecha_fin = models.DateField()
-    evento_pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    evento_ciudad = models.CharField(max_length=255)
-    evento_ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
-    evento_numeroponentes = models.PositiveIntegerField()
-    evento_numeroasistentes = models.PositiveIntegerField()
-
-    def __str__(self):
-        return self.evento_nombre
-
-    def natural_key(self):
-        return self.evento_nombre
-
-    def get_absolute_url(self):
-        return reverse('eventodivulgacion_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        unique_together = ['evento_fecha_inicio', 'evento_nombre']
-
-
-class EventoDivulgacion(models.Model):
     eventodivulgacion_nombre = models.CharField(max_length=255)
     eventodivulgacion_tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
     eventodivulgacion_fecha_inicio = models.DateField()
@@ -123,8 +99,11 @@ class EventoDivulgacion(models.Model):
 
 
 
+
 class OrganizacionEventoDivulgacion(models.Model):
     evento2 = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+    evento = models.ForeignKey(EventoDivulgacion, blank=True, null=True, related_name='OrganizacionEventoAcademico_evento', on_delete=models.DO_NOTHING)
+
     tipo_participacion = models.CharField(
         max_length=50,
         choices=(('', '-------'), ('COORDINADOR', 'Coordinador general'), ('COMITE_ORGANIZADOR', 'Comité organizador'),
