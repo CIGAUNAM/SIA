@@ -116,7 +116,7 @@ class EventoDifusion(models.Model):
 
 
 class OrganizacionEventoAcademico(models.Model):
-    evento2 = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+    evento2 = models.ForeignKey(Evento, blank=True, null=True,  on_delete=models.DO_NOTHING)
     evento = models.ForeignKey(EventoDifusion, blank=True, null=True, related_name='OrganizacionEventoAcademico_evento', on_delete=models.DO_NOTHING)
     tipo_participacion = models.CharField(
         max_length=50,

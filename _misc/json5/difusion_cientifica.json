@@ -4902,25 +4902,9 @@
   "fields": {
     "evento2": 68,
     "evento": 68,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [
-      14
-    ],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 2,
-  "fields": {
-    "evento2": 69,
-    "evento": 69,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 14,
     "coordinador_general": null,
     "comite_organizador": [
       14
@@ -4934,9 +4918,9 @@
   "fields": {
     "evento2": 70,
     "evento": 70,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 14,
     "coordinador_general": null,
     "comite_organizador": [
       14
@@ -4950,9 +4934,9 @@
   "fields": {
     "evento2": 76,
     "evento": 76,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -4966,9 +4950,9 @@
   "fields": {
     "evento2": 77,
     "evento": 77,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -4982,9 +4966,9 @@
   "fields": {
     "evento2": 78,
     "evento": 78,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -4998,9 +4982,9 @@
   "fields": {
     "evento2": 82,
     "evento": 82,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5014,9 +4998,9 @@
   "fields": {
     "evento2": 79,
     "evento": 79,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": 17,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5028,9 +5012,9 @@
   "fields": {
     "evento2": 80,
     "evento": 80,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5044,9 +5028,9 @@
   "fields": {
     "evento2": 81,
     "evento": 81,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5060,9 +5044,9 @@
   "fields": {
     "evento2": 83,
     "evento": 83,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5076,9 +5060,9 @@
   "fields": {
     "evento2": 84,
     "evento": 84,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5092,9 +5076,9 @@
   "fields": {
     "evento2": 85,
     "evento": 85,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": 17,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5106,9 +5090,9 @@
   "fields": {
     "evento2": 86,
     "evento": 86,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5122,9 +5106,9 @@
   "fields": {
     "evento2": 87,
     "evento": 87,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5138,9 +5122,9 @@
   "fields": {
     "evento2": 88,
     "evento": 88,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5150,41 +5134,13 @@
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 17,
-  "fields": {
-    "evento2": 89,
-    "evento": 89,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 18,
-  "fields": {
-    "evento2": 90,
-    "evento": 90,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 19,
   "fields": {
     "evento2": 91,
     "evento": 91,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 17,
     "coordinador_general": null,
     "comite_organizador": [
       17
@@ -5198,9 +5154,9 @@
   "fields": {
     "evento2": 523,
     "evento": 523,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5214,9 +5170,9 @@
   "fields": {
     "evento2": 524,
     "evento": 524,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5230,9 +5186,9 @@
   "fields": {
     "evento2": 525,
     "evento": 525,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5246,9 +5202,9 @@
   "fields": {
     "evento2": 526,
     "evento": 526,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5262,9 +5218,9 @@
   "fields": {
     "evento2": 527,
     "evento": 527,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5278,9 +5234,9 @@
   "fields": {
     "evento2": 5,
     "evento": 5,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5294,9 +5250,9 @@
   "fields": {
     "evento2": 528,
     "evento": 528,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5310,9 +5266,9 @@
   "fields": {
     "evento2": 529,
     "evento": 529,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5326,9 +5282,9 @@
   "fields": {
     "evento2": 530,
     "evento": 530,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5342,9 +5298,9 @@
   "fields": {
     "evento2": 26,
     "evento": 26,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5358,9 +5314,9 @@
   "fields": {
     "evento2": 531,
     "evento": 531,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5374,9 +5330,9 @@
   "fields": {
     "evento2": 532,
     "evento": 532,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": 32,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5388,9 +5344,9 @@
   "fields": {
     "evento2": 533,
     "evento": 533,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": 32,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5402,9 +5358,9 @@
   "fields": {
     "evento2": 535,
     "evento": 535,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5418,9 +5374,9 @@
   "fields": {
     "evento2": 536,
     "evento": 536,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5434,9 +5390,9 @@
   "fields": {
     "evento2": 537,
     "evento": 537,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5450,9 +5406,9 @@
   "fields": {
     "evento2": 538,
     "evento": 538,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5466,9 +5422,9 @@
   "fields": {
     "evento2": 539,
     "evento": 539,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 32,
     "coordinador_general": null,
     "comite_organizador": [
       32
@@ -5482,9 +5438,9 @@
   "fields": {
     "evento2": 655,
     "evento": 655,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 20,
     "coordinador_general": null,
     "comite_organizador": [
       20
@@ -5494,41 +5450,13 @@
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 42,
-  "fields": {
-    "evento2": 656,
-    "evento": 656,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 43,
-  "fields": {
-    "evento2": 657,
-    "evento": 657,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 44,
   "fields": {
     "evento2": 658,
     "evento": 658,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 20,
     "coordinador_general": null,
     "comite_organizador": [
       20
@@ -5542,9 +5470,9 @@
   "fields": {
     "evento2": 659,
     "evento": 659,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 20,
     "coordinador_general": null,
     "comite_organizador": [
       20
@@ -5558,9 +5486,9 @@
   "fields": {
     "evento2": 660,
     "evento": 660,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 20,
     "coordinador_general": null,
     "comite_organizador": [
       20
@@ -5570,126 +5498,14 @@
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 47,
-  "fields": {
-    "evento2": 661,
-    "evento": 661,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 48,
-  "fields": {
-    "evento2": 662,
-    "evento": 662,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 49,
-  "fields": {
-    "evento2": 663,
-    "evento": 663,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 50,
-  "fields": {
-    "evento2": 664,
-    "evento": 664,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 51,
-  "fields": {
-    "evento2": 665,
-    "evento": 665,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 52,
-  "fields": {
-    "evento2": 666,
-    "evento": 666,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 53,
-  "fields": {
-    "evento2": 667,
-    "evento": 667,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 54,
   "fields": {
     "evento2": 649,
     "evento": 649,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 44,
     "coordinador_general": 44,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 55,
-  "fields": {
-    "evento2": 650,
-    "evento": 650,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": []
   }
@@ -5700,9 +5516,9 @@
   "fields": {
     "evento2": 651,
     "evento": 651,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 44,
     "coordinador_general": 44,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5714,38 +5530,10 @@
   "fields": {
     "evento2": 652,
     "evento": 652,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 44,
     "coordinador_general": 44,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 59,
-  "fields": {
-    "evento2": 595,
-    "evento": 595,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 60,
-  "fields": {
-    "evento2": 586,
-    "evento": 586,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": []
   }
@@ -5756,9 +5544,9 @@
   "fields": {
     "evento2": 728,
     "evento": 728,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": 11,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5770,9 +5558,9 @@
   "fields": {
     "evento2": 593,
     "evento": 593,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": 11,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5784,9 +5572,9 @@
   "fields": {
     "evento2": 814,
     "evento": 814,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": 11,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -5798,9 +5586,9 @@
   "fields": {
     "evento2": 814,
     "evento": 814,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": null,
     "comite_organizador": [
       11
@@ -5814,38 +5602,10 @@
   "fields": {
     "evento2": 729,
     "evento": 729,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 66,
-  "fields": {
-    "evento2": 730,
-    "evento": 730,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 67,
-  "fields": {
-    "evento2": 731,
-    "evento": 731,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": []
   }
@@ -5856,38 +5616,10 @@
   "fields": {
     "evento2": 732,
     "evento": 732,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 69,
-  "fields": {
-    "evento2": 743,
-    "evento": 743,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 70,
-  "fields": {
-    "evento2": 733,
-    "evento": 733,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": []
   }
@@ -5898,69 +5630,13 @@
   "fields": {
     "evento2": 734,
     "evento": 734,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": null,
     "comite_organizador": [
       11
     ],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 72,
-  "fields": {
-    "evento2": 735,
-    "evento": 735,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 73,
-  "fields": {
-    "evento2": 736,
-    "evento": 736,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 74,
-  "fields": {
-    "evento2": 739,
-    "evento": 739,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 75,
-  "fields": {
-    "evento2": 741,
-    "evento": 741,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
     "apoyo_tecnico": []
   }
 },
@@ -5970,9 +5646,9 @@
   "fields": {
     "evento2": 742,
     "evento": 742,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11
     "coordinador_general": null,
     "comite_organizador": [
       11
@@ -5982,41 +5658,13 @@
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 77,
-  "fields": {
-    "evento2": 745,
-    "evento": 745,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 78,
-  "fields": {
-    "evento2": 746,
-    "evento": 746,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 79,
   "fields": {
     "evento2": 747,
     "evento": 747,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": null,
     "comite_organizador": [
       11
@@ -6030,9 +5678,9 @@
   "fields": {
     "evento2": 748,
     "evento": 748,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": 11,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -6044,9 +5692,9 @@
   "fields": {
     "evento2": 749,
     "evento": 749,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": 11,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -6058,9 +5706,9 @@
   "fields": {
     "evento2": 750,
     "evento": 750,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": null,
     "comite_organizador": [
       11
@@ -6074,9 +5722,9 @@
   "fields": {
     "evento2": 751,
     "evento": 751,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": null,
     "comite_organizador": [
       11
@@ -6090,9 +5738,9 @@
   "fields": {
     "evento2": 592,
     "evento": 592,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 11,
     "coordinador_general": null,
     "comite_organizador": [
       11
@@ -6106,9 +5754,9 @@
   "fields": {
     "evento2": 795,
     "evento": 795,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 53,
     "coordinador_general": null,
     "comite_organizador": [
       53
@@ -6122,9 +5770,9 @@
   "fields": {
     "evento2": 796,
     "evento": 796,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 53,
     "coordinador_general": null,
     "comite_organizador": [
       53
@@ -6138,9 +5786,9 @@
   "fields": {
     "evento2": 797,
     "evento": 797,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 53,
     "coordinador_general": null,
     "comite_organizador": [
       53
@@ -6154,9 +5802,9 @@
   "fields": {
     "evento2": 817,
     "evento": 817,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6170,9 +5818,9 @@
   "fields": {
     "evento2": 797,
     "evento": 797,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6186,9 +5834,9 @@
   "fields": {
     "evento2": 795,
     "evento": 795,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6202,9 +5850,9 @@
   "fields": {
     "evento2": 55,
     "evento": 55,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 38,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6218,9 +5866,9 @@
   "fields": {
     "evento2": 780,
     "evento": 780,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 38,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6234,9 +5882,9 @@
   "fields": {
     "evento2": 125,
     "evento": 125,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 38,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6250,9 +5898,9 @@
   "fields": {
     "evento2": 828,
     "evento": 828,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6266,9 +5914,9 @@
   "fields": {
     "evento2": 749,
     "evento": 749,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6282,9 +5930,9 @@
   "fields": {
     "evento2": 829,
     "evento": 829,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6298,9 +5946,9 @@
   "fields": {
     "evento2": 319,
     "evento": 319,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6314,9 +5962,9 @@
   "fields": {
     "evento2": 826,
     "evento": 826,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 15,
     "coordinador_general": null,
     "comite_organizador": [
       15
@@ -6330,9 +5978,9 @@
   "fields": {
     "evento2": 502,
     "evento": 502,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6346,9 +5994,9 @@
   "fields": {
     "evento2": 749,
     "evento": 749,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6362,9 +6010,9 @@
   "fields": {
     "evento2": 931,
     "evento": 931,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6378,9 +6026,9 @@
   "fields": {
     "evento2": 932,
     "evento": 932,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6394,9 +6042,9 @@
   "fields": {
     "evento2": 388,
     "evento": 388,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6410,9 +6058,9 @@
   "fields": {
     "evento2": 933,
     "evento": 933,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6426,9 +6074,9 @@
   "fields": {
     "evento2": 388,
     "evento": 388,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6442,9 +6090,9 @@
   "fields": {
     "evento2": 388,
     "evento": 388,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6458,9 +6106,9 @@
   "fields": {
     "evento2": 388,
     "evento": 388,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6474,9 +6122,9 @@
   "fields": {
     "evento2": 934,
     "evento": 934,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6490,9 +6138,9 @@
   "fields": {
     "evento2": 72,
     "evento": 72,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6506,9 +6154,9 @@
   "fields": {
     "evento2": 935,
     "evento": 935,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6522,9 +6170,9 @@
   "fields": {
     "evento2": 388,
     "evento": 388,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6538,9 +6186,9 @@
   "fields": {
     "evento2": 936,
     "evento": 936,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6554,9 +6202,9 @@
   "fields": {
     "evento2": 84,
     "evento": 84,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6570,9 +6218,9 @@
   "fields": {
     "evento2": 161,
     "evento": 161,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6586,24 +6234,10 @@
   "fields": {
     "evento2": 937,
     "evento": 937,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": 34,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 116,
-  "fields": {
-    "evento2": 82,
-    "evento": 82,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": []
   }
@@ -6614,9 +6248,9 @@
   "fields": {
     "evento2": 76,
     "evento": 76,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 34,
     "coordinador_general": null,
     "comite_organizador": [],
     "apoyo_tecnico": [
@@ -6626,153 +6260,13 @@
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 118,
-  "fields": {
-    "evento2": 956,
-    "evento": 956,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 119,
-  "fields": {
-    "evento2": 243,
-    "evento": 243,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 120,
-  "fields": {
-    "evento2": 942,
-    "evento": 942,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 121,
-  "fields": {
-    "evento2": 946,
-    "evento": 946,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 122,
-  "fields": {
-    "evento2": 958,
-    "evento": 958,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 123,
-  "fields": {
-    "evento2": 959,
-    "evento": 959,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 124,
-  "fields": {
-    "evento2": 957,
-    "evento": 957,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 125,
-  "fields": {
-    "evento2": 960,
-    "evento": 960,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 126,
-  "fields": {
-    "evento2": 961,
-    "evento": 961,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
-  "pk": 127,
-  "fields": {
-    "evento2": 962,
-    "evento": 962,
-    "tipo_participacion": "OTRO",
-    "tipo_participacion_otro": null,
-    "usuario": 1,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
-  }
-},
-{
-  "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 128,
   "fields": {
     "evento2": 975,
     "evento": 975,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 33,
     "coordinador_general": 1999,
     "comite_organizador": [
       33
@@ -6786,9 +6280,9 @@
   "fields": {
     "evento2": 983,
     "evento": 983,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 33,
     "coordinador_general": 11,
     "comite_organizador": [
       33
@@ -6805,12 +6299,12 @@
   "fields": {
     "evento2": 1004,
     "evento": 1004,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 21,
     "coordinador_general": 17,
     "comite_organizador": [
-      520
+      21
     ],
     "apoyo_tecnico": [
       38
@@ -6825,7 +6319,7 @@
     "evento": 1010,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -6839,7 +6333,7 @@
     "evento": 1016,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [
       50
@@ -6855,7 +6349,7 @@
     "evento": 1017,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -6885,7 +6379,7 @@
     "evento": 1019,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [
       50
@@ -6901,7 +6395,7 @@
     "evento": 1020,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [
       50
@@ -6917,7 +6411,7 @@
     "evento": 1021,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -6931,7 +6425,7 @@
     "evento": 1022,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -6945,7 +6439,7 @@
     "evento": 632,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 5,
     "coordinador_general": 5,
     "comite_organizador": [
       160,
@@ -6962,7 +6456,7 @@
     "evento": 1026,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 50,
     "coordinador_general": 50,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -6976,7 +6470,7 @@
     "evento": 979,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 31,
     "coordinador_general": 31,
     "comite_organizador": [
       31,
@@ -6998,7 +6492,7 @@
     "evento": 740,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 1505,
     "coordinador_general": 1505,
     "comite_organizador": [
       1505,
@@ -7020,7 +6514,7 @@
     "evento": 1046,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 43,
     "coordinador_general": 43,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -7032,9 +6526,9 @@
   "fields": {
     "evento2": 1047,
     "evento": 1047,
-    "tipo_participacion": "OTRO",
+    "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 43,
     "coordinador_general": 43,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -7048,7 +6542,7 @@
     "evento": 1048,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 43,
     "coordinador_general": 43,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -7062,7 +6556,7 @@
     "evento": 1050,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 43,
     "coordinador_general": 43,
     "comite_organizador": [],
     "apoyo_tecnico": []
@@ -7076,7 +6570,7 @@
     "evento": 1051,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 35,
     "coordinador_general": 2180,
     "comite_organizador": [
       35,
@@ -7094,7 +6588,7 @@
     "evento": 1056,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 36,
     "coordinador_general": 36,
     "comite_organizador": [
       36
@@ -7110,7 +6604,7 @@
     "evento": 995,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1,
+    "usuario": 36,
     "coordinador_general": 36,
     "comite_organizador": [
       36,
