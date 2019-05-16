@@ -91,12 +91,12 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
 
 
 class OrganizacionEventoDivulgacionForm(forms.ModelForm):
-    evento2 = forms.ModelChoiceField(
-        queryset=Evento.objects.all(),
+    evento = forms.ModelChoiceField(
+        queryset=EventoDivulgacion.objects.all(),
         label="Evento",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Evento.objects.all(),
+            search_fields=['eventodivulgacion_nombre__icontains'],
+            queryset=EventoDivulgacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
