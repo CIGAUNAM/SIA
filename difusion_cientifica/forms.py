@@ -38,94 +38,58 @@ class MemoriaInExtensoForm(forms.ModelForm):
         }
 
 
-
-class ResenaForm(forms.ModelForm):
-    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right', 'unique': True}), required=True, label='Título de reseña')
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                                  required=False)
-    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RESENA__TIPO', ), required=True)
-    libro_resenado = forms.ModelChoiceField(
-        required=False,
-        queryset=Libro.objects.all(),
-        label="Libro reseñado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Libro.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    articulo_resenado = forms.ModelChoiceField(
-        required=False,
-        queryset=ArticuloCientifico.objects.all(),
-        label="Artículo",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ArticuloCientifico.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True)
-    revista_publica = forms.ModelChoiceField(
+class EventoDifusionForm(forms.ModelForm):
+    eventodifusion_nombre = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre del evento académico'}),
         required=True,
-        queryset=Revista.objects.all(),
-        label="Revista que publica",
+        label='Nombre del evento académico')
+    eventodifusion_tipo = forms.ModelChoiceField(
+        queryset=TipoEvento.objects.all(),
+        label="Tipo de evento",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Revista.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+            search_fields=['tipoevento_nombre__icontains'],
+            queryset=TipoEvento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right',
+                   'data-placeholder': 'Seleccione el tipo de evento'}
         )
     )
-    pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}), required=True)
-    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
+    eventodifusion_fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True, label='Fecha de inicio del evento.')
+    eventodifusion_fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True, label='Fecha de fin del evento.')
+    eventodifusion_pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['pais_nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right',
+                   'data-placeholder': 'Seleccione el pais donde se llevó a cabo el evento'}
+        )
+    )
+    eventodifusion_ciudad = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Ciudad donde se llevó a cabo el evento académico'}),
+        required=True,
+        label='Ciudad donde se llevó a cabo el evento académico')
+    eventodifusion_ambito = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
+    eventodifusion_numeroponentes = forms.IntegerField(
+        widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+        required=True, label='Número de alumnos de doctorado', initial='0')
+    eventodifusion_numeroasistentes = forms.IntegerField(
+        widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+        required=True, label='Número de alumnos de doctorado', initial='0')
+
 
     class Meta:
-        model = Resena
-        exclude = []
+        model = EventoDifusion
+        exclude = ['eventodifusion_regverificado', 'eventodifusion_regfechacreado', 'eventodifusion_regfechaactualizado', 'eventodifusion_regusuario']
         widgets = {
-            'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
-
-class TraduccionForm(forms.ModelForm):
-    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título')
-    # titulo_original = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título original')
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}),
-                                  required=False)
-    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RESENA__TIPO', ), required=True)
-    libro = forms.ModelChoiceField(
-        required=False,
-        queryset=Libro.objects.all(),
-        label="Libro",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Libro.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    articulo = forms.ModelChoiceField(
-        required=False,
-        queryset=ArticuloCientifico.objects.all(),
-        label="Artículo",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=ArticuloCientifico.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=True)
-    url = forms.URLField(widget=URLInput(attrs={'class': 'form-control pull-right'}), required=False)
-
-    class Meta:
-        model = Traduccion
-        exclude = []
-        widgets = {
-            'autores': wSortedSelect2MultipleWidget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        }
 
 
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
