@@ -23,4 +23,7 @@ urlpatterns = [
 
     url(r'^rest/eventos-difusion/$', RESTEventoDifusionLista.as_view()),
     url(r'^rest/eventos-difusion/(?P<pk>[0-9]+)/$', RESTEventoDifusionDetalle.as_view()),
+
+    url(r'^eventos-difusion/agregar/$', InstitucionAgregar.as_view(), name='institucion_agregar'),
+    url(r'^eventos-difusion/(?P<pk>[\w\-]+)/$', InstitucionDetalle.as_view(), name='institucion_detalle'),
 ]

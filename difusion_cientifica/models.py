@@ -104,7 +104,7 @@ class EventoDifusion(models.Model):
 
     eventodifusion_regverificado = models.BooleanField(default=False,
                                                     verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
-    eventodifusion_regfechacreado = models.DateField(auto_now_add=True)
+    eventodifusion_regfechacreado = models.DateField(auto_now_add=True, blank=True, null=True)
     eventodifusion_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
     eventodifusion_regusuario = models.ForeignKey(User, on_delete=models.PROTECT,
                                                verbose_name='Usuario que creó el registro de esta entrada', default=1)
