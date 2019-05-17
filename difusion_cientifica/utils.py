@@ -64,7 +64,7 @@ class MemoriaInExtensoContext:
 
 
 class OrganizacionEventoAcademicoContext:
-    obj = 'organización de evento académico)'
+    obj = 'organización de evento académico'
     objs = 'organizaciones de eventos académicos'
     Objs = 'Organización de eventos académicos'
     url_seccion = 'organizacion-eventos-academicos'

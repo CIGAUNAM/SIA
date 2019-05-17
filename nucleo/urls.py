@@ -19,8 +19,6 @@ urlpatterns = [
     # url(r'^ciudades/(?P<pk>[\w\-]+)/eliminar$', CiudadEliminar.as_view(), name='ciudad_eliminar'),
     url(r'^ciudades/(?P<pk>[\w\-]+)/$', CiudadDetalle.as_view(), name='ciudad_detalle'),
 
-    url(r'^instituciones/json/', InstitucionJSON.as_view(), name='institucion_lista__json'),
-    url(r'^instituciones/$', InstitucionLista.as_view(), name='institucion_lista'),
     # url(r'^instituciones/(?P<pk>[\w\-]+)/eliminar$', InstitucionEliminar.as_view(), name='institucion_eliminar'),
     url(r'^instituciones/agregar/$', InstitucionAgregar.as_view(), name='institucion_agregar'),
     url(r'^instituciones/(?P<pk>[\w\-]+)/$', InstitucionDetalle.as_view(), name='institucion_detalle'),
