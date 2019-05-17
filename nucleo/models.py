@@ -586,14 +586,14 @@ class ProgramaDoctorado(models.Model):
 
 
 class TipoEvento(models.Model):
-    nombre = models.CharField(max_length=100, unique=True)
+    tipoevento_nombre = models.CharField(max_length=100, unique=True)
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
-        return self.nombre
+        return self.tipoevento_nombre
 
     def natural_key(self):
-        return self.nombre
+        return self.tipoevento_nombre
 
     def get_absolute_url(self):
         return reverse('tipo_evento_detalle', kwargs={'pk': self.pk})

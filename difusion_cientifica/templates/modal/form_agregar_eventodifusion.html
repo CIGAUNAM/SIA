@@ -1,0 +1,222 @@
+{% if user.is_authenticated %}
+    {% block messages %}
+        {% include 'adminlte/lib/_messages.html' %}
+    {% endblock %}
+
+    <div class="col">
+
+        <form id="modal_form_eventodifusion_agregar" action="" method="post">
+            <div id="agregar_eventodifusion_errors"></div>
+            {{ modal_form_eventodifusion_agregar.errors }}
+            {% csrf_token %}
+
+            <p><strong>Nombre del evento:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Nombre de la eventodifusion."><i
+                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_nombre }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Nombre abreviado en Web of Science (WOS):</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Nombre abreviado en Web of Science (WOS). Solo aplica si existe en WOS">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_nombreabreviadowos }}
+                </div>
+            </div>
+            </p>
+            <p><strong>País:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="País donde se edita la eventodifusion.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_pais }}
+                    <div class="input-group-addon">
+                        <a href="#" data-toggle="tooltip" data-placement="left"
+                           title="Mostrar los detalles adicionales del país.">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                    </div>
+                    <div class="input-group-addon">
+                        <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
+                           title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </p>
+            <p><strong>Índices que la registran:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
+                            los resultados que coincidan con la busqueda.">
+                    <i class="fa fa-question-circle"></i></a>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_indices }}
+                </div>
+            </div>
+            </p>
+            <p><strong>ISSN en eventodifusion impresa:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="ISSN asignado a la eventodifusion impresa donde está publicado el articulo. En caso de estar publicado en eventodifusion impresa."><i
+                        class="fa fa-question-circle"></i></a>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_issn_impreso }}
+                </div>
+            </div>
+            </p>
+            <p><strong>ISSN en eventodifusion digital o en línea:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="ISSN asignado a la eventodifusion en línea donde está publicado el articulo. En caso de estar publicado en línea."><i
+                        class="fa fa-question-circle"></i></a>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_issn_online }}
+                </div>
+            </div>
+            </p>
+
+        </form>
+    </div>
+
+    <script>
+
+        $("#modal_form_eventodifusion_agregar").submit(function (event) {
+            console.log("Handler for .submit() modal_form_eventodifusion_agregar.eventodifusion_");
+            eventodifusion_indices = $("#id_eventodifusion_indices").val();
+            eventodifusion_issn_impreso = $("#id_eventodifusion_issn_impreso").val();
+            eventodifusion_issn_online = $("#id_eventodifusion_issn_online").val();
+
+            var datos = {
+                "eventodifusion_nombre": $("#id_eventodifusion_nombre").val(),
+                "eventodifusion_nombreabreviadowos": $("#id_eventodifusion_nombreabreviadowos").val(),
+                "eventodifusion_pais": $("#id_eventodifusion_pais").val(),
+                "eventodifusion_regusuario": {{ user.pk }}
+            };
+
+            if (eventodifusion_indices) {
+                datos['eventodifusion_indices'] = eventodifusion_indices;
+                console.log("eventodifusion_indices", datos['eventodifusion_indices']);
+            }
+
+            if (eventodifusion_issn_impreso) {
+                datos.eventodifusion_issn_impreso = eventodifusion_issn_impreso;
+            }
+            if (eventodifusion_issn_online) {
+                datos.eventodifusion_issn_online = eventodifusion_issn_online;
+            }
+
+            //var datosurl = new URLSearchParams(datos).toString();
+
+            console.log("datos", datos)
+
+            $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+            $.ajax({
+                method: "POST",
+                url: "/nucleo/rest/eventodifusions/",
+                data: JSON.stringify(datos),
+                processData: true,
+                dataType: 'json',
+                contentType: 'application/json',
+                headers: {"X-CSRFToken": $crf_token},
+
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //console.log(xhr.responseJSON.non_field_errors[0])
+                    console.log("error")
+                    console.log(xhr)
+                    console.log(xhr.responseJSON)
+                    console.log("{{ user.get_username }}")
+                    console.log("{{ user.pk }}")
+                    console.log("{{ user }}")
+
+                    errores_form = '<div class="alert alert-danger alert-dismissible fade1 show" role="alert">' +
+                        '  <p><strong>Se encontraron los siguientes errores:</strong><br /></p><ul>';
+
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_nombre')) {
+                        if (xhr.responseJSON.eventodifusion_nombre == "Este campo no puede estar en blanco.") {
+                            errores_form += "<li>El nombre de la eventodifusion no puede estar en blanco</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_pais')) {
+                        if (xhr.responseJSON.eventodifusion_pais == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El país de la eventodifusion no puede estar en blanco</li>"
+                        }
+                    }
+
+                    errores_form += '</ul><button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '    <span aria-hidden="true">&times;</span>' +
+                        '  </button>' +
+                        '</div>'
+                    $("#agregar_eventodifusion_errors").html(errores_form);
+                },
+
+                success: function (data) {
+                    console.log("success")
+                    $('#id_eventodifusion_nombre').val(null).trigger('change');
+                    $('#id_eventodifusion_nombreabreviadowos').val(null).trigger('change');
+                    $('#id_eventodifusion_pais').val(null).trigger('change');
+                    $('#id_eventodifusion_indices').val(null).trigger('change');
+                    $('#id_eventodifusion_issn_impreso').val(null).trigger('change');
+                    $('#id_eventodifusion_issn_online').val(null).trigger('change');
+
+                    $('#modal_form_eventodifusion_agregar').trigger('reset');
+
+                    console.log("data")
+                    console.log(data);
+
+                    var pais_url = "/nucleo/rest/paises/" + data.eventodifusion_pais.toString() + "/";
+                    console.log(pais_url);
+
+                    $.ajax({
+                        url: pais_url,
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log("error")
+                            console.log(xhr)
+                        },
+                        success: function (dataf) {
+                            console.log("success ajax");
+                            console.log(dataf.pais_nombre);
+                            pais = dataf.pais_nombre;
+                            console.log(pais);
+                            var nuevo_eventodifusion_option = new Option(data.eventodifusion_nombre + " (" + pais + ")", data.id, true, true);
+                            $('#id_eventodifusion').append(nuevo_eventodifusion_option).trigger('change');
+                            $('#agregar-eventodifusion-modal-body').empty();
+                            agregar_eventodifusion_dialog.dialog("close")
+                        }
+                    });
+                }
+            });
+            event.preventDefault();
+        });
+
+    </script>
+
+{% else %}
+    <script>
+        window.location.href = '/login/';
+    </script>
+{% endif %}
