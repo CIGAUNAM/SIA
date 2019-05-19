@@ -453,4 +453,85 @@ $(function () {
         }
     });
 
-})
+    /* ------- */
+
+
+    $("#boton-agregar-eventodifusion").on("click", function (e) {
+        console.log("boton agregar eventodifusion")
+        agregar_eventodifusion_dialog = $("#agregar-eventodifusion").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 900,
+            modal: true,
+            class: 'ui-button-left',
+            buttons: {
+                agregar: {
+                    text: "Agregar eventodifusion",
+                    click: function () {
+                        $("#modal_form_eventodifusion_agregar").submit()
+                    },
+                    class: 'btn btn-success ui-button-left'
+                },
+                cancelar: {
+                    text: "Cancelar",
+                    click: function () {
+                        $(this).dialog("close")
+                    },
+                    class: 'btn btn-primary ui-button-left'
+                }
+            },
+
+            open: function (event, ui) {
+                $('#agregar-eventodifusion-modal-body').load('/difusion-cientifica/eventos-difusion/agregar/', function () {
+                    $("#id_eventodifusion_tipo").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
+                    $("#id_eventodifusion_pais").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
+                    $("#id_eventodifusion_ambito").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
+                    $('#id_eventodifusion_fecha_inicio').datepicker({format: 'yyyy-mm-dd'});
+                    $('#id_eventodifusion_fecha_fin').datepicker({format: 'yyyy-mm-dd'});
+                });
+            }
+        });
+        agregar_eventodifusion_dialog.dialog("open");
+    });
+
+    $("#boton-detalle-eventodifusion").on("click", function (e) {
+        if ($("#id_programa").val() == null) {
+            e.stopPropagation();
+        } else {
+
+            detalle_eventodifusion_dialog = $("#detalle-eventodifusion").dialog({
+                autoOpen: false,
+                height: 500,
+                width: 900,
+                modal: true,
+                buttons: {
+                    actualizar: {
+                        text: "Actualizar eventodifusion",
+                        click: function () {
+                            $("#modal_form_eventodifusion_detalle").submit()
+                        },
+                        class: 'btn btn-success ui-button-left'
+                    },
+                    cancelar: {
+                        text: "Cancelar",
+                        click: function () {
+                            $(this).dialog("close")
+                        },
+                        class: 'btn btn-primary ui-button-left'
+                    }
+                },
+
+                open: function (event, ui) {
+                    $('#detalle-eventodifusion-modal-body').load(('/difusion-cientifica/eventos-difusion/' + $("#id_evento").val().toString()) + "/", function () {
+                        console.log("detalle start")
+                        $("#id_eventodifusion_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
+
+                    });
+                    e.stopPropagation();
+                }
+            });
+            detalle_programadoctorado_dialog.dialog("open");
+        }
+    });
+
+});

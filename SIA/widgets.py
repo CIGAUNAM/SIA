@@ -16,6 +16,16 @@ class wDateInput(DateInput):
             return formats.localize_input(value, self.format or formats.get_format(self.format_key)[3])
 
 
+
+class dialogDateInput(DateInput):
+    format_key = 'DATE_INPUT_FORMATS'
+    template_name = 'widgets/wdate.html'
+
+    def format_value(self, value):
+        if value is not None:
+            return formats.localize_input(value, self.format or formats.get_format(self.format_key)[1])
+
+
 class wSortedChoiceWidget(ChoiceWidget):
     def optgroups(self, name, value, attrs=None):
         """Return a list of optgroups for this widget."""
