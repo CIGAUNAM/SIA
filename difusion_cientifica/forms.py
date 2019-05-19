@@ -54,10 +54,10 @@ class EventoDifusionForm(forms.ModelForm):
         )
     )
     eventodifusion_fecha_inicio = forms.DateField(
-        widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True, label='Fecha de inicio del evento.')
     eventodifusion_fecha_fin = forms.DateField(
-        widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True, label='Fecha de fin del evento.')
     eventodifusion_pais = forms.ModelChoiceField(
         queryset=Pais.objects.all(),

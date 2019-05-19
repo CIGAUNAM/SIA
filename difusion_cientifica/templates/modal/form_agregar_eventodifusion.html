@@ -12,7 +12,7 @@
 
             <p><strong>Nombre del evento:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="Nombre de la eventodifusion."><i
+                   title="Nombre del evento."><i
                         class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group date">
@@ -23,79 +23,100 @@
                 </div>
             </div>
             </p>
-            <p><strong>Nombre abreviado en Web of Science (WOS):</strong>
+            <p><strong>Tipo de evento:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="Nombre abreviado en Web of Science (WOS). Solo aplica si existe en WOS">
+                   title="Tipo de evento.">
                     <i class="fa fa-question-circle"></i>
-                </a>
+                </a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
-                <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-pencil-square-o"></i>
-                    </div>
-                    {{ modal_form_eventodifusion_agregar.eventodifusion_nombreabreviadowos }}
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_tipo }}
                 </div>
             </div>
             </p>
             <p><strong>País:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="País donde se edita la eventodifusion.">
+                   title="País donde se realizó el evento.">
                     <i class="fa fa-question-circle"></i>
                 </a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
                     {{ modal_form_eventodifusion_agregar.eventodifusion_pais }}
-                    <div class="input-group-addon">
-                        <a href="#" data-toggle="tooltip" data-placement="left"
-                           title="Mostrar los detalles adicionales del país.">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                    </div>
-                    <div class="input-group-addon">
-                        <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
-                           title="Agregar un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                            <i class="fa fa-plus"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
             </p>
-            <p><strong>Índices que la registran:</strong>
+            <p><strong>Ciudad:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a>
+                   title="Ciudad donde se realizó el evento."><i
+                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_ciudad }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Fecha de inicio:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Fecha de inicio del evento."><i
+                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_fecha_inicio }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Fecha de fin:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Fecha de fin del evento."><i
+                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_fecha_fin }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Ámbito:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Ámbito del evento.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-                    {{ modal_form_eventodifusion_agregar.eventodifusion_indices }}
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_ambito }}
                 </div>
             </div>
             </p>
-            <p><strong>ISSN en eventodifusion impresa:</strong>
+            <p><strong>Número de ponentes:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="ISSN asignado a la eventodifusion impresa donde está publicado el articulo. En caso de estar publicado en eventodifusion impresa."><i
-                        class="fa fa-question-circle"></i></a>
+                   title="Número de ponenes que asistieron al evento.">
+                    <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-pencil-square-o"></i>
-                    </div>
-                    {{ modal_form_eventodifusion_agregar.eventodifusion_issn_impreso }}
+                    <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_numeroponentes }}
                 </div>
             </div>
             </p>
-            <p><strong>ISSN en eventodifusion digital o en línea:</strong>
+            <p><strong>Número de asistentes:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="ISSN asignado a la eventodifusion en línea donde está publicado el articulo. En caso de estar publicado en línea."><i
-                        class="fa fa-question-circle"></i></a>
+                   title="Número de asistentes del evento.">
+                    <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-pencil-square-o"></i>
-                    </div>
-                    {{ modal_form_eventodifusion_agregar.eventodifusion_issn_online }}
+                    <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+                    {{ modal_form_eventodifusion_agregar.eventodifusion_numeroasistentes }}
                 </div>
             </div>
             </p>
@@ -107,28 +128,19 @@
 
         $("#modal_form_eventodifusion_agregar").submit(function (event) {
             console.log("Handler for .submit() modal_form_eventodifusion_agregar.eventodifusion_");
-            eventodifusion_indices = $("#id_eventodifusion_indices").val();
-            eventodifusion_issn_impreso = $("#id_eventodifusion_issn_impreso").val();
-            eventodifusion_issn_online = $("#id_eventodifusion_issn_online").val();
 
             var datos = {
                 "eventodifusion_nombre": $("#id_eventodifusion_nombre").val(),
-                "eventodifusion_nombreabreviadowos": $("#id_eventodifusion_nombreabreviadowos").val(),
+                "eventodifusion_tipo": $("#id_eventodifusion_tipo").val(),
+                "eventodifusion_fecha_inicio": $("#id_eventodifusion_fecha_inicio").val(),
+                "eventodifusion_fecha_fin": $("#id_eventodifusion_fecha_fin").val(),
                 "eventodifusion_pais": $("#id_eventodifusion_pais").val(),
+                "eventodifusion_ciudad": $("#id_eventodifusion_ciudad").val(),
+                "eventodifusion_ambito": $("#id_eventodifusion_ambito").val(),
+                "eventodifusion_numeroponentes": $("#id_eventodifusion_numeroponentes").val(),
+                "eventodifusion_numeroasistentes": $("#id_eventodifusion_numeroasistentes").val(),
                 "eventodifusion_regusuario": {{ user.pk }}
             };
-
-            if (eventodifusion_indices) {
-                datos['eventodifusion_indices'] = eventodifusion_indices;
-                console.log("eventodifusion_indices", datos['eventodifusion_indices']);
-            }
-
-            if (eventodifusion_issn_impreso) {
-                datos.eventodifusion_issn_impreso = eventodifusion_issn_impreso;
-            }
-            if (eventodifusion_issn_online) {
-                datos.eventodifusion_issn_online = eventodifusion_issn_online;
-            }
 
             //var datosurl = new URLSearchParams(datos).toString();
 
@@ -137,7 +149,7 @@
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
             $.ajax({
                 method: "POST",
-                url: "/nucleo/rest/eventodifusions/",
+                url: "/difusion-cientifica/rest/eventos-difusion/",
                 data: JSON.stringify(datos),
                 processData: true,
                 dataType: 'json',
@@ -158,14 +170,35 @@
 
                     if (xhr.responseJSON.hasOwnProperty('eventodifusion_nombre')) {
                         if (xhr.responseJSON.eventodifusion_nombre == "Este campo no puede estar en blanco.") {
-                            errores_form += "<li>El nombre de la eventodifusion no puede estar en blanco</li>"
+                            errores_form += "<li>El nombre del evento no puede estar en blanco</li>"
                         }
                     }
                     if (xhr.responseJSON.hasOwnProperty('eventodifusion_pais')) {
                         if (xhr.responseJSON.eventodifusion_pais == "Este campo no puede ser nulo.") {
-                            errores_form += "<li>El país de la eventodifusion no puede estar en blanco</li>"
+                            errores_form += "<li>El país no puede estar en blanco</li>"
                         }
                     }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_ciudad')) {
+                        if (xhr.responseJSON.eventodifusion_ciudad == "Este campo no puede estar en blanco.") {
+                            errores_form += "<li>La ciudad no puede estar en blanco</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_fecha_fin')) {
+                        if (xhr.responseJSON.eventodifusion_fecha_fin == "Fecha con formato erróneo. Use uno de los siguientes formatos en su lugar: YYYY-MM-DD.") {
+                            errores_form += "<li>Fecha con formato erróneo. Usar el siguiente formato: YYYY-MM-DD.</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_fecha_inicio')) {
+                        if (xhr.responseJSON.eventodifusion_fecha_inicio == "Fecha con formato erróneo. Use uno de los siguientes formatos en su lugar: YYYY-MM-DD.") {
+                            errores_form += "<li>Fecha con formato erróneo. Usar el siguiente formato: YYYY-MM-DD.</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_tipo')) {
+                        if (xhr.responseJSON.eventodifusion_tipo == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El campo de tipo no puede ser nulo.</li>"
+                        }
+                    }
+
 
                     errores_form += '</ul><button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
                         '    <span aria-hidden="true">&times;</span>' +
@@ -177,11 +210,14 @@
                 success: function (data) {
                     console.log("success")
                     $('#id_eventodifusion_nombre').val(null).trigger('change');
-                    $('#id_eventodifusion_nombreabreviadowos').val(null).trigger('change');
+                    $('#id_eventodifusion_tipo').val(null).trigger('change');
+                    $('#id_eventodifusion_fecha_inicio').val(null).trigger('change');
+                    $('#id_eventodifusion_fecha_fin').val(null).trigger('change');
                     $('#id_eventodifusion_pais').val(null).trigger('change');
-                    $('#id_eventodifusion_indices').val(null).trigger('change');
-                    $('#id_eventodifusion_issn_impreso').val(null).trigger('change');
-                    $('#id_eventodifusion_issn_online').val(null).trigger('change');
+                    $('#id_eventodifusion_ciudad').val(null).trigger('change');
+                    $('#id_eventodifusion_ambito').val(null).trigger('change');
+                    $('#id_eventodifusion_numeroponentes').val(null).trigger('change');
+                    $('#id_eventodifusion_numeroasistentes').val(null).trigger('change');
 
                     $('#modal_form_eventodifusion_agregar').trigger('reset');
 

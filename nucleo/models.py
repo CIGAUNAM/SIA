@@ -587,7 +587,6 @@ class ProgramaDoctorado(models.Model):
 
 class TipoEvento(models.Model):
     tipoevento_nombre = models.CharField(max_length=100, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.tipoevento_nombre
