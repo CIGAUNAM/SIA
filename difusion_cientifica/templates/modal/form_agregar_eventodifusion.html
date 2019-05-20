@@ -224,26 +224,11 @@
                     console.log("data")
                     console.log(data);
 
-                    var pais_url = "/nucleo/rest/paises/" + data.eventodifusion_pais.toString() + "/";
-                    console.log(pais_url);
-
-                    $.ajax({
-                        url: pais_url,
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            console.log("error")
-                            console.log(xhr)
-                        },
-                        success: function (dataf) {
-                            console.log("success ajax");
-                            console.log(dataf.pais_nombre);
-                            pais = dataf.pais_nombre;
-                            console.log(pais);
-                            var nuevo_eventodifusion_option = new Option(data.eventodifusion_nombre + " (" + pais + ")", data.id, true, true);
-                            $('#id_eventodifusion').append(nuevo_eventodifusion_option).trigger('change');
-                            $('#agregar-eventodifusion-modal-body').empty();
-                            agregar_eventodifusion_dialog.dialog("close")
-                        }
-                    });
+                    var nuevo_eventodifusion_option = new Option(data.eventodifusion_nombre, data.id, true, true);
+                    console.log(nuevo_eventodifusion_option)
+                    $('#id_evento').append(nuevo_eventodifusion_option).trigger('change');
+                    $('#agregar-eventodifusion-modal-body').empty();
+                    agregar_eventodifusion_dialog.dialog("close");
                 }
             });
             event.preventDefault();
