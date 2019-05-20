@@ -585,7 +585,7 @@ $(function () {
     });
 
     $("#boton-detalle-eventodivulgacion").on("click", function (e) {
-        console.log("Clic");
+        console.log("Clic11");
         if ($("#id_evento").val() == null) {
             e.stopPropagation();
         } else {
