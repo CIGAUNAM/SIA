@@ -38,5 +38,9 @@ urlpatterns = [
     url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/eliminar$', ProgramaRadioTelevisionInternetEliminar.as_view(), name='programa_radio_television_internet_eliminar'),
     url(r'^medios-divulgacion/(?P<pk>[\w\-]+)/$', ProgramaRadioTelevisionInternetDetalle.as_view(), name='programa_radio_television_internet_detalle'),
 
+    url(r'^rest/eventos-difusion/$', RESTEventoDivulgacionLista.as_view()),
+    url(r'^rest/eventos-difusion/(?P<pk>[0-9]+)/$', RESTEventoDivulgacionDetalle.as_view()),
 
+    url(r'^eventos-difusion/agregar/$', EventoDivulgacionAgregar.as_view(), name='institucion_agregar'),
+    url(r'^eventos-difusion/(?P<pk>[\w\-]+)/$', EventoDivulgacionDetalle.as_view(), name='institucion_detalle'),
 ]
