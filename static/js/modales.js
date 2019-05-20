@@ -495,7 +495,8 @@ $(function () {
     });
 
     $("#boton-detalle-eventodifusion").on("click", function (e) {
-        if ($("#id_programa").val() == null) {
+        console.log("Clic");
+        if ($("#id_evento").val() == null) {
             e.stopPropagation();
         } else {
 
@@ -524,13 +525,16 @@ $(function () {
                 open: function (event, ui) {
                     $('#detalle-eventodifusion-modal-body').load(('/difusion-cientifica/eventos-difusion/' + $("#id_evento").val().toString()) + "/", function () {
                         console.log("detalle start")
-                        $("#id_eventodifusion_areaconocimiento").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
-
+                        $("#id_eventodifusion_tipo").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
+                        $("#id_eventodifusion_pais").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
+                        $("#id_eventodifusion_ambito").djangoSelect2({dropdownParent: $("#agregar-eventodifusion")});
+                        $('#id_eventodifusion_fecha_inicio').datepicker({format: 'yyyy-mm-dd'});
+                        $('#id_eventodifusion_fecha_fin').datepicker({format: 'yyyy-mm-dd'});
                     });
                     e.stopPropagation();
                 }
             });
-            detalle_programadoctorado_dialog.dialog("open");
+            detalle_eventodifusion_dialog.dialog("open");
         }
     });
 

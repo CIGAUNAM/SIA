@@ -153,7 +153,7 @@ class RESTEventoDifusionLista(generics.ListCreateAPIView):
 
 
 class RESTEventoDifusionDetalle(generics.RetrieveUpdateDestroyAPIView):
-    queryset = InstitucionSimple.objects.all()
+    queryset = EventoDifusion.objects.all()
     serializer_class = EventoDifusionSerializer
 
 
