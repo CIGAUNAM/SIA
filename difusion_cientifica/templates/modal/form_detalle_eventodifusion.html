@@ -5,97 +5,118 @@
 
     <div class="col">
 
-        <form id="modal_form_revista_detalle" action="" method="post">
-            <div id="detalle_revista_errors"></div>
-            {{ modal_form_revista_detalle.errors }}
+        <form id="modal_form_eventodifusion_detalle" action="" method="post">
+            <div id="agregar_eventodifusion_errors"></div>
+            {{ modal_form_eventodifusion_detalle.errors }}
             {% csrf_token %}
 
-            <p><strong>Nombre de la revista:</strong>
+            <p><strong>Nombre del evento:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="Nombre de la revista."><i
+                   title="Nombre del evento."><i
                         class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group date">
                     <div class="input-group-addon">
                         <i class="fa fa-pencil-square-o"></i>
                     </div>
-                    {{ modal_form_revista_detalle.revista_nombre }}
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_nombre }}
                 </div>
             </div>
             </p>
-            <p><strong>Nombre abreviado en Web of Science (WOS):</strong>
+            <p><strong>Tipo de evento:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="Nombre abreviado en Web of Science (WOS). Solo aplica si existe en WOS">
-                    <i class="fa fa-question-circle"></i>
-                </a>
-            <div class="form-group" style="margin-top: -10px;">
-                <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-pencil-square-o"></i>
-                    </div>
-                    {{ modal_form_revista_detalle.revista_nombreabreviadowos }}
-                </div>
-            </div>
-            </p>
-            <p><strong>País:</strong>
-                <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="País donde se edita la revista.">
+                   title="Tipo de evento.">
                     <i class="fa fa-question-circle"></i>
                 </a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-                    {{ modal_form_revista_detalle.revista_pais }}
-                    <div class="input-group-addon">
-                        <a href="#" data-toggle="tooltip" data-placement="left"
-                           title="Mostrar los detalles adicionales del país.">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                    </div>
-                    <div class="input-group-addon">
-                        <a href="/nucleo/paises" data-toggle="tooltip" data-placement="left" target="_blank"
-                           title="detalle un país nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                            <i class="fa fa-plus"></i>
-                        </a>
-                    </div>
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_tipo }}
                 </div>
             </div>
             </p>
-            <p><strong>Índices que la registran:</strong>
+            <p><strong>País:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="Índices que registran o indexan el artículo en sus registros, al escribir el inicio del nombre se filtran
-                            los resultados que coincidan con la busqueda.">
-                    <i class="fa fa-question-circle"></i></a>
+                   title="País donde se realizó el evento.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
-                    {{ modal_form_revista_detalle.revista_indices }}
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_pais }}
                 </div>
             </div>
             </p>
-            <p><strong>ISSN en revista impresa:</strong>
+            <p><strong>Ciudad:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="ISSN asignado a la revista impresa donde está publicado el articulo. En caso de estar publicado en revista impresa."><i
-                        class="fa fa-question-circle"></i></a>
+                   title="Ciudad donde se realizó el evento."><i
+                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group date">
                     <div class="input-group-addon">
                         <i class="fa fa-pencil-square-o"></i>
                     </div>
-                    {{ modal_form_revista_detalle.revista_issn_impreso }}
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_ciudad }}
                 </div>
             </div>
             </p>
-            <p><strong>ISSN en revista digital o en línea:</strong>
+            <p><strong>Fecha de inicio:</strong>
                 <a href="#" data-toggle="tooltip" data-placement="right"
-                   title="ISSN asignado a la revista en línea donde está publicado el articulo. En caso de estar publicado en línea."><i
-                        class="fa fa-question-circle"></i></a>
+                   title="Fecha de inicio del evento."><i
+                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
             <div class="form-group" style="margin-top: -10px;">
                 <div class="input-group date">
                     <div class="input-group-addon">
-                        <i class="fa fa-pencil-square-o"></i>
+                        <i class="fa fa-calendar"></i>
                     </div>
-                    {{ modal_form_revista_detalle.revista_issn_online }}
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_fecha_inicio }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Fecha de fin:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Fecha de fin del evento."><i
+                        class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_fecha_fin }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Ámbito:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Ámbito del evento.">
+                    <i class="fa fa-question-circle"></i>
+                </a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_ambito }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Número de ponentes:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Número de ponenes que asistieron al evento.">
+                    <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_numeroponentes }}
+                </div>
+            </div>
+            </p>
+            <p><strong>Número de asistentes:</strong>
+                <a href="#" data-toggle="tooltip" data-placement="right"
+                   title="Número de asistentes del evento.">
+                    <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+            <div class="form-group" style="margin-top: -10px;">
+                <div class="input-group date">
+                    <div class="input-group-addon"><i class="fa fa-sort-numeric-desc"></i></div>
+                    {{ modal_form_eventodifusion_detalle.eventodifusion_numeroasistentes }}
                 </div>
             </div>
             </p>
@@ -105,37 +126,27 @@
 
     <script>
 
-        $("#modal_form_revista_detalle").submit(function (event) {
-            console.log("Handler for .submit() modal_form_revista_detalle.");
-            revista_indices = $("#id_revista_indices").val();
-            revista_issn_impreso = $("#id_revista_issn_impreso").val();
-            revista_issn_online = $("#id_revista_issn_online").val();
+        $("#modal_form_eventodifusion_detalle").submit(function (event) {
+            console.log("Handler for .submit() modal_form_eventodifusion_detalle.");
 
             var datos = {
-                "revista_nombre": $("#id_revista_nombre").val(),
-                "revista_nombreabreviadowos": $("#id_revista_nombreabreviadowos").val(),
-                "revista_pais": $("#id_revista_pais").val(),
-                "revista_regusuario": {{ user.pk }}
+                "eventodifusion_nombre": $("#id_eventodifusion_nombre").val(),
+                "eventodifusion_tipo": $("#id_eventodifusion_tipo").val(),
+                "eventodifusion_fecha_inicio": $("#id_eventodifusion_fecha_inicio").val(),
+                "eventodifusion_fecha_fin": $("#id_eventodifusion_fecha_fin").val(),
+                "eventodifusion_pais": $("#id_eventodifusion_pais").val(),
+                "eventodifusion_ciudad": $("#id_eventodifusion_ciudad").val(),
+                "eventodifusion_ambito": $("#id_eventodifusion_ambito").val(),
+                "eventodifusion_numeroponentes": $("#id_eventodifusion_numeroponentes").val(),
+                "eventodifusion_numeroasistentes": $("#id_eventodifusion_numeroasistentes").val(),
+                "eventodifusion_regusuario": {{ user.pk }}
             };
-
-
-            if (revista_indices) {
-                datos['revista_indices'] = revista_indices;
-                console.log("revista_indices", datos['revista_indices']);
-            }
-
-            if (revista_issn_impreso) {
-                datos.revista_issn_impreso = revista_issn_impreso;
-            }
-            if (revista_issn_online) {
-                datos.revista_issn_online = revista_issn_online;
-            }
 
             console.log("datos", datos)
 
 
             $crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-            var patchurl = "/nucleo/rest/revistas/" + $("#id_revista").val().toString() + "/";
+            var patchurl = "/difusion-cientifica/rest/eventos-difusion/" + $("#id_evento").val().toString() + "/";
 
             console.log("patchurl:", patchurl);
 
@@ -152,7 +163,7 @@
                     //console.log(xhr.responseJSON.non_field_errors[0])
                     console.log("error")
                     console.log(xhr)
-                    console.log(xhr.responseJSON)
+                    //console.log(xhr.responseJSON)
                     console.log("{{ user.get_username }}")
                     console.log("{{ user.pk }}")
                     console.log("{{ user }}")
@@ -160,14 +171,34 @@
                     errores_form = '<div class="alert alert-danger alert-dismissible fade1 show" role="alert">' +
                         '  <p><strong>Se encontraron los siguientes errores:</strong><br /></p><ul>';
 
-                    if (xhr.responseJSON.hasOwnProperty('revista_nombre')) {
-                        if (xhr.responseJSON.revista_nombre == "Este campo no puede estar en blanco.") {
-                            errores_form += "<li>El nombre de la revista no puede estar en blanco</li>"
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_nombre')) {
+                        if (xhr.responseJSON.eventodifusion_nombre == "Este campo no puede estar en blanco.") {
+                            errores_form += "<li>El nombre del evento no puede estar en blanco</li>"
                         }
                     }
-                    if (xhr.responseJSON.hasOwnProperty('revista_pais')) {
-                        if (xhr.responseJSON.revista_pais == "Este campo no puede ser nulo.") {
-                            errores_form += "<li>El país de la revista no puede estar en blanco</li>"
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_pais')) {
+                        if (xhr.responseJSON.eventodifusion_pais == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El país no puede estar en blanco</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_ciudad')) {
+                        if (xhr.responseJSON.eventodifusion_ciudad == "Este campo no puede estar en blanco.") {
+                            errores_form += "<li>La ciudad no puede estar en blanco</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_fecha_fin')) {
+                        if (xhr.responseJSON.eventodifusion_fecha_fin == "Fecha con formato erróneo. Use uno de los siguientes formatos en su lugar: YYYY-MM-DD.") {
+                            errores_form += "<li>Fecha con formato erróneo. Usar el siguiente formato: YYYY-MM-DD.</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_fecha_inicio')) {
+                        if (xhr.responseJSON.eventodifusion_fecha_inicio == "Fecha con formato erróneo. Use uno de los siguientes formatos en su lugar: YYYY-MM-DD.") {
+                            errores_form += "<li>Fecha con formato erróneo. Usar el siguiente formato: YYYY-MM-DD.</li>"
+                        }
+                    }
+                    if (xhr.responseJSON.hasOwnProperty('eventodifusion_tipo')) {
+                        if (xhr.responseJSON.eventodifusion_tipo == "Este campo no puede ser nulo.") {
+                            errores_form += "<li>El campo de tipo no puede ser nulo.</li>"
                         }
                     }
 
@@ -175,43 +206,31 @@
                         '    <span aria-hidden="true">&times;</span>' +
                         '  </button>' +
                         '</div>'
-                    $("#detalle_revista_errors").html(errores_form);
+                    $("#detalle_eventodifusion_errors").html(errores_form);
                 },
 
                 success: function (data) {
                     console.log("success")
-                    $('#id_revista_nombre').val(null).trigger('change');
-                    $('#id_revista_nombreabreviadowos').val(null).trigger('change');
-                    $('#id_revista_pais').val(null).trigger('change');
-                    $('#id_revista_indices').val(null).trigger('change');
-                    $('#id_revista_issn_impreso').val(null).trigger('change');
-                    $('#id_revista_issn_online').val(null).trigger('change');
+                    $('#id_eventodifusion_nombre').val(null).trigger('change');
+                    $('#id_eventodifusion_tipo').val(null).trigger('change');
+                    $('#id_eventodifusion_fecha_inicio').val(null).trigger('change');
+                    $('#id_eventodifusion_fecha_fin').val(null).trigger('change');
+                    $('#id_eventodifusion_pais').val(null).trigger('change');
+                    $('#id_eventodifusion_ciudad').val(null).trigger('change');
+                    $('#id_eventodifusion_ambito').val(null).trigger('change');
+                    $('#id_eventodifusion_numeroponentes').val(null).trigger('change');
+                    $('#id_eventodifusion_numeroasistentes').val(null).trigger('change');
 
-                    $('#modal_form_revista_detalle').trigger('reset');
+                    $('#modal_form_eventodifusion_agregar').trigger('reset');
 
                     console.log("data")
                     console.log(data);
 
-                    var pais_url = "/nucleo/rest/paises/" + data.revista_pais.toString() + "/";
-                    console.log(pais_url);
-
-                    $.ajax({
-                        url: pais_url,
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            console.log("error")
-                            console.log(xhr)
-                        },
-                        success: function (dataf) {
-                            console.log("success ajax");
-                            console.log(dataf.pais_nombre);
-                            pais = dataf.pais_nombre;
-                            console.log(pais);
-                            var nuevo_revista_option = new Option(data.revista_nombre + " (" + pais + ")", data.id, true, true);
-                            $('#id_revista').append(nuevo_revista_option).trigger('change');
-                            $('#detalle-revista-modal-body').empty();
-                            detalle_revista_dialog.dialog("close")
-                        }
-                    });
+                    var nuevo_eventodifusion_option = new Option(data.eventodifusion_nombre, data.id, true, true);
+                    console.log(nuevo_eventodifusion_option)
+                    $('#id_evento').append(nuevo_eventodifusion_option).trigger('change');
+                    $('#detalle-eventodifusion-modal-body').empty();
+                    detalle_eventodifusion_dialog.dialog("close");
                 }
             });
             event.preventDefault();
