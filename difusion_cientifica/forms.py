@@ -78,10 +78,10 @@ class EventoDifusionForm(forms.ModelForm):
         choices=(('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
     eventodifusion_numeroponentes = forms.IntegerField(
         widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
-        required=True, label='Número de alumnos de doctorado', initial='0')
+        required=True, label='Número de ponentes', initial='0')
     eventodifusion_numeroasistentes = forms.IntegerField(
         widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
-        required=True, label='Número de alumnos de doctorado', initial='0')
+        required=True, label='Número de asistentes', initial='0')
 
 
     class Meta:

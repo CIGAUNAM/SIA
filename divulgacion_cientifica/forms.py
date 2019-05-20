@@ -90,6 +90,60 @@ class CapituloLibroDivulgacionForm(forms.ModelForm):
         }
 
 
+class EventoDivulgacionForm(forms.ModelForm):
+    eventodivulgacion_nombre = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre del evento académico'}),
+        required=True,
+        label='Nombre del evento académico')
+    eventodivulgacion_tipo = forms.ModelChoiceField(
+        queryset=TipoEvento.objects.all(),
+        label="Tipo de evento",
+        widget=ModelSelect2Widget(
+            search_fields=['tipoevento_nombre__icontains'],
+            queryset=TipoEvento.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right',
+                   'data-placeholder': 'Seleccione el tipo de evento'}
+        )
+    )
+    eventodivulgacion_fecha_inicio = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True, label='Fecha de inicio del evento.')
+    eventodivulgacion_fecha_fin = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        required=True, label='Fecha de fin del evento.')
+    eventodivulgacion_pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['pais_nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right',
+                   'data-placeholder': 'Seleccione el pais donde se llevó a cabo el evento'}
+        )
+    )
+    eventodivulgacion_ciudad = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Ciudad donde se llevó a cabo el evento académico'}),
+        required=True,
+        label='Ciudad donde se llevó a cabo el evento académico')
+    eventodivulgacion_ambito = forms.ChoiceField(
+        widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
+    eventodivulgacion_numeroponentes = forms.IntegerField(
+        widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+        required=True, label='Número de ponentes', initial='0')
+    eventodivulgacion_numeroasistentes = forms.IntegerField(
+        widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}),
+        required=True, label='Número de asistentes', initial='0')
+
+
+    class Meta:
+        model = EventoDivulgacion
+        exclude = ['eventodivulgacion_regverificado', 'eventodivulgacion_regfechacreado', 'eventodivulgacion_regfechaactualizado', 'eventodivulgacion_regusuario']
+        widgets = {
+        }
+
+
+
 class OrganizacionEventoDivulgacionForm(forms.ModelForm):
     evento = forms.ModelChoiceField(
         queryset=EventoDivulgacion.objects.all(),
@@ -110,7 +164,6 @@ class OrganizacionEventoDivulgacionForm(forms.ModelForm):
     class Meta:
         model = OrganizacionEventoDivulgacion
         exclude = ['usuario', ]
-
 
 
 class ParticipacionEventoDivulgacionForm(forms.ModelForm):

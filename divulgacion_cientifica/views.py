@@ -1,4 +1,3 @@
-from django.http.response import (Http404, HttpResponse)
 from django.views.generic import View
 from django.core import serializers
 from SIA.utils import *
@@ -6,6 +5,9 @@ from . forms import *
 from . utils import *
 from . models import *
 from django.db.models import Q
+
+from rest_framework import generics
+from . serializers import EventoDivulgacionSerializer
 
 #
 
@@ -318,3 +320,69 @@ class LibroDivulgacionEliminar(View):
             return redirect('../')
         except:
             raise Http404
+
+
+class RESTEventoDivulgacionLista(generics.ListCreateAPIView):
+    queryset = EventoDivulgacion.objects.all()
+    serializer_class = EventoDivulgacionSerializer
+
+
+class RESTEventoDivulgacionDetalle(generics.RetrieveUpdateDestroyAPIView):
+    queryset = EventoDivulgacion.objects.all()
+    serializer_class = EventoDivulgacionSerializer
+
+
+
+class EventoDivulgacionAgregar(ObjectModalCreateMixin, View):
+    form_class = EventoDivulgacionForm
+    model = EventoDivulgacion
+    template_name = 'modal/form_agregar_eventoDivulgacion.html'
+
+    def get(self, request):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                return render(request, self.template_name, {'modal_form_eventoDivulgacion_agregar': self.form_class})
+        except Exception as e:
+            print(e)
+            # return HttpResponse("")
+            return render(request, self.template_name, {'modal_form_eventoDivulgacion_agregar': self.form_class})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            return JsonResponse(new_obj, safe=False)
+        else:
+            return render(request, self.template_name, {'modal_form_eventoDivulgacion_agregar': bound_form})
+
+
+class EventoDivulgacionDetalle(ObjectModalUpdateMixin, View):
+    form_class = EventoDivulgacionForm
+    model = EventoDivulgacion
+    template_name = 'modal/form_detalle_eventoDivulgacion.html'
+
+    """
+    def get(self, request, pk):
+        obj = get_object_or_404(self.model, pk=pk)
+        return render(request, self.template_name, {'modal_form_eventoDivulgacion_detalle': self.form_class(instance=obj)})
+    """
+
+    def get(self, request, pk):
+        try:
+            ref = request.META['HTTP_REFERER']
+            if ref:
+                obj = get_object_or_404(self.model, pk=pk)
+                return render(request, self.template_name, {'modal_form_eventoDivulgacion_detalle': self.form_class(instance=obj)})
+        except Exception as e:
+            print(e)
+            return HttpResponse("")
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_obj = bound_form.save()
+            messages.success(request, "Registro actualizado con éxito")
+            return redirect(new_obj)
+        else:
+            return render(request, self.template_name, {'modal_form_eventoDivulgacion_detalle': bound_form})
