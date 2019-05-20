@@ -548,6 +548,7 @@ $(function () {
 
     $("#boton-agregar-eventodivulgacion").on("click", function (e) {
         console.log("boton agregar eventodivulgacion")
+
         agregar_eventodivulgacion_dialog = $("#agregar-eventodivulgacion").dialog({
             autoOpen: false,
             height: 500,
@@ -585,7 +586,7 @@ $(function () {
     });
 
     $("#boton-detalle-eventodivulgacion").on("click", function (e) {
-        console.log("Clic");
+        console.log("Clicqq");
         if ($("#id_evento").val() == null) {
             e.stopPropagation();
         } else {
