@@ -538,4 +538,98 @@ $(function () {
         }
     });
 
+
+
+
+
+
+
+
+
+    $("#boton-agregar-eventodivulgacion").on("click", function (e) {
+        console.log("boton agregar eventodivulgacion")
+
+        agregar_eventodivulgacion_dialog = $("#agregar-eventodivulgacion").dialog({
+            autoOpen: false,
+            height: 500,
+            width: 900,
+            modal: true,
+            class: 'ui-button-left',
+            buttons: {
+                agregar: {
+                    text: "Agregar eventodivulgacion",
+                    click: function () {
+                        $("#modal_form_eventodivulgacion_agregar").submit()
+                    },
+                    class: 'btn btn-success ui-button-left'
+                },
+                cancelar: {
+                    text: "Cancelar",
+                    click: function () {
+                        $(this).dialog("close")
+                    },
+                    class: 'btn btn-primary ui-button-left'
+                }
+            },
+
+            open: function (event, ui) {
+                $('#agregar-eventodivulgacion-modal-body').load('/divulgacion-cientifica/eventos-divulgacion/agregar/', function () {
+                    $("#id_eventodivulgacion_tipo").djangoSelect2({dropdownParent: $("#agregar-eventodivulgacion")});
+                    $("#id_eventodivulgacion_pais").djangoSelect2({dropdownParent: $("#agregar-eventodivulgacion")});
+                    $("#id_eventodivulgacion_ambito").djangoSelect2({dropdownParent: $("#agregar-eventodivulgacion")});
+                    $('#id_eventodivulgacion_fecha_inicio').datepicker({format: 'yyyy-mm-dd'});
+                    $('#id_eventodivulgacion_fecha_fin').datepicker({format: 'yyyy-mm-dd'});
+                });
+            }
+        });
+        agregar_eventodivulgacion_dialog.dialog("open");
+    });
+
+    $("#boton-detalle-eventodivulgacion").on("click", function (e) {
+        console.log("Clicqq");
+        if ($("#id_evento").val() == null) {
+            e.stopPropagation();
+        } else {
+
+            detalle_eventodivulgacion_dialog = $("#detalle-eventodivulgacion").dialog({
+                autoOpen: false,
+                height: 500,
+                width: 900,
+                modal: true,
+                buttons: {
+                    actualizar: {
+                        text: "Actualizar eventodivulgacion",
+                        click: function () {
+                            $("#modal_form_eventodivulgacion_detalle").submit()
+                        },
+                        class: 'btn btn-success ui-button-left'
+                    },
+                    cancelar: {
+                        text: "Cancelar",
+                        click: function () {
+                            $(this).dialog("close")
+                        },
+                        class: 'btn btn-primary ui-button-left'
+                    }
+                },
+
+                open: function (event, ui) {
+                    $('#detalle-eventodivulgacion-modal-body').load(('/divulgacion-cientifica/eventos-divulgacion/' + $("#id_evento").val().toString()) + "/", function () {
+                        console.log("detalle start")
+                        $("#id_eventodivulgacion_tipo").djangoSelect2({dropdownParent: $("#agregar-eventodivulgacion")});
+                        $("#id_eventodivulgacion_pais").djangoSelect2({dropdownParent: $("#agregar-eventodivulgacion")});
+                        $("#id_eventodivulgacion_ambito").djangoSelect2({dropdownParent: $("#agregar-eventodivulgacion")});
+                        $('#id_eventodivulgacion_fecha_inicio').datepicker({format: 'yyyy-mm-dd'});
+                        $('#id_eventodivulgacion_fecha_fin').datepicker({format: 'yyyy-mm-dd'});
+                    });
+                    e.stopPropagation();
+                }
+            });
+            detalle_eventodivulgacion_dialog.dialog("open");
+        }
+    });
+
+
+
+
 });
