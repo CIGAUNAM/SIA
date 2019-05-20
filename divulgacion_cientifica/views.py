@@ -336,17 +336,17 @@ class RESTEventoDivulgacionDetalle(generics.RetrieveUpdateDestroyAPIView):
 class EventoDivulgacionAgregar(ObjectModalCreateMixin, View):
     form_class = EventoDivulgacionForm
     model = EventoDivulgacion
-    template_name = 'modal/form_agregar_eventoDivulgacion.html'
+    template_name = 'modal/form_agregar_eventodivulgacion.html'
 
     def get(self, request):
         try:
             ref = request.META['HTTP_REFERER']
             if ref:
-                return render(request, self.template_name, {'modal_form_eventoDivulgacion_agregar': self.form_class})
+                return render(request, self.template_name, {'modal_form_eventodivulgacion_agregar': self.form_class})
         except Exception as e:
             print(e)
             # return HttpResponse("")
-            return render(request, self.template_name, {'modal_form_eventoDivulgacion_agregar': self.form_class})
+            return render(request, self.template_name, {'modal_form_eventodivulgacion_agregar': self.form_class})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
@@ -354,7 +354,7 @@ class EventoDivulgacionAgregar(ObjectModalCreateMixin, View):
             new_obj = bound_form.save()
             return JsonResponse(new_obj, safe=False)
         else:
-            return render(request, self.template_name, {'modal_form_eventoDivulgacion_agregar': bound_form})
+            return render(request, self.template_name, {'modal_form_eventodivulgacion_agregar': bound_form})
 
 
 class EventoDivulgacionDetalle(ObjectModalUpdateMixin, View):
@@ -365,7 +365,7 @@ class EventoDivulgacionDetalle(ObjectModalUpdateMixin, View):
     """
     def get(self, request, pk):
         obj = get_object_or_404(self.model, pk=pk)
-        return render(request, self.template_name, {'modal_form_eventoDivulgacion_detalle': self.form_class(instance=obj)})
+        return render(request, self.template_name, {'modal_form_eventodivulgacion_detalle': self.form_class(instance=obj)})
     """
 
     def get(self, request, pk):
@@ -373,7 +373,7 @@ class EventoDivulgacionDetalle(ObjectModalUpdateMixin, View):
             ref = request.META['HTTP_REFERER']
             if ref:
                 obj = get_object_or_404(self.model, pk=pk)
-                return render(request, self.template_name, {'modal_form_eventoDivulgacion_detalle': self.form_class(instance=obj)})
+                return render(request, self.template_name, {'modal_form_eventodivulgacion_detalle': self.form_class(instance=obj)})
         except Exception as e:
             print(e)
             return HttpResponse("")
@@ -385,4 +385,4 @@ class EventoDivulgacionDetalle(ObjectModalUpdateMixin, View):
             messages.success(request, "Registro actualizado con éxito")
             return redirect(new_obj)
         else:
-            return render(request, self.template_name, {'modal_form_eventoDivulgacion_detalle': bound_form})
+            return render(request, self.template_name, {'modal_form_eventodivulgacion_detalle': bound_form})
