@@ -241,7 +241,10 @@ class InstitucionSimple(models.Model):
     institucion_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada', default=1)
 
     def __str__(self):
-        return "{} ({})".format(self.institucion_nombre, self.institucion_pais)
+        unam = ""
+        if self.institucion_perteneceunam:
+            unam = " [UNAM]"
+        return "{} {} ({})".format(self.institucion_nombre, unam, self.institucion_pais)
 
     def natural_key(self):
         return "{} ({})".format(self.institucion_nombre, self.institucion_pais)
