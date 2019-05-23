@@ -88,7 +88,7 @@ class RedAcademica(models.Model):
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
-    entidades = models.ManyToManyField(Dependencia, related_name='red_academica_entidades')
+    entidades = models.ManyToManyField(Dependencia, blank=True, related_name='red_academica_entidades')
     instituciones = models.ManyToManyField(InstitucionSimple, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     participantes = models.ManyToManyField(User, related_name='red_academica_usuarios',

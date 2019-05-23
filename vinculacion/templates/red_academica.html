@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Nombre de red académica:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de red académica.">
@@ -86,7 +87,8 @@
         </div>
     </div>
     </p>
-    <p><strong>Esta red académica está vinculada a algún proyecto? en caso afirmativo seleccionar el proyecto debajo:</strong>
+    <p><strong>Esta red académica está vinculada a algún proyecto? en caso afirmativo seleccionar el proyecto
+        debajo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Esta red académica está vinculada a algún proyecto? en caso afirmativo seleccionar el proyecto debajo. Al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
@@ -137,6 +139,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Nombre de red académica:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre de red académica.">
@@ -221,7 +224,8 @@
         </div>
     </div>
     </p>
-    <p><strong>Esta red académica está vinculada a algún proyecto? en caso afirmativo seleccionar el proyecto debajo:</strong>
+    <p><strong>Esta red académica está vinculada a algún proyecto? en caso afirmativo seleccionar el proyecto
+        debajo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Esta red académica está vinculada a algún proyecto? en caso afirmativo seleccionar el proyecto debajo. Al escribir el inicio del nombre se filtran
                             los resultados que coincidan con la busqueda.">
