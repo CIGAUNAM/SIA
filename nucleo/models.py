@@ -244,7 +244,7 @@ class InstitucionSimple(models.Model):
         unam = ""
         if self.institucion_perteneceunam:
             unam = " [UNAM]"
-        return "{} {} ({})".format(self.institucion_nombre, unam, self.institucion_pais)
+        return "{}{} ({})".format(self.institucion_nombre, unam, self.institucion_pais)
 
     def natural_key(self):
         return "{} ({})".format(self.institucion_nombre, self.institucion_pais)
