@@ -313,6 +313,7 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=True)
     director = forms.ModelChoiceField(
+        required=False,
         queryset=User.objects.all(),
         label="Director",
         widget=ModelSelect2Widget(
@@ -322,6 +323,7 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
         )
     )
     codirector = forms.ModelChoiceField(
+        required=False,
         queryset=User.objects.all(),
         label="Codirector",
         widget=ModelSelect2Widget(
@@ -330,7 +332,7 @@ class ComiteCandidaturaDoctoralForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    programa_doctorado = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+
     especialidad = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
 
 

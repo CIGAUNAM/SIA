@@ -173,9 +173,9 @@ class ComiteCandidaturaDoctoral(models.Model):
     especialidad = models.CharField(max_length=255, null=True, blank=True)
 
     asesores = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_asesores', blank=True)
-    programa_doctorado = models.ForeignKey(ProgramaDoctorado, on_delete=models.DO_NOTHING)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     fecha_defensa = models.DateField()
