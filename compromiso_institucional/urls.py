@@ -8,10 +8,10 @@ urlpatterns = [
     url(r'^labores-directivas-coordinacion/(?P<pk>[\w\-]+)/eliminar$', LaborDirectivaCoordinacionEliminar.as_view(), name='labor_directiva_coordinacion_eliminar'),
     url(r'^labores-directivas-coordinacion/(?P<pk>[\w\-]+)/$', LaborDirectivaCoordinacionDetalle.as_view(), name='labor_directiva_coordinacion_detalle'),
 
-    url(r'^representaciones-organos-colegiados-unam/json/', RepresentacionOrganoColegiadoJSON.as_view(), name='representacion_organo_colegiado_unam_lista__json'),
-    url(r'^representaciones-organos-colegiados-unam/$', RepresentacionOrganoColegiadoLista.as_view(), name='representacion_organo_colegiado_unam_lista'),
+    url(r'^representaciones-organos-colegiados-unam/json/', RepresentacionOrganoColegiadoUNAMJSON.as_view(), name='representacion_organo_colegiado_unam_lista__json'),
+    url(r'^representaciones-organos-colegiados-unam/$', RepresentacionOrganoColegiadoUNAMLista.as_view(), name='representacion_organo_colegiado_unam_lista'),
     url(r'^representaciones-organos-colegiados-unam/(?P<pk>[\w\-]+)/eliminar$', RepresentacionOrganoColegiadoEliminar.as_view(), name='representacion_organo_colegiado_unam_eliminar'),
-    url(r'^representaciones-organos-colegiados-unam/(?P<pk>[\w\-]+)/$', RepresentacionOrganoColegiadoDetalle.as_view(), name='representacion_organo_colegiado_unam_detalle'),
+    url(r'^representaciones-organos-colegiados-unam/(?P<pk>[\w\-]+)/$', RepresentacionOrganoColegiadoUNAMDetalle.as_view(), name='representacion_organo_colegiado_unam_detalle'),
 
     url(r'^comisiones-institucionales-ciga/json/', ComisionAcademicaJSON.as_view(), name='comision_institucional_lista__json'),
     url(r'^comisiones-institucionales-ciga/$', ComisionAcademicaLista.as_view(), name='comision_institucional_lista'),

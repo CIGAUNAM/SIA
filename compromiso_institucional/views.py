@@ -44,7 +44,7 @@ class LaborDirectivaCoordinacionEliminar(View):
             raise Http404
 
 
-class RepresentacionOrganoColegiadoJSON(View):
+class RepresentacionOrganoColegiadoUNAMJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
@@ -53,22 +53,38 @@ class RepresentacionOrganoColegiadoJSON(View):
                                          fields=('tipo_representacion', 'representacion_dentro_unam', 'representacion_dentro_unam_otra',
                                                  'representacion_fuera_unam', 'institucion_dentro_unam', 'institucion_fuera_unam'          
                                                  'representacion_unam', 'fecha_inicio', 'fecha_fin'))
+
+            json = json.replace('DENTRO', 'Dentro de la UNAM')
+            json = json.replace('REPRESENTACION', 'Con representacion UNAM (Solo por designación)')
+
+            json = json.replace(' "institucion_dentro_unam": null,', '')
+            json = json.replace(' "institucion_fuera_unam": null,', '')
+            json = json.replace(' "representacion_dentro_unam": "",', '')
+            json = json.replace(' "representacion_dentro_unam_otra": "",', '')
+            json = json.replace(' "representacion_fuera_unam": "",', '')
+
+            json = json.replace('"institucion_dentro_unam"', '"institucion"')
+            json = json.replace('"institucion_fuera_unam"', '"institucion"')
+            json = json.replace('"representacion_dentro_unam"', '"representacion"')
+            json = json.replace('"representacion_fuera_unam"', '"representacion"')
+            json = json.replace('"representacion_dentro_unam_otra"', '"representacion"')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
 
 
-class RepresentacionOrganoColegiadoLista(ObjectCreateMixin, View):
+class RepresentacionOrganoColegiadoUNAMLista(ObjectCreateMixin, View):
     form_class = RepresentacionOrganoColegiadoUNAMForm
     model = RepresentacionOrganoColegiadoUNAM
-    aux = RepresentacionOrganoColegiadoContext.contexto
+    aux = RepresentacionOrganoColegiadoUNAMContext.contexto
     template_name = 'representacion_organo_colegiado.html'
 
 
-class RepresentacionOrganoColegiadoDetalle(ObjectUpdateMixin, View):
+class RepresentacionOrganoColegiadoUNAMDetalle(ObjectUpdateMixin, View):
     form_class = RepresentacionOrganoColegiadoUNAMForm
     model = RepresentacionOrganoColegiadoUNAM
-    aux = RepresentacionOrganoColegiadoContext.contexto
+    aux = RepresentacionOrganoColegiadoUNAMContext.contexto
     template_name = 'representacion_organo_colegiado.html'
 
 

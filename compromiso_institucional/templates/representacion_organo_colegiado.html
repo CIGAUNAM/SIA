@@ -412,6 +412,17 @@
             d_institucion_dentro_unam.hide('slow');
         }
 
+        id_representacion_dentro_unam.on('change', function () {
+            if (id_representacion_dentro_unam.val() === 'OTRA') {
+                d_representacion_dentro_unam_otra.show('slow');
+                id_representacion_dentro_unam_otra.attr("required", "true");
+            } else {
+                d_representacion_dentro_unam_otra.hide('slow');
+                id_representacion_dentro_unam_otra.val(null).trigger('change');
+                id_representacion_dentro_unam_otra.attr("required", null);
+            }
+        });
+
         id_tipo_representacion.on('change', function () {
             console.log("change tipo")
             if (id_tipo_representacion.val() === 'DENTRO') {
@@ -421,16 +432,6 @@
                 id_representacion_fuera_unam.val(null).trigger('change');
                 id_representacion_fuera_unam.attr("required", null);
 
-                id_representacion_dentro_unam.on('change', function () {
-                    if (id_representacion_dentro_unam.val() === 'OTRA') {
-                        d_representacion_dentro_unam_otra.show('slow');
-                        id_representacion_dentro_unam_otra.attr("required", "true");
-                    } else {
-                        d_representacion_dentro_unam_otra.hide('slow');
-                        id_representacion_dentro_unam_otra.val(null).trigger('change');
-                        id_representacion_dentro_unam_otra.attr("required", null);
-                    }
-                });
 
                 d_institucion_dentro_unam.show('slow');
                 id_institucion_dentro_unam.attr("required", "true");
