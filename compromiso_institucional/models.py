@@ -85,7 +85,7 @@ class LaborDirectivaCoordinacion(models.Model):
 
 
 class RepresentacionOrganoColegiadoUNAM(models.Model):
-    representacion = models.ForeignKey(Representacion, on_delete=models.DO_NOTHING, blank=True, null=True)
+    # representacion = models.ForeignKey(Representacion, on_delete=models.DO_NOTHING, blank=True, null=True)
     tipo_representacion = models.CharField(max_length=30, choices=(('', '-------'), ('DENTRO', 'Dentro de la UNAM'), ('REPRESENTACION', 'Con representacion UNAM (Solo por designación)')))
     representacion_dentro_unam = models.CharField(max_length=30, choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
                                                                           ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
@@ -93,26 +93,25 @@ class RepresentacionOrganoColegiadoUNAM(models.Model):
     representacion_dentro_unam_otra = models.CharField(max_length=250, blank=True, null=True)
     representacion_fuera_unam = models.CharField(max_length=250, blank=True, null=True)
 
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING, blank=True, null=True)
+    # institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING, blank=True, null=True)
     institucion_dentro_unam = models.ForeignKey(InstitucionSimple, blank=True, null=True, related_name='representacion_organo_colegiado_dentrounam', on_delete=models.DO_NOTHING)
     institucion_fuera_unam = models.ForeignKey(InstitucionSimple, blank=True, null=True, related_name='representacion_organo_colegiado_fueraunam', on_delete=models.DO_NOTHING)
 
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    # dependencia = models.ForeignKey(Dependencia,  null=True, blank=True, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='representante_ante_organo_colegiado_tags', blank=True)
 
     def __str__(self):
-        return "{} : {} : {} ".format(self.representacion, self.dependencia, self.fecha_fin)
+        return "{} : {} : {} ".format(self.usuario, self.tipo_representacion, self.fecha_fin)
 
     def get_absolute_url(self):
-        return reverse('representacion_organo_colegiado_detalle', kwargs={'pk': self.pk})
+        return reverse('representacion_organo_colegiado_unam_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Representantes Ante Organos Colegiados'
-        unique_together = ('usuario', 'representacion', 'fecha_inicio')
+        unique_together = ('usuario', 'tipo_representacion', 'fecha_inicio')
         ordering = ['-fecha_inicio']
 
 
