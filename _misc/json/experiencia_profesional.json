@@ -4293,7 +4293,7 @@
   "fields": {
     "institucion2": 245,
     "dependencia": 551,
-    "institucion": 551,
+    "institucion": 4,
     "cargo": 167,
     "cargo2": null,
     "tipo_cargo": null,
@@ -4357,7 +4357,7 @@
   "fields": {
     "institucion2": 245,
     "dependencia": 547,
-    "institucion": 547,
+    "institucion": 4,
     "cargo": 99,
     "cargo2": null,
     "tipo_cargo": null,
@@ -4373,7 +4373,7 @@
   "fields": {
     "institucion2": 245,
     "dependencia": 547,
-    "institucion": 547,
+    "institucion": 4,
     "cargo": 115,
     "cargo2": null,
     "tipo_cargo": null,
@@ -4389,7 +4389,7 @@
   "fields": {
     "institucion2": 245,
     "dependencia": 547,
-    "institucion": 547,
+    "institucion": 4,
     "cargo": 88,
     "cargo2": null,
     "tipo_cargo": null,
@@ -4405,7 +4405,7 @@
   "fields": {
     "institucion2": 245,
     "dependencia": 551,
-    "institucion": 551,
+    "institucion": 4,
     "cargo": 116,
     "cargo2": null,
     "tipo_cargo": null,
@@ -4421,7 +4421,7 @@
   "fields": {
     "institucion2": 245,
     "dependencia": 551,
-    "institucion": 551,
+    "institucion": 4,
     "cargo": 99,
     "cargo2": null,
     "tipo_cargo": null,
@@ -4944,7 +4944,7 @@
     "linea_investigacion": "Pobreza y Vulnerabilidad",
     "descripcion": "",
     "institucion2": 245,
-    "institucion": 551,
+    "institucion": 4,
     "dependencia": 551,
     "fecha_inicio": "2011-03-14",
     "usuario": 36
@@ -4957,7 +4957,7 @@
     "linea_investigacion": "Procesos territoriales y din\u00e1micas sociales en periferias urbanas",
     "descripcion": "",
     "institucion2": 245,
-    "institucion": 551,
+    "institucion": 4,
     "dependencia": 551,
     "fecha_inicio": "2011-03-14",
     "usuario": 36
@@ -5152,7 +5152,7 @@
     "linea_investigacion": "Desarrollo Sustentable",
     "descripcion": "Estudio del desarrollo sustentable desde diversos enfoques econ\u00f3micos para una mejor comprensi\u00f3n de los problemas, amenazas y oportunidades que pueden surgir como alternativa al crecimiento y desarrollo econ\u00f3mico.",
     "institucion2": 494,
-    "institucion": 764,
+    "institucion": 27,
     "dependencia": 764,
     "fecha_inicio": "2014-02-03",
     "usuario": 54
@@ -5165,7 +5165,7 @@
     "linea_investigacion": "An\u00e1lisis espacial de la demanda de le\u00f1a",
     "descripcion": "",
     "institucion2": 269,
-    "institucion": 557,
+    "institucion": 4,
     "dependencia": 557,
     "fecha_inicio": "2017-02-16",
     "usuario": 93

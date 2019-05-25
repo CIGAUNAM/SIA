@@ -3010,7 +3010,7 @@
     "fecha_fin": "1991-11-28",
     "modalidad": "OTRO",
     "dependencia": 528,
-    "institucion": 528,
+    "institucion": 23,
     "usuario": 30
   }
 },
@@ -3070,7 +3070,7 @@
     "fecha_fin": "1900-01-01",
     "modalidad": "OTRO",
     "dependencia": 528,
-    "institucion": 528,
+    "institucion": 23,
     "usuario": 30
   }
 },
@@ -3173,9 +3173,9 @@
     "horas": 1,
     "fecha_inicio": "2005-06-20",
     "fecha_fin": "2018-06-05",
-    "modalidad": "OTRO",
+    "modalidad": "PRESENCIAL",
     "dependencia": 543,
-    "institucion": 543,
+    "institucion": 16,
     "usuario": 15
   }
 },
@@ -3460,7 +3460,7 @@
     "fecha_fin": "2017-10-13",
     "modalidad": "OTRO",
     "dependencia": 547,
-    "institucion": 547,
+    "institucion": 4,
     "usuario": 15
   }
 },
@@ -3490,7 +3490,7 @@
     "fecha_fin": "2017-05-30",
     "modalidad": "PRESENCIAL",
     "dependencia": 547,
-    "institucion": 547,
+    "institucion": 4,
     "usuario": 36
   }
 },
@@ -3520,7 +3520,7 @@
     "fecha_fin": "2017-09-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 547,
-    "institucion": 547,
+    "institucion": 4,
     "usuario": 16
   }
 },
@@ -3535,7 +3535,7 @@
     "fecha_fin": "2017-06-29",
     "modalidad": "PRESENCIAL",
     "dependencia": 556,
-    "institucion": 556,
+    "institucion": 10,
     "usuario": 16
   }
 },
@@ -3565,7 +3565,7 @@
     "fecha_fin": "2018-06-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 551,
-    "institucion": 551,
+    "institucion": 4,
     "usuario": 40
   }
 },
@@ -3610,7 +3610,7 @@
     "fecha_fin": "2018-04-12",
     "modalidad": "PRESENCIAL",
     "dependencia": 557,
-    "institucion": 557,
+    "institucion": 4,
     "usuario": 12
   }
 },
@@ -3655,7 +3655,7 @@
     "fecha_fin": "2017-02-17",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 35
   }
 },
@@ -3670,7 +3670,7 @@
     "fecha_fin": "2018-02-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 35
   }
 },
@@ -3715,7 +3715,7 @@
     "fecha_fin": "2017-06-03",
     "modalidad": "PRESENCIAL",
     "dependencia": 551,
-    "institucion": 551,
+    "institucion": 4,
     "usuario": 38
   }
 },
@@ -3865,7 +3865,7 @@
     "fecha_fin": "2018-07-11",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 50
   }
 },
@@ -4030,7 +4030,7 @@
     "fecha_fin": "2018-09-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 667,
-    "institucion": 667,
+    "institucion": 4,
     "usuario": 40
   }
 },
@@ -4120,7 +4120,7 @@
     "fecha_fin": "2018-11-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 557,
-    "institucion": 557,
+    "institucion": 4,
     "usuario": 38
   }
 },
@@ -4135,7 +4135,7 @@
     "fecha_fin": "2017-04-26",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 50
   }
 },
@@ -4150,7 +4150,7 @@
     "fecha_fin": "2017-04-28",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 50
   }
 },
@@ -4165,7 +4165,7 @@
     "fecha_fin": "2017-05-29",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 50
   }
 },
@@ -4195,7 +4195,7 @@
     "fecha_fin": "2017-02-22",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 50
   }
 },
@@ -4240,7 +4240,7 @@
     "fecha_fin": "2018-09-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "usuario": 50
   }
 },
@@ -4315,7 +4315,7 @@
     "fecha_fin": "2018-11-14",
     "modalidad": "PRESENCIAL",
     "dependencia": 667,
-    "institucion": 667,
+    "institucion": 4,
     "usuario": 50
   }
 },
@@ -4330,7 +4330,7 @@
     "fecha_fin": "2018-07-27",
     "modalidad": "PRESENCIAL",
     "dependencia": 562,
-    "institucion": 562,
+    "institucion": 6,
     "usuario": 13
   }
 },
@@ -4405,7 +4405,7 @@
     "fecha_fin": "2018-09-21",
     "modalidad": "PRESENCIAL",
     "dependencia": 551,
-    "institucion": 551,
+    "institucion": 4,
     "usuario": 19
   }
 },
@@ -4480,7 +4480,7 @@
     "fecha_fin": "2018-11-15",
     "modalidad": "PRESENCIAL",
     "dependencia": 667,
-    "institucion": 667,
+    "institucion": 4,
     "usuario": 36
   }
 },
@@ -6522,7 +6522,7 @@
     "titulo_proyecto": "Geograf\u00eda Ambiental",
     "tutor": 1,
     "dependencia": 557,
-    "institucion": 557,
+    "institucion": 4,
     "proyecto": 271,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6538,7 +6538,7 @@
     "titulo_proyecto": "La representaci\u00f3n democr\u00e1tica de comunidades locales en el proceso de preparaci\u00f3n para REDD+ en M\u00e9xico",
     "tutor": 1,
     "dependencia": 667,
-    "institucion": 667,
+    "institucion": 4,
     "proyecto": 280,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6570,7 +6570,7 @@
     "titulo_proyecto": "Peligros hidro-metereol\u00f3gicos y vulnerabilidad de peque\u00f1as localidades rurales marginales en zonas de escasa accesibilidad. El caso de la Sierra-Costa de Michoac\u00e1n",
     "tutor": 1,
     "dependencia": 634,
-    "institucion": 634,
+    "institucion": 4,
     "proyecto": 276,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,
@@ -6618,7 +6618,7 @@
     "titulo_proyecto": "An\u00e1lisis espacial de la demanda de le\u00f1a a trav\u00e9s de modelos estad\u00edsticos y sus impactos socioambientales y econ\u00f3micos",
     "tutor": 1,
     "dependencia": 557,
-    "institucion": 557,
+    "institucion": 4,
     "proyecto": 428,
     "entidad_financiamiento": null,
     "otra_entidad_financiamiento": null,

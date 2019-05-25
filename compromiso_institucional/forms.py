@@ -57,10 +57,11 @@ class RepresentacionOrganoColegiadoUNAMForm(forms.ModelForm):
                  ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
                  ('OTRA', 'Otra')), required=False)
 
-    representacion_dentro_unam_otra = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True)
-    representacion_fuera_unam = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True)
+    representacion_dentro_unam_otra = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=False)
+    representacion_fuera_unam = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=False)
 
     institucion_dentro_unam = forms.ModelChoiceField(
+        required=False,
         queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=True),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -70,6 +71,7 @@ class RepresentacionOrganoColegiadoUNAMForm(forms.ModelForm):
         )
     )
     institucion_fuera_unam = forms.ModelChoiceField(
+        required=False,
         queryset=InstitucionSimple.objects.filter(institucion_perteneceunam=False),
         label="Institución",
         widget=ModelSelect2Widget(
