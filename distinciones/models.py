@@ -11,12 +11,21 @@ NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA
 
 
 class DistincionAcademico(models.Model):
-    distincion = models.ForeignKey(Distincion, on_delete=models.DO_NOTHING)
+    distincion = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
+    tipo = models.CharField(max_length=30, choices=(('', '-------'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
+                                                    ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
+                                                    ('GUGGENHEIM', 'Beca Guggenheim'), ('DIPLOMA', 'Diploma'),
+                                                    ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
+    distincion_text = models.CharField(max_length=254, null=True, blank=True)
     fecha = models.DateField()
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
+    ambito = models.CharField(max_length=50,
+                              choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'),
+                                       ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
     usuario = models.ForeignKey(User, related_name='distincion_academico_usuario', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {}".format(self.distincion, self.fecha)
+        return "{} : {} : {}".format(self.distincion, self.distincion.institucion2, self.fecha)
 
     def get_absolute_url(self):
         return reverse('distincion_academico_detalle', kwargs={'pk': self.pk})
@@ -28,14 +37,23 @@ class DistincionAcademico(models.Model):
 
 
 class DistincionAlumno(models.Model):
-    distincion = models.ForeignKey(Distincion, on_delete=models.DO_NOTHING)
+    distincion = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
+    tipo = models.CharField(max_length=30, choices=(('', '-------'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
+                                                    ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
+                                                    ('GUGGENHEIM', 'Beca Guggenheim'), ('DIPLOMA', 'Diploma'),
+                                                    ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
+    distincion_text = models.CharField(max_length=254, null=True, blank=True)
     alumno = models.ForeignKey(User, related_name='distincion_alumno_alumno', on_delete=models.DO_NOTHING)
     nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
     tutores = models.ManyToManyField(User, related_name='distincion_alumno_tutores')
     fecha = models.DateField()
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
+    ambito = models.CharField(max_length=50,
+                              choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'),
+                                       ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
 
     def __str__(self):
-        return "{} : {}".format(self.distincion, self.fecha)
+        return "{} : {} : {}".format(self.distincion, self.distincion.institucion2, self.fecha)
 
     def get_absolute_url(self):
         return reverse('distincion_alumno_detalle', kwargs={'pk': self.pk})

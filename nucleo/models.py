@@ -254,7 +254,7 @@ class InstitucionSimple(models.Model):
 
     class Meta:
         unique_together = ('institucion_nombre', 'institucion_pais', 'institucion_ciudad')
-        ordering = ['pk']
+        ordering = ['institucion_nombre']
         verbose_name = 'Institución'
         verbose_name_plural = 'Instituciones'
 
@@ -638,9 +638,9 @@ class Distincion(models.Model):
                                                     ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
                                                     ('GUGGENHEIM', 'Beca Guggenheim'),
                                                     ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
     ambito = models.CharField(max_length=50, choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre

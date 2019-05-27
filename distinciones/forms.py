@@ -8,7 +8,33 @@ from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Sele
 #
 
 class DistincionAcademicoForm(forms.ModelForm):
+    distincion_text = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre del premio o distinción recibida'}),
+        required=True,
+        label='Nombre del evento académico')
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                               choices=(('', '-------'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
+                                        ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
+                                        ('GUGGENHEIM', 'Beca Guggenheim'), ('DIPLOMA', 'Diploma'),
+                                        ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')),
+                               required=True)
+    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                               choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'),
+                                       ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')),
+                               required=True)
+    institucion = forms.ModelChoiceField(
+        required=True,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
+
     distincion = forms.ModelChoiceField(
+        required=False,
         queryset=Distincion.objects.all(),
         label="Distincion",
         widget=ModelSelect2Widget(
@@ -25,6 +51,30 @@ class DistincionAcademicoForm(forms.ModelForm):
 
 
 class DistincionAlumnoForm(forms.ModelForm):
+    distincion_text = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre del premio o distinción recibida'}),
+        required=True,
+        label='Nombre del evento académico')
+    tipo = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                             choices=(('', '-------'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
+                                      ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
+                                      ('GUGGENHEIM', 'Beca Guggenheim'), ('DIPLOMA', 'Diploma'),
+                                      ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')),
+                             required=True)
+    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+                               choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'),
+                                        ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')),
+                               required=True)
+    institucion = forms.ModelChoiceField(
+        required=True,
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución",
+        widget=ModelSelect2Widget(
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
+        )
+    )
     distincion = forms.ModelChoiceField(
         queryset=Distincion.objects.all(),
         label="Distincion",
