@@ -58,7 +58,7 @@ class CursoDocenciaExtracurricular(models.Model):
                                   choices=(('', '------'), ('DIPLOMADO', 'Diplomado'), ('TALLER', 'Taller'),
                                            ('SEMINARIO', 'Seminario'), ('CURSO', 'Curso'), ('OTRO', 'Otro')))
     asignatura_text = models.CharField(max_length=254, blank=True, null=True)
-    otro_tipo = models.CharField(max_length=254, blank=True, null=True)
+    tipocurso_otro = models.CharField(max_length=254, blank=True, null=True)
     modalidad = models.CharField(max_length=30, choices=(('', 'Seleccionar modalidad de curso'),
                                                          ('PRESENCIAL', 'Presencial'), ('EN_LINEA', 'En línea'),
                                                          ('MIXTO', 'Mixto')))

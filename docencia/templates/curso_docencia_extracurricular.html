@@ -10,23 +10,11 @@
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.tipo }}
-            <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales al tipo de curso.">
-                    <i class="fa fa-eye"></i>
-                </a>
-            </div>
-            <div class="input-group-addon">
-                <a href="/nucleo/tipos-curso/" data-toggle="tooltip" data-placement="left" target="_blank"
-                   title="Agregar un tipo de curso nuevo. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.tipo_curso }}
         </div>
     </div>
     </p>
-    <div id="d_otro_tipo">
+    <div id="d_tipocurso_otro">
         <p><strong>Otro tipo de curso:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Especificar tipo de curso impartido."><i
@@ -37,7 +25,7 @@
                 <div class="input-group-addon">
                     <i class="fa fa-pencil-square-o"></i>
                 </div>
-                {{ form.otro_tipo }}
+                {{ form.tipocurso_otro }}
             </div>
         </div>
         </p>
@@ -52,7 +40,7 @@
             <div class="input-group-addon">
                 <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.asignatura }}
+            {{ form.asignatura_text }}
         </div>
     </div>
     </p>
@@ -164,16 +152,22 @@
     </p>
 
     <script>
-    var id_tipo_curso = $("#id_tipo_curso");
-    var d_otro_tipo = $("#d_otro_tipo");
+        var id_tipo_curso = $("#id_tipo_curso");
+        var d_tipocurso_otro = $("#d_tipocurso_otro");
+        var id_tipocurso_otro = $("#id_tipocurso_otro");
 
-    d_otro_tipo.hide();
+        d_tipocurso_otro.hide();
 
-    if (id_tipo_curso.val() === 'OTRO') {
-
-    }
-
-
+        id_tipo_curso.on('change', function () {
+            if (id_tipo_curso.val() === 'OTRO') {
+                d_tipocurso_otro.show('slow');
+                id_tipocurso_otro.attr("required", "true");
+            } else {
+                id_tipocurso_otro.attr("required", null);
+                id_tipocurso_otro.val(null).trigger('change');
+                d_tipocurso_otro.hide('slow');
+            }
+        });
     </script>
 {% endblock %}
 
@@ -321,4 +315,31 @@
         </div>
     </div>
     </p>
+
+    <script>
+        var id_tipo_curso = $("#id_tipo_curso");
+        var d_tipocurso_otro = $("#d_tipocurso_otro");
+        var id_tipocurso_otro = $("#id_tipocurso_otro");
+
+        d_tipocurso_otro.hide();
+        if (id_tipo_curso.val() === 'OTRO') {
+            d_tipocurso_otro.show('slow');
+            id_tipocurso_otro.attr("required", "true");
+        } else {
+            id_tipocurso_otro.attr("required", null);
+            id_tipocurso_otro.val(null).trigger('change');
+            d_tipocurso_otro.hide('slow');
+        }
+
+        id_tipo_curso.on('change', function () {
+            if (id_tipo_curso.val() === 'OTRO') {
+                d_tipocurso_otro.show('slow');
+                id_tipocurso_otro.attr("required", "true");
+            } else {
+                id_tipocurso_otro.attr("required", null);
+                id_tipocurso_otro.val(null).trigger('change');
+                d_tipocurso_otro.hide('slow');
+            }
+        });
+    </script>
 {% endblock %}
