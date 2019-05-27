@@ -1,10 +1,15 @@
+Tracking file by folder pattern:  migrations
 [
 {
   "model": "distinciones.distincionacademico",
   "pk": 1,
   "fields": {
     "distincion": 1,
+    "tipo": "MEDALLA",
+    "distincion_text": "Medalla Alfonso Caso",
     "fecha": "2015-05-13",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -13,7 +18,11 @@
   "pk": 2,
   "fields": {
     "distincion": 2,
+    "tipo": "DISTINCION",
+    "distincion_text": "PRIDE Nivel D",
     "fecha": "2012-02-07",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -22,7 +31,11 @@
   "pk": 3,
   "fields": {
     "distincion": 5,
+    "tipo": "MEDALLA",
+    "distincion_text": "Medalla en reconocimiento por 15 a\u00f1os de servicios acad\u00e9micos en la UNAM",
     "fecha": "2012-02-15",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -31,7 +44,11 @@
   "pk": 4,
   "fields": {
     "distincion": 2,
+    "tipo": "DISTINCION",
+    "distincion_text": "PRIDE Nivel D",
     "fecha": "2007-07-11",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -40,7 +57,11 @@
   "pk": 5,
   "fields": {
     "distincion": 4,
+    "tipo": "DISTINCION",
+    "distincion_text": "Distinci\u00f3n Candidato a Investigador Nacional",
     "fecha": "2007-04-17",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -49,7 +70,11 @@
   "pk": 6,
   "fields": {
     "distincion": 2,
+    "tipo": "DISTINCION",
+    "distincion_text": "PRIDE Nivel D",
     "fecha": "2017-07-05",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -58,7 +83,11 @@
   "pk": 7,
   "fields": {
     "distincion": 5,
+    "tipo": "MEDALLA",
+    "distincion_text": "Medalla en reconocimiento por 15 a\u00f1os de servicios acad\u00e9micos en la UNAM",
     "fecha": "2007-02-14",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -67,7 +96,11 @@
   "pk": 8,
   "fields": {
     "distincion": 6,
+    "tipo": "DISTINCION",
+    "distincion_text": "Calificaci\u00f3n \u201cWith Distinction\u201d",
     "fecha": "1992-10-14",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -76,7 +109,11 @@
   "pk": 9,
   "fields": {
     "distincion": 2,
+    "tipo": "DISTINCION",
+    "distincion_text": "PRIDE Nivel D",
     "fecha": "2007-07-11",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 14
   }
 },
@@ -85,7 +122,11 @@
   "pk": 11,
   "fields": {
     "distincion": 10,
+    "tipo": "DISTINCION",
+    "distincion_text": "Certificado de Educador Ejemplar",
     "fecha": "2006-11-15",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -94,7 +135,11 @@
   "pk": 12,
   "fields": {
     "distincion": 6,
+    "tipo": "DISTINCION",
+    "distincion_text": "Calificaci\u00f3n \u201cWith Distinction\u201d",
     "fecha": "2018-02-20",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 1
   }
 },
@@ -103,7 +148,11 @@
   "pk": 13,
   "fields": {
     "distincion": 10,
+    "tipo": "DISTINCION",
+    "distincion_text": "Certificado de Educador Ejemplar",
     "fecha": "2006-05-31",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -112,7 +161,11 @@
   "pk": 14,
   "fields": {
     "distincion": 12,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Reconocimiento por el apoyo al trabajo cient\u00edfico t\u00e9cnico al Instituto de Materiales y Reactivos",
     "fecha": "2005-08-19",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 17
   }
 },
@@ -121,7 +174,11 @@
   "pk": 15,
   "fields": {
     "distincion": 13,
+    "tipo": "MEDALLA",
+    "distincion_text": "Medalla Jos\u00e9 Tey: Por la consagraci\u00f3n en la formaci\u00f3n de las nuevas generaciones",
     "fecha": "2004-12-08",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -130,7 +187,11 @@
   "pk": 16,
   "fields": {
     "distincion": 14,
+    "tipo": "OTRO",
+    "distincion_text": "Diploma del Bur\u00f3 sindical como Profesor de Excelencia Universitaria por los resultados alcanzados  del curso 2003-2004",
     "fecha": "2004-04-06",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -139,7 +200,11 @@
   "pk": 17,
   "fields": {
     "distincion": 15,
+    "tipo": "OTRO",
+    "distincion_text": "Diploma de Destacado Alma Mater",
     "fecha": "2003-03-06",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -148,7 +213,11 @@
   "pk": 18,
   "fields": {
     "distincion": 16,
+    "tipo": "OTRO",
+    "distincion_text": "Diploma destacado Alma Mater de la Facultad de Geograf\u00eda",
     "fecha": "2002-04-08",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -157,7 +226,11 @@
   "pk": 19,
   "fields": {
     "distincion": 18,
+    "tipo": "OTRO",
+    "distincion_text": "Diploma del Bur\u00f3 sindical como Profesor de Excelencia Universitaria por los resultados alcanzados  del curso 2000-2001",
     "fecha": "2000-02-15",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -166,7 +239,11 @@
   "pk": 20,
   "fields": {
     "distincion": 19,
+    "tipo": "DISTINCION",
+    "distincion_text": "Distinci\u00f3n por la Educaci\u00f3n Cubana",
     "fecha": "1999-10-22",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -175,7 +252,11 @@
   "pk": 21,
   "fields": {
     "distincion": 20,
+    "tipo": "OTRO",
+    "distincion_text": "Diploma del Rector por los resultados en la Actividad de Postgrado Internacional durante el a\u00f1o 1999",
     "fecha": "1999-12-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -184,7 +265,11 @@
   "pk": 22,
   "fields": {
     "distincion": 20,
+    "tipo": "OTRO",
+    "distincion_text": "Diploma del Rector por los resultados en la Actividad de Postgrado Internacional durante el a\u00f1o 1999",
     "fecha": "1998-12-16",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -193,7 +278,11 @@
   "pk": 23,
   "fields": {
     "distincion": 22,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio anual al m\u00e9rito cient\u00edfico t\u00e9cnico",
     "fecha": "1991-04-24",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -202,7 +291,11 @@
   "pk": 24,
   "fields": {
     "distincion": 23,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Reconocimiento por la calidad del curso de postgrado impartido en la Universidad Aut\u00f3noma de Baja California Sur a personal de dicha instituci\u00f3n",
     "fecha": "1993-08-02",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 17
   }
 },
@@ -211,7 +304,11 @@
   "pk": 25,
   "fields": {
     "distincion": 24,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio por resultado cient\u00edfico - t\u00e9cnico destacado: \u201cNuevo Atlas Nacional de Cuba\u201d",
     "fecha": "1990-04-04",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -220,7 +317,11 @@
   "pk": 26,
   "fields": {
     "distincion": 25,
+    "tipo": "OTRO",
+    "distincion_text": "Menci\u00f3n especial al trabajo cient\u00edfico t\u00e9cnico de la Universidad de la Habana durante el curso 1980  - 1981",
     "fecha": "1981-11-26",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -229,7 +330,11 @@
   "pk": 27,
   "fields": {
     "distincion": 26,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Vocal Ciudadano del Consejo Directivo del Instituto Municipal de Planeaci\u00f3n del Municipio Morelia",
     "fecha": "2017-12-08",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 17
   }
 },
@@ -238,7 +343,11 @@
   "pk": 28,
   "fields": {
     "distincion": 27,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Nivel D PRIDE",
     "fecha": "2013-04-19",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -247,7 +356,11 @@
   "pk": 29,
   "fields": {
     "distincion": 28,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "SNI Nivel 1. \u00c1rea 5. Ciencias Sociales",
     "fecha": "2013-01-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 17
   }
 },
@@ -256,7 +369,11 @@
   "pk": 30,
   "fields": {
     "distincion": 28,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "SNI Nivel 1. \u00c1rea 5. Ciencias Sociales",
     "fecha": "2010-01-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 17
   }
 },
@@ -265,7 +382,11 @@
   "pk": 31,
   "fields": {
     "distincion": 29,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "PRIDE Nivel C. UNAM",
     "fecha": "2010-01-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 17
   }
 },
@@ -274,7 +395,11 @@
   "pk": 32,
   "fields": {
     "distincion": 30,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "PAIPA - UNAM, NIVEL C",
     "fecha": "2008-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 17
   }
 },
@@ -283,7 +408,11 @@
   "pk": 33,
   "fields": {
     "distincion": 31,
+    "tipo": "PREMIO",
+    "distincion_text": "Primera (ex aequo) del Premio de la Universidad del Consejo General del Val-de-Marne (premio de tesis)",
     "fecha": "2013-06-13",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 9
   }
 },
@@ -292,7 +421,11 @@
   "pk": 34,
   "fields": {
     "distincion": 32,
+    "tipo": "OTRO",
+    "distincion_text": "Miembro de la Sociedad de salvaguardia, Grospierres, Ard\u00e9che \u2013 07, participaci\u00f3n a la protecci\u00f3n del patrimonio",
     "fecha": "2013-01-13",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 9
   }
 },
@@ -301,7 +434,11 @@
   "pk": 35,
   "fields": {
     "distincion": 33,
+    "tipo": "OTRO",
+    "distincion_text": "Miembro de la Sociedad de Americanistas de Paris",
     "fecha": "2007-01-03",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 9
   }
 },
@@ -310,7 +447,11 @@
   "pk": 36,
   "fields": {
     "distincion": 34,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores Nivel 1 (\u00e1rea 1)",
     "fecha": "2004-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 23
   }
 },
@@ -319,7 +460,11 @@
   "pk": 37,
   "fields": {
     "distincion": 34,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores Nivel 1 (\u00e1rea 1)",
     "fecha": "2007-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 23
   }
 },
@@ -328,7 +473,11 @@
   "pk": 38,
   "fields": {
     "distincion": 34,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores Nivel 1 (\u00e1rea 1)",
     "fecha": "2011-01-03",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 23
   }
 },
@@ -337,7 +486,11 @@
   "pk": 39,
   "fields": {
     "distincion": 35,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores Nivel 2 (\u00e1rea 1)",
     "fecha": "2015-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 23
   }
 },
@@ -346,7 +499,11 @@
   "pk": 40,
   "fields": {
     "distincion": 36,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Estatal de Investigadores",
     "fecha": "2018-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 23
   }
 },
@@ -355,7 +512,11 @@
   "pk": 41,
   "fields": {
     "distincion": 37,
+    "tipo": "DISTINCION",
+    "distincion_text": "Beca al desempe\u00f1o acad\u00e9mico PAIPA Nivel B",
     "fecha": "2003-01-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 23
   }
 },
@@ -364,7 +525,11 @@
   "pk": 42,
   "fields": {
     "distincion": 38,
+    "tipo": "DISTINCION",
+    "distincion_text": "Beca al desempe\u00f1o acad\u00e9mico PRIDE Nivel C",
     "fecha": "2006-01-02",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 23
   }
 },
@@ -373,7 +538,11 @@
   "pk": 43,
   "fields": {
     "distincion": 39,
+    "tipo": "DISTINCION",
+    "distincion_text": "Beca al desempe\u00f1o acad\u00e9mico PRIDE Nivel D",
     "fecha": "2018-03-05",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 23
   }
 },
@@ -382,7 +551,11 @@
   "pk": 44,
   "fields": {
     "distincion": 39,
+    "tipo": "DISTINCION",
+    "distincion_text": "Beca al desempe\u00f1o acad\u00e9mico PRIDE Nivel D",
     "fecha": "2015-01-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 23
   }
 },
@@ -391,7 +564,11 @@
   "pk": 45,
   "fields": {
     "distincion": 40,
+    "tipo": "DISTINCION",
+    "distincion_text": "Diploma de Percepci\u00f3n remota y SIG II (avanzado)",
     "fecha": "2000-07-17",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 23
   }
 },
@@ -400,7 +577,11 @@
   "pk": 46,
   "fields": {
     "distincion": 41,
+    "tipo": "DISTINCION",
+    "distincion_text": "Stochastic modelling, Hydrological Forecasting and Flood Risk",
     "fecha": "2002-02-11",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 23
   }
 },
@@ -409,7 +590,11 @@
   "pk": 47,
   "fields": {
     "distincion": 42,
+    "tipo": "DISTINCION",
+    "distincion_text": "Geographic Information Systems and application (Water Management)",
     "fecha": "2003-11-14",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 23
   }
 },
@@ -418,7 +603,11 @@
   "pk": 48,
   "fields": {
     "distincion": 43,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Profesor fundador del Claustro Acad\u00e9mico de la Licenciatura en Geohistoria",
     "fecha": "2016-04-04",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -427,7 +616,11 @@
   "pk": 49,
   "fields": {
     "distincion": 45,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cD\u201d",
     "fecha": "2011-01-03",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 33
   }
 },
@@ -436,7 +629,11 @@
   "pk": 50,
   "fields": {
     "distincion": 44,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cC\u201d",
     "fecha": "2016-04-04",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 33
   }
 },
@@ -445,7 +642,11 @@
   "pk": 51,
   "fields": {
     "distincion": 46,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores, Nivel \u201cI\u201d",
     "fecha": "2002-07-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -454,7 +655,11 @@
   "pk": 52,
   "fields": {
     "distincion": 47,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Menci\u00f3n Cum Laude en el examen de grado de doctor",
     "fecha": "1999-12-13",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -463,7 +668,11 @@
   "pk": 53,
   "fields": {
     "distincion": 44,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cC\u201d",
     "fecha": "2010-12-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 33
   }
 },
@@ -472,7 +681,11 @@
   "pk": 54,
   "fields": {
     "distincion": 48,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cB\u201d",
     "fecha": "2005-01-05",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 33
   }
 },
@@ -481,7 +694,11 @@
   "pk": 55,
   "fields": {
     "distincion": 49,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cA\u201d",
     "fecha": "2004-08-02",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -490,7 +707,11 @@
   "pk": 56,
   "fields": {
     "distincion": 50,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Est\u00edmulos de Iniciaci\u00f3n a la Investigaci\u00f3n (PEII)",
     "fecha": "2002-02-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -499,7 +720,11 @@
   "pk": 57,
   "fields": {
     "distincion": 51,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Apoyo a la Incorporaci\u00f3n del Personal Acad\u00e9mico de Tiempo Completo (PAIPA) nivel \u201cB\u201d",
     "fecha": "2000-10-02",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -508,7 +733,11 @@
   "pk": 58,
   "fields": {
     "distincion": 52,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Beca para realizar estudios y tesis de doctorado en la Universidad Complutense de Madrid",
     "fecha": "1995-01-02",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -517,7 +746,11 @@
   "pk": 59,
   "fields": {
     "distincion": 53,
+    "tipo": "OTRO",
+    "distincion_text": "Beca para realizar tesis de licenciatura en la UNAM. Direcci\u00f3n General de Asuntos del Personal Acad\u00e9mico, UNAM",
     "fecha": "1992-10-05",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -526,7 +759,11 @@
   "pk": 60,
   "fields": {
     "distincion": 53,
+    "tipo": "OTRO",
+    "distincion_text": "Beca para realizar tesis de licenciatura en la UNAM. Direcci\u00f3n General de Asuntos del Personal Acad\u00e9mico, UNAM",
     "fecha": "1992-10-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 33
   }
 },
@@ -535,7 +772,11 @@
   "pk": 61,
   "fields": {
     "distincion": 55,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Carolyn Meek Memorial Scholarship",
     "fecha": "1989-01-04",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 32
   }
 },
@@ -544,7 +785,11 @@
   "pk": 62,
   "fields": {
     "distincion": 56,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Beca James P. Bennet Graduate Fellowship",
     "fecha": "1991-02-04",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 32
   }
 },
@@ -553,7 +798,11 @@
   "pk": 63,
   "fields": {
     "distincion": 56,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Beca James P. Bennet Graduate Fellowship",
     "fecha": "1990-02-04",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 32
   }
 },
@@ -562,7 +811,11 @@
   "pk": 65,
   "fields": {
     "distincion": 58,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Scholarship for the PhD Program in the UNAM",
     "fecha": "1996-04-06",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 32
   }
 },
@@ -571,7 +824,11 @@
   "pk": 66,
   "fields": {
     "distincion": 34,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores Nivel 1 (\u00e1rea 1)",
     "fecha": "2007-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 32
   }
 },
@@ -580,7 +837,11 @@
   "pk": 67,
   "fields": {
     "distincion": 60,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al desempe\u00f1o del Personal Acad\u00e9mico de Carrera (PRIDE), Nivel D",
     "fecha": "2007-01-04",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 32
   }
 },
@@ -589,7 +850,11 @@
   "pk": 68,
   "fields": {
     "distincion": 61,
+    "tipo": "PREMIO",
+    "distincion_text": "Sustainable Agriculture and Rural Development (SARD)",
     "fecha": "2000-08-31",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 32
   }
 },
@@ -598,7 +863,11 @@
   "pk": 69,
   "fields": {
     "distincion": 62,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio The Ashden Awards for Sustainable Energy. 1st Prize Winner. The International  Award for Health and Welfare 2006",
     "fecha": "2006-01-05",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 32
   }
 },
@@ -607,7 +876,11 @@
   "pk": 72,
   "fields": {
     "distincion": 65,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio Reconocimiento Investigaci\u00f3n. Sociedad Cient\u00edfica Latinoamericana de Agroecolog\u00eda (SOCLA) , La Plata, Argentina",
     "fecha": "2015-10-08",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 32
   }
 },
@@ -616,7 +889,11 @@
   "pk": 74,
   "fields": {
     "distincion": 67,
+    "tipo": "OTRO",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores Nivel C.",
     "fecha": "2017-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 44
   }
 },
@@ -625,7 +902,11 @@
   "pk": 75,
   "fields": {
     "distincion": 36,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Estatal de Investigadores",
     "fecha": "2017-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 44
   }
 },
@@ -634,7 +915,11 @@
   "pk": 76,
   "fields": {
     "distincion": 68,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "L\u00edder de Academia de Artes",
     "fecha": "2014-08-05",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 44
   }
 },
@@ -643,7 +928,11 @@
   "pk": 77,
   "fields": {
     "distincion": 69,
+    "tipo": "DISTINCION",
+    "distincion_text": "Evaluadora del 5\u00ba Encuentro de J\u00f3venes Investigadores del Estado de Morelos",
     "fecha": "2017-10-03",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 44
   }
 },
@@ -652,7 +941,11 @@
   "pk": 78,
   "fields": {
     "distincion": 66,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio Sor Juana In\u00e9s de la Cruz",
     "fecha": "2018-03-08",
+    "institucion": 1,
+    "ambito": "INTERNACIONAL",
     "usuario": 36
   }
 },
@@ -661,7 +954,11 @@
   "pk": 79,
   "fields": {
     "distincion": 70,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio al Mejor art\u00edculo 2017 (Best Paper Prize 2017 Progress in Development Studies Journal)",
     "fecha": "2018-05-02",
+    "institucion": 1,
+    "ambito": "INTERNACIONAL",
     "usuario": 33
   }
 },
@@ -670,7 +967,11 @@
   "pk": 80,
   "fields": {
     "distincion": 48,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cB\u201d",
     "fecha": "2016-01-28",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 43
   }
 },
@@ -679,7 +980,11 @@
   "pk": 81,
   "fields": {
     "distincion": 71,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Est\u00edmulos de Iniciaci\u00f3n de la Carrera Acad\u00e9mica para Personal de Tiempo Completo (PEI).",
     "fecha": "2016-01-28",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 43
   }
 },
@@ -688,7 +993,11 @@
   "pk": 82,
   "fields": {
     "distincion": 72,
+    "tipo": "OTRO",
+    "distincion_text": "Permanencia en el Nivel I del Sistema Nacional de Investigadores (SNI) de M\u00e9xico, dentro del \u00c1rea V (Ciencias Sociales, Geograf\u00eda), en las especialidades de Geograf\u00eda Ambiental, Etnoecolog\u00eda y Ecolog\u00eda Pol\u00e7itica",
     "fecha": "2018-01-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 43
   }
 },
@@ -697,7 +1006,11 @@
   "pk": 83,
   "fields": {
     "distincion": 73,
+    "tipo": "OTRO",
+    "distincion_text": "Nuevo ingreso al Nivel I del Sistema Nacional de Investigadores (SNI) de M\u00e9xico, dentro del \u00c1rea V (Ciencias Sociales, Geograf\u00eda), en las especialidades de Geograf\u00eda Ambiental, Etnoecolog\u00eda y Ecolog\u00eda Pol\u00edtica",
     "fecha": "2015-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 43
   }
 },
@@ -706,7 +1019,11 @@
   "pk": 84,
   "fields": {
     "distincion": 43,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Profesor fundador del Claustro Acad\u00e9mico de la Licenciatura en Geohistoria",
     "fecha": "2017-03-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 11
   }
 },
@@ -715,7 +1032,11 @@
   "pk": 85,
   "fields": {
     "distincion": 74,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Declaraci\u00f3n Oficial de Inter\u00e9s Municipal a la investigaci\u00f3n: \u201cAbandono y reapropiaci\u00f3n de peque\u00f1as localidades rurales en Am\u00e9rica Latina\u201d en el caso de La Ni\u00f1a.",
     "fecha": "2009-10-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 11
   }
 },
@@ -724,7 +1045,11 @@
   "pk": 86,
   "fields": {
     "distincion": 45,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cD\u201d",
     "fecha": "2016-11-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 11
   }
 },
@@ -733,7 +1058,11 @@
   "pk": 87,
   "fields": {
     "distincion": 75,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio Marcos y Celia Maus",
     "fecha": "2099-11-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 11
   }
 },
@@ -742,7 +1071,11 @@
   "pk": 88,
   "fields": {
     "distincion": 45,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cD\u201d",
     "fecha": "2012-03-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 11
   }
 },
@@ -751,7 +1084,11 @@
   "pk": 89,
   "fields": {
     "distincion": 44,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cC\u201d",
     "fecha": "2009-02-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 11
   }
 },
@@ -760,7 +1097,11 @@
   "pk": 90,
   "fields": {
     "distincion": 48,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cB\u201d",
     "fecha": "2006-03-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 11
   }
 },
@@ -769,7 +1110,11 @@
   "pk": 91,
   "fields": {
     "distincion": 51,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Apoyo a la Incorporaci\u00f3n del Personal Acad\u00e9mico de Tiempo Completo (PAIPA) nivel \u201cB\u201d",
     "fecha": "2004-11-25",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 11
   }
 },
@@ -778,7 +1123,11 @@
   "pk": 92,
   "fields": {
     "distincion": 66,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio Sor Juana In\u00e9s de la Cruz",
     "fecha": "2015-03-09",
+    "institucion": 1,
+    "ambito": "INTERNACIONAL",
     "usuario": 20
   }
 },
@@ -787,7 +1136,11 @@
   "pk": 93,
   "fields": {
     "distincion": 76,
+    "tipo": "DISTINCION",
+    "distincion_text": "Summa cum laude",
     "fecha": "1900-01-01",
+    "institucion": 1,
+    "ambito": "INTERNACIONAL",
     "usuario": 20
   }
 },
@@ -796,7 +1149,11 @@
   "pk": 94,
   "fields": {
     "distincion": 77,
+    "tipo": "OTRO",
+    "distincion_text": "Miembro de CERES",
     "fecha": "1900-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 20
   }
 },
@@ -805,7 +1162,11 @@
   "pk": 95,
   "fields": {
     "distincion": 79,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Diploma en reconocimiento por 10 a\u00f1os de servicios academicos en la UNAM",
     "fecha": "2017-03-20",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 34
   }
 },
@@ -814,7 +1175,11 @@
   "pk": 96,
   "fields": {
     "distincion": 66,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio Sor Juana In\u00e9s de la Cruz",
     "fecha": "2016-03-08",
+    "institucion": 1,
+    "ambito": "INTERNACIONAL",
     "usuario": 32
   }
 },
@@ -823,7 +1188,11 @@
   "pk": 97,
   "fields": {
     "distincion": 80,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Reconocimiento al desempe\u00f1o como verificadora titular del programa \u201cAgenda desde lo Local\u201d",
     "fecha": "2012-09-28",
+    "institucion": 145,
+    "ambito": "REGIONAL",
     "usuario": 15
   }
 },
@@ -832,7 +1201,11 @@
   "pk": 98,
   "fields": {
     "distincion": 80,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Reconocimiento al desempe\u00f1o como verificadora titular del programa \u201cAgenda desde lo Local\u201d",
     "fecha": "2013-12-09",
+    "institucion": 145,
+    "ambito": "REGIONAL",
     "usuario": 15
   }
 },
@@ -841,7 +1214,11 @@
   "pk": 99,
   "fields": {
     "distincion": 60,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al desempe\u00f1o del Personal Acad\u00e9mico de Carrera (PRIDE), Nivel D",
     "fecha": "2017-04-06",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 15
   }
 },
@@ -850,7 +1227,11 @@
   "pk": 100,
   "fields": {
     "distincion": 51,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Apoyo a la Incorporaci\u00f3n del Personal Acad\u00e9mico de Tiempo Completo (PAIPA) nivel \u201cB\u201d",
     "fecha": "2005-06-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 15
   }
 },
@@ -859,7 +1240,11 @@
   "pk": 101,
   "fields": {
     "distincion": 48,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cB\u201d",
     "fecha": "2006-03-02",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 15
   }
 },
@@ -868,7 +1253,11 @@
   "pk": 102,
   "fields": {
     "distincion": 44,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Programa de Primas al Desempe\u00f1o y Productividad del Personal Acad\u00e9mico de Tiempo Completo (PRIDE) nivel \u201cC\u201d",
     "fecha": "2009-02-12",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "usuario": 15
   }
 },
@@ -877,7 +1266,11 @@
   "pk": 103,
   "fields": {
     "distincion": 81,
+    "tipo": "OTRO",
+    "distincion_text": "Promoci\u00f3n de T\u00e9cnico Acad\u00e9mico asociado \u201cC\u201d de T. C. a T\u00e9cnico Acad\u00e9mico Titular \u201cA\u201d de Tiempo Completo",
     "fecha": "2011-02-10",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 15
   }
 },
@@ -886,7 +1279,11 @@
   "pk": 104,
   "fields": {
     "distincion": 82,
+    "tipo": "OTRO",
+    "distincion_text": "Graduaci\u00f3n por excelencia",
     "fecha": "2002-06-30",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 15
   }
 },
@@ -895,7 +1292,11 @@
   "pk": 105,
   "fields": {
     "distincion": 83,
+    "tipo": "OTRO",
+    "distincion_text": "Distinci\u00f3n y merecimiento de una beca de estudios",
     "fecha": "2003-06-30",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 15
   }
 },
@@ -904,7 +1305,11 @@
   "pk": 106,
   "fields": {
     "distincion": 59,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores. Nivel 1",
     "fecha": "2018-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 40
   }
 },
@@ -913,7 +1318,11 @@
   "pk": 107,
   "fields": {
     "distincion": 84,
+    "tipo": "PREMIO",
+    "distincion_text": "Primer premio para presentaci\u00f3n oral en Student Conference in Conservation Science (SCCS) 2010, University of Cambridge, Reino Unido, 23-25 marzo 2010.",
     "fecha": "2010-03-23",
+    "institucion": 669,
+    "ambito": "INTERNACIONAL",
     "usuario": 91
   }
 },
@@ -922,7 +1331,11 @@
   "pk": 108,
   "fields": {
     "distincion": 85,
+    "tipo": "DISTINCION",
+    "distincion_text": "Ingreso a la Academia mexicana de ciencias",
     "fecha": "2016-01-01",
+    "institucion": 293,
+    "ambito": "NACIONAL",
     "usuario": 30
   }
 },
@@ -931,16 +1344,11 @@
   "pk": 109,
   "fields": {
     "distincion": 35,
+    "tipo": "DISTINCION",
+    "distincion_text": "Miembro del Sistema Nacional de Investigadores Nivel 2 (\u00e1rea 1)",
     "fecha": "2015-01-01",
-    "usuario": 30
-  }
-},
-{
-  "model": "distinciones.distincionacademico",
-  "pk": 110,
-  "fields": {
-    "distincion": 86,
-    "fecha": "1900-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 30
   }
 },
@@ -949,7 +1357,11 @@
   "pk": 111,
   "fields": {
     "distincion": 87,
+    "tipo": "DISTINCION",
+    "distincion_text": "Distinci\u00f3n como uno de los cinco mejores carteles cient\u00edficos",
     "fecha": "2014-08-01",
+    "institucion": 483,
+    "ambito": "INTERNACIONAL",
     "usuario": 30
   }
 },
@@ -958,7 +1370,11 @@
   "pk": 112,
   "fields": {
     "distincion": 88,
+    "tipo": "DISTINCION",
+    "distincion_text": "Certificado al m\u00e9rito",
     "fecha": "1992-01-01",
+    "institucion": 941,
+    "ambito": "INTERNACIONAL",
     "usuario": 30
   }
 },
@@ -967,7 +1383,11 @@
   "pk": 113,
   "fields": {
     "distincion": 89,
+    "tipo": "DISTINCION",
+    "distincion_text": "Reconocimiento como investigador correspondiente",
     "fecha": "2018-09-03",
+    "institucion": 252,
+    "ambito": "INTERNACIONAL",
     "usuario": 29
   }
 },
@@ -976,7 +1396,11 @@
   "pk": 114,
   "fields": {
     "distincion": 90,
+    "tipo": "DISTINCION",
+    "distincion_text": "Nombramiento como Candidata a Investigadora Nacional por el Sistema Nacional de Investigadores (SNI)",
     "fecha": "2018-10-08",
+    "institucion": 65,
+    "ambito": "NACIONAL",
     "usuario": 91
   }
 },
@@ -985,7 +1409,11 @@
   "pk": 115,
   "fields": {
     "distincion": 91,
+    "tipo": "OTRO",
+    "distincion_text": "Beca doctoral FI-AGAUR",
     "fecha": "2010-06-01",
+    "institucion": 287,
+    "ambito": "INSTITUCIONAL",
     "usuario": 91
   }
 },
@@ -994,7 +1422,11 @@
   "pk": 116,
   "fields": {
     "distincion": 92,
+    "tipo": "OTRO",
+    "distincion_text": "Beca Erasmus Mundus - Joint European Master in Environmental Studies (JEMES)",
     "fecha": "2007-09-01",
+    "institucion": 135,
+    "ambito": "INTERNACIONAL",
     "usuario": 91
   }
 },
@@ -1003,7 +1435,11 @@
   "pk": 117,
   "fields": {
     "distincion": 94,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Proyecto \"de \u00e9xito\" CONACYT",
     "fecha": "2018-11-06",
+    "institucion": 65,
+    "ambito": "INSTITUCIONAL",
     "usuario": 25
   }
 },
@@ -1012,7 +1448,11 @@
   "pk": 119,
   "fields": {
     "distincion": 4,
+    "tipo": "DISTINCION",
+    "distincion_text": "Distinci\u00f3n Candidato a Investigador Nacional",
     "fecha": "2017-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 93
   }
 },
@@ -1021,7 +1461,11 @@
   "pk": 120,
   "fields": {
     "distincion": 78,
+    "tipo": "RECONOCIMIENTO",
+    "distincion_text": "Tesis con Mencion Honorifica",
     "fecha": "2016-02-26",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "usuario": 93
   }
 },
@@ -1030,7 +1474,11 @@
   "pk": 121,
   "fields": {
     "distincion": 96,
+    "tipo": "DISTINCION",
+    "distincion_text": "International Research Associate",
     "fecha": "2018-08-21",
+    "institucion": 943,
+    "ambito": "INTERNACIONAL",
     "usuario": 93
   }
 },
@@ -1039,7 +1487,11 @@
   "pk": 122,
   "fields": {
     "distincion": 70,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio al Mejor art\u00edculo 2017 (Best Paper Prize 2017 Progress in Development Studies Journal)",
     "fecha": "2018-05-08",
+    "institucion": 1,
+    "ambito": "INTERNACIONAL",
     "usuario": 36
   }
 },
@@ -1048,9 +1500,13 @@
   "pk": 1,
   "fields": {
     "distincion": 9,
+    "tipo": "PREMIO",
+    "distincion_text": "Mejor tesis de doctorado en Geograf\u00eda F\u00edsica",
     "alumno": 383,
     "nivel_academico": "DOCTORADO",
     "fecha": "2016-05-31",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "tutores": [
       17
     ]
@@ -1061,9 +1517,13 @@
   "pk": 2,
   "fields": {
     "distincion": 63,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio Nacional de Periodismo y Divulgaci\u00f3n Cient\u00edfica CONACYT 2014",
     "alumno": 1307,
     "nivel_academico": "MAESTRIA",
     "fecha": "2014-01-01",
+    "institucion": 1,
+    "ambito": "NACIONAL",
     "tutores": [
       32
     ]
@@ -1074,9 +1534,13 @@
   "pk": 3,
   "fields": {
     "distincion": 64,
+    "tipo": "PREMIO",
+    "distincion_text": "Premio Dr. Santiago Cendejas Huerta para Tesis de Licenciatura 2014",
     "alumno": 925,
     "nivel_academico": "LICENCIATURA",
     "fecha": "2014-01-01",
+    "institucion": 1,
+    "ambito": "INSTITUCIONAL",
     "tutores": [
       32
     ]
@@ -1087,9 +1551,13 @@
   "pk": 4,
   "fields": {
     "distincion": 93,
+    "tipo": "PREMIO",
+    "distincion_text": "Primer lugar del premio del Concurso de Uso de Tecnolog\u00edas Libres de la Informaci\u00f3n Geogr\u00e1fica 2018",
     "alumno": 1336,
     "nivel_academico": "MAESTRIA",
     "fecha": "2018-10-18",
+    "institucion": 942,
+    "ambito": "INTERNACIONAL",
     "tutores": [
       25
     ]

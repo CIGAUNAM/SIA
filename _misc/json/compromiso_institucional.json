@@ -1,3 +1,4 @@
+Tracking file by folder pattern:  migrations
 [
 {
   "model": "compromiso_institucional.comisioninstitucional",
@@ -2099,22 +2100,6 @@
     "fecha_inicio": "2018-11-27",
     "fecha_fin": "2020-11-27",
     "usuario": 42
-  }
-},
-{
-  "model": "compromiso_institucional.representacionorganocolegiadounam",
-  "pk": 15,
-  "fields": {
-    "tipo_representacion": "DENTRO",
-    "representacion_dentro_unam": "OTRA",
-    "representacion_dentro_unam_otra": "rew",
-    "representacion_fuera_unam": "",
-    "institucion_dentro_unam": 7,
-    "institucion_fuera_unam": null,
-    "institucion": null,
-    "fecha_inicio": "2019-05-26",
-    "fecha_fin": "2019-05-31",
-    "usuario": 1
   }
 },
 {

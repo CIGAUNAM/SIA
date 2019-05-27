@@ -1,3 +1,4 @@
+Tracking file by folder pattern:  migrations
 [
 {
   "model": "vinculacion.arbitrajepublicacionacademica",
@@ -2029,8 +2030,8 @@
     ],
     "instituciones": [
       4,
-      580,
-      581
+      581,
+      580
     ],
     "participantes": [
       1235,
@@ -2052,8 +2053,8 @@
     "entidades": [],
     "instituciones": [
       4,
-      6,
       137,
+      6,
       305
     ],
     "participantes": [
@@ -2395,9 +2396,9 @@
       483
     ],
     "instituciones": [
+      483,
       105,
-      190,
-      483
+      190
     ],
     "participantes": [
       941,
@@ -2440,13 +2441,13 @@
     "entidades": [],
     "instituciones": [
       4,
-      10,
-      152,
-      201,
       234,
+      722,
+      152,
+      10,
       393,
       581,
-      722
+      201
     ],
     "participantes": [
       259,
