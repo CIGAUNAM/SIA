@@ -782,7 +782,7 @@ class Revista(models.Model):
     revista_nombre = models.CharField(max_length=255, unique=True)
     revista_nombreabreviadowos = models.CharField(max_length=255, null=True, blank=True)
     revista_pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    revista_indices = models.ManyToManyField(Indice, related_name='revista_indices')
+    revista_indices = models.ManyToManyField(Indice, blank=True, related_name='revista_indices')
     revista_issn_impreso = models.CharField(max_length=40, null=True, blank=True, verbose_name='ISSN Impreso')
     revista_issn_online = models.CharField(max_length=40, null=True, blank=True, verbose_name='ISSN Online')
     revista_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')

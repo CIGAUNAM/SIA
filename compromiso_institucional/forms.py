@@ -81,7 +81,7 @@ class RepresentacionOrganoColegiadoUNAMForm(forms.ModelForm):
         )
     )
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
 
     class Meta:
         model = RepresentacionOrganoColegiadoUNAM
