@@ -51,7 +51,7 @@ class CursoDocenciaEscolarizado(models.Model):
 
 
 class CursoDocenciaExtracurricular(models.Model):
-    asignatura = models.ForeignKey(Asignatura, on_delete=models.DO_NOTHING)
+    asignatura = models.ForeignKey(Asignatura, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     tipo = models.ForeignKey(TipoCurso, blank=True, null=True, on_delete=models.DO_NOTHING)
     tipo_curso = models.CharField(max_length=30, blank=True, null=True,
@@ -65,8 +65,8 @@ class CursoDocenciaExtracurricular(models.Model):
     clasificacion = models.CharField(max_length=30,
                                   choices=(('', '------'), ('APOYO_POSGRADO', 'En apoyo al posgrado en Geografía'),
                                            ('CAPACITACION', 'Curso de capacitación')))
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+    institucion2 = models.ForeignKey(Institucion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()

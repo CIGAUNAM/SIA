@@ -96,6 +96,10 @@ class CursoDocenciaExtracurricularForm(forms.ModelForm):
     tipocurso_otro = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                                 label='Otro tipo de curso',
                                 help_text='Otro tipo de curso.')
+    clasificacion = forms.ChoiceField(widget=Select2Widget(
+        attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+        choices=(('', '------'), ('APOYO_POSGRADO', 'En apoyo al posgrado en Geografía'),
+                                           ('CAPACITACION', 'Curso de capacitación')), required=True)
     institucion = forms.ModelChoiceField(
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
