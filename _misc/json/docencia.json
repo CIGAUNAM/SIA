@@ -1,4 +1,3 @@
-Tracking file by folder pattern:  migrations
 [
 {
   "model": "docencia.cursodocenciaescolarizado",
@@ -17641,3 +17640,4 @@ Tracking file by folder pattern:  migrations
     "usuario": 42
   }
 }
+]
