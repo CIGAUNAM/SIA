@@ -52,7 +52,7 @@ class LicenciaturaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': objs.title(),
-                'titulos_tabla': ['Carrera', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
+                'titulos_tabla': ['Título obtenido', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
 
 
     tabla_mios =  '<script>\n' \
@@ -66,9 +66,9 @@ class LicenciaturaContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.carrera",\n' \
+                                        '"data": "fields.titulo_obtenido",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.carrera + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo_obtenido + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.titulo_tesis"},\n' \
@@ -90,7 +90,7 @@ class MaestriaContext:
                 'titulo_lista': 'Mis maestrías', 'titulo_agregar': 'Agregar Maestría',
                 'titulo_detalle': 'Editar maestría',
                 'objeto': 'maestría', 'breadcrumb_seccion': 'Formación académica', 'titulo_pagina': 'Maestrías',
-                'titulos_tabla': ['Programa', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
+                'titulos_tabla': ['Título obtenido', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
 
     tabla_mios =  '<script>\n' \
                     'jQuery(document).ready(function ($jquery) {\n' \
@@ -103,9 +103,9 @@ class MaestriaContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.programa",\n' \
+                                        '"data": "fields.titulo_obtenido",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.programa + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo_obtenido + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.titulo_tesis"},\n' \
@@ -127,7 +127,7 @@ class DoctoradoContext:
                 'titulo_lista': 'Mis doctorados', 'titulo_agregar': 'Agregar doctorado',
                 'titulo_detalle': 'Editar doctorado',
                 'objeto': 'doctorado', 'breadcrumb_seccion': 'Formación académica', 'titulo_pagina': 'Doctorados',
-                'titulos_tabla': ['Programa', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
+                'titulos_tabla': ['Título obtenido', 'Título de Tesis', 'Fecha de grado', 'Dependencia']}
 
     tabla_mios =  '<script>\n' \
                     'jQuery(document).ready(function ($jquery) {\n' \
@@ -140,9 +140,9 @@ class DoctoradoContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.programa",\n' \
+                                        '"data": "fields.titulo_obtenido",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.programa + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo_obtenido + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.titulo_tesis"},\n' \
