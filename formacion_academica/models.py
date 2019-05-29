@@ -27,7 +27,6 @@ class CursoEspecializacion(models.Model):
     fecha_inicio = models.DateField('Fecha de inicio')
     fecha_fin = models.DateField('Fecha de finalización', blank=True, null=True)
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
 
@@ -46,12 +45,8 @@ class CursoEspecializacion(models.Model):
 
 class Licenciatura(models.Model):
     titulo_obtenido = models.CharField(max_length=255)
-    carrera = models.ForeignKey(ProgramaLicenciatura, on_delete=models.DO_NOTHING, null=True, blank=True)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     titulo_tesis = models.CharField(max_length=255)
-    #fecha_inicio = models.DateField('Fecha de inicio de licenciatura')
-    #fecha_fin = models.DateField('Fecha de terminación de licenciatura')
     fecha_grado = models.DateField('Fecha de obtención de grado de licenciatura')
     distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='licenciaturas', on_delete=models.DO_NOTHING)
@@ -73,10 +68,6 @@ class Maestria(models.Model):
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, null=True, blank=True)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     titulo_tesis = models.CharField(max_length=255)
-    #tesis_doc = models.FileField(blank=True)
-    #tesis_url = models.URLField(blank=True)
-    #fecha_inicio = models.DateField('Fecha de inicio de maestría')
-    #fecha_fin = models.DateField('Fecha de terminación de maestría', blank=True, null=True)
     fecha_grado = models.DateField('Fecha de obtención de grado de maestría', blank=True, null=True)
     distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='maestrias', on_delete=models.DO_NOTHING)

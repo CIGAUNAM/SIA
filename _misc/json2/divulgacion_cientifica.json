@@ -5385,10 +5385,1241 @@
   }
 },
 {
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 11,
+  "fields": {
+    "eventodivulgacion_nombre": "Seminario An\u00e1lisis de la vulnerabilidad y riesgos de contaminaci\u00f3n de las aguas subterr\u00e1neas en la Pen\u00ednsula de Yucat\u00e1n",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2009-12-10",
+    "eventodivulgacion_fecha_fin": "2009-12-11",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "M\u00e9rida",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 44,
+  "fields": {
+    "eventodivulgacion_nombre": "Noche de las Estrellas",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2015-11-28",
+    "eventodivulgacion_fecha_fin": "2015-11-28",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 54,
+  "fields": {
+    "eventodivulgacion_nombre": "I Simposio de Aplicaciones Cient\u00edficas  y T\u00e9cnicas de los Veh\u00edculos no Tripulados. M\u00e9xico 2017",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2017-02-16",
+    "eventodivulgacion_fecha_fin": "2017-02-17",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 68,
+  "fields": {
+    "eventodivulgacion_nombre": "III Coloquio Internacional en Geograf\u00eda Ambiental. Morelia, MICH",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2012-03-22",
+    "eventodivulgacion_fecha_fin": "2014-03-24",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 69,
+  "fields": {
+    "eventodivulgacion_nombre": "XIX Reuni\u00f3n Nacional SELPER - M\u00e9xico.",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2011-10-04",
+    "eventodivulgacion_fecha_fin": "2011-10-07",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 70,
+  "fields": {
+    "eventodivulgacion_nombre": "II Reuni\u00f3n Nacional de Geomorfolog\u00eda",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "1989-08-16",
+    "eventodivulgacion_fecha_fin": "1989-08-16",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 72,
+  "fields": {
+    "eventodivulgacion_nombre": "VII Reuni\u00f3n Nacional de Geomorfolog\u00eda",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2007-11-26",
+    "eventodivulgacion_fecha_fin": "2007-11-29",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 76,
+  "fields": {
+    "eventodivulgacion_nombre": "X Reuni\u00f3n Nacional de Geomorfolog\u00eda y I Simposio Nacional de  Geopatrimonio y Geoparques",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2016-11-16",
+    "eventodivulgacion_fecha_fin": "2016-11-25",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 80,
+  "fields": {
+    "eventodivulgacion_nombre": "8vo Coloquio de doctorandos del Posgrado en Geograf\u00eda, UNAM. Miradas m\u00faltiples al espacio geogr\u00e1fico",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2010-10-04",
+    "eventodivulgacion_fecha_fin": "2010-10-13",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 124,
+  "fields": {
+    "eventodivulgacion_nombre": "Seminario Expansi\u00f3n del Periurbano y Conformaci\u00f3n de Territorios Desiguales",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2017-12-08",
+    "eventodivulgacion_fecha_fin": "2017-12-08",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 139,
+  "fields": {
+    "eventodivulgacion_nombre": "Reuni\u00f3n Geograf\u00eda de los suelos de M\u00e9xico. 2011",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2011-09-08",
+    "eventodivulgacion_fecha_fin": "2011-09-09",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 143,
+  "fields": {
+    "eventodivulgacion_nombre": "XIX Congreso Nacional de Geograf\u00eda, Villahermosa Tabasco",
+    "eventodivulgacion_tipo": 2,
+    "eventodivulgacion_fecha_inicio": "2010-11-23",
+    "eventodivulgacion_fecha_fin": "2010-11-26",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Villahermosa",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 145,
+  "fields": {
+    "eventodivulgacion_nombre": "Coloquio de Doctorandos. La Centralidad de la Geograf\u00eda dentro de las Ciencias Sociales",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2009-09-09",
+    "eventodivulgacion_fecha_fin": "2009-09-10",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 160,
+  "fields": {
+    "eventodivulgacion_nombre": "III Coloquio Internacional en  Geograf\u00eda Ambiental",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2010-08-08",
+    "eventodivulgacion_fecha_fin": "2010-08-20",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 161,
+  "fields": {
+    "eventodivulgacion_nombre": "Coloquio Internacional \u201cGeograf\u00eda y Ambiente en Am\u00e9rica Latina\u201d.",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2010-08-08",
+    "eventodivulgacion_fecha_fin": "2010-08-20",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 232,
+  "fields": {
+    "eventodivulgacion_nombre": "Exposici\u00f3n:Planos coloniales (siglo XVI) de la regi\u00f3n de Ac\u00e1mbaro, Museo de Alhondiga",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2014-05-08",
+    "eventodivulgacion_fecha_fin": "2014-07-08",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Ac\u00e1mbaro",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 233,
+  "fields": {
+    "eventodivulgacion_nombre": "Exposici\u00f3n Planos coloniales (siglo XVI) de la regi\u00f3n de Ac\u00e1mbaro en la Casa de la Cultura de Ac\u00e1mbaro",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2014-09-05",
+    "eventodivulgacion_fecha_fin": "2014-12-03",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Ac\u00e1mbaro",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 254,
+  "fields": {
+    "eventodivulgacion_nombre": "La memoria de los nombres: la toponimia en la conformaci\u00f3n hist\u00f3rica del territorio",
+    "eventodivulgacion_tipo": 55,
+    "eventodivulgacion_fecha_inicio": "2015-06-03",
+    "eventodivulgacion_fecha_fin": "2015-06-05",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 285,
+  "fields": {
+    "eventodivulgacion_nombre": "IV Reuni\u00f3n Nacional de Geomorfolog\u00eda",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "1996-10-23",
+    "eventodivulgacion_fecha_fin": "1996-10-26",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "P\u00e1tzcuaro",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 298,
+  "fields": {
+    "eventodivulgacion_nombre": "Simposio Acciones y resultados para el desarrollo sostenible de la cuenca del Lago de Cuitzeo, Michoac\u00e1n",
+    "eventodivulgacion_tipo": 53,
+    "eventodivulgacion_fecha_inicio": "2007-10-08",
+    "eventodivulgacion_fecha_fin": "2007-10-10",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 345,
+  "fields": {
+    "eventodivulgacion_nombre": "Tercer Coloquio de Geograf\u00eda e Historia Ambiental. Convergencias te\u00f3ricas y emp\u00edricas en el espacio-tiempo",
+    "eventodivulgacion_tipo": 55,
+    "eventodivulgacion_fecha_inicio": "2015-08-15",
+    "eventodivulgacion_fecha_fin": "2015-08-13",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 359,
+  "fields": {
+    "eventodivulgacion_nombre": "Seminario organizado con motivo de la visita al CIGA del grupo de estudiantes de la Licenciatura en Arquitectura del Paisaje de la Universidad Nacional Aut\u00f3noma de M\u00e9xico",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2009-11-06",
+    "eventodivulgacion_fecha_fin": "2009-11-06",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 360,
+  "fields": {
+    "eventodivulgacion_nombre": "Seminario organizado con motivo de la visita al CIGA del grupo del colegio de graduados: Perspectivas de la Ecolog\u00eda Urbana III. Optimizaci\u00f3n del Desarrollo Natural Urbano de la Universidad Humboldt de Berl\u00edn",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2009-11-06",
+    "eventodivulgacion_fecha_fin": "2009-11-06",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 379,
+  "fields": {
+    "eventodivulgacion_nombre": "Seminario Procesos Urbanos, Pobreza y Ambiente. Experiencias en Megaciudades y Ciudades Medias",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2012-11-09",
+    "eventodivulgacion_fecha_fin": "2012-11-09",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 380,
+  "fields": {
+    "eventodivulgacion_nombre": "XX Congreso Nacional de Geograf\u00eda",
+    "eventodivulgacion_tipo": 2,
+    "eventodivulgacion_fecha_inicio": "2012-10-09",
+    "eventodivulgacion_fecha_fin": "2012-10-12",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Tlaxcala de Xicoht\u00e9ncatl",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 391,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller Sobre Criterios de Delimitaci\u00f3n de Zonas Metropolitanas en M\u00e9xico",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2002-10-28",
+    "eventodivulgacion_fecha_fin": "2002-10-29",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "M\u00e9rida",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 392,
+  "fields": {
+    "eventodivulgacion_nombre": "XII Seminario de Econom\u00eda Urbana y Regional",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2001-06-06",
+    "eventodivulgacion_fecha_fin": "2001-06-08",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "M\u00e9rida",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 424,
+  "fields": {
+    "eventodivulgacion_nombre": "9\u00ba Encuentro de Ge\u00f3grafos de Am\u00e9rica Latina",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2003-04-21",
+    "eventodivulgacion_fecha_fin": "2003-04-24",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "M\u00e9rida",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 429,
+  "fields": {
+    "eventodivulgacion_nombre": "Seminario Ambientes Urbanos y Periurbanos",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2016-12-08",
+    "eventodivulgacion_fecha_fin": "2016-12-09",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 430,
+  "fields": {
+    "eventodivulgacion_nombre": "Coloquio de la Red Nacional de Instituciones Geogr\u00e1fico Universitarias",
+    "eventodivulgacion_tipo": 55,
+    "eventodivulgacion_fecha_inicio": "2012-10-04",
+    "eventodivulgacion_fecha_fin": "2012-10-05",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 431,
+  "fields": {
+    "eventodivulgacion_nombre": "Serie Aportes para el Desarrollo en el Estado de Hidalgo",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2012-03-02",
+    "eventodivulgacion_fecha_fin": "2012-03-02",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Pachuca",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 432,
+  "fields": {
+    "eventodivulgacion_nombre": "IV Coloquio de Doctorantes en Urbanismo",
+    "eventodivulgacion_tipo": 55,
+    "eventodivulgacion_fecha_inicio": "2009-11-26",
+    "eventodivulgacion_fecha_fin": "2009-11-26",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 433,
+  "fields": {
+    "eventodivulgacion_nombre": "Sistemas Urbanos Transfronterizos. El caso de Venezuela",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2006-05-31",
+    "eventodivulgacion_fecha_fin": "2006-06-02",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 435,
+  "fields": {
+    "eventodivulgacion_nombre": "Conferencia:La metodolog\u00eda constructivista en el an\u00e1lisis metropolitano del Valle de M\u00e9xico",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2004-04-23",
+    "eventodivulgacion_fecha_fin": "2004-04-23",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Naucalpan de Ju\u00e1rez",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 539,
+  "fields": {
+    "eventodivulgacion_nombre": "Primera Feria de Ma\u00edz, Sin consumo no hay ma\u00edz",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2005-02-25",
+    "eventodivulgacion_fecha_fin": "2005-02-27",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "P\u00e1tzcuaro",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 540,
+  "fields": {
+    "eventodivulgacion_nombre": "Segunda Feria de Ma\u00edz, Sin consumo no hay ma\u00edz",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2006-03-04",
+    "eventodivulgacion_fecha_fin": "2006-03-05",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "P\u00e1tzcuaro",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 541,
+  "fields": {
+    "eventodivulgacion_nombre": "Tercera Feria de Ma\u00edz: Por la preservaci\u00f3n de los ma\u00edces criollos y la cultura campesina",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2007-05-19",
+    "eventodivulgacion_fecha_fin": "2007-05-20",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 542,
+  "fields": {
+    "eventodivulgacion_nombre": "Cuarta Feria de Ma\u00edz",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2008-05-22",
+    "eventodivulgacion_fecha_fin": "2008-05-23",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Paracho",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 543,
+  "fields": {
+    "eventodivulgacion_nombre": "Mesa redonda: Fundamentos para el establecimiento de un programa mancomunado sobre protecci\u00f3n de ma\u00edz  criollo",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2008-05-19",
+    "eventodivulgacion_fecha_fin": "2008-05-19",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 544,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller promoci\u00f3n para el cultivo de ma\u00edz criollo y org\u00e1nico",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2009-06-06",
+    "eventodivulgacion_fecha_fin": "2009-06-06",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Nahuatzen",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 545,
+  "fields": {
+    "eventodivulgacion_nombre": "Foro para el uso, la conservaci\u00f3n del ma\u00edz criollo. Primera Feria del Conocimiento Tradicional",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2010-05-13",
+    "eventodivulgacion_fecha_fin": "2010-05-13",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "P\u00e1tzcuaro",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 546,
+  "fields": {
+    "eventodivulgacion_nombre": "Primera Feria del Conocimiento Tradicional",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2011-05-13",
+    "eventodivulgacion_fecha_fin": "2011-05-15",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Tingambato",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 547,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller de Capacitaci\u00f3n para Conservaci\u00f3n y Establecimiento de un Banco de Semillas para Productores de la Cuenca del Lago de P\u00e1tzcuaro, Tzentzenguaro",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2015-09-23",
+    "eventodivulgacion_fecha_fin": "2015-09-23",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "P\u00e1tzcuaro",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 548,
+  "fields": {
+    "eventodivulgacion_nombre": "Mesa:Territorio de Ma\u00edz-D\u00eda del Ma\u00edz 2016",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2016-10-03",
+    "eventodivulgacion_fecha_fin": "2016-10-03",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 549,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller: Mujeres transformadoras de ma\u00edz",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2017-03-21",
+    "eventodivulgacion_fecha_fin": "2017-03-23",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 550,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller: Identificaci\u00f3n y preparaci\u00f3n de quelites",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2017-06-05",
+    "eventodivulgacion_fecha_fin": "2017-06-06",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 551,
+  "fields": {
+    "eventodivulgacion_nombre": "Feria:D\u00eda Nacional del Ma\u00edz",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2015-09-25",
+    "eventodivulgacion_fecha_fin": "2015-09-25",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 635,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller de an\u00e1lisis de los datos de calidad del agua de la Red Comunitaria de Monitoreo del Agua de la Reserva de la Mariposa Monarca",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2018-06-01",
+    "eventodivulgacion_fecha_fin": "2018-06-01",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 763,
+  "fields": {
+    "eventodivulgacion_nombre": "Reuni\u00f3n Anual de la Uni\u00f3n Geof\u00edsica Mexicana",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2010-11-01",
+    "eventodivulgacion_fecha_fin": "2010-11-01",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Puerto Vallarta",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 780,
+  "fields": {
+    "eventodivulgacion_nombre": "Exhibici\u00f3n: Naturaleza y Sociedad desde la Geograf\u00eda Ambiental",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2017-09-05",
+    "eventodivulgacion_fecha_fin": "2017-10-31",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 781,
+  "fields": {
+    "eventodivulgacion_nombre": "Rally Geohist\u00f3rico 2018",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2018-02-24",
+    "eventodivulgacion_fecha_fin": "2018-02-24",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 783,
+  "fields": {
+    "eventodivulgacion_nombre": "Fiesta de las Ciencias y las Humanidades 2013",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2013-10-04",
+    "eventodivulgacion_fecha_fin": "2013-10-05",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 784,
+  "fields": {
+    "eventodivulgacion_nombre": "Fiesta de las Ciencias y las Humanidades 2014",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2014-10-17",
+    "eventodivulgacion_fecha_fin": "2014-10-18",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 785,
+  "fields": {
+    "eventodivulgacion_nombre": "Fiesta de las Ciencias y las Humanidades 2017",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2017-10-19",
+    "eventodivulgacion_fecha_fin": "2017-10-20",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 813,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller Internacional de Experiencias, Formaci\u00f3n en el uso de SIGP y MP",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2014-12-08",
+    "eventodivulgacion_fecha_fin": "2014-12-09",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 819,
+  "fields": {
+    "eventodivulgacion_nombre": "Segundo Taller internacional de creaci\u00f3n cartogr\u00e1fica. Acciones para la construcci\u00f3n de nuevas narrativas territoriales",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2018-10-24",
+    "eventodivulgacion_fecha_fin": "2018-10-27",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 835,
+  "fields": {
+    "eventodivulgacion_nombre": "Programa Visita Cient\u00edfica",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2017-08-07",
+    "eventodivulgacion_fecha_fin": "2018-05-31",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 836,
+  "fields": {
+    "eventodivulgacion_nombre": "Cilco de Talleres INEGI",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2018-05-14",
+    "eventodivulgacion_fecha_fin": "2018-06-11",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 837,
+  "fields": {
+    "eventodivulgacion_nombre": "Feria matem\u00e1tica 2018",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2018-04-14",
+    "eventodivulgacion_fecha_fin": "2018-04-14",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 839,
+  "fields": {
+    "eventodivulgacion_nombre": "Feria infantil 2018",
+    "eventodivulgacion_tipo": 54,
+    "eventodivulgacion_fecha_inicio": "2018-05-05",
+    "eventodivulgacion_fecha_fin": "2018-05-05",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 843,
+  "fields": {
+    "eventodivulgacion_nombre": "The 20th World Congress of Soil Science",
+    "eventodivulgacion_tipo": 2,
+    "eventodivulgacion_fecha_inicio": "2014-06-08",
+    "eventodivulgacion_fecha_fin": "2014-06-13",
+    "eventodivulgacion_pais": 247,
+    "eventodivulgacion_ciudad": "Jeju",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 848,
+  "fields": {
+    "eventodivulgacion_nombre": "Tercera reuni\u00f3n bienal de la asociaci\u00f3n Latinoamericana de Paleomagnetismo y Geomagnetismo: LATINMAG",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2013-10-22",
+    "eventodivulgacion_fecha_fin": "2013-10-25",
+    "eventodivulgacion_pais": 235,
+    "eventodivulgacion_ciudad": "Montevideo",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 853,
+  "fields": {
+    "eventodivulgacion_nombre": "VI Congreso de la Sociedad Iberoamericana de F\u00edsica y Qu\u00edmica Ambiental (SiFy QA)",
+    "eventodivulgacion_tipo": 2,
+    "eventodivulgacion_fecha_inicio": "2011-04-25",
+    "eventodivulgacion_fecha_fin": "2011-04-30",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Canc\u00fan",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 855,
+  "fields": {
+    "eventodivulgacion_nombre": "9th International symposium of Earthworm ecology",
+    "eventodivulgacion_tipo": 53,
+    "eventodivulgacion_fecha_inicio": "2010-09-05",
+    "eventodivulgacion_fecha_fin": "2010-09-11",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Xalapa",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 885,
+  "fields": {
+    "eventodivulgacion_nombre": "II Simposium Caracterizaci\u00f3n y manejo de suelos en la pen\u00ednsula de Yucat\u00e1n: perspectivas y retos",
+    "eventodivulgacion_tipo": 53,
+    "eventodivulgacion_fecha_inicio": "2002-11-04",
+    "eventodivulgacion_fecha_fin": "2002-11-07",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "M\u00e9rida",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 887,
+  "fields": {
+    "eventodivulgacion_nombre": "XV Congreso latinoamericano y V Cubano de la ciencia del suelo",
+    "eventodivulgacion_tipo": 2,
+    "eventodivulgacion_fecha_inicio": "2001-11-11",
+    "eventodivulgacion_fecha_fin": "2001-11-16",
+    "eventodivulgacion_pais": 56,
+    "eventodivulgacion_ciudad": "Varadero",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 899,
+  "fields": {
+    "eventodivulgacion_nombre": "III Simposio Internacional de Qu\u00edmica Ambiental",
+    "eventodivulgacion_tipo": 53,
+    "eventodivulgacion_fecha_inicio": "1993-10-11",
+    "eventodivulgacion_fecha_fin": "1993-10-13",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Oaxaca",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 920,
+  "fields": {
+    "eventodivulgacion_nombre": "1ra Reuni\u00f3n Anual de la Asociaci\u00f3n Mexicana de Estudios del Karst",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2017-06-05",
+    "eventodivulgacion_fecha_fin": "2017-06-06",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Chetumal",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 921,
+  "fields": {
+    "eventodivulgacion_nombre": "Los suelos como la base del ecosistema",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2015-06-05",
+    "eventodivulgacion_fecha_fin": "2015-06-05",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 922,
+  "fields": {
+    "eventodivulgacion_nombre": "New methodologies, approaches and techniques of study of soils",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2012-10-28",
+    "eventodivulgacion_fecha_fin": "2012-11-02",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Puerto Vallarta",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 923,
+  "fields": {
+    "eventodivulgacion_nombre": "IV Seminario Universitario de Impacto Ambiental",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2007-03-17",
+    "eventodivulgacion_fecha_fin": "2007-03-17",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "M\u00e9rida",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 924,
+  "fields": {
+    "eventodivulgacion_nombre": "III Simposio Universitario de Impacto Ambiental",
+    "eventodivulgacion_tipo": 53,
+    "eventodivulgacion_fecha_inicio": "2006-03-17",
+    "eventodivulgacion_fecha_fin": "2006-03-17",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "M\u00e9rida",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 971,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller de diagn\u00f3stico y evaluaci\u00f3n para dar continuidad a la Red de Monitoreo Comunitario del Agua",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2018-06-01",
+    "eventodivulgacion_fecha_fin": "2018-06-01",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 980,
+  "fields": {
+    "eventodivulgacion_nombre": "Noche de las Estrellas 2018",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2018-11-17",
+    "eventodivulgacion_fecha_fin": "2018-11-17",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1006,
+  "fields": {
+    "eventodivulgacion_nombre": "Fiesta de las Ciencias y las Humanidades 2018",
+    "eventodivulgacion_tipo": 61,
+    "eventodivulgacion_fecha_inicio": "2018-11-22",
+    "eventodivulgacion_fecha_fin": "2018-11-23",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1007,
+  "fields": {
+    "eventodivulgacion_nombre": "Programa Visita Cient\u00edfica a la UNAM 2018",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2018-02-22",
+    "eventodivulgacion_fecha_fin": "2018-12-06",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1011,
+  "fields": {
+    "eventodivulgacion_nombre": "International Symposium: The Role of Charcoal in Climate Change and Poverty Alleviation Initiatives",
+    "eventodivulgacion_tipo": 53,
+    "eventodivulgacion_fecha_inicio": "2011-06-12",
+    "eventodivulgacion_fecha_fin": "2011-06-16",
+    "eventodivulgacion_pais": 221,
+    "eventodivulgacion_ciudad": "Arusha",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1012,
+  "fields": {
+    "eventodivulgacion_nombre": "Annual Meeting of the Association For Tropical Biology and Consevation (ATBC) and Africa",
+    "eventodivulgacion_tipo": 56,
+    "eventodivulgacion_fecha_inicio": "2011-06-12",
+    "eventodivulgacion_fecha_fin": "2011-06-16",
+    "eventodivulgacion_pais": 221,
+    "eventodivulgacion_ciudad": "Arusha",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1013,
+  "fields": {
+    "eventodivulgacion_nombre": "La UNAM en tu Tenencia 2018",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2018-10-27",
+    "eventodivulgacion_fecha_fin": "2018-10-27",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1014,
+  "fields": {
+    "eventodivulgacion_nombre": "Visita de j\u00f3venes FIRA",
+    "eventodivulgacion_tipo": 1,
+    "eventodivulgacion_fecha_inicio": "2018-08-01",
+    "eventodivulgacion_fecha_fin": "2018-08-01",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1034,
+  "fields": {
+    "eventodivulgacion_nombre": "Seminario Interdisciplinario sobre Aguas Subterr\u00e1neas",
+    "eventodivulgacion_tipo": 59,
+    "eventodivulgacion_fecha_inicio": "2018-02-13",
+    "eventodivulgacion_fecha_fin": "2018-02-15",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Morelia",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
+  "model": "divulgacion_cientifica.eventodivulgacion",
+  "pk": 1036,
+  "fields": {
+    "eventodivulgacion_nombre": "Taller de Nutrici\u00f3n Comunitaria bajo Condiciones de Sequ\u00eda",
+    "eventodivulgacion_tipo": 52,
+    "eventodivulgacion_fecha_inicio": "2018-05-23",
+    "eventodivulgacion_fecha_fin": "2018-06-14",
+    "eventodivulgacion_pais": 1,
+    "eventodivulgacion_ciudad": "Poblados rurales",
+    "eventodivulgacion_ambito": "NACIONAL",
+    "eventodivulgacion_numeroponentes": 10,
+    "eventodivulgacion_numeroasistentes": 10
+  }
+},
+{
   "model": "divulgacion_cientifica.organizacioneventodivulgacion",
   "pk": 1,
   "fields": {
     "evento2": 68,
+    "evento": 68,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5404,6 +6635,7 @@
   "pk": 2,
   "fields": {
     "evento2": 69,
+    "evento": 69,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5419,6 +6651,7 @@
   "pk": 3,
   "fields": {
     "evento2": 70,
+    "evento": 70,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5434,6 +6667,7 @@
   "pk": 4,
   "fields": {
     "evento2": 233,
+    "evento": 233,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5449,6 +6683,7 @@
   "pk": 5,
   "fields": {
     "evento2": 232,
+    "evento": 232,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5464,6 +6699,7 @@
   "pk": 7,
   "fields": {
     "evento2": 254,
+    "evento": 254,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5477,6 +6713,7 @@
   "pk": 8,
   "fields": {
     "evento2": 285,
+    "evento": 285,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5492,6 +6729,7 @@
   "pk": 9,
   "fields": {
     "evento2": 72,
+    "evento": 72,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5507,6 +6745,7 @@
   "pk": 10,
   "fields": {
     "evento2": 72,
+    "evento": 72,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5522,6 +6761,7 @@
   "pk": 11,
   "fields": {
     "evento2": 298,
+    "evento": 298,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5537,6 +6777,7 @@
   "pk": 12,
   "fields": {
     "evento2": 69,
+    "evento": 69,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5552,6 +6793,7 @@
   "pk": 13,
   "fields": {
     "evento2": 68,
+    "evento": 68,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5567,6 +6809,7 @@
   "pk": 14,
   "fields": {
     "evento2": 124,
+    "evento": 124,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5582,6 +6825,7 @@
   "pk": 15,
   "fields": {
     "evento2": 54,
+    "evento": 54,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5597,6 +6841,7 @@
   "pk": 16,
   "fields": {
     "evento2": 429,
+    "evento": 429,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5612,6 +6857,7 @@
   "pk": 17,
   "fields": {
     "evento2": 76,
+    "evento": 76,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5627,6 +6873,7 @@
   "pk": 18,
   "fields": {
     "evento2": 345,
+    "evento": 345,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5642,6 +6889,7 @@
   "pk": 19,
   "fields": {
     "evento2": 379,
+    "evento": 379,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5657,6 +6905,7 @@
   "pk": 20,
   "fields": {
     "evento2": 380,
+    "evento": 380,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5672,6 +6921,7 @@
   "pk": 21,
   "fields": {
     "evento2": 380,
+    "evento": 380,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5687,6 +6937,7 @@
   "pk": 22,
   "fields": {
     "evento2": 380,
+    "evento": 380,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5702,6 +6953,7 @@
   "pk": 23,
   "fields": {
     "evento2": 380,
+    "evento": 380,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5717,6 +6969,7 @@
   "pk": 24,
   "fields": {
     "evento2": 430,
+    "evento": 430,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5730,6 +6983,7 @@
   "pk": 25,
   "fields": {
     "evento2": 431,
+    "evento": 431,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5743,6 +6997,7 @@
   "pk": 26,
   "fields": {
     "evento2": 143,
+    "evento": 143,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5756,6 +7011,7 @@
   "pk": 27,
   "fields": {
     "evento2": 80,
+    "evento": 80,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5769,6 +7025,7 @@
   "pk": 28,
   "fields": {
     "evento2": 161,
+    "evento": 161,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5784,6 +7041,7 @@
   "pk": 29,
   "fields": {
     "evento2": 432,
+    "evento": 432,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5799,6 +7057,7 @@
   "pk": 30,
   "fields": {
     "evento2": 359,
+    "evento": 359,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5814,6 +7073,7 @@
   "pk": 31,
   "fields": {
     "evento2": 145,
+    "evento": 145,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5827,6 +7087,7 @@
   "pk": 32,
   "fields": {
     "evento2": 360,
+    "evento": 360,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5842,6 +7103,7 @@
   "pk": 33,
   "fields": {
     "evento2": 433,
+    "evento": 433,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5857,6 +7119,7 @@
   "pk": 34,
   "fields": {
     "evento2": 435,
+    "evento": 435,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5872,6 +7135,7 @@
   "pk": 35,
   "fields": {
     "evento2": 435,
+    "evento": 435,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5887,6 +7151,7 @@
   "pk": 36,
   "fields": {
     "evento2": 392,
+    "evento": 392,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5902,6 +7167,7 @@
   "pk": 37,
   "fields": {
     "evento2": 424,
+    "evento": 424,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5915,6 +7181,7 @@
   "pk": 38,
   "fields": {
     "evento2": 391,
+    "evento": 391,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5928,6 +7195,7 @@
   "pk": 39,
   "fields": {
     "evento2": 539,
+    "evento": 539,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5943,6 +7211,7 @@
   "pk": 41,
   "fields": {
     "evento2": 540,
+    "evento": 540,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5958,6 +7227,7 @@
   "pk": 42,
   "fields": {
     "evento2": 543,
+    "evento": 543,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5973,6 +7243,7 @@
   "pk": 43,
   "fields": {
     "evento2": 541,
+    "evento": 541,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -5988,6 +7259,7 @@
   "pk": 44,
   "fields": {
     "evento2": 542,
+    "evento": 542,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6003,6 +7275,7 @@
   "pk": 45,
   "fields": {
     "evento2": 545,
+    "evento": 545,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6018,6 +7291,7 @@
   "pk": 46,
   "fields": {
     "evento2": 546,
+    "evento": 546,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6033,6 +7307,7 @@
   "pk": 47,
   "fields": {
     "evento2": 547,
+    "evento": 547,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6048,6 +7323,7 @@
   "pk": 49,
   "fields": {
     "evento2": 547,
+    "evento": 547,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6063,6 +7339,7 @@
   "pk": 50,
   "fields": {
     "evento2": 548,
+    "evento": 548,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6076,6 +7353,7 @@
   "pk": 51,
   "fields": {
     "evento2": 549,
+    "evento": 549,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6091,6 +7369,7 @@
   "pk": 52,
   "fields": {
     "evento2": 550,
+    "evento": 550,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6104,6 +7383,7 @@
   "pk": 53,
   "fields": {
     "evento2": 551,
+    "evento": 551,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6119,6 +7399,7 @@
   "pk": 63,
   "fields": {
     "evento2": 635,
+    "evento": 635,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6134,6 +7415,7 @@
   "pk": 68,
   "fields": {
     "evento2": 780,
+    "evento": 780,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6149,6 +7431,7 @@
   "pk": 69,
   "fields": {
     "evento2": 781,
+    "evento": 781,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6162,6 +7445,7 @@
   "pk": 71,
   "fields": {
     "evento2": 783,
+    "evento": 783,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6177,6 +7461,7 @@
   "pk": 72,
   "fields": {
     "evento2": 784,
+    "evento": 784,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6192,6 +7477,7 @@
   "pk": 73,
   "fields": {
     "evento2": 785,
+    "evento": 785,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6207,6 +7493,7 @@
   "pk": 74,
   "fields": {
     "evento2": 44,
+    "evento": 44,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6222,6 +7509,7 @@
   "pk": 76,
   "fields": {
     "evento2": 544,
+    "evento": 544,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6237,6 +7525,7 @@
   "pk": 77,
   "fields": {
     "evento2": 819,
+    "evento": 819,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6252,6 +7541,7 @@
   "pk": 78,
   "fields": {
     "evento2": 813,
+    "evento": 813,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6265,6 +7555,7 @@
   "pk": 79,
   "fields": {
     "evento2": 836,
+    "evento": 836,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6280,6 +7571,7 @@
   "pk": 80,
   "fields": {
     "evento2": 835,
+    "evento": 835,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6295,6 +7587,7 @@
   "pk": 81,
   "fields": {
     "evento2": 837,
+    "evento": 837,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6310,6 +7603,7 @@
   "pk": 82,
   "fields": {
     "evento2": 839,
+    "evento": 839,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6325,6 +7619,7 @@
   "pk": 83,
   "fields": {
     "evento2": 843,
+    "evento": 843,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6338,6 +7633,7 @@
   "pk": 84,
   "fields": {
     "evento2": 848,
+    "evento": 848,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6351,6 +7647,7 @@
   "pk": 85,
   "fields": {
     "evento2": 853,
+    "evento": 853,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6366,6 +7663,7 @@
   "pk": 86,
   "fields": {
     "evento2": 855,
+    "evento": 855,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6379,6 +7677,7 @@
   "pk": 87,
   "fields": {
     "evento2": 887,
+    "evento": 887,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6394,6 +7693,7 @@
   "pk": 88,
   "fields": {
     "evento2": 899,
+    "evento": 899,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6409,6 +7709,7 @@
   "pk": 89,
   "fields": {
     "evento2": 920,
+    "evento": 920,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6422,6 +7723,7 @@
   "pk": 90,
   "fields": {
     "evento2": 921,
+    "evento": 921,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6435,6 +7737,7 @@
   "pk": 91,
   "fields": {
     "evento2": 922,
+    "evento": 922,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6450,6 +7753,7 @@
   "pk": 92,
   "fields": {
     "evento2": 160,
+    "evento": 160,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6463,6 +7767,7 @@
   "pk": 93,
   "fields": {
     "evento2": 160,
+    "evento": 160,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6478,6 +7783,7 @@
   "pk": 94,
   "fields": {
     "evento2": 69,
+    "evento": 69,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6493,6 +7799,7 @@
   "pk": 95,
   "fields": {
     "evento2": 139,
+    "evento": 139,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6506,6 +7813,7 @@
   "pk": 96,
   "fields": {
     "evento2": 763,
+    "evento": 763,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6521,6 +7829,7 @@
   "pk": 97,
   "fields": {
     "evento2": 11,
+    "evento": 11,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6536,6 +7845,7 @@
   "pk": 98,
   "fields": {
     "evento2": 923,
+    "evento": 923,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6549,6 +7859,7 @@
   "pk": 99,
   "fields": {
     "evento2": 924,
+    "evento": 924,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6564,6 +7875,7 @@
   "pk": 100,
   "fields": {
     "evento2": 885,
+    "evento": 885,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6577,6 +7889,7 @@
   "pk": 101,
   "fields": {
     "evento2": 1006,
+    "evento": 1006,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6596,6 +7909,7 @@
   "pk": 102,
   "fields": {
     "evento2": 980,
+    "evento": 980,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6615,6 +7929,7 @@
   "pk": 103,
   "fields": {
     "evento2": 1007,
+    "evento": 1007,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6634,6 +7949,7 @@
   "pk": 104,
   "fields": {
     "evento2": 1011,
+    "evento": 1011,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6651,6 +7967,7 @@
   "pk": 105,
   "fields": {
     "evento2": 1012,
+    "evento": 1012,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6667,6 +7984,7 @@
   "pk": 106,
   "fields": {
     "evento2": 1013,
+    "evento": 1013,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6684,6 +8002,7 @@
   "pk": 107,
   "fields": {
     "evento2": 1014,
+    "evento": 1014,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6700,6 +8019,7 @@
   "pk": 108,
   "fields": {
     "evento2": 1034,
+    "evento": 1034,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6715,6 +8035,7 @@
   "pk": 109,
   "fields": {
     "evento2": 1036,
+    "evento": 1036,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
@@ -6731,6 +8052,7 @@
   "pk": 110,
   "fields": {
     "evento2": 971,
+    "evento": 971,
     "tipo_participacion": "OTRO",
     "tipo_participacion_otro": null,
     "usuario": 1,
