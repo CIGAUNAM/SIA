@@ -25,9 +25,9 @@ class CursoEspecializacion(models.Model):
     tipo = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_TIPO, verbose_name='Tipo de curso')
     horas = models.PositiveIntegerField(verbose_name='Número de horas')
     fecha_inicio = models.DateField('Fecha de inicio')
-    fecha_fin = models.DateField('Fecha de finalización', blank=True, null=True)
+    fecha_fin = models.DateField('Fecha de finalización')
     modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
 
     def __str__(self):
@@ -45,14 +45,14 @@ class CursoEspecializacion(models.Model):
 
 class Licenciatura(models.Model):
     titulo_obtenido = models.CharField(max_length=255)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
     fecha_grado = models.DateField('Fecha de obtención de grado de licenciatura')
     distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='licenciaturas', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{}, {}, {}".format(str(self.carrera.programalicenciatura_nombre), self.dependencia, self.titulo_tesis)
+        return "{}, {}, {}".format(str(self.titulo_obtenido), self.titulo_tesis, self.institucion)
 
     def get_absolute_url(self):
         return reverse('licenciatura_detalle', kwargs={'pk': self.pk})
@@ -64,14 +64,14 @@ class Licenciatura(models.Model):
 
 class Maestria(models.Model):
     titulo_obtenido = models.CharField(max_length=255)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
-    fecha_grado = models.DateField('Fecha de obtención de grado de maestría', blank=True, null=True)
+    fecha_grado = models.DateField('Fecha de obtención de grado de maestría')
     distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='maestrias', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{}, {}, {}".format(self.programa.programamaestria_nombre, self.dependencia, self.titulo_tesis)
+        return "{}, {}, {}".format(str(self.titulo_obtenido), self.titulo_tesis, self.institucion)
 
     def get_absolute_url(self):
         return reverse('maestria_detalle', kwargs={'pk': self.pk})
@@ -83,36 +83,27 @@ class Maestria(models.Model):
 
 class Doctorado(models.Model):
     titulo_obtenido = models.CharField(max_length=255)
-    programa = models.ForeignKey(ProgramaDoctorado, on_delete=models.DO_NOTHING, null=True, blank=True)
-    #descripcion = models.TextField(verbose_name='Descripición', blank=True)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     titulo_tesis = models.CharField(max_length=255)
-    #tesis_doc = models.FileField(blank=True)
-    #tesis_url = models.URLField(blank=True)
-    #fecha_inicio = models.DateField('Fecha de inicio de doctorado')
-    #fecha_fin = models.DateField('Fecha de terminación de doctorado', blank=True, null=True)
-    fecha_grado = models.DateField('Fecha de obtención de grado de doctorado', blank=True, null=True)
+    fecha_grado = models.DateField('Fecha de obtención de grado de doctorado')
     distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
     usuario = models.ForeignKey(User, related_name='doctorados', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{}, {}, {}".format(self.programa.programadoctorado_nombre, self.titulo_obtenido,  self.titulo_tesis)
+        return "{}, {}".format(self.titulo_obtenido, self.usuario)
 
     def get_absolute_url(self):
         return reverse('doctorado_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['fecha_grado', 'titulo_tesis']
-        unique_together = ['programa', 'usuario']
-
+        ordering = ['titulo_obtenido', 'usuario']
+        unique_together = ['titulo_obtenido', 'usuario']
 
 
 class PostDoctorado(models.Model):
     titulo_proyecto = models.CharField(max_length=255)
     tutor = models.ForeignKey(User, related_name='postdoctorado_tutor', on_delete=models.DO_NOTHING)
 
-    #descripcion = models.TextField(verbose_name='Descripición', blank=True)
-    #area_conocimiento = models.ForeignKey(AreaConocimiento, related_name='postdoctorado_area_conocimiento', verbose_name='Área de conocimiento', on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, blank=True, null=True)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING, blank=True, null=True)
