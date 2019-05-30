@@ -1,3 +1,4 @@
+Tracking file by folder pattern:  migrations
 [
 {
   "model": "formacion_academica.cursoespecializacion",
@@ -5244,7 +5245,6 @@
   "pk": 1,
   "fields": {
     "titulo_obtenido": "Dr. en An\u00e1lisis Geogr\u00e1fico Regional y Geograf\u00eda F\u00edsica",
-    "programa": 2,
     "institucion": 64,
     "titulo_tesis": "Los espacios forestales de la Sierra de Angangueo (Michoac\u00e1n-Estado de M\u00e9xico), M\u00e9xico. Una visi\u00f3n geogr\u00e1fica",
     "fecha_grado": "2001-10-01",
@@ -5257,7 +5257,6 @@
   "pk": 2,
   "fields": {
     "titulo_obtenido": "Dr. en Medio Ambiente y Desarrollo",
-    "programa": 19,
     "institucion": 121,
     "titulo_tesis": "Modelo de evaluaci\u00f3n de la factibilidad para la Agenda Local 21 en pa\u00edses en desarrollo",
     "fecha_grado": "2012-09-01",
@@ -5270,7 +5269,6 @@
   "pk": 3,
   "fields": {
     "titulo_obtenido": "Dr. en Ecolog\u00eda y Manejo de Recursos Naturales",
-    "programa": 13,
     "institucion": 107,
     "titulo_tesis": "Relaci\u00f3n entre la Heterogeneidad Geoecol\u00f3gica y la Biodiversidad en Ecosistemas Costeros Tropicales.",
     "fecha_grado": "2004-04-01",
@@ -5283,7 +5281,6 @@
   "pk": 4,
   "fields": {
     "titulo_obtenido": "Dr. en Geograf\u00eda",
-    "programa": 17,
     "institucion": 122,
     "titulo_tesis": "Maize population structure and diversity related to ethnolinguistic variation",
     "fecha_grado": "2014-09-01",
@@ -5296,7 +5293,6 @@
   "pk": 5,
   "fields": {
     "titulo_obtenido": "Dr. en Agroecolog\u00eda",
-    "programa": 9,
     "institucion": 123,
     "titulo_tesis": "Sustentabilidad y Sistemas de Manejo en Comunidades Ind\u00edgenas en Chile",
     "fecha_grado": "2015-11-01",
@@ -5309,7 +5305,6 @@
   "pk": 6,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias Ambientales / Sociolog\u00eda Ambiental",
-    "programa": 4,
     "institucion": 124,
     "titulo_tesis": "The socio-cultural dimension of flood vulnerability in a periurban community in central Mexico",
     "fecha_grado": "2011-03-01",
@@ -5322,7 +5317,6 @@
   "pk": 7,
   "fields": {
     "titulo_obtenido": "Dr. en Arqueolog\u00eda",
-    "programa": 3,
     "institucion": 125,
     "titulo_tesis": "La ocupaci\u00f3n del territorio en la regi\u00f3n de Ac\u00e1mbaro (Guanajuato- Michoac\u00e1n) entre el Poscl\u00e1sico tard\u00edo  y el siglo XVI.",
     "fecha_grado": "2012-12-01",
@@ -5335,7 +5329,6 @@
   "pk": 8,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias de la Tierra",
-    "programa": 6,
     "institucion": 17,
     "titulo_tesis": "Din\u00e1mica de la Erosi\u00f3n/Sedimentaci\u00f3n en la \u00c9poca Prehisp\u00e1nica y Periodo Colonial. Reconstrucci\u00f3n de las condiciones Paleoambientales en el Valle de Teotihuac\u00e1n (Estado de M\u00e9xico)",
     "fecha_grado": "2014-07-01",
@@ -5348,7 +5341,6 @@
   "pk": 9,
   "fields": {
     "titulo_obtenido": "Dr. en Geograf\u00eda",
-    "programa": 17,
     "institucion": 126,
     "titulo_tesis": "The Diffusion of Regional Underdevelop\u00acment; Articulation of Capital and Peasantry in Sukumaland, Tanzania",
     "fecha_grado": "1980-08-01",
@@ -5361,7 +5353,6 @@
   "pk": 10,
   "fields": {
     "titulo_obtenido": "Dr. en Geograf\u00eda",
-    "programa": 17,
     "institucion": 4,
     "titulo_tesis": "Historia ambiental de paisajes latinoamericanos: abandono y reapropiaci\u00f3n. Casos en M\u00e9xico y Argentina",
     "fecha_grado": "2015-07-01",
@@ -5374,7 +5365,6 @@
   "pk": 11,
   "fields": {
     "titulo_obtenido": "Dr. en Technology and Development",
-    "programa": 22,
     "institucion": 127,
     "titulo_tesis": "Social Forestry as  Sustainable Development",
     "fecha_grado": "1994-06-01",
@@ -5387,7 +5377,6 @@
   "pk": 12,
   "fields": {
     "titulo_obtenido": "Dr. en Desarrollo Regional",
-    "programa": 8,
     "institucion": 43,
     "titulo_tesis": "\"Sistemas de innovaci\u00f3n y reservas de la biosfera: acciones para el desarrollo regional sustentable en Zicuir\u00e1n-Infiernillo\"",
     "fecha_grado": "2014-08-01",
@@ -5400,7 +5389,6 @@
   "pk": 13,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias Biol\u00f3gicas",
-    "programa": 5,
     "institucion": 6,
     "titulo_tesis": "Sistemas agroforestales y conservaci\u00f3n de biodiversidad en el Valle de Tehuac\u00e1n, Cuicatl\u00e1n",
     "fecha_grado": "2015-02-01",
@@ -5413,7 +5401,6 @@
   "pk": 14,
   "fields": {
     "titulo_obtenido": "Dr. en Ecolog\u00eda y Medio Ambiente",
-    "programa": 15,
     "institucion": 131,
     "titulo_tesis": "El paisaje en Am\u00e9rica Latina. Experiencia de valoraci\u00f3n participada de paisajes visuales para la gesti\u00f3n ambiental en La Habana, Cuba",
     "fecha_grado": "2007-04-01",
@@ -5425,8 +5412,7 @@
   "model": "formacion_academica.doctorado",
   "pk": 15,
   "fields": {
-    "titulo_obtenido": "Dr. en Posgrado en Ciencias Biol\u00f3gicas",
-    "programa": 20,
+    "titulo_obtenido": "Dr. en Ciencias Biol\u00f3gicas",
     "institucion": 23,
     "titulo_tesis": "An\u00e1lisis multi-escalar de los patrones espaciales de oferta y demanda de le\u00f1a para uso residencial en M\u00e9xico",
     "fecha_grado": "2008-06-01",
@@ -5439,7 +5425,6 @@
   "pk": 16,
   "fields": {
     "titulo_obtenido": "Dr. en F\u00edsica, Matem\u00e1ticas y Ciencias de la Tierra",
-    "programa": 1,
     "institucion": 17,
     "titulo_tesis": "Impacto Cultural Y Natural En Las Secuencias Edafosedimentarias Del Holoceno En La Regi\u00f3n Suroriental De M\u00e9xico. Un Estudio Geoarqueol\u00f3gico En Las Tierras Bajas Mayas",
     "fecha_grado": "2014-08-01",
@@ -5452,7 +5437,6 @@
   "pk": 17,
   "fields": {
     "titulo_obtenido": "Dr. en F\u00edsica, Matem\u00e1ticas y Ciencias de la Tierra",
-    "programa": 1,
     "institucion": 16,
     "titulo_tesis": "Object based image analysis with remote sensing images",
     "fecha_grado": "2015-01-01",
@@ -5465,7 +5449,6 @@
   "pk": 18,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias Sociales, especialidad en Antropolog\u00eda Social",
-    "programa": 11,
     "institucion": 150,
     "titulo_tesis": "La transformaci\u00f3n corporativa del comunalismo forestal",
     "fecha_grado": "2005-02-01",
@@ -5478,7 +5461,6 @@
   "pk": 19,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias de la Tierra (Geolog\u00eda Ambiental)",
-    "programa": 10,
     "institucion": 18,
     "titulo_tesis": "Implicaciones del cambio de cobertura vegetal y uso del suelo en el balance h\u00eddrico a nivel regional. El caso de la cuenca del lago de Cuitzeo",
     "fecha_grado": "2002-12-01",
@@ -5491,7 +5473,6 @@
   "pk": 20,
   "fields": {
     "titulo_obtenido": "Dr. en Arqueolog\u00eda",
-    "programa": 3,
     "institucion": 132,
     "titulo_tesis": "Habitar una regi\u00f3n. Espacialidad arquitect\u00f3nica y construcci\u00f3n de paisajes en Andalhuala, valle de Yocavil (Catamarca, Argentina).",
     "fecha_grado": "2015-04-01",
@@ -5504,7 +5485,6 @@
   "pk": 21,
   "fields": {
     "titulo_obtenido": "Dr. en Ecolog\u00eda",
-    "programa": 12,
     "institucion": 107,
     "titulo_tesis": "Diversidad ac\u00fastica de la Biofon\u00eda y degradaci\u00f3n del bosque tropical: \u00bfC\u00f3mo los an\u00e1lisis del paisaje sonoro pueden complementar la evaluaci\u00f3n de la integridad ecosist\u00e9mica?",
     "fecha_grado": "3001-01-01",
@@ -5517,7 +5497,6 @@
   "pk": 22,
   "fields": {
     "titulo_obtenido": "Dr. en Development Planning",
-    "programa": 44,
     "institucion": 134,
     "titulo_tesis": "Effects of urban growth in the process of impoverishment of campesinos\u00b4 households living in peri-urban areas: A case study in Mexico City.",
     "fecha_grado": "2007-07-01",
@@ -5530,7 +5509,6 @@
   "pk": 23,
   "fields": {
     "titulo_obtenido": "Dr. en Econom\u00eda Aplicada",
-    "programa": 16,
     "institucion": 135,
     "titulo_tesis": "Value equivalency analysis: quantity compensation, distance decay and time treatment",
     "fecha_grado": "2011-01-01",
@@ -5543,7 +5521,6 @@
   "pk": 24,
   "fields": {
     "titulo_obtenido": "Dr. en Ecolog\u00eda y Manejo de Recursos Natutales",
-    "programa": 14,
     "institucion": 107,
     "titulo_tesis": "Manejo de la zona riparia de la cuenca de r\u00edo Cutizmala, Jal,",
     "fecha_grado": "2014-12-01",
@@ -5556,7 +5533,6 @@
   "pk": 26,
   "fields": {
     "titulo_obtenido": "Dr. en Ingenier\u00eda Agr\u00edcola y yso integral del agua",
-    "programa": 18,
     "institucion": 153,
     "titulo_tesis": "An\u00e1lisis Normativo Y Pr\u00e1ctico De La Fertilidad Qu\u00edmica Y F\u00edsica Ed\u00e1fica En La Agricultura Org\u00e1nica Y Convencional",
     "fecha_grado": "2010-12-01",
@@ -5569,7 +5545,6 @@
   "pk": 27,
   "fields": {
     "titulo_obtenido": "Dr. en Doctorado en Geograf\u00eda",
-    "programa": 23,
     "institucion": 1,
     "titulo_tesis": "Definition of a minimum set of spatial relations. Theory and applications\u201d.",
     "fecha_grado": "2015-11-24",
@@ -5582,7 +5557,6 @@
   "pk": 28,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias Geogr\u00e1ficas",
-    "programa": 24,
     "institucion": 388,
     "titulo_tesis": "An\u00e1lisis ec\u00f3logo-geoqu\u00edmico del territorio de la Ciudad de Moa y las cuencas de los r\u00edos Moa y Caba\u00f1as en el noreste de Cuba",
     "fecha_grado": "1991-04-04",
@@ -5595,7 +5569,6 @@
   "pk": 29,
   "fields": {
     "titulo_obtenido": "Dr. en Doctorado en Geograf\u00eda",
-    "programa": 23,
     "institucion": 445,
     "titulo_tesis": "Tecnolog\u00eda, empleo y territorio en el marco de la globalizaci\u00f3n econ\u00f3mica. El caso de la industria automotriz en M\u00e9xico",
     "fecha_grado": "1999-12-13",
@@ -5608,7 +5581,6 @@
   "pk": 30,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias Biol\u00f3gicas",
-    "programa": 5,
     "institucion": 23,
     "titulo_tesis": "El efecto de las leguminosas en el mejoramiento de la calidad de los suelos Ando en sistema agr\u00edcolas de ladera en la cuenca del Lago de Zirahu\u00e9n",
     "fecha_grado": "2002-10-25",
@@ -5621,7 +5593,6 @@
   "pk": 31,
   "fields": {
     "titulo_obtenido": "Dr. en Estudios Regionales",
-    "programa": 31,
     "institucion": 267,
     "titulo_tesis": "Pr\u00e1cticas sociales y vida cotidiana de los habitantes en las Ciudades Rurales Sustentables Nuevo Juan de Grijalva y Santiago El Pinar, Chiapas",
     "fecha_grado": "2014-10-17",
@@ -5634,7 +5605,6 @@
   "pk": 32,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias Biol\u00f3gicas",
-    "programa": 5,
     "institucion": 23,
     "titulo_tesis": "Efecto de la aplicaci\u00f3n de vinazas crudas y modificadas por microorganismos anaerobios y aerobios sobre las propiedades qu\u00edmicas de dos suelos del municipio Miguel Alem\u00e1n del estado de Veracruz, M\u00e9xico.",
     "fecha_grado": "2000-01-31",
@@ -5644,23 +5614,9 @@
 },
 {
   "model": "formacion_academica.doctorado",
-  "pk": 33,
-  "fields": {
-    "titulo_obtenido": "Dr. en Ciencia y Tecnolog\u00eda Ambientales",
-    "programa": 38,
-    "institucion": 603,
-    "titulo_tesis": "Desconocido",
-    "fecha_grado": "2019-05-29",
-    "distincion_obtenida": null,
-    "usuario": 43
-  }
-},
-{
-  "model": "formacion_academica.doctorado",
   "pk": 34,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencia y Tecnolog\u00eda Ambientales",
-    "programa": 38,
     "institucion": 603,
     "titulo_tesis": "Investigando la preparaci\u00f3n para REDD+ en M\u00e9xico: Actores, discursos y distribuci\u00f3n de beneficios",
     "fecha_grado": "2016-02-01",
@@ -5673,7 +5629,6 @@
   "pk": 35,
   "fields": {
     "titulo_obtenido": "Dr. en Ciencias de la Tierra",
-    "programa": 6,
     "institucion": 560,
     "titulo_tesis": "Fluctuaci\u00f3n de Campo Magn\u00e9tico Terrestre durante los \u00faltimos 5Ma en M\u00e9xico; Adquisici\u00f3n de nuevos datos y modelaci\u00f3n matem\u00e1tica.",
     "fecha_grado": "2018-08-31",
@@ -5686,25 +5641,11 @@
   "pk": 36,
   "fields": {
     "titulo_obtenido": "Dr. en Biodiversidad: Conservaci\u00f3n y Manejo de las Especies y sus H\u00e1bitat",
-    "programa": 40,
     "institucion": 725,
     "titulo_tesis": "La participaci\u00f3n de la poblaci\u00f3n rural en la conservaci\u00f3n de la naturaleza.",
     "fecha_grado": "2014-09-12",
     "distincion_obtenida": null,
     "usuario": 1837
-  }
-},
-{
-  "model": "formacion_academica.doctorado",
-  "pk": 37,
-  "fields": {
-    "titulo_obtenido": "Dr. en Programa de Maestr\u00eda y Doctorado en Ingenier\u00eda",
-    "programa": 42,
-    "institucion": 28,
-    "titulo_tesis": "Escenarios espaciales expli?citos de uso mu?ltiple de combustibles para coccio?n en el sector energe?tico residencial mexicano y su potencial de mitigacio?n de gases efecto invernadero",
-    "fecha_grado": "2016-02-26",
-    "distincion_obtenida": null,
-    "usuario": 93
   }
 },
 {
