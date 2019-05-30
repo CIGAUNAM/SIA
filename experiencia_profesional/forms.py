@@ -7,7 +7,7 @@ from django_select2.forms import ModelSelect2Widget
 #
 
 class ExperienciaLaboralForm(forms.ModelForm):
-    cargo2 = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True,
+    cargo_text = forms.CharField(widget=TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), required=True,
                              label='Cargo',
                              help_text='Nombre del cargo')
 

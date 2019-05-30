@@ -7,34 +7,23 @@ from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion, I
 
 
 class ExperienciaProfesional(models.Model):
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING)
-    cargo2 = models.CharField(max_length=254, blank=True, null=True)
-    tipo_cargo = models.CharField(max_length=30, blank=True, null=True,
-                                  choices=(('', '-------'), ('ACADEMICO', 'Académico'),
-                                           ('ADMINISTRATIVO', 'Administrativo'), ('DIRECTIVO', 'Directivo'),
-                                           ('OTRO', 'Otro')))
+    cargo_text = models.CharField(max_length=254, blank=True, null=True)
     nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.usuario, self.dependencia, self.cargo)
+        return "{} : {} : {}".format(self.usuario, self.institucion, self.cargo_text)
 
     def get_absolute_url(self):
         return reverse('experiencia_laboral_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['fecha_inicio', 'institucion2']
+        ordering = ['fecha_inicio']
         verbose_name = "Experiencia Laboral"
         verbose_name_plural = "Experiencias Laborales"
-        # unique_together = ['institucion2', 'cargo', 'usuario']
-
 
 class LineaInvestigacion(models.Model):
     linea_investigacion = models.CharField(max_length=255)

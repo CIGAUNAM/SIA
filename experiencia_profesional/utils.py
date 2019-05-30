@@ -26,9 +26,9 @@ class ExperienciaLaboralContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.cargo2",\n' \
+                                        '"data": "fields.cargo_text",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.cargo2 + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.cargo_text + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.nombramiento"},\n' \
