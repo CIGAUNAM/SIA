@@ -22,40 +22,13 @@ class ExperienciaLaboralForm(forms.ModelForm):
         )
     )
 
-    institucion2 = forms.ModelChoiceField(
-        required=True,
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre_institucion__icontains'], queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
 
-        )
-    )
-
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre_dependencia__icontains'], queryset=Dependencia.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'institucion2': 'institucion_dependencia'}
-        )
-    )
     nombramiento = forms.ModelChoiceField(
         required=False,
         queryset=Nombramiento.objects.all(),
         label="Nombramiento",
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'], queryset=Nombramiento.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    cargo = forms.ModelChoiceField(
-        queryset=Cargo.objects.all(),
-        label="Cargo",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'], queryset=Cargo.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -83,23 +56,6 @@ class LineaInvestigacionForm(forms.ModelForm):
         )
     )
 
-    institucion2 = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre_institucion__icontains'], queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    dependencia = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
-        label="Dependencia",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre_dependencia__icontains'], queryset=Dependencia.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'},
-            dependent_fields={'institucion2': 'institucion_dependencia'}
-        )
-    )
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de inicio')
 
     class Meta:

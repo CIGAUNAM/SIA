@@ -1503,9 +1503,9 @@
   "model": "experiencia_profesional.experienciaprofesional",
   "pk": 127,
   "fields": {
-    "institucion": 4,
+    "institucion": 6,
     "cargo_text": "Investigador UNAM",
-    "nombramiento": null,
+    "nombramiento": 45,
     "fecha_inicio": "2015-01-01",
     "fecha_fin": null,
     "usuario": 36
@@ -3377,9 +3377,7 @@
   "fields": {
     "linea_investigacion": "Geograf\u00eda de los Paisajes y Geoecolog\u00eda",
     "descripcion": "",
-    "institucion2": 99,
     "institucion": 387,
-    "dependencia": 387,
     "fecha_inicio": "1977-01-19",
     "usuario": 17
   }
@@ -3390,9 +3388,7 @@
   "fields": {
     "linea_investigacion": "Ordenamientos Ambiental, Ecol\u00f3gico y Territorial",
     "descripcion": "",
-    "institucion2": 99,
     "institucion": 387,
-    "dependencia": 387,
     "fecha_inicio": "1977-02-08",
     "usuario": 17
   }
@@ -3403,9 +3399,7 @@
   "fields": {
     "linea_investigacion": "Geoqu\u00edmica ambiental",
     "descripcion": "",
-    "institucion2": 99,
     "institucion": 387,
-    "dependencia": 387,
     "fecha_inicio": "1985-04-04",
     "usuario": 17
   }
@@ -3416,9 +3410,7 @@
   "fields": {
     "linea_investigacion": "Historia Ambiental",
     "descripcion": "patr\u00f3n de asentamiento\r\nreconstrucci\u00f3n de las formas del paisaje\r\ncambio de uso de suelo en una perspectiva hist\u00f3rica\r\n patr\u00f3n agropecuario\r\nexplotaci\u00f3n de los recursos naturales",
-    "institucion2": 245,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2003-01-01",
     "usuario": 9
   }
@@ -3429,9 +3421,7 @@
   "fields": {
     "linea_investigacion": "relaci\u00f3n sociedad \u2013 medio ambiente",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2003-01-01",
     "usuario": 9
   }
@@ -3442,9 +3432,7 @@
   "fields": {
     "linea_investigacion": "Arqueogeograf\u00eda",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2003-01-07",
     "usuario": 9
   }
@@ -3455,9 +3443,7 @@
   "fields": {
     "linea_investigacion": "Geohistoria",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2003-01-14",
     "usuario": 9
   }
@@ -3468,9 +3454,7 @@
   "fields": {
     "linea_investigacion": "Planeaci\u00f3n espacial y manejo de recursos naturales desde la perspectiva de la Geograf\u00eda f\u00edsica",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2000-01-01",
     "usuario": 23
   }
@@ -3481,9 +3465,7 @@
   "fields": {
     "linea_investigacion": "Geomorfolog\u00eda, Hidrolog\u00eda y ecolog\u00eda el paisaje",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2000-01-01",
     "usuario": 23
   }
@@ -3494,9 +3476,7 @@
   "fields": {
     "linea_investigacion": "Cuantificaci\u00f3n y an\u00e1lisis del cambio de uso del suelo,",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2000-01-01",
     "usuario": 23
   }
@@ -3507,9 +3487,7 @@
   "fields": {
     "linea_investigacion": "An\u00e1lisis de los efectos hidrol\u00f3gicos y edafol\u00f3gicos del cambio de cobertura",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2000-01-03",
     "usuario": 23
   }
@@ -3520,9 +3498,7 @@
   "fields": {
     "linea_investigacion": "An\u00e1lisis de la conectividad espacial",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2014-01-01",
     "usuario": 23
   }
@@ -3533,9 +3509,7 @@
   "fields": {
     "linea_investigacion": "An\u00e1lisis las tendencias y variaciones de cambio clim\u00e1tico",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2003-01-01",
     "usuario": 23
   }
@@ -3546,9 +3520,7 @@
   "fields": {
     "linea_investigacion": "Procesos Socio-Econ\u00f3micos y Ambientales en Territorios Urbanos y Periurbanos",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2006-01-01",
     "usuario": 33
   }
@@ -3559,9 +3531,7 @@
   "fields": {
     "linea_investigacion": "An\u00e1lisis Urbano-Regional",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2000-01-03",
     "usuario": 33
   }
@@ -3572,9 +3542,7 @@
   "fields": {
     "linea_investigacion": "Mercado Laboral Urbano",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 384,
-    "dependencia": 384,
     "fecha_inicio": "2000-01-03",
     "usuario": 33
   }
@@ -3585,9 +3553,7 @@
   "fields": {
     "linea_investigacion": "Estudio y Conservaci\u00f3n de la Agro-Diversidad en el Contexto de los Sistemas de Producci\u00f3n Campesinos a Nivel Unidad de Producci\u00f3n y Regional",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2000-01-01",
     "usuario": 32
   }
@@ -3598,9 +3564,7 @@
   "fields": {
     "linea_investigacion": "Importancia de la conservaci\u00f3n de los ma\u00edces nativos y la milpa",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2005-01-01",
     "usuario": 32
   }
@@ -3611,9 +3575,7 @@
   "fields": {
     "linea_investigacion": "Evaluaci\u00f3n de Sustentabilidad de Agricultura y Sistemas Alimentarios",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "1999-01-01",
     "usuario": 32
   }
@@ -3624,9 +3586,7 @@
   "fields": {
     "linea_investigacion": "Agricultura Ecol\u00f3gica y Calidad de Suelos",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "1992-01-01",
     "usuario": 32
   }
@@ -3637,9 +3597,7 @@
   "fields": {
     "linea_investigacion": "Historia y Paisaje desde el cambio de uso de suelo y tenencia de la tierra en M\u00e9xico.",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2004-01-01",
     "usuario": 11
   }
@@ -3650,9 +3608,7 @@
   "fields": {
     "linea_investigacion": "Teor\u00eda e Historiograf\u00eda de la Geograf\u00eda Hist\u00f3rica e Historia Ambiental",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2008-01-01",
     "usuario": 11
   }
@@ -3663,9 +3619,7 @@
   "fields": {
     "linea_investigacion": "Historia, historiograf\u00eda y epistemolog\u00eda de la Geograf\u00eda",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2008-01-01",
     "usuario": 11
   }
@@ -3676,9 +3630,7 @@
   "fields": {
     "linea_investigacion": "Geograf\u00eda cultural y paisajes hist\u00f3ricos",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 1,
-    "dependencia": 1,
     "fecha_inicio": "2008-03-10",
     "usuario": 11
   }
@@ -3689,9 +3641,7 @@
   "fields": {
     "linea_investigacion": "Estudios regionales, urbano y periurbanos",
     "descripcion": "Estudios regionales, urbano y periurbanos de las ciudades medias, espec\u00edficamente las din\u00e1micas y segregaci\u00f3n socio espacial.",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "2009-01-01",
     "usuario": 44
   }
@@ -3702,9 +3652,7 @@
   "fields": {
     "linea_investigacion": "Estudios Regionales y territoriales.",
     "descripcion": "Implicaciones sociales y espaciales de programas gubernamentales y las distinciones en la reconfiguraci\u00f3n territorial, espec\u00edficamente los efectos del programa Ciudades Rurales Sustentables, Pueblos M\u00e1gicos y las Ciudades Patrimonio en el desarrollo y sostenibilidad de los territorios.",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "2014-01-01",
     "usuario": 44
   }
@@ -3715,9 +3663,7 @@
   "fields": {
     "linea_investigacion": "Evaluaci\u00f3n de tierras en sentido amplio, incluyendo ambientes urbanos, rurales, periurbanos, industriales y mineros, con las siguientes tres subl\u00edneas",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "1900-01-01",
     "usuario": 30
   }
@@ -3728,9 +3674,7 @@
   "fields": {
     "linea_investigacion": "Inventario de recurso naturales y evaluaci\u00f3n de su calidad: suelos, polvos, clima y cuerpos de agua",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "1900-01-01",
     "usuario": 30
   }
@@ -3741,9 +3685,7 @@
   "fields": {
     "linea_investigacion": "Valoraci\u00f3n del conocimiento local sobre el ambiente, recursos naturales y formas de manejo. Culturas Maya, Chichimeca y Pur\u00e9pecha, principalmente.",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "1900-01-01",
     "usuario": 30
   }
@@ -3754,9 +3696,7 @@
   "fields": {
     "linea_investigacion": "Dise\u00f1o de modelos de evaluaci\u00f3n de la aptitud/calidad de los recursos naturales.",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "1900-01-01",
     "usuario": 30
   }
@@ -3767,9 +3707,7 @@
   "fields": {
     "linea_investigacion": "Levantamiento, clasificaci\u00f3n y cartograf\u00eda de paisajes f\u00edsico-geogr\u00e1ficos.",
     "descripcion": "Se refiere a la elaboraci\u00f3n y edici\u00f3n de mapas de paisajes f\u00edsico-geogr\u00e1ficos a diferentes escalas, tanto locales como regionales.",
-    "institucion2": 110,
     "institucion": 215,
-    "dependencia": 215,
     "fecha_inicio": "1988-02-01",
     "usuario": 21
   }
@@ -3780,9 +3718,7 @@
   "fields": {
     "linea_investigacion": "Estructura, funcionamiento y manejo de riberas fluviales",
     "descripcion": "An\u00e1lisis de la estructura y funcionamiento de las riberas fluviales para su manejo sustentable, desde el enfoque de los sistemas socioecol\u00f3gicos.",
-    "institucion2": 428,
     "institucion": 504,
-    "dependencia": 504,
     "fecha_inicio": "2014-12-05",
     "usuario": 53
   }
@@ -3793,9 +3729,7 @@
   "fields": {
     "linea_investigacion": "Monitoreo comunitario del agua",
     "descripcion": "An\u00e1lisis de la calidad del agua con herramientas que permiten la participaci\u00f3n comunitaria",
-    "institucion2": 142,
     "institucion": 253,
-    "dependencia": 253,
     "fecha_inicio": "2004-08-02",
     "usuario": 53
   }
@@ -3806,9 +3740,7 @@
   "fields": {
     "linea_investigacion": "Sistemas de conocimiento",
     "descripcion": "B\u00fasqueda de di\u00e1logo entre m\u00faltiples sistemas de conocimiento sobre los ecosistemas. Valores y conocimiento locales e ind\u00edgenas. Di\u00e1logo de saberes.",
-    "institucion2": 1,
     "institucion": 6,
-    "dependencia": 6,
     "fecha_inicio": "2018-09-01",
     "usuario": 53
   }
@@ -3819,9 +3751,7 @@
   "fields": {
     "linea_investigacion": "Pobreza y Vulnerabilidad",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 4,
-    "dependencia": 551,
     "fecha_inicio": "2011-03-14",
     "usuario": 36
   }
@@ -3832,9 +3762,7 @@
   "fields": {
     "linea_investigacion": "Procesos territoriales y din\u00e1micas sociales en periferias urbanas",
     "descripcion": "",
-    "institucion2": 245,
     "institucion": 4,
-    "dependencia": 551,
     "fecha_inicio": "2011-03-14",
     "usuario": 36
   }
@@ -3845,9 +3773,7 @@
   "fields": {
     "linea_investigacion": "El manejo de forester\u00eda comunitaria.",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "1978-01-01",
     "usuario": 20
   }
@@ -3858,9 +3784,7 @@
   "fields": {
     "linea_investigacion": "Implicaciones en pol\u00edtica del cambio clim\u00e1tico global. Deforestaci\u00f3n, degradaci\u00f3n, forester\u00eda comunitaria y fortalecimiento de capacidades institucionales locales; el mercado de carbono.",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "2000-01-01",
     "usuario": 20
   }
@@ -3871,9 +3795,7 @@
   "fields": {
     "linea_investigacion": "Bioenerg\u00eda y biofuels; impactos sociales.",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "2007-01-01",
     "usuario": 20
   }
@@ -3884,9 +3806,7 @@
   "fields": {
     "linea_investigacion": "G\u00e9nero y energ\u00eda. Perspectiva de g\u00e9nero y herramientas de planeaci\u00f3n en uso de la energ\u00eda.",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "1995-01-01",
     "usuario": 20
   }
@@ -3897,9 +3817,7 @@
   "fields": {
     "linea_investigacion": "Programas de investigacion corriente: \u201dForesteria comunitaria y captura de carbono\u201d, \u201dPol\u00edticas para promover el carbono forestal\u201d y : \u00a8Mejorar el conocimiento de la 'porosidad de la interfaz' en la comunicaci\u00f3n ciencia-pol\u00edtica\u00a8",
     "descripcion": "",
-    "institucion2": 449,
     "institucion": 524,
-    "dependencia": 524,
     "fecha_inicio": "1900-01-01",
     "usuario": 20
   }
@@ -3910,9 +3828,7 @@
   "fields": {
     "linea_investigacion": "Modelado espacio-temporal de los impactos ambientales por la extracci\u00f3n y producci\u00f3n de le\u00f1a y carb\u00f3n vegetal bajo patrones de aprovechamiento tradicional",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 4,
-    "dependencia": 4,
     "fecha_inicio": "2003-01-06",
     "usuario": 26
   }
@@ -3923,9 +3839,7 @@
   "fields": {
     "linea_investigacion": "Modelado prospectivo del potencial de los recursos dendroenerg\u00e9ticos bajo patrones de aprovechamiento tecnificado",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 4,
-    "dependencia": 4,
     "fecha_inicio": "2006-01-02",
     "usuario": 26
   }
@@ -3936,9 +3850,7 @@
   "fields": {
     "linea_investigacion": "Seguridad energ\u00e9tica de la poblaci\u00f3n rural y urbana de bajos recursos",
     "descripcion": "",
-    "institucion2": 1,
     "institucion": 4,
-    "dependencia": 4,
     "fecha_inicio": "2011-01-03",
     "usuario": 26
   }
@@ -3949,9 +3861,7 @@
   "fields": {
     "linea_investigacion": "Ecolog\u00eda pol\u00edtica",
     "descripcion": "",
-    "institucion2": 43,
     "institucion": 603,
-    "dependencia": 603,
     "fecha_inicio": "2007-09-01",
     "usuario": 91
   }
@@ -3962,9 +3872,7 @@
   "fields": {
     "linea_investigacion": "Econom\u00eda ecol\u00f3gica",
     "descripcion": "",
-    "institucion2": 43,
     "institucion": 603,
-    "dependencia": 603,
     "fecha_inicio": "2014-03-01",
     "usuario": 91
   }
@@ -3975,9 +3883,7 @@
   "fields": {
     "linea_investigacion": "A.\tPaisajes Mineros. Estudios de caso del Conflicto socio-ambientales en enclaves mineros.",
     "descripcion": "La actividad minera moderna frecuentemente se presenta como una econom\u00eda de enclave. Es decir, la presencia de un complejo industrial (frecuentemente propiedad de grandes corporaciones) ubicado en un determinado paisaje que en su entorno genera o impulsa un poblado de trabajadores y con ello despliega una econom\u00eda local. El objetivo de la l\u00ednea de investigaci\u00f3n es el explotar los conflictos sociales asociados tanto a la disputa de derechos de acceso al mineral como a los efectos ambientales de las actividades mineras en el paisaje social local.",
-    "institucion2": 1,
     "institucion": 4,
-    "dependencia": 4,
     "fecha_inicio": "2007-03-11",
     "usuario": 27
   }
@@ -3988,9 +3894,7 @@
   "fields": {
     "linea_investigacion": "Modelaci\u00f3n espacial y temporal de los cambios de cubierta/uso del suelo y de la conectividad del paisaje en Michoac\u00e1n",
     "descripcion": "Analizar y modelar el efecto de los CCUS sobre la conectividad del paisaje con base de diferentes escenarios de cambio en el estado de Michoac\u00e1n.",
-    "institucion2": 1,
     "institucion": 4,
-    "dependencia": 4,
     "fecha_inicio": "2018-09-01",
     "usuario": 1841
   }
@@ -4001,9 +3905,7 @@
   "fields": {
     "linea_investigacion": "Geograf\u00eda Econ\u00f3mica",
     "descripcion": "Se analizan las diferentes maneras en que los agentes (individuos, productores, consumidores organizaciones, empresas), factores (tecnolog\u00eda, instituciones, recursos naturales) y procesos econ\u00f3micos (reconfiguraci\u00f3n, globalizaci\u00f3n,  producci\u00f3n, distribuci\u00f3n y consumo) se conjugan en los territorios. El eje central es poner de manifiesto la mutua articulaci\u00f3n de los distintos niveles espaciales, propiciada por la l\u00f3gica capitalista en raz\u00f3n de su proceso de reproducci\u00f3n, a fin de demostrar c\u00f3mo el sistema actual es capaz de extraer excedentes en las m\u00e1s variadas circunstancias, haciendo un uso intensivo de la naturaleza diferenciada y heterog\u00e9nea del espacio geogr\u00e1fico.",
-    "institucion2": 1,
     "institucion": 4,
-    "dependencia": 4,
     "fecha_inicio": "2011-10-01",
     "usuario": 54
   }
@@ -4014,9 +3916,7 @@
   "fields": {
     "linea_investigacion": "Econom\u00eda ambiental y de los recursos naturales",
     "descripcion": "El estudio de la relaci\u00f3n de las actividades econ\u00f3micas con el medio ambiente. As\u00ed la actividad econ\u00f3mica toma recursos naturales para llevarse a cabo, de esta manera genera efectos externos que deben ser internalizados por los contaminadores.",
-    "institucion2": 43,
     "institucion": 763,
-    "dependencia": 763,
     "fecha_inicio": "2006-02-01",
     "usuario": 54
   }
@@ -4027,9 +3927,7 @@
   "fields": {
     "linea_investigacion": "Desarrollo Sustentable",
     "descripcion": "Estudio del desarrollo sustentable desde diversos enfoques econ\u00f3micos para una mejor comprensi\u00f3n de los problemas, amenazas y oportunidades que pueden surgir como alternativa al crecimiento y desarrollo econ\u00f3mico.",
-    "institucion2": 494,
     "institucion": 27,
-    "dependencia": 764,
     "fecha_inicio": "2014-02-03",
     "usuario": 54
   }
@@ -4040,9 +3938,7 @@
   "fields": {
     "linea_investigacion": "An\u00e1lisis espacial de la demanda de le\u00f1a",
     "descripcion": "",
-    "institucion2": 269,
     "institucion": 4,
-    "dependencia": 557,
     "fecha_inicio": "2017-02-16",
     "usuario": 93
   }

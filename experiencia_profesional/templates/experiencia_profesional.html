@@ -2,7 +2,8 @@
 
 {% block form_agregar %}
     {{ form.errors }}
-    <p>Cambiar institución/dependencia a institucion simple, si la institución pertenece a la unam, mostrar el campo de nombramiento</p>
+    <p>Cambiar institución/dependencia a institucion simple, si la institución pertenece a la unam, mostrar el campo de
+        nombramiento</p>
     <p><strong>Cargo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del cargo."><i
@@ -91,29 +92,35 @@
     </p>
 
     <script>
-    var id_institucion = $("#id_institucion");
-    var id_nombramiento = $("#id_nombramiento");
-    var d_nombramiento = $("#d_nombramiento");
+        var id_institucion = $("#id_institucion");
+        var id_nombramiento = $("#id_nombramiento");
+        var d_nombramiento = $("#d_nombramiento");
 
-    d_nombramiento.hide();
+        d_nombramiento.hide();
 
-    id_institucion.on('change', function (e) {
-        console.log(id_institucion.val());
-        $.ajax({
-            url: "/nucleo/rest/instituciones/" + id_institucion.val() + "/"
-        }).done(function (data) {
-            console.log(data);
-            if (data.institucion_perteneceunam) {
-                d_nombramiento.show('slow');
-                id_nombramiento.attr('required', 'true');
-            }
+        id_institucion.on('change', function (e) {
+            console.log(id_institucion.val());
+            $.ajax({
+                url: "/nucleo/rest/instituciones/" + id_institucion.val() + "/"
+            }).done(function (data) {
+                console.log(data);
+                if (data.institucion_perteneceunam) {
+                    d_nombramiento.show('slow');
+                    id_nombramiento.attr('required', 'true');
+                } else {
+                    id_nombramiento.attr('required', null);
+                    id_nombramiento.val(null).trigger('change');
+                    d_nombramiento.hide('slow');
+                }
+            });
         });
-    });
     </script>
 {% endblock %}
 
 {% block form_detalle %}
     {{ form.errors }}
+    <p>Cambiar institución/dependencia a institucion simple, si la institución pertenece a la unam, mostrar el campo de
+        nombramiento</p>
     <p><strong>Cargo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del cargo."><i
@@ -128,6 +135,7 @@
         </div>
     </div>
     </p>
+
     <p>
         <strong>Institución:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -159,8 +167,7 @@
         </div>
     </div>
     </p>
-
-    <div id="f_nombramiento">
+    <div id="d_nombramiento">
         <p><strong>Nombramiento:</strong>
             <a href="#" data-toggle="tooltip" data-placement="left"
                title="Nombramiento recibido, llenar solo en caso de tener un cargo de los listados, si no, dejar en blanco.">
@@ -200,4 +207,43 @@
         </div>
     </div>
     </p>
+
+    <script>
+        var id_institucion = $("#id_institucion");
+        var id_nombramiento = $("#id_nombramiento");
+        var d_nombramiento = $("#d_nombramiento");
+
+        d_nombramiento.hide();
+
+        $.ajax({
+                url: "/nucleo/rest/instituciones/" + id_institucion.val() + "/"
+            }).done(function (data) {
+                console.log(data);
+                if (data.institucion_perteneceunam) {
+                    d_nombramiento.show();
+                    id_nombramiento.attr('required', 'true');
+                } else {
+                    id_nombramiento.attr('required', null);
+                    id_nombramiento.val(null).trigger('change');
+                    d_nombramiento.hide();
+                }
+            });
+
+        id_institucion.on('change', function (e) {
+            console.log(id_institucion.val());
+            $.ajax({
+                url: "/nucleo/rest/instituciones/" + id_institucion.val() + "/"
+            }).done(function (data) {
+                console.log(data);
+                if (data.institucion_perteneceunam) {
+                    d_nombramiento.show('slow');
+                    id_nombramiento.attr('required', 'true');
+                } else {
+                    id_nombramiento.attr('required', null);
+                    id_nombramiento.val(null).trigger('change');
+                    d_nombramiento.hide('slow');
+                }
+            });
+        });
+    </script>
 {% endblock %}

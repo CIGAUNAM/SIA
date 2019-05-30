@@ -28,13 +28,9 @@ class ExperienciaProfesional(models.Model):
 class LineaInvestigacion(models.Model):
     linea_investigacion = models.CharField(max_length=255)
     descripcion = models.TextField(blank=True)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    # tags = models.ManyToManyField(Tag, related_name='linea_investigacion_tags', blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.usuario, self.linea_investigacion)
@@ -43,7 +39,7 @@ class LineaInvestigacion(models.Model):
         return reverse('linea_investigacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['fecha_inicio', 'linea_investigacion']
+        ordering = ['-fecha_inicio']
         verbose_name = "Línea de investigación"
         verbose_name_plural = "Líneas de investigación"
         unique_together = ['linea_investigacion', 'fecha_inicio', 'usuario']
