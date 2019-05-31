@@ -63,23 +63,20 @@ class Representacion(models.Model):
 class LaborDirectivaCoordinacion(models.Model):
     cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING, null=True, blank=True)
     tipo_cargo = models.CharField(max_length=255) # sacar el texto de cargo
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, blank=True, null=True)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField(auto_now=False)
     fecha_fin = models.DateField(auto_now=False)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "[{} : {}] : {} : {}".format(self.tipo_cargo, self.dependencia,
-                                                        self.fecha_inicio, self.fecha_fin)
+        return "[{} : {}] : {} : {}".format(self.tipo_cargo, self.institucion, self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
         return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Labores Directivaa y de Coordinación'
-        unique_together = ('tipo_cargo', 'usuario', 'dependencia', 'fecha_inicio')
+        unique_together = ('tipo_cargo', 'usuario', 'institucion', 'fecha_inicio')
         ordering = ['-fecha_inicio']
         get_latest_by = ['user', 'tipo_cargo']
 
