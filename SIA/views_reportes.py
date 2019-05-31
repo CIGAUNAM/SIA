@@ -110,7 +110,7 @@ class Informe(View):
     context['servicios_externos_entidadesnoacademicas'] = ServicioAsesoriaExterna.objects.filter(fecha_inicio__year=this_year).distinct()
     # context['otros_programa_vinculacion'] = OtroProgramaVinculacion.objects.filter(fecha__year=this_year).distinct()
     context['sociedades_cientificas'] = ParticipacionSociedadCientifica.objects.filter(fecha_inicio__year=this_year).distinct()
-    context['cargos_academicoadministrativos'] = LaborDirectivaCoordinacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(dependencia__institucion_dependencia__id=1).distinct()
+    context['cargos_academicoadministrativos'] = LaborDirectivaCoordinacion.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(institucion__id=1).distinct()
     context['representacion_organos_colegiados'] = RepresentacionOrganoColegiadoUNAM.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
     context['comisiones_academicas'] = ComisionInstitucionalCIGA.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).distinct()
     # context['comisiones_academicas_evaluacion'] = ComisionInstitucionalCIGA.objects.filter((Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__year__gte=this_year)) | (Q(fecha_inicio__year__lte=this_year) & Q(fecha_fin__isnull=True))).filter(es_evaluacion=True).distinct()

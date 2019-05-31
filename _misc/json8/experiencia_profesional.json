@@ -1,0 +1,5026 @@
+[
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 1,
+  "fields": {
+    "institucion": 91,
+    "cargo_text": "Dise\u00f1ador Instruccional Y Tutor Universidad Virtual Michoac\u00e1n",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-01-01",
+    "fecha_fin": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 2,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 46,
+    "fecha_inicio": "2014-03-01",
+    "fecha_fin": null,
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 3,
+  "fields": {
+    "institucion": 80,
+    "cargo_text": "Pensionado Jubilado Pemex",
+    "nombramiento": 1,
+    "fecha_inicio": "1968-06-01",
+    "fecha_fin": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 4,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 59,
+    "fecha_inicio": "2011-04-28",
+    "fecha_fin": "2016-03-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 5,
+  "fields": {
+    "institucion": 6,
+    "cargo_text": "Otro",
+    "nombramiento": 20,
+    "fecha_inicio": "2010-07-28",
+    "fecha_fin": "2010-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 6,
+  "fields": {
+    "institucion": 147,
+    "cargo_text": "Subdirectora de Sistemas de Informaci\u00f3n Geogr\u00e1fica",
+    "nombramiento": 1,
+    "fecha_inicio": "2000-02-28",
+    "fecha_fin": "2005-09-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 7,
+  "fields": {
+    "institucion": 74,
+    "cargo_text": "Jefe de Departamento de Migraci\u00f3n Interna",
+    "nombramiento": 1,
+    "fecha_inicio": "1999-06-28",
+    "fecha_fin": "2000-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 8,
+  "fields": {
+    "institucion": 137,
+    "cargo_text": "Colaborador",
+    "nombramiento": 1,
+    "fecha_inicio": "1998-05-28",
+    "fecha_fin": "1999-07-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 9,
+  "fields": {
+    "institucion": 12,
+    "cargo_text": "Colaborador",
+    "nombramiento": 1,
+    "fecha_inicio": "1997-08-28",
+    "fecha_fin": "1998-04-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 10,
+  "fields": {
+    "institucion": 339,
+    "cargo_text": "Colaborador",
+    "nombramiento": 1,
+    "fecha_inicio": "1997-05-28",
+    "fecha_fin": "1997-07-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 11,
+  "fields": {
+    "institucion": 334,
+    "cargo_text": "Jefe de Departamento",
+    "nombramiento": 1,
+    "fecha_inicio": "1994-10-28",
+    "fecha_fin": "1995-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 12,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Colaborador",
+    "nombramiento": 1,
+    "fecha_inicio": "1993-01-28",
+    "fecha_fin": "1994-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 13,
+  "fields": {
+    "institucion": 13,
+    "cargo_text": "Colaborador",
+    "nombramiento": 1,
+    "fecha_inicio": "1991-01-28",
+    "fecha_fin": "1992-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 14,
+  "fields": {
+    "institucion": 160,
+    "cargo_text": "Digitalizador",
+    "nombramiento": 1,
+    "fecha_inicio": "1989-10-28",
+    "fecha_fin": "1990-12-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 15,
+  "fields": {
+    "institucion": 139,
+    "cargo_text": "Analista",
+    "nombramiento": 1,
+    "fecha_inicio": "1989-01-28",
+    "fecha_fin": "1989-08-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 16,
+  "fields": {
+    "institucion": 46,
+    "cargo_text": "Otro",
+    "nombramiento": 42,
+    "fecha_inicio": "1995-02-01",
+    "fecha_fin": null,
+    "usuario": 29
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 17,
+  "fields": {
+    "institucion": 121,
+    "cargo_text": "T\u00e9cnico de investigaci\u00f3n",
+    "nombramiento": 1,
+    "fecha_inicio": "2012-10-28",
+    "fecha_fin": "2014-02-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 18,
+  "fields": {
+    "institucion": 215,
+    "cargo_text": "Investigador Agregado",
+    "nombramiento": 39,
+    "fecha_inicio": "1988-02-28",
+    "fecha_fin": "2001-11-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 19,
+  "fields": {
+    "institucion": 147,
+    "cargo_text": "Subdirector de Estudios del Medio Biof\u00edsico",
+    "nombramiento": 1,
+    "fecha_inicio": "2001-11-28",
+    "fecha_fin": "2004-04-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 20,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Investigador Asociado",
+    "nombramiento": 41,
+    "fecha_inicio": "2004-04-28",
+    "fecha_fin": "2006-04-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 21,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 45,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": null,
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 22,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 64,
+    "fecha_inicio": "2014-10-01",
+    "fecha_fin": null,
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 23,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 63,
+    "fecha_inicio": "2011-06-28",
+    "fecha_fin": "2014-10-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 24,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 59,
+    "fecha_inicio": "2007-03-28",
+    "fecha_fin": "2011-06-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 25,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Responsable de Computo",
+    "nombramiento": 1,
+    "fecha_inicio": "2006-03-28",
+    "fecha_fin": "2007-02-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 26,
+  "fields": {
+    "institucion": 340,
+    "cargo_text": "Encargado del \u00c1rea de Computaci\u00f3n",
+    "nombramiento": 1,
+    "fecha_inicio": "2001-01-28",
+    "fecha_fin": "2005-12-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 27,
+  "fields": {
+    "institucion": 102,
+    "cargo_text": "Servicio Social",
+    "nombramiento": 1,
+    "fecha_inicio": "2004-06-28",
+    "fecha_fin": "2004-12-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 28,
+  "fields": {
+    "institucion": 336,
+    "cargo_text": "Servicio Social",
+    "nombramiento": 1,
+    "fecha_inicio": "1999-02-28",
+    "fecha_fin": "1999-08-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 29,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Otro",
+    "nombramiento": 48,
+    "fecha_inicio": "1994-01-28",
+    "fecha_fin": "1996-02-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 30,
+  "fields": {
+    "institucion": 232,
+    "cargo_text": "Otro",
+    "nombramiento": 38,
+    "fecha_inicio": "1996-02-28",
+    "fecha_fin": "2000-03-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 31,
+  "fields": {
+    "institucion": 20,
+    "cargo_text": "Otro",
+    "nombramiento": 38,
+    "fecha_inicio": "2000-07-28",
+    "fecha_fin": "2004-07-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 32,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 42,
+    "fecha_inicio": "2007-08-28",
+    "fecha_fin": "2010-02-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 33,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 43,
+    "fecha_inicio": "2010-02-28",
+    "fecha_fin": "2015-05-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 34,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 44,
+    "fecha_inicio": "2015-06-01",
+    "fecha_fin": null,
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 35,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "C\u00e1tedras CONACYT",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-10-01",
+    "fecha_fin": null,
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 36,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Postdoctoral",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-09-01",
+    "fecha_fin": null,
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 37,
+  "fields": {
+    "institucion": 343,
+    "cargo_text": "Levantamiento y elaboraci\u00f3n de mapas de suelos",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-10-28",
+    "fecha_fin": "2009-07-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 38,
+  "fields": {
+    "institucion": 341,
+    "cargo_text": "Plan de mejora de los caminos rurales de Catalunya",
+    "nombramiento": 1,
+    "fecha_inicio": "2006-04-28",
+    "fecha_fin": "2006-09-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 39,
+  "fields": {
+    "institucion": 342,
+    "cargo_text": "Responsable de Calidad",
+    "nombramiento": 1,
+    "fecha_inicio": "2005-09-28",
+    "fecha_fin": "2006-02-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 40,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 53,
+    "fecha_inicio": "1994-12-28",
+    "fecha_fin": "1997-12-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 41,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 51,
+    "fecha_inicio": "1997-12-28",
+    "fecha_fin": "2001-12-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 42,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 52,
+    "fecha_inicio": "2001-12-28",
+    "fecha_fin": "2006-08-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 43,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 64,
+    "fecha_inicio": "2007-09-28",
+    "fecha_fin": "2015-09-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 44,
+  "fields": {
+    "institucion": 3,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 64,
+    "fecha_inicio": "2006-08-28",
+    "fecha_fin": "2007-08-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 45,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 65,
+    "fecha_inicio": "2015-10-01",
+    "fecha_fin": null,
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 46,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Secretar\u00eda T\u00e9cnica",
+    "nombramiento": 64,
+    "fecha_inicio": "2009-01-01",
+    "fecha_fin": "2015-09-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 47,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Miembro de la Mesa Directiva del Colegio del Personal Acad\u00e9mico",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-11-28",
+    "fecha_fin": "2011-10-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 48,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Representante de los t\u00e9cnicos acad\u00e9micos ante el Consejo Interno",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-10-28",
+    "fecha_fin": "2011-10-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 49,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Corresponsable del Proyecto de Creaci\u00f3n de la Licenciatura en Geohistoria",
+    "nombramiento": 1,
+    "fecha_inicio": "2011-11-28",
+    "fecha_fin": "2012-04-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 50,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Comisi\u00f3n para la elaboraci\u00f3n del Nuevo Plan de la Licenciatura en Ciencias Ambientales",
+    "nombramiento": 1,
+    "fecha_inicio": "2010-12-28",
+    "fecha_fin": "2012-04-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 51,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Representante del Director ante el Consejo Acad\u00e9mico de \u00c1rea en Ciencias Sociales",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-08-28",
+    "fecha_fin": "2012-06-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 52,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Representante del personal acad\u00e9mico del CIGA ante el Consejo Acad\u00e9mico de la Licenciatura en Ciencias Ambientales",
+    "nombramiento": 1,
+    "fecha_inicio": "2011-11-28",
+    "fecha_fin": "2012-06-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 53,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Miembro del Comit\u00e9 Acad\u00e9mico Asesor de la Licenciatura en Ciencias Ambientales",
+    "nombramiento": 1,
+    "fecha_inicio": "2013-10-28",
+    "fecha_fin": "2014-10-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 54,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Comisi\u00f3n para la Creaci\u00f3n de la Licenciatura en Estudios Sociales y Gesti\u00f3n Local",
+    "nombramiento": 1,
+    "fecha_inicio": "2013-02-28",
+    "fecha_fin": "2014-03-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 55,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Miembro de la Comisi\u00f3n para la Creaci\u00f3n del Bachillerato Regional UNAM Michoac\u00e1n",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-02-28",
+    "fecha_fin": "2014-12-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 56,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Miembro del Comit\u00e9 Acad\u00e9mico Asesor de la Licenciatura en Geohistoria",
+    "nombramiento": 1,
+    "fecha_inicio": "2013-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 57,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Miembro del Comit\u00e9 Acad\u00e9mico Asesor de la Licenciatura en Estudios Sociales y Gesti\u00f3n Local",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 58,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Miembro del Comit\u00e9 de Publicaciones, representante del \u00c1rea de Ciencias Sociales",
+    "nombramiento": 1,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 59,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Editor Acad\u00e9mico del Comit\u00e9 Editorial",
+    "nombramiento": 1,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 60,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Representante acad\u00e9mico ante el Comit\u00e9 Acad\u00e9mico del Posgrado en Geograf\u00eda",
+    "nombramiento": 1,
+    "fecha_inicio": "2015-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 61,
+  "fields": {
+    "institucion": 10,
+    "cargo_text": "Coordinador de la Licenciatura en Geohistoria",
+    "nombramiento": 1,
+    "fecha_inicio": "2012-04-28",
+    "fecha_fin": "2015-02-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 62,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Jefe del Departamento de Docencia",
+    "nombramiento": 1,
+    "fecha_inicio": "2015-10-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 63,
+  "fields": {
+    "institucion": 20,
+    "cargo_text": "Otro",
+    "nombramiento": 41,
+    "fecha_inicio": "2004-11-28",
+    "fecha_fin": "2007-08-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 64,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 59,
+    "fecha_inicio": "2007-08-28",
+    "fecha_fin": "2011-02-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 65,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 63,
+    "fecha_inicio": "2011-02-28",
+    "fecha_fin": "2015-03-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 66,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 64,
+    "fecha_inicio": "2015-03-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 67,
+  "fields": {
+    "institucion": 344,
+    "cargo_text": "Lecturer",
+    "nombramiento": 1,
+    "fecha_inicio": "1974-01-28",
+    "fecha_fin": "1982-09-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 68,
+  "fields": {
+    "institucion": 127,
+    "cargo_text": "Unversitaire Hoog Docent",
+    "nombramiento": 1,
+    "fecha_inicio": "1982-09-28",
+    "fecha_fin": "2008-06-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 69,
+  "fields": {
+    "institucion": 10,
+    "cargo_text": "Profesor",
+    "nombramiento": 20,
+    "fecha_inicio": "2012-08-01",
+    "fecha_fin": null,
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 70,
+  "fields": {
+    "institucion": 345,
+    "cargo_text": "Profesor invitado",
+    "nombramiento": 1,
+    "fecha_inicio": "2012-07-28",
+    "fecha_fin": "2012-08-01",
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 71,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular B de tiempo completo",
+    "nombramiento": 1,
+    "fecha_inicio": "2013-06-13",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 72,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Profesor Investigador",
+    "nombramiento": 41,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": "2014-10-01",
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 73,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Profesor Investigador",
+    "nombramiento": 41,
+    "fecha_inicio": "2014-11-01",
+    "fecha_fin": null,
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 75,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 63,
+    "fecha_inicio": "2016-04-01",
+    "fecha_fin": null,
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 76,
+  "fields": {
+    "institucion": 252,
+    "cargo_text": "Becaria doctoral",
+    "nombramiento": 1,
+    "fecha_inicio": "2009-04-28",
+    "fecha_fin": "2014-03-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 77,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 1,
+    "fecha_inicio": "2010-03-28",
+    "fecha_fin": "2015-12-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 78,
+  "fields": {
+    "institucion": 92,
+    "cargo_text": "Administrador de Sistemas de informaci\u00f3n (SIGs)",
+    "nombramiento": 1,
+    "fecha_inicio": "2004-08-28",
+    "fecha_fin": "2004-12-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 79,
+  "fields": {
+    "institucion": 139,
+    "cargo_text": "T\u00e9cico Superior",
+    "nombramiento": 1,
+    "fecha_inicio": "2005-07-28",
+    "fecha_fin": "2005-12-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 80,
+  "fields": {
+    "institucion": 346,
+    "cargo_text": "Encargada de Sistemas",
+    "nombramiento": 1,
+    "fecha_inicio": "2005-06-28",
+    "fecha_fin": "2007-03-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 81,
+  "fields": {
+    "institucion": 139,
+    "cargo_text": "T\u00e9cnico Inform\u00e1tico de Zona",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-03-28",
+    "fecha_fin": "2007-09-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 82,
+  "fields": {
+    "institucion": 347,
+    "cargo_text": "Encargada del \u00c1rea de Soporte T\u00e9cnico",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-09-28",
+    "fecha_fin": "2010-02-01",
+    "usuario": 50
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 83,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Residencia Profesional",
+    "nombramiento": 1,
+    "fecha_inicio": "2006-02-28",
+    "fecha_fin": "2006-05-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 84,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Ordinario de Carrera Titular \u201cA\u201d de Tiempo Completo",
+    "nombramiento": 45,
+    "fecha_inicio": "2016-04-01",
+    "fecha_fin": "2018-11-26",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 85,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 60,
+    "fecha_inicio": "2016-04-01",
+    "fecha_fin": null,
+    "usuario": 35
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 86,
+  "fields": {
+    "institucion": 348,
+    "cargo_text": "Conference Director. Miembro por invitaci\u00f3n de la International Society for the Study of Religion, Nature and Culture (ISSRNC)",
+    "nombramiento": 1,
+    "fecha_inicio": "2006-04-28",
+    "fecha_fin": "2008-12-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 87,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Miembro fundador, por invitaci\u00f3n, de la Asociaci\u00f3n de Historiadores de las Ciencias y las Humanidades A.C. (HCyH). Asamblea General Constitutiva, celebrada en el Instituto de Geograf\u00eda, UNAM, el 19 de abril de 2007.",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-04-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 88,
+  "fields": {
+    "institucion": 349,
+    "cargo_text": "Miembro regular de la Conference of Latin Americanist Geographers (CLAG).",
+    "nombramiento": 1,
+    "fecha_inicio": "2011-02-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 89,
+  "fields": {
+    "institucion": 5,
+    "cargo_text": "Director de Cooperaci\u00f3n Acad\u00e9mica",
+    "nombramiento": 1,
+    "fecha_inicio": "2015-09-01",
+    "fecha_fin": null,
+    "usuario": 39
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 90,
+  "fields": {
+    "institucion": 27,
+    "cargo_text": "Profesor",
+    "nombramiento": 20,
+    "fecha_inicio": "2014-01-28",
+    "fecha_fin": "2016-12-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 91,
+  "fields": {
+    "institucion": 146,
+    "cargo_text": "Subdirector de recursos gen\u00e9ticos",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-08-28",
+    "fecha_fin": "2009-08-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 92,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Asociado \u201cC\u201d de Tiempo Completo",
+    "nombramiento": 47,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": "2012-03-09",
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 93,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico acad\u00e9mico adscrito a la Unidad de C\u00f3mputo",
+    "nombramiento": 59,
+    "fecha_inicio": "2016-06-01",
+    "fecha_fin": null,
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 94,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Servicio Profesional en la Unidad de C\u00f3mputo",
+    "nombramiento": 1,
+    "fecha_inicio": "2016-02-01",
+    "fecha_fin": "2016-05-31",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 95,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Pasante en desarrollo Web",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-08-28",
+    "fecha_fin": "2008-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 96,
+  "fields": {
+    "institucion": 6,
+    "cargo_text": "Residente Profesional en desarrollo Web",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-08-28",
+    "fecha_fin": "2007-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 97,
+  "fields": {
+    "institucion": 227,
+    "cargo_text": "Consultor Externo en Soporte T\u00e9cnico",
+    "nombramiento": 1,
+    "fecha_inicio": "2015-10-28",
+    "fecha_fin": "2015-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 98,
+  "fields": {
+    "institucion": 93,
+    "cargo_text": "Servicio Profesional de apoyo a Control Escolar",
+    "nombramiento": 1,
+    "fecha_inicio": "2013-01-28",
+    "fecha_fin": "2015-01-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 99,
+  "fields": {
+    "institucion": 42,
+    "cargo_text": "Servicio Profesional de apoyo a Control Escolar",
+    "nombramiento": 1,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": "2010-12-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 100,
+  "fields": {
+    "institucion": 352,
+    "cargo_text": "Desarrollador Web",
+    "nombramiento": 1,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": "2009-10-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 101,
+  "fields": {
+    "institucion": 353,
+    "cargo_text": "Servicio Social. Operador telef\u00f3nico en mesa de ayuda",
+    "nombramiento": null,
+    "fecha_inicio": "2006-01-25",
+    "fecha_fin": "2006-07-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 102,
+  "fields": {
+    "institucion": 28,
+    "cargo_text": "Otro",
+    "nombramiento": 52,
+    "fecha_inicio": "1984-08-28",
+    "fecha_fin": "1986-10-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 103,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Jefe del Laboratorio de C\u00f3mputo",
+    "nombramiento": 59,
+    "fecha_inicio": "1986-11-28",
+    "fecha_fin": "1990-09-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 104,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular B de Tiempo Completo.",
+    "nombramiento": 58,
+    "fecha_inicio": "1992-10-28",
+    "fecha_fin": "1994-04-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 105,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Jefe del Laboratorio de Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota",
+    "nombramiento": 58,
+    "fecha_inicio": "1998-10-28",
+    "fecha_fin": "2001-10-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 106,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Jefe del Laboratorio de Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota",
+    "nombramiento": 65,
+    "fecha_inicio": "2001-11-28",
+    "fecha_fin": "2004-11-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 107,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Otro",
+    "nombramiento": 65,
+    "fecha_inicio": "2004-12-28",
+    "fecha_fin": "2009-12-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 108,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Coordinador del Laboratorio de An\u00e1lisis Espacial",
+    "nombramiento": 65,
+    "fecha_inicio": "2009-01-28",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 109,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Secretario T\u00e9cnico",
+    "nombramiento": 65,
+    "fecha_inicio": "2015-11-01",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 110,
+  "fields": {
+    "institucion": 147,
+    "cargo_text": "Coordinador de Proyecto",
+    "nombramiento": 1,
+    "fecha_inicio": "1995-02-28",
+    "fecha_fin": "1996-02-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 111,
+  "fields": {
+    "institucion": 354,
+    "cargo_text": "Technical Officer",
+    "nombramiento": 1,
+    "fecha_inicio": "1996-02-28",
+    "fecha_fin": "1998-10-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 112,
+  "fields": {
+    "institucion": 65,
+    "cargo_text": "C\u00e1tedras CONACYT",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-10-28",
+    "fecha_fin": "2015-12-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 113,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": 41,
+    "fecha_inicio": "2016-01-01",
+    "fecha_fin": null,
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 114,
+  "fields": {
+    "institucion": 355,
+    "cargo_text": "Profesor De Maestr\u00eda En Derecho",
+    "nombramiento": 1,
+    "fecha_inicio": "2012-01-01",
+    "fecha_fin": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 115,
+  "fields": {
+    "institucion": 42,
+    "cargo_text": "Evaluador Del Proyecto",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-06-28",
+    "fecha_fin": "2015-04-01",
+    "usuario": 3
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 116,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 117,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 118,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 119,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 29
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 120,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 28
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 121,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 18
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 122,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C. Definitivo",
+    "nombramiento": 45,
+    "fecha_inicio": "2012-03-09",
+    "fecha_fin": "2017-05-25",
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 123,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Asociado \u201cC\u201d de Tiempo Completo",
+    "nombramiento": 41,
+    "fecha_inicio": "2011-04-01",
+    "fecha_fin": "2015-10-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 124,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2016-08-01",
+    "fecha_fin": null,
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 125,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 126,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 24
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 127,
+  "fields": {
+    "institucion": 6,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": 45,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 36
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 128,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 129,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 22
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 131,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 132,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 133,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2017-09-01",
+    "fecha_fin": null,
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 134,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 135,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 136,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 39
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 137,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Titular \u201cB\u201d T.C. Definitivo",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 138,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "C\u00e1tedras CONACYT",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": "2018-09-30",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 139,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador CONACYT",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 140,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador CONACYT",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 5
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 141,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Invitado",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 59
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 142,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Invitado",
+    "nombramiento": null,
+    "fecha_inicio": "2015-01-01",
+    "fecha_fin": null,
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 144,
+  "fields": {
+    "institucion": 334,
+    "cargo_text": "Asesor Cient\u00edfico del Comit\u00e9 T\u00e9cnico del Padr\u00f3n Electoral IFE",
+    "nombramiento": 1,
+    "fecha_inicio": "2012-10-08",
+    "fecha_fin": "2013-10-09",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 145,
+  "fields": {
+    "institucion": 334,
+    "cargo_text": "Asesor del Proceso Electoral Federal.Asesor del Comit\u00e9 T\u00e9cnico del Padr\u00f3n Electoral.",
+    "nombramiento": 1,
+    "fecha_inicio": "2005-10-03",
+    "fecha_fin": "2006-10-19",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 146,
+  "fields": {
+    "institucion": 363,
+    "cargo_text": "Jefe del proyecto \u201cNorth American Integrated Information System\u201d.",
+    "nombramiento": 1,
+    "fecha_inicio": "1997-02-12",
+    "fecha_fin": "1998-07-23",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 147,
+  "fields": {
+    "institucion": 363,
+    "cargo_text": "Consultor del proyecto \u201cNorth American Integrated Information System\u201d.",
+    "nombramiento": 1,
+    "fecha_inicio": "1995-03-15",
+    "fecha_fin": "1996-12-09",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 148,
+  "fields": {
+    "institucion": 364,
+    "cargo_text": "Coordinador T\u00e9cnico",
+    "nombramiento": 1,
+    "fecha_inicio": "1995-03-11",
+    "fecha_fin": "1996-05-15",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 149,
+  "fields": {
+    "institucion": 365,
+    "cargo_text": "Jefe del Departamento de An\u00e1lisis de Informaci\u00f3n",
+    "nombramiento": 1,
+    "fecha_inicio": "1992-10-20",
+    "fecha_fin": "1994-07-14",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 150,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "Responsable del Laboratorio Universitario de Drones",
+    "nombramiento": 1,
+    "fecha_inicio": "2017-03-08",
+    "fecha_fin": "2018-12-31",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 151,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "Secretario T\u00e9cnico",
+    "nombramiento": 1,
+    "fecha_inicio": "2015-05-26",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 152,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular C de Tiempo Completo \t\t\tGestor de im\u00e1genes satelitales ERMEXNG",
+    "nombramiento": 65,
+    "fecha_inicio": "2015-07-03",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 153,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "Coordinador del Laboratorio de An\u00e1lisis Espacial",
+    "nombramiento": 1,
+    "fecha_inicio": "2009-04-10",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 154,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "Jefe del Laboratorio de Sistemas de Informaci\u00f3n Geogr\u00e1fica y Percepci\u00f3n Remota",
+    "nombramiento": 1,
+    "fecha_inicio": "1998-02-10",
+    "fecha_fin": "2005-07-15",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 155,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular C de Tiempo Completo",
+    "nombramiento": null,
+    "fecha_inicio": "2017-01-03",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 156,
+  "fields": {
+    "institucion": 375,
+    "cargo_text": "Miembro del Comit\u00e9 T\u00e9cnico de Especialistas para la distritaci\u00f3n del Estado de Colima",
+    "nombramiento": null,
+    "fecha_inicio": "2013-01-01",
+    "fecha_fin": "2014-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 157,
+  "fields": {
+    "institucion": 379,
+    "cargo_text": "Consultor del proyecto Estudio del impacto ambiental del dep\u00f3sito de residuos municipales de la zona conurbada de la Cd. de Oaxaca, OAX",
+    "nombramiento": null,
+    "fecha_inicio": "1995-02-08",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 158,
+  "fields": {
+    "institucion": 80,
+    "cargo_text": "Consultor del proyecto Reestructuraci\u00f3n del Sistema de Informaci\u00f3n Geogr\u00e1fica del Corporativo",
+    "nombramiento": null,
+    "fecha_inicio": "1992-01-01",
+    "fecha_fin": null,
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 159,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "Definitividad como T\u00e9cnico Acad\u00e9mico de tiempo completo",
+    "nombramiento": null,
+    "fecha_inicio": "2013-06-13",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 161,
+  "fields": {
+    "institucion": 65,
+    "cargo_text": "SNI Nivel 1. \u00c1rea 5. Ciencias Sociales",
+    "nombramiento": null,
+    "fecha_inicio": "2017-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 162,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "Nivel D PRIDE",
+    "nombramiento": null,
+    "fecha_inicio": "2013-04-19",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 163,
+  "fields": {
+    "institucion": 65,
+    "cargo_text": "SNI Nivel 1. \u00c1rea 5. Ciencias Sociales",
+    "nombramiento": null,
+    "fecha_inicio": "2010-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 164,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular A. TC",
+    "nombramiento": null,
+    "fecha_inicio": "2010-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 165,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "PAIPA - UNAM, NIVEL C",
+    "nombramiento": null,
+    "fecha_inicio": "2008-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 166,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular A. TC",
+    "nombramiento": null,
+    "fecha_inicio": "2008-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 167,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular A. TC",
+    "nombramiento": null,
+    "fecha_inicio": "2009-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 168,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "Coordinador de Docencia  y Actividades de investigaci\u00f3n y acad\u00e9micas",
+    "nombramiento": null,
+    "fecha_inicio": "2008-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 169,
+  "fields": {
+    "institucion": 1,
+    "cargo_text": "Direcci\u00f3n General de Posgrado de la UNAM. Asesor del  Posgrado de Geograf\u00eda",
+    "nombramiento": null,
+    "fecha_inicio": "2007-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 170,
+  "fields": {
+    "institucion": 387,
+    "cargo_text": "Profesor Titular",
+    "nombramiento": null,
+    "fecha_inicio": "2006-01-02",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 171,
+  "fields": {
+    "institucion": 387,
+    "cargo_text": "Profesor Auxiliar",
+    "nombramiento": null,
+    "fecha_inicio": "1997-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 172,
+  "fields": {
+    "institucion": 387,
+    "cargo_text": "Profesor Asistente",
+    "nombramiento": null,
+    "fecha_inicio": "1980-01-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 173,
+  "fields": {
+    "institucion": 387,
+    "cargo_text": "Instructor Graduado",
+    "nombramiento": null,
+    "fecha_inicio": "1977-02-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 174,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "Contrato de arque\u00f3loga por el Proyecto Tres Mezquites",
+    "nombramiento": 1,
+    "fecha_inicio": "2015-03-01",
+    "fecha_fin": "2015-03-15",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 175,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "Contrato de arque\u00f3loga por el Proyecto Tres Mezquites",
+    "nombramiento": 1,
+    "fecha_inicio": "2014-02-14",
+    "fecha_fin": "2014-03-14",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 176,
+  "fields": {
+    "institucion": 422,
+    "cargo_text": "Contrato de arque\u00f3loga por el Proyecto Legacy of Resilience \u2013 Lake of Patzcuaro Basin (LORE-LPB, Michoac\u00e1n)",
+    "nombramiento": 1,
+    "fecha_inicio": "2013-02-04",
+    "fecha_fin": "2013-04-04",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 177,
+  "fields": {
+    "institucion": 423,
+    "cargo_text": "Contrato de arque\u00f3loga por el Proyecto Chup\u00edcuaro (Guanajuato) dirigido por Dra. Brigitte Faug\u00e8re (Universidad Paris 1 - CEMCA)",
+    "nombramiento": 1,
+    "fecha_inicio": "2012-08-06",
+    "fecha_fin": "2012-08-31",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 178,
+  "fields": {
+    "institucion": 424,
+    "cargo_text": "Agente polivalente, organizaci\u00f3n de las colecciones, gesti\u00f3n de las exposiciones, Museo de Les Vans",
+    "nombramiento": 1,
+    "fecha_inicio": "2011-07-01",
+    "fecha_fin": "2011-08-31",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 179,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "Responsable de una zona de excavaci\u00f3n, Malpa\u00eds Prieto, municipio de Zacapu, Mich",
+    "nombramiento": 1,
+    "fecha_inicio": "2010-03-08",
+    "fecha_fin": "2010-03-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 180,
+  "fields": {
+    "institucion": 425,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de Dolmen des Pargues n\u00b07 en Beaulieu (Ard\u00e9che, Francia)",
+    "nombramiento": 1,
+    "fecha_inicio": "2010-02-01",
+    "fecha_fin": "2010-02-26",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 181,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "Responsable de prospecciones pedestres en los municipios de Maravat\u00edo (Mich.) y Jer\u00e9cuaro (Gto, M\u00e9xico), Proyecto Chup\u00edcuaro",
+    "nombramiento": 1,
+    "fecha_inicio": "2009-04-08",
+    "fecha_fin": "2009-05-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 182,
+  "fields": {
+    "institucion": 426,
+    "cargo_text": "Levantamiento de grabados rupestres prehist\u00f3ricos en la cueva de \u201cles deux ouvertures\u201d en Saint-Martin-d\u2019Ard\u00e9che (Ard\u00e9che, Francia)",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-08-04",
+    "fecha_fin": "2018-08-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 183,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "Levantamiento de estructuras en el sitio del Malpa\u00eds Prieto (Poscl\u00e1sico tard\u00edo, municipio de Zacapu, Mich., M\u00e9xico), Proyecto Uacusecha",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-03-03",
+    "fecha_fin": "2008-03-27",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 184,
+  "fields": {
+    "institucion": 425,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de Dolmen des Chazes en Saint-Germain (Ard\u00e9che, Francia)",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-02-05",
+    "fecha_fin": "2008-02-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 185,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "Responsable de sector en Sceautres, Excavaci\u00f3n de salvamento (cementerio siglo VI, Ard\u00e9che, Francia)",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-08-03",
+    "fecha_fin": "2007-08-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 186,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de Saint-Martin en Vallon-Pont-d\u2019Arc (Ard\u00e9che, Francia)",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-06-04",
+    "fecha_fin": "2007-06-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 187,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "Responsable de excavaci\u00f3n en los sitios de El Cuizillo y El Cerrito (El Jaral, municipio de Ac\u00e1mbaro,Gto), de La Mora (La Mora, municipio de Tarandacuao, Gto) y de El Cerrito de Tarandacuao (localidad y municipio de Tarandacuao, Gto) y responsable de pro",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": "2007-04-12",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 189,
+  "fields": {
+    "institucion": 423,
+    "cargo_text": "Prospecciones pedestres en les municipios de Ac\u00e1mbaro, Jer\u00e9cuaro, Tarandacuao (Gto, M\u00e9xico), Proyecto Chup\u00edcuaro",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": "2007-03-31",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 190,
+  "fields": {
+    "institucion": 423,
+    "cargo_text": "Prospecciones pedestres en los municipios de Penjamo, Abasolo, Valle de Santiago, Yuriria (Gto, M\u00e9xico)",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-03-02",
+    "fecha_fin": "2007-03-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 191,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de Alba-La-Romaine (Ard\u00e9che, Francia) (cementerio medieval)",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-02-05",
+    "fecha_fin": "2007-02-28",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 192,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "Responsable de sector en el sitio del Castelas de Baravon en Gras (sitio medieval, Ard\u00e9che, Francia)",
+    "nombramiento": 1,
+    "fecha_inicio": "2006-06-01",
+    "fecha_fin": "2006-07-28",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 193,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "Co-responsable de una zona de excavaci\u00f3n en el sitio JR24 en Puruagu\u00efta (Gto, M\u00e9xico), sitio precl\u00e1sico",
+    "nombramiento": 1,
+    "fecha_inicio": "2006-03-01",
+    "fecha_fin": "2006-03-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 194,
+  "fields": {
+    "institucion": 423,
+    "cargo_text": "Prospecciones pedestres en les municipios de Ac\u00e1mbaro, Jer\u00e9cuaro, Tarandacuao (Gto, M\u00e9xico), Proyecto Chup\u00edcuaro",
+    "nombramiento": 1,
+    "fecha_inicio": "2006-02-01",
+    "fecha_fin": "2006-02-28",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 195,
+  "fields": {
+    "institucion": 428,
+    "cargo_text": "Contratos de inventario de la bodega arqueol\u00f3gica de los periodos hist\u00f3ricos de Alba-la-Romaine (material arqueol\u00f3gico de los sitios protohist\u00f3ricos, galorromanos y medievales de la provincia de Ard\u00e9che, Francia)",
+    "nombramiento": null,
+    "fecha_inicio": "2006-09-06",
+    "fecha_fin": "2013-08-22",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 196,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "Recorridos en el sitio de Pl\u00e9oux  en Beaulieu",
+    "nombramiento": null,
+    "fecha_inicio": "2005-09-06",
+    "fecha_fin": "2005-09-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 197,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de La Tuili\u00e8re en Sampzon (Ard\u00e9che, Francia)",
+    "nombramiento": null,
+    "fecha_inicio": "2004-08-04",
+    "fecha_fin": "2004-09-29",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 198,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de Rochers de Carabasse en Beaulieu (Ard\u00e9che, Francia)",
+    "nombramiento": null,
+    "fecha_inicio": "2004-09-01",
+    "fecha_fin": "2007-09-27",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 199,
+  "fields": {
+    "institucion": 427,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de Saint-Martin en Vallon-Pont-d\u2019Arc (Ard\u00e9che, Francia)",
+    "nombramiento": null,
+    "fecha_inicio": "2004-04-05",
+    "fecha_fin": "2004-06-22",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 200,
+  "fields": {
+    "institucion": 420,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio Roc de Pampelune  en Argelliers (Edad Media, H\u00e9rault, Francia)",
+    "nombramiento": null,
+    "fecha_inicio": "2003-07-01",
+    "fecha_fin": "2003-07-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 201,
+  "fields": {
+    "institucion": 421,
+    "cargo_text": "T\u00e9cnico de excavaci\u00f3n en el sitio de Lattes (sitio protohist\u00f3rico, H\u00e9rault, Francia)",
+    "nombramiento": null,
+    "fecha_inicio": "2002-07-01",
+    "fecha_fin": "2002-07-30",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 202,
+  "fields": {
+    "institucion": 384,
+    "cargo_text": "Investigador Titular \u201cC\u201d T.C. Definitivo",
+    "nombramiento": 47,
+    "fecha_inicio": "2017-04-06",
+    "fecha_fin": null,
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 203,
+  "fields": {
+    "institucion": 384,
+    "cargo_text": "Investigador Titular \u201cB\u201d T.C. Definitivo",
+    "nombramiento": 46,
+    "fecha_inicio": "2014-04-03",
+    "fecha_fin": "2017-04-05",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 204,
+  "fields": {
+    "institucion": 384,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C. Definitivo",
+    "nombramiento": 45,
+    "fecha_inicio": "2011-02-11",
+    "fecha_fin": "2014-04-02",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 205,
+  "fields": {
+    "institucion": 384,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C.",
+    "nombramiento": 45,
+    "fecha_inicio": "2007-08-16",
+    "fecha_fin": "2011-02-10",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 206,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C.",
+    "nombramiento": 45,
+    "fecha_inicio": "2006-04-01",
+    "fecha_fin": "2007-08-15",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 207,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "Investigador Asociado (Beca Posdoctoral por proyecto)",
+    "nombramiento": null,
+    "fecha_inicio": "2005-10-01",
+    "fecha_fin": "2006-03-30",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 208,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "Investigador Asociado (Contrato Posdoctoral).",
+    "nombramiento": null,
+    "fecha_inicio": "2003-10-01",
+    "fecha_fin": "2005-09-30",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 209,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "Investigador Asociado (Beca Posdoctoral por proyecto).",
+    "nombramiento": null,
+    "fecha_inicio": "2003-02-01",
+    "fecha_fin": "2003-07-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 210,
+  "fields": {
+    "institucion": 2,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico (Honorarios)",
+    "nombramiento": null,
+    "fecha_inicio": "1996-02-01",
+    "fecha_fin": "1998-08-06",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 211,
+  "fields": {
+    "institucion": 384,
+    "cargo_text": "Asistente de investigador (Beca Posgrado por proyecto)",
+    "nombramiento": null,
+    "fecha_inicio": "1995-08-21",
+    "fecha_fin": "1996-02-29",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 212,
+  "fields": {
+    "institucion": 384,
+    "cargo_text": "Asistente de investigaci\u00f3n en el \u00e1rea de geomorfolog\u00eda y sedimentolog\u00eda en el Proyecto Din\u00e1mica Oce\u00e1nica y su Relaci\u00f3n con el Deterioro Ambiental en la Porci\u00f3n Sur del Golfo de M\u00e9xico",
+    "nombramiento": null,
+    "fecha_inicio": "1990-04-01",
+    "fecha_fin": "1992-03-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 213,
+  "fields": {
+    "institucion": 305,
+    "cargo_text": "Ayudante de investigador en el \u00e1rea de Geomorfolog\u00eda y Sedimentolog\u00eda en el Proyecto Estudio Limnol\u00f3gico Integral del Lago de Catemaco",
+    "nombramiento": null,
+    "fecha_inicio": "1992-05-16",
+    "fecha_fin": "1994-01-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 214,
+  "fields": {
+    "institucion": 435,
+    "cargo_text": "Asistente de investigador en el \u00e1rea de Geomorfolog\u00eda y Ecolog\u00eda del Paisaje",
+    "nombramiento": null,
+    "fecha_inicio": "1994-01-01",
+    "fecha_fin": "1995-12-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 215,
+  "fields": {
+    "institucion": 436,
+    "cargo_text": "Asesor en el Proyecto de Recuperaci\u00f3n Ecol\u00f3gica del Lago de Huayamilpas",
+    "nombramiento": null,
+    "fecha_inicio": "1993-06-01",
+    "fecha_fin": "1993-12-31",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 216,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C.",
+    "nombramiento": null,
+    "fecha_inicio": "2007-08-17",
+    "fecha_fin": "2015-06-11",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 217,
+  "fields": {
+    "institucion": 20,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C.",
+    "nombramiento": null,
+    "fecha_inicio": "2006-06-01",
+    "fecha_fin": "2007-08-17",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 218,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C.",
+    "nombramiento": null,
+    "fecha_inicio": "2005-07-01",
+    "fecha_fin": "2006-06-30",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 219,
+  "fields": {
+    "institucion": 384,
+    "cargo_text": "Investigador Asociado \u201cC\u201d de Tiempo Completo",
+    "nombramiento": 46,
+    "fecha_inicio": "2000-07-01",
+    "fecha_fin": "2005-06-30",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 220,
+  "fields": {
+    "institucion": 137,
+    "cargo_text": "Investigador Participante",
+    "nombramiento": null,
+    "fecha_inicio": "1994-02-01",
+    "fecha_fin": "1994-12-31",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 221,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador",
+    "nombramiento": 46,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": null,
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 222,
+  "fields": {
+    "institucion": 479,
+    "cargo_text": "Consultora T\u00e9cnica",
+    "nombramiento": null,
+    "fecha_inicio": "1993-05-03",
+    "fecha_fin": "1993-09-03",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 223,
+  "fields": {
+    "institucion": 480,
+    "cargo_text": "Inspectora Internacional Agricultura Org\u00e1nica",
+    "nombramiento": null,
+    "fecha_inicio": "1993-06-01",
+    "fecha_fin": "1993-08-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 224,
+  "fields": {
+    "institucion": 481,
+    "cargo_text": "Editora. Bolet\u00edn del Programa: Gesti\u00f3n de Recursos Naturales",
+    "nombramiento": null,
+    "fecha_inicio": "1993-01-03",
+    "fecha_fin": "1995-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 225,
+  "fields": {
+    "institucion": 297,
+    "cargo_text": "Directora",
+    "nombramiento": null,
+    "fecha_inicio": "1994-01-03",
+    "fecha_fin": "1996-01-10",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 227,
+  "fields": {
+    "institucion": 482,
+    "cargo_text": "Consultora: Proyecto Uno",
+    "nombramiento": null,
+    "fecha_inicio": "1997-04-02",
+    "fecha_fin": "1998-04-07",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 228,
+  "fields": {
+    "institucion": 297,
+    "cargo_text": "Investigadora Asociada",
+    "nombramiento": null,
+    "fecha_inicio": "1987-01-02",
+    "fecha_fin": "1989-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 229,
+  "fields": {
+    "institucion": 13,
+    "cargo_text": "Asistente de Investigaci\u00f3n",
+    "nombramiento": null,
+    "fecha_inicio": "1988-01-01",
+    "fecha_fin": "1989-01-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 230,
+  "fields": {
+    "institucion": 646,
+    "cargo_text": "Asistente de Investigaci\u00f3n",
+    "nombramiento": null,
+    "fecha_inicio": "1989-09-02",
+    "fecha_fin": "1989-12-06",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 231,
+  "fields": {
+    "institucion": 646,
+    "cargo_text": "Investigadora",
+    "nombramiento": null,
+    "fecha_inicio": "1990-01-01",
+    "fecha_fin": "1992-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 232,
+  "fields": {
+    "institucion": 646,
+    "cargo_text": "Asistente de Investigaci\u00f3n",
+    "nombramiento": null,
+    "fecha_inicio": "1992-09-01",
+    "fecha_fin": "1993-10-04",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 233,
+  "fields": {
+    "institucion": 297,
+    "cargo_text": "Investigadora",
+    "nombramiento": null,
+    "fecha_inicio": "1992-01-01",
+    "fecha_fin": "1999-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 234,
+  "fields": {
+    "institucion": 483,
+    "cargo_text": "Investigadora",
+    "nombramiento": null,
+    "fecha_inicio": "2005-01-12",
+    "fecha_fin": "2005-02-12",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 235,
+  "fields": {
+    "institucion": 297,
+    "cargo_text": "Directora Programa Agroecolog\u00eda",
+    "nombramiento": 6,
+    "fecha_inicio": "2004-02-11",
+    "fecha_fin": "2004-04-11",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 236,
+  "fields": {
+    "institucion": 484,
+    "cargo_text": "Consultora",
+    "nombramiento": null,
+    "fecha_inicio": "2002-01-01",
+    "fecha_fin": "2004-02-02",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 238,
+  "fields": {
+    "institucion": 297,
+    "cargo_text": "Directora Programa Agroecolog\u00eda",
+    "nombramiento": null,
+    "fecha_inicio": "2005-01-01",
+    "fecha_fin": "2005-12-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 239,
+  "fields": {
+    "institucion": 157,
+    "cargo_text": "Consultora",
+    "nombramiento": null,
+    "fecha_inicio": "2005-11-01",
+    "fecha_fin": "2005-11-30",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 240,
+  "fields": {
+    "institucion": 250,
+    "cargo_text": "Consultora: Taller de Consulta",
+    "nombramiento": null,
+    "fecha_inicio": "2006-01-01",
+    "fecha_fin": "2006-12-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 242,
+  "fields": {
+    "institucion": 319,
+    "cargo_text": "Profesor Auxiliar",
+    "nombramiento": 1,
+    "fecha_inicio": "2016-08-01",
+    "fecha_fin": "2017-08-31",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 243,
+  "fields": {
+    "institucion": 525,
+    "cargo_text": "Profesor",
+    "nombramiento": null,
+    "fecha_inicio": "2014-08-01",
+    "fecha_fin": "2017-08-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 244,
+  "fields": {
+    "institucion": 526,
+    "cargo_text": "Auditor (a)",
+    "nombramiento": null,
+    "fecha_inicio": "2008-07-01",
+    "fecha_fin": "2009-03-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 245,
+  "fields": {
+    "institucion": 527,
+    "cargo_text": "Analista",
+    "nombramiento": null,
+    "fecha_inicio": "2006-02-01",
+    "fecha_fin": "2006-04-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 246,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": 46,
+    "fecha_inicio": "2012-10-11",
+    "fecha_fin": null,
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 247,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": 45,
+    "fecha_inicio": "2007-03-01",
+    "fecha_fin": null,
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 248,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 65,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 249,
+  "fields": {
+    "institucion": 23,
+    "cargo_text": "Profesor Titular de Asignatura",
+    "nombramiento": null,
+    "fecha_inicio": "1989-05-01",
+    "fecha_fin": "1989-10-31",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 250,
+  "fields": {
+    "institucion": 23,
+    "cargo_text": "Profesor Titular de Asignatura",
+    "nombramiento": null,
+    "fecha_inicio": "1989-10-01",
+    "fecha_fin": "1990-05-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 251,
+  "fields": {
+    "institucion": 23,
+    "cargo_text": "Profesor Titular de Asignatura",
+    "nombramiento": null,
+    "fecha_inicio": "1993-11-01",
+    "fecha_fin": "1994-04-30",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 252,
+  "fields": {
+    "institucion": 535,
+    "cargo_text": "Investigador Titular",
+    "nombramiento": 46,
+    "fecha_inicio": "2005-09-01",
+    "fecha_fin": "2007-08-30",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 253,
+  "fields": {
+    "institucion": 535,
+    "cargo_text": "Investigador UNAM",
+    "nombramiento": 41,
+    "fecha_inicio": "1995-02-01",
+    "fecha_fin": "2005-08-30",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 254,
+  "fields": {
+    "institucion": 548,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 59,
+    "fecha_inicio": "2005-01-03",
+    "fecha_fin": "2007-08-03",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 255,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 59,
+    "fecha_inicio": "2007-08-06",
+    "fecha_fin": "2011-02-05",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 256,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 63,
+    "fecha_inicio": "2011-02-01",
+    "fecha_fin": null,
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 257,
+  "fields": {
+    "institucion": 175,
+    "cargo_text": "Asistente de Investigaci\u00f3n. Tiempo Parcial",
+    "nombramiento": null,
+    "fecha_inicio": "2000-01-01",
+    "fecha_fin": "2002-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 258,
+  "fields": {
+    "institucion": 549,
+    "cargo_text": "Asistente de Investigaci\u00f3n. Tiempo Parcial",
+    "nombramiento": null,
+    "fecha_inicio": "2001-01-02",
+    "fecha_fin": "2002-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 259,
+  "fields": {
+    "institucion": 175,
+    "cargo_text": "Asistente T\u00e9cnico de Proyectos. Tiempo completo.",
+    "nombramiento": null,
+    "fecha_inicio": "1900-01-01",
+    "fecha_fin": null,
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 260,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador titular B de tiempo completo.",
+    "nombramiento": null,
+    "fecha_inicio": "2008-07-22",
+    "fecha_fin": null,
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 261,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Titular \u201cC\u201d T.C. Definitivo",
+    "nombramiento": null,
+    "fecha_inicio": "2014-07-12",
+    "fecha_fin": null,
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 262,
+  "fields": {
+    "institucion": 573,
+    "cargo_text": "Profesor Asociado",
+    "nombramiento": null,
+    "fecha_inicio": "2003-01-01",
+    "fecha_fin": "2008-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 263,
+  "fields": {
+    "institucion": 573,
+    "cargo_text": "Profesor Asistente",
+    "nombramiento": null,
+    "fecha_inicio": "1994-01-01",
+    "fecha_fin": "2003-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 264,
+  "fields": {
+    "institucion": 573,
+    "cargo_text": "Profesor Asistente",
+    "nombramiento": null,
+    "fecha_inicio": "1991-01-01",
+    "fecha_fin": "1994-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 265,
+  "fields": {
+    "institucion": 573,
+    "cargo_text": "Investigador doctoral, en campo, Sri Lanka",
+    "nombramiento": null,
+    "fecha_inicio": "1998-01-01",
+    "fecha_fin": "1991-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 266,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C.",
+    "nombramiento": 45,
+    "fecha_inicio": "2007-10-01",
+    "fecha_fin": "2014-04-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 267,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Titular \u201cA\u201d T.C.",
+    "nombramiento": 45,
+    "fecha_inicio": "2006-10-01",
+    "fecha_fin": "2007-10-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 268,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Asociado \u201cC\u201d de Tiempo Completo",
+    "nombramiento": 41,
+    "fecha_inicio": "2001-10-01",
+    "fecha_fin": "2006-10-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 269,
+  "fields": {
+    "institucion": 583,
+    "cargo_text": "Profesor Auxiliar",
+    "nombramiento": null,
+    "fecha_inicio": "1989-10-01",
+    "fecha_fin": "1991-12-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 270,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 59,
+    "fecha_inicio": "2000-02-01",
+    "fecha_fin": "2001-01-31",
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 271,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 63,
+    "fecha_inicio": "2003-04-01",
+    "fecha_fin": "2003-09-12",
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 272,
+  "fields": {
+    "institucion": 16,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico",
+    "nombramiento": 59,
+    "fecha_inicio": "2004-11-01",
+    "fecha_fin": "2007-07-31",
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 273,
+  "fields": {
+    "institucion": 622,
+    "cargo_text": "Administrador de Sistemas de informaci\u00f3n (SIGs)",
+    "nombramiento": 5,
+    "fecha_inicio": "2018-07-18",
+    "fecha_fin": "2018-07-19",
+    "usuario": 1087
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 274,
+  "fields": {
+    "institucion": 603,
+    "cargo_text": "T\u00e9cnico de investigaci\u00f3n",
+    "nombramiento": 1,
+    "fecha_inicio": "2008-01-01",
+    "fecha_fin": "2017-02-28",
+    "usuario": 91
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 275,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Asistente T\u00e9cnico de Proyectos. Tiempo completo.",
+    "nombramiento": null,
+    "fecha_inicio": "2010-10-01",
+    "fecha_fin": "2011-03-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 276,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Ordinario de Carrera Asociado \u201cC\u201d de Tiempo Completo",
+    "nombramiento": 41,
+    "fecha_inicio": "2015-11-02",
+    "fecha_fin": "2016-03-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 277,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Asociado \u201cC\u201d de Tiempo Completo",
+    "nombramiento": 41,
+    "fecha_inicio": "2018-10-01",
+    "fecha_fin": null,
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 279,
+  "fields": {
+    "institucion": 6,
+    "cargo_text": "T\u00e9cnico por Proyecto",
+    "nombramiento": null,
+    "fecha_inicio": "2003-01-02",
+    "fecha_fin": "2003-07-31",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 281,
+  "fields": {
+    "institucion": 705,
+    "cargo_text": "T\u00e9cnico por Proyecto",
+    "nombramiento": null,
+    "fecha_inicio": "2001-03-01",
+    "fecha_fin": "2001-09-30",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 282,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Investigador Titular \u201cB\u201d T.C. Definitivo",
+    "nombramiento": 46,
+    "fecha_inicio": "2017-05-25",
+    "fecha_fin": null,
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 283,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular A. TC",
+    "nombramiento": null,
+    "fecha_inicio": "2011-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 284,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "SNI Nivel 1. \u00c1rea 5. Ciencias Sociales",
+    "nombramiento": null,
+    "fecha_inicio": "2013-12-01",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 285,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular C de Tiempo Completo",
+    "nombramiento": null,
+    "fecha_inicio": "2016-10-27",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 286,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "Nivel D PRIDE",
+    "nombramiento": null,
+    "fecha_inicio": "2018-05-04",
+    "fecha_fin": null,
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 287,
+  "fields": {
+    "institucion": 4,
+    "cargo_text": "T\u00e9cnico Acad\u00e9mico Titular A. TC",
+    "nombramiento": 63,
+    "fecha_inicio": "2011-02-10",
+    "fecha_fin": null,
+    "usuario": 13
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 288,
+  "fields": {
+    "institucion": 788,
+    "cargo_text": "Analista en Teledetecci\u00f3n y Sistemas de Informaci\u00f3n Geogr\u00e1fica",
+    "nombramiento": null,
+    "fecha_inicio": "2012-01-02",
+    "fecha_fin": "2012-06-29",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 289,
+  "fields": {
+    "institucion": 789,
+    "cargo_text": "Analista de sistemas de Informaci\u00f3n Geogr\u00e1ficas",
+    "nombramiento": 1,
+    "fecha_inicio": "2007-06-04",
+    "fecha_fin": "2008-01-31",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 290,
+  "fields": {
+    "institucion": 790,
+    "cargo_text": "Trabajador Social",
+    "nombramiento": 1,
+    "fecha_inicio": "2004-04-05",
+    "fecha_fin": "2007-05-31",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.experienciaprofesional",
+  "pk": 291,
+  "fields": {
+    "institucion": 791,
+    "cargo_text": "Profesor",
+    "nombramiento": 2,
+    "fecha_inicio": "2015-01-05",
+    "fecha_fin": "2017-02-14",
+    "usuario": 93
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 1,
+  "fields": {
+    "linea_investigacion": "Geograf\u00eda de los Paisajes y Geoecolog\u00eda",
+    "descripcion": "",
+    "institucion": 387,
+    "fecha_inicio": "1977-01-19",
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 2,
+  "fields": {
+    "linea_investigacion": "Ordenamientos Ambiental, Ecol\u00f3gico y Territorial",
+    "descripcion": "",
+    "institucion": 387,
+    "fecha_inicio": "1977-02-08",
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 3,
+  "fields": {
+    "linea_investigacion": "Geoqu\u00edmica ambiental",
+    "descripcion": "",
+    "institucion": 387,
+    "fecha_inicio": "1985-04-04",
+    "usuario": 17
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 4,
+  "fields": {
+    "linea_investigacion": "Historia Ambiental",
+    "descripcion": "patr\u00f3n de asentamiento\r\nreconstrucci\u00f3n de las formas del paisaje\r\ncambio de uso de suelo en una perspectiva hist\u00f3rica\r\n patr\u00f3n agropecuario\r\nexplotaci\u00f3n de los recursos naturales",
+    "institucion": 1,
+    "fecha_inicio": "2003-01-01",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 5,
+  "fields": {
+    "linea_investigacion": "relaci\u00f3n sociedad \u2013 medio ambiente",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2003-01-01",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 6,
+  "fields": {
+    "linea_investigacion": "Arqueogeograf\u00eda",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2003-01-07",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 7,
+  "fields": {
+    "linea_investigacion": "Geohistoria",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2003-01-14",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 8,
+  "fields": {
+    "linea_investigacion": "Planeaci\u00f3n espacial y manejo de recursos naturales desde la perspectiva de la Geograf\u00eda f\u00edsica",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 9,
+  "fields": {
+    "linea_investigacion": "Geomorfolog\u00eda, Hidrolog\u00eda y ecolog\u00eda el paisaje",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 10,
+  "fields": {
+    "linea_investigacion": "Cuantificaci\u00f3n y an\u00e1lisis del cambio de uso del suelo,",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 11,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis de los efectos hidrol\u00f3gicos y edafol\u00f3gicos del cambio de cobertura",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2000-01-03",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 12,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis de la conectividad espacial",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2014-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 13,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis las tendencias y variaciones de cambio clim\u00e1tico",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2003-01-01",
+    "usuario": 23
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 14,
+  "fields": {
+    "linea_investigacion": "Procesos Socio-Econ\u00f3micos y Ambientales en Territorios Urbanos y Periurbanos",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2006-01-01",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 16,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis Urbano-Regional",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2000-01-03",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 17,
+  "fields": {
+    "linea_investigacion": "Mercado Laboral Urbano",
+    "descripcion": "",
+    "institucion": 384,
+    "fecha_inicio": "2000-01-03",
+    "usuario": 33
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 18,
+  "fields": {
+    "linea_investigacion": "Estudio y Conservaci\u00f3n de la Agro-Diversidad en el Contexto de los Sistemas de Producci\u00f3n Campesinos a Nivel Unidad de Producci\u00f3n y Regional",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 19,
+  "fields": {
+    "linea_investigacion": "Importancia de la conservaci\u00f3n de los ma\u00edces nativos y la milpa",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2005-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 20,
+  "fields": {
+    "linea_investigacion": "Evaluaci\u00f3n de Sustentabilidad de Agricultura y Sistemas Alimentarios",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "1999-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 21,
+  "fields": {
+    "linea_investigacion": "Agricultura Ecol\u00f3gica y Calidad de Suelos",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "1992-01-01",
+    "usuario": 32
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 22,
+  "fields": {
+    "linea_investigacion": "Historia y Paisaje desde el cambio de uso de suelo y tenencia de la tierra en M\u00e9xico.",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2004-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 24,
+  "fields": {
+    "linea_investigacion": "Teor\u00eda e Historiograf\u00eda de la Geograf\u00eda Hist\u00f3rica e Historia Ambiental",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2008-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 25,
+  "fields": {
+    "linea_investigacion": "Historia, historiograf\u00eda y epistemolog\u00eda de la Geograf\u00eda",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2008-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 26,
+  "fields": {
+    "linea_investigacion": "Geograf\u00eda cultural y paisajes hist\u00f3ricos",
+    "descripcion": "",
+    "institucion": 1,
+    "fecha_inicio": "2008-03-10",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 29,
+  "fields": {
+    "linea_investigacion": "Estudios regionales, urbano y periurbanos",
+    "descripcion": "Estudios regionales, urbano y periurbanos de las ciudades medias, espec\u00edficamente las din\u00e1micas y segregaci\u00f3n socio espacial.",
+    "institucion": 524,
+    "fecha_inicio": "2009-01-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 30,
+  "fields": {
+    "linea_investigacion": "Estudios Regionales y territoriales.",
+    "descripcion": "Implicaciones sociales y espaciales de programas gubernamentales y las distinciones en la reconfiguraci\u00f3n territorial, espec\u00edficamente los efectos del programa Ciudades Rurales Sustentables, Pueblos M\u00e1gicos y las Ciudades Patrimonio en el desarrollo y sostenibilidad de los territorios.",
+    "institucion": 524,
+    "fecha_inicio": "2014-01-01",
+    "usuario": 44
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 31,
+  "fields": {
+    "linea_investigacion": "Evaluaci\u00f3n de tierras en sentido amplio, incluyendo ambientes urbanos, rurales, periurbanos, industriales y mineros, con las siguientes tres subl\u00edneas",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 32,
+  "fields": {
+    "linea_investigacion": "Inventario de recurso naturales y evaluaci\u00f3n de su calidad: suelos, polvos, clima y cuerpos de agua",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 33,
+  "fields": {
+    "linea_investigacion": "Valoraci\u00f3n del conocimiento local sobre el ambiente, recursos naturales y formas de manejo. Culturas Maya, Chichimeca y Pur\u00e9pecha, principalmente.",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 34,
+  "fields": {
+    "linea_investigacion": "Dise\u00f1o de modelos de evaluaci\u00f3n de la aptitud/calidad de los recursos naturales.",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 35,
+  "fields": {
+    "linea_investigacion": "Levantamiento, clasificaci\u00f3n y cartograf\u00eda de paisajes f\u00edsico-geogr\u00e1ficos.",
+    "descripcion": "Se refiere a la elaboraci\u00f3n y edici\u00f3n de mapas de paisajes f\u00edsico-geogr\u00e1ficos a diferentes escalas, tanto locales como regionales.",
+    "institucion": 215,
+    "fecha_inicio": "1988-02-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 36,
+  "fields": {
+    "linea_investigacion": "Estructura, funcionamiento y manejo de riberas fluviales",
+    "descripcion": "An\u00e1lisis de la estructura y funcionamiento de las riberas fluviales para su manejo sustentable, desde el enfoque de los sistemas socioecol\u00f3gicos.",
+    "institucion": 504,
+    "fecha_inicio": "2014-12-05",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 37,
+  "fields": {
+    "linea_investigacion": "Monitoreo comunitario del agua",
+    "descripcion": "An\u00e1lisis de la calidad del agua con herramientas que permiten la participaci\u00f3n comunitaria",
+    "institucion": 253,
+    "fecha_inicio": "2004-08-02",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 38,
+  "fields": {
+    "linea_investigacion": "Sistemas de conocimiento",
+    "descripcion": "B\u00fasqueda de di\u00e1logo entre m\u00faltiples sistemas de conocimiento sobre los ecosistemas. Valores y conocimiento locales e ind\u00edgenas. Di\u00e1logo de saberes.",
+    "institucion": 6,
+    "fecha_inicio": "2018-09-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 39,
+  "fields": {
+    "linea_investigacion": "Pobreza y Vulnerabilidad",
+    "descripcion": "",
+    "institucion": 4,
+    "fecha_inicio": "2011-03-14",
+    "usuario": 36
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 40,
+  "fields": {
+    "linea_investigacion": "Procesos territoriales y din\u00e1micas sociales en periferias urbanas",
+    "descripcion": "",
+    "institucion": 4,
+    "fecha_inicio": "2011-03-14",
+    "usuario": 36
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 41,
+  "fields": {
+    "linea_investigacion": "El manejo de forester\u00eda comunitaria.",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "1978-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 42,
+  "fields": {
+    "linea_investigacion": "Implicaciones en pol\u00edtica del cambio clim\u00e1tico global. Deforestaci\u00f3n, degradaci\u00f3n, forester\u00eda comunitaria y fortalecimiento de capacidades institucionales locales; el mercado de carbono.",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "2000-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 43,
+  "fields": {
+    "linea_investigacion": "Bioenerg\u00eda y biofuels; impactos sociales.",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "2007-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 44,
+  "fields": {
+    "linea_investigacion": "G\u00e9nero y energ\u00eda. Perspectiva de g\u00e9nero y herramientas de planeaci\u00f3n en uso de la energ\u00eda.",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "1995-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 45,
+  "fields": {
+    "linea_investigacion": "Programas de investigacion corriente: \u201dForesteria comunitaria y captura de carbono\u201d, \u201dPol\u00edticas para promover el carbono forestal\u201d y : \u00a8Mejorar el conocimiento de la 'porosidad de la interfaz' en la comunicaci\u00f3n ciencia-pol\u00edtica\u00a8",
+    "descripcion": "",
+    "institucion": 524,
+    "fecha_inicio": "1900-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 46,
+  "fields": {
+    "linea_investigacion": "Modelado espacio-temporal de los impactos ambientales por la extracci\u00f3n y producci\u00f3n de le\u00f1a y carb\u00f3n vegetal bajo patrones de aprovechamiento tradicional",
+    "descripcion": "",
+    "institucion": 4,
+    "fecha_inicio": "2003-01-06",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 47,
+  "fields": {
+    "linea_investigacion": "Modelado prospectivo del potencial de los recursos dendroenerg\u00e9ticos bajo patrones de aprovechamiento tecnificado",
+    "descripcion": "",
+    "institucion": 4,
+    "fecha_inicio": "2006-01-02",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 48,
+  "fields": {
+    "linea_investigacion": "Seguridad energ\u00e9tica de la poblaci\u00f3n rural y urbana de bajos recursos",
+    "descripcion": "",
+    "institucion": 4,
+    "fecha_inicio": "2011-01-03",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 49,
+  "fields": {
+    "linea_investigacion": "Ecolog\u00eda pol\u00edtica",
+    "descripcion": "",
+    "institucion": 603,
+    "fecha_inicio": "2007-09-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 50,
+  "fields": {
+    "linea_investigacion": "Econom\u00eda ecol\u00f3gica",
+    "descripcion": "",
+    "institucion": 603,
+    "fecha_inicio": "2014-03-01",
+    "usuario": 91
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 51,
+  "fields": {
+    "linea_investigacion": "A.\tPaisajes Mineros. Estudios de caso del Conflicto socio-ambientales en enclaves mineros.",
+    "descripcion": "La actividad minera moderna frecuentemente se presenta como una econom\u00eda de enclave. Es decir, la presencia de un complejo industrial (frecuentemente propiedad de grandes corporaciones) ubicado en un determinado paisaje que en su entorno genera o impulsa un poblado de trabajadores y con ello despliega una econom\u00eda local. El objetivo de la l\u00ednea de investigaci\u00f3n es el explotar los conflictos sociales asociados tanto a la disputa de derechos de acceso al mineral como a los efectos ambientales de las actividades mineras en el paisaje social local.",
+    "institucion": 4,
+    "fecha_inicio": "2007-03-11",
+    "usuario": 27
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 52,
+  "fields": {
+    "linea_investigacion": "Modelaci\u00f3n espacial y temporal de los cambios de cubierta/uso del suelo y de la conectividad del paisaje en Michoac\u00e1n",
+    "descripcion": "Analizar y modelar el efecto de los CCUS sobre la conectividad del paisaje con base de diferentes escenarios de cambio en el estado de Michoac\u00e1n.",
+    "institucion": 4,
+    "fecha_inicio": "2018-09-01",
+    "usuario": 1841
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 53,
+  "fields": {
+    "linea_investigacion": "Geograf\u00eda Econ\u00f3mica",
+    "descripcion": "Se analizan las diferentes maneras en que los agentes (individuos, productores, consumidores organizaciones, empresas), factores (tecnolog\u00eda, instituciones, recursos naturales) y procesos econ\u00f3micos (reconfiguraci\u00f3n, globalizaci\u00f3n,  producci\u00f3n, distribuci\u00f3n y consumo) se conjugan en los territorios. El eje central es poner de manifiesto la mutua articulaci\u00f3n de los distintos niveles espaciales, propiciada por la l\u00f3gica capitalista en raz\u00f3n de su proceso de reproducci\u00f3n, a fin de demostrar c\u00f3mo el sistema actual es capaz de extraer excedentes en las m\u00e1s variadas circunstancias, haciendo un uso intensivo de la naturaleza diferenciada y heterog\u00e9nea del espacio geogr\u00e1fico.",
+    "institucion": 4,
+    "fecha_inicio": "2011-10-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 54,
+  "fields": {
+    "linea_investigacion": "Econom\u00eda ambiental y de los recursos naturales",
+    "descripcion": "El estudio de la relaci\u00f3n de las actividades econ\u00f3micas con el medio ambiente. As\u00ed la actividad econ\u00f3mica toma recursos naturales para llevarse a cabo, de esta manera genera efectos externos que deben ser internalizados por los contaminadores.",
+    "institucion": 763,
+    "fecha_inicio": "2006-02-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 55,
+  "fields": {
+    "linea_investigacion": "Desarrollo Sustentable",
+    "descripcion": "Estudio del desarrollo sustentable desde diversos enfoques econ\u00f3micos para una mejor comprensi\u00f3n de los problemas, amenazas y oportunidades que pueden surgir como alternativa al crecimiento y desarrollo econ\u00f3mico.",
+    "institucion": 27,
+    "fecha_inicio": "2014-02-03",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.lineainvestigacion",
+  "pk": 56,
+  "fields": {
+    "linea_investigacion": "An\u00e1lisis espacial de la demanda de le\u00f1a",
+    "descripcion": "",
+    "institucion": 4,
+    "fecha_inicio": "2017-02-16",
+    "usuario": 93
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 1,
+  "fields": {
+    "nombre": "Planificaci\u00f3n del territorio",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 2,
+  "fields": {
+    "nombre": "Manejo de zona costera",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 3,
+  "fields": {
+    "nombre": "Gesti\u00f3n ambiental",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 4,
+  "fields": {
+    "nombre": "Gobernanza",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 5,
+  "fields": {
+    "nombre": "Ambientes urbanos y periurbanos",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 10
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 6,
+  "fields": {
+    "nombre": "Bases de datos: Visual FoxPro, MySQL, Access, Oracle, Excel. etc.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 7,
+  "fields": {
+    "nombre": "Dise\u00f1o de im\u00e1genes: Photoshop, Corel Draw, Flash (Multimedia), Adobe Illustrator, Page Maker",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 8,
+  "fields": {
+    "nombre": "Programaci\u00f3n: Visual Basic, Visual C++, JBuilder, Java, C++, PHP, HTML, JavaSever Page, Javascript, Servlets, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2002-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 9,
+  "fields": {
+    "nombre": "Levantamiento, clasificaci\u00f3n y cartograf\u00eda de paisajes f\u00edsico-geogr\u00e1ficos",
+    "descripcion": "",
+    "fecha_inicio": "1987-01-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 10,
+  "fields": {
+    "nombre": "Heterogeneidad geoecol\u00f3gica y su relaci\u00f3n con la distribuci\u00f3n de la biodiversidad ",
+    "descripcion": "",
+    "fecha_inicio": "1994-01-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 11,
+  "fields": {
+    "nombre": "Ordenamiento ecol\u00f3gico territorial ",
+    "descripcion": "",
+    "fecha_inicio": "1987-01-01",
+    "usuario": 21
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 12,
+  "fields": {
+    "nombre": "Mantenimiento: Preventivo y Correctivo de Microcomputadoras y Servidores.",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 13,
+  "fields": {
+    "nombre": "Redes: An\u00e1lisis, dise\u00f1o e instalaci\u00f3n de redes LAN y WAN (switches y ruteadores CISCO), Seguridad ",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 14,
+  "fields": {
+    "nombre": "Redes Internas conectadas a Internet (Firewall\u00b4s) (Packeeteer, CISCO, Fortinet, SonicWall), Instalaci\u00f3n y configuraci\u00f3n de Servidores Web, Correo, FTP, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 15,
+  "fields": {
+    "nombre": "Administraci\u00f3n y configuraci\u00f3n de terminales VOIP en un conmutador NEC NEAX IPX 2400",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 16,
+  "fields": {
+    "nombre": "Uso y administraci\u00f3n de videoconferencias utilizando el est\u00e1ndar H.323 (Polycom, Sony, Tandberg).",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 17,
+  "fields": {
+    "nombre": "Sistemas Operativos: Windows, Unix (Fedora, Suse, Red Hat, Debian), MacOS.",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 18,
+  "fields": {
+    "nombre": "SIG Intranet: Arcview, ARCGIS, Ilwis, Idrisi, Envi, Erdas, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 19,
+  "fields": {
+    "nombre": "SIG Internet: Map Server, Alov Map, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 34
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 20,
+  "fields": {
+    "nombre": "Experiencia en modelado y an\u00e1lisis de procesos de cambio de uso y cubierta del suelo.",
+    "descripcion": "",
+    "fecha_inicio": "1994-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 21,
+  "fields": {
+    "nombre": "Manejo especializado de los principales Sistemas de Informaci\u00f3n Geogr\u00e1fica: ArcGis 10x, ArcInfo 9.0, ArcView, Ilwis, QGis.",
+    "descripcion": "",
+    "fecha_inicio": "1989-01-01",
+    "usuario": 19
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 22,
+  "fields": {
+    "nombre": "Monitoreo de la deforestaci\u00f3n con base en im\u00e1genes de sat\u00e9lite",
+    "descripcion": "",
+    "fecha_inicio": "1998-01-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 23,
+  "fields": {
+    "nombre": "Modelaci\u00f3n de los cambios de cubierta/uso del suelo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 24,
+  "fields": {
+    "nombre": "Cartograf\u00eda de la vegetaci\u00f3n con base en percepci\u00f3n remota y SIG",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 25
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 25,
+  "fields": {
+    "nombre": "territorialidad, cultura y politica",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 26,
+  "fields": {
+    "nombre": "La perspectiva sociocultural de la vulnerabilidad a desastres",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 27,
+  "fields": {
+    "nombre": "La perspectiva critica de los sistemas de informacion geografica y la integracion de las nuevas tecnologias de comunicacion",
+    "descripcion": "",
+    "fecha_inicio": "2014-01-01",
+    "usuario": 45
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 28,
+  "fields": {
+    "nombre": "Ciencia del suelo, clasificaci\u00f3n y evaluaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 29,
+  "fields": {
+    "nombre": "Geomorfolog\u00eda del paisaje y edafolog\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 30,
+  "fields": {
+    "nombre": "Modelaci\u00f3n de cuencas",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 31,
+  "fields": {
+    "nombre": "Evaluaci\u00f3n y gesti\u00f3n del territorio asociado a cambios de uso de suelo y variabilidad clim\u00e1tica",
+    "descripcion": "",
+    "fecha_inicio": "2013-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 32,
+  "fields": {
+    "nombre": "Influencia antr\u00f3pica en los procesos geom\u00f3rficos y erosi\u00f3n del suelo",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 33,
+  "fields": {
+    "nombre": "El manejo de forester\u00eda comunitaria ",
+    "descripcion": "",
+    "fecha_inicio": "1978-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 34,
+  "fields": {
+    "nombre": "Implicaciones en pol\u00edtica del cambio clim\u00e1tico global. Deforestaci\u00f3n, degradaci\u00f3n, forester\u00eda comunitaria y fortalecimiento de capacidades institucionales locales; el mercado de carbono ",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 35,
+  "fields": {
+    "nombre": "Bioenerg\u00eda y biofuels; impactos sociales  ",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 36,
+  "fields": {
+    "nombre": "G\u00e9nero y energ\u00eda. Perspectiva de g\u00e9nero y herramientas de planeaci\u00f3n en uso de la energ\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "1995-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 37,
+  "fields": {
+    "nombre": "Foresteria comunitaria y captura de carbono",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 38,
+  "fields": {
+    "nombre": "Pol\u00edticas para promover el carbono forestal",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 20
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 39,
+  "fields": {
+    "nombre": "Gesti\u00f3n p\u00fablica",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 40,
+  "fields": {
+    "nombre": "Competitividad",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 41,
+  "fields": {
+    "nombre": "Estructura econ\u00f3mica",
+    "descripcion": "",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 42,
+  "fields": {
+    "nombre": "Innovaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 43,
+  "fields": {
+    "nombre": "Desarrollo sustentable",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 6
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 44,
+  "fields": {
+    "nombre": "Manejo y Conservaci\u00f3n de biodiversidad en socioecosistemas",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 45,
+  "fields": {
+    "nombre": "Complejidad y sistemas complejos para el estudio de problemas ambientales",
+    "descripcion": "",
+    "fecha_inicio": "2012-01-01",
+    "usuario": 46
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 46,
+  "fields": {
+    "nombre": "Valoraci\u00f3n y percepci\u00f3n del paisaje",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 47,
+  "fields": {
+    "nombre": "Conservaci\u00f3n y desarrollo en ANP",
+    "descripcion": "",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 31
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 48,
+  "fields": {
+    "nombre": "Modelado espacio-temporal de los impactos ambientales por la extracci\u00f3n y producci\u00f3n de le\u00f1a y carb\u00f3n vegetal bajo patrones de aprovechamiento tradicional",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 49,
+  "fields": {
+    "nombre": "Modelado prospectivo del potencial de los recursos dendroenerg\u00e9ticos bajo patrones de aprovechamiento tecnificado ",
+    "descripcion": "",
+    "fecha_inicio": "2006-01-01",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 50,
+  "fields": {
+    "nombre": "Seguridad energ\u00e9tica de la poblaci\u00f3n rural y urbana de bajos recursos",
+    "descripcion": "",
+    "fecha_inicio": "2011-01-01",
+    "usuario": 26
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 51,
+  "fields": {
+    "nombre": "Geograf\u00eda del Paisaje",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 52,
+  "fields": {
+    "nombre": "Uso del suelo",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 53,
+  "fields": {
+    "nombre": "An\u00e1lisis espacial",
+    "descripcion": "",
+    "fecha_inicio": "2001-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 54,
+  "fields": {
+    "nombre": "Manejo comunitario de recursos forestales",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 55,
+  "fields": {
+    "nombre": "Pol\u00edtica ambiental",
+    "descripcion": "",
+    "fecha_inicio": "2008-01-01",
+    "usuario": 42
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 56,
+  "fields": {
+    "nombre": "Arqueolog\u00eda del paisaje",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 57,
+  "fields": {
+    "nombre": "Sensores remotos y teledetecci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2007-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 58,
+  "fields": {
+    "nombre": "Sistemas de Informaci\u00f3n geogr\u00e1fica participativos",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 59,
+  "fields": {
+    "nombre": "SIG y an\u00e1lisis espaciales",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 40
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 60,
+  "fields": {
+    "nombre": "historia ambiental, arqueogeograf\u00eda, geohistoria, relaci\u00f3n sociedad, medio ambiente, patr\u00f3n de asentamiento, reconstrucci\u00f3n de las formas del paisaje...",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 9
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 61,
+  "fields": {
+    "nombre": "Historia y paisaje desde el cambio de uso de suelo y tenencia de la tierra",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 62,
+  "fields": {
+    "nombre": "Teor\u00eda e historiograf\u00eda de la geograf\u00eda hist\u00f3rica e historia ambiental",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 63,
+  "fields": {
+    "nombre": "Geograf\u00eda cultural y paisajes hist\u00f3ricos",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 11
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 64,
+  "fields": {
+    "nombre": "Econom\u00eda Ambiental. Instrumentos de Pol\u00edtica Ambiental. Desarrollo Sustentable.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 54
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 65,
+  "fields": {
+    "nombre": "Especializaci\u00f3n avanzada en el manejo de Sistemas de Informaci\u00f3n Geogr\u00e1fica aplicando diversos programas (ArcView, ArcGIS, Erdas, ILWIS).",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 66,
+  "fields": {
+    "nombre": "Elaboraci\u00f3n de modelos y an\u00e1lisis de cambio de coberturas y uso de suelo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 67,
+  "fields": {
+    "nombre": "Aplicaci\u00f3n de t\u00e9cnicas de an\u00e1lisis por criterios m\u00faltiples en relaci\u00f3n a la caracterizaci\u00f3n, diagn\u00f3stico y priorizaci\u00f3n de sistemas ambientales con fines de conservaci\u00f3n.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 68,
+  "fields": {
+    "nombre": "Aplicaci\u00f3n de conceptos asociados a la Ecolog\u00eda del Paisaje con capacidad de determinar y recolectar el tipo de informaci\u00f3n necesaria en suelo y vegetaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 69,
+  "fields": {
+    "nombre": "Aplicaci\u00f3n de T\u00e9cnicas geoestad\u00edsticas en el an\u00e1lisis de datos espaciales",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 70,
+  "fields": {
+    "nombre": "Conocimiento avanzado en t\u00e9cnicas participativas de cartograf\u00eda y realizaci\u00f3n de talleres",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 71,
+  "fields": {
+    "nombre": "Conocimiento sobre dise\u00f1o y uso de cuestionarios y encuestas.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 15
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 72,
+  "fields": {
+    "nombre": "Las ciencias sociales en la era de la globalizaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2011-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 73,
+  "fields": {
+    "nombre": "La cooperaci\u00f3n cient\u00edfica internacional en el mundo contempor\u00e1neo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 74,
+  "fields": {
+    "nombre": "Actividad cient\u00edfica en la Patagonia argentina y chilena",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 75,
+  "fields": {
+    "nombre": "La evaluaci\u00f3n acad\u00e9mica, gerencialismo  y la ilusi\u00f3n de lo cuantitativo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 47
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 76,
+  "fields": {
+    "nombre": "Agrobiodiversidad y agroecolog\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "2003-01-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 77,
+  "fields": {
+    "nombre": "Recursos fitogen\u00e9ticos",
+    "descripcion": "",
+    "fecha_inicio": "2006-01-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 78,
+  "fields": {
+    "nombre": "Planeaci\u00f3n y manejo de recursos naturales y desarrollo rural",
+    "descripcion": "",
+    "fecha_inicio": "2002-01-01",
+    "usuario": 7
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 79,
+  "fields": {
+    "nombre": "Erosi\u00f3n h\u00eddrica de suelos",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 8
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 81,
+  "fields": {
+    "nombre": "Manejo de zonas riparias",
+    "descripcion": "An\u00e1lisis hidrol\u00f3gico, geomorfol\u00f3gico y de vegetaci\u00f3n de las riberas fluviales y sus propiedades",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 82,
+  "fields": {
+    "nombre": "Monitoreo comunitario del agua",
+    "descripcion": "Capacitaci\u00f3n y an\u00e1lisis de la infromaci\u00f3n proveniente del monitoreo comunitario del agua",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 83,
+  "fields": {
+    "nombre": "Sistemas socio-ecol\u00f3gicos",
+    "descripcion": "An\u00e1lisis de la problem\u00e1tica ambiental a partir del enfoque de sistemas socioecol\u00f3gicos",
+    "fecha_inicio": "2004-01-01",
+    "usuario": 53
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 84,
+  "fields": {
+    "nombre": "Sistemas de Informaci\u00f3n Geogr\u00e1fica (Geom\u00e1tica)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 85,
+  "fields": {
+    "nombre": "Inventario de recurso naturales y evaluaci\u00f3n de su calidad: suelos, polvos, clima y cuerpos de agua",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 86,
+  "fields": {
+    "nombre": "Valoraci\u00f3n del conocimiento local sobre el ambiente, recursos naturales y formas de manejo",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 87,
+  "fields": {
+    "nombre": "Dise\u00f1o de modelos de evaluaci\u00f3n de la aptitud/calidad de los recursos naturales.",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 88,
+  "fields": {
+    "nombre": "Evaluaci\u00f3n de tierras en sentido amplio, incluyendo ambientes urbanos, rurales, periurbanos, industriales y mineros, con las siguientes tres subl\u00edneas",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 30
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 89,
+  "fields": {
+    "nombre": "Percepci\u00f3n Remota (Teledetecci\u00f3n)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 90,
+  "fields": {
+    "nombre": "An\u00e1lisis Espacial (Modelado)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 91,
+  "fields": {
+    "nombre": "Drones (Operaci\u00f3n y Aplicaciones Cient\u00edficas)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 92,
+  "fields": {
+    "nombre": "Riesgo, Peligro y Vulnerabilidad (Modelado)",
+    "descripcion": "",
+    "fecha_inicio": "2000-01-01",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 93,
+  "fields": {
+    "nombre": "Ecolog\u00eda Pol\u00edtica",
+    "descripcion": "",
+    "fecha_inicio": "2012-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 94,
+  "fields": {
+    "nombre": "Cubiertas y Usos del Territorio",
+    "descripcion": "",
+    "fecha_inicio": "2005-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 95,
+  "fields": {
+    "nombre": "Etnoecolog\u00eda",
+    "descripcion": "",
+    "fecha_inicio": "2010-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 96,
+  "fields": {
+    "nombre": "Innovaci\u00f3n Comunitaria",
+    "descripcion": "",
+    "fecha_inicio": "2016-01-01",
+    "usuario": 43
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 97,
+  "fields": {
+    "nombre": "Coordinaci\u00f3n de equipos acad\u00e9micos interdisciplinarios, elaboraci\u00f3n de propuestas t\u00e9cnicas, coordinaci\u00f3n de proyectos y elaboraci\u00f3n de informes t\u00e9cnicos.",
+    "descripcion": "",
+    "fecha_inicio": "2000-02-07",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 98,
+  "fields": {
+    "nombre": "Conocimiento extenso del manejo de los principales programas de sistemas de informaci\u00f3n geogr\u00e1fica y procesamiento de im\u00e1genes digitales: ARCGIS, IDRISI, MAPInfo, ArcView, ERDAS, ENVI.",
+    "descripcion": "",
+    "fecha_inicio": "2000-03-09",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 99,
+  "fields": {
+    "nombre": "Conocimiento experto de la operaci\u00f3n de sistemas de bases de datos relacionales.",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 100,
+  "fields": {
+    "nombre": "Conocimiento experto sobre t\u00e9cnicas de an\u00e1lisis y modelamiento espacial",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 101,
+  "fields": {
+    "nombre": "Conocimiento extenso de computadoras y sistemas operativos: PCs, Apple, estaciones",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 102,
+  "fields": {
+    "nombre": "Conocimiento amplio de software de prop\u00f3sito general: hojas de c\u00e1lculo, procesadores de texto, programas de edici\u00f3n gr\u00e1fica, paquetes estad\u00edsticos, etc.",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 103,
+  "fields": {
+    "nombre": "Capacidad de impartir cursos en los niveles de Licenciatura, Especialidad y Posgrado en las \u00e1reas de Sistemas de Informaci\u00f3n Geogr\u00e1fica, Percepci\u00f3n Remota, Peligro, Vulnerabilidad y Riesgo, y M\u00e9todos Multicriterio para la Toma de Decisiones.",
+    "descripcion": "",
+    "fecha_inicio": "2018-02-02",
+    "usuario": 14
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 104,
+  "fields": {
+    "nombre": "An\u00e1lisis de suelo y agua en laboratorio y campo. Manejo de equipo de laboratorio de suelo. Conocimiento y manejo de laboratoria bajo sistema de calidad.",
+    "descripcion": "",
+    "fecha_inicio": "2004-11-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 105,
+  "fields": {
+    "nombre": "Experiencia en actividades de divulgaci\u00f3n cient\u00edfica y coordinaci\u00f3n de grupos de trabajo en tareas de divulgaci\u00f3n",
+    "descripcion": "",
+    "fecha_inicio": "2015-09-01",
+    "usuario": 16
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 106,
+  "fields": {
+    "nombre": "Habilidades y dominio de t\u00e9cnicas",
+    "descripcion": "Programaci\u00f3n: Java, JavaScript, C#, C, C++, SQL, PHP, HTML, CSS, XML, Matlab, Latex, \r\nGestores de contenido: Joomla!, Wordpress, Drupal, Prestashop, Magento.\r\nImplementaci\u00f3n y desarrollo de WebServices: REST/SOAP.\r\nElearning: Moodle, Edmodo, Udemy.\r\nBases de Datos: MySQL, Oracle, SQLite, PostgreSQL, Visual FoxPro, Access, Excel.\r\nSoporte T\u00e9cnico: Mantenimiento preventivo y correctivo de equipo de c\u00f3mputo y servidores.\r\nRedes: Instalaci\u00f3n de redes de \u00e1rea local LAN, esquemas de seguridad de redes conectadas a Internet (Firewalls), Instalaci\u00f3n y configuraci\u00f3n de servidores Web, Correo, FTP y servidores dedicados.\r\nSistemas Operativos: Windows, CentOS, Fedora, Suse, Ubuntu, MacOS.\r\nAn\u00e1lisis Estad\u00edstico: Google Analytics, FusionTables.\r\nDise\u00f1o Gr\u00e1fico: Corel Draw,  PhotoPaint,  Suite  Adobe:  Illustrator,  Photoshop, InDesign, Premiere, AfterEffects, Flash, LifeCycle.\r\nWebservices de Mapas: Google Maps API, OpenStreetMap, OpenLayers.",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 107,
+  "fields": {
+    "nombre": "Especializaci\u00f3n",
+    "descripcion": "Dise\u00f1o Web centrado en el usuario: usabilidad y arquitectura de la informaci\u00f3n. Modelos de tecnolog\u00eda y sistemas para educaci\u00f3n en l\u00ednea.",
+    "fecha_inicio": "2009-01-01",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 108,
+  "fields": {
+    "nombre": "Complejidad",
+    "descripcion": "Estructura y esquemas de b\u00fasqueda por similitud de contenido.",
+    "fecha_inicio": "2013-08-12",
+    "usuario": 38
+  }
+},
+{
+  "model": "experiencia_profesional.capacidadpotencialidad",
+  "pk": 109,
+  "fields": {
+    "nombre": "An\u00e1lisis espacial. Programaci\u00f3n. An\u00e1lisis estad\u00edstico.",
+    "descripcion": "",
+    "fecha_inicio": "2017-02-16",
+    "usuario": 93
+  }
+}
+]
