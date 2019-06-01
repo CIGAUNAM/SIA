@@ -13,10 +13,10 @@ urlpatterns = [
     url(r'^representaciones-organos-colegiados-unam/(?P<pk>[\w\-]+)/eliminar$', RepresentacionOrganoColegiadoEliminar.as_view(), name='representacion_organo_colegiado_unam_eliminar'),
     url(r'^representaciones-organos-colegiados-unam/(?P<pk>[\w\-]+)/$', RepresentacionOrganoColegiadoUNAMDetalle.as_view(), name='representacion_organo_colegiado_unam_detalle'),
 
-    url(r'^comisiones-institucionales-ciga/json/', ComisionAcademicaJSON.as_view(), name='comision_institucional_lista__json'),
-    url(r'^comisiones-institucionales-ciga/$', ComisionAcademicaLista.as_view(), name='comision_institucional_lista'),
-    url(r'^comisiones-institucionales-ciga/(?P<pk>[\w\-]+)/eliminar$', ComisionAcademicaEliminar.as_view(), name='comision_institucional_eliminar'),
-    url(r'^comisiones-institucionales-ciga/(?P<pk>[\w\-]+)/$', ComisionAcademicaDetalle.as_view(), name='comision_institucional_detalle'),
+    url(r'^comisiones-institucionales-ciga/json/', ComisionInstitucionalCIGAJSON.as_view(), name='comision_institucional_lista__json'),
+    url(r'^comisiones-institucionales-ciga/$', ComisionInstitucionalCIGALista.as_view(), name='comision_institucional_lista'),
+    url(r'^comisiones-institucionales-ciga/(?P<pk>[\w\-]+)/eliminar$', ComisionInstitucionalCIGAEliminar.as_view(), name='comision_institucional_eliminar'),
+    url(r'^comisiones-institucionales-ciga/(?P<pk>[\w\-]+)/$', ComisionInstitucionalCIGADetalle.as_view(), name='comision_institucional_detalle'),
 
     url(r'^apoyos-tecnicos/json/', ApoyoTecnicoJSON.as_view(), name='apoyo_tecnico_lista__json'),
     url(r'^apoyos-tecnicos/$', ApoyoTecnicoLista.as_view(), name='apoyo_tecnico_lista'),

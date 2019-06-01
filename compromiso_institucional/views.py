@@ -51,7 +51,7 @@ class RepresentacionOrganoColegiadoUNAMJSON(View):
             items = RepresentacionOrganoColegiadoUNAM.objects.filter(usuario=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('tipo_representacion', 'representacion_dentro_unam', 'representacion_dentro_unam_otra',
-                                                 'representacion_fuera_unam', 'institucion_dentro_unam', 'institucion_fuera_unam'          
+                                                 'representacion_fuera_unam', 'institucion_dentro_unam', 'institucion_fuera_unam',
                                                  'representacion_unam', 'fecha_inicio', 'fecha_fin'))
 
             json = json.replace('DENTRO', 'Dentro de la UNAM')
@@ -98,7 +98,7 @@ class RepresentacionOrganoColegiadoEliminar(View):
             raise Http404
 
 
-class ComisionAcademicaJSON(View):
+class ComisionInstitucionalCIGAJSON(View):
     def get(self, request):
         try:
             usuarioid = User.objects.get(username=request.user.username).id
@@ -110,21 +110,21 @@ class ComisionAcademicaJSON(View):
             raise Http404
 
 
-class ComisionAcademicaLista(ObjectCreateMixin, View):
+class ComisionInstitucionalCIGALista(ObjectCreateMixin, View):
     form_class = ComisionInstitucionalCIGAForm
     model = ComisionInstitucionalCIGA
     aux = ComisionAcademicaContext.contexto
     template_name = 'comision_institucional_ciga.html'
 
 
-class ComisionAcademicaDetalle(ObjectUpdateMixin, View):
+class ComisionInstitucionalCIGADetalle(ObjectUpdateMixin, View):
     form_class = ComisionInstitucionalCIGAForm
     model = ComisionInstitucionalCIGA
     aux = ComisionAcademicaContext.contexto
     template_name = 'comision_institucional_ciga.html'
 
 
-class ComisionAcademicaEliminar(View):
+class ComisionInstitucionalCIGAEliminar(View):
     def get(self, request, pk):
         try:
             item = get_object_or_404(ComisionInstitucionalCIGA, pk=pk, usuario=request.user)

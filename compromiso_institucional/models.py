@@ -72,7 +72,7 @@ class LaborDirectivaCoordinacion(models.Model):
         return "[{} : {}] : {} : {}".format(self.tipo_cargo, self.institucion, self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
-        return reverse('cargo_academico_administrativo_detalle', kwargs={'pk': self.pk})
+        return reverse('labor_directiva_coordinacion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Labores Directivaa y de Coordinación'
@@ -112,7 +112,6 @@ class RepresentacionOrganoColegiadoUNAM(models.Model):
 class ComisionInstitucionalCIGA(models.Model):
     comision_academica = models.ForeignKey(ComisionInstitucional, null=True, blank=True, on_delete=models.DO_NOTHING)
     tipo_comision = models.CharField(max_length=255) # sacar el texto de comision_academica
-    # es_evaluacion = models.BooleanField(default=False)
     tipo_institucion = models.CharField(max_length=30, choices=(('', '-------'), ('INTERIOR', 'Al interior del CIGA'), ('EXTERIOR', 'Al exterior del CIGA')))
     institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
     dependencia = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING)
@@ -126,7 +125,7 @@ class ComisionInstitucionalCIGA(models.Model):
         return "[{}] : {} : {} : {}".format(self.usuario, self.comision_academica, self.fecha_inicio, self.fecha_fin)
 
     def get_absolute_url(self):
-        return reverse('comision_academica_detalle', kwargs={'pk': self.pk})
+        return reverse('comision_institucional_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = 'Comisiones Académicas'
