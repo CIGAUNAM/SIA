@@ -272,7 +272,6 @@ class Dependencia(models.Model):
     nombre_dependencia = models.CharField(max_length=255)
     descripcion_dependencia = models.TextField(blank=True)
     institucion_dependencia = models.ForeignKey(Institucion, on_delete=models.PROTECT)
-    ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT, blank=True, null=True)
     ciudad_text_dependencia = models.CharField(max_length=255)
     subsistema_unam_dependencia = models.CharField(max_length=50, choices=(
         ('', 'Seleccionar Subsistema UNAM'),

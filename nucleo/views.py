@@ -1324,7 +1324,7 @@ class ProyectoArbitradoJSON(View):
     def get(self, request):
         try:
             #usuarioid = User.objects.get(username=request.user.username).id
-            items = Ciudad.objects.all()
+            items = Pais.objects.all()
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'fecha_inicio', 'institucion', 'dependencia', 'status'))
             return HttpResponse(json, content_type='application/json')
