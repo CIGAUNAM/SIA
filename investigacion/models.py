@@ -168,7 +168,6 @@ class MapaArbitrado(models.Model):
     agradecimientos = SortedManyToManyField(User, related_name='mapa_arbitrado_agradecimientos', blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.DO_NOTHING)
     ciudad_text = models.CharField(max_length=255, blank=True, null=True)
     publicacion = models.CharField(max_length=255, blank=True, null=True)
     fecha_enviado = models.DateField(null=True, blank=True)
