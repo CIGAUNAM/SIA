@@ -5,13 +5,17 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import View
 
 from formacion_academica.models import CursoEspecializacion
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, PublicacionTecnica, ProyectoInvestigacion
-from difusion_cientifica.models import MemoriaInExtenso, Resena, Traduccion, OrganizacionEventoAcademico, ParticipacionEventoAcademico
-from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
+from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, PublicacionTecnica, \
+    ProyectoInvestigacion
+from difusion_cientifica.models import MemoriaInExtenso, Resena, Traduccion, OrganizacionEventoAcademico, \
+    ParticipacionEventoAcademico
+from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
+    ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
 from vinculacion.models import ArbitrajePublicacionAcademica
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
-from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, CitaPublicacion
+from distinciones.models import DistincionAcademico, ParticipacionComisionExpertos, ParticipacionSociedadCientifica, \
+    CitaPublicacion
 from vinculacion.models import ConvenioOtraEntidad, RedAcademica, ServicioAsesoriaExterna
 from nucleo.models import User, Libro
 from experiencia_profesional.models import ExperienciaProfesional, LineaInvestigacion, CapacidadPotencialidad
@@ -20,8 +24,6 @@ from compromiso_institucional.models import ComisionInstitucionalCIGA
 from movilidad_academica.models import MovilidadAcademica
 from formacion_recursos_humanos.models import DireccionTesis, AsesoriaEstudiante, SupervisionInvestigadorPostDoctoral, \
     DesarrolloGrupoInvestigacionInterno, ComiteTutoral, ComiteCandidaturaDoctoral
-
-
 
 from datetime import datetime
 from django.db.models import Q, Max, Min, Count, Sum, Avg
@@ -78,7 +80,6 @@ class Dashboard(View):
 
             # cursos_data = [['Año', 'Personas', 'Total horas', 'Mis horas', 'Promedio Horas', 'Max horas', 'Min horas']]
 
-
             cursos_data = [['Año', 'Mis horas', 'Promedio horas', 'Max horas', 'Min horas']]
             for i in range(num_years):
                 year = last_x_years[i]
@@ -93,8 +94,8 @@ class Dashboard(View):
                     users_with_items_year_count = 0
 
                 total_course_hours_year_sum = CursoEspecializacion.objects.filter(fecha_inicio__year=year).filter((
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                     Sum('horas'))['horas__sum']
                 if total_course_hours_year_sum == None:
                     total_course_hours_year_sum = 0
@@ -115,8 +116,8 @@ class Dashboard(View):
 
                 max_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Max('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__max']
                 if max_item_year_user == None:
@@ -125,8 +126,8 @@ class Dashboard(View):
 
                 min_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Min('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__min']
                 if not min_item_year_user:
@@ -143,12 +144,13 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
-                                                                                                  status='PUBLICADO').filter(
+                total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(
+                    fecha_enprensa__year=year,
+                    status='PUBLICADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha_publicado__year=year,
                                                                                status='PUBLICADO',
                                                                                autores=request.user).count()
                 if not request_user_item_year_sum:
@@ -156,7 +158,8 @@ class Dashboard(View):
                 items_data[i + 1].append(request_user_item_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
+                    Q(articulo_cientifico_autores__fecha_publicado__year=year,
+                      articulo_cientifico_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -170,7 +173,8 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_item_year_user = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
+                    Q(articulo_cientifico_autores__fecha_publicado__year=year,
+                      articulo_cientifico_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
@@ -180,7 +184,8 @@ class Dashboard(View):
                 items_data[i + 1].append(max_item_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='PUBLICADO') &
+                    Q(articulo_cientifico_autores__fecha_publicado__year=year,
+                      articulo_cientifico_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Min('articulo_cientifico_autores__count'))[
@@ -200,12 +205,13 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
-                                                                                                  status='EN_PRENSA').filter(
+                total_articulos_cientificos_enprensa_year_sum = ArticuloCientifico.objects.filter(
+                    fecha_enprensa__year=year,
+                    status='EN_PRENSA').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha_enprensa__year=year,
                                                                                status='EN_PRENSA',
                                                                                autores=request.user).count()
                 if not request_user_item_year_sum:
@@ -213,7 +219,8 @@ class Dashboard(View):
                 items_data[i + 1].append(request_user_item_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
+                    Q(articulo_cientifico_autores__fecha_enprensa__year=year,
+                      articulo_cientifico_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -226,7 +233,8 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_item_year_user = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
+                    Q(articulo_cientifico_autores__fecha_enprensa__year=year,
+                      articulo_cientifico_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
@@ -236,7 +244,8 @@ class Dashboard(View):
                 items_data[i + 1].append(max_item_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='EN_PRENSA') &
+                    Q(articulo_cientifico_autores__fecha_enprensa__year=year,
+                      articulo_cientifico_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Min('articulo_cientifico_autores__count'))[
@@ -256,11 +265,11 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                total_items_year_sum = ArticuloCientifico.objects.filter(fecha_aceptado__year=year,
                                                                          status='ACEPTADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
-                request_user_articulo_cientifico_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                request_user_articulo_cientifico_year_sum = ArticuloCientifico.objects.filter(fecha_aceptado__year=year,
                                                                                               status='ACEPTADO',
                                                                                               autores=request.user).count()
                 if not request_user_articulo_cientifico_year_sum:
@@ -268,7 +277,8 @@ class Dashboard(View):
                 items_data[i + 1].append(request_user_articulo_cientifico_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='ACEPTADO') &
+                    Q(articulo_cientifico_autores__fecha_aceptado__year=year,
+                      articulo_cientifico_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -281,7 +291,8 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_item_year_user = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='ACEPTADO') &
+                    Q(articulo_cientifico_autores__fecha_aceptado__year=year,
+                      articulo_cientifico_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Max('articulo_cientifico_autores__count'))[
@@ -291,7 +302,8 @@ class Dashboard(View):
                 items_data[i + 1].append(max_item_year_user)
 
                 min_articulo_cientifico_year_user = User.objects.filter(
-                    Q(articulo_cientifico_autores__fecha__year=year, articulo_cientifico_autores__status='ACEPTADO') &
+                    Q(articulo_cientifico_autores__fecha_aceptado__year=year,
+                      articulo_cientifico_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('articulo_cientifico_autores')).aggregate(Min('articulo_cientifico_autores__count'))[
@@ -311,10 +323,11 @@ class Dashboard(View):
                 year = last_x_years[i]
                 libros_investigacion_publicado_data.append([str(year)])
 
-                total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
+                total_libros_cientificos_year_sum = Libro.objects.filter(fecha_publicado__year=year,
+                                                                         tipo='INVESTIGACION',
                                                                          status='PUBLICADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='PUBLICADO',
                                                                                  autores=request.user).count()
@@ -323,7 +336,7 @@ class Dashboard(View):
                 libros_investigacion_publicado_data[i + 1].append(request_user_libro_investigacion_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_publicado__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -337,7 +350,7 @@ class Dashboard(View):
                     libros_investigacion_publicado_data[i + 1].append(0)
 
                 max_libro_investigacion_year_user = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_publicado__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -348,7 +361,7 @@ class Dashboard(View):
                 libros_investigacion_publicado_data[i + 1].append(max_libro_investigacion_year_user)
 
                 min_libro_investigacion_year_user = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_publicado__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -369,10 +382,11 @@ class Dashboard(View):
                 year = last_x_years[i]
                 libros_investigacion_enprensa_data.append([str(year)])
 
-                total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
+                total_libros_cientificos_year_sum = Libro.objects.filter(fecha_enprensa__year=year,
+                                                                         tipo='INVESTIGACION',
                                                                          status='EN_PRENSA').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='EN_PRENSA',
                                                                                  autores=request.user).count()
@@ -381,7 +395,7 @@ class Dashboard(View):
                 libros_investigacion_enprensa_data[i + 1].append(request_user_libro_investigacion_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_enprensa__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -395,7 +409,7 @@ class Dashboard(View):
                     libros_investigacion_enprensa_data[i + 1].append(0)
 
                 max_libro_investigacion_year_user = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_enprensa__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -406,7 +420,7 @@ class Dashboard(View):
                 libros_investigacion_enprensa_data[i + 1].append(max_libro_investigacion_year_user)
 
                 min_libro_investigacion_year_user = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_enprensa__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -427,10 +441,11 @@ class Dashboard(View):
                 year = last_x_years[i]
                 libros_investigacion_aceptado_data.append([str(year)])
 
-                total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
+                total_libros_cientificos_year_sum = Libro.objects.filter(fecha_aceptado__year=year,
+                                                                         tipo='INVESTIGACION',
                                                                          status='ACEPTADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='ACEPTADO',
                                                                                  autores=request.user).count()
@@ -439,7 +454,7 @@ class Dashboard(View):
                 libros_investigacion_aceptado_data[i + 1].append(request_user_libro_investigacion_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_aceptado__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -453,7 +468,7 @@ class Dashboard(View):
                     libros_investigacion_aceptado_data[i + 1].append(0)
 
                 max_libro_investigacion_year_user = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_aceptado__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -464,7 +479,7 @@ class Dashboard(View):
                 libros_investigacion_aceptado_data[i + 1].append(max_libro_investigacion_year_user)
 
                 min_libro_investigacion_year_user = User.objects.filter(
-                    Q(libro_autores__fecha__year=year, libro_autores__tipo='INVESTIGACION',
+                    Q(libro_autores__fecha_aceptado__year=year, libro_autores__tipo='INVESTIGACION',
                       libro_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
@@ -486,13 +501,13 @@ class Dashboard(View):
                 capitulos_libros_investigacion_publicado_data.append([str(year)])
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
+                    libro__fecha_publicado__year=year, libro__tipo='INVESTIGACION',
                     libro__status='PUBLICADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
+                    libro__fecha_publicado__year=year, libro__tipo='INVESTIGACION',
                     libro__status='PUBLICADO',
                     libro__autores=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
@@ -501,7 +516,7 @@ class Dashboard(View):
                     request_user_capitulos_libros_investigacion_year_sum)
 
                 users_with_capitulos_libros_investigacion_year_count = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_publicado__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -518,7 +533,7 @@ class Dashboard(View):
                     capitulos_libros_investigacion_publicado_data[i + 1].append(0)
 
                 max_capitulos_libros_investigacion_year_user = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_publicado__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -531,7 +546,7 @@ class Dashboard(View):
                     max_capitulos_libros_investigacion_year_user)
 
                 min_capitulos_libros_investigacion_year_user = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_publicado__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -555,13 +570,13 @@ class Dashboard(View):
                 capitulos_libros_investigacion_enprensa_data.append([str(year)])
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
+                    libro__fecha_enprensa__year=year, libro__tipo='INVESTIGACION',
                     libro__status='EN_PRENSA').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
+                    libro__fecha_enprensa__year=year, libro__tipo='INVESTIGACION',
                     libro__status='EN_PRENSA',
                     libro__autores=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
@@ -570,7 +585,7 @@ class Dashboard(View):
                     request_user_capitulos_libros_investigacion_year_sum)
 
                 users_with_capitulos_libros_investigacion_year_count = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_enprensa__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -587,7 +602,7 @@ class Dashboard(View):
                     capitulos_libros_investigacion_enprensa_data[i + 1].append(0)
 
                 max_capitulos_libros_investigacion_year_user = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_enprensa__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -600,7 +615,7 @@ class Dashboard(View):
                     max_capitulos_libros_investigacion_year_user)
 
                 min_capitulos_libros_investigacion_year_user = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_enprensa__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -624,13 +639,13 @@ class Dashboard(View):
                 capitulos_libros_investigacion_aceptado_data.append([str(year)])
 
                 total_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
+                    libro__fecha_aceptado__year=year, libro__tipo='INVESTIGACION',
                     libro__status='ACEPTADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
-                    libro__fecha__year=year, libro__tipo='INVESTIGACION',
+                    libro__fecha_aceptado__year=year, libro__tipo='INVESTIGACION',
                     libro__status='ACEPTADO',
                     libro__autores=request.user).count()
                 if not request_user_capitulos_libros_investigacion_year_sum:
@@ -639,7 +654,7 @@ class Dashboard(View):
                     request_user_capitulos_libros_investigacion_year_sum)
 
                 users_with_capitulos_libros_investigacion_year_count = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_aceptado__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -656,7 +671,7 @@ class Dashboard(View):
                     capitulos_libros_investigacion_aceptado_data[i + 1].append(0)
 
                 max_capitulos_libros_investigacion_year_user = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_aceptado__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -669,7 +684,7 @@ class Dashboard(View):
                     max_capitulos_libros_investigacion_year_user)
 
                 min_capitulos_libros_investigacion_year_user = User.objects.filter(
-                    Q(capitulo_libro_investigacion_autores__libro__fecha__year=year,
+                    Q(capitulo_libro_investigacion_autores__libro__fecha_aceptado__year=year,
                       capitulo_libro_investigacion_autores__libro__tipo='INVESTIGACION',
                       capitulo_libro_investigacion_autores__libro__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
@@ -692,12 +707,12 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                total_items_year_sum = MapaArbitrado.objects.filter(fecha_publicado__year=year,
                                                                     status='PUBLICADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha_publicado__year=year,
                                                                            status='PUBLICADO',
                                                                            autores=request.user).count()
                 if not request_user_items_year_sum:
@@ -705,7 +720,7 @@ class Dashboard(View):
                 items_data[i + 1].append(request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
+                    Q(mapa_arbitrado_autores__fecha_publicado__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -719,7 +734,7 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
+                    Q(mapa_arbitrado_autores__fecha_publicado__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('mapa_arbitrado_autores')).aggregate(Max('mapa_arbitrado_autores__count'))[
@@ -729,7 +744,7 @@ class Dashboard(View):
                 items_data[i + 1].append(max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
+                    Q(mapa_arbitrado_autores__fecha_publicado__year=year, mapa_arbitrado_autores__status='PUBLICADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('mapa_arbitrado_autores')).aggregate(Min('mapa_arbitrado_autores__count'))[
@@ -749,12 +764,12 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                total_items_year_sum = MapaArbitrado.objects.filter(fecha_enprensa__year=year,
                                                                     status='EN_PRENSA').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha_enprensa__year=year,
                                                                            status='EN_PRENSA',
                                                                            autores=request.user).count()
                 if not request_user_items_year_sum:
@@ -762,7 +777,7 @@ class Dashboard(View):
                 items_data[i + 1].append(request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
+                    Q(mapa_arbitrado_autores__fecha_enprensa__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -776,7 +791,7 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
+                    Q(mapa_arbitrado_autores__fecha_enprensa__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('mapa_arbitrado_autores')).aggregate(Max('mapa_arbitrado_autores__count'))[
@@ -786,7 +801,7 @@ class Dashboard(View):
                 items_data[i + 1].append(max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
+                    Q(mapa_arbitrado_autores__fecha_enprensa__year=year, mapa_arbitrado_autores__status='EN_PRENSA') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('mapa_arbitrado_autores')).aggregate(Min('mapa_arbitrado_autores__count'))[
@@ -806,12 +821,12 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                total_items_year_sum = MapaArbitrado.objects.filter(fecha_aceptado__year=year,
                                                                     status='ACEPTADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
+                request_user_items_year_sum = MapaArbitrado.objects.filter(fecha_aceptado__year=year,
                                                                            status='ACEPTADO',
                                                                            autores=request.user).count()
                 if not request_user_items_year_sum:
@@ -819,7 +834,7 @@ class Dashboard(View):
                 items_data[i + 1].append(request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
+                    Q(mapa_arbitrado_autores__fecha_aceptado__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -833,7 +848,7 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
+                    Q(mapa_arbitrado_autores__fecha_aceptado__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('mapa_arbitrado_autores')).aggregate(Max('mapa_arbitrado_autores__count'))[
@@ -843,7 +858,7 @@ class Dashboard(View):
                 items_data[i + 1].append(max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(mapa_arbitrado_autores__fecha__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
+                    Q(mapa_arbitrado_autores__fecha_aceptado__year=year, mapa_arbitrado_autores__status='ACEPTADO') &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('mapa_arbitrado_autores')).aggregate(Min('mapa_arbitrado_autores__count'))[
@@ -863,19 +878,23 @@ class Dashboard(View):
                 year = last_x_years[i]
                 items_data.append([str(year)])
 
-                total_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year).filter(
+                total_items_year_sum = PublicacionTecnica.objects.filter(
+                    Q(fecha_publicado__year=year) | Q(fecha_enprensa__year=year) | Q(
+                        fecha_aceptado__year=year)
+                    | Q(fecha_enviado__year=year)).filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
-                request_user_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year,
-                                                                                autores=request.user).count()
+                request_user_items_year_sum = PublicacionTecnica.objects.filter(Q(fecha_publicado__year=year) | Q(fecha_enprensa__year=year)
+                                                                                | Q(fecha_aceptado__year=year) | Q(fecha_enviado__year=year)).filter(autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
                 items_data[i + 1].append(request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(informe_tecnico_autores__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(informe_tecnico_autores__fecha_enviado__year=year) | Q(informe_tecnico_autores__fecha_aceptado__year=year) |
+                        Q(informe_tecnico_autores__fecha_enprensa__year=year) | Q(informe_tecnico_autores__fecha_publicado__year=year))
+                        & ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
                 if users_with_items_year_count == None:
@@ -888,7 +907,10 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(informe_tecnico_autores__fecha__year=year) &
+                    (Q(informe_tecnico_autores__fecha_enviado__year=year) | Q(
+                        informe_tecnico_autores__fecha_aceptado__year=year) |
+                     Q(informe_tecnico_autores__fecha_enprensa__year=year) | Q(
+                                informe_tecnico_autores__fecha_publicado__year=year)) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('informe_tecnico_autores')).aggregate(Max('informe_tecnico_autores__count'))[
@@ -898,7 +920,10 @@ class Dashboard(View):
                 items_data[i + 1].append(max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(informe_tecnico_autores__fecha__year=year) &
+                    (Q(informe_tecnico_autores__fecha_enviado__year=year) | Q(
+                        informe_tecnico_autores__fecha_aceptado__year=year) |
+                     Q(informe_tecnico_autores__fecha_enprensa__year=year) | Q(
+                                informe_tecnico_autores__fecha_publicado__year=year)) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('informe_tecnico_autores')).aggregate(Min('informe_tecnico_autores__count'))[
@@ -1039,8 +1064,6 @@ class Dashboard(View):
             chart_resena = LineChart(data_source)
             context['chart_resena'] = chart_resena
 
-
-
             items_data = [
                 ['Año', 'Mis Participaciones en eventos académicos', 'Promedio por persona', 'Max por persona',
                  'Min por persona']]
@@ -1078,7 +1101,8 @@ class Dashboard(View):
                     Q(participacion_evento_academico_autores__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_academico_autores')).aggregate(Max('participacion_evento_academico_autores__count'))[
+                    Count('participacion_evento_academico_autores')).aggregate(
+                    Max('participacion_evento_academico_autores__count'))[
                     'participacion_evento_academico_autores__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
@@ -1089,7 +1113,8 @@ class Dashboard(View):
                     Q(participacion_evento_academico_autores__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_academico_autores')).aggregate(Min('participacion_evento_academico_autores__count'))[
+                    Count('participacion_evento_academico_autores')).aggregate(
+                    Min('participacion_evento_academico_autores__count'))[
                     'participacion_evento_academico_autores__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
@@ -1109,7 +1134,7 @@ class Dashboard(View):
 
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year, status='PUBLICADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year, status='PUBLICADO',
                                                                                 autores=request.user).count()
@@ -1168,7 +1193,7 @@ class Dashboard(View):
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                           status='EN_PRENSA').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                                 status='EN_PRENSA',
@@ -1227,7 +1252,7 @@ class Dashboard(View):
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                           status='ACEPTADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                                  status='ACEPTADO',
                                                                                  autores=request.user).count()
@@ -1282,7 +1307,7 @@ class Dashboard(View):
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='PUBLICADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='PUBLICADO',
                                                                    autores=request.user).count()
@@ -1340,7 +1365,7 @@ class Dashboard(View):
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='EN_PRENSA').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='EN_PRENSA',
                                                                    autores=request.user).count()
@@ -1398,7 +1423,7 @@ class Dashboard(View):
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='ACEPTADO').filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) | (
-                        Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
+                            Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='ACEPTADO',
                                                                    autores=request.user).count()
@@ -1458,7 +1483,7 @@ class Dashboard(View):
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='PUBLICADO').filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) | (
-                        Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                            Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
@@ -1528,7 +1553,7 @@ class Dashboard(View):
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='EN_PRENSA').filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) | (
-                        Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                            Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
@@ -1598,7 +1623,7 @@ class Dashboard(View):
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='ACEPTADO').filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) | (
-                        Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                            Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
@@ -1657,7 +1682,6 @@ class Dashboard(View):
             chart_capitulos_libros_divulgacion_aceptados = LineChart(data_source)
             context['chart_capitulos_libros_divulgacion_aceptados'] = chart_capitulos_libros_divulgacion_aceptados
 
-
             # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_organizacioneventodivulgacion = LineChart(data_source)
@@ -1700,7 +1724,8 @@ class Dashboard(View):
                     Q(participacion_evento_divulgacion_autores__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_divulgacion_autores')).aggregate(Max('participacion_evento_divulgacion_autores__count'))[
+                    Count('participacion_evento_divulgacion_autores')).aggregate(
+                    Max('participacion_evento_divulgacion_autores__count'))[
                     'participacion_evento_divulgacion_autores__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
@@ -1711,7 +1736,8 @@ class Dashboard(View):
                     Q(participacion_evento_divulgacion_autores__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_divulgacion_autores')).aggregate(Min('participacion_evento_divulgacion_autores__count'))[
+                    Count('participacion_evento_divulgacion_autores')).aggregate(
+                    Min('participacion_evento_divulgacion_autores__count'))[
                     'participacion_evento_divulgacion_autores__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
@@ -1835,7 +1861,6 @@ class Dashboard(View):
                 items_data[i + 1].append(
                     min_items_year_user)
 
-
             # print(items_data)
             data_source = SimpleDataSource(data=items_data)
             chart_arbitrajeproyectoinvestigacion = LineChart(data_source)
@@ -1856,16 +1881,18 @@ class Dashboard(View):
 
                 total_hours_year_sum = \
                     CursoDocenciaEscolarizado.objects.filter(fecha_inicio__year=year).filter((
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
                         'total_horas__sum']
                 if total_hours_year_sum == None:
                     total_hours_year_sum = 0
 
-                request_user_years_year_sum = User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year,
-                                                                  curso_docencia_escolarizado_usuario__usuario=request.user).aggregate(
-                    Sum('curso_docencia_escolarizado_usuario__total_horas'))['curso_docencia_escolarizado_usuario__total_horas__sum']
+                request_user_years_year_sum = \
+                User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year,
+                                    curso_docencia_escolarizado_usuario__usuario=request.user).aggregate(
+                    Sum('curso_docencia_escolarizado_usuario__total_horas'))[
+                    'curso_docencia_escolarizado_usuario__total_horas__sum']
                 if not request_user_years_year_sum:
                     request_user_years_year_sum = 0
                 items_data[i + 1].append(request_user_years_year_sum)
@@ -1877,20 +1904,22 @@ class Dashboard(View):
                 else:
                     items_data[i + 1].append(round(0, 2))
 
-                max_item_year_user = User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
+                max_item_year_user = \
+                User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_escolarizado_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Max('curso_docencia_escolarizado_usuario__total_horas__sum'))[
                     'curso_docencia_escolarizado_usuario__total_horas__sum__max']
                 if max_item_year_user == None:
                     max_item_year_user = 0
                 items_data[i + 1].append(max_item_year_user)
 
-                min_item_year_user = User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
+                min_item_year_user = \
+                User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_escolarizado_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Min('curso_docencia_escolarizado_usuario__total_horas__sum'))[
                     'curso_docencia_escolarizado_usuario__total_horas__sum__min']
                 if not min_item_year_user:
@@ -1916,16 +1945,18 @@ class Dashboard(View):
 
                 total_hours_year_sum = \
                     CursoDocenciaExtracurricular.objects.filter(fecha_inicio__year=year).filter((
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
                         'total_horas__sum']
                 if total_hours_year_sum == None:
                     total_hours_year_sum = 0
 
-                request_user_years_year_sum = User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year,
-                                                                  curso_docencia_extracurricular_usuario__usuario=request.user).aggregate(
-                    Sum('curso_docencia_extracurricular_usuario__total_horas'))['curso_docencia_extracurricular_usuario__total_horas__sum']
+                request_user_years_year_sum = \
+                User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year,
+                                    curso_docencia_extracurricular_usuario__usuario=request.user).aggregate(
+                    Sum('curso_docencia_extracurricular_usuario__total_horas'))[
+                    'curso_docencia_extracurricular_usuario__total_horas__sum']
                 if not request_user_years_year_sum:
                     request_user_years_year_sum = 0
                 items_data[i + 1].append(request_user_years_year_sum)
@@ -1937,20 +1968,22 @@ class Dashboard(View):
                 else:
                     items_data[i + 1].append(round(0, 2))
 
-                max_item_year_user = User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
+                max_item_year_user = \
+                User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_extracurricular_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Max('curso_docencia_extracurricular_usuario__total_horas__sum'))[
                     'curso_docencia_extracurricular_usuario__total_horas__sum__max']
                 if max_item_year_user == None:
                     max_item_year_user = 0
                 items_data[i + 1].append(max_item_year_user)
 
-                min_item_year_user = User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
+                min_item_year_user = \
+                User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_extracurricular_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Min('curso_docencia_extracurricular_usuario__total_horas__sum'))[
                     'curso_docencia_extracurricular_usuario__total_horas__sum__min']
                 if not min_item_year_user:
@@ -2124,8 +2157,8 @@ class ReporteHistorico(View):
                     users_with_items_year_count = 0
 
                 total_course_hours_year_sum = CursoEspecializacion.objects.filter(fecha_inicio__year=year).filter((
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                    (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                     Sum('horas'))['horas__sum']
                 if total_course_hours_year_sum == None:
                     total_course_hours_year_sum = 0
@@ -2147,8 +2180,8 @@ class ReporteHistorico(View):
 
                 max_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Max('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__max']
                 if max_item_year_user == None:
@@ -2157,8 +2190,8 @@ class ReporteHistorico(View):
 
                 min_item_year_user = User.objects.filter(cursos_especializacion__fecha_inicio__year=year).annotate(
                     Sum('cursos_especializacion__horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Min('cursos_especializacion__horas__sum'))[
                     'cursos_especializacion__horas__sum__min']
                 if not min_item_year_user:
@@ -2180,7 +2213,7 @@ class ReporteHistorico(View):
 
                 total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year, status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                status='PUBLICADO',
@@ -2228,7 +2261,7 @@ class ReporteHistorico(View):
                                                                                    status='PUBLICADO').exclude(
                     Q(id_doi__isnull=True) & Q(indices__isnull=True)).filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 items_data[i + 1].append(total_items_indexados_year_sum)
 
@@ -2247,7 +2280,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                          status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                status='EN_PRENSA',
@@ -2305,7 +2338,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                          status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_articulo_cientifico_year_sum = ArticuloCientifico.objects.filter(fecha__year=year,
                                                                                               status='ACEPTADO',
                                                                                               usuarios=request.user).count()
@@ -2362,7 +2395,7 @@ class ReporteHistorico(View):
                 total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                          status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='PUBLICADO',
                                                                                  usuarios=request.user).count()
@@ -2422,7 +2455,7 @@ class ReporteHistorico(View):
                 total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                          status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='EN_PRENSA',
                                                                                  usuarios=request.user).count()
@@ -2482,7 +2515,7 @@ class ReporteHistorico(View):
                 total_libros_cientificos_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                          status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_libro_investigacion_year_sum = Libro.objects.filter(fecha__year=year, tipo='INVESTIGACION',
                                                                                  status='ACEPTADO',
                                                                                  usuarios=request.user).count()
@@ -2543,7 +2576,7 @@ class ReporteHistorico(View):
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
@@ -2613,7 +2646,7 @@ class ReporteHistorico(View):
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
@@ -2684,7 +2717,7 @@ class ReporteHistorico(View):
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
                     libro__status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_capitulos_libros_investigacion_year_sum = CapituloLibroInvestigacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='INVESTIGACION',
@@ -2754,7 +2787,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
                                                                     status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
                                                                            status='PUBLICADO',
@@ -2813,7 +2846,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
                                                                     status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
                                                                            status='EN_PRENSA',
@@ -2872,7 +2905,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
                                                                     status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = MapaArbitrado.objects.filter(fecha__year=year,
                                                                            status='ACEPTADO',
@@ -2930,7 +2963,7 @@ class ReporteHistorico(View):
 
                 total_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year).filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = PublicacionTecnica.objects.filter(fecha__year=year,
                                                                                 usuarios=request.user).count()
@@ -3020,8 +3053,8 @@ class ReporteHistorico(View):
                         (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                             proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                         | (
-                            Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
-                                proyecto_investigacion_responsables__fecha_fin=None))
+                                Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                            proyecto_investigacion_responsables__fecha_fin=None))
                     ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                               (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                         Count('proyecto_investigacion_responsables')).aggregate(
@@ -3036,8 +3069,8 @@ class ReporteHistorico(View):
                         (Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
                             proyecto_investigacion_responsables__fecha_fin__year__gt=year))
                         | (
-                            Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
-                                proyecto_investigacion_responsables__fecha_fin=None))
+                                Q(proyecto_investigacion_responsables__fecha_inicio__year__lte=year) & Q(
+                            proyecto_investigacion_responsables__fecha_fin=None))
                     ).filter(((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                               (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                         Count('proyecto_investigacion_responsables')).aggregate(
@@ -3070,7 +3103,8 @@ class ReporteHistorico(View):
                     total_items_year_sum = 0
                 items_data[i + 1].append(total_items_year_sum)
 
-                users_with_items_year_count = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
+                users_with_items_year_count = User.objects.filter(
+                    memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -3083,7 +3117,8 @@ class ReporteHistorico(View):
                 else:
                     items_data[i + 1].append(0)
 
-                max_items_year_user = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
+                max_items_year_user = \
+                User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('memoria_in_extenso_autores')).aggregate(
@@ -3092,7 +3127,8 @@ class ReporteHistorico(View):
                     max_items_year_user = 0
                 items_data[i + 1].append(max_items_year_user)
 
-                min_items_year_user = User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
+                min_items_year_user = \
+                User.objects.filter(memoria_in_extenso_autores__evento__fecha_inicio__year=year).filter(
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('memoria_in_extenso_autores')).aggregate(Min('memoria_in_extenso_autores__count'))[
@@ -3106,8 +3142,6 @@ class ReporteHistorico(View):
             data_source = SimpleDataSource(data=items_data)
             hchart_memoria_in_extenso = LineChart(data_source)
             context['hchart_memoria_in_extenso'] = hchart_memoria_in_extenso
-
-
 
             items_data = [
                 ['Año', 'Total Reseñas', 'Promedio por persona', 'Max por persona', 'Min por persona',
@@ -3267,7 +3301,8 @@ class ReporteHistorico(View):
                     Q(participacion_evento_academico_autores__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_academico_autores')).aggregate(Max('participacion_evento_academico_autores__count'))[
+                    Count('participacion_evento_academico_autores')).aggregate(
+                    Max('participacion_evento_academico_autores__count'))[
                     'participacion_evento_academico_autores__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
@@ -3278,7 +3313,8 @@ class ReporteHistorico(View):
                     Q(organizacioneventoacademico__evento__fecha_inicio__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_academico_autores')).aggregate(Min('participacion_evento_academico_autores__count'))[
+                    Count('participacion_evento_academico_autores')).aggregate(
+                    Min('participacion_evento_academico_autores__count'))[
                     'participacion_evento_academico_autores__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
@@ -3299,7 +3335,7 @@ class ReporteHistorico(View):
 
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year, status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year, status='PUBLICADO',
                                                                                 usuarios=request.user).count()
@@ -3360,7 +3396,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                           status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
 
                 request_user_item_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                                 status='EN_PRENSA',
@@ -3421,7 +3457,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                           status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_items_year_sum = ArticuloDivulgacion.objects.filter(fecha__year=year,
                                                                                  status='ACEPTADO',
                                                                                  usuarios=request.user).count()
@@ -3478,7 +3514,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='PUBLICADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='PUBLICADO',
                                                                    usuarios=request.user).count()
@@ -3538,7 +3574,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='EN_PRENSA').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='EN_PRENSA',
                                                                    usuarios=request.user).count()
@@ -3598,7 +3634,7 @@ class ReporteHistorico(View):
                 total_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                             status='ACEPTADO').filter(
                     ((Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad__year__gt=year)) | (
-                        Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
+                            Q(usuarios__ingreso_entidad__year__lte=year) & Q(usuarios__egreso_entidad=None)))).count()
                 request_user_items_year_sum = Libro.objects.filter(fecha__year=year, tipo='DIVULGACION',
                                                                    status='ACEPTADO',
                                                                    usuarios=request.user).count()
@@ -3659,7 +3695,7 @@ class ReporteHistorico(View):
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='PUBLICADO').filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) | (
-                        Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                            Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
@@ -3730,7 +3766,7 @@ class ReporteHistorico(View):
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='EN_PRENSA').filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) | (
-                        Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                            Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
@@ -3801,7 +3837,7 @@ class ReporteHistorico(View):
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
                     libro__status='ACEPTADO').filter(
                     ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) | (
-                        Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
+                            Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = CapituloLibroDivulgacion.objects.filter(
                     libro__fecha__year=year, libro__tipo='DIVULGACION',
@@ -4170,16 +4206,18 @@ class ReporteHistorico(View):
 
                 total_hours_year_sum = \
                     CursoDocenciaEscolarizado.objects.filter(fecha_inicio__year=year).filter((
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
                         'total_horas__sum']
                 if total_hours_year_sum == None:
                     total_hours_year_sum = 0
 
-                request_user_years_year_sum = User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year,
-                                                                  curso_docencia_escolarizado_usuario__usuario=request.user).aggregate(
-                    Sum('curso_docencia_escolarizado_usuario__total_horas'))['curso_docencia_escolarizado_usuario__total_horas__sum']
+                request_user_years_year_sum = \
+                User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year,
+                                    curso_docencia_escolarizado_usuario__usuario=request.user).aggregate(
+                    Sum('curso_docencia_escolarizado_usuario__total_horas'))[
+                    'curso_docencia_escolarizado_usuario__total_horas__sum']
 
                 if not total_hours_year_sum:
                     total_hours_year_sum = 0
@@ -4192,20 +4230,22 @@ class ReporteHistorico(View):
                 else:
                     items_data[i + 1].append(round(0, 2))
 
-                max_item_year_user = User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
+                max_item_year_user = \
+                User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_escolarizado_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Max('curso_docencia_escolarizado_usuario__total_horas__sum'))[
                     'curso_docencia_escolarizado_usuario__total_horas__sum__max']
                 if max_item_year_user == None:
                     max_item_year_user = 0
                 items_data[i + 1].append(max_item_year_user)
 
-                min_item_year_user = User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
+                min_item_year_user = \
+                User.objects.filter(curso_docencia_escolarizado_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_escolarizado_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Min('curso_docencia_escolarizado_usuario__total_horas__sum'))[
                     'curso_docencia_escolarizado_usuario__total_horas__sum__min']
                 if not min_item_year_user:
@@ -4233,16 +4273,18 @@ class ReporteHistorico(View):
 
                 total_hours_year_sum = \
                     CursoDocenciaExtracurricular.objects.filter(fecha_inicio__year=year).filter((
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                        (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
+                            (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).aggregate(
                         Sum('total_horas'))[
                         'total_horas__sum']
                 if total_hours_year_sum == None:
                     total_hours_year_sum = 0
 
-                request_user_years_year_sum = User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year,
-                                                                  curso_docencia_extracurricular_usuario__usuario=request.user).aggregate(
-                    Sum('curso_docencia_extracurricular_usuario__total_horas'))['curso_docencia_extracurricular_usuario__total_horas__sum']
+                request_user_years_year_sum = \
+                User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year,
+                                    curso_docencia_extracurricular_usuario__usuario=request.user).aggregate(
+                    Sum('curso_docencia_extracurricular_usuario__total_horas'))[
+                    'curso_docencia_extracurricular_usuario__total_horas__sum']
 
                 if not total_hours_year_sum:
                     total_hours_year_sum = 0
@@ -4255,20 +4297,22 @@ class ReporteHistorico(View):
                 else:
                     items_data[i + 1].append(round(0, 2))
 
-                max_item_year_user = User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
+                max_item_year_user = \
+                User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_extracurricular_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Max('curso_docencia_extracurricular_usuario__total_horas__sum'))[
                     'curso_docencia_extracurricular_usuario__total_horas__sum__max']
                 if max_item_year_user == None:
                     max_item_year_user = 0
                 items_data[i + 1].append(max_item_year_user)
 
-                min_item_year_user = User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
+                min_item_year_user = \
+                User.objects.filter(curso_docencia_extracurricular_usuario__fecha_inicio__year=year).annotate(
                     Sum('curso_docencia_extracurricular_usuario__total_horas')).filter((
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                    (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
+                        (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).aggregate(
                     Min('curso_docencia_extracurricular_usuario__total_horas__sum'))[
                     'curso_docencia_extracurricular_usuario__total_horas__sum__min']
                 if not min_item_year_user:
@@ -4562,12 +4606,12 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             invest_activos_ant = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             if invest_activos_ant == 0:
@@ -4580,12 +4624,12 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             invest_activos_act = User.objects.filter(tipo='INVESTIGADOR').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             if invest_activos_act == 0:
@@ -4597,12 +4641,12 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             tecnicos_activos_ant = User.objects.filter(tipo='TECNICO').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             if tecnicos_activos_ant == 0:
@@ -4615,12 +4659,12 @@ class InformeActividades(View):
                 (Q(proyecto_investigacion_responsables__fecha_fin__year__gte=this_year - 1) |
                  Q(proyecto_investigacion_responsables__fecha_fin=None))).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             tecnicos_activos_act = User.objects.filter(tipo='TECNICO').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).annotate(
                 Count('pk', distinct=True)).count()
 
             if tecnicos_activos_act == 0:
@@ -5428,7 +5472,7 @@ class InformeActividades(View):
             p_investigadores_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5436,7 +5480,7 @@ class InformeActividades(View):
             p_investigadores_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5444,7 +5488,7 @@ class InformeActividades(View):
             p_investigadores_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5452,7 +5496,7 @@ class InformeActividades(View):
             p_investigadores_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5460,7 +5504,7 @@ class InformeActividades(View):
             p_investigadores_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5468,7 +5512,7 @@ class InformeActividades(View):
             p_investigadores_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5477,7 +5521,7 @@ class InformeActividades(View):
             p_investigadores_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5485,7 +5529,7 @@ class InformeActividades(View):
             p_investigadores_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5493,7 +5537,7 @@ class InformeActividades(View):
             p_investigadores_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5501,7 +5545,7 @@ class InformeActividades(View):
             p_investigadores_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5509,7 +5553,7 @@ class InformeActividades(View):
             p_investigadores_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5517,7 +5561,7 @@ class InformeActividades(View):
             p_investigadores_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5526,7 +5570,7 @@ class InformeActividades(View):
             p_tecnicos_auxA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5534,7 +5578,7 @@ class InformeActividades(View):
             p_tecnicos_auxB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5542,7 +5586,7 @@ class InformeActividades(View):
             p_tecnicos_auxC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5550,7 +5594,7 @@ class InformeActividades(View):
             p_tecnicos_auxA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5558,7 +5602,7 @@ class InformeActividades(View):
             p_tecnicos_auxB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5566,7 +5610,7 @@ class InformeActividades(View):
             p_tecnicos_auxC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5575,7 +5619,7 @@ class InformeActividades(View):
             p_tecnicos_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5583,7 +5627,7 @@ class InformeActividades(View):
             p_tecnicos_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5591,7 +5635,7 @@ class InformeActividades(View):
             p_tecnicos_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5599,7 +5643,7 @@ class InformeActividades(View):
             p_tecnicos_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5607,7 +5651,7 @@ class InformeActividades(View):
             p_tecnicos_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5615,7 +5659,7 @@ class InformeActividades(View):
             p_tecnicos_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5624,7 +5668,7 @@ class InformeActividades(View):
             p_tecnicos_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5632,7 +5676,7 @@ class InformeActividades(View):
             p_tecnicos_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5640,7 +5684,7 @@ class InformeActividades(View):
             p_tecnicos_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5648,7 +5692,7 @@ class InformeActividades(View):
             p_tecnicos_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5656,7 +5700,7 @@ class InformeActividades(View):
             p_tecnicos_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5664,7 +5708,7 @@ class InformeActividades(View):
             p_tecnicos_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5675,7 +5719,7 @@ class InformeActividades(View):
             investigadores_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Medio tiempo', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5683,7 +5727,7 @@ class InformeActividades(View):
             investigadores_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5691,7 +5735,7 @@ class InformeActividades(View):
             investigadores_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5699,7 +5743,7 @@ class InformeActividades(View):
             investigadores_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5707,7 +5751,7 @@ class InformeActividades(View):
             investigadores_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5715,7 +5759,7 @@ class InformeActividades(View):
             investigadores_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5724,7 +5768,7 @@ class InformeActividades(View):
             investigadores_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5732,7 +5776,7 @@ class InformeActividades(View):
             investigadores_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5740,7 +5784,7 @@ class InformeActividades(View):
             investigadores_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5748,7 +5792,7 @@ class InformeActividades(View):
             investigadores_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5756,7 +5800,7 @@ class InformeActividades(View):
             investigadores_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5764,7 +5808,7 @@ class InformeActividades(View):
             investigadores_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Investigador Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5773,7 +5817,7 @@ class InformeActividades(View):
             tecnicos_auxA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5781,7 +5825,7 @@ class InformeActividades(View):
             tecnicos_auxB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5789,7 +5833,7 @@ class InformeActividades(View):
             tecnicos_auxC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5797,7 +5841,7 @@ class InformeActividades(View):
             tecnicos_auxA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5805,7 +5849,7 @@ class InformeActividades(View):
             tecnicos_auxB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5813,7 +5857,7 @@ class InformeActividades(View):
             tecnicos_auxC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Auxiliar C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5822,7 +5866,7 @@ class InformeActividades(View):
             tecnicos_asocA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5830,7 +5874,7 @@ class InformeActividades(View):
             tecnicos_asocB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5838,7 +5882,7 @@ class InformeActividades(View):
             tecnicos_asocC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5846,7 +5890,7 @@ class InformeActividades(View):
             tecnicos_asocA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5854,7 +5898,7 @@ class InformeActividades(View):
             tecnicos_asocB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5862,7 +5906,7 @@ class InformeActividades(View):
             tecnicos_asocC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Asociado C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5871,7 +5915,7 @@ class InformeActividades(View):
             tecnicos_titA_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5879,7 +5923,7 @@ class InformeActividades(View):
             tecnicos_titB_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5887,7 +5931,7 @@ class InformeActividades(View):
             tecnicos_titC_tm = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Medio tiempo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5895,7 +5939,7 @@ class InformeActividades(View):
             tecnicos_titA_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular A, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5903,7 +5947,7 @@ class InformeActividades(View):
             tecnicos_titB_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular B, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5911,7 +5955,7 @@ class InformeActividades(View):
             tecnicos_titC_tc = User.objects.filter(
                 experiencialaboral__nombramiento__nombre='Técnico Académico Titular C, Tiempo Completo').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5920,7 +5964,7 @@ class InformeActividades(View):
             p_nom_investigadores_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5929,7 +5973,7 @@ class InformeActividades(View):
             nom_investigadores_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -5938,7 +5982,7 @@ class InformeActividades(View):
             p_nom_tecnicos_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico', ).filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -5947,7 +5991,7 @@ class InformeActividades(View):
             nom_tecnicos_count = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad__year__gte=this_year)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 1) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6253,7 +6297,7 @@ class InformeActividades(View):
             p_edad_investigadores = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', genero='M').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6275,7 +6319,7 @@ class InformeActividades(View):
             p_edad_investigadoras = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', genero='F').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6297,7 +6341,7 @@ class InformeActividades(View):
             edad_investigadores = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', genero='M').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6319,7 +6363,7 @@ class InformeActividades(View):
             edad_investigadoras = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Investigador', genero='F').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6341,12 +6385,10 @@ class InformeActividades(View):
             #
             #
 
-
-
             p_edad_tecnicos = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico', genero='M').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6368,7 +6410,7 @@ class InformeActividades(View):
             p_edad_tecnicas = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico', genero='F').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year - 1)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 2) & Q(
@@ -6390,7 +6432,7 @@ class InformeActividades(View):
             edad_tecnicos = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico', genero='M').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6412,7 +6454,7 @@ class InformeActividades(View):
             edad_tecnicas = User.objects.filter(
                 experiencialaboral__nombramiento__nombre__startswith='Técnico', genero='F').filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gte=this_year - 1)) | (
-                    Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter((Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
                 experiencialaboral__fecha_fin__year__gte=this_year)) | (Q(
                 experiencialaboral__fecha_inicio__year__lte=this_year - 1) & Q(
@@ -6469,7 +6511,6 @@ class InformeActividades(View):
 
             #
             #
-
 
             p_articulos_cientificos_int_indwos = ArticuloCientifico.objects.exclude(
                 revista__pais__nombre='México').filter(
@@ -6552,10 +6593,14 @@ class InformeActividades(View):
                 indices__isnull=True).count()
 
             articulos_cientificos_data = [['Etiqueta', 'Ind. WOS / Scopus', 'Otros indices', 'No indexadas'],
-                                          [str(this_year-1) + ' Int.', p_articulos_cientificos_int_indwos, p_articulos_cientificos_int_indotros, p_articulos_cientificos_int_indno],
-                                          [str(this_year) + ' Int.', articulos_cientificos_int_indwos, articulos_cientificos_int_indotros, articulos_cientificos_int_indno],
-                                          [str(this_year-1) + ' Nal.', p_articulos_cientificos_nal_indwos, p_articulos_cientificos_nal_indotros, p_articulos_cientificos_nal_indno],
-                                          [str(this_year) + ' Nal.', articulos_cientificos_nal_indwos, articulos_cientificos_nal_indotros, articulos_cientificos_nal_indno],
+                                          [str(this_year - 1) + ' Int.', p_articulos_cientificos_int_indwos,
+                                           p_articulos_cientificos_int_indotros, p_articulos_cientificos_int_indno],
+                                          [str(this_year) + ' Int.', articulos_cientificos_int_indwos,
+                                           articulos_cientificos_int_indotros, articulos_cientificos_int_indno],
+                                          [str(this_year - 1) + ' Nal.', p_articulos_cientificos_nal_indwos,
+                                           p_articulos_cientificos_nal_indotros, p_articulos_cientificos_nal_indno],
+                                          [str(this_year) + ' Nal.', articulos_cientificos_nal_indwos,
+                                           articulos_cientificos_nal_indotros, articulos_cientificos_nal_indno],
                                           ]
 
             data_source = SimpleDataSource(data=articulos_cientificos_data)
@@ -6564,20 +6609,23 @@ class InformeActividades(View):
 
             p_avg_articulos_usuario = User.objects.filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
-                articulo_cientifico_autores__fecha__year=this_year - 1).filter(Q(articulo_cientifico_autores__status='PUBLICADO') & Q(articulo_cientifico_autores__status='EN_PRENSA')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
-                                                'pk__count__avg']
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
+                articulo_cientifico_autores__fecha__year=this_year - 1).filter(
+                Q(articulo_cientifico_autores__status='PUBLICADO') & Q(
+                    articulo_cientifico_autores__status='EN_PRENSA')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
+                'pk__count__avg']
             if p_avg_articulos_usuario:
                 p_avg_articulos_usuario = round(p_avg_articulos_usuario, 2)
             else:
                 p_avg_articulos_usuario = 0
 
-
             avg_articulos_usuario = User.objects.filter(
                 (Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad__year__gt=this_year - 1)) | (
-                Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
-                articulo_cientifico_autores__fecha__year=this_year).filter(Q(articulo_cientifico_autores__status='PUBLICADO') | Q(articulo_cientifico_autores__status='EN_PRENSA')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
-                                              'pk__count__avg']
+                        Q(ingreso_entidad__year__lte=this_year - 2) & Q(egreso_entidad=None))).filter(
+                articulo_cientifico_autores__fecha__year=this_year).filter(
+                Q(articulo_cientifico_autores__status='PUBLICADO') | Q(
+                    articulo_cientifico_autores__status='EN_PRENSA')).annotate(Count('pk')).aggregate(Avg('pk__count'))[
+                'pk__count__avg']
             if avg_articulos_usuario:
                 avg_articulos_usuario = round(avg_articulos_usuario, 2)
             else:
@@ -6598,72 +6646,90 @@ class InformeActividades(View):
                 'articulos_cientificos_nal_indno': articulos_cientificos_nal_indno,
                 'p_avg_articulos_usuario': p_avg_articulos_usuario,
                 'avg_articulos_usuario': avg_articulos_usuario,
-                }
-
+            }
 
             #
 
-            p_libros_nal = Libro.objects.filter(tipo='INVESTIGACION', pais__nombre='México', fecha__year__gte=this_year - 2,
-                                                fecha__year__lte=this_year - 1).filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
+            p_libros_nal = Libro.objects.filter(tipo='INVESTIGACION', pais__nombre='México',
+                                                fecha__year__gte=this_year - 2,
+                                                fecha__year__lte=this_year - 1).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
 
-            libros_nal = Libro.objects.filter(tipo='INVESTIGACION', pais__nombre='México', fecha__year__gte=this_year - 1,
-                                                 fecha__year__lte=this_year).filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
+            libros_nal = Libro.objects.filter(tipo='INVESTIGACION', pais__nombre='México',
+                                              fecha__year__gte=this_year - 1,
+                                              fecha__year__lte=this_year).filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
 
             p_libros_intl = Libro.objects.filter(tipo='INVESTIGACION', fecha__year__gte=this_year - 2,
-                                                fecha__year__lte=this_year - 1).exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
+                                                 fecha__year__lte=this_year - 1).exclude(pais__nombre='México').filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
 
             libros_intl = Libro.objects.filter(tipo='INVESTIGACION', fecha__year__gte=this_year - 1,
-                                              fecha__year__lte=this_year).exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
+                                               fecha__year__lte=this_year).exclude(pais__nombre='México').filter(
+                Q(status='PUBLICADO') | Q(status='EN_PRENSA')).count()
 
+            p_capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México',
+                                                                               libro__fecha__year__gte=this_year - 2,
+                                                                               libro__fecha__year__lte=this_year - 1).filter(
+                Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
-            p_capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México', libro__fecha__year__gte=this_year - 2,
-                                                                               libro__fecha__year__lte=this_year - 1).filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
-
-            capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México', libro__fecha__year__gte=this_year - 1,
-                                                                             libro__fecha__year__lte=this_year).filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
+            capitulos_libros_nal = CapituloLibroInvestigacion.objects.filter(libro__pais__nombre='México',
+                                                                             libro__fecha__year__gte=this_year - 1,
+                                                                             libro__fecha__year__lte=this_year).filter(
+                Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
             p_capitulos_libros_intl = CapituloLibroInvestigacion.objects.filter(libro__fecha__year__gte=this_year - 2,
-                                                                                libro__fecha__year__lte=this_year - 1).exclude(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
+                                                                                libro__fecha__year__lte=this_year - 1).exclude(
+                libro__pais__nombre='México').filter(
+                Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
             capitulos_libros_intl = CapituloLibroInvestigacion.objects.filter(libro__fecha__year__gte=this_year - 1,
-                                                                              libro__fecha__year__lte=this_year).exclude(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
-
+                                                                              libro__fecha__year__lte=this_year).exclude(
+                libro__pais__nombre='México').filter(
+                Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).count()
 
             #
 
             p_articulos_nal = ArticuloCientifico.objects.filter(revista__pais__nombre='México',
                                                                 fecha__year__gte=this_year - 2,
-                                                                fecha__year__lte=this_year - 1).filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
+                                                                fecha__year__lte=this_year - 1).filter(
+                Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
 
             articulos_nal = ArticuloCientifico.objects.filter(revista__pais__nombre='México',
-                                                                             fecha__year__gte=this_year - 1,
-                                                                             fecha__year__lte=this_year).filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
+                                                              fecha__year__gte=this_year - 1,
+                                                              fecha__year__lte=this_year).filter(
+                Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
 
             p_articulos_intl = ArticuloCientifico.objects.filter(fecha__year__gte=this_year - 2,
-                                                                                fecha__year__lte=this_year - 1).exclude(
+                                                                 fecha__year__lte=this_year - 1).exclude(
                 revista__pais__nombre='México').filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
 
             articulos_intl = ArticuloCientifico.objects.filter(fecha__year__gte=this_year - 1,
-                                                                              fecha__year__lte=this_year).exclude(
+                                                               fecha__year__lte=this_year).exclude(
                 revista__pais__nombre='México').filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).count()
-
 
             produccion_data = [['Etiqueta', 'Libros', 'Capitulos de libros', 'Artìculos'],
 
-                           [str(this_year-2) + '-' + str(this_year-1) + ' Nal.', p_libros_nal, p_capitulos_libros_nal, p_articulos_nal],
-                           [str(this_year-1) + '-' + str(this_year) + ' Nal.', libros_nal, capitulos_libros_nal, articulos_nal],
-                           [str(this_year-2) + '-' + str(this_year-1) + ' Intl.', p_libros_intl, p_capitulos_libros_intl, p_articulos_intl],
-                           [str(this_year-1) + '-' + str(this_year) + ' Intl.', libros_intl, capitulos_libros_intl, articulos_intl],
-                           ]
+                               [str(this_year - 2) + '-' + str(this_year - 1) + ' Nal.', p_libros_nal,
+                                p_capitulos_libros_nal, p_articulos_nal],
+                               [str(this_year - 1) + '-' + str(this_year) + ' Nal.', libros_nal, capitulos_libros_nal,
+                                articulos_nal],
+                               [str(this_year - 2) + '-' + str(this_year - 1) + ' Intl.', p_libros_intl,
+                                p_capitulos_libros_intl, p_articulos_intl],
+                               [str(this_year - 1) + '-' + str(this_year) + ' Intl.', libros_intl,
+                                capitulos_libros_intl, articulos_intl],
+                               ]
 
             data_source = SimpleDataSource(data=produccion_data)
-            chart_produccion  = BarChart(data_source)
+            chart_produccion = BarChart(data_source)
             context['chart_produccion'] = chart_produccion
 
             #
 
-            p_eventos_organizados = OrganizacionEventoAcademico.objects.filter(Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
-            eventos_organizados = OrganizacionEventoAcademico.objects.filter(Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
+            p_eventos_organizados = OrganizacionEventoAcademico.objects.filter(
+                Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
+            eventos_organizados = OrganizacionEventoAcademico.objects.filter(
+                Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
 
             eventos_organizados_data = [['Etiqueta', 'Eventos organizados'],
                                         [str(this_year - 2) + '-' + str(this_year - 1), p_eventos_organizados],
@@ -6676,45 +6742,42 @@ class InformeActividades(View):
 
             #
 
-            p_asistencia_eventos_academicos_nal = ParticipacionEventoAcademico.objects.exclude(ambito='INTERNACIONAL').filter(
+            p_asistencia_eventos_academicos_nal = ParticipacionEventoAcademico.objects.exclude(
+                ambito='INTERNACIONAL').filter(
                 Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
-            asistencia_eventos_academicos_nal = OrganizacionEventoAcademico.objects.exclude(ambito='INTERNACIONAL').filter(
+            asistencia_eventos_academicos_nal = OrganizacionEventoAcademico.objects.exclude(
+                ambito='INTERNACIONAL').filter(
                 Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
 
-            p_asistencia_eventos_academicos_intl = ParticipacionEventoAcademico.objects.filter(ambito='INTERNACIONAL').filter(
+            p_asistencia_eventos_academicos_intl = ParticipacionEventoAcademico.objects.filter(
+                ambito='INTERNACIONAL').filter(
                 Q(evento__fecha_inicio__year__gte=this_year - 2) & Q(evento__fecha_fin__year__lte=this_year - 1))
-            asistencia_eventos_academicos_intl = OrganizacionEventoAcademico.objects.filter(ambito='INTERNACIONAL').filter(
+            asistencia_eventos_academicos_intl = OrganizacionEventoAcademico.objects.filter(
+                ambito='INTERNACIONAL').filter(
                 Q(evento__fecha_inicio__year__gte=this_year - 1) & Q(evento__fecha_fin__year__lte=this_year))
 
             asistencia_eventos_academicos_data = [['Etiqueta', 'Nacionales', 'Internacionales'],
-                                        [str(this_year - 2) + '-' + str(this_year - 1), p_asistencia_eventos_academicos_nal, p_asistencia_eventos_academicos_intl],
-                                        [str(this_year - 1) + '-' + str(this_year), asistencia_eventos_academicos_nal, asistencia_eventos_academicos_intl],
-                                        ]
+                                                  [str(this_year - 2) + '-' + str(this_year - 1),
+                                                   p_asistencia_eventos_academicos_nal,
+                                                   p_asistencia_eventos_academicos_intl],
+                                                  [str(this_year - 1) + '-' + str(this_year),
+                                                   asistencia_eventos_academicos_nal,
+                                                   asistencia_eventos_academicos_intl],
+                                                  ]
 
             data_source = SimpleDataSource(data=asistencia_eventos_academicos_data)
             chart_asistencia_eventos_academicos = BarChart(data_source)
             context['chart_asistencia_eventos_academicos'] = chart_asistencia_eventos_academicos
 
-            p_disticion_academicos = DistincionAcademico.objects.filter(fecha__year__gte=this_year - 2, fecha__year__lte=this_year - 1)
-            disticion_academicos = DistincionAcademico.objects.filter(fecha__year__gte=this_year - 1, fecha__year__lte=this_year)
+            p_disticion_academicos = DistincionAcademico.objects.filter(fecha__year__gte=this_year - 2,
+                                                                        fecha__year__lte=this_year - 1)
+            disticion_academicos = DistincionAcademico.objects.filter(fecha__year__gte=this_year - 1,
+                                                                      fecha__year__lte=this_year)
 
             context['p_disticion_academicos'] = p_disticion_academicos
             context['disticion_academicos'] = disticion_academicos
 
-
-
-
-
-
-
-
-
-
-
-
-
         return render(request, self.template_name, context)
-
 
 
 class CVInvestigadorLista(View):
@@ -6748,7 +6811,8 @@ class WebPublicacionLista(View):
     def get(self, request):
         context = {}
         this_year = self.this_year
-        publicaciones = Libro.objects.filter(fecha__year=this_year).filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        publicaciones = Libro.objects.filter(fecha__year=this_year).filter(
+            Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
         context['publicaciones'] = publicaciones
 
@@ -6776,7 +6840,8 @@ class WebArticuloLista(View):
     def get(self, request):
         context = {}
         this_year = self.this_year
-        articulos = ArticuloCientifico.objects.filter(fecha__year=this_year).filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        articulos = ArticuloCientifico.objects.filter(fecha__year=this_year).filter(
+            Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
         context['articulos'] = articulos
 
@@ -6804,7 +6869,9 @@ class WebProyectoLista(View):
     def get(self, request):
         context = {}
         this_year = self.this_year
-        proyectos = ProyectoInvestigacion.objects.filter(Q(fecha_inicio__year=this_year) | Q(fecha_fin=None) | Q(fecha_fin__year__gte=this_year)).order_by('-fecha_inicio')
+        proyectos = ProyectoInvestigacion.objects.filter(
+            Q(fecha_inicio__year=this_year) | Q(fecha_fin=None) | Q(fecha_fin__year__gte=this_year)).order_by(
+            '-fecha_inicio')
 
         context['proyectos'] = proyectos
 
@@ -6833,57 +6900,98 @@ class CVInvestigadorDetalle(View):
         usuario = User.objects.get(pk=pk)
 
         num_articulos = ArticuloCientifico.objects.filter(usuarios__pk=pk).filter(Q(fecha__year=this_year)).count()
-        num_libros_investigacion = Libro.objects.filter(tipo='INVESTIGACION', usuarios__pk=pk).filter(Q(fecha__year=this_year)).count()
-        num_proyectos_investigacion = ProyectoInvestigacion.objects.filter(usuarios__pk=pk).filter(Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
+        num_libros_investigacion = Libro.objects.filter(tipo='INVESTIGACION', usuarios__pk=pk).filter(
+            Q(fecha__year=this_year)).count()
+        num_proyectos_investigacion = ProyectoInvestigacion.objects.filter(usuarios__pk=pk).filter(
+            Q(fecha_fin__year=this_year) | Q(fecha_fin=None)).count()
         doctorados = Doctorado.objects.filter(usuario=pk)
         maestrias = Maestria.objects.filter(usuario=pk)
         licenciaturas = Licenciatura.objects.filter(usuario=pk)
         cursos_especializacion = CursoEspecializacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        exp_prof_unam = ExperienciaProfesional.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by('-fecha_inicio')
-        exp_prof_unam_prom = ExperienciaProfesional.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by('-fecha_inicio')
+        exp_prof_unam = ExperienciaProfesional.objects.filter(usuario=pk).filter(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=True).order_by(
+            '-fecha_inicio')
+        exp_prof_unam_prom = ExperienciaProfesional.objects.filter(usuario=pk).filter(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)', nombramiento__isnull=False).order_by(
+            '-fecha_inicio')
 
         exp_prof_ext = ExperienciaProfesional.objects.filter(usuario=pk).exclude(
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
         lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        articulos_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).exclude(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).exclude(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
-        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
+        articulos_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).exclude(
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).filter(
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk,
+                                                                               indices__isnull=True).exclude(
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).filter(
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(
+            Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(editorial__pais__nombre='México').filter(
+            Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
+        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(
+            Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(editorial__pais__nombre='México').filter(
+            Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
 
-
-        capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION').exclude(
-            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-libro__fecha')
-        capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='INVESTIGACION').filter(
-            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-libro__fecha')
+        capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
+                                                                                                           libro__tipo='INVESTIGACION').exclude(
+            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            '-libro__fecha')
+        capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
+                                                                                                         libro__tipo='INVESTIGACION').filter(
+            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            '-libro__fecha')
 
         mapas_publicaciones_extranjeras = MapaArbitrado.objects.filter(usuarios=pk).exclude(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
         mapas_publicaciones_mexicanas = MapaArbitrado.objects.filter(usuarios=pk).filter(
             editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        informes_tecnicos_mex = PublicacionTecnica.objects.filter(usuarios=pk).filter(proyecto__institucion__pais__nombre='México').order_by('-fecha')
-        informes_tecnicos_intl = PublicacionTecnica.objects.filter(usuarios=pk).exclude(proyecto__institucion__pais__nombre='México').order_by('-fecha')
-        articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        informes_tecnicos_mex = PublicacionTecnica.objects.filter(usuarios=pk).filter(
+            proyecto__institucion__pais__nombre='México').order_by('-fecha')
+        informes_tecnicos_intl = PublicacionTecnica.objects.filter(usuarios=pk).exclude(
+            proyecto__institucion__pais__nombre='México').order_by('-fecha')
+        articulos_divulgacion_mex = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).filter(
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
-        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        libros_divulgacion_editoriales_mexicanas = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').filter(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION').exclude(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-fecha')
-        capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk, libro__tipo='DIVULGACION').filter(libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by('-fecha')
+        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').exclude(
+            pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        libros_divulgacion_editoriales_mexicanas = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').filter(
+            pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
+                                                                                                         libro__tipo='DIVULGACION').exclude(
+            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            '-fecha')
+        capitulos_libros_divulgacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
+                                                                                                       libro__tipo='DIVULGACION').filter(
+            libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            '-fecha')
         resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
         material_medios = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).order_by('-fecha')
-        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by('-fecha_inicio')
-        participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by('-fecha_inicio')
-        ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=True).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=True).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by(
+            '-fecha_inicio')
+        participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by(
+            '-fecha_inicio')
+        ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
+                                                                                                por_invitacion=True).filter(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
+                                                                                                   por_invitacion=False).filter(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
+                                                                                                 por_invitacion=True).exclude(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
+                                                                                                    por_invitacion=False).exclude(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-
+        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(
+            usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -6905,16 +7013,20 @@ class CVInvestigadorDetalle(View):
         context['articulos_no_indexadas_mexicanas'] = articulos_no_indexadas_mexicanas
         context['libros_investigacion_editoriales_mexicanas'] = libros_investigacion_editoriales_mexicanas
         context['libros_investigacion_editoriales_extranjeras'] = libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_investigacion_editoriales_extranjeras'] = capitulos_libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
+        context[
+            'capitulos_libros_investigacion_editoriales_extranjeras'] = capitulos_libros_investigacion_editoriales_extranjeras
+        context[
+            'capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
         context['mapas_publicaciones_extranjeras '] = mapas_publicaciones_extranjeras
         context['mapas_publicaciones_mexicanas '] = mapas_publicaciones_mexicanas
         context['informes_tecnicos_mex'] = informes_tecnicos_mex
         context['informes_tecnicos_intl'] = informes_tecnicos_intl
         context['libros_divulgacion_editoriales_extranjeras'] = libros_divulgacion_editoriales_extranjeras
         context['libros_divulgacion_editoriales_mexicanas'] = libros_divulgacion_editoriales_mexicanas
-        context['capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
-        context['capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
+        context[
+            'capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
+        context[
+            'capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
         context['resenas'] = resenas
 
         context['participacion_proyectos_responsable'] = participacion_proyectos_responsable
@@ -6925,8 +7037,6 @@ class CVInvestigadorDetalle(View):
         context['ponente_eventos_academicos_intl_participacion'] = ponente_eventos_academicos_intl_participacion
         context['organizacion_eventos_academicos_nacionales'] = organizacion_eventos_academicos_nacionales
         context['organizacion_eventos_academicos_internacionales'] = organizacion_eventos_academicos_internacionales
-
-
 
         return render(request, self.template_name, context)
 
@@ -6960,33 +7070,45 @@ class CVInvestigadorPDF(View):
             institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
 
         servicios_acad_admnvos = ExperienciaProfesional.objects.filter(usuario=pk).filter(
-            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').exclude(cargo__tipo_cargo='OTRO').order_by(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').exclude(
+            cargo__tipo_cargo='OTRO').order_by(
             '-fecha_inicio')
-        comisiones_institucionales = ComisionInstitucionalCIGA.objects.filter(usuario=pk).filter(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')
+        comisiones_institucionales = ComisionInstitucionalCIGA.objects.filter(usuario=pk).filter(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)')
 
         lineas_investigacion = LineaInvestigacion.objects.filter(usuario=pk).order_by('-fecha_inicio')
         capacidades_potencialidades = CapacidadPotencialidad.objects.filter(usuario=pk).order_by('-fecha_inicio')
 
         articulos_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).exclude(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(
+            Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=False).filter(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(
+            Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_no_indexadas_extranjeras = ArticuloCientifico.objects.filter(usuarios=pk,
                                                                                indices__isnull=True).exclude(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(
+            Count('usuarios__pk', distinct=True)).order_by('-fecha')
         articulos_no_indexadas_mexicanas = ArticuloCientifico.objects.filter(usuarios=pk, indices__isnull=True).filter(
-            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('usuarios__pk', distinct=True)).order_by('-fecha')
+            revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(
+            Count('usuarios__pk', distinct=True)).order_by('-fecha')
 
-        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
-        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(editorial__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
+        libros_investigacion_editoriales_extranjeras = Libro.objects.filter(tipo='INVESTIGACION').filter(
+            Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).exclude(editorial__pais__nombre='México').filter(
+            Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
+        libros_investigacion_editoriales_mexicanas = Libro.objects.filter(tipo='INVESTIGACION').filter(
+            Q(usuarios=pk) | Q(editores=pk) | Q(coordinadores=pk)).filter(editorial__pais__nombre='México').filter(
+            Q(status='PUBLICADO') | Q(status='EN_PRENSA')).annotate(Count('pk', distinct=True)).order_by('-fecha')
 
         capitulos_libros_investigacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
                                                                                                            libro__tipo='INVESTIGACION').exclude(
-            libro__editorial__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            libro__editorial__pais__nombre='México').filter(
+            Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
             '-libro__fecha')
         capitulos_libros_investigacion_editoriales_mexicanas = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
                                                                                                          libro__tipo='INVESTIGACION').filter(
-            libro__editorial__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
+            libro__editorial__pais__nombre='México').filter(
+            Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
             '-libro__fecha')
 
         memoriainextenso_extranjeras = MemoriaInExtenso.objects.filter(usuarios=pk).exclude(
@@ -7006,12 +7128,13 @@ class CVInvestigadorPDF(View):
         articulos_divulgacion_intl = ArticuloDivulgacion.objects.filter(usuarios=pk).exclude(
             revista__pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
-        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').exclude(pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
+        libros_divulgacion_editoriales_extranjeras = Libro.objects.filter(usuarios=pk, tipo='DIVULGACION').exclude(
+            pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
 
         libros_divulgacion_editoriales_mexicanas = Libro.objects.filter(
             usuarios=pk, tipo='DIVULGACION').filter(
             pais__nombre='México').filter(Q(status='PUBLICADO') | Q(status='EN_PRENSA')).order_by('-fecha')
-        
+
         capitulos_libros_divulgacion_editoriales_extranjeras = CapituloLibroInvestigacion.objects.filter(usuarios=pk,
                                                                                                          libro__tipo='DIVULGACION').exclude(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
@@ -7022,83 +7145,151 @@ class CVInvestigadorPDF(View):
             '-fecha')
         resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
         traducciones = Traduccion.objects.filter(usuario=pk).order_by('-fecha')
-        material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk, actividad='PRODUCCION').order_by('-fecha')
+        material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk,
+                                                                                    actividad='PRODUCCION').order_by(
+            '-fecha')
 
         articulos_docencia = ArticuloDocencia.objects.filter(usuarios=pk).order_by('-fecha')
-        libros_docencia = Libro.objects.filter(usuarios=pk, tipo='DOCENCIA').filter(Q(status='PUBLICADO') & Q(status='EN_PRENSA')).order_by('-fecha')
+        libros_docencia = Libro.objects.filter(usuarios=pk, tipo='DOCENCIA').filter(
+            Q(status='PUBLICADO') & Q(status='EN_PRENSA')).order_by('-fecha')
         programas_estudio_docencia = ProgramaEstudio.objects.filter(usuario=pk).order_by('-fecha')
         produccion_tecnologica = DesarrolloTecnologico.objects.filter(autores=pk).order_by('-fecha')
 
-        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by('-fecha_inicio')
-        participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by('-fecha_inicio')
+        participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by(
+            '-fecha_inicio')
+        participacion_proyectos_participante = ProyectoInvestigacion.objects.filter(participantes=pk).order_by(
+            '-fecha_inicio')
 
         ponente_eventos_academicos_nal_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
                                                                                                 por_invitacion=True).filter(
             evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=True).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk, por_invitacion=False).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_nal_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
+                                                                                                   por_invitacion=False).filter(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_invitacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
+                                                                                                 por_invitacion=True).exclude(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        ponente_eventos_academicos_intl_participacion = ParticipacionEventoAcademico.objects.filter(usuario=pk,
+                                                                                                    por_invitacion=False).exclude(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
-        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_nacionales = OrganizacionEventoAcademico.objects.filter(usuario=pk).filter(
+            evento__pais__nombre='México').order_by('-evento__fecha_inicio')
+        organizacion_eventos_academicos_internacionales = OrganizacionEventoAcademico.objects.filter(
+            usuario=pk).exclude(evento__pais__nombre='México').order_by('-evento__fecha_inicio')
 
-        participacion_comisiones_dictaminadoras_nacionales = ComisionInstitucionalCIGA.objects.filter(usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio')
+        participacion_comisiones_dictaminadoras_nacionales = ComisionInstitucionalCIGA.objects.filter(
+            usuario=pk).filter(institucion__pais__nombre='México').order_by('-fecha_inicio')
 
-        participacion_comisiones_dictaminadoras_internacionales = ComisionInstitucionalCIGA.objects.filter(usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio')
+        participacion_comisiones_dictaminadoras_internacionales = ComisionInstitucionalCIGA.objects.filter(
+            usuario=pk).exclude(institucion__pais__nombre='México').order_by('-fecha_inicio')
 
-        dictamenes_articulos_revistas_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').filter(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
-        dictamenes_articulos_revistas_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='ARTICULO').exclude(articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
-        dictamenes_libros_editoriales_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').filter(libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
-        dictamenes_libros_editoriales_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk, tipo='LIBRO').exclude(libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_articulos_revistas_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk,
+                                                                                               tipo='ARTICULO').filter(
+            articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_articulos_revistas_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk,
+                                                                                                 tipo='ARTICULO').exclude(
+            articulo__revista__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_libros_editoriales_mexicanas = ArbitrajePublicacionAcademica.objects.filter(usuario=pk,
+                                                                                               tipo='LIBRO').filter(
+            libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
+        dictamenes_libros_editoriales_extranjeras = ArbitrajePublicacionAcademica.objects.filter(usuario=pk,
+                                                                                                 tipo='LIBRO').exclude(
+            libro__editorial__pais__nombre='México').order_by('-fecha_dictamen')
 
         estancias_academicas = MovilidadAcademica.objects.filter(usuario=pk, tipo='ESTANCIA').order_by('-fecha_inicio')
-        profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by('-fecha_inicio')
+        profesores_visitantes = MovilidadAcademica.objects.filter(usuario=pk, tipo='INVITACION').order_by(
+            '-fecha_inicio')
         sabaticos = MovilidadAcademica.objects.filter(usuario=pk, tipo='SABATICO').order_by('-fecha_inicio')
         participacion_redes_academicas = RedAcademica.objects.filter(usuarios=pk).order_by('-fecha_constitucion')
         convenios_entidades_externas = ConvenioOtraEntidad.objects.filter(usuarios=pk).order_by('-fecha_inicio')
         servicios_asesorias_externas = ServicioAsesoriaExterna.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
-        participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by('-evento__fecha_inicio')
+        organizacion_eventos_divulgacion = OrganizacionEventoDivulgacion.objects.filter(usuario=pk).order_by(
+            '-evento__fecha_inicio')
+        participacion_eventos_divulgacion = ParticipacionEventoDivulgacion.objects.filter(usuario=pk).order_by(
+            '-evento__fecha_inicio')
 
-        cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
-        cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
-        cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(usuario=pk, institucion__pais__nombre='México').exclude(institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
-        cursos_escolarizados_licenciatura_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
-        cursos_escolarizados_licenciatura_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').filter(nivel='LICENCIATURA').order_by('-fecha_inicio')
-        cursos_escolarizados_posgrado_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='TITULAR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
-        cursos_escolarizados_posgrado_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk, nombramiento='COLABORADOR').exclude(nivel='LICENCIATURA').order_by('-fecha_inicio')
+        cursos_extracurriculares_unam = CursoDocenciaExtracurricular.objects.filter(usuario=pk,
+                                                                                    institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by(
+            '-fecha_inicio')
+        cursos_extracurriculares_nacionales = CursoDocenciaExtracurricular.objects.filter(usuario=pk,
+                                                                                          institucion__pais__nombre='México').exclude(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_extracurriculares_internacionales = CursoDocenciaExtracurricular.objects.exclude(usuario=pk,
+                                                                                                institucion__pais__nombre='México').exclude(
+            institucion__nombre='Universidad Nacional Autónoma de México (UNAM)').order_by('-fecha_inicio')
+        cursos_escolarizados_licenciatura_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk,
+                                                                                             nombramiento='TITULAR').filter(
+            nivel='LICENCIATURA').order_by('-fecha_inicio')
+        cursos_escolarizados_licenciatura_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk,
+                                                                                                 nombramiento='COLABORADOR').filter(
+            nivel='LICENCIATURA').order_by('-fecha_inicio')
+        cursos_escolarizados_posgrado_titular = CursoDocenciaEscolarizado.objects.filter(usuario=pk,
+                                                                                         nombramiento='TITULAR').exclude(
+            nivel='LICENCIATURA').order_by('-fecha_inicio')
+        cursos_escolarizados_posgrado_colaborador = CursoDocenciaEscolarizado.objects.filter(usuario=pk,
+                                                                                             nombramiento='COLABORADOR').exclude(
+            nivel='LICENCIATURA').order_by('-fecha_inicio')
 
-        tesis_dirigidas_licenciatura = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='LICENCIATURA', fecha_examen__isnull=False).order_by('-fecha_examen')
-        tesis_dirigidas_maestria = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='MAESTRIA', fecha_examen__isnull=False).order_by('-fecha_examen')
-        tesis_dirigidas_doctorado = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='DOCTORADO', fecha_examen__isnull=False).order_by('-fecha_examen')
+        tesis_dirigidas_licenciatura = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='LICENCIATURA',
+                                                                     fecha_examen__isnull=False).order_by(
+            '-fecha_examen')
+        tesis_dirigidas_maestria = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='MAESTRIA',
+                                                                 fecha_examen__isnull=False).order_by('-fecha_examen')
+        tesis_dirigidas_doctorado = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='DOCTORADO',
+                                                                  fecha_examen__isnull=False).order_by('-fecha_examen')
 
-        tesis_proceso_licenciatura = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='LICENCIATURA', fecha_examen__isnull=True).order_by('-fecha_examen')
-        tesis_proceso_maestria = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='MAESTRIA', fecha_examen__isnull=True).order_by('-fecha_examen')
-        tesis_proceso_doctorado = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='DOCTORADO', fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_licenciatura = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='LICENCIATURA',
+                                                                   fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_maestria = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='MAESTRIA',
+                                                               fecha_examen__isnull=True).order_by('-fecha_examen')
+        tesis_proceso_doctorado = DireccionTesis.objects.filter(usuarios=pk, nivel_academico='DOCTORADO',
+                                                                fecha_examen__isnull=True).order_by('-fecha_examen')
 
-        asesorias_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk).filter(Q(tipo='ESTANCIA') | Q(tipo='PRACTICA')).order_by('-fecha_inicio')
+        asesorias_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk).filter(
+            Q(tipo='ESTANCIA') | Q(tipo='PRACTICA')).order_by('-fecha_inicio')
         becarios_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='BECARIO').order_by('-fecha_inicio')
-        servicio_social_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='SERVICIO_SOCIAL').order_by('-fecha_inicio')
-        supervision_investigadores = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=pk).order_by('-fecha_inicio')
-        desarrollo_grupos_investigacion = DesarrolloGrupoInvestigacionInterno.objects.filter(usuarios=pk).order_by('-fecha_inicio')
-        sinodales_tesis_licenciatura = ComiteTutoral.objects.filter(nivel_academico='LICENCIATURA', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
-        comite_tutoral_maestria = ComiteTutoral.objects.filter(nivel_academico='MAESTRIA', asesores=pk, fecha_fin__isnull=False).order_by('-fecha_inicio')
-        sinodales_tesis_maestria = ComiteTutoral.objects.filter(nivel_academico='MAESTRIA', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
-        comite_tutoral_doctorado = ComiteTutoral.objects.filter(nivel_academico='DOCTORADO', asesores=pk, fecha_fin__isnull=False).order_by('-fecha_inicio')
-        sinodales_tesis_doctorado = ComiteTutoral.objects.filter(nivel_academico='DOCTORADO', sinodales=pk, fecha_examen__isnull=False).order_by('-fecha_examen')
-        participacion_candidaturas_doctorales = ComiteCandidaturaDoctoral.objects.filter(Q(asesores=pk) | Q(sinodales=pk)).order_by('-fecha_defensa')
-        premios_nacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='PREMIO').filter(institucion__nombre='México').order_by('-fecha')
-        premios_internacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='PREMIO').exclude(institucion__nombre='México').order_by('-fecha')
-        reconocimientos_nacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='RECONOCIMIENTO').filter(institucion__nombre='México').order_by('-fecha')
-        reconocimientos_internacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='RECONOCIMIENTO').exclude(institucion__nombre='México').order_by('-fecha')
-        comisiones_expertos_nacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).filter(institucion__nombre='México').order_by('-fecha_inicio')
-        comisiones_expertos_internacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).exclude(institucion__nombre='México').order_by('-fecha_inicio')
+        servicio_social_estudiantes = AsesoriaEstudiante.objects.filter(usuario=pk, tipo='SERVICIO_SOCIAL').order_by(
+            '-fecha_inicio')
+        supervision_investigadores = SupervisionInvestigadorPostDoctoral.objects.filter(usuario=pk).order_by(
+            '-fecha_inicio')
+        desarrollo_grupos_investigacion = DesarrolloGrupoInvestigacionInterno.objects.filter(usuarios=pk).order_by(
+            '-fecha_inicio')
+        sinodales_tesis_licenciatura = ComiteTutoral.objects.filter(nivel_academico='LICENCIATURA', sinodales=pk,
+                                                                    fecha_examen__isnull=False).order_by(
+            '-fecha_examen')
+        comite_tutoral_maestria = ComiteTutoral.objects.filter(nivel_academico='MAESTRIA', asesores=pk,
+                                                               fecha_fin__isnull=False).order_by('-fecha_inicio')
+        sinodales_tesis_maestria = ComiteTutoral.objects.filter(nivel_academico='MAESTRIA', sinodales=pk,
+                                                                fecha_examen__isnull=False).order_by('-fecha_examen')
+        comite_tutoral_doctorado = ComiteTutoral.objects.filter(nivel_academico='DOCTORADO', asesores=pk,
+                                                                fecha_fin__isnull=False).order_by('-fecha_inicio')
+        sinodales_tesis_doctorado = ComiteTutoral.objects.filter(nivel_academico='DOCTORADO', sinodales=pk,
+                                                                 fecha_examen__isnull=False).order_by('-fecha_examen')
+        participacion_candidaturas_doctorales = ComiteCandidaturaDoctoral.objects.filter(
+            Q(asesores=pk) | Q(sinodales=pk)).order_by('-fecha_defensa')
+        premios_nacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='PREMIO').filter(
+            institucion__nombre='México').order_by('-fecha')
+        premios_internacionales = DistincionAcademico.objects.filter(usuario=pk, distincion__tipo='PREMIO').exclude(
+            institucion__nombre='México').order_by('-fecha')
+        reconocimientos_nacionales = DistincionAcademico.objects.filter(usuario=pk,
+                                                                        distincion__tipo='RECONOCIMIENTO').filter(
+            institucion__nombre='México').order_by('-fecha')
+        reconocimientos_internacionales = DistincionAcademico.objects.filter(usuario=pk,
+                                                                             distincion__tipo='RECONOCIMIENTO').exclude(
+            institucion__nombre='México').order_by('-fecha')
+        comisiones_expertos_nacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).filter(
+            institucion__nombre='México').order_by('-fecha_inicio')
+        comisiones_expertos_internacionales = ParticipacionComisionExpertos.objects.filter(usuario=pk).exclude(
+            institucion__nombre='México').order_by('-fecha_inicio')
 
-        participacion_sociedades_cientificas_nacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).filter(ambito='NACIONAL').order_by('-fecha_inicio')
-        participacion_sociedades_cientificas_internacionales = ParticipacionSociedadCientifica.objects.filter(usuario=pk).filter(ambito='INTERNACIONAL').order_by('-fecha_inicio')
+        participacion_sociedades_cientificas_nacionales = ParticipacionSociedadCientifica.objects.filter(
+            usuario=pk).filter(ambito='NACIONAL').order_by('-fecha_inicio')
+        participacion_sociedades_cientificas_internacionales = ParticipacionSociedadCientifica.objects.filter(
+            usuario=pk).filter(ambito='INTERNACIONAL').order_by('-fecha_inicio')
         citas_publicaciones = CitaPublicacion.objects.filter(usuarios=pk)
-        material_medios_presencia = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).exclude(actividad='PRODUCCION').order_by('-fecha')
-
+        material_medios_presencia = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).exclude(
+            actividad='PRODUCCION').order_by('-fecha')
 
         context['usuario'] = usuario
         context['num_articulos'] = num_articulos
@@ -7122,8 +7313,10 @@ class CVInvestigadorPDF(View):
         context['articulos_no_indexadas_mexicanas'] = articulos_no_indexadas_mexicanas
         context['libros_investigacion_editoriales_mexicanas'] = libros_investigacion_editoriales_mexicanas
         context['libros_investigacion_editoriales_extranjeras'] = libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_investigacion_editoriales_extranjeras'] = capitulos_libros_investigacion_editoriales_extranjeras
-        context['capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
+        context[
+            'capitulos_libros_investigacion_editoriales_extranjeras'] = capitulos_libros_investigacion_editoriales_extranjeras
+        context[
+            'capitulos_libros_investigacion_editoriales_mexicanas'] = capitulos_libros_investigacion_editoriales_mexicanas
         context['memoriainextenso_extranjeras'] = memoriainextenso_extranjeras
         context['memoriainextenso_mexicanas'] = memoriainextenso_mexicanas
         context['mapas_publicaciones_extranjeras'] = mapas_publicaciones_extranjeras
@@ -7134,8 +7327,10 @@ class CVInvestigadorPDF(View):
         context['articulos_divulgacion_intl'] = articulos_divulgacion_intl
         context['libros_divulgacion_editoriales_extranjeras'] = libros_divulgacion_editoriales_extranjeras
         context['libros_divulgacion_editoriales_mexicanas'] = libros_divulgacion_editoriales_mexicanas
-        context['capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
-        context['capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
+        context[
+            'capitulos_libros_divulgacion_editoriales_extranjeras'] = capitulos_libros_divulgacion_editoriales_extranjeras
+        context[
+            'capitulos_libros_divulgacion_editoriales_mexicanas'] = capitulos_libros_divulgacion_editoriales_mexicanas
         context['resenas'] = resenas
         context['traducciones'] = traducciones
         context['material_medios_produccion'] = material_medios_produccion
@@ -7151,8 +7346,10 @@ class CVInvestigadorPDF(View):
         context['ponente_eventos_academicos_intl_participacion'] = ponente_eventos_academicos_intl_participacion
         context['organizacion_eventos_academicos_nacionales'] = organizacion_eventos_academicos_nacionales
         context['organizacion_eventos_academicos_internacionales'] = organizacion_eventos_academicos_internacionales
-        context['participacion_comisiones_dictaminadoras_nacionales'] = participacion_comisiones_dictaminadoras_nacionales
-        context['participacion_comisiones_dictaminadoras_internacionales'] = participacion_comisiones_dictaminadoras_internacionales
+        context[
+            'participacion_comisiones_dictaminadoras_nacionales'] = participacion_comisiones_dictaminadoras_nacionales
+        context[
+            'participacion_comisiones_dictaminadoras_internacionales'] = participacion_comisiones_dictaminadoras_internacionales
         context['dictamenes_articulos_revistas_mexicanas'] = dictamenes_articulos_revistas_mexicanas
         context['dictamenes_articulos_revistas_extranjeras'] = dictamenes_articulos_revistas_extranjeras
         context['dictamenes_libros_editoriales_mexicanas'] = dictamenes_libros_editoriales_mexicanas
@@ -7197,16 +7394,10 @@ class CVInvestigadorPDF(View):
         context['comisiones_expertos_nacionales'] = comisiones_expertos_nacionales
         context['comisiones_expertos_internacionales'] = comisiones_expertos_internacionales
         context['participacion_sociedades_cientificas_nacionales'] = participacion_sociedades_cientificas_nacionales
-        context['participacion_sociedades_cientificas_internacionales'] = participacion_sociedades_cientificas_internacionales
+        context[
+            'participacion_sociedades_cientificas_internacionales'] = participacion_sociedades_cientificas_internacionales
         context['citas_publicaciones'] = citas_publicaciones
         context['material_medios_presencia'] = material_medios_presencia
-
-
-
-
-
-
-
 
         template = get_template('cv.tex')
 
@@ -7228,4 +7419,3 @@ class CVInvestigadorPDF(View):
         r = HttpResponse(content_type='application/pdf')
         r.write(pdf)
         return r
-
