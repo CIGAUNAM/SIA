@@ -96,7 +96,13 @@ class Pais(models.Model):
     pais_nombre = models.CharField(max_length=60, unique=True)
     pais_nombre_extendido = models.CharField(max_length=200, unique=True)
     pais_codigo = models.SlugField(max_length=2, unique=True)
-    pais_zona = models.ForeignKey(ZonaPais, on_delete=models.PROTECT)
+    pais_zona = models.CharField(max_length=60, unique=True, blank=True, null=True,
+                                  choices=(('', '-------'), ('AMERICA_NORTE', 'América del Norte'),
+                                           ('AMERICA_CENTRAL', 'América Central'), ('AMERICA_SUR', 'América del Sur'),
+                                           ('ANTILLAS', 'Antillas'), ('EUROPA', 'Europa'), ('ASIA', 'Asia'),
+                                           ('EURASIA', 'Europa-Asia'), ('AFRICA', 'África'), ('OCEANIA', 'Oceanía'),
+                                           ('ATLANTICO', 'Oceano Atlántico')))
+
 
     def __str__(self):
         return self.pais_nombre
@@ -112,25 +118,6 @@ class Pais(models.Model):
         verbose_name_plural = 'Paises'
         verbose_name = 'País'
 
-
-
-class Estado(models.Model):
-    nombre = models.CharField(max_length=200)
-    # slug = AutoSlugField(populate_from='estado')
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('estado_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        unique_together = ['nombre', 'pais']
-        ordering = ['nombre']
 
 
 class Ciudad(models.Model):
