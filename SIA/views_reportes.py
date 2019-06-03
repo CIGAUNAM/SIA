@@ -71,9 +71,9 @@ class Informe(View):
         | Q(fecha_enviado__year=this_year)).distinct()
 
     context['informes_tecnicos_accesso_publico_nacionales'] = PublicacionTecnica.objects.filter(Q(fecha_publicado__year=this_year) | Q(fecha_enprensa__year=this_year) | Q(fecha_aceptado__year=this_year)
-        | Q(fecha_enviado__year=this_year)).filter(proyecto__institucion2__pais_institucion__pais_nombre='México').distinct()
+        | Q(fecha_enviado__year=this_year)).filter(proyecto__institucion__institucion_pais__pais_nombre='México').distinct()
     context['informes_tecnicos_accesso_publico_internacionales'] = PublicacionTecnica.objects.filter(Q(fecha_publicado__year=this_year) | Q(fecha_enprensa__year=this_year) | Q(fecha_aceptado__year=this_year)
-        | Q(fecha_enviado__year=this_year)).exclude(proyecto__institucion2__pais_institucion__pais_nombre='México').distinct()
+        | Q(fecha_enviado__year=this_year)).exclude(proyecto__institucion__institucion_pais__pais_nombre='México').distinct()
 
     context['articulos_inextenso_memorias_nacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).filter(evento__pais__pais_nombre='México').distinct()
     context['articulos_inextenso_memorias_internacionales'] = MemoriaInExtenso.objects.filter(evento__fecha_inicio__year=this_year).exclude(evento__pais__pais_nombre='México').distinct()

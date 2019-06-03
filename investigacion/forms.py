@@ -277,22 +277,22 @@ class ProyectoInvestigacionForm(forms.ModelForm):
                  ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA (en colaboración con otras dependencias)')),
         required=True)
     financiamiento_extraordinario = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
         required=False,
-        label="Dependencia",
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución que proporciona el financiamiento extraordinario",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
     financiamiento_sin_recurso_ciga = forms.ModelChoiceField(
-        queryset=Dependencia.objects.all(),
         required=False,
-        label="Dependencia",
+        queryset=InstitucionSimple.objects.all(),
+        label="Institución que proporciona el financiamiento sin recurso en el CIGA",
         widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Dependencia.objects.all(),
+            search_fields=['institucion_nombre__icontains'],
+            queryset=InstitucionSimple.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
