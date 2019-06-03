@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
-from nucleo.models import User, Pais, Estado, Ciudad, Institucion, InstitucionSimple, Dependencia, \
+from nucleo.models import User, Pais, Ciudad, Institucion, InstitucionSimple, Dependencia, \
     Revista, Indice, Libro as LibroInvestigacion, Editorial, Coleccion, ProblemaNacionalConacyt, Financiamiento, Metodologia, \
     AreaEspecialidad, ImpactoSocial, AreaConocimiento
 from sortedm2m.fields import SortedManyToManyField

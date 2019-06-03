@@ -9,16 +9,6 @@ urlpatterns = [
     # url(r'^paises/(?P<pk>[\w\-]+)/eliminar$', PaisEliminar.as_view(), name='pais_eliminar'),
     url(r'^paises/(?P<pk>[\w\-]+)/$', PaisDetalle.as_view(), name='pais_detalle'),
 
-    url(r'^estados/json/', EstadoJSON.as_view(), name='estado_lista__json'),
-    url(r'^estados/$', EstadoLista.as_view(), name='estado_lista'),
-    # url(r'^estados/(?P<pk>[\w\-]+)/eliminar$', EstadoEliminar.as_view(), name='estado_eliminar'),
-    url(r'^estados/(?P<pk>[\w\-]+)/$', EstadoDetalle.as_view(), name='estado_detalle'),
-
-    url(r'^ciudades/json/', CiudadJSON.as_view(), name='ciudad_lista__json'),
-    url(r'^ciudades/$', CiudadLista.as_view(), name='ciudad_lista'),
-    # url(r'^ciudades/(?P<pk>[\w\-]+)/eliminar$', CiudadEliminar.as_view(), name='ciudad_eliminar'),
-    url(r'^ciudades/(?P<pk>[\w\-]+)/$', CiudadDetalle.as_view(), name='ciudad_detalle'),
-
     # url(r'^instituciones/(?P<pk>[\w\-]+)/eliminar$', InstitucionEliminar.as_view(), name='institucion_eliminar'),
     url(r'^instituciones/agregar/$', InstitucionAgregar.as_view(), name='institucion_agregar'),
     url(r'^instituciones/(?P<pk>[\w\-]+)/$', InstitucionDetalle.as_view(), name='institucion_detalle'),

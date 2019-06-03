@@ -2,7 +2,7 @@ from SIA.widgets import *
 from . models import *
 
 from django import forms
-from nucleo.models import Pais, Estado, Ciudad
+from nucleo.models import Pais
 from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Select2Widget
 
 #

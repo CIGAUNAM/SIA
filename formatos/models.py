@@ -1,5 +1,5 @@
 from django.db import models
-from nucleo.models import User, Estado, Ciudad, Evento
+from nucleo.models import User, Ciudad, Evento
 from investigacion.models import ProyectoInvestigacion
 from django.urls import reverse
 
@@ -13,7 +13,6 @@ class FormatoServicioTransporte(models.Model):
                                                    ('INVESTIGACION', 'Investigación')))
     num_pasajeros = models.PositiveIntegerField()
     tipo = models.CharField(max_length=10, choices=(('', '-------'), ('LOCAL', 'Local'), ('FORANEO', 'Foraneo')))
-    estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     # ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
     km_aprox = models.PositiveIntegerField()
     gasto_casetas = models.DecimalField(max_digits=20, decimal_places=2, blank=True, null=True)

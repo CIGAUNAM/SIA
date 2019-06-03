@@ -33,44 +33,6 @@ class PaisForm(forms.ModelForm):
         }
 
 
-class EstadoForm(forms.ModelForm):
-    pais = forms.ModelChoiceField(
-        queryset=Pais.objects.all(),
-        label="País",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Pais.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-
-    class Meta:
-        model = Estado
-        exclude = []
-        widgets = {
-            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
-        }
-
-
-class CiudadForm(forms.ModelForm):
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-
-    class Meta:
-        model = Ciudad
-        exclude = ['usuario_creador', 'validado', 'fecha_creado', 'fecha_actualizado']
-        widgets = {
-            'titulo_proyecto': TextInput(attrs={'class': 'form-control pull-right'}),
-        }
-
-
 class InstitucionSimpleForm(forms.ModelForm):
     institucion_nombre = forms.CharField(widget=TextInput(
         attrs={'class': 'form-control pull-right', 'placeholder': 'Nombre de la institución y sus siglas entre parentesis (si oficialmente las tiene)'}),
@@ -412,27 +374,6 @@ class EventoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais': 'pais'},
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-
     class Meta:
         model = Evento
         exclude = []
@@ -482,16 +423,6 @@ class EditorialForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais': 'pais'},
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
     ciudad = forms.ModelChoiceField(
         queryset=Ciudad.objects.all(),
         label="Ciudad",
@@ -531,26 +462,6 @@ class Libro1Form(forms.ModelForm):
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=Pais.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'pais': 'pais'},
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre__icontains'],
-            dependent_fields={'estado': 'estado'},
-            queryset=Ciudad.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -643,26 +554,6 @@ class MedioDivulgacionForm(forms.ModelForm):
         widget=ModelSelect2Widget(
             search_fields=['nombre__icontains'],
             queryset=Pais.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    estado = forms.ModelChoiceField(
-        queryset=Estado.objects.all(),
-        label="Estado",
-        widget=ModelSelect2Widget(
-            dependent_fields={'pais': 'pais'},
-            search_fields=['nombre__icontains'],
-            queryset=Estado.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
-    ciudad = forms.ModelChoiceField(
-        queryset=Ciudad.objects.all(),
-        label="Ciudad",
-        widget=ModelSelect2Widget(
-            dependent_fields={'estado': 'estado'},
-            search_fields=['nombre__icontains'],
-            queryset=Ciudad.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
