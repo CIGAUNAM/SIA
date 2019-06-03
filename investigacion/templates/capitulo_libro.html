@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Título del capítulo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título del capítulo, no del libro.">
@@ -40,9 +41,14 @@
         </div>
     </div>
     </p>
-    <p><strong>Autores (adscritos al CIGA) del capitulo :</strong>
+    <p><strong>Autores como se reportan en el capítulo: <a href="#" data-toggle="tooltip" data-placement="right"
+                                                        title="Autores tal cual se reportan en el capítulo, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
+    </p>
+    <p><strong>Autores del capitulo, adscritos a la entidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores del capítulo, solo autores que están adscritos al CIGA.">
+           title="Autores del capítulo, solo autores que están adscritos a la entidad.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -62,11 +68,6 @@
             </div>
         </div>
     </div>
-    </p>
-    <p><strong>Autores como se reportan en el capítulo: <a href="#" data-toggle="tooltip" data-placement="right"
-                                                        title="Autores tal cual se reportan en el capítulo, en el orden y forma.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.autores_todos }}
     </p>
     <p><strong>Página inicial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -92,7 +93,6 @@
     </p>
 
     <script>
-        //$("#id_usuarios").select2();
         $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);
@@ -106,6 +106,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Título del capítulo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título del capítulo, no del libro.">
@@ -145,9 +146,14 @@
         </div>
     </div>
     </p>
-    <p><strong>Autores (adscritos al CIGA) del capitulo:</strong>
+    <p><strong>Autores como se reportan en el capítulo: <a href="#" data-toggle="tooltip" data-placement="right"
+                                                        title="Autores tal cual se reportan en el capítulo, en el orden y forma.">
+        <i class="fa fa-question-circle"></i></a></strong>
+        {{ form.autores_todos }}
+    </p>
+    <p><strong>Autores del capitulo, adscritos a la entidad:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Autores del capítulo, solo autores que están adscritos al CIGA.">
+           title="Autores del capítulo, solo autores que están adscritos a la entidad.">
             <i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group">
@@ -167,11 +173,6 @@
             </div>
         </div>
     </div>
-    </p>
-    <p><strong>Autores como se reportan en el capítulo: <a href="#" data-toggle="tooltip" data-placement="right"
-                                                        title="Autores tal cual se reportan en el capítulo, en el orden y forma.">
-        <i class="fa fa-question-circle"></i></a></strong>
-        {{ form.autores_todos }}
     </p>
     <p><strong>Página inicial:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -197,7 +198,6 @@
     </p>
 
     <script>
-        //$("#id_usuarios").select2();
         $("#id_autores").on("select2:select", function (evt) {
             var element = evt.params.data.element;
             var $element = $(element);

@@ -735,7 +735,6 @@ class Coleccion(models.Model):
 
 class Libro(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
     tipo = models.CharField(max_length=50, choices=(('INVESTIGACION', 'Investigación'), ('DIVULGACION', 'Divulgación'),
                                                     ('DOCENCIA', 'Docencia')))
     tipo_participacion = models.CharField(max_length=50, choices=(('', '-------'), ('AUTORIA', 'Autoría'), ('EDICION', 'Edición'), ('COORDINACION', 'Coordinación'), ('COMPILACION', 'Compilación')))
@@ -745,11 +744,9 @@ class Libro(models.Model):
     compiladores = SortedManyToManyField(User, related_name='libro_compiladores', blank=True)
     autores_todos = models.TextField(blank=True, null=True)
     agradecimientos = models.ManyToManyField(User, related_name='libro_agradecimientos', blank=True)
-    # editorial = models.ForeignKey(Editorial, on_delete=models.PROTECT, blank=True, null=True)
     editorial_text = models.CharField(max_length=255, blank=True, null=True)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
     ciudad_text = models.CharField(max_length=255, blank=True, null=True)
-    # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT, blank=True, null=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     fecha = models.DateField(blank=True, null=True)
     fecha_enviado = models.DateField(null=True, blank=True)
@@ -765,7 +762,7 @@ class Libro(models.Model):
     arbitrado_pares = models.BooleanField(default=False)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.nombre, self.editorial_text, self.isbn)
+        return "{} : {} : {}".format(self.nombre, self.editorial_text, self.pais)
 
     def natural_key(self):
         return self.nombre

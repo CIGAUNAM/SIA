@@ -125,7 +125,6 @@ class ArticuloCientifico(models.Model):
     revista = models.ForeignKey(Revista, on_delete=models.DO_NOTHING)
     volumen = models.CharField(max_length=100, null=True, blank=True)
     numero = models.CharField(max_length=100, null=True, blank=True)
-    fecha = models.DateField(null=True, blank=True)
     fecha_enviado = models.DateField(null=True, blank=True)
     fecha_aceptado = models.DateField(null=True, blank=True)
     fecha_enprensa = models.DateField(null=True, blank=True)
@@ -155,7 +154,7 @@ class ArticuloCientifico(models.Model):
     class Meta:
         verbose_name = "Artículo científico"
         verbose_name_plural = "Artículos científicos"
-        ordering = ['fecha', 'titulo']
+        ordering = ['-fecha_publicado', '-fecha_enprensa', '-fecha_aceptado', '-fecha_enviado', 'titulo']
 
 
 class CapituloLibroInvestigacion(models.Model):
@@ -182,16 +181,12 @@ class MapaArbitrado(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
     autores = SortedManyToManyField(User, related_name='mapa_arbitrado_autores', verbose_name='Autores', blank=True)
     autores_todos = models.TextField(blank=True, null=True)
-    # editores = models.ManyToManyField(User, related_name='mapa_arbitrado_editores', blank=True)
-    # compiladores = SortedManyToManyField(User, related_name='mapa_arbitrado_compiladores', blank=True)
     agradecimientos = SortedManyToManyField(User, related_name='mapa_arbitrado_agradecimientos', blank=True)
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    # estado = models.ForeignKey(Estado, on_delete=models.DO_NOTHING)
     ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.DO_NOTHING)
     ciudad_text = models.CharField(max_length=255, blank=True, null=True)
     publicacion = models.CharField(max_length=255, blank=True, null=True)
-    fecha = models.DateField(null=True, blank=True)
     fecha_enviado = models.DateField(null=True, blank=True)
     fecha_aceptado = models.DateField(null=True, blank=True)
     fecha_enprensa = models.DateField(null=True, blank=True)
@@ -200,7 +195,7 @@ class MapaArbitrado(models.Model):
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.fecha)
+        return "{} : {}".format(self.titulo, self.publicacion)
 
     def get_absolute_url(self):
         return reverse('mapa_arbitrado_detalle', kwargs={'pk': self.pk})
@@ -223,7 +218,6 @@ class PublicacionTecnica(models.Model):
         ('CARTA_REVISTA', 'Cartas en revistas de prestigio internacional'),
         ('TRADUCCION', 'Traducción de libros y revisiones técnicas')))
     status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
-    fecha = models.DateField(null=True, blank=True)
     fecha_enviado = models.DateField(null=True, blank=True)
     fecha_aceptado = models.DateField(null=True, blank=True)
     fecha_enprensa = models.DateField(null=True, blank=True)
@@ -237,7 +231,7 @@ class PublicacionTecnica(models.Model):
     cita = models.TextField(blank=True)
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.fecha)
+        return "{} : {}".format(self.titulo, self.tipo)
 
     def get_absolute_url(self):
         return reverse('publicacion_tecnica_detalle', kwargs={'pk': self.pk})
@@ -245,7 +239,7 @@ class PublicacionTecnica(models.Model):
     class Meta:
         verbose_name = "Publicación técnico de acceso público"
         verbose_name_plural = "Publicaciones técnicas de acceso público"
-        ordering = ['fecha', 'titulo']
+        ordering = ['titulo']
 
 
 class ActividadApoyoTecnicoInvestigacion(models.Model):
