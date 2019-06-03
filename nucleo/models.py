@@ -136,7 +136,6 @@ class Estado(models.Model):
 class Ciudad(models.Model):
     nombre = models.CharField(max_length=255)
     # slug = AutoSlugField(populate_from='ciudad')
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     validado = models.BooleanField(default=False)
     fecha_creado = models.DateField(auto_now_add=True, null=True, blank=True)
 
@@ -151,7 +150,6 @@ class Ciudad(models.Model):
         return reverse('ciudad_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        unique_together = ['nombre', 'estado']
         ordering = ['nombre']
         verbose_name_plural = 'Ciudades'
 
@@ -172,7 +170,6 @@ class User(AbstractUser):
     direccion = models.CharField(max_length=255, blank=True)
     direccion_continuacion = models.CharField(max_length=255, blank=True)
     pais = models.ForeignKey(Pais, blank=True, null=True, related_name='user_pais', on_delete=models.PROTECT, default=1)
-    estado = models.ForeignKey(Estado, blank=True, null=True, on_delete=models.PROTECT, default=1)
     ciudad = models.ForeignKey(Ciudad, blank=True, null=True, on_delete=models.PROTECT, default=1)
     telefono = models.SlugField(max_length=20, blank=True)
     celular = models.SlugField(max_length=20, blank=True)
@@ -614,7 +611,6 @@ class Evento(models.Model):
     fecha_fin = models.DateField()
     entidades = models.ManyToManyField(Dependencia, related_name='evento_entidades')
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
     ubicacion = models.TextField(blank=True)
 
@@ -696,7 +692,6 @@ class Editorial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    # estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
     ciudad = models.CharField(max_length=255, blank=True)
 
@@ -845,7 +840,6 @@ class MedioDivulgacion(models.Model):
                                                     ('TV', 'Televisión'), ('INTERNET', 'Internet'), ('OTRO', 'Otro')))
     canal = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    estado = models.ForeignKey(Estado, on_delete=models.PROTECT)
     ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
 
     def __str__(self):
