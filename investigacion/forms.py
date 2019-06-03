@@ -147,7 +147,7 @@ class MapaArbitradoForm(forms.ModelForm):
                                      required=True, label='Número de páginas')
     ciudad_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
                                   label='Ciudad')
-    publicacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False,
+    publicacion = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
                                   label='Libro o revista donde se publica')
 
     proyecto = forms.ModelChoiceField(
