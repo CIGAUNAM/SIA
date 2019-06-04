@@ -7,7 +7,7 @@ from django.views.generic import View
 from formacion_academica.models import CursoEspecializacion
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, PublicacionTecnica, \
     ProyectoInvestigacion
-from difusion_cientifica.models import MemoriaInExtenso, Resena, Traduccion, OrganizacionEventoAcademico, \
+from difusion_cientifica.models import MemoriaInExtenso, OrganizacionEventoAcademico, \
     ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, \
     ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
@@ -1005,64 +1005,6 @@ class Dashboard(View):
             data_source = SimpleDataSource(data=items_data)
             chart_proyectos_investigacion = LineChart(data_source)
             context['chart_proyectos_investigacion'] = chart_proyectos_investigacion
-
-            items_data = [
-                ['Año', 'Mis Reseñas', 'Promedio por persona', 'Max por persona', 'Min por persona']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                items_data.append([str(year)])
-
-                total_items_year_sum = Resena.objects.filter(fecha__year=year).filter(
-                    ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) |
-                     (Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
-
-                request_user_items_year_sum = Resena.objects.filter(fecha__year=year, autores=request.user).count()
-                if not request_user_items_year_sum:
-                    request_user_items_year_sum = 0
-                items_data[i + 1].append(
-                    request_user_items_year_sum)
-
-                users_with_items_year_count = User.objects.filter(
-                    Q(resena_autores__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    items_data[i + 1].append(
-                        round(
-                            total_items_year_sum / users_with_items_year_count,
-                            2))
-                else:
-                    items_data[i + 1].append(0)
-
-                max_items_year_user = User.objects.filter(
-                    Q(resena_autores__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autores')).aggregate(Max('resena_autores__count'))[
-                    'resena_autores__count__max']
-                if max_items_year_user == None:
-                    max_items_year_user = 0
-                items_data[i + 1].append(
-                    max_items_year_user)
-
-                min_items_year_user = User.objects.filter(
-                    Q(resena_autores__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autores')).aggregate(Min('resena_autores__count'))[
-                    'resena_autores__count__min']
-                if min_items_year_user == None:
-                    min_items_year_user = 0
-                items_data[i + 1].append(
-                    min_items_year_user)
-
-            # print(items_data)
-            data_source = SimpleDataSource(data=items_data)
-            chart_resena = LineChart(data_source)
-            context['chart_resena'] = chart_resena
 
             items_data = [
                 ['Año', 'Mis Participaciones en eventos académicos', 'Promedio por persona', 'Max por persona',
@@ -3142,66 +3084,6 @@ class ReporteHistorico(View):
             data_source = SimpleDataSource(data=items_data)
             hchart_memoria_in_extenso = LineChart(data_source)
             context['hchart_memoria_in_extenso'] = hchart_memoria_in_extenso
-
-            items_data = [
-                ['Año', 'Total Reseñas', 'Promedio por persona', 'Max por persona', 'Min por persona',
-                 'Personas activas']]
-            for i in range(num_years):
-                year = last_x_years[i]
-                items_data.append([str(year)])
-
-                total_items_year_sum = Resena.objects.filter(fecha__year=year).filter(
-                    ((Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad__year__gt=year)) |
-                     (Q(usuario__ingreso_entidad__year__lte=year) & Q(usuario__egreso_entidad=None)))).count()
-
-                request_user_items_year_sum = Resena.objects.filter(fecha__year=year, usuario=request.user).count()
-
-                if not total_items_year_sum:
-                    total_items_year_sum = 0
-                items_data[i + 1].append(
-                    total_items_year_sum)
-
-                users_with_items_year_count = User.objects.filter(
-                    Q(resena_autores__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
-                if users_with_items_year_count == None:
-                    users_with_items_year_count = 0
-                if users_with_items_year_count > 0:
-                    items_data[i + 1].append(
-                        round(
-                            total_items_year_sum / users_with_items_year_count,
-                            2))
-                else:
-                    items_data[i + 1].append(0)
-
-                max_items_year_user = User.objects.filter(
-                    Q(resena_autores__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autores')).aggregate(Max('resena_autores__count'))[
-                    'resena_autores__count__max']
-                if max_items_year_user == None:
-                    max_items_year_user = 0
-                items_data[i + 1].append(
-                    max_items_year_user)
-
-                min_items_year_user = User.objects.filter(
-                    Q(resena_autores__fecha__year=year) &
-                    ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
-                     (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('resena_autores')).aggregate(Min('resena_autores__count'))[
-                    'resena_autores__count__min']
-                if min_items_year_user == None:
-                    min_items_year_user = 0
-                items_data[i + 1].append(min_items_year_user)
-                items_data[i + 1].append(users_with_items_year_count)
-
-            # print(items_data)
-            data_source = SimpleDataSource(data=items_data)
-            hchart_resena = LineChart(data_source)
-            context['hchart_resena'] = hchart_resena
 
             items_data = [
                 ['Año', 'Total Organizaciones de eventos académicos', 'Promedio por persona', 'Max por persona',
@@ -6969,7 +6851,6 @@ class CVInvestigadorDetalle(View):
                                                                                                        libro__tipo='DIVULGACION').filter(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
             '-fecha')
-        resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
         material_medios = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk).order_by('-fecha')
         participacion_proyectos_responsable = ProyectoInvestigacion.objects.filter(usuarios=pk).order_by(
             '-fecha_inicio')
@@ -7143,8 +7024,6 @@ class CVInvestigadorPDF(View):
                                                                                                        libro__tipo='DIVULGACION').filter(
             libro__pais__nombre='México').filter(Q(libro__status='PUBLICADO') | Q(libro__status='EN_PRENSA')).order_by(
             '-fecha')
-        resenas = Resena.objects.filter(usuario=pk).order_by('-fecha')
-        traducciones = Traduccion.objects.filter(usuario=pk).order_by('-fecha')
         material_medios_produccion = ProgramaRadioTelevisionInternet.objects.filter(usuario=pk,
                                                                                     actividad='PRODUCCION').order_by(
             '-fecha')

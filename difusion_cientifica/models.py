@@ -42,54 +42,6 @@ class MemoriaInExtenso(models.Model):
         verbose_name_plural = 'Memorias in extenso'
 
 
-class Resena(models.Model):
-    titulo = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
-    libro_resenado = models.ForeignKey(Libro, blank=True, null=True, related_name='resena_libro_resenado',
-                                       on_delete=models.DO_NOTHING)
-    articulo_resenado = models.ForeignKey(ArticuloCientifico, blank=True, null=True,
-                                          related_name='resena_revista_resenada', on_delete=models.DO_NOTHING)
-    fecha = models.DateField()
-    revista_publica = models.ForeignKey(Revista, related_name='resena_revista_publica', on_delete=models.DO_NOTHING)
-    pagina_inicio = models.PositiveIntegerField()
-    pagina_fin = models.PositiveIntegerField()
-    url = models.URLField(blank=True)
-    autores = SortedManyToManyField(User, related_name='resena_autores', verbose_name='Autores')
-
-    def __str__(self):
-        return '{} : {}'.format(self.usuario, self.titulo)
-
-    def get_absolute_url(self):
-        return reverse('resena_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        verbose_name = 'Reseña de publicación'
-        verbose_name_plural = 'Reseñas de publicaciones'
-
-
-class Traduccion(models.Model):
-    titulo = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=10, choices=RESENA__TIPO)
-    libro = models.ForeignKey(Libro, blank=True, null=True, on_delete=models.DO_NOTHING)
-    articulo = models.ForeignKey(ArticuloCientifico, blank=True, null=True, on_delete=models.DO_NOTHING)
-    fecha = models.DateField()
-    url = models.URLField(blank=True)
-    # usuario = models.ForeignKey(User, related_name='traduccion_autor', on_delete=models.DO_NOTHING)
-    autores = SortedManyToManyField(User, verbose_name='Autores')
-
-    def __str__(self):
-        return '{} : {}'.format(self.usuario, self.titulo)
-
-    def get_absolute_url(self):
-        return reverse('traduccion_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        verbose_name = 'Reseña de libro'
-        verbose_name_plural = 'Reseñas de libros'
-
-
 class EventoDifusion(models.Model):
     eventodifusion_nombre = models.CharField(max_length=255)
     eventodifusion_tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
