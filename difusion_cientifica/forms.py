@@ -10,17 +10,26 @@ from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Sele
 class MemoriaInExtensoForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Título de memoria in extenso')
     evento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Nombre del evento')
-    lugar_evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Lugar del evento')
+    lugar = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True, label='Lugar del evento')
+    fecha = forms.DateField(
+        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
+        label='Fecha del evento donde se publicó la memoria.')
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['pais_nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right',
+                   'data-placeholder': 'Seleccione el pais donde se llevó a cabo el evento.'}
+        )
+    )
+    ciudad = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Ciudad donde se llevó a cabo el evento.'}),
+        label='Ciudad donde se llevó a cabo el evento.')
     autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Autores como aparecen en la memoria'}),
-                                  required=False)
-    pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
-                                    required=True, label='Número de página inicial')
-    pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
-                                 required=True, label='Número de página final')
-    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-
+                                  required=True)
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -29,6 +38,12 @@ class MemoriaInExtensoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                    label='Número de página inicial')
+    pagina_fin = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
+                                 label='Número de página final')
+    isbn = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
+    url = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
 
     class Meta:
         model = MemoriaInExtenso
