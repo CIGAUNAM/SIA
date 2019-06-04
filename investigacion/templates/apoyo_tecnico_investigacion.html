@@ -79,6 +79,26 @@
     </div>
     </p>
 
+    <script>
+        var id_actividad = $("#id_actividad");
+        var id_actividad_otra = $("#id_actividad_otra");
+        var d_actividad_otra = $("#d_actividad_otra");
+
+        d_actividad_otra.hide();
+
+        id_actividad.on('change', function () {
+            console.log(id_actividad.val());
+            if (id_actividad.val() === '1') {
+                id_actividad_otra.attr('required', 'true');
+                d_actividad_otra.show('slow');
+            } else {
+                id_actividad_otra.val(null).trigger('change');
+                id_actividad_otra.attr('required', null);
+                d_actividad_otra.hide('slow');
+            }
+        })
+    </script>
+
 {% endblock %}
 
 {% block form_detalle %}
@@ -159,4 +179,33 @@
         </div>
     </div>
     </p>
+
+    <script>
+        var id_actividad = $("#id_actividad");
+        var id_actividad_otra = $("#id_actividad_otra");
+        var d_actividad_otra = $("#d_actividad_otra");
+
+        d_actividad_otra.hide();
+
+        if (id_actividad.val() === '1') {
+            id_actividad_otra.attr('required', 'true');
+            d_actividad_otra.show();
+        } else {
+            id_actividad_otra.val(null).trigger('change');
+            id_actividad_otra.attr('required', null);
+            d_actividad_otra.hide();
+        }
+
+        id_actividad.on('change', function () {
+            console.log(id_actividad.val());
+            if (id_actividad.val() === '1') {
+                id_actividad_otra.attr('required', 'true');
+                d_actividad_otra.show('slow');
+            } else {
+                id_actividad_otra.val(null).trigger('change');
+                id_actividad_otra.attr('required', null);
+                d_actividad_otra.hide('slow');
+            }
+        })
+    </script>
 {% endblock %}

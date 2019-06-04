@@ -23,7 +23,7 @@ class DesarrolloTecnologicoJSON(View):
             else:
                 items = DesarrolloTecnologico.objects.filter(autores=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('nombre', 'patente', 'licencia', 'fecha'))
+                                         fields=('nombre', 'patente', 'licencia_text', 'fecha'))
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404

@@ -50,7 +50,10 @@ class ObjetivoDesarrolloSostenible(models.Model):
     objetivodesarrollosostenible_nombre = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
-        return self.objetivodesarrollosostenible_nombre
+        return str(self.pk) + ".- " + self.objetivodesarrollosostenible_nombre
+
+    class Meta:
+        ordering = ['pk']
 
 
 
@@ -70,8 +73,6 @@ class ProyectoInvestigacion(models.Model):
     organizacion = models.CharField(max_length=30, choices=ORGANIZACION_PROYECTO)
     modalidad = models.CharField(max_length=30, choices=MODALIDAD_PROYECTO)
     tematica_genero = models.BooleanField(default=False)
-    problemas_nacionales_conacyt = models.ManyToManyField(ProblemaNacionalConacyt, related_name='proyecto_investigacion_problemas_nacionales_conacyt', blank=True)
-    otro_problema_nacional_conacyt = models.TextField(null=True, blank=True)
     objetivos2030 = models.ManyToManyField(ObjetivoDesarrolloSostenible, blank=True)
 
     tipo_financiamiento = models.CharField(max_length=30, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('PAPIIT', 'DGAPA-PAPIIT'), ('PAPIME', 'DGAPA-PAPIME'), ('EXTRAORDINARIOS', 'Ingresos extraordinarios'), ('SIN_RECURSOS', 'Sin recursos en el CIGA (en colaboración con otras dependencias)')))
@@ -236,7 +237,7 @@ class ActividadApoyoTecnicoInvestigacion(models.Model):
         return self.actividadapoyotecnicoinvestigacion_nombre
 
     class Meta:
-        ordering = ['id', 'orden']
+        ordering = ['orden', 'id']
 
 
 class ActividadApoyoTecnicoServicio(models.Model):
@@ -250,7 +251,7 @@ class ActividadApoyoTecnicoServicio(models.Model):
         return self.actividadapoyotecnicoservicio_nombre
 
     class Meta:
-        ordering = ['id', 'orden']
+        ordering = ['orden', 'id']
 
 
 class ApoyoTecnicoInvestigacion(models.Model):
