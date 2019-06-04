@@ -45,12 +45,12 @@ class Licencia(models.Model):
 
 
 class DesarrolloTecnologico(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
+    nombre = models.CharField(max_length=254, unique=True)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
     descripcion = models.TextField()
     version = models.CharField(max_length=100, blank=True, null=True)
     patente = models.CharField(max_length=255, blank=True, null=True)
-    licencia = models.ForeignKey(Licencia, on_delete=models.DO_NOTHING, blank=True, null=True)
+    licencia_text = models.CharField(max_length=254, blank=True, null=True)
     url = models.URLField(blank=True)
     autores = models.ManyToManyField(User, related_name='desarrollo_tecnologico_autores')
     fecha = models.DateField(blank=True, null=True)

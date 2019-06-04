@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Nombre:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del desarrollo tecnológico."><i
@@ -47,25 +48,14 @@
     </p>
     <p><strong>Licencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Licencia bajo la cual se libera o distribuye el desarrollo tecnológico."><i
+           title="Nombre de la licencia con que se distribuye este desarrollo."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.licencia }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la licencia seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/desarrollos-tecnologicos/licencias" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar una licencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.licencia_text }}
         </div>
     </div>
     </p>
@@ -146,6 +136,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Nombre:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Nombre del desarrollo tecnológico."><i
@@ -192,25 +183,14 @@
     </p>
     <p><strong>Licencia:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Licencia bajo la cual se libera o distribuye el desarrollo tecnológico."><i
+           title="Nombre de la licencia con que se distribuye este desarrollo."><i
                 class="fa fa-question-circle"></i></a>
     <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.licencia }}
+        <div class="input-group date">
             <div class="input-group-addon">
-                <a href="#" data-toggle="tooltip" data-placement="left"
-                   title="Mostrar los detalles adicionales de la licencia seleccionada.">
-                    <i class="fa fa-eye"></i>
-                </a>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            <div class="input-group-addon">
-                <a href="/desarrollos-tecnologicos/licencias" data-toggle="tooltip" data-placement="left"
-                   target="_blank"
-                   title="Agregar una licencia nueva. Cuando no existe en los registros, aquí se puede dar de alta.">
-                    <i class="fa fa-plus"></i>
-                </a>
-            </div>
+            {{ form.licencia_text }}
         </div>
     </div>
     </p>

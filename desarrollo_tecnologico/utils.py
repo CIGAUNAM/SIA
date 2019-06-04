@@ -33,7 +33,7 @@ class DesarrolloTecnologicoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.patente"},\n' \
-                                    '{"data": "fields.licencia"},\n' \
+                                    '{"data": "fields.licencia_text"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
@@ -59,7 +59,7 @@ class DesarrolloTecnologicoContext:
                                         '}\n' \
                                     '},\n' \
                                     '{"data": "fields.patente"},\n' \
-                                    '{"data": "fields.licencia"},\n' \
+                                    '{"data": "fields.licencia_text"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \

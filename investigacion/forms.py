@@ -411,7 +411,7 @@ class ApoyoTecnicoInvestigacionForm(forms.ModelForm):
         required=True)
     fecha_fin = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=False)
+        required=True)
 
     proyecto = forms.ModelChoiceField(
         queryset=ProyectoInvestigacion.objects.all(),
@@ -430,11 +430,11 @@ class ApoyoTecnicoInvestigacionForm(forms.ModelForm):
 
 class ApoyoTecnicoServicioForm(forms.ModelForm):
     actividad = forms.ModelChoiceField(
-        queryset=ActividadApoyoTecnicoInvestigacion.objects.all(),
-        label="Actividad de apoyo técnico a la investigación",
+        queryset=ActividadApoyoTecnicoServicio.objects.all(),
+        label="Actividad de apoyo técnico en actividades de servicio",
         widget=ModelSelect2Widget(
-            search_fields=['actividadapoyotecnicoinvestigacion_nombre__icontains'],
-            queryset=ActividadApoyoTecnicoInvestigacion.objects.all(),
+            search_fields=['actividadapoyotecnicoservicio_nombre__icontains'],
+            queryset=ActividadApoyoTecnicoServicio.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -445,7 +445,7 @@ class ApoyoTecnicoServicioForm(forms.ModelForm):
         required=True)
     fecha_fin = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=False)
+        required=True)
 
     proyecto = forms.ModelChoiceField(
         queryset=ProyectoInvestigacion.objects.all(),
