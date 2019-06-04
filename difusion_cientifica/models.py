@@ -19,21 +19,17 @@ RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO
 
 class MemoriaInExtenso(models.Model):
     nombre = models.CharField(max_length=254, verbose_name='Nombre de memoria in extenso')
-    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING, null=True, blank=True)
-    evento_text = models.CharField(max_length=254, blank=True, null=True, verbose_name='Nombre del evento')
-    lugar_evento = models.CharField(max_length=254, blank=True, null=True, verbose_name='Lugar del evento')
+    evento_text = models.CharField(max_length=254, verbose_name='Nombre del evento')
+    lugar = models.CharField(max_length=254, verbose_name='Lugar del evento')
     fecha = models.DateField()
-    Pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING, )
+    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING, )
     ciudad = models.CharField(max_length=254)
-
     autores = SortedManyToManyField(User)
     autores_todos = models.TextField(blank=True, null=True)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    pagina_inicio = models.PositiveIntegerField(null=True, blank=True)
-    pagina_fin = models.PositiveIntegerField(null=True, blank=True)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
+    pagina_inicio = models.PositiveIntegerField()
+    pagina_fin = models.PositiveIntegerField()
     isbn = models.SlugField(max_length=20, blank=True)
-    url = models.URLField(blank=True)
 
     def __str__(self):
         return self.nombre
