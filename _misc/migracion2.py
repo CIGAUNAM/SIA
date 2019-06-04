@@ -15,7 +15,7 @@ from nucleo.models import *
 from compromiso_institucional.models import ComisionInstitucional, Representacion, LaborDirectivaCoordinacion, \
     RepresentacionOrganoColegiadoUNAM, ComisionInstitucionalCIGA, ApoyoTecnico, ApoyoOtraActividad
 from desarrollo_tecnologico.models import TipoDesarrollo, Licencia, DesarrolloTecnologico
-from difusion_cientifica.models import MemoriaInExtenso, Resena, OrganizacionEventoAcademico, \
+from difusion_cientifica.models import MemoriaInExtenso, OrganizacionEventoAcademico, \
     ParticipacionEventoAcademico
 
 from formacion_academica.models import CursoEspecializacion, Licenciatura, Maestria, Doctorado, PostDoctorado
