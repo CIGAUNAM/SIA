@@ -30,7 +30,7 @@ class MemoriaInExtensoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.evento"},\n' \
+                                    '{"data": "fields.evento_text"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -54,7 +54,7 @@ class MemoriaInExtensoContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.nombre + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.evento"},\n' \
+                                    '{"data": "fields.evento_text"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
