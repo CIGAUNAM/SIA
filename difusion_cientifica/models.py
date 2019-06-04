@@ -22,6 +22,9 @@ class MemoriaInExtenso(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING, null=True, blank=True)
     evento_text = models.CharField(max_length=254, blank=True, null=True, verbose_name='Nombre del evento')
     lugar_evento = models.CharField(max_length=254, blank=True, null=True, verbose_name='Lugar del evento')
+    fecha = models.DateField()
+    Pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING, )
+    ciudad = models.CharField(max_length=254)
 
     autores = SortedManyToManyField(User)
     autores_todos = models.TextField(blank=True, null=True)
