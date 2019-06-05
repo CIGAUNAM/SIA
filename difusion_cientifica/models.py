@@ -6,12 +6,12 @@ from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 
-EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
-EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('COORDINADOR', 'Coordinador general'),
+EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
+EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (('', '-------'), ('COORDINADOR', 'Coordinador general'),
                                                                         ('COMITE', 'Comité organizador'),
                                                                         ('AYUDANTE', 'Ayudante'),
                                                                         ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
-RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('LIBRO', 'Libro'), ('ARTICULO', 'Artículo')))
+RESENA__TIPO = getattr(settings, 'RESENA__TIPO', (('', '-------'), ('LIBRO', 'Libro'), ('ARTICULO', 'Artículo')))
 
 
 # Create your models here.
@@ -97,25 +97,25 @@ class OrganizacionEventoAcademico(models.Model):
 class ParticipacionEventoAcademico(models.Model):
     tipo = models.CharField(max_length=30, choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')))
     titulo = models.CharField(max_length=255)
-    evento = models.ForeignKey(Evento, blank=True, null=True, on_delete=models.DO_NOTHING)
-
-    evento_text = models.CharField(max_length=254, blank=True, null=True, verbose_name='Nombre del evento')
-    lugar_evento = models.CharField(max_length=254, blank=True, null=True, verbose_name='Lugar del evento')
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
+    evento_text = models.CharField(max_length=254, verbose_name='Nombre del evento')
+    lugar_evento = models.CharField(max_length=254, verbose_name='Lugar del evento')
+    ciudad = models.CharField(max_length=255)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     fecha = models.DateField()
-
     ambito = models.CharField(max_length=20, choices=EVENTO__AMBITO)
     por_invitacion = models.BooleanField(default=False)
     ponencia_magistral = models.BooleanField(default=False)
-    autores = SortedManyToManyField(User, related_name='participacion_evento_academico_autores', verbose_name='Autores')
-    autores_todos = models.TextField(blank=True, null=True)
+    autores = SortedManyToManyField(User, verbose_name='Autores')
+    autores_todos = models.TextField()
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.evento_text)
+        return "{} : {}".format(self.evento_text, self.titulo)
 
     def get_absolute_url(self):
         return reverse('participacion_evento_academico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
+        ordering = ['evento_text', 'titulo']
         verbose_name = 'Participación en evento académico'
         verbose_name_plural = 'Participación en eventos académicos'
