@@ -38,6 +38,7 @@ class MemoriaInExtenso(models.Model):
         return reverse('memoria_in_extenso_detalle', kwargs={'pk': self.pk})
     
     class Meta:
+        ordering = ['nombre']
         verbose_name = 'Memoria in extenso'
         verbose_name_plural = 'Memorias in extenso'
 
@@ -74,8 +75,7 @@ class EventoDifusion(models.Model):
 
 
 class OrganizacionEventoAcademico(models.Model):
-    evento2 = models.ForeignKey(Evento, blank=True, null=True,  on_delete=models.DO_NOTHING)
-    evento = models.ForeignKey(EventoDifusion, blank=True, null=True, related_name='OrganizacionEventoAcademico_evento', on_delete=models.DO_NOTHING)
+    evento = models.ForeignKey(EventoDifusion, on_delete=models.DO_NOTHING)
     tipo_participacion = models.CharField(
         max_length=50,
         choices=(('', '-------'), ('COORDINADOR', 'Coordinador general'), ('COMITE_ORGANIZADOR', 'Comité organizador'),
@@ -83,12 +83,8 @@ class OrganizacionEventoAcademico(models.Model):
     tipo_participacion_otro = models.CharField(max_length=254, blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
-    coordinador_general = models.ForeignKey(User, blank=True, null=True, related_name='organizacion_evento_academico_coordinador_general', on_delete=models.DO_NOTHING, verbose_name='Coordinador general')
-    comite_organizador = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_comite_organizador', verbose_name='Comite organizador')
-    apoyo_tecnico = SortedManyToManyField(User, blank=True, related_name='organizacion_evento_academico_apoyo_tecnico', verbose_name='Apoyo técnico')
-
     def __str__(self):
-        return "{}, {}".format(self.evento, self.tipo_participacion)
+        return "{} ({})".format(self.evento, self.get_tipo_participacion_display())
 
     def get_absolute_url(self):
         return reverse('organizacion_evento_academico_detalle', kwargs={'pk': self.pk})
@@ -115,7 +111,7 @@ class ParticipacionEventoAcademico(models.Model):
     autores_todos = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return "{} : {}".format(self.titulo, self.evento)
+        return "{} : {}".format(self.titulo, self.evento_text)
 
     def get_absolute_url(self):
         return reverse('participacion_evento_academico_detalle', kwargs={'pk': self.pk})

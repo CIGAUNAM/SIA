@@ -841,66 +841,6 @@
 },
 {
   "model": "difusion_cientifica.memoriainextenso",
-  "pk": 39,
-  "fields": {
-    "nombre": "El sector automotriz en el proceso de industrializaci\u00f3n en M\u00e9xico. Aspectos hist\u00f3rico-econ\u00f3micos de su conformaci\u00f3n territorial",
-    "evento_text": "VII Congreso de la Asociaci\u00f3n de Historia Econ\u00f3mica Espa\u00f1ola",
-    "lugar": "",
-    "fecha": "2001-09-19",
-    "pais": 1,
-    "ciudad": "Zaragoza",
-    "autores_todos": null,
-    "institucion": 467,
-    "pagina_inicio": 0,
-    "pagina_fin": 0,
-    "isbn": "",
-    "autores": [
-      33
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
-  "pk": 40,
-  "fields": {
-    "nombre": "El sector automotriz en el proceso de industrializaci\u00f3n en M\u00e9xico. Aspectos hist\u00f3rico-econ\u00f3micos de su conformaci\u00f3n territorial",
-    "evento_text": "VII Congreso de la Asociaci\u00f3n de Historia Econ\u00f3mica Espa\u00f1ola",
-    "lugar": "",
-    "fecha": "2001-09-19",
-    "pais": 1,
-    "ciudad": "Zaragoza",
-    "autores_todos": null,
-    "institucion": 467,
-    "pagina_inicio": 0,
-    "pagina_fin": 0,
-    "isbn": "",
-    "autores": [
-      33
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
-  "pk": 41,
-  "fields": {
-    "nombre": "El sector automotriz en el proceso de industrializaci\u00f3n en M\u00e9xico. Aspectos hist\u00f3rico-econ\u00f3micos de su conformaci\u00f3n territorial",
-    "evento_text": "VII Congreso de la Asociaci\u00f3n de Historia Econ\u00f3mica Espa\u00f1ola",
-    "lugar": "",
-    "fecha": "2001-09-19",
-    "pais": 1,
-    "ciudad": "Zaragoza",
-    "autores_todos": null,
-    "institucion": 467,
-    "pagina_inicio": 0,
-    "pagina_fin": 0,
-    "isbn": "",
-    "autores": [
-      33
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
   "pk": 42,
   "fields": {
     "nombre": "Innovaci\u00f3n y nuevas estrategias espaciales competitivas en el sector automotriz. El caso de la Nissan Mexicana",
@@ -1849,27 +1789,6 @@
 },
 {
   "model": "difusion_cientifica.memoriainextenso",
-  "pk": 87,
-  "fields": {
-    "nombre": "Estimation of dissolved organic carbon concentration in peat water using airbone hymap imagery.",
-    "evento_text": "Reunion Nacional SELPER 2013",
-    "lugar": "San Luis Potos\u00ed",
-    "fecha": "2013-10-21",
-    "pais": 1,
-    "ciudad": "San Luis Potos\u00ed",
-    "autores_todos": "",
-    "institucion": 140,
-    "pagina_inicio": 0,
-    "pagina_fin": 0,
-    "isbn": "",
-    "autores": [
-      1330,
-      18
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
   "pk": 88,
   "fields": {
     "nombre": "Tropical dry forest degradation estimation at local scale with uav images.",
@@ -1920,16 +1839,21 @@
   "fields": {
     "nombre": "Evoluci\u00f3n hist\u00f3rica y geogr\u00e1fica de los conflictos forestales en Michoac\u00e1n, M\u00e9xico, 1876-2014",
     "evento_text": "XV Encuentro de Ge\u00f3grafos de Am\u00e9rica Latina.",
-    "lugar": "",
+    "lugar": "La Habana",
     "fecha": "2015-04-06",
     "pais": 1,
     "ciudad": "La Habana",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 4,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      27,
+      259,
+      43,
+      196
+    ]
   }
 },
 {
@@ -1937,17 +1861,22 @@
   "pk": 92,
   "fields": {
     "nombre": "National level biomass database comparison for Mexico in relation to vegetation degradation stages",
-    "evento_text": "Desconocido",
-    "lugar": "",
+    "evento_text": "Land Surface Remote Sensing II",
+    "lugar": "SPIE 2014",
     "fecha": "1900-01-01",
-    "pais": 1,
-    "ciudad": "Desconocido",
-    "autores_todos": null,
+    "pais": 46,
+    "ciudad": "Beijing",
+    "autores_todos": "",
     "institucion": 523,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      860,
+      43,
+      25,
+      18
+    ]
   }
 },
 {
@@ -1956,16 +1885,22 @@
   "fields": {
     "nombre": "An\u00e1lisis de los patrones de deforestaci\u00f3n en M\u00e9xico.",
     "evento_text": "XVI Simposio Internacional SELPER 2014",
-    "lugar": "",
+    "lugar": "Medell\u00edn",
     "fecha": "2014-09-29",
     "pais": 1,
     "ciudad": "Medell\u00edn",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 140,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      860,
+      19,
+      43,
+      25,
+      18
+    ]
   }
 },
 {
@@ -1974,16 +1909,21 @@
   "fields": {
     "nombre": "Validation of MODIS vegetation continuous fields in two areas in",
     "evento_text": "Third International Workshop on Earth Observation and Remote Sensing Applications",
-    "lugar": "",
+    "lugar": "Changsh\u00e1",
     "fecha": "2017-06-11",
     "pais": 1,
     "ciudad": "Changsh\u00e1",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 384,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      43,
+      25,
+      20,
+      18
+    ]
   }
 },
 {
@@ -1992,16 +1932,18 @@
   "fields": {
     "nombre": "Potencial de REDD+ en los bosques secos tropicales (SBC) de M\u00e9xico",
     "evento_text": "6th International Symposium on carbon in Mexico, Programa Mexicana de Carbono.",
-    "lugar": "",
+    "lugar": "Villahermosa",
     "fecha": "2015-05-20",
     "pais": 1,
     "ciudad": "Villahermosa",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 523,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      20
+    ]
   }
 },
 {
@@ -2010,16 +1952,21 @@
   "fields": {
     "nombre": "Efecto de la pendient y la elevanci\u00f3n en la biomasa forestal, su aplicaion para realizar estimaciones en el paisaje",
     "evento_text": "6th International Symposium on carbon in Mexico, Programa Mexicana de Carbono.",
-    "lugar": "",
+    "lugar": "Villahermosa",
     "fecha": "2015-05-20",
     "pais": 1,
     "ciudad": "Villahermosa",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 523,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      1108,
+      320,
+      20,
+      2074
+    ]
   }
 },
 {
@@ -2028,16 +1975,20 @@
   "fields": {
     "nombre": "La ros tumba quema en el context de REDD+.",
     "evento_text": "6th International Symposium on carbon in Mexico, Programa Mexicana de Carbono.",
-    "lugar": "",
+    "lugar": "Villahermosa",
     "fecha": "2015-05-20",
     "pais": 1,
     "ciudad": "Villahermosa",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 523,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      1108,
+      20,
+      2074
+    ]
   }
 },
 {
@@ -2046,34 +1997,43 @@
   "fields": {
     "nombre": "El valor de la emisiones de carbono asociadas a la roza tumba y quema.",
     "evento_text": "6th International Symposium on carbon in Mexico, Programa Mexicana de Carbono.",
-    "lugar": "",
+    "lugar": "Villahermosa",
     "fecha": "2015-05-20",
     "pais": 1,
     "ciudad": "Villahermosa",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 523,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      54,
+      20,
+      2074
+    ]
   }
 },
 {
   "model": "difusion_cientifica.memoriainextenso",
   "pk": 99,
   "fields": {
-    "nombre": "2015 Identification and quantification of drivers of forest degradation in tropical dry forests: a case study in Western Mexico.",
+    "nombre": "Identification and quantification of drivers of forest degradation in tropical dry forests: a case study in Western Mexico.",
     "evento_text": "6th International Symposium on carbon in Mexico, Programa Mexicana de Carbono.",
-    "lugar": "",
+    "lugar": "Villahermosa",
     "fecha": "2015-05-20",
     "pais": 1,
     "ciudad": "Villahermosa",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 523,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "",
-    "autores": []
+    "autores": [
+      54,
+      1138,
+      320,
+      20
+    ]
   }
 },
 {
@@ -2082,52 +2042,21 @@
   "fields": {
     "nombre": "Validation of MODIS vegetation continuous fields in two \u00e1reas in Mexico",
     "evento_text": "Third International Workshop on Earth Observation and Remote Sensing Applications",
-    "lugar": "",
+    "lugar": "Changsh\u00e1",
     "fecha": "2017-06-11",
     "pais": 1,
     "ciudad": "Changsh\u00e1",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 384,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "978-1-4799-4184-",
-    "autores": []
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
-  "pk": 101,
-  "fields": {
-    "nombre": "Evaluation of anual modis PTC data for deforestation and forest degradation analysis",
-    "evento_text": "International Society for Photogrammetry and Remote Sensing.",
-    "lugar": "",
-    "fecha": "2016-07-12",
-    "pais": 1,
-    "ciudad": "Morelia",
-    "autores_todos": null,
-    "institucion": 523,
-    "pagina_inicio": 0,
-    "pagina_fin": 0,
-    "isbn": "",
-    "autores": []
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
-  "pk": 102,
-  "fields": {
-    "nombre": "Evaluation of annual MODIS PTC data for deforestation and forest degradation analysis",
-    "evento_text": "International Society for Photogrammetry and Remote Sensing.",
-    "lugar": "",
-    "fecha": "2016-07-12",
-    "pais": 1,
-    "ciudad": "Morelia",
-    "autores_todos": null,
-    "institucion": 523,
-    "pagina_inicio": 0,
-    "pagina_fin": 0,
-    "isbn": "16821750",
-    "autores": []
+    "autores": [
+      43,
+      25,
+      20,
+      18
+    ]
   }
 },
 {
@@ -2136,34 +2065,18 @@
   "fields": {
     "nombre": "Ciudades Competitivas y marcas territoriales",
     "evento_text": "22\u00ba Encuentro Nacional sobre Desarrollo Regional en M\u00e9xico",
-    "lugar": "",
+    "lugar": "Villahermosa",
     "fecha": "2017-12-08",
     "pais": 1,
     "ciudad": "Villahermosa",
-    "autores_todos": null,
+    "autores_todos": "",
     "institucion": 391,
     "pagina_inicio": 0,
     "pagina_fin": 0,
     "isbn": "978-607-02-9999-5",
-    "autores": []
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
-  "pk": 106,
-  "fields": {
-    "nombre": "Ciudades Competitivas y marcas territoriales",
-    "evento_text": "22\u00ba Encuentro Nacional sobre Desarrollo Regional en M\u00e9xico",
-    "lugar": "",
-    "fecha": "2017-12-08",
-    "pais": 1,
-    "ciudad": "Villahermosa",
-    "autores_todos": null,
-    "institucion": 391,
-    "pagina_inicio": 0,
-    "pagina_fin": 0,
-    "isbn": "978-607-30-0002-4",
-    "autores": []
+    "autores": [
+      44
+    ]
   }
 },
 {
@@ -2229,28 +2142,6 @@
       1579,
       40,
       1561
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
-  "pk": 110,
-  "fields": {
-    "nombre": "MAPEO DE \u00c1REAS INUNDADAS POR LA TORMENTA SUBTROPICAL ALBERTO EN LA CUENCA ZAZA, UTILIZANDO IM\u00c1GENES DE SENTINEL-1",
-    "evento_text": "XVIII SIMPOSIO INTERNACIONAL SELPER",
-    "lugar": "",
-    "fecha": "2018-11-05",
-    "pais": 1,
-    "ciudad": "La Habana",
-    "autores_todos": "Mart\u00edn-Morales, G., L\u00f3pez-S\u00e1nchez, J. G., K.-Mccall, M.",
-    "institucion": 140,
-    "pagina_inicio": 1,
-    "pagina_fin": 9,
-    "isbn": "978-959-247-174-0",
-    "autores": [
-      1569,
-      1335,
-      1579
     ]
   }
 },
@@ -2471,31 +2362,6 @@
 },
 {
   "model": "difusion_cientifica.memoriainextenso",
-  "pk": 126,
-  "fields": {
-    "nombre": "ANALYSIS OF DEFORESTATION HOT-SPOTS IN MEXICO OVER 2000-2010 USING TIME-SERIES MODIS VEGETATION CONTINUOUS FIELDS (VCF) DATA",
-    "evento_text": "Reunion Nacional SELPER 2013",
-    "lugar": "",
-    "fecha": "2013-10-21",
-    "pais": 1,
-    "ciudad": "San Luis Potos\u00ed",
-    "autores_todos": "Gao, Y., Mas, J., Paneque-G\u00e1lvez, J., Skutsch, M., Navarrete-Pacheco, J. A., Ghilardi, A.",
-    "institucion": 140,
-    "pagina_inicio": 1,
-    "pagina_fin": 1,
-    "isbn": "",
-    "autores": [
-      18,
-      432,
-      43,
-      20,
-      13,
-      26
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
   "pk": 127,
   "fields": {
     "nombre": "Innovaci\u00f3n social para una alimentaci\u00f3n sustentable y justa",
@@ -2707,31 +2573,6 @@
 },
 {
   "model": "difusion_cientifica.memoriainextenso",
-  "pk": 136,
-  "fields": {
-    "nombre": "An\u00e1lisis de los patrones de deforestaci\u00f3n en M\u00e9xico",
-    "evento_text": "XVI Simposio Internacional SELPER 2014",
-    "lugar": "",
-    "fecha": "2014-09-29",
-    "pais": 1,
-    "ciudad": "Medell\u00edn",
-    "autores_todos": "Mas, J., Cuevas-Garc\u00eda, G., Rodr\u00edguez, A., Paneque-G\u00e1lvez, J., Gao, Y., Loya-Carrillo, J. O.",
-    "institucion": 140,
-    "pagina_inicio": 1,
-    "pagina_fin": 1,
-    "isbn": "",
-    "autores": [
-      432,
-      442,
-      860,
-      43,
-      18,
-      1336
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
   "pk": 137,
   "fields": {
     "nombre": "VALIDATION OF MODIS VEGETATION CONTINUOUS FIELDS IN TWO AREAS IN MEXICO",
@@ -2753,27 +2594,6 @@
       26,
       13,
       455
-    ]
-  }
-},
-{
-  "model": "difusion_cientifica.memoriainextenso",
-  "pk": 138,
-  "fields": {
-    "nombre": "Innovaci\u00f3n social para una alimentaci\u00f3n sustentable y justa",
-    "evento_text": "13\u00b0 Congreso Estatal de Ciencia, Tecnolog\u00eda e Innovaci\u00f3n",
-    "lugar": "",
-    "fecha": "2018-10-18",
-    "pais": 1,
-    "ciudad": "Morelia",
-    "autores_todos": "Orozco-Mel\u00e9ndez, J. F., Paneque-G\u00e1lvez, J.",
-    "institucion": 521,
-    "pagina_inicio": 1,
-    "pagina_fin": 8,
-    "isbn": "",
-    "autores": [
-      1314,
-      43
     ]
   }
 },
@@ -5387,1739 +5207,1093 @@
   }
 },
 {
-  "model": "difusion_cientifica.eventodifusion",
-  "pk": 1060,
-  "fields": {
-    "eventodifusion_nombre": "evento 22",
-    "eventodifusion_tipo": 2,
-    "eventodifusion_fecha_inicio": "2019-05-28",
-    "eventodifusion_fecha_fin": "2019-05-30",
-    "eventodifusion_pais": 1,
-    "eventodifusion_ciudad": "CDMX",
-    "eventodifusion_ambito": "NACIONAL",
-    "eventodifusion_numeroponentes": 0,
-    "eventodifusion_numeroasistentes": 0,
-    "eventodifusion_regverificado": false,
-    "eventodifusion_regfechacreado": "2019-05-19",
-    "eventodifusion_regfechaactualizado": "2019-05-20",
-    "eventodifusion_regusuario": 1
-  }
-},
-{
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 1,
   "fields": {
-    "evento2": 68,
     "evento": 68,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 14,
-    "coordinador_general": null,
-    "comite_organizador": [
-      14
-    ],
-    "apoyo_tecnico": []
+    "usuario": 14
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 3,
   "fields": {
-    "evento2": 70,
     "evento": 70,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 14,
-    "coordinador_general": null,
-    "comite_organizador": [
-      14
-    ],
-    "apoyo_tecnico": []
+    "usuario": 14
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 4,
   "fields": {
-    "evento2": 76,
     "evento": 76,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 5,
   "fields": {
-    "evento2": 77,
     "evento": 77,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 6,
   "fields": {
-    "evento2": 78,
     "evento": 78,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 7,
   "fields": {
-    "evento2": 82,
     "evento": 82,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 8,
   "fields": {
-    "evento2": 79,
     "evento": 79,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": 17,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 9,
   "fields": {
-    "evento2": 80,
     "evento": 80,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 10,
   "fields": {
-    "evento2": 81,
     "evento": 81,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 11,
   "fields": {
-    "evento2": 83,
     "evento": 83,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 12,
   "fields": {
-    "evento2": 84,
     "evento": 84,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 13,
   "fields": {
-    "evento2": 85,
     "evento": 85,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": 17,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 14,
   "fields": {
-    "evento2": 86,
     "evento": 86,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 15,
   "fields": {
-    "evento2": 87,
     "evento": 87,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 16,
   "fields": {
-    "evento2": 88,
     "evento": 88,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 19,
   "fields": {
-    "evento2": 91,
     "evento": 91,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 17,
-    "coordinador_general": null,
-    "comite_organizador": [
-      17
-    ],
-    "apoyo_tecnico": []
+    "usuario": 17
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 20,
   "fields": {
-    "evento2": 523,
     "evento": 523,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 21,
   "fields": {
-    "evento2": 524,
     "evento": 524,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 22,
   "fields": {
-    "evento2": 525,
     "evento": 525,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 23,
   "fields": {
-    "evento2": 526,
     "evento": 526,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 24,
   "fields": {
-    "evento2": 527,
     "evento": 527,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 25,
   "fields": {
-    "evento2": 5,
     "evento": 5,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 26,
   "fields": {
-    "evento2": 528,
     "evento": 528,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 28,
   "fields": {
-    "evento2": 529,
     "evento": 529,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 29,
   "fields": {
-    "evento2": 530,
     "evento": 530,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 31,
   "fields": {
-    "evento2": 26,
     "evento": 26,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 33,
   "fields": {
-    "evento2": 531,
     "evento": 531,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 34,
   "fields": {
-    "evento2": 532,
     "evento": 532,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": 32,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 35,
   "fields": {
-    "evento2": 533,
     "evento": 533,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": 32,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 36,
   "fields": {
-    "evento2": 535,
     "evento": 535,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 37,
   "fields": {
-    "evento2": 536,
     "evento": 536,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 38,
   "fields": {
-    "evento2": 537,
     "evento": 537,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 39,
   "fields": {
-    "evento2": 538,
     "evento": 538,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 40,
   "fields": {
-    "evento2": 539,
     "evento": 539,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 32,
-    "coordinador_general": null,
-    "comite_organizador": [
-      32
-    ],
-    "apoyo_tecnico": []
+    "usuario": 32
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 41,
   "fields": {
-    "evento2": 655,
     "evento": 655,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 20,
-    "coordinador_general": null,
-    "comite_organizador": [
-      20
-    ],
-    "apoyo_tecnico": []
+    "usuario": 20
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 44,
   "fields": {
-    "evento2": 658,
     "evento": 658,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 20,
-    "coordinador_general": null,
-    "comite_organizador": [
-      20
-    ],
-    "apoyo_tecnico": []
+    "usuario": 20
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 45,
   "fields": {
-    "evento2": 659,
     "evento": 659,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 20,
-    "coordinador_general": null,
-    "comite_organizador": [
-      20
-    ],
-    "apoyo_tecnico": []
+    "usuario": 20
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 46,
   "fields": {
-    "evento2": 660,
     "evento": 660,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 20,
-    "coordinador_general": null,
-    "comite_organizador": [
-      20
-    ],
-    "apoyo_tecnico": []
+    "usuario": 20
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 54,
   "fields": {
-    "evento2": 649,
     "evento": 649,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 44,
-    "coordinador_general": 44,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 44
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 56,
   "fields": {
-    "evento2": 651,
     "evento": 651,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 44,
-    "coordinador_general": 44,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 44
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 57,
   "fields": {
-    "evento2": 652,
     "evento": 652,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 44,
-    "coordinador_general": 44,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 44
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 61,
   "fields": {
-    "evento2": 728,
     "evento": 728,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 62,
   "fields": {
-    "evento2": 593,
     "evento": 593,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 63,
   "fields": {
-    "evento2": 814,
     "evento": 814,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 64,
   "fields": {
-    "evento2": 814,
     "evento": 814,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": null,
-    "comite_organizador": [
-      11
-    ],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 65,
   "fields": {
-    "evento2": 729,
     "evento": 729,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 68,
   "fields": {
-    "evento2": 732,
     "evento": 732,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 71,
   "fields": {
-    "evento2": 734,
     "evento": 734,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": null,
-    "comite_organizador": [
-      11
-    ],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 76,
   "fields": {
-    "evento2": 742,
     "evento": 742,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": null,
-    "comite_organizador": [
-      11
-    ],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 79,
   "fields": {
-    "evento2": 747,
     "evento": 747,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": null,
-    "comite_organizador": [
-      11
-    ],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 80,
   "fields": {
-    "evento2": 748,
     "evento": 748,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 81,
   "fields": {
-    "evento2": 749,
     "evento": 749,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": 11,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 82,
   "fields": {
-    "evento2": 750,
     "evento": 750,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": null,
-    "comite_organizador": [
-      11
-    ],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 83,
   "fields": {
-    "evento2": 751,
     "evento": 751,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": null,
-    "comite_organizador": [
-      11
-    ],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 84,
   "fields": {
-    "evento2": 592,
     "evento": 592,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 11,
-    "coordinador_general": null,
-    "comite_organizador": [
-      11
-    ],
-    "apoyo_tecnico": []
+    "usuario": 11
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 85,
   "fields": {
-    "evento2": 795,
     "evento": 795,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 53,
-    "coordinador_general": null,
-    "comite_organizador": [
-      53
-    ],
-    "apoyo_tecnico": []
+    "usuario": 53
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 86,
   "fields": {
-    "evento2": 796,
     "evento": 796,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 53,
-    "coordinador_general": null,
-    "comite_organizador": [
-      53
-    ],
-    "apoyo_tecnico": []
+    "usuario": 53
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 87,
   "fields": {
-    "evento2": 797,
     "evento": 797,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 53,
-    "coordinador_general": null,
-    "comite_organizador": [
-      53
-    ],
-    "apoyo_tecnico": []
+    "usuario": 53
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 88,
   "fields": {
-    "evento2": 817,
     "evento": 817,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 89,
   "fields": {
-    "evento2": 797,
     "evento": 797,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 90,
   "fields": {
-    "evento2": 795,
     "evento": 795,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 91,
   "fields": {
-    "evento2": 55,
     "evento": 55,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 38,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      38
-    ]
+    "usuario": 38
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 92,
   "fields": {
-    "evento2": 780,
     "evento": 780,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 38,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      38
-    ]
+    "usuario": 38
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 93,
   "fields": {
-    "evento2": 125,
     "evento": 125,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 38,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      38
-    ]
+    "usuario": 38
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 94,
   "fields": {
-    "evento2": 828,
     "evento": 828,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 95,
   "fields": {
-    "evento2": 749,
     "evento": 749,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 96,
   "fields": {
-    "evento2": 829,
     "evento": 829,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 97,
   "fields": {
-    "evento2": 319,
     "evento": 319,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 98,
   "fields": {
-    "evento2": 826,
     "evento": 826,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 15,
-    "coordinador_general": null,
-    "comite_organizador": [
-      15
-    ],
-    "apoyo_tecnico": []
+    "usuario": 15
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 99,
   "fields": {
-    "evento2": 502,
     "evento": 502,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 100,
   "fields": {
-    "evento2": 749,
     "evento": 749,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 101,
   "fields": {
-    "evento2": 931,
     "evento": 931,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 102,
   "fields": {
-    "evento2": 932,
     "evento": 932,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 103,
   "fields": {
-    "evento2": 388,
     "evento": 388,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 104,
   "fields": {
-    "evento2": 933,
     "evento": 933,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 105,
   "fields": {
-    "evento2": 388,
     "evento": 388,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 106,
   "fields": {
-    "evento2": 388,
     "evento": 388,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 107,
   "fields": {
-    "evento2": 388,
     "evento": 388,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 108,
   "fields": {
-    "evento2": 934,
     "evento": 934,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 109,
   "fields": {
-    "evento2": 72,
     "evento": 72,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 110,
   "fields": {
-    "evento2": 935,
     "evento": 935,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 111,
   "fields": {
-    "evento2": 388,
     "evento": 388,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 112,
   "fields": {
-    "evento2": 936,
     "evento": 936,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 113,
   "fields": {
-    "evento2": 84,
     "evento": 84,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 114,
   "fields": {
-    "evento2": 161,
     "evento": 161,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 115,
   "fields": {
-    "evento2": 937,
     "evento": 937,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": 34,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 117,
   "fields": {
-    "evento2": 76,
     "evento": 76,
     "tipo_participacion": "APOYO_TECNICO",
     "tipo_participacion_otro": null,
-    "usuario": 34,
-    "coordinador_general": null,
-    "comite_organizador": [],
-    "apoyo_tecnico": [
-      34
-    ]
+    "usuario": 34
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 128,
   "fields": {
-    "evento2": 975,
     "evento": 975,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 33,
-    "coordinador_general": 1999,
-    "comite_organizador": [
-      33
-    ],
-    "apoyo_tecnico": []
+    "usuario": 33
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 129,
   "fields": {
-    "evento2": 983,
     "evento": 983,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 33,
-    "coordinador_general": 11,
-    "comite_organizador": [
-      33
-    ],
-    "apoyo_tecnico": [
-      34,
-      38
-    ]
+    "usuario": 33
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 130,
   "fields": {
-    "evento2": 1004,
     "evento": 1004,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 21,
-    "coordinador_general": 17,
-    "comite_organizador": [
-      21
-    ],
-    "apoyo_tecnico": [
-      38
-    ]
+    "usuario": 21
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 132,
   "fields": {
-    "evento2": 1010,
     "evento": 1010,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 133,
   "fields": {
-    "evento2": 1016,
     "evento": 1016,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [
-      50
-    ],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 134,
   "fields": {
-    "evento2": 1017,
     "evento": 1017,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 135,
   "fields": {
-    "evento2": 1018,
     "evento": 1018,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [
-      50
-    ],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 136,
   "fields": {
-    "evento2": 1019,
     "evento": 1019,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [
-      50
-    ],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 137,
   "fields": {
-    "evento2": 1020,
     "evento": 1020,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [
-      50
-    ],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 138,
   "fields": {
-    "evento2": 1021,
     "evento": 1021,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 139,
   "fields": {
-    "evento2": 1022,
     "evento": 1022,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 140,
   "fields": {
-    "evento2": 632,
     "evento": 632,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 5,
-    "coordinador_general": 5,
-    "comite_organizador": [
-      160,
-      5
-    ],
-    "apoyo_tecnico": []
+    "usuario": 5
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 141,
   "fields": {
-    "evento2": 1026,
     "evento": 1026,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 50,
-    "coordinador_general": 50,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 50
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 142,
   "fields": {
-    "evento2": 979,
     "evento": 979,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 31,
-    "coordinador_general": 31,
-    "comite_organizador": [
-      31,
-      1978,
-      1977,
-      290,
-      1980
-    ],
-    "apoyo_tecnico": [
-      290
-    ]
+    "usuario": 31
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 143,
   "fields": {
-    "evento2": 740,
     "evento": 740,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 1505,
-    "coordinador_general": 1505,
-    "comite_organizador": [
-      1505,
-      60,
-      46,
-      1368,
-      31
-    ],
-    "apoyo_tecnico": [
-      38
-    ]
+    "usuario": 1505
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 144,
   "fields": {
-    "evento2": 1046,
     "evento": 1046,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 43,
-    "coordinador_general": 43,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 43
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 145,
   "fields": {
-    "evento2": 1047,
     "evento": 1047,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 43,
-    "coordinador_general": 43,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 43
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 146,
   "fields": {
-    "evento2": 1048,
     "evento": 1048,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 43,
-    "coordinador_general": 43,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 43
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 147,
   "fields": {
-    "evento2": 1050,
     "evento": 1050,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 43,
-    "coordinador_general": 43,
-    "comite_organizador": [],
-    "apoyo_tecnico": []
+    "usuario": 43
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 148,
   "fields": {
-    "evento2": 1051,
     "evento": 1051,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 35,
-    "coordinador_general": 2180,
-    "comite_organizador": [
-      35,
-      2193,
-      2194
-    ],
-    "apoyo_tecnico": []
+    "usuario": 35
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 149,
   "fields": {
-    "evento2": 1056,
     "evento": 1056,
     "tipo_participacion": "COORDINADOR",
     "tipo_participacion_otro": null,
-    "usuario": 36,
-    "coordinador_general": 36,
-    "comite_organizador": [
-      36
-    ],
-    "apoyo_tecnico": []
+    "usuario": 36
   }
 },
 {
   "model": "difusion_cientifica.organizacioneventoacademico",
   "pk": 150,
   "fields": {
-    "evento2": 995,
     "evento": 995,
     "tipo_participacion": "COMITE_ORGANIZADOR",
     "tipo_participacion_otro": null,
-    "usuario": 36,
-    "coordinador_general": 36,
-    "comite_organizador": [
-      36,
-      42
-    ],
-    "apoyo_tecnico": []
+    "usuario": 36
   }
 },
 {
