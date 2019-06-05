@@ -3,7 +3,7 @@ from . models import *
 
 from django import forms
 from nucleo.models import Pais
-from django_select2.forms import Select2MultipleWidget, ModelSelect2Widget, Select2Widget
+from django_select2.forms import ModelSelect2Widget, Select2Widget
 
 #
 
@@ -106,7 +106,6 @@ class EventoDifusionForm(forms.ModelForm):
         }
 
 
-
 class OrganizacionEventoAcademicoForm(forms.ModelForm):
     evento = forms.ModelChoiceField(
         queryset=EventoDifusion.objects.all(),
@@ -127,7 +126,6 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
     class Meta:
         model = OrganizacionEventoAcademico
         exclude = ['usuario', ]
-
 
 
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
