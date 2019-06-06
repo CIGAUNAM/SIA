@@ -1014,12 +1014,12 @@ class Dashboard(View):
                 items_data.append([str(year)])
 
                 total_items_year_sum = ParticipacionEventoAcademico.objects.filter(
-                    evento__fecha_inicio__year=year).filter(
+                    fecha__year=year).filter(
                     ((Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad__year__gt=year)) |
                      (Q(autores__ingreso_entidad__year__lte=year) & Q(autores__egreso_entidad=None)))).count()
 
                 request_user_items_year_sum = ParticipacionEventoAcademico.objects.filter(
-                    evento__fecha_inicio__year=year,
+                    fecha__year=year,
                     autores=request.user).count()
                 if not request_user_items_year_sum:
                     request_user_items_year_sum = 0
@@ -1027,7 +1027,7 @@ class Dashboard(View):
                     request_user_items_year_sum)
 
                 users_with_items_year_count = User.objects.filter(
-                    Q(participacion_evento_academico_autores__evento__fecha_inicio__year=year) &
+                    Q(participacioneventoacademico__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('pk', distinct=True)).count()  # numero de usuarios activos en el año y con cursos en el año
@@ -1040,7 +1040,7 @@ class Dashboard(View):
                     items_data[i + 1].append(0)
 
                 max_items_year_user = User.objects.filter(
-                    Q(participacion_evento_academico_autores__evento__fecha_inicio__year=year) &
+                    Q(participacioneventoacademico__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('participacion_evento_academico_autores')).aggregate(
@@ -1052,7 +1052,7 @@ class Dashboard(View):
                     max_items_year_user)
 
                 min_items_year_user = User.objects.filter(
-                    Q(participacion_evento_academico_autores__evento__fecha_inicio__year=year) &
+                    Q(participacioneventoacademico__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
                     Count('participacion_evento_academico_autores')).aggregate(
