@@ -1043,9 +1043,9 @@ class Dashboard(View):
                     Q(participacioneventoacademico__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_academico_autores')).aggregate(
-                    Max('participacion_evento_academico_autores__count'))[
-                    'participacion_evento_academico_autores__count__max']
+                    Count('participacioneventoacademico__autores')).aggregate(
+                    Max('participacioneventoacademico__autores__count'))[
+                    'participacioneventoacademico__autores__count__max']
                 if max_items_year_user == None:
                     max_items_year_user = 0
                 items_data[i + 1].append(
@@ -1055,9 +1055,9 @@ class Dashboard(View):
                     Q(participacioneventoacademico__fecha__year=year) &
                     ((Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad__year__gt=year)) |
                      (Q(ingreso_entidad__year__lte=year) & Q(egreso_entidad=None)))).annotate(
-                    Count('participacion_evento_academico_autores')).aggregate(
-                    Min('participacion_evento_academico_autores__count'))[
-                    'participacion_evento_academico_autores__count__min']
+                    Count('participacioneventoacademico__autores')).aggregate(
+                    Min('participacioneventoacademico__autores__count'))[
+                    'participacioneventoacademico__autores__count__min']
                 if min_items_year_user == None:
                     min_items_year_user = 0
                 items_data[i + 1].append(
