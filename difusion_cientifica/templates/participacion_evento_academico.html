@@ -43,7 +43,7 @@
     </p>
     <p><strong>Lugar del evento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Lugar del evento.">
+           title="Lugar donde se realizó el evento.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -55,16 +55,29 @@
         </div>
     </div>
     </p>
-    <p><strong>Fecha de participación:</strong>
+    <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de participación."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Pais donde se llevó a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad donde se llevó a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.fecha }}
+            {{ form.ciudad }}
         </div>
     </div>
     </p>
@@ -98,6 +111,29 @@
         </div>
     </div>
     </p>
+    <p><strong>Fecha de participación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de participación."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Ámbito:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ambito }}
+        </div>
+    </div>
+    </p>
     <p><strong>Autores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores participantes en el evento, al escribir el inicio del nombre o apellido se filtran
@@ -126,16 +162,6 @@
                                                            title="Autores como aparecen en la publicación.">
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.autores_todos }}
-    </p>
-    <p><strong>Ámbito:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ambito }}
-        </div>
-    </div>
     </p>
     <p><strong>Participación por invitación: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
@@ -202,7 +228,7 @@
     </p>
     <p><strong>Lugar del evento:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Lugar del evento.">
+           title="Lugar donde se realizó el evento.">
             <i class="fa fa-question-circle"></i>
         </a> <i class="fa fa-edit"></i>
     <div class="form-group" style="margin-top: -10px;">
@@ -214,16 +240,29 @@
         </div>
     </div>
     </p>
-    <p><strong>Fecha de participación:</strong>
+    <p><strong>País:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Fecha de participación."><i
-                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+           title="Pais donde se llevó a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.pais }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Ciudad:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ciudad donde se llevó a cabo el evento.">
+            <i class="fa fa-question-circle"></i>
+        </a>
     <div class="form-group" style="margin-top: -10px;">
         <div class="input-group date">
             <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
+                <i class="fa fa-pencil-square-o"></i>
             </div>
-            {{ form.fecha }}
+            {{ form.ciudad }}
         </div>
     </div>
     </p>
@@ -257,6 +296,29 @@
         </div>
     </div>
     </p>
+    <p><strong>Fecha de participación:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Fecha de participación."><i
+                class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            {{ form.fecha }}
+        </div>
+    </div>
+    </p>
+    <p><strong>Ámbito:</strong>
+        <a href="#" data-toggle="tooltip" data-placement="right"
+           title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
+    <div class="form-group" style="margin-top: -10px;">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
+            {{ form.ambito }}
+        </div>
+    </div>
+    </p>
     <p><strong>Autores:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Autores participantes en el evento, al escribir el inicio del nombre o apellido se filtran
@@ -285,16 +347,6 @@
                                                            title="Autores como aparecen en la publicación.">
         <i class="fa fa-question-circle"></i></a></strong>
         {{ form.autores_todos }}
-    </p>
-    <p><strong>Ámbito:</strong>
-        <a href="#" data-toggle="tooltip" data-placement="right"
-           title="Ámbito del evento."><i class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
-    <div class="form-group" style="margin-top: -10px;">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-list-alt"></i></div>
-            {{ form.ambito }}
-        </div>
-    </div>
     </p>
     <p><strong>Participación por invitación: </strong>
         <a href="#" data-toggle="tooltip" data-placement="right"

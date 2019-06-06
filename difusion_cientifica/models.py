@@ -97,7 +97,7 @@ class OrganizacionEventoAcademico(models.Model):
 class ParticipacionEventoAcademico(models.Model):
     tipo = models.CharField(max_length=30, choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')))
     titulo = models.CharField(max_length=255)
-    evento_text = models.CharField(max_length=254, verbose_name='Nombre del evento')
+    evento = models.CharField(max_length=254, verbose_name='Nombre del evento')
     lugar_evento = models.CharField(max_length=254, verbose_name='Lugar del evento')
     ciudad = models.CharField(max_length=255)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
@@ -110,12 +110,12 @@ class ParticipacionEventoAcademico(models.Model):
     autores_todos = models.TextField()
 
     def __str__(self):
-        return "{} : {}".format(self.evento_text, self.titulo)
+        return "{} : {}".format(self.evento, self.titulo)
 
     def get_absolute_url(self):
         return reverse('participacion_evento_academico_detalle', kwargs={'pk': self.pk})
 
     class Meta:
-        ordering = ['evento_text', 'titulo']
+        ordering = ['evento', 'titulo']
         verbose_name = 'Participación en evento académico'
         verbose_name_plural = 'Participación en eventos académicos'
