@@ -131,24 +131,17 @@ class OrganizacionEventoAcademicoForm(forms.ModelForm):
 class ParticipacionEventoAcademicoForm(forms.ModelForm):
     tipo = forms.ChoiceField(widget=Select2Widget(
         attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-        choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')), required=True)
+        choices=(('', '------'), ('PONENCIA', 'Ponencia'), ('POSTER', 'Poster')))
 
-    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    evento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                                  label='Nombre del evento')
-    lugar_evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True,
-                                   label='Lugar del evento')
-    autores_todos = forms.CharField(widget=Textarea(
-        attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Autores como aparecen publicados.'}),
-                                    required=False)
-    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ), required=True)
+    titulo = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}))
+    evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), label='Nombre del evento')
+    lugar_evento = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), label='Lugar del evento')
+    autores_todos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Autores como aparecen publicados.'}))
+    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'EVENTO__AMBITO', ))
     por_invitacion = forms.BooleanField(required=False, label='Participación por invitación')
     ponencia_magistral = forms.BooleanField(required=False, label='Ponencia Magistral')
-    fecha = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True, label='Fecha de la participación en el evento.')
-
-
+    fecha = forms.DateField(widget=wDateInput(attrs={'data-provide': 'datepicker', 'class': 'datepicker form-control pull-right'}), label='Fecha de la participación en el evento.')
     institucion = forms.ModelChoiceField(
-        required=False,
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
         widget=ModelSelect2Widget(
@@ -157,6 +150,19 @@ class ParticipacionEventoAcademicoForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
+    pais = forms.ModelChoiceField(
+        queryset=Pais.objects.all(),
+        label="País",
+        widget=ModelSelect2Widget(
+            search_fields=['pais_nombre__icontains'],
+            queryset=Pais.objects.all(),
+            attrs={'style': 'width: 100%', 'class': 'form-control pull-right',
+                   'data-placeholder': 'Seleccione el pais donde se llevó a cabo el evento.'}
+        )
+    )
+    ciudad = forms.CharField(widget=TextInput(
+        attrs={'class': 'form-control pull-right', 'placeholder': 'Ciudad donde se llevó a cabo el evento.'}),
+        label='Ciudad donde se llevó a cabo el evento.')
 
     class Meta:
         model = ParticipacionEventoAcademico
