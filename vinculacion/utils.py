@@ -12,7 +12,7 @@ class ArbitrajePublicacionAcademicaContext:
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Fecha de dictamen']}
+                'titulos_tabla': ['Publicación', 'Tipo', 'Institución', 'Fecha de dictamen']}
 
 
     tabla_mios =  '<script>\n' \
@@ -26,11 +26,14 @@ class ArbitrajePublicacionAcademicaContext:
                                 '},\n' \
                                 '"columns": [\n' \
                                     '{\n' \
-                                        '"data": "fields.fecha_dictamen",\n' \
+                                        '"data": "fields.publicacion",\n' \
                                         '"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {\n' \
-                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.fecha_dictamen + "</a>");\n' \
+                                            '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.publicacion + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
+                                    '{"data": "fields.tipo"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
+                                    '{"data": "fields.fecha_dictamen"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -44,7 +47,7 @@ class OtraComisionContext:
     obj = 'otra comisión de arbitraje'
     objs = 'otras comisiones de arbitraje'
     Objs = 'Otras comisiones de arbitraje'
-    url_seccion = 'otras-comisiones'
+    url_seccion = 'otras-comisiones-arbitraje'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
