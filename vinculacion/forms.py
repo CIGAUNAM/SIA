@@ -45,25 +45,15 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
 
 class OtraComisionArbitrajeForm(forms.ModelForm):
     comision = forms.ModelChoiceField(
-        queryset=ComisionArbitraje.objects.all(),
+        queryset=ComisionVinculacion.objects.all(),
         label="Comisión",
         widget=ModelSelect2Widget(
             search_fields=['comisionvinculacion_nombre__icontains'],
-            queryset=ComisionArbitraje.objects.all(),
+            queryset=ComisionVinculacion.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    descripcion = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=False)
-    comision_otra = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    institucion2 = forms.ModelChoiceField(
-        queryset=Institucion.objects.all(),
-        label="Institución",
-        widget=ModelSelect2Widget(
-            search_fields=['nombre_institucion__icontains'],
-            queryset=Institucion.objects.all(),
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
-        )
-    )
+    comision_otra = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     institucion = forms.ModelChoiceField(
         queryset=InstitucionSimple.objects.all(),
         label="Institución",
@@ -77,7 +67,7 @@ class OtraComisionArbitrajeForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
-        model = OtraComisionArbitraje
+        model = OtraComision
         exclude = ['usuario', ]
 
 

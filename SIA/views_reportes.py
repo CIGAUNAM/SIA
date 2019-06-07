@@ -6,7 +6,7 @@ from formacion_academica.models import CursoEspecializacion
 from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado, PublicacionTecnica, ProyectoInvestigacion
 from difusion_cientifica.models import MemoriaInExtenso, OrganizacionEventoAcademico, ParticipacionEventoAcademico
 from divulgacion_cientifica.models import ArticuloDivulgacion, CapituloLibroDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion, ProgramaRadioTelevisionInternet
-from vinculacion.models import ArbitrajePublicacionAcademica, OtraComisionArbitraje
+from vinculacion.models import ArbitrajePublicacionAcademica, OtraComision
 from docencia.models import CursoDocenciaEscolarizado, CursoDocenciaExtracurricular, ArticuloDocencia, ProgramaEstudio
 from desarrollo_tecnologico.models import DesarrolloTecnologico
 from distinciones.models import DistincionAcademico, ParticipacionSociedadCientifica, DistincionAlumno
@@ -107,7 +107,7 @@ class Informe(View):
     context['organizacion_eventos_divulgacion'] = OrganizacionEventoDivulgacion.objects.filter(evento2__fecha_inicio__year=this_year).distinct()
     context['participacion_eventos_divulgacion'] = ParticipacionEventoDivulgacion.objects.filter(evento__fecha_inicio__year=this_year).distinct()
     context['arbitrajes_publicaciones_academicas'] = ArbitrajePublicacionAcademica.objects.filter(fecha_dictamen__year=this_year).distinct()
-    context['arbitrajes_otras_actividades'] = OtraComisionArbitraje.objects.filter(fecha_inicio__year=this_year).distinct()
+    context['arbitrajes_otras_actividades'] = OtraComision.objects.filter(fecha_inicio__year=this_year).distinct()
     context['redes_academicas'] = RedAcademica.objects.filter(fecha_constitucion__year=this_year).distinct()
     context['servicios_externos_entidadesnoacademicas'] = ServicioAsesoriaExterna.objects.filter(fecha_inicio__year=this_year).distinct()
     # context['otros_programa_vinculacion'] = OtroProgramaVinculacion.objects.filter(fecha__year=this_year).distinct()
