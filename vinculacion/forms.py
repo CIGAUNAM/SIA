@@ -43,13 +43,13 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
 
 
 
-class OtraComisionForm(forms.ModelForm):
+class OtraComisionArbitrajeForm(forms.ModelForm):
     comision = forms.ModelChoiceField(
-        queryset=ComisionVinculacion.objects.all(),
+        queryset=ComisionArbitraje.objects.all(),
         label="Comisión",
         widget=ModelSelect2Widget(
             search_fields=['comisionvinculacion_nombre__icontains'],
-            queryset=ComisionVinculacion.objects.all(),
+            queryset=ComisionArbitraje.objects.all(),
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
@@ -77,7 +77,7 @@ class OtraComisionForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
 
     class Meta:
-        model = OtraComision
+        model = OtraComisionArbitraje
         exclude = ['usuario', ]
 
 
