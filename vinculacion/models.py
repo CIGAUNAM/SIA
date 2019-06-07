@@ -7,8 +7,8 @@ from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 
-RED_ACADEMICA__CLASIFICACION = getattr(settings, 'RED_ACADEMICA__CLASIFICACION',
-                                       (('', '-------'), ('LOCAL', 'Local'), ('REGIONAL', 'Regional'),
+RED_ACADEMICA__AMBITO = getattr(settings, 'RED_ACADEMICA__AMBITO',
+                                (('', '-------'), ('LOCAL', 'Local'), ('REGIONAL', 'Regional'),
                                         ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional'), ('OTRO', 'Otro')))
 CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION = getattr(settings, 'CONVENIO_ENTIDAD_EXTERNA__CLASIFICACION',
                                                   (('', '-------'), ('FEDERAL', 'Gubernamental federal'),
@@ -59,6 +59,7 @@ class ComisionVinculacion(models.Model):
     class Meta:
         ordering = ['comisionvinculacion_orden', 'id']
 
+
 class OtraComision(models.Model):
     comision = models.ForeignKey(ComisionVinculacion, on_delete=models.DO_NOTHING)
     comision_otra = models.CharField(max_length=255, blank=True, null=True)
@@ -81,15 +82,13 @@ class OtraComision(models.Model):
 
 class RedAcademica(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    ambito = models.CharField(max_length=20, choices=RED_ACADEMICA__CLASIFICACION)
+    ambito = models.CharField(max_length=20, choices=RED_ACADEMICA__AMBITO)
     objetivos = models.TextField()
     fecha_constitucion = models.DateField()
     fecha_fin = models.DateField(null=True, blank=True)
-    entidades = models.ManyToManyField(Dependencia, blank=True, related_name='red_academica_entidades')
-    instituciones = models.ManyToManyField(InstitucionSimple, blank=True)
+    instituciones = models.ManyToManyField(InstitucionSimple)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
-    participantes = models.ManyToManyField(User, related_name='red_academica_usuarios',
-                                      verbose_name='Académicos participantes')
+    participantes = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_constitucion)
