@@ -1998,10 +1998,7 @@
     "objetivos": "Generar informaci\u00f3n relacionada con pobreza que impacte pol\u00edticas p\u00fablicas",
     "fecha_constitucion": "2011-12-22",
     "fecha_fin": null,
-    "proyecto": 1,
-    "entidades": [
-      65
-    ],
+    "proyecto": null,
     "instituciones": [
       65
     ],
@@ -2019,10 +2016,7 @@
     "objetivos": "Su objetivo es ser una plataforma de discusi\u00f3n, difusi\u00f3n y capacitaci\u00f3n en temas de desarrollo urbano sustentable, mediante el intercambio de conocimiento y experiencias, para apoyar y acompa\u00f1ar la implementaci\u00f3n de la Nueva Agenda Urbana (NAU) en la regi\u00f3n producto de H\u00e1bitat III. Adem\u00e1s, busca proponer l\u00edneas de investigaci\u00f3n y apoyar l\u00edneas de acci\u00f3n relevantes y necesarias a nivel local, nacional y regional para el desarrollo urbano sustentable.",
     "fecha_constitucion": "2016-05-02",
     "fecha_fin": null,
-    "proyecto": 1,
-    "entidades": [
-      577
-    ],
+    "proyecto": null,
     "instituciones": [
       577
     ],
@@ -2040,10 +2034,7 @@
     "objetivos": "La Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoam\u00e9rica y el Caribe (REDEUS_LAC) est\u00e1 dirigida y encabezada por el Centro de Desarrollo Urbano Sustentable (CEDEUS). Su objetivo es ser una plataforma de discusi\u00f3n, difusi\u00f3n y capacitaci\u00f3n en temas de desarrollo urbano sustentable, mediante el intercambio de conocimiento y experiencias, para apoyar y acompa\u00f1ar la implementaci\u00f3n de la Nueva Agenda Urbana (NAU) en la regi\u00f3n producto de H\u00e1bitat III. Adem\u00e1s, busca proponer l\u00edneas de investigaci\u00f3n y apoyar l\u00edneas de acci\u00f3n relevantes y necesarias a nivel local, nacional y regional para el desarrollo urbano sustentable.",
     "fecha_constitucion": "2016-05-02",
     "fecha_fin": null,
-    "proyecto": 1,
-    "entidades": [
-      577
-    ],
+    "proyecto": null,
     "instituciones": [
       577
     ],
@@ -2061,12 +2052,7 @@
     "objetivos": "Realizar trabajos de investigaci\u00f3n colaborativos sobre periferias urbanas",
     "fecha_constitucion": "2018-02-28",
     "fecha_fin": null,
-    "proyecto": 1,
-    "entidades": [
-      4,
-      580,
-      581
-    ],
+    "proyecto": null,
     "instituciones": [
       4,
       581,
@@ -2089,7 +2075,6 @@
     "fecha_constitucion": "2015-07-01",
     "fecha_fin": null,
     "proyecto": 304,
-    "entidades": [],
     "instituciones": [
       4,
       137,
@@ -2110,11 +2095,7 @@
     "objetivos": "Colaboraci\u00f3n institucional",
     "fecha_constitucion": "2009-01-01",
     "fecha_fin": "2014-06-30",
-    "proyecto": 1,
-    "entidades": [
-      4,
-      297
-    ],
+    "proyecto": null,
     "instituciones": [
       4,
       297
@@ -2133,11 +2114,7 @@
     "objetivos": "Convenio de coedici\u00f3n",
     "fecha_constitucion": "1900-01-01",
     "fecha_fin": "1900-01-01",
-    "proyecto": 1,
-    "entidades": [
-      4,
-      494
-    ],
+    "proyecto": null,
     "instituciones": [
       4,
       494
@@ -2156,11 +2133,7 @@
     "objetivos": "Convenio investigaci\u00f3n e intercambio acad\u00e9mico",
     "fecha_constitucion": "2012-01-01",
     "fecha_fin": "2012-12-31",
-    "proyecto": 1,
-    "entidades": [
-      4,
-      135
-    ],
+    "proyecto": null,
     "instituciones": [
       4,
       135
@@ -2179,10 +2152,7 @@
     "objetivos": "Pertenencia",
     "fecha_constitucion": "2014-10-01",
     "fecha_fin": "2016-10-01",
-    "proyecto": 1,
-    "entidades": [
-      65
-    ],
+    "proyecto": null,
     "instituciones": [
       65
     ],
@@ -2200,10 +2170,7 @@
     "objetivos": "Pertenencia",
     "fecha_constitucion": "2015-01-01",
     "fecha_fin": "2016-01-01",
-    "proyecto": 1,
-    "entidades": [
-      65
-    ],
+    "proyecto": null,
     "instituciones": [
       65
     ],
@@ -2221,10 +2188,7 @@
     "objetivos": "Pertenencia",
     "fecha_constitucion": "2014-10-01",
     "fecha_fin": "2016-10-01",
-    "proyecto": 1,
-    "entidades": [
-      65
-    ],
+    "proyecto": null,
     "instituciones": [
       65
     ],
@@ -2242,8 +2206,7 @@
     "objetivos": "Realizar investigaci\u00f3n sobre las propiedades magn\u00e9ticas de los suelos relacionadas con la evaluaci\u00f3n de pr\u00e1cticas de manejo as\u00ed como en la clasificaci\u00f3n y geograf\u00eda de suelos.",
     "fecha_constitucion": "1900-01-01",
     "fecha_fin": "1900-01-01",
-    "proyecto": 1,
-    "entidades": [],
+    "proyecto": null,
     "instituciones": [
       4,
       19
@@ -2263,9 +2226,6 @@
     "fecha_constitucion": "2017-12-11",
     "fecha_fin": "2017-12-15",
     "proyecto": 338,
-    "entidades": [
-      277
-    ],
     "instituciones": [
       277
     ],
@@ -2284,9 +2244,6 @@
     "fecha_constitucion": "2017-07-03",
     "fecha_fin": "2017-07-07",
     "proyecto": 338,
-    "entidades": [
-      694
-    ],
     "instituciones": [
       694
     ],
@@ -2305,9 +2262,6 @@
     "fecha_constitucion": "2017-06-26",
     "fecha_fin": "2017-06-30",
     "proyecto": 338,
-    "entidades": [
-      603
-    ],
     "instituciones": [
       603
     ],
@@ -2326,9 +2280,6 @@
     "fecha_constitucion": "2016-06-05",
     "fecha_fin": "2016-06-15",
     "proyecto": 380,
-    "entidades": [
-      283
-    ],
     "instituciones": [
       283
     ],
@@ -2346,10 +2297,7 @@
     "objetivos": "Trabajo en diversas publicaciones en colaboraci\u00f3n con varios investigadores",
     "fecha_constitucion": "2013-01-01",
     "fecha_fin": "2013-05-01",
-    "proyecto": 1,
-    "entidades": [
-      4
-    ],
+    "proyecto": null,
     "instituciones": [
       4
     ],
@@ -2368,9 +2316,6 @@
     "fecha_constitucion": "2008-12-02",
     "fecha_fin": null,
     "proyecto": 396,
-    "entidades": [
-      750
-    ],
     "instituciones": [
       750
     ],
@@ -2389,9 +2334,6 @@
     "fecha_constitucion": "2013-01-07",
     "fecha_fin": null,
     "proyecto": 412,
-    "entidades": [
-      752
-    ],
     "instituciones": [
       752
     ],
@@ -2410,10 +2352,9 @@
     "fecha_constitucion": "2006-01-02",
     "fecha_fin": "2011-12-30",
     "proyecto": 199,
-    "entidades": [
-      630
+    "instituciones": [
+      6
     ],
-    "instituciones": [],
     "participantes": [
       26
     ]
@@ -2429,11 +2370,6 @@
     "fecha_constitucion": "2018-11-15",
     "fecha_fin": "2020-08-31",
     "proyecto": 231,
-    "entidades": [
-      105,
-      190,
-      483
-    ],
     "instituciones": [
       483,
       105,
@@ -2455,9 +2391,6 @@
     "fecha_constitucion": "2016-06-01",
     "fecha_fin": null,
     "proyecto": 416,
-    "entidades": [
-      765
-    ],
     "instituciones": [
       765
     ],
@@ -2477,7 +2410,6 @@
     "fecha_constitucion": "2017-03-16",
     "fecha_fin": "2019-04-01",
     "proyecto": 430,
-    "entidades": [],
     "instituciones": [
       4,
       234,

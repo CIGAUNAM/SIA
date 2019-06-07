@@ -115,10 +115,10 @@ class RedAcademicaJSON(View):
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
                                          fields=('nombre', 'ambito', 'fecha_constitucion'))
 
+            json = json.replace('INTERNACIONAL', 'Internacional')
             json = json.replace('LOCAL', 'Local')
             json = json.replace('REGIONAL', 'Regional')
             json = json.replace('NACIONAL', 'Nacional')
-            json = json.replace('INTERNACIONAL', 'Internacional')
             json = json.replace('OTRO', 'Otro')
             json = json.replace('false', '"No"')
             json = json.replace('true', '"Si"')

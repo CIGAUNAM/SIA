@@ -41,8 +41,6 @@ class ArbitrajePublicacionAcademicaForm(forms.ModelForm):
         exclude = ['usuario', ]
 
 
-
-
 class OtraComisionArbitrajeForm(forms.ModelForm):
     comision = forms.ModelChoiceField(
         queryset=ComisionVinculacion.objects.all(),
@@ -73,7 +71,7 @@ class OtraComisionArbitrajeForm(forms.ModelForm):
 
 class RedAcademicaForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RED_ACADEMICA__CLASIFICACION', ), required=True)
+    ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}), choices=getattr(settings, 'RED_ACADEMICA__AMBITO'), required=True)
     objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
     fecha_constitucion = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
