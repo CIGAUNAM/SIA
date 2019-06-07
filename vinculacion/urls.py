@@ -8,10 +8,10 @@ urlpatterns = [
     url(r'^arbitrajes-publicaciones/(?P<pk>[\w\-]+)/eliminar$', ArbitrajePublicacionAcademicaEliminar.as_view(), name='arbitraje_publicacion_academica_eliminar'),
     url(r'^arbitrajes-publicaciones/(?P<pk>[\w\-]+)/$', ArbitrajePublicacionAcademicaDetalle.as_view(), name='arbitraje_publicacion_academica_detalle'),
 
-    url(r'^otras-comisiones-arbitraje/json/', OtraComisionArbitrajeJSON.as_view(), name='otra_comision_arbitraje_lista__json'),
-    url(r'^otras-comisiones-arbitraje/$', OtraComisionArbitrajeLista.as_view(), name='otra_comision_arbitraje_lista'),
-    url(r'^otras-comisiones-arbitraje/(?P<pk>[\w\-]+)/eliminar$', OtraComisionArbitrajeEliminar.as_view(), name='otra_comision_arbitraje_eliminar'),
-    url(r'^otras-comisiones-arbitraje/(?P<pk>[\w\-]+)/$', OtraComisionArbitrajeDetalle.as_view(), name='otra_comision_arbitraje_detalle'),
+    url(r'^otras-comisiones/json/', OtraComisionJSON.as_view(), name='otra_comision_lista__json'),
+    url(r'^otras-comisiones/$', OtraComisionLista.as_view(), name='otra_comision_lista'),
+    url(r'^otras-comisiones/(?P<pk>[\w\-]+)/eliminar$', OtraComisionEliminar.as_view(), name='otra_comision_eliminar'),
+    url(r'^otras-comisiones/(?P<pk>[\w\-]+)/$', OtraComisionDetalle.as_view(), name='otra_comision_detalle'),
 
     url(r'^redes-academicas/json/', RedAcademicaJSON.as_view(), name='red_academica_lista__json'),
     url(r'^redes-academicas/json-otros/', RedAcademicaJSON.as_view(otros=True), name='red_academica_lista_otros__json'),

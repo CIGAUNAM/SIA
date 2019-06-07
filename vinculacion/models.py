@@ -46,25 +46,22 @@ class ArbitrajePublicacionAcademica(models.Model):
         verbose_name = 'Arbitraje en publicaciones académicas'
         verbose_name_plural = 'Arbitrajes en publicaciones académicas'
 
-class ComisionArbitraje(models.Model):
-    comisionarbitraje_nombre = models.CharField(max_length=140, unique=True)
-    comisionarbitraje_orden = models.IntegerField()
+class ComisionVinculacion(models.Model):
+    comisionvinculacion_nombre = models.CharField(max_length=140, unique=True)
+    comisionvinculacion_orden = models.IntegerField()
 
     def __str__(self):
-        return self.comisionarbitraje_nombre
+        return self.comisionvinculacion_nombre
 
     def natural_key(self):
-        return self.comisionarbitraje_nombre
+        return self.comisionvinculacion_nombre
 
     class Meta:
-        ordering = ['comisionarbitraje_orden', 'id']
+        ordering = ['comisionvinculacion_orden', 'id']
 
-class OtraComisionArbitraje(models.Model):
-    comision = models.ForeignKey(ComisionArbitraje, blank=True, null=True, on_delete=models.DO_NOTHING)
+class OtraComision(models.Model):
+    comision = models.ForeignKey(ComisionVinculacion, on_delete=models.DO_NOTHING)
     comision_otra = models.CharField(max_length=255, blank=True, null=True)
-    descripcion = models.TextField(blank=True)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
     institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -74,7 +71,7 @@ class OtraComisionArbitraje(models.Model):
         return "{} : {}".format(self.comision_otra, self.institucion)
 
     def get_absolute_url(self):
-        return reverse('otra_comision_arbitraje_detalle', kwargs={'pk': self.pk})
+        return reverse('otra_comision_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']

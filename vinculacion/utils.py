@@ -44,17 +44,17 @@ class ArbitrajePublicacionAcademicaContext:
 
 
 class OtraComisionContext:
-    obj = 'otra comisión de arbitraje'
-    objs = 'otras comisiones de arbitraje'
-    Objs = 'Otras comisiones de arbitraje'
-    url_seccion = 'otras-comisiones-arbitraje'
+    obj = 'otra comisión'
+    objs = 'otras comisiones'
+    Objs = 'Otras comisiones'
+    url_seccion = 'otras-comisiones'
 
     contexto = {'url_categoria': url_categoria, 'url_seccion': url_seccion,
                 'tab_lista': 'Mis ' + objs, 'tab_agregar': 'Agregar ' + obj,
                 'tab_detalle': 'Editar ' + obj,
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj, 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Comision', 'dependencia', 'Fecha']}
+                'titulos_tabla': ['Comision', 'Institución', 'Fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -73,7 +73,7 @@ class OtraComisionContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.comision + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
-                                    '{"data": "fields.dependencia"},\n' \
+                                    '{"data": "fields.institucion"},\n' \
                                     '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
