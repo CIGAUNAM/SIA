@@ -9,19 +9,20 @@ EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('NACIONAL', 'Nacional'), 
 EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (
     ('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'),
     ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
-STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO', (
-    ('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-    ('OTRO', 'Otro')))
-STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (
-    ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-    ('OTRO', 'Otro')))
+STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO', (('', '-------'),
+    ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
+STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (('', '-------'),
+    ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
+
+STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (('', '-------'),
+    ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
 
 
 # Create your models here.
 
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     autores = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
     autores_todos = models.TextField(blank=True, null=True)
     agradecimientos = models.ManyToManyField(User, related_name='articulo_divulgacion_agradecimientos', blank=True)
@@ -41,7 +42,7 @@ class ArticuloDivulgacion(models.Model):
     numero = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
+        return "{} : {} : {}".format(self.titulo, self.get_status_display(), self.revista)
 
     def get_absolute_url(self):
         return reverse('articulo_divulgacion_detalle', kwargs={'pk': self.pk})
