@@ -6,29 +6,22 @@ from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField
 
 EVENTO__AMBITO = getattr(settings, 'EVENTO__AMBITO', (('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
-EVENTO__RESPONSABILIDAD = getattr(settings, 'EVENTO__RESPONSABILIDAD', (
-    ('COORDINADOR', 'Coordinador general'), ('COMITE', 'Comité organizador'), ('AYUDANTE', 'Ayudante'),
-    ('TECNICO', 'Apoyo técnico'), ('OTRO', 'Otro')))
-STATUS_PUBLICACION_ARTICULO = getattr(settings, 'STATUS_PUBLICACION_ARTICULO', (
-    ('PUBLICADO', 'Publicado'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-    ('OTRO', 'Otro')))
-STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (
-    ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'),
-    ('OTRO', 'Otro')))
+STATUS_PUBLICACION_LIBRO = getattr(settings, 'STATUS_PUBLICACION_LIBRO', (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado')))
+
+STATUS_PUBLICACION = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'))
 
 
 # Create your models here.
 
 class ArticuloDivulgacion(models.Model):
     titulo = models.CharField(max_length=255, unique=True)
-    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION_ARTICULO)
+    status = models.CharField(max_length=20, choices=STATUS_PUBLICACION)
     autores = SortedManyToManyField(User, related_name='articulo_divulgacion_autores', verbose_name='Autores')
-    autores_todos = models.TextField(blank=True, null=True)
+    autores_todos = models.TextField()
     agradecimientos = models.ManyToManyField(User, related_name='articulo_divulgacion_agradecimientos', blank=True)
     url = models.URLField(blank=True)
     solo_electronico = models.BooleanField(default=False)
-    revista = models.ForeignKey(Revista, related_name='articulodivulgacion_revista', blank=True, null=True, on_delete=models.DO_NOTHING)
-    revista_divulgacion = models.ForeignKey(RevistaDivulgacion, related_name='articulodivulgacion_revistadivulgacion', blank=True, null=True, on_delete=models.DO_NOTHING)
+    revista_divulgacion = models.ForeignKey(RevistaDivulgacion, related_name='articulodivulgacion_revistadivulgacion', on_delete=models.DO_NOTHING)
     fecha = models.DateField(null=True, blank=True)
     fecha_enviado = models.DateField(null=True, blank=True)
     fecha_aceptado = models.DateField(null=True, blank=True)
@@ -36,12 +29,10 @@ class ArticuloDivulgacion(models.Model):
     fecha_publicado = models.DateField(null=True, blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-
-    volumen = models.CharField(max_length=100, blank=True)
     numero = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
-        return "{} : {} : {}".format(self.titulo, self.tipo.title(), self.revista)
+        return "{} : {}".format(self.titulo, self.revista_divulgacion)
 
     def get_absolute_url(self):
         return reverse('articulo_divulgacion_detalle', kwargs={'pk': self.pk})

@@ -23,7 +23,30 @@ class ArticuloDivulgacionJSON(View):
             else:
                 items = ArticuloDivulgacion.objects.filter(autores__id__exact=usuarioid)
             json = serializers.serialize('json', items, use_natural_foreign_keys=True,
-                                         fields=('titulo', 'status', 'revista'))
+                                         fields=('titulo', 'status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa', 'fecha_publicado', 'revista_divulgacion'))
+
+
+            json = json.replace('PUBLICADO', 'Publicado')
+            json = json.replace('ACEPTADO', 'Aceptado')
+            json = json.replace('EN_PRENSA', 'En prensa')
+            json = json.replace('ENVIADO', 'Enviado')
+
+            json = json.replace(' "fecha_enviado": null,', '')
+            json = json.replace(' "fecha_aceptado": null,', '')
+            json = json.replace(' "fecha_enprensa": null,', '')
+            json = json.replace(' "fecha_publicado": null,', '')
+
+            json = json.replace('"fecha_enviado"', '"fecha"')
+            json = json.replace('"fecha_aceptado"', '"fecha"')
+            json = json.replace('"fecha_enprensa"', '"fecha"')
+            json = json.replace('"fecha_publicado"', '"fecha"')
+
+            json = json.replace('"fecha": null}', '}')
+            json = json.replace(',   }', '}')
+            json = json.replace(',  }', '}')
+            json = json.replace(', }', '}')
+            json = json.replace(',}', '}')
+
             return HttpResponse(json, content_type='application/json')
         except:
             raise Http404
