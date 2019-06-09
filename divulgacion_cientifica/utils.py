@@ -12,7 +12,7 @@ class ArticuloDivulgacionContext:
                 'tab_detalle': 'Editar ' + obj, 'tab_otros': Objs + ' de otros miembros', 'titulo_lista_otros': Objs + " de otros miembros",
                 'titulo_lista': 'Mis ' + objs, 'titulo_agregar': 'Agregar ' + obj,
                 'titulo_detalle': 'Editar ' + obj, 'objeto': obj.lower(), 'breadcrumb_seccion': bc_seccion, 'titulo_pagina': Objs,
-                'titulos_tabla': ['Título', 'Status', 'Revista']}
+                'titulos_tabla': ['Título', 'Revista', 'Status', 'Fecha']}
 
 
     tabla_mios =  '<script>\n' \
@@ -31,8 +31,9 @@ class ArticuloDivulgacionContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
+                                    '{"data": "fields.revista_divulgacion"},\n' \
                                     '{"data": "fields.status"},\n' \
-                                    '{"data": "fields.revista"},\n' \
+                                    '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \
@@ -56,8 +57,9 @@ class ArticuloDivulgacionContext:
                                             '$(nTd).html("<a href=\'/' + str(contexto['url_categoria']) + '/' + str(contexto['url_seccion']) + '/" + oData.pk + "\'>" + oData.fields.titulo + "</a>");\n' \
                                         '}\n' \
                                     '},\n' \
+                                    '{"data": "fields.revista_divulgacion"},\n' \
                                     '{"data": "fields.status"},\n' \
-                                    '{"data": "fields.revista"},\n' \
+                                    '{"data": "fields.fecha"},\n' \
                                 ']\n' \
                             '});\n' \
                         '});\n' \

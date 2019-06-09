@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block form_agregar %}
+    {{ form.errors }}
     <p><strong>Título de artículo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de artículo como aparece publicado.">
@@ -29,7 +30,7 @@
         <p><strong>Fecha de enviado:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha en que se envío del artículo."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
@@ -44,7 +45,7 @@
         <p><strong>Fecha de aceptación:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha en que artículo fue aceptado."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
@@ -59,7 +60,7 @@
         <p><strong>Fecha de envío a prensa:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha en que el artículo es envíado a prensa antes de su publicación."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
@@ -74,7 +75,7 @@
         <p><strong>Fecha de publicación:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha de publicación del artículo."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
@@ -300,6 +301,7 @@
 {% endblock %}
 
 {% block form_detalle %}
+    {{ form.errors }}
     <p><strong>Título de artículo:</strong>
         <a href="#" data-toggle="tooltip" data-placement="right"
            title="Título de artículo como aparece publicado.">
@@ -328,7 +330,7 @@
         <p><strong>Fecha de enviado:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha en que se envío del artículo."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
@@ -343,7 +345,7 @@
         <p><strong>Fecha de aceptación:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha en que artículo fue aceptado."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
@@ -358,7 +360,7 @@
         <p><strong>Fecha de envío a prensa:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha en que el artículo es envíado a prensa antes de su publicación."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
@@ -373,7 +375,7 @@
         <p><strong>Fecha de publicación:</strong>
             <a href="#" data-toggle="tooltip" data-placement="right"
                title="Fecha de publicación del artículo."><i
-                    class="fa fa-question-circle"></i></a>
+                    class="fa fa-question-circle"></i></a> <i class="fa fa-edit"></i>
         <div class="form-group" style="margin-top: -10px;">
             <div class="input-group date">
                 <div class="input-group-addon">
