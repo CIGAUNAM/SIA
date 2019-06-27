@@ -24,9 +24,6 @@ class ArticuloDivulgacionForm(forms.ModelForm):
             attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}
         )
     )
-    fecha = forms.DateField(
-        widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
-        required=False, label='Fecha de publicación')
     fecha_enviado = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=False, label='Fecha de envío')
@@ -39,9 +36,8 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     fecha_publicado = forms.DateField(
         widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}),
         required=False, label='Fecha de publicación')
-    volumen = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
-    numero = forms.CharField(
-        widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False, label='Número')
+    numero = forms.CharField(widget=NumberInput(attrs={'min': 0, 'class': 'form-control pull-right'}), required=False,
+                             label='Número')
     pagina_inicio = forms.CharField(widget=NumberInput(attrs={'min': 1, 'class': 'form-control pull-right'}),
                                     required=True, label='Número de página donde inicia')
     pagina_fin = forms.CharField(
@@ -50,7 +46,7 @@ class ArticuloDivulgacionForm(forms.ModelForm):
     autores_todos = forms.CharField(
         widget=Textarea(attrs={'class': 'form-control', 'rows': '3',
                                'placeholder': 'Autores tal cual se reportan en el artículo, en el orden y forma.'}),
-        required=False, label='Autores como se reportan en el artículo')
+        label='Autores como se reportan en el artículo')
 
     class Meta:
         model = ArticuloDivulgacion

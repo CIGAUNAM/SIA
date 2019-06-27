@@ -29,7 +29,7 @@ class ArticuloDivulgacion(models.Model):
     fecha_publicado = models.DateField(null=True, blank=True)
     pagina_inicio = models.PositiveIntegerField()
     pagina_fin = models.PositiveIntegerField()
-    numero = models.CharField(max_length=100, blank=True)
+    numero = models.PositiveIntegerField(null=True, blank=True)
 
     def __str__(self):
         return "{} : {}".format(self.titulo, self.revista_divulgacion)
