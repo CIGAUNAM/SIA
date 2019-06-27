@@ -88,7 +88,7 @@ class RedAcademica(models.Model):
     fecha_fin = models.DateField(null=True, blank=True)
     instituciones = models.ManyToManyField(InstitucionSimple)
     proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
-    participantes = models.ManyToManyField(User, related_name='red_academica_usuarios', verbose_name='Académicos participantes')
+    participantes = models.ManyToManyField(User, related_name='red_academica_participantes', verbose_name='Académicos participantes')
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_constitucion)
@@ -104,38 +104,34 @@ class RedAcademica(models.Model):
 
 class ConvenioOtraEntidad(models.Model):
     nombre = models.CharField(max_length=254, unique=True)
-    entidades = models.ManyToManyField(Dependencia)
-    instituciones = models.ManyToManyField(InstitucionSimple, blank=True)
+    instituciones = models.ManyToManyField(InstitucionSimple)
     objetivos = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField(blank=True, null=True)
     es_renovacion = models.BooleanField(blank=True, default=False)
-    #financiamientos = models.ManyToManyField(Financiamiento, blank=True)
     financiamiento_text = models.CharField(max_length=254, blank=True, null=True)
-    participantes = models.ManyToManyField(User, related_name='convenio_entidad_no_academica_usuarios',
-                                           verbose_name='Académicos participantes')
     proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING, blank=True, null=True)
     ambito = models.CharField(max_length=20, choices=(('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'INTERNACIONAL')))
+    participantes = models.ManyToManyField(User, verbose_name='Académicos participantes')
 
     def __str__(self):
         return "{} : {}".format(self.nombre, self.fecha_inicio)
 
     def get_absolute_url(self):
-        return reverse('convenio_entidad_externa_detalle', kwargs={'pk': self.pk})
+        return reverse('convenio_otra_entidad_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = 'Convenio con entidade externa'
-        verbose_name_plural = 'Convenios con entidades externas'
+        verbose_name = 'Convenio con otra entidad'
+        verbose_name_plural = 'Convenios con otras entidades'
 
 
 class ServicioAsesoriaExterna(models.Model):
     nombre_servicio = models.CharField(max_length=254)
     descripcion = models.TextField(blank=True)
-    entidades = models.ManyToManyField(Dependencia, blank=True)
-    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
+    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
     fecha_inicio = models.DateField()
-    fecha_fin = models.DateField(blank=True, null=True)
+    fecha_fin = models.DateField()
     financiamiento_text = models.CharField(max_length=254)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 

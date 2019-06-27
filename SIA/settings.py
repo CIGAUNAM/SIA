@@ -28,8 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.203', '10.1.11.2', '201.144.41.229', '10.10.4.182', 'sia.ciga.unam.mx']
 
-STATUS_PUBLICACION_ARTICULO = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'))
-STATUS_PUBLICACION = (('', '-------'), ('ENVIADO', 'Enviado'), ('ACEPTADO', 'Aceptado'), ('EN_PRENSA', 'En prensa'), ('PUBLICADO', 'Publicado'))
+STATUS_PUBLICACION_ARTICULO = (('', '-------'), ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'))
+STATUS_PUBLICACION_LIBRO = (('', '-------'), ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'))
+STATUS_PUBLICACION = (('', '-------'), ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'))
 STATUS_PROYECTO = (('', '-------'), ('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'))
 CLASIFICACION_PROYECTO = (('', '-------'), ('BASICO', 'Básico'), ('APLICADO', 'Aplicado'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'),('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'))
 ORGANIZACION_PROYECTO = (('', '-------'), ('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo'))
