@@ -77,6 +77,7 @@ class RedAcademicaForm(forms.ModelForm):
     fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     vigente = forms.BooleanField(required=False)
     proyecto = forms.ModelChoiceField(
+        required=False,
         queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto de Investigación",
         widget=ModelSelect2Widget(
@@ -98,19 +99,14 @@ class RedAcademicaForm(forms.ModelForm):
 
 class ConvenioOtraEntidadForm(forms.ModelForm):
     nombre = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
-    entidades = forms.ModelMultipleChoiceField(
-        queryset=Dependencia.objects.all(),
-        required=True,
-        widget=Select2MultipleWidget(
-            attrs={'style': 'width: 100%', 'class': 'form-control pull-right'})
-        )
     objetivos = forms.CharField(widget=Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': ''}), required=True)
     fecha_inicio = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
-    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=True)
+    fecha_fin = forms.DateField(widget=wDateInput(attrs={'data-provider': 'datepicker', 'class': 'datepicker form-control pull-right'}), required=False)
     es_renovacion = forms.BooleanField(required=False)
 
-    financiamiento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=True)
+    financiamiento_text = forms.CharField(widget=TextInput(attrs={'class': 'form-control pull-right'}), required=False)
     proyecto = forms.ModelChoiceField(
+        required=False,
         queryset=ProyectoInvestigacion.objects.all(),
         label="Proyecto de investigación",
         widget=ModelSelect2Widget(
@@ -120,7 +116,7 @@ class ConvenioOtraEntidadForm(forms.ModelForm):
         )
     )
     ambito = forms.ChoiceField(widget=Select2Widget(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
-                               choices=(('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'INTERNACIONAL')), required=True)
+                               choices=(('', '-------'), ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'INTERNACIONAL')))
 
     class Meta:
         model = ConvenioOtraEntidad
